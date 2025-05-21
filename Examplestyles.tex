@@ -1,0 +1,233 @@
+\documentclass[12pt]{article}
+
+%===============================================================================
+% 1. Package Imports & Global Settings
+%===============================================================================
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}                        % clean, scalable fonts
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}                       % custom section titles
+\usepackage{enumitem}                       % control list spacing
+\usepackage[table]{xcolor}                  % color + table support
+\usepackage{array}                          % table tweaks
+\usepackage{tcolorbox}                      % for callout boxes
+  \tcbuselibrary{skins,breakable}
+\usepackage{marginnote}                     % for marginal notes
+\usepackage{hyperref}                       % hyperlinks
+\usepackage{makeidx}                        % for indexing key terms
+  \makeindex
+\usepackage{fontawesome}                    % ← provides \faInfoCircle, \faLightbulbO, etc.
+
+% Friendly defaults
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parskip}{0.5\baselineskip}
+\setlength{\parindent}{0pt}
+
+%===============================================================================
+% 2. Section Heading Styles
+%===============================================================================
+\titleformat{\section}
+  {\Large\bfseries\sffamily}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{*2}{*1}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\sffamily}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{*1.5}{*0.75}
+
+%===============================================================================
+% 3. Callout Colors & Environments (with icons)
+%===============================================================================
+\definecolor{cbgImportant}{RGB}{255,245,200}
+\definecolor{cframeImportant}{RGB}{255,165,0}
+\definecolor{cbgTip}{RGB}{220,235,252}
+\definecolor{cframeTip}{RGB}{30,144,255}
+\definecolor{cbgTrivia}{RGB}{240,230,250}
+\definecolor{cframeTrivia}{RGB}{148,0,211}
+\definecolor{cbgWarning}{RGB}{255,228,225}
+\definecolor{cframeWarning}{RGB}{255,69,0}
+\definecolor{cbgExample}{RGB}{228,255,228}
+\definecolor{cframeExample}{RGB}{34,139,34}
+
+\newtcolorbox{Important}{
+  breakable,
+  colback=cbgImportant,
+  colframe=cframeImportant,
+  title={\faInfoCircle\ Important},
+  fonttitle=\bfseries\sffamily,
+  boxrule=0.8pt,
+  arc=2pt
+}
+
+\newtcolorbox{Tip}{
+  breakable,
+  colback=cbgTip,
+  colframe=cframeTip,
+  title={\faLightbulbO\ Tip},
+  fonttitle=\bfseries\sffamily,
+  boxrule=0.5pt,
+  arc=2pt
+}
+
+\newtcolorbox{Trivia}{
+  breakable,
+  colback=cbgTrivia,
+  colframe=cframeTrivia,
+  title={\faQuestionCircleO\ Trivia},
+  fonttitle=\bfseries\sffamily,
+  boxrule=0.5pt,
+  arc=2pt
+}
+
+\newtcolorbox{Warning}{
+  breakable,
+  colback=cbgWarning,
+  colframe=cframeWarning,
+  title={\faExclamationTriangle\ Warning},
+  fonttitle=\bfseries\sffamily,
+  boxrule=0.8pt,
+  arc=2pt
+}
+
+\newtcolorbox{Example}{
+  breakable,
+  colback=cbgExample,
+  colframe=cframeExample,
+  title={\faCheckCircleO\ Example},
+  fonttitle=\bfseries\sffamily,
+  boxrule=0.5pt,
+  arc=2pt
+}
+
+\newtcolorbox{Definition}{
+  breakable,
+  colback=white,
+  colframe=blue!50!black,
+  title={\faBook\ Definition},
+  fonttitle=\bfseries\sffamily,
+  boxrule=0.5pt,
+  arc=2pt
+}
+
+%===============================================================================
+% 4. Key Term Highlighting
+%===============================================================================
+\newcommand{\KeyTerm}[1]{%
+  \textbf{\textsf{#1}}%
+  \index{#1}%
+}
+
+%===============================================================================
+% 5. Excel-Style Table & Formula Bar
+%===============================================================================
+% Excel-like colors
+\definecolor{excelHeaderBg}{RGB}{217,217,217}
+\definecolor{excelBorder}{RGB}{191,191,191}
+\definecolor{excelSelected}{RGB}{180,198,231}
+\definecolor{excelFormula}{RGB}{0,0,255}
+\definecolor{excelError}{RGB}{255,0,0}
+\definecolor{excelCondRed}{RGB}{255,199,206}
+\definecolor{excelCondGreen}{RGB}{198,239,206}
+\definecolor{excelCondYellow}{RGB}{255,235,156}
+
+% Table environment
+\newenvironment{exceltable}{%
+  \begin{center}
+  \setlength{\arrayrulewidth}{0.5pt}%
+  \arrayrulecolor{excelBorder}%
+}{%
+  \end{center}
+}
+
+% Header & cell macros
+\newcommand{\excelcolhead}[1]{\cellcolor{excelHeaderBg}\textbf{#1}}
+\newcommand{\excelrowhead}[1]{\cellcolor{excelHeaderBg}\textbf{#1}}
+\newcommand{\excelformula}[1]{\texttt{\textcolor{excelFormula}{#1}}}
+\newcommand{\excelselected}[1]{\cellcolor{excelSelected}#1}
+\newcommand{\excelerror}[1]{\textcolor{excelError}{#1}}
+\newcommand{\excelcondred}[1]{\cellcolor{excelCondRed}{#1}}
+\newcommand{\excelcondgreen}[1]{\cellcolor{excelCondGreen}{#1}}
+\newcommand{\excelcondyellow}[1]{\cellcolor{excelCondYellow}{#1}}
+
+% Formula bar box
+\newtcolorbox{FormulaBar}{
+  colback=gray!10,
+  colframe=excelBorder,
+  arc=0pt,
+  boxrule=0.5pt,
+  fontupper=\ttfamily\color{excelFormula},
+  left=1mm,right=1mm,top=1mm,bottom=1mm
+}
+\renewcommand{\excelformulabar}[1]{\begin{FormulaBar}#1\end{FormulaBar}}
+
+%===============================================================================
+% Document Title
+%===============================================================================
+\title{LaTeX Style Guide Demonstration}
+\author{Math for Business Operations Textbook Team}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+Everything’s inline here: typography, icons, callouts, tables—so you can copy this file straight into your project and see the styles in action.
+
+\section{Typography \& Key Terms}
+Body text uses a friendly sans‐serif face.  Highlight vocabulary with \KeyTerm{KeyTerm}:
+
+\begin{Definition}
+A \KeyTerm{Balance Sheet} is a financial statement showing assets, liabilities, and equity at a point in time.
+\end{Definition}
+
+\section{Callout Examples}
+\begin{Important}
+Always save a backup copy of your spreadsheet before making bulk changes.
+\end{Important}
+
+\begin{Tip}
+Press \texttt{Ctrl+;} in Excel to enter today’s date into a cell.
+\end{Tip}
+
+\begin{Trivia}
+Excel was first released in 1985 for the Macintosh.
+\end{Trivia}
+
+\begin{Warning}
+Avoid circular references unless you explicitly enable iterative calculation.
+\end{Warning}
+
+\begin{Example}
+To sum cells B2 through B10, enter \excelformula{=SUM(B2:B10)} in the formula bar.
+\end{Example}
+
+\section{Excel Elements}
+\subsection{Formula Bar}
+\excelformulabar{=AVERAGE(B2:B8)}
+
+\subsection{Table}
+\begin{exceltable}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\excelcolhead{} & \excelcolhead{A} & \excelcolhead{B} & \excelcolhead{C} \\\hline
+\excelrowhead{1} & \textbf{Item}    & \textbf{Qty}    & \textbf{Price}   \\\hline
+\excelrowhead{2} & Pens             & 50              & \excelcondgreen{\$25.00}    \\\hline
+\excelrowhead{3} & Notebooks        & 30              & \excelcondyellow{\$45.00}   \\\hline
+\excelrowhead{4} & Erasers          & 10              & \excelcondred{\$5.00}       \\\hline
+\excelrowhead{5} & \multicolumn{2}{r|}{\textbf{Total}} & \excelselected{\$75.00}  \\\hline
+\end{tabular}
+\end{exceltable}
+
+\section{Lists \& Marginal Notes}
+Here’s a quick checklist:
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Open the textbook template in Excel
+  \item Rename the file to include your initials
+  \item Enable macros via Trust Center
+\end{itemize}
+
+Note in the margin:\marginnote{Don’t forget to save often!}
+
+\printindex
+\end{document}
