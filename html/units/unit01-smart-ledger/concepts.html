@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Concepts | Unit 1: Smart Ledger Launch</title>
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/textbook.css">
+    <link rel="stylesheet" href="../../assets/css/callouts.css">
+    <link rel="stylesheet" href="../../assets/css/excel.css">
+    <link rel="stylesheet" href="../../assets/css/typography.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="../../index.html">Math for Business Operations</a></h1>
+                    <p class="subtitle">Applied Accounting with Excel</p>
+                </div>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <button class="nav-toggle" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../frontmatter/preface.html">Preface</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Units</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../unit01-smart-ledger/index.html" class="current">Unit 1: Smart Ledger</a></li>
+                                <li><a href="../unit02-month-end-wizard/index.html">Unit 2: Month-End Wizard</a></li>
+                                <li><a href="../unit03-three-statement-storyboard/index.html">Unit 3: Three Statement Storyboard</a></li>
+                                <li><a href="../unit04-data-driven-cafe/index.html">Unit 4: Data-Driven Cafe</a></li>
+                                <li><a href="../unit05-payday-simulator/index.html">Unit 5: Payday Simulator</a></li>
+                                <li><a href="../unit06-pricelab-challenge/index.html">Unit 6: PriceLab Challenge</a></li>
+                                <li><a href="../unit07-asset-inventory-tracker/index.html">Unit 7: Asset Inventory Tracker</a></li>
+                                <li><a href="../unit08-integrated-model-sprint/index.html">Unit 8: Integrated Model Sprint</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../capstone/index.html">Capstone</a></li>
+                        <li><a href="../../backmatter/glossary.html">Glossary</a></li>
+                        <li><a href="../../search.html">Search</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Search bar -->
+                <div class="search-container">
+                    <input type="search" id="quick-search" placeholder="Search textbook..." aria-label="Search textbook">
+                    <button type="button" id="search-btn" aria-label="Search">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Unit 1: Smart Ledger</a></li>
+                <li class="breadcrumb-item current">Core Concepts</li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Main content -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Main content area -->
+                <div class="main-content-area reading-width">
+                    <!-- Section header -->
+                    <header class="section-header">
+                        <div class="section-meta">
+                            <span class="section-number">Section 2</span>
+                            <span class="estimated-time">⏱️ 60 minutes</span>
+                        </div>
+                        <h1>Core Concepts</h1>
+                        <p class="lead">
+                            Before building your Smart Ledger, you need to understand the theoretical foundations 
+                            and vocabulary that underpin every step. Think of this as the story behind the spreadsheet.
+                        </p>
+                    </header>
+                    
+                    <!-- Purpose and Scope -->
+                    <section id="purpose-scope">
+                        <h2>Purpose and Scope of a Self-Auditing Ledger</h2>
+                        
+                        <p>
+                            Startups often operate at high speed with limited oversight. This can lead to accounting 
+                            that's inconsistent, incomplete, or just plain confusing. But to attract investors or 
+                            secure loans, entrepreneurs must prove their financial records are trustworthy.
+                        </p>
+                        
+                        <p>
+                            A <span class="key-term">self-auditing ledger</span> is a financial model that checks itself. 
+                            When set up correctly, it can detect missing entries, flag unbalanced transactions, and 
+                            verify that all accounts align with the <span class="key-term">accounting equation</span>. 
+                            It's like a spell-checker for your books.
+                        </p>
+                        
+                        <div class="callout trivia">
+                            <h3>Did You Know?</h3>
+                            <p>
+                                In a 2020 survey, 21% of startups admitted they had no formal bookkeeping system 
+                                in their first year of operation.
+                            </p>
+                        </div>
+                        
+                        <div class="callout example">
+                            <h3>Real-World Example</h3>
+                            <p>
+                                Imagine you run a weekend juice stand. On Saturday, a friend pays you $200 to cater 
+                                a birthday picnic. You forget to record it. On Sunday, your cash total looks too low—and 
+                                you don't realize you've left out a key piece of income. A self-auditing ledger would 
+                                help catch this error before it affects your monthly report.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- The Accounting Equation -->
+                    <section id="accounting-equation">
+                        <h2>The Accounting Equation</h2>
+                        
+                        <p>The fundamental rule of accounting is:</p>
+                        
+                        <div class="equation">
+                            <strong>Assets = Liabilities + Equity</strong>
+                        </div>
+                        
+                        <p>
+                            This equation ensures that what your business owns is always matched by who has 
+                            a claim on those assets.
+                        </p>
+                        
+                        <div class="callout definition">
+                            <h3>Key Definitions</h3>
+                            <dl>
+                                <dt class="definition-term">Assets</dt>
+                                <dd>Things your business owns (e.g., cash, inventory, equipment)</dd>
+                                
+                                <dt class="definition-term">Liabilities</dt>
+                                <dd>What you owe others (e.g., loans, unpaid bills)</dd>
+                                
+                                <dt class="definition-term">Equity</dt>
+                                <dd>What's left for the owner(s) after debts are paid</dd>
+                            </dl>
+                        </div>
+                        
+                        <div class="callout example">
+                            <h3>Applying the Equation</h3>
+                            <p>
+                                If your startup buys a laptop for $1,000 using a $400 deposit and a $600 loan, 
+                                the equation becomes:
+                            </p>
+                            <div class="formula">
+                                <strong>Assets (Laptop) = Liabilities (Loan) + Equity (Cash Paid)</strong><br>
+                                <strong>$1,000 = $600 + $400</strong>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Debits and Credits -->
+                    <section id="debits-credits">
+                        <h2>Debits and Credits Mechanics</h2>
+                        
+                        <p>
+                            <span class="key-term">Debits</span> and <span class="key-term">credits</span> aren't "good" 
+                            or "bad"—they're just directions: left or right. Every transaction has two sides:
+                        </p>
+                        
+                        <ul>
+                            <li><strong>Debits</strong> increase asset and expense accounts, and decrease liabilities and equity</li>
+                            <li><strong>Credits</strong> increase liability and equity accounts, and decrease assets</li>
+                        </ul>
+                        
+                        <div class="callout tip">
+                            <h3>Memory Aid</h3>
+                            <p>
+                                To remember this, think: <strong>DEAL</strong> accounts increase with debits 
+                                (<strong>D</strong>ividends, <strong>E</strong>xpenses, <strong>A</strong>ssets, <strong>L</strong>osses) 
+                                and <strong>CLIP</strong> accounts increase with credits 
+                                (<strong>C</strong>apital, <strong>L</strong>iabilities, <strong>I</strong>ncome, <strong>P</strong>rofit).
+                            </p>
+                        </div>
+                        
+                        <div class="callout example">
+                            <h3>Debit and Credit Example</h3>
+                            <p>Your business pays $75 cash for office supplies:</p>
+                            
+                            <div class="excel-container">
+                                <div class="excel-toolbar">Journal Entry Example</div>
+                                <div class="excel-grid">
+                                    <table class="excel-table">
+                                        <tr>
+                                            <td class="corner-cell"></td>
+                                            <td class="col-header">A</td>
+                                            <td class="col-header">B</td>
+                                            <td class="col-header">C</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">1</td>
+                                            <td class="cell text">Account</td>
+                                            <td class="cell text">Debit</td>
+                                            <td class="cell text">Credit</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">2</td>
+                                            <td class="cell text">Supplies Expense</td>
+                                            <td class="cell currency cf-green">$75.00</td>
+                                            <td class="cell text">—</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">3</td>
+                                            <td class="cell text">Cash</td>
+                                            <td class="cell text">—</td>
+                                            <td class="cell currency cf-red">$75.00</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <p>Even though your cash decreased, your books stay balanced.</p>
+                        </div>
+                    </section>
+                    
+                    <!-- Journal Entry Structure -->
+                    <section id="journal-entries">
+                        <h2>Journal Entry Structure</h2>
+                        
+                        <p>A <span class="key-term">journal entry</span> is the way accountants capture business activity. Each entry has:</p>
+                        
+                        <ul>
+                            <li>The <strong>date</strong> of the transaction</li>
+                            <li>The <strong>accounts</strong> affected (e.g., "Cash", "Revenue")</li>
+                            <li>The <strong>amounts</strong> recorded as debits and credits</li>
+                            <li>A short <strong>description</strong></li>
+                        </ul>
+                        
+                        <div class="callout example">
+                            <h3>Complete Journal Entry</h3>
+                            <div class="excel-container">
+                                <div class="excel-toolbar">Journal Entry Template</div>
+                                <div class="excel-grid">
+                                    <table class="excel-table">
+                                        <tr>
+                                            <td class="corner-cell"></td>
+                                            <td class="col-header">A</td>
+                                            <td class="col-header">B</td>
+                                            <td class="col-header">C</td>
+                                            <td class="col-header">D</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">1</td>
+                                            <td class="cell text">Date</td>
+                                            <td class="cell text">Account</td>
+                                            <td class="cell text">Debit</td>
+                                            <td class="cell text">Credit</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">2</td>
+                                            <td class="cell date">March 5</td>
+                                            <td class="cell text">Cash</td>
+                                            <td class="cell currency cf-green">$300.00</td>
+                                            <td class="cell text">—</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">3</td>
+                                            <td class="cell text"></td>
+                                            <td class="cell text">Service Revenue</td>
+                                            <td class="cell text">—</td>
+                                            <td class="cell currency cf-green">$300.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row-header">4</td>
+                                            <td class="cell text" colspan="4"><em>Description: Received payment for tutoring session</em></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p>
+                            Every journal entry must keep the accounting equation in balance. This is the core idea 
+                            that makes self-auditing possible.
+                        </p>
+                    </section>
+                    
+                    <!-- Trial Balance -->
+                    <section id="trial-balance">
+                        <h2>Trial Balance as a Control Check</h2>
+                        
+                        <p>
+                            A <span class="key-term">trial balance</span> totals all the debits and credits in your 
+                            ledger to verify that everything still balances. If the result is anything other than zero, 
+                            something is wrong.
+                        </p>
+                        
+                        <div class="callout definition">
+                            <h3>Trial Balance</h3>
+                            <p>
+                                A report that adds up all debits and subtracts all credits. If the total is zero, 
+                                the books are balanced.
+                            </p>
+                        </div>
+                        
+                        <div class="callout warning">
+                            <h3>Important Limitation</h3>
+                            <p>
+                                Even if your trial balance equals zero, some errors (like posting to the wrong account) 
+                                can still slip through. This is a balance check—not an accuracy guarantee.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Data Structuring -->
+                    <section id="data-structuring">
+                        <h2>Data Structuring Concepts</h2>
+                        
+                        <p>
+                            Messy data leads to messy thinking. When you import transactions from a CSV file, 
+                            the first thing you should do is convert them into an <strong>Excel Table</strong>. 
+                            Tables make everything easier:
+                        </p>
+                        
+                        <ul>
+                            <li>They auto-expand when you add new rows</li>
+                            <li>They let you refer to columns by name (e.g., <code>Table1[Debit]</code>)</li>
+                            <li>They support filters, formatting, and cleaner formulas</li>
+                        </ul>
+                        
+                        <div class="callout tip">
+                            <h3>Quick Table Creation</h3>
+                            <p>Use <kbd>Ctrl+T</kbd> to quickly convert a range to a table.</p>
+                        </div>
+                    </section>
+                    
+                    <!-- SUMIF Concept -->
+                    <section id="sumif-concept">
+                        <h2>Aggregation Logic (SUMIF Concept)</h2>
+                        
+                        <p>
+                            To build account totals (like "Cash on hand"), we use a function called <code>SUMIF</code>. 
+                            It adds up only the rows that match a condition—like "only the rows where the Account is 'Cash'."
+                        </p>
+                        
+                        <div class="formula-bar">
+                            =SUMIF(Table1[Account], "Cash", Table1[Debit])
+                        </div>
+                        
+                        <p>This formula adds all debit amounts from rows where the account is Cash.</p>
+                        
+                        <div class="callout definition">
+                            <h3>SUMIF Function</h3>
+                            <p>
+                                A function that sums values based on a matching condition. When used for every major 
+                                account, SUMIF formulas replicate the effect of T-accounts and give you a snapshot 
+                                of each balance.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Conditional Formatting -->
+                    <section id="error-flags">
+                        <h2>Error-Flag Concept (Conditional Formatting)</h2>
+                        
+                        <p>
+                            Humans make mistakes—but software can help catch them. <span class="key-term">Conditional formatting</span> 
+                            adds visual rules to your spreadsheet. These rules automatically highlight cells or rows when 
+                            something looks off:
+                        </p>
+                        
+                        <ul>
+                            <li>Flag entries where debit does not equal credit</li>
+                            <li>Highlight missing descriptions or dates</li>
+                            <li>Shade negative balances that shouldn't be negative (e.g., Cash)</li>
+                        </ul>
+                        
+                        <div class="callout tip">
+                            <h3>Smart Conditional Formatting</h3>
+                            <p>
+                                Use formulas in conditional formatting to make smart rules. For example, 
+                                <code>=[Debit]&lt;&gt;[Credit]</code> highlights entries that don't balance.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Integrated Workflow -->
+                    <section id="workflow">
+                        <h2>Integrated Workflow Overview</h2>
+                        
+                        <p>At this point, you've seen all the pieces. Here's how they fit together:</p>
+                        
+                        <ol>
+                            <li class="step-number">1</li><strong>Import your data.</strong> Bring in the CSV file and format it as an Excel Table.
+                            <li class="step-number">2</li><strong>Post journal entries.</strong> Add debit and credit lines with full descriptions.
+                            <li class="step-number">3</li><strong>Use SUMIF formulas.</strong> Summarize totals by account.
+                            <li class="step-number">4</li><strong>Apply error flags.</strong> Use conditional formatting to check for mistakes.
+                            <li class="step-number">5</li><strong>Run the trial balance.</strong> Confirm that debits = credits. If not, debug.
+                        </ol>
+                        
+                        <div class="callout tip">
+                            <h3>Final Check</h3>
+                            <p>
+                                Think of your trial balance as your project's final boss. If you pass it, 
+                                you're ready to pitch.
+                            </p>
+                        </div>
+                        
+                        <div class="callout important">
+                            <h3>Critical Success Factor</h3>
+                            <p>
+                                In a self-auditing ledger, each concept supports the next. Don't skip the structure: 
+                                clean data and logical flow are your best defense against error.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Comprehension Check -->
+                    <div class="comprehension-check">
+                        <h3>Check Your Understanding</h3>
+                        <p>Test your grasp of these fundamental concepts before moving to the hands-on Excel building.</p>
+                        
+                        <div class="question">
+                            <h4>Question 1: What does the accounting equation ensure?</h4>
+                            <ul class="question-options">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="a">
+                                        That profits are always positive
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="b">
+                                        That what the business owns matches claims against those assets
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="c">
+                                        That expenses never exceed revenues
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="d">
+                                        That cash flow is always positive
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="feedback" id="feedback-q1"></div>
+                        </div>
+                        
+                        <div class="question">
+                            <h4>Question 2: In the DEAL/CLIP memory aid, which accounts increase with debits?</h4>
+                            <ul class="question-options">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="a">
+                                        Capital, Liabilities, Income, Profit
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="b">
+                                        Dividends, Expenses, Assets, Losses
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="c">
+                                        Only Assets and Liabilities
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="d">
+                                        Revenue and Equity accounts
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="feedback" id="feedback-q2"></div>
+                        </div>
+                        
+                        <div class="question">
+                            <h4>Question 3: What is the primary purpose of a trial balance?</h4>
+                            <ul class="question-options">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="a">
+                                        To calculate net income
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="b">
+                                        To verify that total debits equal total credits
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="c">
+                                        To create financial statements
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="d">
+                                        To track individual transactions
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="feedback" id="feedback-q3"></div>
+                        </div>
+                        
+                        <button type="button" onclick="checkConceptsAnswers()" class="btn btn-primary">Check My Answers</button>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="section-nav">
+                        <h3>Unit 1 Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Unit Overview</a></li>
+                            <li><a href="intro.html">1. Introduction</a></li>
+                            <li><a href="concepts.html" class="current">2. Core Concepts</a></li>
+                            <li><a href="excel-model.html">3. Excel Model</a></li>
+                            <li><a href="examples.html">4. Examples</a></li>
+                            <li><a href="exercises.html">5. Exercises</a></li>
+                            <li><a href="summary.html">6. Summary</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="progress-tracker">
+                        <h3>Your Progress</h3>
+                        <div class="progress-item" data-section="intro">
+                            <span class="progress-label">Introduction</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item" data-section="concepts">
+                            <span class="progress-label">Concepts</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item" data-section="excel-model">
+                            <span class="progress-label">Excel Model</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item" data-section="examples">
+                            <span class="progress-label">Examples</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item" data-section="exercises">
+                            <span class="progress-label">Exercises</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item" data-section="summary">
+                            <span class="progress-label">Summary</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Page navigation -->
+            <nav class="page-nav" aria-label="Page navigation">
+                <a href="intro.html" class="page-nav-item prev">
+                    ← Introduction
+                </a>
+                
+                <span class="page-nav-center">Section 2 of 6</span>
+                
+                <a href="excel-model.html" class="page-nav-item next">
+                    Excel Model Building →
+                </a>
+            </nav>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Math for Business Operations</h3>
+                    <p>An interactive textbook for Grade 12 business mathematics</p>
+                    <p>&copy; 2025 Daniel Bodanske. All rights reserved.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../frontmatter/preface.html">Getting Started</a></li>
+                        <li><a href="../../backmatter/glossary.html">Glossary</a></li>
+                        <li><a href="../../search.html">Search</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Support</h4>
+                    <p>Questions about the textbook?</p>
+                    <p>Contact your instructor or refer to the help section.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Progress indicator -->
+    <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
+    
+    <!-- JavaScript -->
+    <script src="../../assets/js/navigation.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    <script src="../../assets/js/glossary.js"></script>
+    <script src="../../assets/js/progress-tracker.js"></script>
+    <script src="../../assets/js/excel-interactive.js"></script>
+    <script src="../../assets/js/theme-toggle.js"></script>
+    
+    <script>
+        // Comprehension check functionality
+        function checkConceptsAnswers() {
+            const answers = {
+                q1: 'b',
+                q2: 'b', 
+                q3: 'b'
+            };
+            
+            const explanations = {
+                q1: {
+                    correct: "Correct! The accounting equation ensures that what the business owns (assets) equals the claims against those assets (liabilities + equity).",
+                    incorrect: "Not quite. The accounting equation is about balance between assets and claims, not about profitability or cash flow."
+                },
+                q2: {
+                    correct: "Excellent! DEAL accounts (Dividends, Expenses, Assets, Losses) increase with debits.",
+                    incorrect: "That's not right. Remember DEAL vs CLIP: DEAL accounts increase with debits, CLIP accounts increase with credits."
+                },
+                q3: {
+                    correct: "Perfect! A trial balance verifies that the fundamental accounting equation remains balanced.",
+                    incorrect: "Not correct. While trial balances help prepare other reports, their primary purpose is to verify mathematical balance."
+                }
+            };
+            
+            Object.keys(answers).forEach(questionId => {
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const feedback = document.getElementById(`feedback-${questionId}`);
+                
+                if (selectedOption) {
+                    const isCorrect = selectedOption.value === answers[questionId];
+                    feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+                    feedback.textContent = isCorrect ? 
+                        explanations[questionId].correct : 
+                        explanations[questionId].incorrect;
+                } else {
+                    feedback.className = 'feedback show incorrect';
+                    feedback.textContent = 'Please select an answer.';
+                }
+            });
+        }
+        
+        // Update page title and progress
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.TextbookNavigation) {
+                window.TextbookNavigation.updatePageTitle('Core Concepts', 'Unit 1: Smart Ledger Launch');
+            }
+        });
+    </script>
+</body>
+</html>

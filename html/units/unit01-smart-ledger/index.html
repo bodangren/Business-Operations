@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Smart Ledger Launch | Math for Business Operations</title>
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/textbook.css">
+    <link rel="stylesheet" href="../../assets/css/callouts.css">
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Learn to build a comprehensive accounting ledger system in Excel with automated features and professional formatting.">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="../../index.html">Math for Business Operations</a></h1>
+                    <p class="subtitle">Applied Accounting with Excel</p>
+                </div>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <button class="nav-toggle" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../frontmatter/preface.html">Preface</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Units</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../unit01-smart-ledger/index.html" class="current">Unit 1: Smart Ledger</a></li>
+                                <li><a href="../unit02-month-end-wizard/index.html">Unit 2: Month-End Wizard</a></li>
+                                <li><a href="../unit03-three-statement-storyboard/index.html">Unit 3: Three Statement Storyboard</a></li>
+                                <li><a href="../unit04-data-driven-cafe/index.html">Unit 4: Data-Driven Cafe</a></li>
+                                <li><a href="../unit05-payday-simulator/index.html">Unit 5: Payday Simulator</a></li>
+                                <li><a href="../unit06-pricelab-challenge/index.html">Unit 6: PriceLab Challenge</a></li>
+                                <li><a href="../unit07-asset-inventory-tracker/index.html">Unit 7: Asset Inventory Tracker</a></li>
+                                <li><a href="../unit08-integrated-model-sprint/index.html">Unit 8: Integrated Model Sprint</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../capstone/index.html">Capstone</a></li>
+                        <li><a href="../../backmatter/glossary.html">Glossary</a></li>
+                        <li><a href="../../search.html">Search</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Search bar -->
+                <div class="search-container">
+                    <input type="search" id="quick-search" placeholder="Search textbook..." aria-label="Search textbook">
+                    <button type="button" id="search-btn" aria-label="Search">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Units</a></li>
+                <li class="breadcrumb-item current">Unit 1: Smart Ledger Launch</li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Main content -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Main content area -->
+                <div class="main-content-area">
+                    <!-- Unit header -->
+                    <header class="unit-header">
+                        <div class="unit-meta">
+                            <span class="unit-number">Unit 1</span>
+                            <span class="duration">2-3 weeks</span>
+                            <span class="difficulty" data-level="Beginner">Beginner</span>
+                        </div>
+                        <h1>Smart Ledger Launch</h1>
+                        <p class="unit-description">
+                            Build a comprehensive accounting ledger system in Excel with automated features, 
+                            professional formatting, and real-time calculations that will serve as the foundation 
+                            for all your business accounting needs.
+                        </p>
+                    </header>
+                    
+                    <!-- Unit overview -->
+                    <section class="unit-overview">
+                        <h2>Unit Overview</h2>
+                        
+                        <div class="overview-grid">
+                            <div class="overview-card">
+                                <h3>🎯 Learning Objectives</h3>
+                                <ul>
+                                    <li>Design and implement a professional double-entry bookkeeping system</li>
+                                    <li>Create automated formulas for account balances and trial balance calculations</li>
+                                    <li>Apply conditional formatting for visual data analysis</li>
+                                    <li>Understand the fundamental accounting equation: Assets = Liabilities + Equity</li>
+                                    <li>Master Excel functions: SUM, SUMIF, VLOOKUP, and conditional logic</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="overview-card">
+                                <h3>🛠️ Tools & Skills</h3>
+                                <ul>
+                                    <li>Excel spreadsheet design and formatting</li>
+                                    <li>Formula creation and cell referencing</li>
+                                    <li>Data validation and error checking</li>
+                                    <li>Chart creation for financial visualization</li>
+                                    <li>Template development for reusability</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="overview-card">
+                                <h3>📊 Final Deliverables</h3>
+                                <ul>
+                                    <li>Complete Smart Ledger Excel workbook</li>
+                                    <li>Trial balance with automated calculations</li>
+                                    <li>Chart of accounts with categorization</li>
+                                    <li>Monthly financial summary dashboard</li>
+                                    <li>User guide and documentation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Driving question -->
+                    <section class="driving-question">
+                        <h2>🔍 Driving Question</h2>
+                        <div class="question-box">
+                            <p>
+                                <strong>"How can a small business owner track their financial transactions 
+                                efficiently and accurately using Excel to make informed business decisions?"</strong>
+                            </p>
+                            <p>
+                                Throughout this unit, you'll work with TechStart Solutions, a fictional 
+                                technology consulting company, to build their complete accounting system 
+                                from the ground up.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Unit sections -->
+                    <section class="unit-sections">
+                        <h2>Unit Sections</h2>
+                        
+                        <div class="sections-grid">
+                            <div class="section-card">
+                                <div class="section-number">1</div>
+                                <div class="section-content">
+                                    <h3><a href="intro.html">Introduction & Setup</a></h3>
+                                    <p>Meet TechStart Solutions and understand the business context. Set up your Excel environment and learn the project requirements.</p>
+                                    <div class="section-meta">
+                                        <span class="estimated-time">⏱️ 45 minutes</span>
+                                        <span class="section-type">📖 Reading & Setup</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="section-number">2</div>
+                                <div class="section-content">
+                                    <h3><a href="concepts.html">Core Concepts</a></h3>
+                                    <p>Master double-entry bookkeeping, chart of accounts, and the fundamental accounting equation.</p>
+                                    <div class="section-meta">
+                                        <span class="estimated-time">⏱️ 60 minutes</span>
+                                        <span class="section-type">📚 Theory & Concepts</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="section-number">3</div>
+                                <div class="section-content">
+                                    <h3><a href="excel-model.html">Excel Model Building</a></h3>
+                                    <p>Build the Smart Ledger step-by-step with automated formulas, validation, and professional formatting.</p>
+                                    <div class="section-meta">
+                                        <span class="estimated-time">⏱️ 90 minutes</span>
+                                        <span class="section-type">🛠️ Hands-on Building</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="section-number">4</div>
+                                <div class="section-content">
+                                    <h3><a href="examples.html">Worked Examples</a></h3>
+                                    <p>Follow detailed examples of common business transactions and see how they flow through the ledger.</p>
+                                    <div class="section-meta">
+                                        <span class="estimated-time">⏱️ 45 minutes</span>
+                                        <span class="section-type">📝 Examples & Practice</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="section-number">5</div>
+                                <div class="section-content">
+                                    <h3><a href="exercises.html">Interactive Exercises</a></h3>
+                                    <p>Practice with dynamic scenarios and get immediate feedback on your ledger entries and calculations.</p>
+                                    <div class="section-meta">
+                                        <span class="estimated-time">⏱️ 60 minutes</span>
+                                        <span class="section-type">🎯 Interactive Practice</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="section-number">6</div>
+                                <div class="section-content">
+                                    <h3><a href="summary.html">Summary & Assessment</a></h3>
+                                    <p>Review key concepts, complete the unit assessment, and prepare for the next unit.</p>
+                                    <div class="section-meta">
+                                        <span class="estimated-time">⏱️ 30 minutes</span>
+                                        <span class="section-type">✅ Review & Assessment</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Prerequisites -->
+                    <section class="prerequisites">
+                        <h2>Prerequisites & Preparation</h2>
+                        <div class="prep-grid">
+                            <div class="prep-card">
+                                <h3>📋 Before You Begin</h3>
+                                <ul>
+                                    <li>Basic Excel knowledge (creating formulas, formatting cells)</li>
+                                    <li>Understanding of basic math operations</li>
+                                    <li>Access to Microsoft Excel or similar spreadsheet software</li>
+                                    <li>Calculator (physical or digital)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="prep-card">
+                                <h3>📁 Downloads & Resources</h3>
+                                <ul>
+                                    <li><a href="resources/unit01-template.xlsx">Unit 1 Excel Template</a></li>
+                                    <li><a href="resources/sample-transactions.pdf">Sample Transaction Data</a></li>
+                                    <li><a href="resources/chart-of-accounts.pdf">Standard Chart of Accounts</a></li>
+                                    <li><a href="resources/quick-reference.pdf">Excel Functions Quick Reference</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="section-nav">
+                        <h3>Unit Navigation</h3>
+                        <ul>
+                            <li><a href="index.html" class="current">Unit Overview</a></li>
+                            <li><a href="intro.html">1. Introduction</a></li>
+                            <li><a href="concepts.html">2. Core Concepts</a></li>
+                            <li><a href="excel-model.html">3. Excel Model</a></li>
+                            <li><a href="examples.html">4. Examples</a></li>
+                            <li><a href="exercises.html">5. Exercises</a></li>
+                            <li><a href="summary.html">6. Summary</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="progress-tracker">
+                        <h3>Your Progress</h3>
+                        <div class="progress-item">
+                            <span class="progress-label">Introduction</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Concepts</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Excel Model</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Examples</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Exercises</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Summary</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Page navigation -->
+            <nav class="page-nav" aria-label="Page navigation">
+                <a href="../../index.html" class="page-nav-item prev">
+                    ← Back to Home
+                </a>
+                
+                <span class="page-nav-center">Unit 1 Overview</span>
+                
+                <a href="intro.html" class="page-nav-item next">
+                    Get Started →
+                </a>
+            </nav>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Math for Business Operations</h3>
+                    <p>An interactive textbook for Grade 12 business mathematics</p>
+                    <p>&copy; 2025 Daniel Bodanske. All rights reserved.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../frontmatter/preface.html">Getting Started</a></li>
+                        <li><a href="../../backmatter/glossary.html">Glossary</a></li>
+                        <li><a href="../../search.html">Search</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Support</h4>
+                    <p>Questions about the textbook?</p>
+                    <p>Contact your instructor or refer to the help section.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Progress indicator -->
+    <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
+    
+    <!-- JavaScript -->
+    <script src="../../assets/js/navigation.js"></script>
+    <script src="../../assets/js/search.js"></script>
+    
+    <script>
+        // Update page title
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.TextbookNavigation) {
+                window.TextbookNavigation.updatePageTitle('Smart Ledger Launch', 'Unit 1');
+            }
+        });
+    </script>
+</body>
+</html>
