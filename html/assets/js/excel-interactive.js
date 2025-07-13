@@ -412,11 +412,24 @@ function calculateFormula(cell, formula) {
             }
         }
         
-        // Simple arithmetic evaluation (CAUTION: This is unsafe for production)
-        const safeExpression = expression.replace(/[^0-9+\-*/().\s]/g, '');
-        const result = Function(`"use strict"; return (${safeExpression})`)();
-        cell.textContent = result;
-        cell.classList.add('number');
+        // SECURE: Use safe formula evaluator instead of Function constructor
+        if (!window.SafeFormulaEvaluator) {
+            console.error('SafeFormulaEvaluator not loaded');
+            cell.textContent = '#ERROR!';
+            cell.classList.add('error');
+            return;
+        }
+        
+        const evaluator = new SafeFormulaEvaluator();
+        const result = evaluator.evaluate(expression);
+        
+        if (result === '#ERROR!') {
+            cell.textContent = result;
+            cell.classList.add('error');
+        } else {
+            cell.textContent = result;
+            cell.classList.add('number');
+        }
         
     } catch (error) {
         cell.textContent = '#ERROR!';

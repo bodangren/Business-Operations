@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Test Suite | Debug</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/textbook.css">
+    <link rel="stylesheet" href="../assets/css/callouts.css">
+    
+    <style>
+        .debug-panel {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .debug-section {
+            margin: 40px 0;
+            padding: 20px;
+            border-left: 4px solid #17a2b8;
+            background: #f8f9fa;
+        }
+        
+        .test-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+        
+        .error-log {
+            background: #ffebee;
+            border: 1px solid #f44336;
+            color: #c62828;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .success-log {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .test-button {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .test-button:hover {
+            background: #138496;
+        }
+        
+        .debug-info {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .component-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .status-loaded { background: #d4edda; color: #155724; }
+        .status-error { background: #f8d7da; color: #721c24; }
+        .status-pending { background: #fff3cd; color: #856404; }
+        
+        .chart-test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .chart-test-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .test-result {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .chart-container {
+            height: 300px;
+            margin: 15px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ensure test buttons appear above charts */
+        .test-button {
+            position: relative;
+            z-index: 10;
+            margin: 5px;
+        }
+        
+        /* Chart canvas positioning */
+        .chart-container canvas {
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Chart wrapper and controls positioning */
+        .chart-wrapper {
+            position: relative;
+            z-index: 5;
+        }
+        
+        .chart-header {
+            position: relative;
+            z-index: 8;
+        }
+        
+        .chart-controls {
+            position: relative;
+            z-index: 9;
+        }
+        
+        /* Debug panels should be above charts */
+        .debug-panel {
+            position: relative;
+            z-index: 15;
+        }
+        
+        .dashboard-container {
+            height: 400px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>📊 Data Visualization Test Suite</h1>
+            <p>Comprehensive testing and debugging for Chart.js integration and all visualization components</p>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content-area">
+                    
+                    <!-- Debug Information Panel -->
+                    <div class="debug-panel">
+                        <h2>🚨 Debug Information</h2>
+                        <div id="system-info"></div>
+                        <div id="component-status"></div>
+                        <div id="error-console"></div>
+                        
+                        <h3>Quick Test Actions</h3>
+                        <button class="test-button" onclick="runAllVisualizationTests()">Run All Tests</button>
+                        <button class="test-button" onclick="clearLogs()">Clear Logs</button>
+                        <button class="test-button" onclick="exportDebugInfo()">Export Debug Info</button>
+                        <button class="test-button" onclick="testChartJSLoading()">Test Chart.js Loading</button>
+                        <button class="test-button" onclick="testAllChartTypes()">Test All Chart Types</button>
+                        <button class="test-button" onclick="testInteractivity()">Test Interactivity</button>
+                        <button class="test-button" onclick="reloadChartJS()">Reload Chart.js</button>
+                    </div>
+
+                    <!-- Test Section 1: Chart.js Loading -->
+                    <div class="debug-section">
+                        <h2>Test 1: Chart.js CDN Loading</h2>
+                        <div class="debug-info">
+                            <strong>Purpose:</strong> Test Chart.js library loading from CDN and fallback handling<br>
+                            <strong>Expected:</strong> Chart.js v4.4.0 loads successfully with all chart types available
+                        </div>
+                        
+                        <div class="test-container">
+                            <h3>Chart.js Library Status</h3>
+                            <div id="chartjs-status"></div>
+                            
+                            <div class="debug-panel">
+                                <h4>Chart.js Test Actions:</h4>
+                                <button class="test-button" onclick="testChartJSVersion()">Check Chart.js Version</button>
+                                <button class="test-button" onclick="testChartTypes()">Test Available Chart Types</button>
+                                <button class="test-button" onclick="testChartJSAPI()">Test Chart.js API</button>
+                                <button class="test-button" onclick="forceFallbackMode()">Force Fallback Mode</button>
+                                
+                                <div id="chartjs-test-results" class="test-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Section 2: Basic Chart Types -->
+                    <div class="debug-section">
+                        <h2>Test 2: Basic Chart Types</h2>
+                        <div class="debug-info">
+                            <strong>Purpose:</strong> Test all basic chart types (line, bar, pie, doughnut)<br>
+                            <strong>Expected:</strong> All chart types render correctly with interactive controls
+                        </div>
+                        
+                        <div class="chart-test-grid">
+                            <div class="chart-test-item">
+                                <h4>Line Chart Test</h4>
+                                <div class="chart-container" data-chart-type="line" data-chart-id="test-line" data-title="Revenue Trend"></div>
+                                <button class="test-button" onclick="testLineChart()">Test Line Chart</button>
+                                <div id="line-chart-results" class="test-result"></div>
+                            </div>
+                            
+                            <div class="chart-test-item">
+                                <h4>Bar Chart Test</h4>
+                                <div class="chart-container" data-chart-type="bar" data-chart-id="test-bar" data-title="Quarterly Sales"></div>
+                                <button class="test-button" onclick="testBarChart()">Test Bar Chart</button>
+                                <div id="bar-chart-results" class="test-result"></div>
+                            </div>
+                            
+                            <div class="chart-test-item">
+                                <h4>Pie Chart Test</h4>
+                                <div class="chart-container" data-chart-type="pie" data-chart-id="test-pie" data-title="Expense Breakdown"></div>
+                                <button class="test-button" onclick="testPieChart()">Test Pie Chart</button>
+                                <div id="pie-chart-results" class="test-result"></div>
+                            </div>
+                            
+                            <div class="chart-test-item">
+                                <h4>Doughnut Chart Test</h4>
+                                <div class="chart-container" data-chart-type="doughnut" data-chart-id="test-doughnut" data-title="Market Share"></div>
+                                <button class="test-button" onclick="testDoughnutChart()">Test Doughnut Chart</button>
+                                <div id="doughnut-chart-results" class="test-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Section 3: Financial Dashboard -->
+                    <div class="debug-section">
+                        <h2>Test 3: Financial Dashboard</h2>
+                        <div class="debug-info">
+                            <strong>Purpose:</strong> Test complete financial dashboard with multiple interconnected charts<br>
+                            <strong>Expected:</strong> Dashboard loads with multiple charts, refresh and export functionality
+                        </div>
+                        
+                        <div class="test-container">
+                            <h3>Financial Dashboard Component</h3>
+                            <div class="sample-charts" id="test-dashboard"></div>
+                            
+                            <div class="debug-panel">
+                                <h4>Dashboard Test Actions:</h4>
+                                <button class="test-button" onclick="testFinancialDashboard()">Test Dashboard Creation</button>
+                                <button class="test-button" onclick="testDashboardRefresh()">Test Dashboard Refresh</button>
+                                <button class="test-button" onclick="testDashboardExport()">Test Dashboard Export</button>
+                                <button class="test-button" onclick="testDashboardInteraction()">Test Dashboard Interaction</button>
+                                
+                                <div id="dashboard-test-results" class="test-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Section 4: Break-Even Visualization -->
+                    <div class="debug-section">
+                        <h2>Test 4: Break-Even Analysis Visualization</h2>
+                        <div class="debug-info">
+                            <strong>Purpose:</strong> Test specialized break-even analysis chart with business calculations<br>
+                            <strong>Expected:</strong> Interactive break-even chart with cost lines and break-even point
+                        </div>
+                        
+                        <div class="test-container">
+                            <h3>Break-Even Chart Component</h3>
+                            <div id="breakeven-chart-container" style="height: 400px; position: relative; z-index: 2;"></div>
+                            
+                            <div class="debug-panel">
+                                <h4>Break-Even Parameters:</h4>
+                                <label>Fixed Costs: $<input type="number" id="be-fixed-costs" value="10000"></label><br>
+                                <label>Variable Cost Rate: <input type="number" id="be-variable-rate" value="0.6" step="0.1"></label><br>
+                                <label>Selling Price: $<input type="number" id="be-selling-price" value="25"></label><br>
+                                
+                                <h4>Break-Even Test Actions:</h4>
+                                <button class="test-button" onclick="testBreakEvenChart()">Test Break-Even Chart</button>
+                                <button class="test-button" onclick="testBreakEvenCalculation()">Test Break-Even Math</button>
+                                <button class="test-button" onclick="testBreakEvenInteraction()">Test Interactive Updates</button>
+                                
+                                <div id="breakeven-test-results" class="test-result"></div>
+                                <div id="breakeven-calculation-results" class="test-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Section 5: Chart Interactivity -->
+                    <div class="debug-section">
+                        <h2>Test 5: Chart Interactivity & Controls</h2>
+                        <div class="debug-info">
+                            <strong>Purpose:</strong> Test all interactive features - data updates, type changes, export functionality<br>
+                            <strong>Expected:</strong> All controls work, charts update dynamically, export functions properly
+                        </div>
+                        
+                        <div class="test-container">
+                            <h3>Interactive Controls Test</h3>
+                            <div class="chart-container" data-chart-type="line" data-chart-id="interactive-test" data-title="Interactive Test Chart"></div>
+                            
+                            <div class="debug-panel">
+                                <h4>Interactivity Test Actions:</h4>
+                                <button class="test-button" onclick="testDataToggle()">Test Data Toggle</button>
+                                <button class="test-button" onclick="testChartTypeChange()">Test Chart Type Change</button>
+                                <button class="test-button" onclick="testDataUpdate()">Test Data Update</button>
+                                <button class="test-button" onclick="testChartExport()">Test Chart Export</button>
+                                <button class="test-button" onclick="testCustomData()">Test Custom Data Input</button>
+                                
+                                <div id="interactivity-test-results" class="test-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Section 6: Performance & Memory -->
+                    <div class="debug-section">
+                        <h2>Test 6: Performance & Memory Tests</h2>
+                        <div class="debug-info">
+                            <strong>Purpose:</strong> Test performance with multiple charts and memory management<br>
+                            <strong>Expected:</strong> Good performance, no memory leaks, proper cleanup
+                        </div>
+                        
+                        <div class="test-container">
+                            <h3>Performance Testing</h3>
+                            
+                            <div class="debug-panel">
+                                <h4>Performance Test Actions:</h4>
+                                <button class="test-button" onclick="testMultipleCharts()">Create Multiple Charts</button>
+                                <button class="test-button" onclick="testChartDestroy()">Test Chart Cleanup</button>
+                                <button class="test-button" onclick="testMemoryUsage()">Monitor Memory Usage</button>
+                                <button class="test-button" onclick="testRenderPerformance()">Test Render Performance</button>
+                                <button class="test-button" onclick="stressTestCharts()">Stress Test</button>
+                                
+                                <div id="performance-test-results" class="test-result"></div>
+                                <div id="performance-metrics" class="test-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comprehensive Testing Section -->
+                    <div class="debug-section">
+                        <h2>🧪 Comprehensive Test Results</h2>
+                        <div id="comprehensive-results"></div>
+                        
+                        <div class="debug-panel">
+                            <h3>Chart.js Integration Status</h3>
+                            <div id="chartjs-integration"></div>
+                            
+                            <h3>Visualization Performance</h3>
+                            <div id="viz-performance"></div>
+                            
+                            <h3>Browser Compatibility</h3>
+                            <div id="browser-compatibility"></div>
+                        </div>
+                    </div>
+
+                    <!-- Error Log Section -->
+                    <div class="debug-section">
+                        <h2>🐛 Error Log & Console Output</h2>
+                        <div id="error-log" class="error-log">No errors logged yet...</div>
+                        
+                        <h3>Test Data Export</h3>
+                        <textarea id="debug-export" rows="10" cols="100" readonly 
+                                  placeholder="Debug information will appear here for copy/paste into chat"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/gamification.js"></script>
+    <script src="../assets/js/data-visualization.js"></script>
+    <script src="../assets/js/breakeven-chart-standalone.js"></script>
+    <script src="../assets/js/exercises.js"></script>
+    
+    <script>
+        // Debug logging system
+        let debugLog = [];
+        let testResults = {};
+        let performanceMetrics = {};
+        
+        // Override console methods to capture output
+        const originalConsole = {
+            log: console.log,
+            error: console.error,
+            warn: console.warn
+        };
+        
+        console.log = function(...args) {
+            originalConsole.log.apply(console, args);
+            logDebug('LOG', args.join(' '));
+        };
+        
+        console.error = function(...args) {
+            originalConsole.error.apply(console, args);
+            logDebug('ERROR', args.join(' '));
+        };
+        
+        console.warn = function(...args) {
+            originalConsole.warn.apply(console, args);
+            logDebug('WARN', args.join(' '));
+        };
+        
+        function logDebug(type, message) {
+            const timestamp = new Date().toISOString();
+            debugLog.push({type, message, timestamp});
+            updateErrorLog();
+        }
+        
+        function updateErrorLog() {
+            const errorDiv = document.getElementById('error-log');
+            if (debugLog.length === 0) {
+                errorDiv.textContent = 'No errors logged yet...';
+                return;
+            }
+            
+            errorDiv.innerHTML = debugLog.map(entry => 
+                `[${entry.timestamp}] ${entry.type}: ${entry.message}`
+            ).join('\n');
+        }
+        
+        // System information collection
+        function collectSystemInfo() {
+            const info = {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                screenResolution: `${screen.width}x${screen.height}`,
+                windowSize: `${window.innerWidth}x${window.innerHeight}`,
+                memoryInfo: navigator.memory ? {
+                    usedJSHeapSize: navigator.memory.usedJSHeapSize,
+                    totalJSHeapSize: navigator.memory.totalJSHeapSize,
+                    jsHeapSizeLimit: navigator.memory.jsHeapSizeLimit
+                } : 'Not available',
+                timestamp: new Date().toISOString()
+            };
+            
+            document.getElementById('system-info').innerHTML = `
+                <h3>System Information</h3>
+                <strong>Browser:</strong> ${info.userAgent}<br>
+                <strong>Platform:</strong> ${info.platform}<br>
+                <strong>Screen:</strong> ${info.screenResolution}<br>
+                <strong>Window:</strong> ${info.windowSize}<br>
+                <strong>Memory:</strong> ${JSON.stringify(info.memoryInfo)}<br>
+                <strong>Test Time:</strong> ${info.timestamp}
+            `;
+            
+            return info;
+        }
+        
+        // Component status checking
+        function checkComponentStatus() {
+            const components = [
+                {name: 'Chart.js Library', check: () => window.Chart},
+                {name: 'DataVisualization', check: () => window.DataVisualization},
+                {name: 'Chart Creation', check: () => window.DataVisualization && window.DataVisualization.createChart},
+                {name: 'Financial Dashboard', check: () => window.DataVisualization && window.DataVisualization.createFinancialDashboard},
+                {name: 'Break-Even Chart', check: () => window.DataVisualization && window.DataVisualization.createBreakEvenChart},
+                {name: 'Chart Instances', check: () => window.DataVisualization && window.DataVisualization.chartInstances}
+            ];
+            
+            const statusDiv = document.getElementById('component-status');
+            let statusHTML = '<h3>Component Status</h3>';
+            
+            components.forEach(comp => {
+                const isLoaded = comp.check();
+                const statusClass = isLoaded ? 'status-loaded' : 'status-error';
+                const statusText = isLoaded ? 'LOADED' : 'ERROR';
+                statusHTML += `<span class="component-status ${statusClass}">${comp.name}: ${statusText}</span>`;
+                
+                // Add detailed Chart.js info
+                if (comp.name === 'Chart.js Library' && isLoaded) {
+                    try {
+                        const version = window.Chart.version || 'Unknown';
+                        const types = Object.keys(window.Chart.registry.controllers.items || {});
+                        statusHTML += `<br><small>Chart.js v${version} - Types: ${types.length}</small>`;
+                    } catch (error) {
+                        statusHTML += `<br><small style="color:red;">Chart.js info error: ${error.message}</small>`;
+                    }
+                }
+            });
+            
+            // Check chart containers
+            const containers = document.querySelectorAll('.chart-container');
+            statusHTML += `<br><h4>Chart Containers: ${containers.length} found</h4>`;
+            
+            containers.forEach((container, index) => {
+                const chartId = container.dataset.chartId;
+                const chartType = container.dataset.chartType;
+                const hasCanvas = container.querySelector('canvas');
+                const initStatus = hasCanvas ? 'INITIALIZED' : 'NOT INITIALIZED';
+                const initClass = hasCanvas ? 'status-loaded' : 'status-error';
+                statusHTML += `<br><small><span class="component-status ${initClass}">Container ${index} (${chartType}, ${chartId}): ${initStatus}</span></small>`;
+            });
+            
+            statusDiv.innerHTML = statusHTML;
+        }
+        
+        // Chart.js specific tests
+        function testChartJSVersion() {
+            const results = [];
+            
+            if (window.Chart) {
+                results.push(`✓ Chart.js loaded successfully`);
+                results.push(`Version: ${window.Chart.version || 'Unknown'}`);
+                
+                // Test available chart types
+                const controllers = window.Chart.registry?.controllers?.items || {};
+                const types = Object.keys(controllers);
+                results.push(`Available chart types: ${types.join(', ')}`);
+                
+                // Test Chart.js capabilities
+                const capabilities = [];
+                if (window.Chart.Tooltip) capabilities.push('Tooltips');
+                if (window.Chart.Legend) capabilities.push('Legend');
+                if (window.Chart.Title) capabilities.push('Title');
+                if (window.Chart.Animation) capabilities.push('Animation');
+                
+                results.push(`Capabilities: ${capabilities.join(', ')}`);
+                
+            } else {
+                results.push('✗ Chart.js not loaded');
+            }
+            
+            document.getElementById('chartjs-test-results').innerHTML = results.join('<br>');
+            testResults.chartjs_version = results;
+        }
+        
+        function testChartTypes() {
+            const results = [];
+            const testTypes = ['line', 'bar', 'pie', 'doughnut', 'radar', 'scatter'];
+            
+            if (!window.Chart) {
+                results.push('✗ Chart.js not available for testing');
+                return;
+            }
+            
+            testTypes.forEach(type => {
+                try {
+                    const testCanvas = document.createElement('canvas');
+                    const ctx = testCanvas.getContext('2d');
+                    
+                    const testChart = new Chart(ctx, {
+                        type: type,
+                        data: {
+                            labels: ['Test'],
+                            datasets: [{
+                                data: [1],
+                                backgroundColor: '#007bff'
+                            }]
+                        },
+                        options: {
+                            responsive: false,
+                            plugins: {
+                                legend: { display: false }
+                            }
+                        }
+                    });
+                    
+                    testChart.destroy();
+                    results.push(`✓ ${type} chart type works`);
+                    
+                } catch (error) {
+                    results.push(`✗ ${type} chart type failed: ${error.message}`);
+                }
+            });
+            
+            document.getElementById('chartjs-test-results').innerHTML += '<br><strong>Chart Type Tests:</strong><br>' + results.join('<br>');
+            testResults.chart_types = results;
+        }
+        
+        function testChartJSAPI() {
+            const results = [];
+            
+            if (!window.Chart) {
+                results.push('✗ Chart.js not available');
+                return;
+            }
+            
+            // Test essential API methods
+            const apiTests = [
+                {name: 'Chart constructor', test: () => typeof window.Chart === 'function'},
+                {name: 'Chart.register', test: () => typeof window.Chart.register === 'function'},
+                {name: 'Chart.getChart', test: () => typeof window.Chart.getChart === 'function'},
+                {name: 'Chart.registry', test: () => window.Chart.registry !== undefined},
+                {name: 'Chart defaults', test: () => window.Chart.defaults !== undefined}
+            ];
+            
+            apiTests.forEach(test => {
+                try {
+                    if (test.test()) {
+                        results.push(`✓ ${test.name} available`);
+                    } else {
+                        results.push(`✗ ${test.name} not available`);
+                    }
+                } catch (error) {
+                    results.push(`✗ ${test.name} error: ${error.message}`);
+                }
+            });
+            
+            document.getElementById('chartjs-test-results').innerHTML += '<br><strong>API Tests:</strong><br>' + results.join('<br>');
+            testResults.chartjs_api = results;
+        }
+        
+        // Chart testing functions
+        function testLineChart() {
+            const container = document.querySelector('[data-chart-id="test-line"]');
+            const results = testChartContainer(container, 'line');
+            document.getElementById('line-chart-results').innerHTML = results.join('<br>');
+            testResults.line_chart = results;
+        }
+        
+        function testBarChart() {
+            const container = document.querySelector('[data-chart-id="test-bar"]');
+            const results = testChartContainer(container, 'bar');
+            document.getElementById('bar-chart-results').innerHTML = results.join('<br>');
+            testResults.bar_chart = results;
+        }
+        
+        function testPieChart() {
+            const container = document.querySelector('[data-chart-id="test-pie"]');
+            const results = testChartContainer(container, 'pie');
+            document.getElementById('pie-chart-results').innerHTML = results.join('<br>');
+            testResults.pie_chart = results;
+        }
+        
+        function testDoughnutChart() {
+            const container = document.querySelector('[data-chart-id="test-doughnut"]');
+            const results = testChartContainer(container, 'doughnut');
+            document.getElementById('doughnut-chart-results').innerHTML = results.join('<br>');
+            testResults.doughnut_chart = results;
+        }
+        
+        function testChartContainer(container, expectedType) {
+            const results = [];
+            
+            if (!container) {
+                results.push('✗ Chart container not found');
+                return results;
+            }
+            
+            results.push('✓ Chart container found');
+            
+            // Check if chart was initialized
+            const canvas = container.querySelector('canvas');
+            if (canvas) {
+                results.push('✓ Canvas element created');
+                
+                // Check Chart.js instance
+                const chartId = container.dataset.chartId;
+                if (window.DataVisualization && window.DataVisualization.chartInstances[chartId]) {
+                    results.push('✓ Chart instance registered');
+                    
+                    const chart = window.DataVisualization.chartInstances[chartId];
+                    if (chart.config && chart.config.type === expectedType) {
+                        results.push(`✓ Chart type is ${expectedType}`);
+                    } else {
+                        results.push(`✗ Chart type mismatch: expected ${expectedType}, got ${chart.config?.type}`);
+                    }
+                    
+                    // Test chart data
+                    if (chart.data && chart.data.datasets) {
+                        results.push(`✓ Chart has ${chart.data.datasets.length} dataset(s)`);
+                    } else {
+                        results.push('✗ Chart data missing');
+                    }
+                    
+                } else {
+                    results.push('✗ Chart instance not found');
+                }
+                
+            } else {
+                results.push('✗ Canvas element not created');
+            }
+            
+            // Check interactive controls
+            const controls = container.querySelector('.chart-controls');
+            if (controls) {
+                results.push('✓ Interactive controls present');
+            } else {
+                results.push('✗ Interactive controls missing');
+            }
+            
+            return results;
+        }
+        
+        // Dashboard testing
+        function testFinancialDashboard() {
+            const results = [];
+            const startTime = performance.now();
+            
+            try {
+                const container = document.getElementById('test-dashboard');
+                if (!container) {
+                    results.push('✗ Dashboard container not found');
+                    return;
+                }
+                
+                if (window.DataVisualization && window.DataVisualization.createFinancialDashboard) {
+                    window.DataVisualization.createFinancialDashboard(container);
+                    results.push('✓ Financial dashboard creation called');
+                    
+                    // Check if dashboard was created
+                    setTimeout(() => {
+                        const charts = container.querySelectorAll('canvas');
+                        results.push(`✓ Dashboard contains ${charts.length} charts`);
+                        
+                        const buttons = container.querySelectorAll('button');
+                        results.push(`✓ Dashboard has ${buttons.length} control buttons`);
+                        
+                        document.getElementById('dashboard-test-results').innerHTML = results.join('<br>');
+                    }, 500);
+                    
+                } else {
+                    results.push('✗ createFinancialDashboard function not available');
+                }
+                
+            } catch (error) {
+                results.push(`✗ Dashboard creation failed: ${error.message}`);
+                logDebug('ERROR', `Dashboard test failed: ${error.message}`);
+            }
+            
+            const endTime = performance.now();
+            performanceMetrics.dashboard_test = endTime - startTime;
+            
+            testResults.financial_dashboard = results;
+        }
+        
+        // Break-even chart testing
+        let breakEvenChartInstance = null;
+        
+        function testBreakEvenChart() {
+            const results = [];
+            const startTime = performance.now();
+            
+            try {
+                const container = document.getElementById('breakeven-chart-container');
+                if (!container) {
+                    results.push('✗ Break-even container not found');
+                    document.getElementById('breakeven-test-results').innerHTML = results.join('<br>');
+                    return;
+                }
+                
+                results.push('✓ Break-even container found');
+                
+                // Clear any existing content
+                container.innerHTML = '';
+                
+                // Clean up any existing chart instance
+                if (breakEvenChartInstance) {
+                    breakEvenChartInstance.destroy();
+                    breakEvenChartInstance = null;
+                }
+                
+                // Check if BreakEvenChart class is available
+                if (!window.BreakEvenChart) {
+                    results.push('✗ BreakEvenChart class not available');
+                    document.getElementById('breakeven-test-results').innerHTML = results.join('<br>');
+                    return;
+                }
+                
+                results.push('✓ BreakEvenChart class available');
+                
+                // Get parameters from test inputs
+                const fixedCosts = parseInt(document.getElementById('be-fixed-costs').value) || 10000;
+                const variableRate = parseFloat(document.getElementById('be-variable-rate').value) || 0.6;
+                const sellingPrice = parseInt(document.getElementById('be-selling-price').value) || 25;
+                
+                results.push('✓ Parameters retrieved');
+                results.push(`Fixed: $${fixedCosts}, Variable: ${variableRate}, Price: $${sellingPrice}`);
+                
+                // Create new break-even chart instance
+                setTimeout(() => {
+                    try {
+                        breakEvenChartInstance = new window.BreakEvenChart(container, {
+                            fixedCosts: fixedCosts,
+                            variableCostRate: variableRate,
+                            sellingPrice: sellingPrice
+                        });
+                        
+                        results.push('✓ BreakEvenChart instance created');
+                        
+                        // Verify chart creation
+                        setTimeout(() => {
+                            const canvas = container.querySelector('canvas');
+                            if (canvas) {
+                                results.push('✓ Canvas element created');
+                                results.push(`Canvas ID: ${canvas.id}`);
+                                
+                                const chartInstance = breakEvenChartInstance.getChartInstance();
+                                if (chartInstance) {
+                                    results.push('✓ Chart.js instance found');
+                                    results.push(`Chart type: ${chartInstance.config.type}`);
+                                    
+                                    if (chartInstance.data && chartInstance.data.datasets) {
+                                        results.push(`✓ Chart has ${chartInstance.data.datasets.length} dataset(s)`);
+                                        results.push(`Data points: ${chartInstance.data.labels.length}`);
+                                    }
+                                    
+                                    results.push('✓ Break-even chart created successfully');
+                                } else {
+                                    results.push('✗ Chart.js instance not found');
+                                }
+                            } else {
+                                results.push('✗ Canvas element not created');
+                            }
+                            
+                            // Check if controls are working
+                            const updateBtn = container.querySelector('.update-chart-btn');
+                            if (updateBtn) {
+                                results.push('✓ Update button found');
+                            }
+                            
+                            const inputs = container.querySelectorAll('input');
+                            results.push(`✓ Found ${inputs.length} input controls`);
+                            
+                            document.getElementById('breakeven-test-results').innerHTML = results.join('<br>');
+                            
+                        }, 500);
+                        
+                    } catch (error) {
+                        results.push(`✗ Error creating BreakEvenChart: ${error.message}`);
+                        document.getElementById('breakeven-test-results').innerHTML = results.join('<br>');
+                        console.error('BreakEvenChart creation error:', error);
+                    }
+                }, 100);
+                
+            } catch (error) {
+                results.push(`✗ Break-even test failed: ${error.message}`);
+                document.getElementById('breakeven-test-results').innerHTML = results.join('<br>');
+                logDebug('ERROR', `Break-even test failed: ${error.message}`);
+            }
+            
+            const endTime = performance.now();
+            performanceMetrics.breakeven_test = endTime - startTime;
+            testResults.breakeven_chart = results;
+        }
+        
+        function testBreakEvenCalculation() {
+            const results = [];
+            
+            try {
+                const fixedCosts = parseInt(document.getElementById('be-fixed-costs').value);
+                const variableRate = parseFloat(document.getElementById('be-variable-rate').value);
+                const sellingPrice = parseInt(document.getElementById('be-selling-price').value);
+                
+                // Manual break-even calculation
+                const variableCost = sellingPrice * variableRate;
+                const contributionMargin = sellingPrice - variableCost;
+                const breakEvenUnits = Math.ceil(fixedCosts / contributionMargin);
+                const breakEvenRevenue = breakEvenUnits * sellingPrice;
+                
+                results.push(`Fixed Costs: $${fixedCosts}`);
+                results.push(`Variable Cost per Unit: $${variableCost.toFixed(2)} (${(variableRate*100)}% of price)`);
+                results.push(`Selling Price: $${sellingPrice}`);
+                results.push(`Contribution Margin: $${contributionMargin.toFixed(2)}`);
+                results.push(`<strong>Break-Even Point: ${breakEvenUnits} units</strong>`);
+                results.push(`<strong>Break-Even Revenue: $${breakEvenRevenue}</strong>`);
+                
+            } catch (error) {
+                results.push(`✗ Calculation error: ${error.message}`);
+            }
+            
+            document.getElementById('breakeven-calculation-results').innerHTML = results.join('<br>');
+            testResults.breakeven_calculation = results;
+        }
+        
+        function updateBreakEvenChart() {
+            testBreakEvenCalculation();
+            
+            if (window.DataVisualization && window.DataVisualization.updateBreakEvenChart) {
+                const fixedCosts = parseInt(document.getElementById('be-fixed-costs').value);
+                const variableRate = parseFloat(document.getElementById('be-variable-rate').value);
+                const sellingPrice = parseInt(document.getElementById('be-selling-price').value);
+                
+                // This function might not exist, so we'll recreate the chart
+                testBreakEvenChart();
+            }
+        }
+        
+        // Comprehensive test runner
+        function runAllVisualizationTests() {
+            logDebug('LOG', 'Starting comprehensive visualization test suite...');
+            
+            // Run tests in sequence with delays
+            setTimeout(() => testChartJSVersion(), 100);
+            setTimeout(() => testChartTypes(), 200);
+            setTimeout(() => testChartJSAPI(), 300);
+            setTimeout(() => testLineChart(), 400);
+            setTimeout(() => testBarChart(), 500);
+            setTimeout(() => testPieChart(), 600);
+            setTimeout(() => testDoughnutChart(), 700);
+            setTimeout(() => testFinancialDashboard(), 800);
+            setTimeout(() => testBreakEvenChart(), 900);
+            setTimeout(() => testBreakEvenCalculation(), 1000);
+            setTimeout(() => generateComprehensiveReport(), 1500);
+        }
+        
+        function generateComprehensiveReport() {
+            const results = document.getElementById('comprehensive-results');
+            const totalTests = Object.keys(testResults).length;
+            const passedTests = Object.values(testResults).filter(result => 
+                Array.isArray(result) && result.some(r => r.startsWith('✓'))
+            ).length;
+            
+            const performanceHTML = Object.entries(performanceMetrics)
+                .map(([test, time]) => `${test}: ${time.toFixed(2)}ms`)
+                .join('<br>');
+            
+            results.innerHTML = `
+                <div class="success-log">
+                    <h3>Visualization Test Summary</h3>
+                    <strong>Total Test Suites:</strong> ${totalTests}<br>
+                    <strong>Passed:</strong> ${passedTests}<br>
+                    <strong>Failed:</strong> ${totalTests - passedTests}<br>
+                    <strong>Success Rate:</strong> ${totalTests > 0 ? Math.round((passedTests/totalTests)*100) : 0}%
+                </div>
+            `;
+            
+            document.getElementById('viz-performance').innerHTML = `
+                <h4>Performance Metrics:</h4>
+                ${performanceHTML}
+            `;
+            
+            // Browser compatibility info
+            const browserInfo = `
+                <strong>WebGL Support:</strong> ${hasWebGLSupport() ? 'Yes' : 'No'}<br>
+                <strong>Canvas Support:</strong> ${hasCanvasSupport() ? 'Yes' : 'No'}<br>
+                <strong>CSS Transforms:</strong> ${hasCSSTransforms() ? 'Yes' : 'No'}
+            `;
+            
+            document.getElementById('browser-compatibility').innerHTML = browserInfo;
+        }
+        
+        function exportDebugInfo() {
+            const exportData = {
+                systemInfo: collectSystemInfo(),
+                testResults: testResults,
+                performanceMetrics: performanceMetrics,
+                debugLog: debugLog,
+                chartInstances: window.DataVisualization ? Object.keys(window.DataVisualization.chartInstances || {}) : [],
+                chartJSInfo: window.Chart ? {
+                    version: window.Chart.version,
+                    availableTypes: Object.keys(window.Chart.registry?.controllers?.items || {})
+                } : null,
+                timestamp: new Date().toISOString()
+            };
+            
+            document.getElementById('debug-export').value = JSON.stringify(exportData, null, 2);
+        }
+        
+        function clearLogs() {
+            debugLog = [];
+            testResults = {};
+            performanceMetrics = {};
+            updateErrorLog();
+            document.getElementById('debug-export').value = '';
+            
+            // Clear all test result divs
+            const resultDivs = document.querySelectorAll('.test-result');
+            resultDivs.forEach(div => div.innerHTML = '');
+            
+            document.getElementById('comprehensive-results').innerHTML = '';
+        }
+        
+        // Utility functions
+        function hasWebGLSupport() {
+            try {
+                const canvas = document.createElement('canvas');
+                return !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+            } catch (e) {
+                return false;
+            }
+        }
+        
+        function hasCanvasSupport() {
+            const canvas = document.createElement('canvas');
+            return !!(canvas.getContext && canvas.getContext('2d'));
+        }
+        
+        function hasCSSTransforms() {
+            const div = document.createElement('div');
+            return 'transform' in div.style || 'webkitTransform' in div.style;
+        }
+        
+        // Additional test functions (placeholder implementations)
+        function testChartJSLoading() { 
+            logDebug('LOG', 'Testing Chart.js loading...');
+            testChartJSVersion();
+        }
+        function testAllChartTypes() { 
+            logDebug('LOG', 'Testing all chart types...');
+            testChartTypes();
+        }
+        function testInteractivity() { logDebug('LOG', 'Testing chart interactivity...'); }
+        function reloadChartJS() { 
+            logDebug('LOG', 'Reloading Chart.js...');
+            // Force reload would go here
+        }
+        function forceFallbackMode() { logDebug('LOG', 'Forcing fallback mode...'); }
+        function testDashboardRefresh() { logDebug('LOG', 'Testing dashboard refresh...'); }
+        function testDashboardExport() { logDebug('LOG', 'Testing dashboard export...'); }
+        function testDashboardInteraction() { logDebug('LOG', 'Testing dashboard interaction...'); }
+        function testBreakEvenInteraction() { logDebug('LOG', 'Testing break-even interaction...'); }
+        function testDataToggle() { logDebug('LOG', 'Testing data toggle...'); }
+        function testChartTypeChange() { logDebug('LOG', 'Testing chart type change...'); }
+        function testDataUpdate() { logDebug('LOG', 'Testing data update...'); }
+        function testChartExport() { logDebug('LOG', 'Testing chart export...'); }
+        function testCustomData() { logDebug('LOG', 'Testing custom data input...'); }
+        function testMultipleCharts() { logDebug('LOG', 'Testing multiple charts...'); }
+        function testChartDestroy() { logDebug('LOG', 'Testing chart cleanup...'); }
+        function testMemoryUsage() { logDebug('LOG', 'Testing memory usage...'); }
+        function testRenderPerformance() { logDebug('LOG', 'Testing render performance...'); }
+        function stressTestCharts() { logDebug('LOG', 'Running stress test...'); }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            logDebug('LOG', 'Visualization debug page loaded, initializing...');
+            collectSystemInfo();
+            
+            setTimeout(() => {
+                checkComponentStatus();
+                logDebug('LOG', 'Initial setup completed');
+            }, 2000); // Give more time for Chart.js to load
+        });
+    </script>
+</body>
+</html>

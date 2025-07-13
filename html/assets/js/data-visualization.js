@@ -384,49 +384,88 @@ function createFinancialDashboard(container) {
 }
 
 function createBreakEvenChart(container, fixedCosts = 10000, variableCostRate = 0.6, sellingPrice = 25) {
-    const canvas = document.createElement('canvas');
-    canvas.id = 'breakeven-chart';
-    canvas.width = 400;
-    canvas.height = 300;
+    console.log('createBreakEvenChart called with container:', container);
+    console.log('Container before update:', container.innerHTML);
     
-    container.innerHTML = `
-        <div class="breakeven-analysis">
-            <h4>Break-Even Analysis Visualization</h4>
-            <div class="breakeven-inputs">
-                <label>Fixed Costs: $<input type="number" id="fixed-costs" value="${fixedCosts}" onchange="updateBreakEvenChart()"></label>
-                <label>Variable Cost Rate: <input type="number" id="variable-rate" value="${variableCostRate}" step="0.01" onchange="updateBreakEvenChart()"></label>
-                <label>Selling Price: $<input type="number" id="selling-price" value="${sellingPrice}" onchange="updateBreakEvenChart()"></label>
-            </div>
-            <div class="breakeven-chart-container">
-                ${canvas.outerHTML}
-            </div>
-            <div class="breakeven-results">
-                <div class="result-item">
-                    <span>Break-Even Point:</span>
-                    <span id="breakeven-point">0 units</span>
+    try {
+        container.innerHTML = `
+            <div class="breakeven-analysis">
+                <h4>Break-Even Analysis Visualization</h4>
+                <div class="breakeven-inputs">
+                    <label>Fixed Costs: $<input type="number" id="fixed-costs" value="${fixedCosts}" onchange="updateBreakEvenChart()"></label>
+                    <label>Variable Cost Rate: <input type="number" id="variable-rate" value="${variableCostRate}" step="0.01" onchange="updateBreakEvenChart()"></label>
+                    <label>Selling Price: $<input type="number" id="selling-price" value="${sellingPrice}" onchange="updateBreakEvenChart()"></label>
                 </div>
-                <div class="result-item">
-                    <span>Break-Even Revenue:</span>
-                    <span id="breakeven-revenue">$0</span>
+                <div class="breakeven-chart-container">
+                    <canvas id="breakeven-chart" width="400" height="300"></canvas>
+                </div>
+                <div class="breakeven-results">
+                    <div class="result-item">
+                        <span>Break-Even Point:</span>
+                        <span id="breakeven-point">0 units</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Break-Even Revenue:</span>
+                        <span id="breakeven-revenue">$0</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+        
+        console.log('Container after update:', container.innerHTML);
+        console.log('Canvas element found:', container.querySelector('canvas'));
+        
+    } catch (error) {
+        console.error('Error setting container innerHTML:', error);
+        return;
+    }
     
-    updateBreakEvenChart();
+    // Use setTimeout to ensure DOM elements are available before calling updateBreakEvenChart
+    setTimeout(() => {
+        try {
+            console.log('About to call updateBreakEvenChart...');
+            const canvas = document.getElementById('breakeven-chart');
+            console.log('Canvas found by ID:', canvas);
+            
+            if (canvas) {
+                updateBreakEvenChart();
+            } else {
+                console.error('Canvas element with ID "breakeven-chart" not found, cannot update chart');
+            }
+        } catch (error) {
+            console.error('Error updating break-even chart:', error);
+        }
+    }, 200);
 }
 
 function updateBreakEvenChart() {
-    const fixedCosts = parseFloat(document.getElementById('fixed-costs').value) || 10000;
-    const variableCostRate = parseFloat(document.getElementById('variable-rate').value) || 0.6;
-    const sellingPrice = parseFloat(document.getElementById('selling-price').value) || 25;
+    // Check if required elements exist first to prevent errors
+    const fixedCostsElement = document.getElementById('fixed-costs');
+    const variableRateElement = document.getElementById('variable-rate');
+    const sellingPriceElement = document.getElementById('selling-price');
+    
+    if (!fixedCostsElement || !variableRateElement || !sellingPriceElement) {
+        console.warn('updateBreakEvenChart: Required input elements not found');
+        return;
+    }
+    
+    const fixedCosts = parseFloat(fixedCostsElement.value) || 10000;
+    const variableCostRate = parseFloat(variableRateElement.value) || 0.6;
+    const sellingPrice = parseFloat(sellingPriceElement.value) || 25;
     
     const breakEvenUnits = Math.ceil(fixedCosts / (sellingPrice * (1 - variableCostRate)));
     const breakEvenRevenue = breakEvenUnits * sellingPrice;
     
-    // Update results display
-    document.getElementById('breakeven-point').textContent = `${breakEvenUnits.toLocaleString()} units`;
-    document.getElementById('breakeven-revenue').textContent = `$${breakEvenRevenue.toLocaleString()}`;
+    // Update results display (check if elements exist)
+    const breakEvenPointElement = document.getElementById('breakeven-point');
+    const breakEvenRevenueElement = document.getElementById('breakeven-revenue');
+    
+    if (breakEvenPointElement) {
+        breakEvenPointElement.textContent = `${breakEvenUnits.toLocaleString()} units`;
+    }
+    if (breakEvenRevenueElement) {
+        breakEvenRevenueElement.textContent = `$${breakEvenRevenue.toLocaleString()}`;
+    }
     
     // Generate chart data
     const maxUnits = breakEvenUnits * 2;
@@ -443,10 +482,26 @@ function updateBreakEvenChart() {
     // Destroy existing chart if it exists
     if (chartInstances['breakeven']) {
         chartInstances['breakeven'].destroy();
+        delete chartInstances['breakeven'];
     }
     
-    const ctx = document.getElementById('breakeven-chart').getContext('2d');
-    chartInstances['breakeven'] = new Chart(ctx, {
+    const canvasElement = document.getElementById('breakeven-chart');
+    if (!canvasElement) {
+        console.warn('updateBreakEvenChart: Canvas element "breakeven-chart" not found');
+        return;
+    }
+    
+    const ctx = canvasElement.getContext('2d');
+    
+    // Ensure Chart.js is available
+    if (!window.Chart) {
+        console.error('Chart.js not loaded - cannot create break-even chart');
+        return;
+    }
+    
+    try {
+        console.log('Creating break-even chart with Chart.js...');
+        chartInstances['breakeven'] = new Chart(ctx, {
         type: 'line',
         data: {
             labels: units,
@@ -519,6 +574,14 @@ function updateBreakEvenChart() {
             }
         }
     });
+        console.log('Break-even chart created successfully, instance:', chartInstances['breakeven']);
+    } catch (error) {
+        console.error('Error creating break-even chart:', error);
+        // Clean up any partial chart instance
+        if (chartInstances['breakeven']) {
+            delete chartInstances['breakeven'];
+        }
+    }
 }
 
 // ===================================

@@ -228,6 +228,18 @@ function createLemonadeStandSimulation(container, id) {
 // ===================================
 
 function createStartupJourneySimulation(container, id) {
+    const gameData = {
+        funding: 10000,
+        monthlyBurn: 2000,
+        users: 100,
+        revenue: 0,
+        stage: 'Idea',
+        month: 1,
+        decisions: []
+    };
+    
+    gameState[id] = gameData;
+    
     container.innerHTML = `
         <div class="simulation-container startup-journey" id="${id}">
             <div class="simulation-header">
@@ -297,6 +309,25 @@ function createStartupJourneySimulation(container, id) {
 // ===================================
 
 function createCashFlowChallengeSimulation(container, id) {
+    const gameData = {
+        cashPosition: 25000,
+        day: 1,
+        totalIncoming: 45000,
+        totalOutgoing: 38000,
+        incomingFlows: [
+            { description: 'Customer Payment A', amount: 15000, daysLeft: 5 },
+            { description: 'Customer Payment B', amount: 20000, daysLeft: 12 },
+            { description: 'Invoice Collection', amount: 10000, daysLeft: 25 }
+        ],
+        outgoingFlows: [
+            { description: 'Supplier Payment', amount: 12000, daysLeft: 3 },
+            { description: 'Payroll', amount: 18000, daysLeft: 15 },
+            { description: 'Rent Payment', amount: 8000, daysLeft: 30 }
+        ]
+    };
+    
+    gameState[id] = gameData;
+    
     container.innerHTML = `
         <div class="simulation-container cash-flow-challenge" id="${id}">
             <div class="simulation-header">
@@ -371,6 +402,146 @@ function createCashFlowChallengeSimulation(container, id) {
     `;
     
     initializeCashFlowGame(id);
+}
+
+// ===================================
+// Inventory Manager Simulation
+// ===================================
+
+function createInventoryManagerSimulation(container, id) {
+    const gameData = {
+        cash: 1000,
+        day: 1,
+        totalRevenue: 0,
+        totalExpenses: 0,
+        inventory: {
+            laptops: { quantity: 0, cost: 800, price: 1200, demand: 'medium' },
+            phones: { quantity: 0, cost: 400, price: 600, demand: 'high' },
+            tablets: { quantity: 0, cost: 300, price: 450, demand: 'low' }
+        },
+        storageCost: 50,
+        orderHistory: []
+    };
+    
+    gameState[id] = gameData;
+    
+    container.innerHTML = `
+        <div class="simulation-container inventory-manager" id="${id}">
+            <div class="simulation-header">
+                <h3>📦 Inventory Manager</h3>
+                <p>Manage inventory levels, optimize ordering, and maximize profits!</p>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat-card">
+                    <h4>Cash</h4>
+                    <div class="stat-value" id="cash-${id}">$${gameData.cash}</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Day</h4>
+                    <div class="stat-value" id="day-${id}">${gameData.day}</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Profit</h4>
+                    <div class="stat-value" id="profit-${id}">$${gameData.totalRevenue - gameData.totalExpenses}</div>
+                </div>
+            </div>
+            
+            <div class="inventory-dashboard">
+                <h4>Current Inventory</h4>
+                <div class="inventory-items">
+                    ${Object.keys(gameData.inventory).map(item => `
+                        <div class="inventory-card">
+                            <h5>${item.charAt(0).toUpperCase() + item.slice(1)}</h5>
+                            <p>Quantity: <span id="${item}-qty-${id}">${gameData.inventory[item].quantity}</span></p>
+                            <p>Cost: $${gameData.inventory[item].cost}</p>
+                            <p>Price: $${gameData.inventory[item].price}</p>
+                            <p>Demand: ${gameData.inventory[item].demand}</p>
+                            <button onclick="orderStock('${id}', '${item}', 5)" class="btn btn-sm">Order 5</button>
+                            <button onclick="orderStock('${id}', '${item}', 10)" class="btn btn-sm">Order 10</button>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="game-actions">
+                <button onclick="advanceDay('${id}')" class="btn btn-primary">Advance Day</button>
+                <button onclick="resetGame('${id}')" class="btn btn-secondary">Reset Game</button>
+            </div>
+        </div>
+    `;
+}
+
+// ===================================
+// Budget Balancer Simulation
+// ===================================
+
+function createBudgetBalancerSimulation(container, id) {
+    const gameData = {
+        monthlyIncome: 5000,
+        month: 1,
+        totalSavings: 1000,
+        expenses: {
+            rent: { amount: 1200, required: true, paid: false },
+            utilities: { amount: 300, required: true, paid: false },
+            groceries: { amount: 400, required: true, paid: false },
+            transportation: { amount: 200, required: true, paid: false },
+            entertainment: { amount: 0, required: false, paid: false },
+            dining: { amount: 0, required: false, paid: false },
+            shopping: { amount: 0, required: false, paid: false }
+        },
+        emergencyFund: 500,
+        financialHealth: 100
+    };
+    
+    gameState[id] = gameData;
+    
+    container.innerHTML = `
+        <div class="simulation-container budget-balancer" id="${id}">
+            <div class="simulation-header">
+                <h3>💰 Budget Balancer</h3>
+                <p>Manage your monthly budget and make smart financial decisions!</p>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat-card">
+                    <h4>Income</h4>
+                    <div class="stat-value" id="income-${id}">$${gameData.monthlyIncome}</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Month</h4>
+                    <div class="stat-value" id="month-${id}">${gameData.month}</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Savings</h4>
+                    <div class="stat-value" id="savings-${id}">$${gameData.totalSavings}</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Financial Health</h4>
+                    <div class="stat-value" id="health-${id}">${gameData.financialHealth}%</div>
+                </div>
+            </div>
+            
+            <div class="budget-dashboard">
+                <h4>Monthly Expenses</h4>
+                <div class="expense-items">
+                    ${Object.keys(gameData.expenses).map(expense => `
+                        <div class="expense-card ${gameData.expenses[expense].required ? 'required' : 'optional'}">
+                            <h5>${expense.charAt(0).toUpperCase() + expense.slice(1)}</h5>
+                            <p>${gameData.expenses[expense].required ? 'Required' : 'Optional'}</p>
+                            <input type="number" id="${expense}-${id}" value="${gameData.expenses[expense].amount}" min="0" step="50">
+                            <button onclick="updateExpense('${id}', '${expense}')" class="btn btn-sm">Update</button>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="game-actions">
+                <button onclick="advanceMonth('${id}')" class="btn btn-primary">End Month</button>
+                <button onclick="resetGame('${id}')" class="btn btn-secondary">Reset Game</button>
+            </div>
+        </div>
+    `;
 }
 
 // ===================================
@@ -1110,9 +1281,60 @@ function addSimulationStyles() {
     document.head.appendChild(styles);
 }
 
+// Missing game functions for new simulations
+window.orderStock = function(id, item, quantity) {
+    const gameData = gameState[id];
+    const itemData = gameData.inventory[item];
+    const cost = itemData.cost * quantity;
+    
+    if (gameData.cash >= cost) {
+        gameData.cash -= cost;
+        gameData.totalExpenses += cost;
+        gameData.inventory[item].quantity += quantity;
+        
+        document.getElementById(`cash-${id}`).textContent = `$${gameData.cash}`;
+        document.getElementById(`${item}-qty-${id}`).textContent = gameData.inventory[item].quantity;
+        saveGameState();
+    }
+};
+
+window.updateExpense = function(id, expense) {
+    const gameData = gameState[id];
+    const newAmount = parseInt(document.getElementById(`${expense}-${id}`).value);
+    gameData.expenses[expense].amount = newAmount;
+    saveGameState();
+};
+
+window.advanceMonth = function(id) {
+    const gameData = gameState[id];
+    let totalExpenses = 0;
+    
+    Object.keys(gameData.expenses).forEach(expense => {
+        totalExpenses += gameData.expenses[expense].amount;
+    });
+    
+    const remaining = gameData.monthlyIncome - totalExpenses;
+    gameData.totalSavings += remaining;
+    gameData.month++;
+    
+    // Calculate financial health
+    const savingsRate = remaining / gameData.monthlyIncome;
+    gameData.financialHealth = Math.max(0, Math.min(100, 50 + (savingsRate * 100)));
+    
+    document.getElementById(`month-${id}`).textContent = gameData.month;
+    document.getElementById(`savings-${id}`).textContent = `$${gameData.totalSavings}`;
+    document.getElementById(`health-${id}`).textContent = `${Math.round(gameData.financialHealth)}%`;
+    
+    saveGameState();
+};
+
 // ===================================
 // Export Functions
 // ===================================
+
+// Export globals for test compatibility
+window.simulationInstances = simulationInstances;
+window.gameState = gameState;
 
 window.BusinessSimulations = {
     createBusinessSimulation,

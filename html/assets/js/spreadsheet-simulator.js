@@ -698,34 +698,20 @@ class SpreadsheetSimulator {
     
     evaluateFormula(formula, currentRow, currentCol) {
         try {
-            // Simple formula evaluation
-            // Replace cell references with values
-            const processedFormula = formula.replace(/([A-Z]+)(\d+)/g, (match, col, row) => {
-                const colIndex = this.letterToNumber(col);
-                const rowIndex = parseInt(row) - 1;
-                const value = this.getCellValue(rowIndex, colIndex);
-                return typeof value === 'number' ? value : 0;
-            });
+            // SECURE: Use safe formula evaluator with proper context
+            if (!window.SafeFormulaEvaluator) {
+                console.error('SafeFormulaEvaluator not loaded');
+                return '#ERROR!';
+            }
             
-            // Handle functions
-            let result = processedFormula;
+            const evaluator = new SafeFormulaEvaluator();
+            evaluator.setSpreadsheetContext(this);
             
-            // SUM function
-            result = result.replace(/SUM\(([A-Z]+\d+):([A-Z]+\d+)\)/g, (match, start, end) => {
-                const sum = this.calculateRangeSum(start, end);
-                return sum;
-            });
-            
-            // AVERAGE function
-            result = result.replace(/AVERAGE\(([A-Z]+\d+):([A-Z]+\d+)\)/g, (match, start, end) => {
-                const avg = this.calculateRangeAverage(start, end);
-                return avg;
-            });
-            
-            // Evaluate the expression (unsafe in production!)
-            return Function(`"use strict"; return (${result})`)();
+            // Let SafeFormulaEvaluator handle everything - it will call back to our methods
+            return evaluator.evaluate('=' + formula);
             
         } catch (error) {
+            console.warn('Formula evaluation error:', error.message);
             return '#ERROR!';
         }
     }
@@ -765,6 +751,24 @@ class SpreadsheetSimulator {
         }
         
         return count > 0 ? sum / count : 0;
+    }
+    
+    calculateRangeCount(startRef, endRef) {
+        const startCoords = this.parseReference(startRef);
+        const endCoords = this.parseReference(endRef);
+        
+        let count = 0;
+        
+        for (let row = startCoords.row; row <= endCoords.row; row++) {
+            for (let col = startCoords.col; col <= endCoords.col; col++) {
+                const value = this.getCellValue(row, col);
+                if (value !== '' && value !== null && value !== undefined) {
+                    count++;
+                }
+            }
+        }
+        
+        return count;
     }
     
     parseReference(ref) {
@@ -828,6 +832,11 @@ class SpreadsheetSimulator {
     // Utility methods
     getCellId(row, col) {
         return this.numberToLetter(col) + (row + 1);
+    }
+    
+    // Alias for SafeFormulaEvaluator compatibility
+    getCellReference(row, col) {
+        return this.getCellId(row, col);
     }
     
     parseCellId(cellId) {

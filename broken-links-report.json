@@ -1,0 +1,1284 @@
+Scanning HTML files in: html
+Found 13 HTML files
+{
+  "summary": {
+    "total_links": 308,
+    "broken_links": 127,
+    "external_links": 0,
+    "fragment_links": 17,
+    "valid_internal_links": 164,
+    "success_rate": 56.3573883161512
+  },
+  "broken_links": [
+    {
+      "source_file": "html/index.html",
+      "link_text": "<link>",
+      "href": "assets/images/favicon.png",
+      "line_number": 13,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/assets/images/favicon.png",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/assets/images/favicon.png"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Preface",
+      "href": "frontmatter/preface.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "units/unit02-month-end-wizard/index.html",
+      "line_number": 51,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "units/unit03-three-statement-storyboard/index.html",
+      "line_number": 52,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "units/unit04-data-driven-cafe/index.html",
+      "line_number": 53,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "units/unit05-payday-simulator/index.html",
+      "line_number": 54,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "units/unit06-pricelab-challenge/index.html",
+      "line_number": 55,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "units/unit07-asset-inventory-tracker/index.html",
+      "line_number": 56,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "units/unit08-integrated-model-sprint/index.html",
+      "line_number": 57,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Capstone",
+      "href": "capstone/index.html",
+      "line_number": 60,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Glossary",
+      "href": "backmatter/glossary.html",
+      "line_number": 61,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Search",
+      "href": "search.html",
+      "line_number": 62,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/search.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/search.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Start Reading",
+      "href": "frontmatter/preface.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Preface",
+      "href": "frontmatter/preface.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Acknowledgments",
+      "href": "frontmatter/acknowledgments.html",
+      "line_number": 108,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/acknowledgments.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/acknowledgments.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "units/unit02-month-end-wizard/index.html",
+      "line_number": 51,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "units/unit03-three-statement-storyboard/index.html",
+      "line_number": 52,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "units/unit04-data-driven-cafe/index.html",
+      "line_number": 53,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "units/unit05-payday-simulator/index.html",
+      "line_number": 54,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "units/unit06-pricelab-challenge/index.html",
+      "line_number": 55,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "units/unit07-asset-inventory-tracker/index.html",
+      "line_number": 56,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "units/unit08-integrated-model-sprint/index.html",
+      "line_number": 57,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Capstone",
+      "href": "capstone/index.html",
+      "line_number": 60,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Project Guidelines",
+      "href": "capstone/guidelines.html",
+      "line_number": 195,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/guidelines.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/guidelines.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Milestones & Timeline",
+      "href": "capstone/milestones.html",
+      "line_number": 196,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/milestones.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/milestones.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Assessment Rubrics",
+      "href": "capstone/rubrics.html",
+      "line_number": 197,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/rubrics.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/rubrics.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Glossary",
+      "href": "backmatter/glossary.html",
+      "line_number": 61,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Subject Index",
+      "href": "backmatter/index.html",
+      "line_number": 206,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/index.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Bibliography",
+      "href": "backmatter/bibliography.html",
+      "line_number": 207,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/bibliography.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/bibliography.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Preface",
+      "href": "frontmatter/preface.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Glossary",
+      "href": "backmatter/glossary.html",
+      "line_number": 61,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html"
+    },
+    {
+      "source_file": "html/index.html",
+      "link_text": "Search",
+      "href": "search.html",
+      "line_number": 62,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/search.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/search.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "Getting Started",
+      "href": "professional-development/getting-started.html",
+      "line_number": 159,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/getting-started.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/getting-started.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "Semester Overview",
+      "href": "course-overview/semester-overview.html",
+      "line_number": 202,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "Excel Skill Map",
+      "href": "excel-curriculum/skill-progression-map.html",
+      "line_number": 205,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/excel-curriculum/skill-progression-map.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/excel-curriculum/skill-progression-map.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Semester Overview",
+      "href": "course-overview/semester-overview.html",
+      "line_number": 202,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Assessment Philosophy",
+      "href": "course-overview/assessment-philosophy.html",
+      "line_number": 222,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/assessment-philosophy.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/assessment-philosophy.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Skill Progression Map",
+      "href": "excel-curriculum/skill-progression-map.html",
+      "line_number": 205,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/excel-curriculum/skill-progression-map.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/excel-curriculum/skill-progression-map.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Getting Started Guide",
+      "href": "professional-development/getting-started.html",
+      "line_number": 159,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/getting-started.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/getting-started.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Sample Daily Plan",
+      "href": "semester1/unit01-smart-ledger/lesson-plans/week1-day1.html",
+      "line_number": 203,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/lesson-plans/week1-day1.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/lesson-plans/week1-day1.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Facilitation Tips",
+      "href": "professional-development/pbl-coaching/facilitation-tips.html",
+      "line_number": 159,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/pbl-coaching/facilitation-tips.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/pbl-coaching/facilitation-tips.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Effective Feedback",
+      "href": "professional-development/grading-efficiency/feedback-strategies.html",
+      "line_number": 159,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/grading-efficiency/feedback-strategies.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/grading-efficiency/feedback-strategies.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Sample Rubrics",
+      "href": "semester1/unit01-smart-ledger/assessment-rubrics/project-rubric.html",
+      "line_number": 203,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/assessment-rubrics/project-rubric.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/assessment-rubrics/project-rubric.html"
+    },
+    {
+      "source_file": "html/teacher/index.html",
+      "link_text": "\u2192 Peer Review Tools",
+      "href": "semester2/assessment-tools/peer-review-protocols.html",
+      "line_number": 255,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester2/assessment-tools/peer-review-protocols.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester2/assessment-tools/peer-review-protocols.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/interactive-demo.html",
+      "link_text": "Practice More Exercises",
+      "href": "exercises.html",
+      "line_number": 288,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/interactive-demo.html",
+      "link_text": "Continue to Unit 2",
+      "href": "../unit02-month-end-wizard/index.html",
+      "line_number": 291,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Getting Started",
+      "href": "../../frontmatter/preface.html",
+      "line_number": 35,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "../unit02-month-end-wizard/index.html",
+      "line_number": 40,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "../unit03-three-statement-storyboard/index.html",
+      "line_number": 41,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "../unit04-data-driven-cafe/index.html",
+      "line_number": 42,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "../unit05-payday-simulator/index.html",
+      "line_number": 43,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "../unit06-pricelab-challenge/index.html",
+      "line_number": 44,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "../unit07-asset-inventory-tracker/index.html",
+      "line_number": 45,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "../unit08-integrated-model-sprint/index.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "Capstone",
+      "href": "../../capstone/index.html",
+      "line_number": 49,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "5. Exercises",
+      "href": "exercises.html",
+      "line_number": 636,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/concepts.html",
+      "link_text": "6. Summary",
+      "href": "summary.html",
+      "line_number": 637,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Getting Started",
+      "href": "../../frontmatter/preface.html",
+      "line_number": 36,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "../unit02-month-end-wizard/index.html",
+      "line_number": 41,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "../unit03-three-statement-storyboard/index.html",
+      "line_number": 42,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "../unit04-data-driven-cafe/index.html",
+      "line_number": 43,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "../unit05-payday-simulator/index.html",
+      "line_number": 44,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "../unit06-pricelab-challenge/index.html",
+      "line_number": 45,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "../unit07-asset-inventory-tracker/index.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "../unit08-integrated-model-sprint/index.html",
+      "line_number": 47,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Capstone",
+      "href": "../../capstone/index.html",
+      "line_number": 50,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "5. Exercises",
+      "href": "exercises.html",
+      "line_number": 670,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "6. Summary",
+      "href": "summary.html",
+      "line_number": 671,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/examples.html",
+      "link_text": "Exercises \u2192",
+      "href": "exercises.html",
+      "line_number": 747,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Preface",
+      "href": "../../frontmatter/preface.html",
+      "line_number": 38,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "../unit02-month-end-wizard/index.html",
+      "line_number": 43,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "../unit03-three-statement-storyboard/index.html",
+      "line_number": 44,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "../unit04-data-driven-cafe/index.html",
+      "line_number": 45,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "../unit05-payday-simulator/index.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "../unit06-pricelab-challenge/index.html",
+      "line_number": 47,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "../unit07-asset-inventory-tracker/index.html",
+      "line_number": 48,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "../unit08-integrated-model-sprint/index.html",
+      "line_number": 49,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Capstone",
+      "href": "../../capstone/index.html",
+      "line_number": 52,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Glossary",
+      "href": "../../backmatter/glossary.html",
+      "line_number": 53,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Search",
+      "href": "../../search.html",
+      "line_number": 54,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/search.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/search.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Interactive Exercises",
+      "href": "exercises.html",
+      "line_number": 211,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Summary & Assessment",
+      "href": "summary.html",
+      "line_number": 223,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Unit 1 Excel Template",
+      "href": "resources/unit01-template.xlsx",
+      "line_number": 251,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/unit01-template.xlsx",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/unit01-template.xlsx"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Sample Transaction Data",
+      "href": "resources/sample-transactions.pdf",
+      "line_number": 252,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/sample-transactions.pdf",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/sample-transactions.pdf"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Standard Chart of Accounts",
+      "href": "resources/chart-of-accounts.pdf",
+      "line_number": 253,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/chart-of-accounts.pdf",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/chart-of-accounts.pdf"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Excel Functions Quick Reference",
+      "href": "resources/quick-reference.pdf",
+      "line_number": 254,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/quick-reference.pdf",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/resources/quick-reference.pdf"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Interactive Exercises",
+      "href": "exercises.html",
+      "line_number": 211,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Summary & Assessment",
+      "href": "summary.html",
+      "line_number": 223,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Preface",
+      "href": "../../frontmatter/preface.html",
+      "line_number": 38,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Glossary",
+      "href": "../../backmatter/glossary.html",
+      "line_number": 53,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/backmatter/glossary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/index.html",
+      "link_text": "Search",
+      "href": "../../search.html",
+      "line_number": 54,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/search.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/search.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Getting Started",
+      "href": "../../frontmatter/preface.html",
+      "line_number": 35,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "../unit02-month-end-wizard/index.html",
+      "line_number": 40,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "../unit03-three-statement-storyboard/index.html",
+      "line_number": 41,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "../unit04-data-driven-cafe/index.html",
+      "line_number": 42,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "../unit05-payday-simulator/index.html",
+      "line_number": 43,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "../unit06-pricelab-challenge/index.html",
+      "line_number": 44,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "../unit07-asset-inventory-tracker/index.html",
+      "line_number": 45,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "../unit08-integrated-model-sprint/index.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "Capstone",
+      "href": "../../capstone/index.html",
+      "line_number": 49,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "5. Exercises",
+      "href": "exercises.html",
+      "line_number": 493,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/intro.html",
+      "link_text": "6. Summary",
+      "href": "summary.html",
+      "line_number": 494,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Getting Started",
+      "href": "../../frontmatter/preface.html",
+      "line_number": 36,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/frontmatter/preface.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 2: Month-End Wizard",
+      "href": "../unit02-month-end-wizard/index.html",
+      "line_number": 41,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit02-month-end-wizard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 3: Three Statement Storyboard",
+      "href": "../unit03-three-statement-storyboard/index.html",
+      "line_number": 42,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit03-three-statement-storyboard/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 4: Data-Driven Cafe",
+      "href": "../unit04-data-driven-cafe/index.html",
+      "line_number": 43,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit04-data-driven-cafe/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 5: Payday Simulator",
+      "href": "../unit05-payday-simulator/index.html",
+      "line_number": 44,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit05-payday-simulator/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 6: PriceLab Challenge",
+      "href": "../unit06-pricelab-challenge/index.html",
+      "line_number": 45,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit06-pricelab-challenge/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 7: Asset Inventory Tracker",
+      "href": "../unit07-asset-inventory-tracker/index.html",
+      "line_number": 46,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit07-asset-inventory-tracker/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Unit 8: Integrated Model Sprint",
+      "href": "../unit08-integrated-model-sprint/index.html",
+      "line_number": 47,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit08-integrated-model-sprint/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "Capstone",
+      "href": "../../capstone/index.html",
+      "line_number": 50,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/capstone/index.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "5. Exercises",
+      "href": "exercises.html",
+      "line_number": 637,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/exercises.html"
+    },
+    {
+      "source_file": "html/units/unit01-smart-ledger/excel-model.html",
+      "link_text": "6. Summary",
+      "href": "summary.html",
+      "line_number": 638,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/units/unit01-smart-ledger/summary.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/pbl-methodology.html",
+      "link_text": "Semester Overview",
+      "href": "semester-overview.html",
+      "line_number": 29,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/pbl-methodology.html",
+      "link_text": "Assessment Philosophy",
+      "href": "assessment-philosophy.html",
+      "line_number": 30,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/assessment-philosophy.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/assessment-philosophy.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/pbl-methodology.html",
+      "link_text": "Getting Started",
+      "href": "../professional-development/getting-started.html",
+      "line_number": 31,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/getting-started.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/professional-development/getting-started.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/pbl-methodology.html",
+      "link_text": "Semester Overview",
+      "href": "semester-overview.html",
+      "line_number": 29,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/pbl-methodology.html",
+      "link_text": "Study the Excel Skill Progression",
+      "href": "../excel-curriculum/skill-progression-map.html",
+      "line_number": 384,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/excel-curriculum/skill-progression-map.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/excel-curriculum/skill-progression-map.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/backward-design-framework.html",
+      "link_text": "Semester Overview",
+      "href": "semester-overview.html",
+      "line_number": 30,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/semester-overview.html"
+    },
+    {
+      "source_file": "html/teacher/course-overview/backward-design-framework.html",
+      "link_text": "Assessment Philosophy",
+      "href": "assessment-philosophy.html",
+      "line_number": 31,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/assessment-philosophy.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/course-overview/assessment-philosophy.html"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "Unit 1 Overview",
+      "href": "../index.html",
+      "line_number": 27,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/index.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/index.html"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "View complete daily plans \u2192",
+      "href": "complete-daily-plans.html",
+      "line_number": 414,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/lesson-plans/complete-daily-plans.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/lesson-plans/complete-daily-plans.html"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "SUMIF Formula Cheat Sheet",
+      "href": "../excel-instruction/sumif-cheat-sheet.pdf",
+      "line_number": 492,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/excel-instruction/sumif-cheat-sheet.pdf",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/excel-instruction/sumif-cheat-sheet.pdf"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "Conditional Formatting Guide",
+      "href": "../excel-instruction/conditional-formatting-guide.pdf",
+      "line_number": 492,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/excel-instruction/conditional-formatting-guide.pdf",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/excel-instruction/conditional-formatting-guide.pdf"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "Project Assessment Rubric",
+      "href": "../assessment-rubrics/project-rubric.html",
+      "line_number": 494,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/assessment-rubrics/project-rubric.html",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/assessment-rubrics/project-rubric.html"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "Sample Transaction Datasets",
+      "href": "../mini-project/transaction-datasets.xlsx",
+      "line_number": 495,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/mini-project/transaction-datasets.xlsx",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/mini-project/transaction-datasets.xlsx"
+    },
+    {
+      "source_file": "html/teacher/semester1/unit01-smart-ledger/lesson-plans/unit01-complete-plan.html",
+      "link_text": "Peer Review Checklist",
+      "href": "../assessment-rubrics/peer-review-checklist.pdf",
+      "line_number": 494,
+      "link_type": "internal_relative",
+      "status": "broken",
+      "resolved_path": "/home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/assessment-rubrics/peer-review-checklist.pdf",
+      "error_message": "File not found: /home/daniel-bo/Desktop/Business-Operations/html/teacher/semester1/unit01-smart-ledger/assessment-rubrics/peer-review-checklist.pdf"
+    }
+  ]
+}

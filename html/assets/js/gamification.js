@@ -1360,9 +1360,50 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
+// Missing functions for API compatibility
+function addExperience(xp, reason = 'Experience gained') {
+    return awardPoints(xp, reason); // XP and points are the same in our system
+}
+
+function updateProgress(activity, progress) {
+    // Update progress for a specific activity
+    if (!gamificationData.activityProgress) {
+        gamificationData.activityProgress = {};
+    }
+    gamificationData.activityProgress[activity] = progress;
+    saveGamificationData();
+    
+    // Check if activity is completed
+    if (progress >= 100) {
+        awardPoints(25, `Completed ${activity}`);
+    }
+}
+
+function getPlayerLevel() {
+    return {
+        level: gamificationData.level,
+        xp: gamificationData.xp,
+        xpToNextLevel: gamificationData.xpToNextLevel,
+        totalPoints: gamificationData.totalPoints
+    };
+}
+
+// Export global functions for direct access
+window.awardPoints = awardPoints;
+window.addExperience = addExperience;
+window.updateProgress = updateProgress;
+window.getPlayerLevel = getPlayerLevel;
+window.unlockAchievement = unlockAchievement;
+window.showNotification = showNotification;
+
 // Export functions
 window.Gamification = {
     awardPoints,
+    addExperience,
+    updateProgress, 
+    getPlayerLevel,
+    unlockAchievement,
+    showNotification,
     onExerciseComplete: window.onExerciseComplete,
     onHintUsed: window.onHintUsed,
     onSimulationComplete: window.onSimulationComplete,
