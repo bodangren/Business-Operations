@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Model | Unit 1: Smart Ledger Launch</title>
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/textbook.css">
+    <link rel="stylesheet" href="../../assets/css/callouts.css">
+    <link rel="stylesheet" href="../../assets/css/excel.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="../../index.html">Math for Business Operations</a></h1>
+                    <p class="subtitle">Applied Accounting with Excel</p>
+                </div>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <button class="nav-toggle" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../frontmatter/preface.html">Getting Started</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Units</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../unit01-smart-ledger/index.html" class="current">Unit 1: Smart Ledger</a></li>
+                                <li><a href="../unit02-month-end-wizard/index.html">Unit 2: Month-End Wizard</a></li>
+                                <li><a href="../unit03-three-statement-storyboard/index.html">Unit 3: Three Statement Storyboard</a></li>
+                                <li><a href="../unit04-data-driven-cafe/index.html">Unit 4: Data-Driven Cafe</a></li>
+                                <li><a href="../unit05-payday-simulator/index.html">Unit 5: Payday Simulator</a></li>
+                                <li><a href="../unit06-pricelab-challenge/index.html">Unit 6: PriceLab Challenge</a></li>
+                                <li><a href="../unit07-asset-inventory-tracker/index.html">Unit 7: Asset Inventory Tracker</a></li>
+                                <li><a href="../unit08-integrated-model-sprint/index.html">Unit 8: Integrated Model Sprint</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../capstone/index.html">Capstone</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Unit 1: Smart Ledger</a></li>
+                <li class="breadcrumb-item current">Excel Model</li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Main content -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Main content area -->
+                <div class="main-content-area reading-width">
+                    <!-- Section header -->
+                    <header class="section-header">
+                        <div class="section-meta">
+                            <span class="section-number">Section 3</span>
+                            <span class="estimated-time">⏱️ 90 minutes</span>
+                        </div>
+                        <h1>Building Sarah's Smart Ledger</h1>
+                        <p class="lead">
+                            Time to transform TechStart's chaotic shoebox into a professional, self-auditing 
+                            ledger system that will impress investors and catch errors before they become disasters.
+                        </p>
+                    </header>
+                    
+                    <!-- Quick Recap -->
+                    <section id="recap">
+                        <h2>🔄 Where We Are Now</h2>
+                        
+                        <div class="progress-summary">
+                            <div class="progress-item completed">
+                                <span class="progress-icon">✓</span>
+                                <div>
+                                    <h3>Understanding the Problem</h3>
+                                    <p>Sarah's shoebox system is investor-repelling chaos</p>
+                                </div>
+                            </div>
+                            
+                            <div class="progress-item completed">
+                                <span class="progress-icon">✓</span>
+                                <div>
+                                    <h3>Core Concepts Mastered</h3>
+                                    <p>Assets = Liabilities + Equity, debits = credits</p>
+                                </div>
+                            </div>
+                            
+                            <div class="progress-item active">
+                                <span class="progress-icon">📊</span>
+                                <div>
+                                    <h3>Build the Smart Ledger</h3>
+                                    <p>Create an Excel system that catches errors automatically</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- The Challenge -->
+                    <section id="challenge">
+                        <h2>🎯 Your Mission</h2>
+                        
+                        <div class="callout important">
+                            <h3>Sarah's Actual Data</h3>
+                            <p>
+                                You're about to work with anonymized transaction data from TechStart's first 
+                                three months. This isn't made-up textbook data – these are the actual messy, 
+                                real-world transactions that almost sank their business.
+                            </p>
+                        </div>
+                        
+                        <div class="mission-grid">
+                            <div class="mission-card">
+                                <h3>🏗️ Build</h3>
+                                <p>A professional ledger with chart of accounts, transaction log, and automated totals</p>
+                            </div>
+                            <div class="mission-card">
+                                <h3>🔍 Audit</h3>
+                                <p>Self-checking formulas that turn red when debits ≠ credits</p>
+                            </div>
+                            <div class="mission-card">
+                                <h3>💡 Impress</h3>
+                                <p>Investor-ready presentation that shows financial control</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 1: Chart of Accounts -->
+                    <section id="step1">
+                        <h2>Step 1: Create the Chart of Accounts</h2>
+                        <p>Every professional ledger starts with a chart of accounts – a numbered list that organizes all possible transactions.</p>
+                        
+                        <div class="callout tip">
+                            <h3>Why Number Accounts?</h3>
+                            <p>
+                                Account numbers aren't just for show. They group similar accounts together 
+                                (all 1000s are assets, all 2000s are liabilities) and make data entry faster. 
+                                Professional accountants think in account numbers!
+                            </p>
+                        </div>
+                        
+                        <!-- Chart of Accounts Builder -->
+                        <div class="interactive-section">
+                            <h3>Interactive Chart Builder</h3>
+                            <p>Click "Build Chart" to create TechStart's chart of accounts in your ledger:</p>
+                            
+                            <div class="excel-container">
+                                <div class="spreadsheet-simulator-container" data-preset="basic" data-rows="15" data-cols="3"></div>
+                            </div>
+                            
+                            <div class="builder-controls">
+                                <button onclick="buildChartOfAccounts()" class="btn btn-primary">
+                                    🏗️ Build Chart of Accounts
+                                </button>
+                                <button onclick="explainAccountNumbers()" class="btn btn-secondary">
+                                    🤔 Explain Account Numbers
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="callout example">
+                            <h3>TechStart's Account Structure</h3>
+                            <div class="account-preview">
+                                <div class="account-group">
+                                    <h4>1000s - Assets (What we own)</h4>
+                                    <ul>
+                                        <li>1000 - Cash in Bank</li>
+                                        <li>1100 - Equipment</li>
+                                        <li>1200 - Accounts Receivable</li>
+                                    </ul>
+                                </div>
+                                <div class="account-group">
+                                    <h4>2000s - Liabilities (What we owe)</h4>
+                                    <ul>
+                                        <li>2000 - Credit Card Debt</li>
+                                        <li>2100 - Accounts Payable</li>
+                                    </ul>
+                                </div>
+                                <div class="account-group">
+                                    <h4>3000s - Equity (Owner's investment)</h4>
+                                    <ul>
+                                        <li>3000 - Owner's Capital</li>
+                                        <li>3100 - Retained Earnings</li>
+                                    </ul>
+                                </div>
+                                <div class="account-group">
+                                    <h4>4000s - Revenue (Money coming in)</h4>
+                                    <ul>
+                                        <li>4000 - Service Revenue</li>
+                                        <li>4100 - Consulting Revenue</li>
+                                    </ul>
+                                </div>
+                                <div class="account-group">
+                                    <h4>5000s - Expenses (Money going out)</h4>
+                                    <ul>
+                                        <li>5000 - Office Rent</li>
+                                        <li>5100 - Software Subscriptions</li>
+                                        <li>5200 - Marketing Costs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 2: Transaction Journal -->
+                    <section id="step2">
+                        <h2>Step 2: Build the Transaction Journal</h2>
+                        <p>Now we'll create the main transaction log where every business activity gets recorded with proper double-entry formatting.</p>
+                        
+                        <div class="callout definition">
+                            <h3>What is a Journal?</h3>
+                            <p>
+                                The journal is your business diary. Every transaction gets recorded in chronological 
+                                order with the date, description, accounts affected, and dollar amounts. It's the 
+                                source of truth for everything that happens financially.
+                            </p>
+                        </div>
+                        
+                        <!-- Transaction Journal Builder -->
+                        <div class="interactive-section">
+                            <h3>Interactive Journal Creator</h3>
+                            <p>Let's build the main transaction journal with proper column headers and formatting:</p>
+                            
+                            <div class="excel-container">
+                                <div class="spreadsheet-simulator-container" data-preset="ledger" data-rows="20" data-cols="6"></div>
+                            </div>
+                            
+                            <div class="builder-controls">
+                                <button onclick="buildJournalHeaders()" class="btn btn-primary">
+                                    📝 Create Journal Headers
+                                </button>
+                                <button onclick="addSampleTransaction()" class="btn btn-secondary">
+                                    💡 Add Sample Transaction
+                                </button>
+                                <button onclick="formatJournal()" class="btn btn-accent">
+                                    🎨 Professional Formatting
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="journal-explanation">
+                            <h4>Journal Column Breakdown</h4>
+                            <div class="column-grid">
+                                <div class="column-card">
+                                    <h5>Date</h5>
+                                    <p>When the transaction happened</p>
+                                </div>
+                                <div class="column-card">
+                                    <h5>Reference</h5>
+                                    <p>Transaction number for easy tracking</p>
+                                </div>
+                                <div class="column-card">
+                                    <h5>Description</h5>
+                                    <p>Clear explanation of what happened</p>
+                                </div>
+                                <div class="column-card">
+                                    <h5>Account</h5>
+                                    <p>Which account is being affected</p>
+                                </div>
+                                <div class="column-card">
+                                    <h5>Debit</h5>
+                                    <p>Amounts that increase assets/expenses</p>
+                                </div>
+                                <div class="column-card">
+                                    <h5>Credit</h5>
+                                    <p>Amounts that increase liabilities/revenue</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 3: Error-Checking Formulas -->
+                    <section id="step3">
+                        <h2>Step 3: Add Smart Error-Checking</h2>
+                        <p>This is where your ledger becomes "smart" – we'll add formulas that automatically catch errors and turn red when something's wrong.</p>
+                        
+                        <div class="callout warning">
+                            <h3>Why Error-Checking Matters</h3>
+                            <p>
+                                In Sarah's shoebox system, a $500 mistake could go unnoticed for months. With 
+                                smart error-checking, you'll know within seconds if debits don't equal credits. 
+                                This is what makes investors trust your books!
+                            </p>
+                        </div>
+                        
+                        <!-- Error-Checking Builder -->
+                        <div class="interactive-section">
+                            <h3>Build Automatic Auditing</h3>
+                            <p>Let's add the formulas that make this ledger self-auditing:</p>
+                            
+                            <div class="excel-container">
+                                <div class="spreadsheet-simulator-container" data-preset="calculator" data-rows="10" data-cols="4"></div>
+                            </div>
+                            
+                            <div class="builder-controls">
+                                <button onclick="addTotalFormulas()" class="btn btn-primary">
+                                    🧮 Add Total Formulas
+                                </button>
+                                <button onclick="addBalanceCheck()" class="btn btn-secondary">
+                                    ⚖️ Add Balance Check
+                                </button>
+                                <button onclick="addConditionalFormatting()" class="btn btn-accent">
+                                    🚨 Add Red Flag Alerts
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="formula-breakdown">
+                            <h4>Smart Formulas Explained</h4>
+                            
+                            <div class="formula-card">
+                                <h5>Total Debits Formula</h5>
+                                <code>=SUM(E:E)</code>
+                                <p>Automatically adds up all debit amounts</p>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <h5>Total Credits Formula</h5>
+                                <code>=SUM(F:F)</code>
+                                <p>Automatically adds up all credit amounts</p>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <h5>Balance Check Formula</h5>
+                                <code>=ABS(SUM(E:E)-SUM(F:F))</code>
+                                <p>Shows the difference between debits and credits (should be 0)</p>
+                            </div>
+                            
+                            <div class="formula-card">
+                                <h5>Error Alert Formula</h5>
+                                <code>=IF(ABS(SUM(E:E)-SUM(F:F))>0,"ERROR: OUT OF BALANCE","✓ Balanced")</code>
+                                <p>Shows a clear message when books don't balance</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 4: Real Data Testing -->
+                    <section id="step4">
+                        <h2>Step 4: Test with Sarah's Real Data</h2>
+                        <p>Time to put your Smart Ledger to the test using actual transactions from TechStart's chaotic early days.</p>
+                        
+                        <div class="callout important">
+                            <h3>Real-World Challenge</h3>
+                            <p>
+                                These transactions contain some of the actual mistakes that Sarah's team made. 
+                                Your Smart Ledger should catch these errors and help you fix them before an 
+                                investor ever sees them.
+                            </p>
+                        </div>
+                        
+                        <!-- Data Import Section -->
+                        <div class="interactive-section">
+                            <h3>Import TechStart's Transactions</h3>
+                            <p>Load Sarah's messy transaction data and see if your error-checking catches the problems:</p>
+                            
+                            <div class="excel-container">
+                                <div class="spreadsheet-simulator-container" data-preset="ledger" data-rows="25" data-cols="6"></div>
+                            </div>
+                            
+                            <div class="builder-controls">
+                                <button onclick="loadSampleData()" class="btn btn-primary">
+                                    📥 Load TechStart Data
+                                </button>
+                                <button onclick="runErrorCheck()" class="btn btn-secondary">
+                                    🔍 Run Error Check
+                                </button>
+                                <button onclick="showErrorGuide()" class="btn btn-accent">
+                                    🆘 Error Fixing Guide
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="data-preview">
+                            <h4>Sample Transactions You'll Process</h4>
+                            <div class="transaction-list">
+                                <div class="transaction-item">
+                                    <span class="date">Jan 15</span>
+                                    <span class="description">Received payment from client $5,000</span>
+                                    <span class="impact">Cash ↑ / Revenue ↑</span>
+                                </div>
+                                <div class="transaction-item">
+                                    <span class="date">Jan 22</span>
+                                    <span class="description">Paid office rent $1,200</span>
+                                    <span class="impact">Cash ↓ / Expenses ↑</span>
+                                </div>
+                                <div class="transaction-item error">
+                                    <span class="date">Feb 3</span>
+                                    <span class="description">Equipment purchase $2,500 (error in original)</span>
+                                    <span class="impact">🚨 Contains mistake to catch!</span>
+                                </div>
+                                <div class="transaction-item">
+                                    <span class="date">Feb 14</span>
+                                    <span class="description">Credit card payment $800</span>
+                                    <span class="impact">Cash ↓ / Liabilities ↓</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 5: Professional Finishing -->
+                    <section id="step5">
+                        <h2>Step 5: Professional Finishing Touches</h2>
+                        <p>Transform your functional ledger into something that would impress professional investors.</p>
+                        
+                        <div class="callout tip">
+                            <h3>Presentation Matters</h3>
+                            <p>
+                                Investors make quick judgments. A professionally formatted ledger with clear 
+                                headers, proper alignment, and visual error flags sends the message that 
+                                your team pays attention to details in all aspects of business.
+                            </p>
+                        </div>
+                        
+                        <!-- Formatting Section -->
+                        <div class="interactive-section">
+                            <h3>Investor-Ready Formatting</h3>
+                            <p>Apply professional formatting to make your ledger investor-presentation ready:</p>
+                            
+                            <div class="excel-container">
+                                <div class="spreadsheet-simulator-container" data-preset="ledger" data-rows="15" data-cols="6"></div>
+                            </div>
+                            
+                            <div class="builder-controls">
+                                <button onclick="applyProfessionalFormat()" class="btn btn-primary">
+                                    💼 Professional Formatting
+                                </button>
+                                <button onclick="addCompanyBranding()" class="btn btn-secondary">
+                                    🏢 Add TechStart Branding
+                                </button>
+                                <button onclick="createPrintVersion()" class="btn btn-accent">
+                                    🖨️ Prepare for Printing
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="formatting-checklist">
+                            <h4>Professional Ledger Checklist</h4>
+                            <div class="checklist-grid">
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="headers">
+                                    <label for="headers">Clear, bold headers</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="alignment">
+                                    <label for="alignment">Proper text alignment</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="currency">
+                                    <label for="currency">Currency formatting</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="borders">
+                                    <label for="borders">Professional borders</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="colors">
+                                    <label for="colors">Consistent color scheme</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="totals">
+                                    <label for="totals">Highlighted totals</label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Final Challenge -->
+                    <section id="final-challenge">
+                        <h2>🎯 Your Final Challenge</h2>
+                        
+                        <div class="challenge-container">
+                            <div class="challenge-header">
+                                <h3>The Investor Presentation Test</h3>
+                                <p>
+                                    Your Smart Ledger is complete. Now Sarah needs to present it to a potential 
+                                    investor who will be looking for three key things:
+                                </p>
+                            </div>
+                            
+                            <div class="investor-criteria">
+                                <div class="criteria-item">
+                                    <div class="criteria-icon">🎯</div>
+                                    <h4>Accuracy</h4>
+                                    <p>Do all transactions balance? Are there any errors?</p>
+                                </div>
+                                <div class="criteria-item">
+                                    <div class="criteria-icon">🔧</div>
+                                    <h4>Functionality</h4>
+                                    <p>Does the system catch errors automatically?</p>
+                                </div>
+                                <div class="criteria-item">
+                                    <div class="criteria-icon">👔</div>
+                                    <h4>Professionalism</h4>
+                                    <p>Does this look like a serious business tool?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="challenge-action">
+                                <button onclick="runInvestorTest()" class="btn btn-primary btn-large">
+                                    🚀 Run Investor Readiness Test
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Comprehension Check -->
+                    <div class="comprehension-check">
+                        <h3>🧠 Check Your Understanding</h3>
+                        <p>Before moving to examples, let's verify you understand the key concepts:</p>
+                        
+                        <div class="question">
+                            <h4>Question 1: What makes a ledger "smart" in our system?</h4>
+                            <ul class="question-options">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="a">
+                                        It uses artificial intelligence to make decisions
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="b">
+                                        It automatically checks for errors and alerts you when debits ≠ credits
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="c">
+                                        It connects to the internet to download transactions
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q1" value="d">
+                                        It automatically pays bills when they're due
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="feedback" id="feedback-q1"></div>
+                        </div>
+                        
+                        <div class="question">
+                            <h4>Question 2: Why do we number accounts in a chart of accounts?</h4>
+                            <ul class="question-options">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="a">
+                                        To make data entry faster and group similar accounts together
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="b">
+                                        Because it's required by law
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="c">
+                                        To confuse competitors who might see our books
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q2" value="d">
+                                        So Excel can sort them automatically
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="feedback" id="feedback-q2"></div>
+                        </div>
+                        
+                        <div class="question">
+                            <h4>Question 3: What should happen if your error-checking formula shows "ERROR: OUT OF BALANCE"?</h4>
+                            <ul class="question-options">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="a">
+                                        Ignore it and continue entering transactions
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="b">
+                                        Delete the error message
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="c">
+                                        Stop and find the mistake before continuing
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="q3" value="d">
+                                        Add a new transaction to make the numbers balance
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="feedback" id="feedback-q3"></div>
+                        </div>
+                        
+                        <button type="button" onclick="checkAnswers()" class="btn btn-primary">Check My Answers</button>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="section-nav">
+                        <h3>Unit 1 Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Unit Overview</a></li>
+                            <li><a href="intro.html">1. Introduction</a></li>
+                            <li><a href="concepts.html">2. Core Concepts</a></li>
+                            <li><a href="excel-model.html" class="current">3. Excel Model</a></li>
+                            <li><a href="examples.html">4. Examples</a></li>
+                            <li><a href="exercises.html">5. Exercises</a></li>
+                            <li><a href="summary.html">6. Summary</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="progress-tracker">
+                        <h3>Your Progress</h3>
+                        <div class="progress-item">
+                            <span class="progress-label">Introduction</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Concepts</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Excel Model</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Examples</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Exercises</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Summary</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-used">
+                        <h3>Excel Skills Building</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item completed">
+                                <span class="skill-icon">✓</span>
+                                Excel Tables
+                            </li>
+                            <li class="skill-item completed">
+                                <span class="skill-icon">✓</span>
+                                SUM Functions
+                            </li>
+                            <li class="skill-item active">
+                                <span class="skill-icon">⚡</span>
+                                Conditional Formatting
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-icon">○</span>
+                                Error-Checking Formulas
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-icon">○</span>
+                                Professional Formatting
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Page navigation -->
+            <nav class="page-nav" aria-label="Page navigation">
+                <a href="concepts.html" class="page-nav-item prev">
+                    ← Core Concepts
+                </a>
+                
+                <span class="page-nav-center">Section 3 of 6</span>
+                
+                <a href="examples.html" class="page-nav-item next">
+                    Examples →
+                </a>
+            </nav>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Math for Business Operations</h3>
+                    <p>An interactive textbook for Grade 12 business mathematics</p>
+                    <p>&copy; 2025 Daniel Bodanske. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="../../assets/js/gamification.js"></script>
+    <script src="../../assets/js/exercises.js"></script>
+    <script src="../../assets/js/safe-formula-evaluator.js"></script>
+    <script src="../../assets/js/spreadsheet-simulator.js"></script>
+    <script src="../../assets/js/financial-calculators.js"></script>
+    <script src="../../assets/js/financial-data-generator.js"></script>
+    
+    <script>
+        // Store references to spreadsheet simulators
+        let chartSimulator, journalSimulator, auditSimulator, dataSimulator, formatSimulator;
+        
+        // Initialize page when loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Award points for viewing Excel model section
+            if (window.Gamification) {
+                setTimeout(() => {
+                    window.Gamification.awardPoints(25, 'Started Excel Model building');
+                }, 1000);
+            }
+            
+            // Get simulator references once they're initialized
+            setTimeout(() => {
+                const containers = document.querySelectorAll('.spreadsheet-simulator-container');
+                if (containers.length >= 5) {
+                    chartSimulator = containers[0].spreadsheetSimulator;
+                    journalSimulator = containers[1].spreadsheetSimulator;
+                    auditSimulator = containers[2].spreadsheetSimulator;
+                    dataSimulator = containers[3].spreadsheetSimulator;
+                    formatSimulator = containers[4].spreadsheetSimulator;
+                }
+            }, 2000);
+            
+            console.log('Unit 1 Excel Model loaded successfully');
+        });
+        
+        // Chart of Accounts functions
+        function buildChartOfAccounts() {
+            if (!chartSimulator) {
+                alert('Spreadsheet is still loading. Please try again in a moment.');
+                return;
+            }
+            
+            // Build chart of accounts data
+            const chartData = {
+                'A1': 'Account #',
+                'B1': 'Account Name', 
+                'C1': 'Type',
+                'A2': '1000',
+                'B2': 'Cash in Bank',
+                'C2': 'Asset',
+                'A3': '1100',
+                'B3': 'Equipment',
+                'C3': 'Asset',
+                'A4': '1200',
+                'B4': 'Accounts Receivable',
+                'C4': 'Asset',
+                'A5': '2000',
+                'B5': 'Credit Card Debt',
+                'C5': 'Liability',
+                'A6': '2100',
+                'B6': 'Accounts Payable',
+                'C6': 'Liability',
+                'A7': '3000',
+                'B7': 'Owner\'s Capital',
+                'C7': 'Equity',
+                'A8': '3100',
+                'B8': 'Retained Earnings',
+                'C8': 'Equity',
+                'A9': '4000',
+                'B9': 'Service Revenue',
+                'C9': 'Revenue',
+                'A10': '4100',
+                'B10': 'Consulting Revenue',
+                'C10': 'Revenue',
+                'A11': '5000',
+                'B11': 'Office Rent',
+                'C11': 'Expense',
+                'A12': '5100',
+                'B12': 'Software Subscriptions',
+                'C12': 'Expense',
+                'A13': '5200',
+                'B13': 'Marketing Costs',
+                'C13': 'Expense'
+            };
+            
+            chartSimulator.setData(chartData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(25, 'Built chart of accounts');
+            }
+            
+            alert('✅ Chart of Accounts created! Notice how account numbers group similar types together - this makes it easy to find accounts and organize financial data professionally.');
+        }
+        
+        function explainAccountNumbers() {
+            alert('Account numbering system:\n\n1000s = Assets (what you own)\n2000s = Liabilities (what you owe)\n3000s = Equity (owner investment)\n4000s = Revenue (money coming in)\n5000s = Expenses (money going out)\n\nThis makes it easy to find accounts and group similar items together!');
+        }
+        
+        // Journal functions  
+        function buildJournalHeaders() {
+            if (!journalSimulator) {
+                alert('Spreadsheet is still loading. Please try again in a moment.');
+                return;
+            }
+            
+            // Create journal headers
+            const headerData = {
+                'A1': 'Date',
+                'B1': 'Ref #',
+                'C1': 'Description', 
+                'D1': 'Account',
+                'E1': 'Debit',
+                'F1': 'Credit'
+            };
+            
+            journalSimulator.setData(headerData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(20, 'Created journal headers');
+            }
+            
+            alert('✅ Journal headers created! This is the foundation of your transaction recording system.');
+        }
+        
+        function addSampleTransaction() {
+            if (!journalSimulator) {
+                alert('Please create journal headers first.');
+                return;
+            }
+            
+            // Add sample transaction data
+            const sampleData = {
+                'A2': '2024-01-15',
+                'B2': 'T001', 
+                'C2': 'Paid office rent for January',
+                'D2': '5000 - Office Rent',
+                'E2': '1200',
+                'F2': '',
+                'A3': '',
+                'B3': '',
+                'C3': '',
+                'D3': '1000 - Cash in Bank', 
+                'E3': '',
+                'F3': '1200'
+            };
+            
+            // Get existing data and merge
+            const currentData = journalSimulator.getData();
+            const mergedData = { ...currentData, ...sampleData };
+            journalSimulator.setData(mergedData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(15, 'Added sample transaction');
+            }
+            
+            alert('✅ Sample transaction added! Notice how each transaction affects two accounts and debits equal credits ($1200 = $1200).');
+        }
+        
+        function formatJournal() {
+            if (!journalSimulator) {
+                alert('Please create the journal first.');
+                return;
+            }
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(15, 'Applied professional formatting');
+            }
+            
+            alert('✅ Professional formatting applied! Your journal now looks investor-ready with proper alignment and currency formatting.');
+        }
+        
+        // Audit functions
+        function addTotalFormulas() {
+            if (!auditSimulator) {
+                alert('Spreadsheet is still loading. Please try again in a moment.');
+                return;
+            }
+            
+            const auditData = {
+                'A1': 'Smart Ledger Audit Dashboard',
+                'A3': 'Total Debits:',
+                'B3': '=SUM(E:E)',
+                'A4': 'Total Credits:', 
+                'B4': '=SUM(F:F)'
+            };
+            
+            auditSimulator.setData(auditData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(25, 'Added total formulas');
+            }
+            
+            alert('✅ Total formulas added! These automatically calculate the sum of all debits and credits.');
+        }
+        
+        function addBalanceCheck() {
+            if (!auditSimulator) {
+                alert('Please add total formulas first.');
+                return;
+            }
+            
+            const balanceData = {
+                'A5': 'Difference:',
+                'B5': '=ABS(B3-B4)'
+            };
+            
+            // Get existing data and merge
+            const currentData = auditSimulator.getData();
+            const mergedData = { ...currentData, ...balanceData };
+            auditSimulator.setData(mergedData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(25, 'Added balance check formula');
+            }
+            
+            alert('✅ Balance check added! This formula shows the difference between debits and credits. Should always be zero if books balance.');
+        }
+        
+        function addConditionalFormatting() {
+            if (!auditSimulator) {
+                alert('Please add balance check first.');
+                return;
+            }
+            
+            const alertData = {
+                'A7': 'Status:',
+                'B7': '=IF(B5>0,"❌ ERROR: OUT OF BALANCE","✅ Balanced")'
+            };
+            
+            // Get existing data and merge
+            const currentData = auditSimulator.getData();
+            const mergedData = { ...currentData, ...alertData };
+            auditSimulator.setData(mergedData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(30, 'Added conditional formatting alerts');
+            }
+            
+            alert('✅ Error alerts added! Your ledger will now automatically warn you when debits don\'t equal credits.');
+        }
+        
+        // Data testing functions
+        function loadSampleData() {
+            if (!dataSimulator) {
+                alert('Spreadsheet is still loading. Please try again in a moment.');
+                return;
+            }
+            
+            // Load sample transaction data with an intentional error
+            const testData = {
+                'A1': 'Date', 'B1': 'Ref #', 'C1': 'Description', 'D1': 'Account', 'E1': 'Debit', 'F1': 'Credit',
+                'A2': '2024-01-15', 'B2': 'T001', 'C2': 'Client payment received', 'D2': '1000 - Cash', 'E2': '5000', 'F2': '',
+                'A3': '', 'B3': '', 'C3': '', 'D3': '4000 - Revenue', 'E3': '', 'F3': '5000',
+                'A4': '2024-01-22', 'B4': 'T002', 'C4': 'Office rent payment', 'D4': '5000 - Rent', 'E4': '1200', 'F4': '',
+                'A5': '', 'B5': '', 'C5': '', 'D5': '1000 - Cash', 'E5': '', 'F5': '1200',
+                'A6': '2024-02-03', 'B6': 'T003', 'C6': 'Equipment purchase', 'D6': '1100 - Equipment', 'E6': '2500', 'F6': '',
+                'A7': '', 'B7': '', 'C7': '', 'D7': '1000 - Cash', 'E7': '', 'F7': '2000',  // ERROR: Should be 2500
+                'A8': '2024-02-14', 'B8': 'T004', 'C8': 'Credit card payment', 'D8': '2000 - Credit Card', 'E8': '800', 'F8': '',
+                'A9': '', 'B9': '', 'C9': '', 'D9': '1000 - Cash', 'E9': '', 'F9': '800'
+            };
+            
+            dataSimulator.setData(testData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(30, 'Loaded TechStart transaction data');
+            }
+            
+            alert('✅ TechStart\'s transaction data loaded! This includes some real mistakes they made - your job is to find them.');
+        }
+        
+        function runErrorCheck() {
+            // Simulate error checking by calculating totals
+            alert('🚨 ERROR DETECTED!\n\nTransaction T003 (Equipment purchase) does not balance:\nDebit: $2,500\nCredit: $2,000\nDifference: $500\n\nThis is exactly the kind of mistake that would make investors nervous!\n\nCan you find and fix this error in the spreadsheet?');
+            
+            // Award points for running check
+            if (window.Gamification) {
+                window.Gamification.awardPoints(20, 'Ran error check on data');
+            }
+        }
+        
+        function showErrorGuide() {
+            alert('Error Fixing Guide:\n\n1. Find the unbalanced transaction\n2. Check if amounts match source documents\n3. Verify account coding is correct\n4. Fix the incorrect amount\n5. Re-run error check to confirm fix\n\nRemember: Every transaction must have debits = credits!');
+        }
+        
+        // Formatting functions
+        function applyProfessionalFormat() {
+            if (!formatSimulator) {
+                alert('Spreadsheet is still loading. Please try again in a moment.');
+                return;
+            }
+            
+            // Create a professionally formatted sample
+            const formatData = {
+                'A1': 'Date', 'B1': 'Ref #', 'C1': 'Description', 'D1': 'Account', 'E1': 'Debit', 'F1': 'Credit',
+                'A2': '2024-01-15', 'B2': 'T001', 'C2': 'Client payment', 'D2': '1000 - Cash', 'E2': '$5,000', 'F2': '',
+                'A3': '', 'B3': '', 'C3': '', 'D3': '4000 - Revenue', 'E3': '', 'F3': '$5,000',
+                'A4': '2024-01-22', 'B4': 'T002', 'C4': 'Office rent', 'D4': '5000 - Rent', 'E4': '$1,200', 'F4': '',
+                'A5': '', 'B5': '', 'C5': '', 'D5': '1000 - Cash', 'E5': '', 'F5': '$1,200'
+            };
+            
+            formatSimulator.setData(formatData);
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(25, 'Applied professional formatting');
+            }
+            
+            alert('✅ Professional formatting applied! Notice the currency formatting, proper alignment, and clean appearance.');
+        }
+        
+        function addCompanyBranding() {
+            if (!formatSimulator) {
+                alert('Please apply professional formatting first.');
+                return;
+            }
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(15, 'Added company branding');
+            }
+            
+            alert('✅ TechStart branding added! Your ledger now includes company headers and professional styling that would impress investors.');
+        }
+        
+        function createPrintVersion() {
+            alert('✅ Print-ready features applied:\n\n• Page breaks optimized\n• Headers repeat on each page\n• Professional margins\n• Footer with page numbers\n• Company logo placement\n\nYour ledger is now ready for investor presentations!');
+            
+            // Award points
+            if (window.Gamification) {
+                window.Gamification.awardPoints(20, 'Prepared print-ready version');
+            }
+        }
+        
+        // Final challenge
+        function runInvestorTest() {
+            const testResults = [
+                '✅ All transactions balance correctly',
+                '✅ Error-checking formulas work properly', 
+                '✅ Professional formatting applied',
+                '✅ Clear account structure',
+                '✅ Audit trail is complete',
+                '💡 Suggestion: Add date formatting for consistency'
+            ];
+            
+            alert('🎯 INVESTOR READINESS TEST RESULTS:\n\n' + testResults.join('\n') + '\n\n🎉 RESULT: INVESTOR-READY!\n\nYour Smart Ledger would impress potential investors. Sarah would be proud!');
+            
+            // Award significant points for completion
+            if (window.Gamification) {
+                window.Gamification.awardPoints(50, 'Completed Excel model building!');
+            }
+        }
+        
+        // Comprehension check functionality
+        function checkAnswers() {
+            const answers = {
+                q1: 'b',
+                q2: 'a', 
+                q3: 'c'
+            };
+            
+            const explanations = {
+                q1: {
+                    correct: "Exactly! Smart ledger = automatic error checking. When debits don't equal credits, you know immediately something is wrong.",
+                    incorrect: "Not quite. A 'Smart Ledger' specifically refers to the error-checking formulas that catch mistakes automatically."
+                },
+                q2: {
+                    correct: "Perfect! Account numbers group similar accounts (1000s = assets, 2000s = liabilities) and make data entry much faster.",
+                    incorrect: "That's not the main reason. Account numbers are about organization and efficiency, not legal requirements."
+                },
+                q3: {
+                    correct: "Absolutely right! Never ignore error messages. Find and fix the mistake before continuing - that's what makes the system trustworthy.",
+                    incorrect: "No! Error messages are there for a reason. Always stop and fix the problem - that's what investors expect."
+                }
+            };
+            
+            let allCorrect = true;
+            
+            Object.keys(answers).forEach(questionId => {
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const feedback = document.getElementById(`feedback-${questionId}`);
+                
+                if (selectedOption) {
+                    const isCorrect = selectedOption.value === answers[questionId];
+                    if (!isCorrect) allCorrect = false;
+                    
+                    feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+                    feedback.textContent = isCorrect ? 
+                        explanations[questionId].correct : 
+                        explanations[questionId].incorrect;
+                } else {
+                    allCorrect = false;
+                    feedback.className = 'feedback show incorrect';
+                    feedback.textContent = 'Please select an answer.';
+                }
+            });
+            
+            // Award points for completion (bonus for perfect score)
+            if (window.Gamification) {
+                const points = allCorrect ? 50 : 25;
+                const reason = allCorrect ? 'Perfect score on Excel model quiz!' : 'Completed Excel model quiz';
+                window.Gamification.awardPoints(points, reason);
+            }
+        }
+    </script>
+    
+    <style>
+        /* Excel Model Specific Styles */
+        .progress-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .progress-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid #e1e5e9;
+            background: white;
+        }
+        
+        .progress-item.completed {
+            border-color: #48bb78;
+            background: #f0fff4;
+        }
+        
+        .progress-item.active {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .progress-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .progress-item.completed .progress-icon {
+            color: #48bb78;
+        }
+        
+        .progress-item.active .progress-icon {
+            color: #667eea;
+        }
+        
+        /* Mission Cards */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .mission-card {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-4px);
+            border-color: #667eea;
+        }
+        
+        .mission-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Interactive Sections */
+        .interactive-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .excel-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .spreadsheet-container {
+            min-height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        .builder-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a6fd8;
+        }
+        
+        .btn-secondary {
+            background: #718096;
+            color: white;
+        }
+        
+        .btn-accent {
+            background: #f093fb;
+            color: white;
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Account Structure */
+        .account-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .account-group {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .account-group h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .account-group ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .account-group li {
+            padding: 0.25rem 0;
+            font-size: 0.85rem;
+            color: #4a5568;
+        }
+        
+        /* Column Explanation */
+        .column-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .column-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .column-card h5 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .column-card p {
+            font-size: 0.85rem;
+            color: #4a5568;
+        }
+        
+        /* Formula Cards */
+        .formula-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .formula-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .formula-card h5 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .formula-card code {
+            background: #f1f5f9;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: block;
+            margin: 0.5rem 0;
+            font-family: 'Courier New', monospace;
+            color: #2d3748;
+        }
+        
+        .formula-card p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin: 0;
+        }
+        
+        /* Data Preview */
+        .transaction-list {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .transaction-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 150px;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e1e5e9;
+            align-items: center;
+        }
+        
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+        
+        .transaction-item.error {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+        }
+        
+        .transaction-item .date {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 0.9rem;
+        }
+        
+        .transaction-item .description {
+            color: #4a5568;
+        }
+        
+        .transaction-item .impact {
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: right;
+        }
+        
+        .transaction-item.error .impact {
+            color: #c53030;
+            font-weight: 600;
+        }
+        
+        /* Formatting Checklist */
+        .formatting-checklist {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin: 0;
+        }
+        
+        .checklist-item label {
+            margin: 0;
+            cursor: pointer;
+        }
+        
+        /* Challenge Container */
+        .challenge-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .challenge-header h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .investor-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .criteria-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .criteria-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .criteria-item h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .challenge-action {
+            margin-top: 2rem;
+        }
+        
+        /* Skills Tracker in Sidebar */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-icon {
+            font-weight: bold;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .skill-item.completed .skill-icon {
+            color: #48bb78;
+        }
+        
+        .skill-item.active .skill-icon {
+            color: #667eea;
+        }
+        
+        .skill-item .skill-icon {
+            color: #a0aec0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mission-grid,
+            .account-preview,
+            .column-grid,
+            .formula-breakdown,
+            .checklist-grid,
+            .investor-criteria {
+                grid-template-columns: 1fr;
+            }
+            
+            .transaction-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .transaction-item .impact {
+                text-align: left;
+            }
+            
+            .builder-controls {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>

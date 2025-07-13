@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 "Math for Business Operations" is an interactive textbook for Grade 12 business mathematics that has evolved from a LaTeX-based project to a modern HTML/CSS/JavaScript platform. The textbook integrates accounting principles, spreadsheet modeling, and entrepreneurship through comprehensive interactive components.
 
-**Current Status**: The project has been fully migrated from LaTeX to HTML with advanced interactive features including spreadsheet simulators, financial calculators, data visualizations, drag-and-drop exercises, business simulations, and a complete gamification system.
+**Current Status**: The project has been fully migrated from LaTeX to HTML with advanced interactive features including spreadsheet simulators, financial calculators, data visualizations, drag-and-drop exercises, business simulations, and a complete gamification system. **Link integrity management system implemented** with automated dead link detection and todo integration.
 
 ## Development Commands
 
@@ -27,6 +27,13 @@ html/                          # Main HTML textbook content
 │   ├── css/                   # Stylesheets
 │   ├── js/                    # Interactive JavaScript components
 │   └── images/                # Images and media
+├── debug/                     # 🧪 COMPONENT TEST SUITE (USE FIRST!)
+│   ├── spreadsheet-test.html  # Spreadsheet simulator testing
+│   ├── calculator-test.html   # Financial calculator testing
+│   ├── visualization-test.html # Chart.js and visualization testing
+│   ├── dragdrop-test.html     # Drag & drop exercise testing
+│   ├── simulations-test.html  # Business simulation testing
+│   └── gamification-test.html # Gamification system testing
 ├── units/                     # Individual unit content
 │   ├── unit01-smart-ledger/   # Unit 1 content
 │   ├── unit02-month-end-wizard/
@@ -38,9 +45,32 @@ html/                          # Main HTML textbook content
 
 ### Testing Interactive Components
 ```bash
-# Open any HTML file in browser to test
-# All components are self-contained and work offline
-# No build process required - direct HTML/CSS/JS
+# Use comprehensive debug test suite for all component testing
+cd html/debug/
+python -m http.server 8000
+
+# Available test pages:
+# - spreadsheet-test.html     (All spreadsheet presets and formulas)
+# - calculator-test.html      (NPV, loan payment, break-even calculators)
+# - visualization-test.html   (Chart.js integration, all chart types)
+# - dragdrop-test.html       (Drag & drop exercises, validation)
+# - simulations-test.html    (Business simulations, game state)
+# - gamification-test.html   (Points, levels, achievements)
+
+# REQUIRED: Test components here BEFORE creating lessons
+```
+
+### Link Integrity Management
+```bash
+# Check for broken links across entire website
+python3 check-links.py --html-root html --format summary
+
+# Generate JSON report for programmatic processing
+python3 check-links.py --html-root html --format json --broken-only
+
+# Use custom commands for ongoing maintenance
+# /check-links - Run dead link analysis
+# /update-link-todos - Convert findings to actionable tasks
 ```
 
 ## Architecture and Structure
@@ -104,23 +134,39 @@ html/                           # Main web application
 │   │   ├── drag-drop-exercises.js    # Interactive exercises
 │   │   ├── business-simulations.js   # Educational games
 │   │   ├── exercises.js       # Exercise system and validation
-│   │   └── financial-data-generator.js  # Realistic test data
-│   └── images/                # Graphics and illustrations
+│   │   ├── financial-data-generator.js  # Realistic test data
+│   │   └── safe-formula-evaluator.js  # Security fixes for formula evaluation
+│   ├── images/
+│   │   ├── favicon.png        # Site favicon (icons8-accounting-50.png)
+│   │   └── cover.png          # Course cover image
+│   └── icons8-accounting-*.png # Additional favicon sizes
 ├── units/
 │   ├── unit01-smart-ledger/   # Complete unit with all 6 sections
-│   ├── unit02-month-end-wizard/
-│   ├── unit03-three-statement-storyboard/
-│   ├── unit04-data-driven-cafe/
-│   ├── unit05-payday-simulator/
-│   ├── unit06-pricelab-challenge/
-│   ├── unit07-asset-inventory-tracker/
-│   └── unit08-integrated-model-sprint/
-├── frontmatter/               # Preface, getting started
-├── backmatter/                # Glossary, references
-└── capstone/                  # Final semester project
+│   ├── unit02-month-end-wizard/     # [MISSING - needs creation]
+│   ├── unit03-three-statement-storyboard/  # [MISSING - needs creation]
+│   ├── unit04-data-driven-cafe/     # [MISSING - needs creation]
+│   ├── unit05-payday-simulator/     # [MISSING - needs creation]
+│   ├── unit06-pricelab-challenge/   # [MISSING - needs creation]
+│   ├── unit07-asset-inventory-tracker/  # [MISSING - needs creation]
+│   └── unit08-integrated-model-sprint/  # [MISSING - needs creation]
+├── frontmatter/
+│   ├── preface.html           # Complete preface introducing course philosophy
+│   └── acknowledgments.html   # [MISSING - needs creation]
+├── backmatter/                # [MISSING - needs creation]
+├── capstone/                  # [MISSING - needs creation]
+└── teacher/                   # Complete teacher materials
+    ├── index.html             # Teacher dashboard
+    ├── course-overview/       # PBL methodology and backward design
+    └── semester1/unit01-smart-ledger/  # Complete Unit 1 teacher resources
 
-INTERACTIVE-COMPONENTS.md      # Comprehensive component documentation
-CLAUDE.md                      # This file - development guidance
+# Development Tools & Documentation
+check-links.py                 # Dead link detection system
+.claude/commands/              # Custom commands for link management
+├── check-links.md            # /check-links command
+└── update-link-todos.md      # /update-link-todos command
+INTERACTIVE-COMPONENTS.md     # Comprehensive component documentation
+CLAUDE.md                     # This file - development guidance
+dev-docs/                     # Unit content planning documents
 ```
 
 ## Content Development Guidelines
@@ -130,6 +176,34 @@ CLAUDE.md                      # This file - development guidance
 - Include appropriate JavaScript files in correct order
 - Use semantic HTML with proper data attributes
 - Follow established naming conventions for consistency
+
+### Component-First Development Workflow
+**CRITICAL: All interactive components must be tested before lesson creation**
+
+#### Pre-Development Testing Requirements
+1. **Test Existing Components First**: Before creating any new interactive activity, check if existing tested components can meet the learning objective
+2. **Use Debug Test Pages**: All components have comprehensive test pages in `html/debug/` that must be used for validation
+3. **Component Selection Priority**:
+   - ✅ **First Choice**: Use existing tested components (spreadsheet, calculator, drag-drop, simulation, gamification)
+   - ⚠️ **Second Choice**: Modify existing component with new presets or configurations
+   - ❌ **Last Resort**: Create entirely new component type (requires full testing suite addition)
+
+#### New Component Type Protocol
+When creating a completely new component type:
+1. **Add to appropriate debug test page** (or create new test page if needed)
+2. **Run comprehensive testing** using the debug interface
+3. **Document in INTERACTIVE-COMPONENTS.md** with usage examples
+4. **Update UNIT-VALIDATION-CHECKLIST.md** with new component requirements
+5. **Only then create lessons** using the thoroughly tested component
+
+#### Quality Gates
+- 🔒 **Gate 1**: Component functionality verified in debug environment
+- 🔒 **Gate 2**: Integration with gamification system confirmed
+- 🔒 **Gate 3**: Mobile responsiveness and accessibility validated
+- 🔒 **Gate 4**: Performance metrics meet standards (<3s load, <500ms interaction)
+- ✅ **Gate 5**: Ready for lesson integration
+
+**Remember: Component testing is not optional. The debug test suite exists to prevent bugs in student-facing content.**
 
 ### Unit Development Pattern
 1. **Start with concepts.html** - Establish theoretical foundation
@@ -151,3 +225,57 @@ CLAUDE.md                      # This file - development guidance
 - Replace static Excel tables with interactive spreadsheet simulators
 - Convert mathematical examples to interactive calculators
 - Transform exercises into drag-and-drop or simulation activities
+
+## Link Integrity & Quality Assurance
+
+### Dead Link Detection System
+A comprehensive system for maintaining link integrity across the website:
+
+**Tools:**
+- `check-links.py` - Python script that scans all HTML files for broken internal links
+- Custom commands: `/check-links` and `/update-link-todos` for ongoing maintenance
+- Automated todo integration for systematic link fixing
+
+**Usage Pattern:**
+1. Run `python3 check-links.py --html-root html --format summary` before major commits
+2. Use `/update-link-todos` to convert broken link findings into actionable TodoWrite tasks
+3. Prioritize fixes: Navigation links (high) → Content links (medium) → Resources (low)
+
+**Current Status (as of last session):**
+- **326 total links** across 14 HTML files
+- **120 broken internal links** (60.9% success rate)
+- **Recently fixed**: favicon.png, frontmatter/preface.html (6 links fixed)
+
+### Priority Missing Content
+Based on link analysis, these files are most critical to create:
+
+**High Priority (Navigation):**
+- Unit index files: `units/unit0[2-8]-*/index.html` (7 files)
+- `frontmatter/acknowledgments.html`
+- `capstone/index.html`
+- `backmatter/glossary.html`
+- `search.html`
+
+**Medium Priority (Content):**
+- Unit 1 completion: `exercises.html`, `summary.html`
+- Teacher overview files: `pbl-methodology.html`, `semester-overview.html`, `assessment-philosophy.html`
+
+## Author & Course Context
+
+**Author**: Daniel Bodanske
+- 25 years teaching experience
+- Founded 3 companies including Reading Advantage (AI-focused ed tech)
+- Reading Advantage: Extensive reading apps for secondary students in Asia
+- Current projects: Primary Advantage, Tutor Advantage, future STEM apps
+- Course motivation: Dissatisfaction with existing Business Math textbooks after 3 years teaching
+
+**Course Philosophy**: Project-Based Learning with authentic assessment
+- Semester 1: 8 foundational units building business analysis skills
+- Semester 2: Independent capstone project with investor presentation
+- Sarah narrative: TechStart Solutions journey connecting all units
+- Real business professional evaluation of student work
+
+**Backward Design Methodology**: All units follow Understanding by Design
+- Stage 1: Identify desired results (essential questions, enduring understandings)
+- Stage 2: Determine acceptable evidence (authentic performance tasks)
+- Stage 3: Plan learning experiences (knowledge building → skill development → application)

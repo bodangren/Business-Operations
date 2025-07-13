@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Simulation Test</title>
+</head>
+<body>
+    <h1>Testing Business Simulations</h1>
+    <div id="test-container"></div>
+    
+    <script src="html/assets/js/business-simulations.js"></script>
+    <script>
+        // Wait for DOM to be ready
+        setTimeout(() => {
+            console.log('Testing BusinessSimulations...');
+            console.log('BusinessSimulations:', window.BusinessSimulations);
+            console.log('simulationInstances:', window.simulationInstances);
+            console.log('gameState:', window.gameState);
+            
+            // Test creating a simulation
+            if (window.BusinessSimulations && window.BusinessSimulations.createBusinessSimulation) {
+                const container = document.getElementById('test-container');
+                try {
+                    window.BusinessSimulations.createBusinessSimulation(container, 'lemonade-stand', 'test-sim');
+                    console.log('✓ Lemonade stand simulation created successfully');
+                } catch (error) {
+                    console.error('✗ Error creating lemonade stand:', error);
+                }
+                
+                try {
+                    window.BusinessSimulations.createBusinessSimulation(container, 'inventory-manager', 'test-inv');
+                    console.log('✓ Inventory manager simulation created successfully');
+                } catch (error) {
+                    console.error('✗ Error creating inventory manager:', error);
+                }
+            } else {
+                console.error('✗ BusinessSimulations not available');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

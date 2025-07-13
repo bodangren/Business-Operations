@@ -37,12 +37,16 @@ function createDragDropExercise(container, type, id) {
     const exercises = {
         'categorize-accounts': createAccountCategorizationExercise,
         'journal-entry-builder': createJournalEntryBuilderExercise,
-        'trial-balance-sort': createTrialBalanceSortExercise,
-        'cash-flow-sequence': createCashFlowSequenceExercise,
-        'financial-statement-builder': createFinancialStatementBuilderExercise
+        'trial-balance-sort': createTrialBalanceSortExercise
     };
     
-    const createFunction = exercises[type] || exercises['categorize-accounts'];
+    const createFunction = exercises[type];
+    if (!createFunction) {
+        console.warn(`Exercise type '${type}' not implemented, falling back to 'categorize-accounts'`);
+        exercises['categorize-accounts'](container, id);
+        return;
+    }
+    
     createFunction(container, id);
     
     dragDropInstances[id] = {

@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../assets/css/textbook.css">
     <link rel="stylesheet" href="../../assets/css/callouts.css">
-    <link rel="stylesheet" href="../../assets/css/excel.css">
-    <link rel="stylesheet" href="../../assets/css/typography.css">
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
@@ -34,7 +32,7 @@
                     
                     <ul class="nav-menu">
                         <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../../frontmatter/preface.html">Preface</a></li>
+                        <li><a href="../../frontmatter/preface.html">Getting Started</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle">Units</a>
                             <ul class="dropdown-menu">
@@ -49,16 +47,8 @@
                             </ul>
                         </li>
                         <li><a href="../../capstone/index.html">Capstone</a></li>
-                        <li><a href="../../backmatter/glossary.html">Glossary</a></li>
-                        <li><a href="../../search.html">Search</a></li>
                     </ul>
                 </nav>
-                
-                <!-- Search bar -->
-                <div class="search-container">
-                    <input type="search" id="quick-search" placeholder="Search textbook..." aria-label="Search textbook">
-                    <button type="button" id="search-btn" aria-label="Search">🔍</button>
-                </div>
             </div>
         </div>
     </header>
@@ -86,377 +76,481 @@
                             <span class="section-number">Section 2</span>
                             <span class="estimated-time">⏱️ 60 minutes</span>
                         </div>
-                        <h1>Core Concepts</h1>
+                        <h1>Building Sarah's Foundation</h1>
                         <p class="lead">
-                            Before building your Smart Ledger, you need to understand the theoretical foundations 
-                            and vocabulary that underpin every step. Think of this as the story behind the spreadsheet.
+                            Now that you understand Sarah's challenge, let's learn the accounting principles 
+                            that will transform TechStart's chaotic finances into an investor-ready system.
                         </p>
                     </header>
                     
-                    <!-- Purpose and Scope -->
-                    <section id="purpose-scope">
-                        <h2>Purpose and Scope of a Self-Auditing Ledger</h2>
+                    <!-- Quick Recap -->
+                    <section id="recap">
+                        <h2>🔄 Where We Left Off</h2>
                         
-                        <p>
-                            Startups often operate at high speed with limited oversight. This can lead to accounting 
-                            that's inconsistent, incomplete, or just plain confusing. But to attract investors or 
-                            secure loans, entrepreneurs must prove their financial records are trustworthy.
-                        </p>
-                        
-                        <p>
-                            A <span class="key-term">self-auditing ledger</span> is a financial model that checks itself. 
-                            When set up correctly, it can detect missing entries, flag unbalanced transactions, and 
-                            verify that all accounts align with the <span class="key-term">accounting equation</span>. 
-                            It's like a spell-checker for your books.
-                        </p>
-                        
-                        <div class="callout trivia">
-                            <h3>Did You Know?</h3>
-                            <p>
-                                In a 2020 survey, 21% of startups admitted they had no formal bookkeeping system 
-                                in their first year of operation.
-                            </p>
-                        </div>
-                        
-                        <div class="callout example">
-                            <h3>Real-World Example</h3>
-                            <p>
-                                Imagine you run a weekend juice stand. On Saturday, a friend pays you $200 to cater 
-                                a birthday picnic. You forget to record it. On Sunday, your cash total looks too low—and 
-                                you don't realize you've left out a key piece of income. A self-auditing ledger would 
-                                help catch this error before it affects your monthly report.
-                            </p>
+                        <div class="recap-container">
+                            <div class="recap-image">
+                                <img src="../../assets/images/messy-vs-organized-desk.jpg" 
+                                     alt="Split image showing a chaotic desk covered with scattered receipts, multiple credit cards, and disorganized papers on the left, contrasted with a clean, organized desk featuring a laptop displaying an organized spreadsheet, neat file folders, and a coffee cup on the right."
+                                     class="comparison-image">
+                            </div>
+                            
+                            <div class="recap-text">
+                                <h3>Sarah's Problem: Financial Chaos</h3>
+                                <ul>
+                                    <li>Shoebox full of receipts</li>
+                                    <li>Multiple credit cards with mixed expenses</li>
+                                    <li>"Money_Stuff.xlsx" with random entries</li>
+                                    <li>No way to track profitability or prepare for investors</li>
+                                </ul>
+                                
+                                <div class="callout important">
+                                    <h4>Your Mission</h4>
+                                    <p>Transform this chaos into a professional system that convinces investors TechStart is ready for funding.</p>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     
-                    <!-- The Accounting Equation -->
+                    <!-- The Accounting Equation Foundation -->
                     <section id="accounting-equation">
-                        <h2>The Accounting Equation</h2>
-                        
-                        <p>The fundamental rule of accounting is:</p>
-                        
-                        <div class="equation">
-                            <strong>Assets = Liabilities + Equity</strong>
-                        </div>
-                        
-                        <p>
-                            This equation ensures that what your business owns is always matched by who has 
-                            a claim on those assets.
-                        </p>
+                        <h2>⚖️ The Foundation: The Accounting Equation</h2>
                         
                         <div class="callout definition">
-                            <h3>Key Definitions</h3>
-                            <dl>
-                                <dt class="definition-term">Assets</dt>
-                                <dd>Things your business owns (e.g., cash, inventory, equipment)</dd>
-                                
-                                <dt class="definition-term">Liabilities</dt>
-                                <dd>What you owe others (e.g., loans, unpaid bills)</dd>
-                                
-                                <dt class="definition-term">Equity</dt>
-                                <dd>What's left for the owner(s) after debts are paid</dd>
-                            </dl>
-                        </div>
-                        
-                        <div class="callout example">
-                            <h3>Applying the Equation</h3>
+                            <h3>The Most Important Business Formula</h3>
                             <p>
-                                If your startup buys a laptop for $1,000 using a $400 deposit and a $600 loan, 
-                                the equation becomes:
-                            </p>
-                            <div class="formula">
-                                <strong>Assets (Laptop) = Liabilities (Loan) + Equity (Cash Paid)</strong><br>
-                                <strong>$1,000 = $600 + $400</strong>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Debits and Credits -->
-                    <section id="debits-credits">
-                        <h2>Debits and Credits Mechanics</h2>
-                        
-                        <p>
-                            <span class="key-term">Debits</span> and <span class="key-term">credits</span> aren't "good" 
-                            or "bad"—they're just directions: left or right. Every transaction has two sides:
-                        </p>
-                        
-                        <ul>
-                            <li><strong>Debits</strong> increase asset and expense accounts, and decrease liabilities and equity</li>
-                            <li><strong>Credits</strong> increase liability and equity accounts, and decrease assets</li>
-                        </ul>
-                        
-                        <div class="callout tip">
-                            <h3>Memory Aid</h3>
-                            <p>
-                                To remember this, think: <strong>DEAL</strong> accounts increase with debits 
-                                (<strong>D</strong>ividends, <strong>E</strong>xpenses, <strong>A</strong>ssets, <strong>L</strong>osses) 
-                                and <strong>CLIP</strong> accounts increase with credits 
-                                (<strong>C</strong>apital, <strong>L</strong>iabilities, <strong>I</strong>ncome, <strong>P</strong>rofit).
+                                The accounting equation is the mathematical foundation of every business in the world. 
+                                It's simple, but it explains how money flows and helps catch errors automatically.
                             </p>
                         </div>
                         
-                        <div class="callout example">
-                            <h3>Debit and Credit Example</h3>
-                            <p>Your business pays $75 cash for office supplies:</p>
-                            
-                            <div class="excel-container">
-                                <div class="excel-toolbar">Journal Entry Example</div>
-                                <div class="excel-grid">
-                                    <table class="excel-table">
-                                        <tr>
-                                            <td class="corner-cell"></td>
-                                            <td class="col-header">A</td>
-                                            <td class="col-header">B</td>
-                                            <td class="col-header">C</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">1</td>
-                                            <td class="cell text">Account</td>
-                                            <td class="cell text">Debit</td>
-                                            <td class="cell text">Credit</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">2</td>
-                                            <td class="cell text">Supplies Expense</td>
-                                            <td class="cell currency cf-green">$75.00</td>
-                                            <td class="cell text">—</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">3</td>
-                                            <td class="cell text">Cash</td>
-                                            <td class="cell text">—</td>
-                                            <td class="cell currency cf-red">$75.00</td>
-                                        </tr>
-                                    </table>
+                        <!-- Interactive Equation Display -->
+                        <div class="equation-container">
+                            <div class="equation-display" id="main-equation">
+                                <div class="equation-part assets">
+                                    <div class="equation-label">ASSETS</div>
+                                    <div class="equation-value">$75,000</div>
+                                    <div class="equation-description">What TechStart Owns</div>
+                                </div>
+                                
+                                <div class="equation-operator">=</div>
+                                
+                                <div class="equation-part liabilities">
+                                    <div class="equation-label">LIABILITIES</div>
+                                    <div class="equation-value">$25,000</div>
+                                    <div class="equation-description">What TechStart Owes</div>
+                                </div>
+                                
+                                <div class="equation-operator">+</div>
+                                
+                                <div class="equation-part equity">
+                                    <div class="equation-label">EQUITY</div>
+                                    <div class="equation-value">$50,000</div>
+                                    <div class="equation-description">Owners' Investment</div>
                                 </div>
                             </div>
                             
-                            <p>Even though your cash decreased, your books stay balanced.</p>
+                            <div class="equation-explanation">
+                                <p><strong>In simple terms:</strong> Everything TechStart owns equals what they owe to others plus what the owners put in.</p>
+                            </div>
                         </div>
-                    </section>
-                    
-                    <!-- Journal Entry Structure -->
-                    <section id="journal-entries">
-                        <h2>Journal Entry Structure</h2>
                         
-                        <p>A <span class="key-term">journal entry</span> is the way accountants capture business activity. Each entry has:</p>
-                        
-                        <ul>
-                            <li>The <strong>date</strong> of the transaction</li>
-                            <li>The <strong>accounts</strong> affected (e.g., "Cash", "Revenue")</li>
-                            <li>The <strong>amounts</strong> recorded as debits and credits</li>
-                            <li>A short <strong>description</strong></li>
-                        </ul>
-                        
-                        <div class="callout example">
-                            <h3>Complete Journal Entry</h3>
-                            <div class="excel-container">
-                                <div class="excel-toolbar">Journal Entry Template</div>
-                                <div class="excel-grid">
-                                    <table class="excel-table">
-                                        <tr>
-                                            <td class="corner-cell"></td>
-                                            <td class="col-header">A</td>
-                                            <td class="col-header">B</td>
-                                            <td class="col-header">C</td>
-                                            <td class="col-header">D</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">1</td>
-                                            <td class="cell text">Date</td>
-                                            <td class="cell text">Account</td>
-                                            <td class="cell text">Debit</td>
-                                            <td class="cell text">Credit</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">2</td>
-                                            <td class="cell date">March 5</td>
-                                            <td class="cell text">Cash</td>
-                                            <td class="cell currency cf-green">$300.00</td>
-                                            <td class="cell text">—</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">3</td>
-                                            <td class="cell text"></td>
-                                            <td class="cell text">Service Revenue</td>
-                                            <td class="cell text">—</td>
-                                            <td class="cell currency cf-green">$300.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-header">4</td>
-                                            <td class="cell text" colspan="4"><em>Description: Received payment for tutoring session</em></td>
-                                        </tr>
-                                    </table>
+                        <!-- Real-World Examples -->
+                        <div class="examples-grid">
+                            <div class="example-card">
+                                <h4>🏠 Like Buying a House</h4>
+                                <div class="house-example">
+                                    <div class="example-line">
+                                        <span class="label">House Value (Asset):</span>
+                                        <span class="value">$300,000</span>
+                                    </div>
+                                    <div class="example-line">
+                                        <span class="label">Mortgage Owed (Liability):</span>
+                                        <span class="value">$250,000</span>
+                                    </div>
+                                    <div class="example-line">
+                                        <span class="label">Your Down Payment (Equity):</span>
+                                        <span class="value">$50,000</span>
+                                    </div>
+                                    <div class="example-equation">$300,000 = $250,000 + $50,000 ✓</div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-card">
+                                <h4>🚗 Like Buying a Car</h4>
+                                <div class="car-example">
+                                    <div class="example-line">
+                                        <span class="label">Car Value (Asset):</span>
+                                        <span class="value">$25,000</span>
+                                    </div>
+                                    <div class="example-line">
+                                        <span class="label">Car Loan (Liability):</span>
+                                        <span class="value">$15,000</span>
+                                    </div>
+                                    <div class="example-line">
+                                        <span class="label">Cash You Paid (Equity):</span>
+                                        <span class="value">$10,000</span>
+                                    </div>
+                                    <div class="example-equation">$25,000 = $15,000 + $10,000 ✓</div>
                                 </div>
                             </div>
                         </div>
                         
-                        <p>
-                            Every journal entry must keep the accounting equation in balance. This is the core idea 
-                            that makes self-auditing possible.
-                        </p>
+                        <!-- Interactive Equation Explorer -->
+                        <div class="equation-explorer">
+                            <h3>🎮 Try It Yourself: Sarah's TechStart Equation</h3>
+                            <p>Adjust the values and see how the equation must always balance:</p>
+                            
+                            <div class="explorer-controls">
+                                <div class="control-group">
+                                    <label for="assets-slider">Assets (What TechStart Owns):</label>
+                                    <input type="range" id="assets-slider" min="50000" max="150000" value="75000" step="5000">
+                                    <span class="slider-value" id="assets-display">$75,000</span>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label for="liabilities-slider">Liabilities (What TechStart Owes):</label>
+                                    <input type="range" id="liabilities-slider" min="10000" max="50000" value="25000" step="2500">
+                                    <span class="slider-value" id="liabilities-display">$25,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="explorer-equation">
+                                <span id="assets-equation">$75,000</span> = 
+                                <span id="liabilities-equation">$25,000</span> + 
+                                <span id="equity-equation">$50,000</span>
+                                <span class="balance-indicator" id="balance-status">✓ Balanced</span>
+                            </div>
+                            
+                            <div class="explorer-explanation">
+                                <p id="balance-explanation">
+                                    The equation always balances! When assets or liabilities change, equity automatically adjusts.
+                                </p>
+                            </div>
+                        </div>
                     </section>
                     
-                    <!-- Trial Balance -->
-                    <section id="trial-balance">
-                        <h2>Trial Balance as a Control Check</h2>
-                        
-                        <p>
-                            A <span class="key-term">trial balance</span> totals all the debits and credits in your 
-                            ledger to verify that everything still balances. If the result is anything other than zero, 
-                            something is wrong.
-                        </p>
-                        
-                        <div class="callout definition">
-                            <h3>Trial Balance</h3>
-                            <p>
-                                A report that adds up all debits and subtracts all credits. If the total is zero, 
-                                the books are balanced.
-                            </p>
-                        </div>
-                        
-                        <div class="callout warning">
-                            <h3>Important Limitation</h3>
-                            <p>
-                                Even if your trial balance equals zero, some errors (like posting to the wrong account) 
-                                can still slip through. This is a balance check—not an accuracy guarantee.
-                            </p>
-                        </div>
-                    </section>
-                    
-                    <!-- Data Structuring -->
-                    <section id="data-structuring">
-                        <h2>Data Structuring Concepts</h2>
-                        
-                        <p>
-                            Messy data leads to messy thinking. When you import transactions from a CSV file, 
-                            the first thing you should do is convert them into an <strong>Excel Table</strong>. 
-                            Tables make everything easier:
-                        </p>
-                        
-                        <ul>
-                            <li>They auto-expand when you add new rows</li>
-                            <li>They let you refer to columns by name (e.g., <code>Table1[Debit]</code>)</li>
-                            <li>They support filters, formatting, and cleaner formulas</li>
-                        </ul>
+                    <!-- Account Categories -->
+                    <section id="account-categories">
+                        <h2>📂 Organizing TechStart's Accounts</h2>
                         
                         <div class="callout tip">
-                            <h3>Quick Table Creation</h3>
-                            <p>Use <kbd>Ctrl+T</kbd> to quickly convert a range to a table.</p>
+                            <h3>Why Organization Matters</h3>
+                            <p>
+                                Investors want to see that Sarah understands exactly what her company owns, 
+                                owes, and earns. Proper account organization shows professional financial management.
+                            </p>
+                        </div>
+                        
+                        <!-- Account Categories Grid -->
+                        <div class="categories-grid">
+                            <div class="category-card assets-card">
+                                <div class="category-header">
+                                    <div class="category-icon">💰</div>
+                                    <h3>ASSETS</h3>
+                                    <p class="category-subtitle">What TechStart Owns</p>
+                                </div>
+                                
+                                <div class="account-examples">
+                                    <div class="account-item">
+                                        <strong>Cash:</strong> Bank accounts, petty cash
+                                    </div>
+                                    <div class="account-item">
+                                        <strong>Equipment:</strong> Laptops, office furniture
+                                    </div>
+                                    <div class="account-item">
+                                        <strong>Accounts Receivable:</strong> Money clients owe TechStart
+                                    </div>
+                                </div>
+                                
+                                <div class="category-rule">
+                                    <strong>Rule:</strong> Assets increase with debits, decrease with credits
+                                </div>
+                            </div>
+                            
+                            <div class="category-card liabilities-card">
+                                <div class="category-header">
+                                    <div class="category-icon">💳</div>
+                                    <h3>LIABILITIES</h3>
+                                    <p class="category-subtitle">What TechStart Owes</p>
+                                </div>
+                                
+                                <div class="account-examples">
+                                    <div class="account-item">
+                                        <strong>Credit Cards:</strong> Business credit card balances
+                                    </div>
+                                    <div class="account-item">
+                                        <strong>Accounts Payable:</strong> Bills TechStart needs to pay
+                                    </div>
+                                    <div class="account-item">
+                                        <strong>Loans:</strong> Money borrowed from banks
+                                    </div>
+                                </div>
+                                
+                                <div class="category-rule">
+                                    <strong>Rule:</strong> Liabilities increase with credits, decrease with debits
+                                </div>
+                            </div>
+                            
+                            <div class="category-card equity-card">
+                                <div class="category-header">
+                                    <div class="category-icon">👥</div>
+                                    <h3>EQUITY</h3>
+                                    <p class="category-subtitle">Owners' Investment</p>
+                                </div>
+                                
+                                <div class="account-examples">
+                                    <div class="account-item">
+                                        <strong>Capital:</strong> Money Sarah & partners invested
+                                    </div>
+                                    <div class="account-item">
+                                        <strong>Retained Earnings:</strong> Profits kept in the business
+                                    </div>
+                                    <div class="account-item">
+                                        <strong>Revenue:</strong> Money earned from clients
+                                    </div>
+                                </div>
+                                
+                                <div class="category-rule">
+                                    <strong>Rule:</strong> Equity increases with credits, decrease with debits
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Memory Aid -->
+                        <div class="memory-aid">
+                            <h3>🧠 Easy Way to Remember</h3>
+                            <div class="memory-visual">
+                                <img src="../../assets/images/accounting-equation-scale.jpg" 
+                                     alt="A balanced scale with 'Assets' on the left side and 'Liabilities + Equity' on the right side, with small business icons (laptop, money, credit cards) on each side to represent the balance of the accounting equation."
+                                     class="scale-image">
+                                
+                                <div class="memory-text">
+                                    <p><strong>Think of a balance scale:</strong></p>
+                                    <ul>
+                                        <li>Assets (what you own) go on the left</li>
+                                        <li>Liabilities + Equity (how you got those assets) go on the right</li>
+                                        <li>The scale must always balance!</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     
-                    <!-- SUMIF Concept -->
-                    <section id="sumif-concept">
-                        <h2>Aggregation Logic (SUMIF Concept)</h2>
-                        
-                        <p>
-                            To build account totals (like "Cash on hand"), we use a function called <code>SUMIF</code>. 
-                            It adds up only the rows that match a condition—like "only the rows where the Account is 'Cash'."
-                        </p>
-                        
-                        <div class="formula-bar">
-                            =SUMIF(Table1[Account], "Cash", Table1[Debit])
-                        </div>
-                        
-                        <p>This formula adds all debit amounts from rows where the account is Cash.</p>
-                        
-                        <div class="callout definition">
-                            <h3>SUMIF Function</h3>
-                            <p>
-                                A function that sums values based on a matching condition. When used for every major 
-                                account, SUMIF formulas replicate the effect of T-accounts and give you a snapshot 
-                                of each balance.
-                            </p>
-                        </div>
-                    </section>
-                    
-                    <!-- Conditional Formatting -->
-                    <section id="error-flags">
-                        <h2>Error-Flag Concept (Conditional Formatting)</h2>
-                        
-                        <p>
-                            Humans make mistakes—but software can help catch them. <span class="key-term">Conditional formatting</span> 
-                            adds visual rules to your spreadsheet. These rules automatically highlight cells or rows when 
-                            something looks off:
-                        </p>
-                        
-                        <ul>
-                            <li>Flag entries where debit does not equal credit</li>
-                            <li>Highlight missing descriptions or dates</li>
-                            <li>Shade negative balances that shouldn't be negative (e.g., Cash)</li>
-                        </ul>
-                        
-                        <div class="callout tip">
-                            <h3>Smart Conditional Formatting</h3>
-                            <p>
-                                Use formulas in conditional formatting to make smart rules. For example, 
-                                <code>=[Debit]&lt;&gt;[Credit]</code> highlights entries that don't balance.
-                            </p>
-                        </div>
-                    </section>
-                    
-                    <!-- Integrated Workflow -->
-                    <section id="workflow">
-                        <h2>Integrated Workflow Overview</h2>
-                        
-                        <p>At this point, you've seen all the pieces. Here's how they fit together:</p>
-                        
-                        <ol>
-                            <li class="step-number">1</li><strong>Import your data.</strong> Bring in the CSV file and format it as an Excel Table.
-                            <li class="step-number">2</li><strong>Post journal entries.</strong> Add debit and credit lines with full descriptions.
-                            <li class="step-number">3</li><strong>Use SUMIF formulas.</strong> Summarize totals by account.
-                            <li class="step-number">4</li><strong>Apply error flags.</strong> Use conditional formatting to check for mistakes.
-                            <li class="step-number">5</li><strong>Run the trial balance.</strong> Confirm that debits = credits. If not, debug.
-                        </ol>
-                        
-                        <div class="callout tip">
-                            <h3>Final Check</h3>
-                            <p>
-                                Think of your trial balance as your project's final boss. If you pass it, 
-                                you're ready to pitch.
-                            </p>
-                        </div>
+                    <!-- Double-Entry Bookkeeping -->
+                    <section id="double-entry">
+                        <h2>🔄 Double-Entry: The Error-Catching System</h2>
                         
                         <div class="callout important">
-                            <h3>Critical Success Factor</h3>
+                            <h3>Why Sarah Needs This</h3>
                             <p>
-                                In a self-auditing ledger, each concept supports the next. Don't skip the structure: 
-                                clean data and logical flow are your best defense against error.
+                                Remember Sarah's $2,000 missed payment? Double-entry bookkeeping would have caught 
+                                that error immediately. Every transaction affects at least two accounts, and debits 
+                                must equal credits. If they don't balance, you know something's wrong.
                             </p>
+                        </div>
+                        
+                        <!-- Transaction Example -->
+                        <div class="transaction-example">
+                            <h3>📝 Example: TechStart Buys a Laptop</h3>
+                            
+                            <div class="transaction-story">
+                                <p>
+                                    Sarah needs a new laptop for her team. She pays $1,500 cash. 
+                                    Here's how double-entry bookkeeping records this transaction:
+                                </p>
+                            </div>
+                            
+                            <div class="journal-entry">
+                                <div class="entry-header">
+                                    <h4>Journal Entry #1</h4>
+                                    <span class="entry-date">March 15, 2024</span>
+                                </div>
+                                
+                                <div class="entry-description">
+                                    <strong>Description:</strong> Purchased laptop for office use
+                                </div>
+                                
+                                <div class="entry-table">
+                                    <div class="entry-row header">
+                                        <div class="account-col">Account</div>
+                                        <div class="debit-col">Debit</div>
+                                        <div class="credit-col">Credit</div>
+                                    </div>
+                                    <div class="entry-row debit-row">
+                                        <div class="account-col">Equipment</div>
+                                        <div class="debit-col">$1,500</div>
+                                        <div class="credit-col">—</div>
+                                    </div>
+                                    <div class="entry-row credit-row">
+                                        <div class="account-col">Cash</div>
+                                        <div class="debit-col">—</div>
+                                        <div class="credit-col">$1,500</div>
+                                    </div>
+                                    <div class="entry-row total-row">
+                                        <div class="account-col"><strong>Totals</strong></div>
+                                        <div class="debit-col"><strong>$1,500</strong></div>
+                                        <div class="credit-col"><strong>$1,500</strong></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="balance-check">
+                                    <span class="check-result">✓ Debits = Credits → Entry Balances!</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Impact Explanation -->
+                            <div class="impact-explanation">
+                                <h4>What Happened:</h4>
+                                <div class="impact-grid">
+                                    <div class="impact-item increase">
+                                        <div class="impact-icon">⬆️</div>
+                                        <div class="impact-text">
+                                            <strong>Equipment Increased</strong><br>
+                                            TechStart now owns a $1,500 laptop
+                                        </div>
+                                    </div>
+                                    <div class="impact-item decrease">
+                                        <div class="impact-icon">⬇️</div>
+                                        <div class="impact-text">
+                                            <strong>Cash Decreased</strong><br>
+                                            TechStart has $1,500 less cash
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="equation-check">
+                                    <p><strong>Accounting Equation Check:</strong></p>
+                                    <p>Assets stayed the same ($1,500 equipment replaces $1,500 cash)</p>
+                                    <p>Liabilities and Equity unchanged</p>
+                                    <p class="equation-result">Assets = Liabilities + Equity ✓ Still balanced!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Interactive Transaction Builder -->
+                        <div class="transaction-builder">
+                            <h3>🎮 Try Building a Transaction</h3>
+                            <p>Help Sarah record this transaction: TechStart received $5,000 from a client.</p>
+                            
+                            <div class="builder-interface">
+                                <div class="transaction-description">
+                                    <strong>Transaction:</strong> Client paid $5,000 for completed project
+                                </div>
+                                
+                                <div class="builder-entry">
+                                    <div class="entry-row">
+                                        <select id="account1" class="account-select">
+                                            <option value="">Choose Account</option>
+                                            <option value="cash">Cash</option>
+                                            <option value="revenue">Service Revenue</option>
+                                            <option value="equipment">Equipment</option>
+                                        </select>
+                                        <input type="number" id="debit1" placeholder="Debit Amount" class="amount-input">
+                                        <input type="number" id="credit1" placeholder="Credit Amount" class="amount-input">
+                                    </div>
+                                    
+                                    <div class="entry-row">
+                                        <select id="account2" class="account-select">
+                                            <option value="">Choose Account</option>
+                                            <option value="cash">Cash</option>
+                                            <option value="revenue">Service Revenue</option>
+                                            <option value="equipment">Equipment</option>
+                                        </select>
+                                        <input type="number" id="debit2" placeholder="Debit Amount" class="amount-input">
+                                        <input type="number" id="credit2" placeholder="Credit Amount" class="amount-input">
+                                    </div>
+                                </div>
+                                
+                                <div class="builder-feedback" id="transaction-feedback">
+                                    <p>Select accounts and enter amounts to check your transaction.</p>
+                                </div>
+                                
+                                <button onclick="checkTransaction()" class="btn btn-primary">Check My Transaction</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Key Takeaways -->
+                    <section id="key-takeaways">
+                        <h2>🎯 What You've Learned</h2>
+                        
+                        <div class="takeaways-grid">
+                            <div class="takeaway-card">
+                                <div class="takeaway-icon">⚖️</div>
+                                <h3>Accounting Equation</h3>
+                                <p>Assets = Liabilities + Equity</p>
+                                <ul>
+                                    <li>Foundation of all business accounting</li>
+                                    <li>Must always balance</li>
+                                    <li>Shows how Sarah financed her assets</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="takeaway-card">
+                                <div class="takeaway-icon">🔄</div>
+                                <h3>Double-Entry System</h3>
+                                <p>Every transaction affects at least 2 accounts</p>
+                                <ul>
+                                    <li>Debits must equal credits</li>
+                                    <li>Catches errors automatically</li>
+                                    <li>Provides mathematical proof of accuracy</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="takeaway-card">
+                                <div class="takeaway-icon">📂</div>
+                                <h3>Account Organization</h3>
+                                <p>Professional categorization of business accounts</p>
+                                <ul>
+                                    <li>Assets, Liabilities, Equity categories</li>
+                                    <li>Clear debit/credit rules</li>
+                                    <li>Shows investor-ready organization</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="takeaway-card">
+                                <div class="takeaway-icon">🛡️</div>
+                                <h3>Error Prevention</h3>
+                                <p>Built-in checks catch mistakes immediately</p>
+                                <ul>
+                                    <li>Balance verification</li>
+                                    <li>Mathematical proof</li>
+                                    <li>Professional reliability</li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
                     
                     <!-- Comprehension Check -->
                     <div class="comprehension-check">
-                        <h3>Check Your Understanding</h3>
-                        <p>Test your grasp of these fundamental concepts before moving to the hands-on Excel building.</p>
+                        <h3>🧠 Check Your Understanding</h3>
+                        <p>Before we build Sarah's Smart Ledger, let's make sure you understand these key concepts:</p>
                         
                         <div class="question">
-                            <h4>Question 1: What does the accounting equation ensure?</h4>
+                            <h4>Question 1: If TechStart has $50,000 in assets and $20,000 in liabilities, what is their equity?</h4>
                             <ul class="question-options">
                                 <li>
                                     <label>
                                         <input type="radio" name="q1" value="a">
-                                        That profits are always positive
+                                        $70,000
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q1" value="b">
-                                        That what the business owns matches claims against those assets
+                                        $30,000
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q1" value="c">
-                                        That expenses never exceed revenues
+                                        $20,000
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q1" value="d">
-                                        That cash flow is always positive
+                                        Cannot be determined
                                     </label>
                                 </li>
                             </ul>
@@ -464,30 +558,30 @@
                         </div>
                         
                         <div class="question">
-                            <h4>Question 2: In the DEAL/CLIP memory aid, which accounts increase with debits?</h4>
+                            <h4>Question 2: TechStart pays $2,000 cash for office supplies. Which accounts are affected?</h4>
                             <ul class="question-options">
                                 <li>
                                     <label>
                                         <input type="radio" name="q2" value="a">
-                                        Capital, Liabilities, Income, Profit
+                                        Debit Office Supplies $2,000, Credit Cash $2,000
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q2" value="b">
-                                        Dividends, Expenses, Assets, Losses
+                                        Debit Cash $2,000, Credit Office Supplies $2,000
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q2" value="c">
-                                        Only Assets and Liabilities
+                                        Credit Office Supplies $2,000, Credit Cash $2,000
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q2" value="d">
-                                        Revenue and Equity accounts
+                                        Only Cash is affected
                                     </label>
                                 </li>
                             </ul>
@@ -495,37 +589,37 @@
                         </div>
                         
                         <div class="question">
-                            <h4>Question 3: What is the primary purpose of a trial balance?</h4>
+                            <h4>Question 3: Why would double-entry bookkeeping have prevented Sarah's $2,000 missed payment?</h4>
                             <ul class="question-options">
                                 <li>
                                     <label>
                                         <input type="radio" name="q3" value="a">
-                                        To calculate net income
+                                        It automatically pays bills
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q3" value="b">
-                                        To verify that total debits equal total credits
+                                        It would have recorded the obligation when incurred
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q3" value="c">
-                                        To create financial statements
+                                        It connects to the contractor's bank account
                                     </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="radio" name="q3" value="d">
-                                        To track individual transactions
+                                        It sends automatic reminders
                                     </label>
                                 </li>
                             </ul>
                             <div class="feedback" id="feedback-q3"></div>
                         </div>
                         
-                        <button type="button" onclick="checkConceptsAnswers()" class="btn btn-primary">Check My Answers</button>
+                        <button type="button" onclick="checkConceptAnswers()" class="btn btn-primary">Check My Answers</button>
                     </div>
                 </div>
                 
@@ -546,37 +640,37 @@
                     
                     <div class="progress-tracker">
                         <h3>Your Progress</h3>
-                        <div class="progress-item" data-section="intro">
+                        <div class="progress-item">
                             <span class="progress-label">Introduction</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 100%"></div>
                             </div>
                         </div>
-                        <div class="progress-item" data-section="concepts">
+                        <div class="progress-item">
                             <span class="progress-label">Concepts</span>
                             <div class="progress-bar">
-                                <div class="progress-fill" style="width: 60%"></div>
+                                <div class="progress-fill" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div class="progress-item" data-section="excel-model">
+                        <div class="progress-item">
                             <span class="progress-label">Excel Model</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 0%"></div>
                             </div>
                         </div>
-                        <div class="progress-item" data-section="examples">
+                        <div class="progress-item">
                             <span class="progress-label">Examples</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 0%"></div>
                             </div>
                         </div>
-                        <div class="progress-item" data-section="exercises">
+                        <div class="progress-item">
                             <span class="progress-label">Exercises</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 0%"></div>
                             </div>
                         </div>
-                        <div class="progress-item" data-section="summary">
+                        <div class="progress-item">
                             <span class="progress-label">Summary</span>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 0%"></div>
@@ -595,7 +689,7 @@
                 <span class="page-nav-center">Section 2 of 6</span>
                 
                 <a href="excel-model.html" class="page-nav-item next">
-                    Excel Model Building →
+                    Excel Model →
                 </a>
             </nav>
         </div>
@@ -610,59 +704,142 @@
                     <p>An interactive textbook for Grade 12 business mathematics</p>
                     <p>&copy; 2025 Daniel Bodanske. All rights reserved.</p>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../../frontmatter/preface.html">Getting Started</a></li>
-                        <li><a href="../../backmatter/glossary.html">Glossary</a></li>
-                        <li><a href="../../search.html">Search</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Support</h4>
-                    <p>Questions about the textbook?</p>
-                    <p>Contact your instructor or refer to the help section.</p>
-                </div>
             </div>
         </div>
     </footer>
     
-    <!-- Progress indicator -->
-    <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
-    
     <!-- JavaScript -->
-    <script src="../../assets/js/navigation.js"></script>
-    <script src="../../assets/js/search.js"></script>
-    <script src="../../assets/js/glossary.js"></script>
-    <script src="../../assets/js/progress-tracker.js"></script>
-    <script src="../../assets/js/excel-interactive.js"></script>
-    <script src="../../assets/js/theme-toggle.js"></script>
+    <script src="../../assets/js/gamification.js"></script>
+    <script src="../../assets/js/exercises.js"></script>
     
     <script>
+        // Interactive Equation Explorer
+        function initializeEquationExplorer() {
+            const assetsSlider = document.getElementById('assets-slider');
+            const liabilitiesSlider = document.getElementById('liabilities-slider');
+            
+            function updateEquation() {
+                const assets = parseInt(assetsSlider.value);
+                const liabilities = parseInt(liabilitiesSlider.value);
+                const equity = assets - liabilities;
+                
+                // Update displays
+                document.getElementById('assets-display').textContent = '$' + assets.toLocaleString();
+                document.getElementById('liabilities-display').textContent = '$' + liabilities.toLocaleString();
+                
+                document.getElementById('assets-equation').textContent = '$' + assets.toLocaleString();
+                document.getElementById('liabilities-equation').textContent = '$' + liabilities.toLocaleString();
+                document.getElementById('equity-equation').textContent = '$' + equity.toLocaleString();
+                
+                // Update balance status
+                const balanceStatus = document.getElementById('balance-status');
+                const balanceExplanation = document.getElementById('balance-explanation');
+                
+                if (equity > 0) {
+                    balanceStatus.textContent = '✓ Balanced';
+                    balanceStatus.className = 'balance-indicator success';
+                    balanceExplanation.textContent = 'Perfect! The equation always balances. Equity automatically adjusts when assets or liabilities change.';
+                } else {
+                    balanceStatus.textContent = '⚠️ Negative Equity';
+                    balanceStatus.className = 'balance-indicator warning';
+                    balanceExplanation.textContent = 'Negative equity means TechStart owes more than they own. This is a warning sign for investors!';
+                }
+            }
+            
+            assetsSlider.addEventListener('input', updateEquation);
+            liabilitiesSlider.addEventListener('input', updateEquation);
+        }
+        
+        // Transaction Builder
+        function checkTransaction() {
+            const account1 = document.getElementById('account1').value;
+            const account2 = document.getElementById('account2').value;
+            const debit1 = parseFloat(document.getElementById('debit1').value) || 0;
+            const credit1 = parseFloat(document.getElementById('credit1').value) || 0;
+            const debit2 = parseFloat(document.getElementById('debit2').value) || 0;
+            const credit2 = parseFloat(document.getElementById('credit2').value) || 0;
+            
+            const feedback = document.getElementById('transaction-feedback');
+            
+            // Check if accounts are selected
+            if (!account1 || !account2) {
+                feedback.innerHTML = '<p class="error">Please select both accounts.</p>';
+                return;
+            }
+            
+            // Check correct accounts and amounts
+            const correctTransaction = (
+                (account1 === 'cash' && debit1 === 5000 && credit1 === 0 &&
+                 account2 === 'revenue' && debit2 === 0 && credit2 === 5000) ||
+                (account1 === 'revenue' && debit1 === 0 && credit1 === 5000 &&
+                 account2 === 'cash' && debit2 === 5000 && credit2 === 0)
+            );
+            
+            const totalDebits = debit1 + debit2;
+            const totalCredits = credit1 + credit2;
+            const balanced = totalDebits === totalCredits && totalDebits > 0;
+            
+            if (correctTransaction && balanced) {
+                feedback.innerHTML = `
+                    <div class="success">
+                        <h4>✅ Perfect Transaction!</h4>
+                        <p><strong>Cash</strong> increases (debit $5,000) - TechStart receives money</p>
+                        <p><strong>Service Revenue</strong> increases (credit $5,000) - TechStart earned the money</p>
+                        <p>Total Debits: $${totalDebits.toLocaleString()} = Total Credits: $${totalCredits.toLocaleString()}</p>
+                    </div>
+                `;
+                
+                // Award points for correct transaction
+                if (window.Gamification) {
+                    window.Gamification.awardPoints(50, 'Built correct journal entry');
+                }
+            } else if (balanced) {
+                feedback.innerHTML = `
+                    <div class="partial">
+                        <h4>🤔 Close, but not quite right</h4>
+                        <p>Your transaction balances (debits = credits), but think about what happens when a client pays:</p>
+                        <ul>
+                            <li>Cash increases (customers give us money)</li>
+                            <li>Revenue increases (we earned money from our service)</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="error">
+                        <h4>❌ Transaction doesn't balance</h4>
+                        <p>Total Debits: $${totalDebits.toLocaleString()}</p>
+                        <p>Total Credits: $${totalCredits.toLocaleString()}</p>
+                        <p>Remember: Debits must equal credits in every transaction!</p>
+                    </div>
+                `;
+            }
+        }
+        
         // Comprehension check functionality
-        function checkConceptsAnswers() {
+        function checkConceptAnswers() {
             const answers = {
-                q1: 'b',
-                q2: 'b', 
-                q3: 'b'
+                q1: 'b', // $50,000 - $20,000 = $30,000
+                q2: 'a', // Debit Office Supplies, Credit Cash
+                q3: 'b'  // Would have recorded the obligation
             };
             
             const explanations = {
                 q1: {
-                    correct: "Correct! The accounting equation ensures that what the business owns (assets) equals the claims against those assets (liabilities + equity).",
-                    incorrect: "Not quite. The accounting equation is about balance between assets and claims, not about profitability or cash flow."
+                    correct: "Correct! Assets ($50,000) = Liabilities ($20,000) + Equity ($30,000). The accounting equation always balances.",
+                    incorrect: "Not quite. Use the accounting equation: Assets = Liabilities + Equity, so $50,000 = $20,000 + Equity. Solve for Equity: $30,000."
                 },
                 q2: {
-                    correct: "Excellent! DEAL accounts (Dividends, Expenses, Assets, Losses) increase with debits.",
-                    incorrect: "That's not right. Remember DEAL vs CLIP: DEAL accounts increase with debits, CLIP accounts increase with credits."
+                    correct: "Perfect! Office supplies are an asset that increases (debit), and cash is an asset that decreases (credit) when paid out.",
+                    incorrect: "Think about what happens: TechStart gets supplies (asset increases = debit) and pays cash (asset decreases = credit)."
                 },
                 q3: {
-                    correct: "Perfect! A trial balance verifies that the fundamental accounting equation remains balanced.",
-                    incorrect: "Not correct. While trial balances help prepare other reports, their primary purpose is to verify mathematical balance."
+                    correct: "Exactly! Double-entry would have recorded 'Accounts Payable' when the work was done, creating a visible obligation to pay.",
+                    incorrect: "Double-entry doesn't automate payments, but it would have recorded the obligation to pay when the contractor completed work."
                 }
             };
+            
+            let allCorrect = true;
             
             Object.keys(answers).forEach(questionId => {
                 const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
@@ -670,23 +847,511 @@
                 
                 if (selectedOption) {
                     const isCorrect = selectedOption.value === answers[questionId];
+                    if (!isCorrect) allCorrect = false;
+                    
                     feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
                     feedback.textContent = isCorrect ? 
                         explanations[questionId].correct : 
                         explanations[questionId].incorrect;
                 } else {
+                    allCorrect = false;
                     feedback.className = 'feedback show incorrect';
                     feedback.textContent = 'Please select an answer.';
                 }
             });
+            
+            // Award points for completion (bonus for perfect score)
+            if (window.Gamification) {
+                const points = allCorrect ? 75 : 35;
+                const reason = allCorrect ? 'Perfect score on concepts quiz!' : 'Completed concepts quiz';
+                window.Gamification.awardPoints(points, reason);
+            }
         }
         
-        // Update page title and progress
+        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.TextbookNavigation) {
-                window.TextbookNavigation.updatePageTitle('Core Concepts', 'Unit 1: Smart Ledger Launch');
+            // Initialize interactive elements
+            initializeEquationExplorer();
+            
+            // Award points for viewing concepts
+            if (window.Gamification) {
+                setTimeout(() => {
+                    window.Gamification.awardPoints(35, 'Studied accounting concepts');
+                }, 1000);
             }
+            
+            console.log('Unit 1 Concepts loaded successfully');
         });
     </script>
+    
+    <style>
+        /* Recap Section */
+        .recap-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+        
+        .comparison-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Equation Display */
+        .equation-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .equation-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .equation-part {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .equation-part:hover {
+            transform: scale(1.05);
+        }
+        
+        .equation-label {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .equation-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .equation-description {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        .equation-operator {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .equation-explanation {
+            text-align: center;
+            color: white;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Examples Grid */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .example-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .example-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-equation {
+            background: #f0fff4;
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            color: #48bb78;
+            margin-top: 1rem;
+        }
+        
+        /* Equation Explorer */
+        .equation-explorer {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .explorer-controls {
+            margin: 1.5rem 0;
+        }
+        
+        .control-group {
+            margin-bottom: 1rem;
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .control-group input[type="range"] {
+            width: 70%;
+            margin-right: 1rem;
+        }
+        
+        .slider-value {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .explorer-equation {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 1rem 0;
+        }
+        
+        .balance-indicator {
+            margin-left: 1rem;
+            font-weight: bold;
+        }
+        
+        .balance-indicator.success {
+            color: #48bb78;
+        }
+        
+        .balance-indicator.warning {
+            color: #f56565;
+        }
+        
+        /* Account Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .category-card {
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .assets-card { background: linear-gradient(135deg, #48bb78, #38a169); }
+        .liabilities-card { background: linear-gradient(135deg, #f56565, #e53e3e); }
+        .equity-card { background: linear-gradient(135deg, #667eea, #764ba2); }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-subtitle {
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .account-examples {
+            margin-bottom: 1.5rem;
+        }
+        
+        .account-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-rule {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Memory Aid */
+        .memory-aid {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .memory-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .scale-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        /* Transaction Example */
+        .transaction-example {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .journal-entry {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .entry-table {
+            margin: 1rem 0;
+        }
+        
+        .entry-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            padding: 0.75rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .entry-row.header {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px 6px 0 0;
+        }
+        
+        .entry-row.debit-row {
+            background: #fff5f5;
+        }
+        
+        .entry-row.credit-row {
+            background: #f0fff4;
+        }
+        
+        .entry-row.total-row {
+            background: #edf2f7;
+            font-weight: bold;
+            border-top: 2px solid #667eea;
+        }
+        
+        .balance-check {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .check-result {
+            background: #48bb78;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        
+        /* Impact Explanation */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .impact-item.increase {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+        }
+        
+        .impact-item.decrease {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+        }
+        
+        .impact-icon {
+            font-size: 1.5rem;
+        }
+        
+        .equation-check {
+            background: #edf2f7;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+        
+        .equation-result {
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        /* Transaction Builder */
+        .transaction-builder {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .builder-interface {
+            margin-top: 1.5rem;
+        }
+        
+        .transaction-description {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .builder-entry .entry-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .account-select, .amount-input {
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .builder-feedback {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 6px;
+            background: #e2e8f0;
+        }
+        
+        .builder-feedback .success {
+            background: #f0fff4;
+            color: #22543d;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #48bb78;
+        }
+        
+        .builder-feedback .error {
+            background: #fff5f5;
+            color: #742a2a;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #f56565;
+        }
+        
+        .builder-feedback .partial {
+            background: #fffbeb;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        /* Key Takeaways */
+        .takeaways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .takeaway-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .takeaway-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .takeaway-card h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .takeaway-card p {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .takeaway-card ul {
+            text-align: left;
+            color: #6b7280;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .recap-container,
+            .memory-visual {
+                grid-template-columns: 1fr;
+            }
+            
+            .equation-display {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .equation-operator {
+                transform: rotate(90deg);
+            }
+            
+            .builder-entry .entry-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
