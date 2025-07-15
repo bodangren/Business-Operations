@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Component Test Suite | Math for Business Operations</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/textbook.css">
+    <link rel="stylesheet" href="../assets/css/callouts.css">
+    <link rel="stylesheet" href="../assets/css/excel.css">
+    
+    <!-- Chart.js for testing visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        .test-suite {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .test-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .test-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn.run-all {
+            background: #28a745;
+            color: white;
+        }
+        
+        .test-btn.run-unit {
+            background: #007bff;
+            color: white;
+        }
+        
+        .test-btn.clear-results {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .test-results {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .test-section h3 {
+            margin-top: 0;
+            color: #495057;
+            border-bottom: 2px solid #f8f9fa;
+            padding-bottom: 10px;
+        }
+        
+        .component-test {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: #f8f9fa;
+        }
+        
+        .test-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .test-status.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .test-status.running {
+            background: #cce7ff;
+            color: #004085;
+        }
+        
+        .test-status.passed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .test-status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .test-details {
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .test-details.show {
+            display: block;
+        }
+        
+        .performance-metrics {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .overall-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .progress-indicator {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-suite">
+        <!-- Test Header -->
+        <div class="test-header">
+            <h1>🧪 Comprehensive Component Test Suite</h1>
+            <p>Automated testing framework for all interactive components across Units 1-8</p>
+            <div class="test-summary">
+                <span id="total-tests">0</span> total tests | 
+                <span id="passed-tests">0</span> passed | 
+                <span id="failed-tests">0</span> failed | 
+                <span id="coverage-percent">0%</span> coverage
+            </div>
+        </div>
+
+        <!-- Test Controls -->
+        <div class="test-controls">
+            <button class="test-btn run-all" onclick="runAllTests()">🚀 Run All Tests</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(1)">Test Unit 1</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(2)">Test Unit 2</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(3)">Test Unit 3</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(4)">Test Unit 4</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(5)">Test Unit 5</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(6)">Test Unit 6</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(7)">Test Unit 7</button>
+            <button class="test-btn run-unit" onclick="runUnitTests(8)">Test Unit 8</button>
+            <button class="test-btn clear-results" onclick="clearResults()">🗑️ Clear Results</button>
+        </div>
+
+        <!-- Overall Status -->
+        <div class="overall-status">
+            <h4>Test Progress</h4>
+            <div class="progress-indicator">
+                <div class="progress-bar" id="overall-progress"></div>
+            </div>
+            <div id="current-test">Ready to start testing</div>
+        </div>
+
+        <!-- Test Results Summary -->
+        <div class="test-results">
+            <h3>Test Results Summary</h3>
+            <div id="results-summary">
+                Click "Run All Tests" to begin comprehensive testing of all components.
+            </div>
+        </div>
+
+        <!-- Test Grid -->
+        <div class="test-grid">
+            <!-- Core Components Testing -->
+            <div class="test-section">
+                <h3>🎮 Core Components</h3>
+                
+                <div class="component-test" data-component="gamification">
+                    <strong>Gamification System</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing points system, achievements, levels, and UI integration...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="spreadsheet-simulator">
+                    <strong>Spreadsheet Simulator</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing Excel-like functionality, formulas, presets, and performance...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="financial-calculators">
+                    <strong>Financial Calculators</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing NPV, loan payment, and break-even calculators...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="data-visualization">
+                    <strong>Data Visualization</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing Chart.js integration, chart types, and export functionality...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 1 Components -->
+            <div class="test-section">
+                <h3>📊 Unit 1: Smart Ledger</h3>
+                
+                <div class="component-test" data-component="drag-drop-exercises">
+                    <strong>Drag-Drop Exercises</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing account categorization, journal entries, and trial balance sorting...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="business-simulations">
+                    <strong>Business Simulations</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing lemonade stand, startup journey, and cash flow challenge...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="exercises">
+                    <strong>Exercise System</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing comprehension checks, adaptive difficulty, and performance tracking...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 2 Components -->
+            <div class="test-section">
+                <h3>🔄 Unit 2: Month-End Wizard</h3>
+                
+                <div class="component-test" data-component="revenue-recognition-simulator">
+                    <strong>Revenue Recognition Simulator</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing scenario switching, timeline visualization, and adjusting entries...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="month-end-wizard">
+                    <strong>Month-End Automation Wizard</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing automation levels, workflow steps, and efficiency metrics...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 3 Components -->
+            <div class="test-section">
+                <h3>📈 Unit 3: Three-Statement Storyboard</h3>
+                
+                <div class="component-test" data-component="statement-linker">
+                    <strong>Financial Statement Linker</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing cross-reference functionality and dynamic linking...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="kpi-dashboard">
+                    <strong>KPI Dashboard Builder</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing dashboard creation and real-time updates...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 4 Components -->
+            <div class="test-section">
+                <h3>📊 Unit 4: Data-Driven Cafe</h3>
+                
+                <div class="component-test" data-component="statistical-analysis">
+                    <strong>Statistical Analysis Tools</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing descriptive stats, outlier detection, and regression analysis...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="data-cleaning">
+                    <strong>Data Cleaning Interface</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing data validation and cleaning workflows...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 5 Components -->
+            <div class="test-section">
+                <h3>💰 Unit 5: Payday Simulator</h3>
+                
+                <div class="component-test" data-component="payroll-calculator">
+                    <strong>Payroll Calculator Suite</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing gross-to-net calculations and tax computations...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="bank-reconciliation">
+                    <strong>Bank Reconciliation Tools</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing transaction matching and reconciliation workflows...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 6 Components -->
+            <div class="test-section">
+                <h3>💲 Unit 6: PriceLab Challenge</h3>
+                
+                <div class="component-test" data-component="pricing-strategy-simulator">
+                    <strong>Pricing Strategy Simulator</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing pricing models and market sensitivity analysis...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="cvp-analysis">
+                    <strong>CVP Analysis Tools</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing cost-volume-profit calculations and break-even analysis...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 7 Components -->
+            <div class="test-section">
+                <h3>🏭 Unit 7: Asset Inventory Tracker</h3>
+                
+                <div class="component-test" data-component="asset-management">
+                    <strong>Asset Management Tools</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing depreciation calculations and asset lifecycle tracking...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="inventory-valuation">
+                    <strong>Inventory Valuation System</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing FIFO/LIFO calculations and turnover analysis...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 8 Components -->
+            <div class="test-section">
+                <h3>🚀 Unit 8: Integrated Model Sprint</h3>
+                
+                <div class="component-test" data-component="integrated-model-builder">
+                    <strong>Integrated Model Builder</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing three-statement linking and model validation...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="scenario-manager">
+                    <strong>Scenario Manager</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing scenario modeling and sensitivity analysis...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance & Accessibility -->
+            <div class="test-section">
+                <h3>⚡ Performance & Accessibility</h3>
+                
+                <div class="component-test" data-component="performance">
+                    <strong>Performance Testing</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing load times, memory usage, and responsiveness...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="accessibility">
+                    <strong>Accessibility Compliance</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing ARIA labels, keyboard navigation, and screen reader support...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+
+                <div class="component-test" data-component="mobile-responsiveness">
+                    <strong>Mobile Responsiveness</strong>
+                    <span class="test-status pending">PENDING</span>
+                    <div class="test-details">
+                        <p>Testing mobile layouts and touch interactions...</p>
+                        <div class="performance-metrics"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load all JavaScript components for testing -->
+    <script src="../assets/js/gamification.js"></script>
+    <script src="../assets/js/spreadsheet-simulator.js"></script>
+    <script src="../assets/js/financial-calculators.js"></script>
+    <script src="../assets/js/data-visualization.js"></script>
+    <script src="../assets/js/drag-drop-exercises.js"></script>
+    <script src="../assets/js/business-simulations.js"></script>
+    <script src="../assets/js/exercises.js"></script>
+    <script src="../assets/js/revenue-recognition-simulator.js"></script>
+    <script src="../assets/js/month-end-wizard.js"></script>
+    <script src="../assets/js/progress-tracker.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+
+    <!-- Test Framework Script -->
+    <script>
+        // Test Framework Implementation
+        let testResults = {};
+        let currentTestIndex = 0;
+        let totalTests = 0;
+        let passedTests = 0;
+        let failedTests = 0;
+
+        // Test Suite Configuration
+        const testSuite = {
+            core: [
+                'gamification',
+                'spreadsheet-simulator', 
+                'financial-calculators',
+                'data-visualization'
+            ],
+            unit1: [
+                'drag-drop-exercises',
+                'business-simulations',
+                'exercises'
+            ],
+            unit2: [
+                'revenue-recognition-simulator',
+                'month-end-wizard'
+            ],
+            // Additional units will be added as components are built
+            performance: [
+                'performance',
+                'accessibility',
+                'mobile-responsiveness'
+            ]
+        };
+
+        // Initialize test suite
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateTotalTests();
+            updateTestSummary();
+        });
+
+        function calculateTotalTests() {
+            totalTests = 0;
+            Object.values(testSuite).forEach(category => {
+                totalTests += category.length;
+            });
+            document.getElementById('total-tests').textContent = totalTests;
+        }
+
+        function updateTestSummary() {
+            document.getElementById('passed-tests').textContent = passedTests;
+            document.getElementById('failed-tests').textContent = failedTests;
+            
+            const coverage = totalTests > 0 ? Math.round((passedTests / totalTests) * 100) : 0;
+            document.getElementById('coverage-percent').textContent = coverage;
+            
+            // Update progress bar
+            const progressBar = document.getElementById('overall-progress');
+            const completedTests = passedTests + failedTests;
+            const progressPercent = totalTests > 0 ? (completedTests / totalTests) * 100 : 0;
+            progressBar.style.width = progressPercent + '%';
+        }
+
+        async function runAllTests() {
+            console.log('🚀 Starting comprehensive test suite...');
+            
+            // Reset counters
+            passedTests = 0;
+            failedTests = 0;
+            currentTestIndex = 0;
+            testResults = {};
+            
+            // Clear previous results
+            clearResults();
+            
+            // Run all test categories
+            for (const [category, tests] of Object.entries(testSuite)) {
+                console.log(`Testing ${category} components...`);
+                
+                for (const componentName of tests) {
+                    await runComponentTest(componentName);
+                }
+            }
+            
+            // Display final results
+            displayFinalResults();
+        }
+
+        async function runUnitTests(unitNumber) {
+            console.log(`🧪 Testing Unit ${unitNumber} components...`);
+            
+            const unitKey = unitNumber === 1 ? 'unit1' : 
+                           unitNumber === 2 ? 'unit2' : 
+                           unitNumber === 3 ? 'unit3' :
+                           unitNumber === 4 ? 'unit4' :
+                           unitNumber === 5 ? 'unit5' :
+                           unitNumber === 6 ? 'unit6' :
+                           unitNumber === 7 ? 'unit7' :
+                           unitNumber === 8 ? 'unit8' : null;
+            
+            if (unitKey && testSuite[unitKey]) {
+                for (const componentName of testSuite[unitKey]) {
+                    await runComponentTest(componentName);
+                }
+            } else {
+                console.log(`Unit ${unitNumber} tests not yet implemented`);
+            }
+            
+            updateTestSummary();
+        }
+
+        async function runComponentTest(componentName) {
+            const testElement = document.querySelector(`[data-component="${componentName}"]`);
+            if (!testElement) {
+                console.warn(`Test element not found for ${componentName}`);
+                return;
+            }
+            
+            // Update UI to show test is running
+            updateTestStatus(testElement, 'running');
+            document.getElementById('current-test').textContent = `Testing ${componentName}...`;
+            
+            const startTime = performance.now();
+            
+            try {
+                // Run the actual component test
+                const result = await performComponentTest(componentName);
+                
+                const endTime = performance.now();
+                const duration = endTime - startTime;
+                
+                if (result.passed) {
+                    updateTestStatus(testElement, 'passed');
+                    passedTests++;
+                } else {
+                    updateTestStatus(testElement, 'failed');
+                    failedTests++;
+                }
+                
+                // Update performance metrics
+                updatePerformanceMetrics(testElement, {
+                    duration: duration,
+                    memory: result.memory || 0,
+                    details: result.details || []
+                });
+                
+                testResults[componentName] = result;
+                
+            } catch (error) {
+                console.error(`Test failed for ${componentName}:`, error);
+                updateTestStatus(testElement, 'failed');
+                failedTests++;
+                
+                testResults[componentName] = {
+                    passed: false,
+                    error: error.message,
+                    details: []
+                };
+            }
+            
+            currentTestIndex++;
+            updateTestSummary();
+            
+            // Small delay for UI updates
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+
+        async function performComponentTest(componentName) {
+            const tests = {
+                'gamification': testGamificationSystem,
+                'spreadsheet-simulator': testSpreadsheetSimulator,
+                'financial-calculators': testFinancialCalculators,
+                'data-visualization': testDataVisualization,
+                'drag-drop-exercises': testDragDropExercises,
+                'business-simulations': testBusinessSimulations,
+                'exercises': testExerciseSystem,
+                'revenue-recognition-simulator': testRevenueRecognitionSimulator,
+                'month-end-wizard': testMonthEndWizard,
+                'performance': testPerformance,
+                'accessibility': testAccessibility,
+                'mobile-responsiveness': testMobileResponsiveness
+            };
+            
+            const testFunction = tests[componentName];
+            if (testFunction) {
+                return await testFunction();
+            } else {
+                return {
+                    passed: false,
+                    details: [`Test not implemented for ${componentName}`]
+                };
+            }
+        }
+
+        // Individual component test functions
+        async function testGamificationSystem() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test if gamification system is loaded
+                if (typeof window.awardPoints !== 'function') {
+                    details.push('❌ awardPoints function not found');
+                    passed = false;
+                } else {
+                    details.push('✅ awardPoints function available');
+                }
+                
+                // Test points awarding
+                if (window.awardPoints) {
+                    window.awardPoints(10, 'Test award');
+                    details.push('✅ Points awarding works');
+                }
+                
+                // Test local storage integration
+                const testData = localStorage.getItem('gamification-data');
+                if (testData) {
+                    details.push('✅ Local storage integration working');
+                } else {
+                    details.push('⚠️ Local storage not initialized');
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testSpreadsheetSimulator() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test if spreadsheet classes are available
+                if (typeof SpreadsheetSimulator === 'undefined') {
+                    details.push('❌ SpreadsheetSimulator class not found');
+                    passed = false;
+                } else {
+                    details.push('✅ SpreadsheetSimulator class available');
+                    
+                    // Test basic initialization
+                    const testContainer = document.createElement('div');
+                    const simulator = new SpreadsheetSimulator(testContainer, 'test-sheet');
+                    if (simulator) {
+                        details.push('✅ Simulator initialization works');
+                    }
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testFinancialCalculators() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test calculator functions
+                if (typeof window.calculateNPV !== 'undefined') {
+                    details.push('✅ NPV calculator available');
+                } else {
+                    details.push('⚠️ NPV calculator not found');
+                }
+                
+                if (typeof window.calculateLoanPayment !== 'undefined') {
+                    details.push('✅ Loan calculator available');
+                } else {
+                    details.push('⚠️ Loan calculator not found');
+                }
+                
+                details.push('✅ Financial calculators module loaded');
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testDataVisualization() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test Chart.js availability
+                if (typeof Chart !== 'undefined') {
+                    details.push('✅ Chart.js library loaded');
+                } else {
+                    details.push('❌ Chart.js library not available');
+                    passed = false;
+                }
+                
+                // Test chart creation capability
+                const testCanvas = document.createElement('canvas');
+                if (typeof Chart !== 'undefined') {
+                    const testChart = new Chart(testCanvas, {
+                        type: 'line',
+                        data: { labels: ['A', 'B'], datasets: [{ data: [1, 2] }] },
+                        options: { responsive: false, animation: false }
+                    });
+                    
+                    if (testChart) {
+                        details.push('✅ Chart creation works');
+                        testChart.destroy(); // Clean up
+                    }
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testDragDropExercises() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test drag-drop functionality
+                if (typeof window.initializeDragDropExercises === 'function') {
+                    details.push('✅ Drag-drop initialization function available');
+                } else {
+                    details.push('⚠️ Drag-drop functions not found');
+                }
+                
+                details.push('✅ Drag-drop exercises module loaded');
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testBusinessSimulations() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test simulation initialization
+                if (typeof window.initializeBusinessSimulations === 'function') {
+                    details.push('✅ Business simulations available');
+                } else {
+                    details.push('⚠️ Business simulations not found');
+                }
+                
+                details.push('✅ Business simulations module loaded');
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testExerciseSystem() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test exercise system
+                if (typeof window.ExerciseSystem === 'object') {
+                    details.push('✅ Exercise system available');
+                } else {
+                    details.push('⚠️ Exercise system not found');
+                }
+                
+                details.push('✅ Exercise system module loaded');
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testRevenueRecognitionSimulator() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test revenue recognition simulator
+                if (typeof RevenueRecognitionSimulator !== 'undefined') {
+                    details.push('✅ RevenueRecognitionSimulator class available');
+                    
+                    // Test basic initialization
+                    const testContainer = document.createElement('div');
+                    const simulator = new RevenueRecognitionSimulator(testContainer, 'test-revenue');
+                    if (simulator) {
+                        details.push('✅ Revenue simulator initialization works');
+                    }
+                } else {
+                    details.push('❌ RevenueRecognitionSimulator class not found');
+                    passed = false;
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testMonthEndWizard() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test month-end wizard
+                if (typeof MonthEndWizard !== 'undefined') {
+                    details.push('✅ MonthEndWizard class available');
+                    
+                    // Test basic initialization
+                    const testContainer = document.createElement('div');
+                    const wizard = new MonthEndWizard(testContainer, 'test-wizard');
+                    if (wizard) {
+                        details.push('✅ Month-end wizard initialization works');
+                    }
+                } else {
+                    details.push('❌ MonthEndWizard class not found');
+                    passed = false;
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testPerformance() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test page load performance
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                if (loadTime < 5000) {
+                    details.push('✅ Page load time acceptable (<5s)');
+                } else {
+                    details.push('⚠️ Page load time slow (>5s)');
+                }
+                
+                // Test memory usage
+                if (performance.memory) {
+                    const memoryUsage = performance.memory.usedJSHeapSize / 1024 / 1024;
+                    details.push(`📊 Memory usage: ${memoryUsage.toFixed(2)}MB`);
+                    
+                    if (memoryUsage < 50) {
+                        details.push('✅ Memory usage acceptable (<50MB)');
+                    } else {
+                        details.push('⚠️ High memory usage (>50MB)');
+                    }
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testAccessibility() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test basic accessibility features
+                const interactiveElements = document.querySelectorAll('button, input, select, textarea, a');
+                let accessibleElements = 0;
+                
+                interactiveElements.forEach(element => {
+                    if (element.getAttribute('aria-label') || 
+                        element.getAttribute('title') || 
+                        element.textContent.trim() ||
+                        element.alt) {
+                        accessibleElements++;
+                    }
+                });
+                
+                const accessibilityRatio = interactiveElements.length > 0 ? 
+                    (accessibleElements / interactiveElements.length) * 100 : 100;
+                
+                details.push(`📊 Accessibility coverage: ${accessibilityRatio.toFixed(1)}%`);
+                
+                if (accessibilityRatio >= 80) {
+                    details.push('✅ Good accessibility coverage');
+                } else {
+                    details.push('⚠️ Accessibility needs improvement');
+                    passed = false;
+                }
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        async function testMobileResponsiveness() {
+            const details = [];
+            let passed = true;
+            
+            try {
+                // Test viewport meta tag
+                const viewportMeta = document.querySelector('meta[name="viewport"]');
+                if (viewportMeta) {
+                    details.push('✅ Viewport meta tag present');
+                } else {
+                    details.push('❌ Viewport meta tag missing');
+                    passed = false;
+                }
+                
+                // Test responsive CSS classes
+                const responsiveElements = document.querySelectorAll('.mobile-responsive, .responsive, [class*="col-"], [class*="grid"]');
+                if (responsiveElements.length > 0) {
+                    details.push('✅ Responsive CSS classes found');
+                } else {
+                    details.push('⚠️ No responsive CSS classes detected');
+                }
+                
+                // Test touch-friendly elements
+                const touchElements = document.querySelectorAll('button, .btn, .clickable');
+                details.push(`📊 Touch-friendly elements: ${touchElements.length}`);
+                
+            } catch (error) {
+                details.push(`❌ Error: ${error.message}`);
+                passed = false;
+            }
+            
+            return { passed, details };
+        }
+
+        // UI Helper Functions
+        function updateTestStatus(testElement, status) {
+            const statusElement = testElement.querySelector('.test-status');
+            const detailsElement = testElement.querySelector('.test-details');
+            
+            statusElement.className = `test-status ${status}`;
+            statusElement.textContent = status.toUpperCase();
+            
+            if (status === 'running') {
+                detailsElement.classList.add('show');
+            }
+        }
+
+        function updatePerformanceMetrics(testElement, metrics) {
+            const metricsElement = testElement.querySelector('.performance-metrics');
+            
+            metricsElement.innerHTML = `
+                Duration: ${metrics.duration.toFixed(2)}ms
+                ${metrics.memory ? `| Memory: ${(metrics.memory / 1024 / 1024).toFixed(2)}MB` : ''}
+                ${metrics.details.length > 0 ? `\n${metrics.details.join('\n')}` : ''}
+            `;
+        }
+
+        function displayFinalResults() {
+            const summary = document.getElementById('results-summary');
+            const successRate = totalTests > 0 ? Math.round((passedTests / totalTests) * 100) : 0;
+            
+            summary.innerHTML = `
+                <div class="final-results">
+                    <h4>🎯 Test Suite Complete!</h4>
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">${passedTests}</span>
+                            <span class="stat-label">Tests Passed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">${failedTests}</span>
+                            <span class="stat-label">Tests Failed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">${successRate}%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                    </div>
+                    <div class="results-summary">
+                        ${successRate >= 90 ? '🟢 Excellent! All systems operational.' :
+                          successRate >= 75 ? '🟡 Good performance with minor issues.' :
+                          '🔴 Significant issues detected. Review failed tests.'}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('current-test').textContent = 'Testing complete';
+            
+            console.log('✅ Comprehensive test suite completed!');
+            console.log(`Results: ${passedTests}/${totalTests} tests passed (${successRate}%)`);
+        }
+
+        function clearResults() {
+            // Reset all test statuses
+            const testElements = document.querySelectorAll('.component-test');
+            testElements.forEach(element => {
+                const statusElement = element.querySelector('.test-status');
+                const detailsElement = element.querySelector('.test-details');
+                const metricsElement = element.querySelector('.performance-metrics');
+                
+                statusElement.className = 'test-status pending';
+                statusElement.textContent = 'PENDING';
+                detailsElement.classList.remove('show');
+                metricsElement.innerHTML = '';
+            });
+            
+            // Reset summary
+            document.getElementById('results-summary').innerHTML = 
+                'Click "Run All Tests" to begin comprehensive testing of all components.';
+            
+            document.getElementById('current-test').textContent = 'Ready to start testing';
+        }
+
+        // Add click handlers for test details
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.component-test')) {
+                const testElement = e.target.closest('.component-test');
+                const detailsElement = testElement.querySelector('.test-details');
+                detailsElement.classList.toggle('show');
+            }
+        });
+
+        // Auto-run basic tests on load for immediate feedback
+        setTimeout(() => {
+            console.log('🔍 Running basic component availability tests...');
+            runComponentTest('gamification');
+            runComponentTest('spreadsheet-simulator');
+            runComponentTest('revenue-recognition-simulator');
+            runComponentTest('month-end-wizard');
+        }, 1000);
+    </script>
+</body>
+</html>

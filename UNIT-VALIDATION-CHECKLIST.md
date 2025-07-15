@@ -16,6 +16,111 @@ Before starting validation, ensure you have:
 
 ---
 
+## Component-First Validation Protocol
+
+### MANDATORY: Pre-Unit Component Testing
+**Before validating any unit content, all interactive components must be tested in debug environment.**
+
+#### Step 1: Component Usage Assessment
+For this unit, identify all interactive components that will be used:
+
+- [ ] **Spreadsheet Simulator** (presets: basic, ledger, trial-balance, calculator)
+- [ ] **Financial Calculators** (NPV, loan payment, break-even analysis)
+- [ ] **Data Visualization** (Chart.js integration, dashboard components)
+- [ ] **Drag & Drop Exercises** (account categorization, journal entries, sorting)
+- [ ] **Business Simulations** (lemonade-stand, startup-journey, cash-flow, inventory, budget)
+- [ ] **Gamification System** (points, achievements, progress tracking)
+
+#### Step 2: Debug Testing Verification
+**Required Documentation for Each Component Type Used:**
+
+**Spreadsheet Components:**
+- [ ] **Debug Test Completed**: `spreadsheet-test.html` run with 100% pass rate
+- [ ] **Test Summary Generated**: Copy-paste test results documented for record
+- [ ] **Preset Verified**: Specific preset (basic/ledger/etc.) tested and functional
+- [ ] **Formula Testing**: All formulas planned for unit tested in debug environment
+- [ ] **Performance Verified**: Load time <3s, formula calculation <500ms
+
+**Financial Calculator Components:**
+- [ ] **Debug Test Completed**: `calculator-test.html` run with 100% pass rate
+- [ ] **Mathematical Accuracy**: All calculations verified against independent sources
+- [ ] **Educational Explanations**: Interpretation text appropriate for Grade 12 level
+- [ ] **Input Validation**: Edge cases and error handling tested
+- [ ] **Integration Testing**: Calculator-to-spreadsheet data flow verified
+
+**Data Visualization Components:**
+- [ ] **Debug Test Completed**: `visualization-test.html` run with 100% pass rate
+- [ ] **Chart Rendering**: All chart types display correctly across browsers
+- [ ] **Data Integration**: Charts update correctly with live data changes
+- [ ] **Responsive Design**: Visualizations work on mobile devices
+- [ ] **Accessibility**: Charts include alt-text and keyboard navigation
+
+**Drag & Drop Components:**
+- [ ] **Debug Test Completed**: `dragdrop-test.html` run with 100% pass rate
+- [ ] **Touch Compatibility**: All exercises work on tablets and phones
+- [ ] **Validation Logic**: Scoring and feedback systems tested thoroughly
+- [ ] **Accessibility**: Keyboard alternatives for all drag-drop actions
+- [ ] **Reset Functionality**: Exercises can be restarted cleanly
+
+**Business Simulation Components:**
+- [ ] **Debug Test Completed**: `simulations-test.html` run with 100% pass rate
+- [ ] **Game Mechanics**: All simulation features functional and balanced
+- [ ] **Educational Value**: Simulations support specific learning objectives
+- [ ] **Data Persistence**: Game state saves and loads correctly
+- [ ] **Performance**: Simulations run smoothly without memory issues
+
+**Gamification System:**
+- [ ] **Debug Test Completed**: `gamification-test.html` run with 100% pass rate
+- [ ] **Points Integration**: All components award points correctly
+- [ ] **Achievement Logic**: Achievements trigger appropriately for unit activities
+- [ ] **Progress Tracking**: Unit progress updates accurately
+- [ ] **Data Persistence**: Gamification data survives browser sessions
+
+#### Step 3: Component Integration Plan
+**Required Documentation Before Unit Creation:**
+
+```markdown
+## Unit Component Integration Plan
+**Unit**: [Unit Number and Name]
+**Learning Objectives**: [List of specific objectives]
+
+### Component Usage Matrix
+| Component Type | Specific Use | Learning Objective | Points Available | Testing Status |
+|---------------|--------------|-------------------|------------------|----------------|
+| Spreadsheet   | [Description] | [LO mapping]     | [Point value]    | ✅ Tested     |
+| Calculator    | [Description] | [LO mapping]     | [Point value]    | ✅ Tested     |
+| Visualization | [Description] | [LO mapping]     | [Point value]    | ✅ Tested     |
+
+### Gamification Integration
+- **Total Points Available**: [Sum of all component points]
+- **Achievement Opportunities**: [List achievements students can unlock]
+- **Progress Tracking**: [How completion is measured]
+
+### Quality Verification
+- **All Components Tested**: ✅ Complete debug testing documented
+- **Performance Standards Met**: ✅ All load times and responsiveness verified
+- **Accessibility Compliance**: ✅ Screen reader and keyboard navigation confirmed
+- **Mobile Compatibility**: ✅ Touch interface functionality verified
+```
+
+#### Step 4: Component Reuse Verification
+**Prevent Component Amnesia:**
+
+- [ ] **Existing Component Check**: Verified that new activities use existing tested components rather than creating new ones
+- [ ] **Modification Documentation**: Any component modifications documented and tested
+- [ ] **Alternative Assessment**: If components can't meet learning objective, documented why and what alternatives explored
+- [ ] **Future Reuse Plan**: New component configurations documented for reuse in other units
+
+#### Step 5: Emergency Fallback Planning
+**For each interactive component:**
+
+- [ ] **Fallback Content**: Static content alternative prepared in case of component failure
+- [ ] **Technical Requirements**: Minimum browser requirements documented
+- [ ] **Troubleshooting Guide**: Common issues and solutions documented for teachers
+- [ ] **Performance Monitoring**: Plan for tracking component performance in production
+
+---
+
 ## Section-by-Section Validation
 
 ### 1. Introduction Section (intro.html)
