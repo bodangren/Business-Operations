@@ -43,8 +43,8 @@
 - [ ] Test and debug all drag-drop exercise components in debug page
 
 ## Todo: Additional Drag & Drop Exercise Components - Beginning Business & Finance Math
-- [ ] FinancialStatementMatching.tsx - match line items to correct financial statements (Income Statement, Balance Sheet, Cash Flow)
-- [ ] BusinessTransactionCategorization.tsx - categorize transactions as Operating, Investing, or Financing activities
+- [x] FinancialStatementMatching.tsx - match line items to correct financial statements (Income Statement, Balance Sheet, Cash Flow) ✅
+- [x] BusinessTransactionCategorization.tsx - categorize transactions as Operating, Investing, or Financing activities ✅
 - [ ] CashFlowTimeline.tsx - arrange cash inflows and outflows on a timeline to visualize cash management
 - [ ] BreakEvenComponents.tsx - drag fixed costs, variable costs, and revenue to build break-even analysis
 - [ ] PercentageCalculationSorting.tsx - sort business scenarios by calculation type (markup, discount, tax, commission)
