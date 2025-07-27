@@ -38,6 +38,11 @@ jobs:
           cd bus-math-nextjs
           npm run build
           
+      - name: List build output
+        run: |
+          echo "Checking build output directory:"
+          ls -la bus-math-nextjs/out/ || echo "No out directory found"
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
