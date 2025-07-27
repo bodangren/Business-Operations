@@ -117,6 +117,7 @@ interface Decision {
       users?: number
       revenue?: number
       growth?: number
+      revenuePerUser?: number
     }
   }[]
 }
