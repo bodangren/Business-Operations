@@ -116,7 +116,7 @@ export function BalanceSheetSimple({
     }).format(amount)
   }
 
-  const isBalanced = statementData.totalAssets === statementData.totalLiabilitiesAndEquity
+  const isBalanced = statementData.assets.totalAssets === statementData.totalLiabilitiesAndEquity
 
   const getBalanceBadge = () => {
     if (isBalanced) {
