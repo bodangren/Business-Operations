@@ -36,11 +36,25 @@
 - [ ] Create integration examples showing all three statements together
 
 ## Todo: Drag & Drop Exercise Components -- in drag-drop-exercises.js
-- [x] Create debug/drag-drop/page.tsx test page
-- [x] AccountCategorization.tsx - create drag-drop component
-- [x] JournalEntryBuilding.tsx - create drag-drop component
-- [ ] TrialBalanceSorting.tsx - create drag-drop component
+- [x] Create debug/drag-drop/page.tsx test page ✅
+- [x] AccountCategorization.tsx - create drag-drop component ✅
+- [x] JournalEntryBuilding.tsx - create drag-drop component ✅
+- [x] TrialBalanceSorting.tsx - create drag-drop component ✅
 - [ ] Test and debug all drag-drop exercise components in debug page
+
+## Todo: Additional Drag & Drop Exercise Components - Beginning Business & Finance Math
+- [ ] FinancialStatementMatching.tsx - match line items to correct financial statements (Income Statement, Balance Sheet, Cash Flow)
+- [ ] BusinessTransactionCategorization.tsx - categorize transactions as Operating, Investing, or Financing activities
+- [ ] CashFlowTimeline.tsx - arrange cash inflows and outflows on a timeline to visualize cash management
+- [ ] BreakEvenComponents.tsx - drag fixed costs, variable costs, and revenue to build break-even analysis
+- [ ] PercentageCalculationSorting.tsx - sort business scenarios by calculation type (markup, discount, tax, commission)
+- [ ] RatioMatching.tsx - match financial ratios to their formulas and business meanings
+- [ ] BudgetCategorySort.tsx - organize expenses into budget categories (fixed, variable, discretionary)
+- [ ] InterestCalculationBuilder.tsx - drag components to build simple and compound interest calculations
+- [ ] PayrollComponentSorting.tsx - sort payroll items into gross pay, deductions, and net pay categories
+- [ ] InventoryFlowDiagram.tsx - arrange inventory costs in FIFO/LIFO flow patterns
+- [ ] DepreciationMethodBuilder.tsx - build depreciation schedules by dragging method components
+- [ ] BusinessCycleSorting.tsx - arrange business activities in proper operational cycle order
 
 ## Todo: Exercise Components -- in exercises.js
 - [ ] Create debug/exercises/page.tsx test page

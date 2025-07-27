@@ -3,6 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AccountCategorization from '@/components/drag-drop-exercises/AccountCategorization';
 import { JournalEntryBuilding } from '@/components/exercises/JournalEntryBuilding';
+import { TrialBalanceSorting } from '@/components/drag-drop-exercises/TrialBalanceSorting';
 
 export default function DragDropExercisesDebugPage() {
 
@@ -56,6 +57,24 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
+        {/* Trial Balance Sorting Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-xl text-gray-800">Trial Balance Sorting Component</CardTitle>
+            <CardDescription>
+              Interactive drag-and-drop exercise teaching trial balance organization and account classification
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Interactive Trial Balance Organization</h3>
+              <div className="bg-white rounded-lg border border-gray-200 p-4">
+                <TrialBalanceSorting />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Component Usage Examples */}
         <Card>
           <CardHeader>
@@ -103,6 +122,24 @@ export default function DragDropExercisesDebugPage() {
               </div>
 
               <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-semibold mb-2">TrialBalanceSorting Usage:</h4>
+                <pre className="text-sm overflow-x-auto">
+{`import { TrialBalanceSorting } from '@/components/drag-drop-exercises/TrialBalanceSorting'
+
+// Basic usage
+<TrialBalanceSorting />
+
+// The component includes:
+// - 12 pre-configured accounts with realistic balances
+// - Drag-and-drop sorting into debit/credit columns
+// - Real-time balance calculation and verification
+// - Color-coded feedback for correct/incorrect placement
+// - Built-in instructions with account classification guide
+// - Comprehensive trial balance education experience`}
+                </pre>
+              </div>
+
+              <div className="bg-gray-100 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2">Required Dependencies:</h4>
                 <pre className="text-sm overflow-x-auto">
 {`// Install required packages
@@ -146,13 +183,13 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'`}
                 </span>
               </div>
               
-              <div className="p-4 border border-gray-200 rounded-lg bg-gray-50">
+              <div className="p-4 border border-green-200 rounded-lg bg-green-50">
                 <h3 className="font-semibold mb-2">Trial Balance Sorting</h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  Drag-and-drop exercise for organizing accounts into proper trial balance format
+                  Drag-and-drop exercise for organizing accounts into proper trial balance format with real-time balance verification
                 </p>
-                <span className="inline-block px-2 py-1 text-xs rounded bg-yellow-100 text-yellow-800">
-                  🚧 Planned
+                <span className="inline-block px-2 py-1 text-xs rounded bg-green-100 text-green-800">
+                  ✅ Complete
                 </span>
               </div>
             </div>
