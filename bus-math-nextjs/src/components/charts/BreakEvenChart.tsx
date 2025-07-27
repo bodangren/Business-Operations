@@ -246,7 +246,7 @@ export function BreakEvenChart({
             x={results.breakEvenUnits} 
             stroke="hsl(0, 0%, 50%)" 
             strokeDasharray="5 5"
-            label={{ value: "Break-Even", position: "topLeft" }}
+            label={{ value: "Break-Even", position: "top" }}
           />
           
           <Line
