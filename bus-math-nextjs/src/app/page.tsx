@@ -134,7 +134,7 @@ export default function Home() {
               <div className="flex justify-center lg:justify-end">
                 <div className="w-full max-w-md">
                   <Image
-                    src="/cover.png"
+                    src="./cover.png"
                     alt="Math for Business Operations textbook cover showing business charts and Excel spreadsheets"
                     width={400}
                     height={533}
