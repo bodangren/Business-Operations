@@ -105,14 +105,15 @@ const getUnitData = (unitSlug: string) => {
   return unitMap[unitSlug] || { number: 1, title: 'Unknown Unit', sections: [] }
 }
 
-export default function UnitsLayout({
+export default async function UnitsLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  params: { unit: string }
+  params: Promise<{ unit: string }>
 }) {
-  const unitData = getUnitData(params.unit)
+  const { unit } = await params
+  const unitData = getUnitData(unit)
 
   return (
     <div className="container mx-auto px-4 py-6">
