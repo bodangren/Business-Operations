@@ -49,7 +49,7 @@ export interface LessonActivity {
   description: string
   details: string[]
   callout?: {
-    type: 'tip' | 'important' | 'definition' | 'example'
+    type: 'tip' | 'important' | 'definition' | 'example' | 'reflection'
     title: string
     content: string
     items?: string[]
