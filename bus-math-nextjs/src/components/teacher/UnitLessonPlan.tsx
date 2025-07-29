@@ -11,7 +11,13 @@ import {
   Lightbulb,
   Info,
   FileText,
-  Settings
+  Settings,
+  MessageSquare,
+  Code,
+  Flag,
+  TrendingUp,
+  Briefcase,
+  GraduationCap
 } from "lucide-react"
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
@@ -443,6 +449,12 @@ function DailyLessonCard({ lesson }: { lesson: any }) {
       case 'important': return <AlertTriangle className="h-5 w-5" />
       case 'definition': return <Info className="h-5 w-5" />
       case 'example': return <FileText className="h-5 w-5" />
+      case 'reflection': return <MessageSquare className="h-5 w-5" />
+      case 'technical': return <Code className="h-5 w-5" />
+      case 'checkpoint': return <Flag className="h-5 w-5" />
+      case 'strategy': return <TrendingUp className="h-5 w-5" />
+      case 'professional': return <Briefcase className="h-5 w-5" />
+      case 'assessment': return <GraduationCap className="h-5 w-5" />
       default: return <Info className="h-5 w-5" />
     }
   }
@@ -453,6 +465,12 @@ function DailyLessonCard({ lesson }: { lesson: any }) {
       case 'important': return 'border-red-200 bg-red-50 dark:bg-red-950/10 text-red-800 dark:text-red-200'
       case 'definition': return 'border-green-200 bg-green-50 dark:bg-green-950/10 text-green-800 dark:text-green-200'
       case 'example': return 'border-purple-200 bg-purple-50 dark:bg-purple-950/10 text-purple-800 dark:text-purple-200'
+      case 'reflection': return 'border-amber-200 bg-amber-50 dark:bg-amber-950/10 text-amber-800 dark:text-amber-200'
+      case 'technical': return 'border-slate-200 bg-slate-50 dark:bg-slate-950/10 text-slate-800 dark:text-slate-200'
+      case 'checkpoint': return 'border-orange-200 bg-orange-50 dark:bg-orange-950/10 text-orange-800 dark:text-orange-200'
+      case 'strategy': return 'border-teal-200 bg-teal-50 dark:bg-teal-950/10 text-teal-800 dark:text-teal-200'
+      case 'professional': return 'border-indigo-200 bg-indigo-50 dark:bg-indigo-950/10 text-indigo-800 dark:text-indigo-200'
+      case 'assessment': return 'border-cyan-200 bg-cyan-50 dark:bg-cyan-950/10 text-cyan-800 dark:text-cyan-200'
       default: return 'border-gray-200 bg-gray-50 dark:bg-gray-950/10 text-gray-800 dark:text-gray-200'
     }
   }
