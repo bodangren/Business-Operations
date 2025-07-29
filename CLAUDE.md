@@ -131,3 +131,8 @@ This is a Grade 12 "Math for Business Operations" course using Project-Based Lea
 - All interactive components should maintain progress state for educational continuity
 - Security is critical: use SafeFormulaEvaluator for any formula evaluation, never Function() constructor or eval()
 - Components should support the project-based learning methodology with clear milestone tracking
+
+## Current Development Status
+- **Active TODO List**: See `TODO.md` for current project status, completed tasks, and next steps
+- **Latest Work**: Unit introduction pages with UnitIntroduction component and modular data structure
+- **Section Architecture**: 6 sections per unit (intro, concepts, excel-model, examples, exercises, summary)
