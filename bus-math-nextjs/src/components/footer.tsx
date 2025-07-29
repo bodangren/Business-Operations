@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Footer Info */}
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Math for Business Operations</h3>
@@ -33,10 +33,41 @@ export function Footer() {
                 Glossary
               </Link>
               <Link 
+                href="/debug" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Component Debugging
+              </Link>
+              <Link 
                 href="/search" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Search
+              </Link>
+            </nav>
+          </div>
+
+          {/* Teacher Resources */}
+          <div className="space-y-3">
+            <h4 className="text-base font-medium">Teacher Resources</h4>
+            <nav className="flex flex-col space-y-2">
+              <Link 
+                href="/teacher/course-overview/pbl-methodology" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                PBL Methodology
+              </Link>
+              <Link 
+                href="/teacher/course-overview/backward-design" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Backward Design
+              </Link>
+              <Link 
+                href="/teacher" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Teacher Dashboard
               </Link>
             </nav>
           </div>
