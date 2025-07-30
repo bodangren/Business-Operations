@@ -38,7 +38,7 @@ export default function TeacherLayout({
           {/* Navigation */}
           <nav className="flex-1 p-4">
             <div className="space-y-1">
-              <h3 className="text-sm font-medium text-muted-foreground mb-2">Course Overview</h3>
+              <h3 className="text-sm font-medium text-muted-foreground mb-2">Course Philosophy</h3>
               <Link href="/teacher/course-overview/pbl-methodology">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <BookOpen className="mr-2 h-4 w-4" />
@@ -51,7 +51,13 @@ export default function TeacherLayout({
                   Backward Design
                 </Button>
               </Link>
-              
+              <Link href="/teacher/classroom-routines">
+                <Button variant="ghost" className="w-full justify-start text-sm">
+                  <FileText className="mr-2 h-4 w-4" />
+                  Classroom Routines
+                </Button>
+              </Link>
+
               <Separator className="my-4" />
               
               <h3 className="text-sm font-medium text-muted-foreground mb-2">Unit Lesson Plans</h3>

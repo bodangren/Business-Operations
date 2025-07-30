@@ -234,7 +234,11 @@ export const unit05LessonPlan: UnitLessonPlan = {
                 description: "Identify which timing changes would have prevented Maria's crisis",
                 duration: "7 minutes"
               }
-            ]
+            ],
+            // COMPONENTS USED:
+            // - BankStatementAnalyzer.tsx - Interactive analysis of Maria's bank statement and payroll register
+            // - BusinessTransactionCategorization.tsx - Transaction Timeline Matching drag-drop activity  
+            // - ComprehensionCheck.tsx - Crisis Prevention Quiz multiple-choice component
           },
           {
             name: "Payroll Challenge Brainstorm",
