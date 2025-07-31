@@ -88,6 +88,150 @@ The application is structured around 8 educational units, each with:
 - Images are unoptimized for static hosting
 - Trailing slashes enabled for better routing
 
+## MCP Knowledge Base Management
+
+### Core Philosophy
+**CRITICAL**: The MCP knowledge base serves as the project's living memory and decision-making foundation. Every development action must maintain this knowledge base to ensure continuity, discoverability, and informed next-step planning.
+
+### Mandatory Documentation Requirements
+
+#### When Creating New Components
+**IMMEDIATELY** after creating any React component:
+1. Use `mcp__components-mcp__create_component` with:
+   - **name**: Component name (exact match to file/export name)
+   - **description**: Clear educational purpose, key features, learning objectives
+   - **filePath**: Absolute path from project root
+   - **usageExample**: Basic implementation example with props
+
+#### When Updating Components
+**IMMEDIATELY** after modifying existing components:
+1. Use `mcp__components-mcp__update_component` to reflect:
+   - Changed functionality or props
+   - New educational features
+   - Updated file locations
+
+#### When Creating APIs/Endpoints
+For any REST endpoints, API routes, or external integrations:
+1. Use `mcp__components-mcp__create_api` documenting:
+   - Endpoint paths and HTTP methods
+   - Request/response structures
+   - Authentication requirements
+   - Educational data flow
+
+#### Knowledge Base Before Planning
+**ALWAYS** query the MCP knowledge base before:
+- Starting new features (check existing components for reuse)
+- Planning architectural changes (understand current patterns)
+- Debugging issues (identify related components)
+- Making next-step decisions (leverage documented capabilities)
+
+### Integration with Development Workflow
+
+#### Pre-Development Phase
+1. Query `mcp__components-mcp__get_components` to understand available building blocks
+2. Check related categories (APIs, hooks, conventions) for relevant patterns
+3. Plan new work based on documented capabilities and gaps
+
+#### Post-Development Phase  
+1. Document new components/APIs immediately after creation
+2. Update existing documentation for any modifications
+3. Verify knowledge base accuracy before task completion
+
+### Educational Project Specificity
+Document components with emphasis on:
+- **Learning Objectives**: Which Grade 12 curriculum goals the component serves
+- **Pedagogical Approach**: How it supports Project-Based Learning methodology
+- **Excel Integration**: Advanced Excel functionality demonstrated
+- **Assessment Integration**: How it connects to formative/summative evaluation
+
+### Knowledge Base Categories
+The MCP system tracks:
+- **Components**: All React components with educational purpose and technical details
+- **APIs**: Backend endpoints and external service integrations
+- **Environment Variables**: Configuration and deployment settings
+- **Style Guide**: Design system patterns and Tailwind conventions
+- **State Management**: Global state patterns and context usage
+- **Custom Hooks**: Reusable React hooks for educational interactions  
+- **Coding Conventions**: Project-specific standards and patterns
+
+## Chrome MCP Browser Testing Integration
+
+### Core Philosophy
+**CRITICAL**: Chrome MCP server provides comprehensive browser automation and testing capabilities that are essential for validating component functionality, user interactions, and educational workflows in real browser environments.
+
+### Browser Testing Capabilities
+
+#### Essential Testing Features
+- **Tab Management**: Navigate between pages, open/close tabs, manage multiple windows
+- **Content Extraction**: Get text content, HTML structure, and page metadata for validation
+- **Interactive Element Detection**: Identify clickable elements, forms, and interactive components with precise coordinates
+- **Form Testing**: Fill inputs, select options, and simulate user form interactions
+- **Console Monitoring**: Capture browser console messages, errors, and debugging information
+- **Network Analysis**: Monitor HTTP requests, API calls, and resource loading
+- **User Simulation**: Send keyboard shortcuts, mouse clicks, and complex user interactions
+- **History Analysis**: Access browser history for testing navigation flows
+
+#### When to Use Chrome MCP Tools
+
+**Component Testing (MANDATORY)**:
+- `mcp__chrome-mcp-stdio__chrome_get_web_content`: Verify component rendering and content
+- `mcp__chrome-mcp-stdio__chrome_get_interactive_elements`: Validate interactive elements and accessibility
+- `mcp__chrome-mcp-stdio__chrome_click_element`: Test button clicks, navigation, and user interactions
+- `mcp__chrome-mcp-stdio__chrome_fill_or_select`: Test form inputs, search functionality, and data entry
+
+**Educational Workflow Testing**:
+- `mcp__chrome-mcp-stdio__chrome_navigate`: Test unit navigation and deep-linking functionality
+- `mcp__chrome-mcp-stdio__chrome_console`: Monitor React errors, Excel formula evaluation errors, and educational component warnings
+- `mcp__chrome-mcp-stdio__chrome_network_capture_start/stop`: Validate API calls for progress tracking and assessment data
+
+**Development Debugging**:
+- `mcp__chrome-mcp-stdio__chrome_screenshot`: Visual verification of component layouts (note: large responses)
+- `mcp__chrome-mcp-stdio__chrome_keyboard`: Test keyboard shortcuts for accessibility and power-user features
+- `mcp__chrome-mcp-stdio__chrome_history`: Verify navigation patterns and user journey flows
+
+### Integration with Development Workflow
+
+#### Pre-Component Development
+1. Test existing similar components to understand interaction patterns
+2. Validate current page state before implementing new features
+3. Document expected user workflows and interaction sequences
+
+#### Post-Component Development (MANDATORY)
+1. **Immediate Testing**: Test new component functionality with chrome MCP tools
+2. **User Interaction Validation**: Verify all interactive elements work correctly
+3. **Educational Flow Testing**: Ensure component supports learning objectives and PBL methodology
+4. **Accessibility Verification**: Test keyboard navigation and screen reader compatibility
+5. **Error Handling**: Monitor console for React errors and educational content warnings
+
+#### Continuous Integration
+- Use chrome MCP for automated component testing during development
+- Validate educational workflows across different browser states
+- Monitor network requests for assessment and progress tracking APIs
+- Test responsive design and mobile compatibility
+
+### Educational Project Specificity
+
+**Excel Integration Testing**:
+- Test spreadsheet component interactions and formula evaluation
+- Validate Excel-like functionality (sorting, filtering, calculations)
+- Monitor console for SafeFormulaEvaluator warnings and errors
+
+**Assessment Workflow Testing**:
+- Test progress tracking and milestone completion flows
+- Validate form submissions for peer reviews and reflection journals
+- Test interactive exercises and drag-drop functionality
+
+**Performance Monitoring**:
+- Monitor network requests for large educational datasets
+- Test component rendering performance with complex financial models
+- Validate static export compatibility for GitHub Pages deployment
+
+### Security and Safety
+- Never use chrome MCP tools to access external sites without permission
+- Monitor console for security warnings and potential vulnerabilities
+- Test input validation and sanitization in educational forms
+- Verify SafeFormulaEvaluator prevents code injection in Excel-like components
+
 ## Educational Context & Pedagogy
 
 ### Curriculum Structure

@@ -1,0 +1,12 @@
+{
+  "setup_date": "2025-07-31T09:45:43+07:00",
+  "version": "1.0",
+  "project_root": "/home/daniel-bo/Desktop/Business-Operations",
+  "hooks_enabled": true,
+  "mcp_servers": {
+    "components-mcp": "configured",
+    "chrome-mcp": "configured"
+  },
+  "development_server": "http://localhost:3000",
+  "status": "ready"
+}

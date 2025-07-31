@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "description": "Claude Code hooks configuration for Business Operations project with Components-MCP and Chrome-MCP integration",
+  "hooks": {
+    "pre-tool-use": {
+      "enabled": true,
+      "scripts": [
+        {
+          "name": "knowledge-base-query",
+          "script": "./hooks/pre-tool-use/knowledge-base-query.sh",
+          "triggers": ["Read", "Glob", "Grep"],
+          "description": "Intercept file searches and provide knowledge base alternatives"
+        },
+        {
+          "name": "component-duplication-check",
+          "script": "./hooks/pre-tool-use/component-check.sh", 
+          "triggers": ["Write", "MultiEdit"],
+          "description": "Check for existing components before creating new ones"
+        },
+        {
+          "name": "testing-preparation",
+          "script": "./hooks/pre-tool-use/testing-prep.sh",
+          "triggers": ["Write", "Edit", "MultiEdit"],
+          "description": "Prepare Chrome-MCP testing environment for component changes"
+        }
+      ]
+    },
+    "post-tool-use": {
+      "enabled": true,
+      "scripts": [
+        {
+          "name": "auto-documentation",
+          "script": "./hooks/post-tool-use/auto-document.sh",
+          "triggers": ["Write", "Edit", "MultiEdit"],
+          "description": "Automatically document new/modified components in knowledge base"
+        },
+        {
+          "name": "component-testing",
+          "script": "./hooks/post-tool-use/component-test.sh",
+          "triggers": ["Write", "Edit", "MultiEdit"],
+          "description": "Run automated testing via Chrome-MCP after component changes"
+        },
+        {
+          "name": "visual-regression",
+          "script": "./hooks/post-tool-use/visual-test.sh",
+          "triggers": ["Write", "Edit", "MultiEdit"],
+          "description": "Capture screenshots and validate design consistency"
+        }
+      ]
+    },
+    "user-prompt-submit": {
+      "enabled": true,
+      "scripts": [
+        {
+          "name": "context-injection",
+          "script": "./hooks/user-prompt-submit/context-inject.sh",
+          "description": "Inject relevant knowledge base context based on user queries"
+        }
+      ]
+    }
+  },
+  "mcp_servers": {
+    "components-mcp": {
+      "endpoints": {
+        "components": "mcp__components-mcp__get_components",
+        "apis": "mcp__components-mcp__get_apis", 
+        "style_guide": "mcp__components-mcp__get_style_guide",
+        "conventions": "mcp__components-mcp__get_conventions",
+        "hooks": "mcp__components-mcp__get_hooks",
+        "environment": "mcp__components-mcp__get_environment",
+        "state": "mcp__components-mcp__get_state"
+      },
+      "create_endpoints": {
+        "component": "mcp__components-mcp__create_component",
+        "api": "mcp__components-mcp__create_api",
+        "environment": "mcp__components-mcp__create_environment",
+        "style_guide": "mcp__components-mcp__create_style_guide"
+      }
+    },
+    "chrome-mcp": {
+      "testing": {
+        "navigate": "mcp__chrome-mcp-stdio__chrome_navigate",
+        "screenshot": "mcp__chrome-mcp-stdio__chrome_screenshot",
+        "get_content": "mcp__chrome-mcp-stdio__chrome_get_web_content",
+        "interactive_elements": "mcp__chrome-mcp-stdio__chrome_get_interactive_elements",
+        "click": "mcp__chrome-mcp-stdio__chrome_click_element",
+        "network_start": "mcp__chrome-mcp-stdio__chrome_network_capture_start",
+        "network_stop": "mcp__chrome-mcp-stdio__chrome_network_capture_stop"
+      }
+    }
+  },
+  "project_config": {
+    "dev_server_url": "http://localhost:3000",
+    "component_paths": [
+      "src/components/**/*.tsx",
+      "src/app/**/*.tsx"
+    ],
+    "test_routes": {
+      "components": "/debug",
+      "units": "/units"
+    },
+    "documentation_patterns": {
+      "component_naming": "PascalCase",
+      "file_structure": "category/ComponentName.tsx",
+      "educational_focus": "Grade 12 Business Math with Excel integration"
+    }
+  }
+}

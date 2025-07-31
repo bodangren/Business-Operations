@@ -1,0 +1,669 @@
+{
+  "components": [
+    {
+      "id": "1753927374595x20ncmwc1",
+      "name": "Footer",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/footer.tsx",
+      "usageExample": "<Footer />",
+      "description": "A footer component for the application, containing navigation links and copyright information."
+    },
+    {
+      "id": "1753927382703igss35tl3",
+      "description": "A header component for the application, including navigation, search bar, and mobile menu.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/header.tsx",
+      "name": "Header",
+      "usageExample": "<Header />"
+    },
+    {
+      "id": "17539273906946yk8q1yjh",
+      "name": "NavigationSidebar",
+      "description": "A sidebar component for navigation, including main links, unit links with descriptions and difficulty, and additional resources.",
+      "usageExample": "<NavigationSidebar />",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/navigation-sidebar.tsx"
+    },
+    {
+      "id": "1753927397448s5tkfdgla",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit-sidebar.tsx",
+      "name": "UnitSidebar",
+      "usageExample": "<UnitSidebar unitNumber={1} unitTitle=\"Smart Ledger\" sections={[]} />",
+      "description": "A sidebar component for unit navigation and progress tracking, displaying sections and overall progress."
+    },
+    {
+      "id": "1753927405954gyryagjje",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/JournalEntry.tsx",
+      "usageExample": "<JournalEntry entryNumber=\"001\" date=\"2025-07-31\" description=\"Example Transaction\" lines={[]} />",
+      "description": "A component to display a journal entry, including lines, debits, credits, and validation for balance. It can also show accounting equation impact and transaction analysis.",
+      "name": "JournalEntry"
+    },
+    {
+      "id": "17539274123287jmhjn1wd",
+      "name": "TAccountDetailed",
+      "usageExample": "<TAccountDetailed accountName=\"Cash\" accountType=\"asset\" debits={[]} credits={[]} />",
+      "description": "A detailed T-account component for visualizing debits and credits for a specific account, including beginning balance, running balance, and calculation formulas.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountDetailed.tsx"
+    },
+    {
+      "id": "1753927420002ucucyllwh",
+      "name": "TAccountSimple",
+      "usageExample": "<TAccountSimple accountName=\"Cash\" accountType=\"asset\" debits={[]} credits={[]} />",
+      "description": "A simple T-account component for visualizing debits and credits for a specific account.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountSimple.tsx"
+    },
+    {
+      "id": "1753927426859mh078t2dd",
+      "usageExample": "<TrialBalance companyName=\"Example Co.\" periodEnding=\"2025-07-31\" accounts={[]} />",
+      "name": "TrialBalance",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TrialBalance.tsx",
+      "description": "A component to display a trial balance, including account balances, validation for balance, and options for grouping and summary."
+    },
+    {
+      "id": "1753927436765yywvizcqk",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/BudgetBalancer.tsx",
+      "description": "A financial simulation game where users manage a monthly budget, track expenses, and observe the impact of their decisions on savings and financial health.",
+      "usageExample": "import { BudgetBalancer } from '@/components/business-simulations/BudgetBalancer'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BudgetBalancer />\n    </div>\n  )\n}",
+      "name": "BudgetBalancer"
+    },
+    {
+      "id": "1753927444725skvt2zipj",
+      "usageExample": "import { CashFlowChallenge } from '@/components/business-simulations/CashFlowChallenge'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <CashFlowChallenge />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/CashFlowChallenge.tsx",
+      "name": "CashFlowChallenge",
+      "description": "A business simulation game where users manage cash flow by balancing incoming and outgoing payments, making strategic decisions to avoid bankruptcy."
+    },
+    {
+      "id": "1753927452727xpb8ayrii",
+      "name": "InventoryManager",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/InventoryManager.tsx",
+      "usageExample": "import { InventoryManager } from '@/components/business-simulations/InventoryManager'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <InventoryManager />\n    </div>\n  )\n}",
+      "description": "A business simulation game where users manage inventory for a retail business, balancing demand, costs, and profit."
+    },
+    {
+      "id": "1753927462220rmxavvbb2",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/LemonadeStand.tsx",
+      "description": "A business simulation game where users run a lemonade stand, learning about profit/loss, pricing strategy, inventory management, and the impact of external factors like weather.",
+      "name": "LemonadeStand",
+      "usageExample": "import { LemonadeStand } from '@/components/business-simulations/LemonadeStand'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <LemonadeStand />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "1753927481015zj4q3zody",
+      "name": "StartupJourney",
+      "usageExample": "import { StartupJourney } from '@/components/business-simulations/StartupJourney'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <StartupJourney />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/StartupJourney.tsx",
+      "description": "A business simulation game where users navigate the journey of a tech startup, making strategic decisions about funding, team, product, and growth."
+    },
+    {
+      "id": "1753927489104x24csr223",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BarChart.tsx",
+      "name": "BarChart",
+      "description": "A reusable bar chart component for visualizing financial data, supporting multiple datasets and customizable options.",
+      "usageExample": "import { BarChart } from '@/components/charts/BarChart'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BarChart\n        title=\"Monthly Sales\"\n        data={{\n          labels: ['Jan', 'Feb', 'Mar'],\n          datasets: [{\n            label: 'Sales',\n            data: [1000, 1500, 1200],\n            backgroundColor: 'rgba(54, 162, 235, 0.8)'\n          }]\n        }}\n        height={300}\n      />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "17539274978052ynfhvoci",
+      "usageExample": "import { BreakEvenChart } from '@/components/charts/BreakEvenChart'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BreakEvenChart\n        fixedCosts={10000}\n        variableCostRate={0.6}\n        sellingPrice={25}\n        interactive={true}\n      />\n    </div>\n  )\n}",
+      "description": "An interactive chart component for visualizing break-even analysis, allowing users to adjust fixed costs, variable cost rate, and selling price.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BreakEvenChart.tsx",
+      "name": "BreakEvenChart"
+    },
+    {
+      "id": "1753927506725xcrgejf8h",
+      "description": "A reusable doughnut chart component for visualizing proportional financial data, supporting customizable options and interactive segments.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/DoughnutChart.tsx",
+      "usageExample": "import { DoughnutChart } from '@/components/charts/DoughnutChart'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <DoughnutChart\n        title=\"Account Balances\"\n        data={{\n          labels: ['Cash', 'Accounts Receivable', 'Equipment'],\n          datasets: [{\n            label: 'Account Balances',\n            data: [8500, 3200, 15000],\n            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']\n          }]\n        }}\n        height={400}\n      />\n    </div>\n  )\n}",
+      "name": "DoughnutChart"
+    },
+    {
+      "id": "1753927517567kkux0mq2b",
+      "description": "A comprehensive financial dashboard component displaying key performance indicators (KPIs), revenue vs. expenses trend, account balances, cash flow, and profit margin analysis.",
+      "usageExample": "import { FinancialDashboard } from '@/components/charts/FinancialDashboard'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <FinancialDashboard />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/FinancialDashboard.tsx",
+      "name": "FinancialDashboard"
+    },
+    {
+      "id": "1753927528418ku6yyo9go",
+      "name": "LineChart",
+      "usageExample": "import { LineChart } from '@/components/charts/LineChart'\n\nexport default function MyPage() {\n  const data = [\n    { month: 'Jan', desktop: 186, mobile: 80 },\n    { month: 'Feb', desktop: 305, mobile: 202 },\n    { month: 'Mar', desktop: 237, mobile: 100 },\n    { month: 'Apr', desktop: 73, mobile: 120 },\n    { month: 'May', desktop: 209, mobile: 130 },\n    { month: 'Jun', desktop: 214, mobile: 140 },\n  ]\n\n  const config = {\n    desktop: {\n      label: 'Desktop',\n      color: 'hsl(var(--chart-1))',\n    },\n    mobile: {\n      label: 'Mobile',\n      color: 'hsl(var(--chart-2))',\n    },\n  }\n\n  return (\n    <div>\n      <LineChart\n        title=\"Website Traffic\"\n        description=\"Monthly website traffic by device type\"\n        data={data}\n        config={config}\n        xAxisKey=\"month\"\n      />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/LineChart.tsx",
+      "description": "A reusable line chart component for visualizing financial data, supporting customizable options."
+    },
+    {
+      "id": "17539275379686iozw2fsh",
+      "name": "PieChart",
+      "description": "A reusable pie chart component for visualizing proportional financial data, supporting customizable options and interactive segments.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/PieChart.tsx",
+      "usageExample": "import { PieChart } from '@/components/charts/PieChart'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <PieChart\n        title=\"Expense Breakdown\"\n        data={{\n          labels: ['Salaries', 'Rent', 'Marketing', 'Utilities'],\n          datasets: [{\n            label: 'Expenses',\n            data: [25000, 8000, 5200, 2400],\n            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40']\n          }]\n        }}\n        height={400}\n      />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "175392755383120ix5iu91",
+      "description": "A drag-and-drop exercise for categorizing business transactions into operating, investing, and financing activities.",
+      "name": "BusinessTransactionCategorization",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop/BusinessTransactionCategorization.tsx",
+      "usageExample": "import { BusinessTransactionCategorization } from '@/components/drag-drop/BusinessTransactionCategorization'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BusinessTransactionCategorization />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "1753927567045ixw1v9vdp",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/AccountCategorization.tsx",
+      "name": "AccountCategorization",
+      "usageExample": "import AccountCategorization from '@/components/drag-drop-exercises/AccountCategorization'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <AccountCategorization />\n    </div>\n  )\n}",
+      "description": "A drag-and-drop exercise for categorizing business accounts into Assets, Liabilities, Equity, Revenue, and Expenses, reinforcing the fundamental accounting equation."
+    },
+    {
+      "id": "1753927577170xc66szan0",
+      "usageExample": "import { BreakEvenComponents } from '@/components/drag-drop-exercises/BreakEvenComponents'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BreakEvenComponents />\n    </div>\n  )\n}",
+      "name": "BreakEvenComponents",
+      "description": "A drag-and-drop exercise for categorizing business costs into fixed and variable, and then calculating break-even points.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BreakEvenComponents.tsx"
+    },
+    {
+      "id": "1753927590699fr2nq9i38",
+      "name": "CashFlowTimeline",
+      "description": "A drag-and-drop exercise for visualizing and arranging cash flows on a timeline to understand cash management timing, working capital needs, and liquidity planning.",
+      "usageExample": "import { CashFlowTimeline } from '@/components/drag-drop-exercises/CashFlowTimeline'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <CashFlowTimeline />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/CashFlowTimeline.tsx"
+    },
+    {
+      "id": "17539276020632evn3pfl4",
+      "name": "FinancialStatementMatching",
+      "description": "A drag-and-drop exercise for categorizing financial statement line items into Income Statement, Balance Sheet, and Cash Flow Statement.",
+      "usageExample": "import { FinancialStatementMatching } from '@/components/drag-drop-exercises/FinancialStatementMatching'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <FinancialStatementMatching />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/FinancialStatementMatching.tsx"
+    },
+    {
+      "id": "1753927612451h1dxmgr2c",
+      "name": "TrialBalanceSorting",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/TrialBalanceSorting.tsx",
+      "description": "A drag-and-drop exercise for organizing accounts into a trial balance format, understanding normal debit/credit balances, and verifying that total debits equal total credits.",
+      "usageExample": "import { TrialBalanceSorting } from '@/components/drag-drop-exercises/TrialBalanceSorting'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <TrialBalanceSorting />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "1753927633396e4osrw16s",
+      "name": "ComprehensionCheck",
+      "usageExample": "import ComprehensionCheck from '@/components/exercises/ComprehensionCheck';\n\nexport default function MyPage() {\n  const sampleQuestions = [\n    {\n      id: 'q1',\n      question: 'What is the capital of France?',\n      answers: ['Paris', 'London', 'Berlin', 'Rome'],\n      explanation: 'Paris is the capital and most populous city of France.'\n    },\n    {\n      id: 'q2',\n      question: 'Which planet is known as the Red Planet?',\n      answers: ['Mars', 'Jupiter', 'Venus', 'Mercury'],\n      explanation: 'Mars is often referred to as the Red Planet due to its reddish appearance.'\n    }\n  ];\n\n  return (\n    <div>\n      <ComprehensionCheck\n        questions={sampleQuestions}\n        title=\"General Knowledge Quiz\"\n        description=\"Test your knowledge on various topics.\"\n        showExplanations={true}\n      />\n    </div>\n  );\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/ComprehensionCheck.tsx",
+      "description": "A multiple-choice comprehension check component for testing understanding, with options for explanations and retries."
+    },
+    {
+      "id": "1753927648541brdkiutsm",
+      "name": "DragAndDrop",
+      "description": "A versatile drag-and-drop matching exercise component for educational purposes, allowing users to match items from a left column to corresponding drop zones in a right column.",
+      "usageExample": "import { DragAndDrop } from '@/components/exercises/DragAndDrop'\n\nconst vocabularyItems = [\n  { id: '1', content: 'Assets', matchId: '2', hint: 'Things a business owns' },\n  { id: '2', content: 'Resources owned by business', matchId: '1' },\n  { id: '3', content: 'Liabilities', matchId: '4', hint: 'Debts owed by business' },\n  { id: '4', content: 'Money owed to others', matchId: '3' },\n]\n\nexport default function MyPage() {\n  return (\n    <div>\n      <DragAndDrop \n        items={vocabularyItems}\n        title=\"Accounting Vocabulary\"\n        description=\"Match each term with its definition\"\n        leftColumnTitle=\"Accounting Terms\"\n        rightColumnTitle=\"Definitions\"\n        showHints={true}\n        shuffleItems={true}\n        onComplete={(score) => console.log('Completed with score:', score)}\n      />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/DragAndDrop.tsx"
+    },
+    {
+      "id": "17539276608411j3ll7eqa",
+      "usageExample": "import { FillInTheBlank } from '@/components/exercises/FillInTheBlank'\n\nconst sentences = [\n  {\n    id: '1',\n    text: 'Assets = {blank} + Equity',\n    answer: 'Liabilities',\n    hint: 'Money owed to creditors'\n  },\n  {\n    id: '2', \n    text: 'Revenue - Expenses = {blank}',\n    answer: 'Net Income',\n    hint: 'The bottom line on an income statement'\n  },\n  {\n    id: '3',\n    text: 'Current Assets / Current Liabilities = {blank}',\n    answer: 'Current Ratio',\n    hint: 'Measures liquidity and ability to pay short-term debts'\n  }\n]\n\nexport default function MyPage() {\n  return (\n    <div>\n      <FillInTheBlank \n        sentences={sentences}\n        title=\"Accounting Equation Practice\"\n        description=\"Fill in the blanks to complete these fundamental accounting relationships\"\n        showWordList={true}\n        randomizeWordOrder={true}\n        showHints={true}\n        onComplete={(score) => console.log('Completed with score:', score)}\n      />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/FillInTheBlank.tsx",
+      "name": "FillInTheBlank",
+      "description": "A fill-in-the-blank exercise component for educational purposes, allowing users to complete sentences with missing words or phrases."
+    },
+    {
+      "id": "1753927672484sg6mzsmy6",
+      "description": "An interactive exercise for building journal entries, where users drag accounts and input amounts to create balanced entries for given business transactions.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/JournalEntryBuilding.tsx",
+      "name": "JournalEntryBuilding",
+      "usageExample": "import { JournalEntryBuilding } from '@/components/exercises/JournalEntryBuilding'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <JournalEntryBuilding />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "1753927694618srn71g776",
+      "description": "A detailed balance sheet component displaying assets, liabilities, and equity with sub-categories, calculations, and financial ratios.",
+      "usageExample": "import { BalanceSheetDetailed } from '@/components/financial-reports/BalanceSheetDetailed'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BalanceSheetDetailed />\n    </div>\n  )\n}",
+      "name": "BalanceSheetDetailed",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/BalanceSheetDetailed.tsx"
+    },
+    {
+      "id": "1753927706188pvbgh0paz",
+      "usageExample": "import { BalanceSheetSimple } from '@/components/financial-reports/BalanceSheetSimple'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <BalanceSheetSimple />\n    </div>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/BalanceSheetSimple.tsx",
+      "description": "A simplified balance sheet component displaying assets, liabilities, and equity, along with basic calculations and financial ratios.",
+      "name": "BalanceSheetSimple"
+    },
+    {
+      "id": "1753927716838ddzld4za1",
+      "usageExample": "import { CashFlowStatementDetailed } from '@/components/financial-reports/CashFlowStatementDetailed'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <CashFlowStatementDetailed />\n    </div>\n  )\n}",
+      "name": "CashFlowStatementDetailed",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/CashFlowStatementDetailed.tsx",
+      "description": "A detailed cash flow statement component displaying cash flows from operating, investing, and financing activities, along with supplemental disclosures and analysis."
+    },
+    {
+      "id": "1753927730905jgmvtdoel",
+      "description": "A simplified cash flow statement component displaying cash flows from operating, investing, and financing activities, along with a summary of cash changes.",
+      "usageExample": "import { CashFlowStatementSimple } from '@/components/financial-reports/CashFlowStatementSimple'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <CashFlowStatementSimple />\n    </div>\n  )\n}",
+      "name": "CashFlowStatementSimple",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/CashFlowStatementSimple.tsx"
+    },
+    {
+      "id": "1753927745716dmlfuxuab",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/IncomeStatementDetailed.tsx",
+      "description": "A detailed income statement component displaying revenues, cost of goods sold, gross profit, operating expenses, operating income, non-operating items, income before taxes, income taxes, and net income.",
+      "usageExample": "import { IncomeStatementDetailed } from '@/components/financial-reports/IncomeStatementDetailed'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <IncomeStatementDetailed />\n    </div>\n  )\n}",
+      "name": "IncomeStatementDetailed"
+    },
+    {
+      "id": "1753927759047ru2me8gn9",
+      "description": "A simplified income statement component displaying key revenue and expense figures, along with profitability metrics.",
+      "name": "IncomeStatementSimple",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/IncomeStatementSimple.tsx",
+      "usageExample": "import { IncomeStatementSimple } from '@/components/financial-reports/IncomeStatementSimple'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <IncomeStatementSimple />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "17539277832972t3mivyfi",
+      "usageExample": "import { spreadsheetTemplates } from '@/components/spreadsheet/SpreadsheetTemplates';\n\nexport default function MyPage() {\n  return (\n    <div>\n      {/* Example of using a template */}\n      <pre>{JSON.stringify(spreadsheetTemplates.tAccount.data, null, 2)}</pre>\n    </div>\n  );\n}",
+      "name": "SpreadsheetTemplates",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetTemplates.tsx",
+      "description": "A component that provides predefined spreadsheet templates for various business and accounting scenarios, including T-Accounts, Trial Balances, Income Statements, Statistical Analysis, Payroll, and Break-Even Analysis."
+    },
+    {
+      "id": "1753927802202oh2iktwnq",
+      "description": "A component to display a detailed unit lesson plan for teachers, including objectives, assessment evidence, learning activities, and resources.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/UnitLessonPlan.tsx",
+      "usageExample": "import { UnitLessonPlanComponent } from '@/components/teacher/UnitLessonPlan';\nimport { unit01LessonPlan } from '@/data/unit01-intro'; // Example data\n\nexport default function MyPage() {\n  return (\n    <div>\n      <UnitLessonPlanComponent lessonPlan={unit01LessonPlan} />\n    </div>\n  );\n}",
+      "name": "UnitLessonPlan"
+    },
+    {
+      "id": "1753927825573fyob6fw1q",
+      "description": "A component to display a high-level unit overview for teachers, including essential questions, learning targets, skills, key assessments, and connection to a capstone project.",
+      "usageExample": "import { UnitOverviewComponent } from '@/components/teacher/UnitOverview';\nimport { unit01Overview } from '@/data/unit01-intro'; // Example data\n\nexport default function MyPage() {\n  return (\n    <div>\n      <UnitOverviewComponent unitOverview={unit01Overview} />\n    </div>\n  );\n}",
+      "name": "UnitOverview",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/UnitOverview.tsx"
+    },
+    {
+      "id": "17539278439438rt5lrs99",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/badge.tsx",
+      "name": "Badge",
+      "usageExample": "import { Badge } from '@/components/ui/badge'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <Badge>New</Badge>\n      <Badge variant=\"secondary\">Beta</Badge>\n      <Badge variant=\"destructive\">Error</Badge>\n      <Badge variant=\"outline\">Draft</Badge>\n    </div>\n  )\n}",
+      "description": "A small, customizable badge component for displaying short, important information, often used for status indicators or labels."
+    },
+    {
+      "id": "1753927857668yyb11mvdg",
+      "name": "Button",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/button.tsx",
+      "usageExample": "import { Button } from '@/components/ui/button'\n\nexport default function MyPage() {\n  return (\n    <div className=\"flex gap-2\">\n      <Button>Default</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  )\n}",
+      "description": "A customizable button component with various styles and sizes, supporting different visual treatments and accessibility features."
+    },
+    {
+      "id": "1753927870048vb7jw609k",
+      "usageExample": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'\n\nexport default function MyPage() {\n  return (\n    <Card>\n      <CardHeader>\n        <CardTitle>Card Title</CardTitle>\n        <CardDescription>Card Description</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p>Card Content</p>\n      </CardContent>\n      <CardFooter>\n        <p>Card Footer</p>\n      </CardFooter>\n    </Card>\n  )\n}",
+      "name": "Card",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/card.tsx",
+      "description": "A flexible card component for grouping and displaying content, with distinct sections for header, title, description, content, and footer."
+    },
+    {
+      "id": "1753927885597v7uqd5t8x",
+      "description": "A utility component for creating customizable charts with Recharts, providing containers, tooltips, and legends.",
+      "usageExample": "import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'\nimport { LineChart, Line, XAxis, YAxis } from 'recharts'\n\nexport default function MyPage() {\n  const data = [\n    { name: 'Jan', value: 100 },\n    { name: 'Feb', value: 200 },\n  ];\n  const config = {\n    value: { label: 'Value', color: 'hsl(var(--chart-1))' },\n  };\n\n  return (\n    <ChartContainer config={config}>\n      <LineChart data={data}>\n        <XAxis dataKey=\"name\" />\n        <YAxis />\n        <ChartTooltip content={<ChartTooltipContent />} />\n        <Line type=\"monotone\" dataKey=\"value\" stroke=\"var(--color-value)\" />\n      </LineChart>\n    </ChartContainer>\n  );\n}",
+      "name": "Chart",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/chart.tsx"
+    },
+    {
+      "id": "1753927898832tgu50qoxs",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/input.tsx",
+      "name": "Input",
+      "usageExample": "import { Input } from '@/components/ui/input'\n\nexport default function MyPage() {\n  return (\n    <div className=\"grid w-full max-w-sm items-center gap-1.5\">\n      <Label htmlFor=\"email\">Email</Label>\n      <Input type=\"email\" id=\"email\" placeholder=\"Email\" />\n    </div>\n  )\n}",
+      "description": "A customizable input component for text, numbers, and other input types, with various styling and accessibility features."
+    },
+    {
+      "id": "17539279166460x1mpmimh",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/label.tsx",
+      "usageExample": "import { Label } from '@/components/ui/label'\n\nexport default function MyPage() {\n  return (\n    <Label htmlFor=\"email\">Email Address</Label>\n  )\n}",
+      "name": "Label",
+      "description": "A component for rendering accessible labels for form elements, enhancing usability and accessibility."
+    },
+    {
+      "id": "17539279318783uzgindhz",
+      "description": "A WAI-ARIA compliant navigation menu component for building accessible and interactive navigation systems.",
+      "name": "NavigationMenu",
+      "usageExample": "import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from '@/components/ui/navigation-menu'\n\nexport default function MyPage() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"/\">Home</NavigationMenuLink>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"/about\">About</NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  )\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/navigation-menu.tsx"
+    },
+    {
+      "id": "1753927969049rta8kow5p",
+      "name": "Progress",
+      "usageExample": "import { Progress } from '@/components/ui/progress'\n\nexport default function MyPage() {\n  return (\n    <Progress value={50} className=\"w-[60%]\" />\n  )\n}",
+      "description": "A customizable progress bar component to display the completion status of a task.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/progress.tsx"
+    },
+    {
+      "id": "1753927987382nm78nomja",
+      "description": "A visual separator component used to divide content or define sections, supporting horizontal and vertical orientations.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/separator.tsx",
+      "name": "Separator",
+      "usageExample": "import { Separator } from '@/components/ui/separator'\n\nexport default function MyPage() {\n  return (\n    <div>\n      <span>Item 1</span>\n      <Separator orientation=\"vertical\" />\n      <span>Item 2</span>\n    </div>\n  )\n}"
+    },
+    {
+      "id": "17539280032556q94kic4z",
+      "name": "Sheet",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/sheet.tsx",
+      "usageExample": "import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet'\nimport { Button } from '@/components/ui/button'\n\nexport default function MyPage() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant=\"outline\">Open</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Edit Profile</SheetTitle>\n          <SheetDescription>\n            Make changes to your profile here. Click save when you're done.\n          </SheetDescription>\n        </SheetHeader>\n        {/* Your form goes here */}\n      </SheetContent>\n    </Sheet>\n  )\n}",
+      "description": "A modal dialog that slides in from the edge of the screen, commonly used for sidebars or mobile menus."
+    },
+    {
+      "id": "1753928016155xfkc5x338",
+      "name": "Sidebar",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/sidebar.tsx",
+      "usageExample": "import { Sidebar, SidebarProvider, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar'\nimport { Home, Settings } from 'lucide-react'\n\nexport default function MyPage() {\n  return (\n    <SidebarProvider>\n      <Sidebar>\n        <SidebarHeader>\n          <h1 className=\"text-lg font-semibold\">My App</h1>\n        </SidebarHeader>\n        <SidebarContent>\n          <SidebarMenu>\n            <SidebarMenuItem>\n              <SidebarMenuButton asChild>\n                <a href=\"#\">\n                  <Home />\n                  <span>Home</span>\n                </a>\n              </SidebarMenuButton>\n            </SidebarMenuItem>\n            <SidebarMenuItem>\n              <SidebarMenuButton asChild>\n                <a href=\"#\">\n                  <Settings />\n                  <span>Settings</span>\n                </a>\n              </SidebarMenuButton>\n            </SidebarMenuItem>\n          </SidebarMenu>\n        </SidebarContent>\n      </Sidebar>\n    </SidebarProvider>\n  )\n}",
+      "description": "A comprehensive sidebar component with various sub-components for building flexible and responsive navigation layouts, including collapsible states, mobile support, and theming."
+    },
+    {
+      "id": "17539280375609m3nt7s0f",
+      "name": "Skeleton",
+      "description": "A visual placeholder component that displays a shimmering effect to indicate loading content.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/skeleton.tsx",
+      "usageExample": "import { Skeleton } from '@/components/ui/skeleton'\n\nexport default function MyPage() {\n  return (\n    <div className=\"flex items-center space-x-4\">\n      <Skeleton className=\"h-12 w-12 rounded-full\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-[250px]\" />\n        <Skeleton className=\"h-4 w-[200px]\" />\n      </div>\n    </div>\n  )\n}"
+    },
+    {
+      "id": "1753928068388per4y03zl",
+      "name": "Tooltip",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/tooltip.tsx",
+      "usageExample": "import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'\nimport { Button } from '@/components/ui/button'\n\nexport default function MyPage() {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\">Hover</Button>\n      </TooltipTrigger>\n      <TooltipContent>\n        <p>This is a tooltip</p>\n      </TooltipContent>\n    </Tooltip>\n  )\n}",
+      "description": "A customizable tooltip component that displays informative text when a user hovers over or focuses on an element."
+    },
+    {
+      "id": "1753928082539p0ww540a8",
+      "name": "VideoPlayer",
+      "description": "A component for embedding and displaying YouTube videos with an optional transcript, allowing users to load the video on demand and toggle transcript visibility.",
+      "usageExample": "import { VideoPlayer } from '@/components/ui/video-player'\n\nexport default function MyPage() {\n  const sampleVideo = {\n    title: 'Introduction to Accounting',\n    description: 'A brief overview of basic accounting principles.',\n    youtubeId: 'dQw4w9WgXcQ',\n    duration: '5:30',\n    transcript: 'This is a sample transcript for the video. It explains various accounting concepts in detail.'\n  };\n\n  return (\n    <div>\n      <VideoPlayer video={sampleVideo} />\n    </div>\n  );\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/ui/video-player.tsx"
+    },
+    {
+      "id": "1753928098855pkynqh56h",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/AssessmentOverview.tsx",
+      "name": "AssessmentOverview",
+      "description": "A component to display an overview of unit assessments, including a final performance task, key milestones, and a rubric preview.",
+      "usageExample": "import { AssessmentOverview } from '@/components/unit/AssessmentOverview';\n\nconst sampleAssessment = {\n  performanceTask: {\n    title: 'Build a Financial Model',\n    description: 'Students will create a comprehensive financial model for a startup.',\n    requirements: [\n      'Forecast revenue and expenses',\n      'Calculate key financial ratios',\n      'Present findings to a mock board'\n    ],\n    context: 'This task simulates a real-world scenario for financial analysts.'\n  },\n  milestones: [\n    { id: 'm1', title: 'Data Collection', day: 5, description: 'Gather necessary financial data.', criteria: ['Collect data from 3 sources'] },\n  ],\n  rubric: [\n    { name: 'Accuracy', weight: '40%', exemplary: 'All calculations are correct.', proficient: 'Most calculations are correct.', developing: 'Many errors in calculations.' },\n  ]\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <AssessmentOverview assessment={sampleAssessment} />\n    </div>\n  );\n}"
+    },
+    {
+      "id": "1753928111594x2speqawn",
+      "description": "A component to display a driving question for a unit, providing context and an optional scenario to engage students.",
+      "usageExample": "import { DrivingQuestion } from '@/components/unit/DrivingQuestion';\n\nconst sampleQuestion = {\n  question: 'How can businesses use financial data to make informed decisions?',\n  context: 'This unit explores the role of accounting in business strategy.',\n  scenario: 'Imagine you are a financial analyst advising a startup.'\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <DrivingQuestion drivingQuestion={sampleQuestion} />\n    </div>\n  );\n}",
+      "name": "DrivingQuestion",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/DrivingQuestion.tsx"
+    },
+    {
+      "id": "1753928123969hdpefv83y",
+      "name": "LearningSequence",
+      "description": "A component to display a unit's learning sequence, broken down by weeks and days, including focus areas, activities, resources, and milestones.",
+      "usageExample": "import { LearningSequence } from '@/components/unit/LearningSequence';\n\nconst sampleSequence = {\n  weeks: [\n    {\n      weekNumber: 1,\n      title: 'Introduction to Accounting',\n      description: 'Understanding the basics of financial transactions.',\n      days: [\n        { day: 1, focus: 'What is Accounting?', activities: ['Lecture', 'Discussion'], resources: ['Textbook Ch 1'] },\n        { day: 2, focus: 'The Accounting Equation', activities: ['Exercise'], resources: ['Worksheet'], milestone: 'Complete Accounting Equation Exercise' },\n      ],\n    },\n  ],\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <LearningSequence learningSequence={sampleSequence} />\n    </div>\n  );\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/LearningSequence.tsx"
+    },
+    {
+      "id": "1753928138347232n9e2xh",
+      "name": "Prerequisites",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/Prerequisites.tsx",
+      "description": "A component to display prerequisites and required resources for a unit, including knowledge, technology, and downloadable materials, with optional differentiation strategies.",
+      "usageExample": "import { Prerequisites } from '@/components/unit/Prerequisites';\n\nconst samplePrereqs = {\n  knowledge: [\n    'Basic algebra',\n    'Understanding of percentages'\n  ],\n  technology: [\n    'Laptop or desktop computer',\n    'Microsoft Excel (version 2016 or newer)'\n  ],\n  resources: [\n    { title: 'Excel Template', type: 'download', url: '/assets/template.xlsx' },\n  ],\n  differentiation: {\n    struggling: ['Provide simplified examples'],\n    advanced: ['Offer challenge problems'],\n    ell: ['Use visual aids']\n  }\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <Prerequisites prerequisites={samplePrereqs} />\n    </div>\n  );\n}"
+    },
+    {
+      "id": "1753928158697pz6b4sjet",
+      "usageExample": "import { StudentChoices } from '@/components/unit/StudentChoices';\n\nconst sampleChoices = {\n  ventures: ['Lemonade Stand', 'Tech Startup'],\n  roles: ['CEO', 'CFO', 'Marketing Lead'],\n  presentationFormats: ['Slide Deck', 'Video', 'Live Demo']\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <StudentChoices studentChoices={sampleChoices} />\n    </div>\n  );\n}",
+      "name": "StudentChoices",
+      "description": "A component to display options for student voice and choice within a unit, such as venture selection, team roles, and presentation formats.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/StudentChoices.tsx"
+    },
+    {
+      "id": "1753928181019d92vjjded",
+      "name": "UnitHeader",
+      "usageExample": "import { UnitHeader } from '@/components/unit/UnitHeader';\n\nexport default function MyPage() {\n  return (\n    <UnitHeader\n      unitNumber=\"Unit 1\"\n      title=\"Introduction to Accounting\"\n      description=\"Learn the fundamental principles of accounting and financial statements.\"\n      duration=\"2 weeks\"\n      difficulty=\"Beginner\"\n    />\n  );\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitHeader.tsx",
+      "description": "A header component for a unit, displaying the unit number, title, description, duration, and difficulty level."
+    },
+    {
+      "id": "1753928203556f575n56b0",
+      "usageExample": "import { UnitIntroduction } from '@/components/unit/UnitIntroduction';\n\nconst sampleIntro = {\n  unitNumber: 'Unit 1',\n  unitTitle: 'Smart Ledger Launch',\n  drivingQuestion: 'How can a simple spreadsheet become a powerful accounting tool?',\n  introVideo: {\n    title: 'Welcome to Unit 1',\n    description: 'An overview of what you will learn.',\n    youtubeId: 'dQw4w9WgXcQ',\n    duration: '2:00',\n    transcript: 'Welcome to the unit. We will cover accounting basics.'\n  },\n  entryEvent: {\n    title: 'The Case of the Confused Coffee Shop',\n    description: 'A local coffee shop owner is struggling to track finances.',\n    activities: ['Read case study', 'Brainstorm solutions'],\n    resources: ['Case Study PDF']\n  },\n  projectOverview: {\n    scenario: 'You are a financial consultant helping the coffee shop.',\n    teamStructure: 'Work in teams of 3-4',\n    deliverable: 'A functional Excel-based accounting ledger',\n    timeline: '2 weeks'\n  },\n  learningObjectives: {\n    content: ['Understand debits and credits', 'Classify accounts'],\n    skills: ['Use SUM function', 'Create basic formulas'],\n    deliverables: ['Journal entries', 'T-accounts']\n  },\n  nextSectionHref: '/units/unit01-smart-ledger/concepts'\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <UnitIntroduction {...sampleIntro} />\n    </div>\n  );\n}",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitIntroduction.tsx",
+      "name": "UnitIntroduction",
+      "description": "A component to display the introduction to a unit, including a driving question, introductory video, entry event, project overview, and learning objectives."
+    },
+    {
+      "id": "17539282183985uskjmdw3",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitOverview.tsx",
+      "usageExample": "import { UnitOverview } from '@/components/unit/UnitOverview';\n\nconst sampleObjectives = {\n  content: [\n    'Understand financial statements',\n    'Analyze profitability'\n  ],\n  skills: [\n    'Use Excel for financial modeling',\n    'Interpret financial ratios'\n  ],\n  deliverables: [\n    'Income Statement',\n    'Balance Sheet',\n    'Cash Flow Statement'\n  ]\n};\n\nexport default function MyPage() {\n  return (\n    <div>\n      <UnitOverview objectives={sampleObjectives} />\n    </div>\n  );\n}",
+      "name": "UnitOverview",
+      "description": "A component to display a high-level overview of a unit's learning objectives, including content knowledge, skills, and final deliverables."
+    },
+    {
+      "id": "17539282348544z4ux7y4d",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitTemplate.tsx",
+      "usageExample": "import { UnitTemplate } from '@/components/unit/UnitTemplate';\nimport { unit01Data } from '@/data/unit01'; // Example data\n\nexport default function MyPage() {\n  return (\n    <div>\n      <UnitTemplate unitData={unit01Data} />\n    </div>\n  );\n}",
+      "description": "A comprehensive template component for displaying a unit's full content, including header, overview, driving question, assessments, learning sequence, student choices, and prerequisites.",
+      "name": "UnitTemplate"
+    },
+    {
+      "id": "17539344847679d0wbeyuw",
+      "name": "ReflectionJournal",
+      "description": "A component for student self-reflection on learning experiences, supporting the CAP (Courage, Adaptability, Persistence) framework used throughout the Grade 12 Business Operations curriculum. Students reflect on their learning journey and develop metacognitive awareness.",
+      "filePath": "bus-math-nextjs/src/components/exercises/ReflectionJournal.tsx",
+      "usageExample": "<ReflectionJournal unitTitle=\"Unit 1 Reflection\" prompts={customPrompts} onSave={handleSave} />"
+    }
+  ],
+  "apis": [],
+  "environment": [],
+  "style-guide": [
+    {
+      "id": "1753928332639btodwcv5a",
+      "className": "text-primary",
+      "usageExample": "<p className=\"text-primary\">Hello World</p>",
+      "description": "Default text color for primary elements.",
+      "element": "Text"
+    },
+    {
+      "id": "1753928340267ivw37dn5y",
+      "element": "Background",
+      "usageExample": "<div className=\"bg-primary\"></div>",
+      "description": "Default background color for primary elements.",
+      "className": "bg-primary"
+    },
+    {
+      "id": "1753928357155ys7rttp5a",
+      "usageExample": "<p className=\"text-secondary-foreground\">Secondary Text</p>",
+      "className": "text-secondary-foreground",
+      "description": "Text color for secondary elements.",
+      "element": "Text"
+    },
+    {
+      "id": "1753928364734wpxllhn0t",
+      "usageExample": "<div className=\"bg-secondary\"></div>",
+      "element": "Background",
+      "description": "Background color for secondary elements.",
+      "className": "bg-secondary"
+    },
+    {
+      "id": "17539283941295xum73t1a",
+      "description": "Text color for muted foreground elements.",
+      "className": "text-muted-foreground",
+      "element": "Text",
+      "usageExample": "<p className=\"text-muted-foreground\">Muted Text</p>"
+    },
+    {
+      "id": "1753928399957w4odz8dbd",
+      "element": "Background",
+      "description": "Background color for muted elements.",
+      "className": "bg-muted",
+      "usageExample": "<div className=\"bg-muted\"></div>"
+    },
+    {
+      "id": "1753928405078mz4a3wkxd",
+      "element": "Text",
+      "usageExample": "<p className=\"text-accent-foreground\">Accent Text</p>",
+      "description": "Text color for accent elements.",
+      "className": "text-accent-foreground"
+    },
+    {
+      "id": "1753928411423jfkbj7h33",
+      "usageExample": "<div className=\"bg-accent\"></div>",
+      "element": "Background",
+      "className": "bg-accent",
+      "description": "Background color for accent elements."
+    },
+    {
+      "id": "1753928424911xwtb9n86n",
+      "className": "text-destructive",
+      "description": "Text color for destructive actions or elements.",
+      "element": "Text",
+      "usageExample": "<p className=\"text-destructive\">Delete</p>"
+    },
+    {
+      "id": "1753928431088msh9orqx4",
+      "className": "bg-destructive",
+      "description": "Background color for destructive actions or elements.",
+      "usageExample": "<div className=\"bg-destructive\"></div>",
+      "element": "Background"
+    },
+    {
+      "id": "1753928437330ezxjofl13",
+      "description": "Border color for elements.",
+      "className": "border-border",
+      "element": "Border",
+      "usageExample": "<div className=\"border border-border\"></div>"
+    },
+    {
+      "id": "1753928443589dupnijuzp",
+      "description": "Ring color for focus states.",
+      "usageExample": "<input className=\"focus:ring ring-ring\" />",
+      "className": "ring-ring",
+      "element": "Ring"
+    },
+    {
+      "id": "17539284485795072157ot",
+      "usageExample": "<input className=\"bg-input\" />",
+      "className": "bg-input",
+      "element": "Input",
+      "description": "Background color for input fields."
+    },
+    {
+      "id": "1753928455250mylpg1ust",
+      "element": "Text",
+      "description": "Default text color for foreground elements.",
+      "usageExample": "<p className=\"text-foreground\">Foreground Text</p>",
+      "className": "text-foreground"
+    },
+    {
+      "id": "1753928462115ccaqet12h",
+      "usageExample": "<div className=\"bg-background\"></div>",
+      "className": "bg-background",
+      "description": "Default background color for the application.",
+      "element": "Background"
+    },
+    {
+      "id": "1753928469692t8jylfd1e",
+      "className": "text-card-foreground",
+      "usageExample": "<p className=\"text-card-foreground\">Card Text</p>",
+      "description": "Text color for card foreground elements.",
+      "element": "Text"
+    },
+    {
+      "id": "17539284762438axgoiwlb",
+      "className": "bg-card",
+      "description": "Background color for card elements.",
+      "usageExample": "<div className=\"bg-card\"></div>",
+      "element": "Background"
+    },
+    {
+      "id": "1753928483926ee8qn7ovl",
+      "description": "Text color for popover foreground elements.",
+      "element": "Text",
+      "usageExample": "<p className=\"text-popover-foreground\">Popover Text</p>",
+      "className": "text-popover-foreground"
+    },
+    {
+      "id": "175392849036145xheoeez",
+      "usageExample": "<div className=\"bg-popover\"></div>",
+      "className": "bg-popover",
+      "description": "Background color for popover elements.",
+      "element": "Background"
+    },
+    {
+      "id": "1753928503481dka2cqhyt",
+      "description": "Color for chart series 1.",
+      "className": "chart-1",
+      "element": "Chart",
+      "usageExample": "stroke=\"var(--color-chart-1)\""
+    },
+    {
+      "id": "17539285095252bcqq5i5r",
+      "description": "Color for chart series 2.",
+      "className": "chart-2",
+      "usageExample": "stroke=\"var(--color-chart-2)\"",
+      "element": "Chart"
+    },
+    {
+      "id": "1753928515311qp2js9rgj",
+      "element": "Chart",
+      "description": "Color for chart series 3.",
+      "usageExample": "stroke=\"var(--color-chart-3)\"",
+      "className": "chart-3"
+    },
+    {
+      "id": "17539285203986ld39hrfa",
+      "description": "Color for chart series 4.",
+      "element": "Chart",
+      "usageExample": "stroke=\"var(--color-chart-4)\"",
+      "className": "chart-4"
+    },
+    {
+      "id": "1753928533939spg139fdz",
+      "className": "chart-5",
+      "element": "Chart",
+      "usageExample": "stroke=\"var(--color-chart-5)\"",
+      "description": "Color for chart series 5."
+    },
+    {
+      "id": "1753928540142yren17slm",
+      "className": "sidebar",
+      "usageExample": "<div className=\"bg-sidebar\"></div>",
+      "description": "Background color for the sidebar.",
+      "element": "Sidebar"
+    },
+    {
+      "id": "17539285451592p152cr01",
+      "usageExample": "<p className=\"text-sidebar-foreground\">Sidebar Text</p>",
+      "className": "sidebar-foreground",
+      "element": "Sidebar",
+      "description": "Foreground color for the sidebar."
+    },
+    {
+      "id": "1753928553944cd0omy8z1",
+      "usageExample": "<div className=\"bg-sidebar-primary\"></div>",
+      "description": "Primary color for sidebar elements.",
+      "className": "sidebar-primary",
+      "element": "Sidebar"
+    },
+    {
+      "id": "1753928559676mdmmky6lt",
+      "description": "Foreground color for primary sidebar elements.",
+      "element": "Sidebar",
+      "usageExample": "<p className=\"text-sidebar-primary-foreground\">Primary Sidebar Text</p>",
+      "className": "sidebar-primary-foreground"
+    },
+    {
+      "id": "1753928565351rlsm9nh03",
+      "element": "Sidebar",
+      "className": "sidebar-accent",
+      "usageExample": "<div className=\"bg-sidebar-accent\"></div>",
+      "description": "Accent color for sidebar elements."
+    },
+    {
+      "id": "17539285710609pdnx6o7h",
+      "element": "Sidebar",
+      "className": "sidebar-accent-foreground",
+      "description": "Foreground color for accent sidebar elements.",
+      "usageExample": "<p className=\"text-sidebar-accent-foreground\">Accent Sidebar Text</p>"
+    },
+    {
+      "id": "1753928576315iwr52zj0h",
+      "className": "sidebar-border",
+      "usageExample": "<div className=\"border-sidebar-border\"></div>",
+      "element": "Sidebar",
+      "description": "Border color for sidebar elements."
+    },
+    {
+      "id": "175392858510198s2qht3x",
+      "description": "Ring color for sidebar focus states.",
+      "usageExample": "<div className=\"ring-sidebar-ring\"></div>",
+      "className": "sidebar-ring",
+      "element": "Sidebar"
+    }
+  ],
+  "state": [],
+  "hooks": [],
+  "conventions": []
+}

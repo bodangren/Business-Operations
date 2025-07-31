@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "components-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["components-mcp"]
+    },
+    "chrome-mcp-stdio": {
+      "command": "npx",
+      "args": [
+        "node",
+        "/home/daniel-bo/.nvm/versions/node/v24.4.0/lib/node_modules/mcp-chrome-bridge/dist/mcp/mcp-server-stdio.js"
+      ]
+    }
+  }
+}
