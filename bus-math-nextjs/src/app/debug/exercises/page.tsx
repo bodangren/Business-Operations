@@ -10,6 +10,7 @@ import { ArrowLeft, FileText, Target, BookOpen, Calculator } from 'lucide-react'
 import { DragAndDrop } from '@/components/exercises/DragAndDrop'
 import { FillInTheBlank } from '@/components/exercises/FillInTheBlank'
 import ComprehensionCheck from '@/components/exercises/ComprehensionCheck'
+import RatioMatching from '@/components/drag-drop-exercises/RatioMatching'
 // TODO: Add other exercise components when they're created
 // import { ReflectionJournal } from '@/components/exercises/ReflectionJournal'
 
@@ -587,6 +588,22 @@ export default function ExercisesDebugPage() {
             />
           </div>
 
+        </CardContent>
+      </Card>
+
+      {/* RatioMatching Component Test */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Target className="w-6 h-6 text-blue-600" />
+            RatioMatching Component (Unit 3)
+          </CardTitle>
+          <CardDescription>
+            Financial ratio matching exercise for Unit 3: Three-Statement Storyboard. Match ratios to their formulas.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <RatioMatching />
         </CardContent>
       </Card>
 

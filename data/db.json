@@ -433,6 +433,20 @@
       "description": "A component for student self-reflection on learning experiences, supporting the CAP (Courage, Adaptability, Persistence) framework used throughout the Grade 12 Business Operations curriculum. Students reflect on their learning journey and develop metacognitive awareness.",
       "filePath": "bus-math-nextjs/src/components/exercises/ReflectionJournal.tsx",
       "usageExample": "<ReflectionJournal unitTitle=\"Unit 1 Reflection\" prompts={customPrompts} onSave={handleSave} />"
+    },
+    {
+      "id": "1753935864452j9g67dvgn",
+      "name": "RatioMatching",
+      "description": "A drag-and-drop exercise component for Unit 3 (Three-Statement Storyboard) that teaches students to match financial ratios to their corresponding formulas. Students learn 8 essential financial ratios across 4 categories: Liquidity (Current Ratio, Quick Ratio), Profitability (Return on Assets, Gross Profit Margin), Efficiency (Inventory Turnover, Accounts Receivable Turnover), and Leverage (Debt-to-Equity, Times Interest Earned). Features real-world business context, hint system with investor perspectives, color-coded categories, immediate feedback, and score tracking. Supports the Unit 3 learning objective of interpreting key financial ratios for investor analysis and three-statement integration.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/RatioMatching.tsx",
+      "usageExample": "import RatioMatching from '@/components/drag-drop-exercises/RatioMatching'\n\nexport default function Unit3Page() {\n  return (\n    <div>\n      <RatioMatching />\n    </div>\n  )\n}"
+    },
+    {
+      "id": "175393607669458ak70qhf",
+      "name": "BudgetCategorySort",
+      "description": "A drag-and-drop exercise component for Unit 4 (Data-Driven Café) that teaches students to organize café operating expenses into budget categories. Students learn to categorize 15 café expenses across 5 budget categories: Cost of Goods Sold (COGS), Labor Costs, Overhead (Fixed Costs), Marketing & Customer Acquisition, and Administrative Expenses. Features real-world café context, monthly budget totals, profit impact indicators, hint system with business insights, immediate feedback with color-coded results, and score tracking. Supports Unit 4's learning objectives of statistical analysis and data-driven operations optimization by connecting expense categorization to POS data analysis and profit maximization goals.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BudgetCategorySort.tsx",
+      "usageExample": "import BudgetCategorySort from '@/components/drag-drop-exercises/BudgetCategorySort'\n\nexport default function Unit4Page() {\n  return (\n    <div>\n      <BudgetCategorySort />\n    </div>\n  )\n}"
     }
   ],
   "apis": [],
@@ -665,5 +679,76 @@
   ],
   "state": [],
   "hooks": [],
-  "conventions": []
+  "conventions": [],
+  "units": [
+    {
+      "id": "mdrha5ziiupuou6dqt",
+      "rationale": "Early-stage startup bookkeeping is often chaotic and unsustainable, creating significant business risk. This unit is designed to teach founders the importance of building a trustworthy, organized financial system ('clean books') from day one. This isn't just for investors or accountants; it's a critical tool for founders to gain clarity on their financial health, make decisions based on facts, and build confidence in their venture.",
+      "title": "Unit 1: Smart Ledger Launch",
+      "status": "Draft",
+      "description": "Your team represents a startup seeking angel investment. Investors will scrutinize your financial controls before writing a check. You must build a self-auditing ledger system that demonstrates you can maintain \"clean books\" from day one. The primary deliverable is a 4-minute investor pitch and a live Excel workbook demo showing self-auditing features.",
+      "sequence": 1
+    },
+    {
+      "id": "mdrhkhm79v8qau43696",
+      "rationale": "Students will experience the real cost of slow month-end closes and learn to build automated solutions that maintain accounting accuracy while dramatically improving efficiency.",
+      "description": "What automation can cut our month-end closing time from two days to two hours without sacrificing GAAP accuracy?",
+      "title": "Month-End Wizard",
+      "status": "Draft",
+      "sequence": 2
+    },
+    {
+      "id": "mdrhlhuxj2zkbimaqfd",
+      "rationale": "Students will dissect real company financial statements and map narrative threads to specific line items, creating a comprehensive financial story for investors.",
+      "sequence": 3,
+      "status": "Draft",
+      "title": "Three-Statement Storyboard",
+      "description": "How do today's journal entries flow into a narrative of profit, solvency, and cash health that investors can trust?"
+    },
+    {
+      "id": "mdrhlhv2yok8auw4s3s",
+      "description": "Given two years of POS data, what inventory and staffing plan will maximize weekend profits without raising waste above 3%?",
+      "rationale": "Work with real café POS data to create data-driven recommendations for weekend operations optimization.",
+      "sequence": 4,
+      "title": "Data-Driven Café",
+      "status": "Draft"
+    },
+    {
+      "id": "mdrhlhv3ixkn2gykua",
+      "rationale": "Small business owners often struggle with cash flow timing, especially when payroll obligations coincide with other major expenses like rent. Through this unit, you'll build a comprehensive payroll system that helps predict and manage these cash flow challenges.",
+      "sequence": 5,
+      "status": "Draft",
+      "title": "PayDay Simulator",
+      "description": "How can a small business owner predict payroll cash-outs and still make rent on time?"
+    },
+    {
+      "id": "mdrhlhv3y4h703ia2t",
+      "sequence": 6,
+      "rationale": "Using live competitor price data and advanced Excel tools, teams will develop data-driven pricing recommendations through CVP analysis and sensitivity modeling.",
+      "description": "What pricing strategy hits our profit target while staying competitive in the local market?",
+      "status": "Draft",
+      "title": "PriceLab Challenge"
+    },
+    {
+      "id": "mdrhlhv4ov691yonkpi",
+      "description": "Which depreciation and inventory methods best align with our cash‑flow and tax strategy?",
+      "title": "Asset & Inventory Tracker",
+      "sequence": 7,
+      "rationale": "Local auditor shares a real case of a company fined for inventory misvaluation and provides anonymized asset and inventory data.",
+      "status": "Draft"
+    },
+    {
+      "id": "mdrhlhv53tduw0ib5oa",
+      "sequence": 8,
+      "description": "Can we convince a micro‑VC that our first‑year financial model is robust enough to merit funding?",
+      "title": "Year‑1 Startup Model",
+      "status": "Draft",
+      "rationale": "A venture capitalist guest outlines common red flags in rookie startup models and challenges students to avoid them. Students review anonymized pitch decks and model failures."
+    }
+  ],
+  "lessons": [],
+  "lessonPhases": [],
+  "appConnections": [],
+  "assessments": [],
+  "tasks": []
 }

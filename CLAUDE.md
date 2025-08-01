@@ -97,7 +97,7 @@ The application is structured around 8 educational units, each with:
 
 #### When Creating New Components
 **IMMEDIATELY** after creating any React component:
-1. Use `mcp__components-mcp__create_component` with:
+1. Use `mcp__curriculum-mcp__create_component` with:
    - **name**: Component name (exact match to file/export name)
    - **description**: Clear educational purpose, key features, learning objectives
    - **filePath**: Absolute path from project root
@@ -105,14 +105,14 @@ The application is structured around 8 educational units, each with:
 
 #### When Updating Components
 **IMMEDIATELY** after modifying existing components:
-1. Use `mcp__components-mcp__update_component` to reflect:
+1. Use `mcp__curriculum-mcp__update_component` to reflect:
    - Changed functionality or props
    - New educational features
    - Updated file locations
 
 #### When Creating APIs/Endpoints
 For any REST endpoints, API routes, or external integrations:
-1. Use `mcp__components-mcp__create_api` documenting:
+1. Use `mcp__curriculum-mcp__create_api` documenting:
    - Endpoint paths and HTTP methods
    - Request/response structures
    - Authentication requirements
@@ -128,8 +128,8 @@ For any REST endpoints, API routes, or external integrations:
 ### Integration with Development Workflow
 
 #### Pre-Development Phase
-1. Query `mcp__components-mcp__get_components` to understand available building blocks
-2. Check related categories (APIs, hooks, conventions) for relevant patterns
+1. Query `mcp__curriculum-mcp__list_components` or `mcp__curriculum-mcp__get_components` to understand available building blocks
+2. Check related categories using `mcp__curriculum-mcp__list_apis`, `mcp__curriculum-mcp__get_hooks`, `mcp__curriculum-mcp__get_conventions` for relevant patterns
 3. Plan new work based on documented capabilities and gaps
 
 #### Post-Development Phase  
@@ -145,9 +145,15 @@ Document components with emphasis on:
 - **Assessment Integration**: How it connects to formative/summative evaluation
 
 ### Knowledge Base Categories
-The MCP system tracks:
+The curriculum-mcp system tracks:
+- **Units**: Curriculum units with learning objectives and structure
+- **Lessons**: Individual lessons within units with phases and activities
+- **Lesson Phases**: Structured lesson components (Hook, Introduction, Guided Practice, etc.)
+- **Assessments**: Formative and summative assessments linked to units/lessons
 - **Components**: All React components with educational purpose and technical details
 - **APIs**: Backend endpoints and external service integrations
+- **App Connections**: Links between lesson phases and UI components/pages
+- **Tasks**: Development and curriculum tasks with status tracking
 - **Environment Variables**: Configuration and deployment settings
 - **Style Guide**: Design system patterns and Tailwind conventions
 - **State Management**: Global state patterns and context usage
