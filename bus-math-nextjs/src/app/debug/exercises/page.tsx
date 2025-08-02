@@ -11,6 +11,8 @@ import { DragAndDrop } from '@/components/exercises/DragAndDrop'
 import { FillInTheBlank } from '@/components/exercises/FillInTheBlank'
 import ComprehensionCheck from '@/components/exercises/ComprehensionCheck'
 import RatioMatching from '@/components/drag-drop-exercises/RatioMatching'
+import PeerCritiqueForm from '@/components/exercises/PeerCritiqueForm'
+import FeedbackCollector from '@/components/exercises/FeedbackCollector'
 // TODO: Add other exercise components when they're created
 // import { ReflectionJournal } from '@/components/exercises/ReflectionJournal'
 
@@ -607,20 +609,162 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
+      {/* PeerCritiqueForm Component Test */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileText className="w-6 h-6 text-green-600" />
+            PeerCritiqueForm Component (Multiple Units)
+          </CardTitle>
+          <CardDescription>
+            Structured peer feedback form for project presentations, Excel models, and business analysis work. 
+            Develops critical evaluation skills and professional communication.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-8">
+          
+          {/* Test 1: Unit 1 Smart Ledger Review */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-green-800">Test 1: Unit 1 Smart Ledger Presentation</h3>
+            <PeerCritiqueForm 
+              projectTitle="Smart Ledger Launch - Angel Investor Pitch"
+              peerName="Sarah Johnson"
+              unitNumber={1}
+              onSubmit={(feedback) => console.log('Unit 1 feedback submitted:', feedback)}
+            />
+          </div>
+
+          <Separator />
+
+          {/* Test 2: Unit 3 Financial Model Review */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-blue-800">Test 2: Unit 3 Three-Statement Model</h3>
+            <PeerCritiqueForm 
+              projectTitle="Three-Statement Storyboard with KPI Dashboard"
+              peerName="Michael Chen"
+              unitNumber={3}
+              onSubmit={(feedback) => console.log('Unit 3 feedback submitted:', feedback)}
+            />
+          </div>
+
+          <Separator />
+
+          {/* Test 3: Unit 8 Capstone Review */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-purple-800">Test 3: Unit 8 Year-1 Startup Model</h3>
+            <PeerCritiqueForm 
+              projectTitle="Year-1 Integrated Financial Model - VC Presentation"
+              peerName="Emma Rodriguez"
+              unitNumber={8}
+              onSubmit={(feedback) => console.log('Unit 8 feedback submitted:', feedback)}
+            />
+          </div>
+
+        </CardContent>
+      </Card>
+
+      {/* FeedbackCollector Component Test */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileText className="w-6 h-6 text-indigo-600" />
+            FeedbackCollector Component (Multiple Units)
+          </CardTitle>
+          <CardDescription>
+            Expert stakeholder feedback collection form for professional industry mentorship. 
+            Facilitates feedback from investors, CPAs, entrepreneurs, consultants, and bankers.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-8">
+          
+          {/* Test 1: Investor Feedback */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-green-800">Test 1: Investor / VC Perspective</h3>
+            <FeedbackCollector 
+              projectTitle="Smart Ledger Launch - Angel Investor Pitch"
+              stakeholderType="investor"
+              unitNumber={1}
+              studentName="Sarah Johnson"
+              onSubmit={(feedback) => console.log('Investor feedback submitted:', feedback)}
+            />
+          </div>
+
+          <Separator />
+
+          {/* Test 2: CPA/Accountant Feedback */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-blue-800">Test 2: CPA / Accountant Review</h3>
+            <FeedbackCollector 
+              projectTitle="Three-Statement Storyboard with KPI Dashboard"
+              stakeholderType="accountant"
+              unitNumber={3}
+              studentName="Michael Chen"
+              onSubmit={(feedback) => console.log('CPA feedback submitted:', feedback)}
+            />
+          </div>
+
+          <Separator />
+
+          {/* Test 3: Entrepreneur Feedback */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-orange-800">Test 3: Entrepreneur Mentor</h3>
+            <FeedbackCollector 
+              projectTitle="Data-Driven Café Operations Optimization"
+              stakeholderType="entrepreneur"
+              unitNumber={4}
+              studentName="Emma Rodriguez"
+              onSubmit={(feedback) => console.log('Entrepreneur feedback submitted:', feedback)}
+            />
+          </div>
+
+          <Separator />
+
+          {/* Test 4: Business Consultant Feedback */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-purple-800">Test 4: Business Consultant Analysis</h3>
+            <FeedbackCollector 
+              projectTitle="PriceLab Challenge - Competitive Pricing Strategy"
+              stakeholderType="consultant"
+              unitNumber={6}
+              studentName="David Kim"
+              onSubmit={(feedback) => console.log('Consultant feedback submitted:', feedback)}
+            />
+          </div>
+
+          <Separator />
+
+          {/* Test 5: Commercial Banker Review */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-indigo-800">Test 5: Commercial Banker Credit Review</h3>
+            <FeedbackCollector 
+              projectTitle="Year-1 Integrated Financial Model - VC Presentation"
+              stakeholderType="banker"
+              unitNumber={8}
+              studentName="Jessica Park"
+              onSubmit={(feedback) => console.log('Banker feedback submitted:', feedback)}
+            />
+          </div>
+
+        </CardContent>
+      </Card>
+
       {/* TODO: Add ReflectionJournal when created */}
       <Card className="bg-yellow-50 border-yellow-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-yellow-800">
             <Calculator className="w-6 h-6" />
-            Coming Soon: ReflectionJournal Component
+            Coming Soon: Additional Exercise Components
           </CardTitle>
           <CardDescription className="text-yellow-700">
-            Self-reflection and learning journal component will be added here once created.
+            More exercise components will be added here as they're developed.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2 text-yellow-700">
             <div>• <strong>ReflectionJournal:</strong> Self-reflection and learning journal component for CAP development</div>
+            <div>• <strong>ErrorCheckingSystem:</strong> Excel error validation and correction exercises</div>
+            <div>• <strong>SpreadsheetSimulator:</strong> Interactive Excel simulation for advanced formula practice</div>
+            <div>• <strong>SafeFormulaEvaluator:</strong> Secure formula evaluation component for Excel-like functionality</div>
           </div>
         </CardContent>
       </Card>
@@ -707,6 +851,59 @@ export default function ExercisesDebugPage() {
                   <strong>Sentence Format:</strong> {`{ id: string, text: string, answer: string, hint?: string, alternativeAnswers?: string[], category?: string }`}
                   <br />
                   <strong>Key Features:</strong> Use {'{blank}'} in text for input placement. Supports alternative correct answers and case-insensitive matching.
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold">PeerCritiqueForm Component:</h4>
+              <p className="text-sm">
+                Structured peer feedback form with five evaluation categories, star ratings, and professional feedback collection.
+                Supports collaborative learning and critical evaluation skill development.
+              </p>
+              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+                {`<PeerCritiqueForm projectTitle="..." peerName="..." unitNumber={1} onSubmit={handleFeedback} />`}
+              </code>
+              <div className="bg-blue-100 p-3 rounded mt-2">
+                <h5 className="font-semibold text-sm">PeerCritiqueForm Props:</h5>
+                <ul className="text-xs mt-2 space-y-1">
+                  <li>• <code>projectTitle</code>: string (optional, default: "Peer Project Review")</li>
+                  <li>• <code>peerName</code>: string (optional, default: "Classmate")</li>
+                  <li>• <code>unitNumber</code>: number (optional)</li>
+                  <li>• <code>onSubmit</code>: (feedback: PeerFeedback) =&gt; void (optional)</li>
+                  <li>• <code>className</code>: string (optional)</li>
+                </ul>
+                <div className="mt-2 text-xs">
+                  <strong>Key Features:</strong> 5-star rating system, comprehensive feedback categories (Strengths, Improvements, Excel Skills, Business Insight, Presentation), progress tracking, professional communication guidelines.
+                  <br />
+                  <strong>Educational Value:</strong> Develops critical evaluation skills, business communication, peer learning, and authentic assessment practices.
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold">FeedbackCollector Component:</h4>
+              <p className="text-sm">
+                Expert stakeholder feedback form with professional rating system and industry-specific focus areas.
+                Supports multiple stakeholder types (investor, accountant, entrepreneur, consultant, banker) with specialized expertise.
+              </p>
+              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+                {`<FeedbackCollector stakeholderType="investor" projectTitle="..." studentName="..." unitNumber={1} onSubmit={handleFeedback} />`}
+              </code>
+              <div className="bg-blue-100 p-3 rounded mt-2">
+                <h5 className="font-semibold text-sm">FeedbackCollector Props:</h5>
+                <ul className="text-xs mt-2 space-y-1">
+                  <li>• <code>stakeholderType</code>: 'investor' | 'entrepreneur' | 'accountant' | 'consultant' | 'banker' (optional, default: "investor")</li>
+                  <li>• <code>projectTitle</code>: string (optional, default: "Student Business Project")</li>
+                  <li>• <code>studentName</code>: string (optional, default: "Student")</li>
+                  <li>• <code>unitNumber</code>: number (optional)</li>
+                  <li>• <code>onSubmit</code>: (feedback: StakeholderFeedback) =&gt; void (optional)</li>
+                  <li>• <code>className</code>: string (optional)</li>
+                </ul>
+                <div className="mt-2 text-xs">
+                  <strong>Key Features:</strong> Professional 5-level rating system (Needs Work → Expert Level), 6 evaluation categories (Financial Accuracy, Business Viability, Presentation Quality, Industry Knowledge, Innovation Potential, Implementation Readiness), stakeholder-specific focus areas, mentorship opportunities, career guidance collection.
+                  <br />
+                  <strong>Educational Value:</strong> Authentic audience feedback, industry professional perspectives, mentorship development, real-world business validation, career pathway guidance.
                 </div>
               </div>
             </div>

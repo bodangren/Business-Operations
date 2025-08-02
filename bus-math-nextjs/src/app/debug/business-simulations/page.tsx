@@ -5,6 +5,8 @@ import { CashFlowChallenge } from '@/components/business-simulations/CashFlowCha
 import { InventoryManager } from '@/components/business-simulations/InventoryManager'
 import { LemonadeStand } from '@/components/business-simulations/LemonadeStand'
 import { StartupJourney } from '@/components/business-simulations/StartupJourney'
+import { PitchPresentationBuilder } from '@/components/business-simulations/PitchPresentationBuilder'
+import ErrorCheckingSystem from '@/components/business-simulations/ErrorCheckingSystem'
 
 export default function BusinessSimulationsDebugPage() {
   return (
@@ -78,6 +80,30 @@ export default function BusinessSimulationsDebugPage() {
               </p>
             </div>
             <StartupJourney />
+          </section>
+
+          <section>
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold text-slate-800 mb-2">
+                Pitch Presentation Builder
+              </h2>
+              <p className="text-slate-600">
+                Build a compelling 4-minute investor pitch for your startup business model with interactive content builder and practice mode.
+              </p>
+            </div>
+            <PitchPresentationBuilder />
+          </section>
+
+          <section>
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold text-slate-800 mb-2">
+                Error Checking System
+              </h2>
+              <p className="text-slate-600">
+                Build conditional formatting rules for business data validation and automated error detection.
+              </p>
+            </div>
+            <ErrorCheckingSystem />
           </section>
         </div>
       </div>

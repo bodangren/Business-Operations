@@ -60,50 +60,50 @@ export default function TeacherLayout({
 
               <Separator className="my-4" />
               
-              <h3 className="text-sm font-medium text-muted-foreground mb-2">Unit Lesson Plans</h3>
-              <Link href="/teacher/unit-lesson-plans/unit01">
+              <h3 className="text-sm font-medium text-muted-foreground mb-2">Teacher Unit Plans</h3>
+              <Link href="/teacher/unit01">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 1: Smart Ledger Launch
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit02">
+              <Link href="/teacher/unit02">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 2: Month-End Wizard
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit03">
+              <Link href="/teacher/unit03">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 3: Three-Statement Storyboard
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit04">
+              <Link href="/teacher/unit04">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 4: Data-Driven Café
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit05">
+              <Link href="/teacher/unit05">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 5: PayDay Simulator
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit06">
+              <Link href="/teacher/unit06">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 6: PriceLab Challenge
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit07">
+              <Link href="/teacher/unit07">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 7: Asset & Inventory Tracker
                 </Button>
               </Link>
-              <Link href="/teacher/unit-lesson-plans/unit08">
+              <Link href="/teacher/unit08">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
                   Unit 8: Year-1 Startup Model

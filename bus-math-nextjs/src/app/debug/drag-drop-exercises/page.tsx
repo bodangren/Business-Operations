@@ -8,6 +8,8 @@ import { FinancialStatementMatching } from '@/components/drag-drop-exercises/Fin
 import { BusinessTransactionCategorization } from '@/components/drag-drop/BusinessTransactionCategorization';
 import { CashFlowTimeline } from '@/components/drag-drop-exercises/CashFlowTimeline';
 import { BreakEvenComponents } from '@/components/drag-drop-exercises/BreakEvenComponents';
+import PercentageCalculationSorting from '@/components/drag-drop-exercises/PercentageCalculationSorting';
+import InventoryFlowDiagram from '@/components/drag-drop-exercises/InventoryFlowDiagram';
 
 export default function DragDropExercisesDebugPage() {
 
@@ -146,6 +148,42 @@ export default function DragDropExercisesDebugPage() {
               <h3 className="text-lg font-semibold mb-4">Interactive Break-Even Analysis Builder</h3>
               <div className="bg-white rounded-lg border border-gray-200 p-4">
                 <BreakEvenComponents />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Percentage Calculation Sorting Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-xl text-gray-800">Percentage Calculation Sorting Component</CardTitle>
+            <CardDescription>
+              Interactive drag-and-drop exercise teaching percentage calculation categorization for café business scenarios
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Interactive Percentage Calculation Learning</h3>
+              <div className="bg-white rounded-lg border border-gray-200 p-4">
+                <PercentageCalculationSorting />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Inventory Flow Diagram Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-xl text-gray-800">Inventory Flow Diagram Component</CardTitle>
+            <CardDescription>
+              Interactive drag-and-drop exercise teaching FIFO/LIFO inventory cost flow visualization for Unit 7 Asset & Inventory Tracker
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Interactive FIFO/LIFO Cost Flow Learning</h3>
+              <div className="bg-white rounded-lg border border-gray-200 p-4">
+                <InventoryFlowDiagram />
               </div>
             </div>
           </CardContent>
@@ -291,6 +329,44 @@ export default function DragDropExercisesDebugPage() {
               </div>
 
               <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-semibold mb-2">PercentageCalculationSorting Usage:</h4>
+                <pre className="text-sm overflow-x-auto">
+{`import PercentageCalculationSorting from '@/components/drag-drop-exercises/PercentageCalculationSorting'
+
+// Basic usage
+<PercentageCalculationSorting />
+
+// The component includes:
+// - 18 realistic café business scenarios requiring percentage calculations
+// - Drag-and-drop categorization into 4 calculation types
+// - Percentage Change, Percentage of Total, Increase/Decrease, Weighted Average
+// - Built-in formulas and business context hints
+// - Real-time feedback with scoring system
+// - Connects to Unit 4 Data-Driven Café statistical analysis theme
+// - Professional data analysis theme with mathematical foundations`}
+                </pre>
+              </div>
+
+              <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-semibold mb-2">InventoryFlowDiagram Usage:</h4>
+                <pre className="text-sm overflow-x-auto">
+{`import InventoryFlowDiagram from '@/components/drag-drop-exercises/InventoryFlowDiagram'
+
+// Basic usage
+<InventoryFlowDiagram />
+
+// The component includes:
+// - 3 realistic business scenarios with inventory lots (Tech, Café, Auto Parts)
+// - Drag-and-drop arrangement of inventory lots in FIFO or LIFO order
+// - Real-time Cost of Goods Sold and ending inventory calculations
+// - Visual cost flow demonstration with business context
+// - Method comparison (FIFO vs LIFO) with financial impact analysis
+// - Connects to Unit 7 Asset & Inventory Tracker theme
+// - Professional inventory management theme with audit trail visualization`}
+                </pre>
+              </div>
+
+              <div className="bg-gray-100 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2">Required Dependencies:</h4>
                 <pre className="text-sm overflow-x-auto">
 {`// Install required packages
@@ -384,13 +460,13 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'`}
                 </span>
               </div>
 
-              <div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
+              <div className="p-4 border border-green-200 rounded-lg bg-green-50">
                 <h3 className="font-semibold mb-2">Percentage Calculation Sorting</h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  Sort business scenarios by calculation type (markup, discount, tax, commission) to understand percentage applications
+                  Sort café business scenarios by percentage calculation type (Change, Total, Increase/Decrease, Weighted Average) for Unit 4 statistical foundations
                 </p>
-                <span className="inline-block px-2 py-1 text-xs rounded bg-yellow-100 text-yellow-800">
-                  🔄 Planned
+                <span className="inline-block px-2 py-1 text-xs rounded bg-green-100 text-green-800">
+                  ✅ Complete
                 </span>
               </div>
 
@@ -434,13 +510,13 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'`}
                 </span>
               </div>
 
-              <div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
+              <div className="p-4 border border-green-200 rounded-lg bg-green-50">
                 <h3 className="font-semibold mb-2">Inventory Flow Diagram</h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  Arrange inventory costs in FIFO/LIFO flow patterns to visualize inventory valuation methods
+                  Arrange inventory costs in FIFO/LIFO flow patterns to visualize inventory valuation methods for Unit 7 Asset & Inventory Tracker
                 </p>
-                <span className="inline-block px-2 py-1 text-xs rounded bg-yellow-100 text-yellow-800">
-                  🔄 Planned
+                <span className="inline-block px-2 py-1 text-xs rounded bg-green-100 text-green-800">
+                  ✅ Complete
                 </span>
               </div>
 

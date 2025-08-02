@@ -347,7 +347,9 @@ export function TrialBalance({
                   
                   return (
                     <div key={type} className="bg-white p-3 rounded border">
-                      <div className="font-medium text-gray-800 capitalize mb-1">{type}s</div>
+                      <div className="font-medium text-gray-800 capitalize mb-1">
+                        {type === 'equity' ? 'Equity' : type === 'liability' ? 'Liabilities' : `${type.charAt(0).toUpperCase() + type.slice(1)}s`}
+                      </div>
                       <div className="text-xs text-gray-600">
                         <div>{typeAccounts.length} accounts</div>
                         <div>Debits: ${typeDebits.toLocaleString()}</div>

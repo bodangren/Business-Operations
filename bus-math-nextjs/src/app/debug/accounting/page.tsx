@@ -5,6 +5,8 @@ import { TAccountSimple } from '@/components/accounting/TAccountSimple'
 import { TAccountDetailed } from '@/components/accounting/TAccountDetailed'
 import { JournalEntry } from '@/components/accounting/JournalEntry'
 import { TrialBalance } from '@/components/accounting/TrialBalance'
+import { TAccountsVisualization } from '@/components/accounting/TAccountsVisualization'
+import { TransactionJournal } from '@/components/accounting/TransactionJournal'
 
 export default function AccountingDebugPage() {
   return (
@@ -179,6 +181,96 @@ export default function AccountingDebugPage() {
                 showRunningBalance={true}
                 interactive={true}
                 title="Accounts Payable with Beginning Balance"
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* T-Accounts Visualization Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-xl text-gray-800">T-Accounts Visualization Component</CardTitle>
+            <CardDescription>
+              Visual representation of multiple T-accounts showing the accounting equation: Assets = Liabilities + Equity
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            {/* Basic Visualization */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Basic T-Accounts Visualization</h3>
+              <TAccountsVisualization 
+                showAccountingEquation={true}
+                showBalances={true}
+                interactive={false}
+                title="Small Business T-Accounts Overview"
+              />
+            </div>
+
+            {/* Interactive Version */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Interactive T-Accounts Visualization</h3>
+              <TAccountsVisualization 
+                showAccountingEquation={true}
+                showBalances={true}
+                interactive={true}
+                title="Interactive Learning Environment"
+              />
+            </div>
+
+            {/* Custom Accounts Example */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Custom Accounts Setup</h3>
+              <TAccountsVisualization 
+                accounts={[
+                  {
+                    id: 'checking',
+                    name: 'Checking Account',
+                    type: 'asset',
+                    debits: [
+                      { id: '1', date: '2024-01-01', description: 'Opening Balance', amount: 25000 },
+                      { id: '2', date: '2024-01-15', description: 'Customer Payment', amount: 8500 },
+                    ],
+                    credits: [
+                      { id: '3', date: '2024-01-05', description: 'Rent Payment', amount: 3500 },
+                      { id: '4', date: '2024-01-20', description: 'Supplier Payment', amount: 6000 },
+                    ]
+                  },
+                  {
+                    id: 'inventory',
+                    name: 'Inventory',
+                    type: 'asset',
+                    debits: [
+                      { id: '5', date: '2024-01-10', description: 'Inventory Purchase', amount: 15000 },
+                    ],
+                    credits: [
+                      { id: '6', date: '2024-01-25', description: 'Cost of Sales', amount: 8000 },
+                    ]
+                  },
+                  {
+                    id: 'loan-payable',
+                    name: 'Bank Loan Payable',
+                    type: 'liability',
+                    debits: [
+                      { id: '7', date: '2024-01-31', description: 'Principal Payment', amount: 2000 },
+                    ],
+                    credits: [
+                      { id: '8', date: '2024-01-01', description: 'Loan Proceeds', amount: 50000 },
+                    ]
+                  },
+                  {
+                    id: 'retained-earnings',
+                    name: 'Retained Earnings',
+                    type: 'equity',
+                    debits: [],
+                    credits: [
+                      { id: '9', date: '2024-01-01', description: 'Prior Year Profits', amount: 12000 },
+                    ]
+                  },
+                ]}
+                showAccountingEquation={true}
+                showBalances={true}
+                interactive={true}
+                title="Retail Business Example"
               />
             </div>
           </CardContent>
@@ -605,6 +697,100 @@ export default function AccountingDebugPage() {
           </CardContent>
         </Card>
 
+        {/* Transaction Journal Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-xl text-gray-800">Transaction Journal Component</CardTitle>
+            <CardDescription>
+              Interactive transaction journal for managing startup transactions and building a self-auditing ledger system
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            {/* Basic Transaction Journal */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Smart Ledger Transaction Journal - Unit 1</h3>
+              <TransactionJournal
+                title="Startup Transaction Journal"
+                clientTypes={[
+                  'Tech Startup',
+                  'E-commerce Business', 
+                  'Service Provider',
+                  'Manufacturing',
+                  'Retail Store',
+                  'Consulting Firm',
+                  'Restaurant/Food Service',
+                  'Creative Agency'
+                ]}
+                maxTransactions={8}
+                showAnalytics={true}
+                initialTransactions={[
+                  {
+                    id: 'demo-1',
+                    entryNumber: 'JE001',
+                    date: '2024-01-01',
+                    description: 'Initial founder investment',
+                    clientFocus: 'Tech Startup',
+                    reference: 'Founder Investment',
+                    isBalanced: true,
+                    lines: [
+                      {
+                        id: 'line-1',
+                        account: 'Cash',
+                        accountType: 'asset',
+                        debit: 50000,
+                        description: 'Founder cash investment'
+                      },
+                      {
+                        id: 'line-2',
+                        account: 'Owner\'s Equity',
+                        accountType: 'equity',
+                        credit: 50000,
+                        description: 'Initial equity contribution'
+                      }
+                    ]
+                  },
+                  {
+                    id: 'demo-2',
+                    entryNumber: 'JE002',
+                    date: '2024-01-05',
+                    description: 'Equipment purchase for development',
+                    clientFocus: 'Tech Startup',
+                    reference: 'Equipment Purchase',
+                    isBalanced: true,
+                    lines: [
+                      {
+                        id: 'line-3',
+                        account: 'Equipment',
+                        accountType: 'asset',
+                        debit: 15000,
+                        description: 'Development computers and servers'
+                      },
+                      {
+                        id: 'line-4',
+                        account: 'Cash',
+                        accountType: 'asset',
+                        credit: 15000,
+                        description: 'Payment for equipment'
+                      }
+                    ]
+                  }
+                ]}
+              />
+            </div>
+
+            {/* Simplified Version */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Simplified Transaction Journal</h3>
+              <TransactionJournal
+                title="Basic Transaction Recorder"
+                clientTypes={['Small Business', 'Freelancer', 'Startup']}
+                maxTransactions={5}
+                showAnalytics={false}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Component Usage Examples */}
         <Card>
           <CardHeader>
@@ -694,6 +880,43 @@ export default function AccountingDebugPage() {
               </div>
 
               <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-semibold mb-2">TAccountsVisualization Usage:</h4>
+                <pre className="text-sm overflow-x-auto">
+{`import { TAccountsVisualization } from '@/components/accounting/TAccountsVisualization'
+
+// Basic usage with default accounts
+<TAccountsVisualization 
+  showAccountingEquation={true}
+  showBalances={true}
+  interactive={false}
+/>
+
+// Interactive version with custom accounts
+<TAccountsVisualization 
+  accounts={[
+    {
+      id: 'cash',
+      name: 'Cash',
+      type: 'asset',
+      debits: [{ id: '1', date: '2024-01-01', description: 'Investment', amount: 50000 }],
+      credits: [{ id: '2', date: '2024-01-05', description: 'Equipment', amount: 15000 }]
+    },
+    {
+      id: 'loan',
+      name: 'Bank Loan',
+      type: 'liability', 
+      debits: [],
+      credits: [{ id: '3', date: '2024-01-01', description: 'Loan proceeds', amount: 30000 }]
+    }
+  ]}
+  showAccountingEquation={true}
+  interactive={true}
+  title="My Business T-Accounts"
+/>`}
+                </pre>
+              </div>
+
+              <div className="bg-gray-100 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2">TrialBalance Usage:</h4>
                 <pre className="text-sm overflow-x-auto">
 {`import { TrialBalance } from '@/components/accounting/TrialBalance'
@@ -722,6 +945,7 @@ export default function AccountingDebugPage() {
                 <h4 className="font-semibold mb-2">Educational Features:</h4>
                 <div className="text-sm space-y-2">
                   <div><strong>T-Accounts:</strong> Visual representation of debits and credits with automatic balance calculations</div>
+                  <div><strong>T-Accounts Visualization:</strong> Multiple T-accounts with accounting equation verification (Assets = Liabilities + Equity)</div>
                   <div><strong>Journal Entries:</strong> Interactive double-entry validation with accounting equation impact analysis</div>
                   <div><strong>Trial Balance:</strong> Automatic balance verification with grouping and analysis features</div>
                   <div><strong>Teaching Tools:</strong> Built-in formulas, explanations, and error demonstrations</div>
