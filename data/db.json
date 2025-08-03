@@ -622,6 +622,90 @@
       "description": "Renders different types of lesson phase content including videos, interactive components, discussion prompts, practice activities, and assessments for the student-facing curriculum system",
       "filePath": "bus-math-nextjs/src/components/lesson-phase-content.tsx",
       "usageExample": "import { LessonPhaseContent } from '@/components/lesson-phase-content'\n<LessonPhaseContent phase={studentLessonPhase} />"
+    },
+    {
+      "id": "mdv0b8iejkfqj98uzhg",
+      "name": "StudentUnitOverview",
+      "description": "Student-centric unit overview component that presents units as engaging business challenges. Features project-focused design with business challenge context, what students will build, skills they'll master, final presentation details, and learning journey timeline. Transforms MCP unit and lesson data into student-friendly format with professional business context, real-world applications, and authentic audience presentations. Supports Grade 12 project-based learning methodology.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudentUnitOverview.tsx",
+      "usageExample": "import { StudentUnitOverview } from \"@/components/student/StudentUnitOverview\"\n\n// Unit and lessons data from MCP\nconst unitData = { id: \"mdrha5ziiupuou6dqt\", title: \"Unit 1: Smart Ledger Launch\", description: \"Build self-auditing ledger system\", rationale: \"Early-stage startup bookkeeping challenges...\", sequence: 1 }\nconst lessonsData = [{ title: \"Introduction: Sarah's Challenge\", keyConcepts: [...], learningObjectives: [...], durationEstimateMinutes: 45 }]\n\n<StudentUnitOverview unit={unitData} lessons={lessonsData} />"
+    },
+    {
+      "id": "mdv0tqyotvmtyr94r3",
+      "name": "StudentLessonOverview",
+      "description": "Student-facing lesson overview component displaying learning objectives, key concepts, lesson phases, and pedagogical approach. Provides structured navigation to individual lesson phases following PBL methodology with 6-phase learning model (Hook, Introduction, Guided Practice, Independent Practice, Assessment, Closing). Updated to include navigation links between lessons and phases.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudentLessonOverview.tsx",
+      "usageExample": "```tsx\n<StudentLessonOverview \n  lesson={lessonData} \n  unit={unitData} \n  phases={lessonPhases} \n/>\n```"
+    },
+    {
+      "id": "mdv125wpi9c2mazxb1",
+      "name": "Unit01Lesson02Data",
+      "description": "Lesson 2 data for Unit 1: Core Concepts - The Accounting Equation. Provides learning objectives, key concepts, and pedagogical approach for teaching the fundamental accounting equation (Assets = Liabilities + Equity) through TechStart Solutions context.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson02/lesson-data.ts",
+      "usageExample": "import { lesson02Data, unit01Data, lesson02Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12a42bjlt3x19c2h",
+      "name": "Unit01Lesson03Data",
+      "description": "Lesson 3 data for Unit 1: Core Concepts - Debit & Credit Rules. Teaches systematic debit/credit rules for all account types through T-account demonstrations and TechStart transaction practice.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson03/lesson-data.ts",
+      "usageExample": "import { lesson03Data, unit01Data, lesson03Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12dueobtgwop10k7",
+      "name": "Unit01Lesson04Data",
+      "description": "Lesson 4 data for Unit 1: Excel Model - Tables & SUMIF Functions. Introduces Excel automation with Tables, structured references, and SUMIF functions for professional ledger systems.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson04/lesson-data.ts",
+      "usageExample": "import { lesson04Data, unit01Data, lesson04Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12huzkafvskignui",
+      "name": "Unit01Lesson05Data",
+      "description": "Lesson 5 data for Unit 1: Excel Model - Conditional Formatting & Error Checking. Adds self-auditing capabilities with conditional formatting rules and trial balance validation formulas for investor-ready systems.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson05/lesson-data.ts",
+      "usageExample": "import { lesson05Data, unit01Data, lesson05Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12ld6kunn6s6hrvk",
+      "name": "Unit01Lesson06Data",
+      "description": "Lesson 6 data for Unit 1: Examples - Professional Ledger Applications. Analyzes real-world professional ledger systems and demonstrates business standards for investor credibility.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson06/lesson-data.ts",
+      "usageExample": "import { lesson06Data, unit01Data, lesson06Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12p7x2n0nb3jr5m6",
+      "name": "Unit01Lesson07Data",
+      "description": "Lesson 7 data for Unit 1: Exercises - Independent Ledger Construction. Provides independent practice time for students to demonstrate mastery through complete self-auditing ledger system construction.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson07/lesson-data.ts",
+      "usageExample": "import { lesson07Data, unit01Data, lesson07Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12t7z8jfciozlnew",
+      "name": "Unit01Lesson08Data",
+      "description": "Lesson 8 data for Unit 1: Summary - Integration & System Refinement. Focuses on polishing ledger systems with professional formatting, documentation, and presentation preparation.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson08/lesson-data.ts",
+      "usageExample": "import { lesson08Data, unit01Data, lesson08Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv12x0104n5mg3uij9k",
+      "name": "Unit01Lesson09Data",
+      "description": "Lesson 9 data for Unit 1: Project Work - Presentation Preparation & Rehearsal. Develops professional communication skills and builds confidence for authentic investor presentations.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson09/lesson-data.ts",
+      "usageExample": "import { lesson09Data, unit01Data, lesson09Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv1311guuq55s7qla",
+      "name": "Unit01Lesson10Data",
+      "description": "Lesson 10 data for Unit 1: Presentations - Investor Showcase & Reflection. Culminating authentic assessment with real business professionals and reflective learning analysis.",
+      "filePath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/app/student/unit01/lesson10/lesson-data.ts",
+      "usageExample": "import { lesson10Data, unit01Data, lesson10Phases } from \"./lesson-data\""
+    },
+    {
+      "id": "mdv1t1kuii4id2j3gwo",
+      "name": "StudentLessonOverview",
+      "description": "Core lesson display component that renders lesson data, unit context, and lesson phases. Used across all student lesson pages to provide consistent educational structure with learning objectives, key concepts, pedagogical approach, and interactive phase breakdowns.",
+      "filePath": "/src/components/student/StudentLessonOverview.tsx",
+      "usageExample": "import { StudentLessonOverview } from \"@/components/student/StudentLessonOverview\"\nimport { lesson01Data, unit01Data, lesson01Phases } from \"./lesson-data\"\n\n<StudentLessonOverview \n  lesson={lesson01Data} \n  unit={unit01Data} \n  phases={lesson01Phases}\n/>"
     }
   ],
   "apis": [],
@@ -5166,49 +5250,85 @@
       "status": "Done"
     },
     {
-      "id": "mdtptl8mq27rpj4x1g",
-      "relatedEntityType": "Unit",
+      "id": "mdv02fs8rq71toivclh",
+      "title": "Phase 5.1: Create Unit Overview Pages",
+      "description": "Create src/app/unit01/page.tsx through src/app/unit08/page.tsx using existing UnitOverview component with colocated unit-data.ts files. Each unit overview page will be a static route that imports unit-specific data and renders using the generalized UnitOverview component.",
       "relatedEntityId": "mdrha5ziiupuou6dqt",
-      "status": "Todo",
-      "description": "Refactor the UnitSidebar to be driven by student-curriculum.ts. The sidebar will link to the Lesson Overview page for each lesson. The expandable sub-menu will then link to each specific phase page.",
-      "title": "Phase 5.1: Rewrite UnitSidebar to use local data",
+      "relatedEntityType": "Unit",
+      "status": "Done",
       "priority": "High"
     },
     {
-      "id": "mdtptl8w2suwktbmoqr",
-      "description": "On the [phaseId]/page.tsx, create a navigation component at the bottom with 'Previous' and 'Next' buttons, driven by the phase sequence in the data file.",
-      "status": "Todo",
-      "priority": "High",
-      "title": "Phase 5.2: Implement in-page navigation",
+      "id": "mdv02fw393gb5gqmawt",
+      "title": "Phase 5.2: Create Lesson Overview Pages",
+      "description": "Create src/app/unit01/lesson01/page.tsx through lesson10 (for all units) using generalized lesson overview component with colocated lesson-data.ts files. Each lesson overview page will be a static route showing lesson details, objectives, and links to phases.\n\n✅ COMPLETED:\n- Extracted all lesson data from MCP curriculum server for all 8 units (80 lessons total)\n- Created StudentLessonOverview component following StudentUnitOverview pattern\n- Created lesson-data.ts files for all Units 1-8 (80 files total)\n- Created page.tsx files for all Units 1-8 (80 files total)  \n- Updated StudentUnitOverview to link to individual lessons with navigation buttons\n- Fixed octal sequence number parsing errors across all files\n- Tested navigation and data consistency across all lesson pages\n- FIXED all 27 lesson-data.ts files with empty learningObjectives and keyConcepts arrays\n- Quality validated: All 80 lesson pages now render correctly with complete educational content\n\n🎯 FINAL STATUS: Complete - Phase 5.2 successfully delivered with full data integrity",
+      "relatedEntityId": "mdrha5ziiupuou6dqt",
       "relatedEntityType": "Unit",
-      "relatedEntityId": "mdrha5ziiupuou6dqt"
+      "status": "Done",
+      "priority": "High"
     },
     {
-      "id": "mdtptl941b8w6usptfj",
-      "status": "Todo",
+      "id": "mdv02g08ry03yemnna",
+      "title": "Phase 5.3: Update UnitSidebar for Static Routes",
+      "description": "Modify UnitSidebar to link to static unit overview pages and lesson overview pages with expandable menus. Remove dynamic routing and replace with hardcoded static route structure using Next.js Link components.",
       "relatedEntityId": "mdrha5ziiupuou6dqt",
-      "description": "The [unitId]/page.tsx will fetch data from student-curriculum.ts and render a list of lessons for that unit. The [lessonId]/page.tsx will fetch data and render the specific lesson's title, description, and a list of its phases.",
-      "priority": "Medium",
       "relatedEntityType": "Unit",
-      "title": "Phase 6.1: Build dynamic Unit and Lesson overview pages"
+      "status": "Todo",
+      "priority": "High"
     },
     {
-      "id": "mdtptl9ctxuqage7qnr",
-      "priority": "Medium",
+      "id": "mdv02g3wuy6v44eh3g",
+      "title": "Phase 6.1: Create Phase Static Pages",
+      "description": "Create bespoke phase pages like src/app/unit01/lesson01/phase01/page.tsx through phase06 using existing specialized components with colocated phase-data.ts files. Each phase page is custom-built based on pedagogical content (Hook, Introduction, Guided Practice, Independent Practice, Assessment, Closing).",
       "relatedEntityId": "mdrha5ziiupuou6dqt",
-      "title": "Phase 6.2: Build the dynamic [phaseId] page",
       "relatedEntityType": "Unit",
-      "description": "The [phaseId]/page.tsx will use the URL params to look up the exact content for that phase in student-curriculum.ts.",
-      "status": "Todo"
+      "status": "Todo",
+      "priority": "Medium"
     },
     {
-      "id": "mdtptl9juch7wxisxkr",
-      "title": "Phase 6.3: Implement dynamic guided practice component loading",
+      "id": "mdv02g7xi2k89js3jti",
+      "title": "Phase 6.2: Implement Navigation Between Pages",
+      "description": "Add Previous/Next buttons on phase pages using colocated phase sequence data and breadcrumb navigation showing Unit > Lesson > Phase hierarchy. Navigation uses static route structure for predictable routing.",
       "relatedEntityId": "mdrha5ziiupuou6dqt",
-      "status": "Todo",
       "relatedEntityType": "Unit",
-      "priority": "Medium",
-      "description": "Implement the logic to dynamically load and render the correct guided practice components based on the configuration in the student data file."
+      "status": "Todo",
+      "priority": "Medium"
+    },
+    {
+      "id": "mdv02gc684bbyp5ubmw",
+      "title": "Phase 6.3: Component Integration",
+      "description": "Each phase page imports and composes relevant specialized components (accounting, exercises, simulations) based on pedagogical design. Use existing components from MCP database as building blocks for bespoke phase experiences.",
+      "relatedEntityId": "mdrha5ziiupuou6dqt",
+      "relatedEntityType": "Unit",
+      "status": "Todo",
+      "priority": "Medium"
+    },
+    {
+      "id": "mdv24szcra56qynvqf",
+      "title": "Fix Missing Learning Objectives and Key Concepts",
+      "description": "Fix 27 lesson-data.ts files that have empty learningObjectives and/or keyConcepts arrays. Files identified by check_empty_fields.sh script:\n\nUNIT 2: lesson04, lesson05, lesson09, lesson10 (4 files)\nUNIT 3: lesson04, lesson05, lesson09, lesson10 (4 files) \nUNIT 4: lesson06, lesson09, lesson10 (3 files)\nUNIT 5: lesson08, lesson09, lesson10 (3 files)\nUNIT 6: lesson04, lesson05, lesson09, lesson10 (4 files)\nUNIT 7: lesson01, lesson05, lesson08, lesson09, lesson10 (5 files)\nUNIT 8: lesson01, lesson08, lesson09, lesson10 (4 files)\n\nMost missing data is in presentation/reflection lessons (9, 10) and checkpoint lessons (4, 5, 8). Populate with appropriate content based on lesson titles and pedagogical approaches from MCP database.",
+      "relatedEntityId": "mdrha5ziiupuou6dqt",
+      "relatedEntityType": "Unit",
+      "status": "Todo",
+      "priority": "High"
+    },
+    {
+      "id": "mdv24t640cpofosuptg6",
+      "title": "Phase 5.3: Update UnitSidebar for Static Routes",
+      "description": "Update UnitSidebar component to properly link to the new static lesson routes at /student/unit{XX}/lesson{XX}/. The sidebar should:\n\n1. Link to lesson overview pages instead of dynamic phase routes\n2. Display lesson titles and sequences correctly\n3. Show progress indicators for completed lessons\n4. Maintain consistent navigation patterns\n\nThis task was originally pending but is now ready since Phase 5.2 lesson pages are complete.",
+      "relatedEntityId": "mdrha5ziiupuou6dqt",
+      "relatedEntityType": "Unit",
+      "status": "Todo",
+      "priority": "High"
+    },
+    {
+      "id": "mdv24tbpohakp591t5r",
+      "title": "Phase 6.1: Create Phase Static Pages",
+      "description": "Create individual phase pages for each lesson following pattern /student/unit{XX}/lesson{XX}/phase{1-6}/. Each phase page should:\n\n1. Display phase-specific content (Hook, Introduction, Guided Practice, etc.)\n2. Connect to appropriate interactive components based on app connections\n3. Include navigation between phases within lessons\n4. Show phase progress and completion status\n5. Link back to lesson overview\n\nThis builds on the completed lesson overview pages from Phase 5.2.",
+      "relatedEntityId": "mdrha5ziiupuou6dqt",
+      "relatedEntityType": "Unit",
+      "status": "Todo",
+      "priority": "Medium"
     }
   ]
 }

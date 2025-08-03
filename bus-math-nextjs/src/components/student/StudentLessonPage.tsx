@@ -7,29 +7,49 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
 import { ChevronLeft, ChevronRight, BookOpen, Clock, CheckCircle } from 'lucide-react'
-import { LessonPhaseContent } from '@/components/lesson/LessonPhaseContent'
-import { SelfPacedNavigation } from '@/components/student/SelfPacedNavigation'
-import { ProgressTracker } from '@/components/student/ProgressTracker'
+import { LessonPhaseContent } from '../lesson/LessonPhaseContent'
+import { SelfPacedNavigation } from './SelfPacedNavigation'
+import { ProgressTracker } from './ProgressTracker'
+import { BilingualVocabularyGlossary } from '../ell-support/BilingualVocabularyGlossary'
+import { MultilingualSupport } from './MultilingualSupport'
+import { ReadingLevelAdjuster } from './ReadingLevelAdjuster'
 
 interface StudentLessonPageProps {
   unitId: string
   lessonNumber: number
 }
 
+interface Phase {
+  id: string;
+  name: string;
+  sequence: number;
+  description: string;
+}
+
+interface LessonData {
+  id: string;
+  title: string;
+  learningObjectives: string[];
+  phases: Phase[];
+}
+
 export function StudentLessonPage({ unitId, lessonNumber }: StudentLessonPageProps) {
   const {
-    state,
     setCurrentContext,
-    getLessonProgress,
     calculateLessonProgress,
     completePhase,
-    updatePhaseProgress
   } = useLessonProgress()
 
   const [currentPhaseIndex, setCurrentPhaseIndex] = useState(0)
-  const [lessonData, setLessonData] = useState<any>(null)
-  const [phases, setPhases] = useState<any[]>([])
+  const [lessonData, setLessonData] = useState<LessonData | null>(null)
+  const [phases, setPhases] = useState<Phase[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [language, setLanguage] = useState('en');
+  const [fontSize, setFontSize] = useState('medium');
+  const [highContrast, setHighContrast] = useState(false);
+  const [showVocabulary, setShowVocabulary] = useState(false);
+  const [readingLevel, setReadingLevel] = useState('medium');
+
 
   // Load lesson data from MCP
   useEffect(() => {
@@ -38,7 +58,7 @@ export function StudentLessonPage({ unitId, lessonNumber }: StudentLessonPagePro
       try {
         // This would normally fetch from MCP, but for now we'll simulate
         // In a real implementation, you'd call the MCP functions here
-        const mockLessonData = {
+        const mockLessonData: LessonData = {
           id: `lesson-${lessonNumber}`,
           title: `Lesson ${lessonNumber}: Business Concepts`,
           learningObjectives: [
@@ -157,7 +177,7 @@ export function StudentLessonPage({ unitId, lessonNumber }: StudentLessonPagePro
             
             {showVocabulary && (
               <div className="mt-6">
-                <VocabularyGlossary
+                <BilingualVocabularyGlossary
                   lessonNumber={lessonNumber}
                   language={language}
                   fontSize={fontSize}
