@@ -263,3 +263,4 @@ export const DoughnutChartExample = () => (
     showPercentages={true}
   />
 )
+export default DoughnutChart

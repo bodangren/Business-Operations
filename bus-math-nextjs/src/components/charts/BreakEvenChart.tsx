@@ -330,3 +330,4 @@ export const BreakEvenChartExample = () => (
     interactive={true}
   />
 )
+export default BreakEvenChart

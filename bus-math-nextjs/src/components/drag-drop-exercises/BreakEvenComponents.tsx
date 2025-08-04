@@ -726,3 +726,4 @@ export function BreakEvenComponents() {
     </div>
   )
 }
+export default BreakEvenComponents

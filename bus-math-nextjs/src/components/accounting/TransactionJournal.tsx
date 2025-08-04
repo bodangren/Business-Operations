@@ -633,3 +633,5 @@ export function TransactionJournal({
     </div>
   )
 }
+
+export default TransactionJournal

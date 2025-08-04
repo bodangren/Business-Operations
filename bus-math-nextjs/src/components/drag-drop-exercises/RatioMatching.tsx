@@ -709,17 +709,17 @@ function FormulaDropZone({ zone, showHints }: FormulaDropZoneProps) {
                         ? 'shadow-lg rotate-2' 
                         : ''
                     } ${
-                      zone.ratio.isCorrect 
+                      zone.ratio?.isCorrect 
                         ? 'bg-green-500 text-white' 
                         : 'bg-red-500 text-white'
                     }`}
-                    title={showHints ? `${zone.ratio.ratio.businessMeaning} - ${zone.ratio.ratio.whyItMatters}` : zone.ratio.ratio.description}
+                    title={showHints ? `${zone.ratio?.ratio.businessMeaning} - ${zone.ratio?.ratio.whyItMatters}` : zone.ratio?.ratio.description}
                   >
-                    <div className="font-semibold text-sm">{zone.ratio.ratio.name}</div>
-                    {zone.ratio.isCorrect && <div className="text-xs mt-1">✓ Correct!</div>}
-                    {showHints && zone.ratio.isCorrect && (
+                    <div className="font-semibold text-sm">{zone.ratio?.ratio.name}</div>
+                    {zone.ratio?.isCorrect && <div className="text-xs mt-1">✓ Correct!</div>}
+                    {showHints && zone.ratio?.isCorrect && (
                       <div className="text-xs opacity-90 mt-1">
-                        {zone.ratio.ratio.goodRange}
+                        {zone.ratio?.ratio.goodRange}
                       </div>
                     )}
                   </div>

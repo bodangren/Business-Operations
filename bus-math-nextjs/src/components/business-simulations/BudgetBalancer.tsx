@@ -663,3 +663,4 @@ export function BudgetBalancer() {
     </div>
   )
 }
+export default BudgetBalancer

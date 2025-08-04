@@ -285,3 +285,4 @@ export const BarChartExample = () => (
     height={300}
   />
 )
+export default BarChart

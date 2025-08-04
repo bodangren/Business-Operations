@@ -385,3 +385,5 @@ export function TAccountDetailed({
     </Card>
   )
 }
+
+export default TAccountDetailed

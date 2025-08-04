@@ -176,3 +176,4 @@ export function IncomeStatementSimple({
     </Card>
   )
 }
+export default IncomeStatementSimple

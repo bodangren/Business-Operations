@@ -868,3 +868,4 @@ export function StartupJourney() {
     </div>
   )
 }
+export default StartupJourney

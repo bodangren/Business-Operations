@@ -689,3 +689,5 @@ export function BusinessTransactionCategorization() {
     </div>
   )
 }
+
+export default BusinessTransactionCategorization

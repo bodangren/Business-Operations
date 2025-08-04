@@ -307,3 +307,4 @@ export function BalanceSheetSimple({
     </Card>
   )
 }
+export default BalanceSheetSimple

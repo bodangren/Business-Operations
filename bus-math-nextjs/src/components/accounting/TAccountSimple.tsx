@@ -201,3 +201,5 @@ export function TAccountSimple({
     </Card>
   )
 }
+
+export default TAccountSimple

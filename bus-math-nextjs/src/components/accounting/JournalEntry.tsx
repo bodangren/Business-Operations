@@ -315,3 +315,5 @@ export function JournalEntry({
     </Card>
   )
 }
+
+export default JournalEntry

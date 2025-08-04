@@ -272,3 +272,4 @@ export function CashFlowStatementSimple({
     </Card>
   )
 }
+export default CashFlowStatementSimple

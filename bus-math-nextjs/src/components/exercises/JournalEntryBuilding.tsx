@@ -720,3 +720,5 @@ export function JournalEntryBuilding() {
     </div>
   )
 }
+
+export default JournalEntryBuilding

@@ -5,7 +5,7 @@ import { TAccountSimple } from '@/components/accounting/TAccountSimple'
 import { TAccountDetailed } from '@/components/accounting/TAccountDetailed'
 import { JournalEntry } from '@/components/accounting/JournalEntry'
 import { TrialBalance } from '@/components/accounting/TrialBalance'
-import { TAccountsVisualization } from '@/components/accounting/TAccountsVisualization'
+import TAccountsVisualization from '@/components/accounting/TAccountsVisualization'
 import { TransactionJournal } from '@/components/accounting/TransactionJournal'
 
 export default function AccountingDebugPage() {
@@ -882,7 +882,7 @@ export default function AccountingDebugPage() {
               <div className="bg-gray-100 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2">TAccountsVisualization Usage:</h4>
                 <pre className="text-sm overflow-x-auto">
-{`import { TAccountsVisualization } from '@/components/accounting/TAccountsVisualization'
+{`import TAccountsVisualization from '@/components/accounting/TAccountsVisualization'
 
 // Basic usage with default accounts
 <TAccountsVisualization 

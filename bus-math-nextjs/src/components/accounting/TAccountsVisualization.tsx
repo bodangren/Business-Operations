@@ -74,7 +74,7 @@ const defaultAccounts: TAccount[] = [
   }
 ]
 
-export function TAccountsVisualization({
+export default function TAccountsVisualization({
   accounts = defaultAccounts,
   showAccountingEquation = true,
   showBalances = true,

@@ -939,3 +939,4 @@ export function CashFlowChallenge() {
     </div>
   )
 }
+export default CashFlowChallenge

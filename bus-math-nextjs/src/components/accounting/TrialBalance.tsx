@@ -385,3 +385,5 @@ export function TrialBalance({
     </Card>
   )
 }
+
+export default TrialBalance

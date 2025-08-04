@@ -138,3 +138,4 @@ export function LineChart({
     </div>
   )
 }
+export default LineChart

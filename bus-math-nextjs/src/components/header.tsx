@@ -14,15 +14,26 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
-const units = [
-  { href: "/units/unit01-smart-ledger/unit01-smart-ledger", title: "Unit 1: Smart Ledger" },
-  { href: "/units/unit02-month-end-wizard/unit02-month-end-wizard", title: "Unit 2: Month-End Wizard" },
-  { href: "/units/unit03-three-statement-storyboard/unit03-three-statement-storyboard", title: "Unit 3: Three Statement Storyboard" },
-  { href: "/units/unit04-data-driven-cafe/unit04-data-driven-cafe", title: "Unit 4: Data-Driven Cafe" },
-  { href: "/units/unit05-payday-simulator/unit05-payday-simulator", title: "Unit 5: Payday Simulator" },
-  { href: "/units/unit06-pricelab-challenge/unit06-pricelab-challenge", title: "Unit 6: PriceLab Challenge" },
-  { href: "/units/unit07-asset-inventory-tracker/unit07-asset-inventory-tracker", title: "Unit 7: Asset Inventory Tracker" },
-  { href: "/units/unit08-integrated-model-sprint/unit08-integrated-model-sprint", title: "Unit 8: Integrated Model Sprint" },
+const studentUnits = [
+  { href: "/student/unit01", title: "Unit 1: Smart Ledger Launch", description: "Self-auditing bookkeeping for angel investors" },
+  { href: "/student/unit02", title: "Unit 2: Month-End Wizard", description: "Excel automation to reduce closing time" },
+  { href: "/student/unit03", title: "Unit 3: Three-Statement Storyboard", description: "Integrated financial statements with KPI dashboards" },
+  { href: "/student/unit04", title: "Unit 4: Data-Driven Café", description: "Statistical analysis and forecasting for operations" },
+  { href: "/student/unit05", title: "Unit 5: PayDay Simulator", description: "Payroll systems with tax calculations and cash flow" },
+  { href: "/student/unit06", title: "Unit 6: PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing" },
+  { href: "/student/unit07", title: "Unit 7: Asset & Inventory Tracker", description: "Depreciation methods and inventory valuation" },
+  { href: "/student/unit08", title: "Unit 8: Year-1 Startup Model", description: "Integrated financial model with scenario analysis" },
+]
+
+const teacherUnits = [
+  { href: "/teacher/unit01", title: "Unit 1: Smart Ledger Launch", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit02", title: "Unit 2: Month-End Wizard", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit03", title: "Unit 3: Three-Statement Storyboard", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit04", title: "Unit 4: Data-Driven Café", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit05", title: "Unit 5: PayDay Simulator", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit06", title: "Unit 6: PriceLab Challenge", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit07", title: "Unit 7: Asset & Inventory Tracker", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit08", title: "Unit 8: Year-1 Startup Model", description: "Teacher lesson plans and resources" },
 ]
 
 export function Header() {
@@ -42,26 +53,26 @@ export function Header() {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                <NavigationMenuLink asChild>
+                  <Link href="/" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                     Home
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <Link href="/frontmatter/preface" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                <NavigationMenuLink asChild>
+                  <Link href="/frontmatter/preface" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                     Preface
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Units</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Student Units</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {units.map((unit) => (
+                    {studentUnits.map((unit) => (
                       <li key={unit.href}>
                         <NavigationMenuLink asChild>
                           <Link
@@ -69,6 +80,32 @@ export function Header() {
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">{unit.title}</div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                              {unit.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Teacher Resources</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {teacherUnits.map((unit) => (
+                      <li key={unit.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={unit.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{unit.title}</div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                              {unit.description}
+                            </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
@@ -129,9 +166,20 @@ export function Header() {
                 <Link href="/frontmatter/preface" className="text-lg font-medium">Preface</Link>
                 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-medium">Units</h3>
+                  <h3 className="text-lg font-medium">Student Units</h3>
                   <div className="pl-4 space-y-2">
-                    {units.map((unit) => (
+                    {studentUnits.map((unit) => (
+                      <Link key={unit.href} href={unit.href} className="block text-sm text-muted-foreground hover:text-foreground">
+                        {unit.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="text-lg font-medium">Teacher Resources</h3>
+                  <div className="pl-4 space-y-2">
+                    {teacherUnits.map((unit) => (
                       <Link key={unit.href} href={unit.href} className="block text-sm text-muted-foreground hover:text-foreground">
                         {unit.title}
                       </Link>

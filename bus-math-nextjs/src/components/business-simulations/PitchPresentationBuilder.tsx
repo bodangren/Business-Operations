@@ -829,3 +829,4 @@ export function PitchPresentationBuilder() {
     </div>
   )
 }
+export default PitchPresentationBuilder

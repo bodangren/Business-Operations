@@ -336,3 +336,4 @@ export function IncomeStatementDetailed({
     </Card>
   )
 }
+export default IncomeStatementDetailed

@@ -938,3 +938,4 @@ export function InventoryManager() {
     </div>
   )
 }
+export default InventoryManager

@@ -261,3 +261,4 @@ export const PieChartExample = () => (
     showPercentages={true}
   />
 )
+export default PieChart

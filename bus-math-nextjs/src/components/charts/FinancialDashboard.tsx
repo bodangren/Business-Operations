@@ -399,3 +399,4 @@ export function FinancialDashboard({
     </div>
   )
 }
+export default FinancialDashboard

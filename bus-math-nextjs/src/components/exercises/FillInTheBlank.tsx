@@ -606,6 +606,8 @@ export function FillInTheBlank({
           {feedbackMessage}
         </div>
       )}
-    </div>
+    </div>  
   );
 }
+
+export default FillInTheBlank

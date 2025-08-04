@@ -807,3 +807,4 @@ export function LemonadeStand() {
     </div>
   )
 }
+export default LemonadeStand

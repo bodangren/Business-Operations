@@ -1165,3 +1165,4 @@ export function BreakEvenAnalysisCalculator() {
     </div>
   )
 }
+export default BreakEvenAnalysisCalculator

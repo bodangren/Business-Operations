@@ -685,3 +685,4 @@ export function TrialBalanceSorting() {
     </div>
   )
 }
+export default TrialBalanceSorting

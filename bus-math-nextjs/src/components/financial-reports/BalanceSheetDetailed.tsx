@@ -709,3 +709,4 @@ export function BalanceSheetDetailed({
     </Card>
   )
 }
+export default BalanceSheetDetailed
