@@ -64,18 +64,6 @@ export default function Unit02Lesson02Phase4() {
     }
   ]
 
-  const galleryWalkItems = [
-    { id: '1', content: 'Crystal clear depreciation calculation', category: 'Stars (Strengths)' },
-    { id: '2', content: 'Well-organized closing entries layout', category: 'Stars (Strengths)' },
-    { id: '3', content: 'Clarify the deferred revenue calculation', category: 'Steps (Improvements)' },
-    { id: '4', content: 'Fix account name in accrual entry', category: 'Steps (Improvements)' },
-    { id: '5', content: 'Excellent use of T-accounts for visualization', category: 'Stars (Strengths)' },
-    { id: '6', content: 'Add dollar signs to all monetary amounts', category: 'Steps (Improvements)' },
-    { id: '7', content: 'Perfect balance in accounting equation', category: 'Stars (Strengths)' },
-    { id: '8', content: 'Include date in journal entry header', category: 'Steps (Improvements)' }
-  ]
-
-  const categories = ['Stars (Strengths)', 'Steps (Improvements)']
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -182,12 +170,7 @@ export default function Unit02Lesson02Phase4() {
             showExplanations={true}
           />
 
-          <FinancialStatementMatching
-            items={galleryWalkItems}
-            categories={categories}
-            title="Practice: Giving Quality Feedback"
-            description="Sort these feedback examples into 'Stars' (strengths to celebrate) or 'Steps' (specific improvements). This prepares you to give valuable feedback during the Gallery Walk."
-          />
+          <FinancialStatementMatching />
 
           <FillInTheBlank 
             sentences={feedbackBlanks}

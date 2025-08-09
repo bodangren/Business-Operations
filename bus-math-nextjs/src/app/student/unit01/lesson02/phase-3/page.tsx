@@ -1,7 +1,6 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { DragAndDrop } from "@/components/exercises/DragAndDrop"
 import AccountCategorization from "@/components/drag-drop-exercises/AccountCategorization"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users } from "lucide-react"
@@ -34,18 +33,6 @@ export default function Unit01Lesson02Phase3() {
     }
   ]
 
-  const dragDropItems = [
-    { id: "cash", content: "Cash in Bank Account", category: "Assets" },
-    { id: "computer", content: "Computer Equipment", category: "Assets" },
-    { id: "receivables", content: "Money Clients Owe Us", category: "Assets" },
-    { id: "loan", content: "Bank Loan", category: "Liabilities" },
-    { id: "printer-debt", content: "Amount Owed on Printer", category: "Liabilities" },
-    { id: "subscription", content: "Software Subscription Due", category: "Liabilities" },
-    { id: "owner-investment", content: "Sarah's Initial Investment", category: "Equity" },
-    { id: "business-profits", content: "Accumulated Profits", category: "Equity" }
-  ]
-
-  const categories = ["Assets", "Liabilities", "Equity"]
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -107,12 +94,6 @@ export default function Unit01Lesson02Phase3() {
             </CardContent>
           </Card>
 
-          <DragAndDrop
-            title="Categorize TechStart's Financial Elements"
-            items={dragDropItems}
-            categories={categories}
-            instructions="Drag each item to the correct category in the accounting equation. Think about whether Sarah's business owns it, owes it, or if it represents her ownership stake."
-          />
 
           <ComprehensionCheck 
             questions={practiceQuestions}

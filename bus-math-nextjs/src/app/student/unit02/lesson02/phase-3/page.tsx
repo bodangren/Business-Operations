@@ -1,6 +1,6 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import AccountCategorization from "@/components/drag-drop-exercises/AccountCategorization"
+import BusinessTransactionCategorization from "@/components/drag-drop/BusinessTransactionCategorization"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, MapPin, CheckSquare, Star } from "lucide-react"
@@ -192,12 +192,7 @@ export default function Unit02Lesson02Phase3() {
             showExplanations={true}
           />
 
-          <AccountCategorization
-            items={adjustingEntryItems}
-            categories={categories}
-            title="Practice Mapping: Sort the Journal Entry Components"
-            description="Drag each debit and credit to its correct adjusting entry scenario. This practice builds the logical foundation for your Month-End Wizard."
-          />
+          <BusinessTransactionCategorization />
 
           <Card className="border-yellow-200 bg-yellow-50 mt-8">
             <CardHeader>
