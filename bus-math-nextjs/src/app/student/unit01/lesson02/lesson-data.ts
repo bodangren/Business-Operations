@@ -39,36 +39,42 @@ export const lesson02Phases = [
     id: "phase02-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Explore the accounting equation through Sarah's business balance and discover why every transaction must balance"
+    description: "Explore the accounting equation through Sarah's business balance and discover why every transaction must balance",
+    // component: "TAccountsVisualization" (id: mdsie6qfkrdny3sqlyf) - To visually introduce the concept of balance in the accounting equation.
   },
   {
     id: "phase02-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn the universal accounting equation and understand how it applies to all business transactions"
+    description: "Learn the universal accounting equation and understand how it applies to all business transactions",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the core concepts of the accounting equation.
   },
   {
     id: "phase02-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice identifying how TechStart transactions affect assets, liabilities, and equity components"
+    description: "Practice identifying how TechStart transactions affect assets, liabilities, and equity components",
+    // component: "AccountCategorization" (id: 1753927567045ixw1v9vdp) - Students can drag and drop accounts into the accounting equation categories.
   },
   {
     id: "phase02-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Analyze complex transactions independently and verify mathematical balance"
+    description: "Analyze complex transactions independently and verify mathematical balance",
+    // component: "TransactionJournal" (id: mdsirjnug8tn2wqhrjt) - Students can practice creating full transactions and ensuring they balance.
   },
   {
     id: "phase02-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on accounting equation application and transaction analysis"
+    description: "Complete formative assessment on accounting equation application and transaction analysis",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess understanding of the accounting equation and transaction analysis.
   },
   {
     id: "phase02-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the accounting equation's role in maintaining financial accuracy and preview debit/credit rules"
+    description: "Reflect on the accounting equation's role in maintaining financial accuracy and preview debit/credit rules",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the importance of the accounting equation.
   }
 ]

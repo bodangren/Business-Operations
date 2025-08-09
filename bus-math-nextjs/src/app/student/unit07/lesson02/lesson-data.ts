@@ -32,36 +32,42 @@ export const lesson02Phases = [
     id: "phase_hook_2",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for depreciation techniques"
+    description: "Capture attention and establish relevance for depreciation techniques",
+    // component: "DepreciationMethodBuilder" (id: mdsautabwqbxyzahzfd) - To show the difference between depreciation methods.
   },
   {
     id: "phase_introduction_2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Systematic introduction of Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications with step-by-step demonstrations"
+    description: "Systematic introduction of Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications with step-by-step demonstrations",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase_guided_practice_2",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications with scaffolded support"
+    description: "Collaborative practice applying Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications with scaffolded support",
+    // component: "DepreciationMethodBuilder" (id: mdsautabwqbxyzahzfd) - To practice calculating depreciation.
   },
   {
     id: "phase_independent_practice_2",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications independently with minimal teacher support"
+    description: "Practice Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications independently with minimal teacher support",
+    // component: "DepreciationMethodBuilder" (id: mdsautabwqbxyzahzfd) - To practice calculating depreciation.
   },
   {
     id: "phase_assessment_2",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation"
+    description: "Demonstrate understanding through formative assessment and peer evaluation",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
   },
   {
     id: "phase_closing_2",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons"
+    description: "Summarize key takeaways and preview connections to upcoming lessons",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

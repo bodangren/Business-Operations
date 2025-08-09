@@ -40,36 +40,42 @@ export const lesson03Phases = [
     id: "phase03-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Discover the logic behind debit and credit rules through T-account visualization and account type patterns"
+    description: "Discover the logic behind debit and credit rules through T-account visualization and account type patterns",
+    // component: "TAccountSimple" (id: 1753927420002ucucyllwh) - To visually introduce the T-account structure.
   },
   {
     id: "phase03-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn systematic debit/credit rules for assets, liabilities, equity, revenue, and expense accounts"
+    description: "Learn systematic debit/credit rules for assets, liabilities, equity, revenue, and expense accounts",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of debit and credit rules.
   },
   {
     id: "phase03-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice recording TechStart transactions in T-accounts and journal entry format"
+    description: "Practice recording TechStart transactions in T-accounts and journal entry format",
+    // component: "JournalEntryBuilding" (id: 1753927672484sg6mzsmy6) - Interactive exercise for creating journal entries.
   },
   {
     id: "phase03-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Create journal entries independently and verify debit/credit balance for complex transactions"
+    description: "Create journal entries independently and verify debit/credit balance for complex transactions",
+    // component: "TransactionJournal" (id: mdsirjnug8tn2wqhrjt) - Students can independently create and validate journal entries.
   },
   {
     id: "phase03-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on debit/credit rules and T-account construction"
+    description: "Complete formative assessment on debit/credit rules and T-account construction",
+    // component: "TrialBalanceSorting" (id: 1753927612451h1dxmgr2c) - To assess understanding of normal debit and credit balances.
   },
   {
     id: "phase03-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on debit/credit mastery and preview Excel implementation of ledger systems"
+    description: "Reflect on debit/credit mastery and preview Excel implementation of ledger systems",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

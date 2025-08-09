@@ -30,36 +30,42 @@ export const lesson07Phases = [
     id: "phase_hook_7",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for exercises: independent analysis completion"
+    description: "Capture attention and establish relevance for exercises: independent analysis completion",
+    // No component needed for this phase.
   },
   {
     id: "phase_introduction_7",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Cost-benefit analysis for inventory and staffing decisions and connect to business applications"
+    description: "Introduce Cost-benefit analysis for inventory and staffing decisions and connect to business applications",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase_guided_practice_7",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Cost-benefit analysis for inventory and staffing decisions with scaffolded support"
+    description: "Collaborative practice applying Cost-benefit analysis for inventory and staffing decisions with scaffolded support",
+    // component: "InventoryManager" (id: 1753927452727xpb8ayrii) - To practice inventory management and see the cost-benefit effects.
   },
   {
     id: "phase_independent_practice_7",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Apply Cost-benefit analysis for inventory and staffing decisions independently to solve authentic business problems"
+    description: "Apply Cost-benefit analysis for inventory and staffing decisions independently to solve authentic business problems",
+    // component: "InventoryManager" (id: 1753927452727xpb8ayrii) - To practice inventory management and see the cost-benefit effects.
   },
   {
     id: "phase_assessment_7",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation"
+    description: "Demonstrate understanding through formative assessment and peer evaluation",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
   },
   {
     id: "phase_closing_7",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons"
+    description: "Summarize key takeaways and preview connections to upcoming lessons",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

@@ -41,35 +41,41 @@ export const lesson10Phases = [
     phaseName: "Hook" as const,
     sequence: 1,
     description: "Welcome professional business panel and set stage for authentic investor showcase presentations"
+    // No component needed for this phase.
   },
   {
     id: "phase10-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
     description: "Review presentation format and introduce business professional panel members"
+    // No component needed for this phase.
   },
   {
     id: "phase10-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
     description: "Support students through investor presentations with professional audience feedback"
+    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - Students present their pitch.
   },
   {
     id: "phase10-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
     description: "Complete individual presentations and respond to investor panel questions"
+    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - Students present their pitch.
   },
   {
     id: "phase10-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete summative presentation assessment and receive professional panel feedback"
+    description: "Complete summative presentation assessment and receive professional panel feedback",
+    // component: "FeedbackCollector" (id: mdso449cltlcqozjia) - To collect feedback from the professional panel.
   },
   {
     id: "phase10-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on learning journey, celebrate achievements, and plan for next unit applications"
+    description: "Reflect on learning journey, celebrate achievements, and plan for next unit applications",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the unit.
   }
 ]

@@ -36,36 +36,42 @@ export const lesson09Phases = [
     id: "phase_hook_9",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for project work: final model refinement"
+    description: "Capture attention and establish relevance for project work: final model refinement",
+    // No component needed for this phase.
   },
   {
     id: "phase_introduction_9",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications"
+    description: "Introduce key concepts and connect to business applications",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase_guided_practice_9",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying lesson concepts with scaffolded support"
+    description: "Collaborative practice applying lesson concepts with scaffolded support",
+    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To refine the financial model.
   },
   {
     id: "phase_independent_practice_9",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete model construction demonstrating mastery of technical skills"
+    description: "Complete model construction demonstrating mastery of technical skills",
+    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To refine the financial model.
   },
   {
     id: "phase_assessment_9",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation"
+    description: "Demonstrate understanding through formative assessment and peer evaluation",
+    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - For peer evaluation of the final model.
   },
   {
     id: "phase_closing_9",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons"
+    description: "Summarize key takeaways and preview connections to upcoming lessons",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

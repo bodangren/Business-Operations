@@ -40,36 +40,43 @@ export const lesson05Phases = [
     id: "phase05-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Witness the power of self-auditing systems through live error detection and automatic visual alerts"
+    description: "Witness the power of self-auditing systems through live error detection and automatic visual alerts",
+    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) - To demonstrate the power of conditional formatting.
   },
   {
     id: "phase05-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn conditional formatting techniques and trial balance validation formulas for error prevention"
+    description: "Learn conditional formatting techniques and trial balance validation formulas for error prevention",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase05-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build conditional formatting rules and error-checking formulas step-by-step with TechStart data"
+    description: "Build conditional formatting rules and error-checking formulas step-by-step with TechStart data",
+    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can practice building the rules in a template.
+    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) - To guide the creation of the rules.
   },
   {
     id: "phase05-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Test self-auditing features by introducing intentional errors and verifying detection systems"
+    description: "Test self-auditing features by introducing intentional errors and verifying detection systems",
+    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can test their created rules by intentionally making errors.
   },
   {
     id: "phase05-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on conditional formatting and error detection system creation"
+    description: "Complete formative assessment on conditional formatting and error detection system creation",
+    // component: "FillInTheBlank" (id: 17539276608411j3ll7eqa) - To assess the ability to create conditional formatting formulas.
   },
   {
     id: "phase05-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the value of self-auditing systems and preview professional ledger applications"
+    description: "Reflect on the value of self-auditing systems and preview professional ledger applications",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

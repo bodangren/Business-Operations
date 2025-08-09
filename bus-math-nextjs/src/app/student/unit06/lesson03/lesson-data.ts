@@ -33,36 +33,42 @@ export const lesson03Phases = [
     id: "phase_hook_3",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for cvp model construction"
+    description: "Capture attention and establish relevance for cvp model construction",
+    // component: "BreakEvenChart" (id: 17539274978052ynfhvoci) - To show an interactive break-even chart.
   },
   {
     id: "phase_introduction_3",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Fixed vs. variable cost behavior and break-even analysis and connect to business applications"
+    description: "Introduce Fixed vs. variable cost behavior and break-even analysis and connect to business applications",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase_guided_practice_3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Step-by-step construction of models with guided coaching and error correction"
+    description: "Step-by-step construction of models with guided coaching and error correction",
+    // component: "BreakEvenComponents" (id: 1753927577170xc66szan0) - To practice categorizing costs and seeing the impact on the break-even point.
   },
   {
     id: "phase_independent_practice_3",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete model construction demonstrating mastery of technical skills"
+    description: "Complete model construction demonstrating mastery of technical skills",
+    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - To build a full CVP model.
   },
   {
     id: "phase_assessment_3",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation"
+    description: "Demonstrate understanding through formative assessment and peer evaluation",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
   },
   {
     id: "phase_closing_3",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons"
+    description: "Summarize key takeaways and preview connections to upcoming lessons",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

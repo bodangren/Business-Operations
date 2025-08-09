@@ -36,36 +36,42 @@ export const lesson01Phases = [
     id: "phase_hook_1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to VC Red Flags & Entry Event"
+    description: "Engage students with compelling opening scenario related to VC Red Flags & Entry Event",
+    // component: "Lesson01Phase1" (id: mdwl1ovg1rb2fimw7zj) - To introduce the unit's story with a video and comprehension questions.
   },
   {
     id: "phase_introduction_1",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications"
+    description: "Introduce key concepts and connect to business applications",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the introductory text.
   },
   {
     id: "phase_guided_practice_1",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying lesson concepts with scaffolded support"
+    description: "Collaborative practice applying lesson concepts with scaffolded support",
+    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To analyze a startup financial model for red flags.
   },
   {
     id: "phase_independent_practice_1",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice lesson skills independently with minimal teacher support"
+    description: "Practice lesson skills independently with minimal teacher support",
+    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To analyze a startup financial model for red flags.
   },
   {
     id: "phase_assessment_1",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation"
+    description: "Demonstrate understanding through formative assessment and peer evaluation",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
   },
   {
     id: "phase_closing_1",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps"
+    description: "Preview upcoming learning sequence and build anticipation for next steps",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

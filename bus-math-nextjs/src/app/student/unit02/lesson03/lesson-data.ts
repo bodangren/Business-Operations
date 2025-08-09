@@ -34,36 +34,42 @@ export const lesson03Phases = [
     id: "phase-1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Discover real adjusting entry scenarios from actual business month-end procedures"
+    description: "Discover real adjusting entry scenarios from actual business month-end procedures",
+    // component: "JournalEntry" (id: 1753927405954gyryagjje) - To show a real-world example of an adjusting entry.
   },
   {
     id: "phase-2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Review GAAP principles for accruals, deferrals, and depreciation calculations"
+    description: "Review GAAP principles for accruals, deferrals, and depreciation calculations",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase-3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Work through four practice scenarios with instructor guidance and peer collaboration"
+    description: "Work through four practice scenarios with instructor guidance and peer collaboration",
+    // component: "JournalEntryBuilding" (id: 1753927672484sg6mzsmy6) - To practice creating the four types of adjusting entries.
   },
   {
     id: "phase-4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete additional adjusting entry scenarios independently with self-checking"
+    description: "Complete additional adjusting entry scenarios independently with self-checking",
+    // component: "TransactionJournal" (id: mdsirjnug8tn2wqhrjt) - To independently create and validate adjusting entries.
   },
   {
     id: "phase-5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate mastery of adjusting entry recording through practical application"
+    description: "Demonstrate mastery of adjusting entry recording through practical application",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
   },
   {
     id: "phase-6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the systematic approach to month-end adjusting entries"
+    description: "Reflect on the systematic approach to month-end adjusting entries",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

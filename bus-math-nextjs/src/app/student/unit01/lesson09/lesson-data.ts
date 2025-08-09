@@ -40,36 +40,42 @@ export const lesson09Phases = [
     id: "phase09-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Experience the power of compelling investor presentations through professional examples and success stories"
+    description: "Experience the power of compelling investor presentations through professional examples and success stories",
+    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - To show an example of a well-structured pitch.
   },
   {
     id: "phase09-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn investor pitch structure and effective techniques for technical demonstrations"
+    description: "Learn investor pitch structure and effective techniques for technical demonstrations",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase09-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice presentation segments with teacher coaching and immediate feedback"
+    description: "Practice presentation segments with teacher coaching and immediate feedback",
+    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - Students can practice building their pitch with guidance.
   },
   {
     id: "phase09-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Rehearse complete presentations with peer audiences and refine based on feedback"
+    description: "Rehearse complete presentations with peer audiences and refine based on feedback",
+    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - Students can rehearse their full pitch.
   },
   {
     id: "phase09-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete presentation rehearsal assessment with rubric-based peer evaluation"
+    description: "Complete presentation rehearsal assessment with rubric-based peer evaluation",
+    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - For peer evaluation of the presentation.
   },
   {
     id: "phase09-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on presentation skills development and finalize plans for investor showcase"
+    description: "Reflect on presentation skills development and finalize plans for investor showcase",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]

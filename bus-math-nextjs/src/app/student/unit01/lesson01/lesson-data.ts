@@ -39,36 +39,42 @@ export const lesson01Phases = [
     id: "mdtj2p38pe9mgaavvsg",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Meet Sarah and experience the chaos of manual bookkeeping through an interactive business scenario"
+    description: "Meet Sarah and experience the chaos of manual bookkeeping through an interactive business scenario",
+    // component: "Lesson01Phase1" (id: mdwl1ovg1rb2fimw7zj) - Introduces Sarah's story with video and comprehension questions.
   },
   {
     id: "mdtj2u56x4nakwb8iv", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn about TechStart Solutions' business model and the critical role of financial record-keeping in investor relations"
+    description: "Learn about TechStart Solutions' business model and the critical role of financial record-keeping in investor relations",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the introductory text.
   },
   {
     id: "mdtj2zs6ff1v6ab2prk",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Categorize sample business transactions and discuss the challenges of manual tracking systems"
+    description: "Categorize sample business transactions and discuss the challenges of manual tracking systems",
+    // component: "AccountCategorization" (id: 1753927567045ixw1v9vdp) - Interactive drag-and-drop for transaction categorization.
   },
   {
     id: "mdtj347dcgzlo95xtz",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Analyze transaction scenarios independently and identify potential investor concerns"
+    description: "Analyze transaction scenarios independently and identify potential investor concerns",
+    // component: "TransactionJournal" (id: mdsirjnug8tn2wqhrjt) - Students can practice entering transactions and see the immediate impact.
   },
   {
     id: "mdtj37xs1ppb1cqqebq",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on business transaction categorization and investor expectations"
+    description: "Complete formative assessment on business transaction categorization and investor expectations",
+    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
   },
   {
     id: "mdtj3ci2ntggyv07f4",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the importance of organized financial records and preview the ledger-building journey ahead"
+    description: "Reflect on the importance of organized financial records and preview the ledger-building journey ahead",
+    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
   }
 ]
