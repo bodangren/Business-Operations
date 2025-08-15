@@ -21,8 +21,34 @@
       "path": "components/accounting/TAccountSimple.tsx",
       "category": "accounting",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountSimple.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 7,
+          "context": "import { TAccountSimple } from \"@/components/accounting/TAccountSimple\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 129,
+          "context": "<TAccountSimple"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 7,
+          "context": "import { TAccountSimple } from \"@/components/accounting/TAccountSimple\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 187,
+          "context": "<TAccountSimple"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 193,
+          "context": "<TAccountSimple"
+        }
+      ],
+      "totalUsages": 5
     },
     {
       "name": "TAccountsVisualization",
@@ -37,8 +63,29 @@
       "path": "components/accounting/TransactionJournal.tsx",
       "category": "accounting",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TransactionJournal.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 6,
+          "context": "import { TransactionJournal } from \"@/components/accounting/TransactionJournal\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 200,
+          "context": "<TransactionJournal />"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx",
+          "line": 6,
+          "context": "import TransactionJournal from \"@/components/accounting/TransactionJournal\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx",
+          "line": 183,
+          "context": "<TransactionJournal"
+        }
+      ],
+      "totalUsages": 4
     },
     {
       "name": "TrialBalance",
@@ -61,8 +108,19 @@
       "path": "components/business-simulations/CashFlowChallenge.tsx",
       "category": "business-simulations",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/CashFlowChallenge.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx",
+          "line": 6,
+          "context": "import { CashFlowChallenge } from \"@/components/business-simulations/CashFlowChallenge\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx",
+          "line": 217,
+          "context": "<CashFlowChallenge />"
+        }
+      ],
+      "totalUsages": 2
     },
     {
       "name": "ErrorCheckingSystem",
@@ -128,8 +186,19 @@
       "path": "components/charts/BreakEvenChart.tsx",
       "category": "charts",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BreakEvenChart.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 7,
+          "context": "import { BreakEvenChart } from \"@/components/charts/BreakEvenChart\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 220,
+          "context": "<BreakEvenChart"
+        }
+      ],
+      "totalUsages": 2
     },
     {
       "name": "DoughnutChart",
@@ -164,6 +233,35 @@
       "totalUsages": 0
     },
     {
+      "name": "DataCleaningExercise",
+      "path": "components/data-cleaning/DataCleaningExercise.tsx",
+      "category": "data-cleaning",
+      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/data-cleaning/DataCleaningExercise.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx",
+          "line": 8,
+          "context": "import DataCleaningExercise from \"@/components/data-cleaning/DataCleaningExercise\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx",
+          "line": 136,
+          "context": "<DataCleaningExercise"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 8,
+          "context": "import DataCleaningExercise from \"@/components/data-cleaning/DataCleaningExercise\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 252,
+          "context": "<DataCleaningExercise"
+        }
+      ],
+      "totalUsages": 4
+    },
+    {
       "name": "BusinessTransactionCategorization",
       "path": "components/drag-drop/BusinessTransactionCategorization.tsx",
       "category": "drag-drop",
@@ -190,6 +288,26 @@
           "context": "<BusinessTransactionCategorization />"
         },
         {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 3,
+          "context": "import BusinessTransactionCategorization from \"@/components/drag-drop/BusinessTransactionCategorizat"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 195,
+          "context": "<BusinessTransactionCategorization />"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 8,
+          "context": "import { BusinessTransactionCategorization } from \"@/components/drag-drop/BusinessTransactionCategor"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 178,
+          "context": "<BusinessTransactionCategorization />"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-3/page.tsx",
           "line": 4,
           "context": "import BusinessTransactionCategorization from \"@/components/drag-drop/BusinessTransactionCategorizat"
@@ -198,25 +316,77 @@
           "file": "app/student/unit08/lesson01/phase-3/page.tsx",
           "line": 159,
           "context": "<BusinessTransactionCategorization />"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 3,
+          "context": "import { BusinessTransactionCategorization } from \"@/components/drag-drop/BusinessTransactionCategor"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 142,
+          "context": "<BusinessTransactionCategorization />"
         }
       ],
-      "totalUsages": 6
+      "totalUsages": 12
     },
     {
       "name": "AccountCategorization",
       "path": "components/drag-drop-exercises/AccountCategorization.tsx",
       "category": "drag-drop-exercises",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/AccountCategorization.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 4,
+          "context": "import AccountCategorization from \"@/components/drag-drop-exercises/AccountCategorization\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 73,
+          "context": "<AccountCategorization />"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 8,
+          "context": "import AccountCategorization from \"@/components/drag-drop-exercises/AccountCategorization\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 102,
+          "context": "<AccountCategorization />"
+        }
+      ],
+      "totalUsages": 4
     },
     {
       "name": "BreakEvenComponents",
       "path": "components/drag-drop-exercises/BreakEvenComponents.tsx",
       "category": "drag-drop-exercises",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BreakEvenComponents.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx",
+          "line": 5,
+          "context": "import BreakEvenComponents from \"@/components/drag-drop-exercises/BreakEvenComponents\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx",
+          "line": 116,
+          "context": "<BreakEvenComponents />"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 7,
+          "context": "import { BreakEvenComponents } from \"@/components/drag-drop-exercises/BreakEvenComponents\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 84,
+          "context": "<BreakEvenComponents />"
+        }
+      ],
+      "totalUsages": 4
     },
     {
       "name": "BudgetCategorySort",
@@ -252,6 +422,16 @@
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/FinancialStatementMatching.tsx",
       "usages": [
         {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 5,
+          "context": "import FinancialStatementMatching from \"@/components/drag-drop-exercises/FinancialStatementMatching\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 173,
+          "context": "<FinancialStatementMatching />"
+        },
+        {
           "file": "app/student/unit03/lesson01/phase-3/page.tsx",
           "line": 7,
           "context": "import { FinancialStatementMatching } from \"@/components/drag-drop-exercises/FinancialStatementMatch"
@@ -260,9 +440,19 @@
           "file": "app/student/unit03/lesson01/phase-3/page.tsx",
           "line": 248,
           "context": "<FinancialStatementMatching />"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx",
+          "line": 3,
+          "context": "import { FinancialStatementMatching } from \"@/components/drag-drop-exercises/FinancialStatementMatch"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx",
+          "line": 91,
+          "context": "<FinancialStatementMatching />"
         }
       ],
-      "totalUsages": 2
+      "totalUsages": 6
     },
     {
       "name": "InventoryFlowDiagram",
@@ -293,8 +483,49 @@
       "path": "components/drag-drop-exercises/TrialBalanceSorting.tsx",
       "category": "drag-drop-exercises",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/TrialBalanceSorting.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 5,
+          "context": "import TrialBalanceSorting from \"@/components/drag-drop-exercises/TrialBalanceSorting\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 142,
+          "context": "<TrialBalanceSorting />"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 7,
+          "context": "import { TrialBalanceSorting } from \"@/components/drag-drop-exercises/TrialBalanceSorting\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 251,
+          "context": "<TrialBalanceSorting />"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 7,
+          "context": "import { TrialBalanceSorting } from \"@/components/drag-drop-exercises/TrialBalanceSorting\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 245,
+          "context": "<TrialBalanceSorting />"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 9,
+          "context": "import TrialBalanceSorting from \"@/components/drag-drop-exercises/TrialBalanceSorting\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 165,
+          "context": "<TrialBalanceSorting />"
+        }
+      ],
+      "totalUsages": 8
     },
     {
       "name": "ComprehensionCheck",
@@ -343,6 +574,76 @@
           "context": "<ComprehensionCheck"
         },
         {
+          "file": "app/student/unit01/lesson02/phase-1/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-1/page.tsx",
+          "line": 81,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 142,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 98,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 144,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-5/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-5/page.tsx",
+          "line": 132,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 157,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 205,
+          "context": "<ComprehensionCheck"
+        },
+        {
           "file": "app/student/unit02/lesson01/phase-2/page.tsx",
           "line": 5,
           "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
@@ -370,6 +671,86 @@
         {
           "file": "app/student/unit02/lesson01/phase-5/page.tsx",
           "line": 125,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-1/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-1/page.tsx",
+          "line": 162,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 199,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 4,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 189,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 167,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 146,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-1/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-1/page.tsx",
+          "line": 166,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 7,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 303,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-5/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-5/page.tsx",
+          "line": 269,
           "context": "<ComprehensionCheck"
         },
         {
@@ -428,6 +809,66 @@
           "context": "<ComprehensionCheck"
         },
         {
+          "file": "app/student/unit03/lesson02/phase-1/page.tsx",
+          "line": 7,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-1/page.tsx",
+          "line": 166,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 9,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 236,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-5/page.tsx",
+          "line": 8,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-5/page.tsx",
+          "line": 207,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-1/page.tsx",
+          "line": 1,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-1/page.tsx",
+          "line": 183,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-2/page.tsx",
+          "line": 1,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-2/page.tsx",
+          "line": 260,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 1,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 206,
+          "context": "<ComprehensionCheck"
+        },
+        {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx",
           "line": 6,
           "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
@@ -439,7 +880,7 @@
         },
         {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx",
-          "line": 73,
+          "line": 72,
           "context": "<ComprehensionCheck"
         },
         {
@@ -454,7 +895,57 @@
         },
         {
           "file": "app/student/unit04/lesson01/phase-5/page.tsx",
-          "line": 51,
+          "line": 50,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-1/page.tsx",
+          "line": 7,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-1/page.tsx",
+          "line": 118,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 10,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 313,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-5/page.tsx",
+          "line": 7,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-5/page.tsx",
+          "line": 185,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-1/page.tsx",
+          "line": 4,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-1/page.tsx",
+          "line": 125,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-5/page.tsx",
+          "line": 4,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-5/page.tsx",
+          "line": 174,
           "context": "<ComprehensionCheck"
         },
         {
@@ -484,7 +975,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-3/page.tsx",
-          "line": 67,
+          "line": 76,
           "context": "<ComprehensionCheck"
         },
         {
@@ -495,6 +986,46 @@
         {
           "file": "app/student/unit05/lesson01/phase-5/page.tsx",
           "line": 33,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx",
+          "line": 192,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-5/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-5/page.tsx",
+          "line": 251,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-1/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-1/page.tsx",
+          "line": 149,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-5/page.tsx",
+          "line": 5,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-5/page.tsx",
+          "line": 214,
           "context": "<ComprehensionCheck"
         },
         {
@@ -525,6 +1056,56 @@
         {
           "file": "app/student/unit06/lesson01/phase-5/page.tsx",
           "line": 33,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-1/page.tsx",
+          "line": 5,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-1/page.tsx",
+          "line": 167,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-5/page.tsx",
+          "line": 5,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-5/page.tsx",
+          "line": 245,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-1/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-1/page.tsx",
+          "line": 130,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 228,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-5/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-5/page.tsx",
+          "line": 196,
           "context": "<ComprehensionCheck"
         },
         {
@@ -578,6 +1159,26 @@
           "context": "<ComprehensionCheck"
         },
         {
+          "file": "app/student/unit07/lesson02/phase-1/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-1/page.tsx",
+          "line": 154,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-5/page.tsx",
+          "line": 6,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-5/page.tsx",
+          "line": 211,
+          "context": "<ComprehensionCheck"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-1/page.tsx",
           "line": 4,
           "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\""
@@ -621,9 +1222,39 @@
           "file": "app/student/unit08/lesson01/phase-5/page.tsx",
           "line": 238,
           "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-1/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-1/page.tsx",
+          "line": 118,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 4,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 155,
+          "context": "<ComprehensionCheck"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-5/page.tsx",
+          "line": 3,
+          "context": "import ComprehensionCheck from \"@/components/exercises/ComprehensionCheck\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-5/page.tsx",
+          "line": 240,
+          "context": "<ComprehensionCheck"
         }
       ],
-      "totalUsages": 64
+      "totalUsages": 144
     },
     {
       "name": "DragAndDrop",
@@ -771,7 +1402,7 @@
         {
           "file": "app/student/unit01/lesson01/phase-2/page.tsx",
           "line": 227,
-          "context": "<FillInTheBlank sentences={vocabularySentences} />"
+          "context": "<FillInTheBlank"
         },
         {
           "file": "app/student/unit01/lesson01/phase-4/page.tsx",
@@ -781,7 +1412,37 @@
         {
           "file": "app/student/unit01/lesson01/phase-4/page.tsx",
           "line": 267,
-          "context": "<FillInTheBlank sentences={scenarioSentences} />"
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 4,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 172,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 4,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 150,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-2/page.tsx",
+          "line": 6,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-2/page.tsx",
+          "line": 235,
+          "context": "<FillInTheBlank"
         },
         {
           "file": "app/student/unit02/lesson01/phase-2/page.tsx",
@@ -797,6 +1458,46 @@
           "file": "app/student/unit02/lesson01/phase-4/page.tsx",
           "line": 6,
           "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 4,
+          "context": "import FillInTheBlank from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 205,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 4,
+          "context": "import FillInTheBlank from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 175,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 4,
+          "context": "import FillInTheBlank from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 177,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 6,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 293,
+          "context": "<FillInTheBlank"
         },
         {
           "file": "app/student/unit03/lesson01/phase-2/page.tsx",
@@ -829,6 +1530,56 @@
           "context": "<FillInTheBlank"
         },
         {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx",
+          "line": 7,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx",
+          "line": 217,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-2/page.tsx",
+          "line": 7,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-2/page.tsx",
+          "line": 193,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-2/page.tsx",
+          "line": 4,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-2/page.tsx",
+          "line": 232,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx",
+          "line": 6,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx",
+          "line": 264,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx",
+          "line": 5,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx",
+          "line": 220,
+          "context": "<FillInTheBlank"
+        },
+        {
           "file": "app/student/unit07/lesson01/phase-2/page.tsx",
           "line": 6,
           "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\""
@@ -836,7 +1587,7 @@
         {
           "file": "app/student/unit07/lesson01/phase-2/page.tsx",
           "line": 236,
-          "context": "<FillInTheBlank sentences={vocabularySentences} />"
+          "context": "<FillInTheBlank"
         },
         {
           "file": "app/student/unit07/lesson01/phase-4/page.tsx",
@@ -846,7 +1597,7 @@
         {
           "file": "app/student/unit07/lesson01/phase-4/page.tsx",
           "line": 274,
-          "context": "<FillInTheBlank sentences={strategyScenarios} />"
+          "context": "<FillInTheBlank"
         },
         {
           "file": "app/student/unit07/lesson01/phase-5/page.tsx",
@@ -857,17 +1608,58 @@
           "file": "app/student/unit07/lesson01/phase-5/page.tsx",
           "line": 197,
           "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-2/page.tsx",
+          "line": 5,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-2/page.tsx",
+          "line": 279,
+          "context": "<FillInTheBlank"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-2/page.tsx",
+          "line": 3,
+          "context": "import { FillInTheBlank } from \"@/components/exercises/FillInTheBlank\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-2/page.tsx",
+          "line": 188,
+          "context": "<FillInTheBlank"
         }
       ],
-      "totalUsages": 19
+      "totalUsages": 47
     },
     {
       "name": "JournalEntryBuilding",
       "path": "components/exercises/JournalEntryBuilding.tsx",
       "category": "exercises",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/JournalEntryBuilding.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 6,
+          "context": "import JournalEntryBuilding from \"@/components/exercises/JournalEntryBuilding\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 220,
+          "context": "<JournalEntryBuilding />"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx",
+          "line": 6,
+          "context": "import { JournalEntryBuilding } from \"@/components/exercises/JournalEntryBuilding\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx",
+          "line": 181,
+          "context": "<JournalEntryBuilding />"
+        }
+      ],
+      "totalUsages": 4
     },
     {
       "name": "PeerCritiqueForm",
@@ -884,9 +1676,19 @@
           "file": "app/student/unit01/lesson01/phase-5/page.tsx",
           "line": 181,
           "context": "<PeerCritiqueForm"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 2,
+          "context": "import PeerCritiqueForm from \"@/components/exercises/PeerCritiqueForm\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 225,
+          "context": "<PeerCritiqueForm"
         }
       ],
-      "totalUsages": 2
+      "totalUsages": 4
     },
     {
       "name": "ReflectionJournal",
@@ -905,6 +1707,26 @@
           "context": "<ReflectionJournal"
         },
         {
+          "file": "app/student/unit01/lesson02/phase-6/page.tsx",
+          "line": 3,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-6/page.tsx",
+          "line": 119,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-6/page.tsx",
+          "line": 6,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-6/page.tsx",
+          "line": 200,
+          "context": "<ReflectionJournal"
+        },
+        {
           "file": "app/student/unit02/lesson01/phase-6/page.tsx",
           "line": 5,
           "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
@@ -912,6 +1734,26 @@
         {
           "file": "app/student/unit02/lesson01/phase-6/page.tsx",
           "line": 84,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-6/page.tsx",
+          "line": 3,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-6/page.tsx",
+          "line": 147,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-6/page.tsx",
+          "line": 6,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-6/page.tsx",
+          "line": 173,
           "context": "<ReflectionJournal"
         },
         {
@@ -925,6 +1767,26 @@
           "context": "<ReflectionJournal"
         },
         {
+          "file": "app/student/unit03/lesson02/phase-6/page.tsx",
+          "line": 8,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-6/page.tsx",
+          "line": 148,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-6/page.tsx",
+          "line": 1,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-6/page.tsx",
+          "line": 153,
+          "context": "<ReflectionJournal"
+        },
+        {
           "file": "app/student/unit04/lesson01/phase-6/page.tsx",
           "line": 5,
           "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
@@ -932,6 +1794,26 @@
         {
           "file": "app/student/unit04/lesson01/phase-6/page.tsx",
           "line": 21,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-6/page.tsx",
+          "line": 7,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-6/page.tsx",
+          "line": 140,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-6/page.tsx",
+          "line": 4,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-6/page.tsx",
+          "line": 210,
           "context": "<ReflectionJournal"
         },
         {
@@ -945,6 +1827,26 @@
           "context": "<ReflectionJournal"
         },
         {
+          "file": "app/student/unit05/lesson02/phase-6/page.tsx",
+          "line": 6,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-6/page.tsx",
+          "line": 198,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-6/page.tsx",
+          "line": 5,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-6/page.tsx",
+          "line": 193,
+          "context": "<ReflectionJournal"
+        },
+        {
           "file": "app/student/unit06/lesson01/phase-6/page.tsx",
           "line": 5,
           "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
@@ -952,6 +1854,26 @@
         {
           "file": "app/student/unit06/lesson01/phase-6/page.tsx",
           "line": 21,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-6/page.tsx",
+          "line": 5,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-6/page.tsx",
+          "line": 152,
+          "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-6/page.tsx",
+          "line": 6,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-6/page.tsx",
+          "line": 142,
           "context": "<ReflectionJournal"
         },
         {
@@ -965,6 +1887,16 @@
           "context": "<ReflectionJournal"
         },
         {
+          "file": "app/student/unit07/lesson02/phase-6/page.tsx",
+          "line": 6,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-6/page.tsx",
+          "line": 162,
+          "context": "<ReflectionJournal"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-6/page.tsx",
           "line": 3,
           "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\""
@@ -973,33 +1905,86 @@
           "file": "app/student/unit08/lesson01/phase-6/page.tsx",
           "line": 125,
           "context": "<ReflectionJournal"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-6/page.tsx",
+          "line": 3,
+          "context": "import ReflectionJournal from \"@/components/exercises/ReflectionJournal\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-6/page.tsx",
+          "line": 162,
+          "context": "<ReflectionJournal"
         }
       ],
-      "totalUsages": 16
+      "totalUsages": 44
     },
     {
       "name": "BreakEvenAnalysisCalculator",
       "path": "components/financial-calculations/BreakEvenAnalysisCalculator.tsx",
       "category": "financial-calculations",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/BreakEvenAnalysisCalculator.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx",
+          "line": 5,
+          "context": "import BreakEvenAnalysisCalculator from \"@/components/financial-calculations/BreakEvenAnalysisCalcul"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx",
+          "line": 160,
+          "context": "<BreakEvenAnalysisCalculator />"
+        }
+      ],
+      "totalUsages": 2
     },
     {
       "name": "DepreciationMethodBuilder",
       "path": "components/financial-calculations/DepreciationMethodBuilder.tsx",
       "category": "financial-calculations",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/DepreciationMethodBuilder.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit07/lesson02/phase-3/page.tsx",
+          "line": 6,
+          "context": "import DepreciationMethodBuilder from \"@/components/financial-calculations/DepreciationMethodBuilder"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-3/page.tsx",
+          "line": 59,
+          "context": "<DepreciationMethodBuilder />"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-4/page.tsx",
+          "line": 6,
+          "context": "import DepreciationMethodBuilder from \"@/components/financial-calculations/DepreciationMethodBuilder"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-4/page.tsx",
+          "line": 256,
+          "context": "<DepreciationMethodBuilder />"
+        }
+      ],
+      "totalUsages": 4
     },
     {
       "name": "InterestCalculationBuilder",
       "path": "components/financial-calculations/InterestCalculationBuilder.tsx",
       "category": "financial-calculations",
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/InterestCalculationBuilder.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "usages": [
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx",
+          "line": 6,
+          "context": "import InterestCalculationBuilder from \"@/components/financial-calculations/InterestCalculationBuild"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx",
+          "line": 198,
+          "context": "<InterestCalculationBuilder />"
+        }
+      ],
+      "totalUsages": 2
     },
     {
       "name": "BalanceSheetDetailed",
@@ -1096,13 +2081,63 @@
       "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetWrapper.tsx",
       "usages": [
         {
+          "file": "app/student/unit03/lesson03/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { SpreadsheetWrapper } from \"@/components/spreadsheet/SpreadsheetWrapper\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-3/page.tsx",
+          "line": 101,
+          "context": "<SpreadsheetWrapper"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { SpreadsheetWrapper } from \"@/components/spreadsheet/SpreadsheetWrapper\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx",
+          "line": 103,
+          "context": "<SpreadsheetWrapper"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 9,
+          "context": "import { SpreadsheetWrapper } from \"@/components/spreadsheet/SpreadsheetWrapper\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 273,
+          "context": "<SpreadsheetWrapper"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-3/page.tsx",
+          "line": 4,
+          "context": "import SpreadsheetWrapper from \"@/components/spreadsheet/SpreadsheetWrapper\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-3/page.tsx",
+          "line": 157,
+          "context": "<SpreadsheetWrapper"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-4/page.tsx",
+          "line": 4,
+          "context": "import SpreadsheetWrapper from \"@/components/spreadsheet/SpreadsheetWrapper\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-4/page.tsx",
+          "line": 234,
+          "context": "<SpreadsheetWrapper"
+        },
+        {
           "file": "app/student/unit05/lesson01/phase-3/page.tsx",
           "line": 6,
           "context": "import SpreadsheetWrapper, { SpreadsheetData } from \"@/components/spreadsheet/SpreadsheetWrapper\";"
         },
         {
           "file": "app/student/unit05/lesson01/phase-3/page.tsx",
-          "line": 64,
+          "line": 73,
           "context": "<SpreadsheetWrapper initialData={tippedEmployeePayrollData} />"
         },
         {
@@ -1112,8 +2147,18 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-4/page.tsx",
-          "line": 69,
+          "line": 79,
           "context": "<SpreadsheetWrapper initialData={salariedEmployeePayrollData} />"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-3/page.tsx",
+          "line": 6,
+          "context": "import SpreadsheetWrapper from \"@/components/spreadsheet/SpreadsheetWrapper\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-3/page.tsx",
+          "line": 87,
+          "context": "<SpreadsheetWrapper"
         },
         {
           "file": "app/student/unit06/lesson01/phase-3/page.tsx",
@@ -1134,9 +2179,19 @@
           "file": "app/student/unit06/lesson01/phase-4/page.tsx",
           "line": 81,
           "context": "<SpreadsheetWrapper initialData={messyCompetitorData2} />"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 6,
+          "context": "import SpreadsheetWrapper from \"@/components/spreadsheet/SpreadsheetWrapper\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 141,
+          "context": "<SpreadsheetWrapper"
         }
       ],
-      "totalUsages": 8
+      "totalUsages": 22
     },
     {
       "name": "AccessibilityToolbar",
@@ -1216,7 +2271,7 @@
         },
         {
           "file": "app/student/unit01/lesson01/phase-2/page.tsx",
-          "line": 280,
+          "line": 284,
           "context": "<PhaseFooter"
         },
         {
@@ -1236,7 +2291,7 @@
         },
         {
           "file": "app/student/unit01/lesson01/phase-4/page.tsx",
-          "line": 334,
+          "line": 338,
           "context": "<PhaseFooter"
         },
         {
@@ -1246,7 +2301,7 @@
         },
         {
           "file": "app/student/unit01/lesson01/phase-5/page.tsx",
-          "line": 267,
+          "line": 252,
           "context": "<PhaseFooter"
         },
         {
@@ -1256,7 +2311,127 @@
         },
         {
           "file": "app/student/unit01/lesson01/phase-6/page.tsx",
+          "line": 264,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-1/page.tsx",
+          "line": 89,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 181,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 115,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 173,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-5/page.tsx",
+          "line": 154,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-6/page.tsx",
+          "line": 149,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 217,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-2/page.tsx",
           "line": 265,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 328,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 316,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 320,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-6/page.tsx",
+          "line": 280,
           "context": "<PhaseFooter"
         },
         {
@@ -1306,7 +2481,127 @@
         },
         {
           "file": "app/student/unit02/lesson01/phase-6/page.tsx",
-          "line": 190,
+          "line": 189,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-1/page.tsx",
+          "line": 192,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 231,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 241,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 246,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 238,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-6/page.tsx",
+          "line": 194,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-1/page.tsx",
+          "line": 207,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 342,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx",
+          "line": 269,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx",
+          "line": 277,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-5/page.tsx",
+          "line": 356,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-6/page.tsx",
+          "line": 253,
           "context": "<PhaseFooter"
         },
         {
@@ -1360,13 +2655,133 @@
           "context": "<PhaseFooter"
         },
         {
+          "file": "app/student/unit03/lesson02/phase-1/page.tsx",
+          "line": 6,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-1/page.tsx",
+          "line": 197,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx",
+          "line": 6,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx",
+          "line": 258,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 7,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 227,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 7,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 297,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-5/page.tsx",
+          "line": 7,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-5/page.tsx",
+          "line": 337,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-6/page.tsx",
+          "line": 7,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-6/page.tsx",
+          "line": 257,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-1/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-1/page.tsx",
+          "line": 200,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-2/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-2/page.tsx",
+          "line": 277,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-3/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-3/page.tsx",
+          "line": 253,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx",
+          "line": 338,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 259,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-6/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-6/page.tsx",
+          "line": 205,
+          "context": "<PhaseFooter"
+        },
+        {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx",
           "line": 3,
           "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
         },
         {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx",
-          "line": 91,
+          "line": 89,
           "context": "<PhaseFooter"
         },
         {
@@ -1396,7 +2811,7 @@
         },
         {
           "file": "app/student/unit04/lesson01/phase-5/page.tsx",
-          "line": 70,
+          "line": 68,
           "context": "<PhaseFooter"
         },
         {
@@ -1407,6 +2822,126 @@
         {
           "file": "app/student/unit04/lesson01/phase-6/page.tsx",
           "line": 46,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-1/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-1/page.tsx",
+          "line": 157,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-2/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-2/page.tsx",
+          "line": 225,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx",
+          "line": 277,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 365,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-5/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-5/page.tsx",
+          "line": 288,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-6/page.tsx",
+          "line": 4,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-6/page.tsx",
+          "line": 227,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-1/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-1/page.tsx",
+          "line": 164,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-2/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-2/page.tsx",
+          "line": 267,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-3/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-3/page.tsx",
+          "line": 313,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-4/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-4/page.tsx",
+          "line": 364,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-5/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-5/page.tsx",
+          "line": 349,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-6/page.tsx",
+          "line": 3,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-6/page.tsx",
+          "line": 257,
           "context": "<PhaseFooter"
         },
         {
@@ -1426,7 +2961,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-2/page.tsx",
-          "line": 75,
+          "line": 74,
           "context": "<PhaseFooter"
         },
         {
@@ -1436,7 +2971,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-3/page.tsx",
-          "line": 96,
+          "line": 105,
           "context": "<PhaseFooter"
         },
         {
@@ -1446,7 +2981,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-4/page.tsx",
-          "line": 72,
+          "line": 82,
           "context": "<PhaseFooter"
         },
         {
@@ -1456,7 +2991,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-5/page.tsx",
-          "line": 63,
+          "line": 62,
           "context": "<PhaseFooter"
         },
         {
@@ -1467,6 +3002,126 @@
         {
           "file": "app/student/unit05/lesson01/phase-6/page.tsx",
           "line": 46,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx",
+          "line": 201,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx",
+          "line": 275,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx",
+          "line": 204,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx",
+          "line": 223,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-5/page.tsx",
+          "line": 261,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-6/page.tsx",
+          "line": 205,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-1/page.tsx",
+          "line": 157,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-2/page.tsx",
+          "line": 267,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-3/page.tsx",
+          "line": 253,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-4/page.tsx",
+          "line": 316,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-5/page.tsx",
+          "line": 251,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-6/page.tsx",
+          "line": 226,
           "context": "<PhaseFooter"
         },
         {
@@ -1486,7 +3141,7 @@
         },
         {
           "file": "app/student/unit06/lesson01/phase-2/page.tsx",
-          "line": 69,
+          "line": 68,
           "context": "<PhaseFooter"
         },
         {
@@ -1516,7 +3171,7 @@
         },
         {
           "file": "app/student/unit06/lesson01/phase-5/page.tsx",
-          "line": 63,
+          "line": 62,
           "context": "<PhaseFooter"
         },
         {
@@ -1527,6 +3182,126 @@
         {
           "file": "app/student/unit06/lesson01/phase-6/page.tsx",
           "line": 46,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-1/page.tsx",
+          "line": 175,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx",
+          "line": 230,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx",
+          "line": 188,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx",
+          "line": 211,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-5/page.tsx",
+          "line": 277,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-6/page.tsx",
+          "line": 196,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-1/page.tsx",
+          "line": 175,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 282,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 233,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-4/page.tsx",
+          "line": 358,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-5/page.tsx",
+          "line": 332,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-6/page.tsx",
+          "line": 247,
           "context": "<PhaseFooter"
         },
         {
@@ -1546,7 +3321,7 @@
         },
         {
           "file": "app/student/unit07/lesson01/phase-2/page.tsx",
-          "line": 289,
+          "line": 293,
           "context": "<PhaseFooter"
         },
         {
@@ -1566,7 +3341,7 @@
         },
         {
           "file": "app/student/unit07/lesson01/phase-4/page.tsx",
-          "line": 349,
+          "line": 353,
           "context": "<PhaseFooter"
         },
         {
@@ -1587,6 +3362,66 @@
         {
           "file": "app/student/unit07/lesson01/phase-6/page.tsx",
           "line": 292,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-1/page.tsx",
+          "line": 196,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-2/page.tsx",
+          "line": 319,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-3/page.tsx",
+          "line": 269,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-4/page.tsx",
+          "line": 364,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-5/page.tsx",
+          "line": 301,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-6/page.tsx",
+          "line": 253,
           "context": "<PhaseFooter"
         },
         {
@@ -1648,9 +3483,69 @@
           "file": "app/student/unit08/lesson01/phase-6/page.tsx",
           "line": 233,
           "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-1/page.tsx",
+          "line": 165,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-2/page.tsx",
+          "line": 237,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx",
+          "line": 255,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 357,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-5/page.tsx",
+          "line": 307,
+          "context": "<PhaseFooter"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseFooter } from \"@/components/student/PhaseFooter\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-6/page.tsx",
+          "line": 215,
+          "context": "<PhaseFooter"
         }
       ],
-      "totalUsages": 88
+      "totalUsages": 256
     },
     {
       "name": "PhaseHeader",
@@ -1709,6 +3604,126 @@
           "context": "<PhaseHeader"
         },
         {
+          "file": "app/student/unit01/lesson02/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-1/page.tsx",
+          "line": 35,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx",
+          "line": 68,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-3/page.tsx",
+          "line": 39,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-4/page.tsx",
+          "line": 75,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-5/page.tsx",
+          "line": 101,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson02/phase-6/page.tsx",
+          "line": 33,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-1/page.tsx",
+          "line": 74,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-2/page.tsx",
+          "line": 69,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-3/page.tsx",
+          "line": 86,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx",
+          "line": 57,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-5/page.tsx",
+          "line": 128,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit01/lesson03/phase-6/page.tsx",
+          "line": 35,
+          "context": "<PhaseHeader"
+        },
+        {
           "file": "app/student/unit02/lesson01/phase-2/page.tsx",
           "line": 1,
           "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
@@ -1756,6 +3771,126 @@
         {
           "file": "app/student/unit02/lesson01/phase-6/page.tsx",
           "line": 42,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-1/page.tsx",
+          "line": 45,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-2/page.tsx",
+          "line": 70,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-3/page.tsx",
+          "line": 65,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx",
+          "line": 70,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-5/page.tsx",
+          "line": 88,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson02/phase-6/page.tsx",
+          "line": 34,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-1/page.tsx",
+          "line": 51,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-2/page.tsx",
+          "line": 106,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx",
+          "line": 15,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx",
+          "line": 15,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-5/page.tsx",
+          "line": 128,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-6/page.tsx",
+          "line": 36,
           "context": "<PhaseHeader"
         },
         {
@@ -1809,6 +3944,126 @@
           "context": "<PhaseHeader"
         },
         {
+          "file": "app/student/unit03/lesson02/phase-1/page.tsx",
+          "line": 5,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-1/page.tsx",
+          "line": 51,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx",
+          "line": 5,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx",
+          "line": 54,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 6,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx",
+          "line": 17,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 6,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx",
+          "line": 64,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-5/page.tsx",
+          "line": 6,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-5/page.tsx",
+          "line": 107,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-6/page.tsx",
+          "line": 6,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit03/lesson02/phase-6/page.tsx",
+          "line": 37,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-1/page.tsx",
+          "line": 59,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-2/page.tsx",
+          "line": 71,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-3/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-3/page.tsx",
+          "line": 14,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx",
+          "line": 67,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-5/page.tsx",
+          "line": 127,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit03/lesson03/phase-6/page.tsx",
+          "line": 34,
+          "context": "<PhaseHeader"
+        },
+        {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx",
           "line": 2,
           "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
@@ -1859,6 +4114,126 @@
           "context": "<PhaseHeader"
         },
         {
+          "file": "app/student/unit04/lesson02/phase-1/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-1/page.tsx",
+          "line": 52,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-2/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-2/page.tsx",
+          "line": 57,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx",
+          "line": 104,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-4/page.tsx",
+          "line": 206,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-5/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-5/page.tsx",
+          "line": 129,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-6/page.tsx",
+          "line": 3,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit04/lesson02/phase-6/page.tsx",
+          "line": 38,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-1/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-1/page.tsx",
+          "line": 59,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-2/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-2/page.tsx",
+          "line": 60,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-3/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-3/page.tsx",
+          "line": 105,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-4/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-4/page.tsx",
+          "line": 94,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-5/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-5/page.tsx",
+          "line": 125,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-6/page.tsx",
+          "line": 2,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit04/lesson03/phase-6/page.tsx",
+          "line": 33,
+          "context": "<PhaseHeader"
+        },
+        {
           "file": "app/student/unit05/lesson01/phase-1/page.tsx",
           "line": 1,
           "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
@@ -1885,7 +4260,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-3/page.tsx",
-          "line": 39,
+          "line": 48,
           "context": "<PhaseHeader"
         },
         {
@@ -1895,7 +4270,7 @@
         },
         {
           "file": "app/student/unit05/lesson01/phase-4/page.tsx",
-          "line": 40,
+          "line": 50,
           "context": "<PhaseHeader"
         },
         {
@@ -1916,6 +4291,126 @@
         {
           "file": "app/student/unit05/lesson01/phase-6/page.tsx",
           "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx",
+          "line": 60,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx",
+          "line": 59,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx",
+          "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx",
+          "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-5/page.tsx",
+          "line": 126,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-6/page.tsx",
+          "line": 34,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-1/page.tsx",
+          "line": 50,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-2/page.tsx",
+          "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-3/page.tsx",
+          "line": 15,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-4/page.tsx",
+          "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-5/page.tsx",
+          "line": 126,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
+        },
+        {
+          "file": "app/student/unit05/lesson03/phase-6/page.tsx",
+          "line": 34,
           "context": "<PhaseHeader"
         },
         {
@@ -1976,6 +4471,126 @@
         {
           "file": "app/student/unit06/lesson01/phase-6/page.tsx",
           "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-1/page.tsx",
+          "line": 61,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx",
+          "line": 73,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx",
+          "line": 14,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx",
+          "line": 14,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-5/page.tsx",
+          "line": 127,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson02/phase-6/page.tsx",
+          "line": 35,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-1/page.tsx",
+          "line": 62,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-2/page.tsx",
+          "line": 74,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-3/page.tsx",
+          "line": 17,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-4/page.tsx",
+          "line": 14,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-5/page.tsx",
+          "line": 128,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit06/lesson03/phase-6/page.tsx",
+          "line": 36,
           "context": "<PhaseHeader"
         },
         {
@@ -2039,6 +4654,66 @@
           "context": "<PhaseHeader"
         },
         {
+          "file": "app/student/unit07/lesson02/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-1/page.tsx",
+          "line": 61,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-2/page.tsx",
+          "line": 72,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-3/page.tsx",
+          "line": 14,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-4/page.tsx",
+          "line": 14,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-5/page.tsx",
+          "line": 127,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit07/lesson02/phase-6/page.tsx",
+          "line": 35,
+          "context": "<PhaseHeader"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-1/page.tsx",
           "line": 1,
           "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\""
@@ -2097,9 +4772,69 @@
           "file": "app/student/unit08/lesson01/phase-6/page.tsx",
           "line": 35,
           "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-1/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-1/page.tsx",
+          "line": 49,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-2/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-2/page.tsx",
+          "line": 57,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx",
+          "line": 13,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx",
+          "line": 62,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-5/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-5/page.tsx",
+          "line": 126,
+          "context": "<PhaseHeader"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-6/page.tsx",
+          "line": 1,
+          "context": "import { PhaseHeader } from \"@/components/student/PhaseHeader\";"
+        },
+        {
+          "file": "app/student/unit08/lesson02/phase-6/page.tsx",
+          "line": 35,
+          "context": "<PhaseHeader"
         }
       ],
-      "totalUsages": 88
+      "totalUsages": 256
     },
     {
       "name": "ReadingLevelAdjuster",
@@ -3123,14 +5858,15 @@
       "totalUsages": 0
     }
   ],
-  "lastGenerated": "2025-08-05T03:59:36.585Z",
+  "lastGenerated": "2025-08-15T12:44:32.862Z",
   "stats": {
-    "totalComponents": 72,
-    "totalUsages": 506,
+    "totalComponents": 73,
+    "totalUsages": 1049,
     "categoryCounts": {
       "accounting": 6,
       "business-simulations": 7,
       "charts": 6,
+      "data-cleaning": 1,
       "drag-drop": 1,
       "drag-drop-exercises": 9,
       "exercises": 7,
