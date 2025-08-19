@@ -1,20 +1,28 @@
 // Asset & Inventory Tracker, Lesson 4 data - extracted from MCP curriculum database
 export const lesson04Data = {
   id: "mds5x99o393t4h40nm3",
-  title: "Technical Application",
+  title: "FIFO/LIFO Inventory Valuation with Excel Tables",
   sequence: 4,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Implement complex inventory layer calculations using array formulas"
+    "Build structured Excel Tables to track inventory purchases and sales",
+    "Implement FIFO and LIFO layer calculations using array formulas",
+    "Use structured references and XLOOKUP to automate COGS and Ending Inventory",
+    "Validate models with error checks and edge cases"
   ],
   keyConcepts: [
-    "Array formulas for FIFO and LIFO layer calculations"
+    "Inventory layers and cost flow assumptions",
+    "Structured references with Excel Tables",
+    "XLOOKUP and SUMPRODUCT for valuation",
+    "Professional validation and error checking"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Build Excel array formulas for FIFO and LIFO layer calculations"
+    "Hands-on Excel tutorial with TechStart inventory scenarios",
+    "Guided practice building a FIFO/LIFO valuation engine",
+    "Interactive validation using business error-checking patterns"
   ],
-  rationale: "To teach students how to use array formulas to perform complex inventory calculations, a valuable skill for any aspiring financial analyst.",
+  rationale: "Students connect inventory theory to professional Excel practice by building an automated FIFO/LIFO valuation system that investors can trust.",
   status: "Draft"
 }
 

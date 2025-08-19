@@ -50,7 +50,7 @@
 
 'use client'
 
-import { Bar, BarChart as RechartsBarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart as RechartsBarChart, CartesianGrid, XAxis, YAxis, Cell } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   ChartConfig,
@@ -232,7 +232,11 @@ export function BarChart({
               fill={chartConfig[key]?.color}
               name={dataset.label}
               radius={[2, 2, 0, 0]}
-            />
+            >
+              {Array.isArray(dataset.backgroundColor) && rechartsData.map((entry, cellIndex) => (
+                <Cell key={`cell-${cellIndex}`} fill={colors[cellIndex] || colors[0]} />
+              ))}
+            </Bar>
           )
         })}
       </RechartsBarChart>

@@ -1,30 +1,31 @@
 // Unit 1, Lesson 5 data - extracted from MCP curriculum database
 export const lesson05Data = {
   id: "mds5t7qth7rdjsqegg",
-  title: "Excel Model: Conditional Formatting & Error Checking",
+  title: "Advanced Ledger Automation: Dynamic Trial Balance & Posting Validator",
   sequence: 5,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
-    "Create conditional formatting rules for visual error detection in ledger systems",
-    "Build trial balance auto-check formulas to verify debit/credit equality",
-    "Implement visual error detection systems that alert users to imbalances",
-    "Test self-auditing features with intentional errors to verify system reliability"
+    "Automate posting validation using structured references and SUMIFS across tables",
+    "Use XLOOKUP with IFERROR for robust account mapping and missing-ID checks",
+    "Build dynamic trial balance controls that flag out-of-balance states instantly",
+    "Implement professional data validation (lists, ranges, stale dates, negative values)",
+    "Stress test the model with edge cases to prove investor-ready reliability"
   ],
   keyConcepts: [
-    "Conditional formatting rule creation",
-    "Trial balance validation formulas",
-    "Visual error detection systems",
-    "Self-auditing ledger principles",
-    "Color-coded feedback systems"
+    "Structured References (Table[Column])",
+    "XLOOKUP with IFERROR and validation",
+    "SUMIFS and SUMPRODUCT for ledger checks",
+    "Dynamic method switching (cash vs accrual)",
+    "Audit trails and self-auditing controls"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Demonstration of error-catching techniques",
-    "Hands-on conditional formatting setup",
-    "Guided practice with intentional errors",
-    "System testing and validation"
+    "Demonstration of advanced automation patterns",
+    "Guided build of validation and control formulas",
+    "Independent stress testing with edge cases",
+    "Professional documentation and auditability standards"
   ],
-  rationale: "This lesson adds critical error-checking capabilities that transform a basic ledger into a self-auditing system worthy of investor confidence.",
+  rationale: "Students deepen Lesson04 skills by building a self-auditing ledger with dynamic trial balance and robust validation. This reliability builds investor trust and prepares the model for growth.",
   status: "Draft"
 }
 
@@ -40,43 +41,42 @@ export const lesson05Phases = [
     id: "phase05-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Witness the power of self-auditing systems through live error detection and automatic visual alerts",
-    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) - To demonstrate the power of conditional formatting.
+    description: "See a fragile ledger fail under stress—then watch a dynamic, self-auditing build catch issues instantly.",
+    // component: "ComprehensionCheck" for diagnostic/prediction questions
   },
   {
     id: "phase05-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn conditional formatting techniques and trial balance validation formulas for error prevention",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Deep dive on XLOOKUP error handling, SUMIFS controls, and structured references for professional-grade automation.",
+    // component: "FillInTheBlank" for advanced vocabulary
   },
   {
     id: "phase05-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build conditional formatting rules and error-checking formulas step-by-step with TechStart data",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can practice building the rules in a template.
-    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) - To guide the creation of the rules.
+    description: "Build Sarah’s posting validator and trial balance checks step-by-step with safeguards and documentation.",
+    // component: "ErrorCheckingSystem" for validation logic practice
   },
   {
     id: "phase05-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Test self-auditing features by introducing intentional errors and verifying detection systems",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can test their created rules by intentionally making errors.
+    description: "Download advanced practice data with edge cases; implement dynamic updates and document your checks.",
+    // dataset: public/resources/unit01-ledger-advanced-practice.csv
   },
   {
     id: "phase05-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on conditional formatting and error detection system creation",
-    // component: "FillInTheBlank" (id: 17539276608411j3ll7eqa) - To assess the ability to create conditional formatting formulas.
+    description: "Professional mastery assessment: technical knowledge + applied business judgment for investor-readiness.",
+    // component: "ComprehensionCheck" with 8–10 comprehensive questions
   },
   {
     id: "phase05-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the value of self-auditing systems and preview professional ledger applications",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesize wins and reliability improvements; reflect on CAP skills; preview Lesson06 integration.",
+    // component: "ReflectionJournal"
   }
 ]

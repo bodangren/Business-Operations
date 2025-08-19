@@ -1,26 +1,28 @@
-// Three-Statement Storyboard, Lesson 4 data - extracted from MCP curriculum database
+// Three-Statement Storyboard, Lesson 4 data - Excel Advanced Functions for Financial Modeling
 export const lesson04Data = {
   id: "mds5via5psu7rqxs1h",
-  title: "Feedback & Iteration: Income Statement Gallery Walk",
+  title: "Excel Mastery: INDEX/MATCH & Named Ranges for Dynamic Financial Models",
   sequence: 4,
   unitId: "mdrhlhuxj2zkbimaqfd",
   learningObjectives: [
-    "Evaluate Income Statement accuracy and presentation using professional criteria",
-    "Provide constructive, specific feedback to improve financial statement quality",
-    "Identify and correct common errors in revenue recognition and expense classification",
-    "Apply industry standards for Income Statement formatting and disclosure requirements"
+    "Master INDEX/MATCH functions to create dynamic financial statement links",
+    "Implement named ranges for professional spreadsheet organization and maintenance",
+    "Build self-updating Income Statement models that respond to trial balance changes",
+    "Apply advanced Excel techniques to create investor-ready financial reports"
   ],
   keyConcepts: [
-    "Income Statement structure and GAAP compliance requirements",
-    "Revenue recognition principles and matching concept application",
-    "Expense classification (operating vs. non-operating)",
-    "Professional peer review standards and constructive feedback protocols"
+    "INDEX/MATCH function syntax and advantages over VLOOKUP",
+    "Named ranges for formula clarity and professional spreadsheet design",
+    "Dynamic financial statement modeling with live data connections",
+    "Professional Excel standards for financial reporting and investor presentations"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Gallery walk critique of Income Statements with teacher and peer feedback"
+    "Hands-on Excel tutorial with step-by-step demonstration of advanced functions",
+    "Guided practice building dynamic Income Statement models",
+    "Real-world application using Sarah's TechStart Solutions data"
   ],
-  rationale: "To provide students with constructive feedback from multiple sources and to encourage them to learn from each other.",
+  rationale: "To equip students with advanced Excel skills essential for creating professional, dynamic financial models that automatically update and maintain accuracy as business data changes.",
   status: "Draft"
 }
 
@@ -30,48 +32,42 @@ export const unit03Data = {
   sequence: 3
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases for Excel INDEX/MATCH & Named Ranges mastery
 export const lesson04Phases = [
   {
     id: "phase_hook_4",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Set expectations for constructive peer feedback and improvement mindset",
-    // No component needed for this phase.
+    description: "Sarah's INDEX/MATCH Challenge - When VLOOKUP fails investors",
   },
   {
     id: "phase_introduction_4",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "INDEX/MATCH & Named Ranges: The Professional Foundation for Dynamic Financial Models",
   },
   {
     id: "phase_guided_practice_4",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice giving and receiving constructive feedback using established criteria",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer review process.
+    description: "Building Sarah's Dynamic Income Statement System with Advanced Excel Functions",
   },
   {
     id: "phase_independent_practice_4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Engage in peer review process providing specific, actionable feedback",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer review process.
+    description: "Advanced INDEX/MATCH Mastery Challenges and Professional Model Building",
   },
   {
     id: "phase_assessment_4",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "INDEX/MATCH & Named Ranges: Professional Mastery Assessment",
   },
   {
     id: "phase_closing_4",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Excel Mastery Complete: Building Your Professional Future with Dynamic Models",
   }
 ]

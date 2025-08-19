@@ -1,0 +1,20 @@
+Category,Item,Monthly_Amount,Percentage_of_Total
+COGS,Coffee Beans,3200,15.2%
+COGS,Food Ingredients,2800,13.3%
+COGS,Beverages (Non-Coffee),1200,5.7%
+COGS,Packaging Materials,800,3.8%
+Labor,Manager Salary,4200,20.0%
+Labor,Barista Wages,2800,13.3%
+Labor,Kitchen Staff,1800,8.6%
+Labor,Weekend Extra Staff,600,2.9%
+Overhead,Rent,2400,11.4%
+Overhead,Utilities,450,2.1%
+Overhead,Insurance,200,1.0%
+Overhead,Equipment Maintenance,350,1.7%
+Marketing,Social Media Ads,150,0.7%
+Marketing,Local Newspaper,100,0.5%
+Marketing,Loyalty Program,50,0.2%
+Administrative,Accounting Software,89,0.4%
+Administrative,POS System,120,0.6%
+Administrative,Office Supplies,45,0.2%
+Administrative,Legal/Professional,125,0.6%

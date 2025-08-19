@@ -1,0 +1,12 @@
+Component,Description,Formula,Example_Value
+Fixed_Costs,Monthly costs that don't change with volume,Input Value,15000
+Variable_Cost_Per_Unit,Cost that increases with each sale,Input Value,320
+Price_Per_Unit,Selling price per item/service,Input Value,850
+Volume_Units,Number of units sold,Input Value,35
+Total_Revenue,Price × Volume,=Price_Per_Unit*Volume_Units,29750
+Total_Variable_Costs,Variable Cost × Volume,=Variable_Cost_Per_Unit*Volume_Units,11200
+Total_Costs,Fixed + Variable Costs,=Fixed_Costs+Total_Variable_Costs,26200
+Net_Profit,Revenue - Total Costs,=Total_Revenue-Total_Costs,3550
+Break_Even_Units,Fixed Costs ÷ (Price - Variable Cost),=Fixed_Costs/(Price_Per_Unit-Variable_Cost_Per_Unit),28.30
+Contribution_Margin,Price - Variable Cost per Unit,=Price_Per_Unit-Variable_Cost_Per_Unit,530
+Margin_of_Safety,Current Volume - Break Even Volume,=Volume_Units-Break_Even_Units,6.70

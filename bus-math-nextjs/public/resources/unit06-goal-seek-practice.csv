@@ -1,0 +1,11 @@
+Business_Scenario,Current_Price,Current_Volume,Fixed_Costs,Variable_Cost_Per_Unit,Current_Profit,Target_Profit,Goal_Seek_Challenge
+TechStart Solutions Website Projects,2500,20,15000,800,19000,50000,What price per project achieves $50k profit?
+Local Marketing Agency Social Media,850,35,8000,320,10550,25000,What volume needed for $25k profit at current price?
+Coffee Shop Catering Service,45,400,5000,22,4200,12000,What's max variable cost per order for $12k profit?
+Consulting Firm Strategy Projects,5000,8,12000,1500,16000,35000,What price needed for $35k profit with current volume?
+E-commerce Store Product Sales,75,800,18000,35,14000,40000,How many units needed for $40k profit?
+Graphic Design Studio Logo Packages,600,50,6000,180,15000,30000,What price achieves $30k profit?
+Personal Training Studio Sessions,120,200,8000,25,11000,25000,What volume for $25k profit at 10% price increase?
+Restaurant Food Delivery Service,25,2000,12000,15,8000,20000,What price per delivery for $20k profit?
+Digital Marketing SEO Services,1200,25,7000,400,15000,35000,What's maximum variable cost for $35k profit?
+Online Course Platform Subscriptions,199,150,10000,50,12485,30000,What subscription price for $30k profit?

@@ -1,23 +1,30 @@
-// PayDay Simulator, Lesson 4 data - extracted from MCP curriculum database
+// PayDay Simulator, Lesson 4 data - Excel-focused skills introduction
 export const lesson04Data = {
   id: "mds5w74rp4icpe60td",
-  title: "Feedback & Iteration: Calculator Refinement",
+  title: "Making Your Calculator Bulletproof: Data Validation & Error Detection",
   sequence: 4,
   unitId: "mdrhlhv3ixkn2gykua",
   learningObjectives: [
-    "Implement data validation for error-free payroll entry",
-    "Create visual alerts for reconciliation discrepancies"
+    "Implement data validation rules to prevent payroll entry errors",
+    "Create conditional formatting for visual error detection and alerts",
+    "Build professional error-checking systems for business reliability",
+    "Design bulletproof payroll tools that prevent costly mistakes"
   ],
   keyConcepts: [
-    "Data validation for bilingual pay stub formatting",
-    "Conditional formatting for reconciliation alerts"
+    "Excel Data Validation techniques and business rules",
+    "Conditional Formatting for visual error alerts",
+    "Professional error-checking systems and best practices",
+    "Input validation and range checking for payroll data"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Refine calculators based on testing and add error-checking features"
+    "Hands-on Excel demonstration of data validation features",
+    "Guided practice with conditional formatting rules",
+    "Real-world error scenarios and prevention strategies",
+    "Professional formatting and user interface design"
   ],
-  rationale: "To teach students the importance of error-checking and to introduce them to more advanced Excel features.",
-  status: "Draft"
+  rationale: "Building bulletproof payroll systems requires more than accurate formulas—it demands professional error-checking that prevents mistakes before they happen. This lesson transforms basic calculators into reliable business tools through advanced Excel validation features.",
+  status: "Complete"
 }
 
 export const unit05Data = {

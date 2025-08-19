@@ -1,21 +1,28 @@
-// Data-Driven Café, Lesson 4 data - extracted from MCP curriculum database
+// Data-Driven Café, Lesson 4 data - Excel Charts & Data Visualization
 export const lesson04Data = {
   id: "mds5vu00qkk4xiaq3ha",
-  title: "New Skill Focus: Data Visualization & Pattern Recognition",
+  title: "Excel Charts & Data Visualization: Transforming Data into Business Insights",
   sequence: 4,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Create professional data visualizations with appropriate chart types"
+    "Create professional Excel charts (column, line, scatter) with proper formatting",
+    "Build interactive charts with trendlines and data labels for business analysis",
+    "Design visual dashboards that reveal patterns in café POS data"
   ],
   keyConcepts: [
-    "Data visualization: Histograms, box plots, scatterplots with trendlines"
+    "Excel chart types: Column charts for categories, line charts for trends, scatter plots for relationships",
+    "Chart formatting: Professional titles, axis labels, legends, and data series",
+    "Trendline analysis: Adding linear trendlines to identify patterns and forecast demand",
+    "Dashboard design: Combining multiple charts to tell a complete data story"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Create professional charts to reveal business patterns in café data"
+    "Hands-on Excel chart creation using café POS data",
+    "Progressive skill building from basic charts to interactive dashboards",
+    "Business context focus: connecting visual patterns to operational decisions"
   ],
-  rationale: "To teach students how to create effective data visualizations that can reveal patterns and insights in business data.",
-  status: "Draft"
+  rationale: "Students need to transform raw café data into compelling visual stories that reveal actionable business insights. This Excel skill bridges statistical analysis with professional data presentation, preparing students for advanced forecasting in lesson05.",
+  status: "Ready for Dev"
 }
 
 export const unit04Data = {
@@ -24,50 +31,48 @@ export const unit04Data = {
   sequence: 4
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases focusing on Excel Charts & Data Visualization
 export const lesson04Phases = [
   {
     id: "phase_hook_4",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Present real-world problem requiring the skills to be learned in this lesson",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To show an example of a dashboard with various charts.
+    description: "Sarah's Data Visualization Challenge: From spreadsheet chaos to compelling business insights",
+    // component: "FinancialDashboard" - Show café manager's current confusing data vs. clear visual story
   },
   {
     id: "phase_introduction_4",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Data visualization: Histograms, box plots, scatterplots with trendlines and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Excel Charts: The Professional Foundation for transforming data into actionable business intelligence",
+    // component: "FillInTheBlank" - Chart type selection and Excel chart terminology
   },
   {
     id: "phase_guided_practice_4",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Data visualization: Histograms, box plots, scatterplots with trendlines with scaffolded support",
-    // component: "BarChart" (id: 1753927489104x24csr223) - To practice creating a bar chart.
-    // component: "LineChart" (id: 1753927528418ku6yyo9go) - To practice creating a line chart.
-    // component: "PieChart" (id: 17539275379686iozw2fsh) - To practice creating a pie chart.
+    description: "Building Sarah's Excel Chart System: Step-by-step chart creation for café data analysis",
+    // components: "BarChart", "LineChart", "PieChart" - Progressive chart building exercises
   },
   {
     id: "phase_independent_practice_4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Data visualization: Histograms, box plots, scatterplots with trendlines independently with minimal teacher support",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To build their own dashboard.
+    description: "Advanced Excel Chart Mastery: Complex dashboard creation and business insight development",
+    // component: "DragAndDrop" - Chart type selection for business scenarios
   },
   {
     id: "phase_assessment_4",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Excel Charts: Professional Mastery Assessment with chart interpretation and business analysis",
+    // component: "ComprehensionCheck" - Chart reading and business insight assessment
   },
   {
     id: "phase_closing_4",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Excel Chart Mastery Complete: Building Your Future with professional data visualization skills",
+    // component: "ReflectionJournal" - CAP framework reflection on data storytelling journey
   }
 ]

@@ -12,3 +12,4 @@ export default function Lesson05Page() {
     </div>
   )
 }
+

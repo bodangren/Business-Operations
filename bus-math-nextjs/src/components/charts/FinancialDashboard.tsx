@@ -12,6 +12,11 @@ interface FinancialDashboardProps {
   className?: string
   refreshable?: boolean
   exportable?: boolean
+  data?: {
+    monthlyData?: ChartData[]
+    accountBalances?: AccountData[]
+    kpiData?: KPIData[]
+  }
 }
 
 interface ChartData {
@@ -40,12 +45,13 @@ export function FinancialDashboard({
   title = "Financial Dashboard", 
   className = "",
   refreshable = true,
-  exportable = true 
+  exportable = true,
+  data
 }: FinancialDashboardProps) {
   const [isRefreshing, setIsRefreshing] = useState(false)
   
-  // Sample financial data - in real app would come from props or API
-  const monthlyData: ChartData[] = [
+  // Default data for complete dashboard
+  const defaultMonthlyData: ChartData[] = [
     { month: 'Jan', revenue: 15000, expenses: 12000, profit: 3000, cashFlow: 2800 },
     { month: 'Feb', revenue: 18000, expenses: 14500, profit: 3500, cashFlow: 3200 },
     { month: 'Mar', revenue: 16500, expenses: 13200, profit: 3300, cashFlow: 3000 },
@@ -54,7 +60,17 @@ export function FinancialDashboard({
     { month: 'Jun', revenue: 25000, expenses: 18500, profit: 6500, cashFlow: 6200 }
   ]
 
-  const accountBalances: AccountData[] = [
+  // Compact dashboard uses different data
+  const compactMonthlyData: ChartData[] = [
+    { month: 'Jan', revenue: 8500, expenses: 6800, profit: 1700, cashFlow: 1500 },
+    { month: 'Feb', revenue: 9200, expenses: 7100, profit: 2100, cashFlow: 1900 },
+    { month: 'Mar', revenue: 11000, expenses: 8200, profit: 2800, cashFlow: 2600 },
+    { month: 'Apr', revenue: 12500, expenses: 9300, profit: 3200, cashFlow: 3000 },
+    { month: 'May', revenue: 10800, expenses: 8600, profit: 2200, cashFlow: 2000 },
+    { month: 'Jun', revenue: 13200, expenses: 9800, profit: 3400, cashFlow: 3200 }
+  ]
+
+  const defaultAccountBalances: AccountData[] = [
     { name: 'Cash', value: 8500, color: '#4F46E5' },
     { name: 'Accounts Receivable', value: 3200, color: '#06B6D4' },
     { name: 'Equipment', value: 15000, color: '#F59E0B' },
@@ -62,7 +78,15 @@ export function FinancialDashboard({
     { name: 'Accounts Payable', value: 2800, color: '#EF4444' }
   ]
 
-  const kpiData: KPIData[] = [
+  const compactAccountBalances: AccountData[] = [
+    { name: 'Cash', value: 4200, color: '#4F46E5' },
+    { name: 'Receivables', value: 1800, color: '#06B6D4' },
+    { name: 'Equipment', value: 8500, color: '#F59E0B' },
+    { name: 'Inventory', value: 2200, color: '#10B981' },
+    { name: 'Payables', value: 1500, color: '#EF4444' }
+  ]
+
+  const defaultKpiData: KPIData[] = [
     {
       title: 'Total Revenue',
       value: '$116,000',
@@ -92,6 +116,167 @@ export function FinancialDashboard({
       icon: <TrendingUp className="h-4 w-4" />
     }
   ]
+
+  const compactKpiData: KPIData[] = [
+    {
+      title: 'Total Revenue',
+      value: '$65,200',
+      change: '+6.8%',
+      trend: 'up',
+      icon: <DollarSign className="h-4 w-4" />
+    },
+    {
+      title: 'Net Profit',
+      value: '$14,400',
+      change: '+4.2%',
+      trend: 'up',
+      icon: <TrendingUp className="h-4 w-4" />
+    },
+    {
+      title: 'Cash Flow',
+      value: '$13,200',
+      change: '+1.8%',
+      trend: 'up',
+      icon: <Target className="h-4 w-4" />
+    },
+    {
+      title: 'Profit Margin',
+      value: '22.1%',
+      change: '+2.1%',
+      trend: 'up',
+      icon: <TrendingUp className="h-4 w-4" />
+    }
+  ]
+
+  // Café-specific data for café operations dashboard
+  const cafeMonthlyData: ChartData[] = [
+    { month: 'Jan', revenue: 12500, expenses: 8900, profit: 3600, cashFlow: 3400 },
+    { month: 'Feb', revenue: 14200, expenses: 9800, profit: 4400, cashFlow: 4100 },
+    { month: 'Mar', revenue: 16800, expenses: 11200, profit: 5600, cashFlow: 5300 },
+    { month: 'Apr', revenue: 18900, expenses: 12800, profit: 6100, cashFlow: 5800 },
+    { month: 'May', revenue: 21500, expenses: 14200, profit: 7300, cashFlow: 7000 },
+    { month: 'Jun', revenue: 23800, expenses: 15600, profit: 8200, cashFlow: 7900 }
+  ]
+
+  const cafeAccountBalances: AccountData[] = [
+    { name: 'Cash Register', value: 2800, color: '#4F46E5' },
+    { name: 'Daily Sales', value: 4200, color: '#06B6D4' },
+    { name: 'Café Equipment', value: 18500, color: '#F59E0B' },
+    { name: 'Food Inventory', value: 3500, color: '#10B981' },
+    { name: 'Supplier Payables', value: 1800, color: '#EF4444' }
+  ]
+
+  const cafeKpiData: KPIData[] = [
+    {
+      title: 'Weekend Revenue',
+      value: '$107,700',
+      change: '+18.5%',
+      trend: 'up',
+      icon: <DollarSign className="h-4 w-4" />
+    },
+    {
+      title: 'Café Profit',
+      value: '$35,200',
+      change: '+24.3%',
+      trend: 'up',
+      icon: <TrendingUp className="h-4 w-4" />
+    },
+    {
+      title: 'Food Waste',
+      value: '2.8%',
+      change: '-1.2%',
+      trend: 'up',
+      icon: <Target className="h-4 w-4" />
+    },
+    {
+      title: 'Customer Traffic',
+      value: '1,240/day',
+      change: '+15.6%',
+      trend: 'up',
+      icon: <TrendingUp className="h-4 w-4" />
+    }
+  ]
+
+  // Portfolio data for student mastery demonstration
+  const portfolioMonthlyData: ChartData[] = [
+    { month: 'Q1', revenue: 28500, expenses: 19200, profit: 9300, cashFlow: 8800 },
+    { month: 'Q2', revenue: 32100, expenses: 21600, profit: 10500, cashFlow: 10200 },
+    { month: 'Q3', revenue: 29800, expenses: 20800, profit: 9000, cashFlow: 8700 },
+    { month: 'Q4', revenue: 38900, expenses: 26400, profit: 12500, cashFlow: 12100 }
+  ]
+
+  const portfolioAccountBalances: AccountData[] = [
+    { name: 'Project Revenue', value: 45200, color: '#4F46E5' },
+    { name: 'Client Retainers', value: 12800, color: '#06B6D4' },
+    { name: 'Tech Assets', value: 8500, color: '#F59E0B' },
+    { name: 'Working Capital', value: 15600, color: '#10B981' },
+    { name: 'Business Expenses', value: 6200, color: '#EF4444' }
+  ]
+
+  const portfolioKpiData: KPIData[] = [
+    {
+      title: 'Annual Revenue',
+      value: '$129,300',
+      change: '+34.2%',
+      trend: 'up',
+      icon: <DollarSign className="h-4 w-4" />
+    },
+    {
+      title: 'Net Profit Margin',
+      value: '32.1%',
+      change: '+8.4%',
+      trend: 'up',
+      icon: <TrendingUp className="h-4 w-4" />
+    },
+    {
+      title: 'Client Retention',
+      value: '94%',
+      change: '+12%',
+      trend: 'up',
+      icon: <Target className="h-4 w-4" />
+    },
+    {
+      title: 'Growth Rate',
+      value: '156%',
+      change: '+45%',
+      trend: 'up',
+      icon: <TrendingUp className="h-4 w-4" />
+    }
+  ]
+
+  // Use provided data or defaults based on dashboard type
+  const getDashboardData = () => {
+    if (title.includes('Quick') || title.includes('Compact')) {
+      return {
+        monthly: compactMonthlyData,
+        accounts: compactAccountBalances,
+        kpis: compactKpiData
+      }
+    } else if (title.includes('Café') || title.includes('Operations')) {
+      return {
+        monthly: cafeMonthlyData,
+        accounts: cafeAccountBalances,
+        kpis: cafeKpiData
+      }
+    } else if (title.includes('Portfolio') || title.includes('Mastery')) {
+      return {
+        monthly: portfolioMonthlyData,
+        accounts: portfolioAccountBalances,
+        kpis: portfolioKpiData
+      }
+    } else {
+      return {
+        monthly: defaultMonthlyData,
+        accounts: defaultAccountBalances,
+        kpis: defaultKpiData
+      }
+    }
+  }
+
+  const dashboardData = getDashboardData()
+  const monthlyData = data?.monthlyData || dashboardData.monthly
+  const accountBalances = data?.accountBalances || dashboardData.accounts
+  const kpiData = data?.kpiData || dashboardData.kpis
 
   const handleRefresh = async () => {
     setIsRefreshing(true)
@@ -127,7 +312,7 @@ export function FinancialDashboard({
   }
 
   return (
-    <div className={`space-y-6 ${className}`}>
+    <div className={`w-full space-y-6 ${className}`}>
       {/* Dashboard Header */}
       <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
         <CardHeader>
@@ -197,53 +382,55 @@ export function FinancialDashboard({
       </div>
 
       {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-full">
         {/* Revenue vs Expenses Trend */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Revenue vs Expenses</CardTitle>
             <CardDescription>Monthly financial performance comparison</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="min-h-[300px]">
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={monthlyData}>
+          <CardContent className="p-6">
+            <div className="w-full h-[350px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={monthlyData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                   <XAxis 
                     dataKey="month" 
                     tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
+                    axisLine={true}
+                    tickLine={true}
                   />
                   <YAxis 
                     tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
+                    axisLine={true}
+                    tickLine={true}
                     tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                   />
-                  <ChartTooltip 
-                    content={<ChartTooltipContent />}
-                    formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                  <Tooltip 
+                    formatter={(value: number, name: string) => [`$${value.toLocaleString()}`, name]}
+                    labelFormatter={(label) => `Month: ${label}`}
                   />
                   <Legend />
                   <Line 
                     type="monotone" 
                     dataKey="revenue" 
-                    stroke="var(--color-revenue)" 
+                    stroke="#3b82f6" 
                     strokeWidth={3}
-                    dot={{ r: 4 }}
-                    activeDot={{ r: 6 }}
+                    dot={{ r: 4, fill: '#3b82f6' }}
+                    activeDot={{ r: 6, fill: '#3b82f6' }}
+                    connectNulls={false}
                   />
                   <Line 
                     type="monotone" 
                     dataKey="expenses" 
-                    stroke="var(--color-expenses)" 
+                    stroke="#ef4444" 
                     strokeWidth={3}
-                    dot={{ r: 4 }}
-                    activeDot={{ r: 6 }}
+                    dot={{ r: 4, fill: '#ef4444' }}
+                    activeDot={{ r: 6, fill: '#ef4444' }}
+                    connectNulls={false}
                   />
                 </LineChart>
               </ResponsiveContainer>
-            </ChartContainer>
+            </div>
           </CardContent>
         </Card>
 
@@ -253,16 +440,16 @@ export function FinancialDashboard({
             <CardTitle className="text-lg">Account Balances</CardTitle>
             <CardDescription>Current account balances distribution</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="min-h-[300px]">
-              <ResponsiveContainer width="100%" height={300}>
+          <CardContent className="p-6">
+            <div className="w-full h-[350px]">
+              <ResponsiveContainer width="100%" height="100%">
                 <RechartsPieChart>
                   <Pie
                     data={accountBalances}
                     cx="50%"
                     cy="50%"
-                    outerRadius={100}
-                    innerRadius={40}
+                    outerRadius={120}
+                    innerRadius={50}
                     paddingAngle={2}
                     dataKey="value"
                   >
@@ -276,7 +463,7 @@ export function FinancialDashboard({
                   <Legend />
                 </RechartsPieChart>
               </ResponsiveContainer>
-            </ChartContainer>
+            </div>
           </CardContent>
         </Card>
 
@@ -286,40 +473,40 @@ export function FinancialDashboard({
             <CardTitle className="text-lg">Cash Flow Analysis</CardTitle>
             <CardDescription>Monthly cash flow and profit tracking</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="min-h-[300px]">
-              <ResponsiveContainer width="100%" height={300}>
-                <RechartsBarChart data={monthlyData}>
+          <CardContent className="p-6">
+            <div className="w-full h-[350px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <RechartsBarChart data={monthlyData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                   <XAxis 
                     dataKey="month" 
                     tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
+                    axisLine={true}
+                    tickLine={true}
                   />
                   <YAxis 
                     tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
+                    axisLine={true}
+                    tickLine={true}
                     tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                   />
-                  <ChartTooltip 
-                    content={<ChartTooltipContent />}
-                    formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                  <Tooltip 
+                    formatter={(value: number, name: string) => [`$${value.toLocaleString()}`, name]}
+                    labelFormatter={(label) => `Month: ${label}`}
                   />
                   <Legend />
                   <Bar 
                     dataKey="profit" 
-                    fill="var(--color-profit)" 
+                    fill="#10b981" 
                     radius={[2, 2, 0, 0]}
                   />
                   <Bar 
                     dataKey="cashFlow" 
-                    fill="var(--color-cashFlow)" 
+                    fill="#3b82f6" 
                     radius={[2, 2, 0, 0]}
                   />
                 </RechartsBarChart>
               </ResponsiveContainer>
-            </ChartContainer>
+            </div>
           </CardContent>
         </Card>
 
@@ -329,40 +516,44 @@ export function FinancialDashboard({
             <CardTitle className="text-lg">Profit Margin Analysis</CardTitle>
             <CardDescription>Monthly profit margin percentage</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="min-h-[300px]">
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={monthlyData.map(item => ({
-                  ...item,
-                  margin: ((item.profit / item.revenue) * 100)
-                }))}>
+          <CardContent className="p-6">
+            <div className="w-full h-[350px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart 
+                  data={monthlyData.map(item => ({
+                    ...item,
+                    margin: ((item.profit / item.revenue) * 100)
+                  }))}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                >
                   <XAxis 
                     dataKey="month" 
                     tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
+                    axisLine={true}
+                    tickLine={true}
                   />
                   <YAxis 
                     tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
+                    axisLine={true}
+                    tickLine={true}
                     tickFormatter={(value) => `${value.toFixed(1)}%`}
                   />
-                  <ChartTooltip 
-                    content={<ChartTooltipContent />}
+                  <Tooltip 
                     formatter={(value: number) => [`${value.toFixed(1)}%`, 'Profit Margin']}
+                    labelFormatter={(label) => `Month: ${label}`}
                   />
                   <Line 
                     type="monotone" 
                     dataKey="margin" 
-                    stroke="var(--color-profit)" 
+                    stroke="#10b981" 
                     strokeWidth={3}
-                    dot={{ r: 5 }}
-                    activeDot={{ r: 7 }}
+                    dot={{ r: 5, fill: '#10b981' }}
+                    activeDot={{ r: 7, fill: '#10b981' }}
+                    connectNulls={false}
                   />
                 </LineChart>
               </ResponsiveContainer>
-            </ChartContainer>
+            </div>
           </CardContent>
         </Card>
       </div>

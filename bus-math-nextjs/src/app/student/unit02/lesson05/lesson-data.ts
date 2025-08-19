@@ -1,77 +1,73 @@
-// Month-End Wizard, Lesson 5 data - extracted from MCP curriculum database
+// Unit 2, Lesson 5 data - Advanced Month-End Automation: Scenario Engine & Validation
 export const lesson05Data = {
-  id: "mds5v4u7x4qkztwi6g",
-  title: "Reflection Checkpoint: Sprint Retrospective",
+  id: "unit02_lesson05",
+  title: "Advanced Month-End Automation: Scenario Engine & Validation",
   sequence: 5,
-  unitId: "mdrhkhm79v8qau43696",
+  unitId: "unit02",
   learningObjectives: [
-    "Reflect on learning progress and identify areas for improvement in month-end procedures",
-    "Analyze what worked well and what challenged during the adjusting entries process",
-    "Set strategic goals for the Excel automation phase of the project",
-    "Practice metacognitive thinking to enhance future learning"
+    "Build a scenario-driven adjusting entry engine using structured references",
+    "Use XLOOKUP with error handling to map accounts to methods",
+    "Implement SWITCH/IF logic for dynamic method selection",
+    "Add robust data validation and audit checks for investor-ready reliability"
   ],
   keyConcepts: [
-    "Sprint retrospective methodology for continuous improvement",
-    "Metacognitive reflection strategies for deeper learning",
-    "Goal setting techniques for academic and professional development",
-    "Growth mindset principles applied to financial learning challenges"
+    "XLOOKUP with if_not_found for safer lookups",
+    "SWITCH/IFS for dynamic method routing",
+    "SUMIFS/SUMPRODUCT for multi-criteria aggregation",
+    "Data validation and audit flags for month-end controls"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Learning analysis and strategic planning for automation phase"
+    "Hands-on scenario engine construction with TechStart cases",
+    "Progressively enhance reliability with validation rules",
+    "Professional standards: documentation, auditability, and investor trust"
   ],
-  rationale: "To encourage metacognition and strategic planning, preparing students for the next phase of the project.",
+  rationale: "Students deepen their Excel automation by building a dynamic month-end engine that adapts to new scenarios without breaking. They practice professional controls that build investor confidence.",
   status: "Draft"
 }
 
 export const unit02Data = {
-  id: "mdrhkhm79v8qau43696",
-  title: "Month-End Wizard",
+  id: "unit02",
+  title: "Unit 2: Month-End Wizard",
   sequence: 2
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson05Phases = [
   {
-    id: "phase_hook_5",
+    id: "phase-1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Activate prior knowledge and prepare for metacognitive reflection",
-    // No component needed for this phase.
+    description: "Stress test Sarah's month-end model: fragile vs robust under growth",
   },
   {
-    id: "phase_introduction_5",
+    id: "phase-2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Advanced automation: XLOOKUP + SWITCH + validation for professional reliability",
   },
   {
-    id: "phase_guided_practice_5",
+    id: "phase-3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying lesson concepts with scaffolded support",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide the retrospective process.
+    description: "Build the scenario engine and validation system step-by-step",
   },
   {
-    id: "phase_independent_practice_5",
+    id: "phase-4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice lesson skills independently with minimal teacher support",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide the retrospective process.
+    description: "Advanced mastery challenges with dynamic updates and investor outputs",
   },
   {
-    id: "phase_assessment_5",
+    id: "phase-5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment demonstrating understanding of key concepts and skills",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Professional mastery assessment: automation, validation, and judgment",
   },
   {
-    id: "phase_closing_5",
+    id: "phase-6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesize learning and establish goals for continued growth",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesis, CAP reflection, and preview of integration/dashboards",
   }
 ]
+

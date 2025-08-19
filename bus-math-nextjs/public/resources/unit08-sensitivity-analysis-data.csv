@@ -1,0 +1,9 @@
+Variable,Base Case,Low Impact,High Impact,NPV Impact ($)
+Revenue Growth Rate,20%,15%,30%,125000
+Customer Acquisition Cost,$250,$200,$350,-75000
+Churn Rate,5%,3%,8%,-95000
+Pricing ($),85,75,95,110000
+Market Size (TAM),250M,200M,350M,85000
+Conversion Rate,3%,2%,5%,90000
+Operating Margin,15%,10%,25%,180000
+Time to Market (months),6,4,9,-45000

@@ -1,0 +1,16 @@
+Employee_ID,Employee_Name,Employee_Type,Pay_Rate,Hours_Worked,Overtime_Hours,Pay_Period,State,Notes
+EMP001,Alex Rodriguez,Hourly,25.50,40,0,Weekly,CA,Full-time developer
+EMP002,Maria Santos,Salary,65000,N/A,N/A,Annual,CA,Marketing manager
+EMP003,James Chen,Contractor,75.00,32,0,Weekly,CA,Freelance designer
+EMP004,Sarah Kim,Hourly,18.00,45,5,Weekly,CA,Customer service
+EMP005,Michael Brown,Salary,85000,N/A,N/A,Annual,TX,Senior developer
+TEST001,ERROR_TEST,Hourly,-15.00,200,50,Weekly,CA,INVALID - negative rate and impossible hours
+TEST002,BLANK_TEST,Hourly,,40,0,Weekly,CA,INVALID - missing pay rate
+TEST003,OVERTIME_TEST,Hourly,20.00,40,60,Weekly,CA,SUSPICIOUS - extreme overtime
+TEST004,ZERO_HOURS,Hourly,25.00,0,0,Weekly,CA,EDGE CASE - no hours worked
+TEST005,MAX_HOURS,Hourly,30.00,80,0,Weekly,CA,EDGE CASE - maximum allowable hours
+TEST006,DECIMAL_HOURS,Hourly,22.50,37.5,2.5,Weekly,CA,VALID - decimal hours
+TEST007,MIN_WAGE,Hourly,7.25,20,0,Weekly,CA,VALID - minimum wage
+TEST008,HIGH_SALARY,Salary,250000,N/A,N/A,Annual,CA,HIGH - review needed
+TEST009,LOW_SALARY,Salary,25000,N/A,N/A,Annual,CA,LOW - check minimum
+TEST010,CONTRACTOR_HIGH,Contractor,200.00,40,0,Weekly,CA,HIGH RATE - specialist

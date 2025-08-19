@@ -1,0 +1,17 @@
+Date,AccountID,AccountName,StatementLine,Category,Amount,Method,Scenario,Notes
+2025-01-02,REV100,Website Project,Revenue,Revenue,2200,Accrual,Base,New client project billed
+2025-01-05,COG200,Contractor Fees,COGS,COGS,-900,Accrual,Base,Cost to deliver project
+2025-01-07,OPE300,Software Subscriptions,Operating Expenses,OpEx,-120,Accrual,Base,Monthly SaaS tools
+2025-01-10,REV110,SEO Package,Revenue,Revenue,1100,Accrual,Base,SEO work for dental office
+2025-01-12,REV120,Social Setup,Revenue,Revenue,650,Accrual,Base,Social media package
+2025-01-13,COG210,Design Subcontract,COGS,COGS,-420,Accrual,Base,Design assistance
+2025-01-20,OPE310,Marketing Spend,Operating Expenses,OpEx,-250,Accrual,Base,Ad campaign
+2025-01-25,BNK001,Bank Deposit,Cash Flow,Other,3450,NonCash,Base,Aggregated cash receipt
+2025-01-28,REV130,Maintenance Plan,Revenue,Revenue,300,Accrual,Stretch,Recurring support upsell
+2025-01-30,OPE320,Office Supplies,Operating Expenses,OpEx,-85,Accrual,Stretch,Basic supplies
+2025-02-01,REV999,Unknown Mapping,Unknown,Revenue,500,Accrual,Base,Edge case: missing mapping should show "Unknown"
+2024-11-15,COG999,Legacy Cost,COGS,COGS,-75,Accrual,Base,Stale prior‑period date to test filters
+2025-02-05,REV140,Custom App Feature,Revenue,Revenue,1800,Accrual,Conservative,High‑margin feature add
+2025-02-06,COG220,Cloud Hosting,COGS,COGS,-300,Accrual,Conservative,Variable cost
+2025-02-06,OPE330,Team Training,Operating Expenses,OpEx,-200,Accrual,Conservative,Upskilling
+2025-02-10,ADJ001,Equity Adjustment,Balance Sheet,Equity,0,NonCash,Base,Non‑cash item to ensure cash flow tie logic

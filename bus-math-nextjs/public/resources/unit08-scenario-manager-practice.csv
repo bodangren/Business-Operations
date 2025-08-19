@@ -1,0 +1,11 @@
+Scenario Variables,Optimistic,Realistic,Pessimistic
+Monthly Recurring Revenue Growth Rate (%),35%,20%,8%
+Customer Acquisition Cost ($),150,250,400
+Monthly Churn Rate (%),2%,5%,12%
+Operating Expense Growth Rate (%),15%,25%,40%
+Initial Customers,500,250,100
+Average Revenue Per User ($),120,85,60
+Market Penetration Rate (%),25%,12%,5%
+Customer Lifetime Value ($),3600,1700,500
+Time to Break Even (months),8,18,36
+Total Addressable Market ($M),500,250,100

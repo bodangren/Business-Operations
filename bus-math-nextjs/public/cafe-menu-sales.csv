@@ -1,0 +1,22 @@
+Category,Item,Saturday_Revenue,Sunday_Revenue,Units_Saturday,Units_Sunday,Unit_Price
+Beverages,Coffee (Regular),4500,3200,900,640,5.00
+Beverages,Coffee (Specialty),3200,2400,160,120,20.00
+Beverages,Tea,1800,1350,300,225,6.00
+Beverages,Smoothies,2100,1650,105,82,20.00
+Beverages,Soft Drinks,900,720,180,144,5.00
+Pastries,Croissants,1800,1200,120,80,15.00
+Pastries,Muffins,2200,1650,220,165,10.00
+Pastries,Donuts,1500,1125,250,187,6.00
+Pastries,Danish,1300,975,130,97,10.00
+Sandwiches,Club Sandwich,2800,2100,140,105,20.00
+Sandwiches,Grilled Cheese,1600,1200,160,120,10.00
+Sandwiches,BLT,2200,1650,110,82,20.00
+Sandwiches,Veggie Wrap,1800,1350,120,90,15.00
+Sandwiches,Turkey Club,2600,1950,130,97,20.00
+Salads,Caesar Salad,1800,1350,90,67,20.00
+Salads,Garden Salad,1200,900,120,90,10.00
+Salads,Greek Salad,1500,1125,75,56,20.00
+Desserts,Cookies,800,600,160,120,5.00
+Desserts,Brownies,900,675,90,67,10.00
+Desserts,Cheesecake,1800,1350,60,45,30.00
+Desserts,Ice Cream,1200,900,120,90,10.00

@@ -1,21 +1,30 @@
-// Year‑1 Startup Model, Lesson 4 data - extracted from MCP curriculum database
+// Year‑1 Startup Model, Lesson 4 data - Office365 Compatible Excel Automation
 export const lesson04Data = {
   id: "mds5xnq9qhugknmd1o",
-  title: "Excel Model: Scenario Manager Introduction",
+  title: "Excel Model: Scenario Manager & Advanced Financial Modeling",
   sequence: 4,
   unitId: "mdrhlhv53tduw0ib5oa",
   learningObjectives: [
-    "Use Scenario Manager to model best/worst/realistic cases"
+    "Master Excel Scenario Manager to model optimistic, pessimistic, and realistic business cases",
+    "Build dynamic financial models using advanced Excel functions (INDIRECT, CHOOSE, INDEX/MATCH)",
+    "Create professional data tables for sensitivity analysis",
+    "Implement Office365-compatible automation for investor presentations"
   ],
   keyConcepts: [
-    "Excel Scenario Manager functionality and setup"
+    "Excel Scenario Manager setup and variable switching",
+    "Advanced Excel functions for dynamic modeling",
+    "Data tables and sensitivity analysis",
+    "Professional financial model structure",
+    "Office365 Excel automation capabilities"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Learn Scenario Manager functionality and build multiple business scenarios"
+    "Hands-on Excel demonstration with Scenario Manager",
+    "Guided practice building dynamic startup financial models",
+    "Real-world investor presentation preparation"
   ],
-  rationale: "To introduce students to the Scenario Manager tool in Excel and to teach them how to use it to model different business scenarios.",
-  status: "Draft"
+  rationale: "Students need to master Office365-compatible Excel automation to build investor-ready financial models. Scenario Manager and advanced functions provide the dynamic capabilities that VBA would offer, while being fully supported in cloud-based Excel.",
+  status: "Ready for Dev"
 }
 
 export const unit08Data = {

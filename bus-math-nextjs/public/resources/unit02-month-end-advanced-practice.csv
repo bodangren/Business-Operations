@@ -1,0 +1,12 @@
+TxnID,Date,AccountID,Type,Amount,Notes
+T-1001,2025-03-28,4001,Revenue,1200,Retainer received mid-month (deferral)
+T-1002,2025-03-29,1101,Asset,-3000,Computer purchase (capex) negative test
+T-1003,2025-03-30,4002,Revenue,500,SEO project completed (accrual)
+T-1004,2025-04-02,4001,Revenue,200,Out-of-period revenue (should flag)
+T-1005,2025-03-31,9999,Revenue,450,Missing AccountID mapping (Unknown)
+T-1006,2025-03-27,5201,Expense,275,Software subscription (deferral spread)
+T-1007,2025-03-15,4003,Revenue,800,New category: Accrual-Spread (update Map)
+T-1007,2025-03-15,4003,Revenue,800,Duplicate TxnID to test duplicate flag
+T-1008,2024-12-30,4001,Revenue,100,Stale date from prior period (flag)
+T-1009,2025-03-25,,Revenue,350,Blank AccountID to test validation
+T-1010,2025-03-26,5202,Expense,-45,Negative expense refund (should be handled)

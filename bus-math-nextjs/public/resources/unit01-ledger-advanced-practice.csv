@@ -1,0 +1,29 @@
+Date,DocNo,AccountID,Description,Debit,Credit,EarnedDate,ReceivedDate,CustomerID,Project,Notes
+2025-01-05,INV-101,ACC110,Website design invoice,0,0,2025-01-05,2025-01-20,CUST-01,WebRedesign,Invoice recorded; payment later (accrual)
+2025-01-20,RCPT-101,ACC100,Payment received for INV-101,2,200,2025-01-05,2025-01-20,CUST-01,WebRedesign,Split across Debit/Credit by account (Cash vs AR)
+2025-01-20,RCPT-101,ACC110,Payment received for INV-101,0,2,200,2025-01-05,2025-01-20,CUST-01,WebRedesign,Posting pair for AR (credit)
+2025-01-26,BILL-88,ACC610,Bank fees January,45,0,2025-01-26,2025-01-26,BANK-01,Operations,Expense paid immediately
+2025-01-28,ADJ-12,ACC230,Unearned revenue adjustment,0,300,2025-01-28,,CUST-02,Retainer,Liability increase (no cash)
+2025-02-02,ADJ-13,ACC230,Unearned to earned revenue,300,0,2025-02-02,,CUST-02,Retainer,Recognition entry
+2025-02-07,INV-115,,Social media setup invoice,0,0,2025-02-07,,CUST-03,SM-Setup,Missing AccountID (edge case)
+2024-08-14,INV-090,ACC400,Old invoice still unpaid,0,0,2024-08-14,,CUST-04,Legacy,Stale EarnedDate over 120 days (edge case)
+2025-02-10,INV-116,ACC999,Nonexistent account test,0,850,2025-02-10,,CUST-05,Test,AccountID not in Accounts (edge case)
+2025-02-11,RCPT-116,ACC100,Payment for INV-116,850,0,2025-02-10,2025-02-11,CUST-05,Test,Received next day
+2025-02-12,INV-117,ACC110,Partial payment invoice,0,0,2025-02-12,,CUST-06,Marketing,Will receive partial payments
+2025-02-15,RCPT-117A,ACC100,Partial payment 1,400,0,2025-02-12,2025-02-15,CUST-06,Marketing,First partial
+2025-02-15,RCPT-117A,ACC110,Partial payment 1,0,400,2025-02-12,2025-02-15,CUST-06,Marketing,AR credit
+2025-02-20,RCPT-117B,ACC100,Partial payment 2,350,0,2025-02-12,2025-02-20,CUST-06,Marketing,Second partial
+2025-02-20,RCPT-117B,ACC110,Partial payment 2,0,350,2025-02-12,2025-02-20,CUST-06,Marketing,AR credit
+2025-02-22,ADJ-ERR,ACC110,Mistaken negative debit,-25,0,2025-02-22,,CUST-99,ErrorTest,Negative amount (edge case)
+2025-02-23,DUP-01,ACC100,Duplicate doc no cash entry,125,0,2025-02-23,2025-02-23,CUST-07,Ops,Duplicate DocNo (edge case)
+2025-02-23,DUP-01,ACC100,Duplicate doc no cash entry,125,0,2025-02-23,2025-02-23,CUST-07,Ops,Duplicate DocNo (edge case)
+2025-02-25,INV-118,ACC400,Revenue recorded incorrectly in both columns,200,200,2025-02-25,,CUST-08,Audit,Debit and Credit on same row (edge case)
+
+ACCOUNTS,,,
+AccountID,AccountName,Type
+ACC100,Cash,Asset
+ACC110,Accounts Receivable,Asset
+ACC230,Unearned Revenue,Liability
+ACC400,Service Revenue,Revenue
+ACC410,Sales Returns and Allowances,Revenue-Contra
+ACC610,Bank Fees,Expense

@@ -1,26 +1,28 @@
-// PriceLab Challenge, Lesson 4 data - extracted from MCP curriculum database
+// PriceLab Challenge, Lesson 4 data - Excel Automation Skills Focus
 export const lesson04Data = {
-  id: "mds5wn3okuxm9d9w5ip",
-  title: "Peer Critique & Model Refinement",
+  id: "mds5wn3okuxm9d9w5ip", 
+  title: "Goal Seek for Target Profit Scenarios",
   sequence: 4,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Evaluate peer CVP models using professional criteria for accuracy and business relevance",
-    "Provide specific, constructive feedback to improve pricing model quality and insights",
-    "Incorporate peer feedback to refine break-even calculations and sensitivity analysis",
-    "Identify and correct common errors in Cost-Volume-Profit model construction"
+    "Master Goal Seek functionality to reverse-engineer pricing decisions for target profit scenarios",
+    "Build automated 'what-if' analysis systems using Goal Seek with CVP models",
+    "Apply Goal Seek to solve complex business problems: target pricing, volume planning, cost optimization",
+    "Create professional Excel models that can quickly answer investor questions about profitability scenarios"
   ],
   keyConcepts: [
-    "Professional peer review standards for financial modeling and pricing analysis",
-    "CVP model validation techniques and error detection strategies",
-    "Constructive feedback protocols for collaborative improvement",
-    "Quality assurance principles for business decision-making models"
+    "Goal Seek mechanics: Set Cell, To Value, By Changing Cell parameters",
+    "Reverse engineering business scenarios from profit targets to operational requirements",
+    "Excel automation for rapid scenario analysis and investor presentations", 
+    "Professional Goal Seek applications: pricing optimization, break-even analysis, resource planning"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Structured peer feedback on CVP models and collaborative improvement"
+    "Hands-on Excel demonstration and guided practice with Goal Seek tool",
+    "Real-world business scenario application with Sarah's TechStart Solutions",
+    "Interactive practice with escalating complexity scenarios"
   ],
-  rationale: "To provide students with an opportunity to receive feedback on their CVP models and to learn from their peers.",
+  rationale: "Goal Seek is a crucial Excel automation skill for business leaders to quickly analyze 'what-if' scenarios and make data-driven decisions. This lesson bridges conceptual CVP understanding with practical Excel tools for professional financial modeling.",
   status: "Draft"
 }
 

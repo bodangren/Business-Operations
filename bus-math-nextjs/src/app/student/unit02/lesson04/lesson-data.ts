@@ -1,77 +1,73 @@
-// Month-End Wizard, Lesson 4 data - extracted from MCP curriculum database
+// Unit 2, Lesson 4 data - Excel Tables & SUMIF: Building the Month-End Wizard Foundation
 export const lesson04Data = {
-  id: "mds5v4u3rd68v5ozg1",
-  title: "Peer Critique & Revision: Gallery Walk Feedback",
+  id: "unit02_lesson04",
+  title: "Excel Tables & SUMIF: Building the Month-End Wizard Foundation",
   sequence: 4,
-  unitId: "mdrhkhm79v8qau43696",
+  unitId: "unit02",
   learningObjectives: [
-    "Apply structured peer review criteria to evaluate adjusting entry accuracy and completeness",
-    "Provide constructive feedback on month-end procedures and GAAP compliance",
-    "Identify opportunities for improvement in financial closing processes",
-    "Demonstrate professional communication skills through gallery walk format"
+    "Create Excel Tables with structured references for dynamic month-end processes",
+    "Build SUMIF functions to automate adjusting entry calculations",
+    "Design scalable table structures that grow with business transactions",
+    "Integrate professional Excel techniques for GAAP-compliant automation"
   ],
   keyConcepts: [
-    "Peer review protocols and constructive feedback techniques",
-    "Quality criteria for adjusting entries and month-end procedures",
-    "Gallery walk methodology for collaborative learning",
-    "Professional communication standards in business contexts"
+    "Excel Tables with structured references and automatic expansion",
+    "SUMIF function syntax for conditional data aggregation",
+    "Named ranges and table references for professional automation",
+    "Error-proofing strategies for month-end closing procedures"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Structured peer review and revision of adjusting entry work"
+    "Hands-on Excel demonstration with TechStart month-end scenarios",
+    "Progressive skill building from basic tables to advanced automation",
+    "Real-world application connecting to investor presentation standards"
   ],
-  rationale: "To foster collaborative learning and improve the quality of student work through peer feedback.",
+  rationale: "Students must master Excel Tables and SUMIF functions as the foundation for automated month-end processes, essential for the Month-End Wizard project that reduces closing time from days to hours.",
   status: "Draft"
 }
 
 export const unit02Data = {
-  id: "mdrhkhm79v8qau43696",
-  title: "Month-End Wizard",
+  id: "unit02",
+  title: "Unit 2: Month-End Wizard",
   sequence: 2
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases (standard 6-phase structure for Excel skills introduction)
 export const lesson04Phases = [
   {
-    id: "phase_hook_4",
+    id: "phase-1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Set expectations for constructive peer feedback and improvement mindset",
-    // No component needed for this phase.
+    description: "Discover Sarah's Excel Tables Challenge: From chaos to automated month-end efficiency",
   },
   {
-    id: "phase_introduction_4",
+    id: "phase-2", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Excel Tables & SUMIF: The Professional Foundation for automated financial processes",
   },
   {
-    id: "phase_guided_practice_4",
+    id: "phase-3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice giving and receiving constructive feedback using established criteria",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer review process.
+    description: "Building Sarah's Excel Tables System: Step-by-step month-end automation",
   },
   {
-    id: "phase_independent_practice_4",
+    id: "phase-4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Engage in peer review process providing specific, actionable feedback",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer review process.
+    description: "Advanced Excel Tables Mastery Challenges: Professional automation scenarios",
   },
   {
-    id: "phase_assessment_4",
+    id: "phase-5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Excel Tables & SUMIF: Professional Mastery Assessment for month-end automation",
   },
   {
-    id: "phase_closing_4",
+    id: "phase-6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Excel Tables Mastery Complete: Building Your Automated Future",
   }
 ]
