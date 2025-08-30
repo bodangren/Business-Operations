@@ -1,0 +1,11 @@
+scenario,driver_id,growth_rate,gm_percent,cac,monthly_churn,as_of_date,notes
+Base,DRV-001,0.18,0.54,120,0.03,2025-05-15,Healthy baseline (recent date)
+Stretch,DRV-002,0.32,0.62,150,0.025,2025-06-01,Aggressive growth and margin
+Downside,DRV-003,0.05,0.45,95,0.045,2025-05-01,Conservative; higher churn
+Edge_HighGM,DRV-004,0.22,1.10,130,0.03,2025-05-20,GM% > 100% (should be flagged)
+Edge_NegGrowth,DRV-005,-0.08,0.52,110,0.035,2025-05-25,Negative growth (should be flagged)
+Edge_StaleDate,DRV-006,0.16,0.50,125,0.03,2024-10-01,Stale date > 90 days old (flag)
+Edge_MissingID,,0.15,0.51,118,0.03,2025-05-10,Missing driver_id (flag)
+Edge_TextNum,DRV-007,0.2x,0.56,140,0.03,2025-05-18,Invalid growth text (validation)
+Edge_BlankGM,DRV-008,0.17,,115,0.03,2025-05-22,Blank GM% (validation)
+Edge_CACZero,DRV-009,0.19,0.55,0,0.03,2025-05-28,CAC zero (business rule check)

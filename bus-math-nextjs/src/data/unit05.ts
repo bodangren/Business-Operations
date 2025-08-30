@@ -63,26 +63,26 @@ export const unit05Data: UnitData = {
       },
       {
         id: "milestone2",
-        day: 6,
-        title: "Register + Stubs",
-        description: "Multi-employee payroll register with bilingual pay stub generation",
+        day: 4,
+        title: "Validation & Error Detection",
+        description: "Bulletproof the prototype with data validation and visual error checks",
         criteria: [
-          "XLOOKUP integration for employee data retrieval",
-          "Bilingual pay stub template functionality",
-          "Handles 10+ employees with different wage structures",
-          "Professional stub formatting and layout"
+          "Input validation prevents missing/invalid entries (IDs, hours, dates)",
+          "Conditional formatting highlights errors and warnings",
+          "Clear user guidance and labels for correction",
+          "Error-checking system documents and flags edge cases"
         ]
       },
       {
         id: "milestone3",
-        day: 7,
-        title: "Reconciliation Report",
-        description: "Bank reconciliation system identifying timing mismatches",
+        day: 5,
+        title: "Advanced Automation Engine",
+        description: "Scaled payroll engine with robust mapping and overtime logic",
         criteria: [
-          "SUMIFS formulas for transaction matching",
-          "Visual indicators for reconciliation status",
-          "Automated detection of timing discrepancies",
-          "Clear reporting of cash flow implications"
+          "Structured references and named ranges for reliability",
+          "XLOOKUP maps employee data and tax tables with safe defaults",
+          "Overtime/tiered logic implemented (e.g., SUMPRODUCT or equivalent)",
+          "Automation passes advanced dataset with documented audit checks"
         ]
       }
     ],
@@ -127,24 +127,24 @@ export const unit05Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Explore",
+            focus: "Launch & Explore: The Payroll Cash Crunch",
             activities: [
-              "Watch café owner overdraft skit",
-              "Analyze sample bank statement and payroll register",
-              "Identify timing mismatch causes"
+              "Watch kickoff video: Sarah’s Payroll Cash Crunch",
+              "Discuss timing risk and cash-out vs deposits",
+              "Comprehension check on unit context and goals"
             ],
             resources: [
-              "Sample CSVs",
-              "Café overdraft scenario materials"
+              "Unit intro video",
+              "Lesson text and comprehension prompts"
             ]
           },
           {
             day: 2,
-            focus: "Skill Introduction",
+            focus: "Skill Introduction: Gross to Net Calculations",
             activities: [
-              "Teach gross→net computation process",
-              "Demo IF formulas and tax table logic",
-              "Practice with sample employee data"
+              "Teach gross→net process across employee types",
+              "Guided practice with tax table logic",
+              "Fill-in-the-blank and scenario checks"
             ],
             resources: [
               "Tax table handout",
@@ -153,11 +153,11 @@ export const unit05Data: UnitData = {
           },
           {
             day: 3,
-            focus: "Application Practice",
+            focus: "Application Practice: Building the Prototype Calculator",
             activities: [
               "Build single-employee payroll calculator",
-              "Test with different employee scenarios",
-              "Peer review of calculation accuracy"
+              "Test with hourly, salaried, tipped scenarios",
+              "Peer review for calculation accuracy"
             ],
             resources: [
               "Starter workbook template"
@@ -166,28 +166,28 @@ export const unit05Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Feedback & Iteration",
+            focus: "Making It Bulletproof: Validation & Error Detection",
             activities: [
-              "Peer testing of calculators",
-              "Fix formula bugs and edge cases",
-              "Document common calculation errors"
+              "Implement data validation rules (IDs, hours, dates)",
+              "Add conditional formatting error alerts",
+              "Use error-checking system to test edge cases"
             ],
             resources: [
-              "Peer review form",
+              "Validation practice dataset (/resources/unit05-validation-practice.csv)",
               "Bug tracking worksheet"
             ]
           },
           {
             day: 5,
-            focus: "Reflection/Checkpoint",
+            focus: "Advanced Automation: Payroll Tax & Overtime Engine",
             activities: [
-              "Log common calculation issues",
-              "Reflect on cash-flow visibility improvements",
-              "Plan for multi-employee scaling"
+              "Engineer mapping with XLOOKUP and safe defaults",
+              "Implement overtime/tiered logic on advanced dataset",
+              "Run mastery check with error/audit flags"
             ],
             resources: [
-              "Journal prompt worksheet",
-              "Reflection protocol"
+              "Advanced practice dataset (/resources/unit05-payroll-automation-advanced-practice.csv)",
+              "Automation checklist"
             ]
           }
         ]
@@ -326,6 +326,16 @@ export const unit05Data: UnitData = {
       {
         title: "Screencast Planning Guide",
         url: "/resources/screencast-guide.pdf",
+        type: "download"
+      },
+      {
+        title: "Validation Practice Dataset",
+        url: "/resources/unit05-validation-practice.csv",
+        type: "download"
+      },
+      {
+        title: "Advanced Automation Practice Dataset",
+        url: "/resources/unit05-payroll-automation-advanced-practice.csv",
         type: "download"
       }
     ]

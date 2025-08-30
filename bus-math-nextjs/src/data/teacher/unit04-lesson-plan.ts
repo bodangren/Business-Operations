@@ -1,5 +1,15 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
+// Component Usage Schedule (Unit 04, Lessons 01–05)
+// - ComprehensionCheck (default export)
+// - ReflectionJournal (default export)
+// - FillInTheBlank (default export)
+// - BudgetCategorySort (default export)
+// - DataCleaningExercise (default export)
+// - SpreadsheetWrapper (Spreadsheet/Excel-like grid)
+// - Charts: BarChart, LineChart, PieChart, FinancialDashboard (named exports vary by file)
+// - PhaseHeader / PhaseFooter (named exports)
+
 export const unit04LessonPlan: UnitLessonPlan = {
   unitNumber: 4,
   unitTitle: "Data-Driven Café",
@@ -93,14 +103,14 @@ export const unit04LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 7,
-        title: "Complete Forecast Model & Visuals",
-        description: "Working demand forecast with supporting visualizations",
+        day: 5,
+        title: "Forecast Automation & Validation (Advanced)",
+        description: "Scenario toggles, structured references, and audit checks in place",
         criteria: [
-          "Linear regression model built using FORECAST.LINEAR or Analysis ToolPak",
-          "Model accuracy evaluated with R-squared and residual analysis",
-          "Professional charts created: histogram, box plot, and scatterplot with trendline",
-          "Cost-benefit analysis completed for different scenarios"
+          "Forecast uses Excel Tables (structured references) with FORECAST.LINEAR",
+          "Scenario toggle implemented (Baseline vs PromoAdjusted) with dynamic recalculation",
+          "Audit panel flags addressed: stale dates, missing keys, negative units, invalid prices",
+          "Error handling (IFERROR/XLOOKUP defaults) and assumptions documented"
         ]
       },
       {
@@ -157,13 +167,13 @@ export const unit04LessonPlan: UnitLessonPlan = {
           days: "Day 1"
         },
         {
-          title: "Core Concepts: Data Cleaning & Statistical Analysis", 
-          description: "Master data preparation and descriptive statistics using café POS data",
+          title: "Core Concepts: Data Cleaning & Descriptive Stats", 
+          description: "Master data preparation, descriptive statistics, and outlier identification",
           days: "Days 2-3"
         },
         {
-          title: "Excel Model: Statistical Analysis & Forecasting",
-          description: "Build comprehensive analytical model using Analysis ToolPak and regression",
+          title: "Excel Visualization & Forecast Automation",
+          description: "Create professional charts and implement advanced forecast automation",
           days: "Days 4-5" 
         },
         {
@@ -397,8 +407,8 @@ export const unit04LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "New Skill Focus: Data Visualization & Pattern Recognition",
-        focus: "Create professional charts to reveal business patterns in café data",
+        title: "Excel Charts & Data Visualization: Transforming Data into Business Insights",
+        focus: "Create professional Excel charts and interpret visual business patterns",
         duration: "45 minutes", 
         activities: [
           {
@@ -466,8 +476,8 @@ export const unit04LessonPlan: UnitLessonPlan = {
       },
       {
         day: 5,
-        title: "Model Completion: Regression Forecasting",
-        focus: "Build demand forecast models using linear regression techniques",
+        title: "Advanced Forecast Automation (Regression)",
+        focus: "Deepen Lesson04 with automation, scenario toggles, and validation",
         duration: "45 minutes",
         activities: [
           {
@@ -532,7 +542,8 @@ export const unit04LessonPlan: UnitLessonPlan = {
           "FORECAST.LINEAR function guide with examples",
           "Analysis ToolPak Regression tutorial",
           "Model validation checklist",
-          "Forecast template worksheets"
+          "Forecast template worksheets",
+          "/resources/unit04-forecasting-advanced-practice.csv"
         ]
       },
       {

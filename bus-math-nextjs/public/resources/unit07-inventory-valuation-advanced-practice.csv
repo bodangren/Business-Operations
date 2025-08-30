@@ -1,0 +1,34 @@
+Date,SKU,TransactionType,Quantity,UnitCost,LotID,SalesUnitPrice,Notes
+2025-01-02,KB-101,Purchase,100,20.00,L1,,Initial stock
+2025-01-02,KB-101,Purchase,50,20.50,L2,,Same-day second lot
+2025-01-15,KB-101,Sale,-80,,,
+2025-01-20,KB-101,Purchase,120,21.00,L3,,Rising prices
+2025-01-25,KB-101,Return,10,,,
+2025-02-03,KB-101,Sale,-60,,,
+2025-02-10,KB-101,Purchase,200,22.25,L4,,Large restock
+2025-02-14,KB-101,Sale,-75,,,
+2025-02-20,KB-101,Purchase,75,22.25,L5,,Same cost as L4
+2025-03-01,KB-101,Sale,-90,,,
+2025-03-05,KB-101,Purchase,30,0.00,L6,,EDGE: zero cost (invalid)
+2025-03-06,KB-101,Purchase,30,-5.00,L7,,EDGE: negative cost (invalid)
+2025-03-10,KB-101,Sale,-30,,,
+2025-03-12,KB-101,Return,5,,,
+2024-11-01,KB-101,Purchase,10,19.75,L0,,EDGE: stale date before period
+2025-03-20,KB-101,Sale,-40,,,
+2025-03-25,,Sale,-10,,,
+2025-03-28,KB-101,Sale,-25,,,
+2025-03-30,KB-101,Purchase,60,23.10,L8,,Late quarter increase
+2025-03-31,KB-101,Sale,-55,,,
+
+2025-01-03,MS-204,Purchase,80,15.00,M1,,Second SKU starts
+2025-01-18,MS-204,Sale,-20,,,
+2025-02-01,MS-204,Purchase,40,15.80,M2,,Price uptick
+2025-02-05,MS-204,Sale,-60,,,
+2025-02-28,MS-204,Return,8,,,
+2025-03-02,MS-204,Purchase,50,15.70,M3,,Slight decrease
+2025-03-15,MS-204,Sale,-30,,,
+2025-03-27,MS-204,Sale,-35,,,
+2025-03-31,MS-204,Purchase,25,0,M4,,EDGE: zero cost (invalid)
+
+2025-02-12, ,Purchase,20,12.00,X1,,EDGE: missing SKU on purchase
+2025-02-13,KB-101,Sale,-999,,,

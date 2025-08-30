@@ -48,7 +48,7 @@ export const unit07Data: UnitData = {
     milestones: [
       {
         id: "milestone1",
-        day: 3,
+        day: 2,
         title: "Basic Depreciation Schedule",
         description: "Complete functional depreciation schedules for both SLN and DDB methods",
         criteria: [
@@ -152,15 +152,16 @@ export const unit07Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Technical Application",
+            focus: "FIFO/LIFO Inventory Valuation with Excel Tables",
             activities: [
-              "Build array formulas for layer costing",
-              "Implement complex inventory calculations",
-              "Peer accuracy check and validation"
+              "Build Excel Tables and array formulas for FIFO/LIFO layer costing",
+              "Implement structured references with automated COGS and Ending Inventory",
+              "Validate with error checks and edge cases"
             ],
             resources: [
               "Advanced template",
-              "Peer rubric for validation"
+              "Peer rubric for validation",
+              "/resources/unit07-inventory-valuation-practice.csv"
             ]
           },
           {
@@ -312,6 +313,11 @@ export const unit07Data: UnitData = {
       {
         title: "Sample Asset and Inventory Dataset",
         url: "/resources/sample-asset-inventory-data.csv",
+        type: "download"
+      },
+      {
+        title: "Unit 7 Inventory Valuation Practice Data",
+        url: "/resources/unit07-inventory-valuation-practice.csv",
         type: "download"
       }
     ]

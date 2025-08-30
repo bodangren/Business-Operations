@@ -1,22 +1,27 @@
 // Data-Driven Café, Lesson 5 data - extracted from MCP curriculum database
 export const lesson05Data = {
   id: "mds5vu037acxztit45w",
-  title: "Model Completion: Regression Forecasting",
+  title: "Advanced Forecast Automation (Regression)",
   sequence: 5,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Build and evaluate linear regression models for demand forecasting",
-    "Build forecasting models using Excel's regression capabilities"
+    "Automate forecasts with FORECAST.LINEAR using structured references",
+    "Build scenario toggles and what‑if analysis for demand planning",
+    "Install robust validation to catch outliers, stale dates, and missing keys",
+    "Produce investor‑ready summaries with clear assumptions and audit checks"
   ],
   keyConcepts: [
-    "Linear regression principles and business forecasting applications",
-    "FORECAST.LINEAR function and regression analysis in Excel"
+    "Structured references (Table[Column]) and dynamic ranges",
+    "FORECAST.LINEAR vs. AVERAGE growth baselines with method switching",
+    "SUMIFS/SUMPRODUCT filters for segmented forecasts",
+    "Error handling with IFERROR and XLOOKUP defaults",
+    "Scenario inputs and goal‑based checks"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Build demand forecast models using linear regression techniques"
+    "Deepen Lesson04 skills with automation, validation, and scenario tools"
   ],
-  rationale: "To teach students how to use linear regression to build forecasting models, a powerful tool for business planning.",
+  rationale: "Students harden a forecasting model for TechStart’s café client: dynamic method switching, scenario inputs, and visible validations make outputs reliable at scale—key for investor trust.",
   status: "Draft"
 }
 

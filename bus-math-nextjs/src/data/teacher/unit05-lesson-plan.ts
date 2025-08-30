@@ -1,5 +1,18 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
+/*
+  Component Usage Schedule (implemented across student lessons 01–05):
+  - ComprehensionCheck (default)
+  - FillInTheBlank (default)
+  - ReflectionJournal (default)
+  - ErrorCheckingSystem (default)
+  - SpreadsheetWrapper (default)
+  - SpreadsheetTemplates.payrollTemplate (named constant)
+  - CashFlowChallenge (named)
+  - InterestCalculationBuilder (default)
+  - VideoPlayer (named)
+*/
+
 export const unit05LessonPlan: UnitLessonPlan = {
   unitNumber: 5,
   unitTitle: "PayDay Simulator",
@@ -93,25 +106,25 @@ export const unit05LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 6,
-        title: "Register + Stubs",
-        description: "Complete payroll register with professional pay stub generation",
+        day: 4,
+        title: "Validation & Error Detection",
+        description: "Add robust validation rules and visual error alerts to prevent mistakes",
         criteria: [
-          "XLOOKUP integration for employee data retrieval",
-          "Bilingual pay stub formatting with data validation",
-          "Professional appearance suitable for employee distribution",
-          "Error-checking for missing or invalid employee data"
+          "Data validation prevents missing IDs, negative hours, stale dates",
+          "Conditional formatting flags errors/warnings clearly",
+          "User guidance helps correct invalid inputs",
+          "ErrorCheckingSystem scenarios pass with documented checks"
         ]
       },
       {
-        day: 7,
-        title: "Reconciliation Report",
-        description: "Bank reconciliation system identifying timing mismatches",
+        day: 5,
+        title: "Advanced Automation Engine",
+        description: "Implement mapping and overtime logic that scales and remains reliable",
         criteria: [
-          "SUMIFS formulas comparing payroll register to bank transactions",
-          "Visual identification of timing discrepancies and errors",
-          "Cash flow analysis predicting future payroll funding needs",
-          "Professional reconciliation report format"
+          "XLOOKUP maps employee/tax data with if_not_found safeguards",
+          "Structured references and named ranges used consistently",
+          "Overtime/tiered calculations correct across edge cases",
+          "Advanced dataset processed with audit flags and no errors"
         ]
       }
     ],
@@ -152,24 +165,24 @@ export const unit05LessonPlan: UnitLessonPlan = {
     overview: {
       phases: [
         {
-          title: "Launch & Explore: The Payroll Crisis",
-          description: "Analyze realistic payroll cash flow scenarios and identify business risks",
+          title: "Launch & Explore: The Payroll Cash Crunch",
+          description: "Sarah’s story + comprehension: why payroll timing and cash flow matter",
           days: "Day 1"
         },
         {
-          title: "Core Concepts: Payroll Mathematics",
-          description: "Master gross-to-net calculations and tax table applications",
-          days: "Days 2-3"
+          title: "Core Concepts: Gross → Net",
+          description: "Gross/net math and tax table applications with checks",
+          days: "Day 2"
         },
         {
-          title: "Excel Model: Automated Payroll System",
-          description: "Build sophisticated payroll calculator with XLOOKUP and conditional logic",
-          days: "Days 4-6"
+          title: "Excel Model: Prototype + Validation",
+          description: "Build prototype calculator and add validation/error detection",
+          days: "Days 3-4"
         },
         {
-          title: "Examples & Exercises: Reconciliation Mastery",
-          description: "Analyze professional reconciliation examples and build complete systems",
-          days: "Day 7"
+          title: "Advanced Automation",
+          description: "Mapping, overtime logic, and audit flags on advanced dataset",
+          days: "Day 5"
         },
         {
           title: "Summary & Presentation: Tutorial Creation",
@@ -438,8 +451,8 @@ export const unit05LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Feedback & Iteration: Calculator Refinement",
-        focus: "Refine calculators based on testing and add error-checking features",
+        title: "Making Your Calculator Bulletproof: Data Validation & Error Detection",
+        focus: "Implement validation rules and visual error checks for reliability",
         duration: "45 minutes",
         activities: [
           {
@@ -501,75 +514,58 @@ export const unit05LessonPlan: UnitLessonPlan = {
           "Bug tracking worksheet for systematic fixes",
           "Data validation templates and examples",
           "Professional formatting style guide",
-          "Instructor validation dataset for final testing"
+          "Validation practice dataset: /resources/unit05-validation-practice.csv"
         ]
       },
       {
         day: 5,
-        title: "Reflection/Checkpoint: System Planning",
-        focus: "Reflect on learning and plan multi-employee system expansion",
+        title: "Advanced Automation: Payroll Tax & Overtime Engine",
+        focus: "Engineer mapping and overtime logic; run mastery checks on advanced data",
         duration: "45 minutes",
         activities: [
           {
-            name: "Learning Reflection Journal",
-            duration: "12 minutes",
-            description: "Document learning journey and identify growth areas",
+            name: "Mapping & Safeguards",
+            duration: "15 minutes",
+            description: "Implement XLOOKUP-based mapping with safe defaults",
             details: [
-              "Reflection prompt: What was most challenging about payroll calculations?",
-              "Technical analysis: Which Excel skills were new vs. building on prior knowledge?",
-              "Business insight: How does accurate payroll connect to business success?",
-              "Error analysis: What mistakes taught you the most about payroll systems?"
+              "Map employee/tax tables using XLOOKUP with if_not_found",
+              "Adopt structured references and named ranges",
+              "Validate mappings with spot checks and audit flags"
             ]
           },
           {
-            name: "Cash Flow Visibility Discussion",
+            name: "Overtime/Tiered Logic",
             duration: "18 minutes",
-            description: "Connect payroll accuracy to business cash flow management",
+            description: "Add overtime or tiered calculations to the engine",
             details: [
-              "Small group discussion: How does payroll timing affect business cash flow?",
-              "Case study analysis: Review Maria's crisis from a cash flow prediction perspective",
-              "Solution brainstorming: What Excel features could help predict payroll cash needs?",
-              "Class synthesis: Combine insights into comprehensive cash flow management approach"
-            ],
-            callout: {
-              type: "important",
-              title: "Payroll and Cash Flow Management Connection",
-              content: "Accurate payroll calculation is only half the battle",
-              items: [
-                "Timing prediction: Know exactly when payroll cash will be needed",
-                "Revenue alignment: Ensure sufficient deposits before payroll dates",
-                "Emergency planning: Have backup funding for unexpected timing gaps",
-                "Growth planning: Scale payroll systems as business adds employees"
-              ]
-            }
-          },
-          {
-            name: "Multi-Employee System Planning",
-            duration: "12 minutes",
-            description: "Plan approach for scaling to full payroll register",
-            details: [
-              "Architecture discussion: How do we handle 10+ employees efficiently?",
-              "Excel tool preview: Introduction to XLOOKUP for employee data management", 
-              "Template planning: Design structure for consistent multi-employee processing",
-              "Role specialization: Teams plan focus areas (hourly, salaried, tipped scenarios)"
+              "Implement overtime/tiered logic (e.g., SUMPRODUCT or step IFs)",
+              "Test edge cases across employee types",
+              "Document assumptions and verification steps"
             ]
           },
           {
-            name: "Week 2 Goal Setting",
-            duration: "3 minutes",
-            description: "Set specific objectives for completing the payroll system",
+            name: "Mastery Check & Audit Flags",
+            duration: "10 minutes",
+            description: "Run validation on advanced dataset and finalize checks",
             details: [
-              "Teams set SMART goals for their multi-employee payroll register",
-              "Identify specific Excel skills needed for Week 2 success",
-              "Preview Day 6: Introduction to XLOOKUP and payroll register construction"
+              "Process advanced dataset with audit flags",
+              "Resolve remaining warnings in ErrorCheckingSystem",
+              "Prepare notes for next build phase"
+            ]
+          },
+          {
+            name: "Preview Next Steps",
+            duration: "2 minutes",
+            description: "Preview scaling and reporting integration",
+            details: [
+              "Preview: Scaling and summaries",
+              "Plan: Integrate learnings into larger system"
             ]
           }
         ],
         materials: [
-          "Reflection journal prompts and templates",
-          "Cash flow case study materials", 
-          "Multi-employee system planning worksheets",
-          "Week 2 goal setting templates"
+          "Advanced practice dataset: /resources/unit05-payroll-automation-advanced-practice.csv",
+          "Automation checklist and audit sheet"
         ]
       },
       {

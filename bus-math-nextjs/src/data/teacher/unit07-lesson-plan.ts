@@ -1,5 +1,17 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
+/*
+ Component Usage Schedule (unit07, lessons 01–04 implemented)
+ - VideoPlayer
+ - ComprehensionCheck
+ - FillInTheBlank
+ - DragAndDrop
+ - DepreciationMethodBuilder
+ - InventoryFlowDiagram
+ - InventoryManager
+ - ReflectionJournal
+*/
+
 export const unit07LessonPlan: UnitLessonPlan = {
   unitNumber: 7,
   unitTitle: "Asset & Inventory Tracker",
@@ -158,8 +170,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
           days: "Day 1"
         },
         {
-          title: "Model Construction: Depreciation & Inventory",
-          description: "Build Excel models for SLN, DDB, FIFO, and LIFO calculations",
+          title: "Model Construction: Depreciation & FIFO/LIFO",
+          description: "Build Excel models for SLN, DDB, and FIFO/LIFO calculations",
           days: "Days 2-5"
         },
         {
@@ -392,8 +404,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Technical Application",
-        focus: "Build Excel array formulas for FIFO and LIFO layer calculations",
+        title: "FIFO/LIFO Inventory Valuation with Excel Tables",
+        focus: "Build Excel Tables and array formulas for FIFO/LIFO layer calculations",
         duration: "45 minutes",
         activities: [
           {
@@ -457,7 +469,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
           "Sample inventory dataset with purchases and sales",
           "Formula troubleshooting guide",
           "Peer review checklist and answer keys",
-          "Excel named ranges tutorial"
+          "Excel named ranges tutorial",
+          "/resources/unit07-inventory-valuation-practice.csv"
         ]
       },
       {

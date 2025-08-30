@@ -53,7 +53,7 @@ export const unit06Data: UnitData = {
     milestones: [
       {
         id: "milestone1",
-        day: 3,
+        day: 1,
         title: "Benchmark Competitor Pricing",
         description: "Import and analyze competitor price data using Power Query",
         criteria: [
@@ -65,14 +65,15 @@ export const unit06Data: UnitData = {
       },
       {
         id: "milestone2",
-        day: 7,
-        title: "Build \"What‑If\" CVP Model",
-        description: "Create comprehensive CVP model with sensitivity analysis",
+        day: 5,
+        title: "Advanced CVP Automation: Scenario Runner & Data Tables",
+        description: "Implement professional \"what‑if\" automation with validation for investor‑readiness",
         criteria: [
-          "Functional CVP model with fixed/variable cost inputs",
-          "Professional CVP graph with proper labeling",
-          "One- and two-variable data tables for sensitivity analysis",
-          "Goal Seek scenarios for target profit analysis"
+          "Functional CVP model with clear input/output structure",
+          "One‑ and two‑variable Data Tables for sensitivity analysis",
+          "Goal Seek scenarios to hit target profit levels",
+          "Validation rules for out‑of‑range values and stale data (e.g., negative costs, missing IDs)",
+          "Concise executive summary communicating pricing insights"
         ]
       },
       {
@@ -129,7 +130,7 @@ export const unit06Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Data Prep",
+            focus: "Launch & Competitor Data Import",
             activities: [
               "Entry Event demo: Import live competitor price data via Power Query",
               "Students explore the raw dataset and identify patterns"
@@ -141,10 +142,10 @@ export const unit06Data: UnitData = {
           },
           {
             day: 2,
-            focus: "Concept Introduction",
+            focus: "Markup vs. Margin Concepts",
             activities: [
-              "Teach markup vs. margin concepts with examples",
-              "Guided practice problems calculating both metrics"
+              "Teach markup vs. margin with concrete examples",
+              "Interactive practice calculating markup and margin"
             ],
             resources: [
               "Markup vs. margin worksheet",
@@ -153,7 +154,7 @@ export const unit06Data: UnitData = {
           },
           {
             day: 3,
-            focus: "CVP Modeling",
+            focus: "CVP Model Construction",
             activities: [
               "Build CVP model with fixed/variable cost inputs",
               "Create professional CVP graph with proper formatting"
@@ -166,26 +167,26 @@ export const unit06Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Peer Critique",
+            focus: "Goal Seek for Target Profit Scenarios",
             activities: [
-              "Gallery walk of initial CVP models",
-              "Collect structured peer feedback using forms"
+              "Introduce Goal Seek and demonstrate Set Cell / To Value / By Changing Cell",
+              "Apply Goal Seek to target profit and break‑even scenarios using CVP model"
             ],
             resources: [
-              "Peer critique form",
-              "Gallery walk protocol"
+              "/resources/unit06-goal-seek-practice.csv",
+              "/resources/unit06-goal-seek-template.csv"
             ]
           },
           {
             day: 5,
-            focus: "Sprint Retrospective",
+            focus: "Advanced CVP Automation: Scenario Runner & Data Tables",
             activities: [
-              "Reflect on model logic vs. peer feedback",
-              "Plan revisions for next week's work"
+              "Build one‑ and two‑variable Data Tables for sensitivity analysis",
+              "Implement validation rules and run advanced edge‑case scenarios"
             ],
             resources: [
-              "Reflection prompt",
-              "Revision planning template"
+              "/resources/unit06-cvp-advanced-practice.csv",
+              "Investor‑ready checklist"
             ]
           }
         ]
@@ -197,14 +198,14 @@ export const unit06Data: UnitData = {
         days: [
           {
             day: 6,
-            focus: "Goal Seek Practice",
+            focus: "Peer Critique & Model Refinement",
             activities: [
-              "Introduce Goal Seek feature with demonstration",
-              "Apply to set prices for target profit scenarios"
+              "Gallery walk of CVP models and scenario runners",
+              "Revise models based on structured peer feedback"
             ],
             resources: [
-              "Goal Seek tutorial",
-              "Practice scenarios worksheet"
+              "Peer critique form",
+              "Revision planning template"
             ]
           },
           {
@@ -308,6 +309,21 @@ export const unit06Data: UnitData = {
       {
         title: "Memo Writing Guide",
         url: "/resources/business-memo-template.docx",
+        type: "download"
+      },
+      {
+        title: "Goal Seek Practice Scenarios",
+        url: "/resources/unit06-goal-seek-practice.csv",
+        type: "download"
+      },
+      {
+        title: "Excel CVP Template (Goal Seek Ready)",
+        url: "/resources/unit06-goal-seek-template.csv",
+        type: "download"
+      },
+      {
+        title: "Advanced CVP Practice Dataset",
+        url: "/resources/unit06-cvp-advanced-practice.csv",
         type: "download"
       }
     ]

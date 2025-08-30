@@ -12,6 +12,19 @@ export const unit08LessonPlan: UnitLessonPlan = {
     course: "Math for Business Operations"
   },
 
+  /*
+   * Component Usage Schedule (from implemented student pages)
+   * - ComprehensionCheck (default export) — frequent knowledge checks
+   * - FillInTheBlank (named export) — vocabulary/concept reinforcement
+   * - FinancialStatementMatching (named export) — statement structure practice
+   * - BusinessTransactionCategorization (named export) — cash flow categorization
+   * - DragAndDrop (named export) — matching exercises
+   * - ReflectionJournal (default export) — phase 6 reflection activities
+   * - ErrorCheckingSystem (default export) — validation logic practice (lesson04)
+   * - VideoPlayer (named export) — unit intro video (lesson01)
+   * Note: PhaseHeader/PhaseFooter and shadcn/ui components are used for layout/styling.
+   */
+
   // Stage 1: Desired Results
   objectives: {
     enduring: [
@@ -83,24 +96,24 @@ export const unit08LessonPlan: UnitLessonPlan = {
     milestones: [
       {
         day: 5,
-        title: "Fully Linked 3-Statement Forecast",
-        description: "Complete integration of income statement, balance sheet, and cash flow",
+        title: "Milestone 1: Sensitivity Analysis Complete",
+        description: "Sensitivity tables and analysis implemented for key drivers",
         criteria: [
-          "All three statements linked with accurate cross-sheet formulas",
-          "No hard-coded numbers in linking cells (formulas only)",
-          "Balance sheet balances (Assets = Liabilities + Equity)",
-          "Cash flow statement ties to balance sheet cash changes"
+          "One-variable data table correctly evaluates a key input",
+          "Two-variable sensitivity table built for two key drivers",
+          "Tornado chart or equivalent visual compares driver impact",
+          "Top 3 sensitivity drivers identified with rationale"
         ]
       },
       {
         day: 6,
-        title: "Model Runs 3 Scenarios",
+        title: "Milestone 2: Model Runs 3 Scenarios",
         description: "Scenario Manager implementation with best/worst/realistic cases",
         criteria: [
           "Three distinct scenarios: optimistic, pessimistic, realistic",
           "Scenario Manager properly switches all variable inputs",
-          "Output tables show clear differences between scenarios",
-          "Sensitivity table identifies top 3 drivers of performance"
+          "Outputs update consistently across all three statements",
+          "Scenario summary clearly contrasts results across cases"
         ]
       }
     ],
@@ -153,18 +166,18 @@ export const unit08LessonPlan: UnitLessonPlan = {
           days: "Day 1"
         },
         {
-          title: "Core Concepts: Model Assembly & Integration",
-          description: "Link three financial statements with formula integrity and cross-sheet references",
+          title: "Core Concepts: Review & Integration",
+          description: "Review prior outputs; link three statements with formula integrity and cross-sheet references",
           days: "Days 2-3"
         },
         {
-          title: "Excel Model: Scenario Testing & Sensitivity Analysis",
-          description: "Build Scenario Manager functionality and sensitivity tables for risk analysis",
+          title: "Excel Model: Scenario Manager, Sensitivity, Advanced Testing",
+          description: "Build Scenario Manager; implement sensitivity analysis; test advanced scenarios",
           days: "Days 4-6"
         },
         {
-          title: "Examples & Exercises: Professional Standards",
-          description: "Apply industry standards and peer audit techniques to validate models",
+          title: "Examples & Prep: Professional Standards + Mock Panel",
+          description: "Apply professional standards; peer audits; prepare and rehearse for mock panel",
           days: "Days 7-8"
         },
         {
@@ -351,7 +364,7 @@ export const unit08LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Excel Model: Scenario Manager Introduction",
+        title: "Excel Model: Scenario Manager & Advanced Financial Modeling",
         focus: "Learn Scenario Manager functionality and build multiple business scenarios",
         duration: "45 minutes",
         activities: [
@@ -404,7 +417,9 @@ export const unit08LessonPlan: UnitLessonPlan = {
           "Scenario Manager step-by-step tutorial",
           "Business scenario development worksheet",
           "Startup variable identification guide",
-          "Scenario summary interpretation examples"
+          "Scenario summary interpretation examples",
+          "/resources/unit08-scenario-manager-practice.csv",
+          "/resources/unit08-financial-model-template.csv"
         ]
       },
       {
@@ -425,24 +440,24 @@ export const unit08LessonPlan: UnitLessonPlan = {
             ]
           },
           {
-            name: "Milestone 1: Fully Linked 3-Statement Assessment",
+            name: "Milestone 1: Sensitivity Analysis Assessment",
             duration: "20 minutes",
-            description: "Complete assessment of integrated financial model",
+            description: "Complete assessment of sensitivity tables and analysis",
             details: [
-              "Students submit their fully integrated three-statement model",
-              "Assessment criteria: All sheets linked, no hard-coded numbers, mathematical accuracy",
-              "Peer validation: Teams check each other's models using validation checklist",
-              "Instructor spot-checks: Random testing of formula integrity and linking"
+              "Students submit one-variable and two-variable data tables",
+              "Assessment criteria: Tables compute correctly and reference proper cells",
+              "Visualization: Tornado chart (or equivalent) compares driver impact",
+              "Analysis: Top 3 sensitivity drivers identified with rationale"
             ],
             callout: {
               type: "important",
               title: "Milestone 1 Success Criteria",
-              content: "Professional standards for integrated financial models",
+              content: "Professional standards for sensitivity analysis",
               items: [
-                "Income statement flows correctly to retained earnings",
-                "Balance sheet balances with proper asset/liability/equity structure",
-                "Cash flow statement reconciles to balance sheet cash changes",
-                "All linking formulas (no hard-coded values in calculation cells)"
+                "Accurate one- and two-variable data table construction",
+                "Clear labeling and documentation of inputs and outputs",
+                "Appropriate visual summarizing impacts across drivers",
+                "Written interpretation connects sensitivity to business risk"
               ]
             }
           },
@@ -462,7 +477,8 @@ export const unit08LessonPlan: UnitLessonPlan = {
           "Sensitivity analysis tutorial and templates",
           "Milestone 1 assessment rubric and checklist",
           "Model validation tools and error checking guides",
-          "Tornado chart creation examples"
+          "Tornado chart creation examples",
+          "/resources/unit08-sensitivity-analysis-data.csv"
         ]
       },
       {

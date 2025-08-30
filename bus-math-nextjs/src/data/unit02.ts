@@ -64,14 +64,14 @@ export const unit02Data: UnitData = {
       },
       {
         id: "milestone2",
-        day: 6, 
-        title: "Macro Inserts Closing Entries",
-        description: "Functional macro system that automatically processes closing entries",
+        day: 5,
+        title: "Scenario Engine + Validation Installed",
+        description: "Advanced month-end automation built with XLOOKUP mapping, SWITCH/IFS routing, and robust validation",
         criteria: [
-          "Macro successfully records closing entries for revenue and expense accounts",
-          "Automated transfer to retained earnings account", 
-          "Error-checking routines prevent invalid entries",
-          "Named ranges properly configured for dynamic updates"
+          "XLOOKUP maps AccountID to Method with if_not_found handling",
+          "SWITCH/IFS logic selects correct method and computes adjusted values",
+          "Validation flags missing/invalid mappings and out-of-range amounts",
+          "Aggregations (SUMIF/SUMPRODUCT) accurately summarize by criteria"
         ]
       },
       {
@@ -135,7 +135,7 @@ export const unit02Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Explore",
+            focus: "Launch & Explore: CFO's Month-End Challenge",
             activities: [
               "Entry Event: CFO vlog clip on the real cost of slow closes",
               "In-class \"shoebox receipt\" challenge: manually sort receipts and time yourselves",
@@ -149,7 +149,7 @@ export const unit02Data: UnitData = {
           },
           {
             day: 2, 
-            focus: "Skill Introduction",
+            focus: "Skill Introduction: Accruals, Deferrals & SLN Depreciation",
             activities: [
               "Mini-lesson: Accruals/deferrals & SLN depreciation principles",
               "Demo: Named ranges and macro recorder basics",
@@ -163,7 +163,7 @@ export const unit02Data: UnitData = {
           },
           {
             day: 3,
-            focus: "Guided Practice", 
+            focus: "Guided Practice: Four Scenarios into Ledger", 
             activities: [
               "Students map four adjusting-entry scenarios into ledger format",
               "Instructor support and troubleshooting", 
@@ -177,28 +177,28 @@ export const unit02Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Peer Critique & Revision",
+            focus: "Excel Tables & SUMIF: Building the Month-End Wizard Foundation",
             activities: [
-              "Gallery walk of scenario mappings with peer feedback",
-              "Revision based on rubric criteria and peer suggestions",
-              "Teacher check-in on technical progress"
+              "Create Excel Tables with structured references for transactions",
+              "Build SUMIF formulas for revenue, expenses, and adjusting categories",
+              "Introduce named ranges and link summaries to dashboard cells"
             ],
             resources: [
-              "Peer-review form",
-              "Revision checklist"
+              "Sample transaction dataset",
+              "SUMIF reference sheet"
             ]
           },
           {
             day: 5,
-            focus: "Reflection Checkpoint",
+            focus: "Advanced Month-End Automation: Scenario Engine & Validation",
             activities: [
-              "Sprint retrospective: What worked? What slowed you down?",
-              "Team planning for Week 4 automation build",
-              "Technical troubleshooting session"
+              "Map AccountID to Method using XLOOKUP with fallback",
+              "Route logic with SWITCH/IFS to compute adjusted values",
+              "Implement validation rules and audit flags for reliability"
             ],
             resources: [
-              "Reflection prompt sheet",
-              "Week 4 planning template"
+              "Advanced practice CSV: /resources/unit02-month-end-advanced-practice.csv",
+              "Validation checklist"
             ]
           }
         ]
@@ -321,6 +321,11 @@ export const unit02Data: UnitData = {
       {
         title: "Month-End Wizard Starter Workbook",
         url: "/resources/unit02-template.xlsx",
+        type: "download"
+      },
+      {
+        title: "Unit 2 Advanced Practice CSV",
+        url: "/resources/unit02-month-end-advanced-practice.csv",
         type: "download"
       },
       {

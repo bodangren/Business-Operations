@@ -1,5 +1,21 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
+/*
+Component Usage Schedule (unit03 lessons 01–05)
+- ComprehensionCheck (default)
+- FillInTheBlank (default and named import variants in pages)
+- AccountCategorization (default)
+- TrialBalanceSorting (default)
+- BusinessTransactionCategorization (named)
+- SpreadsheetWrapper (named)
+- SpreadsheetTemplates.incomeStatementTemplate (named)
+- PeerCritiqueForm (default)
+- ReflectionJournal (default)
+- DragAndDrop (default)
+- ErrorCheckingSystem (default)
+- Lesson01Phase1 (default, custom student component)
+*/
+
 export const unit03LessonPlan: UnitLessonPlan = {
   unitNumber: 3,
   unitTitle: "Three-Statement Storyboard",
@@ -95,6 +111,17 @@ export const unit03LessonPlan: UnitLessonPlan = {
         ]
       },
       {
+        day: 5,
+        title: "Advanced Automation: Three‑Statement Link Engine",
+        description: "Implement robust links, scenario control, and validation checks using the advanced dataset",
+        criteria: [
+          "Structured references (Tables) and XLOOKUP/SUMIFS drive statement rollups",
+          "Scenario switch (e.g., SWITCH/CHOOSE) updates drivers and KPIs without errors",
+          "Validation flags surface A=L+E tie, NI → RE roll‑forward, cash reconciliation, and missing IDs",
+          "Model updates correctly when adding rows or new accounts from the advanced practice CSV"
+        ]
+      },
+      {
         day: 6,
         title: "Balance Sheet Linked and Retained Earnings Reconciled",
         description: "Integrated Balance Sheet with proper account linking and equity reconciliation",
@@ -161,9 +188,19 @@ export const unit03LessonPlan: UnitLessonPlan = {
           days: "Day 1"
         },
         {
-          title: "Statement Foundations: Income Statement Mastery",
-          description: "Build Income Statement from Unit 1 data using INDEX/MATCH techniques",
-          days: "Days 2-5"
+          title: "Income Statement Build",
+          description: "Direct instruction and independent build with peer debugging",
+          days: "Days 2-3"
+        },
+        {
+          title: "Excel Mastery: INDEX/MATCH & Named Ranges",
+          description: "Hands-on INDEX/MATCH and named ranges for dynamic links",
+          days: "Day 4"
+        },
+        {
+          title: "Advanced Automation: Link Engine",
+          description: "Scenario switch, mapping, SUMIFS rollups, and validation checks",
+          days: "Day 5"
         },
         {
           title: "Linking & Integration: Balance Sheet and Cash Flow",
@@ -380,138 +417,90 @@ export const unit03LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Feedback & Iteration: Income Statement Gallery Walk",
-        focus: "Gallery walk critique of Income Statements with teacher and peer feedback",
+        title: "Excel Mastery: INDEX/MATCH & Named Ranges",
+        focus: "Hands-on INDEX/MATCH and named ranges to create dynamic links",
         duration: "45 minutes",
         activities: [
           {
-            name: "Gallery Walk Setup",
-            duration: "5 minutes",
-            description: "Prepare Income Statements for public critique and feedback",
+            name: "INDEX/MATCH Deep Dive",
+            duration: "18 minutes",
+            description: "Teach professional INDEX/MATCH patterns for statement mapping",
             details: [
-              "Teams post their Income Statements at stations around the classroom",
-              "Each station includes: completed statement, formula summary, team reflection",
-              "Review gallery walk protocol: constructive feedback focused on improvement",
-              "Distribute feedback forms with specific criteria for evaluation"
+              "Compare INDEX/MATCH vs. VLOOKUP for flexibility and maintainability",
+              "Create named ranges and use structured references in formulas",
+              "Refactor Income Statement links to rely on INDEX/MATCH and names",
+              "Add IFERROR guards for missing accounts"
             ]
           },
           {
-            name: "Gallery Walk Critique",
-            duration: "25 minutes", 
-            description: "Structured critique focusing on accuracy, professionalism, and innovation",
+            name: "Guided Refactor",
+            duration: "20 minutes",
+            description: "Convert existing student models to named ranges + structured references",
             details: [
-              "Teams rotate through stations providing written feedback on peer work",
-              "Focus areas: formula accuracy, professional appearance, creative solutions",
-              "Instructor provides targeted feedback on technical implementation",
-              "Identify exemplary features and innovative approaches to highlight"
-            ],
-            callout: {
-              type: "tip",
-              title: "Professional Feedback Protocol",
-              content: "Feedback should be specific, actionable, and growth-oriented",
-              items: [
-                "Stars: What works exceptionally well in this model?",
-                "Steps: What specific improvements would enhance this work?",
-                "Professional Language: Feedback as if reviewing colleague's work",
-                "Technical Focus: Formula accuracy, error handling, formatting standards"
-              ]
-            }
-          },
-          {
-            name: "Revision and Improvement Time",
-            duration: "12 minutes",
-            description: "Teams incorporate feedback to refine their Income Statements",
-            details: [
-              "Teams review all feedback received during gallery walk",
-              "Prioritize improvements: technical fixes vs. formatting enhancements",
-              "Implement highest-impact revisions with remaining time",
-              "Document changes made and rationale for revision decisions"
+              "Turn data into Tables to enable auto‑expansion",
+              "Replace positional references with Table[Column] notation",
+              "Validate dynamic updates by inserting rows into source data",
+              "Document key ranges and assumptions"
             ]
           },
           {
-            name: "Reflection & Balance Sheet Preview",
-            duration: "3 minutes",
-            description: "Capture learning from feedback process and preview next statement",
+            name: "Quick Check",
+            duration: "7 minutes",
+            description: "Short comprehension check on INDEX/MATCH and naming conventions",
             details: [
-              "Quick reflection: What feedback was most valuable for improving your work?",
-              "Document technical lessons learned for future reference",
-              "Preview Day 5: Balance Sheet construction and the challenge of account linking"
+              "Multiple‑choice concept check (ComprehensionCheck)",
+              "Vocabulary reinforcement (FillInTheBlank)"
             ]
           }
         ],
         materials: [
-          "Gallery walk feedback forms with evaluation criteria",
-          "Station setup materials (poster paper, markers, stands)",
-          "Revision tracking worksheets",
-          "Exemplary Income Statement models for comparison"
+          "INDEX/MATCH tutorial screencast",
+          "Named ranges quick guide",
+          "Income Statement refactor worksheet"
         ]
       },
       {
         day: 5,
-        title: "Reflection/Checkpoint: Sprint Retrospective & Knowledge Check",
-        focus: "Sprint retrospective on Income Statement work plus quiz on statement relationships",
+        title: "Advanced Automation: Three‑Statement Link Engine",
+        focus: "Implement scenario switch, mapping, SUMIFS rollups, and validation checks",
         duration: "45 minutes",
         activities: [
           {
-            name: "Sprint Retrospective",
-            duration: "15 minutes",
-            description: "Team reflection on Income Statement construction challenges and solutions",
+            name: "Link Engine Build",
+            duration: "22 minutes",
+            description: "Step‑by‑step build of mapping, rollups, and scenario control",
             details: [
-              "Teams reflect on their Income Statement construction journey",
-              "Identify biggest challenges: INDEX/MATCH formulas, account categorization, formatting",
-              "Share successful strategies and solutions with other teams",
-              "Document lessons learned for application to Balance Sheet construction"
-            ],
-            callout: {
-              type: "reflection",
-              title: "Agile Learning Reflection Questions",
-              content: "Teams reflect on their learning process and technical growth",
-              items: [
-                "What Worked Well: Which techniques or approaches were most effective?",
-                "What Was Challenging: Where did we struggle and how did we overcome obstacles?",
-                "What We Learned: Key insights about financial modeling and Excel techniques",
-                "Next Sprint Goals: How will these lessons improve our Balance Sheet work?"
-              ]
-            }
-          },
-          {
-            name: "Financial Statement Relationships Quiz",
-            duration: "20 minutes",
-            description: "Individual assessment of understanding of how statements connect",
-            details: [
-              "Individual quiz covering Income Statement construction and statement integration",
-              "Questions focus on: formula logic, account classification, statement connections",
-              "Include both multiple choice and short-answer application questions",
-              "Emphasis on understanding relationships between Income Statement and other statements"
+              "Map AccountID → StatementLine with XLOOKUP including if_not_found",
+              "Create SUMIFS rollups for statement sections using structured references",
+              "Add Scenario control (SWITCH/CHOOSE) to drive planning inputs",
+              "Document assumptions and named cells"
             ]
           },
           {
-            name: "Quiz Review & Discussion",
-            duration: "8 minutes",
-            description: "Immediate feedback on quiz performance and concept clarification",
+            name: "Validation Systems",
+            duration: "13 minutes",
+            description: "Add professional validation checks and surface errors visibly",
             details: [
-              "Review quiz answers with explanations for correct responses",
-              "Address common misconceptions about statement relationships",
-              "Clarify any confusion about INDEX/MATCH formula construction",
-              "Connect quiz concepts to upcoming Balance Sheet and Cash Flow work"
+              "A=L+E tie, NI → RE roll‑forward, cash reconciliation",
+              "Highlight unmapped IDs as \"Unknown\" with conditional formatting",
+              "Use ErrorCheckingSystem to reinforce validation thinking"
             ]
           },
           {
-            name: "Week 6 Preview & Goal Setting",
-            duration: "2 minutes",
-            description: "Preview Balance Sheet challenges and set learning goals for Week 6",
+            name: "Advanced Dataset Challenge",
+            duration: "10 minutes",
+            description: "Apply automation to edge‑case dataset and verify updates without manual fixes",
             details: [
-              "Preview Week 6 focus: Balance Sheet linking and Retained Earnings reconciliation",
-              "Teams set specific learning goals for Balance Sheet construction",
-              "Quick preview of Cash Flow Statement as the final integration piece"
+              "Download and use /resources/unit03-three-statement-advanced-practice.csv",
+              "Add rows and new accounts; confirm model self‑updates",
+              "Run scenario switch and review KPI summary for correctness"
             ]
           }
         ],
         materials: [
-          "Sprint retrospective template and discussion prompts",
-          "Financial statement relationships quiz (individual)",
-          "Quiz answer key with detailed explanations",
-          "Week 6 preview materials and learning goal worksheets"
+          "/resources/unit03-three-statement-advanced-practice.csv",
+          "Automation checklist and validation rubric",
+          "Scenario control quick reference"
         ]
       },
       {

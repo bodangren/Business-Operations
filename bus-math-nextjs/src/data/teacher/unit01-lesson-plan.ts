@@ -5,20 +5,23 @@ import { UnitLessonPlan } from "@/types/lesson-plan"
  * 
  * Components scheduled for use in Unit 1: Smart Ledger Launch
  * 
- * DAY 1 - Introduction Page (/units/unit01/intro):
- * - ComprehensionCheck.tsx ✅ - Sarah's business model quiz (5 questions)
- * - BusinessTransactionCategorization.tsx ✅ - Match clients to projects
- * - StartupJourney.tsx ✅ - Interactive TechStart Solutions story
+ * DAY 1 - Introduction Page (/student/unit01/lesson01/*):
+ * - ComprehensionCheck.tsx ✅ - Intro questions from Sarah's story
+ * - BusinessTransactionCategorization.tsx ✅ - Categorize TechStart transactions
+ * - FillInTheBlank.tsx ✅ - Key vocabulary reinforcement
  * 
- * DAY 2-3 - Concepts Page (/units/unit01/concepts):
- * - TAccountsVisualization.tsx (to be created) - Visual T-accounts for Assets = Liabilities + Equity
- * - AccountCategorization.tsx ✅ - Drag-drop sorting of Sarah's transactions
- * - JournalEntryBuilding.tsx (to be created) - Build journal entries for actual transactions
+ * DAY 2-3 - Concepts (/student/unit01/lesson02, lesson03):
+ * - TAccountSimple.tsx ✅ - Visual T-accounts
+ * - AccountCategorization.tsx ✅ - Sort accounts by equation components
+ * - JournalEntryBuilding.tsx ✅ - Build journal entries for TechStart
+ * - TransactionJournal.tsx ✅ - Record and verify entries
  * 
- * DAY 4-5 - Excel Model Page (/units/unit01/excel-model):
- * - SpreadsheetSimulator.tsx (to be created) - Practice Excel Tables with transaction data
- * - ErrorCheckingSystem.tsx (to be created) - Build conditional formatting rules
- * - TrialBalanceGenerator.tsx (to be created) - Create auto-check formula
+ * DAY 4-5 - Excel Model & Advanced Automation (/student/unit01/lesson04, lesson05):
+ * - ComprehensionCheck.tsx ✅ - Concept checks
+ * - FillInTheBlank.tsx ✅ - Excel and controls vocabulary
+ * - TAccountsVisualization.tsx ✅ - Concept bridging
+ * - ErrorCheckingSystem.tsx ✅ - Postings validator & controls practice
+ * - Independent dataset download ✅ /resources/unit01-ledger-advanced-practice.csv
  * 
  * DAY 6 - Examples Page (/units/unit01/examples):
  * - FinancialStatementMatching.tsx ✅ - Match transactions to statements
@@ -32,7 +35,10 @@ import { UnitLessonPlan } from "@/types/lesson-plan"
  * - PitchPresentationBuilder.tsx (to be created) - 4-minute investor pitch tool
  * - ReflectionJournal.tsx ✅ - Document learning journey
  * 
- * TOTAL: 12 components (4 already implemented ✅, 8 to be created)
+ * TOTAL: Core components in use across Days 1–5: ComprehensionCheck, FillInTheBlank,
+ * AccountCategorization, TAccountSimple/TAccountsVisualization, JournalEntryBuilding,
+ * TransactionJournal, TrialBalanceSorting, ErrorCheckingSystem. Additional builder tools
+ * for pitch prep remain planned for Days 6–10.
  */
 
 export const unit01LessonPlan: UnitLessonPlan = {
@@ -128,14 +134,14 @@ export const unit01LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 6,
-        title: "Integrated \"Red Flag\" Rules",
-        description: "Visual error detection through conditional formatting",
+        day: 5,
+        title: "Posting Validator + Controls",
+        description: "Robust posting validation and self‑auditing controls implemented",
         criteria: [
-          "Conditional formatting highlighting negative balances",
-          "Visual indicators for missing or incomplete entries",
-          "Automated alerts for debit/credit imbalances",
-          "Professional color scheme and formatting"
+          "XLOOKUP with IFERROR handles mapping and missing‑ID warnings",
+          "SUMIFS controls validate postings across accounts",
+          "Data Validation blocks invalid entries (negative amounts, stale dates)",
+          "Professional documentation describing each control"
         ]
       },
       {
@@ -216,8 +222,8 @@ export const unit01LessonPlan: UnitLessonPlan = {
     dailyLessons: [
       {
         day: 1,
-        title: "Introduction: Meet Sarah & TechStart Solutions",
-        focus: "Introduction to Sarah's business challenge through video and comprehension activities",
+        title: "Introduction: Sarah's Challenge",
+        focus: "Sarah's story, why clean books matter, and transaction categorization warm‑up",
         duration: "45 minutes",
         activities: [
           {
@@ -522,8 +528,8 @@ export const unit01LessonPlan: UnitLessonPlan = {
       },
       {
         day: 5,
-        title: "Excel Model: Conditional Formatting & Error Checking",
-        focus: "Add visual error detection and automated validation to Sarah's ledger",
+        title: "Advanced Ledger Automation: Dynamic Trial Balance & Posting Validator",
+        focus: "Implement posting validator, SUMIFS controls, and dynamic trial balance using advanced dataset",
         duration: "45 minutes",
         activities: [
           {
@@ -722,10 +728,9 @@ export const unit01LessonPlan: UnitLessonPlan = {
           }
         ],
         materials: [
-          "Client-specific transaction datasets (bakery, pet grooming, dental)",
-          "Assessment rubric checklist",
-          "Peer review feedback forms",
-          "Excel troubleshooting guide"
+          "Unit01 advanced practice CSV (resources/unit01-ledger-advanced-practice.csv)",
+          "Validator reference examples",
+          "Assessment rubric checklist"
         ]
       },
       {

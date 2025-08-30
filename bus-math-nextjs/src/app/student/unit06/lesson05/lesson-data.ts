@@ -1,27 +1,31 @@
-// PriceLab Challenge, Lesson 5 data - extracted from MCP curriculum database
+// PriceLab Challenge, Lesson 5 — Advanced Excel Automation for Unit 06 (CVP)
 export const lesson05Data = {
-  id: "mds5wn3rpt1xi5h617a",
-  title: "Sprint Retrospective & Milestone Assessment",
+  id: "u06_l05_advanced_cvp_automation",
+  title: "Advanced CVP Automation: Scenario Runner & Data Tables",
   sequence: 5,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Reflect on learning progress in CVP analysis and pricing strategy development",
-    "Demonstrate mastery of competitor analysis techniques and market positioning insights",
-    "Assess technical proficiency in Excel tools including Power Query and Data Tables",
-    "Self-evaluate readiness for pricing recommendation development and presentation"
+    "Build professional one- and two-variable Data Tables for CVP sensitivity analysis",
+    "Implement dynamic method switching (price, units, fixed, variable) to hit profit targets",
+    "Add robust validation checks for out-of-range values, missing IDs, and stale dates",
+    "Document formulas with structured references and error handling for investor-ready models",
+    "Communicate results with a concise executive summary that informs pricing decisions"
   ],
   keyConcepts: [
-    "Metacognitive reflection strategies for complex financial modeling projects",
-    "Competitive analysis methodology and market intelligence gathering",
-    "Sprint retrospective techniques for project-based learning assessment",
-    "Integration of technical skills with strategic business thinking"
+    "Data Table (one- and two-variable) what-if analysis",
+    "Goal Seek vs. Scenario analysis in pricing models",
+    "Contribution margin, operating leverage, and margin of safety",
+    "Structured references (Table[Column]) and IFERROR safeguards",
+    "Professional standards: validation, auditability, documentation"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 55,
   pedagogicalApproach: [
-    "Reflection on learning and formal assessment of competitor analysis milestone"
+    "Direct instruction on advanced Excel automation",
+    "Guided build with validation rules and error handling",
+    "Independent mastery challenges with edge-case data"
   ],
-  rationale: "To encourage students to reflect on their learning and to assess their understanding of key concepts.",
-  status: "Draft"
+  rationale: "Students deepen CVP automation by building a scenario runner with Data Tables and strong validation to produce investor-ready insights.",
+  status: "Ready"
 }
 
 export const unit06Data = {
@@ -36,42 +40,36 @@ export const lesson05Phases = [
     id: "phase_hook_5",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for sprint retrospective & milestone assessment",
-    // No component needed for this phase.
+    description: "Stress test Sarah's model: fragile vs. robust CVP automation for investor trust",
   },
   {
     id: "phase_introduction_5",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Data Tables and professional-grade automation: standards, gotchas, benefits",
   },
   {
     id: "phase_guided_practice_5",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying lesson concepts with scaffolded support",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide the retrospective process.
+    description: "Build Sarah's scenario runner with validation and safeguards",
   },
   {
     id: "phase_independent_practice_5",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice lesson skills independently with minimal teacher support",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide the retrospective process.
+    description: "Advanced mastery challenges using edge-case dataset and self-checklist",
   },
   {
     id: "phase_assessment_5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment demonstrating understanding of key concepts and skills",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Professional mastery assessment: technical knowledge + applied judgment",
   },
   {
     id: "phase_closing_5",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesize learning and establish goals for continued growth",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesis and CAP reflection; preview integration and dashboards in Lesson 06",
   }
 ]

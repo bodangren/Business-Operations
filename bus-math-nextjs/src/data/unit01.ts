@@ -64,14 +64,14 @@ export const unit01Data: UnitData = {
       },
       {
         id: "milestone2",
-        day: 6,
-        title: "Integrated \"Red Flag\" Rules",
-        description: "Add visual error detection and automated alerts",
+        day: 5,
+        title: "Posting Validator + Controls",
+        description: "Implement robust posting validation and self‑auditing controls",
         criteria: [
-          "Conditional formatting highlighting negative balances",
-          "Visual indicators for missing or incomplete entries",
-          "Automated alerts for debit/credit imbalances",
-          "Professional color scheme and formatting"
+          "XLOOKUP with IFERROR for account mapping and missing‑ID warnings",
+          "SUMIFS controls validate postings across accounts",
+          "Data Validation blocks invalid entries (negative amounts, stale dates)",
+          "Professional documentation describing each control"
         ]
       },
       {
@@ -128,43 +128,42 @@ export const unit01Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Explore",
+            focus: "Introduction: Sarah's Challenge",
             activities: [
-              "Entry Event: Founder's talk & dataset reveal",
-              "Form teams; select a start‑up (food truck, e‑commerce, tutoring) or pitch your own"
+              "Watch Sarah's story and identify record‑keeping risks",
+              "Comprehension check and transaction categorization warm‑up"
             ],
             resources: [
-              "Transaction CSVs",
-              "\"Choosing Your Venture\" handout"
+              "Unit 1 overview page",
+              "Intro comprehension prompts"
             ]
           },
           {
             day: 2,
-            focus: "Accounting Equation & Excel Tables",
+            focus: "Core Concepts: Accounting Equation",
             activities: [
               "Mini‑lesson: Accounting equation & T‑accounts",
-              "Demo: Convert raw CSV to Excel Table",
-              "Hands‑on: Format table, add headers"
+              "Guided practice: Analyze TechStart transactions for balance"
             ],
             resources: [
-              "Sample ledger template (Excel)"
+              "Accounting equation reference sheet"
             ]
           },
           {
             day: 3,
-            focus: "Journal Entries Practice",
+            focus: "Core Concepts: Debit & Credit Rules",
             activities: [
-              "Guided practice: Record 10 sample transactions",
-              "Peer‑quiz: Exchange ledgers & identify errors"
+              "Guided practice: Build T‑accounts and journal entries",
+              "Peer check: Verify debits = credits"
             ],
             resources: [
-              "Journal‑entry worksheet"
+              "Journal entry worksheet"
             ],
             milestone: "Prototype ledger with 10 transactions"
           },
           {
             day: 4,
-            focus: "SUMIF & Auto‑Totals",
+            focus: "Excel Model: Tables & SUMIF",
             activities: [
               "Teach: SUMIF to total debits/credits by account",
               "Lab: Implement SUMIF in your ledger; test on sample data"
@@ -175,13 +174,14 @@ export const unit01Data: UnitData = {
           },
           {
             day: 5,
-            focus: "Sprint Retrospective",
+            focus: "Advanced Ledger Automation",
             activities: [
-              "Team reflection: What worked? What blocked you?",
-              "Teacher & peer feedback on prototype"
+              "Deep dive: Posting validator (XLOOKUP + IFERROR) and SUMIFS controls",
+              "Independent practice with advanced dataset and self‑assessment checklist"
             ],
             resources: [
-              "Retrospective protocol sheet"
+              "Advanced practice CSV",
+              "Posting validator reference"
             ]
           }
         ]
@@ -293,6 +293,11 @@ export const unit01Data: UnitData = {
       {
         title: "Sample Transaction Data",
         url: "/resources/sample-transactions.pdf",
+        type: "download"
+      },
+      {
+        title: "Unit01 Advanced Practice Dataset (CSV)",
+        url: "/resources/unit01-ledger-advanced-practice.csv",
         type: "download"
       },
       {

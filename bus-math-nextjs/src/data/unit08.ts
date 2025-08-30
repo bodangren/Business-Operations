@@ -60,8 +60,20 @@ export const unit08Data: UnitData = {
       },
       {
         id: "milestone2",
+        day: 5,
+        title: "Milestone 1: Sensitivity Analysis Complete",
+        description: "Sensitivity tables and analysis implemented for key drivers",
+        criteria: [
+          "One-variable data table correctly evaluates a key input",
+          "Two-variable sensitivity table built for two key drivers",
+          "Tornado chart or equivalent visual compares driver impact",
+          "Top 3 sensitivity drivers identified with brief rationale"
+        ]
+      },
+      {
+        id: "milestone3",
         day: 6,
-        title: "Model Runs 3 Scenarios",
+        title: "Milestone 2: Model Runs 3 Scenarios",
         description: "Scenario Manager implemented with sensitivity analysis",
         criteria: [
           "Best case, worst case, and base case scenarios defined",
@@ -119,7 +131,7 @@ export const unit08Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Explore",
+            focus: "Introduction: VC Red Flags & Entry Event",
             activities: [
               "Entry Event: VC guest speaker on common pitch deck failures",
               "Review anonymized pitch failures and red flags",
@@ -133,7 +145,7 @@ export const unit08Data: UnitData = {
           },
           {
             day: 2,
-            focus: "Skill Introduction",
+            focus: "Core Concepts: Review & Link Integration",
             activities: [
               "Review linking from prior unit files",
               "Income Statement refresher and best practices",
@@ -147,7 +159,7 @@ export const unit08Data: UnitData = {
           },
           {
             day: 3,
-            focus: "Application Practice",
+            focus: "Core Concepts: Balance Sheet & Cash Flow Integration",
             activities: [
               "Balance Sheet + Cash Flow integration workshop",
               "Build connections between all three statements",
@@ -161,28 +173,29 @@ export const unit08Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Feedback & Iteration",
+            focus: "Excel Model: Scenario Manager & Advanced Financial Modeling",
             activities: [
-              "Peer model testing and link verification",
-              "Cross-team audit using checklist",
-              "Address identified issues and gaps"
+              "Scenario Manager tutorial and setup",
+              "Define optimistic, pessimistic, and realistic scenarios",
+              "Implement variable switching and verify outputs"
             ],
             resources: [
-              "Peer audit checklist",
-              "Common linking errors guide"
+              "Scenario Manager guide",
+              "/resources/unit08-scenario-manager-practice.csv",
+              "/resources/unit08-financial-model-template.csv"
             ]
           },
           {
             day: 5,
-            focus: "Reflection/Checkpoint",
+            focus: "Excel Model: Sensitivity Analysis & Milestone 1",
             activities: [
-              "Sprint reflection on model building challenges",
-              "Error diagnosis journal entry",
-              "Team retrospective and planning"
+              "Build one- and two-variable data tables",
+              "Create tornado chart and interpret results",
+              "Submit Milestone 1: Sensitivity Analysis"
             ],
             resources: [
-              "Reflection prompt questions",
-              "Error tracking template"
+              "Sensitivity analysis tutorial",
+              "/resources/unit08-sensitivity-analysis-data.csv"
             ]
           }
         ]
@@ -194,7 +207,7 @@ export const unit08Data: UnitData = {
         days: [
           {
             day: 6,
-            focus: "New Skill Focus",
+            focus: "Excel Model: Advanced Scenario Testing & Milestone 2",
             activities: [
               "Scenario Manager tutorial and setup",
               "Add revenue shock and cost spike variables to model",
@@ -208,7 +221,7 @@ export const unit08Data: UnitData = {
           },
           {
             day: 7,
-            focus: "Model Completion",
+            focus: "Examples: Professional Model Standards",
             activities: [
               "Build sensitivity table for key drivers",
               "Create tornado chart analysis",
@@ -221,7 +234,7 @@ export const unit08Data: UnitData = {
           },
           {
             day: 8,
-            focus: "Presentation Prep",
+            focus: "Examples: Presentation Prep & Mock Panel",
             activities: [
               "Start 8-slide pitch deck development",
               "Assign presentation topics per team member",
@@ -322,6 +335,21 @@ export const unit08Data: UnitData = {
       {
         title: "VC Q&A Preparation Guide",
         url: "/resources/qa-preparation.pdf",
+        type: "download"
+      },
+      {
+        title: "Scenario Manager Practice CSV",
+        url: "/resources/unit08-scenario-manager-practice.csv",
+        type: "download"
+      },
+      {
+        title: "Financial Model Template CSV",
+        url: "/resources/unit08-financial-model-template.csv",
+        type: "download"
+      },
+      {
+        title: "Sensitivity Analysis Dataset CSV",
+        url: "/resources/unit08-sensitivity-analysis-data.csv",
         type: "download"
       }
     ]

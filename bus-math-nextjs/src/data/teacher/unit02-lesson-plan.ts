@@ -1,5 +1,9 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
+// Component Usage Schedule (from implemented student pages, unit02 lessons 01–05):
+// ComprehensionCheck, FillInTheBlank, DragAndDrop, BusinessTransactionCategorization,
+// FinancialStatementMatching, JournalEntryBuilding, TransactionJournal,
+// ErrorCheckingSystem, ReflectionJournal
 export const unit02LessonPlan: UnitLessonPlan = {
   unitNumber: 2,
   unitTitle: "Month-End Wizard",
@@ -94,14 +98,14 @@ export const unit02LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 6,
-        title: "Macro Inserts Closing Entries",
-        description: "Functional automation that properly executes closing entry procedures",
+        day: 5,
+        title: "Scenario Engine + Validation Installed",
+        description: "Advanced automation using XLOOKUP mapping, SWITCH/IFS routing, and validation flags",
         criteria: [
-          "Macro successfully zeros all temporary accounts",
-          "Revenue and expense accounts properly closed to retained earnings",
-          "Dividend accounts closed to retained earnings if applicable",
-          "Post-closing trial balance shows only permanent accounts"
+          "XLOOKUP correctly maps AccountID to Method with if_not_found handling",
+          "SWITCH/IFS logic routes methods and computes adjusted values accurately",
+          "Validation flags surface missing/invalid mappings and outliers",
+          "Aggregations (SUMIF/SUMPRODUCT) are accurate for reporting"
         ]
       },
       {
@@ -165,14 +169,19 @@ export const unit02LessonPlan: UnitLessonPlan = {
           days: "Day 1"
         },
         {
-          title: "Core Concepts: Adjusting Entries & Automation",
-          description: "Master GAAP-compliant adjusting entries and introduce Excel automation tools",
+          title: "Core Concepts & Practice",
+          description: "Adjusting entries foundation with guided practice",
           days: "Days 2-3"
         },
         {
-          title: "Excel Model: Named Ranges & Macros",
-          description: "Build automated systems using named ranges, macro recorder, and basic VBA",
-          days: "Days 4-5"
+          title: "Excel Tables & SUMIF Foundation",
+          description: "Structured references and SUMIF automation for month-end",
+          days: "Day 4"
+        },
+        {
+          title: "Advanced Automation: XLOOKUP, SWITCH, Validation",
+          description: "Scenario engine with robust validation and auditability",
+          days: "Day 5"
         },
         {
           title: "Examples & Testing: Simulation & UX Design",
@@ -433,142 +442,114 @@ export const unit02LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Peer Critique & Revision: Gallery Walk Feedback",
-        focus: "Structured peer review and revision of adjusting entry work",
+        title: "Excel Tables & SUMIF: Building the Month-End Wizard Foundation",
+        focus: "Hands-on Excel Tables with structured references and SUMIF automation",
         duration: "45 minutes",
         activities: [
           {
-            name: "Gallery Walk Setup & Protocol",
-            duration: "5 minutes",
-            description: "Establish peer feedback protocol and rotation schedule",
+            name: "Excel Tables: Structured References",
+            duration: "15 minutes",
+            description: "Convert data ranges to Tables and use structured references",
             details: [
-              "Post team work at stations around the classroom",
-              "Explain feedback protocol: specific, actionable, kind",
-              "Distribute peer review forms with assessment criteria",
-              "Set rotation timing: 8 minutes per station"
+              "Create TransactionTable with headers and banded rows",
+              "Use structured references (e.g., TransactionTable[Amount])",
+              "Demonstrate auto-expansion when adding new rows",
+              "Discuss benefits for reliability and scalability"
             ]
           },
           {
-            name: "Gallery Walk: Peer Review Rounds",
-            duration: "25 minutes",
-            description: "Structured feedback collection using assessment rubric",
-            // Component: PeerFeedbackForm.tsx - Gallery walk structured feedback on four adjusting entry scenarios
+            name: "SUMIF Foundations",
+            duration: "15 minutes",
+            description: "Build SUMIF formulas to automate conditional totals",
             details: [
-              "Teams rotate through stations reviewing other teams' scenario work",
-              "Provide written feedback using structured rubric form",
-              "Focus on: accuracy of calculations, GAAP compliance, clarity of documentation",
-              "Identify exemplary work and suggest specific improvements"
-            ],
-            callout: {
-              type: "tip",
-              title: "Effective Peer Feedback Framework",
-              content: "Structure feedback for maximum learning impact",
-              items: [
-                "Stars: What this team did really well",
-                "Steps: Specific suggestions for improvement",
-                "Questions: What you'd like to know more about",
-                "Connections: How this relates to your own work"
-              ]
-            }
+              "Revenue total: =SUMIF(TransactionTable[Type], \"Revenue\", TransactionTable[Amount])",
+              "Expense total: =SUMIF(TransactionTable[Type], \"Expense\", TransactionTable[Amount])",
+              "Accrual total: =SUMIF(TransactionTable[Type], \"Accrual\", TransactionTable[Amount])",
+              "Troubleshoot criteria and reference errors"
+            ]
           },
           {
-            name: "Feedback Analysis & Revision Planning",
+            name: "Named Ranges & Linking",
             duration: "10 minutes",
-            description: "Teams analyze feedback and plan revisions",
+            description: "Define named cells and link summaries to dashboard outputs",
             details: [
-              "Teams read and categorize feedback received",
-              "Identify common themes and priority areas for improvement",
-              "Plan specific revisions to address feedback",
-              "Set individual goals for technical skill development"
+              "Create MonthlyRevenue and MonthlyExpenses named cells",
+              "Link to SUMIF totals for reporting",
+              "Check for dynamic updates as data grows"
             ]
           },
           {
-            name: "Reflection & Sprint Planning",
+            name: "Quick Check: Tables & SUMIF",
             duration: "5 minutes",
-            description: "Learning reflection and preparation for automation phase",
-            // Component: ReflectionJournal.tsx - Individual and team reflection on learning progress and challenges
+            description: "Short formative check on structured references and SUMIF",
             details: [
-              "Individual reflection: What was most challenging about the adjusting entries?",
-              "Team discussion: How will this foundation help with Excel automation?",
-              "Preview Days 5-6: Building automated systems using Excel tools"
+              "Students answer 3–4 questions on syntax and behavior",
+              "Verify understanding before advanced automation"
             ]
           }
         ],
         materials: [
-          "Gallery walk station setup materials",
-          "Peer review feedback forms",
-          "Assessment rubric checklists",
-          "Revision planning templates"
+          "Sample transaction dataset",
+          "SUMIF reference sheet",
+          "Excel Tables quick guide"
         ]
       },
       {
         day: 5,
-        title: "Reflection Checkpoint: Sprint Retrospective",
-        focus: "Learning analysis and strategic planning for automation phase",
+        title: "Advanced Month-End Automation: Scenario Engine & Validation",
+        focus: "Build XLOOKUP mapping, SWITCH/IFS routing, and robust validation",
         duration: "45 minutes",
         activities: [
           {
-            name: "Individual Learning Reflection",
-            duration: "10 minutes",
-            description: "Personal analysis of learning progress and challenges",
+            name: "XLOOKUP Mapping: Account to Method",
+            duration: "12 minutes",
+            description: "Map AccountID to Method using XLOOKUP with if_not_found fallback",
             details: [
-              "Reflection writing: What worked well in your learning this week?",
-              "Challenge identification: What slowed you down or caused confusion?",
-              "Skill assessment: Rate confidence in each adjusting entry type",
-              "Goal setting: What do you want to improve in the automation phase?"
+              "Create Map table with AccountID → Method",
+              "Add Method column: =XLOOKUP([@AccountID], Map[AccountID], Map[Method], \"Unknown\")",
+              "Discuss defensive patterns to avoid #N/A and blank results"
             ]
           },
           {
-            name: "Team Sprint Retrospective",
-            duration: "20 minutes",
-            description: "Collaborative analysis of team process and technical progress",
-            // Component: SprintRetrospectiveTool.tsx - Team retrospective: what worked, what didn't, technical readiness
+            name: "SWITCH/IFS Routing Logic",
+            duration: "12 minutes",
+            description: "Route logic by method and compute adjusted values",
             details: [
-              "What worked: Identify successful collaboration strategies and learning approaches",
-              "What didn't work: Honest discussion of obstacles and ineffective methods",
-              "Team dynamics: How well did specialization choices and role distribution work?",
-              "Technical readiness: Are we prepared to tackle Excel automation?"
+              "AdjValue: =SWITCH([@Method], \"Accrual\", [@Amount], \"Deferral\", -[@Amount], 0)",
+              "Alternative IFS pattern for more conditions",
+              "Verify sign conventions and totals"
+            ]
+          },
+          {
+            name: "Validation & Audit Flags",
+            duration: "15 minutes",
+            description: "Implement checks that surface missing mappings and outliers",
+            details: [
+              "Flag Unknown methods and negative anomalies",
+              "Add summary checks using COUNTIF/SUMIFS",
+              "Demo ErrorCheckingSystem to reinforce visible controls"
             ],
             callout: {
-              type: "important",
-              title: "Retrospective Protocol: Continuous Improvement",
-              content: "Structured reflection drives better learning outcomes",
-              items: [
-                "Start-Stop-Continue framework for process improvement",
-                "Focus on specific, actionable changes for next sprint",
-                "Celebrate learning achievements and progress made",
-                "Identify resource needs for successful automation phase"
-              ]
+              type: "professional",
+              title: "Investor-Ready Controls",
+              content: "Visible validation builds trust and prevents surprises"
             }
           },
           {
-            name: "Technical Skill Assessment & Planning",
-            duration: "10 minutes",
-            description: "Evaluate technical readiness and plan skill development",
+            name: "Mastery Challenges",
+            duration: "6 minutes",
+            description: "Apply scenario engine to new data using advanced practice CSV",
             details: [
-              "Self-assessment: Excel comfort level and experience with advanced features",
-              "Team assessment: Who will lead macro development, UI design, testing?",
-              "Skill gaps: What Excel techniques do we need to learn for our automation goal?",
-              "Resource planning: What help and materials will we need next week?"
-            ]
-          },
-          {
-            name: "Week 2 Preview & Commitment",
-            duration: "5 minutes",
-            description: "Set expectations and commitments for automation sprint",
-            details: [
-              "Preview Week 2 goals: functional macro, UI button, time simulation",
-              "Team commitments: specific responsibilities and deadlines",
-              "Success visualization: What will our Innovation Fair demo look like?",
-              "Transition to Day 6: Introduction to named ranges and macro recorder"
+              "Import dataset and verify XLOOKUP coverage",
+              "Test SWITCH logic for multiple methods",
+              "Check validation flags and correct issues"
             ]
           }
         ],
         materials: [
-          "Individual reflection prompt sheets",
-          "Team retrospective protocol guide",
-          "Technical skill self-assessment forms",
-          "Week 2 preview and planning materials"
+          "/resources/unit02-month-end-advanced-practice.csv",
+          "Validation checklist",
+          "Formula patterns handout (XLOOKUP, SWITCH, SUMIFS)"
         ]
       },
       {

@@ -1,5 +1,12 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
+// Component Usage Schedule (Unit 06, Lessons 01–05)
+// Day 1 (Lesson01): VideoPlayer, ComprehensionCheck, SpreadsheetWrapper
+// Day 2 (Lesson02): ComprehensionCheck, FillInTheBlank, BreakEvenComponents, BreakEvenAnalysisCalculator, ReflectionJournal
+// Day 3 (Lesson03): ComprehensionCheck, BreakEvenChart, BreakEvenComponents, SpreadsheetWrapper, ReflectionJournal
+// Day 4 (Lesson04): ComprehensionCheck, FillInTheBlank, BreakEvenAnalysisCalculator, ReflectionJournal
+// Day 5 (Lesson05): ComprehensionCheck, FillInTheBlank, BreakEvenAnalysisCalculator, ErrorCheckingSystem, ComprehensionCheck
+
 export const unit06LessonPlan: UnitLessonPlan = {
   unitNumber: 6,
   unitTitle: "PriceLab Challenge",
@@ -82,7 +89,7 @@ export const unit06LessonPlan: UnitLessonPlan = {
     },
     milestones: [
       {
-        day: 5,
+        day: 1,
         title: "Competitor Benchmark Analysis & Margin Calculation",
         description: "Complete analysis of competitor pricing data with accurate margin calculations",
         criteria: [
@@ -93,14 +100,14 @@ export const unit06LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 8,
-        title: "Complete CVP Model with Sensitivity Analysis",
-        description: "Working Cost-Volume-Profit model with comprehensive what-if analysis",
+        day: 5,
+        title: "Advanced CVP Automation: Scenario Runner & Data Tables",
+        description: "Build professional scenario runner with Data Tables, Goal Seek, and validation",
         criteria: [
           "Accurate CVP model with correct fixed/variable cost identification",
-          "Professional CVP chart with clear break-even visualization",
-          "One- and two-variable data tables showing pricing sensitivity",
-          "Goal Seek scenarios for multiple target profit levels"
+          "One- and two-variable Data Tables for pricing sensitivity",
+          "Goal Seek scenarios for target profit and break-even",
+          "Validation rules for out-of-range values and stale data (e.g., negative costs, missing IDs)"
         ]
       },
       {
@@ -152,24 +159,24 @@ export const unit06LessonPlan: UnitLessonPlan = {
     overview: {
       phases: [
         {
-          title: "Data Import & Competitive Analysis",
-          description: "Import competitor pricing data and analyze current market position",
-          days: "Days 1-3"
+          title: "Launch & Competitive Data Import",
+          description: "Power Query import and competitor benchmark analysis",
+          days: "Day 1"
         },
         {
-          title: "CVP Modeling & Break-Even Analysis",
-          description: "Build Cost-Volume-Profit models and identify break-even scenarios",
-          days: "Days 4-6"
+          title: "Markup/Margin & CVP Modeling",
+          description: "Foundations of pricing math and CVP model construction",
+          days: "Days 2-3"
         },
         {
-          title: "Sensitivity Analysis & Goal Seeking",
-          description: "Perform what-if analysis and optimize for target profit scenarios",
-          days: "Days 7-8"
+          title: "Goal Seek & Advanced Automation",
+          description: "Target profit analysis and scenario runner with Data Tables",
+          days: "Days 4-5"
         },
         {
-          title: "Recommendation Development & Debate",
-          description: "Synthesize analysis into pricing strategy and defend in town hall format",
-          days: "Days 9-10"
+          title: "Recommendation & Debate",
+          description: "Synthesize insights and defend pricing strategy",
+          days: "Days 6-10"
         }
       ]
     },
@@ -380,197 +387,131 @@ export const unit06LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Peer Critique & Model Refinement",
-        focus: "Structured peer feedback on CVP models and collaborative improvement",
-        duration: "45 minutes",
-        activities: [
-          {
-            name: "Gallery Walk Setup",
-            duration: "5 minutes",
-            description: "Organize peer review process for CVP models",
-            details: [
-              "Teams post their CVP models and charts for peer examination",
-              "Distribute peer critique forms with specific evaluation criteria",
-              "Explain rotation schedule and feedback protocols",
-              "Emphasize constructive feedback focused on improvement"
-            ]
-          },
-          {
-            name: "Structured Gallery Walk",
-            duration: "25 minutes",
-            description: "Systematic peer review using evaluation criteria",
-            details: [
-              "Teams rotate through all posted CVP models (5 minutes each)",
-              "Complete peer critique forms focusing on accuracy, clarity, and professionalism",
-              "Identify strengths and suggest specific improvements",
-              "Note innovative approaches or particularly effective visualizations"
-            ],
-            callout: {
-              type: "important",
-              title: "Peer Critique Focus Areas",
-              content: "Structured feedback improves model quality and business thinking",
-              items: [
-                "Mathematical accuracy: Are calculations and formulas correct?",
-                "Professional presentation: Is the model clear and well-formatted?",
-                "Business logic: Do cost classifications and assumptions make sense?",
-                "Visual effectiveness: Does the CVP chart clearly communicate insights?"
-              ]
-            }
-          },
-          {
-            name: "Feedback Analysis & Planning",
-            duration: "10 minutes",
-            description: "Teams analyze received feedback and plan improvements",
-            details: [
-              "Teams review all feedback forms and identify common themes",
-              "Prioritize suggested improvements based on impact and feasibility",
-              "Create action plan for model refinement before next milestone",
-              "Discuss how peer feedback will strengthen their final presentation"
-            ]
-          },
-          {
-            name: "Sprint Retrospective",
-            duration: "5 minutes",
-            description: "Reflect on learning progress and peer collaboration",
-            details: [
-              "Individual reflection: What did peer feedback teach me about CVP modeling?",
-              "Team discussion: How will we incorporate feedback into our work?",
-              "Class sharing: What common challenges did multiple teams identify?",
-              "Preview Day 5: Using Goal Seek for target profit analysis"
-            ]
-          }
-        ],
-        materials: [
-          "Peer critique forms with evaluation criteria",
-          "Gallery walk rotation schedule",
-          "Reflection prompts and planning templates",
-          "Model improvement tracking sheets"
-        ]
-      },
-      {
-        day: 5,
-        title: "Sprint Retrospective & Milestone Assessment",
-        focus: "Reflection on learning and formal assessment of competitor analysis milestone",
-        duration: "45 minutes",
-        activities: [
-          {
-            name: "Learning Journey Reflection",
-            duration: "10 minutes",
-            description: "Individual and team reflection on Week 1 learning",
-            details: [
-              "Individual writing: How has your understanding of pricing analysis changed?",
-              "Team discussion: What aspects of CVP modeling were most challenging?",
-              "Identify skills that need additional practice or reinforcement",
-              "Connect learning to essential question about competitive pricing"
-            ]
-          },
-          {
-            name: "Milestone 1 Assessment: Competitor Analysis",
-            duration: "25 minutes",
-            description: "Formal assessment of competitor benchmarking and margin calculations",
-            details: [
-              "Teams present their competitor pricing analysis and current margin calculations",
-              "Demonstrate Power Query data import and transformation process",
-              "Show CVP model construction and break-even analysis",
-              "Receive instructor feedback on technical accuracy and business insights"
-            ],
-            callout: {
-              type: "important",
-              title: "Milestone 1 Success Criteria",
-              content: "Assessment focuses on technical skills and analytical thinking",
-              items: [
-                "Data Import: Successful Power Query import with proper data cleaning",
-                "Calculations: Accurate markup vs. margin calculations for all products",
-                "CVP Model: Working model with correct fixed/variable cost classification",
-                "Analysis: Clear insights about competitive positioning and opportunities"
-              ]
-            }
-          },
-          {
-            name: "Week 2 Planning & Goal Setting",
-            duration: "10 minutes",
-            description: "Prepare for sensitivity analysis and final presentation phase",
-            details: [
-              "Review Week 2 schedule and remaining milestones",
-              "Set team goals for Goal Seek practice and data table analysis",
-              "Discuss presentation format options (memo vs. slide deck)",
-              "Preview the town hall debate format and stakeholder perspectives"
-            ]
-          }
-        ],
-        materials: [
-          "Reflection writing prompts",
-          "Milestone 1 assessment rubric",
-          "Week 2 planning materials",
-          "Presentation format examples"
-        ]
-      },
-      {
-        day: 6,
         title: "Goal Seek for Target Profit Scenarios",
         focus: "Master Goal Seek functionality for reverse engineering pricing decisions",
         duration: "45 minutes",
         activities: [
           {
-            name: "The Reverse Engineering Challenge",
-            duration: "5 minutes",
-            description: "Introduce Goal Seek as solution to backwards pricing problems",
-            details: [
-              "Scenario: Management wants 20% profit margin - what price do we need?",
-              "Traditional approach: Trial and error with CVP model",
-              "Goal Seek approach: Let Excel solve for the required price automatically"
-            ]
-          },
-          {
-            name: "Goal Seek Tutorial & Practice",
-            duration: "25 minutes",
-            description: "Hands-on learning of Goal Seek with CVP models",
-            details: [
-              "Demonstrate Goal Seek interface: Set cell, To value, By changing cell",
-              "Practice: Find price needed for $50,000 profit target",
-              "Practice: Find volume needed to break even at competitor's price",
-              "Practice: Find maximum variable cost for profitable pricing"
-            ],
-            callout: {
-              type: "tip",
-              title: "Goal Seek Best Practices",
-              content: "Goal Seek is powerful but requires careful setup",
-              items: [
-                "Set Cell: Must contain formula that calculates target metric",
-                "To Value: Specific target (e.g., $50,000 profit, 0 for break-even)",
-                "By Changing Cell: Must be input cell that affects the formula",
-                "Always verify results make business sense"
-              ]
-            }
-          },
-          {
-            name: "Multiple Scenario Analysis",
+            name: "Goal Seek Introduction",
             duration: "10 minutes",
-            description: "Use Goal Seek for various target profit scenarios",
+            description: "Demonstrate Set Cell / To Value / By Changing Cell using the CVP model",
             details: [
-              "Create scenarios: Conservative, optimistic, and stretch profit targets",
-              "Use Goal Seek to find required pricing for each scenario",
-              "Compare results to competitor pricing to assess feasibility",
-              "Document scenarios for inclusion in final recommendation"
+              "Find required price for $50,000 profit",
+              "Find required units to break even at competitor price",
+              "Discuss verification and business-sense checks"
             ]
           },
           {
-            name: "Integration with CVP Model",
-            duration: "5 minutes",
-            description: "Ensure Goal Seek results integrate with overall analysis",
+            name: "Guided Practice",
+            duration: "25 minutes",
+            description: "Students run multiple target-profit and break-even scenarios",
             details: [
-              "Verify Goal Seek results don't break CVP model formulas",
-              "Update CVP charts with Goal Seek pricing scenarios",
-              "Test model functionality after Goal Seek modifications",
-              "Preview Day 7: Data Tables for comprehensive sensitivity analysis"
+              "Conservative, base, and stretch targets",
+              "Document assumptions and results for later presentation",
+              "Troubleshoot common Goal Seek pitfalls"
+            ]
+          },
+          {
+            name: "Reflection",
+            duration: "10 minutes",
+            description: "Capture key takeaways and how Goal Seek integrates with CVP model",
+            details: [
+              "Write 2–3 takeaways from Goal Seek practice",
+              "Note one common pitfall and how to avoid it",
+              "Identify how Goal Seek outputs feed back into the CVP model"
             ]
           }
         ],
         materials: [
-          "Goal Seek tutorial with step-by-step instructions",
-          "Target profit scenario worksheets",
-          "CVP model integration guides",
-          "Business scenario validation exercises"
+          "/resources/unit06-goal-seek-practice.csv",
+          "/resources/unit06-goal-seek-template.csv",
+          "Goal Seek step-by-step guide"
+        ]
+      },
+      {
+        day: 5,
+        title: "Advanced CVP Automation: Scenario Runner & Data Tables",
+        focus: "Build one- and two-variable Data Tables and add robust validation",
+        duration: "45 minutes",
+        activities: [
+          {
+            name: "Scenario Runner Build",
+            duration: "20 minutes",
+            description: "Create inputs/outputs and construct one- and two-variable Data Tables",
+            details: [
+              "Define a single input area (Price, Units, Variable Cost, Fixed Costs)",
+              "Create Profit output cell with IFERROR safeguard",
+              "Build one-variable Data Table varying Price; label units clearly",
+              "Build two-variable Data Table (Price × Units) with profit cell reference"
+            ]
+          },
+          {
+            name: "Validation & Error Handling",
+            duration: "15 minutes",
+            description: "Add rules for negative costs, missing IDs, and stale dates; document assumptions",
+            details: [
+              "Create data validation to prevent negative costs and blank IDs",
+              "Flag stale dates with conditional formatting",
+              "Document assumptions and validation rules on a Notes sheet"
+            ]
+          },
+          {
+            name: "Independent Mastery",
+            duration: "10 minutes",
+            description: "Run edge-case scenarios and complete investor-ready checklist",
+            details: [
+              "Use advanced dataset to stress‑test the model",
+              "Complete investor‑ready checklist and fix any issues found",
+              "Export summary of insights for tomorrow’s peer critique"
+            ]
+          }
+        ],
+        materials: [
+          "/resources/unit06-cvp-advanced-practice.csv",
+          "Investor-ready checklist",
+          "Data Table reference guide"
+        ]
+      },
+      {
+        day: 6,
+        title: "Peer Critique & Model Refinement",
+        focus: "Structured peer feedback on CVP automation and collaborative improvement",
+        duration: "45 minutes",
+        activities: [
+          {
+            name: "Gallery Walk",
+            duration: "25 minutes",
+            description: "Teams review scenario runners and CVP models using an evaluation checklist",
+            details: [
+              "Rotate to 3–4 teams and review their models",
+              "Use checklist to evaluate automation, clarity, and validation",
+              "Leave one specific praise and one actionable suggestion per team"
+            ]
+          },
+          {
+            name: "Revision Sprint",
+            duration: "15 minutes",
+            description: "Teams implement high-impact fixes based on peer feedback",
+            details: [
+              "Prioritize top two issues identified in feedback",
+              "Implement fixes and re‑test Goal Seek and Data Tables",
+              "Update documentation and checklist items"
+            ]
+          },
+          {
+            name: "Reflection",
+            duration: "5 minutes",
+            description: "Record key improvements and open questions for instructor feedback",
+            details: [
+              "Note one improvement made today and its impact",
+              "List any remaining blockers to discuss with instructor"
+            ]
+          }
+        ],
+        materials: [
+          "Peer critique forms with evaluation criteria",
+          "Investor-ready checklist",
+          "Revision planning template"
         ]
       },
       {

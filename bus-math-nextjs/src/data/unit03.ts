@@ -64,6 +64,18 @@ export const unit03Data: UnitData = {
         ]
       },
       {
+        id: "milestone_automation",
+        day: 5,
+        title: "Advanced Automation: Three‑Statement Link Engine",
+        description: "Implement robust three‑statement links with scenario control and validation checks",
+        criteria: [
+          "Use structured references (Tables) throughout with XLOOKUP/SUMIFS rollups",
+          "Scenario switch (e.g., SWITCH/CHOOSE) correctly updates drivers and KPIs",
+          "Validation flags surface issues (A=L+E, NI → RE, cash reconciliation, missing IDs)",
+          "Model updates correctly with added rows and new accounts using the advanced dataset"
+        ]
+      },
+      {
         id: "milestone2",
         day: 6,
         title: "Balance Sheet Linked and Retained Earnings Reconciled",
@@ -129,10 +141,10 @@ export const unit03Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Explore",
+            focus: "Launch & Explore: Financial Statement Detective Work",
             activities: [
-              "Entry Event: dissect Tesla's (or local firm's) 10-Q, mapping narrative threads to line items",
-              "Provide teams with raw Unit 1 journal entries and trial balance"
+              "Entry event: examine a real 10-Q excerpt and map narrative to Income Statement/Balance Sheet/Cash Flow lines",
+              "Connect TechStart Unit 1 journal entries and trial balance to the three‑statement ‘storyboard’"
             ],
             resources: [
               "10-Q excerpt",
@@ -141,10 +153,10 @@ export const unit03Data: UnitData = {
           },
           {
             day: 2,
-            focus: "Skill Introduction",
+            focus: "Skill Introduction: Income Statement Construction",
             activities: [
-              "Demo: build Income Statement in Excel from trial balance",
-              "INDEX/MATCH refresher and cross-sheet linking techniques"
+              "Direct instruction: build an Income Statement from trial balance data",
+              "INDEX/MATCH and named ranges for dynamic cross‑sheet links"
             ],
             resources: [
               "Income Statement template",
@@ -153,10 +165,10 @@ export const unit03Data: UnitData = {
           },
           {
             day: 3,
-            focus: "Application Practice",
+            focus: "Application Practice: Income Statement Independent Build",
             activities: [
-              "Build Income Statement from Unit 1 data using proper formulas",
-              "Peer debugging session and formula verification"
+              "Independent build of the Income Statement using Unit 1 data",
+              "Peer debugging and formula verification"
             ],
             resources: [
               "Unit 1 dataset",
@@ -166,26 +178,28 @@ export const unit03Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Feedback & Iteration",
+            focus: "Excel Mastery: INDEX/MATCH & Named Ranges",
             activities: [
-              "Gallery walk of Income Statements with peer review",
-              "Teacher critique and formula debugging workshop"
+              "Hands‑on practice with INDEX/MATCH and named ranges for dynamic links",
+              "Convert models to use structured references and improve maintainability"
             ],
             resources: [
-              "Gallery-walk rubric"
+              "INDEX/MATCH tutorial",
+              "Named ranges quick guide"
             ]
           },
           {
             day: 5,
-            focus: "Reflection/Checkpoint",
+            focus: "Advanced Automation: Three‑Statement Link Engine",
             activities: [
-              "Sprint retrospective: challenges & solutions discussion",
-              "Quiz on financial statement relationships and cross-references"
+              "Implement scenario switch, mapping, and SUMIFS rollups",
+              "Add validation checks (A=L+E, NI → RE, cash reconciliation, missing IDs) and test with edge cases"
             ],
             resources: [
-              "Quiz sheet",
-              "Reflection prompts"
-            ]
+              "/resources/unit03-three-statement-advanced-practice.csv",
+              "Automation checklist"
+            ],
+            milestone: "Advanced Automation: Three‑Statement Link Engine"
           }
         ]
       },
@@ -317,6 +331,11 @@ export const unit03Data: UnitData = {
       {
         title: "Investor One-Pager Template",
         url: "/resources/investor-template.pptx",
+        type: "download"
+      },
+      {
+        title: "Unit 3 Advanced Practice Dataset",
+        url: "/resources/unit03-three-statement-advanced-practice.csv",
         type: "download"
       }
     ]

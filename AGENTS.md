@@ -1,4 +1,4 @@
-# AGENTS.md
+# AGENTS.md CLAUDE.md GEMINI.md (duplicates)
 
 This file provides guidance to coding agents (Claude Code, OpenAI Codex CLI, etc.) working with this repository. It supplements existing docs with agent‑specific workflow rules and the Excel‑focused lesson implementation patterns actively used in this project.
 

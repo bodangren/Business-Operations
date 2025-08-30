@@ -61,14 +61,14 @@ export const unit04Data: UnitData = {
       },
       {
         id: "milestone2",
-        day: 7,
-        title: "Complete Forecast Model & Visuals",
-        description: "Build functional regression model with supporting visualizations",
+        day: 5,
+        title: "Forecast Automation & Validation (Advanced)",
+        description: "Establish advanced forecast automation with scenario toggles and audit checks",
         criteria: [
-          "Linear regression model using FORECAST.LINEAR or Analysis ToolPak",
-          "Model accuracy evaluated and documented",
-          "Cost-benefit analysis across multiple scenarios",
-          "Professional charts and graphs supporting findings"
+          "Forecast built with structured references (Excel Tables) and FORECAST.LINEAR",
+          "Scenario toggle implemented (e.g., Baseline vs PromoAdjusted) updating outputs dynamically",
+          "Audit panel flags resolved: missing keys, negative units, invalid prices, stale dates",
+          "Error handling in place (IFERROR/XLOOKUP defaults) and assumptions documented"
         ]
       },
       {
@@ -125,11 +125,11 @@ export const unit04Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Explore",
+            focus: "Launch & Explore: Campus Café Challenge",
             activities: [
-              "Entry Event & team formation",
-              "Virtual field trip to campus café",
-              "Scenario brief and dataset walkthrough"
+              "Entry event video: Data as a competitive advantage",
+              "Virtual field trip context and challenge framing",
+              "Comprehension checks on scenario and goals"
             ],
             resources: [
               "Raw POS CSV",
@@ -138,10 +138,11 @@ export const unit04Data: UnitData = {
           },
           {
             day: 2,
-            focus: "Skill Introduction",
+            focus: "Skill Introduction: Data Cleaning Fundamentals",
             activities: [
-              "Demo: cleaning CSV (Text-to-Columns, TRIM, remove duplicates)",
-              "Guided practice with sample data"
+              "Demonstration: Text-to-Columns, TRIM, Remove Duplicates",
+              "Guided cleaning using café POS sample",
+              "Independent practice with complex messy data"
             ],
             resources: [
               "Cleaning cheat sheet"
@@ -149,7 +150,7 @@ export const unit04Data: UnitData = {
           },
           {
             day: 3,
-            focus: "Application Practice",
+            focus: "Application Practice: Outliers & Descriptive Statistics",
             activities: [
               "Identify outliers using z-scores",
               "Compute mean, median, σ with Analysis ToolPak"
@@ -161,25 +162,27 @@ export const unit04Data: UnitData = {
           },
           {
             day: 4,
-            focus: "Feedback & Iteration",
+            focus: "Excel Charts & Data Visualization: Transforming Data into Business Insights",
             activities: [
-              "Gallery walk of cleaned datasets",
-              "Peer critique using rubric",
-              "Revise work based on feedback"
+              "Select appropriate chart types (column, line, pie, scatter)",
+              "Build and format charts to reveal patterns",
+              "Interpret visual insights for staffing and inventory"
             ],
             resources: [
-              "Peer critique form"
+              "Chart creation quick guides"
             ]
           },
           {
             day: 5,
-            focus: "Reflection/Checkpoint",
+            focus: "Advanced Forecast Automation (Regression)",
             activities: [
-              "Students create histogram & box-plot",
-              "Oral check-in on statistical findings"
+              "Set up Table-based forecast with FORECAST.LINEAR",
+              "Add scenario toggle (Baseline vs PromoAdjusted)",
+              "Implement audit checks and error handling"
             ],
             resources: [
-              "Histogram template"
+              "/resources/unit04-forecasting-advanced-practice.csv",
+              "Forecast template"
             ]
           }
         ]
@@ -312,6 +315,11 @@ export const unit04Data: UnitData = {
       {
         title: "Peer Critique & Pitch Rubrics",
         url: "/resources/unit04-rubrics.pdf",
+        type: "download"
+      },
+      {
+        title: "Advanced Forecasting Practice Dataset (Unit 04)",
+        url: "/resources/unit04-forecasting-advanced-practice.csv",
         type: "download"
       }
     ]
