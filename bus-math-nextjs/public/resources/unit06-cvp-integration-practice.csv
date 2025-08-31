@@ -1,0 +1,13 @@
+Scenario,AsOfDate,Price,Units,FixedCost,VariableCostPerUnit,TargetMarginPct,MinMarginPct,MaxMarginPct
+Base,2025-01-15,120,950,25000,62,0.22,0.15,0.35
+Stretch,2025-01-15,135,1100,26000,60,0.28,0.15,0.35
+Downside,2025-01-15,105,800,24000,65,0.18,0.15,0.35
+#EDGE_MissingName,2024-12-31,130,1000,25000,61,0.25,0.15,0.35
+#EDGE_StaleDate,2023-06-30,128,980,25000,61,0.24,0.15,0.35
+#EDGE_OutOfRangeMargin,2025-01-15,129,990,25000,61,1.10,0.15,0.35
+#EDGE_NegativeVarCost,2025-01-15,129,990,25000,-5,0.24,0.15,0.35
+# Notes:
+# - Use exact-match on Scenario names (ignore rows beginning with #EDGE_ in dashboards but use them to test validation).
+# - AsOfDate lets you flag stale data when older than 90 days.
+# - TargetMarginPct supports executive summary (e.g., "Margin below target" alert).
+# - Min/Max margin thresholds drive colored indicators on KPI cards.

@@ -1,0 +1,13 @@
+Scenario,AsOfDate,RevenueGrowthPct,GrossMarginPct,ChurnPct,AvgPrice,OpExGrowthPct,TargetRunwayMonths,MinMarginPct,MaxMarginPct
+Base,2025-01-15,0.18,0.42,0.03,120,0.08,9,0.30,0.55
+Stretch,2025-01-15,0.26,0.48,0.02,129,0.09,12,0.30,0.55
+Downside,2025-01-15,0.10,0.35,0.05,112,0.06,6,0.30,0.55
+#EDGE_MissingName,2025-01-15,0.22,0.44,0.03,125,0.08,9,0.30,0.55
+#EDGE_StaleDate,2023-05-31,0.20,0.43,0.03,124,0.08,9,0.30,0.55
+#EDGE_OutOfRangeRate,2025-01-15,1.20,0.40,0.03,124,0.08,9,0.30,0.55
+#EDGE_NegativeMargin,2025-01-15,0.18,-0.05,0.03,120,0.08,9,0.30,0.55
+# Notes:
+# - Use exact-match on Scenario names for switching (ignore rows beginning with #EDGE_ in dashboards but use them to test validation).
+# - AsOfDate should be recent (e.g., within 90 days) or flag as stale.
+# - TargetRunwayMonths supports an executive summary (e.g., "Runway below target" alert).
+# - Min/Max margin thresholds drive KPI indicator colors.

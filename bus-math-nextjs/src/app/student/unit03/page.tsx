@@ -1,4 +1,15 @@
 import { StudentUnitOverview } from "@/components/student/StudentUnitOverview"
+// Derive lessons from canonical lesson data to avoid drift
+import { lesson01Data } from "./lesson01/lesson-data"
+import { lesson02Data } from "./lesson02/lesson-data"
+import { lesson03Data } from "./lesson03/lesson-data"
+import { lesson04Data } from "./lesson04/lesson-data"
+import { lesson05Data } from "./lesson05/lesson-data"
+import { lesson06Data } from "./lesson06/lesson-data"
+import { lesson07Data } from "./lesson07/lesson-data"
+import { lesson08Data } from "./lesson08/lesson-data"
+import { lesson09Data } from "./lesson09/lesson-data"
+import { lesson10Data } from "./lesson10/lesson-data"
 
 const unit03Data = {
   id: "mdrhlhuxj2zkbimaqfd",
@@ -9,67 +20,23 @@ const unit03Data = {
 }
 
 const unit03Lessons = [
-  {
-    title: "Introduction: The Financial Story",
-    keyConcepts: ["Financial statement interconnections", "Investor narratives", "Company performance analysis", "Financial storytelling"],
-    learningObjectives: ["Understand three-statement relationships", "Identify investor information needs", "Analyze company performance stories", "Connect transactions to outcomes"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Core Concepts: Income Statement Analysis",
-    keyConcepts: ["Revenue recognition", "Expense classification", "Gross profit analysis", "Operating income trends"],
-    learningObjectives: ["Master income statement structure", "Analyze revenue and expense patterns", "Calculate key profitability metrics", "Identify performance drivers"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Core Concepts: Balance Sheet Dynamics",
-    keyConcepts: ["Asset valuation", "Liability management", "Equity structure", "Working capital analysis"],
-    learningObjectives: ["Understand balance sheet components", "Analyze asset and liability trends", "Evaluate financial position", "Calculate liquidity ratios"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Core Concepts: Cash Flow Integration",
-    keyConcepts: ["Operating cash flow", "Investing activities", "Financing activities", "Free cash flow"],
-    learningObjectives: ["Master cash flow statement", "Reconcile net income to cash flow", "Analyze cash generation ability", "Evaluate cash management"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: Integrated Model Building",
-    keyConcepts: ["Three-statement modeling", "Formula linking", "Scenario analysis", "Financial ratios"],
-    learningObjectives: ["Build integrated financial model", "Create statement linkages", "Implement scenario planning", "Calculate financial ratios"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: Ratio Analysis Dashboard",
-    keyConcepts: ["Financial ratio calculations", "Trend analysis", "Benchmarking", "Visual dashboards"],
-    learningObjectives: ["Create ratio analysis dashboard", "Build trend visualizations", "Implement benchmarking", "Design investor-ready reports"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Examples: Real Company Analysis",
-    keyConcepts: ["Public company cases", "Industry analysis", "Competitive positioning", "Investment decisions"],
-    learningObjectives: ["Analyze real financial statements", "Compare industry performance", "Evaluate investment potential", "Identify red flags"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Exercises: Building Your Storyboard",
-    keyConcepts: ["Narrative development", "Data visualization", "Presentation design", "Investor communication"],
-    learningObjectives: ["Create financial narrative", "Design compelling visualizations", "Build presentation materials", "Practice investor communication"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Project Work: Presentation Preparation",
-    keyConcepts: ["Board presentation skills", "Executive summary", "Key insights", "Recommendation development"],
-    learningObjectives: ["Prepare board presentation", "Develop executive summary", "Identify key insights", "Create actionable recommendations"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Presentations: Board Room Analysis",
-    keyConcepts: ["Professional presentation", "Financial analysis", "Strategic recommendations", "Q&A handling"],
-    learningObjectives: ["Present financial analysis to board", "Deliver strategic recommendations", "Handle executive questions", "Demonstrate analytical skills"],
-    durationEstimateMinutes: 45
-  }
-]
+  lesson01Data,
+  lesson02Data,
+  lesson03Data,
+  lesson04Data,
+  lesson05Data,
+  lesson06Data,
+  lesson07Data,
+  lesson08Data,
+  lesson09Data,
+  lesson10Data,
+].sort((a, b) => (a.sequence ?? 0) - (b.sequence ?? 0))
+  .map(ld => ({
+    title: ld.title,
+    keyConcepts: ld.keyConcepts,
+    learningObjectives: ld.learningObjectives,
+    durationEstimateMinutes: ld.durationEstimateMinutes ?? 45,
+  }))
 
 export default function Unit03Page() {
   return (

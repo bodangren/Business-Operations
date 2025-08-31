@@ -1,30 +1,31 @@
-// Unit 1, Lesson 6 data - extracted from MCP curriculum database
+// Unit 1, Lesson 6 — Integration & Presentation Readiness
 export const lesson06Data = {
   id: "mds5t7qxp0v3d9i52ti",
-  title: "Examples: Professional Ledger Applications",
+  title: "Integration & Dashboards: Decision‑Ready Ledger",
   sequence: 6,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
-    "Analyze professional ledger standards used in real business environments",
-    "Evaluate self-auditing features that meet investor and auditor expectations",
-    "Compare manual vs. automated accounting systems for efficiency and accuracy",
-    "Identify presentation-ready features that demonstrate business professionalism"
+    "Integrate driver tables and named ranges to switch scenarios",
+    "Link model outputs to charts and KPI cards for a single dashboard view",
+    "Use XLOOKUP/INDEX‑MATCH with IFNA/IFERROR for stable switching",
+    "Validate inputs (stale AsOfDate, out‑of‑range rates, missing scenario)",
+    "Communicate decisions with investor‑ready summaries and visuals"
   ],
   keyConcepts: [
-    "Professional accounting standards",
-    "Investor-ready financial controls",
-    "Self-auditing system benefits",
-    "Manual vs. automated system comparison",
-    "Business presentation standards"
+    "Scenario Manager / driver table",
+    "Named ranges and structured references",
+    "XLOOKUP exact‑match switching with IFNA/IFERROR",
+    "Chart data binding and expanding ranges",
+    "KPI thresholds and executive summaries"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Worked example analysis",
-    "Before/after system comparison",
-    "Professional standards review",
-    "Case study examination"
+    "Live demo and comparison",
+    "Direct instruction with worked syntax",
+    "Guided build with validation",
+    "Independent challenges with self‑assessment"
   ],
-  rationale: "This lesson provides real-world context by examining professional ledger systems and demonstrating the business value of automated financial controls.",
+  rationale: "Students integrate their advanced automation into a decision‑ready dashboard with scenario toggles, clear KPIs, and professional communication for investors.",
   status: "Draft"
 }
 
@@ -40,43 +41,36 @@ export const lesson06Phases = [
     id: "phase06-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Explore real professional ledger systems and discover what makes them investor-ready and audit-worthy",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To showcase a professional-looking financial dashboard.
+    description: "Sarah’s live dashboard demo with Base/Stretch/Downside toggles—see hard‑coded sheets vs integrated model.",
   },
   {
-    id: "phase06-intro", 
+    id: "phase06-intro",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn professional accounting standards and examine the features that meet business and regulatory requirements",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of professional standards.
+    description: "How to move from model to decision: driver tables, named ranges, exact‑match lookups, and KPI selection.",
   },
   {
     id: "phase06-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Analyze worked examples of professional ledgers and identify key features for business credibility",
-    // component: "TrialBalance" (id: 1753927426859mh078t2dd) - To analyze a professionally formatted trial balance.
-    // component: "IncomeStatementDetailed" (id: 1753927745716dmlfuxuab) - To analyze a detailed income statement.
+    description: "Build Sarah’s scenario controls, link to charts, and add business‑rule validation for reliability.",
   },
   {
     id: "phase06-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Compare manual vs. automated systems and evaluate their effectiveness for different business scenarios",
-    // component: "LemonadeStand" (id: 1753927462220rmxavvbb2) - A simple business simulation to compare manual tracking vs. the built-in automated reports.
+    description: "Tackle integration challenges with the unit01 dataset; produce a live‑updating dashboard and exec summary.",
   },
   {
     id: "phase06-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on professional ledger standards and system evaluation criteria",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess understanding of the concepts.
+    description: "Integration & dashboard mastery check—switching logic, named ranges, chart linkage, KPI interpretation.",
   },
   {
     id: "phase06-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on professional standards and prepare for independent ledger construction project",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesize wins and present with confidence; reflect on CAP skills and preview Lesson07.",
   }
 ]

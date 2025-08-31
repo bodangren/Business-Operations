@@ -1,4 +1,15 @@
 import { StudentUnitOverview } from "@/components/student/StudentUnitOverview"
+// Derive lessons from canonical lesson data to avoid drift
+import { lesson01Data } from "./lesson01/lesson-data"
+import { lesson02Data } from "./lesson02/lesson-data"
+import { lesson03Data } from "./lesson03/lesson-data"
+import { lesson04Data } from "./lesson04/lesson-data"
+import { lesson05Data } from "./lesson05/lesson-data"
+import { lesson06Data } from "./lesson06/lesson-data"
+import { lesson07Data } from "./lesson07/lesson-data"
+import { lesson08Data } from "./lesson08/lesson-data"
+import { lesson09Data } from "./lesson09/lesson-data"
+import { lesson10Data } from "./lesson10/lesson-data"
 
 const unit04Data = {
   id: "mdrhlhv2yok8auw4s3s",
@@ -9,67 +20,23 @@ const unit04Data = {
 }
 
 const unit04Lessons = [
-  {
-    title: "Introduction: The Weekend Rush Challenge",
-    keyConcepts: ["POS data analysis", "Weekend operations", "Profit optimization", "Waste management"],
-    learningObjectives: ["Understand café operational challenges", "Analyze POS data patterns", "Identify profit optimization opportunities", "Recognize waste reduction importance"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Core Concepts: Statistical Analysis Foundations",
-    keyConcepts: ["Descriptive statistics", "Data distributions", "Correlation analysis", "Trend identification"],
-    learningObjectives: ["Master statistical analysis techniques", "Calculate descriptive statistics", "Identify data patterns", "Perform correlation analysis"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: POS Data Analysis",
-    keyConcepts: ["Data import", "Data cleaning", "PivotTable analysis", "Chart creation"],
-    learningObjectives: ["Import and clean POS data", "Create analytical PivotTables", "Build informative charts", "Identify sales patterns"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: Forecasting Models",
-    keyConcepts: ["Trend analysis", "Seasonal patterns", "Forecasting formulas", "Confidence intervals"],
-    learningObjectives: ["Build forecasting models", "Identify seasonal trends", "Create demand predictions", "Calculate forecast accuracy"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: Optimization Analysis",
-    keyConcepts: ["Staffing optimization", "Inventory management", "Cost-benefit analysis", "Constraint modeling"],
-    learningObjectives: ["Optimize staffing schedules", "Manage inventory levels", "Analyze cost-benefit trade-offs", "Model operational constraints"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Examples: Industry Best Practices",
-    keyConcepts: ["Restaurant analytics", "Operations research", "Performance benchmarking", "Technology solutions"],
-    learningObjectives: ["Study industry analytics", "Learn optimization techniques", "Benchmark performance", "Evaluate technology solutions"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Exercises: Building Recommendations",
-    keyConcepts: ["Data-driven decisions", "Business recommendations", "Implementation planning", "ROI calculation"],
-    learningObjectives: ["Develop data-driven recommendations", "Create implementation plans", "Calculate return on investment", "Present business cases"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Summary: Implementation Strategy",
-    keyConcepts: ["Change management", "Performance monitoring", "Continuous improvement", "Success metrics"],
-    learningObjectives: ["Plan implementation strategy", "Design monitoring systems", "Create improvement processes", "Define success metrics"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Project Work: Presentation Preparation",
-    keyConcepts: ["Data presentation", "Statistical communication", "Business storytelling", "Visual design"],
-    learningObjectives: ["Prepare statistical presentation", "Communicate data insights", "Tell compelling stories", "Design effective visuals"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Presentations: Café Owner Consultation",
-    keyConcepts: ["Professional consulting", "Data-driven recommendations", "Implementation guidance", "Performance tracking"],
-    learningObjectives: ["Present to café owners", "Deliver actionable recommendations", "Provide implementation guidance", "Establish performance tracking"],
-    durationEstimateMinutes: 45
-  }
-]
+  lesson01Data,
+  lesson02Data,
+  lesson03Data,
+  lesson04Data,
+  lesson05Data,
+  lesson06Data,
+  lesson07Data,
+  lesson08Data,
+  lesson09Data,
+  lesson10Data,
+].sort((a, b) => (a.sequence ?? 0) - (b.sequence ?? 0))
+  .map(ld => ({
+    title: ld.title,
+    keyConcepts: ld.keyConcepts,
+    learningObjectives: ld.learningObjectives,
+    durationEstimateMinutes: ld.durationEstimateMinutes ?? 45,
+  }))
 
 export default function Unit04Page() {
   return (

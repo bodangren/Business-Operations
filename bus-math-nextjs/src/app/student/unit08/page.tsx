@@ -1,4 +1,15 @@
 import { StudentUnitOverview } from "@/components/student/StudentUnitOverview"
+// Derive lessons from canonical lesson data to avoid drift
+import { lesson01Data } from "./lesson01/lesson-data"
+import { lesson02Data } from "./lesson02/lesson-data"
+import { lesson03Data } from "./lesson03/lesson-data"
+import { lesson04Data } from "./lesson04/lesson-data"
+import { lesson05Data } from "./lesson05/lesson-data"
+import { lesson06Data } from "./lesson06/lesson-data"
+import { lesson07Data } from "./lesson07/lesson-data"
+import { lesson08Data } from "./lesson08/lesson-data"
+import { lesson09Data } from "./lesson09/lesson-data"
+import { lesson10Data } from "./lesson10/lesson-data"
 
 const unit08Data = {
   id: "mdrhlhv53tduw0ib5oa",
@@ -9,67 +20,23 @@ const unit08Data = {
 }
 
 const unit08Lessons = [
-  {
-    title: "Introduction: VC Reality Check",
-    keyConcepts: ["Venture capital process", "Model red flags", "Investor expectations", "Funding requirements"],
-    learningObjectives: ["Understand VC evaluation process", "Identify common model mistakes", "Learn investor expectations", "Define funding requirements"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Core Concepts: Financial Modeling",
-    keyConcepts: ["Revenue projections", "Cost modeling", "Growth assumptions", "Scenario planning"],
-    learningObjectives: ["Build revenue projections", "Model cost structures", "Validate growth assumptions", "Create scenario plans"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Core Concepts: Startup Metrics",
-    keyConcepts: ["Unit economics", "CAC and LTV", "Burn rate", "Runway calculations"],
-    learningObjectives: ["Calculate unit economics", "Understand CAC and LTV", "Track burn rate", "Project cash runway"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: Integrated Financial Model",
-    keyConcepts: ["Three-statement integration", "Dynamic modeling", "Sensitivity analysis", "Monte Carlo simulation"],
-    learningObjectives: ["Build integrated model", "Create dynamic assumptions", "Perform sensitivity analysis", "Run scenario simulations"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Excel Model: Investor Dashboard",
-    keyConcepts: ["KPI dashboards", "Investor metrics", "Visual presentations", "Executive summaries"],
-    learningObjectives: ["Create investor dashboard", "Track key metrics", "Design visual presentations", "Write executive summaries"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Examples: Successful Startup Models",
-    keyConcepts: ["Model case studies", "Success factors", "Common pitfalls", "Best practices"],
-    learningObjectives: ["Study successful models", "Identify success factors", "Avoid common pitfalls", "Apply best practices"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Exercises: Perfecting Your Model",
-    keyConcepts: ["Model refinement", "Assumption testing", "Peer review", "Expert feedback"],
-    learningObjectives: ["Refine financial model", "Test key assumptions", "Conduct peer reviews", "Incorporate expert feedback"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Summary: Pitch Preparation",
-    keyConcepts: ["Pitch deck creation", "Story development", "Financial highlights", "Q&A preparation"],
-    learningObjectives: ["Create compelling pitch deck", "Develop investment story", "Highlight financial strength", "Prepare for investor questions"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Project Work: Final Rehearsal",
-    keyConcepts: ["Presentation skills", "Investor communication", "Technical demonstration", "Confidence building"],
-    learningObjectives: ["Practice presentation skills", "Master investor communication", "Perfect technical demonstration", "Build presentation confidence"],
-    durationEstimateMinutes: 45
-  },
-  {
-    title: "Presentations: VC Pitch Panel",
-    keyConcepts: ["Professional pitch delivery", "VC panel engagement", "Model defense", "Funding readiness"],
-    learningObjectives: ["Deliver professional pitch", "Engage VC panel", "Defend financial model", "Demonstrate funding readiness"],
-    durationEstimateMinutes: 45
-  }
-]
+  lesson01Data,
+  lesson02Data,
+  lesson03Data,
+  lesson04Data,
+  lesson05Data,
+  lesson06Data,
+  lesson07Data,
+  lesson08Data,
+  lesson09Data,
+  lesson10Data,
+].sort((a, b) => (a.sequence ?? 0) - (b.sequence ?? 0))
+  .map(ld => ({
+    title: ld.title,
+    keyConcepts: ld.keyConcepts,
+    learningObjectives: ld.learningObjectives,
+    durationEstimateMinutes: ld.durationEstimateMinutes ?? 45,
+  }))
 
 export default function Unit08Page() {
   return (

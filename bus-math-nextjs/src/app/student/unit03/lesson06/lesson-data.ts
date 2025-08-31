@@ -1,22 +1,28 @@
 // Three-Statement Storyboard, Lesson 6 data - extracted from MCP curriculum database
 export const lesson06Data = {
   id: "mds5via91pq5u8xbug5",
-  title: "New Skill Focus: Balance Sheet Linking & Retained Earnings",
+  title: "Integration & Dashboard: Decision-Ready Three‑Statement Model",
   sequence: 6,
   unitId: "mdrhlhuxj2zkbimaqfd",
   learningObjectives: [
-    "Link Balance Sheet accounts with proper Retained Earnings reconciliation",
-    "Use INDEX/MATCH functions for dynamic cross-sheet data retrieval"
+    "Build scenario toggles (Base/Stretch/Downside) that safely switch model drivers",
+    "Link outputs to charts and KPI cards using structured references and named ranges",
+    "Add validation for exact-match lookups, stale dates, and out-of-range rates",
+    "Compose an investor-ready one‑page summary with clear decision cues"
   ],
   keyConcepts: [
-    "Balance Sheet account linking and Retained Earnings reconciliation",
-    "Cross-sheet linking with INDEX/MATCH and named ranges"
+    "Scenario Manager or driver‑table with named ranges",
+    "XLOOKUP/INDEX‑MATCH with IFNA/IFERROR for exact‑match switching",
+    "Chart/link stability with Tables and expanding ranges",
+    "KPI selection: margin, runway, current ratio, cash coverage",
+    "Executive summaries that frame decisions"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 55,
   pedagogicalApproach: [
-    "Direct instruction on Balance Sheet construction with cross-sheet linking"
+    "Textbook-first explanation, then integrated practice",
+    "Iterative build with validation and professional standards"
   ],
-  rationale: "To teach students the critical skill of linking financial statements, a key concept in financial modeling.",
+  rationale: "Students convert their three‑statement links into a decision‑ready dashboard with scenarios, live visuals, and a concise executive summary that builds investor trust.",
   status: "Draft"
 }
 
@@ -32,42 +38,42 @@ export const lesson06Phases = [
     id: "phase_hook_6",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Present real-world problem requiring the skills to be learned in this lesson",
-    // component: "BalanceSheetSimple" (id: 1753927706188pvbgh0paz) - To show a simple balance sheet with an obvious error.
+    description: "Sarah demos an investor dashboard request: one page, scenario toggles, clear decision cues",
+    // component: "ComprehensionCheck" – integration pitfalls and dashboard best practices
   },
   {
     id: "phase_introduction_6",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Systematic introduction of Balance Sheet account linking and Retained Earnings reconciliation with step-by-step demonstrations",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "From model to decision: driver tables, exact‑match switching, named ranges, and KPI linkage",
+    // component: "FillInTheBlank" – vocabulary on scenarios, slicers/filters, structured refs, IFNA/IFERROR
   },
   {
     id: "phase_guided_practice_6",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Balance Sheet account linking and Retained Earnings reconciliation with scaffolded support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building a balance sheet in a template.
+    description: "Build Sarah’s scenario controls, link to outputs and visuals, add validation flags",
+    // component: "ErrorCheckingSystem" – business rule checks; charts/FinancialDashboard for visuals
   },
   {
     id: "phase_independent_practice_6",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Balance Sheet account linking and Retained Earnings reconciliation independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building a balance sheet in a template.
+    description: "Integration mastery using dataset with Base/Stretch/Downside scenarios and KPI targets",
+    // feature: download integration dataset; build live‑updating dashboard and exec summary
   },
   {
     id: "phase_assessment_6",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Integration & dashboard mastery check: switching logic, stable links, KPI judgment",
+    // component: "ComprehensionCheck" – 8–10 questions
   },
   {
     id: "phase_closing_6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesize wins and preview Lesson 07 stakeholder review / worked examples",
+    // component: "ReflectionJournal" – CAP prompts
   }
 ]

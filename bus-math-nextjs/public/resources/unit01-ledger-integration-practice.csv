@@ -1,0 +1,10 @@
+Scenario,AsOfDate,Price,UnitCost,Volume,AR_Days,AP_Days,Overhead,Target_Margin_Pct,Target_Cash_Days
+Base,2025-01-15,45,22,800,25,20,3500,0.20,30
+Stretch,2025-01-15,49,21,950,22,25,3600,0.25,35
+Downside,2025-01-15,41,23,650,35,18,3400,0.20,30
+# Edge cases for validation below,,,,,,,,,
+MissingScenario,,47,22,820,25,20,3500,0.20,30
+Base,2023-12-01,45,22,800,25,20,3500,0.20,30
+Base,2025-01-15,45,-5,800,25,20,3500,0.20,30
+Base,2025-01-15,45,22,800,120,20,3500,0.20,30
+Typo-Case,2025-01-15,45,22,800,25,20,3500,0.20,30

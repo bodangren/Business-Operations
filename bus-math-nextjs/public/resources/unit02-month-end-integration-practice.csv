@@ -1,0 +1,9 @@
+Scenario,AsOfDate,Revenue_Growth_Pct,COGS_Pct,OpEx_Pct,AR_Days,AP_Days,Inventory_Days,Margin_Target_Pct,Runway_Target_Months,Notes
+Base,2025-06-30,0.06,0.58,0.28,30,20,25,0.20,6,Default planning case
+Stretch,2025-06-30,0.12,0.55,0.26,28,22,23,0.22,8,Aggressive growth with slightly better margins
+Downside,2025-06-30,-0.04,0.62,0.30,35,18,28,0.18,4,Revenue dips and costs rise
+Edge_MissingScenario,,0.05,0.58,0.28,30,20,25,0.20,6,Missing AsOfDate should trigger stale-date flag
+Edge_NegativeRate,2025-03-31,0.08,0.56,-0.05,30,20,25,0.21,6,Negative OpEx% should trigger validation
+Edge_Over100,2025-03-31,0.03,1.50,0.25,30,20,25,0.20,6,COGS% > 100% should trigger validation
+Edge_ShortRunway,2025-05-31,0.02,0.60,0.31,40,15,35,0.20,3,Runway under 4 months should show warning
+Edge_AR_Slow,2025-06-30,0.05,0.58,0.28,60,20,25,0.20,6,AR Days very high impacts cash coverage

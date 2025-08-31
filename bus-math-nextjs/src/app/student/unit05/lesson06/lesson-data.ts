@@ -1,22 +1,28 @@
-// PayDay Simulator, Lesson 6 data - extracted from MCP curriculum database
+// PayDay Simulator, Lesson 6 — Integration & Presentation: Decision‑Ready Payroll Dashboard
 export const lesson06Data = {
-  id: "mds5w750z2mfpi7ehte",
-  title: "New Skill Focus: XLOOKUP & Multi-Employee Systems",
+  id: "u05_l06_integration",
+  title: "Integration & Presentation: Payroll Decision Dashboard",
   sequence: 6,
   unitId: "mdrhlhv3ixkn2gykua",
   learningObjectives: [
-    "Use XLOOKUP to retrieve employee rates and tax information dynamically",
-    "Create professional bilingual pay stubs for diverse workforces"
+    "Integrate payroll engine outputs into a single, decision‑ready dashboard",
+    "Implement scenario switching (Base/Stretch/Downside) by exact name",
+    "Link model outputs to charts/tiles using structured references",
+    "Apply validation for missing IDs, negative hours, rate bounds, and stale AsOfDate",
+    "Communicate payroll KPIs (coverage days, margin, variance) with clear recommendations"
   ],
   keyConcepts: [
-    "XLOOKUP function for employee data and tax table retrieval",
-    "Data validation for bilingual pay stub formatting"
+    "Named‑range or driver table scenario control",
+    "XLOOKUP/INDEX‑MATCH exact‑match switching with IFNA/IFERROR",
+    "Structured references (Table[Column]) for stable visuals",
+    "KPI thresholds (coverage days, payroll % of revenue, variance) driving summaries",
+    "Auditability, documentation, and performance standards"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Master XLOOKUP for employee data management and payroll register creation"
+    "Integrate prior automation into a scenario‑driven dashboard and present"
   ],
-  rationale: "To introduce students to the powerful XLOOKUP function and to teach them how to create a multi-employee payroll register.",
+  rationale: "Students turn Lesson04–05 payroll automation into a live, investor‑ready system: scenario controls, linked visuals, validation, and clear decision cues.",
   status: "Draft"
 }
 
@@ -32,42 +38,42 @@ export const lesson06Phases = [
     id: "phase_hook_6",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Present real-world problem requiring the skills to be learned in this lesson",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To show a payroll register with missing information.
+    description: "Live demo: one dashboard view with Base/Stretch/Downside and payroll decision cues",
+    // component: "ComprehensionCheck" – integration pitfalls & best practices
   },
   {
     id: "phase_introduction_6",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce XLOOKUP function for employee data and tax table retrieval and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "From model to decision: scenario tools, exact‑match linking, visuals, and KPI selection",
+    // component: "FillInTheBlank" – vocabulary on scenario drivers, structured refs, IFNA/IFERROR
   },
   {
     id: "phase_guided_practice_6",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying XLOOKUP function for employee data and tax table retrieval with scaffolded support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice using XLOOKUP in a template.
+    description: "Build Sarah’s payroll dashboard with scenario controls, linked charts, and validation",
+    // component: "ErrorCheckingSystem" – integration + validation practice
   },
   {
     id: "phase_independent_practice_6",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice XLOOKUP function for employee data and tax table retrieval independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice using XLOOKUP in a template.
+    description: "Integration mastery challenges with downloadable payroll dataset; executive summary outputs",
+    // resources: /public/resources/unit05-payroll-integration-practice.csv
   },
   {
     id: "phase_assessment_6",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Mastery check: scenario switching, linking, chart stability, and KPI judgment",
+    // component: "ComprehensionCheck" – 8–10 questions
   },
   {
     id: "phase_closing_6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesis and reflection: reliability improvements and presentation readiness",
+    // component: "ReflectionJournal" – CAP prompts
   }
 ]

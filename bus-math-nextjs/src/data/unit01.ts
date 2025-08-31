@@ -301,6 +301,11 @@ export const unit01Data: UnitData = {
         type: "download"
       },
       {
+        title: "Unit01 Integration Practice Dataset (CSV)",
+        url: "/resources/unit01-ledger-integration-practice.csv",
+        type: "download"
+      },
+      {
         title: "Standard Chart of Accounts",
         url: "/resources/chart-of-accounts.pdf",
         type: "download"

@@ -1,0 +1,7 @@
+Scenario,AsOfDate,OvertimeThresholdHours,OvertimeRateMultiplier,BasePayFrequency,TaxRatePct,SSRatePct,MedicareRatePct,StateTaxRatePct,Employer401kMatchPct,MinWage,PayrollCoverageTargetDays,PayrollPctRevenueTarget,Note
+Base,2025-03-31,40,1.5,biweekly,0.18,0.062,0.0145,0.045,0.03,15.00,14,0.30,"Standard payroll assumptions baseline"
+Stretch,2025-03-31,40,1.5,biweekly,0.18,0.062,0.0145,0.040,0.04,15.25,21,0.28,"Slightly lower state rate; stronger cash coverage"
+Downside,2025-03-31,38,1.75,weekly,0.20,0.062,0.0145,0.050,0.00,15.00,10,0.33,"More overtime; tighter coverage"
+"",,40,1.5,biweekly,0.18,0.062,0.0145,0.045,0.03,15.00,14,0.30,"Edge: Missing scenario name"
+EdgeRateOutOfRange,2024-12-31,40,2.50,biweekly,1.20,0.99,0.50,1.10,-0.10,0.00,-5,1.50,"Edge: Impossible rates; negative targets; stale date"
+EdgeStaleDate,2024-01-01,40,1.5,biweekly,0.18,0.062,0.0145,0.045,0.03,15.00,14,0.30,"Edge: AsOfDate is stale (>30 days)"
