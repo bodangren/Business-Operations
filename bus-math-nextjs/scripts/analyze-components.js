@@ -48,45 +48,40 @@ function getComponentFiles(dir, category = '') {
 
 // Search for component usage in teacher/ and student/ directories
 function findComponentUsage(componentName, searchDirs) {
-  const usages = []
-  
+  // Track unique files where the component appears (import or JSX usage)
+  const filesWithUsage = new Set()
+
   function searchInDirectory(dir) {
     if (!fs.existsSync(dir)) return
-    
+
     const items = fs.readdirSync(dir, { withFileTypes: true })
-    
+
     for (const item of items) {
       const fullPath = path.join(dir, item.name)
-      
+
       if (item.isDirectory()) {
         searchInDirectory(fullPath)
       } else if (item.name.endsWith('.tsx') || item.name.endsWith('.ts')) {
         try {
           const content = fs.readFileSync(fullPath, 'utf8')
-          const lines = content.split('\n')
-          
-          lines.forEach((line, lineIndex) => {
-            // Look for import statements and component usage
-            const importRegex = new RegExp(`import.*\\b${componentName}\\b.*from`, 'g')
-            const usageRegex = new RegExp(`<${componentName}\\b`, 'g')
-            
-            if (importRegex.test(line) || usageRegex.test(line)) {
-              usages.push({
-                file: path.relative(srcDir, fullPath),
-                line: lineIndex + 1,
-                context: line.trim().substring(0, 100)
-              })
-            }
-          })
+          // Look for either an import that mentions the component or JSX usage
+          const importRegex = new RegExp(`import[\\s\\S]*?\\b${componentName}\\b[\n\r]*[\s\S]*?from`, 'm')
+          const usageRegex = new RegExp(`<${componentName}(\\s|/|>)`, 'm')
+
+          if (importRegex.test(content) || usageRegex.test(content)) {
+            filesWithUsage.add(path.relative(srcDir, fullPath))
+          }
         } catch (err) {
           console.warn(`Warning: Could not read file ${fullPath}`)
         }
       }
     }
   }
-  
+
   searchDirs.forEach(searchInDirectory)
-  return usages
+
+  // Return array of objects with only file field; no line numbers or context
+  return Array.from(filesWithUsage).map((file) => ({ file }))
 }
 
 // Main analysis function

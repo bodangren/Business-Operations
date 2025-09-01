@@ -8,8 +8,6 @@ import { RefreshCw, ExternalLink, Play } from 'lucide-react'
 
 interface ComponentUsage {
   file: string
-  line: number
-  context: string
 }
 
 interface ComponentInfo {
@@ -231,11 +229,8 @@ export default function ComponentsReportPage() {
                                 <div key={idx} className="flex items-center gap-2 text-sm">
                                   <ExternalLink className="w-3 h-3 text-gray-400" />
                                   <code className="bg-gray-100 px-2 py-1 rounded text-xs">
-                                    {usage.file}:{usage.line}
+                                    {usage.file}
                                   </code>
-                                  <span className="text-gray-600 truncate max-w-md">
-                                    {usage.context}
-                                  </span>
                                 </div>
                               ))}
                             </div>
