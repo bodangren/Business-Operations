@@ -1,0 +1,21 @@
+Scenario,AsOfDate,Account,Type,Amount,Description,Notes
+Base,2025-05-31,Cash,Debit,2200,Client payment received,Valid
+Base,2025-05-31,Service Revenue,Credit,2200,Revenue for project,Valid
+Stretch,2025-05-31,Accounts Receivable,Debit,1100,Invoice issued,Valid
+Stretch,2025-05-31,Service Revenue,Credit,1100,Revenue recognized,Valid
+Downside,2025-05-31,Utilities Expense,Debit,300,Monthly utilities,Valid
+Downside,2025-05-31,Cash,Credit,300,Payment made,Valid
+Base,2025-05-15,Inventory,Debit,850,Stock purchase,Should tie to AP
+Base,2025-05-15,Accounts Payable,Credit,850,Vendor invoice,Should tie to Inventory
+EdgeCase,2024-01-01,Cash,Debit,0,Zero-amount test,Edge: zero amount
+EdgeCase,2025-05-31,Sales Tax Payable,Credit,-45,Negative liability,Invalid negative amount
+Base,2024-12-31,Service Revenue,Credit,6500,Stale date test,Edge: stale AsOfDate
+Stretch,2025-05-31,Unknown Account,Debit,200,Invalid account name,Invalid account
+Downside,2025-05-31,Accounts Receivable,Credit,500,Write-off without debit pair,Unbalanced
+Base,2025-05-31,Marketing Expense,Debit,199.995,Rounding stress near threshold,Edge: rounding
+Base,2025-05-31,Cash,Credit,199.995,Payment rounding pair,Edge: rounding
+Base,2025-05-31,Bank Reconciliation Adjustment,Debit,25,Recon item missing pair,Recon: expect tie-out
+Base,2025-05-31,Owner’s Equity,Credit,25,Owner contribution small,Recon: equity tie
+Typo,2025-05-31,Accounts Recievable,Debit,400,Spelling variant to test exact-match lookup,Invalid scenario/typo
+Downside,2025-05-31,Refunds & Returns,Debit,100,Return processed,Valid edge account
+Downside,2025-05-31,Cash,Credit,100,Refund paid,Valid

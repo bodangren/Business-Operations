@@ -1,0 +1,16 @@
+Employee_ID,ScenarioName,Hours_Worked,Hourly_Rate,OvertimeRateMultiplier,TaxRatePct,AsOfDate,Bank_Amount,Register_Amount,Notes
+EMP001,Base,38,22.00,1.5,18%,2024-06-28,836.00,836.00,Normal week
+EMP002,Base,41,18.50,1.5,16%,2024-06-28,776.75,776.75,Overtime 1 hour
+EMP003,Stretch,45,25.00,1.5,22%,2024-06-28,1218.75,1218.75,OT heavy
+EMP004,Downside,35,19.00,1.5,15%,2024-06-28,665.00,665.00,Short week
+EMP005,Base,40,20.00,1.5,17%,2024-06-28,800.00,800.00,Exact 40
+EMP006,Stretch,52,16.75,1.5,14%,2024-06-28,871.00,871.00,OT > 10%
+EMP007,Unknown,39,21.00,1.5,18%,2024-06-28,819.00,819.00,Invalid scenario name (should trigger IFNA/IFERROR)
+EMP008,Base,37.5,27.25,1.5,19%,2024-06-28,1021.88,1021.88,Rounding stress (.5 hours)
+EMP009,Base,40,-15.00,1.5,20%,2024-06-28,0.00,0.00,Invalid negative rate (should be flagged)
+EMP010,Stretch,-2,24.00,1.5,20%,2024-06-28,0.00,0.00,Invalid negative hours (should be flagged)
+EMP011,Base,42,30.00,1.5,105%,2024-06-28,1365.00,1365.00,Tax rate > 100% (should be flagged)
+EMP012,Base,40,23.00,1.5,18%,2023-01-15,920.00,920.00,Stale AsOfDate (should be flagged)
+EMP013,Base,40,24.00,1.5,18%,2024-06-28,960.00,959.99,Bank vs Register 0.01 rounding difference
+EMP014,Base,40,24.00,1.5,18%,2024-06-28,960.00,940.00,Bank fee/timing difference ($20) – investigate
+EMP015,Stretch,60,20.00,1.25,18%,2024-06-28,1300.00,1300.00,Nonstandard OT multiplier (edge case)

@@ -1,22 +1,27 @@
-// Asset & Inventory Tracker, Lesson 7 data - extracted from MCP curriculum database
+// Asset & Inventory Tracker, Lesson 7 data - Production Studio focus
 export const lesson07Data = {
   id: "mds5x9a0ilvdijl97xj",
-  title: "Ratio & Visualization",
+  title: "Production Studio: Model Completion, QA, and Presentation",
   sequence: 7,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Analyze inventory turnover ratios for operational insights",
-    "Design professional charts for financial data visualization"
+    "Complete the inventory/asset model and remove hard‑coded outputs",
+    "Enforce exact‑match lookups with IFNA/IFERROR and clear messages",
+    "Bind visuals to structured references and verify reconciliation checks",
+    "Publish an investor‑ready summary with KPI‑driven insights"
   ],
   keyConcepts: [
-    "Inventory Turnover Ratio calculation and business implications",
-    "Chart creation for inventory turnover and COGS visualization"
+    "Named ranges and structured references (Tables)",
+    "XLOOKUP / INDEX‑MATCH (exact) with IFNA/IFERROR",
+    "Validation + reconciliation (inventory ledger ↔ financial statements)",
+    "KPI thresholds (turnover, days‑on‑hand) driving executive summaries"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Calculate inventory turnover ratio and create impact visualizations"
+    "Production‑style sprint with standards, QA, peer audit, and presentation readiness"
   ],
-  rationale: "To teach students how to calculate and interpret the inventory turnover ratio, a key performance indicator for any business that holds inventory.",
+  rationale:
+    "Students harden the Unit 07 inventory & asset tracker for real stakeholders by enforcing exact references, documenting assumptions, reconciling stock movements, and packaging insights for fast investor review.",
   status: "Draft"
 }
 
@@ -32,42 +37,42 @@ export const lesson07Phases = [
     id: "phase_hook_7",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for ratio & visualization",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To show a dashboard with an inventory turnover ratio.
+    description: "Production kickoff and stakes: investor expects an audit‑ready tracker today",
+    // component: "ComprehensionCheck" – Standards quick check
   },
   {
     id: "phase_introduction_7",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Inventory Turnover Ratio calculation and business implications and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Standards, Definition of Done checklist, and short build plan",
+    // component: "FillInTheBlank" – Vocabulary on lookups, validation, reconciliation
   },
   {
     id: "phase_guided_practice_7",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Inventory Turnover Ratio calculation and business implications with scaffolded support",
-    // component: "RatioMatching" (id: 1753935864452j9g67dvgn) - To practice matching the ratio to its formula.
+    description: "Production Sprint I: Finish core links, enforce exact lookups, no hard‑codes",
+    // component: "ErrorCheckingSystem" – Initial rules and safeguards
   },
   {
     id: "phase_independent_practice_7",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Inventory Turnover Ratio calculation and business implications independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice calculating the ratio in a template.
+    description: "Production Sprint II: QA + reconciliation, visuals bound to tables, executive summary",
+    // component: "FinancialDashboard" – Visual verification and KPI readout
   },
   {
     id: "phase_assessment_7",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "QA review + peer audit with checklist; mini comprehension check on tradeoffs",
+    // component: "PeerCritiqueForm" – Peer audit capture
   },
   {
     id: "phase_closing_7",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesis, readiness check, CAP reflection, preview to Lesson08",
+    // component: "ReflectionJournal" – CAP prompts
   }
 ]

@@ -1,20 +1,27 @@
 // Data-Driven Café, Lesson 7 data - extracted from MCP curriculum database
 export const lesson07Data = {
   id: "mds5vu0cmuyzd6czgp",
-  title: "Exercises: Independent Analysis Completion",
+  title: "Production Studio: Model Completion, QA, and Presentation",
   sequence: 7,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Develop inventory and staffing recommendations based on statistical analysis"
+    "Complete the forecasting model and remove hard‑coded outputs",
+    "Enforce exact‑match lookups with IFNA/IFERROR and clear messages",
+    "Bind charts to structured references and verify reconciliation checks",
+    "Publish an investor‑ready one‑screen dashboard and executive summary"
   ],
   keyConcepts: [
-    "Cost-benefit analysis for inventory and staffing decisions"
+    "Named ranges and structured references",
+    "XLOOKUP / INDEX‑MATCH (exact match) with IFNA/IFERROR",
+    "Validation and reconciliation for auditability",
+    "KPI thresholds driving decision‑ready summaries"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Complete comprehensive statistical analysis and develop business recommendations"
+    "Production‑style sprint with standards, QA, peer audit, and presentation readiness"
   ],
-  rationale: "To provide students with an opportunity to apply all of the skills they have learned in the unit to a single, comprehensive project.",
+  rationale:
+    "Students harden the Unit 04 café forecasting model for real stakeholders by enforcing exact references, documenting assumptions, and packaging insights for fast investor review.",
   status: "Draft"
 }
 
@@ -30,42 +37,42 @@ export const lesson07Phases = [
     id: "phase_hook_7",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for exercises: independent analysis completion",
-    // No component needed for this phase.
+    description: "Production kickoff and stakes: investor expects an audit‑ready forecast today",
+    // component: "ComprehensionCheck" – Standards quick check
   },
   {
     id: "phase_introduction_7",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Cost-benefit analysis for inventory and staffing decisions and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Standards, Definition of Done checklist, and short build plan",
+    // component: "FillInTheBlank" – Vocabulary on lookups, validation, reconciliation
   },
   {
     id: "phase_guided_practice_7",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Cost-benefit analysis for inventory and staffing decisions with scaffolded support",
-    // component: "InventoryManager" (id: 1753927452727xpb8ayrii) - To practice inventory management and see the cost-benefit effects.
+    description: "Production Sprint I: Finish core links, enforce exact lookups, no hard‑codes",
+    // component: "ErrorCheckingSystem" – Initial rules and safeguards
   },
   {
     id: "phase_independent_practice_7",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Apply Cost-benefit analysis for inventory and staffing decisions independently to solve authentic business problems",
-    // component: "InventoryManager" (id: 1753927452727xpb8ayrii) - To practice inventory management and see the cost-benefit effects.
+    description: "Production Sprint II: QA + reconciliation, visuals bound to tables, executive summary",
+    // component: "FinancialDashboard" – Visual verification and KPI readout
   },
   {
     id: "phase_assessment_7",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "QA review + peer audit with checklist; mini comprehension check on tradeoffs",
+    // component: "PeerCritiqueForm" – Peer audit capture
   },
   {
     id: "phase_closing_7",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesis, readiness check, CAP reflection, preview to Lesson08",
+    // component: "ReflectionJournal" – CAP prompts
   }
 ]

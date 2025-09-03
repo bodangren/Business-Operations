@@ -1,0 +1,12 @@
+Scenario,AsOfDate,Units,UnitPrice,COGSPerUnit,OpEx,TaxRate,GrowthRate,AR_Days,AP_Days,InvalidFlag,Notes
+Base,2025-08-15,1200,38.50,19.75,14500,0.21,0.06,30,25,,Typical month baseline
+Stretch,2025-08-15,1500,41.00,20.00,15250,0.21,0.12,28,25,,Higher price and volume
+Downside,2025-08-15,900,36.00,20.50,14000,0.21,-0.05,35,30,,Lower volume; higher COGS
+Unknown,2025-08-15,1100,39.00,19.90,14600,0.21,0.05,30,25,TRUE,Invalid scenario name (should trigger IFNA)
+Base_Stale,2024-06-01,1200,38.50,19.75,14500,0.21,0.06,30,25,TRUE,Stale AsOfDate (should trigger freshness rule)
+EdgeHighRate,2025-08-15,1200,38.50,19.75,14500,1.15,0.06,30,25,TRUE,TaxRate > 100% (invalid)
+NegativeRate,2025-08-15,1200,38.50,19.75,14500,-0.05,0.06,30,25,TRUE,Negative TaxRate (invalid)
+NearThresholdUp,2025-08-15,1250,40.00,19.80,14650,0.21,0.099,29,25,,Growth just below 10% threshold
+NearThresholdDown,2025-08-15,1245,39.80,19.85,14650,0.21,0.101,29,25,,Growth just above 10% threshold
+RoundingStress,2025-08-15,1333,37.37,19.19,14141,0.213,0.061,31,27,,Repeating decimals to test rounding
+MissingRecon,2025-08-15,1100,39.00,19.90,14500,0.21,0.06,30,25,TRUE,Use to simulate missing reconciliation line

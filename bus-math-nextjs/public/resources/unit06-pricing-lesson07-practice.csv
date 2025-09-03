@@ -1,0 +1,15 @@
+ScenarioName,AsOfDate,Price,VariableCostPerUnit,FixedCostPerMonth,ExpectedVolume,DiscountRate,ConversionRate,ReturnRate,Notes
+Base,2025-01-15,120,55,18000,850,0.05,0.22,0.04,Healthy baseline
+Stretch,2025-01-15,135,55,18000,950,0.05,0.25,0.03,Aggressive sales target
+Downside,2025-01-15,110,60,20000,700,0.06,0.18,0.05,Conservative scenario
+Edge-Rounding,2025-01-15,19.99,8.5,3500,1000,0.00,0.30,0.02,Near-threshold pricing for rounding tests
+StaleDate,2023-03-01,120,55,18000,850,0.05,0.22,0.04,Should flag stale AsOfDate
+InvalidScenario,2025-01-15,125,55,18000,800,0.05,0.22,0.04,Name not found in lookup table
+BadRateHigh,2025-01-15,120,55,18000,850,1.20,0.22,0.04,DiscountRate > 100% (invalid)
+BadRateNegative,2025-01-15,120,55,18000,850,-0.10,0.22,0.04,Negative DiscountRate (invalid)
+NegativeVolume,2025-01-15,120,55,18000,-50,0.05,0.22,0.04,Negative volume (invalid)
+ZeroConversion,2025-01-15,120,55,18000,850,0.05,0.00,0.04,ConversionRate = 0 (edge case)
+OverOneConversion,2025-01-15,120,55,18000,850,0.05,1.10,0.04,ConversionRate > 1 (invalid)
+HighReturnRate,2025-01-15,120,55,18000,850,0.05,0.22,0.60,ReturnRate extremely high (stress)
+NearKPI1,2025-01-15,128,56,18500,820,0.05,0.21,0.04,Near target margin threshold
+NearKPI2,2025-01-15,115,54,17500,980,0.05,0.24,0.04,Near revenue/runway threshold

@@ -1,0 +1,15 @@
+Scenario,AsOfDate,Week,MenuID,Type,Units,Price,PromoFlag,GrowthRatePct,Note
+Baseline,2025-03-01,13,DRK-101,Drink,120,4.50,0,5.0,
+Baseline,2025-03-08,14,DRK-101,Drink,126,4.50,0,5.0,
+PromoAdjusted,2025-03-15,15,DRK-101,Drink,150,4.50,1,5.0,Near-threshold spike
+Downside,2025-03-22,16,DRK-101,Drink,110,4.50,0,-2.0,
+Baseline,2025-03-01,13,FOOD-205,Food,80,8.00,0,3.0,
+Baseline,2025-03-08,14,FOOD-205,Food,82,8.00,0,3.0,
+PromoAdjusted,2025-03-15,15,FOOD-205,Food,96,8.00,1,3.0,
+Downside,2025-03-22,16,FOOD-205,Food,76,8.00,0,-1.0,
+InvalidScenario,2025-03-22,16,DRK-101,Drink,118,4.50,0,5.0,Invalid scenario name — should trigger IFNA message
+Baseline,2023-06-01,1,DRK-101,Drink,90,4.50,0,5.0,Stale AsOfDate — should trigger freshness validation
+Baseline,2025-03-29,17,DRK-101,Drink,130,4.50,0,105.0,>100% rate — should be flagged
+Baseline,2025-03-29,17,FOOD-205,Food,-5,8.00,0,3.0,Negative units — invalid input
+Baseline,2025-04-05,18,FOOD-999,Food,70,7.50,0,2.0,Missing MenuID in master — lookup should message
+Baseline,2025-04-12,19,DRK-101,Drink,131,4.50,0,5.0,Edge close to KPI threshold

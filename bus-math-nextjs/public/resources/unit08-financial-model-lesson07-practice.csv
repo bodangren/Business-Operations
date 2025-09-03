@@ -1,0 +1,13 @@
+Scenario,AsOfDate,GrowthRatePct,GrossMarginPct,ChurnRatePct,Price,OpExGrowthPct,BankBalance,LedgerCashTotal,Note
+Base,2025-01-31,0.03,0.36,0.02,49.00,0.02,25000.00,25000.00,Normal case (passes all checks)
+Stretch,2025-01-31,0.06,0.42,0.01,55.00,0.03,40250.10,40250.11,Rounding stress (1 cent diff)
+Downside,2025-01-31,0.01,0.34,0.04,45.00,0.01,12000.00,11999.99,Margin near threshold; reconciliation off by -0.01
+InvalidScenario,2025-01-31,0.04,0.38,0.02,50.00,0.02,18000.00,18000.00,Invalid scenario name (should trigger flag)
+Base,2023-11-30,0.03,0.37,0.02,49.00,0.02,24000.00,24000.00,Stale AsOfDate (should trigger freshness check)
+Base,2025-01-31,1.20,0.40,0.02,49.00,0.02,26000.00,26000.00,GrowthRatePct > 100% (invalid)
+Base,2025-01-31,0.03,1.05,0.02,49.00,0.02,27000.00,27000.00,GrossMarginPct > 100% (invalid)
+Base,2025-01-31,0.03,-0.10,0.02,49.00,0.02,23000.00,23000.00,Negative margin (invalid)
+Base,2025-01-31,0.03,0.36,-0.05,49.00,0.02,22000.00,22000.00,Negative churn rate (invalid)
+Base,2025-01-31,0.03,0.36,0.02,49.00,-0.10,21000.00,21000.00,Negative OpEx growth (invalid)
+Base,2025-01-31,0.00,0.35,0.02,49.00,0.02,20000.00,20000.00,Exactly at margin threshold 35%
+Base,2025-01-31,0.029,0.3501,0.0201,49.00,0.0201,19999.99,19999.99,Edge rounding for KPI and rates

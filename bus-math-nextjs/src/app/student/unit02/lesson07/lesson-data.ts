@@ -1,20 +1,27 @@
 // Month-End Wizard, Lesson 7 data - extracted from MCP curriculum database
 export const lesson07Data = {
   id: "mds5v4udik3kb3x51po",
-  title: "Time-to-Close Simulation: Testing Automation",
+  title: "Production Studio: Completion, QA, and Investor Readiness",
   sequence: 7,
   unitId: "mdrhkhm79v8qau43696",
   learningObjectives: [
-    "Implement error-checking and validation in automated systems"
+    "Finish and harden the month‑end automation with exact-match lookups and structured references",
+    "Implement comprehensive validation, reconciliation, and error handling",
+    "Prepare an investor‑ready summary with clear visuals and decision‑focused messaging"
   ],
   keyConcepts: [
-    "Error-checking routines and data validation techniques"
+    "XLOOKUP/INDEX‑MATCH with exact match",
+    "IFNA/IFERROR and user‑friendly messages",
+    "Named ranges, Tables, structured references",
+    "Reconciliation tie‑outs and auditability",
+    "Scenario drivers and KPI thresholds"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Full system testing and time measurement against 2-hour target"
+    "Production‑style sprint with Definition of Done checklist",
+    "Peer audit and concise executive communication"
   ],
-  rationale: "To provide a realistic test of the students' automated systems and to reinforce the importance of efficiency and accuracy.",
+  rationale: "Students complete and quality‑assure the Unit 02 automation, then present a concise, decision‑ready model that builds investor confidence.",
   status: "Draft"
 }
 

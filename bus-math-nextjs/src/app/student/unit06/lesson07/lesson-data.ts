@@ -1,22 +1,26 @@
 // PriceLab Challenge, Lesson 7 data - extracted from MCP curriculum database
 export const lesson07Data = {
   id: "mds5wn3xm9hisij8jqf",
-  title: "Data Tables for Sensitivity Analysis",
+  title: "Production Studio: Completion, QA, and Presentation Readiness",
   sequence: 7,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Create one- and two-variable data tables for scenario analysis",
-    "Perform sensitivity analysis using multiple Excel tools"
+    "Complete the pricing model with exact-match lookups and structured references",
+    "Implement validation, reconciliation, and clear error handling for reliability",
+    "Prepare an investor-ready summary tied to KPI thresholds and scenarios"
   ],
   keyConcepts: [
-    "Data Tables (one- and two-variable) for what-if analysis",
-    "Sensitivity analysis principles and applications"
+    "Exact-match lookups with IFNA/IFERROR",
+    "Named ranges, Tables, and structured references",
+    "Validation rules and reconciliation tie-outs",
+    "Sensitivity scenarios and decision-ready summaries"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Build comprehensive what-if analysis using one- and two-variable data tables"
+    "Production sprint flow: build → validate → visualize → present",
+    "Peer audit using a Definition of Done checklist"
   ],
-  rationale: "To teach students how to use data tables to perform sensitivity analysis, a critical skill for understanding the impact of uncertainty on business decisions.",
+  rationale: "Students finish and harden their Unit 06 PriceLab model with professional QA, then prepare concise, decision-ready outputs for investors.",
   status: "Draft"
 }
 

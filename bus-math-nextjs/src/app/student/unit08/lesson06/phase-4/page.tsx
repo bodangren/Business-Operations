@@ -58,7 +58,7 @@ export default function Phase4Page() {
                   <ul className="list-disc list-inside text-amber-900">
                     <li>Scenario selector switches drivers with no #N/A errors</li>
                     <li>All outputs use links; no hard‑coded numbers in reports</li>
-                    <li>Validation flags: stale AsOfDate, negative margin, &gt100% rates</li>
+                    <li>Validation flags: stale AsOfDate, negative margin, &gt; 100% rates</li>
                     <li>Charts reference Tables and expand correctly</li>
                     <li>Executive summary matches KPI thresholds</li>
                   </ul>

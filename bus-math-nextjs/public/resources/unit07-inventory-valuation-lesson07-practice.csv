@@ -1,0 +1,12 @@
+AsOfDate,Scenario,SKU,ItemName,Method,BegQty,BegUnitCost,PurchasesQty,PurchasesUnitCost,SalesQty,UnitPrice,ShrinkQty,Notes
+2025-01-31,Base,TS-USB-16,USB Drive 16GB,FIFO,120,4.50,80,4.40,150,9.99,2,Normal month; near-threshold turnover
+2025-01-31,Base,TS-HDST-1TB,Portable HDD 1TB,LIFO,60,42.00,40,45.00,35,79.00,0,Cost rising; check LIFO valuation
+2025-01-31,Base,TS-MOUSE-WL,Wireless Mouse,WA,200,8.00,0,0.00,50,19.50,1,No purchases this period; average cost unchanged
+2024-09-30,Base,TS-KBD-LED,LED Keyboard,FIFO,90,15.00,50,15.50,20,39.00,0,STALE AsOfDate (should trigger warning)
+2025-01-31,Stretch,TS-CAM-1080,Webcam 1080p,FIFO,40,22.00,120,20.50,10,49.00,0,Excess build vs sales; DOH likely high
+2025-01-31,Downside,TS-CASE-LPT,Laptop Case 15in,WA,150,6.00,30,6.20,155,14.00,3,Edge: nearly clears stock; test zero/negative ending
+2025-01-31,Base,TS-CBL-HDMI,HDMI Cable 2m,FIFO,300,2.20,0,0.00,0,6.99,0,No movement; watch turnover divide-by-zero safeguards
+2025-01-31,INVALID_SCENARIO,TS-ADPT-USB,USB‑C Adapter,LIFO,50,7.50,20,7.80,25,17.99,0,Invalid scenario name (expect IFNA guidance)
+2025-01-31,Base,TS-BATT-AA,AA Batteries 24pk,WA,200,5.20,-10,5.10,30,12.99,0,Negative purchase qty (invalid input)
+2025-01-31,Base,,Cable Ties 100pk,FIFO,100,1.10,50,1.05,60,3.99,0,Missing SKU (key) should be flagged
+2025-01-31,Base,TS-ROUTER-AC,AC Router,FIFO,25,55.00,10,60.00,24,119.00,1,Near-out-of-stock; check reorder signal

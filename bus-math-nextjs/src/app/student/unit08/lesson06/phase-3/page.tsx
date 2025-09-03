@@ -39,7 +39,7 @@ export default function Phase3Page() {
                     <li>Build a selector cell (scenario name) and use <strong>XLOOKUP with IFNA</strong> to pull driver values.</li>
                     <li>Link outputs (Revenue, COGS, Profit, Cash Flow) to the driver cells—no hard‑coding.</li>
                     <li>Point charts at an Excel <strong>Table</strong> so they expand as months are added.</li>
-                    <li>Add validation: stale AsOfDate, margin &lt 0, rates &gt 100%, missing scenario name.</li>
+                    <li>Add validation: stale AsOfDate, margin &lt 0, rates &gt; 100%, missing scenario name.</li>
                   </ol>
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mt-4">
                     <p className="text-yellow-900 text-sm">

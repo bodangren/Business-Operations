@@ -1,0 +1,12 @@
+Scenario,AsOfDate,ClientName,InvoiceAmount,Collected,DiscountRate,COGSPercent,Note
+Base,2025-06-30,Alpha Dental,2200,Yes,0.05,0.62,Valid baseline
+Stretch,2025-06-30,Bark & Bubbles,650,No,0.10,0.40,High discount to test margin
+Downside,2025-05-15,Local Bakery,1100,No,0.00,0.85,High COGS to stress margin
+Invalid,2024-12-31,Unknown Co,500,No,0.15,1.20,COGS > 100% (invalid)
+Base,2025-06-30,Alpha Dental,0,No,-0.05,0.50,Negative discount (invalid)
+Base,2024-01-01,Alpha Dental,2200,Yes,0.05,0.62,Stale AsOfDate (invalid)
+Base,2025-06-30,Alpha Dental,2199.99,Yes,0.05,0.62,Rounding stress near thresholds
+Downside,2025-06-30,Bark & Bubbles,650,Yes,0.00,0.50,Edge case: collected in downside
+Stretch,2025-06-30,Local Bakery,1100,Yes,1.10,0.30,Discount >100% (invalid)
+Base,2025-06-30,Alpha Dental,2200,Yes,0.05,0.62,Duplicate to test reconciliation
+

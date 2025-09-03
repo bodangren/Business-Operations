@@ -1,25 +1,42 @@
 // PayDay Simulator, Lesson 7 data - extracted from MCP curriculum database
 export const lesson07Data = {
   id: "mds5w754qfq7uvh9icq",
-  title: "Model Completion: 10-Employee System & Reconciliation",
+  title: "Production Completion: Payroll QA, Reconciliation, and Presentation",
   sequence: 7,
   unitId: "mdrhlhv3ixkn2gykua",
   learningObjectives: [
-    "Reconcile payroll registers against bank statements to identify timing issues",
-    "Apply SUMIFS for sophisticated payroll reporting and analysis",
-    "Create visual alerts for reconciliation discrepancies"
+    "Finish the payroll model with exact‑match lookups and structured references",
+    "Validate inputs and implement error handling with clear user messages",
+    "Reconcile bank vs. payroll register and explain timing differences",
+    "Bind visuals to tables and draft an executive summary tied to KPI thresholds",
+    "Demonstrate investor‑readiness through a concise, audit‑ready presentation"
   ],
   keyConcepts: [
-    "Payroll register reconciliation with bank transactions",
-    "SUMIFS functions for multi-criteria payroll analysis",
-    "Conditional formatting for reconciliation alerts"
+    "Exact‑match lookups with IFNA/IFERROR",
+    "Named ranges and structured references (Tables)",
+    "Validation rules and reconciliation tie‑outs",
+    "Scenario drivers (Base/Stretch/Downside) and sensitivity",
+    "Dashboard binding and executive summary logic"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Complete full payroll system with bank reconciliation capabilities"
+    "Production‑studio flow: build → validate → reconcile → present"
   ],
-  rationale: "To teach students how to reconcile their payroll register with bank statements, a critical step in ensuring accuracy.",
-  status: "Draft"
+  rationale:
+    "Students complete and harden the payroll system they began in Lessons 04–06, add validation and reconciliation, and prepare a decision‑ready summary for stakeholders.",
+  status: "In Progress",
+  definitionOfDone: [
+    "No hard‑coded outputs; use named ranges and structured references",
+    "Exact‑match XLOOKUP or INDEX/MATCH wrapped with IFNA/IFERROR",
+    "All charts bind to tables; no fixed A1:C10 ranges",
+    "Inputs validated: no negatives where invalid; rates ≤ 100%; fresh AsOfDate",
+    "Reconciliation tie‑outs pass (payroll totals, bank vs. register)",
+    "No volatile heavy formulas; model responds quickly",
+    "Assumptions and version/date noted; no hidden logic",
+    "Scenarios update KPIs; executive summary text follows thresholds",
+    "Clear user‑facing errors; ErrorCheckingSystem rules pass",
+    "Single‑screen dashboard or summary readout is readable and concise"
+  ]
 }
 
 export const unit05Data = {
