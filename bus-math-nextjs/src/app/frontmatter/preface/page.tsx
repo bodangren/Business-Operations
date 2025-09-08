@@ -339,6 +339,8 @@ export default function PrefacePage() {
             <Link href="/student/unit01" className="underline">Jump to Unit 1</Link>
             <span>•</span>
             <Link href="/capstone" className="underline">Preview the Capstone</Link>
+            <span>•</span>
+            <Link href="/frontmatter/acknowledgments" className="underline">Acknowledgments & Author</Link>
           </div>
         </section>
       </main>

@@ -1,13 +1,11 @@
 Broken Links and Assets – Next.js App
 
 Summary
-- Broken routes: 9
+- Broken routes: 8
 - Missing assets: 1
 - Scope: Checked all internal href/Link targets against existing routes in `src/app/**/page.tsx` and files under `public/`.
 
 Broken Routes (create pages or update links)
-- /frontmatter/acknowledgments
-  - bus-math-nextjs/src/app/page.tsx:190
 - /backmatter/glossary
   - bus-math-nextjs/src/app/page.tsx:218
   - bus-math-nextjs/src/components/footer.tsx:30
@@ -15,8 +13,6 @@ Broken Routes (create pages or update links)
   - bus-math-nextjs/src/components/header.tsx:191
 - /backmatter/index
   - bus-math-nextjs/src/app/page.tsx:221
-- /backmatter/bibliography
-  - bus-math-nextjs/src/app/page.tsx:224
 - /search
   - bus-math-nextjs/src/components/footer.tsx:42
   - bus-math-nextjs/src/components/header.tsx:134
@@ -39,7 +35,6 @@ Missing Assets (under public/)
 Action Items
 1) Decide per-link: create page vs. update/remove link
    - Create pages at:
-     - src/app/frontmatter/acknowledgments/page.tsx
      - src/app/backmatter/glossary/page.tsx
      - src/app/backmatter/index/page.tsx
      - src/app/backmatter/bibliography/page.tsx
@@ -64,6 +59,7 @@ Validation Steps (after fixes)
 
 Recent Fixes (applied)
 - Added Preface: `src/app/frontmatter/preface/page.tsx`
+- Added Acknowledgments: `src/app/frontmatter/acknowledgments/page.tsx`
 - Added Capstone Guidelines: `src/app/capstone/guidelines/page.tsx`
 - Added Capstone Rubrics: `src/app/capstone/rubrics/page.tsx`
 

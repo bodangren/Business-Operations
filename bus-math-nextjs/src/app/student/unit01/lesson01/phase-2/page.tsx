@@ -61,7 +61,7 @@ export default function Phase2Page() {
     },
     {
       id: 'vocab3',  
-      text: "Sarah's driving question is: How can we design a {blank}-{blank} ledger that would convince a potential angel investor we keep clean books from day 1?",
+      text: "Sarah's driving question is: How can we design a {blank} ledger that would convince a potential angel investor we keep clean books from day 1?",
       answer: 'self-auditing',
       hint: "A system that automatically checks its own accuracy"
     }

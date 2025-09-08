@@ -48,20 +48,20 @@ export default function Phase4Page() {
   const scenarioSentences = [
     {
       id: 'scenario1',
-      text: "When Sarah's potential angel investor asks to see her financial records, the biggest risk is that the {blank} system cannot provide {blank} and {blank} financial information.",
-      answer: 'notebook, accurate, organized',
+      text: "When Sarah's potential angel investor asks to see her financial records, the biggest risk is that the notebook system cannot provide {blank} and organized financial information.",
+      answer: 'accurate',
       hint: "Think about what investors need to see"
     },
     {
       id: 'scenario2',
-      text: "Sarah realizes that as her business grows, she needs a system that can automatically {blank} transactions and {blank} mathematical accuracy.",
-      answer: 'categorize, verify',
+      text: "Sarah realizes that as her business grows, she needs a system that can automatically categorize transactions and {blank} mathematical accuracy.",
+      answer: 'verify',
       hint: "What would a smart ledger do automatically?"
     },
     {
       id: 'scenario3',
-      text: "The driving question for this unit asks how to design a {blank}-{blank} ledger that would convince investors that Sarah keeps {blank} {blank} from day 1.",
-      answer: 'self-auditing, clean books',
+      text: "The driving question for this unit asks how to design a {blank} ledger that would convince investors that Sarah keeps clean books from day 1.",
+      answer: 'self-auditing',
       hint: "This is our main unit goal"
     }
   ]
