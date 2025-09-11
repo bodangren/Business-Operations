@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import JournalEntryBuilding from "@/components/exercises/JournalEntryBuilding"
+import JournalEntryBuilding, { Scenario as JEScenario } from "@/components/exercises/JournalEntryBuilding"
 import TAccountsVisualization from "@/components/accounting/TAccountsVisualization"
 import { Brain, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react"
 import { lesson04Data, unit01Data, lesson04Phases } from "../lesson-data"
@@ -115,7 +115,48 @@ export default function Phase4Page() {
             equation balance.
           </p>
           
-          <JournalEntryBuilding />
+          {(() => {
+            const availableAccounts = [
+              'Cash','Accounts Receivable','Accounts Payable','Notes Payable','Service Revenue','Sales Revenue','Rent Expense','Supplies Expense','Utilities Expense','Inventory','Equipment','Unearned Revenue','Owner\'s Equity'
+            ]
+            const scenarios: JEScenario[] = [
+              {
+                id: 'advanced-1',
+                description: 'Record a $2,200 website project billed to the bakery; client will pay next week.',
+                correctEntry: [
+                  { account: 'Accounts Receivable', debit: 2200, credit: 0 },
+                  { account: 'Service Revenue', debit: 0, credit: 2200 }
+                ],
+                explanation: 'AR (asset) increases with a debit; Service Revenue increases with a credit.'
+              },
+              {
+                id: 'advanced-2',
+                description: 'Purchase $1,500 equipment on account (to be paid later).',
+                correctEntry: [
+                  { account: 'Equipment', debit: 1500, credit: 0 },
+                  { account: 'Accounts Payable', debit: 0, credit: 1500 }
+                ],
+                explanation: 'Equipment (asset) increases with a debit; AP (liability) increases with a credit.'
+              },
+              {
+                id: 'advanced-3',
+                description: 'Pay $600 toward outstanding Accounts Payable.',
+                correctEntry: [
+                  { account: 'Accounts Payable', debit: 600, credit: 0 },
+                  { account: 'Cash', debit: 0, credit: 600 }
+                ],
+                explanation: 'AP (liability) decreases with a debit; Cash (asset) decreases with a credit.'
+              }
+            ]
+            return (
+              <JournalEntryBuilding 
+                title="Independent Practice: Advanced Entries"
+                description="Handle billing, purchases on account, and paydowns with balanced entries."
+                availableAccounts={availableAccounts}
+                scenarios={scenarios}
+              />
+            )
+          })()}
         </section>
 
         {/* Excel Formula Challenges */}

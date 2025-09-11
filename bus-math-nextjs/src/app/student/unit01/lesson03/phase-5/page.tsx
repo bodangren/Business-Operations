@@ -242,7 +242,26 @@ export default function Phase5Page() {
           </Card>
           
           <div className="mt-6">
-            <TrialBalanceSorting />
+            {(() => {
+              const assessmentTrialBalanceAccounts = [
+                { name: 'Cash', balance: 1000, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Inventory', balance: 1400, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Equipment', balance: 1600, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Rent Expense', balance: 500, correctSide: 'debit' as const, category: 'Expenses' as const },
+                { name: 'Wages Expense', balance: 500, correctSide: 'debit' as const, category: 'Expenses' as const },
+                { name: 'Accounts Payable', balance: 1000, correctSide: 'credit' as const, category: 'Liabilities' as const },
+                { name: 'Notes Payable', balance: 1500, correctSide: 'credit' as const, category: 'Liabilities' as const },
+                { name: 'Sales Revenue', balance: 1500, correctSide: 'credit' as const, category: 'Revenue' as const },
+                { name: "Owner's Equity", balance: 1000, correctSide: 'credit' as const, category: 'Equity' as const },
+              ]
+              return (
+                <TrialBalanceSorting 
+                  title="Trial Balance: Assessment Set"
+                  accounts={assessmentTrialBalanceAccounts}
+                  initialShuffle={true}
+                />
+              )
+            })()}
           </div>
         </section>
 

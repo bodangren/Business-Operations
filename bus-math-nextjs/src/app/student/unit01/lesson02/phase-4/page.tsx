@@ -138,8 +138,26 @@ export default function Unit01Lesson02Phase4() {
               </div>
             </div>
           </div>
-
-          <TrialBalanceSorting />
+          {(() => {
+            const introTrialBalanceAccounts = [
+              { name: 'Cash', balance: 3000, correctSide: 'debit' as const, category: 'Assets' as const },
+              { name: 'Accounts Receivable', balance: 1000, correctSide: 'debit' as const, category: 'Assets' as const },
+              { name: 'Supplies', balance: 500, correctSide: 'debit' as const, category: 'Assets' as const },
+              { name: 'Rent Expense', balance: 800, correctSide: 'debit' as const, category: 'Expenses' as const },
+              { name: 'Salary Expense', balance: 700, correctSide: 'debit' as const, category: 'Expenses' as const },
+              { name: 'Accounts Payable', balance: 1500, correctSide: 'credit' as const, category: 'Liabilities' as const },
+              { name: 'Notes Payable', balance: 1000, correctSide: 'credit' as const, category: 'Liabilities' as const },
+              { name: "Owner's Equity", balance: 2000, correctSide: 'credit' as const, category: 'Equity' as const },
+              { name: 'Service Revenue', balance: 1500, correctSide: 'credit' as const, category: 'Revenue' as const },
+            ]
+            return (
+              <TrialBalanceSorting 
+                title="Trial Balance: Intro Practice"
+                accounts={introTrialBalanceAccounts}
+                initialShuffle={true}
+              />
+            )
+          })()}
 
           <ComprehensionCheck 
             questions={independentQuestions}

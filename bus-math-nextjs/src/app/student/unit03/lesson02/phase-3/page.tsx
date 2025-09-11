@@ -162,7 +162,24 @@ export default function Phase3Page() {
             </p>
           </CardHeader>
           <CardContent>
-            <TrialBalanceSorting />
+            {(() => {
+              const incomeStatementPrepAccounts = [
+                { name: 'Cash', balance: 800, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Accounts Receivable', balance: 600, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Supplies Expense', balance: 300, correctSide: 'debit' as const, category: 'Expenses' as const },
+                { name: 'Salary Expense', balance: 300, correctSide: 'debit' as const, category: 'Expenses' as const },
+                { name: 'Service Revenue', balance: 1200, correctSide: 'credit' as const, category: 'Revenue' as const },
+                { name: 'Sales Revenue', balance: 800, correctSide: 'credit' as const, category: 'Revenue' as const },
+              ]
+
+              return (
+                <TrialBalanceSorting 
+                  title="Trial Balance: Income Statement Prep"
+                  accounts={incomeStatementPrepAccounts}
+                  initialShuffle={true}
+                />
+              )
+            })()}
           </CardContent>
         </Card>
 

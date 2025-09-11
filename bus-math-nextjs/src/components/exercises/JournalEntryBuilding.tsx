@@ -61,7 +61,7 @@
 
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -90,7 +90,7 @@ interface JournalEntry {
   credit: number
 }
 
-interface Scenario {
+export interface Scenario {
   id: string
   description: string
   correctEntry: JournalEntry[]
@@ -116,7 +116,15 @@ interface ExerciseState {
   completed: boolean
 }
 
-const AVAILABLE_ACCOUNTS = [
+interface JournalEntryBuildingProps {
+  title?: string
+  description?: string
+  availableAccounts?: string[]
+  scenarios?: Scenario[]
+  showInstructionsDefaultOpen?: boolean
+}
+
+const DEFAULT_AVAILABLE_ACCOUNTS = [
   'Cash',
   'Accounts Receivable', 
   'Equipment',
@@ -140,7 +148,7 @@ const AVAILABLE_ACCOUNTS = [
   'Office Expense'
 ]
 
-const SCENARIOS: Scenario[] = [
+const DEFAULT_SCENARIOS: Scenario[] = [
   {
     id: 'scenario-1',
     description: 'Your business receives $1,500 cash for consulting services provided to a client.',
@@ -188,13 +196,22 @@ const SCENARIOS: Scenario[] = [
   }
 ]
 
-export function JournalEntryBuilding() {
+export function JournalEntryBuilding({
+  title,
+  description,
+  availableAccounts,
+  scenarios,
+  showInstructionsDefaultOpen = false,
+}: JournalEntryBuildingProps) {
+  const accounts = useMemo(() => availableAccounts ?? DEFAULT_AVAILABLE_ACCOUNTS, [availableAccounts])
+  const scenarioList = useMemo(() => scenarios ?? DEFAULT_SCENARIOS, [scenarios])
+
+  const makeEmptyRows = (scenario: Scenario) =>
+    Array.from({ length: Math.max(2, scenario.correctEntry.length) }, () => ({ account: '', debit: 0, credit: 0 }))
+
   const [exerciseState, setExerciseState] = useState<ExerciseState>({
-    currentScenario: SCENARIOS[0],
-    journalEntries: [
-      { account: '', debit: 0, credit: 0 },
-      { account: '', debit: 0, credit: 0 }
-    ],
+    currentScenario: scenarioList[0],
+    journalEntries: makeEmptyRows(scenarioList[0]),
     draggedAccounts: [],
     totalDebits: 0,
     totalCredits: 0,
@@ -207,7 +224,7 @@ export function JournalEntryBuilding() {
   })
 
   const [draggedElement, setDraggedElement] = useState<string | null>(null)
-  const [showInstructions, setShowInstructions] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(showInstructionsDefaultOpen)
 
   // Calculate totals whenever journal entries change
   useEffect(() => {
@@ -353,16 +370,14 @@ export function JournalEntryBuilding() {
   }, [])
 
   const nextScenario = useCallback(() => {
-    const currentIndex = SCENARIOS.findIndex(s => s.id === exerciseState.currentScenario.id)
-    const nextIndex = (currentIndex + 1) % SCENARIOS.length
+    const currentIndex = scenarioList.findIndex(s => s.id === exerciseState.currentScenario.id)
+    const nextIndex = (currentIndex + 1) % scenarioList.length
+    const next = scenarioList[nextIndex]
     
     setExerciseState(prev => ({
       ...prev,
-      currentScenario: SCENARIOS[nextIndex],
-      journalEntries: [
-        { account: '', debit: 0, credit: 0 },
-        { account: '', debit: 0, credit: 0 }
-      ],
+      currentScenario: next,
+      journalEntries: makeEmptyRows(next),
       draggedAccounts: [],
       totalDebits: 0,
       totalCredits: 0,
@@ -373,7 +388,7 @@ export function JournalEntryBuilding() {
       isCorrect: false,
       completed: false
     }))
-  }, [exerciseState.currentScenario.id])
+  }, [exerciseState.currentScenario.id, scenarioList])
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
@@ -382,10 +397,10 @@ export function JournalEntryBuilding() {
         <CardHeader className="text-center">
           <CardTitle className="text-3xl flex items-center justify-center gap-2">
             <BookOpen className="w-8 h-8 text-purple-600" />
-            Journal Entry Builder
+            {title ?? 'Journal Entry Builder'}
           </CardTitle>
           <CardDescription className="text-lg">
-            Learn double-entry bookkeeping by creating journal entries for business transactions
+            {description ?? 'Learn double-entry bookkeeping by creating journal entries for business transactions'}
           </CardDescription>
           <div className="mt-4">
             <Button
@@ -526,7 +541,7 @@ export function JournalEntryBuilding() {
         <CardHeader>
           <CardTitle className="text-xl text-blue-800 flex items-center gap-2">
             <FileText className="w-5 h-5" />
-            Transaction Scenario {SCENARIOS.findIndex(s => s.id === exerciseState.currentScenario.id) + 1} of {SCENARIOS.length}
+            Transaction Scenario {scenarioList.findIndex(s => s.id === exerciseState.currentScenario.id) + 1} of {scenarioList.length}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -548,7 +563,7 @@ export function JournalEntryBuilding() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
-            {AVAILABLE_ACCOUNTS.map((account) => (
+            {accounts.map((account) => (
               <div
                 key={account}
                 draggable

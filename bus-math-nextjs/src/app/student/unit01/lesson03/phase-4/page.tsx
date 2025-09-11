@@ -197,7 +197,45 @@ export default function Phase4Page() {
           </Card>
           
           <div className="mt-6">
-            <TransactionJournal />
+            {(() => {
+              const initialTransactions = [
+                {
+                  id: 'seed-1',
+                  entryNumber: 'JE001',
+                  date: '2025-01-10',
+                  description: 'Design software purchase: $500 (paid $200 cash, $300 on account)',
+                  clientFocus: 'Tech Startup',
+                  lines: [
+                    { id: 'l1', account: 'Software', accountType: 'asset' as const, debit: 500, credit: 0 },
+                    { id: 'l2', account: 'Cash', accountType: 'asset' as const, debit: 0, credit: 200 },
+                    { id: 'l3', account: 'Accounts Payable', accountType: 'liability' as const, debit: 0, credit: 300 }
+                  ],
+                  isBalanced: true
+                },
+                {
+                  id: 'seed-2',
+                  entryNumber: 'JE002',
+                  date: '2025-01-12',
+                  description: 'Website project completed: $2,000 (received $1,200 cash, $800 on account)',
+                  clientFocus: 'Tech Startup',
+                  lines: [
+                    { id: 'l1', account: 'Cash', accountType: 'asset' as const, debit: 1200, credit: 0 },
+                    { id: 'l2', account: 'Accounts Receivable', accountType: 'asset' as const, debit: 800, credit: 0 },
+                    { id: 'l3', account: 'Service Revenue', accountType: 'revenue' as const, debit: 0, credit: 2000 }
+                  ],
+                  isBalanced: true
+                }
+              ]
+              return (
+                <TransactionJournal 
+                  title="Independent Transaction Journal"
+                  clientTypes={["Tech Startup","Service Provider","Creative Agency"]}
+                  initialTransactions={initialTransactions}
+                  maxTransactions={12}
+                  showAnalytics={true}
+                />
+              )
+            })()}
           </div>
         </section>
 
@@ -248,7 +286,25 @@ export default function Phase4Page() {
           </Card>
           
           <div className="mt-6">
-            <TrialBalanceSorting />
+            {(() => {
+              const complexTrialBalanceAccounts = [
+                { name: 'Cash', balance: 1200, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Accounts Receivable', balance: 900, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Prepaid Insurance', balance: 400, correctSide: 'debit' as const, category: 'Assets' as const },
+                { name: 'Utilities Expense', balance: 250, correctSide: 'debit' as const, category: 'Expenses' as const },
+                { name: 'Advertising Expense', balance: 250, correctSide: 'debit' as const, category: 'Expenses' as const },
+                { name: 'Accounts Payable', balance: 700, correctSide: 'credit' as const, category: 'Liabilities' as const },
+                { name: 'Unearned Revenue', balance: 800, correctSide: 'credit' as const, category: 'Liabilities' as const },
+                { name: 'Service Revenue', balance: 1500, correctSide: 'credit' as const, category: 'Revenue' as const },
+              ]
+              return (
+                <TrialBalanceSorting 
+                  title="Trial Balance: Complex Categorization"
+                  accounts={complexTrialBalanceAccounts}
+                  initialShuffle={true}
+                />
+              )
+            })()}
           </div>
         </section>
 

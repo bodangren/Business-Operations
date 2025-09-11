@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, Wrench, Target } from 'lucide-react'
-import JournalEntryBuilding from "@/components/exercises/JournalEntryBuilding"
+import JournalEntryBuilding, { Scenario as JEScenario } from "@/components/exercises/JournalEntryBuilding"
 import { TAccountSimple } from "@/components/accounting/TAccountSimple"
 import { lesson03Data, unit01Data, lesson03Phases } from "../lesson-data"
 
@@ -217,7 +217,48 @@ export default function Phase3Page() {
           </Card>
           
           <div className="mt-6">
-            <JournalEntryBuilding />
+            {(() => {
+              const availableAccounts = [
+                'Cash','Accounts Receivable','Accounts Payable','Service Revenue','Sales Revenue','Rent Expense','Salary Expense','Unearned Revenue','Supplies','Equipment'
+              ]
+              const scenarios: JEScenario[] = [
+                {
+                  id: 'techstart-1',
+                  description: 'Sarah receives $1,100 cash for completing SEO work for the dental office.',
+                  correctEntry: [
+                    { account: 'Cash', debit: 1100, credit: 0 },
+                    { account: 'Service Revenue', debit: 0, credit: 1100 }
+                  ],
+                  explanation: 'Cash (asset) increases with a debit; Service Revenue increases with a credit.'
+                },
+                {
+                  id: 'techstart-2',
+                  description: 'Sarah pays $800 cash for office rent.',
+                  correctEntry: [
+                    { account: 'Rent Expense', debit: 800, credit: 0 },
+                    { account: 'Cash', debit: 0, credit: 800 }
+                  ],
+                  explanation: 'Rent Expense increases with a debit; Cash (asset) decreases with a credit.'
+                },
+                {
+                  id: 'techstart-3',
+                  description: 'A new client pays $600 cash in advance for services next month.',
+                  correctEntry: [
+                    { account: 'Cash', debit: 600, credit: 0 },
+                    { account: 'Unearned Revenue', debit: 0, credit: 600 }
+                  ],
+                  explanation: 'Cash (asset) increases with a debit; Unearned Revenue (liability) increases with a credit.'
+                }
+              ]
+              return (
+                <JournalEntryBuilding 
+                  title="Journal Entry Practice: TechStart"
+                  description="Build proper entries for Sarah’s transactions. Keep debits = credits."
+                  availableAccounts={availableAccounts}
+                  scenarios={scenarios}
+                />
+              )
+            })()}
           </div>
         </section>
 

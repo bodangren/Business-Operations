@@ -18,7 +18,8 @@
  * ```
  * 
  * The component is fully self-contained with its own state management.
- * No props are required - it initializes with default values.
+ * It supports optional props for configuration; if omitted, it initializes
+ * with a balanced default dataset and standard UI copy.
  * 
  * STUDENT INTERACTION & LEARNING OBJECTIVES:
  * ==========================================
@@ -63,7 +64,7 @@
 
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -107,6 +108,16 @@ interface GameState {
   showFeedback: boolean
 }
 
+interface TrialBalanceSortingProps {
+  title?: string
+  description?: string
+  accounts?: Omit<Account, 'id'>[]
+  initialShuffle?: boolean // default: true
+  showInstructionsDefaultOpen?: boolean // default: false
+  showCategoryBadges?: boolean // default: true
+}
+
+// Default dataset (balanced totals)
 const TRIAL_BALANCE_ACCOUNTS: Omit<Account, 'id'>[] = [
   { name: 'Cash', balance: 5000, correctSide: 'debit', category: 'Assets' },
   { name: 'Accounts Receivable', balance: 2500, correctSide: 'debit', category: 'Assets' },
@@ -116,23 +127,32 @@ const TRIAL_BALANCE_ACCOUNTS: Omit<Account, 'id'>[] = [
   { name: 'Notes Payable', balance: 8000, correctSide: 'credit', category: 'Liabilities' },
   { name: 'Owner\'s Equity', balance: 12000, correctSide: 'credit', category: 'Equity' },
   { name: 'Retained Earnings', balance: 1500, correctSide: 'credit', category: 'Equity' },
-  { name: 'Service Revenue', balance: 4800, correctSide: 'credit', category: 'Revenue' },
+  // Adjusted to ensure debits equal credits for the default set
+  { name: 'Service Revenue', balance: 7300, correctSide: 'credit', category: 'Revenue' },
   { name: 'Rent Expense', balance: 1200, correctSide: 'debit', category: 'Expenses' },
   { name: 'Salary Expense', balance: 4300, correctSide: 'debit', category: 'Expenses' },
   { name: 'Utilities Expense', balance: 800, correctSide: 'debit', category: 'Expenses' }
 ]
 
-export function TrialBalanceSorting() {
+export function TrialBalanceSorting({
+  title,
+  description,
+  accounts,
+  initialShuffle = true,
+  showInstructionsDefaultOpen = false,
+  showCategoryBadges = true,
+}: TrialBalanceSortingProps) {
+  const baseAccounts = useMemo(() => accounts ?? TRIAL_BALANCE_ACCOUNTS, [accounts])
+
   const [gameState, setGameState] = useState<GameState>(() => {
-    const shuffledAccounts = [...TRIAL_BALANCE_ACCOUNTS]
-      .sort(() => Math.random() - 0.5)
-      .map((account, index) => ({
-        ...account,
-        id: `account-${index}`
-      }))
-    
+    const prepared = [...baseAccounts].map((account, index) => ({
+      ...account,
+      id: `account-${index}`
+    }))
+    const unplaced = initialShuffle ? prepared.sort(() => Math.random() - 0.5) : prepared
+
     return {
-      unplacedAccounts: shuffledAccounts,
+      unplacedAccounts: unplaced,
       debitAccounts: [],
       creditAccounts: [],
       attempts: 0,
@@ -142,7 +162,7 @@ export function TrialBalanceSorting() {
   })
 
   const [draggedAccount, setDraggedAccount] = useState<Account | null>(null)
-  const [showInstructions, setShowInstructions] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(showInstructionsDefaultOpen)
 
   const getDebitTotal = useCallback(() => {
     return gameState.debitAccounts.reduce((sum, account) => sum + account.balance, 0)
@@ -245,22 +265,21 @@ export function TrialBalanceSorting() {
   }, [gameState, getDebitTotal, getCreditTotal])
 
   const resetExercise = useCallback(() => {
-    const shuffledAccounts = [...TRIAL_BALANCE_ACCOUNTS]
-      .sort(() => Math.random() - 0.5)
-      .map((account, index) => ({
-        ...account,
-        id: `account-${index}-${Date.now()}`
-      }))
-    
+    const prepared = [...baseAccounts].map((account, index) => ({
+      ...account,
+      id: `account-${index}-${Date.now()}`
+    }))
+    const unplaced = initialShuffle ? prepared.sort(() => Math.random() - 0.5) : prepared
+
     setGameState({
-      unplacedAccounts: shuffledAccounts,
+      unplacedAccounts: unplaced,
       debitAccounts: [],
       creditAccounts: [],
       attempts: 0,
       isComplete: false,
       showFeedback: false
     })
-  }, [])
+  }, [baseAccounts, initialShuffle])
 
   const balanceStatus = getBalanceStatus()
   const debitTotal = getDebitTotal()
@@ -270,6 +289,12 @@ export function TrialBalanceSorting() {
   const totalPlacements = gameState.debitAccounts.length + gameState.creditAccounts.length
   const score = totalPlacements > 0 ? Math.round((correctPlacements / totalPlacements) * 100) : 0
 
+  const expectedTotals = useMemo(() => {
+    const debit = baseAccounts.filter(a => a.correctSide === 'debit').reduce((s, a) => s + a.balance, 0)
+    const credit = baseAccounts.filter(a => a.correctSide === 'credit').reduce((s, a) => s + a.balance, 0)
+    return { debit, credit }
+  }, [baseAccounts])
+
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       {/* Header */}
@@ -277,10 +302,10 @@ export function TrialBalanceSorting() {
         <CardHeader className="text-center">
           <CardTitle className="text-3xl flex items-center justify-center gap-2">
             <Scale className="w-8 h-8 text-blue-600" />
-            Trial Balance Sorting Challenge
+            {title ?? 'Trial Balance Sorting Challenge'}
           </CardTitle>
           <CardDescription className="text-lg">
-            Drag each account to the correct side of the trial balance. Make sure debits equal credits!
+            {description ?? 'Drag each account to the correct side of the trial balance. Make sure debits equal credits!'}
           </CardDescription>
           <div className="mt-4">
             <Button
@@ -418,8 +443,13 @@ export function TrialBalanceSorting() {
             <div className="p-4 bg-green-50 rounded-lg border border-green-200">
               <h4 className="font-semibold text-green-800 mb-2">🏆 Expected Outcome</h4>
               <p className="text-sm text-green-700">
-                When completed correctly, you should have <strong>$29,700</strong> in total debits and 
-                <strong>$29,700</strong> in total credits, with all accounts placed on their correct sides.
+                When completed correctly, you should have <strong>${expectedTotals.debit.toLocaleString()}</strong> in total debits and 
+                <strong>${expectedTotals.credit.toLocaleString()}</strong> in total credits, with all accounts placed on their correct sides.
+                {Math.abs(expectedTotals.debit - expectedTotals.credit) > 0.01 && (
+                  <span className="block mt-1 text-yellow-700">
+                    Note: The provided dataset is not balanced. To complete with a balanced trial balance, use a balanced account set.
+                  </span>
+                )}
               </p>
             </div>
           </CardContent>
@@ -510,9 +540,11 @@ export function TrialBalanceSorting() {
                   <div className="text-center">
                     <p className="font-semibold text-gray-800">{account.name}</p>
                     <p className="text-lg font-bold text-gray-700">${account.balance.toLocaleString()}</p>
-                    <Badge variant="outline" className="text-xs mt-1">
-                      {account.category}
-                    </Badge>
+                    {showCategoryBadges && (
+                      <Badge variant="outline" className="text-xs mt-1">
+                        {account.category}
+                      </Badge>
+                    )}
                   </div>
                 </div>
               ))}
@@ -551,9 +583,11 @@ export function TrialBalanceSorting() {
                   >
                     <div>
                       <p className="font-semibold">{account.name}</p>
-                      <Badge variant="outline" className="text-xs">
-                        {account.category}
-                      </Badge>
+                      {showCategoryBadges && (
+                        <Badge variant="outline" className="text-xs">
+                          {account.category}
+                        </Badge>
+                      )}
                     </div>
                     <div className="text-right">
                       <p className="font-bold">${account.balance.toLocaleString()}</p>
@@ -606,9 +640,11 @@ export function TrialBalanceSorting() {
                   >
                     <div>
                       <p className="font-semibold">{account.name}</p>
-                      <Badge variant="outline" className="text-xs">
-                        {account.category}
-                      </Badge>
+                      {showCategoryBadges && (
+                        <Badge variant="outline" className="text-xs">
+                          {account.category}
+                        </Badge>
+                      )}
                     </div>
                     <div className="text-right">
                       <p className="font-bold">${account.balance.toLocaleString()}</p>

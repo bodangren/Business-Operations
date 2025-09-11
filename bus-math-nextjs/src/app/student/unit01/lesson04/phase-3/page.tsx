@@ -111,7 +111,43 @@ export default function Phase3Page() {
             automated SUMIF calculations.
           </p>
 
-          <TransactionJournal />
+          {(() => {
+            const initialTransactions = [
+              {
+                id: 'u1-seed-1',
+                entryNumber: 'JE001',
+                date: '2025-02-02',
+                description: 'Bakery website billed $2,200 on credit',
+                clientFocus: 'TechStart Solutions',
+                lines: [
+                  { id: 'l1', account: 'Accounts Receivable', accountType: 'asset' as const, debit: 2200, credit: 0 },
+                  { id: 'l2', account: 'Service Revenue', accountType: 'revenue' as const, debit: 0, credit: 2200 }
+                ],
+                isBalanced: true
+              },
+              {
+                id: 'u1-seed-2',
+                entryNumber: 'JE002',
+                date: '2025-02-04',
+                description: 'Supplies purchased for $150, paid cash',
+                clientFocus: 'TechStart Solutions',
+                lines: [
+                  { id: 'l1', account: 'Supplies Expense', accountType: 'expense' as const, debit: 150, credit: 0 },
+                  { id: 'l2', account: 'Cash', accountType: 'asset' as const, debit: 0, credit: 150 }
+                ],
+                isBalanced: true
+              }
+            ]
+            return (
+              <TransactionJournal 
+                title="Smart Ledger Practice Journal"
+                clientTypes={["TechStart Solutions","E-commerce Business","Creative Agency"]}
+                initialTransactions={initialTransactions}
+                maxTransactions={15}
+                showAnalytics={true}
+              />
+            )
+          })()}
         </section>
 
         {/* Professional Standards Focus */}
