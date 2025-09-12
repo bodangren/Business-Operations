@@ -2,6 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import JournalEntryBuilding, { Scenario as JEScenario } from "@/components/exercises/JournalEntryBuilding"
 import TAccountsVisualization from "@/components/accounting/TAccountsVisualization"
 import { Brain, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react"
@@ -47,6 +48,76 @@ export default function Phase4Page() {
             </p>
           </div>
         </section>
+
+{/* Sample Data Download + Setup Instructions */}
+<section className="max-w-4xl mx-auto">
+  <Card className="border-emerald-200 bg-emerald-50">
+    <CardHeader>
+      <CardTitle className="text-emerald-900">
+        Start Here: Download the Sample Journal Data
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <div className="flex flex-wrap items-center gap-3">
+        <a
+          href="/resources/unit01-ledger-basic-practice.xlsx"
+          download
+          className="inline-flex"
+        >
+          <Button className="bg-emerald-600 hover:bg-emerald-700">
+            Download: unit01-ledger-basic-practice.xlsx
+          </Button>
+        </a>
+        <p className="text-emerald-900 text-sm">
+          File path (public): <code>/resources/unit01-ledger-basic-practice.xlsx</code>
+        </p>
+      </div>
+
+      <div className="bg-white rounded border p-4">
+        <h4 className="font-semibold text-emerald-900 mb-2">How to Use This File</h4>
+        <ol className="list-decimal list-inside text-emerald-800 space-y-2 text-sm">
+          <li>Open the downloaded file in Excel.</li>
+          <li>
+            Convert the data range to an <strong>Excel Table</strong> (Windows:
+            <code className="mx-1 px-1 rounded bg-gray-100">Ctrl</code>+<code className="px-1 rounded bg-gray-100">T</code>,
+            Mac: <code className="mx-1 px-1 rounded bg-gray-100">⌘</code>+<code className="px-1 rounded bg-gray-100">T</code>).
+          </li>
+          <li>
+            Name the table <code className="px-1 rounded bg-gray-100">LedgerTable</code> (Table Design → Table Name).
+          </li>
+          <li>
+            Keep the column headers exactly as provided:
+            {" "}
+            <code className="px-1 rounded bg-gray-100">Date</code>,
+            {" "}
+            <code className="px-1 rounded bg-gray-100">Description</code>,
+            {" "}
+            <code className="px-1 rounded bg-gray-100">Account</code>,
+            {" "}
+            <code className="px-1 rounded bg-gray-100">Type</code>,
+            {" "}
+            <code className="px-1 rounded bg-gray-100">Debit</code>,
+            {" "}
+            <code className="px-1 rounded bg-gray-100">Credit</code>.
+          </li>
+          <li>
+            You can now complete the challenges below using
+            {" "}
+            <code className="px-1 rounded bg-gray-100">SUMIF</code> /
+            <code className="mx-1 px-1 rounded bg-gray-100">SUMIFS</code> on
+            <code className="mx-1 px-1 rounded bg-gray-100">LedgerTable</code>.
+          </li>
+        </ol>
+      </div>
+
+      <p className="text-emerald-900 text-sm">
+        Tip: If the file opens in your browser, right-click the link and choose
+        <em> “Save link as…”</em>, then open it in Excel.
+      </p>
+    </CardContent>
+  </Card>
+</section>
+
 
         {/* Challenge Scenarios */}
         <section className="max-w-4xl mx-auto space-y-6">
