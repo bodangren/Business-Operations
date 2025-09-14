@@ -704,210 +704,138 @@ export const unit02LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "UX & Button Design: Professional Interface Development",
-        focus: "User interface design and system integration for non-expert users",
-        duration: "45 minutes",
+        title: "PBL Milestone 1: Project Definition",
+        focus: "Define problem, scope, success metrics; plan Excel model and risks",
+        duration: "55 minutes",
         activities: [
           {
-            name: "User Experience Design Principles",
-            duration: "10 minutes",
-            description: "Introduction to business software usability standards",
+            name: "Framing & Objectives",
+            duration: "8 minutes",
+            description: "Connect unit driving question to milestone goals",
             details: [
-              "User-centered design: Interface must work for non-experts",
-              "Error prevention: Visual cues and validation to prevent mistakes",
-              "Clarity: Labels and instructions must be immediately understandable",
-              "Professional appearance: Interface reflects business credibility"
+              "Business Objectives: speed, accuracy, investor/client trust",
+              "Excel Objectives: XLOOKUP/SWITCH, named ranges, validation, dashboard plan"
             ]
           },
           {
-            name: "Button and Form Control Implementation",
+            name: "Plan Drafting",
             duration: "20 minutes",
-            description: "Hands-on development of user interface elements",
-            // Component: UIDesigner.tsx - Create professional button interface with form controls and named ranges
+            description: "Teams write problem statement, scope, stakeholders, success metrics",
             details: [
-              "Insert form control buttons for macro execution",
-              "Design clear labels and instructions for each automation feature",
-              "Implement named range checks to validate data before automation runs",
-              "Add error-flag formatting to highlight issues requiring attention"
-            ],
-            callout: {
-              type: "example",
-              title: "Professional UI Template",
-              content: "Design interface that non-accountants can operate confidently",
-              items: [
-                "\"Run Month-End Close\" button with clear progress indicators",
-                "Data validation checks with red/green status indicators",
-                "Help text explaining what each automation step accomplishes",
-                "Error reporting that guides users to correct problems"
-              ]
-            }
-          },
-          {
-            name: "Integration Testing & Named Range Configuration",
-            duration: "10 minutes",
-            description: "Verify all system components work together seamlessly",
-            details: [
-              "Test UI buttons with complete automation sequences",
-              "Verify named ranges update correctly when new data added",
-              "Check error-checking routines trigger appropriately",
-              "Ensure system handles edge cases and data validation failures"
+              "Define acceptance criteria",
+              "List data sources and file naming convention",
+              "Outline workbook tabs and validation strategy"
             ]
           },
           {
-            name: "Milestone 3 Validation & Demo Prep",
-            duration: "5 minutes",
-            description: "Final verification against assessment criteria",
+            name: "Workbook Skeleton",
+            duration: "15 minutes",
+            description: "Create tabs, named ranges, and initial validations",
             details: [
-              "Complete system test: time simulation under 2 hours with UI button operation",
-              "Verify all Milestone 3 criteria met: functionality, time target, professional interface",
-              "Preview Days 9-10: Mock demo, feedback collection, and Innovation Fair presentation"
+              "Tabs: data, mapping, journal, reports, dashboard",
+              "Named ranges for inputs and lookups",
+              "Basic validation rules and error flags"
+            ]
+          },
+          {
+            name: "Dataset Assignment & Check-In",
+            duration: "12 minutes",
+            description: "Download g1–g6 datasets; instructor milestone review",
+            details: [
+              "Each team selects one dataset (consistent schema)",
+              "Checklist verification: plan + skeleton + risks",
+              "Rubric reviewed: technical accuracy, rationale, clarity, timing, Q&A"
             ]
           }
         ],
         materials: [
-          "UI design templates and standards guide",
-          "Form control tutorial and examples",
-          "Named range configuration worksheets",
-          "Integration testing checklists"
+          "Milestone 1 checklist template",
+          "Unit datasets (g1–g6, CSV)",
+          "Workbook skeleton guide (tabs/named ranges)",
+          "Risk/assumption log"
         ]
       },
       {
         day: 9,
-        title: "Mock Demo & Feedback: User Testing Preparation",
-        focus: "Presentation practice and user feedback collection for system improvement",
-        duration: "45 minutes",
+        title: "PBL Milestone 2: Prototype + Rehearsal",
+        focus: "Working prototype, validations passing, documented tests; rehearsal and peer feedback",
+        duration: "60 minutes",
         activities: [
           {
-            name: "Demo Script Development",
-            duration: "10 minutes",
-            description: "Structure presentations for Innovation Fair audience",
+            name: "Prototype Build Sprint",
+            duration: "30 minutes",
+            description: "Implement excelSkillFocus and run tests on the dataset",
             details: [
-              "Opening: Explain the business problem (2-day vs. 2-hour close time)",
-              "Demonstration: Live system operation showing automation in action",
-              "Benefits: Quantify time savings and error reduction for business value",
-              "Interaction: Allow visitors to try the system with guidance"
+              "XLOOKUP mapping + SWITCH/IFS routing",
+              "Data validation and error flags",
+              "Record test scenarios and results"
             ]
           },
           {
-            name: "Peer Demo Practice & Feedback",
-            duration: "25 minutes",
-            description: "Teams present to classmates acting as Innovation Fair visitors",
-            // Component: UserTestingSurvey.tsx - Mock demo practice with peer feedback on presentation clarity
+            name: "Rehearsal (Round 1)",
+            duration: "15 minutes",
+            description: "4–5 minute demo practice per team",
             details: [
-              "Each team delivers 5-minute demo to peer audience",
-              "Peers provide feedback using visitor survey form",
-              "Focus on: clarity of explanation, demonstration effectiveness, business value communication",
-              "Identify common questions and prepare responses for actual fair"
-            ],
-            callout: {
-              type: "tip",
-              title: "Effective Demo Structure",
-              content: "Engage visitors with clear business value and hands-on interaction",
-              items: [
-                "Hook: Start with the time/money cost of manual processes",
-                "Show: Demonstrate actual system operation with real data",
-                "Quantify: Specific time savings and error reduction numbers",
-                "Interact: Let visitors try the system to experience the benefits"
-              ]
-            }
-          },
-          {
-            name: "User Feedback Analysis & System Refinement",
-            duration: "8 minutes",
-            description: "Analyze feedback and implement improvements",
-            details: [
-              "Review survey feedback for common usability issues and suggestions",
-              "Prioritize improvements that can be implemented before Innovation Fair",
-              "Make quick fixes to interface clarity and demonstration flow",
-              "Plan how to collect and respond to Innovation Fair visitor feedback"
+              "Storyline: problem → approach → results → decision",
+              "Timing: hit 4–5 minutes",
+              "Rubric alignment called out explicitly"
             ]
           },
           {
-            name: "Final Preparation & Logistics",
-            duration: "2 minutes",
-            description: "Innovation Fair setup planning and final system checks",
+            name: "Peer Critique & Iteration",
+            duration: "15 minutes",
+            description: "Collect feedback and revise",
             details: [
-              "Plan booth setup: laptop positioning, materials display, visitor flow",
-              "Final system reliability check with backup plans for technical issues",
-              "Preview Day 10: Innovation Fair presentation and feedback collection"
+              "PeerCritiqueForm categories map to rubric",
+              "Update change notes and next steps"
             ]
           }
         ],
         materials: [
-          "Demo script templates and timing guides",
-          "User testing survey forms",
-          "Feedback analysis worksheets",
-          "Innovation Fair setup guidelines"
+          "Milestone 2 checklist",
+          "Peer critique forms",
+          "Test summary template (scenarios/results)"
         ]
       },
       {
         day: 10,
-        title: "Public Presentation: Innovation Fair & Reflection",
-        focus: "Final presentations to Innovation Fair visitors and unit learning reflection",
+        title: "PBL Milestone 3: Presentations + Peer Review",
+        focus: "Final demo delivery with rubric‑aligned evaluation and reflection",
         duration: "45 minutes",
         activities: [
           {
-            name: "Innovation Fair Booth Setup",
-            duration: "10 minutes",
-            description: "Prepare professional presentation stations",
+            name: "Setup & Flow",
+            duration: "5 minutes",
+            description: "Presenter order and rubric reminder",
             details: [
-              "Set up demonstration stations with working systems",
-              "Arrange signage explaining the business problem and solution",
-              "Prepare feedback collection materials and visitor interaction space",
-              "Final system checks and backup plan preparation"
+              "Timeboxing: Six groups × ~5 minutes; 5‑minute wrap",
+              "Rubric weights: Technical 50, Rationale 20, Clarity 15, Time 10, Q&A 5"
             ]
           },
           {
-            name: "Live Demonstrations to Visitors",
-            duration: "25 minutes",
-            description: "Present Month-End Wizard systems to Innovation Fair audience",
-            // Component: UserTestingSurvey.tsx - Collect visitor feedback on system usability and business value
+            name: "Group Presentations",
+            duration: "35 minutes",
+            description: "Demo + quick Q&A for each team",
             details: [
-              "Deliver structured demos to visitors (teachers, parents, entrepreneurs)",
-              "Allow visitors to interact with systems and experience automation benefits",
-              "Collect feedback using structured survey forms",
-              "Answer questions about technical implementation and business value"
-            ],
-            callout: {
-              type: "important",
-              title: "Final Assessment: Public Demonstration",
-              content: "Authentic assessment through real-world presentation",
-              items: [
-                "Technical demonstration: System works reliably during live presentation",
-                "Business communication: Clear explanation of value proposition",
-                "User interaction: Visitors can successfully operate the system",
-                "Professional presentation: Appropriate for business audience"
-              ]
-            }
-          },
-          {
-            name: "Feedback Collection & Analysis",
-            duration: "5 minutes",
-            description: "Gather visitor input for system improvement and learning reflection",
-            details: [
-              "Compile visitor feedback forms and suggestions",
-              "Identify patterns in user comments and improvement suggestions",
-              "Note successful demonstration elements and visitor engagement levels",
-              "Plan post-fair improvements for v2.0 system development"
+              "Show end‑to‑end automation and dashboard",
+              "Connect results to a business decision; address risks",
+              "Audience submits PeerCritiqueForm feedback"
             ]
           },
           {
-            name: "Unit Reflection & Portfolio Addition",
+            name: "Wrap & Reflection",
             duration: "5 minutes",
-            description: "Learning synthesis and documentation for course portfolio",
+            description: "Submit files and capture learning",
             details: [
-              "Reflection writing: How did building automation change your understanding of business processes?",
-              "Skill analysis: Which technical skills (Excel vs. accounting) were most challenging?",
-              "Future application: How might automation apply to other business challenges?",
-              "Add completed Month-End Wizard to course portfolio with reflection documentation"
+              "Submit final model, slides, and peer reviews",
+              "Quick CAP reflection and next‑step improvements"
             ]
           }
         ],
         materials: [
-          "Innovation Fair booth setup materials",
-          "Visitor feedback survey forms and clipboards",
-          "Demo scripts and backup system preparations",
-          "Unit reflection prompts and portfolio guidelines"
+          "Presentation rubric (weights visible)",
+          "Peer review forms",
+          "Submission checklist"
         ]
       }
     ]

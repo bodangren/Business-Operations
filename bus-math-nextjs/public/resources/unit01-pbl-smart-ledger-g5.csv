@@ -1,0 +1,50 @@
+date,txn_id,description,account,counter_account,debit,credit,notes
+2025-05-01,T401,AR from prior month,Cash,Accounts Receivable,800,0,Deposit
+2025-05-02,T402,Client design sprint,Accounts Receivable,Service Revenue,1400,0,Invoice EOM
+2025-05-03,T403,Stock icons,Software Expense,Cash,12.00,0,Assets pack
+2025-05-05,T404,Client prepay,Cash,Unearned Revenue,250,0,Retainer
+2025-05-07,T405,Owner investment,Cash,Owner's Equity,750,0,Boost
+2025-05-09,T406,Travel to workshop,Travel Expense,Cash,27.40,0,Transit
+2025-05-11,T407,AR collected (T402),Cash,Accounts Receivable,1400,0,Settlement
+2025-05-13,T408,Theme + plugin bundle,Software Expense,Accounts Payable,99.00,0,Bundle
+2025-05-15,T409,Pay A/P (T408),Accounts Payable,Cash,0,99.00,ACH
+2025-05-18,T410,Hosting,Hosting Expense,Cash,18.00,0,Monthly
+2025-05-20,T411,Bank fee,Bank Fees Expense,Cash,6.00,0,Service fee
+2025-05-22,T412,Refund for delay,Sales Returns and Allowances,Cash,30,0,Customer care
+2025-05-25,T413,QA entry,Trial Balance Check,Trial Balance Check,0,0,Balance test
+2025-05-01,T414,Opening receipt,Cash,Service Revenue,420,0,Quick fix
+2025-05-02,T415,Recognize prepay,Unearned Revenue,Service Revenue,0,110,Monthly
+2025-05-03,T416,Stock video,Software Expense,Cash,14.00,0,Clip
+2025-05-04,T417,Local transit,Travel Expense,Cash,7.20,0,Client trip
+2025-05-05,T418,Invoice (SEO),Accounts Receivable,Service Revenue,600,0,Net 15
+2025-05-06,T419,Collect AR (T418),Cash,Accounts Receivable,600,0,Card
+2025-05-07,T420,Owner draw,Owner's Equity,Cash,0,210,Personal
+2025-05-08,T421,Phone bill,Utilities Expense,Cash,58.30,0,Monthly
+2025-05-09,T422,Refund,Sales Returns and Allowances,Cash,27,0,Adjustment
+2025-05-10,T423,Analytics add‑on,Software Expense,Cash,16.00,0,App
+2025-05-11,T424,Bank fee,Bank Fees Expense,Cash,6.00,0,Service fee
+2025-05-12,T425,Invoice (design),Accounts Receivable,Service Revenue,740,0,Net 30
+2025-05-13,T426,Collect AR (T425),Cash,Accounts Receivable,740,0,Wire
+2025-05-14,T427,Plugin,Software Expense,Accounts Payable,42.00,0,Due 30
+2025-05-15,T428,Pay A/P (T427),Accounts Payable,Cash,0,42.00,Online
+2025-05-16,T429,Snacks,Supplies Expense,Cash,10.20,0,Meeting
+2025-05-17,T430,Taxi,Travel Expense,Cash,14.80,0,Client demo
+2025-05-18,T431,Hosting,Hosting Expense,Cash,18.00,0,Monthly
+2025-05-19,T432,Recognize prepay,Unearned Revenue,Service Revenue,0,140,Earned portion
+2025-05-20,T433,Phone proration,Utilities Expense,Cash,7.40,0,Prorated
+2025-05-21,T434,Owner investment,Cash,Owner's Equity,610,0,Capital
+2025-05-22,T435,Invoice (audit),Accounts Receivable,Service Revenue,520,0,Net 15
+2025-05-23,T436,Collect AR (T435),Cash,Accounts Receivable,520,0,Deposit
+2025-05-24,T437,Sales refund,Sales Returns and Allowances,Cash,31,0,Goodwill
+2025-05-26,T438,Month end check,Trial Balance Check,Trial Balance Check,0,0,Reconciliation
+2025-05-26,T439,AR invoice (support),Accounts Receivable,Service Revenue,430,0,Net 15
+2025-05-26,T440,Collect AR (T439),Cash,Accounts Receivable,430,0,Same day
+2025-05-27,T441,Cloud storage,Software Expense,Cash,9.99,0,Backup
+2025-05-27,T442,Office supplies,Supplies Expense,Cash,9.10,0,Stationery
+2025-05-27,T443,Recognize prepay,Unearned Revenue,Service Revenue,0,110,Monthly portion
+2025-05-28,T444,Phone proration,Utilities Expense,Cash,7.20,0,Prorated
+2025-05-28,T445,Bank fee,Bank Fees Expense,Cash,6.00,0,Service fee
+2025-05-29,T446,Owner investment,Cash,Owner's Equity,530,0,Capital add
+2025-05-29,T447,Travel to client,Travel Expense,Cash,12.90,0,Transit
+2025-05-31,T448,QA balance check,Trial Balance Check,Trial Balance Check,0,0,Close out
+2025-05-31,T449,Bank fee,Bank Fees Expense,Cash,6.00,0,Service fee

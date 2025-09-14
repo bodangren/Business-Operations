@@ -27,45 +27,9 @@ export const unit06Data = {
 // Lesson phases from MCP curriculum database
 export const lesson08Phases = [
   {
-    id: "phase_hook_8",
-    phaseName: "Hook" as const,
-    sequence: 1,
-    description: "Capture attention and establish relevance for pricing recommendation development",
-    // No component needed for this phase.
-  },
-  {
-    id: "phase_introduction_8",
+    id: "pbl_m1",
     phaseName: "Introduction" as const,
-    sequence: 2,
-    description: "Introduce Competitive pricing strategies and market positioning and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
-  },
-  {
-    id: "phase_guided_practice_8",
-    phaseName: "Guided Practice" as const,
-    sequence: 3,
-    description: "Collaborative practice applying Competitive pricing strategies and market positioning with scaffolded support",
-    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - To guide the creation of the pricing recommendation.
-  },
-  {
-    id: "phase_independent_practice_8",
-    phaseName: "Independent Practice" as const,
-    sequence: 4,
-    description: "Practice Competitive pricing strategies and market positioning independently with minimal teacher support",
-    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - To create the pricing recommendation.
-  },
-  {
-    id: "phase_assessment_8",
-    phaseName: "Assessment" as const,
-    sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - For peer evaluation of the pricing recommendation.
-  },
-  {
-    id: "phase_closing_8",
-    phaseName: "Closing" as const,
-    sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    sequence: 1,
+    description: "PBL Milestone 1 — Project Definition: scope, datasets, Excel model plan, risks, and acceptance criteria."
   }
 ]

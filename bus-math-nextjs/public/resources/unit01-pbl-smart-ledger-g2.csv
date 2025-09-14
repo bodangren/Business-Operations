@@ -1,0 +1,51 @@
+date,txn_id,description,account,counter_account,debit,credit,notes
+2025-02-02,T101,Pet grooming social package,Cash,Service Revenue,720,0,Prepaid project
+2025-02-03,T102,Canva Pro team plan,Software Expense,Cash,27.99,0,Monthly
+2025-02-04,T103,New client invoice (SEO),Accounts Receivable,Service Revenue,1100,0,Net 30
+2025-02-07,T104,Printer ink & paper,Supplies Expense,Cash,42.10,0,Receipt #219
+2025-02-09,T105,Website maintenance retainer,Cash,Unearned Revenue,300,0,Work next month
+2025-02-10,T106,Internet bill,Utilities Expense,Cash,59.80,0,Fiber
+2025-02-12,T107,Owner draw,Owner's Equity,Cash,0,200,Personal transfer
+2025-02-14,T108,AR collected (T103),Cash,Accounts Receivable,1100,0,ACH deposit
+2025-02-16,T109,Plugin license,Software Expense,Accounts Payable,49.00,0,Due in 30 days
+2025-02-18,T110,Rideshare to client,Travel Expense,Cash,18.75,0,Client visit
+2025-02-20,T111,Pay A/P from T109,Accounts Payable,Cash,0,49,Online payment
+2025-02-22,T112,Monthly hosting,Hosting Expense,Cash,18.00,0,Hosting plan
+2025-02-24,T113,Client discount issued,Sales Returns and Allowances,Service Revenue,50,0,Contractual
+2025-02-26,T114,Bank service fee,Bank Fees Expense,Cash,6.00,0,Monthly
+2025-02-28,T115,Quality check entry,Trial Balance Check,Trial Balance Check,0,0,For balance testing
+2025-02-01,T116,Opening cash receipt,Cash,Service Revenue,450,0,Walk‑in client
+2025-02-02,T117,Recognize Jan prepay,Unearned Revenue,Service Revenue,0,100,Monthly portion
+2025-02-03,T118,Stock icons,Software Expense,Cash,11.00,0,One‑off
+2025-02-04,T119,Phone proration,Utilities Expense,Cash,8.20,0,Prorated cycle
+2025-02-05,T120,Client deposit,Cash,Unearned Revenue,280,0,Project start
+2025-02-06,T121,Local bus fare,Travel Expense,Cash,6.70,0,Client trip
+2025-02-07,T122,Printer paper,Supplies Expense,Cash,9.50,0,Stationery
+2025-02-08,T123,Owner investment,Cash,Owner's Equity,600,0,Capital add
+2025-02-09,T124,Invoice (support),Accounts Receivable,Service Revenue,320,0,Net 15
+2025-02-10,T125,Collect AR (T124),Cash,Accounts Receivable,320,0,Card
+2025-02-11,T126,Bank fee,Bank Fees Expense,Cash,6.00,0,Monthly
+2025-02-12,T127,Ad credit reversal,Sales Returns and Allowances,Cash,20,0,Correction
+2025-02-13,T128,Analytics add‑on,Software Expense,Cash,15.00,0,App
+2025-02-14,T129,Owner draw,Owner's Equity,Cash,0,180,Personal
+2025-02-15,T130,Invoice (web update),Accounts Receivable,Service Revenue,540,0,Net 15
+2025-02-16,T131,Collect AR (T130),Cash,Accounts Receivable,540,0,Wire
+2025-02-17,T132,Hosting upgrade,Hosting Expense,Cash,22.00,0,Plan bump
+2025-02-18,T133,ACH fee,Bank Fees Expense,Cash,2.00,0,Processing
+2025-02-19,T134,Recognize prepay,Unearned Revenue,Service Revenue,0,140,Earned portion
+2025-02-20,T135,Plugin license,Software Expense,Accounts Payable,39.00,0,Due EOM
+2025-02-21,T136,Pay A/P (T135),Accounts Payable,Cash,0,39.00,Online
+2025-02-22,T137,Snacks for client,Supplies Expense,Cash,7.20,0,Meeting
+2025-02-23,T138,Taxi to venue,Travel Expense,Cash,14.90,0,Presentation
+2025-02-24,T139,Phone bill,Utilities Expense,Cash,58.50,0,Auto‑pay
+2025-02-25,T140,Sales refund,Sales Returns and Allowances,Cash,35,0,Service credit
+2025-02-26,T141,Invoice (SEO),Accounts Receivable,Service Revenue,680,0,Net 30
+2025-02-27,T142,Collect AR (T141),Cash,Accounts Receivable,680,0,ACH
+2025-02-28,T143,Month end check,Trial Balance Check,Trial Balance Check,0,0,Reconciliation
+2025-02-28,T144,AR invoice (maintenance),Accounts Receivable,Service Revenue,360,0,Net 15
+2025-02-28,T145,Collect AR (T144),Cash,Accounts Receivable,360,0,Same day
+2025-02-28,T146,Digital storage,Software Expense,Cash,9.99,0,Cloud
+2025-02-28,T147,Printer ink,Supplies Expense,Cash,13.40,0,Office
+2025-02-28,T148,Recognize prepay,Unearned Revenue,Service Revenue,0,120,Monthly portion
+2025-02-28,T149,Bank fee,Bank Fees Expense,Cash,6.00,0,Service fee
+2025-02-28,T150,QA balance check,Trial Balance Check,Trial Balance Check,0,0,Close out

@@ -1,0 +1,47 @@
+date,account,txn_type,amount,department,method,notes
+2025-01-01,Accounts Receivable,accrual,520,Client G,,Kickoff work complete
+2025-01-02,Utilities Expense,accrual,275,Facilities,,Metered; bill on 2/2
+2025-01-03,Sales Revenue,regular,-980,Sales,,Card payment
+2025-01-04,Supplies Expense,accrual,85,Operations,,Printer ink & paper
+2025-01-05,Sales Revenue,regular,-740,Sales,,Cash sale
+2025-01-06,Unearned Revenue,deferral,-900,Sales,,3-month package sold 1/6
+2025-01-07,Accounts Receivable,accrual,430,Client H,,Design completed
+2025-01-08,Phone Expense,accrual,88,Admin,,Cycle ends 2/8
+2025-01-09,Accounts Receivable,accrual,750,Client B,,Work done; invoice 2/4
+2025-01-10,Advertising Expense,accrual,260,Marketing,,Campaign mid-run
+2025-01-11,Sales Revenue,regular,-1120,Sales,,ACH settlement
+2025-01-12,Bank Fees,accrual,28,Accounting,,Monthly fees
+2025-01-13,Software Expense,accrual,99,Operations,,App subscription renews 2/13
+2025-01-14,Sales Discounts,regular,35,Sales,,Promo applied
+2025-01-15,Sales Revenue,regular,-860,Sales,,POS batch
+2025-01-16,Office Furniture,depreciation,2400,Admin,SLN,Chairs and desks
+2025-01-17,Interest Expense,accrual,52,Accounting,,Loan interest
+2025-01-18,Travel Expense,accrual,140,Sales,,Client meeting mileage
+2025-01-19,Rent Expense,accrual,1150,Admin,,Lease due next month
+2025-01-20,Sales Revenue,regular,-1320,Sales,,Online order paid
+2025-01-21,Maintenance Expense,accrual,120,Facilities,,Light service
+2025-01-22,Maintenance Expense,accrual,160,Facilities,,Vendor bill pending
+2025-01-23,Accounts Receivable,accrual,680,Client I,,Implementation done
+2025-01-24,Software Expense,accrual,75,Operations,,Analytics add-on
+2025-01-25,Sales Returns,regular,120,Sales,,Refund
+2025-01-26,Sales Revenue,regular,-1650,Sales,,Collected same day
+2025-01-27,Postage Expense,accrual,20,Operations,,Ship materials
+2025-01-28,Insurance Expense,deferral,75,Admin,,Monthly recognition
+2025-01-29,Prepaid Insurance,deferral,900,Admin,,Policy paid upfront
+2025-01-30,Sales Revenue,regular,-940,Sales,,Marketplace payout
+2025-01-31,Closing Entries,closing,0,Accounting,,Close revenue/expense
+2025-01-06,Deferred Revenue Adjustment,deferral,300,Sales,,Monthly portion recognized
+2025-01-08,Accrued Revenue,accrual,260,Sales,,January work complete
+2025-01-10,Wages Payable,accrual,910,HR,,EOM accrual
+2025-01-12,Utilities Expense,accrual,190,Facilities,,Gas & electric
+2025-01-14,Professional Fees,accrual,320,Accounting,,Consultation pending
+2025-01-16,Accounts Receivable,accrual,560,Client J,,Testing approved
+2025-01-18,Advertising Expense,accrual,210,Marketing,,Sponsored post
+2025-01-20,Software Expense,accrual,89,Operations,,Reporting module
+2025-01-22,Travel Expense,accrual,115,Sales,,Local trips
+2025-01-24,Bank Fees,accrual,16,Accounting,,Wire charges
+2025-01-26,Sales Revenue,regular,-1015,Sales,,Card settlement
+2025-01-28,Phone Expense,accrual,92,Admin,,Overage
+2025-01-29,Interest Expense,accrual,40,Accounting,,Note interest
+2025-01-30,Sales Revenue,regular,-880,Sales,,Cash drawer
+2025-01-31,Closing Entries,closing,0,Accounting,,Reset income/expense

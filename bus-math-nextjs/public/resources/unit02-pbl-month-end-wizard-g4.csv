@@ -1,0 +1,46 @@
+date,account,txn_type,amount,department,method,notes
+2025-01-01,Accounts Receivable,accrual,610,Client O,,Initial deliverables
+2025-01-02,Sales Revenue,regular,-760,Sales,,Cash sale
+2025-01-03,Accounts Receivable,accrual,980,Client D,,Service complete 1/3; invoice 2/1
+2025-01-04,Supplies Expense,accrual,72,Operations,,Notebook/pens
+2025-01-05,Utilities Expense,accrual,225,Facilities,,Metered
+2025-01-06,Sales Revenue,regular,-880,Sales,,POS
+2025-01-07,Unearned Revenue,deferral,-300,Sales,,Advance for Feb services
+2025-01-08,Phone Expense,accrual,82,Admin,,Cycle ends 2/8
+2025-01-09,Sales Discounts,regular,30,Sales,,Promo
+2025-01-10,Advertising Expense,accrual,210,Marketing,,Search ads
+2025-01-11,Software Expense,accrual,85,Operations,,Licenses renew 2/11
+2025-01-12,Bank Fees,accrual,24,Accounting,,Fees
+2025-01-13,Sales Revenue,regular,-990,Sales,,ACH
+2025-01-14,Maintenance Expense,accrual,105,Facilities,,Light repair
+2025-01-15,Office Furniture,depreciation,1500,Admin,SLN,File cabinets
+2025-01-16,Interest Expense,accrual,46,Accounting,,Loan
+2025-01-17,Travel Expense,accrual,155,Sales,,Client visits
+2025-01-18,Advertising Expense,accrual,260,Marketing,,Sponsored post
+2025-01-19,Rent Expense,accrual,1175,Admin,,Due next month
+2025-01-20,Sales Revenue,regular,-920,Sales,,Marketplace payout
+2025-01-21,Accounts Receivable,accrual,540,Client P,,QA complete
+2025-01-22,Software Expense,accrual,74,Operations,,Plug-in
+2025-01-23,Postage Expense,accrual,16,Operations,,Mail samples
+2025-01-24,Maintenance Expense,accrual,120,Facilities,,HVAC filter change
+2025-01-25,Insurance Expense,deferral,90,Admin,,Monthly recognition
+2025-01-26,Sales Revenue,regular,-1750,Sales,,Collected via ACH
+2025-01-27,Accounts Receivable,accrual,620,Client Q,,Approved
+2025-01-28,Travel Expense,accrual,120,Sales,,Local trips
+2025-01-29,Prepaid Insurance,deferral,720,Admin,,Semiannual policy
+2025-01-30,Sales Returns,regular,130,Sales,,Refund
+2025-01-31,Closing Entries,closing,0,Accounting,,Close income/expense
+2025-01-05,Deferred Revenue Adjustment,deferral,100,Sales,,Recognize January portion
+2025-01-07,Accrued Revenue,accrual,300,Sales,,Phase done
+2025-01-09,Wages Payable,accrual,960,HR,,EOM accrual
+2025-01-11,Utilities Expense,accrual,205,Facilities,,Power
+2025-01-13,Professional Fees,accrual,280,Accounting,,Consultation
+2025-01-15,Accounts Receivable,accrual,560,Client R,,Testing pass
+2025-01-17,Advertising Expense,accrual,190,Marketing,,Retargeting
+2025-01-19,Software Expense,accrual,92,Operations,,Reporting
+2025-01-21,Travel Expense,accrual,128,Sales,,City travel
+2025-01-23,Bank Fees,accrual,14,Accounting,,Wire
+2025-01-25,Sales Revenue,regular,-1050,Sales,,Card batch
+2025-01-27,Phone Expense,accrual,84,Admin,,Overage
+2025-01-29,Interest Expense,accrual,41,Accounting,,Note
+2025-01-31,Closing Entries,closing,0,Accounting,,Reset temporary

@@ -735,162 +735,154 @@ export const unit01LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "Summary: Integration & System Refinement",
-        focus: "Integrate all components and refine ledger systems for professional presentation",
-        duration: "45 minutes",
+        title: "PBL Milestone 1: Project Definition",
+        focus: "Definition → data plan → workbook skeleton",
+        duration: "45–60 minutes",
         activities: [
           {
-            name: "System Integration Review",
+            name: "Project Brief & Scope",
+            duration: "15 minutes",
+            description: "Draft problem statement, scope, stakeholders, and success metrics",
+            details: [
+              "Stakeholders (Sarah, clients, investor) and what each needs",
+              "Success metrics tied to accuracy, speed, and investor readiness",
+              "Short, client-friendly language with concrete outcomes"
+            ]
+          },
+          {
+            name: "Data Inventory & File Conventions",
             duration: "10 minutes",
-            description: "Ensure all ledger components work together seamlessly",
+            description: "List sources and agree on file naming rules",
             details: [
-              "Test complete system with full TechStart dataset",
-              "Verify Excel Tables, SUMIF functions, and error-checking work together",
-              "Identify and fix any integration issues"
+              "Pick dataset for your group (g1–g6) and log its path",
+              "Set naming pattern for workbook versions and tabs",
+              "Note assumptions and constraints (access, timing)"
             ]
           },
           {
-            name: "Professional Formatting & Documentation",
-            duration: "20 minutes",
-            description: "Prepare ledger for investor presentation standards",
+            name: "Workbook Skeleton",
+            duration: "15 minutes",
+            description: "Create tabs and headers (Transactions, Accounts, Trial Balance, Checks, Dashboard)",
             details: [
-              "Apply professional business formatting standards",
-              "Add clear documentation explaining how to use the self-auditing features",
-              "Create user instructions for non-expert users",
-              "Ensure visual appeal appropriate for business presentation"
+              "Define validation plan and trial-balance auto-check",
+              "Record initial risks and mitigation steps",
+              "Prepare a one-page brief outline"
             ]
           },
           {
-            name: "Presentation Planning",
-            duration: "10 minutes",
-            description: "Plan approach for investor pitch presentation",
+            name: "Milestone Acceptance Check",
+            duration: "5–10 minutes",
+            description: "Self-review against acceptance criteria before submission",
             details: [
-              "Outline key points: Why self-auditing matters, how system works, benefits to Sarah",
-              "Practice explaining technical features in business-friendly language",
-              "Prepare to demonstrate error-catching capabilities live"
-            ]
-            // COMPONENT: PitchPresentationBuilder.tsx (to be created) - 4-minute investor pitch tool
-          },
-          {
-            name: "Final System Validation",
-            duration: "5 minutes",
-            description: "Complete quality check before presentations",
-            details: [
-              "Run final test with instructor-provided validation dataset",
-              "Confirm system meets all Milestone 3 requirements",
-              "Teams sign off that their system is presentation-ready"
+              "Brief + skeleton started; plan is clear and testable",
+              "Datasets: reuse same g1–g6 files across Days 8–10",
+              "Submission checklist completed"
             ]
           }
         ],
         materials: [
-          "Professional formatting standards guide",
-          "User documentation templates",
-          "Presentation planning worksheet",
-          "Final validation dataset"
+          "Group datasets: /resources/unit01-pbl-smart-ledger-g1..g6.csv",
+          "Milestone 1 acceptance criteria checklist",
+          "One-page brief template"
         ]
       },
       {
         day: 9,
-        title: "Project Work: Presentation Preparation & Rehearsal",
-        focus: "Prepare and practice investor pitch presentations with peer feedback",
-        duration: "45 minutes",
+        title: "PBL Milestone 2: Prototype + Rehearsal",
+        focus: "Working prototype, validation tests, and structured rehearsal",
+        duration: "60 minutes (+20 min peer feedback)",
         activities: [
           {
-            name: "Presentation Structure Workshop",
-            duration: "15 minutes",
-            description: "Learn effective business presentation techniques",
-            details: [
-              "Review successful investor pitch structure: Problem, Solution, Demonstration, Benefits",
-              "Connect to Sarah's story: Why does she need this system?",
-              "Practice explaining technical features using business language"
-            ]
-          },
-          {
-            name: "Team Rehearsal Time",
+            name: "Prototype Check",
             duration: "20 minutes",
-            description: "Teams practice their 4-minute investor presentations",
+            description: "Verify core features on real data",
             details: [
-              "Teams rehearse complete presentation with live Excel demonstration",
-              "Practice timing to ensure 4-minute limit",
-              "Prepare for likely investor questions about accuracy and reliability",
-              "Refine presentation flow and technical demonstration"
+              "Tables, SUMIF/SUMIFS, and trial-balance checks working",
+              "Data validation prevents common entry errors",
+              "Document test scenarios and outcomes"
             ]
           },
           {
-            name: "Peer Feedback Rounds",
-            duration: "10 minutes",
-            description: "Structured feedback from other teams",
+            name: "Rehearsal (Timeboxed)",
+            duration: "20 minutes",
+            description: "Practice story + demo within 4–5 minutes",
             details: [
-              "Teams present to other teams using presentation feedback protocol",
-              "Focus feedback on: clarity of explanation, demonstration effectiveness, business benefits",
-              "Provide specific suggestions for improvement before tomorrow's final presentations"
+              "Problem → solution → live demo flow",
+              "Assign speaking roles and transitions",
+              "Anticipate investor questions"
             ]
+          },
+          {
+            name: "Peer Feedback (Structured)",
+            duration: "20 minutes",
+            description: "Use PeerCritiqueForm to capture feedback by rubric category",
+            details: [
+              "Collect strengths, improvements, Excel skills, business insight, delivery",
+              "Summarize changes to make before Day 10",
+              "Reconfirm dataset reuse (g1–g6) for consistency"
+            ]
+            // COMPONENT: PeerCritiqueForm.tsx ✅
           }
         ],
         materials: [
-          "Investor pitch structure guide",
-          "Presentation timing tools",
-          "Peer feedback protocol sheets",
-          "Technical demonstration checklist"
+          "Group datasets: /resources/unit01-pbl-smart-ledger-g1..g6.csv",
+          "Prototype test checklist",
+          "PeerCritiqueForm rubric reference"
         ]
       },
       {
         day: 10,
-        title: "Presentations: Investor Showcase & Reflection",
-        focus: "Final presentations to investor panel and unit reflection",
-        duration: "45 minutes",
+        title: "PBL Milestone 3: Presentations + Peer Review",
+        focus: "Final presentations to authentic audience; rubric-aligned peer reviews; reflection",
+        duration: "40 minutes presentations + 5 minutes wrap",
         activities: [
           {
-            name: "Investor Panel Presentations",
-            duration: "30 minutes",
-            description: "Teams present self-auditing ledgers to finance professional panel",
+            name: "Presentation Flow & Timeboxing",
+            duration: "40 minutes",
+            description: "5 min setup; Six groups × ~5 min each; 5 min wrap",
             details: [
-              "Each team delivers 4-minute investor pitch with live Excel demonstration",
-              "Panel asks questions about system accuracy, reliability, and business value",
-              "Teams demonstrate error-catching features and explain investor benefits",
-              "Panel provides feedback on presentation quality and system effectiveness"
+              "Order: g1 → g2 → g3 → g4 → g5 → g6",
+              "4–5 minutes per team + brief Q&A",
+              "Audience completes PeerCritiqueForm by rubric category"
             ],
-            // COMPONENT: PitchPresentationBuilder.tsx (to be created) - Final presentations
+            // COMPONENT: PeerCritiqueForm.tsx ✅ (audience reviewers)
             callout: {
               type: "important",
-              title: "Final Assessment: Investor Presentation",
-              content: "Authentic assessment mirroring real investor due diligence",
+              title: "Standard Rubric (weights)",
+              content: "Technical Accuracy 50%, Strategic Rationale 20%, Communication & Clarity 15%, Time Management 10%, Q&A 5%",
               items: [
-                "Technical accuracy: All Excel functions work correctly",
-                "Business communication: Clear explanation of system benefits",
-                "Professional presentation: Appropriate for investor audience",
-                "Q&A handling: Confident responses to panel questions"
+                "Map feedback to the five rubric categories",
+                "Use concise, professional comments",
+                "Note specific Excel strengths and business insights"
               ]
             }
           },
           {
             name: "Unit Reflection & Learning Analysis",
-            duration: "10 minutes",
-            description: "Students reflect on learning journey and connect to future applications",
+            duration: "5 minutes",
+            description: "Students reflect and log takeaways + next steps",
             details: [
-              "Reflection writing: How did building Sarah's ledger change your understanding of business systems?",
-              "Learning analysis: Which skills (accounting concepts vs. Excel techniques) were most challenging?",
-              "Future application: How might these skills help in other business contexts?",
-              "Connection to Unit 2: What business challenge might Sarah face next as TechStart grows?"
+              "Post-presentation reflection journal",
+              "Personal improvements to carry into Unit 2",
+              "Confirm final files and slide links are submitted"
             ]
-            // COMPONENT: ReflectionJournal.tsx ✅ - Document learning journey
+            // COMPONENT: ReflectionJournal.tsx ✅
           },
           {
             name: "Portfolio Addition & Closure",
             duration: "5 minutes",
             description: "Document learning achievements and prepare for next unit",
             details: [
-              "Add completed ledger system to digital portfolio with reflection notes",
-              "Celebrate team achievements and acknowledge growth in business thinking",
-              "Preview Unit 2: Sarah's next challenge with month-end processes and automation"
+              "Add final workbook and slides to portfolio",
+              "Celebrate team achievements and acknowledge growth",
+              "Preview Unit 2: Month‑end processes and automation"
             ]
           }
         ],
         materials: [
-          "Investor panel evaluation forms",
-          "Reflection writing prompts",
-          "Portfolio submission guidelines",
-          "Unit 2 preview materials"
+          "PeerCritiqueForm rubric reference",
+          "Presentation timing sheet (4–5 minutes)",
+          "Submission checklist: final workbook + slides + peer reviews"
         ]
       }
     ]

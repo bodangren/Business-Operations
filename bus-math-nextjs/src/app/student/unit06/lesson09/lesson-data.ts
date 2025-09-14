@@ -33,45 +33,9 @@ export const unit06Data = {
 // Lesson phases from MCP curriculum database
 export const lesson09Phases = [
   {
-    id: "phase_hook_9",
-    phaseName: "Hook" as const,
-    sequence: 1,
-    description: "Capture attention and establish relevance for town hall debate preparation",
-    // No component needed for this phase.
-  },
-  {
-    id: "phase_introduction_9",
-    phaseName: "Introduction" as const,
-    sequence: 2,
-    description: "Introduce key concepts and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
-  },
-  {
-    id: "phase_guided_practice_9",
-    phaseName: "Guided Practice" as const,
-    sequence: 3,
-    description: "Collaborative practice applying lesson concepts with scaffolded support",
-    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - To prepare for the debate.
-  },
-  {
-    id: "phase_independent_practice_9",
-    phaseName: "Independent Practice" as const,
-    sequence: 4,
-    description: "Design and develop presentation materials showcasing learning achievements",
-    // component: "PitchPresentationBuilder" (id: mdsno4jnkaav47ved9p) - To prepare for the debate.
-  },
-  {
-    id: "phase_assessment_9",
+    id: "pbl_m2",
     phaseName: "Assessment" as const,
-    sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - For peer evaluation of the debate preparation.
-  },
-  {
-    id: "phase_closing_9",
-    phaseName: "Closing" as const,
-    sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    sequence: 1,
+    description: "PBL Milestone 2 — Prototype + Rehearsal: working prototype, validations, test scenarios, and peer feedback."
   }
 ]
