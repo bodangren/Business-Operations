@@ -12,6 +12,7 @@ import {
   Home
 } from "lucide-react"
 import Link from "next/link"
+import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 
 interface LessonPhase {
   id: string
@@ -68,6 +69,8 @@ export function PhaseHeader({ lesson, unit, phase, phases }: PhaseHeaderProps) {
   
   return (
     <div className="max-w-4xl mx-auto space-y-6 mb-8">
+      {/* Ensure public resource links include basePath in production */}
+      <ResourceBasePathFixer />
       {/* Breadcrumb Navigation */}
       <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
         <Link href="/student" className="hover:text-foreground flex items-center gap-1">

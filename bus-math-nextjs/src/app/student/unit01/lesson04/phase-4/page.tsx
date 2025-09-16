@@ -7,6 +7,7 @@ import JournalEntryBuilding, { Scenario as JEScenario } from "@/components/exerc
 import TAccountsVisualization from "@/components/accounting/TAccountsVisualization"
 import { Brain, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react"
 import { lesson04Data, unit01Data, lesson04Phases } from "../lesson-data"
+import { withBasePath } from "@/lib/paths"
 
 const currentPhase = lesson04Phases[3]
 
@@ -60,7 +61,7 @@ export default function Phase4Page() {
     <CardContent className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
         <a
-          href={`${process.env.NODE_ENV === 'production' ? '/Business-Operations' : ''}/resources/unit01-ledger-basic-practice.xlsx`}
+          href={withBasePath('/resources/unit01-ledger-basic-practice.xlsx')}
           download
           className="inline-flex"
         >
@@ -69,7 +70,7 @@ export default function Phase4Page() {
           </Button>
         </a>
         <p className="text-emerald-900 text-sm">
-          File path (public): <code>{`${process.env.NODE_ENV === 'production' ? '/Business-Operations' : ''}/resources/unit01-ledger-basic-practice.xlsx`}</code>
+          File path (public): <code>{withBasePath('/resources/unit01-ledger-basic-practice.xlsx')}</code>
         </p>
       </div>
 

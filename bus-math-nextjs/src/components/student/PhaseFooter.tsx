@@ -11,6 +11,7 @@ import {
   Lightbulb
 } from "lucide-react"
 import Link from "next/link"
+import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 
 interface LessonPhase {
   id: string
@@ -57,6 +58,8 @@ export function PhaseFooter({ lesson, unit, phase, phases }: PhaseFooterProps) {
   
   return (
     <div className="max-w-4xl mx-auto space-y-6 mt-8">
+      {/* Ensure public resource links include basePath in production */}
+      <ResourceBasePathFixer />
       {/* Navigation Controls */}
       <div className="flex items-center justify-between pt-6 border-t">
         <div className="flex items-center gap-2">
