@@ -1,0 +1,81 @@
+date,hour,category,item,qty,unit_price,weather,event,notes
+2024-09-07,08,beverage,drip_coffee,32,2.50,clear,None,morning rush steady
+2024-09-07,08,beverage,latte,18,4.00,clear,None,milk usage high
+2024-09-07,08,beverage,cappuccino,9,3.75,clear,None,
+2024-09-07,08,pastry,croissant,14,2.75,clear,None,fresh batch
+2024-09-07,08,pastry,blueberry_muffin,12,2.50,clear,None,
+2024-09-07,09,beverage,drip_coffee,36,2.50,clear,None,peak line
+2024-09-07,09,beverage,latte,22,4.00,clear,None,
+2024-09-07,09,beverage,iced_coffee,15,3.00,clear,None,
+2024-09-07,09,pastry,croissant,16,2.75,clear,None,
+2024-09-07,09,pastry,chocolate_chip_cookie,10,2.00,clear,None,
+2024-09-07,10,beverage,drip_coffee,28,2.50,clear,None,
+2024-09-07,10,beverage,latte,20,4.00,clear,None,
+2024-09-07,10,beverage,chai_latte,7,3.50,clear,None,
+2024-09-07,10,pastry,croissant,10,2.75,clear,None,
+2024-09-07,10,pastry,banana_bread,8,2.75,clear,None,
+2024-09-07,11,beverage,iced_coffee,14,3.00,clear,None,
+2024-09-07,11,beverage,latte,16,4.00,clear,None,
+2024-09-07,11,beverage,drip_coffee,22,2.50,clear,None,
+2024-09-07,11,food,breakfast_burrito,9,5.50,clear,None,late breakfast
+2024-09-07,11,food,ham_panini,6,6.50,clear,None,
+2024-09-07,12,food,veggie_panini,8,6.25,clear,None,lunch start
+2024-09-07,12,food,grilled_cheese,7,5.75,clear,None,
+2024-09-07,12,beverage,iced_tea,10,2.75,clear,None,
+2024-09-07,12,beverage,drip_coffee,18,2.50,clear,None,
+2024-09-07,12,pastry,chocolate_chip_cookie,9,2.00,clear,None,
+2024-09-07,13,food,ham_panini,9,6.50,clear,None,lunch peak
+2024-09-07,13,food,veggie_panini,10,6.25,clear,None,
+2024-09-07,13,beverage,iced_coffee,16,3.00,clear,None,
+2024-09-07,13,beverage,lemonade,8,3.00,clear,None,
+2024-09-07,13,pastry,brownie,7,2.25,clear,None,
+2024-09-07,14,food,grilled_cheese,8,5.75,clear,None,
+2024-09-07,14,food,caesar_salad,6,6.75,clear,None,
+2024-09-07,14,beverage,iced_tea,12,2.75,clear,None,
+2024-09-07,14,beverage,latte,11,4.00,clear,None,
+2024-09-07,14,pastry,blueberry_muffin,6,2.50,clear,None,near sellout
+2024-09-07,15,beverage,drip_coffee,14,2.50,clear,None,afternoon dip
+2024-09-07,15,beverage,iced_coffee,12,3.00,clear,None,
+2024-09-07,15,beverage,chai_latte,6,3.50,clear,None,
+2024-09-07,15,pastry,croissant,5,2.75,clear,None,last tray
+2024-09-07,15,food,grilled_cheese,5,5.75,clear,None,
+2024-09-08,08,beverage,drip_coffee,26,2.50,cloudy,None,morning slower
+2024-09-08,08,beverage,latte,15,4.00,cloudy,None,
+2024-09-08,08,pastry,croissant,12,2.75,cloudy,None,
+2024-09-08,08,pastry,blueberry_muffin,9,2.50,cloudy,None,
+2024-09-08,08,beverage,iced_coffee,7,3.00,cloudy,None,
+2024-09-08,09,beverage,drip_coffee,30,2.50,cloudy,None,
+2024-09-08,09,beverage,latte,18,4.00,cloudy,None,
+2024-09-08,09,beverage,iced_coffee,12,3.00,cloudy,None,
+2024-09-08,09,pastry,croissant,13,2.75,cloudy,None,
+2024-09-08,09,pastry,chocolate_chip_cookie,8,2.00,cloudy,None,
+2024-09-08,10,beverage,drip_coffee,22,2.50,cloudy,None,
+2024-09-08,10,beverage,latte,17,4.00,cloudy,None,
+2024-09-08,10,pastry,banana_bread,7,2.75,cloudy,None,
+2024-09-08,10,beverage,chai_latte,6,3.50,cloudy,None,
+2024-09-08,10,pastry,croissant,8,2.75,cloudy,None,
+2024-09-08,11,food,breakfast_burrito,7,5.50,cloudy,None,
+2024-09-08,11,beverage,drip_coffee,18,2.50,cloudy,None,
+2024-09-08,11,beverage,iced_coffee,10,3.00,cloudy,None,
+2024-09-08,11,food,ham_panini,5,6.50,cloudy,None,
+2024-09-08,11,pastry,brownie,6,2.25,cloudy,None,
+2024-09-08,12,food,veggie_panini,7,6.25,cloudy,None,lunch start
+2024-09-08,12,food,grilled_cheese,6,5.75,cloudy,None,
+2024-09-08,12,beverage,iced_tea,8,2.75,cloudy,None,
+2024-09-08,12,beverage,latte,12,4.00,cloudy,None,
+2024-09-08,12,pastry,chocolate_chip_cookie,7,2.00,cloudy,None,
+2024-09-08,13,food,ham_panini,7,6.50,cloudy,None,lunch modest
+2024-09-08,13,food,veggie_panini,8,6.25,cloudy,None,
+2024-09-08,13,beverage,iced_coffee,12,3.00,cloudy,None,
+2024-09-08,13,beverage,lemonade,7,3.00,cloudy,None,
+2024-09-08,13,pastry,brownie,5,2.25,cloudy,None,
+2024-09-08,14,food,grilled_cheese,6,5.75,cloudy,None,
+2024-09-08,14,food,caesar_salad,5,6.75,cloudy,None,
+2024-09-08,14,beverage,iced_tea,9,2.75,cloudy,None,
+2024-09-08,14,beverage,latte,9,4.00,cloudy,None,
+2024-09-08,14,pastry,blueberry_muffin,4,2.50,cloudy,None,low leftovers
+2024-09-08,15,beverage,drip_coffee,12,2.50,cloudy,None,closeout hour
+2024-09-08,15,beverage,iced_coffee,9,3.00,cloudy,None,
+2024-09-08,15,beverage,chai_latte,5,3.50,cloudy,None,
+2024-09-08,15,pastry,croissant,4,2.75,cloudy,None,near zero waste
+2024-09-08,15,food,grilled_cheese,4,5.75,cloudy,None,

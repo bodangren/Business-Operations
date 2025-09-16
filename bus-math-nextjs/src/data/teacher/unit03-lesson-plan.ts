@@ -778,62 +778,48 @@ export const unit03LessonPlan: UnitLessonPlan = {
       },
       {
         day: 10,
-        title: "Public Presentation: Demo Day Investor Showcase",
+        title: "Presentations + Peer Review (Single‑Phase PBL)",
         focus: "Final presentations to mock investor panel with interactive workbook demonstrations",
-        duration: "45 minutes",
+        duration: "40 minutes",
         activities: [
           {
-            name: "Demo Day Setup & Preparation",
+            name: "Setup",
             duration: "5 minutes",
-            description: "Final preparation for investor panel presentations",
+            description: "Teams stage laptops and materials; rubric review",
             details: [
-              "Teams set up presentation stations with laptops and investor materials",
-              "Review presentation protocol: 4-minute pitch + 2-minute Q&A per team",
-              "Final technical check: all Excel models function correctly",
-              "Review evaluation criteria with student teams and investor panel"
+              "Check that all Excel links and dashboards work",
+              "Review rubric weights: 50/20/15/10/5",
+              "Confirm presenter order (six groups)"
             ]
           },
           {
-            name: "Investor Panel Presentations",
+            name: "Six Groups × ~5 min",
             duration: "30 minutes",
-            description: "Teams present integrated three-statement models to mock investor panel",
+            description: "4–5 minute pitch + brief Q&A per group",
             details: [
-              "Each team delivers 4-minute pitch with live Excel demonstration",
-              "Panel includes local CPAs, PTA members with finance backgrounds, entrepreneurs",
-              "Teams demonstrate KPI dashboard interactivity and statement integration",
-              "Panel provides feedback on technical accuracy, business narrative, and investor appeal"
+              "Live demo: linked three‑statement model + KPI dashboard",
+              "Story: decision, drivers, risks, and assumptions",
+              "Audience submits PeerCritiqueForm feedback by rubric category"
             ],
             callout: {
               type: "assessment",
               title: "Authentic Investor Presentation Assessment",
-              content: "Final assessment mirrors real investor due diligence process",
+              content: "Mirrors real investor due diligence",
               items: [
-                "Technical Mastery: Do all formulas work correctly? Are statements integrated?",
-                "Business Communication: Is the financial narrative clear and compelling?",
-                "Professional Presentation: Appropriate for investor audience?",
-                "Q&A Competency: Can students handle investor questions confidently?"
+                "Technical Mastery: Formulas, links, and validations",
+                "Business Narrative: Clear, relevant insights",
+                "Professional Delivery: Audience‑appropriate visuals",
+                "Q&A: Confident, concise responses"
               ]
             }
           },
           {
-            name: "Panel Feedback & Reflection",
-            duration: "8 minutes",
-            description: "Investor panel provides overall feedback and students reflect on learning",
+            name: "Wrap",
+            duration: "5 minutes",
+            description: "Panel feedback and student reflection",
             details: [
-              "Panel shares overall observations on presentation quality and technical competency",
-              "Students complete exit reflection on their three-statement modeling journey",
-              "Teams identify key learning achievements and areas for continued growth",
-              "Connect learning to future business applications and Unit 4 preview"
-            ]
-          },
-          {
-            name: "Portfolio Addition & Unit Closure",
-            duration: "2 minutes",
-            description: "Archive completed work and prepare for next unit transition",
-            details: [
-              "Students add integrated workbook and investor materials to digital portfolio",
-              "Celebrate team achievements in mastering complex financial integration",
-              "Preview Unit 4: Data-Driven Café statistical analysis and forecasting challenges"
+              "Panel highlights strengths and next steps",
+              "Students complete quick reflection and archive final files"
             ]
           }
         ],

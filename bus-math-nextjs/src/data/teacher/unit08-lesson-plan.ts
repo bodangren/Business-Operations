@@ -599,165 +599,150 @@ export const unit08LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "Examples: Presentation Prep & Mock Panel",
-        focus: "Prepare pitch presentations and conduct trial investor presentations",
-        duration: "45 minutes",
+        title: "PBL Milestone 1: Project Definition",
+        focus: "Define scope, data inventory, workbook plan, and risks with acceptance criteria",
+        duration: "45–60 minutes",
         activities: [
           {
-            name: "Pitch Deck Development",
-            duration: "20 minutes",
-            description: "Create 8-slide VC-style presentation with model integration",
+            name: "Planning Brief",
+            duration: "15 minutes",
+            description: "Write problem statement, scope, stakeholders, and success metrics",
             details: [
-              "Slide structure: Problem, solution, market, model demonstration, scenarios, ask",
-              "Integrate model outputs: Key metrics, scenario comparisons, sensitivity insights",
-              "Design professional visuals that support financial story",
-              "Practice timing: 6 minutes presentation + 2 minutes Q&A preparation"
+              "Identify decision to support with the model",
+              "Name primary stakeholders and what they need to see",
+              "Define measurable success metrics for the first year",
+              "Outline deliverables and versioning approach"
             ]
           },
           {
-            name: "Mock VC Panel Presentations",
-            duration: "20 minutes",
-            description: "Trial presentations with peer VC panel feedback",
+            name: "Data Inventory + Sources",
+            duration: "10 minutes",
+            description: "List required inputs, expected formats, and source plan",
             details: [
-              "Teams present to other teams acting as VC panel",
-              "Focus on model demonstration and scenario explanation",
-              "Practice Q&A responses about assumptions, risks, competitive advantages",
-              "Receive structured feedback using VC evaluation criteria"
-            ],
-            callout: {
-              type: "important",
-              title: "VC Presentation Success Factors",
-              content: "Critical elements that determine investor engagement",
-              items: [
-                "Clear problem definition and large market opportunity",
-                "Credible financial model with realistic assumptions",
-                "Compelling scenario analysis showing risk awareness",
-                "Confident Q&A handling that builds investor trust"
-              ]
-            }
+              "Create a data table: field, source, format, frequency",
+              "Choose a file naming convention (team, date, version)",
+              "Download assigned group dataset (g1–g6)",
+              "Confirm consistent schema across groups"
+            ]
           },
           {
-            name: "Presentation Refinement",
-            duration: "5 minutes",
-            description: "Incorporate feedback and finalize presentation approach",
+            name: "Excel Model Plan",
+            duration: "15 minutes",
+            description: "Sketch workbook tabs, validations, and scenario switching",
             details: [
-              "Address key feedback points from mock presentations",
-              "Refine model demonstration timing and flow",
-              "Prepare responses to anticipated investor questions",
-              "Final technical check: Ensure model works flawlessly for live demo"
+              "Tabs: Assumptions, Drivers, IS, BS, CF, Scenarios, Sensitivity, Dashboard",
+              "Validation rules and error checks (ranges, required IDs, dates)",
+              "Scenario Manager setup and switching approach",
+              "Dashboard KPIs and visual plan"
+            ]
+          },
+          {
+            name: "Risks & Check‑In",
+            duration: "5–10 minutes",
+            description: "Document assumptions and risks; quick teacher check‑in for acceptance",
+            details: [
+              "Top risks and mitigation actions",
+              "Assumptions that need evidence",
+              "Acceptance criteria review and approvals",
+              "Start workbook skeleton"
             ]
           }
         ],
         materials: [
-          "8-slide pitch deck template with VC standards",
-          "Mock VC panel feedback forms",
-          "Q&A preparation worksheet",
-          "Technical demonstration checklist"
+          "/resources/unit08-pbl-year1-startup-model-g1.csv",
+          "/resources/unit08-pbl-year1-startup-model-g2.csv",
+          "/resources/unit08-pbl-year1-startup-model-g3.csv",
+          "/resources/unit08-pbl-year1-startup-model-g4.csv",
+          "/resources/unit08-pbl-year1-startup-model-g5.csv",
+          "/resources/unit08-pbl-year1-startup-model-g6.csv",
+          "Standard rubric reference (Technical 50 / Strategy 20 / Clarity 15 / Time 10 / Q&A 5)"
         ]
       },
       {
         day: 9,
-        title: "Project Work: Final Model Refinement",
-        focus: "Complete model enhancements and finalize investor presentation materials",
-        duration: "45 minutes",
+        title: "PBL Milestone 2: Prototype + Rehearsal",
+        focus: "Build working prototype with scenarios and sensitivity; rehearse and collect peer feedback",
+        duration: "~60 min build + ~20 min rehearsal",
         activities: [
           {
-            name: "Final Model Polish",
-            duration: "25 minutes",
-            description: "Implement professional formatting and advanced features",
+            name: "Prototype Build",
+            duration: "40–50 minutes",
+            description: "Implement scenario switching and sensitivity tables; validate with test cases",
             details: [
-              "Apply professional formatting standards throughout model",
-              "Add data validation and error-checking for user protection",
-              "Create executive summary dashboard with key metrics",
-              "Test all functionality: scenarios, sensitivity analysis, linking integrity"
+              "Scenario Manager with best/worst/realistic cases",
+              "One- and two-variable data tables on key drivers",
+              "Validation/error checks pass with sample data",
+              "Document test scenarios and results"
             ]
           },
           {
-            name: "Presentation Rehearsal",
-            duration: "15 minutes",
-            description: "Final practice with completed models and refined presentations",
+            name: "Rehearsal + Peer Feedback",
+            duration: "20–30 minutes",
+            description: "Run a timed demo and use PeerCritiqueForm for structured feedback",
             details: [
-              "Full presentation rehearsal with live model demonstration",
-              "Practice seamless switching between scenarios during presentation",
-              "Rehearse responses to challenging investor questions",
-              "Time final presentation to ensure 8-minute total duration"
-            ]
-          },
-          {
-            name: "Final Quality Check",
-            duration: "5 minutes",
-            description: "Last verification of model integrity and presentation readiness",
-            details: [
-              "Complete model functionality test with instructor validation dataset",
-              "Verify all presentation technology works correctly",
-              "Confirm teams are prepared for tomorrow's investor panel",
-              "Final preparation: Professional attire, materials organization"
+              "4–5 minute rehearsal: model demo + storyline",
+              "Peers complete rubric-aligned PeerCritiqueForm",
+              "Identify changes to ship before Demo Day",
+              "Update change notes"
             ]
           }
         ],
         materials: [
-          "Professional formatting standards guide",
-          "Executive dashboard templates",
-          "Final validation test dataset",
-          "Presentation technology setup guide"
+          "/resources/unit08-pbl-year1-startup-model-g1.csv",
+          "/resources/unit08-pbl-year1-startup-model-g2.csv",
+          "/resources/unit08-pbl-year1-startup-model-g3.csv",
+          "/resources/unit08-pbl-year1-startup-model-g4.csv",
+          "/resources/unit08-pbl-year1-startup-model-g5.csv",
+          "/resources/unit08-pbl-year1-startup-model-g6.csv",
+          "PeerCritiqueForm (rubric aligned)",
+          "Standard rubric reference"
         ]
       },
       {
         day: 10,
-        title: "Presentations: VC Demo Day & Reflection",
-        focus: "Final presentations to external VC panel and comprehensive unit reflection",
-        duration: "45 minutes",
+        title: "PBL Milestone 3: Presentations + Peer Review",
+        focus: "Final presentations (40 minutes flow) with rubric‑aligned peer reviews and reflection",
+        duration: "45–50 minutes",
         activities: [
           {
-            name: "VC Panel Presentations",
-            duration: "30 minutes",
-            description: "Professional presentations to external venture capital mentor panel",
+            name: "Presentation Flow",
+            duration: "40 minutes",
+            description: "5 min setup; Six groups × ~5 min; 5 min wrap",
             details: [
-              "Each team delivers complete 8-slide pitch with live Excel demonstration",
-              "External panel includes: VC mentors, successful entrepreneurs, finance professionals",
-              "Live Q&A handling: Teams respond to investor questions about model and assumptions",
-              "Panel evaluation: Professional feedback on presentation quality and model sophistication"
+              "Order posted; enforce 4–5 minute timebox",
+              "Live model demo: scenarios + sensitivity highlights",
+              "Audience submits PeerCritiqueForm feedback by rubric category",
+              "Collect final files: model + slides + peer reviews"
             ],
             callout: {
               type: "important",
-              title: "Final Assessment: Authentic VC Evaluation",
-              content: "Real-world assessment matching actual investor due diligence",
+              title: "Standard Rubric (Weights)",
+              content: "Use during scoring and peer feedback",
               items: [
-                "Model integrity: Technical accuracy and professional construction",
-                "Business acumen: Realistic assumptions and market understanding",
-                "Communication skills: Clear explanation of complex financial concepts",
-                "Investor readiness: Confidence and competence in Q&A responses"
+                "Technical Accuracy — 50%",
+                "Strategic Rationale — 20%",
+                "Communication & Clarity — 15%",
+                "Time Management — 10%",
+                "Q&A Readiness — 5%"
               ]
             }
           },
           {
-            name: "Unit Reflection & CAP Analysis",
-            duration: "10 minutes",
-            description: "Comprehensive reflection on learning journey and CAP development",
+            name: "Post‑Presentation Reflection",
+            duration: "5–10 minutes",
+            description: "Students reflect on feedback and identify next improvements",
             details: [
-              "Reflection writing: How did building an integrated model change your understanding of business complexity?",
-              "CAP analysis: Specific examples of Courage, Adaptability, and Persistence demonstrated",
-              "Skill transfer: How might integrated modeling skills apply to other business contexts?",
-              "Semester synthesis: Connection to all prior units and preparation for capstone project"
-            ]
-          },
-          {
-            name: "Portfolio Documentation & Course Transition",
-            duration: "5 minutes",
-            description: "Document achievements and prepare for semester 2 capstone",
-            details: [
-              "Add completed model and presentation to digital portfolio",
-              "Document key learning outcomes and technical skill achievements",
-              "Celebrate team accomplishments and acknowledge professional growth",
-              "Preview semester 2: Advanced capstone project with real startup development"
+              "What audience question revealed a gap?",
+              "Which change will improve trust the most?",
+              "Plan 1–2 concrete next steps",
+              "Submit reflection with final artifacts"
             ]
           }
         ],
         materials: [
-          "External VC panel evaluation forms",
-          "Reflection writing prompts with CAP analysis framework",
-          "Portfolio submission guidelines and templates",
-          "Semester 2 capstone preview materials"
+          "PeerCritiqueForm (audience reviewers)",
+          "Standard rubric reference",
+          "Submission checklist (final model, slides, peer reviews)"
         ]
       }
     ]

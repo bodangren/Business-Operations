@@ -1,41 +1,41 @@
-// Year‑1 Startup Model, Lesson 9 data - extracted from MCP curriculum database
+// Unit 08 — PBL Lesson 09 (Single Phase)
 export const lesson09Data = {
-  id: "mds5xnqj3aolal5gxbq",
-  title: "Project Work: Final Model Refinement",
+  id: "u08_l09_pbl_m2",
+  title: "PBL Milestone 2: Prototype + Rehearsal",
   sequence: 9,
-  unitId: "mdrhlhv53tduw0ib5oa",
+  unitId: "unit08",
   learningObjectives: [
-    "Refine integrated 3-statement financial models to ensure formula integrity and cross-sheet accuracy",
-    "Enhance scenario analysis capabilities and sensitivity testing features in startup financial models",
-    "Finalize professional investor presentation materials with compelling visuals and clear narratives",
-    "Implement feedback from peer audits to improve model robustness and eliminate potential red flags"
+    "Build a working prototype with scenario switching",
+    "Create one- and two-variable sensitivity tables",
+    "Demonstrate validation and error checks using test scenarios",
+    "Rehearse and incorporate structured peer feedback"
   ],
   keyConcepts: [
-    "Financial model quality assurance and validation techniques for investor-grade presentations",
-    "Advanced Excel formula auditing and error detection in complex linked models",
-    "Professional project management and deadline optimization for high-stakes deliverables",
-    "Continuous improvement methodology for startup financial modeling and presentation development"
+    "Scenario Manager and driver selection",
+    "Sensitivity analysis with data tables",
+    "Validation rules and test planning",
+    "Iterative improvement through peer critique"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 80,
   pedagogicalApproach: [
-    "Complete model enhancements and finalize investor presentation materials"
+    "Guided build of core features",
+    "Peer critique using structured rubric",
+    "Timed rehearsal with improvement cycle"
   ],
-  rationale: "To provide students with an opportunity to polish their financial models and presentations before their final presentations.",
-  status: "Draft"
+  rationale: "A working prototype proves your ideas. Rehearsal and peer feedback make your model clearer, more accurate, and presentation‑ready.",
 }
 
 export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
+  id: "unit08",
   title: "Year‑1 Startup Model",
-  sequence: 8
+  sequence: 8,
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson09Phases = [
   {
     id: "pbl_m2",
     phaseName: "Assessment" as const,
     sequence: 1,
-    description: "PBL Milestone 2 — Prototype + Rehearsal: working prototype, validations, test scenarios, and peer feedback."
-  }
+    description: "Build a working prototype implementing scenario and sensitivity features. Rehearse, collect peer feedback, and improve.",
+  },
 ]

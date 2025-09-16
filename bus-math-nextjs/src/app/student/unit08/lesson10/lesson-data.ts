@@ -1,41 +1,41 @@
-// Year‑1 Startup Model, Lesson 10 data - extracted from MCP curriculum database
+// Unit 08 — PBL Lesson 10 (Single Phase)
 export const lesson10Data = {
-  id: "mds5xnql1zkuylybvfsi",
-  title: "Presentations: VC Demo Day & Reflection",
+  id: "u08_l10_pbl_m3",
+  title: "PBL Milestone 3: Presentations + Peer Review",
   sequence: 10,
-  unitId: "mdrhlhv53tduw0ib5oa",
+  unitId: "unit08",
   learningObjectives: [
-    "Present comprehensive startup financial models to external venture capital panel with professional confidence",
-    "Demonstrate mastery of integrated 3-statement modeling through live Excel demonstrations and scenario analysis",
-    "Engage authentically with investor due diligence questions about financial assumptions and business strategy",
-    "Reflect on comprehensive learning journey and articulate growth in financial modeling and business communication skills"
+    "Demonstrate an accurate linked model with working scenarios",
+    "Communicate strategic rationale with clear visuals and timing",
+    "Manage Q&A confidently using evidence from the model",
+    "Submit final files and reflect on feedback for next steps"
   ],
   keyConcepts: [
-    "Venture capital demo day presentation standards and investor engagement protocols",
-    "Professional financial modeling demonstration and live technology integration",
-    "Authentic stakeholder communication and strategic business thinking in investment contexts",
-    "Capstone reflection and metacognitive assessment of comprehensive project-based learning journey"
+    "Investor‑ready communication standards",
+    "Rubric‑aligned evaluation and time management",
+    "Peer review for professional growth",
+    "Evidence submission and portfolio readiness"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Final presentations to external VC panel and comprehensive unit reflection"
+    "Live demonstration with timeboxing",
+    "Audience peer review by rubric category",
+    "Reflective practice for continuous improvement"
   ],
-  rationale: "To provide a culminating, authentic assessment of student learning and to give them an opportunity to share their work with a real-world audience.",
-  status: "Draft"
+  rationale: "Your presentation is the final proof. Clear delivery, accurate modeling, and thoughtful Q&A show investors they can trust your work.",
 }
 
 export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
+  id: "unit08",
   title: "Year‑1 Startup Model",
-  sequence: 8
+  sequence: 8,
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson10Phases = [
   {
     id: "pbl_m3",
     phaseName: "Assessment" as const,
     sequence: 1,
-    description: "PBL Milestone 3 — Presentations + Peer Review: final model, 4–5 minute presentation, rubric-based feedback."
-  }
+    description: "Final presentations, audience peer review using rubric categories, and post‑presentation reflection.",
+  },
 ]

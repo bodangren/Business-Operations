@@ -1,0 +1,80 @@
+Date,AccountID,AccountName,StatementLine,Category,Amount,Method,Scenario,Notes
+2025-01-02,REV100,Website Project A,Revenue,Revenue,2380,Accrual,Base,New client project billed
+2025-01-03,AR001,Accounts Receivable,Balance Sheet,Asset,2380,Accrual,Base,Invoice issued net 15
+2025-01-05,COG200,Contractor Fees,COGS,COGS,-940,Accrual,Base,Subcontractor for project A
+2025-01-07,OPE300,Software Subscriptions,Operating Expenses,OpEx,-119,Accrual,Base,Monthly SaaS tools
+2025-01-08,OPE310,Marketing Spend,Operating Expenses,OpEx,-258,Accrual,Base,Ad campaign
+2025-01-09,REV110,SEO Package A,Revenue,Revenue,1135,Accrual,Base,SEO engagement billed
+2025-01-10,BNK001,Bank Deposit,Cash Flow,Other,2950,Accrual,Base,Partial cash collection from AR
+2025-01-11,AR001,Accounts Receivable,Balance Sheet,Asset,-2950,Accrual,Base,Collection from customers
+2025-01-12,COG210,Design Subcontract,COGS,COGS,-435,Accrual,Base,Design assistance
+2025-01-13,OPE320,Office Supplies,Operating Expenses,OpEx,-91,Accrual,Base,Basic supplies
+2025-01-14,OPE330,Team Training,Operating Expenses,OpEx,-205,Accrual,Base,Upskilling session
+2025-01-15,REV120,Social Setup A,Revenue,Revenue,670,Accrual,Base,Social media package
+2025-01-16,ADJ001,Depreciation Expense,Operating Expenses,OpEx,-148,NonCash,Base,Non‑cash monthly depreciation
+2025-01-16,ADJ101,Accumulated Depreciation,Balance Sheet,ContraAsset,148,NonCash,Base,Pairs with depreciation expense
+2025-01-18,REV130,Maintenance Plan A,Revenue,Revenue,318,Accrual,Stretch,Recurring support upsell
+2025-01-20,OPE340,Rent,Operating Expenses,OpEx,-905,Accrual,Base,Office lease
+2025-01-22,HR500,Payroll,Operating Expenses,OpEx,-2210,Accrual,Base,Salaries and wages
+2025-01-23,TXP100,Payroll Taxes,Operating Expenses,OpEx,-282,Accrual,Base,Employer payroll taxes
+2025-01-25,BNK002,Bank Fees,Operating Expenses,OpEx,-25,Accrual,Base,Service charges
+2025-01-26,REV140,Custom Feature A,Revenue,Revenue,1760,Accrual,Conservative,Feature add-on billed
+2025-01-28,BNK003,Loan Proceeds,Cash Flow,Financing,5050,Accrual,Base,Working capital loan
+2025-01-28,LIA200,Loan Payable,Balance Sheet,Liability,5050,Accrual,Base,Loan principal recognized
+2025-01-29,BNK004,Equipment Purchase,Cash Flow,Investing,-2220,Accrual,Base,Hardware purchase
+2025-01-29,AST300,Equipment,Balance Sheet,Asset,2220,Accrual,Base,Capitalize equipment
+2025-01-30,BNK005,Loan Payment,Cash Flow,Financing,-422,Accrual,Base,Monthly payment
+2025-01-30,LIA201,Loan Interest,Operating Expenses,OpEx,-70,Accrual,Base,Interest portion
+2025-01-30,LIA200,Loan Payable,Balance Sheet,Liability,-352,Accrual,Base,Principal portion
+2025-02-01,REV200,Website Project B,Revenue,Revenue,2580,Accrual,Base,Project billed
+2025-02-02,AR001,Accounts Receivable,Balance Sheet,Asset,2580,Accrual,Base,Invoice issued net 15
+2025-02-03,COG200,Contractor Fees,COGS,COGS,-995,Accrual,Base,Subcontractor for project B
+2025-02-04,OPE300,Software Subscriptions,Operating Expenses,OpEx,-119,Accrual,Base,SaaS renewals
+2025-02-05,REV210,SEO Package B,Revenue,Revenue,1195,Accrual,Base,SEO billed
+2025-02-06,OPE340,Rent,Operating Expenses,OpEx,-905,Accrual,Base,Office lease
+2025-02-07,BNK001,Bank Deposit,Cash Flow,Other,2580,Accrual,Base,AR collection
+2025-02-07,AR001,Accounts Receivable,Balance Sheet,Asset,-2580,Accrual,Base,AR settled
+2025-02-08,COG210,Design Subcontract,COGS,COGS,-448,Accrual,Base,Design tasks
+2025-02-09,OPE350,Utilities,Operating Expenses,OpEx,-141,Accrual,Base,Power + internet
+2025-02-10,HR500,Payroll,Operating Expenses,OpEx,-2260,Accrual,Base,Salaries and wages
+2025-02-10,TXP100,Payroll Taxes,Operating Expenses,OpEx,-289,Accrual,Base,Employer payroll taxes
+2025-02-11,REV230,Maintenance Plan B,Revenue,Revenue,338,Accrual,Stretch,Recurring revenue
+2025-02-12,BNK006,Dividend Paid,Cash Flow,Financing,-305,Accrual,Base,Owner draw
+2025-02-12,EQ100,Retained Earnings,Balance Sheet,Equity,-305,Accrual,Base,Dividend reduces equity
+2025-02-14,ADJ001,Depreciation Expense,Operating Expenses,OpEx,-148,NonCash,Base,Monthly depreciation
+2025-02-14,ADJ101,Accumulated Depreciation,Balance Sheet,ContraAsset,148,NonCash,Base,Accumulate depreciation
+2025-02-16,BNK005,Loan Payment,Cash Flow,Financing,-422,Accrual,Base,Monthly payment
+2025-02-16,LIA201,Loan Interest,Operating Expenses,OpEx,-69,Accrual,Base,Interest portion
+2025-02-16,LIA200,Loan Payable,Balance Sheet,Liability,-353,Accrual,Base,Principal portion
+2025-02-18,REV240,Custom Feature B,Revenue,Revenue,1860,Accrual,Conservative,Feature billed
+2025-02-20,OPE360,Insurance,Operating Expenses,OpEx,-160,Accrual,Base,Business policy
+2025-02-22,OPE370,Travel,Operating Expenses,OpEx,-210,Accrual,Base,Client visits
+2025-02-24,BNK001,Bank Deposit,Cash Flow,Other,1820,Accrual,Base,Collections
+2025-02-24,AR001,Accounts Receivable,Balance Sheet,Asset,-1820,Accrual,Base,AR settled
+2025-03-01,REV300,Website Project C,Revenue,Revenue,2700,Accrual,Base,Project billed
+2025-03-02,AR001,Accounts Receivable,Balance Sheet,Asset,2700,Accrual,Base,Invoice issued
+2025-03-03,COG200,Contractor Fees,COGS,COGS,-1015,Accrual,Base,Subcontractor for project C
+2025-03-04,OPE300,Software Subscriptions,Operating Expenses,OpEx,-119,Accrual,Base,SaaS tools
+2025-03-05,REV310,SEO Package C,Revenue,Revenue,1245,Accrual,Base,SEO billed
+2025-03-06,OPE340,Rent,Operating Expenses,OpEx,-905,Accrual,Base,Office lease
+2025-03-07,OPE350,Utilities,Operating Expenses,OpEx,-146,Accrual,Base,Power + internet
+2025-03-08,HR500,Payroll,Operating Expenses,OpEx,-2330,Accrual,Base,Salaries and wages
+2025-03-08,TXP100,Payroll Taxes,Operating Expenses,OpEx,-295,Accrual,Base,Employer payroll taxes
+2025-03-10,COG210,Design Subcontract,COGS,COGS,-473,Accrual,Base,Design tasks
+2025-03-12,REV330,Maintenance Plan C,Revenue,Revenue,342,Accrual,Stretch,Recurring support
+2025-03-14,ADJ001,Depreciation Expense,Operating Expenses,OpEx,-148,NonCash,Base,Monthly depreciation
+2025-03-14,ADJ101,Accumulated Depreciation,Balance Sheet,ContraAsset,148,NonCash,Base,Accumulate depreciation
+2025-03-15,BNK005,Loan Payment,Cash Flow,Financing,-422,Accrual,Base,Monthly payment
+2025-03-15,LIA201,Loan Interest,Operating Expenses,OpEx,-67,Accrual,Base,Interest portion
+2025-03-15,LIA200,Loan Payable,Balance Sheet,Liability,-355,Accrual,Base,Principal portion
+2025-03-18,BNK001,Bank Deposit,Cash Flow,Other,2700,Accrual,Base,AR collection
+2025-03-18,AR001,Accounts Receivable,Balance Sheet,Asset,-2700,Accrual,Base,AR settled
+2025-03-20,BNK007,Equity Injection,Cash Flow,Financing,2050,Accrual,Base,Owner contribution
+2025-03-20,EQ200,Contributed Capital,Balance Sheet,Equity,2050,Accrual,Base,Increase equity
+2025-03-22,OPE380,Professional Fees,Operating Expenses,OpEx,-305,Accrual,Base,CPA consultation
+2025-03-24,REV340,Custom Feature C,Revenue,Revenue,1900,Accrual,Conservative,Feature billed
+2025-03-26,OPE390,Maintenance & Repairs,Operating Expenses,OpEx,-111,Accrual,Base,Equipment tune-up
+2025-03-28,BNK008,Sales Tax Payment,Cash Flow,Operating,-222,Accrual,Base,Quarterly sales tax remittance
+2025-03-30,ADJ200,AR Adjustment,Balance Sheet,Asset,-100,Accrual,Base,Uncollectible AR write-off
+2025-03-30,ADJ201,Bad Debt Expense,Operating Expenses,OpEx,-100,Accrual,Base,Recognize bad debt expense
+2025-03-31,REV399,Quarter-End True-Up,Revenue,Revenue,150,Accrual,Base,Minor true-up entry

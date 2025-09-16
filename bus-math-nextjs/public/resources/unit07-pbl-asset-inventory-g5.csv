@@ -1,0 +1,99 @@
+date,sku,movement,qty,unit_cost,notes
+2025-01-02,LPT-17,purchase,15,653,Laptop batch A5
+2025-01-05,MON-22,purchase,21,139,Monitors
+2025-01-06,CAB-16,purchase,60,12.2,Cables
+2025-01-08,SSD-05,purchase,30,96.7,SSD inventory
+2025-01-10,LPT-17,sale,4,0,Client setup
+2025-01-12,MON-22,sale,6,0,Bundle sale
+2025-01-14,CAB-16,sale,16,0,Accessories sold
+2025-01-16,LPT-17,purchase,12,645,Batch B5
+2025-01-18,SSD-05,sale,11,0,Upgrades
+2025-01-20,MON-22,purchase,18,141,Restock
+2025-01-22,LPT-17,sale,5,0,Service project
+2025-01-24,CAB-16,purchase,65,11.9,Restock
+2025-01-26,SSD-05,purchase,24,96.9,Restock
+2025-01-28,MON-22,sale,7,0,Office refresh
+2025-01-30,LPT-17,sale,6,0,New hires
+2025-02-02,LPT-17,purchase,20,641,Batch C5
+2025-02-04,SSD-05,sale,12,0,Upgrades
+2025-02-05,CAB-16,sale,22,0,Accessories sold
+2025-02-06,MON-22,purchase,22,142,Vendor promo
+2025-02-08,LPT-17,sale,8,0,Install project
+2025-02-10,SSD-05,purchase,26,96.5,Restock
+2025-02-12,CAB-16,purchase,54,11.7,Restock
+2025-02-13,MON-22,sale,9,0,Training room
+2025-02-15,LPT-17,purchase,12,639,Batch D5
+2025-02-16,LPT-17,sale,8,0,Client order
+2025-02-18,SSD-05,sale,13,0,Upgrades
+2025-02-20,CAB-16,sale,24,0,Accessories sold
+2025-02-22,MON-22,purchase,12,146,Small restock
+2025-02-24,LPT-17,sale,6,0,Client install
+2025-02-26,SSD-05,purchase,24,96.2,Promo
+2025-03-01,LPT-17,purchase,18,637,Batch E5
+2025-03-02,MON-22,purchase,22,140,Monitor restock
+2025-03-03,CAB-16,purchase,62,11.5,Bulk order
+2025-03-04,SSD-05,sale,14,0,Upgrades
+2025-03-06,LPT-17,sale,10,0,Client rollout
+2025-03-08,MON-22,sale,8,0,Training room
+2025-03-09,SSD-05,purchase,26,96.0,Restock
+2025-03-10,CAB-16,sale,26,0,Accessories sold
+2025-03-12,LPT-17,sale,9,0,New hire kits
+2025-03-14,MON-22,purchase,18,144,Vendor change
+2025-03-16,SSD-05,sale,11,0,Upgrades
+2025-03-18,CAB-16,purchase,54,11.6,Restock
+2025-03-20,LPT-17,purchase,12,636,Batch F5
+2025-03-21,MON-22,sale,10,0,Office expansion
+2025-03-22,SSD-05,purchase,24,95.9,Restock
+2025-03-24,CAB-16,sale,28,0,Accessories sold
+2025-03-26,LPT-17,sale,8,0,Client order
+2025-03-28,MON-22,purchase,14,147,Small restock
+2025-04-01,LPT-17,purchase,18,633,Batch G5
+2025-04-02,SSD-05,purchase,28,95.6,Restock
+2025-04-03,CAB-16,purchase,60,11.3,Restock
+2025-04-04,MON-22,sale,10,0,Conference kits
+2025-04-06,LPT-17,sale,11,0,Client rollout
+2025-04-08,SSD-05,sale,16,0,Upgrades
+2025-04-10,CAB-16,sale,30,0,Accessories sold
+2025-04-12,MON-22,purchase,20,143,Monitor restock
+2025-04-14,LPT-17,sale,9,0,Service project
+2025-04-16,SSD-05,purchase,26,96.0,Vendor
+2025-04-18,CAB-16,purchase,70,11.2,Bulk order
+2025-04-20,MON-22,sale,12,0,Training lab
+2025-04-22,LPT-17,purchase,12,632,Batch H5
+2025-04-24,SSD-05,sale,18,0,Upgrades
+2025-04-26,CAB-16,sale,32,0,Accessories sold
+2025-04-28,MON-22,purchase,18,145,Restock
+2025-04-30,LPT-17,sale,10,0,New hire kits
+2025-05-02,SSD-05,purchase,26,95.3,Restock
+2025-05-03,CAB-16,purchase,50,11.1,Restock
+2025-05-04,MON-22,sale,9,0,Client staging
+2025-05-06,LPT-17,purchase,16,629,Batch I5
+2025-05-08,SSD-05,sale,18,0,Upgrades
+2025-05-10,CAB-16,sale,32,0,Accessories sold
+2025-05-12,MON-22,purchase,16,146,Vendor change
+2025-05-14,LPT-17,sale,10,0,Client rollout
+2025-05-16,SSD-05,purchase,28,95.0,Restock
+2025-05-18,CAB-16,purchase,58,11.0,Bulk order
+2025-05-20,MON-22,sale,10,0,Office refresh
+2025-05-22,LPT-17,sale,9,0,Service project
+2025-05-24,SSD-05,sale,15,0,Upgrades
+2025-05-26,CAB-16,sale,34,0,Accessories sold
+2025-05-28,MON-22,purchase,20,144,Restock
+2025-06-01,LPT-17,purchase,18,628,Batch J5
+2025-06-03,SSD-05,purchase,24,94.9,Restock
+2025-06-04,CAB-16,purchase,65,10.9,Restock
+2025-06-05,MON-22,sale,12,0,Training room
+2025-06-06,LPT-17,sale,12,0,Client rollout
+2025-06-08,SSD-05,sale,17,0,Upgrades
+2025-06-10,CAB-16,sale,36,0,Accessories sold
+2025-06-12,MON-22,purchase,16,145,Small restock
+2025-06-14,LPT-17,sale,10,0,New hire kits
+2025-06-16,SSD-05,purchase,28,94.7,Vendor promo
+2025-06-18,CAB-16,purchase,48,10.8,Restock
+2025-06-20,MON-22,sale,11,0,Client staging
+2025-06-22,LPT-17,purchase,12,627,Batch K5
+2025-06-24,SSD-05,sale,16,0,Upgrades
+2025-06-26,CAB-16,sale,38,0,Accessories sold
+2025-06-28,MON-22,purchase,18,143,Restock
+2025-06-30,LPT-17,sale,12,0,Quarter close orders
+

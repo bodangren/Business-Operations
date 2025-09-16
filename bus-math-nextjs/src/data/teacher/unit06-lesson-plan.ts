@@ -698,7 +698,8 @@ export const unit06LessonPlan: UnitLessonPlan = {
               "Teams practice their initial presentation within time limits",
               "Rehearse responses to anticipated panel questions",
               "Refine data visualizations and talking points for maximum impact",
-              "Assign roles for debate: lead presenter, technical expert, rebuttal specialist"
+              "Assign roles for debate: lead presenter, technical expert, rebuttal specialist",
+              "Use PeerCritiqueForm rubric categories to structure peer feedback"
             ]
           },
           {
@@ -716,7 +717,7 @@ export const unit06LessonPlan: UnitLessonPlan = {
         materials: [
           "Town hall debate format guide",
           "Stakeholder perspective summaries",
-          "Presentation rehearsal feedback forms",
+          "Presentation rehearsal feedback forms (PeerCritiqueForm rubric)",
           "Technical setup checklists"
         ]
       },
@@ -734,7 +735,8 @@ export const unit06LessonPlan: UnitLessonPlan = {
               "Each team presents 4-minute pricing recommendation with live Excel demonstration",
               "Panel asks probing questions about methodology, assumptions, and market feasibility",
               "Teams defend their strategies against competing approaches and stakeholder concerns",
-              "Panel provides feedback on analytical rigor and business communication effectiveness"
+              "Panel provides feedback on analytical rigor and business communication effectiveness",
+              "Audience completes PeerCritiqueForm by rubric category"
             ],
             callout: {
               type: "important",

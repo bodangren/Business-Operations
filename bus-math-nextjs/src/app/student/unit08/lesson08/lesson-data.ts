@@ -1,41 +1,41 @@
-// Year‑1 Startup Model, Lesson 8 data - extracted from MCP curriculum database
+// Unit 08 — PBL Lesson 08 (Single Phase)
 export const lesson08Data = {
-  id: "mds5xnqip0dbejpgqd",
-  title: "Examples: Presentation Prep & Mock Panel",
+  id: "u08_l08_pbl_m1",
+  title: "PBL Milestone 1: Project Definition",
   sequence: 8,
-  unitId: "mdrhlhv53tduw0ib5oa",
+  unitId: "unit08",
   learningObjectives: [
-    "Develop compelling 8-slide VC pitch presentations with clear narrative structure and professional visuals",
-    "Practice live Excel model demonstrations showcasing scenario analysis and financial model integrity",
-    "Prepare strategic responses to anticipated investor questions about assumptions and risk factors",
-    "Incorporate feedback from mock panel sessions to refine presentation quality and impact"
+    "Build a clear project scope and success metrics",
+    "Create a data inventory and source plan with naming conventions",
+    "Design an Excel workbook skeleton with tabs and validations",
+    "Document risks, assumptions, and mitigation strategies"
   ],
   keyConcepts: [
-    "Venture capital pitch presentation structure and investor communication best practices",
-    "Live financial model demonstration techniques and technology integration",
-    "Q&A preparation strategies for defending startup assumptions and methodology",
-    "Iterative improvement process for high-stakes investor presentations"
+    "Scope definition and stakeholder alignment",
+    "Dataset planning and file standards",
+    "Workbook architecture and validation planning",
+    "Assumption tracking and risk management"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 55,
   pedagogicalApproach: [
-    "Prepare pitch presentations and conduct trial investor presentations"
+    "Direct planning with teacher check‑ins",
+    "Team collaboration on workbook design",
+    "Independent drafting with evidence gathering"
   ],
-  rationale: "To prepare students for their final presentations and to give them an opportunity to practice their communication and presentation skills.",
-  status: "Draft"
+  rationale: "A strong plan prevents errors later. By defining scope, data, and workbook structure now, your model will be faster to build and easier to trust.",
 }
 
 export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
+  id: "unit08",
   title: "Year‑1 Startup Model",
-  sequence: 8
+  sequence: 8,
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson08Phases = [
   {
     id: "pbl_m1",
     phaseName: "Introduction" as const,
     sequence: 1,
-    description: "PBL Milestone 1 — Project Definition: scope, datasets, Excel model plan, risks, and acceptance criteria."
-  }
+    description: "Define the project scope, data plan, Excel model architecture, and risks. Submit acceptance criteria and start the workbook skeleton.",
+  },
 ]

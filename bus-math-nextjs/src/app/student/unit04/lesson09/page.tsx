@@ -1,14 +1,5 @@
-import { StudentLessonOverview } from "@/components/student/StudentLessonOverview"
-import { lesson09Data, unit04Data, lesson09Phases } from "./lesson-data"
+import { redirect } from "next/navigation"
 
 export default function Lesson09Page() {
-  return (
-    <div className="container mx-auto py-8">
-      <StudentLessonOverview 
-        lesson={lesson09Data} 
-        unit={unit04Data} 
-        phases={lesson09Phases}
-      />
-    </div>
-  )
+  redirect("/student/unit04/lesson09/phase-1/")
 }

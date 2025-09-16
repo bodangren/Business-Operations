@@ -676,201 +676,142 @@ export const unit04LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "Presentation Prep: Infographic Design",
-        focus: "Transform statistical analysis into compelling visual business communication",
-        duration: "45 minutes",
+        title: "PBL Milestone 1: Project Definition",
+        focus: "Define problem, scope, metrics, risks; set up Excel workbook skeleton",
+        duration: "45–60 minutes",
         activities: [
           {
-            name: "From Data to Story",
+            name: "Project Framing",
             duration: "10 minutes",
-            description: "Frame infographic as business storytelling tool",
+            description: "Clarify business goals and constraints with authentic context",
             details: [
-              "Review challenge: How to communicate complex statistical findings in 90 seconds?",
-              "Examine successful business infographics: What makes them compelling and credible?",
-              "Identify key story elements: problem, analysis, insights, recommendations, impact",
-              "Connect to stakeholder needs: What does café management most need to know?"
+              "Write problem statement tied to ≤3% weekend waste target",
+              "Identify stakeholders and success metrics",
+              "Confirm scope and timelines for prototype and presentation"
             ]
           },
           {
-            name: "Infographic Design Workshop",
-            duration: "25 minutes",
-            description: "Create professional visual communication materials",
-            // Components: InfographicDesigner.tsx (poster creation tool), DesignThemeSelector.tsx
+            name: "Data Inventory & Plan",
+            duration: "12 minutes",
+            description: "Plan data sources and file conventions",
             details: [
-              "Design principles: visual hierarchy, color psychology, data visualization best practices",
-              "Content organization: lead with insights, support with data, end with clear recommendations",
-              "Technical execution: integrate charts, highlight key statistics, ensure readability",
-              "Professional standards: business-appropriate aesthetics and branding consistency"
-            ],
-            callout: {
-              type: "tip",
-              title: "Effective Business Infographic Elements",
-              content: "Successful infographics balance visual appeal with analytical credibility", 
-              items: [
-                "Compelling headline highlighting the main business insight or recommendation",
-                "Key statistics presented with visual emphasis and business context",
-                "Charts integrated seamlessly with supporting narrative text",
-                "Clear call-to-action with specific next steps for management implementation"
-              ]
-            }
-          },
-          {
-            name: "Storyboard Development",
-            duration: "8 minutes",
-            description: "Plan 90-second elevator pitch structure",
-            // Components: PitchStoryboardBuilder.tsx (90-second pitch planning tool)
-            details: [
-              "Map infographic elements to presentation flow: visual sequence supporting verbal narrative",
-              "Practice timing: ensure key points fit within 90-second constraint",
-              "Anticipate questions: prepare for likely stakeholder concerns and objections",
-              "Rehearse transitions: smooth flow between statistical findings and business implications"
+              "List dataset columns and cleaning steps (TRIM, Remove Duplicates)",
+              "Establish file naming convention and folder structure",
+              "Assign roles for data import and cleaning"
             ]
           },
           {
-            name: "Design Completion Check",
-            duration: "2 minutes", 
-            description: "Verify infographic readiness for tomorrow's rehearsal",
+            name: "Excel Workbook Skeleton",
+            duration: "18 minutes",
+            description: "Create tabs and validations for future automation",
             details: [
-              "Teams confirm infographic includes all required elements and meets design standards",
-              "Preview Day 9: presentation rehearsal with peer feedback and refinement",
-              "Final preparation focus: delivery confidence and stakeholder engagement"
+              "Tabs: Data, Clean, Charts, Forecast, Dashboard, Audit",
+              "Add basic validations and error checks placeholders",
+              "Document assumptions and risks in an Audit/Notes area"
+            ]
+          },
+          {
+            name: "Milestone 1 Check & Submit",
+            duration: "5 minutes",
+            description: "Quick readiness review and brief submission",
+            details: [
+              "Confirm acceptance criteria met (brief + skeleton started)",
+              "Peer check‑in for clarity and feasibility",
+              "Upload brief and workbook draft"
             ]
           }
         ],
         materials: [
-          "Infographic design templates and examples",
-          "Business presentation design guidelines",
-          "Storyboard planning worksheets",
-          "Visual design software or online tools access"
+          "Milestone 1 acceptance checklist",
+          "Data inventory template",
+          "Workbook skeleton guide",
+          "Group dataset links (g1–g6)"
         ]
       },
       {
         day: 9,
-        title: "Mock Panel & Revision: Presentation Rehearsal",
-        focus: "Practice presentations with peer feedback and final refinements",
-        duration: "45 minutes",
+        title: "PBL Milestone 2: Prototype + Rehearsal",
+        focus: "Build working prototype, validate, rehearse; collect structured peer feedback",
+        duration: "60 minutes (+20 min rehearsal & feedback)",
         activities: [
           {
-            name: "Presentation Excellence Standards",
-            duration: "8 minutes",
-            description: "Establish criteria for successful stakeholder presentations",
-            details: [
-              "Review assessment rubric: analytical depth, realistic recommendations, visual communication",
-              "Business presentation standards: confidence, clarity, professional demeanor",
-              "Stakeholder expectations: actionable insights, implementation feasibility, measurable outcomes",
-              "Success indicators: engaging delivery, compelling evidence, credible recommendations"
-            ]
-          },
-          {
-            name: "Team Presentation Rehearsals",
+            name: "Prototype Build & Test",
             duration: "25 minutes",
-            description: "Practice 90-second pitches with peer audiences",
-            // Components: PitchStoryboardBuilder.tsx (practice presentations), PeerCritiqueForm.tsx
+            description: "Implement forecast, validations, and test scenarios",
             details: [
-              "Teams deliver complete presentations using infographic and verbal narrative",
-              "Peer audiences provide structured feedback using assessment criteria",
-              "Focus areas: timing accuracy, message clarity, visual integration, professional delivery",
-              "Address identified weaknesses through targeted practice and refinement"
-            ],
-            callout: {
-              type: "important",
-              title: "Peer Feedback Protocol",
-              content: "Structured feedback improves presentation quality and confidence",
-              items: [
-                "Strengths identification: What aspects were most compelling and credible?",
-                "Improvement opportunities: Specific suggestions for enhancing clarity or impact",
-                "Stakeholder perspective: How would café management respond to these recommendations?",
-                "Delivery coaching: Body language, voice projection, and visual aid integration"
-              ]
-            }
-          },
-          {
-            name: "Revision & Final Preparation",
-            duration: "10 minutes",
-            description: "Incorporate feedback and finalize presentation materials",
-            details: [
-              "Teams revise presentations based on peer feedback and self-reflection",
-              "Final practice runs with timing and visual aid coordination",
-              "Prepare for stakeholder questions: anticipate concerns and prepare evidence-based responses",
-              "Confidence building: affirmation of analytical quality and business value"
+              "Implement FORECAST.LINEAR or use Regression output",
+              "Add validations, IFERROR defaults, and audit flags",
+              "Run test scenarios; record results and change notes"
             ]
           },
           {
-            name: "Final Readiness Check",
-            duration: "2 minutes",
-            description: "Confirm preparation for authentic stakeholder presentation",
+            name: "Rehearsal Round 1",
+            duration: "20 minutes",
+            description: "Deliver timed practice; collect peer feedback",
             details: [
-              "Teams confirm completion of all presentation requirements",
-              "Preview Day 10: authentic presentation to café management with real-world feedback",
-              "Mental preparation: focus on value delivery and professional communication"
+              "4–5 min timed delivery per team",
+              "Use PeerCritiqueForm categories aligned to rubric",
+              "Identify clarity gaps and data/visual issues"
+            ]
+          },
+          {
+            name: "Incorporate Feedback",
+            duration: "12 minutes",
+            description: "Refine model and narrative based on critique",
+            details: [
+              "Address validation flags and confusing visuals",
+              "Tighten storyline and transitions",
+              "Update test summary and change log"
+            ]
+          },
+          {
+            name: "Quick Check",
+            duration: "3 minutes",
+            description: "Confirm readiness for final presentations",
+            details: [
+              "All rubric areas addressed",
+              "Timing within 4–5 min window",
+              "Files named and organized for submission"
             ]
           }
         ],
         materials: [
-          "Presentation assessment rubric and feedback forms",
-          "Professional presentation tips and guidelines",
-          "Timing tools and practice facilitation materials",
-          "Stakeholder question preparation worksheets"
+          "PeerCritiqueForm and rubric reference",
+          "Test scenario worksheet",
+          "Audit panel checklist",
+          "Timing tools"
         ]
       },
       {
         day: 10,
-        title: "Public Presentation: Café Management Showcase",
-        focus: "Deliver presentations to authentic stakeholders and reflect on learning",
-        duration: "45 minutes", 
+        title: "PBL Milestone 3: Presentations + Peer Review",
+        focus: "Deliver final model and story; collect rubric‑aligned peer feedback; reflect",
+        duration: "45 minutes",
         activities: [
           {
-            name: "Stakeholder Presentation Session",
-            duration: "30 minutes",
-            description: "Teams present to café manager and student staff",
-            // Components: PitchStoryboardBuilder.tsx (final presentations), FeedbackCollector.tsx
+            name: "Presentation Block",
+            duration: "40 minutes",
+            description: "5 min setup; 6 groups × ~5 min; 5 min wrap",
             details: [
-              "Each team delivers 90-second pitch with infographic support",
-              "Café management asks questions about feasibility, implementation, and expected outcomes", 
-              "Teams demonstrate deep understanding through confident, evidence-based responses",
-              "Stakeholders provide feedback on analytical quality and business practicality"
-            ],
-            callout: {
-              type: "important",
-              title: "Authentic Assessment Experience",
-              content: "Real stakeholder feedback provides genuine business learning",
-              items: [
-                "Café manager evaluates recommendations against operational realities",
-                "Student staff provide perspective on implementation challenges and customer impact",
-                "Best proposals selected for actual testing during following weekend operations",
-                "Professional feedback mirrors real consulting and business analysis experiences"
-              ]
-            }
-          },
-          {
-            name: "Real-World Implementation Planning",
-            duration: "8 minutes",
-            description: "Discuss next steps for implementing successful recommendations",
-            details: [
-              "Café manager identifies most promising recommendations for weekend trial",
-              "Teams discuss implementation support and data collection for results measurement",
-              "Plan follow-up analysis comparing predicted vs actual outcomes",
-              "Connect to ongoing business improvement and data-driven decision making"
+              "Presentations target 4–5 minutes plus brief Q&A",
+              "Audience uses PeerCritiqueForm aligned to standard rubric",
+              "Emphasis on accuracy, clarity, and decision impact"
             ]
           },
           {
-            name: "Learning Reflection & Portfolio Addition",
-            duration: "7 minutes",
-            description: "Reflect on statistical analysis learning and business application",
-            // Components: ReflectionJournal.tsx (learning reflection and portfolio documentation)
+            name: "Reflection & Submit",
+            duration: "5 minutes",
+            description: "Submit files and reflect on learning",
             details: [
-              "Written reflection: How did statistical analysis change your understanding of business operations?",
-              "Skill assessment: Which analytical techniques will be most valuable in future business contexts?",
-              "Learning integration: How does data-driven decision making connect to other business functions?",
-              "Portfolio documentation: Archive analysis package with reflection notes for future reference"
+              "Submit final workbook, slides, and collected peer reviews",
+              "Write short reflection focusing on CAP and next improvements"
             ]
           }
         ],
         materials: [
-          "Stakeholder evaluation forms and feedback protocols",
-          "Implementation planning worksheets",
-          "Learning reflection prompts and portfolio guidelines",
-          "Follow-up data collection planning materials"
+          "Rubric reference and PeerCritiqueForm",
+          "Submission checklist",
+          "Reflection prompts"
         ]
       }
     ]

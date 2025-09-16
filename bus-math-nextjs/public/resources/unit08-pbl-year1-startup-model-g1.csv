@@ -1,0 +1,91 @@
+date,scenario,stream,units,price,variable_cost_per_unit,fixed_cost,marketing_spend,payroll,capex,notes
+2025-01,Base,SaaS_Subscriptions,120,29,6,8000,2500,18000,0,Launch month baseline
+2025-01,Base,Implementation_Services,8,750,220,8000,2500,18000,0,Onboarding projects
+2025-01,Base,Support_Addons,25,9,2,8000,2500,18000,0,Chat + email support
+2025-01,Optimistic,SaaS_Subscriptions,140,29,6,8000,3000,18500,0,Higher early traction
+2025-01,Optimistic,Implementation_Services,10,750,220,8000,3000,18500,0,Extra onboarding
+2025-01,Optimistic,Support_Addons,32,9,2,8000,3000,18500,0,Upsell success
+2025-01,Pessimistic,SaaS_Subscriptions,95,29,6,8000,1800,17500,0,Slower sales
+2025-01,Pessimistic,Implementation_Services,6,750,220,8000,1800,17500,0,Fewer projects
+2025-01,Pessimistic,Support_Addons,18,9,2,8000,1800,17500,0,Lower attach rate
+2025-02,Base,SaaS_Subscriptions,135,29,6,8000,2600,18250,0,Steady growth
+2025-02,Base,Implementation_Services,9,750,220,8000,2600,18250,0,Onboarding
+2025-02,Base,Support_Addons,28,9,2,8000,2600,18250,0,Support growth
+2025-02,Optimistic,SaaS_Subscriptions,160,29,6,8000,3200,18800,0,Great word of mouth
+2025-02,Optimistic,Implementation_Services,12,750,220,8000,3200,18800,0,Extra projects
+2025-02,Optimistic,Support_Addons,38,9,2,8000,3200,18800,0,Upsell strong
+2025-02,Pessimistic,SaaS_Subscriptions,105,29,6,8000,1900,17750,0,Churn pressure
+2025-02,Pessimistic,Implementation_Services,7,750,220,8000,1900,17750,0,Limited demand
+2025-02,Pessimistic,Support_Addons,20,9,2,8000,1900,17750,0,Lower attach
+2025-03,Base,SaaS_Subscriptions,155,29,6,8200,2700,18500,0,Seasonal push
+2025-03,Base,Implementation_Services,10,750,220,8200,2700,18500,0,Onboarding
+2025-03,Base,Support_Addons,30,9,2,8200,2700,18500,0,Support
+2025-03,Optimistic,SaaS_Subscriptions,182,29,6,8200,3300,19000,0,Campaign win
+2025-03,Optimistic,Implementation_Services,13,750,220,8200,3300,19000,0,More projects
+2025-03,Optimistic,Support_Addons,42,9,2,8200,3300,19000,0,Higher attach
+2025-03,Pessimistic,SaaS_Subscriptions,118,29,6,8200,1950,17900,0,Soft month
+2025-03,Pessimistic,Implementation_Services,7,750,220,8200,1950,17900,0,Less work
+2025-03,Pessimistic,Support_Addons,21,9,2,8200,1950,17900,0,Attach dips
+2025-04,Base,SaaS_Subscriptions,170,29,6,8200,2750,18500,1500,Steady
+2025-04,Base,Implementation_Services,11,760,225,8200,2750,18500,1500,Scope mix
+2025-04,Base,Support_Addons,33,9,2,8200,2750,18500,1500,Support
+2025-04,Optimistic,SaaS_Subscriptions,200,29,6,8200,3400,19100,1500,Great traction
+2025-04,Optimistic,Implementation_Services,14,760,225,8200,3400,19100,1500,Extra scope
+2025-04,Optimistic,Support_Addons,46,9,2,8200,3400,19100,1500,Attach up
+2025-04,Pessimistic,SaaS_Subscriptions,130,29,6,8200,2000,18000,1500,Churn event
+2025-04,Pessimistic,Implementation_Services,8,760,225,8200,2000,18000,1500,Fewer gigs
+2025-04,Pessimistic,Support_Addons,22,9,2,8200,2000,18000,1500,Attach down
+2025-05,Base,SaaS_Subscriptions,185,29,6,8400,2800,18600,0,New release
+2025-05,Base,Implementation_Services,12,780,230,8400,2800,18600,0,Implementations
+2025-05,Base,Support_Addons,36,9,2,8400,2800,18600,0,Support
+2025-05,Optimistic,SaaS_Subscriptions,220,29,6,8400,3500,19200,0,Strong month
+2025-05,Optimistic,Implementation_Services,15,780,230,8400,3500,19200,0,Added work
+2025-05,Optimistic,Support_Addons,50,9,2,8400,3500,19200,0,Attach strong
+2025-05,Pessimistic,SaaS_Subscriptions,138,29,6,8400,2050,18100,0,Softness
+2025-05,Pessimistic,Implementation_Services,9,780,230,8400,2050,18100,0,Light work
+2025-05,Pessimistic,Support_Addons,24,9,2,8400,2050,18100,0,Attach low
+2025-06,Base,SaaS_Subscriptions,200,29,6,8400,2900,18600,1000,Summer start
+2025-06,Base,Implementation_Services,12,790,232,8400,2900,18600,1000,Implementations
+2025-06,Base,Support_Addons,38,9,2,8400,2900,18600,1000,Support
+2025-06,Optimistic,SaaS_Subscriptions,240,29,6,8400,3600,19250,1000,Great upsell
+2025-06,Optimistic,Implementation_Services,16,790,232,8400,3600,19250,1000,Extra work
+2025-06,Optimistic,Support_Addons,55,9,2,8400,3600,19250,1000,Attach peak
+2025-06,Pessimistic,SaaS_Subscriptions,150,29,6,8400,2100,18150,1000,Churn
+2025-06,Pessimistic,Implementation_Services,10,790,232,8400,2100,18150,1000,Slim demand
+2025-06,Pessimistic,Support_Addons,27,9,2,8400,2100,18150,1000,Attach down
+2025-07,Base,SaaS_Subscriptions,210,29,6,8600,3000,18750,0,Steady
+2025-07,Base,Implementation_Services,13,800,235,8600,3000,18750,0,Impl.
+2025-07,Base,Support_Addons,40,9,2,8600,3000,18750,0,Support
+2025-07,Optimistic,SaaS_Subscriptions,255,29,6,8600,3700,19300,0,Peak growth
+2025-07,Optimistic,Implementation_Services,17,800,235,8600,3700,19300,0,Extra impl.
+2025-07,Optimistic,Support_Addons,58,9,2,8600,3700,19300,0,Attach high
+2025-07,Pessimistic,SaaS_Subscriptions,158,29,6,8600,2150,18200,0,Soft month
+2025-07,Pessimistic,Implementation_Services,10,800,235,8600,2150,18200,0,Low demand
+2025-07,Pessimistic,Support_Addons,28,9,2,8600,2150,18200,0,Attach low
+2025-08,Base,SaaS_Subscriptions,220,29,6,8600,3050,18750,0,Steady
+2025-08,Base,Implementation_Services,13,810,238,8600,3050,18750,0,Impl.
+2025-08,Base,Support_Addons,41,9,2,8600,3050,18750,0,Support
+2025-08,Optimistic,SaaS_Subscriptions,265,29,6,8600,3750,19350,0,Upside
+2025-08,Optimistic,Implementation_Services,18,810,238,8600,3750,19350,0,Extra impl.
+2025-08,Optimistic,Support_Addons,60,9,2,8600,3750,19350,0,Attach high
+2025-08,Pessimistic,SaaS_Subscriptions,160,29,6,8600,2200,18250,0,Softness
+2025-08,Pessimistic,Implementation_Services,11,810,238,8600,2200,18250,0,Less impl.
+2025-08,Pessimistic,Support_Addons,29,9,2,8600,2200,18250,0,Attach dip
+2025-09,Base,SaaS_Subscriptions,230,29,6,8800,3100,18900,0,Back to school
+2025-09,Base,Implementation_Services,14,820,240,8800,3100,18900,0,Impl.
+2025-09,Base,Support_Addons,43,9,2,8800,3100,18900,0,Support
+2025-09,Optimistic,SaaS_Subscriptions,275,29,6,8800,3800,19450,0,Strong
+2025-09,Optimistic,Implementation_Services,19,820,240,8800,3800,19450,0,Extra
+2025-09,Optimistic,Support_Addons,62,9,2,8800,3800,19450,0,Attach peak
+2025-09,Pessimistic,SaaS_Subscriptions,165,29,6,8800,2250,18400,0,Churn
+2025-09,Pessimistic,Implementation_Services,11,820,240,8800,2250,18400,0,Fewer gigs
+2025-09,Pessimistic,Support_Addons,30,9,2,8800,2250,18400,0,Attach low
+2025-10,Base,SaaS_Subscriptions,240,29,6,8800,3200,18900,0,Pre‑holiday
+2025-10,Base,Implementation_Services,14,825,242,8800,3200,18900,0,Impl.
+2025-10,Base,Support_Addons,45,9,2,8800,3200,18900,0,Support
+2025-10,Optimistic,SaaS_Subscriptions,290,29,6,8800,3900,19500,0,Upside
+2025-10,Optimistic,Implementation_Services,20,825,242,8800,3900,19500,0,Extra impl.
+2025-10,Optimistic,Support_Addons,65,9,2,8800,3900,19500,0,Attach
+2025-10,Pessimistic,SaaS_Subscriptions,170,29,6,8800,2300,18450,0,Soft
+2025-10,Pessimistic,Implementation_Services,12,825,242,8800,2300,18450,0,Low impl.
+2025-10,Pessimistic,Support_Addons,31,9,2,8800,2300,18450,0,Attach low

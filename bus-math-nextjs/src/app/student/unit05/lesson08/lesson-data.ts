@@ -1,41 +1,42 @@
-// PayDay Simulator, Lesson 8 data - extracted from MCP curriculum database
 export const lesson08Data = {
-  id: "mds5w7584llzr6a7rl7",
-  title: "Presentation Prep: Tutorial Planning",
+  id: "unit05_lesson08_pbl_m1",
+  title: "PBL Milestone 1: Project Definition (PayDay Simulator)",
   sequence: 8,
-  unitId: "mdrhlhv3ixkn2gykua",
+  unitId: "unit05",
   learningObjectives: [
-    "Design comprehensive tutorial structure for explaining payroll systems to business audiences",
-    "Plan effective screencast demonstrations highlighting key features and edge cases",
-    "Organize complex technical content into logical, accessible teaching sequences",
-    "Prepare professional documentation and scripts for public YouTube publication"
+    "Define the payroll cash‑flow problem with clear success metrics",
+    "Create a data inventory and source plan with file naming conventions",
+    "Outline an Excel model skeleton (tabs, validations, method switching, dashboards)",
+    "Identify risks and assumptions with mitigation steps",
+    "Begin the workbook skeleton and prepare a 1–2 page brief"
   ],
   keyConcepts: [
-    "Instructional design principles for technical business tutorials",
-    "Screencast planning and storyboard development for complex Excel systems",
-    "Audience analysis for entrepreneurial and small business users",
-    "Professional presentation standards for educational content creation"
+    "Problem statements and stakeholder analysis",
+    "Cash‑flow timing and payroll risk",
+    "Excel model planning (tabs, validations, dashboards)",
+    "Data sourcing and naming conventions",
+    "Assumptions, risks, and mitigation"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 55,
   pedagogicalApproach: [
-    "Plan comprehensive tutorial explaining payroll system for business audience"
+    "Project definition with real data planning",
+    "Excel model planning and skeleton creation",
+    "Team check-ins and milestone criteria review",
   ],
-  rationale: "To prepare students for their final project, which is to create a tutorial for a business audience.",
-  status: "Draft"
+  rationale: "Clear scope, data plan, and an Excel model skeleton reduce risk and keep the team focused on business outcomes from the start.",
 }
 
 export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
+  id: "unit05",
   title: "PayDay Simulator",
-  sequence: 5
+  sequence: 5,
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson08Phases = [
   {
     id: "pbl_m1",
     phaseName: "Introduction" as const,
     sequence: 1,
-    description: "PBL Milestone 1 — Project Definition: scope, datasets, Excel model plan, risks, and acceptance criteria."
-  }
+    description: "Define the payroll cash‑flow problem, select scope, plan data sources, and outline the Excel model skeleton (tabs, validations, dashboards).",
+  },
 ]

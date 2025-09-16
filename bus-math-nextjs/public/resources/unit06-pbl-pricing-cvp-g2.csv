@@ -1,0 +1,101 @@
+date,sku,product,channel,price,competitor_price,units_sold,variable_cost_per_unit,fixed_cost_alloc,promo,notes
+2024-01-05,S1,Starter Pack,online,35.00,32.50,55,18.50,520,false,New year promo ended
+2024-01-05,S2,Starter Pack,retail,36.00,33.50,44,19.00,520,false,Weekend traffic
+2024-01-05,S3,Pro Kit,online,50.00,47.50,39,26.50,520,false,
+2024-01-05,S4,Pro Kit,retail,51.00,48.50,35,27.00,520,false,
+2024-01-05,S5,Deluxe Bundle,online,63.00,60.50,27,33.50,520,false,
+2024-01-05,S6,Deluxe Bundle,retail,64.00,61.50,24,34.00,520,false,
+2024-01-05,S7,Starter Pack,wholesale,31.00,29.50,116,18.00,520,false,Bulk order
+2024-01-05,S8,Pro Kit,wholesale,46.00,44.50,82,26.00,520,false,Bulk order
+2024-01-05,S9,Deluxe Bundle,wholesale,59.00,57.50,62,33.00,520,false,Bulk order
+2024-01-05,S10,Accessory Set,online,20.00,18.50,72,10.00,520,false,Add‑on item
+2024-01-12,S1,Starter Pack,online,35.00,33.00,58,18.50,520,false,
+2024-01-12,S2,Starter Pack,retail,36.00,34.00,46,19.00,520,false,
+2024-01-12,S3,Pro Kit,online,50.00,48.00,41,26.50,520,false,
+2024-01-12,S4,Pro Kit,retail,51.00,49.00,36,27.00,520,false,
+2024-01-12,S5,Deluxe Bundle,online,63.00,61.00,28,33.50,520,false,
+2024-01-12,S6,Deluxe Bundle,retail,64.00,62.00,25,34.00,520,false,
+2024-01-12,S7,Starter Pack,wholesale,31.00,30.00,114,18.00,520,false,Bulk reorder
+2024-01-12,S8,Pro Kit,wholesale,46.00,45.00,81,26.00,520,false,Bulk reorder
+2024-01-12,S9,Deluxe Bundle,wholesale,59.00,58.00,61,33.00,520,false,Bulk reorder
+2024-01-12,S10,Accessory Set,online,20.00,19.00,75,10.00,520,false,Attach rate improving
+2024-01-19,S1,Starter Pack,online,36.00,33.50,59,18.50,520,false,Minor price test
+2024-01-19,S2,Starter Pack,retail,37.00,34.50,43,19.00,520,false,
+2024-01-19,S3,Pro Kit,online,51.00,47.50,38,26.50,520,false,
+2024-01-19,S4,Pro Kit,retail,52.00,48.50,34,27.00,520,false,
+2024-01-19,S5,Deluxe Bundle,online,64.00,60.50,26,33.50,520,false,
+2024-01-19,S6,Deluxe Bundle,retail,65.00,61.50,23,34.00,520,false,
+2024-01-19,S7,Starter Pack,wholesale,31.00,29.50,117,18.00,520,false,
+2024-01-19,S8,Pro Kit,wholesale,46.00,44.50,80,26.00,520,false,
+2024-01-19,S9,Deluxe Bundle,wholesale,59.00,57.50,63,33.00,520,false,
+2024-01-19,S10,Accessory Set,online,20.00,18.50,77,10.00,520,false,
+2024-01-26,S1,Starter Pack,online,36.00,33.75,58,18.50,520,false,
+2024-01-26,S2,Starter Pack,retail,37.00,34.75,44,19.00,520,false,
+2024-01-26,S3,Pro Kit,online,51.00,47.75,37,26.50,520,false,
+2024-01-26,S4,Pro Kit,retail,52.00,48.75,33,27.00,520,false,
+2024-01-26,S5,Deluxe Bundle,online,64.00,60.75,25,33.50,520,false,
+2024-01-26,S6,Deluxe Bundle,retail,65.00,61.75,22,34.00,520,false,
+2024-01-26,S7,Starter Pack,wholesale,31.00,29.75,115,18.00,520,false,
+2024-01-26,S8,Pro Kit,wholesale,46.00,44.75,79,26.00,520,false,
+2024-01-26,S9,Deluxe Bundle,wholesale,59.00,57.75,62,33.00,520,false,
+2024-01-26,S10,Accessory Set,online,20.00,18.75,74,10.00,520,false,
+2024-02-02,S1,Starter Pack,online,35.00,33.50,60,18.50,520,false,Reverted price test
+2024-02-02,S2,Starter Pack,retail,36.00,34.50,47,19.00,520,false,
+2024-02-02,S3,Pro Kit,online,50.00,47.50,40,26.50,520,false,
+2024-02-02,S4,Pro Kit,retail,51.00,48.50,35,27.00,520,false,
+2024-02-02,S5,Deluxe Bundle,online,63.00,60.50,27,33.50,520,false,
+2024-02-02,S6,Deluxe Bundle,retail,64.00,61.50,24,34.00,520,false,
+2024-02-02,S7,Starter Pack,wholesale,31.00,29.50,118,18.00,520,false,
+2024-02-02,S8,Pro Kit,wholesale,46.00,44.50,83,26.00,520,false,
+2024-02-02,S9,Deluxe Bundle,wholesale,59.00,57.50,64,33.00,520,false,
+2024-02-02,S10,Accessory Set,online,20.00,18.50,76,10.00,520,false,
+2024-02-09,S1,Starter Pack,online,35.00,33.25,61,18.50,520,false,
+2024-02-09,S2,Starter Pack,retail,36.00,34.25,48,19.00,520,false,
+2024-02-09,S3,Pro Kit,online,50.00,47.75,42,26.50,520,false,
+2024-02-09,S4,Pro Kit,retail,51.00,48.75,36,27.00,520,false,
+2024-02-09,S5,Deluxe Bundle,online,63.00,60.75,29,33.50,520,false,
+2024-02-09,S6,Deluxe Bundle,retail,64.00,61.75,25,34.00,520,false,
+2024-02-09,S7,Starter Pack,wholesale,31.00,29.75,114,18.00,520,false,
+2024-02-09,S8,Pro Kit,wholesale,46.00,44.75,82,26.00,520,false,
+2024-02-09,S9,Deluxe Bundle,wholesale,59.00,57.75,63,33.00,520,false,
+2024-02-09,S10,Accessory Set,online,20.00,18.75,78,10.00,520,false,
+2024-02-16,S1,Starter Pack,online,35.00,33.50,62,18.50,520,true,Valentine promo
+2024-02-16,S2,Starter Pack,retail,36.00,34.50,50,19.00,520,true,Valentine promo
+2024-02-16,S3,Pro Kit,online,49.00,47.50,45,26.50,520,true,Limited discount
+2024-02-16,S4,Pro Kit,retail,50.00,48.50,39,27.00,520,true,Limited discount
+2024-02-16,S5,Deluxe Bundle,online,62.00,60.50,31,33.50,520,true,Limited discount
+2024-02-16,S6,Deluxe Bundle,retail,63.00,61.50,26,34.00,520,true,Limited discount
+2024-02-16,S7,Starter Pack,wholesale,30.50,29.50,121,18.00,520,false,Bulk order
+2024-02-16,S8,Pro Kit,wholesale,45.50,44.50,85,26.00,520,false,Bulk order
+2024-02-16,S9,Deluxe Bundle,wholesale,58.50,57.50,66,33.00,520,false,Bulk order
+2024-02-16,S10,Accessory Set,online,19.50,18.50,82,10.00,520,true,Promo add‑on
+2024-02-23,S1,Starter Pack,online,35.00,33.75,60,18.50,520,false,
+2024-02-23,S2,Starter Pack,retail,36.00,34.75,49,19.00,520,false,
+2024-02-23,S3,Pro Kit,online,50.00,47.75,43,26.50,520,false,
+2024-02-23,S4,Pro Kit,retail,51.00,48.75,37,27.00,520,false,
+2024-02-23,S5,Deluxe Bundle,online,63.00,60.75,30,33.50,520,false,
+2024-02-23,S6,Deluxe Bundle,retail,64.00,61.75,25,34.00,520,false,
+2024-02-23,S7,Starter Pack,wholesale,31.00,29.75,118,18.00,520,false,
+2024-02-23,S8,Pro Kit,wholesale,46.00,44.75,84,26.00,520,false,
+2024-02-23,S9,Deluxe Bundle,wholesale,59.00,57.75,64,33.00,520,false,
+2024-02-23,S10,Accessory Set,online,20.00,18.75,77,10.00,520,false,
+2024-03-01,S1,Starter Pack,online,35.00,33.50,63,18.50,520,false,
+2024-03-01,S2,Starter Pack,retail,36.00,34.50,50,19.00,520,false,
+2024-03-01,S3,Pro Kit,online,50.00,47.50,44,26.50,520,false,
+2024-03-01,S4,Pro Kit,retail,51.00,48.50,38,27.00,520,false,
+2024-03-01,S5,Deluxe Bundle,online,63.00,60.50,31,33.50,520,false,
+2024-03-01,S6,Deluxe Bundle,retail,64.00,61.50,26,34.00,520,false,
+2024-03-01,S7,Starter Pack,wholesale,31.00,29.50,121,18.00,520,false,
+2024-03-01,S8,Pro Kit,wholesale,46.00,44.50,86,26.00,520,false,
+2024-03-01,S9,Deluxe Bundle,wholesale,59.00,57.50,66,33.00,520,false,
+2024-03-01,S10,Accessory Set,online,20.00,18.50,80,10.00,520,false,
+2024-03-08,S1,Starter Pack,online,35.00,33.75,64,18.50,520,false,
+2024-03-08,S2,Starter Pack,retail,36.00,34.75,51,19.00,520,false,
+2024-03-08,S3,Pro Kit,online,50.00,47.75,45,26.50,520,false,
+2024-03-08,S4,Pro Kit,retail,51.00,48.75,39,27.00,520,false,
+2024-03-08,S5,Deluxe Bundle,online,63.00,60.75,32,33.50,520,false,
+2024-03-08,S6,Deluxe Bundle,retail,64.00,61.75,27,34.00,520,false,
+2024-03-08,S7,Starter Pack,wholesale,31.00,29.75,119,18.00,520,false,
+2024-03-08,S8,Pro Kit,wholesale,46.00,44.75,84,26.00,520,false,
+2024-03-08,S9,Deluxe Bundle,wholesale,59.00,57.75,65,33.00,520,false,
+2024-03-08,S10,Accessory Set,online,20.00,18.75,82,10.00,520,false,

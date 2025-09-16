@@ -200,7 +200,7 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
         </CardHeader>
         <CardContent>
           <div className="grid gap-2">
-            {lesson.pedagogicalApproach.map((approach, index) => (
+            {(lesson.pedagogicalApproach ?? []).map((approach, index) => (
               <div key={index} className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-orange-600 rounded-full" />
                 <span className="text-sm text-orange-700 dark:text-orange-300">{approach}</span>

@@ -1,39 +1,39 @@
-// Asset & Inventory Tracker, Lesson 8 data - extracted from MCP curriculum database
 export const lesson08Data = {
-  id: "mds5x9a4tb2lsrj7nu",
-  title: "Advisory Brief Draft",
+  id: "u07_l08_pbl_m1",
+  title: "PBL Milestone 1: Project Definition",
   sequence: 8,
-  unitId: "mdrhlhv4ov691yonkpi",
+  unitId: "unit07",
   learningObjectives: [
-    "Evaluate method selection based on business strategy",
-    "Present financial recommendations to business decision-makers"
+    "Define the problem, scope, stakeholders, and success metrics",
+    "Inventory realistic data sources and set file conventions",
+    "Plan Excel workbook tabs, validations, method switching, dashboards",
+    "Identify risks and assumptions with mitigation strategies"
   ],
   keyConcepts: [
-    "Strategic business writing principles for executive communication",
-    "Data-driven recommendation development and evidence-based argumentation",
-    "Financial method selection criteria and business impact analysis",
-    "Professional advisory brief structure and persuasive writing techniques"
+    "Clear project definition aligned to business goals",
+    "Data inventory and file naming conventions",
+    "Workbook skeleton: Inputs, SLN/DDB, FIFO/LIFO, Dashboard, Checks",
+    "Risk/assumption tracking with mitigation plans"
   ],
-  durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Develop strategic recommendations based on quantitative analysis"
+    "Plan-first approach with a professional brief and workbook skeleton"
   ],
-  rationale: "To provide students with an opportunity to apply their analytical skills to a real-world business problem and to develop a persuasive, data-driven recommendation.",
-  status: "Draft"
+  rationale: "A precise project definition and clean workbook structure help teams build faster, avoid mistakes, and communicate clearly to an executive audience.",
+  durationEstimateMinutes: 55,
+  status: "Planned"
 }
 
 export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
+  id: "unit07",
   title: "Asset & Inventory Tracker",
   sequence: 7
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson08Phases = [
   {
     id: "pbl_m1",
     phaseName: "Introduction" as const,
     sequence: 1,
-    description: "PBL Milestone 1 — Project Definition: scope, datasets, Excel model plan, risks, and acceptance criteria."
+    description: "Project definition, dataset selection (g1–g6), and workbook skeleton"
   }
 ]

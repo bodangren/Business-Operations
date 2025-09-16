@@ -1,41 +1,39 @@
-// Asset & Inventory Tracker, Lesson 10 data - extracted from MCP curriculum database
 export const lesson10Data = {
-  id: "mds5x9aaehnruhxnq4k",
-  title: "Public Presentation",
+  id: "u07_l10_pbl_m3",
+  title: "PBL Milestone 3: Presentations + Peer Review",
   sequence: 10,
-  unitId: "mdrhlhv4ov691yonkpi",
+  unitId: "unit07",
   learningObjectives: [
-    "Present strategic financial recommendations to Board of Directors panel with professional confidence",
-    "Demonstrate mastery of depreciation and inventory valuation through comprehensive advisory brief",
-    "Engage effectively with board-level questions about cash flow and tax implications",
-    "Reflect on learning achievements in financial analysis and strategic business communication"
+    "Present a clear business story backed by accurate models",
+    "Demonstrate dashboard insights and defend recommendations",
+    "Address risks and assumptions with confident Q&A",
+    "Provide and receive structured peer feedback"
   ],
   keyConcepts: [
-    "Board of Directors presentation standards and corporate governance communication",
-    "Strategic financial decision-making and method selection in business contexts",
-    "Professional advisory services and client engagement best practices",
-    "Integration of technical financial analysis with executive-level strategic thinking"
+    "Executive presentation: Problem → Analysis → Recommendation",
+    "Rubric-aligned peer critique and reflection",
+    "Timeboxing and Q&A readiness",
+    "Communicating method impacts on business decisions"
   ],
-  durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Final Board presentation and unit reflection"
+    "Public presentation with authentic audience and rubric-aligned feedback"
   ],
-  rationale: "To provide a culminating, authentic assessment of student learning and to give them an opportunity to share their work with a real-world audience.",
-  status: "Draft"
+  rationale: "Clear, concise presentations translate analysis into action. Sharing your model and reasoning earns trust and leads to better decisions.",
+  durationEstimateMinutes: 45,
+  status: "Planned"
 }
 
 export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
+  id: "unit07",
   title: "Asset & Inventory Tracker",
   sequence: 7
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson10Phases = [
   {
     id: "pbl_m3",
     phaseName: "Assessment" as const,
     sequence: 1,
-    description: "PBL Milestone 3 — Presentations + Peer Review: final model, 4–5 minute presentation, rubric-based feedback."
+    description: "Team presentations with rubric‑aligned peer review and reflection"
   }
 ]

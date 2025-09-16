@@ -685,212 +685,166 @@ export const unit07LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "Advisory Brief Draft",
-        focus: "Develop strategic recommendations based on quantitative analysis",
-        duration: "45 minutes",
+        title: "PBL Milestone 1: Project Definition",
+        focus: "Definition, data inventory, workbook skeleton",
+        duration: "55 minutes",
         activities: [
           {
-            name: "Advisory Brief Structure Workshop",
+            name: "Project Brief Setup",
             duration: "12 minutes",
-            description: "Learn professional business advisory format and expectations",
+            description: "Define problem, scope, stakeholders, and success metrics",
             details: [
-              "Executive summary: Key recommendations in 2-3 sentences",
-              "Analysis section: Quantitative support for recommendations",
-              "Strategic rationale: Connect method choice to business objectives",
-              "Implementation considerations: Practical steps and timeline"
+              "Problem statement aligned to asset and inventory challenges",
+              "Scope and constraints clearly stated (time, data, tools)",
+              "Stakeholders and decision makers identified",
+              "Success metrics measurable and relevant to business goals"
             ],
             callout: {
               type: "important",
-              title: "Business Advisory Writing Standards",
-              content: "Board-level communication requires clarity, brevity, and data support",
+              title: "Why Definition Matters",
+              content: "Clarity up front reduces rework and increases trust",
               items: [
-                "Executive focus: Busy executives need key points quickly",
-                "Data-driven: Quantitative analysis should support all recommendations",
-                "Action-oriented: Clear next steps and implementation guidance",
-                "Professional tone: Confident but not presumptuous language"
+                "Executives expect precise scope and decision criteria",
+                "Good definitions speed up model building and review",
+                "Success metrics anchor the dashboard and final story",
+                "Stakeholders guide what to show and what to hide"
               ]
             }
           },
           {
-            name: "Method Selection Rationale Development",
+            name: "Data Inventory & Sources",
+            duration: "15 minutes",
+            description: "Select dataset (g1–g6) and define file naming conventions",
+            details: [
+              "Choose one group dataset and log data dictionary",
+              "Establish file naming: unit07-teamX-asset-inventory-v1.xlsx",
+              "Note refresh cadence and data validity checks",
+              "Plan for data validation and audit columns in Excel"
+            ]
+          },
+          {
+            name: "Workbook Skeleton",
             duration: "20 minutes",
-            description: "Teams develop strategic rationale for their method recommendations",
+            description: "Create tabs: Inputs, SLN, DDB, FIFO/LIFO, Dashboard, Checks",
             details: [
-              "Analysis of cash flow impact: How do method choices affect cash timing?",
-              "Tax strategy evaluation: Which methods optimize tax obligations?",
-              "Industry context consideration: How does business type affect method selection?",
-              "Risk assessment: What are the trade-offs of each approach?"
+              "Add placeholders and brief tab notes for each sheet",
+              "List key formulas to be implemented for each method",
+              "Reserve space for method switching controls and outputs",
+              "Add a Checks sheet for validations and error flags"
             ]
           },
           {
-            name: "Peer Critique Protocol",
-            duration: "10 minutes",
-            description: "Structured feedback on draft advisory briefs",
+            name: "Risks & Assumptions",
+            duration: "8 minutes",
+            description: "Document assumptions and 2–3 mitigation steps",
             details: [
-              "Teams exchange draft briefs with structured critique form",
-              "Feedback focus: Clarity of recommendations, strength of rationale, professional tone",
-              "Constructive suggestions: Specific improvements for final version",
-              "Quality standards: Ensure briefs meet Board presentation expectations"
-            ]
-          },
-          {
-            name: "Revision Planning",
-            duration: "3 minutes",
-            description: "Incorporate feedback and plan final brief completion",
-            details: [
-              "Review feedback received and prioritize revisions",
-              "Plan brief completion timeline for Day 9 presentation prep",
-              "Identify any additional analysis needed to strengthen recommendations",
-              "Milestone 3 checkpoint: Assess progress toward final deliverable"
+              "Common risks: missing fields, negative costs, stale dates",
+              "Mitigation: validation rules, IFERROR guards, review checklist",
+              "Owner: assign who updates data and who reviews",
+              "Evidence: brief + workbook skeleton saved"
             ]
           }
         ],
         materials: [
-          "Advisory brief template and examples",
-          "Business writing style guide",
-          "Peer critique protocol forms",
-          "Strategic analysis framework",
-          "Professional document formatting guidelines"
+          "Project brief template",
+          "Dataset links (g1–g6) in Resources",
+          "Workbook skeleton example",
+          "Validation checklist (required fields, ranges, dates)"
         ]
       },
       {
         day: 9,
-        title: "Mock Board Presentation",
-        focus: "Presentation rehearsal with peer feedback and refinement",
-        duration: "45 minutes",
+        title: "PBL Milestone 2: Prototype + Rehearsal",
+        focus: "Prototype with method switching, validations, peer feedback",
+        duration: "80 minutes",
         activities: [
           {
-            name: "Presentation Structure Review",
-            duration: "8 minutes",
-            description: "Review effective Board presentation techniques and expectations",
+            name: "Prototype Build",
+            duration: "40 minutes",
+            description: "Implement SLN/DDB and FIFO/LIFO with dynamic switching",
             details: [
-              "Board presentation format: Problem, Analysis, Recommendation, Implementation",
-              "Professional delivery: Appropriate tone, pace, and body language for executives",
-              "Visual aids: Effective use of Excel models and charts during presentation",
-              "Q&A preparation: Anticipate Board questions and prepare confident responses"
+              "Add method dropdowns and INDEX/MATCH logic",
+              "Complete core formulas and verify against small test cases",
+              "Add validation rules and conditional formatting checks",
+              "Log test scenarios and results in a Test Summary sheet"
             ]
           },
           {
-            name: "Team Presentation Rehearsals",
-            duration: "25 minutes",
-            description: "Teams practice 5-minute presentations with live Excel demonstrations",
+            name: "Rehearsal + Peer Critique",
+            duration: "30 minutes",
+            description: "5–6 minute rehearsal with structured peer feedback",
             details: [
-              "Full presentation run-through: Teams present to 2-3 other teams",
-              "Live Excel demo: Practice smooth transitions between analysis and recommendations",
-              "Timing practice: Ensure presentations stay within 5-minute limit",
-              "Q&A simulation: Other teams ask challenging questions as Board members would"
-            ],
-            callout: {
-              type: "tip",
-              title: "Effective Board Presentation Techniques",
-              content: "Executive presentations require confidence, clarity, and compelling rationale",
-              items: [
-                "Start strong: Lead with clear recommendation, then support with analysis",
-                "Show, don't just tell: Use Excel model to demonstrate impact visually",
-                "Anticipate questions: Prepare for challenges to your methodology",
-                "End with action: Clear next steps and implementation timeline"
-              ]
-            }
+              "Run through the story: problem → analysis → recommendation",
+              "Demonstrate switching and explain business impact",
+              "Collect feedback by rubric category (technical, rationale, clarity)",
+              "Identify top 2 changes to apply before Day 10"
+            ]
           },
           {
-            name: "Peer Feedback Integration",
+            name: "Revise & Lock",
             duration: "10 minutes",
-            description: "Incorporate feedback and finalize presentation approach",
+            description: "Apply changes and finalize prototype for presentation",
             details: [
-              "Structured feedback collection: Specific suggestions from peer audiences",
-              "Presentation refinement: Adjust based on feedback about clarity and impact",
-              "Final practice: Quick run-through of revised presentation",
-              "Confidence building: Address any remaining concerns or questions"
-            ]
-          },
-          {
-            name: "Final Preparation",
-            duration: "2 minutes",
-            description: "Last-minute preparation for tomorrow's Board presentation",
-            details: [
-              "Technical check: Ensure Excel models work perfectly on presentation computer",
-              "Team coordination: Confirm roles and transitions between team members",
-              "Professional readiness: Review dress code and presentation etiquette",
-              "Mental preparation: Build confidence for authentic Board presentation experience"
+              "Fix any formula or validation issues",
+              "Polish dashboard labels and numbers",
+              "Export/share final prototype paths with team and teacher",
+              "Confirm presentation roles and timing"
             ]
           }
         ],
         materials: [
-          "Board presentation guidelines and rubric",
-          "Peer feedback forms for presentation evaluation",
-          "Technical setup checklist for Excel demonstrations",
-          "Professional presentation etiquette guide",
-          "Q&A preparation worksheet"
+          "Peer critique forms (rubric-aligned)",
+          "Validation checklist and Test Summary template",
+          "Presentation outline (Problem/Analysis/Recommendation/Q&A)",
+          "Dataset links (same g1–g6 as Day 8)"
         ]
       },
       {
         day: 10,
-        title: "Public Presentation",
-        focus: "Final Board presentation and unit reflection",
+        title: "PBL Milestone 3: Presentations + Peer Review",
+        focus: "Team presentations, rubric‑aligned peer review, reflection",
         duration: "45 minutes",
         activities: [
           {
-            name: "Board of Directors Panel Presentations",
-            duration: "30 minutes",
-            description: "Teams present advisory briefs and recommendations to external business panel",
+            name: "Presentation Flow",
+            duration: "40 minutes",
+            description: "5 min setup; Six groups × ~5 min; 5 min wrap",
             details: [
-              "Professional setup: Board panel of local business leaders, accountants, auditors",
-              "5-minute presentations: Teams deliver advisory brief with live Excel demonstration",
-              "Strategic Q&A: Board members ask challenging questions about method selection rationale",
-              "Real-world feedback: Panel provides authentic business perspective on recommendations"
+              "Presenter order and timeboxing posted",
+              "Each team: 4–5 minute presentation + brief Q&A",
+              "Audience completes rubric‑aligned peer critique",
+              "Wrap: collect files and feedback; outline next steps"
             ],
             callout: {
               type: "important",
-              title: "Authentic Assessment: Board Presentation",
-              content: "Final assessment mirrors real corporate governance decision-making",
+              title: "Standard Rubric Weights",
+              content: "Use these categories for feedback and scoring",
               items: [
-                "Technical mastery: All Excel calculations must be accurate and professional",
-                "Strategic thinking: Recommendations must align with stated business objectives",
-                "Communication skills: Clear, confident presentation appropriate for executive audience",
-                "Professional behavior: Appropriate responses to challenging questions and feedback"
+                "Technical Accuracy — 50%",
+                "Strategic Rationale — 20%",
+                "Communication & Clarity — 15%",
+                "Time Management — 10%",
+                "Q&A Readiness — 5%"
               ]
             }
           },
           {
-            name: "Board Feedback Collection",
-            duration: "8 minutes",
-            description: "Panel provides structured feedback on presentations and strategic thinking",
-            details: [
-              "Individual team feedback: Board members provide specific comments on each presentation",
-              "Common themes: Panel identifies strengths and areas for improvement across all teams",
-              "Industry insights: Board shares real-world perspective on method selection practices",
-              "Recognition: Acknowledge exceptional presentations and strategic insights"
-            ]
-          },
-          {
-            name: "Unit Reflection & Learning Analysis",
+            name: "Post‑Presentation Reflection",
             duration: "5 minutes",
-            description: "Students reflect on learning journey and connect to future applications",
+            description: "Individual reflection and file submission",
             details: [
-              "Learning reflection: How did this unit change your understanding of business decision-making?",
-              "Skill transfer: Which technical skills will be most valuable in other contexts?",
-              "Strategic thinking: How do quantitative analysis and business strategy connect?",
-              "Future application: How might these skills help in Unit 8 integrated modeling?"
-            ]
-          },
-          {
-            name: "Portfolio Documentation & Closure",
-            duration: "2 minutes",
-            description: "Document achievements and transition to next unit",
-            details: [
-              "Portfolio addition: Archive completed Excel models and advisory brief with reflection",
-              "Achievement celebration: Recognize growth in both technical and strategic capabilities",
-              "Unit 8 connection: Preview how asset and inventory models integrate into startup financial model",
-              "Professional development: Acknowledge progress toward business communication competency"
+              "Submit final model, slides, and peer reviews",
+              "Reflect on strengths, improvements, and next steps",
+              "Record two actions to improve professional readiness",
+              "Confirm portfolio artifacts are complete"
             ]
           }
         ],
         materials: [
-          "Board panel evaluation forms and feedback sheets",
-          "Professional presentation setup (projector, laptop, business setting)",
-          "Unit reflection prompts and portfolio guidelines",
-          "Achievement certificates or recognition materials",
-          "Unit 8 preview and connection materials"
+          "Peer critique forms (rubric categories)",
+          "Presentation timing sheet and order list",
+          "Submission checklist",
+          "Portfolio reflection prompts"
         ]
       }
     ]

@@ -1,0 +1,82 @@
+date,employee_id,employee_name,pay_type,hours_worked,hourly_rate,salary_monthly,tips_reported,overtime_hours,bonus,deductions_other,pay_period_start,pay_period_end,tax_status_federal,tax_status_state,allowances,department,notes
+2024-01-05,E101,Alex Rivera,hourly,38,18.50,,0,2,0,0,2023-12-30,2024-01-05,S,CA,1,Operations,Regular week
+2024-01-12,E101,Alex Rivera,hourly,40,18.50,,0,0,0,0,2024-01-06,2024-01-12,S,CA,1,Operations,Full hours
+2024-01-19,E101,Alex Rivera,hourly,36,18.50,,0,0,0,0,2024-01-13,2024-01-19,S,CA,1,Operations,Left early one day
+2024-01-26,E101,Alex Rivera,hourly,42,18.50,,0,4,0,0,2024-01-20,2024-01-26,S,CA,1,Operations,Overtime
+2024-02-02,E101,Alex Rivera,hourly,40,18.50,,0,0,0,0,2024-01-27,2024-02-02,S,CA,1,Operations,Regular
+2024-02-09,E101,Alex Rivera,hourly,39,18.50,,0,1,0,0,2024-02-03,2024-02-09,S,CA,1,Operations,Small OT
+2024-02-16,E101,Alex Rivera,hourly,40,18.50,,0,0,0,0,2024-02-10,2024-02-16,S,CA,1,Operations,Regular
+2024-02-23,E101,Alex Rivera,hourly,37,18.50,,0,0,0,0,2024-02-17,2024-02-23,S,CA,1,Operations,Short week
+2024-03-01,E101,Alex Rivera,hourly,41,18.50,,0,1,100,0,2024-02-24,2024-03-01,S,CA,1,Operations,Spot bonus
+2024-03-08,E101,Alex Rivera,hourly,40,18.50,,0,0,0,0,2024-03-02,2024-03-08,S,CA,1,Operations,Regular
+2024-01-05,E102,Priya Shah,tipped-hourly,32,12.00,,85,0,0,0,2023-12-30,2024-01-05,M,CA,0,Service,Winter slowdown
+2024-01-12,E102,Priya Shah,tipped-hourly,35,12.00,,120,0,0,0,2024-01-06,2024-01-12,M,CA,0,Service,Weekend rush
+2024-01-19,E102,Priya Shah,tipped-hourly,30,12.00,,95,0,0,0,2024-01-13,2024-01-19,M,CA,0,Service,Short hours
+2024-01-26,E102,Priya Shah,tipped-hourly,38,12.00,,140,1,0,0,2024-01-20,2024-01-26,M,CA,0,Service,Overtime + tips
+2024-02-02,E102,Priya Shah,tipped-hourly,36,12.00,,110,0,0,0,2024-01-27,2024-02-02,M,CA,0,Service,Steady
+2024-02-09,E102,Priya Shah,tipped-hourly,34,12.00,,88,0,0,0,2024-02-03,2024-02-09,M,CA,0,Service,Weekday shift
+2024-02-16,E102,Priya Shah,tipped-hourly,39,12.00,,132,1,0,0,2024-02-10,2024-02-16,M,CA,0,Service,Busy week
+2024-02-23,E102,Priya Shah,tipped-hourly,33,12.00,,76,0,0,0,2024-02-17,2024-02-23,M,CA,0,Service,Rainy days
+2024-03-01,E102,Priya Shah,tipped-hourly,37,12.00,,125,0,0,0,2024-02-24,2024-03-01,M,CA,0,Service,Regular
+2024-03-08,E102,Priya Shah,tipped-hourly,35,12.00,,118,0,0,0,2024-03-02,2024-03-08,M,CA,0,Service,Steady
+2024-01-05,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2023-12-30,2024-01-05,S,CA,2,Admin,Monthly salary
+2024-01-12,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-01-06,2024-01-12,S,CA,2,Admin,Monthly accrual
+2024-01-19,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-01-13,2024-01-19,S,CA,2,Admin,Monthly accrual
+2024-01-26,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-01-20,2024-01-26,S,CA,2,Admin,Monthly accrual
+2024-02-02,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-01-27,2024-02-02,S,CA,2,Admin,Monthly accrual
+2024-02-09,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-02-03,2024-02-09,S,CA,2,Admin,Monthly accrual
+2024-02-16,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-02-10,2024-02-16,S,CA,2,Admin,Monthly accrual
+2024-02-23,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-02-17,2024-02-23,S,CA,2,Admin,Monthly accrual
+2024-03-01,E103,Jordan Lee,salaried,0,,4200,0,0,400,0,2024-02-24,2024-03-01,S,CA,2,Admin,Quarterly bonus
+2024-03-08,E103,Jordan Lee,salaried,0,,4200,0,0,0,0,2024-03-02,2024-03-08,S,CA,2,Admin,Monthly accrual
+2024-01-05,E104,Mia Chen,hourly,40,20.00,,0,0,0,0,2023-12-30,2024-01-05,S,CA,1,Design,Regular
+2024-01-12,E104,Mia Chen,hourly,42,20.00,,0,2,0,0,2024-01-06,2024-01-12,S,CA,1,Design,Overtime
+2024-01-19,E104,Mia Chen,hourly,38,20.00,,0,0,0,0,2024-01-13,2024-01-19,S,CA,1,Design,Regular
+2024-01-26,E104,Mia Chen,hourly,36,20.00,,0,0,0,0,2024-01-20,2024-01-26,S,CA,1,Design,Short week
+2024-02-02,E104,Mia Chen,hourly,40,20.00,,0,0,0,0,2024-01-27,2024-02-02,S,CA,1,Design,Regular
+2024-02-09,E104,Mia Chen,hourly,41,20.00,,0,1,0,0,2024-02-03,2024-02-09,S,CA,1,Design,Client deadline
+2024-02-16,E104,Mia Chen,hourly,39,20.00,,0,0,0,0,2024-02-10,2024-02-16,S,CA,1,Design,Regular
+2024-02-23,E104,Mia Chen,hourly,40,20.00,,0,0,0,0,2024-02-17,2024-02-23,S,CA,1,Design,Regular
+2024-03-01,E104,Mia Chen,hourly,43,20.00,,0,3,0,0,2024-02-24,2024-03-01,S,CA,1,Design,Overtime
+2024-03-08,E104,Mia Chen,hourly,37,20.00,,0,0,0,0,2024-03-02,2024-03-08,S,CA,1,Design,Short week
+2024-01-05,E105,Sam Torres,hourly,28,17.25,,0,0,0,0,2023-12-30,2024-01-05,M,CA,0,Support,New hire training
+2024-01-12,E105,Sam Torres,hourly,32,17.25,,0,0,0,0,2024-01-06,2024-01-12,M,CA,0,Support,Building up hours
+2024-01-19,E105,Sam Torres,hourly,35,17.25,,0,0,0,0,2024-01-13,2024-01-19,M,CA,0,Support,Regular
+2024-01-26,E105,Sam Torres,hourly,34,17.25,,0,0,0,0,2024-01-20,2024-01-26,M,CA,0,Support,Regular
+2024-02-02,E105,Sam Torres,hourly,36,17.25,,0,0,0,0,2024-01-27,2024-02-02,M,CA,0,Support,Regular
+2024-02-09,E105,Sam Torres,hourly,38,17.25,,0,0,0,0,2024-02-03,2024-02-09,M,CA,0,Support,Steady
+2024-02-16,E105,Sam Torres,hourly,39,17.25,,0,1,0,0,2024-02-10,2024-02-16,M,CA,0,Support,Small OT
+2024-02-23,E105,Sam Torres,hourly,37,17.25,,0,0,0,0,2024-02-17,2024-02-23,M,CA,0,Support,Regular
+2024-03-01,E105,Sam Torres,hourly,40,17.25,,0,0,0,0,2024-02-24,2024-03-01,M,CA,0,Support,Regular
+2024-03-08,E105,Sam Torres,hourly,41,17.25,,0,1,0,0,2024-03-02,2024-03-08,M,CA,0,Support,Busy week
+2024-01-05,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2023-12-30,2024-01-05,M,CA,1,Finance,Monthly salary
+2024-01-12,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-01-06,2024-01-12,M,CA,1,Finance,Monthly accrual
+2024-01-19,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-01-13,2024-01-19,M,CA,1,Finance,Monthly accrual
+2024-01-26,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-01-20,2024-01-26,M,CA,1,Finance,Monthly accrual
+2024-02-02,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-01-27,2024-02-02,M,CA,1,Finance,Monthly accrual
+2024-02-09,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-02-03,2024-02-09,M,CA,1,Finance,Monthly accrual
+2024-02-16,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-02-10,2024-02-16,M,CA,1,Finance,Monthly accrual
+2024-02-23,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-02-17,2024-02-23,M,CA,1,Finance,Monthly accrual
+2024-03-01,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-02-24,2024-03-01,M,CA,1,Finance,Monthly accrual
+2024-03-08,E106,Lila Nguyen,salaried,0,,3800,0,0,0,0,2024-03-02,2024-03-08,M,CA,1,Finance,Monthly accrual
+2024-01-05,E107,Chris Park,hourly,44,22.50,,0,4,0,0,2023-12-30,2024-01-05,S,CA,0,Operations,Overtime
+2024-01-12,E107,Chris Park,hourly,40,22.50,,0,0,0,0,2024-01-06,2024-01-12,S,CA,0,Operations,Regular
+2024-01-19,E107,Chris Park,hourly,39,22.50,,0,0,0,0,2024-01-13,2024-01-19,S,CA,0,Operations,Regular
+2024-01-26,E107,Chris Park,hourly,41,22.50,,0,1,0,0,2024-01-20,2024-01-26,S,CA,0,Operations,Small OT
+2024-02-02,E107,Chris Park,hourly,40,22.50,,0,0,0,0,2024-01-27,2024-02-02,S,CA,0,Operations,Regular
+2024-02-09,E107,Chris Park,hourly,38,22.50,,0,0,0,0,2024-02-03,2024-02-09,S,CA,0,Operations,Regular
+2024-02-16,E107,Chris Park,hourly,42,22.50,,0,2,0,0,2024-02-10,2024-02-16,S,CA,0,Operations,Overtime
+2024-02-23,E107,Chris Park,hourly,37,22.50,,0,0,0,0,2024-02-17,2024-02-23,S,CA,0,Operations,Short week
+2024-03-01,E107,Chris Park,hourly,40,22.50,,0,0,0,0,2024-02-24,2024-03-01,S,CA,0,Operations,Regular
+2024-03-08,E107,Chris Park,hourly,41,22.50,,0,1,0,0,2024-03-02,2024-03-08,S,CA,0,Operations,Busy week
+2024-01-05,E108,Dana Brooks,hourly,30,16.00,,0,0,0,0,2023-12-30,2024-01-05,S,CA,1,Sales,Part time
+2024-01-12,E108,Dana Brooks,hourly,28,16.00,,0,0,0,0,2024-01-06,2024-01-12,S,CA,1,Sales,Part time
+2024-01-19,E108,Dana Brooks,hourly,34,16.00,,0,0,0,0,2024-01-13,2024-01-19,S,CA,1,Sales,Regular
+2024-01-26,E108,Dana Brooks,hourly,33,16.00,,0,0,0,0,2024-01-20,2024-01-26,S,CA,1,Sales,Regular
+2024-02-02,E108,Dana Brooks,hourly,35,16.00,,0,0,0,0,2024-01-27,2024-02-02,S,CA,1,Sales,Regular
+2024-02-09,E108,Dana Brooks,hourly,36,16.00,,0,0,0,0,2024-02-03,2024-02-09,S,CA,1,Sales,Regular
+2024-02-16,E108,Dana Brooks,hourly,32,16.00,,0,0,0,0,2024-02-10,2024-02-16,S,CA,1,Sales,Regular
+2024-02-23,E108,Dana Brooks,hourly,29,16.00,,0,0,0,0,2024-02-17,2024-02-23,S,CA,1,Sales,Fewer shifts
+2024-03-01,E108,Dana Brooks,hourly,31,16.00,,0,0,0,0,2024-02-24,2024-03-01,S,CA,1,Sales,Regular
+2024-03-08,E108,Dana Brooks,hourly,34,16.00,,0,0,0,0,2024-03-02,2024-03-08,S,CA,1,Sales,Regular
+

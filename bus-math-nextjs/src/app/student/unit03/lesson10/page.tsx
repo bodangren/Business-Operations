@@ -9,6 +9,9 @@ export default function Lesson10Page() {
         unit={unit03Data} 
         phases={lesson10Phases}
       />
+      <div className="mt-6">
+        <a className="underline text-blue-600" href="/student/unit03/lesson10/phase-1/">Go to Phase 1</a>
+      </div>
     </div>
   )
 }
