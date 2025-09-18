@@ -5,8 +5,8 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit01Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, ClipboardList, Lightbulb } from "lucide-react"
-import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
+import { ArrowRightCircle, ClipboardList, Lightbulb, Target } from "lucide-react"
+import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 
 const currentPhase = lesson07Phases[1]
 
@@ -32,35 +32,65 @@ export default function Phase2Page() {
               <Card className="border-green-200 bg-white">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                    <ClipboardList className="w-5 h-5 text-green-700" /> Definition of Done (Student Checklist)
+                    <ClipboardList className="w-5 h-5 text-green-700" /> QA Ladder for Lesson 07
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3 text-left">
-                  <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
-                    <ul className="list-disc list-inside space-y-2 text-green-900">
-                      <li><strong>Exact references:</strong> No hard‑coded outputs; use named ranges and structured references.</li>
-                      <li><strong>Lookups:</strong> XLOOKUP or INDEX/MATCH (exact match) + IFNA/IFERROR with clear messages.</li>
-                      <li><strong>Tables:</strong> Use structured refs (e.g., Table[#All]) so ranges auto‑expand.</li>
-                      <li><strong>Charts:</strong> Bind to tables/structured refs; no static A1:C10 ranges.</li>
-                      <li><strong>Validation:</strong> Inputs constrained (no negatives where invalid; ≤100% rates; valid scenario names; fresh AsOfDate).</li>
-                      <li><strong>Reconciliation:</strong> Tie‑outs pass (totals, bank vs register, accounting equation, balance checks).</li>
-                      <li><strong>Performance:</strong> Avoid volatile functions; confirm responsive updates.</li>
-                      <li><strong>Auditability:</strong> Assumptions sheet, date/version note, transparent formulas; no hidden logic.</li>
-                      <li><strong>Scenario behavior:</strong> KPIs update across Base/Stretch/Downside; thresholds drive executive summary text.</li>
-                      <li><strong>Error handling:</strong> Clear user messages; all ErrorCheckingSystem rules pass.</li>
-                      <li><strong>Presentation:</strong> Single‑screen dashboard/summary; readable charts; concise executive summary.</li>
-                    </ul>
+                <CardContent className="space-y-4 text-left">
+                  <div className="bg-green-50 border border-green-200 p-4 rounded-lg space-y-3">
+                    <p className="text-green-900 leading-relaxed">
+                      Lesson 07 is a guided QA lab. You will climb a ladder of quality checks one rung at a time. Everyone
+                      starts with clean trial balance basics. When that feels steady, you can explore the stretch checks that
+                      professional analysts use every day.
+                    </p>
+                    <div className="bg-white border border-green-200 rounded-lg p-4 space-y-2">
+                      <h3 className="font-semibold text-green-900 flex items-center gap-2"><ArrowRightCircle className="w-5 h-5" /> Tier 1 — Core Safety Checks</h3>
+                      <ul className="list-disc list-inside text-green-800 space-y-1">
+                        <li>Import the ledger data as a Table named <strong>Transactions</strong>.</li>
+                        <li>Run a trial balance test: <code>=SUM(Table[Debit]) - SUM(Table[Credit])</code>.</li>
+                        <li>Highlight at least two obvious errors (bad account name, negative liability, zero amount).</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-blue-200 rounded-lg p-4 space-y-2">
+                      <h3 className="font-semibold text-blue-900 flex items-center gap-2"><ArrowRightCircle className="w-5 h-5" /> Tier 2 — Pro Moves</h3>
+                      <ul className="list-disc list-inside text-blue-800 space-y-1">
+                        <li>Wrap lookups with <code>IFNA</code>/<code>IFERROR</code> so typos show friendly messages.</li>
+                        <li>Flag stale dates older than 90 days.</li>
+                        <li>Use <code>ROUND</code> so values like 199.995 display as 200.00.</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-purple-200 rounded-lg p-4 space-y-2">
+                      <h3 className="font-semibold text-purple-900 flex items-center gap-2"><ArrowRightCircle className="w-5 h-5" /> Tier 3 — Analyst Stretch</h3>
+                      <ul className="list-disc list-inside text-purple-800 space-y-1">
+                        <li>Build a mini QA dashboard (error counts + traffic-light status).</li>
+                        <li>Replace any static ranges with structured references or named tables.</li>
+                        <li>Write a one-sentence audit note that ties errors to next steps.</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                    <div className="flex items-center gap-2 text-blue-900 font-semibold mb-2"><Lightbulb className="w-5 h-5" /> Build Plan (Short)</div>
-                    <ul className="list-disc list-inside text-blue-900">
-                      <li>Drivers/assumptions named and dated</li>
-                      <li>Core links: exact-match lookups and structured refs</li>
-                      <li>Outputs: reconciliations and KPI summary</li>
-                      <li>Visuals: charts bound to tables</li>
-                      <li>QA: validation + ErrorCheckingSystem passes</li>
-                    </ul>
+                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg space-y-2">
+                    <div className="flex items-center gap-2 text-blue-900 font-semibold"><Lightbulb className="w-5 h-5" /> Why this ladder matters</div>
+                    <p className="text-blue-900 leading-relaxed">
+                      Sarah’s investors do not expect perfection in week three. They expect a ledger that shows problems fast
+                      and explains what to do about them. Each tier gives you another way to earn that trust.
+                    </p>
                   </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-amber-200 bg-amber-50">
+                <CardHeader>
+                  <CardTitle className="text-amber-900 flex items-center gap-2">
+                    <Target className="w-5 h-5" /> Lesson 07 Learning Targets
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-amber-900">
+                  <p>
+                    By the end of this lesson you will be able to explain how a trial balance proves ledger integrity, use
+                    validation formulas to catch messy data, and communicate findings in a short audit note.
+                  </p>
+                  <p>
+                    Keep these goals visible as you practice. They help you decide which tier to work on and when to push for the stretch challenge.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -88,4 +118,3 @@ export default function Phase2Page() {
     </div>
   )
 }
-
