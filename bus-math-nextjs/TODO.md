@@ -1,3 +1,11 @@
+# Workflow Guardrails (MANDATORY)
+- Confirm `main` is clean and synced before starting. If not, resolve or escalate.
+- Review the current sprint story file (`docs/sprint/S#.md`, when available) and this TODO list to lock priorities.
+- Open a GitHub issue for the slice (`gh issue create` with milestone + labels), then branch from `main` using `<type>/<issue>-<slug>`.
+- Apply TDD: write/adjust tests first, run `npm run lint` and relevant `npm run test*` commands prior to each commit.
+- Use Conventional Commits, keep work scoped to the issue branch, and document changes/tests in the PR (`gh pr create --fill`).
+- Merge via squash after CI passes, prune branches, close the issue, and update sprint docs/TODO before moving on.
+
 Broken Links and Assets – Next.js App
 
 Summary

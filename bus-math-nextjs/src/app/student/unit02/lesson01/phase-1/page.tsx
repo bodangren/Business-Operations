@@ -5,8 +5,8 @@ export default function Phase1Page() {
   const videoData = {
     title: "The Automation Breakthrough: Conquering the Month-End Nightmare",
     description: "Sarah's business is growing, but so is her administrative workload. A weekend-long 'bank reconciliation nightmare' reveals the flaws in her manual system. With advice from her mentor, Marcus, Sarah discovers the power of automation to cut her month-end closing time from days to hours. Learn why this step is crucial for freeing up time to focus on growth.",
-    youtubeId: "Je7SPYOw9Vk",
-    duration: "5:15",
+    youtubeId: "1O_YHSGpZDo",
+    duration: "2:55",
     transcript: `(Sarah is on camera, appearing more settled and professional than in the first video. The setting is the same.)
 
 So, I had my smart ledger, and I was feeling pretty good. The business was growing. I even landed my first monthly retainer client, a local fitness studio. That was a big deal—it meant consistent revenue every month. But it also meant more transactions, more data entry, more things to keep track of.
