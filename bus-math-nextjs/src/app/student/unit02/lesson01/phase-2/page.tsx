@@ -32,8 +32,8 @@ export default function Phase2Page() {
   const fillInBlankSentences = [
     {
       id: '1',
-      text: 'Sarah\'s driving question became: "What automation can cut our month-end closing time from {blank} to {blank} without sacrificing GAAP accuracy?"',
-      answer: 'two days, two hours',
+      text: 'Sarah\'s driving question became: "What automation can cut our month-end closing time from {blank} to two hours without sacrificing GAAP accuracy?"',
+      answer: 'two days',
       hint: 'The time reduction goal from weekend nightmare to manageable task'
     },
     {
