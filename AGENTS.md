@@ -2,18 +2,22 @@
 
 This file provides guidance to coding agents (Claude Code, OpenAI Codex CLI, etc.) working with this repository. It supplements existing docs with agent‑specific workflow rules and the Excel‑focused lesson implementation patterns actively used in this project.
 
+## Tone and Tenor
+Be direct when asked for advice. Don't worry about offending the requester.
+
 ## Agile / TDD Issue Workflow (MANDATORY)
 Follow this process for every development slice to keep the repository, sprint artifacts, and GitHub history aligned:
 1. Start from a clean, up-to-date `main`. If the worktree is dirty, stop and clarify before proceeding.
 2. Review the current sprint story file (`docs/sprint/S#.md`) and `bus-math-nextjs/TODO.md` to confirm priorities and acceptance criteria. If the sprint file is missing, document the gap in TODO.md and request guidance before coding.
-3. Create a GitHub issue that captures the slice (use `gh issue create` with milestone and labels: `type:*`, `area:*`, `priority:*`; include story, acceptance criteria, and test plan per template).
-4. Branch from `main` using `<type>/<issue>-<slug>` (example: `feat/7-mcq-quiz-auto-score`). All commits for the slice stay on this branch.
-5. Practice TDD: add or update tests first, then implement. Run `npm run lint` and `npm run test` before every commit. When APIs or Prisma schema change, also run `npm run test:integration`; for broader flows, run `npm run test:e2e`.
-6. Use Conventional Commit messages (e.g., `feat: add automated scoring rubric`). Keep commits atomic and scoped to the issue.
-7. Push the branch (`git push -u origin <branch>`) and open a PR (`gh pr create --fill --label ... --milestone ...`). Link the issue, record test commands in the body, and run `gh pr checks`.
-8. Complete a self-review, address feedback on the same branch, then merge with squash (`gh pr merge --squash --delete-branch`). Ensure CI is green before merge.
-9. After merge, switch back to `main`, run `git pull --ff-only`, prune stale branches, close the linked issue (if not auto-closed), and update sprint artifacts (sprint doc, TODO.md) to reflect completion.
-10. Repeat the loop for the next prioritized issue; do not batch unrelated work on a single branch.
+3. List existing open GitHub issues for the sprint slice (`gh issue list` with appropriate filters) and match them against the sprint story so you avoid duplicating work.
+4. Only create a new GitHub issue when the sprint item lacks coverage or you are explicitly directed to do so; capture the slice with milestone and labels (`type:*`, `area:*`, `priority:*`) plus story, acceptance criteria, and test plan per template.
+5. Branch from `main` using `<type>/<issue>-<slug>` (example: `feat/7-mcq-quiz-auto-score`). All commits for the slice stay on this branch.
+6. Practice TDD: add or update tests first, then implement. Run `npm run lint` and `npm run test` before every commit. When APIs or Prisma schema change, also run `npm run test:integration`; for broader flows, run `npm run test:e2e`.
+7. Use Conventional Commit messages (e.g., `feat: add automated scoring rubric`). Keep commits atomic and scoped to the issue.
+8. Push the branch (`git push -u origin <branch>`) and open a PR (`gh pr create --fill --label ... --milestone ...`). Link the issue, record test commands in the body, and run `gh pr checks`.
+9. Complete a self-review, address feedback on the same branch, then merge with squash (`gh pr merge --squash --delete-branch`). Ensure CI is green before merge.
+10. After merge, switch back to `main`, run `git pull --ff-only`, prune stale branches, close the linked issue (if not auto-closed), and update sprint artifacts (sprint doc, TODO.md) to reflect completion.
+11. Repeat the loop for the next prioritized issue; do not batch unrelated work on a single branch.
 
 ## Agent Operating Rules (Read First)
 - Work only in `bus-math-nextjs/` unless explicitly told otherwise.
