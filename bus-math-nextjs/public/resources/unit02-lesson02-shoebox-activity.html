@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Unit 02 Lesson 02 Shoebox Receipt Challenge</title>
+<style>
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 24px;
+    background: #f4f4f4;
+    color: #222;
+  }
+
+  header {
+    border-bottom: 2px solid #222;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 16px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    margin: 6px 0;
+  }
+
+  .instructions {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-left: 4px solid #222;
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+
+  .categories {
+    background: #fff;
+    border: 1px dashed #bbb;
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+
+  .categories ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+  }
+
+  .log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: #fff;
+  }
+
+  .log-table th,
+  .log-table td {
+    border: 1px solid #bbb;
+    padding: 6px 8px;
+    text-align: left;
+  }
+
+  .log-table th {
+    background: #efefef;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  .receipts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .receipt-card {
+    background: #fffdfa;
+    border: 1px solid #d4d0c6;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    padding: 14px;
+    position: relative;
+  }
+
+  .receipt-card::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px dashed #c7c2b6;
+    pointer-events: none;
+  }
+
+  .receipt-header {
+    font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .receipt-body {
+    font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+    font-size: 12px;
+  }
+
+  .receipt-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+  }
+
+  .receipt-body td {
+    padding: 2px 0;
+    vertical-align: top;
+  }
+
+  .receipt-body td.label {
+    width: 44%;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #555;
+  }
+
+  .receipt-foot {
+    border-top: 1px dashed #c7c2b6;
+    padding-top: 6px;
+    font-size: 11px;
+  }
+
+  .flag-problem {
+    background: #fff3f3;
+    border-color: #d8a8a8;
+  }
+
+  .flag-problem::after {
+    border-color: #d8a8a8;
+  }
+
+  .flag-problem .receipt-header {
+    color: #9b1b1b;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 18px;
+    }
+
+    header {
+      margin-bottom: 12px;
+    }
+
+    .instructions,
+    .categories {
+      break-inside: avoid;
+    }
+
+    .receipts-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .receipt-card {
+      box-shadow: none;
+    }
+
+    .page-break {
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Shoebox Receipt Challenge</h1>
+    <p><strong>Unit 02 · Lesson 02 · Phase 1</strong></p>
+  </header>
+
+  <section class="instructions">
+    <h2>Challenge Steps</h2>
+    <ol>
+      <li>Cut the receipts apart after printing, then shuffle them into a "shoebox" pile.</li>
+      <li>Sort each receipt into the category you think is most accurate. Flag anything you are unsure about.</li>
+      <li>Enter each transaction into the Month-End Ledger template. Document your assumptions in the notes column.</li>
+      <li>Compare totals with your partner team and discuss any mismatches or ambiguous receipts.</li>
+    </ol>
+  </section>
+
+  <section class="categories">
+    <h2>Ledger Categories To Use</h2>
+    <p>Sort the receipts into these buckets before entering the data:</p>
+    <ul>
+      <li>Office &amp; Supplies</li>
+      <li>Utilities &amp; Services</li>
+      <li>Client Meals &amp; Events</li>
+      <li>Travel &amp; Transportation</li>
+      <li>Miscellaneous / Needs Clarification</li>
+    </ul>
+  </section>
+
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Receipts Placed</th>
+        <th>Total Amount</th>
+        <th>Questionable Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Office &amp; Supplies</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Utilities &amp; Services</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Client Meals &amp; Events</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Travel &amp; Transportation</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Miscellaneous / Needs Clarification</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="receipts-grid">
+    <article class="receipt-card" aria-label="Receipt R-001">
+      <div class="receipt-header">R-001 · Fresh Corner Market</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/04/24</td></tr>
+          <tr><td class="label">Amount</td><td>$58.23</td></tr>
+          <tr><td class="label">Tax</td><td>$3.27</td></tr>
+          <tr><td class="label">Payment</td><td>Visa •••• 2118</td></tr>
+        </table>
+        <p>Snack refills &amp; sparkling water for client lounge.</p>
+      </div>
+      <div class="receipt-foot">Thanks for shopping!</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-002">
+      <div class="receipt-header">R-002 · QuickFuel Station #18</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/05/24</td></tr>
+          <tr><td class="label">Amount</td><td>$42.18</td></tr>
+          <tr><td class="label">Tax</td><td>$2.11</td></tr>
+          <tr><td class="label">Gallons</td><td>10.2 @ $3.99</td></tr>
+        </table>
+        <p>Company van refuel before on-site client training.</p>
+      </div>
+      <div class="receipt-foot">Pump 3 • Auth Code 84122</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-003">
+      <div class="receipt-header">R-003 · CityPower Electric</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Service Period</td><td>Dec 1 – Dec 31</td></tr>
+          <tr><td class="label">Due Date</td><td>01/12/24</td></tr>
+          <tr><td class="label">Amount</td><td>$187.46</td></tr>
+          <tr><td class="label">Tax</td><td>Included</td></tr>
+        </table>
+        <p>Auto-pay confirmation emailed to accounting@clientops.com.</p>
+      </div>
+      <div class="receipt-foot">Account # 294817-01</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-004">
+      <div class="receipt-header">R-004 · OfficeMax Print Lab</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/06/24</td></tr>
+          <tr><td class="label">Amount</td><td>$124.89</td></tr>
+          <tr><td class="label">Tax</td><td>$9.37</td></tr>
+          <tr><td class="label">Invoice</td><td>238411</td></tr>
+        </table>
+        <p>Color brochures &amp; heavy stock proposal folders (Qty 50).</p>
+      </div>
+      <div class="receipt-foot">Associate: VERA</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-005">
+      <div class="receipt-header">R-005 · ByteCloud SaaS</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Billing Cycle</td><td>Jan 2024</td></tr>
+          <tr><td class="label">Amount</td><td>$75.00</td></tr>
+          <tr><td class="label">Tax</td><td>$0.00</td></tr>
+          <tr><td class="label">Plan</td><td>Team - 5 seats</td></tr>
+        </table>
+        <p>Recurring charge processed via ACH.</p>
+      </div>
+      <div class="receipt-foot">Invoice # INV-71294</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-006">
+      <div class="receipt-header">R-006 · Urban Eats Bistro</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/07/24</td></tr>
+          <tr><td class="label">Guests</td><td>3</td></tr>
+          <tr><td class="label">Amount</td><td>$68.40</td></tr>
+          <tr><td class="label">Tip</td><td>$12.00</td></tr>
+        </table>
+        <p>Client lunch with Rivera Architects. Notes: approved by Sarah.</p>
+      </div>
+      <div class="receipt-foot">Server: KIM • Table 12</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-007">
+      <div class="receipt-header">R-007 · Metro Water Works</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Service Period</td><td>Dec 2023</td></tr>
+          <tr><td class="label">Amount</td><td>$94.15</td></tr>
+          <tr><td class="label">Tax</td><td>$3.12</td></tr>
+          <tr><td class="label">Due Date</td><td>01/15/24</td></tr>
+        </table>
+        <p>Usage 2,180 gal. Auto-draft scheduled.</p>
+      </div>
+      <div class="receipt-foot">Customer # 441090</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-008">
+      <div class="receipt-header">R-008 · Paper Trail Recycling</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Pickup</td><td>01/02/24</td></tr>
+          <tr><td class="label">Amount</td><td>$28.60</td></tr>
+          <tr><td class="label">Tax</td><td>$2.29</td></tr>
+          <tr><td class="label">Payment</td><td>Check #1123</td></tr>
+        </table>
+        <p>Document shredding &amp; recycling (4 boxes).</p>
+      </div>
+      <div class="receipt-foot">Route 4A · Driver ID 72</div>
+    </article>
+
+    <article class="receipt-card flag-problem" aria-label="Receipt R-009">
+      <div class="receipt-header">R-009 · Bean Scene Coffee</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>??/08/24</td></tr>
+          <tr><td class="label">Amount</td><td>$24.75</td></tr>
+          <tr><td class="label">Tip</td><td>$4.00 (handwritten)</td></tr>
+          <tr><td class="label">Payment</td><td>Square Receipt</td></tr>
+        </table>
+        <p>Morning strategy session. Date partially smudged—verify bank feed.</p>
+      </div>
+      <div class="receipt-foot">Order # 58213</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-010">
+      <div class="receipt-header">R-010 · Downtown Parking Deck</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/05/24</td></tr>
+          <tr><td class="label">Time</td><td>08:13 - 13:42</td></tr>
+          <tr><td class="label">Amount</td><td>$18.00</td></tr>
+          <tr><td class="label">Payment</td><td>Mobile App</td></tr>
+        </table>
+        <p>Garage pass for client onboarding workshop.</p>
+      </div>
+      <div class="receipt-foot">License: VAN-2048</div>
+    </article>
+
+    <article class="receipt-card flag-problem" aria-label="Receipt R-011">
+      <div class="receipt-header">R-011 · SmartTech Repairs</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/03/24</td></tr>
+          <tr><td class="label">Amount</td><td>$142.18?</td></tr>
+          <tr><td class="label">Tax</td><td>$11.34</td></tr>
+          <tr><td class="label">Technician</td><td>Initials JS</td></tr>
+        </table>
+        <p>Handwritten total with question mark. Laptop hinge repair &amp; battery swap.</p>
+      </div>
+      <div class="receipt-foot">Work Order # ST-6672</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-012">
+      <div class="receipt-header">R-012 · SupplyHub Warehouse</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/09/24</td></tr>
+          <tr><td class="label">Amount</td><td>$214.52</td></tr>
+          <tr><td class="label">Tax</td><td>$15.06</td></tr>
+          <tr><td class="label">Payment</td><td>Corporate Card</td></tr>
+        </table>
+        <p>Whiteboards, markers, file storage bins (team re-org).</p>
+      </div>
+      <div class="receipt-foot">Truck Door 6 · Pallet 19B</div>
+    </article>
+
+    <article class="receipt-card flag-problem" aria-label="Receipt R-013">
+      <div class="receipt-header">R-013 · Freelance Guru Collective</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>—</td></tr>
+          <tr><td class="label">Amount</td><td>$350.00</td></tr>
+          <tr><td class="label">Tax</td><td>N/A</td></tr>
+          <tr><td class="label">Service</td><td>Copywriting sprint</td></tr>
+        </table>
+        <p>Invoice emailed without date stamp. Mentions "Net 10" terms.</p>
+      </div>
+      <div class="receipt-foot">Invoice ID FG-8841</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-014">
+      <div class="receipt-header">R-014 · CityRide Shuttle</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Trip</td><td>Airport → HQ</td></tr>
+          <tr><td class="label">Date</td><td>01/11/24</td></tr>
+          <tr><td class="label">Amount</td><td>$46.80</td></tr>
+          <tr><td class="label">Tip</td><td>$8.00</td></tr>
+        </table>
+        <p>Client airport pickup. Driver requested signature.</p>
+      </div>
+      <div class="receipt-foot">Driver: KAY-114</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-015">
+      <div class="receipt-header">R-015 · BlueSky Internet</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Service Period</td><td>Jan 2024</td></tr>
+          <tr><td class="label">Amount</td><td>$132.00</td></tr>
+          <tr><td class="label">Tax</td><td>$8.91</td></tr>
+          <tr><td class="label">Account</td><td>BB-55201</td></tr>
+        </table>
+        <p>Fiber business internet (500 Mbps). Paid via autopay.</p>
+      </div>
+      <div class="receipt-foot">Confirmation 7K1-LQ9</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-016">
+      <div class="receipt-header">R-016 · Midtown Flowers</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/10/24</td></tr>
+          <tr><td class="label">Amount</td><td>$58.00</td></tr>
+          <tr><td class="label">Tax</td><td>$4.64</td></tr>
+          <tr><td class="label">Payment</td><td>Visa •••• 2118</td></tr>
+        </table>
+        <p>Arrangement for client grand opening gift.</p>
+      </div>
+      <div class="receipt-foot">Receipt # 41198</div>
+    </article>
+
+    <article class="receipt-card flag-problem" aria-label="Receipt R-017">
+      <div class="receipt-header">R-017 · LedgerPro Supplies</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/08/24</td></tr>
+          <tr><td class="label">Amount</td><td>$89.00*</td></tr>
+          <tr><td class="label">Tax</td><td>$6.24</td></tr>
+          <tr><td class="label">Memo</td><td>*Subtotal $71.20</td></tr>
+        </table>
+        <p>Receipt lists "discount applied" but total is handwritten. Confirm discount.</p>
+      </div>
+      <div class="receipt-foot">Invoice copy attached</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-018">
+      <div class="receipt-header">R-018 · Printify Express</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/11/24</td></tr>
+          <tr><td class="label">Amount</td><td>$38.25</td></tr>
+          <tr><td class="label">Tax</td><td>$3.05</td></tr>
+          <tr><td class="label">Order</td><td>#PE-20177</td></tr>
+        </table>
+        <p>Client workshop workbooks (rush print, 15 copies).</p>
+      </div>
+      <div class="receipt-foot">Pickup after 4 PM</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-019">
+      <div class="receipt-header">R-019 · City Courier Bike</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/09/24</td></tr>
+          <tr><td class="label">Amount</td><td>$22.50</td></tr>
+          <tr><td class="label">Tax</td><td>N/A</td></tr>
+          <tr><td class="label">Delivery</td><td>Client contracts (5 mi)</td></tr>
+        </table>
+        <p>Rush document courier. Signed proof attached.</p>
+      </div>
+      <div class="receipt-foot">Courier ID: 557A</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-020">
+      <div class="receipt-header">R-020 · TechBox Subscription</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Billing Cycle</td><td>Jan 2024</td></tr>
+          <tr><td class="label">Amount</td><td>$48.00</td></tr>
+          <tr><td class="label">Tax</td><td>$0.00</td></tr>
+          <tr><td class="label">Notes</td><td>Monthly cloud backup</td></tr>
+        </table>
+        <p>Auto-renewed storage and backup licensing.</p>
+      </div>
+      <div class="receipt-foot">Invoice TB-1449</div>
+    </article>
+
+    <article class="receipt-card flag-problem" aria-label="Receipt R-021">
+      <div class="receipt-header">R-021 · GreenLeaf Catering</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Event</td><td>Jan Mixer</td></tr>
+          <tr><td class="label">Date</td><td>01/12/24</td></tr>
+          <tr><td class="label">Amount</td><td>$286.40</td></tr>
+          <tr><td class="label">Deposit</td><td>$100 paid 12/20</td></tr>
+        </table>
+        <p>Final invoice lists deposit separately. Need to confirm ledger entry split.</p>
+      </div>
+      <div class="receipt-foot">Invoice # GL-2297</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-022">
+      <div class="receipt-header">R-022 · RideShare Xpress</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/03/24</td></tr>
+          <tr><td class="label">Amount</td><td>$19.82</td></tr>
+          <tr><td class="label">Tip</td><td>$2.50</td></tr>
+          <tr><td class="label">Pickup</td><td>Client site → HQ</td></tr>
+        </table>
+        <p>Post-meeting ride for senior consultant.</p>
+      </div>
+      <div class="receipt-foot">Trip ID 3BF9-22</div>
+    </article>
+
+    <article class="receipt-card" aria-label="Receipt R-023">
+      <div class="receipt-header">R-023 · Summit Co-Working</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/02/24</td></tr>
+          <tr><td class="label">Amount</td><td>$95.00</td></tr>
+          <tr><td class="label">Tax</td><td>$7.13</td></tr>
+          <tr><td class="label">Pass</td><td>Day rental, Conf Rm B</td></tr>
+        </table>
+        <p>External strategy session with accounting mentors.</p>
+      </div>
+      <div class="receipt-foot">Ref # 88419</div>
+    </article>
+
+    <article class="receipt-card flag-problem" aria-label="Receipt R-024">
+      <div class="receipt-header">R-024 · Tiny Tacos Food Truck</div>
+      <div class="receipt-body">
+        <table>
+          <tr><td class="label">Date</td><td>01/12/24</td></tr>
+          <tr><td class="label">Amount</td><td>$64.10</td></tr>
+          <tr><td class="label">Tax</td><td>$5.17</td></tr>
+          <tr><td class="label">Payment</td><td>Cash</td></tr>
+        </table>
+        <p>Team appreciation lunch. Receipt handwritten &amp; missing business name on top.</p>
+      </div>
+      <div class="receipt-foot">Vendor permits displayed</div>
+    </article>
+  </div>
+
+  <div class="page-break"></div>
+  <p style="font-size: 11px; color: #666;">Use the back of this sheet for reconciliation notes, questions for the instructor, or follow-up documentation.</p>
+</body>
+</html>

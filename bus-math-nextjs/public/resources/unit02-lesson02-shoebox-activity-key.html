@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Shoebox Receipt Challenge · Answer Key</title>
+<style>
+  body {
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 0;
+    padding: 28px;
+    background: #f8fafc;
+    color: #1f2933;
+  }
+
+  header {
+    border-bottom: 2px solid #1f2933;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 18px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    margin: 6px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+    border: 1px solid #d9dde4;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  th {
+    background: #e2e8f0;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .summary-table td {
+    font-weight: 600;
+  }
+
+  .notes {
+    background: #fff7ed;
+    border: 1px solid #f2c97d;
+    padding: 12px;
+    margin-top: 14px;
+  }
+
+  .flag {
+    color: #b45309;
+    font-weight: 600;
+  }
+
+  .category-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #e2f0ff;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .category-tag[data-type="office"] { background: #f1f5f9; color: #0f172a; }
+  .category-tag[data-type="utilities"] { background: #ecfdf5; color: #047857; }
+  .category-tag[data-type="client"] { background: #fef3c7; color: #b45309; }
+  .category-tag[data-type="travel"] { background: #ede9fe; color: #5b21b6; }
+  .category-tag[data-type="misc"] { background: #fee2e2; color: #b91c1c; }
+
+  footer {
+    margin-top: 18px;
+    font-size: 11px;
+    color: #475569;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 18px;
+    }
+
+    table {
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Shoebox Receipt Challenge</h1>
+    <p><strong>Answer Key · Unit 02 · Lesson 02 · Phase 1</strong></p>
+  </header>
+
+  <section>
+    <h2>Category Summary</h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Receipt IDs</th>
+          <th>Total Recognized Expense</th>
+          <th>Flags</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Office &amp; Supplies</td>
+          <td>R-001, R-004, R-012, R-017*, R-018</td>
+          <td>$544.08</td>
+          <td>*Verify discount math on R-017</td>
+        </tr>
+        <tr>
+          <td>Utilities &amp; Services</td>
+          <td>R-003, R-005, R-007, R-008, R-015, R-020, R-023</td>
+          <td>$681.66</td>
+          <td>All straight-through charges</td>
+        </tr>
+        <tr>
+          <td>Client Meals &amp; Events</td>
+          <td>R-006, R-009, R-016, R-021†, R-024</td>
+          <td>$527.46</td>
+          <td>†Apply prior deposit on R-021</td>
+        </tr>
+        <tr>
+          <td>Travel &amp; Transportation</td>
+          <td>R-002, R-010, R-014, R-019, R-022</td>
+          <td>$161.91</td>
+          <td>Track tips separately if policy requires</td>
+        </tr>
+        <tr>
+          <td>Miscellaneous / Needs Clarification</td>
+          <td>R-011‡, R-013</td>
+          <td>$503.52</td>
+          <td>‡Confirm handwritten total before posting</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="notes">
+      <p><span class="flag">Running total:</span> $2,418.63 across all receipts (before adjusting the GreenLeaf deposit).</p>
+      <p>Use these buckets when reconciling the student ledger. Amounts assume tips are included in the expense total and sales tax is captured in the tax column where provided.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Receipt-Level Guidance</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Vendor / Description</th>
+          <th>Recommended Category</th>
+          <th>Total to Record</th>
+          <th>Tax / Tip Handling</th>
+          <th>Notes &amp; Assumptions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R-001</td>
+          <td>Fresh Corner Market — client lounge snacks</td>
+          <td><span class="category-tag" data-type="office">Office &amp; Supplies</span></td>
+          <td>$61.50</td>
+          <td>$3.27 sales tax</td>
+          <td>Treat as hospitality supplies for on-site clients.</td>
+        </tr>
+        <tr>
+          <td>R-002</td>
+          <td>QuickFuel Station — van refuel</td>
+          <td><span class="category-tag" data-type="travel">Travel &amp; Transportation</span></td>
+          <td>$44.29</td>
+          <td>$2.11 sales tax</td>
+          <td>Business mileage for on-site training visit.</td>
+        </tr>
+        <tr>
+          <td>R-003</td>
+          <td>CityPower Electric — December service</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$187.46</td>
+          <td>Tax included in bill</td>
+          <td>Record as January cash payment for prior-month utility usage.</td>
+        </tr>
+        <tr>
+          <td>R-004</td>
+          <td>OfficeMax Print Lab — brochures</td>
+          <td><span class="category-tag" data-type="office">Office &amp; Supplies</span></td>
+          <td>$134.26</td>
+          <td>$9.37 sales tax</td>
+          <td>Marketing collateral; track quantities for reorders.</td>
+        </tr>
+        <tr>
+          <td>R-005</td>
+          <td>ByteCloud SaaS — January subscription</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$75.00</td>
+          <td>No tax</td>
+          <td>Recurring ACH; ensure automatic entry exists in ledger.</td>
+        </tr>
+        <tr>
+          <td>R-006</td>
+          <td>Urban Eats Bistro — client lunch</td>
+          <td><span class="category-tag" data-type="client">Client Meals &amp; Events</span></td>
+          <td>$80.40</td>
+          <td>Includes $12.00 tip</td>
+          <td>Attach attendee list for compliance.</td>
+        </tr>
+        <tr>
+          <td>R-007</td>
+          <td>Metro Water Works — December service</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$97.27</td>
+          <td>$3.12 sales tax</td>
+          <td>Auto-draft; reconcile against bank feed.</td>
+        </tr>
+        <tr>
+          <td>R-008</td>
+          <td>Paper Trail Recycling — shredding</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$30.89</td>
+          <td>$2.29 sales tax</td>
+          <td>Professional service; keep compliance certificate on file.</td>
+        </tr>
+        <tr>
+          <td>R-009</td>
+          <td>Bean Scene Coffee — morning strategy session</td>
+          <td><span class="category-tag" data-type="client">Client Meals &amp; Events</span></td>
+          <td>$28.75</td>
+          <td>$4.00 tip</td>
+          <td>Date is smudged—confirm with bank transaction before closing.</td>
+        </tr>
+        <tr>
+          <td>R-010</td>
+          <td>Downtown Parking Deck — workshop parking</td>
+          <td><span class="category-tag" data-type="travel">Travel &amp; Transportation</span></td>
+          <td>$18.00</td>
+          <td>Tax included</td>
+          <td>Tag to specific client project if billable.</td>
+        </tr>
+        <tr>
+          <td>R-011</td>
+          <td>SmartTech Repairs — laptop service</td>
+          <td><span class="category-tag" data-type="misc">Needs Clarification</span></td>
+          <td>$153.52‡</td>
+          <td>$11.34 sales tax (verify)</td>
+          <td>Handwritten total shows a question mark. Verify final invoice or card charge before posting.</td>
+        </tr>
+        <tr>
+          <td>R-012</td>
+          <td>SupplyHub Warehouse — re-org materials</td>
+          <td><span class="category-tag" data-type="office">Office &amp; Supplies</span></td>
+          <td>$229.58</td>
+          <td>$15.06 sales tax</td>
+          <td>Large order; consider allocating to multiple cost centers.</td>
+        </tr>
+        <tr>
+          <td>R-013</td>
+          <td>Freelance Guru Collective — copywriting sprint</td>
+          <td><span class="category-tag" data-type="misc">Needs Clarification</span></td>
+          <td>$350.00</td>
+          <td>No tax</td>
+          <td>Invoice missing service date. Confirm completion date before recognizing expense.</td>
+        </tr>
+        <tr>
+          <td>R-014</td>
+          <td>CityRide Shuttle — airport pickup</td>
+          <td><span class="category-tag" data-type="travel">Travel &amp; Transportation</span></td>
+          <td>$54.80</td>
+          <td>Includes $8.00 tip</td>
+          <td>Document traveler name for reimbursement policy.</td>
+        </tr>
+        <tr>
+          <td>R-015</td>
+          <td>BlueSky Internet — January service</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$140.91</td>
+          <td>$8.91 sales tax</td>
+          <td>Scheduled autopay; ensure accrual reversals are posted.</td>
+        </tr>
+        <tr>
+          <td>R-016</td>
+          <td>Midtown Flowers — client gift</td>
+          <td><span class="category-tag" data-type="client">Client Meals &amp; Events</span></td>
+          <td>$62.64</td>
+          <td>$4.64 sales tax</td>
+          <td>Treat as client appreciation expense; note recipient in ledger.</td>
+        </tr>
+        <tr>
+          <td>R-017</td>
+          <td>LedgerPro Supplies — discounted order</td>
+          <td><span class="category-tag" data-type="office">Office &amp; Supplies</span></td>
+          <td>$77.44*</td>
+          <td>$6.24 sales tax</td>
+          <td>Subtotal shows $71.20 after discount; handwritten total reads $89.00. Confirm with vendor and adjust if needed.</td>
+        </tr>
+        <tr>
+          <td>R-018</td>
+          <td>Printify Express — workshop workbooks</td>
+          <td><span class="category-tag" data-type="office">Office &amp; Supplies</span></td>
+          <td>$41.30</td>
+          <td>$3.05 sales tax</td>
+          <td>Rush fee embedded in subtotal; note for job costing.</td>
+        </tr>
+        <tr>
+          <td>R-019</td>
+          <td>City Courier Bike — contract delivery</td>
+          <td><span class="category-tag" data-type="travel">Travel &amp; Transportation</span></td>
+          <td>$22.50</td>
+          <td>No tax</td>
+          <td>Classify as local courier expense (logistics).</td>
+        </tr>
+        <tr>
+          <td>R-020</td>
+          <td>TechBox Subscription — cloud backup</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$48.00</td>
+          <td>No tax</td>
+          <td>Recurring SaaS; verify user count for budgeting.</td>
+        </tr>
+        <tr>
+          <td>R-021</td>
+          <td>GreenLeaf Catering — January mixer</td>
+          <td><span class="category-tag" data-type="client">Client Meals &amp; Events</span></td>
+          <td>$286.40†</td>
+          <td>Deposit $100 applied (paid 12/20)</td>
+          <td>Recognize full catering cost now. Cash paid this cycle: $186.40 after deposit; reclass prepaid from December.</td>
+        </tr>
+        <tr>
+          <td>R-022</td>
+          <td>RideShare Xpress — return ride</td>
+          <td><span class="category-tag" data-type="travel">Travel &amp; Transportation</span></td>
+          <td>$22.32</td>
+          <td>$2.50 tip</td>
+          <td>Attach ride receipt from app for audit trail.</td>
+        </tr>
+        <tr>
+          <td>R-023</td>
+          <td>Summit Co-Working — conference room rental</td>
+          <td><span class="category-tag" data-type="utilities">Utilities &amp; Services</span></td>
+          <td>$102.13</td>
+          <td>$7.13 sales tax</td>
+          <td>Treat as facilities/space rental for project kickoff.</td>
+        </tr>
+        <tr>
+          <td>R-024</td>
+          <td>Tiny Tacos Food Truck — team lunch</td>
+          <td><span class="category-tag" data-type="client">Client Meals &amp; Events</span></td>
+          <td>$69.27</td>
+          <td>$5.17 sales tax</td>
+          <td>Cash receipt is handwritten—retain vendor permit copy in file.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>* and † highlight receipts that require follow-up before final posting. Encourage students to document questions in the spreadsheet notes column.</p>
+    <p>Prepared for instructional use. Adjust categories if your chart of accounts uses more granular buckets.</p>
+  </footer>
+</body>
+</html>
