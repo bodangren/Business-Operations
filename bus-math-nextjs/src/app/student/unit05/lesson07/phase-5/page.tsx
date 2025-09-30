@@ -6,35 +6,10 @@ import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Users } from "lucide-react"
 import { lesson07Data, unit05Data, lesson07Phases } from "../lesson-data"
+import { drawUnit05Phase5ComprehensionCheckItems } from "@/data/question-banks/unit05-phase5"
 
 const currentPhase = lesson07Phases[4]
-
-const auditQuestions = [
-  {
-    id: "u05l07-assess-1",
-    question: "Which choice best defines ‘investor‑ready’?",
-    answers: [
-      "Clear, reliable, auditable, and documented assumptions",
-      "Colorful charts with many tabs",
-      "Hidden formulas to protect IP",
-      "Hard‑coded values to keep things simple"
-    ],
-    explanation:
-      "Investor‑ready work is clear, reliable, and auditable with transparent assumptions."
-  },
-  {
-    id: "u05l07-assess-2",
-    question: "A peer finds labor% doesn’t change when scenario toggles. Likely cause?",
-    answers: [
-      "Chart bound to static A1:C10, not a Table",
-      "Too many comments in the sheet",
-      "Using INDEX/MATCH instead of XLOOKUP",
-      "Using a named range for drivers"
-    ],
-    explanation:
-      "Static ranges don’t expand with data or reflect driver changes. Bind visuals to structured references."
-  }
-]
+const auditQuestions = drawUnit05Phase5ComprehensionCheckItems(2, { lessonIds: ["lesson07"] })
 
 export default function Phase5Page() {
   return (
