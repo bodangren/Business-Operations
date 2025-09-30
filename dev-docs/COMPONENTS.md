@@ -152,9 +152,20 @@
 - ✅ **Unit08 Phase-5 Question Bank** (`src/data/question-banks/unit08-phase5.ts`)
   - Externalizes Unit 8 Lesson 01–07 assessment questions with TechStart VC narrative context, balanced answer text, and objective tags.
   - Highlights venture-capital evaluation skills, three-statement integration, scenario manager workflows, sensitivity automation, investor dashboards, and audit-ready QA.
-  - Ships the standard helper suite (`getUnit08Phase5Questions`, `drawRandomUnit08Phase5Questions`, `getUnit08Phase5ComprehensionCheckItems`, `drawUnit08Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`) for direct ComprehensionCheck usage and future practice-test draws.
+- Ships the standard helper suite (`getUnit08Phase5Questions`, `drawRandomUnit08Phase5Questions`, `getUnit08Phase5ComprehensionCheckItems`, `drawUnit08Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`) for direct ComprehensionCheck usage and future practice-test draws.
   - Tags cover: `vc-evaluation`, `risk-analysis`, `unit-economics`, `integration-principles`, `cross-sheet-linking`, `scenario-manager`, `sensitivity-analysis`, `structured-references`, `dashboard-design`, `validation`, `investor-readiness`, `audit-readiness`.
   - Student pages at `src/app/student/unit08/lesson0{1-7}/phase-5/page.tsx` now pull from the shared bank, eliminating inline arrays and enabling consistent randomization/testing flows.
+
+## 🧪 Practice-Test Routes
+
+- ✅ **Unit 1 Practice Test** (`src/app/student/unit01/practice-test/page.tsx`)
+  - Six-phase layout mirrors the lesson structure; navigation overrides keep breadcrumbs scoped to the practice-test hub.
+  - Draws from `drawRandomUnit01Phase5Questions` with lesson/tag filters and persists selections under `unit01_practice_test_state_v1`.
+  - Provides investor-readiness narrative, score recap card, and ReflectionJournal prompts tuned to Unit 1 objectives.
+- ✅ **Unit 2 Practice Test** (`src/app/student/unit02/practice-test/page.tsx`)
+  - Cloned architecture from Unit 1 with Month-End Wizard content, 10/15/20 quick-select counts, and lesson checkbox filters.
+  - Uses `getRandomQuestions` from the Unit 2 bank and stores preferences at `unit02_practice_test_state_v1` to survive refreshes.
+  - Adds practice-test CTAs on the Unit 2 overview and Lesson 10 milestone page so students can launch a rehearsal straight from closing activities.
 
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 

@@ -3,10 +3,13 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson10Data, lesson10Phases, unit02Data } from "../lesson-data"
+import Link from "next/link"
+import { ArrowRight, Target } from "lucide-react"
 
 export default function Page() {
   const currentPhase = lesson10Phases[0]
@@ -107,10 +110,35 @@ export default function Page() {
           </CardContent>
         </Card>
 
+        <Card className="border-teal-200 bg-teal-50">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-teal-900">
+              <Target className="h-5 w-5" />
+              Keep the automation sharp between presentations
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm text-slate-700">
+            <p>
+              Before the next investor check-in, run the dedicated Unit 2 practice test. It pulls fresh questions from
+              every lesson so you can rehearse adjusting entries, automation controls, and reconciliation tie-outs with
+              real month-end pressure.
+            </p>
+            <p className="text-xs text-slate-600">
+              Tip: Save your filter choices so you can focus on the lessons that still feel shaky, then repeat the run a
+              few days later to measure growth.
+            </p>
+            <Button asChild>
+              <Link href="/student/unit02/practice-test" className="flex items-center gap-2">
+                Launch Unit 2 Practice Test
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+
         <ReflectionJournal unitTitle="Milestone 3 Reflection (CAP)" />
 
         <PhaseFooter unit={unit02Data} lesson={lesson10Data} phase={currentPhase} phases={lesson10Phases} />
       </div>
     </div>
   )}
-

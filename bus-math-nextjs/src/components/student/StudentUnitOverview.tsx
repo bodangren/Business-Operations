@@ -56,6 +56,31 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
   
   const finalPresentation = presentationTypes[unit.sequence - 1] || "Professional business presentation"
 
+  const practiceTestMessaging: Record<number, { title: string; description: string; tip: string }> = {
+    1: {
+      title: "Practice Test & Investor Rehearsal",
+      description:
+        "Ready for a confidence check? Run the Unit 1 practice test to rehearse investor questions, pull randomized items from every lesson, and track progress with built-in explanations.",
+      tip:
+        "Tip: Finish Lesson 07 first so you can apply Sarah's audit trail strategies while you review answers."
+    },
+    2: {
+      title: "Practice Test & Month-End Drill",
+      description:
+        "Need a fast rehearsal before close? Launch the Unit 2 practice test to drill adjusting entries, automation controls, and dashboards with fresh question draws every time.",
+      tip:
+        "Tip: Complete Lesson 07 before the drill so you can check reconciliations and QA steps while grading your responses."
+    }
+  }
+
+  const defaultPracticeTestCopy = {
+    title: "Practice Test Ready",
+    description: `Launch the Unit ${unit.sequence} practice test to review key skills and track your mastery before assessments.`,
+    tip: "Tip: Focus on the lessons you just completed to reinforce the newest skills first."
+  }
+
+  const practiceTestContent = practiceTestMessaging[unit.sequence] ?? defaultPracticeTestCopy
+
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Hero Section */}
@@ -187,17 +212,16 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-teal-800 dark:text-teal-200">
             <Target className="h-5 w-5" />
-            Practice Test & Investor Rehearsal
+            {practiceTestContent.title}
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="space-y-2 text-teal-900 dark:text-teal-100">
             <p className="text-sm leading-relaxed">
-              Ready for a confidence check? Run the Unit 1 practice test to rehearse investor questions, pull randomized
-              items from every lesson, and track progress with built-in explanations.
+              {practiceTestContent.description}
             </p>
             <p className="text-xs text-teal-700 dark:text-teal-300">
-              Tip: Finish Lesson 07 first so you can apply Sarah's audit trail strategies while you review answers.
+              {practiceTestContent.tip}
             </p>
           </div>
           <Button size="lg" asChild>
