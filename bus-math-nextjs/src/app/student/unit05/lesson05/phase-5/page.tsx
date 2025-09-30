@@ -4,99 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson05Data, unit05Data, lesson05Phases } from "../lesson-data"
+import { drawUnit05Phase5ComprehensionCheckItems } from "@/data/question-banks/unit05-phase5"
 
 const currentPhase = lesson05Phases[4]
-
-const assessmentQuestions = [
-  {
-    id: "a1",
-    question: "Which formula best prevents errors when an EmployeeID is missing?",
-    answers: [
-      '=XLOOKUP([@EmployeeID], Emp[EmployeeID], Emp[PayRate], "Missing ID")',
-      '=XLOOKUP([@EmployeeID], Emp[EmployeeID], Emp[PayRate])',
-      '=VLOOKUP([@EmployeeID], Emp, 3, TRUE)',
-      '=INDEX(Emp[PayRate], MATCH([@EmployeeID], Emp[EmployeeID], 1))'
-    ],
-    explanation: "Use if_not_found to keep summaries stable and surface issues." 
-  },
-  {
-    id: "a2",
-    question: "Overtime at 1.5x starts after 40 hours. Which approach scales best?",
-    answers: [
-      'SUMPRODUCT with conditions for base and overtime tiers',
-      'Nested IFs with many parentheses',
-      'Manual calculation in a hidden sheet',
-      'Copy‑paste overtime rows for each employee'
-    ],
-    explanation: "SUMPRODUCT handles tier math clearly and adapts to new rows."
-  },
-  {
-    id: "a3",
-    question: "Which validation rule is most critical for preventing silent payroll errors?",
-    answers: [
-      'Block negative hours and require EmployeeID',
-      'Add a company logo',
-      'Hide helper columns',
-      'Turn off gridlines'
-    ],
-    explanation: "Bad inputs cause wrong pay. Guard rails protect people and cash."
-  },
-  {
-    id: "a4",
-    question: "Your summary shows #N/A in Net Pay after adding new staff. First check?",
-    answers: [
-      'Look for missing IDs or unmapped pay codes',
-      'Delete and rebuild the sheet',
-      'Switch to manual calculation mode',
-      'Email the file to a friend'
-    ],
-    explanation: "Missing keys break lookups. Fix the data, not the math first."
-  },
-  {
-    id: "a5",
-    question: "Why round taxes with ROUND( ,2)?",
-    answers: [
-      'Prevents penny drift and makes totals tie to bank',
-      'It makes formulas shorter',
-      'It hides #DIV/0!',
-      'It speeds up calculation time only'
-    ],
-    explanation: "Banks and paychecks use cents; rounding ensures reconciliation."
-  },
-  {
-    id: "a6",
-    question: "Which summary best convinces investors your payroll is reliable?",
-    answers: [
-      'Header with audit flags + totals by PayDate',
-      'Raw data dump of every row',
-      'Screenshot of formulas',
-      'A colorful theme without checks'
-    ],
-    explanation: "Surface problems up front and show accurate totals tied to dates."
-  },
-  {
-    id: "a7",
-    question: "To switch pay frequency logic cleanly, use:",
-    answers: [
-      'SWITCH with a control cell',
-      'Many nested IFs and manual edits',
-      'Separate files for each frequency',
-      'Hidden sheet with hard‑coded numbers'
-    ],
-    explanation: "SWITCH keeps logic readable and easy to audit."
-  },
-  {
-    id: "a8",
-    question: "A PayDate is 90 days old in the active register. Which response is most professional?",
-    answers: [
-      'Flag as stale date and investigate timing',
-      'Ignore it and continue',
-      'Delete the row to hide it',
-      'Email the bank with no context'
-    ],
-    explanation: "Aging checks help find timing issues that affect cash flow."
-  },
-]
+const assessmentQuestions = drawUnit05Phase5ComprehensionCheckItems(8, { lessonIds: ["lesson05"] })
 
 export default function Phase5Page() {
   return (

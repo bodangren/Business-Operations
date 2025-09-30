@@ -6,99 +6,10 @@ import { Badge } from "@/components/ui/badge"
 import { BarChart3, Award, TrendingUp, Users } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, lesson04Phases, unit05Data } from "../lesson-data"
+import { drawUnit05Phase5ComprehensionCheckItems } from "@/data/question-banks/unit05-phase5"
 
 const currentPhase = lesson04Phases[4] // Assessment phase
-
-const assessmentQuestions = [
-  {
-    id: "assess-1",
-    question: "Which Excel feature would prevent someone from entering 200 hours worked in a single week?",
-    answers: [
-      "Data Validation with input restrictions",
-      "Conditional Formatting with color rules",
-      "VLOOKUP with error checking",
-      "Pivot Tables with data filtering"
-    ],
-    explanation: "Data Validation allows you to set input restrictions, such as limiting hours worked to a realistic range (e.g., 0-80 hours per week), preventing impossible entries before they can cause problems."
-  },
-  {
-    id: "assess-2",
-    question: "A payroll system shows negative net pay in red using Conditional Formatting. What business problem does this solve?",
-    answers: [
-      "It immediately alerts users to calculation errors that could result in owing money to employees",
-      "It makes the spreadsheet look more professional and colorful",
-      "It automatically fixes the calculation error without user intervention",
-      "It prevents users from entering any data into the affected cells"
-    ],
-    explanation: "Conditional Formatting provides visual alerts to highlight problems. Negative net pay indicates a serious calculation error that could mean the business owes additional money to the employee."
-  },
-  {
-    id: "assess-3",
-    question: "What is the primary business benefit of implementing bulletproof payroll validation systems?",
-    answers: [
-      "Prevents costly payroll mistakes and builds investor confidence in operational systems",
-      "Eliminates the need for human review of payroll calculations",
-      "Allows businesses to pay employees less than minimum wage",
-      "Makes Excel spreadsheets run faster and more efficiently"
-    ],
-    explanation: "Professional error prevention systems demonstrate systematic thinking and operational maturity, which builds investor confidence while preventing costly mistakes that could damage employee relationships."
-  },
-  {
-    id: "assess-4",
-    question: "Which validation rule would be most appropriate for a 'Pay Rate' field in a professional payroll system?",
-    answers: [
-      "Decimal numbers between $7.25 and $200.00 with required entry",
-      "Any positive number with no upper limit",
-      "Text values only to prevent calculation errors",
-      "Whole numbers between 1 and 100"
-    ],
-    explanation: "Pay rates should be decimal numbers within realistic ranges, with a minimum of federal minimum wage ($7.25) and a reasonable maximum ($200/hour) to catch data entry errors."
-  },
-  {
-    id: "assess-5",
-    question: "How does implementing data validation in payroll systems demonstrate professional business management skills?",
-    answers: [
-      "It shows systematic thinking about preventing problems before they occur",
-      "It proves advanced Excel knowledge is more important than business understanding",
-      "It eliminates the need for backup systems and manual verification",
-      "It guarantees that no payroll errors will ever happen"
-    ],
-    explanation: "Professional managers anticipate and prevent problems systematically. Building error prevention into systems shows strategic thinking and operational maturity that investors value."
-  },
-  {
-    id: "assess-6",
-    question: "In Sarah's case, what would have prevented the $3,200 overtime error from occurring?",
-    answers: [
-      "Data validation limiting overtime hours to realistic maximums (e.g., 0-40 hours)",
-      "Using a different font color for overtime calculations",
-      "Calculating overtime manually instead of using Excel formulas",
-      "Sending all payroll calculations to an external accounting firm"
-    ],
-    explanation: "Data validation could have restricted overtime entries to realistic ranges, preventing the impossible 80-hour overtime entry that caused the $3,200 mistake."
-  },
-  {
-    id: "assess-7",
-    question: "What role does conditional formatting play in a bulletproof payroll system?",
-    answers: [
-      "Provides immediate visual alerts when calculations produce suspicious or impossible results",
-      "Automatically corrects calculation errors without user intervention",
-      "Prevents users from accessing certain parts of the spreadsheet",
-      "Makes the spreadsheet compatible with different versions of Excel"
-    ],
-    explanation: "Conditional formatting acts as a visual warning system, immediately highlighting problems like negative net pay, excessive overtime, or missing data that need attention."
-  },
-  {
-    id: "assess-8",
-    question: "Which approach best demonstrates mastery of professional payroll system design?",
-    answers: [
-      "Multiple validation layers: input restrictions, range checking, visual alerts, and cross-validation",
-      "Using only conditional formatting to highlight errors after they occur",
-      "Relying primarily on manual review to catch calculation mistakes",
-      "Building separate spreadsheets for each employee to avoid complexity"
-    ],
-    explanation: "Professional systems use multiple validation layers that work together: preventing invalid input, checking ranges, providing visual alerts, and cross-validating results for comprehensive error prevention."
-  }
-]
+const assessmentQuestions = drawUnit05Phase5ComprehensionCheckItems(8, { lessonIds: ["lesson04"] })
 
 export default function Phase5Page() {
   return (
