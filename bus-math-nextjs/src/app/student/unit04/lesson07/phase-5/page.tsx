@@ -8,33 +8,10 @@ import { Badge } from "@/components/ui/badge"
 import { Scale, Users } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { getUnit04Phase5ComprehensionCheckItems } from "@/data/question-banks/unit04-phase5"
 
 const currentPhase = lesson07Phases[4]
-
-const auditMiniQuiz = [
-  {
-    id: "u4l7-audit-1",
-    question: "Lookup returns #N/A on a new scenario. Best fix?",
-    answers: [
-      "Wrap in IFNA with a clear message",
-      "Hide the row",
-      "Replace with zero",
-      "Format the cell green"
-    ],
-    explanation: "Tell users what to check; don’t hide problems."
-  },
-  {
-    id: "u4l7-audit-2",
-    question: "Your chart misses the last two weeks of data. Root cause?",
-    answers: [
-      "Chart references a fixed range, not a table",
-      "The font is too small",
-      "You need more colors",
-      "Sheet is protected"
-    ],
-    explanation: "Bind visuals to table columns to auto‑expand."
-  }
-]
+const auditMiniQuiz = getUnit04Phase5ComprehensionCheckItems({ lessonIds: ["lesson07"] })
 
 export default function Phase5Page() {
   return (

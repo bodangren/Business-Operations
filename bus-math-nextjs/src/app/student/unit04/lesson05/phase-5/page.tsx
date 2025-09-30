@@ -4,99 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson05Data, unit04Data, lesson05Phases } from "../lesson-data"
+import { getUnit04Phase5ComprehensionCheckItems } from "@/data/question-banks/unit04-phase5"
 
 const currentPhase = lesson05Phases[4]
-
-const assessmentQuestions = [
-  {
-    id: "u04l05-a1",
-    question: "Why do structured references make forecasts more reliable as data grows?",
-    answers: [
-      "They auto‑expand with new rows and keep formulas current",
-      "They calculate faster than regular ranges",
-      "They prevent all errors permanently",
-      "They color code cells automatically"
-    ],
-    explanation: "Tables expand automatically, so formulas like Sales[Units] always include the latest data."
-  },
-  {
-    id: "u04l05-a2",
-    question: "Which formula creates a Promo‑Adjusted regression by excluding promo days?",
-    answers: [
-      "FORECAST.LINEAR([@Week], FILTER(Sales[Units], Sales[PromoFlag]=0), FILTER(Sales[Week], Sales[PromoFlag]=0))",
-      "FORECAST.LINEAR([@Week], Sales[Units], Sales[Week]) + 10",
-      "AVERAGE(Sales[Units])",
-      "SUMIF(Sales[PromoFlag], 0, Sales[Units])"
-    ],
-    explanation: "Filtering both Units and Week by PromoFlag=0 creates a regression on non‑promo history."
-  },
-  {
-    id: "u04l05-a3",
-    question: "What’s the best way to handle missing MenuID lookups in investor‑facing sheets?",
-    answers: [
-      "Use XLOOKUP with an if_not_found default like \"Unknown\"",
-      "Hide errors by changing font color to white",
-      "Delete rows with missing IDs",
-      "Replace formulas with static text"
-    ],
-    explanation: "Graceful defaults preserve output quality and highlight issues without crashing the model."
-  },
-  {
-    id: "u04l05-a4",
-    question: "Which validation is MOST critical before presenting a forecast?",
-    answers: [
-      "Flag stale dates and show count of outliers in an Audit Panel",
-      "Check cell background colors",
-      "Bold all totals",
-      "Freeze the header row"
-    ],
-    explanation: "Investors need to see current, clean data and that issues are known and controlled."
-  },
-  {
-    id: "u04l05-a5",
-    question: "A scenario toggle switches Baseline vs. Promo‑Adjusted. Which function is ideal?",
-    answers: [
-      "SWITCH or IFS on a named Scenario cell",
-      "VLOOKUP with approximate match",
-      "ROUNDUP",
-      "TEXTSPLIT"
-    ],
-    explanation: "SWITCH/IFS route logic clearly based on the chosen scenario."
-  },
-  {
-    id: "u04l05-a6",
-    question: "Which statement best describes SUMPRODUCT in this unit?",
-    answers: [
-      "It filters and aggregates across multiple criteria for segmented views",
-      "It replaces all charting needs",
-      "It turns errors into zeros",
-      "It formats currencies automatically"
-    ],
-    explanation: "SUMPRODUCT is a flexible way to compute filtered totals (e.g., Drinks this week)."
-  },
-  {
-    id: "u04l05-a7",
-    question: "Why add plain‑language notes near inputs?",
-    answers: [
-      "They make assumptions visible and auditable",
-      "They speed up Excel recalculation",
-      "They hide complexity from teachers",
-      "They enable macros to run"
-    ],
-    explanation: "Notes communicate assumptions and limits—crucial for trust and handoffs."
-  },
-  {
-    id: "u04l05-a8",
-    question: "Your forecast still shows #N/A. What’s the first fix to try?",
-    answers: [
-      "Wrap the expression in IFERROR and check the upstream lookup",
-      "Change the cell to text",
-      "Delete the workbook",
-      "Decrease zoom to 90%"
-    ],
-    explanation: "IFERROR prevents visible breaks; then trace the source (often a missing key)."
-  }
-]
+const assessmentQuestions = getUnit04Phase5ComprehensionCheckItems({ lessonIds: ["lesson05"] })
 
 export default function Phase5Page() {
   return (
