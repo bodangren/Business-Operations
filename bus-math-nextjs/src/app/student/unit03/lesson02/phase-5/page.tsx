@@ -7,97 +7,9 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson02Data, lesson02Phases, unit03Data } from "../lesson-data"
+import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5"
 
-const assessmentQuestions = [
-  {
-    id: 'assessment-1',
-    question: 'Sarah needs to show her bank that TechStart Solutions is profitable. Which financial statement tells this part of her business story?',
-    answers: [
-      'Income Statement - it shows whether revenues exceed expenses over a time period',
-      'Balance Sheet - it shows what she owns versus what she owes',
-      'Statement of Cash Flows - it shows how cash moves through the business',
-      'Trial Balance - it shows all account balances'
-    ],
-    explanation: 'The Income Statement is the financial statement that reveals profitability by comparing revenues to expenses, making it the "plot" of the business story.'
-  },
-  {
-    id: 'assessment-2',
-    question: 'Why does Jennifer Kim recommend using INDEX/MATCH instead of copying and pasting numbers into the Income Statement?',
-    answers: [
-      'INDEX/MATCH creates dynamic formulas that automatically update when new transactions are added to the ledger',
-      'INDEX/MATCH is faster to type than copying and pasting',
-      'Banks require the use of complex formulas for loan approval',
-      'INDEX/MATCH prevents all calculation errors'
-    ],
-    explanation: 'Dynamic formulas like INDEX/MATCH create live links between the trial balance and financial statements, ensuring automatic updates and maintaining data integrity.'
-  },
-  {
-    id: 'assessment-3',
-    question: 'If Sarah\'s Service Revenue account shows $8,500 and her total Operating Expenses are $4,200, what is her Net Income and what does this tell investors?',
-    answers: [
-      'Net Income is $4,300, showing the business is profitable and generating positive returns',
-      'Net Income is $12,700, calculated by adding revenue and expenses',
-      'Net Income cannot be determined without more information',
-      'Net Income is negative, indicating the business is losing money'
-    ],
-    explanation: 'Net Income = Revenues - Expenses = $8,500 - $4,200 = $4,300. Positive Net Income demonstrates profitability, which is a key indicator investors look for.'
-  },
-  {
-    id: 'assessment-4',
-    question: 'In the accounting equation (Assets = Liabilities + Equity), which accounts from the trial balance flow into the Income Statement?',
-    answers: [
-      'Revenue and Expense accounts flow into the Income Statement to calculate Net Income',
-      'Asset and Liability accounts are used to build the Income Statement',
-      'Only Equity accounts appear on the Income Statement',
-      'All trial balance accounts are included in the Income Statement'
-    ],
-    explanation: 'Only Revenue and Expense accounts from the trial balance flow into the Income Statement. Assets, Liabilities, and Equity accounts appear on the Balance Sheet.'
-  },
-  {
-    id: 'assessment-5',
-    question: 'What happens to Sarah\'s Income Statement if she adds a new client project worth $3,000 to her trial balance and her statements are built with INDEX/MATCH formulas?',
-    answers: [
-      'The Income Statement automatically updates to include the new revenue and recalculates Net Income',
-      'She must manually add the $3,000 to her Income Statement',
-      'The Income Statement shows an error until she rebuilds it completely',
-      'Nothing changes until she updates her Excel formulas'
-    ],
-    explanation: 'Dynamic INDEX/MATCH formulas create live links, so when new transactions are added to the trial balance, the Income Statement automatically reflects these changes.'
-  },
-  {
-    id: 'assessment-6',
-    question: 'Why is it crucial for Sarah to categorize her Rent Expense correctly in the trial balance when building her Income Statement?',
-    answers: [
-      'Incorrect categorization could misstate her business expenses and mislead investors about her true profitability',
-      'Rent is the largest expense so it matters most',
-      'The bank specifically looks at rent expenses when making loan decisions',
-      'Excel formulas won\'t work if categories are wrong'
-    ],
-    explanation: 'Proper categorization ensures accurate financial reporting. Misclassifying expenses could make the business appear more or less profitable than it actually is, misleading investors and lenders.'
-  },
-  {
-    id: 'assessment-7',
-    question: 'Jennifer Kim describes the three financial statements as a "storyboard." In this analogy, what specific story does the Income Statement tell?',
-    answers: [
-      'The plot: whether the business made or lost money during a specific period',
-      'The setting: what the business owns and what it owes at a moment in time',
-      'The action: how cash actually moved in and out of the business',
-      'The ending: predictions about future business performance'
-    ],
-    explanation: 'The Income Statement tells the "plot" by revealing whether the business was profitable over a specific time period, answering the fundamental question: did the business make money?'
-  },
-  {
-    id: 'assessment-8',
-    question: 'A potential investor asks Sarah, "How do I know your business can consistently generate profit?" Which aspect of Income Statement construction best addresses this question?',
-    answers: [
-      'Dynamic formulas that automatically update monthly Income Statements showing consistent profitability trends',
-      'A single Income Statement showing one profitable month',
-      'The total amount of revenue without considering expenses',
-      'A detailed list of all business assets'
-    ],
-    explanation: 'Consistent profitability over time is best demonstrated through a series of Income Statements that automatically update with dynamic formulas, showing sustainable profit generation rather than a one-time result.'
-  }
-]
+const assessmentQuestions = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson02"] })
 
 export default function Phase5Page() {
   const currentPhase = lesson02Phases[4] // Assessment phase

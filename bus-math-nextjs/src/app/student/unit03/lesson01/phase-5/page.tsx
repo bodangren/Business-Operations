@@ -6,67 +6,12 @@ import { CheckCircle2, AlertTriangle, TrendingUp, Award, Target } from "lucide-r
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
 import { lesson01Data, unit03Data, lesson01Phases } from "../lesson-data"
+import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases[4] // Assessment phase
 
-  const assessmentQuestions = [
-    {
-      id: 'q1',
-      question: 'What are the three components of the financial statement "storyboard" that Jennifer Kim described to Sarah?',
-      answers: [
-        'Income Statement (plot), Balance Sheet (setting), Statement of Cash Flows (action)',
-        'Revenue, Expenses, and Net Income',
-        'Assets, Liabilities, and Equity',
-        'Operating, Investing, and Financing activities'
-      ],
-      explanation: 'The three-statement storyboard consists of: Income Statement showing the plot (profitability), Balance Sheet showing the setting (financial position), and Statement of Cash Flows showing the action (cash movement). Together they tell one integrated business story.'
-    },
-    {
-      id: 'q2',
-      question: 'Why weren\'t Sarah\'s detailed internal spreadsheets sufficient for the bank loan officer and potential investor?',
-      answers: [
-        'External stakeholders need standardized financial statements that follow GAAP formatting',
-        'The spreadsheets contained mathematical errors',
-        'Internal records are always less accurate than financial statements',
-        'Banks prefer handwritten documents over digital spreadsheets'
-      ],
-      explanation: 'Internal records are perfect for management use, but banks and investors require standardized financial statements that follow Generally Accepted Accounting Principles (GAAP). This ensures consistency and comparability across different businesses and time periods.'
-    },
-    {
-      id: 'q3',
-      question: 'A business shows $60,000 revenue, $45,000 expenses, $20,000 cash, $35,000 total assets, and $12,000 liabilities. What is the owner\'s equity?',
-      answers: [
-        '$23,000 (Assets $35,000 - Liabilities $12,000)',
-        '$15,000 (Revenue $60,000 - Expenses $45,000)',
-        '$20,000 (the cash amount)',
-        '$8,000 (Cash $20,000 - Liabilities $12,000)'
-      ],
-      explanation: 'Owner\'s equity is calculated using the accounting equation: Assets = Liabilities + Equity, therefore Equity = Assets - Liabilities = $35,000 - $12,000 = $23,000. This represents the owner\'s financial interest in the business.'
-    },
-    {
-      id: 'q4',
-      question: 'Which scenario best demonstrates the importance of integrated financial statement analysis?',
-      answers: [
-        'A company with high profits but negative cash flow needs all three statements to understand the complete picture',
-        'A company that only prepares an Income Statement because it\'s the most important',
-        'A company that shows identical numbers on all three statements',
-        'A company that only shares financial information with internal managers'
-      ],
-      explanation: 'When profit and cash flow don\'t align, it demonstrates why all three statements are essential. The Income Statement might show profitability, but the Cash Flow Statement reveals timing issues with collections or payments, while the Balance Sheet shows the resulting accounts receivable buildup.'
-    },
-    {
-      id: 'q5',
-      question: 'What is the central business challenge that drives the entire Unit 3 learning experience?',
-      answers: [
-        '"How do today\'s journal entries flow into a narrative of profit, solvency, and cash health that investors can trust?"',
-        '"How can Sarah reduce her monthly expenses to increase profitability?"',
-        '"How should Sarah organize her office space for maximum efficiency?"',
-        '"How can Sarah hire more employees to grow her business faster?"'
-      ],
-      explanation: 'This driving question captures the essence of Unit 3: transforming raw accounting data into professional financial statements that communicate business performance and health to external stakeholders like banks and investors.'
-    }
-  ]
+  const assessmentQuestions = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] }).slice(0, 5)
 
   const masteryCheck = [
     {
@@ -95,41 +40,7 @@ export default function Phase5Page() {
     }
   ]
 
-  const comprehensiveAssessment = [
-    {
-      id: 'q6',
-      question: 'TechFlow Solutions has the following information: Revenue $75,000, Expenses $62,000, Cash $18,000, Equipment $45,000, Accounts Payable $15,000, Bank Loan $28,000. What story does this integrated data tell?',
-      answers: [
-        'Profitable business ($13,000 net income) with strong asset base ($63,000 total assets) and manageable debt structure',
-        'Unprofitable business that should close immediately',
-        'Business with too much equipment and insufficient cash',
-        'Business that owes too much money to be viable'
-      ],
-      explanation: 'The integrated analysis shows: Income Statement reveals $13,000 profit ($75,000 - $62,000), Balance Sheet shows $63,000 total assets ($18,000 + $45,000) with $43,000 total liabilities ($15,000 + $28,000), resulting in $20,000 equity. This tells a story of a profitable, well-positioned business.'
-    },
-    {
-      id: 'q7',
-      question: 'Two businesses both show $40,000 net income. Company A has $5,000 operating cash flow while Company B has $38,000 operating cash flow. What does this difference suggest about their business models?',
-      answers: [
-        'Company A likely has collection issues or high accounts receivable, while Company B effectively converts profit to cash',
-        'Company A is more profitable because it shows higher growth investment',
-        'Company B has accounting errors because cash flow should match net income exactly',
-        'The difference is normal and doesn\'t indicate any business concerns'
-      ],
-      explanation: 'This significant difference between net income and operating cash flow for Company A suggests timing issues - perhaps slow customer payments, inventory buildup, or other working capital challenges. Company B\'s alignment between profit and cash flow indicates healthier operations.'
-    },
-    {
-      id: 'q8',
-      question: 'If you were Jennifer Kim advising Sarah about presenting to investors, what would be the most important message about financial statements?',
-      answers: [
-        'The three statements work together to tell one credible story about business performance, position, and cash management',
-        'Only the Income Statement matters because it shows profitability',
-        'Financial statements are just formalities required by accounting rules',
-        'Investors prefer simple spreadsheets over formal financial statements'
-      ],
-      explanation: 'The key insight is integration - investors need to see how profitability (Income Statement), financial position (Balance Sheet), and cash management (Cash Flow Statement) work together to demonstrate business health and growth potential.'
-    }
-  ]
+  const comprehensiveAssessment = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] }).slice(5, 8)
 
   return (
     <div className="min-h-screen bg-background">

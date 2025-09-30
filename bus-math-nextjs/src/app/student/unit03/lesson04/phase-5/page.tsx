@@ -5,99 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ClipboardCheck, TrendingUp, Award, Briefcase } from "lucide-react";
 import { lesson04Data, unit03Data, lesson04Phases } from "../lesson-data";
+import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5";
 
 const currentPhase = lesson04Phases[4]; // Assessment phase
 
-const masteryAssessmentQuestions = [
-  {
-    id: "assessment-q1",
-    question: "Which INDEX/MATCH formula correctly uses named ranges to create a professional, maintainable lookup for 'Marketing Expense' in Sarah's trial balance?",
-    answers: [
-      "=INDEX(TrialBalance_Amounts,MATCH(\"Marketing Expense\",TrialBalance_Accounts,0))",
-      "=INDEX(B2:B50,MATCH(\"Marketing Expense\",A2:A50,0))",
-      "=VLOOKUP(\"Marketing Expense\",TrialBalance_Data,2,0)",
-      "=LOOKUP(\"Marketing Expense\",TrialBalance_Accounts,TrialBalance_Amounts)"
-    ],
-    explanation: "Professional financial models use named ranges like 'TrialBalance_Amounts' and 'TrialBalance_Accounts' instead of cell references. This makes formulas self-documenting, maintainable, and audit-ready for investors."
-  },
-  {
-    id: "assessment-q2",
-    question: "Why do professional financial analysts prefer INDEX/MATCH over VLOOKUP for building investor-ready financial models?",
-    answers: [
-      "INDEX/MATCH is more robust, flexible, and won't break when columns are inserted or moved, which is essential for models that evolve over time",
-      "INDEX/MATCH is always faster than VLOOKUP in every situation",
-      "INDEX/MATCH automatically formats cells with professional colors and borders",
-      "INDEX/MATCH is required by GAAP accounting standards for all financial statements"
-    ],
-    explanation: "INDEX/MATCH is preferred because it's robust against structural changes, can look in any direction, doesn't use hard-coded column numbers, and is the industry standard for maintainable financial models."
-  },
-  {
-    id: "assessment-q3",
-    question: "What advanced technique would Sarah use to automatically sum all accounts containing 'Marketing' in their name, regardless of the specific account titles?",
-    answers: [
-      "=SUMPRODUCT((ISNUMBER(SEARCH(\"*Marketing*\",TrialBalance_Accounts)))*(TrialBalance_Amounts))",
-      "=INDEX(TrialBalance_Amounts,MATCH(\"*Marketing*\",TrialBalance_Accounts,0))",
-      "=SUMIF(TrialBalance_Accounts,\"Marketing\",TrialBalance_Amounts)",
-      "=VLOOKUP(\"Marketing\",TrialBalance_Data,2,0)"
-    ],
-    explanation: "SUMPRODUCT with SEARCH function allows wildcard pattern matching to automatically group similar accounts. This technique enables dynamic categorization that updates as new marketing-related accounts are added."
-  },
-  {
-    id: "assessment-q4",
-    question: "How should Sarah handle potential errors when an account might not exist in her trial balance, to maintain professional presentation standards?",
-    answers: [
-      "=IFERROR(INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0)),0)",
-      "=INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0),0)",
-      "=IF(INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0)))",
-      "=TRY(INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0)))"
-    ],
-    explanation: "IFERROR wrapping prevents #N/A errors from displaying when accounts don't exist. Professional models never show error values to investors - they either return 0 or a meaningful message."
-  },
-  {
-    id: "assessment-q5",
-    question: "What makes a financial model 'dynamic' and why is this crucial for growing businesses like TechStart Solutions?",
-    answers: [
-      "Dynamic models automatically update all calculations when new data is added, ensuring reports always reflect current business reality without manual formula updates",
-      "Dynamic models change colors automatically based on profit levels and performance metrics",
-      "Dynamic models can email stakeholders when key financial metrics change significantly",
-      "Dynamic models automatically backup data to the cloud every time they're modified"
-    ],
-    explanation: "Dynamic models maintain live connections between data sources and calculations. When Sarah adds new transactions to her trial balance, her Income Statement updates automatically, ensuring accuracy and saving hours of manual work."
-  },
-  {
-    id: "assessment-q6",
-    question: "In a professional financial model, which naming convention for ranges demonstrates the highest level of Excel sophistication?",
-    answers: [
-      "TrialBalance_Accounts, IncomeStatement_Revenue, BalanceSheet_Assets with consistent, descriptive naming that clearly indicates content and purpose",
-      "TB_Accts, IS_Rev, BS_Assets with abbreviated names for faster typing",
-      "Data1, Data2, Data3 with simple sequential numbering for easy reference",
-      "A2:A50, B2:B50, C2:C50 using cell references instead of named ranges"
-    ],
-    explanation: "Professional naming conventions use full, descriptive names that make formulas self-documenting. Names like 'TrialBalance_Accounts' immediately tell any reader what data the range contains, which is essential for auditing and maintenance."
-  },
-  {
-    id: "assessment-q7",
-    question: "How would Sarah create a formula that automatically pulls revenue data from the correct quarter based on today's date?",
-    answers: [
-      "=INDEX(TrialBalance_Amounts,MATCH(\"Q\"&QUARTER(TODAY())&\"_Revenue\",TrialBalance_Accounts,0))",
-      "=INDEX(TrialBalance_Amounts,MATCH(\"Q1_Revenue\",TrialBalance_Accounts,0))",
-      "=VLOOKUP(\"Current Quarter Revenue\",TrialBalance_Data,2,0)",
-      "=SUM(INDEX(TrialBalance_Amounts,MATCH(\"Revenue\",TrialBalance_Accounts,0)))"
-    ],
-    explanation: "Using QUARTER(TODAY()) dynamically determines the current quarter (1-4) and builds the account name accordingly. This formula automatically updates as quarters change, requiring no manual intervention."
-  },
-  {
-    id: "assessment-q8",
-    question: "What business advantage does Sarah gain by mastering these advanced INDEX/MATCH techniques beyond just having working formulas?",
-    answers: [
-      "Professional-grade Excel skills signal attention to detail and technical competence, building investor confidence in her overall business management capabilities",
-      "Advanced Excel functions make her computer run faster and more efficiently",
-      "INDEX/MATCH formulas automatically comply with tax regulations and GAAP standards",
-      "These techniques allow her to eliminate the need for accounting software entirely"
-    ],
-    explanation: "Technical excellence in financial modeling demonstrates professional competence and attention to detail. Investors judge business owners partly by the quality of their financial systems - sophisticated models suggest sophisticated business management."
-  }
-];
+const masteryAssessmentQuestions = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson04"] });
 
 export default function Unit03Lesson04Phase5() {
   return (

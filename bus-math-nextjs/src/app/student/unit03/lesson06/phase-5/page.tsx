@@ -5,99 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle2 } from "lucide-react"
 import { lesson06Data, unit03Data, lesson06Phases } from "../lesson-data"
+import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5"
 
 const currentPhase = lesson06Phases[4]
 
-const assessmentQuestions = [
-  {
-    id: "a1",
-    question: "Best practice for switching Base/Stretch/Downside safely:",
-    answers: [
-      'XLOOKUP([@Scenario], Driver[Name], Driver[Value], "Missing") with IFNA',
-      'VLOOKUP([@Scenario], Driver, 2, TRUE) for flexibility',
-      'INDEX(Driver[Value], MATCH([@Scenario], Driver[Name], 1))',
-      'Manual copy/paste driver values into each sheet'
-    ],
-    explanation: "Exact‑match with an if_not_found fallback avoids wrong matches and #N/A during demos."
-  },
-  {
-    id: "a2",
-    question: "To keep charts stable as data grows, link them to:",
-    answers: [
-      'Excel Tables and structured references',
-      'Fixed ranges ($B$2:$B$50)',
-      'Hidden named ranges with fixed rows',
-      'A separate workbook with pasted values'
-    ],
-    explanation: "Tables auto‑expand and keep visuals accurate under new rows."
-  },
-  {
-    id: "a3",
-    question: "Which validation is most important for investor trust?",
-    answers: [
-      'A=L+E tie, NI→RE rollforward, and cash reconciliation flags',
-      'Conditional coloring of headings only',
-      'A long formula note on a hidden tab',
-      'Emailing the workbook for review later'
-    ],
-    explanation: "Visible, automatic checks prove the model ties and updates correctly."
-  },
-  {
-    id: "a4",
-    question: "When scenario name is misspelled, your model should:",
-    answers: [
-      'Show a friendly message using IFNA/IFERROR and keep charts stable',
-      'Return #N/A throughout the dashboard',
-      'Silently switch to Base assumptions',
-      'Freeze calculation until corrected'
-    ],
-    explanation: "Graceful handling prevents confusion and preserves trust during live demos."
-  },
-  {
-    id: "a5",
-    question: "KPI choices for decision‑readiness should emphasize:",
-    answers: [
-      'Runway, margin, current ratio, cash coverage',
-      'All ratios available in textbooks',
-      'Only profit, because it looks good',
-      'Advanced volatility metrics unrelated to the business'
-    ],
-    explanation: "Choose indicators that directly influence go/no‑go decisions."
-  },
-  {
-    id: "a6",
-    question: "Which is a common integration mistake?",
-    answers: [
-      'Charts referencing static ranges',
-      'Using named ranges for clarity',
-      'Showing validation badges on the dashboard',
-      'Using exact‑match lookups'
-    ],
-    explanation: "Static ranges go stale and break visuals."
-  },
-  {
-    id: "a7",
-    question: "To improve auditability, you should:",
-    answers: [
-      'Name critical inputs/outputs and keep formulas readable',
-      'Hide all intermediate calculations',
-      'Use one mega‑formula for the whole model',
-      'Delete comments and headers'
-    ],
-    explanation: "Named ranges and clear structure help others review quickly."
-  },
-  {
-    id: "a8",
-    question: "A dashboard that is investor‑ready shows:",
-    answers: [
-      'Clarity, reliability, and auditability in one page',
-      'A separate sheet for each metric',
-      'Hidden macros that run behind the scenes',
-      'Only a single big number without context'
-    ],
-    explanation: "One page that updates live and proves correctness earns trust."
-  }
-]
+const assessmentQuestions = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson06"] })
 
 export default function Phase5Page() {
   return (
