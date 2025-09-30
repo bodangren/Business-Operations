@@ -7,33 +7,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import { lesson07Data, unit02Data, lesson07Phases } from "../lesson-data"
+import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
 
 const currentPhase = lesson07Phases[4]
 
-const auditQuestions = [
-  {
-    id: 'a1',
-    question: 'Which definition best fits “investor‑ready”?',
-    answers: [
-      'Clear, reliable, auditable with documented assumptions and concise summary',
-      'Lots of hidden logic with perfect formatting',
-      'Only visuals, no formulas',
-      'Manual inputs with no checks'
-    ],
-    explanation: 'Investor‑ready means trustworthy numbers, transparent logic, and clear communication.'
-  },
-  {
-    id: 'a2',
-    question: 'What is the purpose of reconciliation tie‑outs?',
-    answers: [
-      'Prove totals match across sources and catch integrity issues',
-      'Make the sheet look nice',
-      'Add complexity for advanced users',
-      'Speed up volatile functions'
-    ],
-    explanation: 'Tie‑outs confirm correctness across systems and prevent hidden errors.'
-  }
-]
+const auditQuestions = toComprehensionCheckFormat(
+  getQuestionsForLesson("lesson07")
+)
 
 export default function Phase5Page() {
   return (

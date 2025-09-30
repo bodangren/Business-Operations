@@ -5,122 +5,14 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, Award, Target, Briefcase } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, unit02Data, lesson04Phases } from "../lesson-data"
+import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
 
 const currentPhase = lesson04Phases[4]
 
 export default function Phase5Page() {
-  const assessmentQuestions = [
-    {
-      id: "q1",
-      question: "What is the primary advantage of using Excel Tables instead of regular cell ranges for month-end procedures?",
-      answers: [
-        "Tables use less computer memory and make files smaller",
-        "Tables automatically expand and maintain formula references when new data is added",
-        "Tables can only be used with SUMIF functions and not other formulas",
-        "Tables automatically save your work to the cloud every 5 minutes"
-      ],
-      explanation: "Excel Tables automatically expand when new rows are added and maintain structured references, eliminating the need to manually update formula ranges during month-end procedures."
-    },
-    {
-      id: "q2",
-      question: "In the formula =SUMIF(TransactionTable[Type],\"Accrual\",TransactionTable[Amount]), what does the middle argument (\"Accrual\") represent?",
-      answers: [
-        "The name of the Excel worksheet where the data is stored",
-        "The criteria that determines which rows to include in the sum",
-        "The column where the sum result should be displayed",
-        "The format for displaying currency in the result"
-      ],
-      explanation: "The criteria argument specifies the condition that must be met for a row to be included in the sum. Only transactions with Type = 'Accrual' will be summed."
-    },
-    {
-      id: "q3",
-      question: "Why are structured references like TransactionTable[Amount] better than cell references like C2:C50 for Sarah's month-end automation?",
-      answers: [
-        "Structured references are easier to understand and automatically adjust when the table grows",
-        "Structured references can only be used with tables, making them more exclusive",
-        "Structured references run faster and use less processing power",
-        "Structured references automatically format numbers as currency"
-      ],
-      explanation: "Structured references are self-documenting (you can understand what they refer to) and automatically expand when new data is added to the table, making them ideal for automated systems."
-    },
-    {
-      id: "q4",
-      question: "If Sarah adds 5 new transactions to her TransactionTable, what happens to her existing SUMIF formulas that use structured references?",
-      answers: [
-        "The formulas break and show #REF! errors until manually updated",
-        "The formulas automatically include the new transactions without any changes needed",
-        "The formulas need to be rewritten using the new cell ranges",
-        "The formulas continue working but ignore the new transactions"
-      ],
-      explanation: "This is the key benefit of Excel Tables - formulas with structured references automatically include new data added to the table without any manual intervention."
-    },
-    {
-      id: "q5",
-      question: "In a professional business context, what makes Excel Tables particularly valuable for investor presentations?",
-      answers: [
-        "Tables make spreadsheets load faster during presentations",
-        "Tables demonstrate scalable, automated systems that can grow with the business",
-        "Tables automatically create charts and graphs for visual appeal",
-        "Tables can only be opened by professional versions of Excel"
-      ],
-      explanation: "Investors value scalable systems. Excel Tables show that the business uses professional automation that can handle growth without requiring constant manual intervention."
-    },
-    {
-      id: "q6",
-      question: "What type of business scenario would require a COUNTIF function instead of a SUMIF function?",
-      answers: [
-        "When you need to total the dollar amounts of all transactions",
-        "When you need to count how many transactions meet certain criteria",
-        "When you need to calculate the average value of transactions",
-        "When you need to find the maximum transaction amount"
-      ],
-      explanation: "COUNTIF counts the number of items that meet criteria, while SUMIF adds up the values. Use COUNTIF when you need frequency analysis (e.g., 'How many times did we invoice this client?')."
-    },
-    {
-      id: "q7",
-      question: "In the context of Sarah's Month-End Wizard, how do named ranges enhance the professional quality of the system?",
-      answers: [
-        "Named ranges make formulas easier to read and maintain, improving audit trails",
-        "Named ranges automatically backup data to prevent loss",
-        "Named ranges can only be created by certified Excel professionals",
-        "Named ranges make the file size smaller for email attachments"
-      ],
-      explanation: "Named ranges like 'MonthlyRevenue' make formulas self-documenting and easier to audit. When someone reviews the model, they can immediately understand what each formula calculates."
-    },
-    {
-      id: "q8",
-      question: "Which formula would correctly calculate the total revenue for a specific client using Excel Tables?",
-      answers: [
-        "=SUM(TransactionTable[Amount],\"FitnessStudio\")",
-        "=SUMIF(TransactionTable[Client],\"FitnessStudio\",TransactionTable[Amount])",
-        "=COUNT(TransactionTable[Client],\"FitnessStudio\")",
-        "=AVERAGE(TransactionTable[Amount],\"FitnessStudio\")"
-      ],
-      explanation: "SUMIF requires three arguments: the range to check (Client column), the criteria ('FitnessStudio'), and the range to sum (Amount column)."
-    },
-    {
-      id: "q9",
-      question: "Why is error-checking crucial in Excel Tables systems for month-end procedures?",
-      answers: [
-        "Error-checking prevents the computer from crashing during calculations",
-        "Error-checking ensures accuracy and maintains investor confidence in financial reports",
-        "Error-checking is required by law for all business spreadsheets",
-        "Error-checking automatically fixes all formula mistakes"
-      ],
-      explanation: "Financial accuracy is critical for investor trust and business decisions. Error-checking helps catch mistakes before they impact financial statements and business analysis."
-    },
-    {
-      id: "q10",
-      question: "What is the ultimate goal of mastering Excel Tables and SUMIF functions in the context of the Month-End Wizard project?",
-      answers: [
-        "To reduce month-end closing time from days to hours while maintaining GAAP accuracy",
-        "To impress teachers with advanced Excel knowledge",
-        "To create the most complex spreadsheet possible",
-        "To replace all accounting software with Excel"
-      ],
-      explanation: "The goal is business efficiency - dramatically reducing the time required for month-end procedures while ensuring the accuracy and compliance that investors and stakeholders expect."
-    }
-  ]
+  const assessmentQuestions = toComprehensionCheckFormat(
+    getQuestionsForLesson("lesson04")
+  )
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">

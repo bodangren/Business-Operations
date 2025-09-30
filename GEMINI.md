@@ -1,6 +1,63 @@
-# CLAUDE.md
+# AGENTS.md CLAUDE.md GEMINI.md (duplicates)
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to coding agents (Claude Code, OpenAI Codex CLI, etc.) working with this repository. It supplements existing docs with agent‑specific workflow rules and the Excel‑focused lesson implementation patterns actively used in this project.
+
+## Tone and Tenor
+Be direct when asked for advice. Don't worry about offending the requester.
+
+## Agile / TDD Issue Workflow (MANDATORY)
+Follow this process for every development slice to keep the repository, sprint artifacts, and GitHub history aligned:
+1. Start from a clean, up-to-date `main`. If the worktree is dirty, stop and clarify before proceeding.
+2. Review the current sprint story file (`docs/sprint/S#.md`) and `bus-math-nextjs/TODO.md` to confirm priorities and acceptance criteria. If the sprint file is missing, document the gap in TODO.md and request guidance before coding.
+3. List existing open GitHub issues for the sprint slice (`gh issue list` with appropriate filters) and match them against the sprint story so you avoid duplicating work.
+4. Only create a new GitHub issue when the sprint item lacks coverage or you are explicitly directed to do so; capture the slice with milestone and labels (`type:*`, `area:*`, `priority:*`) plus story, acceptance criteria, and test plan per template.
+5. Branch from `main` using `<type>/<issue>-<slug>` (example: `feat/7-mcq-quiz-auto-score`). All commits for the slice stay on this branch.
+6. Practice TDD: add or update tests first, then implement. Run `npm run lint` and `npm run test` before every commit. When APIs or Prisma schema change, also run `npm run test:integration`; for broader flows, run `npm run test:e2e`.
+7. Use Conventional Commit messages (e.g., `feat: add automated scoring rubric`). Keep commits atomic and scoped to the issue.
+8. Push the branch (`git push -u origin <branch>`) and open a PR (`gh pr create --fill --label ... --milestone ...`). Link the issue, record test commands in the body, and run `gh pr checks`.
+9. Complete a self-review, address feedback on the same branch, then merge with squash (`gh pr merge --squash --delete-branch`). Ensure CI is green before merge.
+10. After merge, switch back to `main`, run `git pull --ff-only`, prune stale branches, close the linked issue (if not auto-closed), and update sprint artifacts (sprint doc, TODO.md) to reflect completion.
+11. Repeat the loop for the next prioritized issue; do not batch unrelated work on a single branch.
+
+## Agent Operating Rules (Read First)
+- Work only in `bus-math-nextjs/` unless explicitly told otherwise.
+- Do NOT run `npm` commands (including `npm run build`, `npm run dev`, `npm start`, installs) or mutate `.next` without explicit user approval.
+- Prefer fast, read‑only introspection: use `rg` (ripgrep) to search, and read files in chunks ≤250 lines.
+- Verify component exports before import: check for `export default` vs named exports in actual files.
+- Follow six‑phase page structure and the established styling wrapper from lesson03 (gradient background, `PhaseHeader`/`PhaseFooter`, `Badge`, max width containers).
+- Create realistic practice datasets in `public/resources/` and link with `<a href="/resources/file.csv" download>`.
+- Use existing interactive components; avoid inventing new APIs. If you add/modify components, immediately document them in the MCP knowledge base.
+- For testing and validation, prefer Chrome MCP tools and page navigation checks; avoid local build commands unless approved.
+
+## Excel‑Focused Lesson Patterns (Active Work)
+The course uses a “textbook‑first” approach with interactive formative assessment. Two recurring Excel lessons per unit are common:
+
+- Lesson04: Excel‑Focused Skills Introduction
+  - Purpose: introduce the first major Excel automation skill for the unit and bridge concepts to practice.
+  - Deliverables: all 6 student phase pages, realistic practice CSV in `public/resources/`, business‑authentic content at 8th‑grade reading level.
+  - Components: ComprehensionCheck, FillInTheBlank, ErrorCheckingSystem (as relevant), ReflectionJournal, and unit‑relevant business exercises.
+
+  Styling requirements (MANDATORY):
+  <div className="min-h-screen bg-gradient-to-br from-slate-50 to-[PHASE_COLOR]-50">
+    <PhaseHeader unit={unitData} lesson={lessonData} phase={currentPhase} phases={lessonPhases} />
+    <main className="container mx-auto px-4 py-8 space-y-8">
+      <section className="space-y-6">
+        <div className="text-center space-y-4">
+          <Badge className="bg-[PHASE_COLOR]-100 text-[PHASE_COLOR]-800 text-lg px-4 py-2">
+            [PHASE_ICON] Phase [N]: [PHASE_NAME]
+          </Badge>
+          {/* Content sections wrapped in max-w-4xl mx-auto */}
+        </div>
+      </section>
+    </main>
+    <PhaseFooter unit={unitData} lesson={lessonData} phase={currentPhase} phases={lessonPhases} />
+  </div>
+
+- Lesson05: Advanced Excel Automation (Second Excel Lesson)
+  - Purpose: deepen the Excel skill introduced in Lesson04 with advanced automation (e.g., dynamic method switching, what‑if tools, enhanced validation, dashboards), preparing students for later synthesis.
+  - Deliverables: all 6 phases, advanced practice data (`public/resources/unit[x]-[skill]-advanced-practice.csv`), stronger professional standards and investor‑readiness.
+
+Both lessons must follow the Component Documentation Protocol (MCP) and Testing & Validation requirements defined below.
 
 ## Project Overview
 
@@ -58,9 +115,67 @@ The application is structured around 8 educational units, each with:
 - Student choice options
 
 ### Routing Structure
-- `/units/[unit]/` - Dynamic routing for 8 units (unit01-smart-ledger through unit08-integrated-model-sprint)
+- `/student/unit01/lesson01/phase-1/` - Static student lesson phase pages (6 phases per lesson, 10 lessons per unit)
+- `/teacher/[unit]/[lessonNumber]/` - Dynamic teacher lesson plans and resources  
 - `/debug/` - Development testing pages for component categories
-- Each unit has consistent sub-pages based on the UnitData interface
+- Unit text content stored in `unit[X]-text.md` files for comprehensive explanations
+
+## Component Discovery & Usage Guidelines
+
+### Finding the Right Interactive Component
+Before creating new components, search existing ones using these methods:
+
+1. **MCP Curriculum Server** (RECOMMENDED):
+   ```bash
+   # List all available components with descriptions
+   mcp__curriculum-mcp__list_components
+   
+   # Get detailed component info including usage examples
+   mcp__curriculum-mcp__get_components
+   
+   # Search for components by educational purpose
+   mcp__curriculum-mcp__get_components --id="component-id"
+   ```
+
+2. **By Educational Function** (File System):
+   ```bash
+   # Search for comprehension/assessment components
+   find src/components -name "*Check*" -o -name "*Quiz*" -o -name "*Assessment*"
+   
+   # Search for drag-drop learning activities  
+   find src/components/drag-drop-exercises -name "*.tsx"
+   ```
+
+3. **By Content Area** (Use Grep tool):
+   - Accounting concepts: `grep -r "debit\|credit\|journal\|ledger" src/components/`
+   - Excel/spreadsheet: `grep -r "SUMIF\|Excel\|spreadsheet" src/components/`  
+   - Business scenarios: `grep -r "TechStart\|Sarah\|business.*scenario" src/components/`
+
+### Component Import Syntax (CRITICAL)
+Most interactive components use **default exports**. Use correct import syntax to avoid common errors:
+
+```tsx
+// ✅ CORRECT - Default import (no curly braces)
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import ReflectionJournal from "@/components/exercises/ReflectionJournal"
+import AccountCategorization from "@/components/drag-drop-exercises/AccountCategorization"
+
+// ❌ INCORRECT - Named import will cause errors
+import { ComprehensionCheck } from "@/components/exercises/ComprehensionCheck"  // ERROR
+import { ReflectionJournal } from "@/components/exercises/ReflectionJournal"    // ERROR
+
+// ✅ CORRECT - UI components use named exports  
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { VideoPlayer } from "@/components/ui/video-player"
+import { Card, CardContent } from "@/components/ui/card"
+```
+
+### Component-to-Learning-Objective Mapping
+- **Conceptual Understanding**: ComprehensionCheck.tsx, FillInTheBlank.tsx
+- **Skill Practice**: DragAndDrop.tsx, AccountCategorization.tsx, TrialBalanceSorting.tsx
+- **Application**: BusinessTransactionCategorization.tsx, StartupJourney.tsx
+- **Reflection**: ReflectionJournal.tsx, PeerCritiqueForm.tsx
+- **Assessment**: All exercise components support formative assessment
 
 ## Development Guidelines
 
@@ -274,6 +389,192 @@ This is a Grade 12 "Math for Business Operations" course using Project-Based Lea
 - Public presentation formats should be professional and industry-appropriate
 - Include authentic business scenarios and data whenever possible
 
+## Static Phase Page Development (CRITICAL)
+
+### Online Textbook Requirements
+This application serves as an **online textbook** for Grade 12 Business Operations. Each lesson phase page must include:
+
+#### Required Structure for Each Phase Page:
+1. **Substantial Explanatory Content** (Primary Requirement)
+   - Complete educational explanations written directly in JSX at 8th grade reading level
+   - Comprehensive coverage of key concepts, vocabulary, and real-world applications
+   - Business context connecting to authentic scenarios (TechStart Solutions, etc.)
+   - "Why this matters" explanations linking concepts to student goals
+
+2. **Interactive Components for Formative Assessment** (Secondary Requirement)
+   - ComprehensionCheck.tsx for knowledge checks and quizzes
+   - DragAndDrop.tsx and specialized drag-drop exercises for skill practice
+   - BusinessTransactionCategorization.tsx for real-world application
+   - FillInTheBlank.tsx for vocabulary and concept reinforcement
+   - ReflectionJournal.tsx for metacognitive learning
+   - Think-Pair-Share discussion frameworks (structured prompts, not components)
+
+3. **Complete Self-Contained Pages**
+   - Each `phase1/page.tsx` through `phase6/page.tsx` contains ALL content for that phase
+   - No generic prop-passing systems - write actual educational content directly
+   - Import PhaseHeader and PhaseFooter for navigation only
+   - Import and use educational components with real data, not placeholder content
+
+#### Phase Page Content Formula:
+**Educational Theory + Real-World Context + Interactive Practice = Complete Learning Experience**
+
+### Content Style Guide & Writing Patterns
+
+#### Sarah's Narrative Voice (TechStart Solutions Context)
+Use Sarah Chen's authentic business story throughout content. Examples:
+
+```tsx
+// ✅ GOOD - Authentic business context
+<p className="text-lg leading-relaxed">
+  When Sarah first launched TechStart Solutions, she landed three projects back-to-back: 
+  a website for a local bakery ($2,200), social media setup for pet grooming ($650), 
+  and SEO work for a dental office ($1,100). But behind the success was chaos—tracking 
+  everything in notebooks was overwhelming and unsustainable.
+</p>
+
+// ❌ AVOID - Generic, abstract explanations  
+<p>Business owners need to track their transactions systematically.</p>
+```
+
+#### 8th Grade Reading Level Patterns
+- **Sentence Length**: 15-20 words average, vary for rhythm
+- **Vocabulary**: Introduce business terms with context clues
+- **Explanations**: Use concrete examples before abstract concepts
+
+```tsx
+// ✅ GOOD - 8th grade level with business vocabulary
+<p>
+  All business, from the smallest startup to the largest corporation, operates under 
+  one unbreakable rule. It's a rule of perfect balance, and it's the foundation of 
+  all financial tracking. This is the <strong>Accounting Equation</strong>.
+</p>
+
+// ❌ AVOID - Too complex or too simple
+<p>The fundamental principle of double-entry bookkeeping necessitates...</p>
+<p>Businesses need to balance their books.</p>
+```
+
+#### "Why This Matters" Integration Patterns
+Always connect concepts to student goals and real-world impact:
+
+```tsx
+// ✅ GOOD - Clear relevance and impact
+<div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+  <h3 className="font-semibold text-blue-900 mb-2">Why This Matters</h3>
+  <p className="text-blue-800">
+    Understanding debits and credits isn't just about following rules—it's about 
+    building the foundation for investor confidence. When Sarah shows potential 
+    investors her self-auditing ledger, they can immediately see that she 
+    understands how money flows through her business.
+  </p>
+</div>
+```
+
+#### Think-Pair-Share Discussion Framework Templates
+Structure collaborative learning with specific prompts:
+
+```tsx
+// ✅ GOOD - Structured collaborative learning
+<Card className="border-blue-200 bg-blue-50">
+  <CardHeader>
+    <CardTitle className="text-blue-800 flex items-center gap-2">
+      <Users className="h-5 w-5" />
+      Turn and Talk
+    </CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p className="font-medium text-blue-900 mb-2">
+      Discussion Prompt (3 minutes):
+    </p>
+    <p className="text-blue-800 mb-2">
+      Think about Sarah's experience with tracking client payments in notebooks. 
+      Share with a partner:
+    </p>
+    <ul className="list-disc list-inside space-y-1 text-blue-800">
+      <li>What specific problems do you see with her current system?</li>
+      <li>How might these problems affect her relationship with clients?</li>
+      <li>What would convince you that Sarah's business is trustworthy?</li>
+    </ul>
+  </CardContent>
+</Card>
+```
+
+### Lesson Phase Structure (6 Phases per Lesson):
+1. **Hook** (5 min): Engaging introduction with video/scenario + comprehension check
+2. **Introduction** (15 min): Core concept explanation + multiple interactive assessments  
+3. **Guided Practice** (12 min): Structured learning activities + think-pair-share discussions
+4. **Independent Practice** (8 min): Student application + advanced interactive exercises
+5. **Assessment** (5 min): Formative assessment + knowledge verification
+6. **Closing** (5 min): Synthesis and preview + reflection activities
+
+### Assessment-Component Integration Patterns
+
+#### Formative Assessment Flow
+Each phase should include multiple assessment touchpoints using appropriate components:
+
+```tsx
+// Phase progression: Content → Check → Practice → Apply → Reflect
+export default function Phase2Page() {
+  return (
+    <div>
+      {/* 1. Educational Content */}
+      <div className="prose prose-lg max-w-none">
+        <p>Sarah's business operates under the accounting equation: Assets = Liabilities + Equity...</p>
+      </div>
+      
+      {/* 2. Comprehension Check */}
+      <ComprehensionCheck
+        questions={accountingEquationQuestions}
+        title="Understanding the Accounting Equation"
+        showExplanations={true}
+      />
+      
+      {/* 3. Skill Practice */}
+      <AccountCategorization
+        items={sarahsTransactions}
+        title="Categorize Sarah's Business Transactions"
+      />
+    </div>
+  )
+}
+```
+
+#### Component-to-Learning-Objective Alignment
+Match components to specific lesson objectives from teacher lesson plans:
+
+- **Knowledge Retention**: ComprehensionCheck.tsx with `showExplanations={true}`
+- **Skill Development**: DragAndDrop.tsx, AccountCategorization.tsx  
+- **Application**: BusinessTransactionCategorization.tsx, StartupJourney.tsx
+- **Analysis**: FinancialStatementMatching.tsx, TrialBalanceSorting.tsx
+- **Reflection**: ReflectionJournal.tsx, PeerCritiqueForm.tsx
+
+### Development Methodology:
+1. **Read Current Lesson Data** (CRITICAL - Filesystem is source of truth):
+   ```bash
+   # Read current lesson plans from filesystem
+   Read teacher/unit01/lesson-01/page.tsx  # Teacher objectives and context
+   Read student/unit01/lesson01/lesson-data.ts  # Current lesson structure
+   Read student/unit01/unit01-text.md  # Comprehensive content reference
+   ```
+
+2. **Cross-Reference with MCP Server**:
+   ```bash
+   # Check MCP server for component availability
+   mcp__curriculum-mcp__list_components
+   mcp__curriculum-mcp__get_lessons --unitId="unit01"
+   
+   # Update MCP if discrepancies found
+   mcp__curriculum-mcp__update_lesson --id="lesson-id" --newData
+   ```
+
+3. **Component Discovery Priority**:
+   - **Primary**: Use MCP server for component descriptions and usage examples
+   - **Secondary**: File system search for component patterns and implementations
+   - **Always**: Verify imports and syntax in actual component files
+
+4. **Write Educational Content**: 8th grade reading level with Sarah's TechStart context
+5. **Document Updates**: Record new component usage in MCP server for future reference
+
 ## Important Notes
 - The project includes both modern Next.js components and legacy HTML files
 - Interactive elements rely heavily on React state and drag-drop libraries
@@ -281,6 +582,7 @@ This is a Grade 12 "Math for Business Operations" course using Project-Based Lea
 - All interactive components should maintain progress state for educational continuity
 - Security is critical: use SafeFormulaEvaluator for any formula evaluation, never Function() constructor or eval()
 - Components should support the project-based learning methodology with clear milestone tracking
+- **TEXTBOOK FIRST**: Every phase page must teach concepts thoroughly before providing practice activities
 
 ## Current Development Status
 - **Active TODO List**: See `TODO.md` for current project status, completed tasks, and next steps

@@ -4,121 +4,13 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson05Data, unit02Data, lesson05Phases } from "../lesson-data"
+import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
 
 const currentPhase = lesson05Phases[4]
 
-const assessmentQuestions = [
-  {
-    id: "a1",
-    question: "Best pattern to map AccountID to Method with graceful failure?",
-    answers: [
-      "XLOOKUP with if_not_found and structured references",
-      "VLOOKUP approximate match across fixed ranges",
-      "INDEX/MATCH without error handling",
-      "Manual mapping on the summary page"
-    ],
-    explanation: "Use XLOOKUP’s if_not_found and Table[Column] references for reliable, readable mapping."
-  },
-  {
-    id: "a2",
-    question: "When do you prefer SWITCH over nested IFs?",
-    answers: [
-      "When matching exact text options for routing logic",
-      "When comparing numeric thresholds with < and >",
-      "When building a single SUMIF",
-      "When formatting the sheet header"
-    ],
-    explanation: "SWITCH handles exact-option routing with cleaner syntax and fewer errors."
-  },
-  {
-    id: "a3",
-    question: "Which validation rule best catches out-of-period rows?",
-    answers: [
-      "Date NOT between PeriodStart and PeriodEnd flags the row",
-      "Date equals today() flags the row",
-      "Amount equals zero flags the row",
-      "AccountID contains letters flags the row"
-    ],
-    explanation: "Month-end relies on accurate period boundaries; enforce date windows."
-  },
-  {
-    id: "a4",
-    question: "Your total changes after adding 15 rows. What should be true?",
-    answers: [
-      "No formulas were edited; totals updated automatically via structured references",
-      "Several ranges were extended manually",
-      "You rebuilt the pivot from scratch",
-      "You re-typed two SUM formulas"
-    ],
-    explanation: "Auto-expansion proves scalable design and saves time."
-  },
-  {
-    id: "a5",
-    question: "Which summary proves investor readiness most clearly?",
-    answers: [
-      "A dashboard showing totals plus an Audit Panel with open issues",
-      "A list of raw transactions",
-      "A single cell with net income",
-      "A color theme update"
-    ],
-    explanation: "Totals plus visible audit status communicates both results and reliability."
-  },
-  {
-    id: "a6",
-    question: "Multi-criteria aggregation approach for complex rules?",
-    answers: [
-      "SUMPRODUCT with boolean tests across columns",
-      "SUM over a fixed range",
-      "AVERAGEIFS with text criteria",
-      "COUNTBLANK over Map table"
-    ],
-    explanation: "SUMPRODUCT handles multiple logical conditions when SUMIFS is insufficient."
-  },
-  {
-    id: "a7",
-    question: "Which error should be surfaced, not hidden?",
-    answers: [
-      "Missing AccountID mapping displayed as 'Unknown' with a flag",
-      "Temporary calculation delay hidden with IFERROR('')",
-      "All flags removed before a demo",
-      "Suppressing validation to avoid questions"
-    ],
-    explanation: "Surface and fix issues; transparency builds trust."
-  },
-  {
-    id: "a8",
-    question: "Why document methods and assumptions on-sheet?",
-    answers: [
-      "Promotes auditability and speeds reviews by mentors/investors",
-      "Increases file size only",
-      "Makes the sheet colorful",
-      "Prevents anyone else from understanding the model"
-    ],
-    explanation: "Clear documentation is a professional standard and improves collaboration."
-  },
-  {
-    id: "a9",
-    question: "Best practice for duplicates in TxnID?",
-    answers: [
-      "Flag duplicates with a COUNTIF check and link to source",
-      "Ignore duplicates to keep the model simple",
-      "Delete one duplicate without review",
-      "Hide the column"
-    ],
-    explanation: "Duplicates can distort results; flag and resolve with traceability."
-  },
-  {
-    id: "a10",
-    question: "Career connection: which role most relies on these skills?",
-    answers: [
-      "Financial analyst building month-end automation",
-      "Front desk receptionist",
-      "Graphic designer",
-      "Facilities custodian"
-    ],
-    explanation: "Analysts and consultants use scenario engines and validation every month-end."
-  }
-]
+const assessmentQuestions = toComprehensionCheckFormat(
+  getQuestionsForLesson("lesson05")
+)
 
 export default function Phase5Page() {
   return (

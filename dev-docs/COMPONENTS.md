@@ -98,6 +98,17 @@
     - `getUnit01Phase5Questions(filter)` returns raw entries filtered by lesson IDs and/or tags.
     - `toComprehensionCheckItems(entries)` turns entries into `ComprehensionCheck`-ready props.
     - `getUnit01Phase5ComprehensionCheckItems(filter)` combines the two steps for lesson pages.
+
+- ✅ **Unit02 Phase-5 Question Bank** (`src/data/question-banks/unit02-phase5.ts`)
+  - Centralizes all Unit 2 Lesson 01–07 phase-5 assessment questions with metadata (`lessonId`, `lessonTitle`, `objectiveTags`).
+  - Answer choices balanced so correct answers aren't noticeably longer than distractors.
+  - Exposes helpers:
+    - `getQuestionsForLesson(lessonId)` returns all questions for a specific lesson.
+    - `toComprehensionCheckFormat(questions)` converts entries to `ComprehensionCheck` props with shuffled answers.
+    - `getRandomQuestions(count, filter?)` returns random sample with optional lesson/tag filtering.
+    - `getQuestionsByTags(tags)` filters questions by objective tags.
+    - `getLessonMetadata(lessonId)` returns lesson metadata including question count and tags.
+  - **Pattern**: Same architecture as Unit 1, reusable for Unit 3–8 question banks.
     - `drawRandomUnit01Phase5Questions(count, filter)` and `drawUnit01Phase5ComprehensionCheckItems(...)` support practice-test / SRS pulls without repeats.
   - Answer choices were rewritten so correct and incorrect responses stay similar in length, preventing easy elimination during shuffles.
   - Tags cover themes such as `investor-confidence`, `excel-automation`, `controls`, and `dashboard-design` to support future filtering.
