@@ -5,62 +5,14 @@ import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Target, CheckCircle2, TrendingUp, RefreshCw } from "lucide-react"
 import { lesson02Data, unit02Data, lesson02Phases } from "../lesson-data"
+import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
 
 export default function Unit02Lesson02Phase5() {
   const currentPhase = lesson02Phases.find(p => p.sequence === 5)!
-  
-  const assessmentQuestions = [
-    {
-      id: "assess1",
-      question: "A business receives $3,000 cash for a 12-month service contract. The correct initial entry is:",
-      answers: [
-        "Debit Cash $3,000, Credit Deferred Revenue $3,000",
-        "Debit Cash $3,000, Credit Service Revenue $3,000",
-        "Debit Accounts Receivable $3,000, Credit Service Revenue $3,000",
-        "Debit Service Revenue $3,000, Credit Cash $3,000"
-      ]
-    },
-    {
-      id: "assess2",
-      question: "After one month of the above contract, the adjusting entry should be:",
-      answers: [
-        "Debit Deferred Revenue $250, Credit Service Revenue $250",
-        "Debit Service Revenue $250, Credit Deferred Revenue $250",
-        "Debit Cash $250, Credit Service Revenue $250",
-        "Debit Deferred Revenue $3,000, Credit Service Revenue $3,000"
-      ]
-    },
-    {
-      id: "assess3",
-      question: "Equipment costing $12,000 with 4-year useful life and $2,000 salvage value has monthly depreciation of:",
-      answers: [
-        "$208.33",
-        "$250.00",
-        "$300.00",
-        "$1,000.00"
-      ]
-    },
-    {
-      id: "assess4",
-      question: "The purpose of closing entries is to:",
-      answers: [
-        "Reset temporary accounts to zero and transfer net income to retained earnings",
-        "Record all cash transactions for the month",
-        "Calculate depreciation on all company assets",
-        "Adjust accounts receivable for uncollectible amounts"
-      ]
-    },
-    {
-      id: "assess5",
-      question: "Accumulated Depreciation is a contra-asset account, which means it:",
-      answers: [
-        "Reduces the book value of assets while keeping original cost visible",
-        "Increases the total value of assets on the balance sheet",
-        "Records the cash spent on asset maintenance",
-        "Tracks the current market value of company assets"
-      ]
-    }
-  ]
+
+  const assessmentQuestions = toComprehensionCheckFormat(
+    getQuestionsForLesson("lesson02")
+  )
 
   const scenarioBlanks = [
     {

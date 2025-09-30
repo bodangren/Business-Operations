@@ -8,7 +8,10 @@
 
 Sprint Planning Status
 - Sprint 10 plan recorded in `docs/sprint/S10.md` (Question Bank Initiative).
-- Completed slice: Issue #11 – Unit 1 practice-test experience from question bank.
+- Completed slices:
+  - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅
+  - Issue #11 – Unit 1 practice-test experience from question bank ✅
+  - Issue #26 – Unit 2 phase-5 question bank (in progress)
 - Next slice to tackle: Issue #12 – Prototype Unit 1 spaced-repetition review using question bank.
 
 Broken Links and Assets – Next.js App

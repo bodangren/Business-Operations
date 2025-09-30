@@ -5,67 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { DragAndDrop } from "@/components/exercises/DragAndDrop"
 import { CheckCircle2, Award, Target } from "lucide-react"
+import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 5)!
 
-  const summativeAssessmentQuestions = [
-    {
-      id: 'q1',
-      question: 'Based on Sarah\'s experience, what is the primary business risk of scaling a company with manual month-end processes?',
-      answers: [
-        'Administrative time grows exponentially with business complexity, limiting growth and increasing error risk',
-        'Computers will eventually run out of storage space for all the transaction data',
-        'Manual processes require hiring too many employees, increasing labor costs',
-        'Clients prefer businesses that use the latest technology for competitive advantage'
-      ],
-      explanation: 'Manual processes don\'t scale linearly - as Sarah discovered, more transactions create exponentially more complexity, errors, and time requirements. This becomes a growth bottleneck that can prevent business expansion.'
-    },
-    {
-      id: 'q2',
-      question: 'What makes Sarah\'s automation goal ("two days to two hours") a well-designed business objective?',
-      answers: [
-        'It is specific, measurable, achievable, and directly addresses the core problem identified',
-        'It focuses on using the latest technology to impress potential investors',
-        'It eliminates all human involvement in the month-end closing process',
-        'It guarantees that Sarah will never have accounting errors in the future'
-      ],
-      explanation: 'Sarah\'s goal follows SMART criteria: Specific (month-end closing), Measurable (2 days to 2 hours), Achievable (through automation), Relevant (addresses her core problem), and Time-bound (for each month-end).'
-    },
-    {
-      id: 'q3',
-      question: 'According to Marcus Rodriguez\'s advice, what is the most important factor to consider when evaluating automation opportunities?',
-      answers: [
-        'The opportunity cost of time spent on tasks that machines can do better than humans',
-        'The upfront cost of purchasing new software and technology systems',
-        'The risk that automation might eliminate jobs and reduce employment',
-        'The complexity of learning new technology and training employees to use it'
-      ],
-      explanation: 'Marcus emphasized that time is Sarah\'s most valuable asset. The key insight is recognizing when human time is being wasted on tasks that machines can perform more accurately and efficiently.'
-    },
-    {
-      id: 'q4',
-      question: 'Which of the following best explains why Sarah\'s "weekend nightmare" was actually valuable for her business development?',
-      answers: [
-        'It provided firsthand experience of the problem, making the business case for automation compelling and specific',
-        'It taught her that manual processes are always better than automated ones for accuracy',
-        'It showed her that working longer hours is the best way to handle business growth',
-        'It demonstrated that month-end closing should be avoided entirely in small businesses'
-      ],
-      explanation: 'Experiencing the pain of manual processes gave Sarah specific insights into where automation would provide the highest value. This firsthand knowledge is crucial for designing effective solutions.'
-    },
-    {
-      id: 'q5',
-      question: 'What is the most important lesson from this unit for future entrepreneurs?',
-      answers: [
-        'Identify and solve process bottlenecks early, before they become growth limitations',
-        'Always choose the most expensive automation technology to ensure the best results',
-        'Avoid using any manual processes in business operations from the very beginning',
-        'Focus only on revenue-generating activities and outsource all administrative work'
-      ],
-      explanation: 'The key entrepreneurial lesson is proactive problem-solving: identify inefficiencies while they\'re manageable and implement scalable solutions before they become major constraints on growth.'
-    }
-  ]
+  const summativeAssessmentQuestions = toComprehensionCheckFormat(
+    getQuestionsForLesson("lesson01")
+  )
 
   const businessScenarioItems = [
     { id: '1', content: 'A dental practice manually scheduling 200+ appointments weekly', matchId: '5', hint: 'High-volume, repetitive administrative task' },
