@@ -90,6 +90,18 @@
 ### Cross-Unit Components (1 component)
 - ✅ **ReflectionJournal** - CAP framework self-reflection component
 
+## 📘 Data Modules & Question Banks
+
+- ✅ **Unit01 Phase-5 Question Bank** (`src/data/question-banks/unit01-phase5.ts`)
+  - Centralizes every Lesson 01–07 assessment item with metadata (`lessonId`, `lessonTitle`, `objectiveTags`).
+  - Exposes helpers:
+    - `getUnit01Phase5Questions(filter)` returns raw entries filtered by lesson IDs and/or tags.
+    - `toComprehensionCheckItems(entries)` turns entries into `ComprehensionCheck`-ready props.
+    - `getUnit01Phase5ComprehensionCheckItems(filter)` combines the two steps for lesson pages.
+    - `drawRandomUnit01Phase5Questions(count, filter)` and `drawUnit01Phase5ComprehensionCheckItems(...)` support practice-test / SRS pulls without repeats.
+  - Answer choices were rewritten so correct and incorrect responses stay similar in length, preventing easy elimination during shuffles.
+  - Tags cover themes such as `investor-confidence`, `excel-automation`, `controls`, and `dashboard-design` to support future filtering.
+
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 
 ### Unit 3 Components (Three-Statement Storyboard)

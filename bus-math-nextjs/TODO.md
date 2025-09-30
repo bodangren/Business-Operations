@@ -6,6 +6,10 @@
 - Use Conventional Commits, keep work scoped to the issue branch, and document changes/tests in the PR (`gh pr create --fill`).
 - Merge via squash after CI passes, prune branches, close the issue, and update sprint docs/TODO before moving on.
 
+Sprint Planning Status
+- Sprint 10 plan recorded in `docs/sprint/S10.md` (Question Bank Initiative).
+- Active slice to start: Issue #10 – Unit 1 phase-5 question bank and scaffolding.
+
 Broken Links and Assets – Next.js App
 
 Summary

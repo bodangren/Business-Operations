@@ -3,23 +3,12 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 import { Award, Briefcase } from "lucide-react"
 import { lesson05Data, unit01Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[4]
-
-const assessmentQuestions = [
-  { id: 'q1', question: 'Which formula best maps AccountID to AccountName with a friendly error?', answers: ['IFERROR(XLOOKUP([@AccountID], Accounts[AccountID], Accounts[AccountName], "Missing ID"), "Missing ID")', 'VLOOKUP([@AccountID], Accounts, 2, FALSE)', 'INDEX(Accounts[AccountName], MATCH([@AccountID], Accounts[AccountID], 0))', 'IFNA(VLOOKUP([@AccountID], Accounts, 2, FALSE), "")'], explanation: 'XLOOKUP with IFERROR provides clear handling and structured references.' },
-  { id: 'q2', question: 'To detect an out-of-balance trial balance, compare:', answers: ['SUM(Transactions[Debit]) vs SUM(Transactions[Credit])', 'COUNT(Transactions[Debit]) vs COUNT(Transactions[Credit])', 'MAX(Debit) vs MAX(Credit)', 'AVERAGE(Debit) vs AVERAGE(Credit)'], explanation: 'Total debits must equal total credits in double-entry accounting.' },
-  { id: 'q3', question: 'Why use Tables and structured references?', answers: ['Formulas expand to new rows automatically', 'They calculate faster than all functions', 'They remove the need for validation', 'They hide errors more easily'], explanation: 'Tables keep ranges dynamic and reduce maintenance risk.' },
-  { id: 'q4', question: 'Which is a strong Data Validation rule for amounts?', answers: ['Allow whole numbers or decimals greater than or equal to 0', 'Allow any number', 'Block all numbers over 1000', 'Allow negative numbers to catch refunds'], explanation: 'Negative entries should be handled via proper Debit/Credit columns, not negative amounts.' },
-  { id: 'q5', question: 'Best way to switch Cash vs Accrual?', answers: ['Use a single Settings[Method] cell and IF logic', 'Duplicate sheets: one for Cash, one for Accrual', 'Manual find/replace in formulas', 'No need—methods always match'], explanation: 'Central toggles avoid breaking formulas and improve clarity.' },
-  { id: 'q6', question: 'A missing AccountID should:', answers: ['Trigger a visible warning and exclude from final totals', 'Be ignored until month-end', 'Be filled with a guessed value', 'Be hidden using white font color'], explanation: 'Never hide problems; surface them early and block silent errors.' },
-  { id: 'q7', question: 'Which SUMIFS pattern checks posting per account?', answers: ['SUMIFS(Transactions[Debit], Transactions[AccountID], [@AccountID]) - SUMIFS(Transactions[Credit], Transactions[AccountID], [@AccountID])', 'SUMIF(Transactions[Debit], [@AccountID])', 'COUNTIF(Transactions[AccountID], [@AccountID])', 'SUMPRODUCT(Transactions[Debit])'], explanation: 'Compare debit and credit totals per account; difference should be zero.' },
-  { id: 'q8', question: 'Which statement reflects investor-readiness?', answers: ['Controls are documented and tested with edge cases', 'Formulas are hidden to prevent copying', 'Totals are updated manually each week', 'Errors are suppressed to keep dashboards clean'], explanation: 'Documentation and testing build stakeholder trust.' },
-  { id: 'q9', question: 'Stale dates should be flagged by:', answers: ['Conditional formatting + comparison to TODAY()', 'Hiding the date column', 'Manually scanning for old dates', 'Rounding dates to current month'], explanation: 'Automated visual checks prevent outdated postings.' },
-  { id: 'q10', question: 'What belongs in audit notes next to a control?', answers: ['Purpose, logic reference, and expected result', 'Color name used in formatting', 'The author’s initials only', 'A motivational quote'], explanation: 'Short documentation accelerates reviews and reduces future errors.' },
-]
+const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson05"] })
 
 export default function Phase5Page() {
   return (
@@ -95,4 +84,3 @@ export default function Phase5Page() {
     </div>
   )
 }
-
