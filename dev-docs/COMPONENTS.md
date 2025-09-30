@@ -113,6 +113,19 @@
   - Answer choices were rewritten so correct and incorrect responses stay similar in length, preventing easy elimination during shuffles.
   - Tags cover themes such as `investor-confidence`, `excel-automation`, `controls`, and `dashboard-design` to support future filtering.
 
+- ✅ **Unit03 Phase-5 Question Bank** (`src/data/question-banks/unit03-phase5.ts`)
+  - Centralizes all Unit 3 Lesson 01–07 phase-5 assessment questions with metadata (`lessonId`, `lessonTitle`, `objectiveTags`).
+  - Covers three-statement storyboard integration, INDEX/MATCH techniques, dynamic formulas, scenario analysis, and investor dashboards.
+  - Answer choices balanced to prevent correct answers from being obviously longer than distractors.
+  - Exposes helpers matching Unit 1/2 pattern:
+    - `getUnit03Phase5Questions(filter)` returns raw entries filtered by lesson IDs and/or tags.
+    - `toComprehensionCheckItems(entries)` converts entries into `ComprehensionCheck`-ready props.
+    - `getUnit03Phase5ComprehensionCheckItems(filter)` combines filtering and conversion for direct use in lesson pages.
+    - `drawRandomUnit03Phase5Questions(count, filter)` returns random sample for practice-test scenarios.
+    - `drawUnit03Phase5ComprehensionCheckItems(count, filter)` combines random sampling with format conversion.
+  - Tags include: `financial-statements`, `integration`, `INDEX-MATCH`, `XLOOKUP`, `scenario-analysis`, `dashboards`, `KPIs`, `validation`, `investor-communication`, `professional-standards`.
+  - All 7 unit03 lesson phase-5 pages now import from this centralized bank instead of maintaining inline question arrays.
+
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 
 ### Unit 3 Components (Three-Statement Storyboard)

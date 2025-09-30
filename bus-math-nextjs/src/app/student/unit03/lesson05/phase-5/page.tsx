@@ -4,99 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson05Data, unit03Data, lesson05Phases } from "../lesson-data"
+import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5"
 
 const currentPhase = lesson05Phases[4]
 
-const assessmentQuestions = [
-  {
-    id: "u3a1",
-    question: "Best practice for mapping AccountID to StatementLine?",
-    answers: [
-      "XLOOKUP with if_not_found using Map Table columns",
-      "VLOOKUP with approximate match and fixed ranges",
-      "INDEX only with hard‑coded row numbers",
-      "Manual copy/paste into a summary sheet"
-    ],
-    explanation: "XLOOKUP with the if_not_found argument prevents #N/A and keeps logic readable with tables."
-  },
-  {
-    id: "u3a2",
-    question: "Which validation proves the cash flow statement ties to the balance sheet?",
-    answers: [
-      "EndingCash = BeginningCash + NetCashFlow (within tolerance)",
-      "Revenue − Expenses = Net Income",
-      "Assets = Liabilities + Equity",
-      "Gross Margin % = Revenue / COGS"
-    ],
-    explanation: "Cash reconciliation confirms the cash bridge is accurate."
-  },
-  {
-    id: "u3a3",
-    question: "What breaks first when using fixed ranges like C2:C200?",
-    answers: [
-      "New rows are excluded from totals",
-      "Formulas calculate twice as fast",
-      "XLOOKUP stops working",
-      "Tables cannot be created"
-    ],
-    explanation: "Fixed ranges don’t auto‑expand; tables do."
-  },
-  {
-    id: "u3a4",
-    question: "Cleanest way to route logic for Base/Stretch/Conservative?",
-    answers: [
-      "SWITCH(Scenario, " + '"Base",1,"Stretch",1.1,"Conservative",0.9)' + ")",
-      "Nested IF(Scenario=\"Base\",1, IF(Scenario=\"Stretch\",1.1,0.9))",
-      "Multiple copies of each formula on different sheets",
-      "Manual overrides for each month"
-    ],
-    explanation: "SWITCH is more readable and maintainable than nested IFs for discrete modes."
-  },
-  {
-    id: "u3a5",
-    question: "Where should audit flags live for investor confidence?",
-    answers: [
-      "Visible near the summary with clear labels",
-      "Hidden on a helper tab",
-      "Embedded in long formulas only",
-      "Left for manual checks later"
-    ],
-    explanation: "Flags should be obvious and close to the story you’re telling."
-  },
-  {
-    id: "u3a6",
-    question: "Which rollup pattern is correct for COGS?",
-    answers: [
-      "SUMIFS(TransactionTable[Amount], TransactionTable[StatementLine], " + '"COGS"' + ")",
-      "SUMIF(C:C, " + '"COGS"' + ", TransactionTable[Amount])",
-      "SUM(TransactionTable[Amount]=\"COGS\")",
-      "AVERAGEIFS(TransactionTable[Amount], TransactionTable[StatementLine], " + '"COGS"' + ")"
-    ],
-    explanation: "SUMIFS with table columns and exact criteria is the standard."
-  },
-  {
-    id: "u3a7",
-    question: "If Assets − (Liabilities + Equity) = 1.25, what should your model do?",
-    answers: [
-      "Surface a red validation flag with guidance",
-      "Hide the error until month‑end",
-      "Round to 0 and move on",
-      "Delete the outlier row"
-    ],
-    explanation: "Professional models never hide tie breaks; they guide fixes."
-  },
-  {
-    id: "u3a8",
-    question: "Best way to document assumptions for investors?",
-    answers: [
-      "A short, labeled block near KPIs with scenario notes",
-      "A long email chain",
-      "Hidden comments on random cells",
-      "No documentation to keep it clean"
-    ],
-    explanation: "Concise, visible documentation builds trust and speeds review."
-  }
-]
+const assessmentQuestions = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson05"] })
 
 export default function Phase5Page() {
   return (
