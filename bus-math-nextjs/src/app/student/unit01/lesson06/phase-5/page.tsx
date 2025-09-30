@@ -3,21 +3,12 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 import { Award, Briefcase } from "lucide-react"
 import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[4]
-
-const assessmentQuestions = [
-  { id: 'q1', question: 'Best practice for scenario switching by name is:', answers: ['Exact‑match XLOOKUP/INDEX‑MATCH wrapped in IFNA/IFERROR', 'Approximate match with TRUE for flexibility', 'Manually change ranges in each formula', 'Duplicate tabs for each scenario and link screenshots'], explanation: 'Exact match prevents mislabeled scenarios; IFNA/IFERROR guards against missing names.' },
-  { id: 'q2', question: 'Charts that stop expanding usually point to:', answers: ['Static A1:A20 ranges instead of Table[Column]', 'Too many colors in the chart', 'Wrong font family selected', 'Sheet protection turned on'], explanation: 'Bind charts to Table columns so ranges expand automatically.' },
-  { id: 'q3', question: 'Which is the strongest stale date check?', answers: ['IF(Settings[@AsOfDate] < TODAY()-7, "Stale AsOfDate", "Fresh")', 'Manually read the date each week', 'Hide the date so no one asks', 'Round the date to current month'], explanation: 'Automated checks surface freshness clearly and consistently.' },
-  { id: 'q4', question: 'To block invalid rates:', answers: ['Use Data Validation with 0–1 (0%–100%) and visual flags', 'Allow any number and fix later', 'Convert all rates to text', 'Hide rates from users'], explanation: 'Validation prevents bad inputs and keeps models reliable.' },
-  { id: 'q5', question: 'IF a scenario is missing, the best dashboard behavior is to:', answers: ['Show a friendly message and hold last good state', 'Show zero everywhere', 'Crash the workbook', 'Silently switch to Base'], explanation: 'Never hide problems; show clear status and maintain integrity.' },
-  { id: 'q6', question: 'Which KPI set best supports decisions?', answers: ['Margin %, Cash Days, Runway months', 'Row count, Column width, Font size', 'File size, Zoom level, Sheet order', 'Chart color, Border style, Icon set'], explanation: 'Tie KPIs to cash and sustainability for investor relevance.' },
-  { id: 'q7', question: 'A stable executive summary should:', answers: ['Update text at thresholds with plain language', 'Use only emojis for speed', 'Be a static text box', 'Explain every formula in detail'], explanation: 'Short, readable guidance at key thresholds supports fast decisions.' },
-  { id: 'q8', question: 'Investor‑ready means:', answers: ['Clarity, reliability, and auditability under time pressure', 'Hiding errors to keep charts clean', 'Many hidden tabs with manual steps', 'Only screenshots and no live model'], explanation: 'Fast, trustworthy decisions require visible controls and clean switching.' },
-]
+const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson06"] })
 
 export default function Unit01Lesson06Phase5() {
   return (
@@ -91,4 +82,3 @@ export default function Unit01Lesson06Phase5() {
     </div>
   )
 }
-

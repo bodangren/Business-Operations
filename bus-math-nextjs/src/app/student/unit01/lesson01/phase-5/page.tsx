@@ -4,68 +4,12 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 import { lesson01Data, unit01Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 5)!
-
-  const assessmentQuestions = [
-    {
-      id: 'q1',
-      question: 'Which statement best explains why Sarah\'s notebook system creates a credibility problem with potential investors?',
-      answers: [
-        'Investors cannot quickly verify the accuracy, completeness, or mathematical consistency of financial records',
-        'Notebooks look unprofessional compared to digital systems',
-        'Handwritten records take too long to read through',
-        'The notebook pages might get lost or damaged'
-      ],
-      explanation: 'Investor credibility requires verifiable, accurate, and mathematically sound financial records. A notebook system cannot provide the instant verification, error-checking, and organized presentation that investors need for due diligence.'
-    },
-    {
-      id: 'q2',
-      question: 'What is the primary business risk that Sarah faces by continuing to use her current record-keeping system as TechStart Solutions grows?',
-      answers: [
-        'She will be unable to make informed business decisions or demonstrate financial competence to stakeholders',
-        'Her handwriting will become illegible over time',
-        'She will need to buy more notebooks and pens',
-        'Her clients will expect digital invoices instead of handwritten ones'
-      ],
-      explanation: 'The core business risk is decision-making paralysis and stakeholder confidence loss. Without organized, accurate financial data, Sarah cannot make informed strategic decisions, prepare for taxes, secure funding, or demonstrate professional business management.'
-    },
-    {
-      id: 'q3',
-      question: 'How does a "self-auditing" ledger system address the fundamental challenges Sarah faces?',
-      answers: [
-        'It automatically organizes transactions, checks mathematical accuracy, and provides instant financial insights that build investor confidence',
-        'It makes Sarah\'s business look more modern and technological',
-        'It reduces the physical storage space needed for business records',
-        'It allows Sarah to work from anywhere without carrying notebooks'
-      ],
-      explanation: 'A self-auditing system solves the core problems: automatic organization eliminates chaos, mathematical checking prevents errors, and instant insights enable informed decision-making while demonstrating professional financial management to investors.'
-    },
-    {
-      id: 'q4',
-      question: 'Based on what you\'ve learned about TechStart Solutions, what would be the most convincing evidence to show an angel investor that Sarah keeps "clean books"?',
-      answers: [
-        'Instantly accessible financial reports with automatic error-checking that shows mathematical accuracy and complete transaction tracking',
-        'Neat, handwritten ledger books with color-coded sections',
-        'Digital photos of all receipts organized in folders',
-        'A simple spreadsheet with transaction dates and amounts'
-      ],
-      explanation: 'Clean books require three key elements: instant accessibility (for quick due diligence), automatic error-checking (for mathematical accuracy), and complete transaction tracking (for comprehensive financial picture). This demonstrates professional financial control systems.'
-    },
-    {
-      id: 'q5',
-      question: 'What business transaction understanding is essential for building any professional ledger system?',
-      answers: [
-        'Every transaction must be properly categorized and tracked to provide accurate financial insights and support business decision-making',
-        'All transactions should be recorded in chronological order',
-        'Digital transactions are more important than cash transactions',
-        'Revenue transactions are more important than expense transactions'
-      ],
-      explanation: 'Professional ledger systems require proper categorization and tracking of all transactions to provide accurate, comprehensive financial insights. This enables informed business decisions and builds stakeholder confidence in the financial management system.'
-    }
-  ]
+  const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] })
 
   return (
     <div className="min-h-screen bg-background">

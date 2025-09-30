@@ -8,33 +8,11 @@ import { Badge } from "@/components/ui/badge"
 import { Scale, Users, CheckCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 
 const currentPhase = lesson07Phases[4]
 
-const auditQuiz = [
-  {
-    id: 'a1',
-    question: 'A peer audit finds a chart linked to A1:C10 while the table has 200 rows. What is the correct fix?',
-    answers: [
-      'Rebind the chart series to the Table[Column] structured reference',
-      'Leave it as is to avoid breaking the chart',
-      'Paste values into the chart source',
-      'Hide the extra data rows so the range is correct'
-    ],
-    explanation: 'Charts must follow tables so visuals auto-expand as data grows.'
-  },
-  {
-    id: 'a2',
-    question: 'Why is IFNA useful with XLOOKUP in investor-ready models?',
-    answers: [
-      'It provides a clear message when an exact match isn’t found',
-      'It makes the model calculate faster',
-      'It hides all errors from investors',
-      'It replaces the need for structured references'
-    ],
-    explanation: 'IFNA/IFERROR handles failures gracefully and improves user understanding.'
-  }
-]
+const auditQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson07"] })
 
 export default function Phase5Page() {
   return (
@@ -61,7 +39,7 @@ export default function Phase5Page() {
                   <CardTitle className="text-blue-900">Mini Comprehension Check</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ComprehensionCheck questions={auditQuiz as any} title="Audit Decisions & Tradeoffs" showExplanations={true} />
+                  <ComprehensionCheck questions={auditQuestions} title="Audit Decisions & Tradeoffs" showExplanations={true} />
                 </CardContent>
               </Card>
 
@@ -89,4 +67,3 @@ export default function Phase5Page() {
     </div>
   )
 }
-

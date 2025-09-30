@@ -4,123 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckSquare, Award, Target } from 'lucide-react'
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 import { TrialBalanceSorting } from "@/components/drag-drop-exercises/TrialBalanceSorting"
 import { lesson03Data, unit01Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[4]
 
-const assessmentQuestions = [
-  {
-    id: "q1",
-    question: "According to the DEA LER system, which of the following accounts would INCREASE with a debit?",
-    answers: [
-      "Cash, Equipment, and Rent Expense",
-      "Service Revenue, Accounts Payable, and Owner's Capital",
-      "Accounts Payable, Service Revenue, and Cash",
-      "Owner's Capital, Equipment, and Service Revenue"
-    ],
-    explanation: "Cash and Equipment are Assets, and Rent Expense is an Expense. All three are part of DEA, which increases with debits."
-  },
-  {
-    id: "q2",
-    question: "Sarah pays $300 for office supplies using cash. What is the correct journal entry?",
-    answers: [
-      "Debit Supplies $300, Credit Cash $300",
-      "Debit Cash $300, Credit Supplies $300", 
-      "Debit Supplies Expense $300, Credit Supplies $300",
-      "Credit Supplies $300, Debit Accounts Payable $300"
-    ],
-    explanation: "Supplies (asset) increases with a debit, Cash (asset) decreases with a credit. Both are assets, but one increases while the other decreases."
-  },
-  {
-    id: "q3",
-    question: "Which statement about T-accounts is TRUE?",
-    answers: [
-      "Debits are always recorded on the left side, credits on the right side",
-      "Assets are always recorded on the right side of T-accounts",
-      "Credits increase all account types",
-      "The debit side shows what the business owes"
-    ],
-    explanation: "This is the fundamental structure of T-accounts: debits (Dr.) always go on the left, credits (Cr.) always go on the right, regardless of account type."
-  },
-  {
-    id: "q4",
-    question: "Sarah receives $1,500 from a client but won't start the work until next month. The correct journal entry is:",
-    answers: [
-      "Debit Cash $1,500, Credit Deferred Revenue $1,500",
-      "Debit Cash $1,500, Credit Service Revenue $1,500",
-      "Debit Accounts Receivable $1,500, Credit Service Revenue $1,500",
-      "Debit Deferred Revenue $1,500, Credit Cash $1,500"
-    ],
-    explanation: "Cash increases (debit), but since work hasn't been performed, this creates a liability (Deferred Revenue) that increases with a credit."
-  },
-  {
-    id: "q5",
-    question: "In a trial balance, if total debits equal $25,000, then total credits must equal:",
-    answers: [
-      "$25,000",
-      "More than $25,000",
-      "Less than $25,000", 
-      "It depends on the types of accounts"
-    ],
-    explanation: "The fundamental principle of double-entry bookkeeping requires that total debits always equal total credits. This is how the accounting equation stays balanced."
-  },
-  {
-    id: "q6",
-    question: "Which accounts would normally appear in the CREDIT column of a trial balance?",
-    answers: [
-      "Accounts Payable, Service Revenue, and Owner's Capital",
-      "Cash, Accounts Receivable, and Equipment",
-      "Rent Expense, Supplies, and Advertising Expense",
-      "Cash, Service Revenue, and Accounts Payable"
-    ],
-    explanation: "These are all LER accounts (Liabilities, Equity, Revenue) which have normal credit balances and appear in the credit column of a trial balance."
-  },
-  {
-    id: "q7",
-    question: "Sarah buys $2,000 of equipment, paying $800 cash and signing a note for the balance. This transaction affects:",
-    answers: [
-      "3 accounts: Equipment (+$2,000 debit), Cash (-$800 credit), Notes Payable (+$1,200 credit)",
-      "2 accounts: Equipment (+$2,000 debit), Cash (-$2,000 credit)",
-      "2 accounts: Equipment (+$2,000 debit), Notes Payable (+$2,000 credit)",
-      "4 accounts: Equipment, Cash, Notes Payable, and Accounts Payable"
-    ],
-    explanation: "Equipment increases by $2,000 (debit), Cash decreases by $800 (credit), and Notes Payable increases by $1,200 (credit). Total debits ($2,000) = Total credits ($800 + $1,200)."
-  },
-  {
-    id: "q8",
-    question: "Why is the rule 'debits must equal credits' essential for Sarah's self-auditing ledger?",
-    answers: [
-      "It ensures the accounting equation stays balanced and errors are immediately detected",
-      "It follows GAAP accounting standards required by law",
-      "It makes the ledger easier to read and understand",
-      "It reduces the amount of paperwork needed"
-    ],
-    explanation: "When debits equal credits, the accounting equation (Assets = Liabilities + Equity) automatically stays balanced. Any imbalance immediately signals an error, making the ledger self-auditing."
-  },
-  {
-    id: "q9",
-    question: "Which scenario represents the correct application of debit and credit rules?",
-    answers: [
-      "Paying rent decreases Cash (credit) and increases Rent Expense (debit)",
-      "Earning revenue increases Cash (credit) and increases Service Revenue (debit)",
-      "Buying supplies increases Supplies (credit) and decreases Cash (debit)",
-      "Taking a loan increases Cash (debit) and decreases Notes Payable (credit)"
-    ],
-    explanation: "Rent Expense (expense) increases with debit, Cash (asset) decreases with credit. This follows DEA LER rules correctly."
-  },
-  {
-    id: "q10",
-    question: "What makes Sarah's T-account system superior to her old notebook method?",
-    answers: [
-      "It provides systematic organization, automatic balance verification, and professional credibility",
-      "It requires less time to maintain than notebooks",
-      "It uses fewer pages than traditional record-keeping",
-      "It eliminates the need for detailed transaction descriptions"
-    ],
-    explanation: "T-accounts create systematic organization (left/right structure), enable automatic error detection (debits = credits), and demonstrate professional accounting knowledge to investors and lenders."
-  }
-]
+const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson03"] })
 
 export default function Phase5Page() {
   return (

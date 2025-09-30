@@ -3,125 +3,15 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 import { CheckCircle, Award, TrendingUp, Users } from "lucide-react"
 import { lesson04Data, unit01Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[4]
 
-export default function Phase5Page() {
+const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson04"] })
 
-  const assessmentQuestions = [
-    {
-      id: "q1",
-      question: "In a professional financial model, why do structured references like 'LedgerTable[Account]' provide better investor confidence than cell references like 'A1:A50'?",
-      answers: [
-        "They automatically expand with new data and are easier to audit and understand",
-        "They make the spreadsheet load faster and use less memory",
-        "They are required by GAAP accounting standards",
-        "They prevent other people from editing the spreadsheet"
-      ],
-      explanation: "Structured references expand automatically, are self-documenting (easier to understand), and reduce errors, all of which increase investor confidence in the financial model's reliability and scalability."
-    },
-    {
-      id: "q2", 
-      question: "Sarah's investor asks: 'How much revenue did you generate from clients whose names contain the word Tech?' Which Excel formula would answer this instantly?",
-      answers: [
-        "=SUMIF(LedgerTable[Description], \"*Tech*\", LedgerTable[Credit])",
-        "=SUMIF(LedgerTable[Account], \"*Tech*\", LedgerTable[Debit])",
-        "=COUNTIF(LedgerTable[Description], \"Tech\")",
-        "=VLOOKUP(\"Tech\", LedgerTable, 3, FALSE)"
-      ],
-      explanation: "SUMIF with wildcard criteria (*Tech*) searches descriptions for partial matches and sums corresponding credit amounts, which represent revenue in the accounting equation."
-    },
-    {
-      id: "q3",
-      question: "What is the most critical business risk that Excel Tables and SUMIF formulas solve for growing startups like TechStart Solutions?",
-      answers: [
-        "Manual calculation errors that undermine investor confidence and business decisions",
-        "Compliance with complex government tax regulations",
-        "The inability to create colorful charts and presentations", 
-        "Difficulty accessing data from multiple computer locations"
-      ],
-      explanation: "Manual calculation errors can lead to incorrect business decisions, inaccurate investor reports, and loss of credibility. Excel automation eliminates this critical risk."
-    },
-    {
-      id: "q4",
-      question: "A CFO uses this SUMIF formula: =SUMIF(LedgerTable[Account], \"Accounts Receivable\", LedgerTable[Debit]) - SUMIF(LedgerTable[Account], \"Accounts Receivable\", LedgerTable[Credit]). What business insight does this provide?",
-      answers: [
-        "How much money customers currently owe the company",
-        "How much the company owes to suppliers",
-        "The company's total monthly revenue",
-        "The company's cash balance in the bank"
-      ],
-      explanation: "This formula calculates the net balance of Accounts Receivable (an asset account that increases with debits), showing the total amount customers owe to the company."
-    },
-    {
-      id: "q5",
-      question: "In a job interview, you're asked to explain why SUMIF formulas are superior to manual calculations for business reporting. What's the strongest professional argument?",
-      answers: [
-        "They provide mathematical precision, scale with business growth, and maintain audit trails",
-        "They are faster to type than using a calculator",
-        "They make spreadsheets look more professional with formulas",
-        "They are easier to understand than basic arithmetic"
-      ],
-      explanation: "The combination of precision (no human error), scalability (handles growth), and audit trails (formulas show exact logic) makes SUMIF formulas essential for professional business operations."
-    },
-    {
-      id: "q6",
-      question: "Sarah's business partner accidentally enters a $5,000 expense as revenue. If Sarah's Excel Table uses proper SUMIF formulas, what will happen to her trial balance?",
-      answers: [
-        "The trial balance will be out of balance, alerting her to the error",
-        "The trial balance will still balance, but the amounts will be wrong",
-        "The SUMIF formulas will automatically correct the mistake",
-        "Nothing will change because Excel ignores data entry errors"
-      ],
-      explanation: "If an expense is recorded as revenue (credit instead of debit), the trial balance will be out of balance because total debits won't equal total credits, immediately alerting to the error."
-    },
-    {
-      id: "q7",
-      question: "Which scenario best demonstrates why Excel Tables are essential for scaling a business beyond startup phase?",
-      answers: [
-        "Adding 100 new transactions automatically updates all SUMIF calculations without changing formulas",
-        "Excel Tables prevent competitors from stealing business data",
-        "The colors and formatting make presentations more attractive",
-        "Excel Tables compress file sizes to save computer storage space"
-      ],
-      explanation: "Excel Tables automatically expand to include new data, and structured references ensure all SUMIF formulas include new transactions without manual formula updates - critical for business growth."
-    },
-    {
-      id: "q8", 
-      question: "An angel investor reviews Sarah's ledger and says 'I can see you understand systematic financial controls.' What Excel features specifically demonstrated this?",
-      answers: [
-        "Excel Tables with SUMIF formulas creating automated, error-checked calculations",
-        "Using multiple colors and fonts throughout the spreadsheet",
-        "Having separate worksheets for different types of data",
-        "Including the company logo in the header of each sheet"
-      ],
-      explanation: "Systematic financial controls involve automated, repeatable processes with built-in error checking. Excel Tables with SUMIF formulas demonstrate these professional standards."
-    },
-    {
-      id: "q9",
-      question: "In your future career, which profession would most directly benefit from mastering Excel Tables and SUMIF functions?",
-      answers: [
-        "Financial Analyst at an investment firm analyzing portfolio companies",
-        "Graphic designer creating marketing materials for social media",
-        "Software programmer writing mobile app code",
-        "Restaurant server taking orders and serving customers"
-      ],
-      explanation: "Financial analysts regularly work with complex datasets, need automated calculations, and must provide accurate reports to stakeholders - directly matching Excel Tables and SUMIF applications."
-    },
-    {
-      id: "q10",
-      question: "Sarah's Excel system calculates that she has -$500 in her Accounts Payable account (showing as negative when it should be positive). What does this indicate about her business situation?",
-      answers: [
-        "She has overpaid her suppliers and they owe her money",
-        "She has underpaid her suppliers and owes them more money",
-        "Her cash account balance is negative",
-        "There is an error in her SUMIF formula syntax"
-      ],
-      explanation: "Accounts Payable is a liability account with a normal credit balance (positive). A negative balance means debits exceed credits, indicating overpayments to suppliers who now owe her money."
-    }
-  ]
+export default function Phase5Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
