@@ -8,33 +8,13 @@ import { Badge } from "@/components/ui/badge"
 import { Scale, Users } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { getUnit07Phase5ComprehensionCheckItems } from "@/data/question-banks/unit07-phase5"
 
 const currentPhase = lesson07Phases[4]
 
-const auditMiniQuiz = [
-  {
-    id: "u7l7-audit-1",
-    question: "A chart stops updating when new rows are added. Most likely cause?",
-    answers: [
-      "The chart references a static range instead of a Table",
-      "Too many colors in the chart",
-      "The sheet is protected",
-      "The file name changed"
-    ],
-    explanation: "Charts must bind to structured references (Tables) to auto‑expand."
-  },
-  {
-    id: "u7l7-audit-2",
-    question: "Which message is clearer when a SKU lookup fails?",
-    answers: [
-      "IFNA returns 'SKU not found — check name'",
-      "Leave #N/A visible so users can guess",
-      "Replace with zero silently",
-      "Hide the entire row"
-    ],
-    explanation: "Clear, specific error messages help users fix issues and trust the model."
-  }
-]
+const auditMiniQuiz = getUnit07Phase5ComprehensionCheckItems({ lessonIds: ["lesson07"] })
+
+
 
 export default function Phase5Page() {
   return (
@@ -67,7 +47,7 @@ export default function Phase5Page() {
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={auditMiniQuiz as any}
+                    questions={auditMiniQuiz}
                     title="QA & Audit Decisions"
                     description="Common tradeoffs and how to resolve them"
                     showExplanations={true}
@@ -100,4 +80,3 @@ export default function Phase5Page() {
     </div>
   )
 }
-

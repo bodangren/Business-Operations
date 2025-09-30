@@ -4,122 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Trophy, Target, AlertTriangle } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
+import { getUnit07Phase5ComprehensionCheckItems } from "@/data/question-banks/unit07-phase5";
 import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data";
 
 const currentPhase = lesson02Phases[4]; // Assessment phase
 
-const assessmentQuestions = [
-  {
-    id: "technical-1",
-    question: "A company purchases equipment for $60,000 with a salvage value of $6,000 and useful life of 9 years. What is the annual straight-line depreciation expense?",
-    answers: [
-      "$6,000 per year",
-      "$6,667 per year", 
-      "$5,400 per year",
-      "$7,333 per year"
-    ],
-    explanation: "Using SLN formula: ($60,000 - $6,000) ÷ 9 years = $54,000 ÷ 9 = $6,000 per year. The depreciable base is cost minus salvage value."
-  },
-  {
-    id: "excel-1",
-    question: "Which Excel formula would correctly calculate the third year depreciation for a $45,000 asset with $3,000 salvage value and 6-year life using Double-Declining Balance?",
-    answers: [
-      "=DDB(45000,3000,6,3)",
-      "=DDB(45000,3000,3,6)",
-      "=SLN(45000,3000,6)*2",
-      "=DDB(42000,3000,6,3)"
-    ],
-    explanation: "The DDB function syntax is =DDB(cost, salvage, life, period). The period parameter (3) specifies we want the third year's depreciation."
-  },
-  {
-    id: "business-1",
-    question: "Why might a rapidly growing technology company prefer Double-Declining Balance over Straight-Line depreciation for computer equipment?",
-    answers: [
-      "DDB provides larger tax deductions in early years, improving cash flow for reinvestment in growth",
-      "DDB spreads costs evenly, making budgeting more predictable for new companies",
-      "DDB increases the asset's book value over time, improving the balance sheet",
-      "DDB is required by law for all technology equipment purchases"
-    ],
-    explanation: "DDB accelerates depreciation, creating larger tax deductions early when growing companies most need cash flow for expansion. It also better matches the rapid obsolescence of technology assets."
-  },
-  {
-    id: "comparison-1", 
-    question: "For an asset costing $80,000 with 4-year life and $8,000 salvage value, how much MORE depreciation would DDB provide in Year 1 compared to SLN?",
-    answers: [
-      "$22,000 more with DDB",
-      "$18,000 more with DDB", 
-      "$15,000 more with DDB",
-      "$12,000 more with DDB"
-    ],
-    explanation: "SLN Year 1: ($80,000-$8,000)÷4 = $18,000. DDB Year 1: $80,000×(2÷4) = $40,000. Difference: $40,000-$18,000 = $22,000 more with DDB."
-  },
-  {
-    id: "strategic-1",
-    question: "A manufacturing company with variable seasonal production is considering different depreciation methods for new equipment. Which combination would be most appropriate?",
-    answers: [
-      "Consider Units of Production method to match depreciation with actual equipment usage patterns",
-      "Always use Straight-Line method because manufacturing requires predictable expenses",
-      "Use DDB method to maximize early tax benefits regardless of usage patterns",
-      "Switch between methods each year based on production levels"
-    ],
-    explanation: "Units of Production method matches depreciation expense with actual asset usage, making it ideal for equipment with variable production patterns. This provides the most accurate cost allocation."
-  },
-  {
-    id: "financial-1",
-    question: "How does the choice between SLN and DDB depreciation methods affect a company's financial statements in the first year?",
-    answers: [
-      "DDB shows lower net income and lower asset book value compared to SLN",
-      "DDB shows higher net income and higher asset book value compared to SLN",
-      "Both methods show identical financial statement impacts in all periods",
-      "DDB affects only the cash flow statement, not the income statement or balance sheet"
-    ],
-    explanation: "DDB creates higher depreciation expense in early years, reducing net income. Higher accumulated depreciation also reduces the asset's book value on the balance sheet compared to SLN."
-  },
-  {
-    id: "investor-1",
-    question: "When presenting to potential investors, why might a company's depreciation method choice matter?",
-    answers: [
-      "It demonstrates management's understanding of tax strategy and financial optimization",
-      "Investors only care about the total amount of depreciation, not the timing",
-      "Depreciation method choice has no impact on investor decision-making",
-      "All companies are required to use the same depreciation method for comparability"
-    ],
-    explanation: "Sophisticated investors analyze depreciation choices as indicators of management's financial acumen and strategic thinking about tax optimization and cash flow management."
-  },
-  {
-    id: "cash-flow-1",
-    question: "A startup company has $100,000 equipment with 5-year life and $10,000 salvage value. If their tax rate is 30%, how much additional cash will DDB save them in taxes during Year 1 compared to SLN?",
-    answers: [
-      "$9,000 more cash from tax savings",
-      "$6,000 more cash from tax savings",
-      "$12,000 more cash from tax savings", 
-      "$3,000 more cash from tax savings"
-    ],
-    explanation: "SLN Year 1: $18,000 depreciation. DDB Year 1: $40,000 depreciation. Extra depreciation: $22,000. Tax savings: $22,000 × 30% = $6,600. (Closest answer is $6,000)"
-  },
-  {
-    id: "professional-1",
-    question: "In a professional audit or business valuation context, what is the primary advantage of consistent depreciation method application?",
-    answers: [
-      "It provides comparability across periods and supports reliable financial analysis",
-      "It maximizes the company's reported profits in all accounting periods", 
-      "It minimizes the work required by accountants and auditors",
-      "It automatically optimizes tax benefits without additional planning"
-    ],
-    explanation: "Consistency in accounting methods is a fundamental principle that ensures financial statements can be compared across periods, enabling meaningful trend analysis and reliable business valuations."
-  },
-  {
-    id: "application-1",
-    question: "Sarah at TechStart Solutions is analyzing her $18,000 equipment purchase. Given that she wants to maximize early cash flow for business growth while maintaining investor confidence, which approach should she take?",
-    answers: [
-      "Use DDB for tax purposes and clearly explain the strategic rationale to investors",
-      "Use SLN method exclusively to show consistent, conservative financial management",
-      "Switch between methods quarterly based on current cash flow needs",
-      "Expense the full $18,000 immediately to minimize complexity"
-    ],
-    explanation: "Using DDB for legitimate tax optimization while transparently explaining the strategy demonstrates sophisticated financial management to investors. The key is clear communication of the business rationale."
-  }
-];
+const assessmentQuestions = getUnit07Phase5ComprehensionCheckItems({ lessonIds: ["lesson02"] });
 
 export default function Unit07Lesson02Phase5() {
   return (

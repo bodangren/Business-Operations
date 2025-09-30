@@ -143,6 +143,12 @@
   - Emphasizes Power Query hygiene, markup vs. margin strategy, CVP modeling, Goal Seek levers, automation/data tables, scenario dashboards, and investor-readiness QA.
   - Provides helper utilities following the established pattern (`getUnit06Phase5Questions`, `drawRandomUnit06Phase5Questions`, `getUnit06Phase5ComprehensionCheckItems`, `drawUnit06Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`).
   - Phase-5 lesson pages now source questions from the shared bank (stable, randomizable draws) to prep for the future Unit 6 practice-test route.
+- ✅ **Unit07 Phase-5 Question Bank** (`src/data/question-banks/unit07-phase5.ts`)
+  - Centralizes Unit 7 Lesson 01–07 assessment items with metadata, balanced answer text, and Sarah Chen's TechStart narrative alignment.
+  - Covers depreciation strategy, FIFO/LIFO trade-offs, weighted-average automation, scenario switching, investor-ready dashboards, validation controls, and QA/audit standards from the production studio lesson.
+  - Provides the standard helper set (`getUnit07Phase5Questions`, `drawRandomUnit07Phase5Questions`, `getUnit07Phase5ComprehensionCheckItems`, `drawUnit07Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`) for lesson consumption and future practice-test draws.
+  - Objective tags include: `matching-principle`, `method-selection`, `inventory-strategy`, `cash-flow`, `depreciation-calculation`, `excel-functions`, `validation-controls`, `investor-readiness`, `scenario-planning`, `kpi-storytelling`, `dashboard-design`, `data-integrity`, `error-handling`.
+  - Student pages at `src/app/student/unit07/lesson0{1-7}/phase-5/page.tsx` now import from the shared bank rather than maintaining inline arrays, aligning Unit 7 with the established Units 1–6 pattern.
 
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 

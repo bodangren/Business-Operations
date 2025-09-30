@@ -4,79 +4,13 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
+import { getUnit07Phase5ComprehensionCheckItems } from "@/data/question-banks/unit07-phase5"
 import { lesson01Data, unit07Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 5)!
 
-  const comprehensiveAssessmentQuestions = [
-    {
-      id: 'q1',
-      question: 'What is the primary reason businesses depreciate long-term assets rather than expensing them immediately?',
-      answers: [
-        'To match the cost of assets with the income they help generate over multiple years',
-        'To reduce the current year\'s tax liability as much as possible',
-        'To make the balance sheet look more impressive to investors',
-        'To comply with government regulations about asset purchases'
-      ],
-      explanation: 'The Matching Principle requires businesses to match the cost of assets with the income they help generate over time. Since long-term assets help generate income for multiple years, their cost should be spread over those years through depreciation.'
-    },
-    {
-      id: 'q2',
-      question: 'A growing startup needs to preserve cash for expansion while also showing strong financial performance to potential investors. Which combination would best serve both goals?',
-      answers: [
-        'Use DDB depreciation for tax savings and FIFO inventory to show higher profits, then clearly communicate the strategy to investors',
-        'Use Straight-Line depreciation and LIFO inventory to show consistent, conservative financial management',
-        'Switch between methods quarterly based on cash flow needs and investor meetings',
-        'Delay major asset purchases and inventory buildups until after securing investment'
-      ],
-      explanation: 'DDB provides early tax savings for cash preservation, while FIFO shows higher profits for investor appeal. The key is transparent communication about the strategic rationale behind method choices.'
-    },
-    {
-      id: 'q3',
-      question: 'In a period of rapidly rising inventory costs, which statement best describes the strategic implications of LIFO vs FIFO?',
-      answers: [
-        'LIFO provides better cash flow through tax savings but may signal lower profitability to investors, while FIFO shows higher profits but results in higher tax payments',
-        'LIFO and FIFO will produce identical results since they both track the same physical inventory',
-        'FIFO is always better because it matches the physical flow of goods in most businesses',
-        'LIFO should only be used by manufacturing companies, while FIFO is better for retail businesses'
-      ],
-      explanation: 'In rising cost environments, LIFO assigns higher (newer) costs to goods sold, reducing profits and taxes but preserving cash. FIFO assigns lower (older) costs to goods sold, showing higher profits but requiring higher tax payments.'
-    },
-    {
-      id: 'q4',
-      question: 'Sarah\'s TechStart Solutions spent $18,000 on office equipment. If she expects the equipment to last 5 years with a $2,000 salvage value, what would be the annual Straight-Line depreciation?',
-      answers: [
-        '$3,200 per year',
-        '$3,600 per year',
-        '$2,800 per year',
-        '$4,000 per year'
-      ],
-      explanation: 'Using the SLN formula: (Cost - Salvage Value) ÷ Useful Life = ($18,000 - $2,000) ÷ 5 years = $16,000 ÷ 5 = $3,200 per year.'
-    },
-    {
-      id: 'q5',
-      question: 'Why would a company facing serious financial difficulties be especially motivated to choose LIFO during periods of inflation?',
-      answers: [
-        'LIFO reduces taxable income, preserving cash that would otherwise go to taxes during a cash flow crisis',
-        'LIFO makes inventory appear more valuable on the balance sheet, improving financial ratios',
-        'LIFO is easier to calculate and requires less accounting expertise during difficult times',
-        'LIFO is required by law for companies experiencing financial difficulties'
-      ],
-      explanation: 'Companies in financial distress need to preserve every dollar of cash. LIFO\'s higher Cost of Goods Sold in inflationary periods reduces taxable income and tax payments, keeping more cash in the business.'
-    },
-    {
-      id: 'q6',
-      question: 'What is the key strategic question that should guide a business\'s choice of depreciation and inventory methods?',
-      answers: [
-        'Which methods best align with the company\'s cash-flow needs and tax strategy given their specific business goals?',
-        'Which methods are most commonly used by other businesses in the same industry?',
-        'Which methods will result in the highest reported profits on financial statements?',
-        'Which methods require the least amount of record-keeping and administrative work?'
-      ],
-      explanation: 'The strategic question is about alignment with business goals. Different companies have different priorities (cash flow, investor appeal, tax minimization, predictability), and method choices should support those specific strategic objectives.'
-    }
-  ]
+  const assessmentQuestions = getUnit07Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] })
 
   const masteryConcepts = [
     {
@@ -175,7 +109,7 @@ export default function Phase5Page() {
                 Demonstrate your mastery by analyzing these comprehensive business scenarios. Consider the strategic implications and business context for each situation:
               </p>
               <ComprehensionCheck 
-                questions={comprehensiveAssessmentQuestions} 
+                questions={assessmentQuestions} 
                 allowRetry={false}
                 title="Asset & Inventory Strategy Assessment"
                 description="Apply your strategic analysis skills to these real-world business scenarios"
