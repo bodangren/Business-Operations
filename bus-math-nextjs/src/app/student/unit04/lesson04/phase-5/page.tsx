@@ -7,99 +7,10 @@ import { BarChart } from "@/components/charts/BarChart"
 import { LineChart } from "@/components/charts/LineChart"
 import { Award, TrendingUp, Target } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
+import { getUnit04Phase5ComprehensionCheckItems } from "@/data/question-banks/unit04-phase5"
 
 const currentPhase = lesson04Phases[4]
-
-const assessmentQuestions = [
-  {
-    id: "assess-q1",
-    question: "Looking at this chart showing café revenue by hour, what business decision should the manager make about staffing?",
-    answers: [
-      "Schedule 2 additional staff from 10 AM - 12 PM to handle the $4,200 revenue peak",
-      "Reduce staff during all hours since revenue is declining after noon",
-      "Keep staffing constant throughout the day regardless of revenue patterns",
-      "Only schedule extra staff during the 8 AM opening hour"
-    ],
-    explanation: "The chart shows peak revenue of $4,200 between 10 AM - 12 PM. This high-revenue period requires adequate staffing to maintain service quality and maximize sales potential. Strategic staffing during peaks while reducing during valleys optimizes labor costs."
-  },
-  {
-    id: "assess-q2",
-    question: "Sarah creates a pie chart showing that beverages represent 45% of total café revenue, food 35%, and desserts 20%. What inventory strategy should this drive?",
-    answers: [
-      "Prioritize beverage inventory and supplier relationships since they drive nearly half of revenue",
-      "Focus equally on all categories since they all contribute to revenue",
-      "Eliminate desserts since they have the lowest percentage",
-      "Order the same quantity of all items regardless of revenue contribution"
-    ],
-    explanation: "Since beverages generate 45% of revenue, they should receive priority in inventory planning, supplier negotiations, and quality control. The highest revenue contributors deserve the most attention to ensure availability and quality."
-  },
-  {
-    id: "assess-q3",
-    question: "In Excel, Sarah adds a linear trendline to her scatter plot showing advertising spend vs. weekly sales. The R-squared value is 0.82. What does this tell her about the relationship?",
-    answers: [
-      "Strong relationship (82% of sales variation explained by advertising) - reliable for forecasting",
-      "Weak relationship (only 18% correlation) - advertising doesn't affect sales",
-      "Perfect relationship - advertising guarantees sales increases",
-      "No relationship exists between advertising and sales"
-    ],
-    explanation: "R-squared of 0.82 means 82% of sales variation can be explained by advertising spend, indicating a strong relationship. Values above 0.7 are generally considered reliable for business forecasting and decision-making."
-  },
-  {
-    id: "assess-q4",
-    question: "The café manager looks at Sarah's line chart and says, 'I see customer traffic drops 30% at 2 PM every day. Should we close early?' How should Sarah respond using data visualization principles?",
-    answers: [
-      "Create additional charts showing revenue per customer and operational costs to provide complete context",
-      "Agree immediately since the chart shows declining traffic",
-      "Dismiss the manager's concern since one chart shows the full picture",
-      "Recommend closing based solely on traffic patterns"
-    ],
-    explanation: "Good data visualization tells complete stories. Traffic decline alone doesn't justify closing - Sarah needs to analyze revenue per customer, fixed costs, and profitability during low-traffic periods to make informed recommendations."
-  },
-  {
-    id: "assess-q5",
-    question: "Sarah builds a dashboard combining 4 charts: hourly sales, product mix, seasonal trends, and cost breakdown. What makes this more valuable than individual charts?",
-    answers: [
-      "Reveals connections between metrics and tells a complete business story for strategic decision-making",
-      "Looks more impressive to clients but provides the same information",
-      "Uses more advanced Excel features but offers no additional business value",
-      "Combines unrelated data that confuses rather than clarifies business insights"
-    ],
-    explanation: "Dashboards reveal relationships between metrics that individual charts miss. For example, seasonal trends might explain product mix changes, while cost breakdown connects to pricing strategy. Integration creates strategic business intelligence."
-  },
-  {
-    id: "assess-q6",
-    question: "When creating charts for business executives, which formatting approach demonstrates professional data visualization standards?",
-    answers: [
-      "Clear titles stating business insights, professional colors, minimal gridlines, and data labels only where they add value",
-      "Bright colors, 3D effects, and decorative elements to make charts more visually appealing",
-      "Maximum detail with every possible data label and chart element displayed",
-      "Generic titles and default Excel formatting to save time"
-    ],
-    explanation: "Professional charts prioritize clarity and insight over decoration. Clear titles, appropriate colors, strategic use of labels, and minimal visual clutter help busy executives quickly understand and act on data insights."
-  },
-  {
-    id: "assess-q7",
-    question: "Sarah discovers that her café charts reveal a 15% revenue increase following weather-related advertising campaigns. What Excel feature would best help her forecast this relationship for future campaigns?",
-    answers: [
-      "Scatter plot with linear trendline showing campaign spend vs. revenue increase",
-      "Pie chart showing proportion of revenue from different advertising types",
-      "Column chart comparing campaign costs across different months",
-      "Line chart showing general revenue trends over time"
-    ],
-    explanation: "Scatter plots with trendlines are specifically designed to show relationships between two variables (advertising spend and revenue) and provide forecasting capability through the trendline equation and R-squared value."
-  },
-  {
-    id: "assess-q8",
-    question: "The café wants to reduce food waste from 8% to 3%. Which combination of Excel charts would best support Sarah's waste reduction strategy?",
-    answers: [
-      "Line chart for daily waste trends + Column chart comparing waste by menu item + Pie chart showing waste cost breakdown",
-      "Single pie chart showing current waste percentages by category",
-      "Line chart showing only total monthly waste trends",
-      "Column chart comparing waste to industry averages"
-    ],
-    explanation: "Waste reduction requires multi-dimensional analysis: trends over time (line chart), item-specific patterns (column chart), and cost impact (pie chart). This combination reveals when, what, and how much waste occurs, enabling targeted interventions."
-  }
-]
+const assessmentQuestions = getUnit04Phase5ComprehensionCheckItems({ lessonIds: ["lesson04"] })
 
 // Sample data for demonstration charts
 const hourlyRevenueData = [

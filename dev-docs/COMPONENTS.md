@@ -126,6 +126,19 @@
   - Tags include: `financial-statements`, `integration`, `INDEX-MATCH`, `XLOOKUP`, `scenario-analysis`, `dashboards`, `KPIs`, `validation`, `investor-communication`, `professional-standards`.
   - All 7 unit03 lesson phase-5 pages now import from this centralized bank instead of maintaining inline question arrays.
 
+- ✅ **Unit04 Phase-5 Question Bank** (`src/data/question-banks/unit04-phase5.ts`)
+  - Centralizes all Unit 4 Lesson 01–07 phase-5 assessment questions with metadata (`lessonId`, `lessonTitle`, `objectiveTags`).
+  - Covers data-driven café analytics: descriptive statistics, data cleaning (TRIM, Text-to-Columns), z-score outlier detection, Excel charts, FORECAST.LINEAR, scenario modeling, and investor-ready dashboards.
+  - Answer choices balanced so correct answers aren't noticeably longer than distractors (following Unit 1-3 pattern).
+  - Exposes helpers matching Unit 1-3 pattern:
+    - `getUnit04Phase5Questions(filter)` returns raw entries filtered by lesson IDs and/or tags.
+    - `toComprehensionCheckItems(entries)` converts entries into `ComprehensionCheck`-ready props.
+    - `getUnit04Phase5ComprehensionCheckItems(filter)` combines filtering and conversion for direct use in lesson pages.
+    - `drawRandomUnit04Phase5Questions(count, filter)` returns random sample for practice-test scenarios.
+    - `drawUnit04Phase5ComprehensionCheckItems(count, filter)` combines random sampling with format conversion.
+  - Tags include: `descriptive-statistics`, `data-analysis-foundations`, `data-cleaning`, `text-functions`, `excel-automation`, `z-scores`, `outlier-detection`, `excel-analysis-toolpak`, `chart-interpretation`, `trendlines`, `r-squared`, `forecasting`, `forecast-linear`, `scenario-modeling`, `dashboard-design`, `xlookup`, `error-handling`, `investor-readiness`, `professional-standards`.
+  - All 7 unit04 lesson phase-5 pages now import from this centralized bank instead of maintaining inline question arrays.
+
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 
 ### Unit 3 Components (Three-Statement Storyboard)
