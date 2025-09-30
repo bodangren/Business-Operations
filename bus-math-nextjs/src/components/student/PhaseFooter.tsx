@@ -13,7 +13,7 @@ import {
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 
-interface LessonPhase {
+export interface LessonPhase {
   id: string
   phaseName: "Hook" | "Introduction" | "Guided Practice" | "Independent Practice" | "Assessment" | "Closing"
   sequence: number
@@ -34,6 +34,15 @@ interface PhaseFooterProps {
   }
   phase: LessonPhase
   phases: LessonPhase[]
+  navigationOverrides?: PhaseFooterNavigationOverrides
+}
+
+interface PhaseFooterNavigationOverrides {
+  lessonHref?: string
+  lessonOverviewLabel?: string
+  backToLessonLabel?: string
+  completeLessonLabel?: string
+  phaseHrefBuilder?: (phase: LessonPhase) => string
 }
 
 const phaseIcons = {
@@ -45,9 +54,9 @@ const phaseIcons = {
   "Closing": Lightbulb
 }
 
-export function PhaseFooter({ lesson, unit, phase, phases }: PhaseFooterProps) {
+export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }: PhaseFooterProps) {
   // Sort phases for navigation
-  const sortedPhases = phases.sort((a, b) => a.sequence - b.sequence)
+  const sortedPhases = [...phases].sort((a, b) => a.sequence - b.sequence)
   const currentIndex = sortedPhases.findIndex(p => p.id === phase.id)
   const prevPhase = currentIndex > 0 ? sortedPhases[currentIndex - 1] : null
   const nextPhase = currentIndex < sortedPhases.length - 1 ? sortedPhases[currentIndex + 1] : null
@@ -55,6 +64,12 @@ export function PhaseFooter({ lesson, unit, phase, phases }: PhaseFooterProps) {
   // Format lesson and unit numbers with leading zeros
   const formattedLessonNumber = lesson.sequence.toString().padStart(2, '0')
   const formattedUnitNumber = unit.sequence.toString().padStart(2, '0')
+  const defaultLessonHref = `/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}`
+  const lessonHref = navigationOverrides?.lessonHref ?? defaultLessonHref
+  const phaseHrefBuilder = navigationOverrides?.phaseHrefBuilder ?? ((phase: LessonPhase) => `${defaultLessonHref}/phase-${phase.sequence}`)
+  const lessonOverviewLabel = navigationOverrides?.lessonOverviewLabel ?? "Lesson Overview"
+  const backToLessonLabel = navigationOverrides?.backToLessonLabel ?? `Back to ${lessonOverviewLabel}`
+  const completeLessonLabel = navigationOverrides?.completeLessonLabel ?? "Complete Lesson"
   
   return (
     <div className="max-w-4xl mx-auto space-y-6 mt-8">
@@ -65,16 +80,16 @@ export function PhaseFooter({ lesson, unit, phase, phases }: PhaseFooterProps) {
         <div className="flex items-center gap-2">
           {prevPhase ? (
             <Button variant="outline" asChild>
-              <Link href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}/phase-${prevPhase.sequence}`}>
+              <Link href={phaseHrefBuilder(prevPhase)}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Previous: {prevPhase.phaseName}
               </Link>
             </Button>
           ) : (
             <Button variant="outline" asChild>
-              <Link href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}`}>
+              <Link href={lessonHref}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Lesson Overview
+                {backToLessonLabel}
               </Link>
             </Button>
           )}
@@ -82,22 +97,22 @@ export function PhaseFooter({ lesson, unit, phase, phases }: PhaseFooterProps) {
 
         <div className="flex items-center gap-2">
           <Button variant="outline" asChild>
-            <Link href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}`}>
-              Lesson Overview
+            <Link href={lessonHref}>
+              {lessonOverviewLabel}
             </Link>
           </Button>
           
           {nextPhase ? (
             <Button asChild>
-              <Link href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}/phase-${nextPhase.sequence}`}>
+              <Link href={phaseHrefBuilder(nextPhase)}>
                 Next: {nextPhase.phaseName}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           ) : (
             <Button asChild>
-              <Link href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}`}>
-                Complete Lesson
+              <Link href={lessonHref}>
+                {completeLessonLabel}
                 <CheckCircle2 className="h-4 w-4 ml-2" />
               </Link>
             </Button>
@@ -122,7 +137,7 @@ export function PhaseFooter({ lesson, unit, phase, phases }: PhaseFooterProps) {
               return (
                 <Link 
                   key={p.id}
-                  href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}/phase-${p.sequence}`}
+                  href={phaseHrefBuilder(p)}
                   className={`flex items-center gap-2 p-2 rounded-md text-xs transition-colors ${
                     isCurrent 
                       ? 'bg-primary text-primary-foreground' 
