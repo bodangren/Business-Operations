@@ -4,124 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, ClipboardCheck, TrendingUp, Briefcase } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
+import { getUnit06Phase5ComprehensionCheckItems } from "@/data/question-banks/unit06-phase5";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
 const currentPhase = lesson04Phases[4]; // Assessment phase
 
-const assessmentQuestions = [
-  {
-    id: "assessment-1",
-    question: "Sarah wants her TechStart Solutions to generate exactly $60,000 profit next year. Her current model shows $35,000 profit at $3,000 per website project. What Excel tool and approach should she use?",
-    answers: [
-      "Use Goal Seek with Set Cell = Profit Cell ($60,000), By Changing Cell = Price per Project",
-      "Use SUM function to add up all her potential projects",
-      "Use VLOOKUP to find the right price in a competitor table",
-      "Manually try different prices until she gets close to $60,000"
-    ],
-    explanation: "Goal Seek is designed for this exact scenario. Sarah sets her profit target ($60,000) and Goal Seek calculates the precise price needed, which would be approximately $3,714 per project."
-  },
-  {
-    id: "assessment-2",
-    question: "In Excel Goal Seek, what does the 'By Changing Cell' parameter represent?",
-    answers: [
-      "The single input cell that Excel will automatically adjust to reach your target",
-      "The cell containing the formula you want to change",
-      "The target value you want to achieve",
-      "The cell that displays the final result"
-    ],
-    explanation: "The 'By Changing Cell' is the input variable Excel will modify. It must contain a single value (not a formula) that affects the Set Cell formula."
-  },
-  {
-    id: "assessment-3",
-    question: "An investor asks Sarah: 'If your fixed costs increase by 20% but you want to maintain current profit levels, what's the minimum price increase needed?' What makes Goal Seek the best tool for this question?",
-    answers: [
-      "Goal Seek can instantly calculate the exact price needed for any profit target, even with changing cost structures",
-      "Goal Seek automatically updates all competitor pricing data",
-      "Goal Seek creates professional charts for investor presentations",
-      "Goal Seek sends automatic alerts when costs change"
-    ],
-    explanation: "Goal Seek excels at reverse-engineering solutions from targets. Sarah can update her fixed costs (+20%), keep profit constant, and Goal Seek finds the precise price increase needed."
-  },
-  {
-    id: "assessment-4",
-    question: "Sarah's CVP model shows break-even at 85 units. She wants to reduce break-even to 60 units through price increases only. How should she set up Goal Seek?",
-    answers: [
-      "Set Cell = Break-even formula, To Value = 60, By Changing Cell = Price per unit",
-      "Set Cell = Price per unit, To Value = 60, By Changing Cell = Break-even formula", 
-      "Set Cell = Fixed costs, To Value = 60, By Changing Cell = Variable costs",
-      "Set Cell = Volume, To Value = 85, By Changing Cell = Break-even formula"
-    ],
-    explanation: "The break-even formula should be the Set Cell since it contains the calculation. Goal Seek will adjust the price to make the formula equal exactly 60 units."
-  },
-  {
-    id: "assessment-5",
-    question: "Why is Goal Seek mastery essential for professional investor presentations?",
-    answers: [
-      "Investors ask complex 'what-if' questions and expect immediate, precise answers during meetings",
-      "Goal Seek automatically creates PowerPoint slides for presentations",
-      "Investors only invest in businesses that use advanced Excel features",
-      "Goal Seek guarantees higher profits for all business models"
-    ],
-    explanation: "Professional credibility requires the ability to instantly answer scenario questions like 'What price achieves 25% profit margin?' Goal Seek provides precise, immediate responses."
-  },
-  {
-    id: "assessment-6",
-    question: "A consulting firm needs to determine: 'What's the maximum variable cost per project that still allows 30% profit margin at current pricing?' Which Goal Seek setup is correct?",
-    answers: [
-      "Set Cell = Profit margin formula, To Value = 30%, By Changing Cell = Variable cost per project",
-      "Set Cell = Variable cost per project, To Value = 30%, By Changing Cell = Profit margin",
-      "Set Cell = Price per project, To Value = 30%, By Changing Cell = Fixed costs",
-      "Set Cell = Total revenue, To Value = 30%, By Changing Cell = Volume"
-    ],
-    explanation: "The profit margin formula must be the Set Cell since it calculates the percentage. Goal Seek adjusts variable costs to achieve exactly 30% margin."
-  },
-  {
-    id: "assessment-7",
-    question: "Sarah's goal is $75,000 profit. Her current model shows this requires either $4,200 per project (at current volume) or 95 projects (at current price). What does this demonstrate about Goal Seek?",
-    answers: [
-      "Goal Seek can solve the same profit target through different business levers (price OR volume)",
-      "Goal Seek always provides multiple solutions simultaneously",
-      "Goal Seek can only work with price changes, not volume changes",
-      "Goal Seek calculations are inaccurate when results are too high"
-    ],
-    explanation: "Goal Seek finds solutions by adjusting whatever variable you specify. Sarah can reach $75k profit by increasing price OR volume, depending on which cell she designates as 'By Changing Cell'."
-  },
-  {
-    id: "assessment-8",
-    question: "During a team meeting, Sarah's partner asks: 'If we hire 2 more developers (increasing fixed costs by $8,000/month), what volume do we need to break even?' How does Goal Seek help?",
-    answers: [
-      "Update fixed costs (+$8,000), set Goal Seek to find volume needed for $0 profit (break-even)",
-      "Goal Seek automatically calculates salary costs for new employees",
-      "Goal Seek compares hiring costs across different industries",
-      "Goal Seek creates job descriptions for the new developer positions"
-    ],
-    explanation: "After updating the cost structure, Sarah sets Profit = $0 (break-even) and Goal Seek determines the exact volume needed. This is critical for expansion planning."
-  },
-  {
-    id: "assessment-9",
-    question: "What's the key business advantage of Goal Seek over manual trial-and-error pricing?",
-    answers: [
-      "Goal Seek provides mathematically precise solutions instantly, enabling confident decision-making under pressure",
-      "Goal Seek is more colorful and impressive in presentations",
-      "Goal Seek works faster than calculators",
-      "Goal Seek eliminates the need for business planning"
-    ],
-    explanation: "Goal Seek's precision and speed enable professional-level analysis. Instead of guessing and checking, business leaders get exact answers they can stake their reputation on."
-  },
-  {
-    id: "assessment-10",
-    question: "Sarah needs to present three scenarios to investors: conservative (20% profit growth), optimistic (40% profit growth), and stretch (60% profit growth). Each requires different pricing. What's the most professional approach using Goal Seek?",
-    answers: [
-      "Run Goal Seek three times with different profit targets, documenting the required price for each scenario",
-      "Use Goal Seek once with the middle scenario and guess the other two",
-      "Create three separate business models instead of using Goal Seek",
-      "Ask investors to choose their preferred scenario before running any analysis"
-    ],
-    explanation: "Professional scenario analysis requires precise calculations for each case. Goal Seek enables Sarah to provide exact pricing requirements for conservative ($42k profit = $X price), optimistic ($49k profit = $Y price), and stretch ($56k profit = $Z price) scenarios."
-  }
-];
-
 export default function Phase5Page() {
+  const assessmentQuestions = getUnit06Phase5ComprehensionCheckItems({ lessonIds: ["lesson04"] })
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
       <PhaseHeader 
