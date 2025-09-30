@@ -8,35 +8,13 @@ import { Badge } from "@/components/ui/badge"
 import { Scale, Users } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { getUnit06Phase5ComprehensionCheckItems } from "@/data/question-banks/unit06-phase5"
 
 const currentPhase = lesson07Phases[4]
 
-const auditQuiz = [
-  {
-    id: 'u6l7-a1',
-    question: 'A peer audit finds a chart linked to A1:C10 while the pricing table has 200 rows. What is the correct fix?',
-    answers: [
-      'Rebind the chart series to the Table[Column] structured reference',
-      'Leave it as is to avoid breaking the chart',
-      'Paste values into the chart source',
-      'Hide extra data rows so the range is correct'
-    ],
-    explanation: 'Charts must follow tables so visuals auto‑expand as data grows.'
-  },
-  {
-    id: 'u6l7-a2',
-    question: 'Why is IFNA useful with XLOOKUP in investor‑ready scenario models?',
-    answers: [
-      'It provides a clear message when an exact match isn’t found',
-      'It calculates faster than exact match',
-      'It hides all errors from investors',
-      'It replaces the need for structured references'
-    ],
-    explanation: 'IFNA/IFERROR handles lookup failures gracefully and improves user understanding.'
-  }
-]
-
 export default function Phase5Page() {
+  const assessmentQuestions = getUnit06Phase5ComprehensionCheckItems({ lessonIds: ["lesson07"] })
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
       <PhaseHeader unit={unit06Data} lesson={lesson07Data} phase={currentPhase} phases={lesson07Phases} />
@@ -61,7 +39,11 @@ export default function Phase5Page() {
                   <CardTitle className="text-blue-900">Mini Comprehension Check</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ComprehensionCheck questions={auditQuiz as any} title="Audit Decisions & Tradeoffs" showExplanations={true} />
+                  <ComprehensionCheck
+                    questions={assessmentQuestions}
+                    title="Audit Decisions & Tradeoffs"
+                    showExplanations={true}
+                  />
                 </CardContent>
               </Card>
 
@@ -86,4 +68,3 @@ export default function Phase5Page() {
     </div>
   )
 }
-

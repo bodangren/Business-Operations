@@ -4,102 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Briefcase, AlignLeft } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
+import { getUnit06Phase5ComprehensionCheckItems } from "@/data/question-banks/unit06-phase5";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
 const currentPhase = lesson06Phases[4]; // Assessment
 
-const assessmentQuestions = [
-  {
-    id: "u06l06-assess-1",
-    question: "Best approach for scenario switching by name?",
-    answers: [
-      "XLOOKUP (exact match) or INDEX‑MATCH with validation",
-      "Manual copy/paste into the model",
-      "SUMIF across scenario sheets",
-      "Approximate matches for faster results"
-    ],
-    explanation: "Use exact-match lookups anchored to a documented driver table and guard with IFNA/IFERROR."
-  },
-  {
-    id: "u06l06-assess-2",
-    question: "Charts stop updating as data grows. What fixes it?",
-    answers: [
-      "Build visuals on Excel Tables (structured references)",
-      "Hard-code ranges but add colors",
-      "Turn off automatic calculation",
-      "Move charts to a new sheet"
-    ],
-    explanation: "Structured references expand automatically and keep links stable."
-  },
-  {
-    id: "u06l06-assess-3",
-    question: "Which validation rule most improves investor trust?",
-    answers: [
-      "Flag stale AsOfDate and out-of-range rates with clear messages",
-      "Hide errors by formatting cells with white text",
-      "Delete invalid rows before meetings",
-      "Depend on screenshots"
-    ],
-    explanation: "Visible guardrails prevent misleading outputs and make issues easy to resolve."
-  },
-  {
-    id: "u06l06-assess-4",
-    question: "Scenario Manager vs. Driver Table: when is a driver table better?",
-    answers: [
-      "When you need dynamic named switching and linked charts",
-      "When you avoid documentation",
-      "When you prefer many separate files",
-      "When you want no trace of assumptions"
-    ],
-    explanation: "Driver tables integrate cleanly with formulas, KPIs, and visuals for live dashboards."
-  },
-  {
-    id: "u06l06-assess-5",
-    question: "Best formula to avoid #N/A on missing scenario names?",
-    answers: [
-      "IFNA(XLOOKUP(...), 'Scenario not found')",
-      "SUM(XLOOKUP(...))",
-      "AVERAGEIF(Table[Scenario], ...)",
-      "LEFT(XLOOKUP(...), 3)"
-    ],
-    explanation: "IFNA/IFERROR wraps the lookup and returns a friendly message instead of an error."
-  },
-  {
-    id: "u06l06-assess-6",
-    question: "Which KPI set is most decision-ready for pricing?",
-    answers: [
-      "Unit margin, break-even units, runway months",
-      "Total rows, number of tabs, cell colors",
-      "Days since last save, file size, sheet count",
-      "Average character count in labels"
-    ],
-    explanation: "These KPIs tie directly to pricing strategy and risk."
-  },
-  {
-    id: "u06l06-assess-7",
-    question: "In an investor Q&A, what should you show first?",
-    answers: [
-      "Scenario toggle → KPIs → short recommendation",
-      "Raw data dump",
-      "VBA editor",
-      "Email thread with your team"
-    ],
-    explanation: "Lead with clarity: scenario, impacts, and a concise call."
-  },
-  {
-    id: "u06l06-assess-8",
-    question: "Which change most improves auditability?",
-    answers: [
-      "Comments that explain driver-to-output links",
-      "Hidden sheets with secret logic",
-      "Merged cells around every chart",
-      "Copying values over formulas"
-    ],
-    explanation: "Clear documentation helps others trace and trust your work."
-  }
-];
-
 export default function Phase5Page() {
+  const assessmentQuestions = getUnit06Phase5ComprehensionCheckItems({ lessonIds: ["lesson06"] })
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
       <PhaseHeader 
@@ -169,4 +81,3 @@ export default function Phase5Page() {
     </div>
   );
 }
-

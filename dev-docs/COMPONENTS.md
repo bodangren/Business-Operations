@@ -138,6 +138,11 @@
     - `drawUnit04Phase5ComprehensionCheckItems(count, filter)` combines random sampling with format conversion.
   - Tags include: `descriptive-statistics`, `data-analysis-foundations`, `data-cleaning`, `text-functions`, `excel-automation`, `z-scores`, `outlier-detection`, `excel-analysis-toolpak`, `chart-interpretation`, `trendlines`, `r-squared`, `forecasting`, `forecast-linear`, `scenario-modeling`, `dashboard-design`, `xlookup`, `error-handling`, `investor-readiness`, `professional-standards`.
   - All 7 unit04 lesson phase-5 pages now import from this centralized bank instead of maintaining inline question arrays.
+- ✅ **Unit06 Phase-5 Question Bank** (`src/data/question-banks/unit06-phase5.ts`)
+  - Consolidates Lesson 01–07 assessment items for the PriceLab Challenge with complete metadata and 8th-grade narrative alignment.
+  - Emphasizes Power Query hygiene, markup vs. margin strategy, CVP modeling, Goal Seek levers, automation/data tables, scenario dashboards, and investor-readiness QA.
+  - Provides helper utilities following the established pattern (`getUnit06Phase5Questions`, `drawRandomUnit06Phase5Questions`, `getUnit06Phase5ComprehensionCheckItems`, `drawUnit06Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`).
+  - Phase-5 lesson pages now source questions from the shared bank (stable, randomizable draws) to prep for the future Unit 6 practice-test route.
 
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 
