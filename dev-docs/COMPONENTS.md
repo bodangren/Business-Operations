@@ -149,6 +149,12 @@
   - Provides the standard helper set (`getUnit07Phase5Questions`, `drawRandomUnit07Phase5Questions`, `getUnit07Phase5ComprehensionCheckItems`, `drawUnit07Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`) for lesson consumption and future practice-test draws.
   - Objective tags include: `matching-principle`, `method-selection`, `inventory-strategy`, `cash-flow`, `depreciation-calculation`, `excel-functions`, `validation-controls`, `investor-readiness`, `scenario-planning`, `kpi-storytelling`, `dashboard-design`, `data-integrity`, `error-handling`.
   - Student pages at `src/app/student/unit07/lesson0{1-7}/phase-5/page.tsx` now import from the shared bank rather than maintaining inline arrays, aligning Unit 7 with the established Units 1–6 pattern.
+- ✅ **Unit08 Phase-5 Question Bank** (`src/data/question-banks/unit08-phase5.ts`)
+  - Externalizes Unit 8 Lesson 01–07 assessment questions with TechStart VC narrative context, balanced answer text, and objective tags.
+  - Highlights venture-capital evaluation skills, three-statement integration, scenario manager workflows, sensitivity automation, investor dashboards, and audit-ready QA.
+  - Ships the standard helper suite (`getUnit08Phase5Questions`, `drawRandomUnit08Phase5Questions`, `getUnit08Phase5ComprehensionCheckItems`, `drawUnit08Phase5ComprehensionCheckItems`, `toComprehensionCheckItems`) for direct ComprehensionCheck usage and future practice-test draws.
+  - Tags cover: `vc-evaluation`, `risk-analysis`, `unit-economics`, `integration-principles`, `cross-sheet-linking`, `scenario-manager`, `sensitivity-analysis`, `structured-references`, `dashboard-design`, `validation`, `investor-readiness`, `audit-readiness`.
+  - Student pages at `src/app/student/unit08/lesson0{1-7}/phase-5/page.tsx` now pull from the shared bank, eliminating inline arrays and enabling consistent randomization/testing flows.
 
 ## 🚨 STILL MISSING: Critical Unit-Specific Components
 

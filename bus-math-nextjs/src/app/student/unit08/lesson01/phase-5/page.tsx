@@ -4,69 +4,21 @@ import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { DragAndDrop } from "@/components/exercises/DragAndDrop"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ClipboardCheck, Trophy, AlertCircle, Star, Target } from "lucide-react"
+import { getUnit08Phase5ComprehensionCheckItems } from "@/data/question-banks/unit08-phase5"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases[4] // Assessment phase
 
-  // Comprehensive VC Evaluation Questions
-  const vcEvaluationQuestions = [
-    {
-      id: "q1",
-      question: "A startup's financial model shows consistent 15% monthly growth in users but revenue only growing 5% monthly. As a VC, what would be your primary concern?",
-      answers: [
-        "User growth is too slow and needs to accelerate",
-        "There's a disconnect between user growth and monetization that needs explanation",
-        "Revenue growth should be ignored if user growth is strong",
-        "The model is technically incorrect and needs rebuilding"
-      ],
-      explanation: "This disconnect suggests potential issues with monetization strategy, user quality, or business model effectiveness. VCs need to understand why growing users aren't translating to proportional revenue growth."
-    },
-    {
-      id: "q2",
-      question: "In a startup's three-statement model, the cash flow statement shows $100K from operations, but the income statement shows a $50K loss. This could indicate:",
-      answers: [
-        "The model has errors and should be rejected immediately",
-        "Working capital changes and non-cash expenses may explain the difference",
-        "The company is lying about their financial performance",
-        "Cash flow should always equal net income in a proper model"
-      ],
-      explanation: "This is normal and expected. Differences between net income and operating cash flow often result from working capital changes (receivables, payables, inventory) and non-cash expenses like depreciation."
-    },
-    {
-      id: "q3",
-      question: "What's the most concerning red flag when reviewing a startup's scenario analysis?",
-      answers: [
-        "The optimistic scenario shows too much growth",
-        "All three scenarios (best, base, worst) show the company succeeding",
-        "The model includes too many different scenarios",
-        "The scenarios use different Excel sheets instead of one integrated model"
-      ],
-      explanation: "If even the worst-case scenario shows success, it suggests the entrepreneur hasn't seriously considered downside risks or competitive threats. Realistic worst-case scenarios should show meaningful challenges."
-    },
-    {
-      id: "q4",
-      question: "A startup model shows customer acquisition cost (CAC) of $50 and lifetime value (LTV) of $150. The LTV:CAC ratio of 3:1 suggests:",
-      answers: [
-        "This is a red flag - the ratio is too low for sustainable growth",
-        "This is acceptable but not impressive - industry standard performance",
-        "This is excellent - strong unit economics that support growth",
-        "The ratio is meaningless without knowing the payback period"
-      ],
-      explanation: "A 3:1 LTV:CAC ratio is generally healthy and indicates good unit economics. However, the payback period (how long to recover the $50) is also crucial for cash flow planning."
-    },
-    {
-      id: "q5",
-      question: "Which formula error would be most immediately disqualifying in a VC pitch?",
-      answers: [
-        "Minor rounding differences between sheets",
-        "Circular references that prevent the model from calculating",
-        "Using different number formats across sheets",
-        "Complex formulas without documentation"
-      ],
-      explanation: "Circular references break Excel's calculation engine and prevent the model from working. This shows fundamental technical incompetence and would immediately undermine credibility."
-    }
-  ]
+  const vcEvaluationQuestions = getUnit08Phase5ComprehensionCheckItems({
+    lessonIds: ["lesson01"],
+    tags: ["phase5-vc-eval"]
+  })
+
+  const capstoneQuestions = getUnit08Phase5ComprehensionCheckItems({
+    lessonIds: ["lesson01"],
+    tags: ["phase5-capstone"]
+  })
 
   // Investment Decision Framework
   const decisionFrameworkItems = [
@@ -81,31 +33,6 @@ export default function Phase5Page() {
   ]
 
   // Final Assessment Challenge
-  const finalAssessmentQuestions = [
-    {
-      id: "q6",
-      question: "Sarah's TechStart Solutions model shows break-even at month 24 with $2M in funding. A VC's first question would likely be:",
-      answers: [
-        "Why does it take so long to break even?",
-        "What happens if break-even takes 6 months longer?",
-        "How much additional funding would be needed if things go wrong?",
-        "All of the above - comprehensive risk assessment"
-      ],
-      explanation: "Professional investors think systematically about risks. They want to understand not just the base case but what happens if timelines slip or additional capital is needed."
-    },
-    {
-      id: "q7",
-      question: "The most impressive thing a student can demonstrate to a VC panel is:",
-      answers: [
-        "Advanced Excel formulas and complex calculations",
-        "Deep understanding of their business model and thoughtful risk analysis",
-        "Optimistic projections showing rapid growth and profitability",
-        "A model with more sheets and detail than anyone else's"
-      ],
-      explanation: "VCs invest in entrepreneurs who deeply understand their business. Technical Excel skills matter, but business insight and risk awareness are what separate fundable entrepreneurs from spreadsheet experts."
-    }
-  ]
-
   return (
     <div className="min-h-screen bg-gray-50">
       <PhaseHeader 
@@ -236,7 +163,7 @@ export default function Phase5Page() {
 
         {/* Capstone Assessment Questions */}
         <ComprehensionCheck
-          questions={finalAssessmentQuestions}
+          questions={capstoneQuestions}
           title="Capstone Assessment: Investment Readiness"
           description="Final evaluation of your understanding of what makes entrepreneurs and financial models investment-ready from a VC perspective."
           showExplanations={true}
