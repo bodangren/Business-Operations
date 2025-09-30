@@ -6,35 +6,13 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { getUnit08Phase5ComprehensionCheckItems } from "@/data/question-banks/unit08-phase5"
 import { lesson07Data, unit08Data, lesson07Phases } from "../lesson-data"
 
 const currentPhase = lesson07Phases[4]
 
 export default function Phase5Page() {
-  const auditQuiz = [
-    {
-      id: 'aq1',
-      question: 'A chart points to A1:C10 and ignores new rows. What is the fix?',
-      answers: [
-        'Bind the chart to a Table with structured references',
-        'Expand the range manually each week',
-        'Convert numbers to text to freeze values',
-        'Hide rows to keep the range small'
-      ],
-      explanation: 'Tables expand automatically; structured references keep visuals in sync.'
-    },
-    {
-      id: 'aq2',
-      question: 'Which statement best defines “investor‑ready”?',
-      answers: [
-        'Clarity, reliability, audit trail, and documented assumptions',
-        'Colorful charts with many tabs',
-        'No formulas, only typed numbers',
-        'One giant sheet without sections'
-      ],
-      explanation: 'Investors want a clear, reliable model with traceable logic and assumptions.'
-    }
-  ]
+  const auditQuiz = getUnit08Phase5ComprehensionCheckItems({ lessonIds: ["lesson07"] })
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
@@ -63,7 +41,7 @@ export default function Phase5Page() {
               <ComprehensionCheck 
                 title="Audit Decisions & Tradeoffs"
                 description="Quick check: quality standards and review decisions"
-                questions={auditQuiz as any}
+                questions={auditQuiz}
                 showExplanations
               />
 
@@ -87,4 +65,3 @@ export default function Phase5Page() {
     </div>
   )
 }
-

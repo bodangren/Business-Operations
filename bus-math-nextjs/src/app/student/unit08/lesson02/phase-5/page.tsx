@@ -3,122 +3,12 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Target, TrendingUp } from "lucide-react";
+import { getUnit08Phase5ComprehensionCheckItems } from "@/data/question-banks/unit08-phase5";
 import { lesson02Data, unit08Data, lesson02Phases } from "../lesson-data";
 
 const currentPhase = lesson02Phases[4]; // Assessment phase
 
-const assessmentQuestions = [
-  {
-    id: "a1",
-    question: "In Sarah's integrated financial model, what is the primary reason that her Balance Sheet must always balance (Assets = Liabilities + Equity) even when she changes growth assumptions?",
-    answers: [
-      "The fundamental accounting equation represents the mathematical foundation that validates the model's integrity regardless of scenario changes",
-      "Investors expect to see the same total on both sides of the balance sheet",
-      "Excel automatically forces the equation to balance when you use formulas", 
-      "The balance sheet only balances if you enter the numbers in the correct order"
-    ],
-    explanation: "The accounting equation isn't just a formatting requirement - it's a mathematical proof that your model correctly tracks how resources (assets) are financed (liabilities and equity). An integrated model that maintains this balance demonstrates technical competence and business understanding."
-  },
-  {
-    id: "a2",
-    question: "When Sarah's model shows that increasing revenue by 25% actually decreases her cash flow in the short term, which integration principle best explains this counterintuitive result?",
-    answers: [
-      "Working capital changes can consume cash even during profitable growth because higher sales create higher accounts receivable",
-      "The model has an error because revenue growth should always increase cash flow",
-      "This happens because tax expenses increase proportionally with revenue",
-      "Higher revenue always requires more inventory, which reduces cash"
-    ],
-    explanation: "This demonstrates the power of integrated thinking. When you sell more on credit, revenue goes up (Income Statement) and A/R goes up (Balance Sheet), but cash doesn't increase until customers pay. The cash flow statement shows this as an operating cash outflow, explaining why growth can strain cash flow."
-  },
-  {
-    id: "a3",
-    question: "Which formula structure best demonstrates professional cross-sheet linking with proper reference integrity for connecting Net Income to Retained Earnings?",
-    answers: [
-      "=Previous_Retained_Earnings + Income_Statement!$B$25 where B25 contains Net Income with absolute references",
-      "=Previous_Retained_Earnings + 15000 using a hard-coded profit number",
-      "=Previous_Retained_Earnings + B25 using a relative reference within the same sheet",
-      "=Retained_Earnings + Net_Income using named ranges without sheet references"
-    ],
-    explanation: "Professional models use absolute references ($B$25) for fixed cell locations and explicit sheet references (Income_Statement!) to create clear, maintainable formulas. This prevents errors when copying formulas and makes the model transparent to reviewers."
-  },
-  {
-    id: "a4",
-    question: "In Sarah's integrated model, why would a venture capitalist specifically look for the validation that 'Cash Flow Statement ending cash = Balance Sheet cash balance'?",
-    answers: [
-      "This mathematical check proves that all cash movements are properly tracked and the model's three statements are truly integrated",
-      "It shows that Sarah understands basic Excel functions",
-      "Investors want to see that cash flow is always positive",
-      "This check ensures that the company has enough cash to operate"
-    ],
-    explanation: "This validation is the ultimate integrity test for integrated models. If the cash reconciles, it proves that every dollar of cash flow change is properly explained and connected across all three statements. It's a technical competence signal that investors use to assess model quality."
-  },
-  {
-    id: "a5",
-    question: "When Sarah changes her customer payment terms from 30 days to 45 days, how should her integrated model reflect this change across all three statements?",
-    answers: [
-      "Income Statement unchanged, Balance Sheet shows higher A/R, Cash Flow shows reduced operating cash due to A/R increase",
-      "All three statements should show proportional decreases because customers are paying later",
-      "Only the Cash Flow Statement changes because this is purely a cash timing issue",
-      "Revenue should decrease on the Income Statement because collection is slower"
-    ],
-    explanation: "This tests understanding of accrual vs. cash accounting within integration. Revenue recognition (when earned) is separate from cash collection (when received). The integrated model shows this relationship clearly: same profits, different cash timing."
-  },
-  {
-    id: "a6", 
-    question: "What is the most significant advantage of using named ranges (like 'Growth_Rate') instead of cell references (like 'B5') in Sarah's cross-sheet formulas?",
-    answers: [
-      "Named ranges make formulas self-documenting and create more robust models that are easier for investors to understand and validate",
-      "Named ranges calculate faster than cell references in Excel",
-      "You can use longer names which look more professional",
-      "Named ranges automatically update all formulas when you change the input"
-    ],
-    explanation: "Named ranges transform formulas like '=B5*C7' into '=Monthly_Revenue*Growth_Rate', making models transparent and professional. This clarity builds investor confidence and makes models easier to audit, modify, and understand - critical factors in due diligence."
-  },
-  {
-    id: "a7",
-    question: "In Sarah's startup model, if she purchases $20,000 of equipment with cash, which statement shows the CORRECT integrated impact?",
-    answers: [
-      "Income Statement: Depreciation expense over time; Balance Sheet: Equipment +$20K, Cash -$20K; Cash Flow: Investing activity -$20K",
-      "Income Statement: Equipment expense $20K immediately; Balance Sheet: No change; Cash Flow: Operating expense $20K",
-      "All three statements show a $20K expense in the current period",
-      "Only the Cash Flow Statement is affected by this equipment purchase"
-    ],
-    explanation: "Equipment purchases are capital expenditures, not immediate expenses. The integrated model shows: Balance Sheet captures the asset and cash reduction, Cash Flow shows the investing outflow, and Income Statement spreads the cost over time through depreciation."
-  },
-  {
-    id: "a8",
-    question: "Why would Sarah's model be considered more sophisticated than a competitor's model that shows the same profit projections but uses separate, unlinked spreadsheets?",
-    answers: [
-      "Sarah's integrated model can instantly test different scenarios and assumptions while maintaining mathematical consistency across all statements",
-      "Integrated models always show higher profits than separate models",
-      "Sarah's model uses more complex Excel functions",
-      "Integrated models take longer to build, showing more effort"
-    ],
-    explanation: "Integration enables scenario analysis - the holy grail for investors. When Sarah can answer 'what if customer acquisition costs double?' instantly with mathematically consistent results across all statements, she demonstrates strategic thinking and technical competence that separate models cannot match."
-  },
-  {
-    id: "a9",
-    question: "Which business insight becomes most apparent only when viewing Sarah's three financial statements as an integrated system rather than separately?",
-    answers: [
-      "How operational decisions (like growth rate or payment terms) create complex, interconnected effects on profitability, cash flow, and financial position",
-      "Which expenses are the highest on the income statement",
-      "How much cash the company has at any point in time", 
-      "Whether the company is profitable in each month"
-    ],
-    explanation: "Integration reveals the interconnected nature of business decisions. A single change (faster growth) affects revenue (Income Statement), working capital (Balance Sheet), and cash flow timing - insights that are invisible when viewing statements separately but critical for strategic management."
-  },
-  {
-    id: "a10",
-    question: "From an investor's perspective, what does Sarah's ability to build and maintain formula integrity across three integrated statements signal about her capabilities as an entrepreneur?",
-    answers: [
-      "Systems thinking, attention to detail, and the technical competence to build scalable business processes - all critical CEO skills",
-      "That she's good with Excel but may not understand business strategy",
-      "That she can handle the bookkeeping for a small company",
-      "That she follows instructions well and pays attention to formatting"
-    ],
-    explanation: "Investors see integrated modeling as a proxy for entrepreneurial sophistication. Building systems that maintain integrity under different scenarios demonstrates the systematic thinking, process orientation, and technical leadership that investors want in CEOs they're betting millions on."
-  }
-];
+const assessmentQuestions = getUnit08Phase5ComprehensionCheckItems({ lessonIds: ["lesson02"] });
 
 export default function Unit08Lesson02Phase5() {
   return (
