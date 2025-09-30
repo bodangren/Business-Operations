@@ -181,6 +181,32 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
           </div>
         </CardContent>
       </Card>
+
+      {/* Practice Test Callout */}
+      <Card className="border-teal-200 bg-teal-50 dark:bg-teal-950/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-teal-800 dark:text-teal-200">
+            <Target className="h-5 w-5" />
+            Practice Test & Investor Rehearsal
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="space-y-2 text-teal-900 dark:text-teal-100">
+            <p className="text-sm leading-relaxed">
+              Ready for a confidence check? Run the Unit 1 practice test to rehearse investor questions, pull randomized
+              items from every lesson, and track progress with built-in explanations.
+            </p>
+            <p className="text-xs text-teal-700 dark:text-teal-300">
+              Tip: Finish Lesson 07 first so you can apply Sarah's audit trail strategies while you review answers.
+            </p>
+          </div>
+          <Button size="lg" asChild>
+            <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}/practice-test`}>
+              Start Practice Test <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   )
 }

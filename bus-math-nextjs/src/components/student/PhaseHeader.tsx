@@ -14,7 +14,7 @@ import {
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 
-interface LessonPhase {
+export interface LessonPhase {
   id: string
   phaseName: "Hook" | "Introduction" | "Guided Practice" | "Independent Practice" | "Assessment" | "Closing"
   sequence: number
@@ -35,6 +35,14 @@ interface PhaseHeaderProps {
   }
   phase: LessonPhase
   phases: LessonPhase[]
+  navigationOverrides?: PhaseHeaderNavigationOverrides
+}
+
+interface PhaseHeaderNavigationOverrides {
+  unitHref?: string
+  lessonHref?: string
+  lessonLabel?: string
+  phaseLabel?: string
 }
 
 const phaseIcons = {
@@ -55,18 +63,22 @@ const phaseColors = {
   "Closing": "text-indigo-600 bg-indigo-50 border-indigo-200"
 }
 
-export function PhaseHeader({ lesson, unit, phase, phases }: PhaseHeaderProps) {
+export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }: PhaseHeaderProps) {
   const Icon = phaseIcons[phase.phaseName]
   const colorClass = phaseColors[phase.phaseName]
   
   // Sort phases for navigation
-  const sortedPhases = phases.sort((a, b) => a.sequence - b.sequence)
+  const sortedPhases = [...phases].sort((a, b) => a.sequence - b.sequence)
   const progress = ((phase.sequence) / sortedPhases.length) * 100
   
   // Format lesson and unit numbers with leading zeros
   const formattedLessonNumber = lesson.sequence.toString().padStart(2, '0')
   const formattedUnitNumber = unit.sequence.toString().padStart(2, '0')
-  
+  const unitHref = navigationOverrides?.unitHref ?? `/student/unit${formattedUnitNumber}`
+  const lessonHref = navigationOverrides?.lessonHref ?? `/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}`
+  const lessonLabel = navigationOverrides?.lessonLabel ?? `Lesson ${lesson.sequence}`
+  const phaseBreadcrumbLabel = navigationOverrides?.phaseLabel ?? phase.phaseName
+
   return (
     <div className="max-w-4xl mx-auto space-y-6 mb-8">
       {/* Ensure public resource links include basePath in production */}
@@ -78,15 +90,15 @@ export function PhaseHeader({ lesson, unit, phase, phases }: PhaseHeaderProps) {
           Student
         </Link>
         <ArrowRight className="h-3 w-3" />
-        <Link href={`/student/unit${formattedUnitNumber}`} className="hover:text-foreground">
+        <Link href={unitHref} className="hover:text-foreground">
           {unit.title}
         </Link>
         <ArrowRight className="h-3 w-3" />
-        <Link href={`/student/unit${formattedUnitNumber}/lesson${formattedLessonNumber}`} className="hover:text-foreground">
-          Lesson {lesson.sequence}
+        <Link href={lessonHref} className="hover:text-foreground">
+          {lessonLabel}
         </Link>
         <ArrowRight className="h-3 w-3" />
-        <span className="text-foreground">{phase.phaseName}</span>
+        <span className="text-foreground">{phaseBreadcrumbLabel}</span>
       </nav>
 
       {/* Progress Bar */}
