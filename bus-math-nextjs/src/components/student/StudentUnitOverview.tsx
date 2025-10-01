@@ -70,6 +70,13 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Need a fast rehearsal before close? Launch the Unit 2 practice test to drill adjusting entries, automation controls, and dashboards with fresh question draws every time.",
       tip:
         "Tip: Complete Lesson 07 before the drill so you can check reconciliations and QA steps while grading your responses."
+    },
+    3: {
+      title: "Practice Test & Storyboard Mastery",
+      description:
+        "Ready to prove integration? Run the Unit 3 practice test to rehearse three-statement connections, dynamic formulas, and dashboard logic with randomized questions from every lesson.",
+      tip:
+        "Tip: Complete Lesson 07 first so you can apply integration validation and audit-readiness checks while reviewing your answers."
     }
   }
 
