@@ -7,8 +7,9 @@
 - Merge via squash after CI passes, prune branches, close the issue, and update sprint docs/TODO before moving on.
 
 Sprint Planning Status
-- Sprint 10 plan recorded in `docs/sprint/S10.md` (Question Bank Initiative).
-- Completed slices:
+- Sprint 12 plan recorded in `docs/sprint/S12.md` (Component Refactor).
+- Sprint 10 plan retained in `docs/sprint/S10.md` for historical reference.
+- Completed slices (Sprint 10 wrap-up):
   - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅
   - Issue #11 – Unit 1 practice-test experience from question bank ✅
   - Issue #26 – Unit 2 phase-5 question bank ✅
@@ -17,7 +18,7 @@ Sprint Planning Status
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
   - Issue #37 – Unit 6 practice-test experience from question bank ✅
-- Next slice to tackle: Issue #12 – Prototype Unit 1 spaced-repetition review using question bank.
+- Next slice to tackle: Issue #14 – Define Unit 1 Lesson 1 component scenarios (establish shared scenario data layer).
 
 Broken Links and Assets – Next.js App
 
