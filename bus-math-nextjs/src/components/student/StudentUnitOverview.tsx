@@ -91,6 +91,13 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Ready to prove your payroll expertise? Launch the Unit 5 practice test to rehearse gross-to-net calculations, tax withholdings, overtime logic, and validation with randomized questions from every payroll lesson.",
       tip:
         "Tip: Complete Lesson 07 first so you can apply QA checks, reconciliation strategies, and professional presentation standards while reviewing your answers."
+    },
+    6: {
+      title: "Practice Test & Pricing Strategy Confidence",
+      description:
+        "Ready to prove your pricing mastery? Launch the Unit 6 practice test to rehearse CVP analysis, Goal Seek scenarios, markup vs. margin calculations, and scenario automation with randomized questions from every PriceLab lesson.",
+      tip:
+        "Tip: Complete Lesson 07 first so you can apply production QA, presentation readiness checks, and investor-ready polish while reviewing your answers."
     }
   }
 
