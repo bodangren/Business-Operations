@@ -77,6 +77,13 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Ready to prove integration? Run the Unit 3 practice test to rehearse three-statement connections, dynamic formulas, and dashboard logic with randomized questions from every lesson.",
       tip:
         "Tip: Complete Lesson 07 first so you can apply integration validation and audit-readiness checks while reviewing your answers."
+    },
+    4: {
+      title: "Practice Test & Café Analysis Confidence",
+      description:
+        "Ready to prove your statistical mastery? Launch the Unit 4 practice test to rehearse data cleaning, forecasting, and what-if analysis with randomized questions from every café lesson.",
+      tip:
+        "Tip: Complete Lesson 07 first so you can apply dashboard validation and investor-readiness checks while reviewing your answers."
     }
   }
 
