@@ -105,6 +105,13 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Ready to prove your depreciation and inventory expertise? Launch the Unit 7 practice test to rehearse method selection, FIFO vs. LIFO trade-offs, cash-flow impacts, and board-ready strategic reasoning with randomized questions from every asset and inventory lesson.",
       tip:
         "Tip: Complete Lesson 07 first so you can apply peer audit checks, model QA standards, and presentation polish while reviewing your answers."
+    },
+    8: {
+      title: "Practice Test & Investor Readiness",
+      description:
+        "Ready to prove your startup modeling mastery? Launch the Unit 8 practice test to rehearse VC evaluation criteria, integrated financial statements, scenario analysis, and investor-ready presentation standards with randomized questions from every Year-1 Startup Model lesson.",
+      tip:
+        "Tip: Complete Lesson 07 first so you can apply final QA checks, audit-readiness validation, and professional pitch polish while reviewing your answers."
     }
   }
 
