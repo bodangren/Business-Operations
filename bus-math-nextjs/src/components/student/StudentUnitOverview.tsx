@@ -98,6 +98,13 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Ready to prove your pricing mastery? Launch the Unit 6 practice test to rehearse CVP analysis, Goal Seek scenarios, markup vs. margin calculations, and scenario automation with randomized questions from every PriceLab lesson.",
       tip:
         "Tip: Complete Lesson 07 first so you can apply production QA, presentation readiness checks, and investor-ready polish while reviewing your answers."
+    },
+    7: {
+      title: "Practice Test & Asset Strategy Mastery",
+      description:
+        "Ready to prove your depreciation and inventory expertise? Launch the Unit 7 practice test to rehearse method selection, FIFO vs. LIFO trade-offs, cash-flow impacts, and board-ready strategic reasoning with randomized questions from every asset and inventory lesson.",
+      tip:
+        "Tip: Complete Lesson 07 first so you can apply peer audit checks, model QA standards, and presentation polish while reviewing your answers."
     }
   }
 
