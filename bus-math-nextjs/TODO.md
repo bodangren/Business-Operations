@@ -16,6 +16,7 @@ Sprint Planning Status
   - Issue #28 – Unit 4 phase-5 question bank ✅
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
+  - Issue #37 – Unit 6 practice-test experience from question bank ✅
 - Next slice to tackle: Issue #12 – Prototype Unit 1 spaced-repetition review using question bank.
 
 Broken Links and Assets – Next.js App
