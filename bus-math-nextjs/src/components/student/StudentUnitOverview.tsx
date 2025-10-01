@@ -84,6 +84,13 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Ready to prove your statistical mastery? Launch the Unit 4 practice test to rehearse data cleaning, forecasting, and what-if analysis with randomized questions from every café lesson.",
       tip:
         "Tip: Complete Lesson 07 first so you can apply dashboard validation and investor-readiness checks while reviewing your answers."
+    },
+    5: {
+      title: "Practice Test & Payroll Mastery",
+      description:
+        "Ready to prove your payroll expertise? Launch the Unit 5 practice test to rehearse gross-to-net calculations, tax withholdings, overtime logic, and validation with randomized questions from every payroll lesson.",
+      tip:
+        "Tip: Complete Lesson 07 first so you can apply QA checks, reconciliation strategies, and professional presentation standards while reviewing your answers."
     }
   }
 
