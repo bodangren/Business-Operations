@@ -78,5 +78,5 @@ export function listAvailableLessonScenarios(): Array<{
 
 export const registeredLessonScenarios = scenarioRegistry
 
-const _lesson01Slug: "unit01-lesson01" = unit01Lesson01Scenario.metadata.slug
+const _lesson01Slug = unit01Lesson01Scenario.metadata.slug
 void _lesson01Slug
