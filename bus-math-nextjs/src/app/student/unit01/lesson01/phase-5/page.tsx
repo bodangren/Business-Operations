@@ -1,205 +1,124 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
-import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
-import { lesson01Data, unit01Data, lesson01Phases } from "../lesson-data"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptComprehensionCheck,
+  adaptPeerReview,
+  getPhaseBySequence,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit01Data } from "../lesson-data"
+import type { PhaseComponentInstance } from "@/types/lesson-scenarios"
+
+const lessonScenario = getLessonScenario("unit01", 1)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 5)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit01Data.sequence
+}
+
+const comprehensionComponent = phaseScenario.components.find((component): component is Extract<
+  PhaseComponentInstance,
+  { type: "comprehensionCheck" }
+> => component.type === "comprehensionCheck")
+
+if (!comprehensionComponent) {
+  throw new Error("Unit 1 Lesson 1 Phase 5 scenario is missing a comprehension check component.")
+}
+
+const peerReviewComponent = phaseScenario.components.find((component): component is Extract<
+  PhaseComponentInstance,
+  { type: "peerReview" }
+> => component.type === "peerReview")
+
+if (!peerReviewComponent) {
+  throw new Error("Unit 1 Lesson 1 Phase 5 scenario is missing peer review configuration.")
+}
+
+const comprehensionData = adaptComprehensionCheck(comprehensionComponent)
+const peerReviewData = adaptPeerReview(peerReviewComponent)
 
 export default function Phase5Page() {
-  const currentPhase = lesson01Phases.find(p => p.sequence === 5)!
-  const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] })
+  const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-6">
-        <PhaseHeader 
-          lesson={lesson01Data}
-          unit={unit01Data}
-          phase={currentPhase}
-          phases={lesson01Phases}
-        />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
+      <PhaseHeader lesson={lessonHeader} unit={unitHeader} phase={currentPhase} phases={phasesForHeader} />
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Assessment Introduction */}
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <Badge className="bg-orange-600 text-white">Assessment</Badge>
-                <CardTitle className="text-orange-800 dark:text-orange-200">
-                  Demonstrate Your Understanding: Business Transaction Categorization and Investment Readiness
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
+              Phase 5: {phaseScenario.name}
+            </Badge>
+            <h1 className="text-3xl font-semibold text-gray-900">{phaseScenario.title}</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">{phaseScenario.summary}</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            <ScenarioNarrative blocks={phaseScenario.narrative} />
+
+            <Card className="border-red-200 bg-red-50 dark:bg-red-950/10">
+              <CardHeader>
+                <CardTitle className="text-red-800 dark:text-red-200">
+                  {comprehensionData.title ?? "Unit 1 Lesson 1 Assessment"}
                 </CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="prose prose-orange max-w-none">
-                <p className="text-lg leading-relaxed">
-                  This assessment evaluates your understanding of the core concepts from today's lesson: 
-                  TechStart Solutions' business model, the challenges of manual record-keeping, and the 
-                  importance of financial credibility for investor confidence.
-                </p>
-                
-                <p className="text-lg leading-relaxed">
-                  Demonstrate that you can analyze business scenarios from both an operational and investor 
-                  perspective, and explain why Sarah needs a Smart Ledger system to build a successful, 
-                  investment-ready business.
-                </p>
-
-                <div className="bg-white p-4 rounded-lg border-2 border-orange-300 mt-6">
-                  <h4 className="font-semibold text-orange-800 mb-2">Assessment Focus Areas:</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Understanding TechStart Solutions' business model and transaction types</li>
-                    <li>• Analyzing the challenges and risks of manual record-keeping systems</li>
-                    <li>• Explaining investor credibility requirements and "clean books" concept</li>
-                    <li>• Connecting business transaction categorization to professional financial management</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Main Assessment Questions */}
-          <Card className="border-red-200 bg-red-50 dark:bg-red-950/10">
-            <CardHeader>
-              <CardTitle className="text-red-800 dark:text-red-200">
-                Formative Assessment: Business Analysis and Financial Credibility
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-4">
-                <p className="text-lg">
-                  Answer these questions thoughtfully, drawing on everything you've learned about Sarah's challenge 
-                  and the business requirements for investor-ready financial systems.
-                </p>
-              </div>
-              <ComprehensionCheck 
-                questions={assessmentQuestions}
-                title="Unit 1 Lesson 1 Assessment"
-                description="Demonstrate your understanding of business transactions, financial credibility, and professional ledger systems"
-                showExplanations={true}
-              />
-            </CardContent>
-          </Card>
-
-          {/* Peer Review Assessment */}
-          <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
-            <CardHeader>
-              <CardTitle className="text-purple-800 dark:text-purple-200">
-                Peer Assessment: Business Scenario Analysis
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <p className="text-lg">
-                  Work with a partner to evaluate each other's understanding of the key concepts. 
-                  Use this structured peer review process:
-                </p>
-
-                <div className="bg-white p-6 rounded-lg border">
-                  <h4 className="font-semibold mb-3 text-purple-800">Partner Discussion Scenarios</h4>
-                  <p className="text-sm mb-4">
-                    Take turns explaining these scenarios to your partner. Your partner should evaluate 
-                    your explanations using the criteria below.
-                  </p>
-                  
-                  <div className="grid gap-4">
-                    <div className="bg-purple-100 p-4 rounded">
-                      <h5 className="font-semibold text-purple-800">Scenario A:</h5>
-                      <p className="text-sm">
-                        Explain to your partner why Sarah's notebook system would fail an investor due diligence review. 
-                        Include specific examples of what investors need and why notebooks can't provide it.
-                      </p>
-                    </div>
-                    
-                    <div className="bg-purple-100 p-4 rounded">
-                      <h5 className="font-semibold text-purple-800">Scenario B:</h5>
-                      <p className="text-sm">
-                        Describe what makes a ledger system "self-auditing" and explain how this addresses Sarah's 
-                        core business challenges. Give specific examples of automatic features that would help.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <PeerCritiqueForm 
-                  projectTitle="Smart Ledger Analysis"
-                  peerName="Peer Name"
-                  unitNumber={1}
+              </CardHeader>
+              <CardContent>
+                <ComprehensionCheck
+                  questions={comprehensionData.questions}
+                  title={comprehensionData.title}
+                  description={
+                    comprehensionData.description ??
+                    "Demonstrate that you can articulate TechStart's business model, the risks of manual bookkeeping, and investor expectations."
+                  }
+                  showExplanations={comprehensionData.showExplanations ?? true}
+                  allowRetry={comprehensionData.allowRetry ?? true}
                 />
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          {/* Self-Assessment Reflection */}
-          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
-            <CardHeader>
-              <CardTitle className="text-blue-800 dark:text-blue-200">
-                Self-Assessment: Learning Reflection
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <p className="text-lg">
-                  Complete this self-assessment to reflect on your learning and identify areas for continued growth:
-                </p>
-                
-                <div className="grid gap-4">
-                  <div className="bg-white p-4 rounded-lg border">
-                    <h4 className="font-semibold mb-2 text-blue-800">Confidence Check</h4>
-                    <p className="text-sm mb-2">Rate your confidence (1-5 scale) in these areas:</p>
-                    <ul className="text-xs space-y-1 ml-4">
-                      <li>• Understanding TechStart Solutions' business model and services</li>
-                      <li>• Explaining why manual record-keeping creates business risks</li>
-                      <li>• Analyzing scenarios from an investor's perspective</li>
-                      <li>• Connecting transaction categorization to professional financial management</li>
+            <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
+              <CardHeader>
+                <CardTitle className="text-purple-800 dark:text-purple-200">
+                  Peer Critique: {peerReviewData.projectTitle}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {peerReviewData.instructions && (
+                  <p className="text-purple-900/80">{peerReviewData.instructions}</p>
+                )}
+                {peerReviewData.rubricFocus && peerReviewData.rubricFocus.length > 0 && (
+                  <div className="bg-white p-4 rounded-lg border border-purple-200 space-y-2">
+                    <h2 className="text-sm font-semibold text-purple-800">Feedback Focus</h2>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-purple-900">
+                      {peerReviewData.rubricFocus.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </div>
-                  
-                  <div className="bg-white p-4 rounded-lg border">
-                    <h4 className="font-semibold mb-2 text-blue-800">Key Insights</h4>
-                    <p className="text-sm">What was the most important thing you learned about business financial management today?</p>
-                  </div>
-                  
-                  <div className="bg-white p-4 rounded-lg border">
-                    <h4 className="font-semibold mb-2 text-blue-800">Application Thinking</h4>
-                    <p className="text-sm">How might these concepts apply to other businesses you know about (restaurants, stores, services)?</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                )}
+                <PeerCritiqueForm
+                  projectTitle={peerReviewData.projectTitle}
+                  peerName={peerReviewData.defaultPeerName}
+                  unitNumber={unitHeader.sequence}
+                />
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </main>
 
-          {/* Assessment Summary */}
-          <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
-            <CardHeader>
-              <CardTitle className="text-green-800 dark:text-green-200">
-                Assessment Complete: Ready for Next Steps
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="prose prose-green max-w-none">
-                <p className="text-lg leading-relaxed">
-                  You have successfully demonstrated your understanding of the foundational concepts that drive 
-                  this entire unit. You understand Sarah's business challenge, can analyze it from multiple perspectives, 
-                  and recognize why professional financial management systems are essential for business success.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  In the final phase of today's lesson, we'll synthesize these learnings and preview the exciting 
-                  journey ahead as we help Sarah build her Smart Ledger system step by step.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <PhaseFooter 
-          lesson={lesson01Data}
-          unit={unit01Data}
-          phase={currentPhase}
-          phases={lesson01Phases}
-        />
-      </div>
+      <PhaseFooter lesson={lessonHeader} unit={unitHeader} phase={currentPhase} phases={phasesForHeader} />
     </div>
   )
 }
