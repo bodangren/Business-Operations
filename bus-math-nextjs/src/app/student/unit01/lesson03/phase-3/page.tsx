@@ -29,8 +29,8 @@ const unitHeader = {
 }
 
 const tAccountComponents = phaseScenario.components.filter(
-  (component): component is Extract<PhaseComponentInstance, { type: "tAccount" }>
-    => component.type === "tAccount"
+  (component): component is Extract<PhaseComponentInstance, { type: "tAccount" }> =>
+    component.type === "tAccount"
 )
 
 if (tAccountComponents.length === 0) {

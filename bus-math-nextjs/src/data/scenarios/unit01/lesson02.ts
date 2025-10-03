@@ -402,10 +402,11 @@ export const unit01Lesson02Scenario: LessonScenario = {
       ],
       components: [
         {
-          type: "dragAndDrop",
+          type: "trialBalance",
           component: "TrialBalanceSorting",
           data: {
             title: "Trial Balance: Intro Practice",
+            description: "Students prove debit and credit totals match by sorting TechStart accounts into the correct columns.",
             accounts: [
               { name: "Cash", balance: 3000, correctSide: "debit", category: "Assets" },
               { name: "Accounts Receivable", balance: 1000, correctSide: "debit", category: "Assets" },
@@ -418,8 +419,7 @@ export const unit01Lesson02Scenario: LessonScenario = {
               { name: "Service Revenue", balance: 1500, correctSide: "credit", category: "Revenue" }
             ],
             initialShuffle: true
-          },
-          description: "Students prove debit and credit totals match by sorting TechStart accounts into the correct columns."
+          }
         },
         {
           type: "comprehensionCheck",

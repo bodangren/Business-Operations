@@ -86,6 +86,10 @@ export function validateUnitProjectFramework(framework: UnitProjectFramework): V
     warnings.push("Framework should include at least one required dataset")
   }
 
+  if (requiredGuides.length === 0) {
+    warnings.push("Framework should include at least one required teacher or student guide")
+  }
+
   // Classroom-only validation
   const nonClassroomResources = [
     ...framework.resources.templates,

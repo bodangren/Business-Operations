@@ -26,14 +26,12 @@ const unitHeader = {
 }
 
 const dragAndDropComponent = getPhaseComponent(phaseScenario, "dragAndDrop")
-const accountCategorizationScenario =
-  dragAndDropComponent && dragAndDropComponent.component === "AccountCategorization"
-    ? dragAndDropComponent
-    : null
 
-if (!accountCategorizationScenario) {
+if (!dragAndDropComponent || dragAndDropComponent.component !== "AccountCategorization") {
   throw new Error("Unit 01 Lesson 02 Phase 3 is missing the AccountCategorization activity in the scenario.")
 }
+
+const accountCategorizationScenario = dragAndDropComponent
 
 const comprehensionComponent = getPhaseComponent(phaseScenario, "comprehensionCheck")
 if (!comprehensionComponent) {
