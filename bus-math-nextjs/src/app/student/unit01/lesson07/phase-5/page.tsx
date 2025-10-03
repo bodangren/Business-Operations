@@ -1,69 +1,112 @@
-'use client'
-
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import { lesson07Data, unit01Data, lesson07Phases } from "../lesson-data"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Scale, Users, CheckCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
-import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptComprehensionCheck,
+  adaptPeerReview,
+  getPhaseBySequence,
+  getPhaseComponent,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit01Data } from "../lesson-data"
 
-const currentPhase = lesson07Phases[4]
+const lessonScenario = getLessonScenario("unit01", 7)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 5)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit01Data.sequence
+}
 
-const auditQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson07"] })
+const comprehensionComponent = getPhaseComponent(phaseScenario, "comprehensionCheck")
+if (!comprehensionComponent) {
+  throw new Error("Unit 01 Lesson 07 Phase 5 scenario is missing a comprehension check component.")
+}
+
+const peerReviewComponent = getPhaseComponent(phaseScenario, "peerReview")
+if (!peerReviewComponent) {
+  throw new Error("Unit 01 Lesson 07 Phase 5 scenario is missing a peer review component.")
+}
+
+const comprehensionData = adaptComprehensionCheck(comprehensionComponent)
+const peerReviewData = adaptPeerReview(peerReviewComponent)
+const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
 
 export default function Phase5Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
-      <PhaseHeader unit={unit01Data} lesson={lesson07Data} phase={currentPhase} phases={lesson07Phases} />
+      <PhaseHeader
+        lesson={lessonHeader}
+        unit={unitHeader}
+        phase={currentPhase}
+        phases={phasesForHeader}
+      />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">✅ Phase 5: Assessment</Badge>
-            <div className="max-w-4xl mx-auto space-y-8">
-              <Card className="border-yellow-200 bg-white">
-                <CardHeader>
-                  <CardTitle className="text-yellow-900 flex items-center gap-2"><Scale className="w-5 h-5" /> Investor-Ready Standards</CardTitle>
-                </CardHeader>
-                <CardContent className="text-yellow-900">
-                  Clarity, reliability, audit trail, and documented assumptions. Models should tell a clean story and
-                  make decision‑making fast. If a number changes, every linked output should update without manual edits.
-                </CardContent>
-              </Card>
-
-              <Card className="border-blue-200 bg-white">
-                <CardHeader>
-                  <CardTitle className="text-blue-900">Mini Comprehension Check</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ComprehensionCheck questions={auditQuestions} title="Audit Decisions & Tradeoffs" showExplanations={true} />
-                </CardContent>
-              </Card>
-
-              <Card className="border-green-200 bg-green-50">
-                <CardHeader>
-                  <CardTitle className="text-green-900 flex items-center gap-2"><Users className="w-5 h-5" /> Peer Audit</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-green-900 mb-3 text-sm">
-                    Use the Definition of Done checklist while completing this peer review. Confirm exact lookups,
-                    structured references, reconciliation, chart bindings, and error handling.
-                  </p>
-                  <PeerCritiqueForm projectTitle="Smart Ledger – Investor Readiness" peerName="Partner" unitNumber={1} />
-                  <div className="mt-3 text-sm text-green-900">
-                    <CheckCircle className="inline w-4 h-4 mr-1 text-green-700" /> Capture at least one strength and one concrete improvement.
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">
+              ✅ Phase {phaseScenario.sequence}: {phaseScenario.name}
+            </Badge>
+            <h1 className="text-3xl font-bold text-gray-900">{phaseScenario.title}</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              {phaseScenario.summary}
+            </p>
           </div>
+        </section>
+
+        <section className="max-w-4xl mx-auto space-y-8">
+          <ScenarioNarrative blocks={phaseScenario.narrative} />
+
+          <Card className="border-blue-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-blue-900">
+                {comprehensionData.title ?? "Assessment Check"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ComprehensionCheck
+                questions={comprehensionData.questions}
+                title={comprehensionData.title}
+                description={comprehensionData.description ?? "Test your understanding"}
+                showExplanations={comprehensionData.showExplanations ?? true}
+                allowRetry={comprehensionData.allowRetry ?? true}
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-green-200 bg-green-50">
+            <CardHeader>
+              <CardTitle className="text-green-900">{peerReviewData.projectTitle}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {peerReviewData.instructions && (
+                <p className="text-green-900 text-sm">{peerReviewData.instructions}</p>
+              )}
+              <PeerCritiqueForm
+                projectTitle={peerReviewData.projectTitle}
+                peerName={peerReviewData.defaultPeerName ?? "Partner"}
+                unitNumber={1}
+              />
+            </CardContent>
+          </Card>
         </section>
       </main>
 
-      <PhaseFooter unit={unit01Data} lesson={lesson07Data} phase={currentPhase} phases={lesson07Phases} />
+      <PhaseFooter
+        lesson={lessonHeader}
+        unit={unitHeader}
+        phase={currentPhase}
+        phases={phasesForHeader}
+      />
     </div>
   )
 }

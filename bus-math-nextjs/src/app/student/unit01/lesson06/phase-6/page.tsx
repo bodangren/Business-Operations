@@ -1,40 +1,65 @@
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { Lightbulb } from "lucide-react"
-import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptReflection,
+  getPhaseBySequence,
+  getPhaseComponent,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit01Data } from "../lesson-data"
 
-const currentPhase = lesson06Phases[5]
+const lessonScenario = getLessonScenario("unit01", 6)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 6)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit01Data.sequence
+}
 
-export default function Unit01Lesson06Phase6() {
+const reflectionComponent = getPhaseComponent(phaseScenario, "reflection")
+if (!reflectionComponent) {
+  throw new Error("Unit 01 Lesson 06 Phase 6 scenario is missing a reflection component.")
+}
+
+const reflectionData = adaptReflection(reflectionComponent)
+
+export default function Phase6Page() {
+  const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
       <PhaseHeader
-        lesson={lesson06Data}
-        unit={unit01Data}
+        lesson={lessonHeader}
+        unit={unitHeader}
         phase={currentPhase}
-        phases={lesson06Phases}
+        phases={phasesForHeader}
       />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-              🧭 Phase 6: Closing — Present with Confidence
+              🧭 Phase {phaseScenario.sequence}: {phaseScenario.name}
             </Badge>
-            <h1 className="text-3xl font-bold text-gray-900">
-              Integrated Automation: Your Best One‑Minute Story
-            </h1>
+            <h1 className="text-3xl font-bold text-gray-900">{phaseScenario.title}</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Summarize what changed: faster switching, stable charts, clear KPIs, and better
-              decisions. Prepare a short script you could use in a live investor call.
+              {phaseScenario.summary}
             </p>
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto space-y-4">
+        <section className="max-w-4xl mx-auto space-y-6">
+          <ScenarioNarrative blocks={phaseScenario.narrative} />
+
           <Card className="border-amber-200 bg-amber-50">
             <CardHeader>
               <CardTitle className="text-amber-900 flex items-center gap-2">
@@ -48,20 +73,19 @@ export default function Unit01Lesson06Phase6() {
               professional models.
             </CardContent>
           </Card>
-        </section>
 
-        <section className="max-w-4xl mx-auto">
-          <ReflectionJournal 
-            unitTitle="CAP Reflection — Integration & Dashboards"
+          <ReflectionJournal
+            unitTitle={reflectionData.unitTitle}
+            prompts={reflectionData.prompts}
           />
         </section>
       </main>
 
-      <PhaseFooter 
-        lesson={lesson06Data}
-        unit={unit01Data}
+      <PhaseFooter
+        lesson={lessonHeader}
+        unit={unitHeader}
         phase={currentPhase}
-        phases={lesson06Phases}
+        phases={phasesForHeader}
       />
     </div>
   )
