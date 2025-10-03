@@ -14,6 +14,7 @@ Sprint Planning Status
   - Issue #14 – Unit 1 Lesson 1 component scenarios ✅
   - Issue #15 – Unit 1 Lesson 1 student refactor ✅
   - Issue #57 – Unit 01 Lessons 02-04 student refactor ✅
+  - Issue #58 – Unit 01 Lessons 05-07 scenario data ✅
 - Completed Sprint 10 slices:
   - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅
   - Issue #11 – Unit 1 practice-test experience from question bank ✅
@@ -23,7 +24,7 @@ Sprint Planning Status
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
   - Issue #37 – Unit 6 practice-test experience from question bank ✅
-- Next slice to tackle: Issue #58 – Unit 01 Lessons 05-07 scenario data (paired with #59 for student refactor).
+- Next slice to tackle: Issue #59 – Unit 01 Lessons 05-07 student refactor (paired with #60 for scenario data).
 
 Broken Links and Assets – Next.js App
 
