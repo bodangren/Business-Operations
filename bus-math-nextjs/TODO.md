@@ -24,7 +24,7 @@ Sprint Planning Status
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
   - Issue #37 – Unit 6 practice-test experience from question bank ✅
-- Next slice to tackle: Issue #59 – Unit 01 Lessons 05-07 student refactor (paired with #60 for scenario data).
+- Next slice to tackle: Issue #61 – Unit 01 Lessons 08-10 student refactor (paired with #60 for scenario data).
 
 Broken Links and Assets – Next.js App
 
