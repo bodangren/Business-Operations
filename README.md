@@ -302,12 +302,12 @@ npm run lint
 
 ### Testing & Quality Assurance
 
-**Browser Testing with Chrome MCP:**
+**Browser Testing with Chrome DevTools MCP:**
 ```bash
 # Test component functionality in real browser environment
-mcp__chrome-mcp-studio__chrome_navigate --url="http://localhost:3000/student/unit01/lesson01/phase-1"
-mcp__chrome-mcp-studio__chrome_get_interactive_elements  # Verify component accessibility
-mcp__chrome-mcp-studio__chrome_console  # Monitor for React errors
+mcp__chrome-devtools__navigate_page --url="http://localhost:3000/student/unit01/lesson01/phase-1"
+mcp__chrome-devtools__take_snapshot  # Verify component accessibility and interactive elements
+mcp__chrome-devtools__list_console_messages  # Monitor for React errors
 ```
 
 **Component Testing:**
