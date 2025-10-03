@@ -14,20 +14,21 @@ Follow this process for every development slice to keep the repository, sprint a
 5. Branch from `main` using `<type>/<issue>-<slug>` (example: `feat/7-mcq-quiz-auto-score`). All commits for the slice stay on this branch.
 6. Practice TDD: add or update tests first, then implement. Run `npm run lint` and `npm run test` before every commit. When APIs or Prisma schema change, also run `npm run test:integration`; for broader flows, run `npm run test:e2e`.
 7. Use Conventional Commit messages (e.g., `feat: add automated scoring rubric`). Keep commits atomic and scoped to the issue.
-8. Push the branch (`git push -u origin <branch>`) and open a PR (`gh pr create --fill --label ... --milestone ...`). Link the issue, record test commands in the body, and run `gh pr checks`.
-9. Complete a self-review, address feedback on the same branch, then merge with squash (`gh pr merge --squash --delete-branch`). Ensure CI is green before merge.
-10. After merge, switch back to `main`, run `git pull --ff-only`, prune stale branches, close the linked issue (if not auto-closed), and update sprint artifacts (sprint doc, TODO.md) to reflect completion.
-11. Repeat the loop for the next prioritized issue; do not batch unrelated work on a single branch.
+8. Before final verification, terminate all running dev servers (e.g., `pkill -f "npm run dev"` or `pkill -f next`), then execute `npm run build`. Resolve any build errors before claiming the slice is complete.
+9. Push the branch (`git push -u origin <branch>`) and open a PR (`gh pr create --fill --label ... --milestone ...`). Link the issue, record test commands in the body, and run `gh pr checks`.
+10. Complete a self-review, address feedback on the same branch, then merge with squash (`gh pr merge --squash --delete-branch`). Ensure CI is green before merge.
+11. After merge, switch back to `main`, run `git pull --ff-only`, prune stale branches, close the linked issue (if not auto-closed), and update sprint artifacts (sprint doc, TODO.md) to reflect completion.
+12. Repeat the loop for the next prioritized issue; do not batch unrelated work on a single branch.
 
 ## Agent Operating Rules (Read First)
 - Work only in `bus-math-nextjs/` unless explicitly told otherwise.
-- Do NOT run `npm` commands (including `npm run build`, `npm run dev`, `npm start`, installs) or mutate `.next` without explicit user approval.
+- Avoid `npm` commands (including `npm run build`, `npm run dev`, `npm start`, installs) unless you are performing the mandatory final `npm run build` verification or have explicit user approval. Do not mutate `.next` manually.
 - Prefer fast, read‑only introspection: use `rg` (ripgrep) to search, and read files in chunks ≤250 lines.
 - Verify component exports before import: check for `export default` vs named exports in actual files.
 - Follow six‑phase page structure and the established styling wrapper from lesson03 (gradient background, `PhaseHeader`/`PhaseFooter`, `Badge`, max width containers).
 - Create realistic practice datasets in `public/resources/` and link with `<a href="/resources/file.csv" download>`.
 - Use existing interactive components; avoid inventing new APIs. If you add/modify components, immediately document them in the MCP knowledge base.
-- For testing and validation, prefer Chrome MCP tools and page navigation checks; avoid local build commands unless approved.
+- For testing and validation, prefer Chrome MCP tools and page navigation checks; run local builds only for the required `npm run build` verification step.
 
 ## Excel‑Focused Lesson Patterns (Active Work)
 The course uses a “textbook‑first” approach with interactive formative assessment. Two recurring Excel lessons per unit are common:
