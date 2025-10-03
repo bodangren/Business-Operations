@@ -77,13 +77,19 @@ export default function Phase4Page() {
               </CardHeader>
               <CardContent className="text-blue-900 space-y-3 leading-relaxed">
                 <p>{dataset.description}</p>
-                <a
-                  href={dataset.path}
-                  download
-                  className="inline-flex items-center gap-2 font-semibold underline text-blue-700"
-                >
-                  Download: {dataset.path.split('/').pop() ?? 'dataset.csv'}
-                </a>
+                {dataset.path ? (
+                  <a
+                    href={dataset.path}
+                    download
+                    className="inline-flex items-center gap-2 font-semibold underline text-blue-700"
+                  >
+                    Download: {dataset.path.split('/').pop() ?? "dataset.csv"}
+                  </a>
+                ) : (
+                  <p className="italic">
+                    Resource path will be added once the dataset is available in the shared resources folder.
+                  </p>
+                )}
               </CardContent>
             </Card>
           )}
