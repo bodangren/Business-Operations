@@ -771,7 +771,7 @@ export function toComprehensionCheckFormat(
   return questions.map(q => ({
     id: q.id,
     question: q.prompt,
-    answers: shuffleArray([q.correctAnswer, ...q.distractors]),
+    answers: [q.correctAnswer, ...q.distractors],
     explanation: q.explanation
   }));
 }

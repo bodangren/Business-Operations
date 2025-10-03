@@ -1,200 +1,108 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock, AlertTriangle, Users } from "lucide-react"
-import { lesson02Data, unit02Data, lesson02Phases } from "../lesson-data"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptComprehensionCheck,
+  adaptTurnAndTalk,
+  adaptVideoScenario,
+  getPhaseBySequence,
+  getPhaseComponent,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit02Data } from "../lesson-data"
+
+const lessonScenario = getLessonScenario("unit02", 2)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 1)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit02Data.sequence
+}
+
+const videoComponent = getPhaseComponent(phaseScenario, "video")
+if (!videoComponent) {
+  throw new Error("Unit 2 Lesson 2 Phase 1 scenario is missing a video component.")
+}
+
+const comprehensionComponent = getPhaseComponent(phaseScenario, "comprehensionCheck")
+if (!comprehensionComponent) {
+  throw new Error("Unit 2 Lesson 2 Phase 1 scenario is missing a comprehension check component.")
+}
+
+const videoData = adaptVideoScenario(videoComponent.data)
+const comprehensionData = adaptComprehensionCheck(comprehensionComponent)
+const turnAndTalkComponent = getPhaseComponent(phaseScenario, "turnAndTalk")
+const turnAndTalkData = turnAndTalkComponent ? adaptTurnAndTalk(turnAndTalkComponent) : null
 
 export default function Unit02Lesson02Phase1() {
-  const currentPhase = lesson02Phases.find(p => p.sequence === 1)!
-  const hookQuestions = [
-    {
-      id: "hook1",
-      question: "What was the main problem Sarah faced with her month-end closing process?",
-      answers: [
-        "It took her entire weekend and was full of errors",
-        "She couldn't afford accounting software",
-        "Her clients weren't paying on time",
-        "She didn't understand basic accounting"
-      ]
-    },
-    {
-      id: "hook2", 
-      question: "According to Marcus, what was Sarah's most valuable business asset?",
-      answers: [
-        "Her time",
-        "Her computer equipment", 
-        "Her client relationships",
-        "Her technical skills"
-      ]
-    },
-    {
-      id: "hook3",
-      question: "What is Sarah's goal for her Month-End Wizard automation?",
-      answers: [
-        "Cut closing time from two days to two hours",
-        "Eliminate all manual bookkeeping",
-        "Replace her accountant completely",
-        "Process transactions in real-time"
-      ]
-    }
-  ]
+  const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit02Data}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
+      <PhaseHeader
+        lesson={lessonHeader}
+        unit={unitHeader}
         phase={currentPhase}
-        phases={lesson02Phases}
+        phases={phasesForHeader}
       />
-      
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <div className="prose prose-lg max-w-none">
-          
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200 mb-8">
-            <h2 className="text-2xl font-bold text-red-900 mb-4 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6" />
-              The Weekend Nightmare
-            </h2>
-            
-            <p className="text-lg leading-relaxed mb-4">
-              Sarah thought she had solved her bookkeeping problems with her "Smart Ledger" from Unit 1. 
-              Her business was growing, she landed her first monthly retainer client, and life was good. 
-              But then came her first real month-end closing...
-            </p>
 
-            <div className="bg-white p-4 rounded border-l-4 border-red-400 mb-4">
-              <p className="text-red-800 font-medium mb-2">The Complete Nightmare:</p>
-              <p className="text-red-700">
-                Sarah spent her entire weekend hunched over her laptop, cross-referencing every transaction. 
-                She found dozens of tiny errors—typos, missed subscription fees, small mistakes that threw 
-                off her totals. Each error sent her on long, frustrating hunts for the source of the problem.
-              </p>
-            </div>
-
-            <p className="text-lg leading-relaxed">
-              Her "smart" ledger was still completely manual, eating up her most valuable resource: time. 
-              She had solved one problem only to create another.
-            </p>
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
+              Phase 1: {phaseScenario.name}
+            </Badge>
+            <h1 className="text-3xl font-semibold text-gray-900">{phaseScenario.title}</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">{phaseScenario.summary}</p>
           </div>
 
-          <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
-            <h3 className="text-xl font-bold text-blue-900 mb-3">💡 The Mentor's Wake-Up Call</h3>
-            <p className="text-blue-800 mb-4">
-              Frustrated, Sarah vented to her mentor, Marcus Rodriguez, about wasting a whole weekend 
-              on administrative work. Marcus was direct and transformative in his response.
-            </p>
-            
-            <div className="bg-white p-4 rounded border border-blue-200">
-              <p className="text-blue-800 italic mb-2">
-                "Your time is the most valuable asset in your business, and you're wasting it on tasks 
-                that a machine could do better and more accurately."
-              </p>
-              <p className="text-blue-700 text-sm">
-                — Marcus Rodriguez, Sarah's Business Mentor
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <ScenarioNarrative blocks={phaseScenario.narrative} />
 
-            <p className="text-blue-800 mt-4">
-              Marcus pushed Sarah to stop thinking about just <em>recording</em> her finances and start 
-              thinking about <em>automating</em> them. Those "little" errors weren't so little—they could 
-              have serious consequences down the road.
-            </p>
+            <VideoPlayer video={videoData} />
+
+            <ComprehensionCheck
+              questions={comprehensionData.questions}
+              title={comprehensionData.title ?? "Understanding Adjusting Entries"}
+              description={
+                comprehensionData.description ??
+                "Test your understanding of the key concepts that make month-end closing accurate."
+              }
+              showExplanations={comprehensionData.showExplanations ?? true}
+              allowRetry={comprehensionData.allowRetry ?? true}
+            />
+
+            {turnAndTalkData && (
+              <Card className="border-indigo-200 bg-indigo-50 dark:bg-indigo-950/10">
+                <CardHeader>
+                  <CardTitle className="text-indigo-800 dark:text-indigo-200 flex items-center justify-between">
+                    <span>{turnAndTalkData.title}</span>
+                    <span className="text-sm font-normal text-indigo-600">{turnAndTalkData.duration}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-indigo-800/80">{turnAndTalkData.description}</p>
+                  <ul className="list-disc list-inside space-y-2 text-indigo-900">
+                    {turnAndTalkData.prompts.map((prompt, index) => (
+                      <li key={index}>{prompt}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
           </div>
+        </section>
+      </main>
 
-          <Card className="border-green-200 bg-green-50 mb-8">
-            <CardHeader>
-              <CardTitle className="text-green-800 flex items-center gap-2">
-                <Clock className="h-5 w-5" />
-                The Essential Question
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-center p-4 bg-white rounded border border-green-200">
-                <p className="text-xl font-bold text-green-900 mb-2">
-                  "What automation can cut our month-end closing time from 
-                  two days to two hours without sacrificing GAAP accuracy?"
-                </p>
-                <p className="text-green-700 text-sm">
-                  This conversation sparked the goal that drives our entire Unit 2 project.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200 mb-8">
-            <h3 className="text-xl font-bold text-yellow-900 mb-3">📦 Your Challenge: The Shoebox Receipt Challenge</h3>
-            <p className="text-yellow-800 mb-4">
-              Before you can build your own solution, you need to understand the problem firsthand. 
-              Your team will experience the same bottlenecks and frustrations that Sarah did.
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div className="bg-white p-4 rounded border border-yellow-200">
-                <h4 className="font-semibold text-yellow-900 mb-2">📋 The Task</h4>
-                <ul className="text-sm text-yellow-800 space-y-1">
-                  <li>• Sort a pile of mock receipts</li>
-                  <li>• Categorize each transaction</li>
-                  <li>• Process them manually</li>
-                  <li>• Time yourselves throughout</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-4 rounded border border-yellow-200">
-                <h4 className="font-semibold text-yellow-900 mb-2">🎯 The Goal</h4>
-                <ul className="text-sm text-yellow-800 space-y-1">
-                  <li>• Feel the pain of manual processing</li>
-                  <li>• Understand why automation matters</li>
-                  <li>• Experience the time bottlenecks</li>
-                  <li>• Identify improvement opportunities</li>
-                </ul>
-              </div>
-            </div>
-
-            <p className="text-yellow-800">
-              Once you've experienced this frustration, you'll form project teams and choose an 
-              automation focus area—accruals, deferrals, or depreciation—to begin building your 
-              own Month-End Wizard.
-            </p>
-          </div>
-
-          <ComprehensionCheck 
-            questions={hookQuestions}
-            title="Understanding the Problem"
-            showExplanations={true}
-          />
-
-          <Card className="border-purple-200 bg-purple-50 mt-8">
-            <CardHeader>
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="font-medium text-purple-900 mb-2">
-                Discussion Prompt (3 minutes):
-              </p>
-              <p className="text-purple-800 mb-2">
-                Think about Sarah's "weekend nightmare" experience. Share with a partner:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-purple-800">
-                <li>What specific problems do you see with manual month-end processing?</li>
-                <li>How might these time-consuming processes affect a growing business?</li>
-                <li>What would convince you that automation is worth the effort to build?</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-      
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit02Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+      <PhaseFooter lesson={lessonHeader} unit={unitHeader} phase={currentPhase} phases={phasesForHeader} />
     </div>
   )
 }

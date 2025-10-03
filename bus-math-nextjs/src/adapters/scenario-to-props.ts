@@ -1,4 +1,5 @@
 import { getUnit01Phase5ComprehensionCheckItems, type ComprehensionCheckItem } from "@/data/question-banks/unit01-phase5"
+import { toComprehensionCheckFormat, getQuestionsForLesson, type Unit02LessonId } from "@/data/question-banks/unit02-phase5"
 import {
   type LessonScenario,
   type PhaseScenario,
@@ -20,7 +21,13 @@ type QuestionBankResolver = (filter?: Record<string, unknown>) => ComprehensionC
 
 const QUESTION_BANK_RESOLVERS: Record<string, QuestionBankResolver> = {
   "unit01-phase5": filter =>
-    getUnit01Phase5ComprehensionCheckItems(filter as Parameters<typeof getUnit01Phase5ComprehensionCheckItems>[0])
+    getUnit01Phase5ComprehensionCheckItems(filter as Parameters<typeof getUnit01Phase5ComprehensionCheckItems>[0]),
+  "unit02-phase5": filter => {
+    const questions = getQuestionsForLesson((filter as { lessonId: Unit02LessonId }).lessonId)
+    const count = (filter as { count?: number }).count
+    const limitedQuestions = count ? questions.slice(0, count) : questions
+    return toComprehensionCheckFormat(limitedQuestions)
+  }
 }
 
 export interface AdaptedComprehensionCheck {
@@ -100,6 +107,21 @@ export interface AdaptedTAccountsVisualization {
   showAccountingEquation?: boolean
   showBalances?: boolean
   interactive?: boolean
+}
+
+export interface AdaptedDragAndDrop {
+  title: string
+  description: string
+  leftColumnTitle?: string
+  rightColumnTitle?: string
+  showHints?: boolean
+  shuffleItems?: boolean
+  items: Array<{
+    id: string
+    content: string
+    matchId: string
+    hint?: string
+  }>
 }
 
 export function getPhaseBySequence(lessonScenario: LessonScenario, sequence: number): PhaseScenario {
@@ -273,6 +295,35 @@ export function adaptTAccountsVisualization(
     showAccountingEquation: component.data.showAccountingEquation,
     showBalances: component.data.showBalances,
     interactive: component.data.interactive
+  }
+}
+
+export function adaptDragAndDrop(
+  component: ExtractComponentInstance<"dragAndDrop">
+): AdaptedDragAndDrop {
+  const data = component.data as {
+    title: string
+    description: string
+    leftColumnTitle?: string
+    rightColumnTitle?: string
+    showHints?: boolean
+    shuffleItems?: boolean
+    items: Array<{
+      id: string
+      content: string
+      matchId: string
+      hint?: string
+    }>
+  }
+  
+  return {
+    title: data.title,
+    description: data.description,
+    leftColumnTitle: data.leftColumnTitle,
+    rightColumnTitle: data.rightColumnTitle,
+    showHints: data.showHints,
+    shuffleItems: data.shuffleItems,
+    items: data.items
   }
 }
 
