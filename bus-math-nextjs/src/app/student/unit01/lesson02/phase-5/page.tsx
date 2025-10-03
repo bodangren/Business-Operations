@@ -1,74 +1,85 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { PhaseHeader } from "@/components/student/PhaseHeader"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
-import { lesson02Data, unit01Data, lesson02Phases } from "../lesson-data"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptComprehensionCheck,
+  getPhaseBySequence,
+  getPhaseComponent,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit01Data } from "../lesson-data"
 
-export default function Unit01Lesson02Phase5() {
-  const currentPhase = lesson02Phases.find(p => p.sequence === 5)!
-  const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson02"] })
+const lessonScenario = getLessonScenario("unit01", 2)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 5)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit01Data.sequence
+}
+
+const comprehensionComponent = getPhaseComponent(phaseScenario, "comprehensionCheck")
+if (!comprehensionComponent) {
+  throw new Error("Unit 01 Lesson 02 Phase 5 scenario is missing a comprehension check component.")
+}
+
+const comprehensionData = adaptComprehensionCheck(comprehensionComponent)
+
+export default function Phase5Page() {
+  const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit01Data}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
+      <PhaseHeader
+        lesson={lessonHeader}
+        unit={unitHeader}
         phase={currentPhase}
-        phases={lesson02Phases}
+        phases={phasesForHeader}
       />
-      
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <div className="prose prose-lg max-w-none">
-          
-          <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-200 mb-8">
-            <h2 className="text-2xl font-bold text-indigo-900 mb-4">📋 Learning Assessment</h2>
-            
-            <p className="text-lg leading-relaxed mb-4">
-              This assessment measures your understanding of the accounting equation and its 
-              application to business transactions. Take your time and think through each 
-              scenario carefully.
-            </p>
 
-            <div className="bg-white p-4 rounded border-l-4 border-indigo-400">
-              <p className="font-semibold text-indigo-900 mb-2">Assessment Focus:</p>
-              <ul className="list-disc list-inside space-y-1 text-indigo-800">
-                <li>Understanding the accounting equation formula</li>
-                <li>Identifying Assets, Liabilities, and Equity</li>
-                <li>Calculating missing components of the equation</li>
-                <li>Analyzing transaction effects on equation balance</li>
-                <li>Explaining the universal nature of the equation</li>
-              </ul>
-            </div>
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
+              Phase {phaseScenario.sequence}: {phaseScenario.name}
+            </Badge>
+            <h1 className="text-3xl font-semibold text-gray-900">{phaseScenario.title}</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">{phaseScenario.summary}</p>
           </div>
 
-          <ComprehensionCheck 
-            questions={assessmentQuestions}
-            title="Accounting Equation Mastery Assessment"
-            showExplanations={true}
-            allowRetry={true}
-          />
+          <div className="max-w-4xl mx-auto space-y-8">
+            <ScenarioNarrative blocks={phaseScenario.narrative} />
 
-          <div className="bg-green-50 p-6 rounded-lg border border-green-200 mt-8">
-            <h3 className="text-xl font-bold text-green-900 mb-3">✅ Assessment Complete!</h3>
-            <p className="text-green-800 mb-3">
-              You have demonstrated your understanding of the accounting equation. This fundamental 
-              concept will be the foundation for everything we learn about financial record-keeping 
-              and ledger construction.
-            </p>
-            <p className="text-green-800">
-              <strong>Next:</strong> In our closing phase, we'll reflect on how this equation 
-              connects to Sarah's goal of building investor confidence through "clean books."
-            </p>
+            <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+              <CardHeader>
+                <CardTitle className="text-orange-800">
+                  {comprehensionData.title ?? "Accounting Equation Mastery Assessment"}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ComprehensionCheck
+                  questions={comprehensionData.questions}
+                  title={comprehensionData.title}
+                  description={
+                    comprehensionData.description ??
+                    "Complete the mastery check to demonstrate you can apply the accounting equation in every scenario."
+                  }
+                  showExplanations={comprehensionData.showExplanations ?? true}
+                  allowRetry={comprehensionData.allowRetry ?? true}
+                />
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </div>
-      
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit01Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+        </section>
+      </main>
+
+      <PhaseFooter lesson={lessonHeader} unit={unitHeader} phase={currentPhase} phases={phasesForHeader} />
     </div>
   )
 }

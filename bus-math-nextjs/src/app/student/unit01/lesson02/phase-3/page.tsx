@@ -1,123 +1,109 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { PhaseHeader } from "@/components/student/PhaseHeader"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import AccountCategorization from "@/components/drag-drop-exercises/AccountCategorization"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users } from "lucide-react"
-import { lesson02Data, unit01Data, lesson02Phases } from "../lesson-data"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptComprehensionCheck,
+  getPhaseBySequence,
+  getPhaseComponent,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit01Data } from "../lesson-data"
 
-export default function Unit01Lesson02Phase3() {
-  const currentPhase = lesson02Phases.find(p => p.sequence === 3)!
-  const practiceQuestions = [
-    {
-      id: "q1",
-      question: "Sarah buys a $1,200 computer and pays cash. How does this transaction affect the accounting equation?",
-      answers: [
-        "One asset (cash) decreases by $1,200, another asset (computer) increases by $1,200",
-        "Assets increase by $1,200, equation goes out of balance",
-        "Liabilities increase by $1,200",
-        "Equity decreases by $1,200"
-      ],
-      explanation: "This is an asset-to-asset transaction. Cash (asset) decreases by $1,200 while Computer Equipment (asset) increases by $1,200. Total assets remain the same, so the equation stays balanced."
-    },
-    {
-      id: "q2",
-      question: "If Sarah takes out a $5,000 business loan and deposits it into her business account, what happens?",
-      answers: [
-        "Assets increase by $5,000 and liabilities increase by $5,000",
-        "Only assets increase",
-        "Equity increases by $5,000", 
-        "The equation becomes unbalanced"
-      ],
-      explanation: "Cash (assets) increases by $5,000 because money entered the business account. Bank Loan Payable (liabilities) also increases by $5,000 because the business now owes this money. Both sides of the equation increase equally."
-    }
-  ]
+const lessonScenario = getLessonScenario("unit01", 2)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 3)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit01Data.sequence
+}
 
+const dragAndDropComponent = getPhaseComponent(phaseScenario, "dragAndDrop")
+const accountCategorizationScenario =
+  dragAndDropComponent && dragAndDropComponent.component === "AccountCategorization"
+    ? dragAndDropComponent
+    : null
+
+if (!accountCategorizationScenario) {
+  throw new Error("Unit 01 Lesson 02 Phase 3 is missing the AccountCategorization activity in the scenario.")
+}
+
+const comprehensionComponent = getPhaseComponent(phaseScenario, "comprehensionCheck")
+if (!comprehensionComponent) {
+  throw new Error("Unit 01 Lesson 02 Phase 3 scenario is missing a comprehension check component.")
+}
+
+const comprehensionData = adaptComprehensionCheck(comprehensionComponent)
+
+export default function Phase3Page() {
+  const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit01Data}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
+      <PhaseHeader
+        lesson={lessonHeader}
+        unit={unitHeader}
         phase={currentPhase}
-        phases={lesson02Phases}
+        phases={phasesForHeader}
       />
-      
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <div className="prose prose-lg max-w-none">
-          
-          <div className="bg-green-50 p-6 rounded-lg border border-green-200 mb-8">
-            <h2 className="text-2xl font-bold text-green-900 mb-4">🎯 Practice with Sarah's Business</h2>
-            
-            <p className="text-lg leading-relaxed mb-4">
-              Now that we understand the three components of the accounting equation, let's practice 
-              identifying them in Sarah's TechStart Solutions. Remember:
-            </p>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="bg-white p-3 rounded border">
-                <p className="font-bold text-green-700">Assets</p>
-                <p className="text-sm">What we OWN</p>
-              </div>
-              <div className="bg-white p-3 rounded border">
-                <p className="font-bold text-red-700">Liabilities</p>
-                <p className="text-sm">What we OWE</p>
-              </div>
-              <div className="bg-white p-3 rounded border">
-                <p className="font-bold text-purple-700">Equity</p>
-                <p className="text-sm">Owner's STAKE</p>
-              </div>
-            </div>
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
+              Phase {phaseScenario.sequence}: {phaseScenario.name}
+            </Badge>
+            <h1 className="text-3xl font-semibold text-gray-900">{phaseScenario.title}</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">{phaseScenario.summary}</p>
           </div>
 
-          <AccountCategorization />
+          <div className="max-w-4xl mx-auto space-y-8">
+            <ScenarioNarrative blocks={phaseScenario.narrative} />
 
-          <Card className="border-blue-200 bg-blue-50 mb-6">
-            <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="font-medium text-blue-900 mb-2">
-                Discussion Prompt (3 minutes):
-              </p>
-              <p className="text-blue-800 mb-2">
-                Work with a partner to discuss these scenarios:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-blue-800">
-                <li>Sarah receives $1,100 from the dental office. What changes and why?</li>
-                <li>Sarah buys $200 worth of design software and agrees to pay next month. What happens to each component?</li>
-                <li>How would you explain the "perfect balance" concept to someone who has never heard of accounting?</li>
-              </ul>
-            </CardContent>
-          </Card>
+            <Card className="border-emerald-200 bg-emerald-50 dark:bg-emerald-950/10">
+              <CardHeader>
+                <CardTitle className="text-emerald-800">Scenario Practice: TechStart Account Sorting</CardTitle>
+                {accountCategorizationScenario.description && (
+                  <CardDescription>{accountCategorizationScenario.description}</CardDescription>
+                )}
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* TODO(#57): Pass scenario preset once AccountCategorization supports external props. */}
+                <AccountCategorization />
+              </CardContent>
+            </Card>
 
-
-          <ComprehensionCheck 
-            questions={practiceQuestions}
-            title="Guided Practice Check"
-            showExplanations={true}
-          />
-
-          <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-            <h3 className="text-xl font-bold text-yellow-900 mb-3">🔑 Key Insight</h3>
-            <p className="text-yellow-800">
-              Every transaction affects <strong>at least two</strong> components of the equation, 
-              but the equation <strong>always stays balanced</strong>. This is why it's called 
-              "double-entry" bookkeeping - there are always two sides to every financial story.
-            </p>
+            <Card className="border-indigo-200 bg-indigo-50 dark:bg-indigo-950/10">
+              <CardHeader>
+                <CardTitle className="text-indigo-800">
+                  {comprehensionData.title ?? "Guided Practice Check"}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ComprehensionCheck
+                  questions={comprehensionData.questions}
+                  title={comprehensionData.title}
+                  description={
+                    comprehensionData.description ??
+                    "Explain how each TechStart transaction keeps the accounting equation balanced."
+                  }
+                  showExplanations={comprehensionData.showExplanations ?? true}
+                  allowRetry={comprehensionData.allowRetry ?? true}
+                />
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </div>
-      
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit01Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+        </section>
+      </main>
+
+      <PhaseFooter lesson={lessonHeader} unit={unitHeader} phase={currentPhase} phases={phasesForHeader} />
     </div>
   )
 }

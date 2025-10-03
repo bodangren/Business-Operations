@@ -6,7 +6,12 @@ import {
   type VideoScenario,
   type MultipleChoiceQuestionScenario,
   type FillInBlankScenario,
-  type ReflectionPromptScenario
+  type ReflectionPromptScenario,
+  type TAccountScenario,
+  type JournalEntryExerciseScenario,
+  type TransactionJournalEntryScenario,
+  type TrialBalanceAccountScenario,
+  type TAccountsVisualizationAccount
 } from "@/types/lesson-scenarios"
 import type { VideoContent } from "@/types/sections"
 import type { LessonPhase } from "@/components/student/PhaseHeader"
@@ -55,6 +60,46 @@ export interface AdaptedPeerReview {
   defaultPeerName?: string
   rubricFocus?: string[]
   instructions?: string
+}
+
+export interface AdaptedTAccount {
+  accountName: string
+  accountType: TAccountScenario["accountType"]
+  debits: TAccountScenario["debits"]
+  credits: TAccountScenario["credits"]
+  showBalance?: boolean
+  showFormulas?: boolean
+  title?: string
+}
+
+export interface AdaptedJournalEntry {
+  title?: string
+  description?: string
+  availableAccounts?: string[]
+  scenarios: JournalEntryExerciseScenario[]
+}
+
+export interface AdaptedTransactionJournal {
+  title?: string
+  clientTypes?: string[]
+  initialTransactions?: TransactionJournalEntryScenario[]
+  maxTransactions?: number
+  showAnalytics?: boolean
+}
+
+export interface AdaptedTrialBalanceSorting {
+  title?: string
+  description?: string
+  accounts: TrialBalanceAccountScenario[]
+  initialShuffle?: boolean
+}
+
+export interface AdaptedTAccountsVisualization {
+  title?: string
+  accounts?: TAccountsVisualizationAccount[]
+  showAccountingEquation?: boolean
+  showBalances?: boolean
+  interactive?: boolean
 }
 
 export function getPhaseBySequence(lessonScenario: LessonScenario, sequence: number): PhaseScenario {
@@ -172,6 +217,62 @@ export function adaptPeerReview(component: ExtractComponentInstance<"peerReview"
     defaultPeerName: component.data.defaultPeerName,
     rubricFocus: component.data.rubricFocus,
     instructions: component.data.instructions
+  }
+}
+
+export function adaptTAccount(component: ExtractComponentInstance<"tAccount">): AdaptedTAccount {
+  return {
+    accountName: component.data.accountName,
+    accountType: component.data.accountType,
+    debits: component.data.debits,
+    credits: component.data.credits,
+    showBalance: component.data.showBalance,
+    showFormulas: component.data.showFormulas,
+    title: component.data.title
+  }
+}
+
+export function adaptJournalEntry(component: ExtractComponentInstance<"journalEntry">): AdaptedJournalEntry {
+  return {
+    title: component.data.title,
+    description: component.data.description,
+    availableAccounts: component.data.availableAccounts,
+    scenarios: component.data.scenarios
+  }
+}
+
+export function adaptTransactionJournal(
+  component: ExtractComponentInstance<"transactionJournal">
+): AdaptedTransactionJournal {
+  return {
+    title: component.data.title,
+    clientTypes: component.data.clientTypes,
+    initialTransactions: component.data.initialTransactions,
+    maxTransactions: component.data.maxTransactions,
+    showAnalytics: component.data.showAnalytics
+  }
+}
+
+export function adaptTrialBalance(
+  component: ExtractComponentInstance<"trialBalance">
+): AdaptedTrialBalanceSorting {
+  return {
+    title: component.data.title,
+    description: component.data.description,
+    accounts: component.data.accounts,
+    initialShuffle: component.data.initialShuffle
+  }
+}
+
+export function adaptTAccountsVisualization(
+  component: ExtractComponentInstance<"tAccountsVisualization">
+): AdaptedTAccountsVisualization {
+  return {
+    title: component.data.title,
+    accounts: component.data.accounts,
+    showAccountingEquation: component.data.showAccountingEquation,
+    showBalances: component.data.showBalances,
+    interactive: component.data.interactive
   }
 }
 
