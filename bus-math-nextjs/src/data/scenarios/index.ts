@@ -1,9 +1,15 @@
 import { LessonScenario } from "@/types/lesson-scenarios"
 import { unit01Lesson01Scenario } from "./unit01/lesson01"
+import { unit01Lesson02Scenario } from "./unit01/lesson02"
+import { unit01Lesson03Scenario } from "./unit01/lesson03"
+import { unit01Lesson04Scenario } from "./unit01/lesson04"
 
 const scenarioRegistry: Record<string, Record<number, LessonScenario>> = {
   unit01: {
-    1: unit01Lesson01Scenario
+    1: unit01Lesson01Scenario,
+    2: unit01Lesson02Scenario,
+    3: unit01Lesson03Scenario,
+    4: unit01Lesson04Scenario
   }
 }
 

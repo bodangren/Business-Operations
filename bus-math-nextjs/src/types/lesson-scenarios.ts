@@ -84,6 +84,76 @@ export interface VideoScenario {
   resourceRefId?: string
 }
 
+export interface TAccountTransaction {
+  id: string
+  date: string
+  description: string
+  amount: number
+  reference?: string
+}
+
+export interface TAccountScenario {
+  accountName: string
+  accountType: "asset" | "liability" | "equity" | "revenue" | "expense"
+  debits: TAccountTransaction[]
+  credits: TAccountTransaction[]
+  title?: string
+  showBalance?: boolean
+  showFormulas?: boolean
+}
+
+export interface JournalEntryExerciseScenario {
+  id: string
+  description: string
+  correctEntry: Array<{
+    account: string
+    debit: number
+    credit: number
+  }>
+  explanation: string
+}
+
+export interface TransactionJournalEntryLine {
+  id: string
+  account: string
+  accountType: "asset" | "liability" | "equity" | "revenue" | "expense"
+  debit: number
+  credit: number
+}
+
+export interface TransactionJournalEntryScenario {
+  id: string
+  entryNumber: string
+  date: string
+  description: string
+  clientFocus: string
+  lines: TransactionJournalEntryLine[]
+  isBalanced: boolean
+}
+
+export interface TrialBalanceAccountScenario {
+  name: string
+  balance: number
+  correctSide: "debit" | "credit"
+  category: "Assets" | "Liabilities" | "Equity" | "Revenue" | "Expenses"
+}
+
+export interface TAccountsVisualizationTransaction {
+  id: string
+  date: string
+  description: string
+  amount: number
+  reference?: string
+}
+
+export interface TAccountsVisualizationAccount {
+  id: string
+  name: string
+  type: "asset" | "liability" | "equity"
+  debits: TAccountsVisualizationTransaction[]
+  credits: TAccountsVisualizationTransaction[]
+}
+
 export type PhaseComponentInstance =
   | {
       type: "video"
@@ -138,6 +208,53 @@ export type PhaseComponentInstance =
         rubricFocus?: string[]
         defaultPeerName?: string
         instructions?: string
+      }
+    }
+  | {
+      type: "tAccount"
+      component: "TAccountSimple"
+      data: TAccountScenario
+    }
+  | {
+      type: "journalEntry"
+      component: "JournalEntryBuilding"
+      data: {
+        title?: string
+        description?: string
+        availableAccounts?: string[]
+        scenarios: JournalEntryExerciseScenario[]
+      }
+    }
+  | {
+      type: "transactionJournal"
+      component: "TransactionJournal"
+      data: {
+        title?: string
+        clientTypes?: string[]
+        initialTransactions?: TransactionJournalEntryScenario[]
+        maxTransactions?: number
+        showAnalytics?: boolean
+      }
+    }
+  | {
+      type: "trialBalance"
+      component: "TrialBalanceSorting"
+      data: {
+        title?: string
+        description?: string
+        accounts: TrialBalanceAccountScenario[]
+        initialShuffle?: boolean
+      }
+    }
+  | {
+      type: "tAccountsVisualization"
+      component: "TAccountsVisualization"
+      data: {
+        title?: string
+        accounts?: TAccountsVisualizationAccount[]
+        showAccountingEquation?: boolean
+        showBalances?: boolean
+        interactive?: boolean
       }
     }
 
