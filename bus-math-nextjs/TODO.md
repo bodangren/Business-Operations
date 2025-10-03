@@ -7,9 +7,13 @@
 - Merge via squash after CI passes, prune branches, close the issue, and update sprint docs/TODO before moving on.
 
 Sprint Planning Status
-- Sprint 12 plan recorded in `docs/sprint/S12.md` (Component Refactor).
+- Sprint 11 plan in `docs/sprint/S11.md` (Teacher Slide Platform + scenario registry expansion). Epic #104 tracks all Sprint 11 slices (#56-#103).
+- Sprint 12 outline in `docs/sprint/S12.md` remains future backlog prep.
 - Sprint 10 plan retained in `docs/sprint/S10.md` for historical reference.
-- Completed slices (Sprint 10 wrap-up):
+- Completed Sprint 11 slices so far:
+  - Issue #14 – Unit 1 Lesson 1 component scenarios ✅
+  - Issue #15 – Unit 1 Lesson 1 student refactor ✅
+- Completed Sprint 10 slices:
   - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅
   - Issue #11 – Unit 1 practice-test experience from question bank ✅
   - Issue #26 – Unit 2 phase-5 question bank ✅
@@ -18,7 +22,7 @@ Sprint Planning Status
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
   - Issue #37 – Unit 6 practice-test experience from question bank ✅
-- Next slice to tackle: Issue #14 – Define Unit 1 Lesson 1 component scenarios (establish shared scenario data layer).
+- Next slice to tackle: Issue #56 – Define Unit 01 Lessons 02-04 component scenarios (paired with #57 in Sprint 11).
 
 Broken Links and Assets – Next.js App
 
