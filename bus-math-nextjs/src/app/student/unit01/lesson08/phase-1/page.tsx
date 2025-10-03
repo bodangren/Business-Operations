@@ -1,170 +1,223 @@
-'use client'
-
+import { ScenarioNarrative } from "@/components/student/ScenarioNarrative"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import { lesson08Data, unit01Data, lesson08Phases } from "../lesson-data"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getLessonScenario } from "@/data/scenarios"
+import {
+  adaptComprehensionCheck,
+  adaptFillInTheBlank,
+  adaptReflection,
+  getPhaseBySequence,
+  getPhaseComponent,
+  mapLessonMetadata,
+  mapScenarioPhasesToLessonPhases
+} from "@/adapters/scenario-to-props"
+import { unit01Data } from "../lesson-data"
 
-const currentPhase = lesson08Phases[0]
+const lessonScenario = getLessonScenario("unit01", 8)
+const phasesForHeader = mapScenarioPhasesToLessonPhases(lessonScenario)
+const lessonHeader = mapLessonMetadata(lessonScenario)
+const phaseScenario = getPhaseBySequence(lessonScenario, 1)
+const unitHeader = {
+  id: lessonScenario.metadata.unitId,
+  title: lessonScenario.metadata.unitTitle,
+  sequence: unit01Data.sequence
+}
 
-const businessObjectives = [
-  "Define a clear problem statement and project scope for Smart Ledger",
-  "Identify stakeholders (Sarah, clients, potential investors) and their needs",
-  "Set success metrics that show accuracy, speed, and investor readiness"
-]
+const comprehensionComponent = getPhaseComponent(phaseScenario, "comprehensionCheck")
+if (!comprehensionComponent) {
+  throw new Error("Unit 01 Lesson 08 Phase 1 scenario is missing a comprehension check component.")
+}
 
-const excelObjectives = [
-  "Plan workbook tabs (Transactions, Accounts, Trial Balance, Checks, Dashboard)",
-  "Use Excel Tables, structured references, SUMIF/SUMIFS for totals",
-  "Design data validation and a trial-balance auto-check to prevent errors"
+const fillInBlankComponent = getPhaseComponent(phaseScenario, "fillInTheBlank")
+if (!fillInBlankComponent) {
+  throw new Error("Unit 01 Lesson 08 Phase 1 scenario is missing a fill in the blank component.")
+}
+
+const reflectionComponent = getPhaseComponent(phaseScenario, "reflection")
+if (!reflectionComponent) {
+  throw new Error("Unit 01 Lesson 08 Phase 1 scenario is missing a reflection component.")
+}
+
+const comprehensionData = adaptComprehensionCheck(comprehensionComponent)
+const fillInBlankData = adaptFillInTheBlank(fillInBlankComponent)
+const reflectionData = adaptReflection(reflectionComponent)
+
+const acceptanceCriteria = [
+  "Problem statement, scope, stakeholders, and success metrics are clearly written",
+  "Data inventory and source plan are listed; team sets a file naming convention",
+  "Excel model plan lists tabs, validations, trial-balance check, and a small dashboard",
+  "Risks/assumptions and simple mitigation steps are documented",
+  "Evidence started: brief outline plus workbook skeleton (tabs created, headers set)"
 ]
 
 const rubric = [
-  { name: "Technical Accuracy", weight: "50%", desc: "Correct formulas, validations, and reliable results" },
-  { name: "Strategic Rationale", weight: "20%", desc: "Explains business goals and trade-offs" },
-  { name: "Communication & Clarity", weight: "15%", desc: "Concise story and audience-fit visuals" },
-  { name: "Time Management", weight: "10%", desc: "Stays within time and clean transitions" },
-  { name: "Q&A Readiness", weight: "5%", desc: "Confident, concise responses" }
+  { name: "Technical Accuracy", weight: "50%", description: "Correct formulas, validations, and reliable results" },
+  { name: "Strategic Rationale", weight: "20%", description: "Explains business goals and trade-offs" },
+  { name: "Communication & Clarity", weight: "15%", description: "Concise story and audience-fit visuals" },
+  { name: "Time Management", weight: "10%", description: "Stays within time and clean transitions" },
+  { name: "Q&A Readiness", weight: "5%", description: "Confident, concise responses" }
 ]
 
+const submissionChecklist = [
+  "One-page project brief (PDF or doc link)",
+  "Workbook skeleton (tabs set, headers added)",
+  "Link or path to dataset used (g1–g6)"
+]
+
+const datasetResource = lessonScenario.sharedResources?.find(resource => resource.id === "smart-ledger-datasets")
+const datasetBasePath = datasetResource?.path ?? "/resources/unit01-pbl-smart-ledger-g"
+const datasetLinks = Array.from({ length: 6 }, (_, index) => ({
+  id: `g${index + 1}`,
+  href: `${datasetBasePath}${index + 1}.csv`
+}))
+
 export default function Phase1Page() {
+  const currentPhase = phasesForHeader.find(phase => phase.sequence === phaseScenario.sequence)!
+
   return (
-    <div className="min-h-screen bg-white">
-      <PhaseHeader unit={unit01Data} lesson={lesson08Data} phase={currentPhase} phases={lesson08Phases} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-rose-50">
+      <PhaseHeader
+        lesson={lessonHeader}
+        unit={unitHeader}
+        phase={currentPhase}
+        phases={phasesForHeader}
+      />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-lg px-4 py-2">📌 Phase 1: Introduction</Badge>
-            <div className="max-w-4xl mx-auto space-y-8 text-left">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Project Definition — Smart Ledger for TechStart</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-muted-foreground">
-                  <p>
-                    Sarah Chen runs TechStart Solutions, a small digital marketing company. She moves fast and takes on
-                    new clients, but her old tracking system is messy. Today, you will define a clean plan for a
-                    professional ledger. This plan must make sense to an executive audience and build investor trust.
-                  </p>
-                  <p>
-                    Keep your writing simple and direct. Use terms like stakeholder, scope, and success metrics in ways
-                    a client would understand. Your plan guides how you build the Excel model in the next sessions.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Objectives</CardTitle>
-                </CardHeader>
-                <CardContent className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="font-semibold mb-2">Business Objectives</h3>
-                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                      {businessObjectives.map((o) => (<li key={o}>{o}</li>))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Excel Objectives</h3>
-                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                      {excelObjectives.map((o) => (<li key={o}>{o}</li>))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Why This Matters</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  A well-defined plan saves time and reduces mistakes. Investors and clients look for controls that
-                  prevent errors. Your checklist today becomes the standard you use to judge your final workbook.
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Milestone 1 — Acceptance Criteria</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-muted-foreground">
-                  <p>Use this checkable list with your team as you draft and review:</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Problem statement, scope, stakeholders, and success metrics are clearly written.</span></li>
-                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Data inventory and source plan are listed; team sets a file naming convention.</span></li>
-                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Excel model plan lists tabs, validations, trial-balance check, and a small dashboard.</span></li>
-                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Risks/assumptions and simple mitigation steps are documented.</span></li>
-                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Evidence started: brief outline + workbook skeleton (tabs created, headers set).</span></li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Standard Rubric (Shown on all PBL pages)</CardTitle>
-                </CardHeader>
-                <CardContent className="grid sm:grid-cols-2 gap-4">
-                  {rubric.map(r => (
-                    <div key={r.name} className="border rounded-md p-3">
-                      <div className="flex items-center justify-between"><span className="font-medium">{r.name}</span><Badge variant="outline">{r.weight}</Badge></div>
-                      <p className="text-sm text-muted-foreground mt-1">{r.desc}</p>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Workflow Today (~45–60 min)</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  Plan → create workbook skeleton → download dataset → team check-in. Keep your notes short and clear.
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Resources — Group Datasets (reuse in Lessons 09–10)</CardTitle>
-                </CardHeader>
-                <CardContent className="grid sm:grid-cols-2 gap-2 text-sm">
-                  {Array.from({length:6}).map((_,i)=>{
-                    const n=i+1
-                    const href=`/resources/unit01-pbl-smart-ledger-g${n}.csv`
-                    return (<a key={n} href={href} download className="underline text-blue-600">Download g{n} dataset</a>)
-                  })}
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Submission Checklist</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground text-sm space-y-2">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>One-page project brief (PDF or doc link)</li>
-                    <li>Workbook skeleton (tabs set, headers added)</li>
-                    <li>Link or path to dataset used (g1–g6)</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Reflection</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ReflectionJournal unitTitle="Milestone 1 Reflection" />
-                </CardContent>
-              </Card>
-            </div>
+            <Badge className="bg-rose-100 text-rose-800 text-lg px-4 py-2">
+              📌 Phase {phaseScenario.sequence}: {phaseScenario.name}
+            </Badge>
+            <h1 className="text-3xl font-bold text-gray-900">{phaseScenario.title}</h1>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              {phaseScenario.summary}
+            </p>
           </div>
+        </section>
+
+        <section className="max-w-4xl mx-auto space-y-8">
+          <ScenarioNarrative blocks={phaseScenario.narrative} />
+
+          <Card className="border-rose-200 bg-rose-50">
+            <CardHeader>
+              <CardTitle className="text-rose-900">
+                {comprehensionData.title ?? "Project Definition Understanding"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ComprehensionCheck
+                questions={comprehensionData.questions}
+                title={comprehensionData.title}
+                description={
+                  comprehensionData.description ??
+                  "Test your understanding of the Smart Ledger project planning work."
+                }
+                showExplanations={comprehensionData.showExplanations ?? true}
+                allowRetry={comprehensionData.allowRetry ?? true}
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-yellow-200 bg-yellow-50">
+            <CardHeader>
+              <CardTitle className="text-yellow-900">{fillInBlankData.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <FillInTheBlank
+                sentences={fillInBlankData.sentences}
+                title={fillInBlankData.title}
+                description="Complete each sentence to lock in key project planning vocabulary."
+                showWordList={true}
+                randomizeWordOrder={true}
+                showHints={true}
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900">Milestone 1 — Acceptance Criteria</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-blue-900">
+              <p>Use this list with your team as you draft and review deliverables:</p>
+              <ul className="space-y-2">
+                {acceptanceCriteria.map(item => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1">✅</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900">Standard Rubric</CardTitle>
+            </CardHeader>
+            <CardContent className="grid sm:grid-cols-2 gap-4 text-purple-900">
+              {rubric.map(item => (
+                <div key={item.name} className="border border-purple-200 rounded-md p-3 bg-white">
+                  <div className="flex items-center justify-between">
+                    <span className="font-medium">{item.name}</span>
+                    <Badge variant="outline">{item.weight}</Badge>
+                  </div>
+                  <p className="text-sm mt-2">{item.description}</p>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="border-teal-200 bg-teal-50">
+            <CardHeader>
+              <CardTitle className="text-teal-900">Resources — Group Datasets</CardTitle>
+            </CardHeader>
+            <CardContent className="grid sm:grid-cols-2 gap-2 text-sm text-teal-900">
+              {datasetLinks.map(link => (
+                <a key={link.id} href={link.href} download className="underline">Download {link.id} dataset</a>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="border-slate-200 bg-slate-50">
+            <CardHeader>
+              <CardTitle className="text-slate-900">Submission Checklist</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-900 space-y-2">
+              <ul className="list-disc list-inside space-y-1">
+                {submissionChecklist.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-emerald-200 bg-emerald-50">
+            <CardHeader>
+              <CardTitle className="text-emerald-900">Reflection</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ReflectionJournal
+                unitTitle={reflectionData.unitTitle}
+                prompts={reflectionData.prompts}
+              />
+            </CardContent>
+          </Card>
         </section>
       </main>
 
-      <PhaseFooter unit={unit01Data} lesson={lesson08Data} phase={currentPhase} phases={lesson08Phases} />
+      <PhaseFooter
+        lesson={lessonHeader}
+        unit={unitHeader}
+        phase={currentPhase}
+        phases={phasesForHeader}
+      />
     </div>
   )
 }
