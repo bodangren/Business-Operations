@@ -9,6 +9,9 @@ import { unit01Lesson07Scenario } from "./unit01/lesson07"
 import { unit01Lesson08Scenario } from "./unit01/lesson08"
 import { unit01Lesson09Scenario } from "./unit01/lesson09"
 import { unit01Lesson10Scenario } from "./unit01/lesson10"
+import { unit02Lesson01Scenario } from "./unit02/lesson01"
+import { unit02Lesson02Scenario } from "./unit02/lesson02"
+import { unit02Lesson03Scenario } from "./unit02/lesson03"
 
 const scenarioRegistry: Record<string, Record<number, LessonScenario>> = {
   unit01: {
@@ -22,6 +25,11 @@ const scenarioRegistry: Record<string, Record<number, LessonScenario>> = {
     8: unit01Lesson08Scenario,
     9: unit01Lesson09Scenario,
     10: unit01Lesson10Scenario
+  },
+  unit02: {
+    1: unit02Lesson01Scenario,
+    2: unit02Lesson02Scenario,
+    3: unit02Lesson03Scenario
   }
 }
 
