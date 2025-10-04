@@ -6,6 +6,12 @@
 - Use Conventional Commits, keep work scoped to the issue branch, and document changes/tests in the PR (`gh pr create --fill`).
 - Merge via squash after CI passes, prune branches, close the issue, and update sprint docs/TODO before moving on.
 
+# ROLLBACK NOTICE (2025-10-03)
+- Rolled back from PR #113/#114 due to data loss and build failures
+- Current safe state: commit 915a96a (after PR #112)
+- Issues #62/#63 reopened for proper re-implementation
+- Build verified to pass at rollback state
+
 Sprint Planning Status
 - Sprint 11 plan in `docs/sprint/S11.md` (Teacher Slide Platform + scenario registry expansion). Epic #104 tracks all Sprint 11 slices (#56-#103).
 - Sprint 12 outline in `docs/sprint/S12.md` remains future backlog prep.
@@ -18,6 +24,9 @@ Sprint Planning Status
   - Issue #59 – Unit 01 Lessons 05-07 student refactor ✅
   - Issue #60 – Unit 01 Lessons 08-10 scenario data ✅
   - Issue #61 – Unit 01 Lessons 08-10 student refactor ✅
+- ROLLED BACK Sprint 11 slices (data loss in merge):
+  - Issue #62 – Unit 02 Lessons 01-03 scenario data (REOPENED)
+  - Issue #63 – Unit 02 Lessons 01-03 student refactor (REOPENED)
 - Completed Sprint 10 slices:
   - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅
   - Issue #11 – Unit 1 practice-test experience from question bank ✅
@@ -27,7 +36,8 @@ Sprint Planning Status
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
   - Issue #37 – Unit 6 practice-test experience from question bank ✅
-- Next slice to tackle: Issue #62 – Unit 02 Lessons 01-03 scenario data.
+- Next slice to tackle: Issue #62 – Unit 02 Lessons 01-03 scenario data (REOPENED after rollback).
+- Issue #63 – Unit 02 Lessons 01-03 student refactor (REOPENED after rollback).
 
 Broken Links and Assets – Next.js App
 
