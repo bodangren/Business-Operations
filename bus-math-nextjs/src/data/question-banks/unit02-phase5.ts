@@ -762,6 +762,24 @@ export const allUnit02Phase5Questions: Unit02Phase5Question[] = [
   ...lesson07Questions
 ];
 
+export function getUnit02Phase5Questions(filter?: Unit02Phase5Filter): Unit02Phase5Question[] {
+  const { lessonIds, tags } = filter ?? {};
+
+  return allUnit02Phase5Questions.filter(question => {
+    const matchesLesson = !lessonIds || lessonIds.includes(question.lessonId);
+    const matchesTags =
+      !tags || tags.length === 0 || tags.some(tag => question.objectiveTags.includes(tag));
+
+    return matchesLesson && matchesTags;
+  });
+}
+
+export function getUnit02Phase5ComprehensionCheckItems(
+  filter?: Unit02Phase5Filter
+): ComprehensionCheckItem[] {
+  return toComprehensionCheckFormat(getUnit02Phase5Questions(filter));
+}
+
 /**
  * Convert Unit02Phase5Question to ComprehensionCheck format
  */

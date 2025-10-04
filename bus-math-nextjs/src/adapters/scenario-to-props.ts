@@ -1,4 +1,8 @@
-import { getUnit01Phase5ComprehensionCheckItems, type ComprehensionCheckItem } from "@/data/question-banks/unit01-phase5"
+import {
+  getUnit01Phase5ComprehensionCheckItems,
+  type ComprehensionCheckItem
+} from "@/data/question-banks/unit01-phase5"
+import { getUnit02Phase5ComprehensionCheckItems } from "@/data/question-banks/unit02-phase5"
 import {
   type LessonScenario,
   type PhaseScenario,
@@ -20,7 +24,9 @@ type QuestionBankResolver = (filter?: Record<string, unknown>) => ComprehensionC
 
 const QUESTION_BANK_RESOLVERS: Record<string, QuestionBankResolver> = {
   "unit01-phase5": filter =>
-    getUnit01Phase5ComprehensionCheckItems(filter as Parameters<typeof getUnit01Phase5ComprehensionCheckItems>[0])
+    getUnit01Phase5ComprehensionCheckItems(filter as Parameters<typeof getUnit01Phase5ComprehensionCheckItems>[0]),
+  "unit02-phase5": filter =>
+    getUnit02Phase5ComprehensionCheckItems(filter as Parameters<typeof getUnit02Phase5ComprehensionCheckItems>[0])
 }
 
 export interface AdaptedComprehensionCheck {
