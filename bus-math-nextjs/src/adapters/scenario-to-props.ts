@@ -47,6 +47,25 @@ export interface AdaptedFillInTheBlank {
   sentences: FillInBlankScenario[]
 }
 
+export interface AdaptedDragAndDropItem {
+  id: string
+  content: string
+  matchId: string
+  hint?: string
+  category?: string
+  description?: string
+}
+
+export interface AdaptedDragAndDrop {
+  title: string
+  description: string
+  leftColumnTitle?: string
+  rightColumnTitle?: string
+  items: AdaptedDragAndDropItem[]
+  showHints?: boolean
+  shuffleItems?: boolean
+}
+
 export interface AdaptedReflectionJournal {
   title: string
   unitTitle?: string
@@ -196,6 +215,54 @@ export function adaptFillInTheBlank(component: ExtractComponentInstance<"fillInT
   return {
     title: component.data.title,
     sentences: component.data.items
+  }
+}
+
+export function adaptDragAndDrop(component: ExtractComponentInstance<"dragAndDrop">): AdaptedDragAndDrop {
+  const data = component.data as Record<string, unknown> | undefined
+
+  if (!data) {
+    throw new Error("Drag-and-drop scenario is missing configuration data.")
+  }
+
+  const { title, description, leftColumnTitle, rightColumnTitle, items, showHints, shuffleItems } = data
+
+  if (typeof title !== "string" || typeof description !== "string") {
+    throw new Error("Drag-and-drop scenario requires a title and description string.")
+  }
+
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new Error(`Drag-and-drop scenario '${title}' must include at least one matching item.`)
+  }
+
+  const mappedItems: AdaptedDragAndDropItem[] = items.map((rawItem, index) => {
+    const item = rawItem as Record<string, unknown>
+    const id = item.id
+    const content = item.content
+    const matchId = item.matchId
+
+    if (typeof id !== "string" || typeof content !== "string" || typeof matchId !== "string") {
+      throw new Error(`Drag-and-drop item at index ${index} is missing required string fields (id, content, matchId).`)
+    }
+
+    return {
+      id,
+      content,
+      matchId,
+      hint: typeof item.hint === "string" ? item.hint : undefined,
+      category: typeof item.category === "string" ? item.category : undefined,
+      description: typeof item.description === "string" ? item.description : undefined
+    }
+  })
+
+  return {
+    title,
+    description,
+    leftColumnTitle: typeof leftColumnTitle === "string" ? leftColumnTitle : undefined,
+    rightColumnTitle: typeof rightColumnTitle === "string" ? rightColumnTitle : undefined,
+    items: mappedItems,
+    showHints: typeof showHints === "boolean" ? showHints : undefined,
+    shuffleItems: typeof shuffleItems === "boolean" ? shuffleItems : undefined
   }
 }
 
