@@ -52,6 +52,7 @@ export interface FillInBlankScenario {
   text: string
   answer: string
   hint?: string
+  alternativeAnswers?: string[]
 }
 
 export interface TurnAndTalkScenario {

@@ -9,7 +9,7 @@
 # ROLLBACK NOTICE (2025-10-03)
 - Rolled back from PR #113/#114 due to data loss and build failures
 - Current safe state: commit 915a96a (after PR #112)
-- Issues #62/#63 reopened for proper re-implementation
+- Issue #62 reopened for proper re-implementation (Issue #63 now re-implemented in Sprint 11)
 - Build verified to pass at rollback state
 
 Sprint Planning Status
@@ -24,9 +24,9 @@ Sprint Planning Status
   - Issue #59 – Unit 01 Lessons 05-07 student refactor ✅
   - Issue #60 – Unit 01 Lessons 08-10 scenario data ✅
   - Issue #61 – Unit 01 Lessons 08-10 student refactor ✅
+  - Issue #63 – Unit 02 Lessons 01-03 student refactor ✅
 - ROLLED BACK Sprint 11 slices (data loss in merge):
   - Issue #62 – Unit 02 Lessons 01-03 scenario data (REOPENED)
-  - Issue #63 – Unit 02 Lessons 01-03 student refactor (REOPENED)
 - Completed Sprint 10 slices:
   - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅
   - Issue #11 – Unit 1 practice-test experience from question bank ✅
@@ -36,8 +36,7 @@ Sprint Planning Status
   - Issue #32 – Unit 8 phase-5 question bank and practice-test scaffolding ✅
   - Issue #36 – Unit 5 practice-test experience from question bank ✅
   - Issue #37 – Unit 6 practice-test experience from question bank ✅
-- Next slice: Issue #62 – Unit 02 Lessons 01-03 scenario data (Lessons 01-03 modules drafted; sync with MCP + QA next).
-- Issue #63 – Unit 02 Lessons 01-03 student refactor (REOPENED after rollback).
+- Next slice: Issue #62 – Unit 02 Lessons 01-03 scenario data (finalize MCP sync + QA).
 
 Broken Links and Assets – Next.js App
 
