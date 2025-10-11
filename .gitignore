@@ -63,3 +63,6 @@ Thumbs.db
 *.pfx
 secrets/
 config/secrets.json
+
+# v2
+bus-math-v2
