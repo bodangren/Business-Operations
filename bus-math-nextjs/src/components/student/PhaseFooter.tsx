@@ -76,17 +76,17 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
       {/* Ensure public resource links include basePath in production */}
       <ResourceBasePathFixer />
       {/* Navigation Controls */}
-      <div className="flex items-center justify-between pt-6 border-t">
+      <div className="flex items-center justify-between pt-6 border-t border-border/50 bg-muted/10 -mx-4 px-4 py-4 rounded-lg">
         <div className="flex items-center gap-2">
           {prevPhase ? (
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild className="border-border/50 hover:bg-accent/50">
               <Link href={phaseHrefBuilder(prevPhase)}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Previous: {prevPhase.phaseName}
               </Link>
             </Button>
           ) : (
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild className="border-border/50 hover:bg-accent/50">
               <Link href={lessonHref}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 {backToLessonLabel}
@@ -96,21 +96,21 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
         </div>
 
         <div className="flex items-center gap-2">
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild className="border-border/50 hover:bg-accent/50">
             <Link href={lessonHref}>
               {lessonOverviewLabel}
             </Link>
           </Button>
           
           {nextPhase ? (
-            <Button asChild>
+            <Button asChild className="gradient-financial text-primary-foreground shadow-md hover:shadow-lg transition-shadow">
               <Link href={phaseHrefBuilder(nextPhase)}>
                 Next: {nextPhase.phaseName}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           ) : (
-            <Button asChild>
+            <Button asChild className="gradient-success text-white shadow-md hover:shadow-lg transition-shadow">
               <Link href={lessonHref}>
                 {completeLessonLabel}
                 <CheckCircle2 className="h-4 w-4 ml-2" />
@@ -121,13 +121,13 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
       </div>
 
       {/* Phase Overview for Navigation */}
-      <Card className="border-amber-200 bg-amber-50 dark:bg-amber-950/10">
-        <CardHeader>
-          <CardTitle className="text-amber-800 dark:text-amber-200 text-sm">
+      <Card className="card-ledger border-border/50 shadow-sm">
+        <CardHeader className="excel-header">
+          <CardTitle className="text-primary text-sm font-semibold">
             Phase Navigation
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-3">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {sortedPhases.map((p, index) => {
               const PhaseIcon = phaseIcons[p.phaseName]
@@ -138,17 +138,17 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
                 <Link 
                   key={p.id}
                   href={phaseHrefBuilder(p)}
-                  className={`flex items-center gap-2 p-2 rounded-md text-xs transition-colors ${
+                  className={`flex items-center gap-2 p-3 rounded-lg text-xs font-medium transition-all duration-200 border ${
                     isCurrent 
-                      ? 'bg-primary text-primary-foreground' 
+                      ? 'bg-primary text-primary-foreground border-primary shadow-md scale-105' 
                       : isCompleted 
-                        ? 'bg-green-100 text-green-800 hover:bg-green-200' 
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        ? 'bg-gradient-success/10 text-green-700 dark:text-green-300 border-green-200/50 dark:border-green-800/30 hover:bg-gradient-success/20' 
+                        : 'bg-muted/30 text-muted-foreground border-border/30 hover:bg-muted/50 hover:text-foreground'
                   }`}
                 >
                   <PhaseIcon className="h-3 w-3 flex-shrink-0" />
                   <span className="truncate">{p.phaseName}</span>
-                  {isCompleted && <CheckCircle2 className="h-3 w-3 text-green-600" />}
+                  {isCompleted && <CheckCircle2 className="h-3 w-3 text-green-600 dark:text-green-400" />}
                 </Link>
               )
             })}

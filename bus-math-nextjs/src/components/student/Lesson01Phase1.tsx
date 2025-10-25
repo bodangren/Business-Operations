@@ -62,7 +62,7 @@ export default function Lesson01Phase1({
   const currentPhase = lesson01Phases[0] // Hook phase
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       <PhaseHeader 
         lesson={lesson01Data}
         unit={unitData}
@@ -70,16 +70,18 @@ export default function Lesson01Phase1({
         phases={lesson01Phases}
       />
       
-      <div className="max-w-4xl mx-auto space-y-8 pb-8">
+      <div className="max-w-4xl mx-auto space-y-8 pb-8 px-4">
         {/* Introductory Text */}
         <div className="prose prose-lg max-w-none">
-          <p className="text-lg leading-relaxed">
-            {unitConfig.introText.welcomeText}
-          </p>
-          
-          <p className="text-base leading-relaxed text-gray-700">
-            {unitConfig.introText.contextText}
-          </p>
+          <div className="bg-card/50 backdrop-blur-sm rounded-lg border border-border/50 p-6 shadow-sm">
+            <p className="text-lg leading-relaxed text-foreground">
+              {unitConfig.introText.welcomeText}
+            </p>
+            
+            <p className="text-base leading-relaxed text-muted-foreground mt-4">
+              {unitConfig.introText.contextText}
+            </p>
+          </div>
         </div>
 
         {/* Additional Content Section (for unit-specific content) */}
@@ -90,9 +92,11 @@ export default function Lesson01Phase1({
 
         {/* Reflection Text */}
         <div className="prose prose-lg max-w-none">
-          <p className="text-base leading-relaxed text-gray-700">
-            {unitConfig.reflectionText}
-          </p>
+          <div className="bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg border border-blue-200/50 dark:border-blue-800/30 p-6">
+            <p className="text-base leading-relaxed text-foreground">
+              {unitConfig.reflectionText}
+            </p>
+          </div>
         </div>
 
         {/* Comprehension Check */}
@@ -104,24 +108,24 @@ export default function Lesson01Phase1({
         />
 
         {/* Turn and Talk */}
-        <Card className={`border-${unitConfig.colorScheme.cardBorder} bg-${unitConfig.colorScheme.cardBg} dark:bg-${unitConfig.colorScheme.primary}-950/10`}>
-          <CardHeader>
-            <CardTitle className={`text-${unitConfig.colorScheme.text} dark:text-${unitConfig.colorScheme.secondary} flex items-center gap-2`}>
+        <Card className="card-ledger border-primary/20">
+          <CardHeader className="excel-header">
+            <CardTitle className="text-primary flex items-center gap-2">
               <Users className="h-5 w-5" />
               Turn and Talk
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-start gap-3">
-              <MessageCircle className={`h-5 w-5 text-${unitConfig.colorScheme.primary}-600 mt-1 flex-shrink-0`} />
+              <MessageCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
               <div>
-                <p className={`font-medium text-${unitConfig.colorScheme.primary}-900 dark:text-${unitConfig.colorScheme.secondary} mb-2`}>
+                <p className="font-medium text-foreground mb-2">
                   Discussion Prompt (3 minutes):
                 </p>
-                <p className={`text-${unitConfig.colorScheme.text} dark:text-${unitConfig.colorScheme.secondary}`}>
+                <p className="text-muted-foreground">
                   {unitConfig.turnAndTalkPrompt.description}
                 </p>
-                <ul className={`list-disc list-inside mt-2 space-y-1 text-${unitConfig.colorScheme.text} dark:text-${unitConfig.colorScheme.secondary}`}>
+                <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
                   {unitConfig.turnAndTalkPrompt.questions.map((question, index) => (
                     <li key={index}>{question}</li>
                   ))}
@@ -133,9 +137,11 @@ export default function Lesson01Phase1({
 
         {/* Transition Text */}
         <div className="prose prose-lg max-w-none">
-          <p className="text-base leading-relaxed text-gray-700">
-            {unitConfig.transitionText}
-          </p>
+          <div className="bg-accent/10 rounded-lg border border-accent/20 p-6">
+            <p className="text-base leading-relaxed text-foreground">
+              {unitConfig.transitionText}
+            </p>
+          </div>
         </div>
       </div>
 

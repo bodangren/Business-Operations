@@ -44,72 +44,76 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.5rem;
+  /* Accounting & Excel Theme - Professional Financial Software Palette */
+  --background: oklch(0.98 0.003 250);
+  --foreground: oklch(0.15 0.015 250);
+  --card: oklch(1 0.002 250);
+  --card-foreground: oklch(0.15 0.015 250);
+  --popover: oklch(1 0.002 250);
+  --popover-foreground: oklch(0.15 0.015 250);
+  --primary: oklch(0.47 0.13 220); /* Professional blue - Excel-like */
+  --primary-foreground: oklch(0.98 0.003 250);
+  --secondary: oklch(0.94 0.008 220); /* Light gray-blue */
+  --secondary-foreground: oklch(0.15 0.015 250);
+  --muted: oklch(0.96 0.006 220);
+  --muted-foreground: oklch(0.45 0.01 220);
+  --accent: oklch(0.52 0.15 200); /* Accent blue */
+  --accent-foreground: oklch(0.98 0.003 250);
+  --destructive: oklch(0.55 0.22 15); /* Professional red */
+  --border: oklch(0.88 0.01 220);
+  --input: oklch(0.92 0.008 220);
+  --ring: oklch(0.47 0.13 220);
+  /* Chart colors - Financial data visualization */
+  --chart-1: oklch(0.47 0.13 220); /* Blue - Primary data */
+  --chart-2: oklch(0.28 0.18 140); /* Green - Positive values */
+  --chart-3: oklch(0.55 0.22 15); /* Red - Negative values */
+  --chart-4: oklch(0.65 0.20 45); /* Orange - Warning/attention */
+  --chart-5: oklch(0.38 0.16 280); /* Purple - Secondary data */
+  --sidebar: oklch(0.96 0.006 220);
+  --sidebar-foreground: oklch(0.15 0.015 250);
+  --sidebar-primary: oklch(0.47 0.13 220);
+  --sidebar-primary-foreground: oklch(0.98 0.003 250);
+  --sidebar-accent: oklch(0.94 0.008 220);
+  --sidebar-accent-foreground: oklch(0.15 0.015 250);
+  --sidebar-border: oklch(0.88 0.01 220);
+  --sidebar-ring: oklch(0.47 0.13 220);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark mode - Professional financial software theme */
+  --background: oklch(0.11 0.01 230);
+  --foreground: oklch(0.92 0.01 230);
+  --card: oklch(0.15 0.015 230);
+  --card-foreground: oklch(0.92 0.01 230);
+  --popover: oklch(0.15 0.015 230);
+  --popover-foreground: oklch(0.92 0.01 230);
+  --primary: oklch(0.65 0.15 220); /* Brighter blue for dark mode */
+  --primary-foreground: oklch(0.11 0.01 230);
+  --secondary: oklch(0.18 0.02 220);
+  --secondary-foreground: oklch(0.92 0.01 230);
+  --muted: oklch(0.16 0.02 220);
+  --muted-foreground: oklch(0.55 0.03 220);
+  --accent: oklch(0.58 0.18 200);
+  --accent-foreground: oklch(0.11 0.01 230);
+  --destructive: oklch(0.65 0.25 15); /* Brighter red for dark mode */
+  --border: oklch(0.25 0.03 220);
+  --input: oklch(0.22 0.025 220);
+  --ring: oklch(0.65 0.15 220);
+  /* Dark mode chart colors */
+  --chart-1: oklch(0.65 0.15 220);
+  --chart-2: oklch(0.45 0.20 140);
+  --chart-3: oklch(0.65 0.25 15);
+  --chart-4: oklch(0.75 0.22 45);
+  --chart-5: oklch(0.55 0.20 280);
+  --sidebar: oklch(0.16 0.02 220);
+  --sidebar-foreground: oklch(0.92 0.01 230);
+  --sidebar-primary: oklch(0.65 0.15 220);
+  --sidebar-primary-foreground: oklch(0.11 0.01 230);
+  --sidebar-accent: oklch(0.18 0.02 220);
+  --sidebar-accent-foreground: oklch(0.92 0.01 230);
+  --sidebar-border: oklch(0.25 0.03 220);
+  --sidebar-ring: oklch(0.65 0.15 220);
 }
 
 @layer base {
@@ -118,5 +122,81 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Custom scrollbar for spreadsheet-like feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--muted));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground));
+  }
+}
+
+@layer utilities {
+  /* Accounting-specific utilities */
+  .accounting-grid {
+    background-image: 
+      linear-gradient(oklch(var(--border)) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .excel-header {
+    @apply bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-b-2 border-blue-200 dark:border-blue-800;
+  }
+  
+  .financial-positive {
+    @apply text-green-600 dark:text-green-400 font-medium;
+  }
+  
+  .financial-negative {
+    @apply text-red-600 dark:text-red-400 font-medium;
+  }
+  
+  .financial-neutral {
+    @apply text-muted-foreground;
+  }
+  
+  /* Professional card variants */
+  .card-ledger {
+    @apply bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border shadow-sm;
+  }
+  
+  .card-statement {
+    @apply bg-white dark:bg-gray-900 border-2 border-blue-200 dark:border-blue-800 shadow-md;
+  }
+  
+  /* Excel-like cell styling */
+  .excel-cell {
+    @apply border border-border bg-card hover:bg-accent/50 transition-colors;
+  }
+  
+  .excel-cell-header {
+    @apply bg-muted/80 font-semibold text-center border border-border;
+  }
+  
+  .excel-cell-selected {
+    @apply bg-primary/10 border-primary ring-1 ring-primary/30;
+  }
+  
+  /* Professional gradients */
+  .gradient-financial {
+    background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--accent)) 100%);
+  }
+  
+  .gradient-success {
+    background: linear-gradient(135deg, oklch(0.28 0.18 140) 0%, oklch(0.35 0.15 145) 100%);
+  }
+  
+  .gradient-danger {
+    background: linear-gradient(135deg, oklch(0.55 0.22 15) 0%, oklch(0.60 0.18 20) 100%);
   }
 }

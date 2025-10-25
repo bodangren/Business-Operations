@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Search, Menu } from "lucide-react"
+import { Search, Menu, Calculator, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -38,15 +38,19 @@ const teacherUnits = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex flex-col">
-            <Link href="/" className="text-xl font-bold text-foreground hover:opacity-80">
+            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground hover:opacity-80 transition-opacity">
+              <div className="flex items-center gap-1">
+                <Calculator className="h-6 w-6 text-primary" />
+                <TrendingUp className="h-5 w-5 text-accent" />
+              </div>
               Math for Business Operations
             </Link>
-            <p className="text-sm text-muted-foreground">Applied Accounting with Excel</p>
+            <p className="text-sm text-muted-foreground font-medium">Applied Accounting with Excel</p>
           </div>
 
           {/* Desktop Navigation */}
@@ -77,10 +81,10 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={unit.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
                           >
-                            <div className="text-sm font-medium leading-none">{unit.title}</div>
-                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                            <div className="text-sm font-medium leading-none group-hover:text-accent-foreground">{unit.title}</div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover:text-accent-foreground">
                               {unit.description}
                             </p>
                           </Link>
@@ -100,10 +104,10 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={unit.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
                           >
-                            <div className="text-sm font-medium leading-none">{unit.title}</div>
-                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                            <div className="text-sm font-medium leading-none group-hover:text-accent-foreground">{unit.title}</div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover:text-accent-foreground">
                               {unit.description}
                             </p>
                           </Link>
@@ -145,9 +149,9 @@ export function Header() {
             <Input
               type="search"
               placeholder="Search textbook..."
-              className="w-64"
+              className="w-64 border-border/50 bg-background/50 focus:bg-background transition-colors"
             />
-            <Button size="sm" variant="outline">
+            <Button size="sm" variant="outline" className="border-border/50 hover:bg-accent/50">
               <Search className="h-4 w-4" />
             </Button>
           </div>

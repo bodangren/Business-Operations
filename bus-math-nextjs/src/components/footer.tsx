@@ -1,15 +1,22 @@
 import Link from "next/link"
+import { Calculator, TrendingUp } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t border-border/50 bg-muted/30 mt-auto">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Footer Info */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Math for Business Operations</h3>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                <Calculator className="h-5 w-5 text-primary" />
+                <TrendingUp className="h-4 w-4 text-accent" />
+              </div>
+              <h3 className="text-lg font-semibold">Math for Business Operations</h3>
+            </div>
             <p className="text-sm text-muted-foreground">
-              An interactive textbook for Grade 12 business mathematics
+              An interactive textbook for Grade 12 business mathematics with Excel integration
             </p>
             <p className="text-sm text-muted-foreground">
               © 2025 Daniel Bodanske. All rights reserved.
