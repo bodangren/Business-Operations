@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
+import { IncomeStatementSimple } from "@/components/financial-reports/IncomeStatementSimple"
+import { BalanceSheetSimple } from "@/components/financial-reports/BalanceSheetSimple"
+import { CashFlowStatementSimple } from "@/components/financial-reports/CashFlowStatementSimple"
 import { lesson02Data, lesson02Phases, unit03Data } from "../lesson-data"
 
 const incomeStatementBlanks = [
@@ -48,6 +51,91 @@ const incomeStatementBlanks = [
 
 export default function Phase2Page() {
   const currentPhase = lesson02Phases[1] // Introduction phase
+
+  const starterIncomeStatement = {
+    period: "For the Month Ended March 31, 2024",
+    revenue: 4200,
+    costOfGoodsSold: 1200,
+    grossProfit: 3000,
+    operatingExpenses: 1300,
+    operatingIncome: 1700,
+    otherIncome: 0,
+    interestExpense: 100,
+    netIncomeBeforeTaxes: 1600,
+    taxes: 320,
+    netIncome: 1280
+  }
+
+  const starterBalanceSheet = {
+    asOfDate: "As of March 31, 2024",
+    assets: {
+      currentAssets: {
+        cash: 3200,
+        accountsReceivable: 1800,
+        inventory: 1200,
+        prepaidExpenses: 300,
+        totalCurrentAssets: 6500
+      },
+      fixedAssets: {
+        equipment: 4000,
+        accumulatedDepreciation: -500,
+        netEquipment: 3500,
+        buildings: 0,
+        land: 0,
+        totalFixedAssets: 3500
+      },
+      totalAssets: 10000
+    },
+    liabilities: {
+      currentLiabilities: {
+        accountsPayable: 1700,
+        accruedLiabilities: 300,
+        shortTermDebt: 500,
+        totalCurrentLiabilities: 2500
+      },
+      longTermLiabilities: {
+        longTermDebt: 1500,
+        mortgagePayable: 0,
+        totalLongTermLiabilities: 1500
+      },
+      totalLiabilities: 4000
+    },
+    equity: {
+      commonStock: 4500,
+      retainedEarnings: 1500,
+      totalEquity: 6000
+    },
+    totalLiabilitiesAndEquity: 10000
+  }
+
+  const starterCashFlow = {
+    period: "For the Month Ended March 31, 2024",
+    operatingActivities: {
+      netIncome: 1280,
+      depreciation: 200,
+      changeInReceivables: -400,
+      changeInInventory: -200,
+      changeInPayables: 150,
+      netOperatingCashFlow: 1030
+    },
+    investingActivities: {
+      equipmentPurchases: -700,
+      equipmentSales: 0,
+      investmentPurchases: 0,
+      investmentSales: 0,
+      netInvestingCashFlow: -700
+    },
+    financingActivities: {
+      stockIssuance: 0,
+      dividendPayments: -200,
+      loanProceeds: 500,
+      loanRepayments: -300,
+      netFinancingCashFlow: 0
+    },
+    netChangeInCash: 330,
+    beginningCash: 2870,
+    endingCash: 3200
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -209,6 +297,90 @@ export default function Phase2Page() {
                 </p>
                 <p className="text-amber-700 text-sm">This profit shows her business is financially healthy</p>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Simple Financial Reports */}
+        <Card className="border-purple-200 shadow-sm">
+          <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+            <CardTitle className="text-purple-900 flex flex-col gap-1">
+              Starter Financial Reports
+              <span className="text-base font-normal text-purple-700">
+                See the simplest version of each statement using TechStart’s March snapshot.
+              </span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="space-y-4">
+              <Badge className="bg-purple-100 text-purple-800 w-fit">Step 1 · Income Statement</Badge>
+              <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start">
+                <div className="prose prose-sm max-w-none">
+                  <p>
+                    Focus on just three zones: <strong>revenue in, expenses out, net income left over.</strong>
+                    Everything else is supporting detail.
+                  </p>
+                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                    <li>All sales for the month land in the Revenue line.</li>
+                    <li>Software, contractors, and marketing group into Expenses.</li>
+                    <li>Net Income ($1,280) is the profit that will flow into equity later.</li>
+                  </ul>
+                </div>
+                <IncomeStatementSimple
+                  data={starterIncomeStatement}
+                  className="max-w-xl mx-auto md:mx-0"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <Badge className="bg-blue-100 text-blue-800 w-fit">Step 2 · Balance Sheet</Badge>
+              <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start">
+                <div className="prose prose-sm max-w-none">
+                  <p>
+                    This snapshot must balance: <strong>$10,000 in assets</strong> equals <strong>$4,000 in liabilities</strong> plus
+                    <strong> $6,000 in equity.</strong>
+                  </p>
+                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                    <li>Cash ($3,200) matches the ending cash from the cash flow statement below.</li>
+                    <li>Retained earnings includes this month’s $1,280 profit.</li>
+                    <li>If the math doesn’t balance, the story falls apart instantly.</li>
+                  </ul>
+                </div>
+                <BalanceSheetSimple
+                  data={starterBalanceSheet}
+                  showRatios={false}
+                  showCalculations={false}
+                  className="max-w-xl mx-auto md:mx-0"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <Badge className="bg-indigo-100 text-indigo-800 w-fit">Step 3 · Cash Flow Statement</Badge>
+              <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start">
+                <div className="prose prose-sm max-w-none">
+                  <p>
+                    Cash explains <strong>how Sarah stays solvent even when timing is messy.</strong> We keep only the core lines here.
+                  </p>
+                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                    <li>Operating Cash (+$1,030) starts with Net Income then adjusts for timing shifts.</li>
+                    <li>Investing Cash (−$700) shows a small tool purchase.</li>
+                    <li>Financing Cash nets to zero this month—the bank loan and repayment offset.</li>
+                  </ul>
+                </div>
+                <CashFlowStatementSimple
+                  data={starterCashFlow}
+                  showCalculations={false}
+                  className="max-w-xl mx-auto md:mx-0"
+                />
+              </div>
+            </div>
+
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+              <strong>Quick Check:</strong> Confirm the linking math—
+              Net Income ($1,280) should appear inside Equity, and Ending Cash ($3,200) should match the Balance Sheet cash line.
+              When those agree, your simple storyboard is ready for investors.
             </div>
           </CardContent>
         </Card>

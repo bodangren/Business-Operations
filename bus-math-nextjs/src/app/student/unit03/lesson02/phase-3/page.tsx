@@ -7,10 +7,98 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import AccountCategorization from "@/components/drag-drop-exercises/AccountCategorization"
 import TrialBalanceSorting from "@/components/drag-drop-exercises/TrialBalanceSorting"
+import { IncomeStatementSimple } from "@/components/financial-reports/IncomeStatementSimple"
+import { BalanceSheetSimple } from "@/components/financial-reports/BalanceSheetSimple"
+import { CashFlowStatementSimple } from "@/components/financial-reports/CashFlowStatementSimple"
 import { lesson02Data, lesson02Phases, unit03Data } from "../lesson-data"
 
 export default function Phase3Page() {
   const currentPhase = lesson02Phases[2] // Guided Practice phase
+
+  const guidedIncomeStatement = {
+    period: "For the Month Ended March 31, 2024",
+    revenue: 4200,
+    costOfGoodsSold: 1200,
+    grossProfit: 3000,
+    operatingExpenses: 1300,
+    operatingIncome: 1700,
+    otherIncome: 0,
+    interestExpense: 100,
+    netIncomeBeforeTaxes: 1600,
+    taxes: 320,
+    netIncome: 1280
+  }
+
+  const guidedBalanceSheet = {
+    asOfDate: "As of March 31, 2024",
+    assets: {
+      currentAssets: {
+        cash: 3200,
+        accountsReceivable: 1800,
+        inventory: 1200,
+        prepaidExpenses: 300,
+        totalCurrentAssets: 6500
+      },
+      fixedAssets: {
+        equipment: 4000,
+        accumulatedDepreciation: -500,
+        netEquipment: 3500,
+        buildings: 0,
+        land: 0,
+        totalFixedAssets: 3500
+      },
+      totalAssets: 10000
+    },
+    liabilities: {
+      currentLiabilities: {
+        accountsPayable: 1700,
+        accruedLiabilities: 300,
+        shortTermDebt: 500,
+        totalCurrentLiabilities: 2500
+      },
+      longTermLiabilities: {
+        longTermDebt: 1500,
+        mortgagePayable: 0,
+        totalLongTermLiabilities: 1500
+      },
+      totalLiabilities: 4000
+    },
+    equity: {
+      commonStock: 4500,
+      retainedEarnings: 1500,
+      totalEquity: 6000
+    },
+    totalLiabilitiesAndEquity: 10000
+  }
+
+  const guidedCashFlow = {
+    period: "For the Month Ended March 31, 2024",
+    operatingActivities: {
+      netIncome: 1280,
+      depreciation: 200,
+      changeInReceivables: -400,
+      changeInInventory: -200,
+      changeInPayables: 150,
+      netOperatingCashFlow: 1030
+    },
+    investingActivities: {
+      equipmentPurchases: -700,
+      equipmentSales: 0,
+      investmentPurchases: 0,
+      investmentSales: 0,
+      netInvestingCashFlow: -700
+    },
+    financingActivities: {
+      stockIssuance: 0,
+      dividendPayments: -200,
+      loanProceeds: 500,
+      loanRepayments: -300,
+      netFinancingCashFlow: 0
+    },
+    netChangeInCash: 330,
+    beginningCash: 2870,
+    endingCash: 3200
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -52,6 +140,88 @@ export default function Phase3Page() {
                 <li>• Build confidence with the trial balance structure that feeds into financial statements</li>
                 <li>• Prepare for building dynamic Income Statements using INDEX/MATCH formulas</li>
               </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Simple Statement Reference */}
+        <Card className="border-purple-200 shadow-sm">
+          <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+            <CardTitle className="text-purple-900 flex flex-col gap-1">
+              Simple Statements in Action
+              <span className="text-base font-normal text-purple-700">
+                Use these lightweight statements to double-check every classification decision.
+              </span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-10">
+            <div className="space-y-3">
+              <Badge className="bg-purple-100 text-purple-800 w-fit">1 · Review Profit</Badge>
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+                <div className="prose prose-sm max-w-none">
+                  <p>
+                    Before you sort accounts, look at <strong>the finished product we are aiming for.</strong>
+                    Notice how every line connects directly to a ledger category.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                    <li>Verify the Income Statement still follows Revenue − Expenses = Net Income.</li>
+                    <li>Highlight which accounts in your trial balance will feed Revenue versus Expenses.</li>
+                    <li>Check that Net Income ($1,280) will later flow into retained earnings.</li>
+                  </ol>
+                </div>
+                <IncomeStatementSimple
+                  data={guidedIncomeStatement}
+                  className="max-w-xl mx-auto lg:mx-0"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Badge className="bg-blue-100 text-blue-800 w-fit">2 · Confirm Balance</Badge>
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+                <div className="prose prose-sm max-w-none">
+                  <p>
+                    As you classify assets and liabilities, <strong>use this balance sheet to sanity-check totals.</strong>
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                    <li>Match Cash ($3,200) to the Ending Cash figure from the cash flow report.</li>
+                    <li>Ensure each liability you categorize will land in either current or long-term buckets.</li>
+                    <li>Confirm Assets ($10,000) = Liabilities ($4,000) + Equity ($6,000) after every adjustment.</li>
+                  </ol>
+                </div>
+                <BalanceSheetSimple
+                  data={guidedBalanceSheet}
+                  showRatios={false}
+                  showCalculations={false}
+                  className="max-w-xl mx-auto lg:mx-0"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Badge className="bg-indigo-100 text-indigo-800 w-fit">3 · Track Cash</Badge>
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+                <div className="prose prose-sm max-w-none">
+                  <p>
+                    When you adjust receivables or payables during guided practice, <strong>watch how it changes cash.</strong>
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                    <li>Identify which account moves should appear as operating adjustments.</li>
+                    <li>Keep investing activity simple—just the $700 equipment purchase.</li>
+                    <li>Reconcile Ending Cash ($3,200) with the balance sheet to close the loop.</li>
+                  </ol>
+                </div>
+                <CashFlowStatementSimple
+                  data={guidedCashFlow}
+                  showCalculations={false}
+                  className="max-w-xl mx-auto lg:mx-0"
+                />
+              </div>
+            </div>
+
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+              <strong>Guided practice checklist:</strong> before moving on, make sure the equation on each statement holds,
+              your trial balance accounts have a clear destination, and your classmates can follow the story by glancing at these snapshots.
             </div>
           </CardContent>
         </Card>
