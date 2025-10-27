@@ -138,6 +138,122 @@ export default function Phase3Page() {
             </CardContent>
           </Card>
 
+          {/* Equation Walkthrough */}
+          <Card className="border-purple-200 shadow-sm">
+            <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+              <CardTitle className="text-purple-900 flex flex-col gap-1">
+                Guided Walkthrough: Filling the Skeletons
+                <span className="text-base font-normal text-purple-700">
+                  Map real business activity to each part of the core equations.
+                </span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 space-y-8">
+              <div className="grid gap-6 md:grid-cols-3">
+                {/* Income Statement Equation */}
+                <div className="space-y-4 bg-white rounded-xl border border-purple-200 p-5">
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-purple-100 text-purple-800 text-xs uppercase">Income Statement</Badge>
+                    <span className="text-xs text-purple-600 tracking-wide">Plot</span>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    Connect each revenue stream and expense category to the Net Income target.
+                  </p>
+                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <p className="text-sm font-semibold text-purple-900 mb-2">Equation in Action</p>
+                    <p className="text-lg font-bold text-purple-700">
+                      ($3,850 Client Fees + $500 Maintenance)
+                    </p>
+                    <p className="text-lg font-bold text-purple-700">
+                      − ($600 Software + $450 Contractors + $120 Marketing)
+                    </p>
+                    <p className="text-lg font-bold text-purple-900 mt-2">
+                      = $3,180 Net Income
+                    </p>
+                  </div>
+                  <ul className="text-sm text-purple-800 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-500" />
+                      Highlight revenue drivers: every service Sarah offers feeds the first part of the equation.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-500" />
+                      Classify costs correctly: mislabeling an expense breaks the math.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Balance Sheet Equation */}
+                <div className="space-y-4 bg-white rounded-xl border border-blue-200 p-5">
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-blue-100 text-blue-800 text-xs uppercase">Balance Sheet</Badge>
+                    <span className="text-xs text-blue-600 tracking-wide">Setting</span>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    Trace how Net Income becomes part of Equity while liabilities explain the rest of the balance.
+                  </p>
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <p className="text-sm font-semibold text-blue-900 mb-2">Equation in Action</p>
+                    <p className="text-lg font-bold text-blue-700">
+                      ($12,000 Cash + $6,500 Equipment + $4,200 Receivables)
+                    </p>
+                    <p className="text-lg font-bold text-blue-700">
+                      = ($5,400 Credit Card + $3,000 Vendor Bills)
+                    </p>
+                    <p className="text-lg font-bold text-blue-900 mt-2">
+                      + (Owner Equity $14,300 including retained profits)
+                    </p>
+                  </div>
+                  <ul className="text-sm text-blue-800 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-500" />
+                      Assets grow when Sarah reinvests cash or buys tools—record each side.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-500" />
+                      Equity includes today’s Net Income, so check the Income Statement before finalizing this page.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Cash Flow Statement Equation */}
+                <div className="space-y-4 bg-white rounded-xl border border-indigo-200 p-5">
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-indigo-100 text-indigo-800 text-xs uppercase">Cash Flow Statement</Badge>
+                    <span className="text-xs text-indigo-600 tracking-wide">Action</span>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    Show how cash increases or decreases even when Net Income stays positive.
+                  </p>
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                    <p className="text-sm font-semibold text-indigo-900 mb-2">Equation in Action</p>
+                    <p className="text-lg font-bold text-indigo-700">
+                      Operating (+$2,900) + Investing (−$1,200) + Financing (+$800)
+                    </p>
+                    <p className="text-lg font-bold text-indigo-900 mt-2">
+                      = +$2,500 Net Change in Cash
+                    </p>
+                  </div>
+                  <ul className="text-sm text-indigo-800 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-indigo-500" />
+                      Operating cash adjusts Net Income for timing differences like receivables.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-indigo-500" />
+                      Investing and financing explain why cash moved even when profit stayed steady.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+                <strong>Coach’s tip:</strong> When your spreadsheet outputs don’t match these equations, pause and trace each
+                number back to its source. The storyboard fails if even one term is missing.
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Vocabulary Building */}
           <DragAndDrop
             items={vocabularyItems}

@@ -3,10 +3,256 @@ import { incomeStatementTemplate } from "@/components/spreadsheet/SpreadsheetTem
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { IncomeStatementDetailed } from "@/components/financial-reports/IncomeStatementDetailed";
+import { BalanceSheetDetailed } from "@/components/financial-reports/BalanceSheetDetailed";
+import { CashFlowStatementDetailed } from "@/components/financial-reports/CashFlowStatementDetailed";
 import { Users, Calculator, TrendingUp, AlertCircle } from "lucide-react";
 import { lesson03Data, unit03Data, lesson03Phases } from "../lesson-data";
 
 const currentPhase = lesson03Phases[2]; // Guided Practice phase
+
+const detailedIncomeStatementData = {
+  period: "For the Month Ended April 30, 2024",
+  revenues: {
+    productSales: 18000,
+    serviceSales: 14000,
+    otherRevenues: 1200,
+    totalRevenue: 33200
+  },
+  costOfGoodsSold: {
+    beginningInventory: 5000,
+    purchases: 9000,
+    directLabor: 3200,
+    manufacturingOverhead: 1200,
+    goodsAvailableForSale: 18400,
+    endingInventory: 4200,
+    totalCOGS: 14200
+  },
+  grossProfit: 19000,
+  operatingExpenses: {
+    selling: {
+      advertising: 1800,
+      salesCommissions: 900,
+      deliveryExpense: 400,
+      totalSelling: 3100
+    },
+    administrative: {
+      salaries: 7200,
+      rent: 1800,
+      utilities: 600,
+      insurance: 350,
+      depreciation: 450,
+      totalAdministrative: 10400
+    },
+    totalOperating: 13500
+  },
+  operatingIncome: 5500,
+  nonOperating: {
+    interestIncome: 120,
+    dividendIncome: 0,
+    gainOnSaleOfAssets: 0,
+    totalOtherIncome: 120,
+    interestExpense: 300,
+    totalNonOperating: -180
+  },
+  incomeBeforeTaxes: 5320,
+  incomeTaxes: {
+    currentTax: 1060,
+    deferredTax: 40,
+    totalTaxes: 1100
+  },
+  netIncome: 4220
+};
+
+const detailedBalanceSheetData = {
+  asOfDate: "As of April 30, 2024",
+  assets: {
+    currentAssets: {
+      cashAndEquivalents: {
+        cashOnHand: 600,
+        checkingAccount: 5200,
+        savingsAccount: 3300,
+        moneyMarketFunds: 1200,
+        totalCash: 10300
+      },
+      receivables: {
+        accountsReceivable: 6400,
+        notesReceivable: 800,
+        allowanceForDoubtfulAccounts: -200,
+        netReceivables: 7000
+      },
+      inventory: {
+        rawMaterials: 1500,
+        workInProcess: 900,
+        finishedGoods: 2600,
+        totalInventory: 5000
+      },
+      otherCurrentAssets: {
+        prepaidExpenses: 900,
+        marketableSecurities: 1500,
+        totalOtherCurrent: 2400
+      },
+      totalCurrentAssets: 24700
+    },
+    fixedAssets: {
+      propertyPlantEquipment: {
+        land: 7000,
+        buildings: 15000,
+        equipment: 12000,
+        vehicles: 4800,
+        furniture: 2000,
+        totalPPE: 40800,
+        accumulatedDepreciation: -6500,
+        netPPE: 34300
+      },
+      intangibleAssets: {
+        patents: 1800,
+        trademarks: 900,
+        goodwill: 0,
+        totalIntangible: 2700
+      },
+      investments: {
+        longTermInvestments: 3500,
+        subsidiaryInvestments: 0,
+        totalInvestments: 3500
+      },
+      totalFixedAssets: 40500
+    },
+    totalAssets: 65200
+  },
+  liabilities: {
+    currentLiabilities: {
+      payables: {
+        accountsPayable: 4800,
+        notesPayable: 1200,
+        accruedExpenses: 900,
+        totalPayables: 6900
+      },
+      shortTermDebt: {
+        shortTermLoans: 1500,
+        currentPortionLongTerm: 1000,
+        totalShortTermDebt: 2500
+      },
+      otherCurrentLiabilities: {
+        accruedWages: 1800,
+        accruedTaxes: 700,
+        deferredRevenue: 900,
+        totalOtherCurrent: 3400
+      },
+      totalCurrentLiabilities: 12800
+    },
+    longTermLiabilities: {
+      longTermDebt: {
+        mortgagePayable: 8000,
+        bondsPayable: 0,
+        bankLoans: 6000,
+        totalLongTermDebt: 14000
+      },
+      otherLongTermLiabilities: {
+        deferredTaxLiability: 1500,
+        pensionLiability: 700,
+        totalOtherLongTerm: 2200
+      },
+      totalLongTermLiabilities: 16200
+    },
+    totalLiabilities: 29000
+  },
+  equity: {
+    paidInCapital: {
+      commonStock: 15000,
+      preferredStock: 0,
+      additionalPaidInCapital: 3500,
+      totalPaidInCapital: 18500
+    },
+    retainedEarnings: {
+      beginningRetainedEarnings: 15000,
+      netIncome: 4220,
+      dividendsPaid: -2000,
+      endingRetainedEarnings: 17220
+    },
+    otherEquity: {
+      treasuryStock: -720,
+      accumulatedOtherIncome: 1200,
+      totalOtherEquity: 480
+    },
+    totalEquity: 36200
+  },
+  totalLiabilitiesAndEquity: 65200
+};
+
+const detailedCashFlowData = {
+  period: "For the Month Ended April 30, 2024",
+  operatingActivities: {
+    netIncome: 4220,
+    adjustments: {
+      depreciation: 650,
+      amortization: 90,
+      lossOnSaleOfAssets: 0,
+      badDebtExpense: 140,
+      stockBasedCompensation: 220,
+      deferredTaxes: 60,
+      totalAdjustments: 1160
+    },
+    workingCapitalChanges: {
+      accountsReceivable: -600,
+      inventory: -400,
+      prepaidExpenses: -120,
+      accountsPayable: 380,
+      accruedLiabilities: 210,
+      deferredRevenue: 150,
+      totalWorkingCapitalChanges: -380
+    },
+    netOperatingCashFlow: 5000
+  },
+  investingActivities: {
+    capitalExpenditures: {
+      equipmentPurchases: -1500,
+      buildingPurchases: 0,
+      vehiclePurchases: -800,
+      totalCapEx: -2300
+    },
+    assetSales: {
+      equipmentSales: 400,
+      buildingSales: 0,
+      totalAssetSales: 400
+    },
+    investments: {
+      purchaseOfSecurities: -600,
+      saleOfSecurities: 0,
+      acquisitions: 0,
+      totalInvestments: -600
+    },
+    netInvestingCashFlow: -2500
+  },
+  financingActivities: {
+    equity: {
+      stockIssuance: 0,
+      stockRepurchases: -500,
+      dividendPayments: -2000,
+      totalEquity: -2500
+    },
+    debt: {
+      loanProceeds: 1500,
+      loanRepayments: -900,
+      bondIssuance: 0,
+      bondRepayments: 0,
+      totalDebt: 600
+    },
+    netFinancingCashFlow: -1900
+  },
+  supplementalDisclosures: {
+    interestPaid: 300,
+    taxesPaid: 1050,
+    nonCashTransactions: {
+      assetAcquisitionByDebt: 0,
+      stockIssuedForServices: 0
+    }
+  },
+  netChangeInCash: 600,
+  beginningCash: 9700,
+  endingCash: 10300
+};
 
 export default function Unit03Lesson03Phase3() {
   return (
@@ -121,6 +367,78 @@ export default function Unit03Lesson03Phase3() {
             </div>
           </div>
         </div>
+
+        <Card className="border-purple-200 shadow-sm">
+          <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+            <CardTitle className="text-purple-900 flex flex-col gap-1">
+              Reference: Detailed Statements for Quality Checks
+              <span className="text-base font-normal text-purple-700">
+                Keep these on screen while you build—your spreadsheet should reconcile to every subtotal shown here.
+              </span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-10">
+            <div className="space-y-3">
+              <Badge className="bg-purple-100 text-purple-800 w-fit">Income Statement</Badge>
+              <div className="prose prose-sm max-w-none">
+                <p>
+                  Before you hit submit, <strong>toggle the breakdown</strong> and verify that each INDEX/MATCH formula you wrote feeds the correct section.
+                  Selling expenses should total $3,100, administrative expenses $10,400, and net income $4,220—if any number is off, trace that account in your workbook.
+                </p>
+              </div>
+              <div className="overflow-x-auto">
+                <IncomeStatementDetailed
+                  data={detailedIncomeStatementData}
+                  showCalculations={false}
+                  showComparatives={false}
+                  className="w-full"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Badge className="bg-blue-100 text-blue-800 w-fit">Balance Sheet</Badge>
+              <div className="prose prose-sm max-w-none">
+                <p>
+                  Use this as your balancing report: <strong>Assets ($65,200)</strong> must equal <strong>Liabilities + Equity ($29,000 + $36,200)</strong>.
+                  Pay careful attention to net receivables and ending retained earnings—they are common trouble spots when trial balance links are off.
+                </p>
+              </div>
+              <div className="overflow-x-auto">
+                <BalanceSheetDetailed
+                  data={detailedBalanceSheetData}
+                  showRatios={true}
+                  showCalculations={false}
+                  showBreakdown={true}
+                  className="w-full"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Badge className="bg-indigo-100 text-indigo-800 w-fit">Cash Flow</Badge>
+              <div className="prose prose-sm max-w-none">
+                <p>
+                  Confirm that your cash reconciles by section: +$5,000 operating, −$2,500 investing, −$1,900 financing. 
+                  The supplemental disclosures (interest and taxes paid) should match the supporting schedules you maintain in the workbook.
+                </p>
+              </div>
+              <div className="overflow-x-auto">
+                <CashFlowStatementDetailed
+                  data={detailedCashFlowData}
+                  showCalculations={false}
+                  showSupplemental={true}
+                  className="w-full"
+                />
+              </div>
+            </div>
+
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+              <strong>Quick audit routine:</strong> After each major formula change, flip back to these statements. 
+              If the totals no longer match, you’ve introduced an error—fix it before moving forward.
+            </div>
+          </CardContent>
+        </Card>
 
         <div className="prose prose-lg max-w-none mt-8">
           <h3 className="text-2xl font-semibold text-green-800 mb-4">

@@ -269,13 +269,113 @@ export default function Phase2Page() {
                 Be ready to share one insight with the class
               </Badge>
             </CardContent>
-          </Card>
+        </Card>
 
-          {/* Learning Objectives Preview */}
-          <Card className="border-purple-200">
-            <CardHeader className="bg-purple-100">
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Target className="w-5 h-5" />
+        {/* Three-Statement Skeletons */}
+        <Card className="border-purple-200 shadow-sm">
+          <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+            <CardTitle className="text-purple-900 flex flex-col gap-1">
+              Three-Statement Skeletons
+              <span className="text-base font-normal text-purple-700">
+                Anchor the top-level equations before layering on details.
+              </span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-6 space-y-6">
+            <div className="grid gap-6 md:grid-cols-3">
+              {/* Income Statement Skeleton */}
+              <div className="space-y-4 bg-white rounded-xl border border-purple-200 p-5 shadow-sm">
+                <Badge className="bg-purple-100 text-purple-800 text-sm">Income Statement</Badge>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-600">
+                    The plot of the story: how money earned becomes profit that investors can evaluate.
+                  </p>
+                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                    <p className="text-sm font-semibold text-purple-900 uppercase tracking-wide">Equation</p>
+                    <p className="text-xl font-bold text-purple-700 mt-2">
+                      Revenue <span className="text-gray-500">−</span> Expenses <span className="text-gray-500">=</span> Net Income
+                    </p>
+                  </div>
+                  <div className="grid gap-2">
+                    <div className="rounded-lg border border-purple-100 bg-purple-50/50 p-3 text-sm text-purple-800">
+                      <span className="font-semibold text-purple-900">Revenue:</span> Fees and sales Sarah earns.
+                    </div>
+                    <div className="rounded-lg border border-purple-100 bg-purple-50/50 p-3 text-sm text-purple-800">
+                      <span className="font-semibold text-purple-900">Expenses:</span> Software, contractors, marketing—costs of doing business.
+                    </div>
+                    <div className="rounded-lg border border-purple-200 bg-purple-100 p-3 text-sm font-semibold text-purple-900">
+                      Net Income: Profit (or loss) after expenses.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Balance Sheet Skeleton */}
+              <div className="space-y-4 bg-white rounded-xl border border-blue-200 p-5 shadow-sm">
+                <Badge className="bg-blue-100 text-blue-800 text-sm">Balance Sheet</Badge>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-600">
+                    The setting of the story: everything the business owns must balance with obligations and owner value.
+                  </p>
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <p className="text-sm font-semibold text-blue-900 uppercase tracking-wide">Equation</p>
+                    <p className="text-xl font-bold text-blue-700 mt-2">
+                      Assets <span className="text-gray-500">=</span> Liabilities <span className="text-gray-500">+</span> Equity
+                    </p>
+                  </div>
+                  <div className="grid gap-2">
+                    <div className="rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-sm text-blue-800">
+                      <span className="font-semibold text-blue-900">Assets:</span> Cash, laptops, receivables—resources Sarah controls.
+                    </div>
+                    <div className="rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-sm text-blue-800">
+                      <span className="font-semibold text-blue-900">Liabilities:</span> Amounts owed to banks, suppliers, or credit cards.
+                    </div>
+                    <div className="rounded-lg border border-blue-200 bg-blue-100 p-3 text-sm font-semibold text-blue-900">
+                      Equity: Owner investment plus profits kept inside the company.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Cash Flow Skeleton */}
+              <div className="space-y-4 bg-white rounded-xl border border-indigo-200 p-5 shadow-sm">
+                <Badge className="bg-indigo-100 text-indigo-800 text-sm">Cash Flow Statement</Badge>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-600">
+                    The action of the story: tracks how cash actually moves so Sarah can make payroll on time.
+                  </p>
+                  <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
+                    <p className="text-sm font-semibold text-indigo-900 uppercase tracking-wide">Equation</p>
+                    <p className="text-xl font-bold text-indigo-700 mt-2">
+                      Operating Cash <span className="text-gray-500">+</span> Investing Cash <span className="text-gray-500">+</span> Financing Cash <span className="text-gray-500">=</span> Net Change in Cash
+                    </p>
+                  </div>
+                  <div className="grid gap-2">
+                    <div className="rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-sm text-indigo-800">
+                      <span className="font-semibold text-indigo-900">Operating:</span> Cash from client work and everyday bills.
+                    </div>
+                    <div className="rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-sm text-indigo-800">
+                      <span className="font-semibold text-indigo-900">Investing:</span> Purchases or sales of long-term tools.
+                    </div>
+                    <div className="rounded-lg border border-indigo-200 bg-indigo-100 p-3 text-sm font-semibold text-indigo-900">
+                      Financing: Loans, owner draws, or new capital from investors.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+              <strong>Helpful memory device:</strong> Income Statement solves for profit, Balance Sheet must balance, Cash Flow explains why cash rose or fell. Every spreadsheet you build later should trace back to these three sentences.
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Learning Objectives Preview */}
+        <Card className="border-purple-200">
+          <CardHeader className="bg-purple-100">
+            <CardTitle className="text-purple-800 flex items-center gap-2">
+              <Target className="w-5 h-5" />
                 What We'll Build Together
               </CardTitle>
             </CardHeader>
