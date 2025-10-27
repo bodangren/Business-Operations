@@ -5,8 +5,8 @@ export default function Phase1Page() {
   const videoData = {
     title: "Speaking the Language of Investors: Creating Financial Statements",
     description: "A major client opportunity and interest from a potential investor force Sarah to level up her financial reporting. With her CPA Jennifer Kim, she learns that her internal records aren't enough. Discover how the three core financial statements—the Income Statement, Balance Sheet, and Cash Flow Statement—work together as a 'storyboard' to tell the official story of her business's health to banks and investors.",
-    youtubeId: "Je7SPYOw9Vk",
-    duration: "4:45",
+    youtubeId: "XHZjrjOcr7E",
+    duration: "2:58",
     transcript: `(Sarah is on camera. She seems more confident, speaking with the assurance of someone who has overcome a significant professional challenge.)
 
 Okay, so my back-office was finally running smoothly. The automation was working, and it freed me up to think bigger. And a huge opportunity came along—a regional retail chain needed a comprehensive e-commerce solution. It was a massive project, the kind that could really put TechStart on the map. But a project that big requires a lot of upfront resources, so I knew I'd need to secure a business line of credit from the bank to manage the cash flow.
