@@ -5,11 +5,9 @@ export default function Phase1Page() {
   const videoData = {
     title: "Data as a Weapon: Using Analytics for Competitive Advantage",
     description: "Revenue is growing, but Sarah realizes she's flying blind in a competitive market. A client's request for an ROI analysis and a shocking discovery that she's underpriced by 15% forces her to embrace data. See how Sarah transitions from simple reporting to using data analysis as a strategic weapon for pricing, proving value, and winning bigger contracts.",
-    youtubeId: "Je7SPYOw9Vk",
-    duration: "5:30",
-    transcript: `(Sarah is on camera, looking focused and speaking with a strategic tone. Her environment seems busy but organized.)
-
-So, having professional financial statements was a game-changer. It gave me the confidence to start competing for much bigger projects. My business was doing well, but the market was getting more competitive. I found myself bidding on things like a digital marketing contract for the municipal government, where you're up against larger, more established agencies. Gut feelings and a nice portfolio just weren't going to be enough to win.
+    youtubeId: "MKNYfuGZntk",
+    duration: "2:51",
+    transcript: `So, having professional financial statements was a game-changer. It gave me the confidence to start competing for much bigger projects. My business was doing well, but the market was getting more competitive. I found myself bidding on things like a digital marketing contract for the municipal government, where you're up against larger, more established agencies. Gut feelings and a nice portfolio just weren't going to be enough to win.
 
 I started running into two big problems. First, I noticed a competing agency was charging significantly more, and they were still winning big clients. Second, my own clients were getting more sophisticated. One of them asked me for a detailed Return on Investment—or ROI—analysis to justify what they were spending with me. They wanted hard numbers. I realized I had to get better at using data not just for my own business, but to prove my value and make strategic decisions.
 
