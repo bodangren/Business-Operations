@@ -3,43 +3,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson01Data, unit05Data, lesson01Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import SpreadsheetWrapper, { SpreadsheetData } from "@/components/spreadsheet/SpreadsheetWrapper";
-
-const salariedEmployeePayrollData: SpreadsheetData = [
-  [
-    { value: "Employee", readOnly: true },
-    { value: "Annual Salary", readOnly: true },
-    { value: "Pay Periods/Year", readOnly: true },
-    { value: "Gross Pay", readOnly: true },
-    { value: "Health Insurance", readOnly: true },
-    { value: "Taxable Income", readOnly: true },
-    { value: "Tax Rate", readOnly: true },
-    { value: "Tax", readOnly: true },
-    { value: "Net Pay", readOnly: true },
-  ],
-  [
-    { value: "" },
-    { value: "" },
-    { value: "" },
-    { value: "=B2/C2", readOnly: true },
-    { value: "" },
-    { value: "=D2-E2", readOnly: true },
-    { value: "" },
-    { value: "=F2*G2", readOnly: true },
-    { value: "=D2-E2-H2", readOnly: true },
-  ],
-  [
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }, 
-    { value: "" }
-  ],
-];
+import { RestaurantStaffingSimulator } from "@/components/business-simulations/RestaurantStaffingSimulator";
 
 export default function Phase4Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 4)!
@@ -54,29 +18,30 @@ export default function Phase4Page() {
           phases={lesson01Phases}
         />
 
-        <div className="max-w-4xl mx-auto space-y-8">
-        <Card className="mb-8 bg-purple-50 border-purple-200">
-          <CardHeader>
-            <CardTitle className="text-2xl text-purple-800">Independent Practice: Salaried Employee with Deductions</CardTitle>
-          </CardHeader>
-          <CardContent className="prose max-w-none">
-            <p>
-              Now it's time to apply your skills to a more complex scenario. Use the payroll spreadsheet template to calculate the net pay for a salaried employee with additional deductions.
-            </p>
-            <p>
-              <strong>Your Task:</strong> Input the following information into the spreadsheet to calculate the manager's net pay.
-            </p>
-            <ul className="list-disc pl-6">
-              <li><strong>Employee:</strong> Maria's Manager</li>
-              <li><strong>Annual Salary:</strong> $45,000</li>
-              <li><strong>Pay Periods/Year:</strong> 26</li>
-              <li><strong>Health Insurance:</strong> $50</li>
-              <li><strong>Tax Rate:</strong> 15% (enter as 0.15)</li>
-            </ul>
-          </CardContent>
-        </Card>
+        <div className="max-w-5xl mx-auto space-y-8">
+          <Card className="bg-emerald-50 border-emerald-200">
+            <CardHeader>
+              <CardTitle className="text-emerald-900">Independent Practice: Restaurant Staffing Simulator</CardTitle>
+            </CardHeader>
+            <CardContent className="prose max-w-none text-emerald-900 space-y-4">
+              <p>
+                You built a spreadsheet that calculates gross vs. net pay for every type of employee Sarah hires. Now it is time to run the business. In this simulation, you manage a twelve-month schedule for a growing café that feels a lot like TechStart’s catering arm. Each decision changes payroll costs, customer experience, and the cash you have left to pay people next month.
+              </p>
+              <p>
+                Take one minute per turn. Adjust hours, shift coverage, and team size for waiters, bussers, dishwashers, cooks, and the eventual assistant manager. Notice how overtime and extra hires eat cash fast, and how missing a shift crashes morale. Your goal: finish the year without bouncing payroll and with morale above 70%.
+              </p>
+              <ul className="list-disc pl-6 text-emerald-900">
+                <li>Watch the Monthly Ledger for a real financial report: Revenue → Food Cost → Gross Profit → Payroll → Net Cash.</li>
+                <li>Food cost is 40% of revenue, but sloppy overtime in the kitchen pushes it to 45%. That one mistake can erase all profits.</li>
+                <li>Once the assistant manager is on the schedule at the right time, morale jumps and the restaurant can handle surges without you burning out.</li>
+              </ul>
+              <p>
+                Treat this as a live pilot of your Payday Simulator. Jot down the staffing ideas that worked and the warning signs that appeared before cash got tight—you will plug those insights back into your Excel model in Phase 5.
+              </p>
+            </CardContent>
+          </Card>
 
-        <SpreadsheetWrapper initialData={salariedEmployeePayrollData} />
+          <RestaurantStaffingSimulator />
         </div>
 
         <PhaseFooter

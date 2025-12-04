@@ -7,6 +7,7 @@ import { LemonadeStand } from '@/components/business-simulations/LemonadeStand'
 import { StartupJourney } from '@/components/business-simulations/StartupJourney'
 import { PitchPresentationBuilder } from '@/components/business-simulations/PitchPresentationBuilder'
 import ErrorCheckingSystem from '@/components/business-simulations/ErrorCheckingSystem'
+import { RestaurantStaffingSimulator } from '@/components/business-simulations/RestaurantStaffingSimulator'
 
 export default function BusinessSimulationsDebugPage() {
   return (
@@ -104,6 +105,18 @@ export default function BusinessSimulationsDebugPage() {
               </p>
             </div>
             <ErrorCheckingSystem />
+          </section>
+
+          <section>
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold text-slate-800 mb-2">
+                Restaurant Staffing Simulator
+              </h2>
+              <p className="text-slate-600">
+                Plan 12 months of hiring and shift coverage so payroll, cash, and guest experience stay balanced.
+              </p>
+            </div>
+            <RestaurantStaffingSimulator />
           </section>
         </div>
       </div>
