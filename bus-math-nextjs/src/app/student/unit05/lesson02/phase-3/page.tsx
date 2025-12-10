@@ -1,212 +1,261 @@
+'use client'
+
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson02Data, lesson02Phases, unit05Data } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calculator, Users, TrendingUp } from "lucide-react"
-import InterestCalculationBuilder from "@/components/financial-calculations/InterestCalculationBuilder"
+import { CalculateDeductions, DeductionScenario } from "@/components/payroll/CalculateDeductions"
+import { Badge } from "@/components/ui/badge"
+import { TaxBracketTable } from "@/components/payroll/TaxBracketTable"
+import { federalTaxTables2025 } from "@/data/payroll/federalTaxTables"
 
-const currentPhase = lesson02Phases[2] // Phase 3: Guided Practice
+const currentPhase = lesson02Phases[2]
+const singleTable = federalTaxTables2025.single
+const marriedTable = federalTaxTables2025.married
+const headTable = federalTaxTables2025.headOfHousehold
+
+const scenarios: DeductionScenario[] = [
+  {
+    id: "alex-base",
+    title: "Alex – regular 80-hour pay period",
+    description:
+      "No overtime this period. Health premiums and 401(k) deferrals already came out, so taxable wages are $2,140.",
+    payPeriod: "Bi-weekly",
+    taxableWages: 2140,
+    filingStatus: "single",
+    bracketHint:
+      "Annualize $2,140 × 26 = $55,640. Still inside the 12% bracket, so apply the single formula: $1,192.50 + 12% over $11,925, then divide back to the pay period.",
+    stateRate: 0.04,
+    expected: {
+      socialSecurity: 132.68,
+      medicare: 31.03,
+      federalIncome: 318.45,
+      stateIncome: 85.6
+    }
+  },
+  {
+    id: "alex-overtime",
+    title: "Alex – 15 hours of overtime",
+    description:
+      "Alex sprinted to hit a deadline and logged 95 hours. After overtime and pre-tax benefits, taxable wages are $2,660.",
+    payPeriod: "Bi-weekly",
+    taxableWages: 2660,
+    filingStatus: "single",
+    bracketHint:
+      "Annualized wages jump above $69k, so part of this check is taxed at 22%. Use $5,578.50 + 22% of the amount over $48,475, then convert back to this pay period.",
+    stateRate: 0.04,
+    expected: {
+      socialSecurity: 164.92,
+      medicare: 38.57,
+      federalIncome: 412.9,
+      stateIncome: 106.4
+    }
+  },
+  {
+    id: "maria-head",
+    title: "Maria – head of household café manager",
+    description:
+      "Maria runs the weekend café and claims head-of-household status for her two children. Taxable wages this period: $2,480.",
+    payPeriod: "Bi-weekly",
+    taxableWages: 2480,
+    filingStatus: "headOfHousehold",
+    bracketHint:
+      "HOH brackets go 10% up to $17,000, then 12% up to $64,850. Annualized wages ≈ $64,480, still inside the 12% band.",
+    stateRate: 0.03,
+    expected: {
+      socialSecurity: 153.76,
+      medicare: 35.96,
+      federalIncome: 286.2,
+      stateIncome: 74.4
+    },
+    notes: "Maria works in Arizona so Sarah withholds a flat 3% until the AZ worksheet is complete."
+  }
+]
 
 export default function Phase3Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-violet-100">
-      <PhaseHeader
-        lesson={lesson02Data}
-        unit={unit05Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
-      
-      <main className="max-w-4xl mx-auto px-6 pb-8 space-y-8">
-        {/* Guided Practice Content */}
-        <div className="space-y-6">
-          <div className="text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
-              <Calculator className="h-4 w-4" />
-              Guided Practice
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-              Building Sarah's Payroll Calculator
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Let's practice the mathematics behind payroll calculations using real scenarios 
-              that Sarah will face when hiring Alex for TechStart Solutions.
-            </p>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-100">
+      <PhaseHeader lesson={lesson02Data} unit={unit05Data} phase={currentPhase} phases={lesson02Phases} />
+
+      <main className="container mx-auto px-4 py-10 space-y-8">
+        <section className="space-y-4 text-center">
+          <Badge className="bg-purple-200 text-purple-900 text-lg px-4 py-2">Guided Calculator Practice</Badge>
+          <h1 className="text-4xl font-bold text-slate-900">Fill in the Paystub Deductions with Support</h1>
+          <p className="text-lg text-slate-700 max-w-3xl mx-auto">
+            Use the IRS tables you just studied to calculate each deduction. This component gives you scaffolds: hints,
+            highlighting, and instant feedback. Phase 4 removes the training wheels.
+          </p>
+
+        </section>
+
+        <section className="space-y-4">
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader>
+              <CardTitle className="text-slate-900 text-lg">Quick-reference tax tables</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-700 text-sm">
+              Keep the correct filing status in view while you calculate. Match each scenario card to one of these tables,
+              find the taxable income range, and apply the IRS formula before dividing back down to the bi-weekly amount.
+            </CardContent>
+          </Card>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <TaxBracketTable
+              title="Single"
+              filingStatusLabel={singleTable.label}
+              brackets={singleTable.brackets}
+              highlightIncome={55640}
+              note="Use for both Alex scenarios."
+            />
+            <TaxBracketTable
+              title="Head of household"
+              filingStatusLabel={headTable.label}
+              brackets={headTable.brackets}
+              highlightIncome={64480}
+              note="Maria's annualized wages fall in the 12% band here."
+            />
+            <TaxBracketTable
+              title="Married filing jointly"
+              filingStatusLabel={marriedTable.label}
+              brackets={marriedTable.brackets}
+              highlightIncome={90480}
+              note="Jordan's salary lives in the 12% married bracket."
+            />
           </div>
+        </section>
 
-          {/* Practice Context */}
-          <Card className="border-2 border-indigo-200 bg-indigo-50">
+        <section className="grid gap-6 lg:grid-cols-2">
+          <Card className="border-indigo-200 bg-white/90">
             <CardHeader>
-              <CardTitle className="text-indigo-900 text-2xl">Sarah's Hiring Scenario</CardTitle>
+              <CardTitle className="text-indigo-900">How to Attack Each Scenario</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-indigo-800">
-              <p className="text-lg leading-relaxed">
-                Sarah is ready to hire Alex as a developer for TechStart Solutions. Here's what she's considering:
+            <CardContent className="text-indigo-900 text-sm space-y-2">
+              <ol className="list-decimal list-inside space-y-1">
+                <li>Copy the taxable wages shown on the card.</li>
+                <li>Multiply by 6.2% and 1.45% for Social Security and Medicare.</li>
+                <li>Annualize the wages (multiply by 26) to find the correct federal bracket.</li>
+                <li>Apply the row's formula, then divide back to the pay period.</li>
+                <li>Use the stated state rate until we load official tables.</li>
+              </ol>
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900">Why This Matters for Sarah</CardTitle>
+            </CardHeader>
+            <CardContent className="text-purple-900 text-sm space-y-2">
+              <p>
+                Sarah can't hold payroll until a consultant hands her formulas. She needs to know the math herself so she
+                can audit the spreadsheet, train future bookkeepers, and explain every line to Alex. Your calculator should
+                reflect the same logic you are practicing right now.
               </p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-indigo-100 p-4 rounded-lg border border-indigo-300">
-                  <h3 className="font-bold mb-2">Position Details</h3>
-                  <ul className="space-y-1">
-                    <li><strong>Role:</strong> Junior Developer</li>
-                    <li><strong>Rate:</strong> $25 per hour</li>
-                    <li><strong>Schedule:</strong> 40 hours per week</li>
-                    <li><strong>Pay Period:</strong> Bi-weekly (every 2 weeks)</li>
-                  </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <Card className="border-violet-200 bg-white/95">
+            <CardHeader>
+              <CardTitle className="text-violet-900">Worked Paystub Example: Jordan's Check</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-slate-800">
+              <p>
+                Sarah sits beside Jordan, her payroll coordinator, and walks through one bi-weekly check with taxable wages of
+                <strong> $2,240</strong>. Everything you see below mirrors the calculator you are about to use, so study the method
+                as much as the answers.
+              </p>
+              <div className="grid gap-6 lg:grid-cols-2">
+                <div className="space-y-4">
+                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                    <h3 className="font-semibold text-slate-900">Social Security – 6.2%</h3>
+                    <p>
+                      Wage base check: $2,240 is far below the $172,800 annual cap, so the entire check is taxable. Multiply the
+                      taxable wages by 0.062 → <code>2,240 × 0.062 = 138.88</code>. Sarah rounds to the nearest cent, so the
+                      deduction on the stub is <strong>$138.88</strong>.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                    <h3 className="font-semibold text-slate-900">Medicare – 1.45%</h3>
+                    <p>
+                      No cap exists for Medicare on this paycheck. Multiply the same taxable wages by 0.0145 →
+                      <code>2,240 × 0.0145 = 32.48</code>. The deduction prints as <strong>$32.48</strong>.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                    <h3 className="font-semibold text-slate-900">Federal income tax – single filing</h3>
+                    <ol className="list-decimal list-inside space-y-1">
+                      <li>Annualize: <code>2,240 × 26 = 58,240</code>.
+                      </li>
+                      <li>
+                        Spot the bracket: $58,240 is in the single 22% band so use the formula <code>$5,578.50 + 22% of (income −
+                          $48,475)</code>.
+                      </li>
+                      <li>
+                        Plug in: income above the cutoff is <code>58,240 − 48,475 = 9,765</code>. Multiply by 0.22 to get
+                        <code>2,148.30</code>, then add the base <code>5,578.50</code> for <code>7,726.80</code> annual tax.
+                      </li>
+                      <li>Return to the pay period: <code>7,726.80 ÷ 26 = 297.19</code>. Rounded deduction is <strong>$297.19</strong>.
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                    <h3 className="font-semibold text-slate-900">State income tax – 3.5% placeholder</h3>
+                    <p>
+                      TechStart withholds a flat 3.5% until the state table is finalized. Multiply the wages by 0.035 →
+                      <code>2,240 × 0.035 = 78.40</code>, so the deduction equals <strong>$78.40</strong>.
+                    </p>
+                  </div>
                 </div>
-                <div className="bg-indigo-100 p-4 rounded-lg border border-indigo-300">
-                  <h3 className="font-bold mb-2">Sarah's Concerns</h3>
-                  <ul className="space-y-1">
-                    <li>• Cash flow timing for payroll</li>
-                    <li>• True cost including employer taxes</li>
-                    <li>• Setting Alex's expectations correctly</li>
-                    <li>• Planning for busy periods with overtime</li>
-                  </ul>
+                <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
+                  <h3 className="font-semibold text-violet-900 mb-2">Jordan's paystub summary</h3>
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="text-violet-900">
+                        <th className="py-1">Line</th>
+                        <th className="py-1 text-right">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-slate-900">
+                      <tr className="border-t border-violet-200">
+                        <td className="py-1 font-medium">Taxable wages</td>
+                        <td className="py-1 text-right">$2,240.00</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1">Social Security (6.2%)</td>
+                        <td className="py-1 text-right">$138.88</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1">Medicare (1.45%)</td>
+                        <td className="py-1 text-right">$32.48</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1">Federal income tax</td>
+                        <td className="py-1 text-right">$297.19</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1">State income tax (3.5%)</td>
+                        <td className="py-1 text-right">$78.40</td>
+                      </tr>
+                      <tr className="border-t border-violet-200 font-semibold text-violet-900">
+                        <td className="py-1">Net pay to Jordan</td>
+                        <td className="py-1 text-right">$1,693.05</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p className="mt-3 text-sm text-violet-900">
+                    Double-check: add every deduction ($546.95) and subtract from wages to reach the same net total. When your
+                    numbers balance like this, you know the paystub is defensible.
+                  </p>
                 </div>
               </div>
             </CardContent>
           </Card>
+        </section>
 
-          {/* Step-by-Step Calculation Guide */}
-          <Card className="border-2 border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-900 text-2xl">Step-by-Step Calculation Walkthrough</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6 text-green-800">
-              <div className="grid gap-6">
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-3 text-green-900">Step 1: Calculate Gross Pay</h3>
-                  <div className="space-y-2">
-                    <p><strong>Regular Time:</strong> 80 hours × $25/hour = $2,000</p>
-                    <p><strong>With Overtime (90 hours):</strong> (80 × $25) + (10 × $25 × 1.5) = $2,000 + $375 = $2,375</p>
-                    <div className="bg-green-200 p-2 rounded text-sm">
-                      <p><strong>Excel Formula:</strong> =IF(Hours&gt;80, 80*Rate + (Hours-80)*Rate*1.5, Hours*Rate)</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-3 text-green-900">Step 2: Calculate FICA Taxes</h3>
-                  <div className="space-y-2">
-                    <p><strong>Social Security:</strong> $2,000 × 6.2% = $124.00</p>
-                    <p><strong>Medicare:</strong> $2,000 × 1.45% = $29.00</p>
-                    <p><strong>Total FICA:</strong> $124.00 + $29.00 = $153.00</p>
-                    <div className="bg-green-200 p-2 rounded text-sm">
-                      <p><strong>Excel Formula:</strong> =GrossPay*0.062 + GrossPay*0.0145</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-3 text-green-900">Step 3: Estimate Federal Income Tax</h3>
-                  <div className="space-y-2">
-                    <p><strong>Approximate Rate:</strong> 12% for this income level</p>
-                    <p><strong>Federal Tax:</strong> $2,000 × 12% = $240.00</p>
-                    <div className="bg-green-200 p-2 rounded text-sm">
-                      <p><strong>Note:</strong> Actual amount depends on Alex's W-4 form and tax tables</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-3 text-green-900">Step 4: Calculate Net Pay</h3>
-                  <div className="space-y-2">
-                    <p><strong>Gross Pay:</strong> $2,000.00</p>
-                    <p><strong>Less FICA:</strong> -$153.00</p>
-                    <p><strong>Less Federal Tax:</strong> -$240.00</p>
-                    <p><strong>Less State Tax (5%):</strong> -$100.00</p>
-                    <p className="text-xl font-bold text-green-900 border-t pt-2"><strong>Net Pay:</strong> $1,507.00</p>
-                    <div className="bg-green-200 p-2 rounded text-sm">
-                      <p><strong>Take-Home Rate:</strong> About 75% of gross pay</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Sarah's True Cost */}
-          <Card className="border-2 border-yellow-200 bg-yellow-50">
-            <CardHeader>
-              <CardTitle className="text-yellow-900 text-2xl flex items-center gap-2">
-                <TrendingUp className="h-6 w-6" />
-                Sarah's True Payroll Cost
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-yellow-800">
-              <p className="text-lg leading-relaxed">
-                But wait—Sarah's cost is more than just Alex's gross pay! She also pays employer taxes:
-              </p>
-              <div className="bg-yellow-100 p-4 rounded-lg border border-yellow-300">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="font-bold mb-2 text-yellow-900">Alex Receives</h3>
-                    <p className="text-2xl font-bold">$1,507</p>
-                    <p className="text-sm">Net pay in his bank account</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-2 text-yellow-900">Sarah Pays</h3>
-                    <p className="text-2xl font-bold">$2,153</p>
-                    <p className="text-sm">Gross + employer FICA + unemployment taxes</p>
-                  </div>
-                </div>
-                <div className="mt-4 p-3 bg-yellow-200 rounded">
-                  <h4 className="font-bold text-yellow-900 mb-2">Sarah's Total Cost Breakdown:</h4>
-                  <div className="space-y-1 text-sm">
-                    <p>Alex's Gross Pay: $2,000</p>
-                    <p>Employer FICA: $153 (Sarah matches Alex's FICA taxes)</p>
-                    <p>Federal & State Unemployment: ~$60</p>
-                    <p><strong>Total Cost to Sarah: $2,213</strong></p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Think-Pair-Share Discussion */}
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="font-medium text-blue-900 mb-2">
-                Discussion Prompt (3 minutes):
-              </p>
-              <p className="text-blue-800 mb-2">
-                Look at the calculation walkthrough above. Share with a partner:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-blue-800">
-                <li>What surprised you most about the difference between gross pay, net pay, and Sarah's total cost?</li>
-                <li>Why is it important for Sarah to understand her true payroll costs, not just the gross wage?</li>
-                <li>How might this calculation change if Alex works overtime during busy project periods?</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          {/* Interactive Calculator */}
-          <Card className="border-2 border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-900 text-2xl">Practice with Sarah's Scenarios</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg text-purple-800 mb-4">
-                Use this interactive calculator to explore different payroll scenarios that Sarah might encounter. 
-                Try calculating payroll costs for various situations Alex might face at TechStart Solutions.
-              </p>
-              <InterestCalculationBuilder />
-            </CardContent>
-          </Card>
-        </div>
+        <CalculateDeductions scenarios={scenarios} mode="assisted" />
       </main>
 
-      <PhaseFooter
-        lesson={lesson02Data}
-        unit={unit05Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+      <PhaseFooter lesson={lesson02Data} unit={unit05Data} phase={currentPhase} phases={lesson02Phases} />
     </div>
   )
 }

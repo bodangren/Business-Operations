@@ -1,283 +1,214 @@
+'use client'
+
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson02Data, lesson02Phases, unit05Data } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calculator, DollarSign, Users } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { TaxBracketTable } from "@/components/payroll/TaxBracketTable"
+import { federalTaxTables2025, SOCIAL_SECURITY_RATE, MEDICARE_RATE } from "@/data/payroll/federalTaxTables"
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
+import { Calculator, Info } from "lucide-react"
 
-const currentPhase = lesson02Phases[1] // Phase 2: Introduction
+const currentPhase = lesson02Phases[1]
 
-const payrollTerms = [
+const payrollSentences = [
   {
-    id: '1',
-    text: '{blank} is the total amount an employee earns before any deductions are taken out.',
-    answer: 'Gross Pay',
-    hint: 'This is what you agree to pay an employee before taxes and other deductions',
-    category: 'Basic Terms'
+    id: "gross",
+    text: '{blank} pay is the full promise—hours times rate before any deductions happen.',
+    answer: 'Gross',
+    hint: 'Offer letter number',
+    category: 'Vocabulary'
   },
   {
-    id: '2', 
-    text: '{blank} is the amount employees actually take home after all deductions are subtracted.',
-    answer: 'Net Pay',
-    hint: 'This is what ends up in the employee\'s bank account',
-    category: 'Basic Terms'
+    id: "net",
+    text: '{blank} pay is what lands in the employee\'s bank account after all withholdings and benefits are removed.',
+    answer: 'Net',
+    hint: 'Spendable money',
+    category: 'Vocabulary'
   },
   {
-    id: '3',
-    text: 'For hourly employees who work more than 40 hours, overtime is typically {blank} times their regular rate.',
-    answer: '1.5',
-    hint: 'Time and a half is the standard overtime rate',
-    alternativeAnswers: ['1.5', 'one and a half'],
-    category: 'Calculations'
-  },
-  {
-    id: '4',
-    text: 'FICA taxes fund two programs: Social Security at {blank}% and Medicare at 1.45%.',
+    id: "fica",
+    text: 'Social Security withholding equals {blank}% of taxable wages until the annual wage base is reached.',
     answer: '6.2',
-    hint: 'Social Security tax rate is slightly higher than Medicare',
-    category: 'Tax Rates'
+    alternativeAnswers: ['6.2', '6.20'],
+    hint: 'Printed on the employer poster',
+    category: 'Rates'
   },
   {
-    id: '5',
-    text: 'For tipped employees, the federal minimum base wage is ${blank} per hour.',
-    answer: '2.13',
-    hint: 'This is much lower than regular minimum wage because tips are expected',
-    category: 'Special Cases'
+    id: "medicare",
+    text: 'Medicare withholding equals {blank}% of every taxable dollar Alex earns.',
+    answer: '1.45',
+    alternativeAnswers: ['1.45', '1.450'],
+    hint: 'No annual cap',
+    category: 'Rates'
   },
   {
-    id: '6',
-    text: 'The basic payroll formula is: {blank} - Deductions = Net Pay.',
-    answer: 'Gross Pay',
-    hint: 'Start with what the employee earns, then subtract what comes out',
-    category: 'Formulas'
+    id: "tables",
+    text: 'Federal income tax uses IRS {blank} tables that match the filing status and taxable income range.',
+    answer: 'tax bracket',
+    alternativeAnswers: ['tax brackets', 'bracket'],
+    hint: 'Starts at 10%',
+    category: 'Concept'
+  },
+  {
+    id: "state",
+    text: 'State income tax withholding follows a state-specific table or simplified {blank}% starter rate until a full table is built.',
+    answer: '4',
+    alternativeAnswers: ['4', '4.0', 'four'],
+    hint: 'TechStart\'s temporary California rate',
+    category: 'Concept'
   }
 ]
 
 export default function Phase2Page() {
+  const marriedTable = federalTaxTables2025.married
+  const singleTable = federalTaxTables2025.single
+  const headTable = federalTaxTables2025.headOfHousehold
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
-      <PhaseHeader
-        lesson={lesson02Data}
-        unit={unit05Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
-      
-      <main className="max-w-4xl mx-auto px-6 pb-8 space-y-8">
-        {/* Introduction Content */}
-        <div className="space-y-6">
-          <div className="text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-              <Calculator className="h-4 w-4" />
-              Core Concepts
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-              From Gross to Net: The Payroll Mathematics
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Every paycheck tells a story of transformation—from the gross amount you promise to pay 
-              to the net amount that actually reaches your employee's bank account.
-            </p>
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-lime-100">
+      <PhaseHeader lesson={lesson02Data} unit={unit05Data} phase={currentPhase} phases={lesson02Phases} />
+
+      <main className="container mx-auto px-4 py-10 space-y-8">
+        <section className="space-y-4 max-w-4xl mx-auto text-center">
+          <Badge className="bg-green-200 text-green-900 text-lg px-4 py-2 gap-2">
+            <Calculator className="h-4 w-4" />
+            Mechanics before Macros
+          </Badge>
+          <h1 className="text-4xl font-bold text-slate-900">How Each Deduction Gets Calculated</h1>
+          <p className="text-lg text-slate-700">
+            Before we touch Excel we need clean mental math. Every deduction you saw on Alex's paystub follows a very
+            specific rule. When you know the rule, building the spreadsheet is easy.
+          </p>
+        </section>
+
+        <section className="grid gap-6 md:grid-cols-2">
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader>
+              <CardTitle className="text-slate-900">Federal vs. State Income Tax</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-800 space-y-3">
+              <p>
+                <strong>Federal income tax</strong> comes from the IRS tax tables. We subtract the standard deduction,
+                figure out the taxable wages for the pay period, then see which bracket the wages fall into. Alex filed his
+                W-4 as single with no dependents, so we use the "single" bracket.
+              </p>
+              <p>
+                <strong>State income tax</strong> depends on the state. TechStart operates in California, so Sarah uses a
+                temporary 4% starter rate until her full state worksheet is finished. In Lesson 03 you'll build the
+                official California lookup table using SUMIFS and validation rules.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader>
+              <CardTitle className="text-slate-900">FICA: Social Security + Medicare</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-800 space-y-3">
+              <p>
+                Social Security is always <strong>{(SOCIAL_SECURITY_RATE * 100).toFixed(1)}%</strong> of taxable wages until
+                the annual wage base hits $172,800. If Alex earns $2,240 during the pay period, the Social Security
+                withholding is $138.88. Sarah matches that same amount as an employer expense.
+              </p>
+              <p>
+                Medicare is <strong>{(MEDICARE_RATE * 100).toFixed(2)}%</strong> of every dollar Alex earns. There is no cap.
+                Once Alex earns more than $200,000 in a calendar year, an additional 0.9% employee surtax kicks in. We
+                won't hit that this week, but your Excel model should plan for it when Sarah hires higher-paid staff.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl font-bold text-slate-900 text-center">2025 IRS Federal Tax Tables</h2>
+          <p className="text-center text-slate-700 max-w-3xl mx-auto">
+            Tables pulled from IRS Rev. Proc. 2024-40 (tax year 2025). Use the table that matches the employee's filing
+            status, find the correct range, then apply the formula listed in the third column.
+          </p>
+          <div className="grid gap-5 lg:grid-cols-3">
+            <TaxBracketTable
+              title="Single · no dependents"
+              filingStatusLabel={singleTable.label}
+              brackets={singleTable.brackets}
+              highlightIncome={58200}
+              note="Alex's taxable wages (after standard deduction) sit inside the 12% bracket until the simulator shows higher annual income."
+            />
+            <TaxBracketTable
+              title="Married filing jointly"
+              filingStatusLabel={marriedTable.label}
+              brackets={marriedTable.brackets}
+              highlightIncome={110000}
+              note="Use this table when employees update their W-4 to married status or when Sarah models her own salary with a spouse."
+            />
+            <TaxBracketTable
+              title="Head of household"
+              filingStatusLabel={headTable.label}
+              brackets={headTable.brackets}
+              highlightIncome={78000}
+              note="Head of household covers single parents supporting dependents. The bracket thresholds are more generous than the single table."
+            />
           </div>
+        </section>
 
-          {/* Key Concept: Gross vs Net */}
-          <Card className="border-2 border-blue-200 bg-blue-50">
+        <section className="grid gap-6 lg:grid-cols-2">
+          <Card className="border-amber-200 bg-amber-50">
             <CardHeader>
-              <CardTitle className="text-blue-900 text-2xl flex items-center gap-2">
-                <DollarSign className="h-6 w-6" />
-                The Two Numbers That Matter
-              </CardTitle>
+              <CardTitle className="text-amber-900">What if Alex Marries and Has Two Kids?</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-blue-800">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
-                  <h3 className="font-bold text-lg mb-2">Gross Pay</h3>
-                  <p className="mb-2">
-                    The total amount an employee earns before any deductions. This is what you negotiate when you hire someone.
-                  </p>
-                  <p className="font-semibold text-blue-900">
-                    Example: Alex works 40 hours at $25/hour = $1,000 gross pay
-                  </p>
-                </div>
-                <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
-                  <h3 className="font-bold text-lg mb-2">Net Pay</h3>
-                  <p className="mb-2">
-                    The amount left after all taxes and deductions are taken out. This is what actually hits the employee's bank account.
-                  </p>
-                  <p className="font-semibold text-blue-900">
-                    Example: Alex's $1,000 gross becomes ~$750 net after taxes
-                  </p>
-                </div>
-              </div>
-              <div className="bg-blue-200 p-4 rounded-lg border border-blue-400 text-center">
-                <p className="font-bold text-lg text-blue-900">
-                  The Golden Rule: Gross Pay - Deductions = Net Pay
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Types of Gross Pay Calculations */}
-          <Card className="border-2 border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-900 text-2xl">Three Ways to Calculate Gross Pay</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6 text-green-800">
-              <div className="grid md:grid-cols-1 gap-6">
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-2 text-green-900">1. Hourly Employees</h3>
-                  <p className="mb-2">
-                    Multiply hours worked by hourly rate. For overtime (over 40 hours), pay 1.5 times the regular rate.
-                  </p>
-                  <div className="bg-green-200 p-3 rounded font-mono text-sm">
-                    <p><strong>Regular:</strong> 32 hours × $15/hour = $480</p>
-                    <p><strong>With Overtime:</strong> 45 hours = (40 × $15) + (5 × $15 × 1.5) = $600 + $112.50 = $712.50</p>
-                  </div>
-                </div>
-
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-2 text-green-900">2. Salaried Employees</h3>
-                  <p className="mb-2">
-                    Divide annual salary by number of pay periods (weekly = 52, bi-weekly = 26, monthly = 12).
-                  </p>
-                  <div className="bg-green-200 p-3 rounded font-mono text-sm">
-                    <p><strong>Example:</strong> $45,000 salary ÷ 26 bi-weekly periods = $1,730.77 per paycheck</p>
-                  </div>
-                </div>
-
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-                  <h3 className="font-bold text-lg mb-2 text-green-900">3. Tipped Employees</h3>
-                  <p className="mb-2">
-                    Base wage plus reported tips, but must meet standard minimum wage requirements.
-                  </p>
-                  <div className="bg-green-200 p-3 rounded font-mono text-sm">
-                    <p><strong>Base:</strong> 25 hours × $2.13 = $53.25</p>
-                    <p><strong>Plus Tips:</strong> $53.25 + $180 tips = $233.25 total</p>
-                    <p><strong>Minimum Check:</strong> Must equal at least 25 × $7.25 = $181.25</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Deductions Breakdown */}
-          <Card className="border-2 border-orange-200 bg-orange-50">
-            <CardHeader>
-              <CardTitle className="text-orange-900 text-2xl">What Gets Deducted</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-orange-800">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="bg-orange-100 p-4 rounded-lg border border-orange-300">
-                    <h3 className="font-bold text-lg mb-2 text-orange-900">Required Deductions</h3>
-                    <ul className="space-y-2">
-                      <li><strong>Federal Income Tax:</strong> Based on W-4 form and tax tables</li>
-                      <li><strong>State Income Tax:</strong> Varies by state</li>
-                      <li><strong>Social Security:</strong> 6.2% of gross pay</li>
-                      <li><strong>Medicare:</strong> 1.45% of gross pay</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="bg-orange-100 p-4 rounded-lg border border-orange-300">
-                    <h3 className="font-bold text-lg mb-2 text-orange-900">Optional Deductions</h3>
-                    <ul className="space-y-2">
-                      <li><strong>Health Insurance:</strong> Employee premium share</li>
-                      <li><strong>Retirement (401k):</strong> Employee contributions</li>
-                      <li><strong>Other:</strong> Life insurance, parking, etc.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-orange-200 p-4 rounded-lg border border-orange-400">
-                <h3 className="font-bold text-lg mb-2 text-orange-900">Sarah's Responsibility</h3>
-                <p>
-                  Getting this wrong can lead to huge problems. Under-withholding means Alex could owe money at tax time. 
-                  Over-withholding means less money in his pocket each month. Sarah needs to get this exactly right 
-                  to be a good employer and maintain trust.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Why This Matters */}
-          <Card className="border-2 border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-900 text-2xl flex items-center gap-2">
-                💡 Why This Matters for Sarah
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-purple-800">
-              <p className="text-lg leading-relaxed">
-                When Sarah promises to pay Alex $25 per hour, she's talking gross pay. But her actual cash outflow will be different:
+            <CardContent className="text-amber-900 space-y-2 text-sm">
+              <p>
+                Filing status changes everything. If Alex updates his W-4 to married filing jointly with two dependents,
+                the withholding jumps to the married table plus expanded child tax credits. The bi-weekly taxable amount
+                drops because the standard deduction doubles to $30,000 per year. Sarah needs your simulator to switch
+                tables instantly when employees update their forms.
               </p>
-              <div className="bg-purple-100 p-4 rounded-lg border border-purple-300">
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <p className="font-semibold text-purple-900">Alex's Gross Pay</p>
-                    <p className="text-2xl font-bold">$1,000</p>
-                    <p className="text-sm">What Sarah promised</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-purple-900">Alex's Net Pay</p>
-                    <p className="text-2xl font-bold">~$750</p>
-                    <p className="text-sm">What Alex actually gets</p>
-                  </div>
-                </div>
-                <div className="mt-4 p-3 bg-purple-200 rounded text-center">
-                  <p className="font-semibold text-purple-900">
-                    Sarah's True Cost: $1,000 + Employer Taxes (~$76.50) = $1,076.50
-                  </p>
-                </div>
-              </div>
-              <p className="text-lg leading-relaxed">
-                Understanding these calculations helps Sarah predict her exact payroll cash needs. 
-                No more guessing—just precise, reliable financial planning.
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Think-Pair-Share Discussion */}
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="font-medium text-blue-900 mb-2">
-                Discussion Prompt (3 minutes):
-              </p>
-              <p className="text-blue-800 mb-2">
-                Think about the difference between gross and net pay. Share with a partner:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-blue-800">
-                <li>Why might employees be surprised by the difference between gross and net pay?</li>
-                <li>How could Sarah explain this to Alex during the hiring process to set proper expectations?</li>
-                <li>What additional costs beyond gross pay should Sarah budget for when hiring Alex?</li>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Standard deduction doubles · {marriedTable.standardDeduction.toLocaleString()}</li>
+                <li>Child credits reduce federal withholding even before refund time.</li>
+                <li>Spreadsheet must store filing status so formulas know which table to query.</li>
               </ul>
             </CardContent>
           </Card>
 
-          {/* Fill in the Blank Exercise */}
-          <FillInTheBlank
-            sentences={payrollTerms}
-            title="Master the Payroll Vocabulary"
-            description="Complete these key payroll concepts to build your foundation for accurate calculations"
-            showWordList={true}
-            randomizeWordOrder={true}
-            showHints={true}
-          />
-        </div>
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900">Checklist Before Running the Calculator</CardTitle>
+            </CardHeader>
+            <CardContent className="text-blue-900 space-y-2 text-sm">
+              <ol className="list-decimal list-inside space-y-1">
+                <li>Start with gross pay (hours × rate) for the pay period.</li>
+                <li>Subtract pre-tax benefits if they exist (health premiums, retirement contributions).</li>
+                <li>Apply Social Security (6.2%) and Medicare (1.45%) to the taxable wages.</li>
+                <li>Use the correct IRS tax table row to find federal withholding.</li>
+                <li>Apply the state rate or table.</li>
+                <li>The remainder is net pay. Add employer-side FICA on top for Sarah's cash planning.</li>
+              </ol>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader className="flex flex-col gap-2">
+              <CardTitle className="text-slate-900">Lock In the Vocabulary</CardTitle>
+              <p className="text-sm text-slate-700">Complete each sentence before moving on to the guided calculator.</p>
+            </CardHeader>
+            <CardContent>
+              <FillInTheBlank
+                sentences={payrollSentences}
+                title="Payroll Deduction Language"
+                description="These are the key terms you will type into Excel cell labels in the next phase."
+                showWordList={true}
+                showHints={true}
+              />
+            </CardContent>
+          </Card>
+        </section>
       </main>
 
-      <PhaseFooter
-        lesson={lesson02Data}
-        unit={unit05Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+      <PhaseFooter lesson={lesson02Data} unit={unit05Data} phase={currentPhase} phases={lesson02Phases} />
     </div>
   )
 }
