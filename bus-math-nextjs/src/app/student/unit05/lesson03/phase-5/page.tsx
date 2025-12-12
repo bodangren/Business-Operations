@@ -1,13 +1,48 @@
+import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, TrendingUp } from "lucide-react"
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { CheckCircle2, ClipboardList, Share2 } from "lucide-react"
 import { lesson03Data, lesson03Phases, unit05Data } from "../lesson-data"
-import { drawUnit05Phase5ComprehensionCheckItems } from "@/data/question-banks/unit05-phase5"
 
 const currentPhase = lesson03Phases[4] // Assessment phase
-const assessmentQuestions = drawUnit05Phase5ComprehensionCheckItems(10, { lessonIds: ["lesson03"] })
+
+const assessmentQuestions = [
+  {
+    id: "assess-1",
+    question: "Which part of today's calculator guarantees you're referencing the correct tax table?",
+    answers: [
+      "The data-validation selector tied to your named ranges",
+      "Typing the table name manually",
+      "Color-coding the sheet",
+      "Adding a logo"
+    ],
+    explanation: "The selector enforces valid table names, so the lookup always pulls from the right range."
+  },
+  {
+    id: "assess-2",
+    question: "Why does the lookup formula use approximate match mode (the final argument = 1)?",
+    answers: [
+      "It finds the closest income bracket when the exact value isn't listed",
+      "It makes Excel run faster",
+      "It prevents negative numbers",
+      "It hides the formula from other users"
+    ],
+    explanation: "Approximate match moves to the correct bracket so Sarah always gets the right yearly tax."
+  },
+  {
+    id: "assess-3",
+    question: "What should you do if the selector shows a blank after you rename a tax table?",
+    answers: [
+      "Update the named range list so the selector still points to a valid name",
+      "Ignore it and hope the lookup still works",
+      "Delete the entire workbook",
+      "Switch to a random table"
+    ],
+    explanation: "Whenever you rename a table, refresh the validation list to keep the selector + lookup in sync."
+  }
+]
 
 export default function Phase5Page() {
   return (
@@ -20,121 +55,86 @@ export default function Phase5Page() {
       />
 
       <div className="space-y-8">
-        {/* Assessment Introduction */}
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">
-            Demonstrate Your Payroll Mastery
+          <h2 className="text-2xl font-bold text-blue-900 mb-3">
+            Assessment: Defend Your Selector + Lookup
           </h2>
-          
           <p className="text-lg leading-relaxed">
-            Time to show what you've learned about building professional payroll systems. This assessment 
-            covers both the technical Excel skills and business understanding you need to help entrepreneurs 
-            like Sarah make confident hiring decisions.
+            A calculator is only useful if someone else can trust it. Prove your build works by walking through the rubric below, 
+            trading calculators with a partner, and finishing the checkpoint quiz.
           </p>
         </div>
 
-        {/* Assessment Context */}
         <Card className="border-purple-200 bg-purple-50">
-          <CardContent className="p-6">
+          <CardContent className="p-6 space-y-3">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full bg-purple-100">
-                <TrendingUp className="h-6 w-6 text-purple-600" />
+                <Share2 className="h-6 w-6 text-purple-700" />
               </div>
               <div>
-                <h3 className="font-semibold text-purple-900 text-lg mb-2">
-                  Assessment Focus Areas
+                <h3 className="font-semibold text-purple-900 text-lg mb-1">
+                  Partner Exchange (6 minutes)
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-purple-800">
-                  <div>
-                    <h4 className="font-medium mb-2">Technical Skills:</h4>
-                    <ul className="space-y-1">
-                      <li>• Complex IF statement construction</li>
-                      <li>• Gross-to-net pay calculations</li>
-                      <li>• Error handling and data validation</li>
-                      <li>• Named ranges and formula optimization</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2">Business Application:</h4>
-                    <ul className="space-y-1">
-                      <li>• Cash flow planning and management</li>
-                      <li>• Employee cost analysis</li>
-                      <li>• Strategic hiring decisions</li>
-                      <li>• Payroll compliance understanding</li>
-                    </ul>
-                  </div>
-                </div>
+                <ul className="list-disc list-inside text-sm text-purple-900 space-y-1">
+                  <li>Swap laptops or share screens.</li>
+                  <li>Have your partner pick a new taxable income and selector option.</li>
+                  <li>They should explain what they trust and what they question about your lookup.</li>
+                </ul>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Success Criteria */}
         <Card className="border-green-200 bg-green-50">
-          <CardContent className="p-6">
+          <CardContent className="p-6 space-y-4">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full bg-green-100">
-                <CheckCircle2 className="h-6 w-6 text-green-600" />
+                <ClipboardList className="h-6 w-6 text-green-700" />
               </div>
-              <div>
-                <h3 className="font-semibold text-green-900 text-lg mb-2">
-                  Performance Standards
+              <div className="flex-1">
+                <h3 className="font-semibold text-green-900 text-lg mb-1">
+                  Peer Critique Snapshot
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-green-800">
-                  <div>
-                    <h4 className="font-medium text-green-900 mb-2">Proficient (70-79%)</h4>
-                    <p>Demonstrates solid understanding of payroll calculations and basic Excel functions for business use.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-green-900 mb-2">Advanced (80-89%)</h4>
-                    <p>Shows mastery of complex formulas and strong business application of payroll systems.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-green-900 mb-2">Expert (90-100%)</h4>
-                    <p>Demonstrates sophisticated understanding of both technical and strategic aspects of payroll management.</p>
-                  </div>
-                </div>
+                <p className="text-green-800 text-sm mb-3">
+                  Capture structured feedback using the PeerCritiqueForm. Focus on clarity, accuracy, and explainability.
+                </p>
+                <PeerCritiqueForm
+                  projectTitle="Unit 05 Lesson 03 – Tax Table Selector"
+                  peerName="Partner"
+                  unitNumber={5}
+                />
+                <p className="text-xs text-green-700 mt-2">
+                  Use the “Excel Technical Skills” section to comment on selector accuracy and lookup logic, and the “Business Analysis” or “Presentation” sections to capture client-facing explanations.
+                </p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Comprehensive Assessment */}
-        <ComprehensionCheck
-          title="Payroll Calculator Assessment"
-          description="Test your mastery of payroll calculations, Excel formulas, and business applications. This assessment covers the technical skills and strategic thinking needed for professional payroll management."
-          questions={assessmentQuestions}
-          showExplanations={true}
-          allowRetry={true}
-        />
-
-        {/* Next Steps Preview */}
-        <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-          <h3 className="font-semibold text-blue-900 mb-3">Looking Ahead</h3>
-          <p className="text-blue-800 mb-3">
-            You've built the foundation for Sarah's payroll system, but there's more to consider. In our next lesson, 
-            we'll explore how to scale this calculator for multiple employees, add advanced features like different 
-            pay frequencies, and integrate with other business systems.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div>
-              <h4 className="font-medium text-blue-900 mb-2">Coming Up:</h4>
-              <ul className="text-blue-800 space-y-1">
-                <li>• Multi-employee payroll registers</li>
-                <li>• XLOOKUP for employee databases</li>
-                <li>• Bilingual pay stub templates</li>
-              </ul>
+        <Card className="border-slate-200">
+          <CardContent className="p-6 space-y-4">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full bg-slate-100">
+                <CheckCircle2 className="h-6 w-6 text-slate-700" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-slate-900 text-lg mb-1">
+                  Selector + Lookup Checkpoint
+                </h3>
+                <p className="text-slate-700 text-sm mb-3">
+                  Answer these items to confirm you can explain the technical choices behind your build.
+                </p>
+                <ComprehensionCheck
+                  title="Selector Integrity Quiz"
+                  description="Three quick questions about the architecture you just built"
+                  questions={assessmentQuestions}
+                  showExplanations={true}
+                  allowRetry={true}
+                />
+              </div>
             </div>
-            <div>
-              <h4 className="font-medium text-blue-900 mb-2">Real-World Connection:</h4>
-              <ul className="text-blue-800 space-y-1">
-                <li>• Bank reconciliation systems</li>
-                <li>• Cash flow forecasting</li>
-                <li>• Compliance and record keeping</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
 
       <PhaseFooter

@@ -1,13 +1,85 @@
+import SpreadsheetWrapper, { type SpreadsheetData } from "@/components/spreadsheet/SpreadsheetWrapper"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Calculator, Lightbulb, CheckCircle, ArrowRight } from "lucide-react"
-import SpreadsheetWrapper from "@/components/spreadsheet/SpreadsheetWrapper"
-import { payrollTemplate } from "@/components/spreadsheet/SpreadsheetTemplates"
+import { Layers, Link2, Percent, Users } from "lucide-react"
 import { lesson03Data, lesson03Phases, unit05Data } from "../lesson-data"
 
 const currentPhase = lesson03Phases[2] // Guided Practice phase
+
+const bracketPracticeData: SpreadsheetData = [
+  [
+    { value: "Lower Bound", readOnly: true },
+    { value: "Upper Bound", readOnly: true },
+    { value: "Base Tax", readOnly: true },
+    { value: "% over Lower", readOnly: true },
+    { value: "Row Formula", readOnly: true }
+  ],
+  [
+    { value: 0, readOnly: false },
+    { value: 11925, readOnly: false },
+    { value: 0, readOnly: false },
+    { value: 0.1, readOnly: false },
+    { value: "'=MAX($B$10-A2,0)*D2 + C2", readOnly: true }
+  ],
+  [
+    { value: 11925, readOnly: false },
+    { value: 48475, readOnly: false },
+    { value: 1192.5, readOnly: false },
+    { value: 0.12, readOnly: false },
+    { value: "'=MAX($B$10-A3,0)*D3 + C3", readOnly: true }
+  ],
+  [
+    { value: 48475, readOnly: false },
+    { value: 103350, readOnly: false },
+    { value: 5578.5, readOnly: false },
+    { value: 0.22, readOnly: false },
+    { value: "'=MAX($B$10-A4,0)*D4 + C4", readOnly: true }
+  ],
+  [
+    { value: 103350, readOnly: false },
+    { value: 197300, readOnly: false },
+    { value: 17651, readOnly: false },
+    { value: 0.24, readOnly: false },
+    { value: "'=MAX($B$10-A5,0)*D5 + C5", readOnly: true }
+  ],
+  [
+    { value: 197300, readOnly: false },
+    { value: 250525, readOnly: false },
+    { value: 40199, readOnly: false },
+    { value: 0.32, readOnly: false },
+    { value: "'=MAX($B$10-A6,0)*D6 + C6", readOnly: true }
+  ],
+  [
+    { value: 250525, readOnly: false },
+    { value: 626350, readOnly: false },
+    { value: 57231, readOnly: false },
+    { value: 0.35, readOnly: false },
+    { value: "'=MAX($B$10-A7,0)*D7 + C7", readOnly: true }
+  ],
+  [
+    { value: 626350, readOnly: false },
+    { value: "and up", readOnly: false },
+    { value: 188769.75, readOnly: false },
+    { value: 0.37, readOnly: false },
+    { value: "'=MAX($B$10-A8,0)*D8 + C8", readOnly: true }
+  ],
+  [
+    { value: "", readOnly: true },
+    { value: "", readOnly: true },
+    { value: "", readOnly: true },
+    { value: "", readOnly: true },
+    { value: "", readOnly: true }
+  ],
+  [
+    { value: "Taxable Income", readOnly: true },
+    { value: 65000, readOnly: false },
+    { value: "", readOnly: true },
+    { value: "Selected Bracket", readOnly: true },
+    { value: "'=XLOOKUP(B10,A2:A8,E2:E8,\"No match\",1)" , readOnly: true }
+  ]
+]
 
 export default function Phase3Page() {
   return (
@@ -20,234 +92,112 @@ export default function Phase3Page() {
       />
 
       <div className="space-y-8">
-        {/* Introduction to Guided Practice */}
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">
-            Building Sarah's Payroll Calculator Step-by-Step
-          </h2>
-          
-          <p className="text-lg leading-relaxed">
-            Now it's time to put theory into practice. You'll work with a payroll template to understand 
-            how the formulas we discussed actually work in Excel. Sarah needs a tool that can handle 
-            her current freelance team and scale as she grows TechStart Solutions.
+          <h2 className="text-2xl font-bold text-blue-900">Guided Practice: Fill the Bracket Table</h2>
+          <p>
+            Work through the steps below so your workbook can determine the correct bracket and compute the progressive tax 
+            with one formula. The interactive sheet mirrors the structure you should mimic in Excel.
           </p>
         </div>
 
-        {/* Template Overview */}
-        <Card className="border-purple-200 bg-purple-50">
+        <Card className="border-slate-200 bg-slate-50">
           <CardHeader>
-            <CardTitle className="text-purple-900 flex items-center gap-2">
-              <Calculator className="h-5 w-5" />
-              Payroll Template Walkthrough
+            <CardTitle className="text-slate-900 flex items-center gap-2">
+              <Badge className="bg-white text-slate-900">Selector Primer</Badge>
+              Step 0 – Tie the Selector to Named Tables
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-purple-800">
-              The template below shows a basic payroll structure that Sarah might use. Examine the formulas 
-              in columns D (Gross Pay), F (Tax), and G (Net Pay). Notice how Excel calculates everything 
-              automatically once you enter the hours and rates.
-            </p>
-            
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-purple-900 mb-3">Template Features:</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600" />
-                  <span>Automatic gross pay calculations</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600" />
-                  <span>Fixed 25% tax rate for simplicity</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600" />
-                  <span>Net pay formula integration</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600" />
-                  <span>Summary totals at bottom</span>
-                </div>
-              </div>
+          <CardContent className="space-y-3 text-slate-800 text-sm">
+            <p>Before you type any brackets, set up the drop-down that controls which filing status table feeds the lookup.</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Name each bracket range from Lesson 2 (e.g., <span className="font-mono">Fed_Single_2025</span>, <span className="font-mono">Fed_Married_2025</span>).</li>
+              <li>Create a named list like <span className="font-mono">TaxTable_List</span> that references those names.</li>
+              <li>Apply <strong>Data Validation → List</strong> to cell B4 so students can only choose one of the approved tables.</li>
+            </ul>
+            <div className="bg-white p-3 rounded border font-mono text-xs">
+              =LET(selected, INDIRECT($B$4), XLOOKUP($B$10, CHOOSECOLS(selected,1), CHOOSECOLS(selected,5), "No match", 1))
             </div>
+            <p>This formula shows how the selector text (cell B4) converts to the appropriate bracket table through <code>INDIRECT</code>.</p>
           </CardContent>
         </Card>
 
-        {/* Interactive Spreadsheet */}
-        <Card className="border-green-200 bg-green-50">
-          <CardHeader>
-            <CardTitle className="text-green-900">
-              Interactive Payroll Calculator
-            </CardTitle>
-            <p className="text-green-800 text-sm">
-              Try changing the hours or rates in columns B and C to see how the calculations update automatically.
-            </p>
-          </CardHeader>
-          <CardContent>
-            <div className="bg-white p-4 rounded-lg border">
-              <SpreadsheetWrapper
-                initialData={payrollTemplate.data}
-                className="w-full"
-              />
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Step-by-Step Analysis */}
         <Card className="border-blue-200 bg-blue-50">
           <CardHeader>
             <CardTitle className="text-blue-900 flex items-center gap-2">
-              <Lightbulb className="h-5 w-5" />
-              Understanding the Formulas
+              <Layers className="h-5 w-5" />
+              Step 1 – Enter the Bracket Boundaries
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-lg border">
-                <h4 className="font-semibold text-blue-900 mb-2">Column D: Gross Pay</h4>
-                <div className="bg-gray-100 p-2 rounded font-mono text-xs mb-2">
-                  =B2*C2
-                </div>
-                <p className="text-sm text-blue-800">
-                  Multiplies hours worked (B2) by hourly rate (C2) to calculate gross pay.
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border">
-                <h4 className="font-semibold text-blue-900 mb-2">Column F: Taxes</h4>
-                <div className="bg-gray-100 p-2 rounded font-mono text-xs mb-2">
-                  =D2*E2
-                </div>
-                <p className="text-sm text-blue-800">
-                  Multiplies gross pay (D2) by tax rate (E2) to calculate total tax withholding.
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border">
-                <h4 className="font-semibold text-blue-900 mb-2">Column G: Net Pay</h4>
-                <div className="bg-gray-100 p-2 rounded font-mono text-xs mb-2">
-                  =D2-F2
-                </div>
-                <p className="text-sm text-blue-800">
-                  Subtracts taxes (F2) from gross pay (D2) to calculate what the employee receives.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-blue-900 mb-2">Row 6: Summary Formulas</h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div>
-                  <Badge className="bg-blue-100 text-blue-800 mb-1">Total Hours</Badge>
-                  <div className="bg-gray-100 p-1 rounded font-mono text-xs">=SUM(B2:B4)</div>
-                </div>
-                <div>
-                  <Badge className="bg-blue-100 text-blue-800 mb-1">Total Gross</Badge>
-                  <div className="bg-gray-100 p-1 rounded font-mono text-xs">=SUM(D2:D4)</div>
-                </div>
-                <div>
-                  <Badge className="bg-blue-100 text-blue-800 mb-1">Total Net</Badge>
-                  <div className="bg-gray-100 p-1 rounded font-mono text-xs">=SUM(G2:G4)</div>
-                </div>
-              </div>
-            </div>
+          <CardContent className="space-y-2 text-blue-900">
+            <ul className="list-disc list-inside space-y-1 text-sm">
+              <li>Copy each lower bound and upper bound directly from the IRS table.</li>
+              <li>Use exact dollars (no commas) so lookup math stays clean.</li>
+              <li>For the top bracket leave upper bound blank or type "and up".</li>
+            </ul>
           </CardContent>
         </Card>
 
-        {/* Guided Scenarios */}
-        <Card className="border-orange-200 bg-orange-50">
-          <CardHeader>
-            <CardTitle className="text-orange-900">
-              Practice Scenarios
-            </CardTitle>
-            <p className="text-orange-800 text-sm">
-              Try these scenarios in the spreadsheet above to see how different situations affect payroll costs.
-            </p>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-lg border">
-                <h4 className="font-semibold text-orange-900 mb-2">Scenario 1: Alex's Full-Time Position</h4>
-                <ul className="text-sm text-orange-800 space-y-1">
-                  <li><strong>Employee:</strong> Alex Rodriguez (row 2)</li>
-                  <li><strong>Hours:</strong> 40 per week</li>
-                  <li><strong>Rate:</strong> $31.25/hour ($65k ÷ 52 weeks ÷ 40 hours)</li>
-                </ul>
-                <p className="text-xs text-orange-700 mt-2">
-                  What's Alex's weekly net pay? How much does Sarah need for her business account?
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border">
-                <h4 className="font-semibold text-orange-900 mb-2">Scenario 2: Mixed Team</h4>
-                <ul className="text-sm text-orange-800 space-y-1">
-                  <li><strong>Alex:</strong> 40 hours at $31.25/hour</li>
-                  <li><strong>Part-time designer:</strong> 20 hours at $25/hour</li>
-                  <li><strong>Freelance writer:</strong> 15 hours at $30/hour</li>
-                </ul>
-                <p className="text-xs text-orange-700 mt-2">
-                  What's Sarah's total weekly payroll cost? How does this compare to her project revenue?
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Think-Pair-Share */}
         <Card className="border-green-200 bg-green-50">
           <CardHeader>
-            <CardTitle className="text-green-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Collaborate and Discuss
+            <CardTitle className="text-green-900 flex items-center gap-2">
+              <Percent className="h-5 w-5" />
+              Step 2 – Add Base Tax + Marginal Rate
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-green-900 text-sm">
+            <p>The <strong>Base Tax</strong> column holds the IRS amount that already covers previous brackets.</p>
+            <p>The <strong>% over Lower</strong> column stores the decimal rate (22% → 0.22). Freeze decimals to four places.</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-purple-200 bg-purple-50">
+          <CardHeader>
+            <CardTitle className="text-purple-900 flex items-center gap-2">
+              <Link2 className="h-5 w-5" />
+              Step 3 – Write the Row Formula
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-purple-900 text-sm">
+            <p>Use <code>MAX(TaxableIncome - LowerBound, 0)</code> so rows above the current bracket return zero.</p>
+            <div className="bg-white p-3 rounded border font-mono text-xs">
+              =MAX($B$8 - A4, 0) * D4 + C4
+            </div>
+            <p>Copy the formula down the table. Only one row will produce a positive amount when the taxable income lands inside its range.</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-slate-200">
+          <CardHeader>
+            <CardTitle className="text-slate-900 flex items-center gap-2">
+              <Badge className="bg-slate-100 text-slate-800">Demo Sheet</Badge>
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="font-medium text-green-900 mb-2">
-              Discussion Prompt (5 minutes):
+            <p className="text-slate-700 text-sm mb-3">
+              Edit the sheet below to see how the row formulas react. Try changing the taxable income in cell B8 and watch 
+              which row displays a non-zero result.
             </p>
-            <p className="text-green-800 mb-3">
-              Work with a partner to analyze the spreadsheet. Share your observations:
-            </p>
-            <ul className="list-disc list-inside space-y-1 text-green-800">
-              <li>What happens to total costs when you increase someone's hourly rate by $5?</li>
-              <li>How does adding overtime hours (45 instead of 40) affect the calculations?</li>
-              <li>What questions would Sarah need to ask before hiring a second full-time employee?</li>
-            </ul>
-            
-            <div className="mt-4 p-3 bg-white rounded border">
-              <p className="text-sm text-green-700">
-                <strong>Extension Challenge:</strong> The template uses a simplified 25% tax rate. In reality, 
-                different employees might have different withholding rates based on their W-4 forms. How could 
-                you modify this template to handle variable tax rates?
-              </p>
+            <div className="bg-white p-4 rounded border">
+              <SpreadsheetWrapper initialData={bracketPracticeData} className="w-full" />
             </div>
           </CardContent>
         </Card>
 
-        {/* Key Insights */}
-        <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-          <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-            <ArrowRight className="h-5 w-5" />
-            Key Insights from This Practice
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-blue-800">
-            <div>
-              <h4 className="font-medium mb-2">For Sarah as an Employer:</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Gross pay is only part of the total employment cost</li>
-                <li>• Tax withholding requires careful tracking and remittance</li>
-                <li>• Excel automation reduces payroll errors and saves time</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">For Business Operations:</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Predictable formulas enable cash flow planning</li>
-                <li>• Summary totals help with budgeting and forecasting</li>
-                <li>• Template structure scales as the team grows</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <Card className="border-orange-200 bg-orange-50">
+          <CardHeader>
+            <CardTitle className="text-orange-900 flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              Partner Debrief (5 minutes)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2 text-orange-900 text-sm">
+            <ul className="list-disc list-inside space-y-1">
+              <li>Explain to a partner why the <code>MAX</code> wrapper keeps earlier rows at zero.</li>
+              <li>Show how you'd reference the winning row inside <code>XLOOKUP</code> or <code>INDEX/MATCH</code>.</li>
+              <li>Swap taxable incomes (one low, one high) and verify you land on different brackets.</li>
+            </ul>
+          </CardContent>
+        </Card>
       </div>
 
       <PhaseFooter

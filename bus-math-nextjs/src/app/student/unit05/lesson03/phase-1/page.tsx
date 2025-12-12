@@ -2,45 +2,48 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { AlertTriangle, Calculator, Users } from "lucide-react"
+import { AlertTriangle, Calculator, Layers3, Users } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { TaxBracketTable } from "@/components/payroll/TaxBracketTable"
+import { federalTaxTables2025 } from "@/data/payroll/federalTaxTables"
 import { lesson03Data, lesson03Phases, unit05Data } from "../lesson-data"
 
 const currentPhase = lesson03Phases[0] // Hook phase
+const singleBrackets = federalTaxTables2025.single
 
 const hookQuestions = [
   {
     id: "hook-1",
-    question: "Why is Sarah afraid to hire Alex, even though her business is successful?",
+    question: "Why can't Sarah just multiply Alex's taxable income by one rate?",
     answers: [
-      "She fears not having enough cash to pay him consistently", 
-      "She doesn't trust Alex's programming skills",
-      "She doesn't want to share profits with another person",
-      "She thinks hiring employees is illegal for small businesses"
+      "Because the U.S. income tax is progressive and uses multiple brackets",
+      "Because Excel can't multiply",
+      "Because payroll systems always ignore deductions",
+      "Because single employees pay different tax each pay period"
     ],
-    explanation: "Sarah's main fear is cash flow management. Having enough revenue doesn't guarantee having cash available when payroll is due, especially with irregular project-based income."
+    explanation: "Each chunk of income is taxed at a different rate, so Sarah needs the bracket ranges to know the correct formula."
   },
   {
-    id: "hook-2", 
-    question: "What specific problem does a payroll calculator solve for business owners?",
+    id: "hook-2",
+    question: "What information must be stored in each bracket so a lookup formula can calculate annual tax?",
     answers: [
-      "It predicts exactly how much cash will be needed for each payday",
-      "It eliminates the need to pay taxes on employee wages", 
-      "It allows businesses to pay employees less than minimum wage",
-      "It automatically deposits money into employee bank accounts"
+      "Minimum income for the bracket, maximum income (or null), base tax, and the marginal rate",
+      "Only the tax rate percentage",
+      "The employee's address",
+      "The employer's withholding ID"
     ],
-    explanation: "A payroll calculator helps predict cash needs by accurately computing gross pay, taxes, and deductions to determine net pay amounts and timing."
+    explanation: "With those four values Sarah can add the base tax to the marginal tax on the amount above the lower bound."
   },
   {
     id: "hook-3",
-    question: "In the story about Maria's café, what caused her payroll checks to bounce?",
+    question: "How does building a bracket table first speed up the rest of the payroll calculator?",
     answers: [
-      "Timing mismatch between cash earnings and electronic payroll withdrawals",
-      "She didn't have enough total revenue to cover payroll",
-      "Her employees worked too many overtime hours", 
-      "The bank made an error processing her business account"
+      "Any taxable income can reuse the same lookup logic instead of rewriting formulas",
+      "It removes the need for deductions",
+      "It automatically deposits paychecks",
+      "It replaces budgeting entirely"
     ],
-    explanation: "Maria had the money but faced a timing problem - payroll left her account immediately on Friday, but weekend cash sales weren't deposited until Monday."
+    explanation: "Once the table exists, Sarah only needs to change the taxable income input and the lookup handles the rest."
   }
 ]
 
@@ -55,100 +58,74 @@ export default function Phase1Page() {
       />
 
       <div className="space-y-8">
-        {/* Hook Story */}
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">
-            Sarah's Big Decision
-          </h2>
-          
-          <p className="text-lg leading-relaxed">
-            Sarah Chen stared at her laptop screen, looking at the email that had just changed everything. 
-            A major client wanted TechStart Solutions to build a complete e-commerce platform—a six-month 
-            project worth $75,000. It was the kind of contract that could transform her small business into 
-            something much bigger.
-          </p>
-
-          <p className="text-lg leading-relaxed">
-            But there was one massive problem: she couldn't do it alone. The project required 40 hours 
-            of development work per week, and Sarah was already working 50+ hours on her current clients. 
-            She'd have to turn down this life-changing opportunity unless she made a decision that 
-            terrified her more than any business challenge she'd faced.
-          </p>
-
-          <p className="text-lg leading-relaxed">
-            She needed to hire her first employee.
+          <h2 className="text-2xl font-bold text-blue-900">Hook: Sarah Needs a Bracket Brain</h2>
+          <p>
+            Sarah has ten minutes before a follow-up call with Alex. The investor on the line will ask, “What is the yearly
+            federal income tax if Alex's taxable income lands at $65,000?” Lesson 2 gave Sarah the IRS tables, but scrolling 
+            through PDFs takes too long. She needs a mini-calculator that instantly identifies the correct bracket and applies
+            the progressive formula.
           </p>
         </div>
 
-        {/* Business Challenge */}
         <Alert className="border-orange-200 bg-orange-50">
           <AlertTriangle className="h-4 w-4 text-orange-600" />
           <AlertDescription className="text-orange-800">
-            <strong>The Friday Crisis:</strong> Sarah remembered Maria's café story from her entrepreneurship class. 
-            Maria's business was thriving, but her payroll checks bounced because the cash from weekend sales 
-            hadn't been deposited when Friday payroll hit her account. The timing mismatch nearly destroyed 
-            employee trust and her business reputation.
+            Lesson 2 already proved the brackets exist. Today's single-period sprint extracts those brackets into a structured 
+            table so Sarah can look up the annual tax automatically.
           </AlertDescription>
         </Alert>
 
-        <div className="prose prose-lg max-w-none">
-          <p className="text-lg leading-relaxed">
-            Sarah had already talked to Alex Rodriguez, a talented developer she'd met at a local tech meetup. 
-            Alex was interested in joining TechStart as her first full-time employee at $65,000 per year. 
-            The math seemed simple: the big contract would pay $75,000, Alex's salary would cost $65,000, 
-            leaving $10,000 profit. But Sarah knew business math was never that simple.
-          </p>
-
-          <p className="text-lg leading-relaxed">
-            What would Alex actually cost? How much would show up in his bank account each month? When 
-            exactly would that money leave her business account? Sarah realized she needed more than 
-            gut feelings and rough estimates. She needed a system—a tool that could predict every penny 
-            of payroll costs and timing.
-          </p>
-        </div>
-
-        {/* Why This Matters */}
-        <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-          <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-            <Calculator className="h-5 w-5" />
-            Why This Matters
-          </h3>
-          <p className="text-blue-800">
-            Today you'll build the exact tool Sarah needs: a prototype payroll calculator. This isn't 
-            just about math—it's about giving entrepreneurs the confidence to grow their teams. By the 
-            end of this lesson, you'll understand how to calculate gross pay, apply tax withholdings, 
-            and use Excel's IF functions to handle different employee types. Most importantly, you'll 
-            see how accurate payroll calculations connect to cash flow management and business growth.
-          </p>
-        </div>
-
-        {/* Think-Pair-Share */}
-        <Card className="border-green-200 bg-green-50">
+        <Card className="border-blue-200 bg-blue-50">
           <CardHeader>
-            <CardTitle className="text-green-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk
+            <CardTitle className="text-blue-900 flex items-center gap-2">
+              <Layers3 className="h-5 w-5" />
+              What We Build in One Period
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <p className="font-medium text-green-900 mb-2">
-              Discussion Prompt (3 minutes):
-            </p>
-            <p className="text-green-800 mb-2">
-              Think about Sarah's situation with hiring Alex. Share with a partner:
-            </p>
-            <ul className="list-disc list-inside space-y-1 text-green-800">
-              <li>What hidden costs might Sarah face beyond Alex's $65,000 salary?</li>
-              <li>How could a payroll calculator help her avoid Maria's "Friday Crisis"?</li>
-              <li>What Excel skills would be most valuable for building this tool?</li>
+          <CardContent className="space-y-2 text-blue-900">
+            <ul className="list-disc list-inside space-y-1">
+              <li>Columns for <strong>Lower Bound</strong>, <strong>Upper Bound</strong>, <strong>Base Tax</strong>, and <strong>Marginal Rate</strong>.</li>
+              <li>A formula that returns <code>BaseTax + (TaxableIncome − LowerBound) × Rate</code>.</li>
+              <li>A selector that chooses the correct filing status table (reuse the Lesson 2 datasets).</li>
+              <li>A single output cell that reports yearly tax so Sarah can divide it back down if needed.</li>
             </ul>
           </CardContent>
         </Card>
 
-        {/* Comprehension Check */}
+        <div>
+          <p className="text-sm text-slate-600 mb-2">
+            This is the table you are recreating inside Excel. Notice how each row already includes the base tax and the “amount over” description.
+          </p>
+          <TaxBracketTable
+            title="IRS 2025 – Single"
+            filingStatusLabel={singleBrackets.label}
+            brackets={singleBrackets.brackets}
+            highlightIncome={65000}
+            note="The highlighted row is the one Sarah needs for Alex today."
+          />
+        </div>
+
+        <Card className="border-green-200 bg-green-50">
+          <CardHeader>
+            <CardTitle className="text-green-900 flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              Turn & Talk (3 minutes)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2 text-green-900">
+            <p>Discuss with your table group:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Where will you store the standard deduction you pulled yesterday?</li>
+              <li>How will you keep the column headers identical for each filing status?</li>
+              <li>What cell will you highlight when explaining the formula to a client?</li>
+            </ul>
+          </CardContent>
+        </Card>
+
         <ComprehensionCheck
-          title="Understanding the Payroll Challenge"
-          description="Test your understanding of the business problem we're solving."
+          title="Do You Understand the Progressive Goal?"
+          description="Confirm the key concepts before moving into build mode."
           questions={hookQuestions}
           showExplanations={true}
         />

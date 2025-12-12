@@ -1,11 +1,52 @@
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { TaxBracketTable } from "@/components/payroll/TaxBracketTable"
+import { federalTaxTables2025 } from "@/data/payroll/federalTaxTables"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calculator, DollarSign, FileSpreadsheet, AlertCircle } from "lucide-react"
+import { Calculator, Columns3, ListChecks, Sheet } from "lucide-react"
 import { lesson03Data, lesson03Phases, unit05Data } from "../lesson-data"
 
 const currentPhase = lesson03Phases[1] // Introduction phase
+const marriedBrackets = federalTaxTables2025.married
+const headBrackets = federalTaxTables2025.headOfHousehold
+
+const introductionQuestions = [
+  {
+    id: "intro-1",
+    question: "Which columns must your bracket table include so the lookup can return yearly tax?",
+    answers: [
+      "Lower bound, upper bound, base tax, marginal rate, and a description/reference",
+      "Employee name and hire date",
+      "Only the marginal rate",
+      "The payroll register tab color"
+    ],
+    explanation: "Those columns let Excel know how much income is taxed at each rate and what base amount to add."
+  },
+  {
+    id: "intro-2",
+    question: "What is the Excel expression for a progressive row once the taxable income is inside the bracket?",
+    answers: [
+      "=BaseTax + (TaxableIncome - LowerBound) * MarginalRate",
+      "=TaxableIncome * MarginalRate only",
+      "=BaseTax - TaxableIncome",
+      "=0"
+    ],
+    explanation: "You add the base tax (which covers all lower brackets) and then the marginal percentage of the remaining amount."
+  },
+  {
+    id: "intro-3",
+    question: "How do the tables from Lesson 2 feed into today's workbook?",
+    answers: [
+      "Each filing status gets its own bracket table sheet or named range with the same column order",
+      "You delete them and start over",
+      "You paste screenshots",
+      "They only stay in the PDF"
+    ],
+    explanation: "Reusable named ranges mean your selector can point at any filing status without rewriting formulas."
+  }
+]
 
 export default function Phase2Page() {
   return (
@@ -18,250 +59,118 @@ export default function Phase2Page() {
       />
 
       <div className="space-y-8">
-        {/* Core Concept: From Gross to Net */}
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">
-            From Gross to Net: The Payroll Calculation Journey
-          </h2>
-          
-          <p className="text-lg leading-relaxed">
-            When Sarah offers Alex a $65,000 salary, that's his <strong>gross pay</strong>—the total 
-            amount before any deductions. But Alex won't see $65,000 in his bank account. The actual 
-            amount he receives is called <strong>net pay</strong>, and it's what's left after taxes 
-            and other deductions are subtracted.
-          </p>
-
-          <p className="text-lg leading-relaxed">
-            Understanding this difference is crucial for Sarah. If she budgets only for gross pay, 
-            she'll underestimate her total payroll costs. The government requires employers to 
-            withhold taxes and contribute to programs like Social Security and Medicare. Getting 
-            these calculations wrong can lead to penalties, angry employees, or both.
+          <h2 className="text-2xl font-bold text-blue-900">Introduction: Blueprint for a Progressive Lookup</h2>
+          <p>
+            You already highlighted the IRS brackets yesterday. Now you will copy those rows into Excel so a single formula 
+            can determine the tax for any taxable income. The trick is storing the bracket math in columns so Excel knows 
+            where to stop and how much “base tax” to carry forward from previous brackets.
           </p>
         </div>
 
-        {/* The Three Employee Types */}
-        <Card className="border-purple-200 bg-purple-50">
+        <Card className="border-slate-200">
           <CardHeader>
-            <CardTitle className="text-purple-900 flex items-center gap-2">
-              <DollarSign className="h-5 w-5" />
-              The Three Types of Employees
+            <CardTitle className="flex items-center gap-2 text-slate-900">
+              <Columns3 className="h-5 w-5" />
+              Mandatory Columns Per Bracket
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <h4 className="font-semibold text-purple-900 mb-2">
-                  <Badge className="bg-purple-100 text-purple-800 mr-2">Hourly</Badge>
-                </h4>
-                <p className="text-sm text-purple-800 mb-2">
-                  Paid by the hour, often with overtime (1.5× rate) for hours &gt; 40 per week.
-                </p>
-                <p className="text-xs text-purple-700 font-mono">
-                  Formula: Hours × Rate (+ Overtime if applicable)
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <h4 className="font-semibold text-purple-900 mb-2">
-                  <Badge className="bg-purple-100 text-purple-800 mr-2">Salaried</Badge>
-                </h4>
-                <p className="text-sm text-purple-800 mb-2">
-                  Fixed yearly amount divided by number of pay periods.
-                </p>
-                <p className="text-xs text-purple-700 font-mono">
-                  Formula: Annual Salary ÷ Pay Periods
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <h4 className="font-semibold text-purple-900 mb-2">
-                  <Badge className="bg-purple-100 text-purple-800 mr-2">Tipped</Badge>
-                </h4>
-                <p className="text-sm text-purple-800 mb-2">
-                  Lower base wage plus tips, must meet minimum wage requirements.
-                </p>
-                <p className="text-xs text-purple-700 font-mono">
-                  Formula: MAX(Base + Tips, Min Wage × Hours)
-                </p>
-              </div>
+          <CardContent className="grid gap-3 md:grid-cols-2 text-sm text-slate-800">
+            <div className="bg-slate-50 p-3 rounded border">
+              <p className="font-semibold">A – Lower Bound</p>
+              <p>Exact dollar where the bracket starts (e.g., $48,475). Use whole numbers for lookup precision.</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded border">
+              <p className="font-semibold">B – Upper Bound</p>
+              <p>Last dollar taxed at this rate. Use `"and up"` (or blank) for the top bracket.</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded border">
+              <p className="font-semibold">C – Base Tax</p>
+              <p>The IRS amount that already covers earlier brackets.</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded border">
+              <p className="font-semibold">D – Marginal Rate</p>
+              <p>The percent applied to dollars above the lower bound.</p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Excel Formulas Section */}
-        <div className="prose prose-lg max-w-none">
-          <h3 className="text-xl font-bold text-blue-900 mb-4">
-            Building the Logic in Excel
-          </h3>
-          
-          <p className="text-lg leading-relaxed">
-            Sarah needs Excel formulas that can handle all three employee types automatically. 
-            This is where <strong>IF statements</strong> become powerful tools for business logic.
-          </p>
+        <Card className="border-blue-200 bg-blue-50">
+          <CardHeader>
+            <CardTitle className="text-blue-900 flex items-center gap-2">
+              <Calculator className="h-5 w-5" />
+              Row-Level Formula Pattern
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-blue-900">
+            <p>Once your taxable income lands in a bracket, the annual tax equals:</p>
+            <div className="bg-white p-3 rounded border font-mono text-sm">
+              =BaseTax + (TaxableIncome - LowerBound) * MarginalRate
+            </div>
+            <p className="text-sm">
+              In Excel you might use names like <code>=C5 + (TaxableIncome - A5) * D5</code>. Remember to guard the formula 
+              with <code>MAX(TaxableIncome - A5, 0)</code> so earlier rows stay at zero when the income never reaches them.
+            </p>
+          </CardContent>
+        </Card>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <TaxBracketTable
+            title="Married Filing Jointly"
+            filingStatusLabel={marriedBrackets.label}
+            brackets={marriedBrackets.brackets}
+            highlightIncome={90000}
+            note="Each row already lists the base tax you should copy into column C."
+          />
+          <TaxBracketTable
+            title="Head of Household"
+            filingStatusLabel={headBrackets.label}
+            brackets={headBrackets.brackets}
+            highlightIncome={70000}
+            note="Notice the column order never changes. Consistency keeps your lookup from breaking."
+          />
         </div>
 
         <Card className="border-green-200 bg-green-50">
           <CardHeader>
             <CardTitle className="text-green-900 flex items-center gap-2">
-              <FileSpreadsheet className="h-5 w-5" />
-              Excel Formula Patterns for Payroll
+              <Sheet className="h-5 w-5" />
+              Document Your Table Layout
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
-            {/* Hourly Formula */}
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-green-900 mb-2">Hourly Employee with Overtime</h4>
-              <div className="bg-gray-100 p-3 rounded font-mono text-sm">
-                =IF(Hours&gt;40, 40*Rate + (Hours-40)*Rate*1.5, Hours*Rate)
-              </div>
-              <p className="text-sm text-green-800 mt-2">
-                <strong>Logic:</strong> If hours exceed 40, calculate 40 regular hours plus overtime hours at 1.5× rate. 
-                Otherwise, calculate regular hours only.
-              </p>
-            </div>
-
-            {/* Salaried Formula */}
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-green-900 mb-2">Salaried Employee</h4>
-              <div className="bg-gray-100 p-3 rounded font-mono text-sm">
-                =Annual_Salary/Pay_Periods_Per_Year
-              </div>
-              <p className="text-sm text-green-800 mt-2">
-                <strong>Logic:</strong> Divide annual salary by number of pay periods (26 for bi-weekly, 12 for monthly).
-              </p>
-            </div>
-
-            {/* Tipped Formula */}
-            <div className="bg-white p-4 rounded-lg border">
-              <h4 className="font-semibold text-green-900 mb-2">Tipped Employee</h4>
-              <div className="bg-gray-100 p-3 rounded font-mono text-sm">
-                =MAX(Hours*Min_Wage, Hours*Tipped_Rate + Tips_Reported)
-              </div>
-              <p className="text-sm text-green-800 mt-2">
-                <strong>Logic:</strong> Calculate both minimum wage earnings and base wage plus tips, 
-                then use MAX to ensure legal compliance.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Deductions Section */}
-        <div className="prose prose-lg max-w-none">
-          <h3 className="text-xl font-bold text-blue-900 mb-4">
-            Calculating Deductions
-          </h3>
-          
-          <p className="text-lg leading-relaxed">
-            Once Sarah calculates gross pay, she must determine how much to withhold for taxes and other deductions. 
-            The two main categories are <strong>taxes</strong> (required by law) and <strong>voluntary deductions</strong> 
-            (chosen by the employee).
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Required Taxes */}
-          <Card className="border-red-200 bg-red-50">
-            <CardHeader>
-              <CardTitle className="text-red-900 text-lg">Required Taxes (FICA)</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="bg-white p-3 rounded border">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium text-red-800">Social Security</span>
-                  <Badge className="bg-red-100 text-red-800">6.2%</Badge>
-                </div>
-                <div className="bg-gray-100 p-2 rounded font-mono text-xs mt-2">
-                  =Gross_Pay * 0.062
-                </div>
-              </div>
-              
-              <div className="bg-white p-3 rounded border">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium text-red-800">Medicare</span>
-                  <Badge className="bg-red-100 text-red-800">1.45%</Badge>
-                </div>
-                <div className="bg-gray-100 p-2 rounded font-mono text-xs mt-2">
-                  =Gross_Pay * 0.0145
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Income Tax */}
-          <Card className="border-orange-200 bg-orange-50">
-            <CardHeader>
-              <CardTitle className="text-orange-900 text-lg">Income Tax Withholding</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-white p-3 rounded border">
-                <p className="text-sm text-orange-800 mb-2">
-                  Federal and state income tax amounts depend on:
-                </p>
-                <ul className="list-disc list-inside text-xs text-orange-700 space-y-1">
-                  <li>Employee's W-4 form selections</li>
-                  <li>Gross pay amount</li>
-                  <li>Filing status and dependents</li>
-                  <li>Official IRS withholding tables</li>
-                </ul>
-                <div className="bg-gray-100 p-2 rounded font-mono text-xs mt-2">
-                  =VLOOKUP(Gross_Pay, Tax_Table, 2, TRUE)
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Final Formula */}
-        <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-blue-900 flex items-center gap-2">
-              <Calculator className="h-5 w-5" />
-              The Master Formula
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="bg-white p-4 rounded border text-center">
-              <div className="text-2xl font-bold text-blue-900 mb-2">
-                Net Pay = Gross Pay - Total Deductions
-              </div>
-              <div className="bg-gray-100 p-3 rounded font-mono text-sm">
-                =Gross_Pay - (Social_Security + Medicare + Federal_Tax + State_Tax + Other_Deductions)
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Professional Best Practices */}
-        <Card className="border-amber-200 bg-amber-50">
-          <CardHeader>
-            <CardTitle className="text-amber-900 flex items-center gap-2">
-              <AlertCircle className="h-5 w-5" />
-              Excel Best Practices for Payroll
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-amber-800">
-              <li><strong>Named Ranges:</strong> Use "Overtime_Rate" instead of 1.5 for clarity</li>
-              <li><strong>Data Validation:</strong> Prevent impossible entries (negative hours, etc.)</li>
-              <li><strong>Error Handling:</strong> Use IFERROR to handle division by zero</li>
-              <li><strong>Formatting:</strong> Format currency to two decimal places consistently</li>
-              <li><strong>Documentation:</strong> Add comments explaining complex formulas</li>
+          <CardContent className="space-y-2 text-green-900 text-sm">
+            <p>Before you start typing, sketch the sheet layout:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Rows 2-9 → Federal brackets for each filing status.</li>
+              <li>Row 12 → Summary cell that uses the lookup result to display yearly tax.</li>
+              <li>Row 14 → Note that cites the IRS publication and tax year.</li>
             </ul>
           </CardContent>
         </Card>
 
-        {/* Why This Matters */}
-        <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-          <h3 className="font-semibold text-blue-900 mb-3">Why This Matters</h3>
-          <p className="text-blue-800">
-            Building a reliable payroll calculator isn't just about getting the math right—it's about 
-            creating a system Sarah can trust as she grows her business. Every formula you build, every 
-            validation rule you add, and every error check you implement helps prevent the kind of 
-            payroll mistakes that can damage employee relationships and create legal problems. This 
-            technical precision is what separates successful businesses from those that struggle with 
-            basic operational challenges.
-          </p>
-        </div>
+        <Card className="border-amber-200 bg-amber-50">
+          <CardHeader>
+            <CardTitle className="text-amber-900 flex items-center gap-2">
+              <ListChecks className="h-5 w-5" />
+              Why This Structure Matters
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-amber-900 text-sm space-y-1">
+            <p>Investors expect you to show:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Evidence that you understand how progressive taxes compound.</li>
+              <li>Clear traceability: they can see which row produced the tax.</li>
+              <li>Consistency across filing statuses so hiring decisions are easier.</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <ComprehensionCheck
+          title="Progressive Table Foundations"
+          description="Answer these before opening Excel."
+          questions={introductionQuestions}
+          showExplanations={true}
+        />
       </div>
 
       <PhaseFooter
