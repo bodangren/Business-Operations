@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, Target, Users } from "lucide-react"
+import { AlertTriangle, Target, Users, MessageCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, lesson04Phases, unit05Data } from "../lesson-data"
 
@@ -12,36 +12,36 @@ const currentPhase = lesson04Phases[0] // Hook phase
 const hookQuestions = [
   {
     id: "hook-1",
-    question: "What could happen if Sarah's payroll calculator allows someone to enter negative hours?",
+    question: "Why is Sarah replacing ten separate payroll tabs with one linked register?",
     answers: [
-      "The system could generate incorrect paychecks and damage employee trust", 
-      "Nothing serious - Excel will automatically fix the error",
-      "The negative hours would just be ignored by the system",
-      "It would only affect the display, not the actual calculations"
+      "Because copying each employee into a new workbook before every quote wastes hours and introduces errors",
+      "Because investors only like colorful spreadsheets",
+      "Because hourly employees do not need records",
+      "Because she wants to delete the employee list"
     ],
-    explanation: "Allowing invalid data like negative hours could result in incorrect paychecks, overpayments, or system crashes, potentially costing thousands and destroying employee confidence in the payroll system."
+    explanation: "Sarah needs a single workbook that pulls every employee from one source so she can model gross payroll for new contracts without retyping data."
   },
   {
-    id: "hook-2", 
-    question: "Why do professional payroll systems need to be 'bulletproof' rather than just accurate?",
+    id: "hook-2",
+    question: "What problem does the Employee List sheet solve?",
     answers: [
-      "They must prevent mistakes before they happen, not just calculate correctly",
-      "They need to work faster than manual calculations", 
-      "They must be password-protected from unauthorized access",
-      "They need to automatically backup data to the cloud"
+      "It gives XLOOKUP a reliable table for names, roles, pay types, and rates",
+      "It automatically withholds taxes",
+      "It emails pay stubs to workers",
+      "It replaces the need for schedules"
     ],
-    explanation: "Professional systems need error prevention - data validation and conditional formatting that stops mistakes before they become costly payroll errors affecting real employees."
+    explanation: "The Employee List becomes the single source of truth that every other sheet references, so lookups stay accurate even as the roster grows."
   },
   {
     id: "hook-3",
-    question: "What type of mistake would be most costly for Sarah's growing business?",
+    question: "Why do we add hourly, salary, and commission formulas together inside one Gross Pay cell?",
     answers: [
-      "Overpaying an employee due to unchecked overtime calculation errors",
-      "Using the wrong font in her Excel spreadsheet",
-      "Forgetting to save her work before closing Excel", 
-      "Not having a colorful enough spreadsheet design"
+      "The unused pay types evaluate to $0, so one additive formula works for every employee",
+      "Excel requires three different cells",
+      "Commission employees should be excluded",
+      "Salary employees do not need formulas"
     ],
-    explanation: "Overpaying employees due to calculation errors could cost hundreds or thousands of dollars per pay period, especially with overtime miscalculations that compound over time."
+    explanation: "By letting each IF branch return either a real number or zero, we can stack the calculations inside one cell and reuse the formula across the table."
   }
 ]
 
@@ -59,79 +59,46 @@ export default function Phase1Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              🎯 Phase 1: Sarah's Data Validation Crisis
+              🎯 Phase 1: One Register to Run Them All
             </Badge>
             
             <div className="max-w-4xl mx-auto">
-              {/* Hook Story */}
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-2xl font-bold text-red-900 mb-4">
-                  The $3,200 Mistake
+                  When Payroll Lives in Ten Tabs
                 </h2>
-                
                 <p className="text-lg leading-relaxed">
-                  Sarah thought her payroll calculator was perfect. She had tested it with Alex's salary, 
-                  and the numbers looked right. Gross pay: $2,500 for two weeks. Federal taxes: $312. 
-                  State taxes: $125. FICA: $191.25. Net pay: $1,871.75. Everything balanced perfectly.
+                  Sarah just landed a proposal to staff five café locations for a regional chain. The client asked a 
+                  simple question: “If we add fourteen people next month, what will payroll cost me before taxes?” 
+                  Sarah opened her laptop and felt the panic hit. Every employee lived in a separate sheet. Hourly 
+                  staff were on the “Cafe Hours” tab, salaried leaders on another, and commission reps hiding inside 
+                  a marketing workbook. Copying each name into a fresh calculator would take hours—and every copy/paste 
+                  created a new chance for an expensive typo.
                 </p>
-
                 <p className="text-lg leading-relaxed">
-                  Then disaster struck. While rushing to process payroll for her second employee, Maria, 
-                  Sarah accidentally typed "80" instead of "8" in the overtime hours cell. The calculator 
-                  dutifully computed 80 hours of overtime at time-and-a-half, generating a paycheck for 
-                  $3,200 instead of $320.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  Sarah didn't notice the error until Maria called, confused about the massive deposit 
-                  in her account. By then, the damage was done—Sarah had to explain the mistake, ask 
-                  for the money back, and deal with the payroll tax complications. Worse, she realized 
-                  her "perfect" calculator was actually a disaster waiting to happen.
+                  Today you will build the tool Sarah wished she already had: an <strong>Employee List</strong> sheet that 
+                  stores the truth once, a <strong>Gross Pay Register</strong> that pulls the right rate with XLOOKUP, 
+                  and a single additive formula that calculates gross for every employee regardless of pay type. The 
+                  deliverable ends with a SUMIF-driven summary, a bar chart investors can read in seconds, and a pivot 
+                  table that shows payroll by department. This becomes the launchpad for Lesson 05 when we layer on 
+                  withholdings.
                 </p>
               </div>
 
-              {/* Business Crisis Alert */}
-              <Alert className="border-red-200 bg-red-50 my-6">
-                <AlertTriangle className="h-4 w-4 text-red-600" />
-                <AlertDescription className="text-red-800">
-                  <strong>The Real Cost:</strong> This single typo cost Sarah over $2,800 in overpayment, 
-                  plus additional hours fixing tax withholdings, and potential damage to her professional 
-                  reputation. A "bulletproof" system with data validation would have prevented this entirely.
-                </AlertDescription>
-              </Alert>
-
-              <div className="prose prose-lg max-w-none">
-                <p className="text-lg leading-relaxed">
-                  That night, Sarah researched professional payroll systems and discovered they all had 
-                  one thing in common: they were designed to prevent mistakes, not just calculate accurately. 
-                  They used something called "data validation" to stop impossible entries before they 
-                  could cause damage.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  Sarah realized her calculator needed to be more than correct—it needed to be 
-                  <strong> bulletproof</strong>. It should refuse to accept 80 overtime hours for someone 
-                  who only worked 40 regular hours. It should highlight suspicious numbers in red. 
-                  It should guide users toward correct entries and away from costly mistakes.
-                </p>
-              </div>
-
-              {/* Why This Matters */}
-              <div className="bg-red-50 p-6 rounded-lg border border-red-200 my-6">
-                <h3 className="font-semibold text-red-900 mb-3 flex items-center gap-2">
+              <div className="bg-red-50 p-6 rounded-lg border border-red-200 my-6 space-y-3">
+                <h3 className="font-semibold text-red-900 flex items-center gap-2">
                   <Target className="h-5 w-5" />
-                  Why This Matters
+                  Final Workbook Checklist
                 </h3>
-                <p className="text-red-800">
-                  Today you'll transform your basic payroll calculator into a professional, bulletproof 
-                  system using Excel's Data Validation and Conditional Formatting features. You'll learn 
-                  to prevent errors before they happen, create visual alerts for suspicious data, and 
-                  build the kind of robust financial tool that actual businesses depend on. This isn't 
-                  just about Excel skills—it's about professional system design and error prevention.
-                </p>
+                <ul className="list-disc list-inside text-red-800 space-y-1">
+                  <li>EmployeeList table: IDs, roles, pay types, departments.</li>
+                  <li>GrossPayRegister table with XLOOKUP pulls for name, type, rate, salary, and commission fields.</li>
+                  <li>One gross-pay formula per row that adds hourly, salary, and commission math (unused paths return $0).</li>
+                  <li>Summary block using SUMIF + COUNTIF plus a clustered bar chart.</li>
+                  <li>Pivot table showing total gross payroll by department.</li>
+                </ul>
               </div>
 
-              {/* Think-Pair-Share */}
               <Card className="border-red-200 bg-red-50">
                 <CardHeader>
                   <CardTitle className="text-red-800 flex items-center gap-2">
@@ -139,26 +106,34 @@ export default function Phase1Page() {
                     Turn and Talk
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="font-medium text-red-900 mb-2">
-                    Discussion Prompt (3 minutes):
-                  </p>
-                  <p className="text-red-800 mb-2">
-                    Think about Sarah's $3,200 mistake and how it could have been prevented. Share with a partner:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-red-800">
-                    <li>What Excel features could automatically catch impossible data entries?</li>
-                    <li>How might visual alerts help prevent costly payroll errors?</li>
-                    <li>What other types of payroll mistakes could data validation prevent?</li>
-                  </ul>
+                <CardContent className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="h-5 w-5 text-red-600 mt-1" />
+                    <div>
+                      <p className="font-medium text-red-900">3-minute discussion:</p>
+                      <ul className="list-disc list-inside text-red-800 space-y-1">
+                        <li>What headaches do you notice when payroll data is scattered across tabs?</li>
+                        <li>How does an Employee List sheet make XLOOKUP and IF formulas easier to maintain?</li>
+                        <li>Where would a bar chart or pivot table help you defend payroll assumptions to a client?</li>
+                      </ul>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Comprehension Check */}
+              <Alert className="border-red-200 bg-red-50 my-6">
+                <AlertTriangle className="h-4 w-4 text-red-600" />
+                <AlertDescription className="text-red-800">
+                  <strong>Mindset Check:</strong> We are not inventing random tabs. Every sheet you touch today has a 
+                  job description. Keep the data normalized on the Employee List, use XLOOKUP instead of copy/paste, and 
+                  focus on making the summary visuals investor-ready.
+                </AlertDescription>
+              </Alert>
+
               <div className="mt-8">
                 <ComprehensionCheck
-                  title="Understanding Data Validation Importance"
-                  description="Test your understanding of why bulletproof systems matter in business."
+                  title="Why Consolidate Payroll Data?"
+                  description="Confirm the reason we are building an Employee List + Gross Pay Register workflow."
                   questions={hookQuestions}
                   showExplanations={true}
                 />

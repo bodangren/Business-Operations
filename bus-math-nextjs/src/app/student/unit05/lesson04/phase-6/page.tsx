@@ -3,189 +3,104 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { Target, ArrowRight, Trophy, BookOpen } from "lucide-react"
+import { Target, ArrowRight, Trophy } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson04Data, lesson04Phases, unit05Data } from "../lesson-data"
 
-const currentPhase = lesson04Phases[5] // Closing phase
+const currentPhase = lesson04Phases[5]
+
+const reflectionPrompts = [
+  {
+    id: "u5l4-courage",
+    category: "courage" as const,
+    prompt: "Which part of linking the EmployeeList to the GrossPayRegister stretched you the most (e.g., XLOOKUP syntax, structured references, IF logic)? How will you keep your cool if a lookup breaks during client prep?",
+    placeholder: "Example: I froze when my return array referenced the wrong column..."
+  },
+  {
+    id: "u5l4-adaptability",
+    category: "adaptability" as const,
+    prompt: "Describe how you will adapt the workbook when Sarah hires in a brand-new department or needs to model seasonal workers.",
+    placeholder: "Example: I’ll add a Department dropdown to EmployeeList and refresh the pivot..."
+  },
+  {
+    id: "u5l4-persistence",
+    category: "persistence" as const,
+    prompt: "List the checkpoints you will follow before Lesson 05 (e.g., verify gross totals, refresh the pivot, capture screenshots).",
+    placeholder: "Example: Before tomorrow I will rerun the SUMIF totals..."
+  }
+]
 
 export default function Phase6Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
-      <PhaseHeader 
-        unit={unit05Data} 
-        lesson={lesson04Data}
-        phase={currentPhase}
-        phases={lesson04Phases}
-      />
-      
+      <PhaseHeader lesson={lesson04Data} unit={unit05Data} phase={currentPhase} phases={lesson04Phases} />
+
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-              🎯 Phase 6: Data Validation Mastery Complete - Building Your Future
-            </Badge>
-            
-            <div className="max-w-4xl mx-auto">
-              {/* Achievement Celebration */}
-              <div className="prose prose-lg max-w-none">
-                <h2 className="text-2xl font-bold text-indigo-900 mb-4">
-                  From Basic Calculator to Bulletproof Business System
-                </h2>
-                
-                <p className="text-lg leading-relaxed">
-                  Congratulations! You've transformed from someone who builds basic Excel calculators 
-                  into someone who designs professional, bulletproof business systems. The data validation 
-                  and conditional formatting skills you've mastered represent a fundamental shift in 
-                  thinking—from reactive problem-solving to proactive problem prevention.
-                </p>
+            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🎯 Phase 6: Wrap & Reflect</Badge>
 
+            <div className="max-w-4xl mx-auto space-y-6">
+              <div className="prose prose-lg max-w-none">
+                <h2 className="text-2xl font-bold text-indigo-900 mb-4">Your Payroll Control Center Is Live</h2>
                 <p className="text-lg leading-relaxed">
-                  Sarah's $3,200 mistake taught you that accuracy alone isn't enough in business. 
-                  Professional systems must be reliable, user-friendly, and designed to prevent errors 
-                  before they can cause damage. These are the same principles that separate successful 
-                  businesses from those that struggle with operational problems.
+                  Today you promoted the roster to a table, linked the GrossPayRegister with XLOOKUP, reused a single IF-based formula for every employee, and turned the results into visuals that leaders can read in seconds. That is a giant leap from the single-employee calculator you built in Lesson 03.
                 </p>
               </div>
 
-              {/* Learning Synthesis */}
-              <Card className="border-indigo-200 bg-indigo-50 my-6">
+              <Card className="border-indigo-200 bg-indigo-50">
                 <CardHeader>
                   <CardTitle className="text-indigo-800 flex items-center gap-2">
                     <Trophy className="h-5 w-5" />
-                    What You've Accomplished
+                    What’s Inside Your Workbook Now
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-indigo-800 space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold mb-2">Technical Mastery:</h4>
-                      <ul className="list-disc list-inside space-y-1 text-sm">
-                        <li>Advanced Data Validation with business rules</li>
-                        <li>Conditional Formatting for visual error alerts</li>
-                        <li>Multi-layer validation system design</li>
-                        <li>Professional error prevention strategies</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Business Thinking:</h4>
-                      <ul className="list-disc list-inside space-y-1 text-sm">
-                        <li>Risk assessment and prevention planning</li>
-                        <li>User experience and system reliability design</li>
-                        <li>Professional standards and investor confidence</li>
-                        <li>Systematic approach to operational excellence</li>
-                      </ul>
-                    </div>
-                  </div>
+                <CardContent className="text-indigo-900 text-sm space-y-1">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Linked EmployeeList + GrossPayRegister tables</li>
+                    <li>Reusable Gross Pay formula covering hourly, salary, and commission</li>
+                    <li>SUMIF summary block plus a clustered bar chart</li>
+                    <li>Pivot table showing gross payroll by department</li>
+                  </ul>
                 </CardContent>
               </Card>
 
-              {/* Connection to Unit Driving Question */}
-              <div className="prose prose-lg max-w-none">
-                <h3 className="text-xl font-bold text-indigo-900 mb-3">
-                  Answering the Unit's Essential Question
-                </h3>
-                
-                <p className="text-lg leading-relaxed">
-                  <strong>"How can a small business owner predict payroll cash-outs and still make rent on time?"</strong>
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  The bulletproof validation system you've built is a critical foundation for answering 
-                  this question. Before Sarah can predict cash flow timing, she needs to trust that her 
-                  payroll calculations are accurate and error-free. The validation features you've mastered 
-                  ensure that every paycheck calculation is correct, providing the reliable foundation 
-                  needed for cash flow forecasting and business growth.
-                </p>
-              </div>
-
-              {/* Preview of Next Lesson */}
-              <Card className="border-indigo-200 bg-indigo-50 my-6">
+              <Card className="border-indigo-200 bg-indigo-50">
                 <CardHeader>
                   <CardTitle className="text-indigo-800 flex items-center gap-2">
                     <ArrowRight className="h-5 w-5" />
-                    Coming Next: Scaling to Multi-Employee Systems
+                    Preview of Lesson 05 & 06
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-indigo-800 space-y-3">
-                  <p>
-                    Your bulletproof single-employee calculator is ready, but Sarah's business is growing. 
-                    In the next lesson, you'll learn to scale your validation system to handle multiple 
-                    employees efficiently using:
-                  </p>
+                <CardContent className="text-indigo-900 text-sm space-y-1">
                   <ul className="list-disc list-inside space-y-1">
-                    <li><strong>XLOOKUP functions</strong> for employee data management</li>
-                    <li><strong>Dynamic validation rules</strong> that adapt to different employee types</li>
-                    <li><strong>Bilingual pay stub generation</strong> with data validation</li>
-                    <li><strong>Bank reconciliation systems</strong> with error-checking</li>
+                    <li><strong>Lesson 05:</strong> Pull taxable wages from the GrossPayRegister and layer on federal/state withholdings plus employer taxes.</li>
+                    <li><strong>Lesson 06:</strong> Feed the register from a scheduling sheet so hours update automatically.</li>
                   </ul>
-                  <p className="font-semibold">
-                    The validation foundation you've built today will be essential for managing the 
-                    complexity of a growing business.
-                  </p>
                 </CardContent>
               </Card>
 
-              {/* Professional Development Reflection */}
-              <div className="prose prose-lg max-w-none">
-                <h3 className="text-xl font-bold text-indigo-900 mb-3">
-                  Your Professional Growth Journey
-                </h3>
-                
-                <p className="text-lg leading-relaxed">
-                  Take a moment to reflect on how far you've come. You started this lesson understanding 
-                  basic Excel formulas. You're finishing it as someone who thinks like a professional 
-                  system designer—someone who anticipates problems, designs solutions, and builds 
-                  systems that support business growth.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  These aren't just Excel skills. They're professional problem-solving and systems 
-                  thinking skills that will serve you in any career path you choose.
-                </p>
-              </div>
-
-              {/* CAP Framework Reflection */}
-              <div className="mt-8">
-                <ReflectionJournal />
-              </div>
-
-              {/* Resources for Continued Learning */}
-              <Card className="border-indigo-200 bg-indigo-50 my-6">
+              <Card className="border-indigo-200 bg-indigo-50">
                 <CardHeader>
                   <CardTitle className="text-indigo-800 flex items-center gap-2">
-                    <BookOpen className="h-5 w-5" />
-                    Continue Building Your Expertise
+                    <Target className="h-5 w-5" />
+                    Final To-Do List
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-indigo-800 space-y-3">
-                  <div>
-                    <h4 className="font-semibold mb-2">Practice Opportunities:</h4>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Apply validation rules to other business scenarios (inventory, sales, budgeting)</li>
-                      <li>Design error-checking systems for family budgets or personal finance</li>
-                      <li>Help local businesses or organizations improve their Excel systems</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Advanced Topics to Explore:</h4>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Custom data validation formulas with complex business rules</li>
-                      <li>Dynamic conditional formatting that adapts to changing data</li>
-                      <li>Integration with other Microsoft Office applications</li>
-                    </ul>
-                  </div>
+                <CardContent className="text-indigo-900 text-sm space-y-1">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Save the workbook and label it `Unit05-Lesson04-GrossPay-Lastname.xlsx`.</li>
+                    <li>Export a PDF or screenshot showing the register + summary block.</li>
+                    <li>Write one insight from your pivot table to share tomorrow.</li>
+                  </ul>
                 </CardContent>
               </Card>
 
-              {/* Final Achievement Recognition */}
-              <Alert className="border-indigo-200 bg-indigo-50 my-6">
-                <Target className="h-4 w-4 text-indigo-600" />
+              <ReflectionJournal unitTitle="Unit 5 Lesson 4 – Gross Pay Register" prompts={reflectionPrompts} />
+
+              <Alert className="border-indigo-200 bg-indigo-50">
                 <AlertDescription className="text-indigo-800">
-                  <strong>Achievement Unlocked:</strong> You've mastered professional data validation 
-                  and error prevention—skills that demonstrate systematic thinking and operational 
-                  excellence. You're now ready to tackle the advanced payroll modeling challenges 
-                  that await in the next lessons of your PayDay Simulator journey.
+                  The more disciplined you are with source tables now, the easier it will be to trust your deduction math in Lesson 05. Keep the file handy and be ready to demonstrate your bar chart and pivot table at the start of next class.
                 </AlertDescription>
               </Alert>
             </div>
@@ -193,12 +108,7 @@ export default function Phase6Page() {
         </section>
       </main>
 
-      <PhaseFooter
-        unit={unit05Data}
-        lesson={lesson04Data}
-        phase={currentPhase} 
-        phases={lesson04Phases}
-      />
+      <PhaseFooter lesson={lesson04Data} unit={unit05Data} phase={currentPhase} phases={lesson04Phases} />
     </div>
   )
 }
