@@ -1,0 +1,11 @@
+EmployeeID,Name,Department,Role,HourlyRate,DefaultShiftHours,AvailabilityNotes,PreferredDays
+CF01,Sierra Lopez,Cafe,Beverage Lead,22.50,6,"6am-2pm most days, no Wednesdays",Mon;Tue;Thu;Fri
+CF02,Noah Patel,Cafe,Barista,18.25,5,"Open to swing shifts, leaves by 6pm",Mon;Wed;Thu;Sat
+CF03,Lena Ortiz,Cafe,Prep Cook,19.00,7,"Available after 9am, doubles OK weekends",Tue;Wed;Fri;Sat
+BK01,Milo Gaines,Bakery,Oven Crew,20.75,6,"Prefers overnight bakes Sun-Wed",Sun;Mon;Tue;Wed
+BK02,Avery Chen,Bakery,Counter Lead,21.50,5,"Cannot work Sundays, evening shifts only",Tue;Wed;Thu;Fri
+MK01,Jordan Ellis,Market,Deli Associate,17.80,6,"Needs 2 evenings off for classes (Tue/Thu)",Mon;Wed;Fri;Sat
+MK02,Hannah Reed,Market,Produce Clerk,17.25,5,"Comfortable closing, limit 35 hrs",Wed;Thu;Fri;Sat;Sun
+MK03,Leo Watkins,Market,Cashier,16.75,4,"Available every afternoon, no mornings",Mon;Tue;Wed;Thu;Fri
+MK04,Nia Brooks,Market,Stock Lead,19.40,7,"Full availability, capable of back-to-back shifts",Mon;Tue;Wed;Thu;Fri;Sat
+SV01,Andre Phelps,Services,Floater,18.90,5,"Fills call-outs, needs schedule 48 hrs ahead",Varies

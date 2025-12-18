@@ -3,138 +3,170 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 import { lesson05Data, unit05Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[1]
 
 const vocabSentences = [
   {
-    id: "s1",
-    text: "Use {blank} to safely map EmployeeID → PayRate with a fallback when an ID is missing.",
-    answer: "XLOOKUP",
-    hint: "Modern replacement for VLOOKUP",
-    alternativeAnswers: []
+    id: "roster",
+    text: 'The EmployeeRoster table is the single {blank} of truth for IDs, hourly rates, departments, and availability.',
+    answer: 'source',
+    hint: 'Investors ask for it',
+    category: 'Vocabulary'
   },
   {
-    id: "s2",
-    text: "Add the {blank} argument in XLOOKUP to prevent #N/A and keep reports stable.",
-    answer: "if_not_found",
-    hint: "Fourth argument",
-    alternativeAnswers: ["if not found", "IF_NOT_FOUND"]
+    id: "validation",
+    text: 'Every dropdown inside the WeeklySchedule relies on {blank} validation that points to the roster IDs.',
+    answer: 'data',
+    hint: 'Prevents typos',
+    category: 'Process'
   },
   {
-    id: "s3",
-    text: "Use {blank} to compute overtime tiers without messy nested IFs.",
-    answer: "SUMPRODUCT",
-    hint: "Array math across conditions",
-    alternativeAnswers: []
+    id: "sumifs",
+    text: '{blank} totals hours by employee, department, or day of week without copy/paste.',
+    answer: 'SUMIFS',
+    hint: 'Multi-criteria function',
+    category: 'Formula'
   },
   {
-    id: "s4",
-    text: "Write Table[Column] instead of A2:A200 by using {blank}.",
-    answer: "structured references",
-    hint: "Expands automatically with the table",
-    alternativeAnswers: ["structured reference", "structured table references"]
+    id: "threshold",
+    text: 'Hours over {blank} in a week should trigger an overtime highlight and new gross-pay math.',
+    answer: '40',
+    hint: 'Federal baseline',
+    category: 'Concept'
   },
   {
-    id: "s5",
-    text: "Create dropdowns for State or Pay Frequency with {blank}.",
-    answer: "Data Validation",
-    hint: "Limits bad inputs",
-    alternativeAnswers: ["data validation"]
-  },
-  {
-    id: "s6",
-    text: "Round taxes and net pay using {blank} to avoid penny drift.",
-    answer: "ROUND",
-    hint: "ROUND(value, 2)",
-    alternativeAnswers: ["ROUND()"]
-  },
-  {
-    id: "s7",
-    text: "Switch between Weekly, Biweekly, or Monthly logic using {blank} with a control cell.",
-    answer: "SWITCH",
-    hint: "Cleaner than many IFs",
-    alternativeAnswers: ["CHOOSE"]
+    id: "handoff",
+    text: 'The Hours & Gross sheet is the {blank} handoff that feeds the Lesson06 cash-flow dashboard.',
+    answer: 'bridge',
+    hint: 'Connects schedule → Payday Simulator',
+    category: 'Concept'
   }
 ]
 
 export default function Phase2Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-lime-100">
       <PhaseHeader 
-        unit={unit05Data}
         lesson={lesson05Data}
+        unit={unit05Data}
         phase={currentPhase}
         phases={lesson05Phases}
       />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
-              📚 Phase 2: Introduction
-            </Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Payroll Automation: Professional‑Grade Patterns</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              You will build a payroll engine that remains accurate as TechStart grows. We use structured
-              references, safe lookups, and clear validation. This earns investor trust because errors become
-              visible and fixable.
-            </p>
-          </div>
+        <section className="space-y-6 text-center">
+          <Badge className="bg-emerald-100 text-emerald-900 text-lg px-4 py-2">
+            🧱 Phase 2: Blueprint
+          </Badge>
+          <h1 className="text-3xl font-bold text-slate-900">Blueprint: Roster → Schedule → Hours</h1>
+          <p className="text-lg text-slate-700 max-w-4xl mx-auto">
+            Before you open Excel, lock the architecture. Every sheet you build today has a job description and feeds a
+            question Sarah must answer for Harbor Market. Keep the writing at an 8th-grade reading level so your teammates
+            can follow the plan while they code.
+          </p>
         </section>
 
-        <section className="max-w-4xl mx-auto space-y-6">
-          <Card className="border-green-200 bg-green-50">
+        <section className="grid gap-6 lg:grid-cols-3">
+          <Card className="border-slate-200 bg-white/90">
             <CardHeader>
-              <CardTitle className="text-green-800">Key Patterns and Gotchas</CardTitle>
+              <CardTitle className="text-slate-900">Sheet 1 — EmployeeRoster</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-green-900">
+            <CardContent className="space-y-2 text-slate-800 text-sm">
               <ul className="list-disc list-inside space-y-1">
-                <li>Use tables: <span className="font-mono">Emp[EmployeeID]</span> and <span className="font-mono">Payroll[Hours]</span> auto‑expand.</li>
-                <li>Safe lookup: <span className="font-mono">=XLOOKUP([@EmployeeID], Emp[EmployeeID], Emp[PayRate], "Missing ID")</span>.</li>
-                <li>Overtime math: clear <span className="font-mono">SUMPRODUCT</span> conditions avoid fragile nested IFs.</li>
-                <li>Validation: dropdowns for State and Pay Frequency; block negative hours; require EmployeeID.</li>
-                <li>Rounding: use <span className="font-mono">ROUND(x,2)</span> for taxes and net pay to stop penny drift.</li>
-                <li>Docs: label inputs, show calculation notes, and display audit flags in the header.</li>
+                <li>Columns: EmployeeID, Name, Department, Role, HourlyRate, Availability, PreferredDays.</li>
+                <li>Format as table <span className="font-mono">tblRoster</span>. Structured references auto-expand.</li>
+                <li>Store overtime eligibility and max hours so SUMIFS can respect individual caps.</li>
               </ul>
-              <div className="bg-white border border-green-200 p-3 rounded font-mono text-sm">
-                =LET(
-                  id, [@EmployeeID],
-                  rate, XLOOKUP(id, Emp[EmployeeID], Emp[PayRate], "Missing ID"),
-                  hrs, [@Hours],
-                  base, MIN(40, hrs)*rate,
-                  ot, MAX(0, hrs-40)*rate*1.5,
-                  gross, base+ot,
-                  ROUND(gross, 2)
-                )
-              </div>
-              <div className="bg-blue-50 border border-blue-200 p-3 rounded text-blue-900">
-                <p className="font-semibold mb-1">Why This Matters</p>
-                <p>Accurate, well‑documented payroll protects cash flow. Investors want to see models that
-                stay correct when new rows or rules appear. Your work shows professional standards.</p>
-              </div>
+              <p>
+                Download the starter data here:
+                {' '}
+                <a
+                  href="/resources/unit05-lesson05-schedule-practice.csv"
+                  className="text-emerald-700 underline"
+                  download
+                >
+                  unit05-lesson05-schedule-practice.csv
+                </a>
+              </p>
             </CardContent>
           </Card>
 
-          <FillInTheBlank
-            title="Advanced Vocabulary Check"
-            description="Fill the blanks to reinforce key payroll automation terms."
-            sentences={vocabSentences as any}
-            showWordList={true}
-            randomizeWordOrder={true}
-            showHints={true}
-          />
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader>
+              <CardTitle className="text-slate-900">Sheet 2 — WeeklySchedule</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-slate-800 text-sm">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Grid layout: rows = time blocks (e.g., 6a–10a, 10a–2p, 2p–6p, 6p–close).</li>
+                <li>Columns = Sun → Sat. Each cell has a data-validation dropdown referencing <span className="font-mono">tblRoster[EmployeeID]</span>.</li>
+                <li>Use conditional formatting to highlight double-booked employees or empty high-priority slots.</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader>
+              <CardTitle className="text-slate-900">Sheet 3 — Hours &amp; Gross</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-slate-800 text-sm">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Use <span className="font-mono">SUMIFS</span> to total hours by EmployeeID and by Department.</li>
+                <li>Add helper columns: RegularHours, OvertimeHours, GrossPay.</li>
+                <li>Formula idea: <span className="font-mono">=LET(h,TotalHours, rate,XLOOKUP(ID, tblRoster[EmployeeID], tblRoster[HourlyRate]), reg, MIN(40,h), ot, MAX(0,h-40), reg*rate + ot*rate*1.5)</span></li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="max-w-4xl mx-auto space-y-4">
+          <Card className="border-emerald-200 bg-emerald-50">
+            <CardHeader>
+              <CardTitle className="text-emerald-900">Questions Investors Will Ask</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-emerald-900 text-sm">
+              <p className="font-medium">Build with these answers in mind:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>“What is the cost of fully staffing the bakery next week?” → Filter WeeklySchedule by department.</li>
+                <li>“Who crosses 35 hours before Friday?” → Use conditional formatting plus the Hours sheet.</li>
+                <li>“How much cash do I need on payday if we add a Sunday brunch shift?” → Hours &amp; Gross updates instantly.</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Alert className="border-amber-200 bg-amber-50">
+            <AlertDescription className="text-amber-900 text-sm">
+              <strong>Pro Tip:</strong> Name your ranges now (<span className="font-mono">dvEmployee</span>, <span className="font-mono">rngBlocks</span>,
+              <span className="font-mono">tblHours</span>). Lesson06 combines this workbook with the Payday Simulator, so clean names save hours later.
+            </AlertDescription>
+          </Alert>
+        </section>
+
+        <section className="max-w-4xl mx-auto">
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900">Lock In the Vocabulary</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <FillInTheBlank 
+                sentences={vocabSentences}
+                title="Schedule Blueprint Vocabulary"
+                description="Complete each sentence before you start building your workbook."
+                randomizeWordOrder={false}
+              />
+            </CardContent>
+          </Card>
         </section>
       </main>
 
       <PhaseFooter 
-        unit={unit05Data}
         lesson={lesson05Data}
+        unit={unit05Data}
         phase={currentPhase}
         phases={lesson05Phases}
       />
     </div>
   )
 }
-

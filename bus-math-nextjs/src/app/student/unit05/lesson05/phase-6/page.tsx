@@ -9,7 +9,7 @@ const currentPhase = lesson05Phases[5]
 
 export default function Phase6Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-slate-50 to-emerald-100">
       <PhaseHeader 
         unit={unit05Data}
         lesson={lesson05Data}
@@ -18,68 +18,67 @@ export default function Phase6Page() {
       />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-              🎯 Phase 6: Closing
-            </Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Payroll Automation: Ready for the Next Step</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              You built a payroll engine that stays accurate as TechStart grows. You added validation, clear
-              documentation, and investor‑ready summaries. Now, connect this to dashboards and cash‑flow views in Lesson06.
-            </p>
-          </div>
+        <section className="text-center space-y-4">
+          <Badge className="bg-indigo-100 text-indigo-900 text-lg px-4 py-2">
+            🌅 Phase 6: Closing
+          </Badge>
+          <h1 className="text-3xl font-bold text-slate-900">From Schedule Clarity to Cash Confidence</h1>
+          <p className="text-lg text-slate-700 max-w-4xl mx-auto">
+            You now have a roster that feeds a schedule, and a schedule that feeds gross pay. Lesson06 combines this work with
+            tax withholding, cash-flow timing, and dashboards. Capture what you learned so your future self remembers the
+            breakthroughs.
+          </p>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-6">
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
-              <CardTitle className="text-green-800">Synthesis: What Improved and Why It Matters</CardTitle>
+              <CardTitle className="text-green-900">Key Takeaways</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-green-900">
-              <ul className="list-disc list-inside">
-                <li>Reliability: Safe lookups, clear overtime math, and rounding that reconciles to bank totals.</li>
-                <li>Visibility: Audit flags reveal errors fast—protecting people and cash.</li>
-                <li>Scalability: Tables and SWITCH logic adapt to new staff and pay rules.</li>
-                <li>Communication: One‑page summaries show the story investors care about.</li>
+            <CardContent className="space-y-2 text-green-900 text-sm">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Scheduling accuracy is payroll accuracy—no more separate whiteboards.</li>
+                <li>SUMIFS, validation, and conditional formatting act like internal auditors.</li>
+                <li>Hours &amp; Gross is the bridge that lets Lesson06 plug in taxes, benefits, and cash forecasts.</li>
               </ul>
             </CardContent>
           </Card>
 
           <ReflectionJournal
-            unitTitle="CAP Reflection — Persistence in Debugging & Validation"
+            unitTitle="Reflection — Courage, Adaptability, Persistence"
             prompts={[
               {
-                id: 'courage-payroll',
+                id: 'courage-schedule',
                 category: 'courage',
-                prompt: 'Where did you take a risk in redesigning payroll logic (e.g., replacing fragile formulas)?',
-                placeholder: 'Describe the change you made and why it was brave…'
+                prompt: 'Where did you show courage while challenging an existing schedule habit (like ditching the wall calendar)?',
+                placeholder: 'Describe the risky change you made and what happened…'
               },
               {
-                id: 'adaptability-payroll',
+                id: 'adaptability-schedule',
                 category: 'adaptability',
-                prompt: 'What feedback or errors forced you to adapt your approach? How did you adjust?',
-                placeholder: 'Explain the issue and your new strategy…'
+                prompt: 'How did you adapt when the data validation or SUMIFS formula did not work the first time?',
+                placeholder: 'Explain the bug, the fix, and the new lesson you learned…'
               },
               {
-                id: 'persistence-payroll',
+                id: 'persistence-schedule',
                 category: 'persistence',
-                prompt: 'What kept you going when the validation flags would not clear at first?',
-                placeholder: 'Reflect on your persistence and the result…'
+                prompt: 'What kept you going while balancing employee preferences with business coverage?',
+                placeholder: 'Reflect on the strategy that helped you keep iterating…'
               }
             ] as any}
           />
 
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-blue-800">Preview: Lesson06 Integration</CardTitle>
+              <CardTitle className="text-blue-900">Preview: Lesson06 Integration Sprint</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-1 text-blue-900">
-              <ul className="list-disc list-inside">
-                <li>Connect payroll outputs to a cash‑flow dashboard (totals by PayDate).</li>
-                <li>Add slicers/controls for State and Pay Frequency.</li>
-                <li>Prepare a one‑minute investor summary with key reliability checks.</li>
+            <CardContent className="space-y-2 text-blue-900 text-sm">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Feed your Hours &amp; Gross table into the Payday Simulator’s withholding logic.</li>
+                <li>Plot weekly payroll cash-outs next to actual bank timing to prevent Maria’s Friday crisis.</li>
+                <li>Build a dashboard tile that answers “What happens if we open two more evening shifts?” in one click.</li>
               </ul>
+              <p>Bring your Lesson05 workbook tomorrow—we will layer taxes, benefits, and cash-flow views directly on top of it.</p>
             </CardContent>
           </Card>
         </section>
@@ -94,4 +93,3 @@ export default function Phase6Page() {
     </div>
   )
 }
-

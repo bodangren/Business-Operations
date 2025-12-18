@@ -7,6 +7,7 @@
 - Merge via squash after CI passes, prune branches, close the issue, and update sprint docs/TODO before moving on.
 
 Sprint Planning Status
+- NOTE: `docs/sprint/` directory is currently missing in the repo, so Sprint 10 story file (S10) could not be reviewed. Please advise if it lives elsewhere or should be recreated.
 - Sprint 10 plan recorded in `docs/sprint/S10.md` (Question Bank Initiative).
 - Completed slices:
   - Issue #10 – Unit 1 phase-5 question bank and practice-test scaffolding ✅

@@ -1,26 +1,26 @@
 // Unit05 Lesson05 — Advanced Excel Automation for Payroll (PayDay Simulator)
 export const lesson05Data = {
-  id: "unit05_lesson05_advanced",
-  title: "Advanced Automation: Payroll Tax & Overtime Engine",
+  id: "unit05_lesson05_schedule",
+  title: "Schedule-to-Pay: Building the Weekly Labor Engine",
   sequence: 5,
   unitId: "unit05",
   learningObjectives: [
-    "Engineer a robust payroll engine using structured references, XLOOKUP, and SUMPRODUCT",
-    "Implement professional validation to prevent missing IDs, negative hours, and stale dates",
-    "Build scenario toggles for pay frequency and state rules with clear documentation",
-    "Produce investor-ready summaries that update correctly as employees and rows change"
+    "Design a normalized Employee Roster with availability, roles, and hourly rates that feeds the rest of the workbook",
+    "Draft a visual weekly schedule for a medium restaurant or grocery team using dropdowns and conditional formatting",
+    "Convert scheduled shifts into total hours, overtime flags, and gross pay using SUMIFS and overtime logic",
+    "Explain how accurate scheduling protects payroll promises, prevents overtime surprises, and keeps cash predictable"
   ],
   keyConcepts: [
-    "Structured references (Table[Column]) and named ranges",
-    "XLOOKUP with if_not_found for safe table mapping",
-    "SUMPRODUCT for tiered/overtime calculations",
-    "Data validation and audit flags for reliability"
+    "Structured tables and named ranges shared across sheets",
+    "Data validation lists and conditional formatting for schedule accuracy",
+    "SUMIFS and pivot-style summaries to total hours by person or department",
+    "Overtime logic tying 40+ hours to gross pay calculations"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Textbook-first explanation with interactive checks and validation practice"
+    "Excel build with textbook guidance, interactive checks, and data storytelling"
   ],
-  rationale: "Students deepen Lesson04 skills by building a resilient payroll system that scales, protects cash flow, and earns investor trust.",
+  rationale: "Students extend the Lesson04 roster into a living schedule so Sarah can plan labor, monitor overtime risk, and flow clean numbers into the Payday Simulator.",
   status: "Draft"
 }
 
