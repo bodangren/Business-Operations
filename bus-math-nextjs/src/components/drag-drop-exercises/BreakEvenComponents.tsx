@@ -73,7 +73,7 @@ import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
-import { 
+import {
   DollarSign,
   TrendingUp,
   Building2,
@@ -90,6 +90,18 @@ import {
   Target,
   PieChart
 } from 'lucide-react'
+import {
+  ComposedChart,
+  Line,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+} from 'recharts'
 
 interface CostItem {
   id: string
@@ -116,35 +128,172 @@ interface GameState {
   gameComplete: boolean
 }
 
+// Fisher-Yates shuffle — stable reference, called once at module level per component mount
+function shuffleArray<T>(arr: T[]): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+// TechStart Solutions — digital marketing consultancy cost structure
 const INITIAL_COST_ITEMS: Omit<CostItem, 'id' | 'placed' | 'placedCategory' | 'isCorrect'>[] = [
-  // Fixed Costs
-  { name: 'Monthly Rent', amount: 3000, description: 'Office space rental - same every month', correctCategory: 'fixed' },
-  { name: 'Insurance Premiums', amount: 500, description: 'Business insurance - fixed annual cost', correctCategory: 'fixed' },
-  { name: 'Manager Salary', amount: 4000, description: 'Salaried employee - same monthly amount', correctCategory: 'fixed' },
-  { name: 'Loan Payment', amount: 800, description: 'Equipment loan - fixed monthly payment', correctCategory: 'fixed' },
-  { name: 'Software Licenses', amount: 200, description: 'Monthly software subscriptions', correctCategory: 'fixed' },
-  { name: 'Property Taxes', amount: 400, description: 'Annual property tax - fixed amount', correctCategory: 'fixed' },
-  { name: 'Depreciation', amount: 600, description: 'Equipment depreciation - fixed monthly', correctCategory: 'fixed' },
-  
-  // Variable Costs
-  { name: 'Raw Materials', amount: 15, description: 'Materials per unit produced', correctCategory: 'variable' },
-  { name: 'Direct Labor', amount: 12, description: 'Hourly wages per unit made', correctCategory: 'variable' },
-  { name: 'Sales Commission', amount: 8, description: '5% commission per unit sold', correctCategory: 'variable' },
-  { name: 'Packaging Costs', amount: 3, description: 'Materials to package each unit', correctCategory: 'variable' },
-  { name: 'Shipping Costs', amount: 5, description: 'Delivery cost per unit sold', correctCategory: 'variable' },
-  { name: 'Credit Card Fees', amount: 2, description: '2% payment processing per sale', correctCategory: 'variable' },
-  { name: 'Utilities (Production)', amount: 4, description: 'Electricity varies with production', correctCategory: 'variable' },
-  { name: 'Quality Control', amount: 1, description: 'Testing cost per unit produced', correctCategory: 'variable' }
+  // Fixed Costs — same every month regardless of how many client projects Sarah takes on
+  { name: 'Office Lease', amount: 2200, description: "TechStart's downtown co-working space — same every month", correctCategory: 'fixed' },
+  { name: 'Business Insurance', amount: 350, description: 'General liability policy — fixed annual premium', correctCategory: 'fixed' },
+  { name: "Alex's Salary", amount: 4500, description: 'Full-time employee salary — same regardless of project load', correctCategory: 'fixed' },
+  { name: 'Accounting Software', amount: 150, description: 'QuickBooks subscription — fixed monthly fee', correctCategory: 'fixed' },
+  { name: 'Equipment Loan Payment', amount: 600, description: 'Laptop and monitor financing — fixed monthly installment', correctCategory: 'fixed' },
+  { name: 'Domain & Hosting', amount: 120, description: 'TechStart website and client portal hosting — fixed fee', correctCategory: 'fixed' },
+  { name: 'Laptop Depreciation', amount: 180, description: 'Monthly depreciation on Sarah and Alex\'s laptops', correctCategory: 'fixed' },
+
+  // Variable Costs — change with each client project Sarah takes on
+  { name: 'Contractor Fees', amount: 420, description: 'Freelance developers hired per project when needed', correctCategory: 'variable' },
+  { name: 'Ad Spend Management', amount: 85, description: 'Platform fees (Google/Meta) charged per client campaign', correctCategory: 'variable' },
+  { name: 'Client Reporting Tools', amount: 30, description: 'Dashboard and analytics tools billed per active client', correctCategory: 'variable' },
+  { name: 'Freelance Design', amount: 200, description: 'Graphic designer hired for assets on each project', correctCategory: 'variable' },
+  { name: 'Travel & Client Meetings', amount: 65, description: 'Transportation and coffee meetings per client onboarded', correctCategory: 'variable' },
+  { name: 'Payment Processing Fees', amount: 45, description: '2.9% Stripe fee charged on each invoice collected', correctCategory: 'variable' },
+  { name: 'Project Management Software', amount: 20, description: 'Asana seats scale with active projects — per-project cost', correctCategory: 'variable' },
+  { name: 'Stock Photo Licenses', amount: 15, description: 'Images purchased per client website or campaign', correctCategory: 'variable' },
 ]
+
+// ── CVP Chart ────────────────────────────────────────────────────────────────
+
+interface CvpChartProps {
+  breakEvenUnits: number
+  fixedCosts: number
+  variableCostPerUnit: number
+  salesPricePerUnit: number
+}
+
+function CvpChart({ breakEvenUnits, fixedCosts, variableCostPerUnit, salesPricePerUnit }: CvpChartProps) {
+  // Build data points from 0 to 2× break-even (or at least 10 projects)
+  const maxProjects = Math.max(Math.ceil(breakEvenUnits * 2), 10)
+  const step = Math.max(1, Math.floor(maxProjects / 10))
+
+  const data = []
+  for (let units = 0; units <= maxProjects; units += step) {
+    const revenue = units * salesPricePerUnit
+    const totalCost = fixedCosts + units * variableCostPerUnit
+    const profit = revenue - totalCost
+    data.push({
+      projects: units,
+      revenue,
+      totalCost,
+      fixedCost: fixedCosts,
+      // positive profit zone (above break-even) vs. loss zone
+      profitZone: profit >= 0 ? profit : 0,
+      lossZone: profit < 0 ? Math.abs(profit) : 0,
+    })
+  }
+  const formatCurrency = (v: number) =>
+    v >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${v}`
+
+  return (
+    <div className="mt-6">
+      <h4 className="font-semibold text-gray-800 mb-1 flex items-center gap-2">
+        <BarChart3 className="w-5 h-5 text-orange-600" />
+        Cost-Volume-Profit Chart
+      </h4>
+      <p className="text-sm text-gray-600 mb-4">
+        Watch the break-even point shift as you classify more costs. The green zone is profit; the red zone is loss.
+      </p>
+      <ResponsiveContainer width="100%" height={320}>
+        <ComposedChart data={data} margin={{ top: 10, right: 20, bottom: 20, left: 10 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+          <XAxis
+            dataKey="projects"
+            label={{ value: 'Client Projects per Month', position: 'insideBottom', offset: -10, fontSize: 12 }}
+            tick={{ fontSize: 11 }}
+          />
+          <YAxis
+            tickFormatter={formatCurrency}
+            tick={{ fontSize: 11 }}
+            label={{ value: 'Amount ($)', angle: -90, position: 'insideLeft', offset: 10, fontSize: 12 }}
+          />
+          <Tooltip
+            formatter={(value: number, name: string) => {
+              const labels: Record<string, string> = {
+                revenue: 'Revenue',
+                totalCost: 'Total Cost',
+                fixedCost: 'Fixed Costs',
+              }
+              return [`$${value.toLocaleString()}`, labels[name] ?? name]
+            }}
+            labelFormatter={(label) => `${label} projects`}
+          />
+          <Legend verticalAlign="top" height={36} />
+          {/* Fixed cost floor — dashed blue */}
+          <Line
+            type="monotone"
+            dataKey="fixedCost"
+            name="Fixed Costs"
+            stroke="#3b82f6"
+            strokeWidth={2}
+            strokeDasharray="6 3"
+            dot={false}
+          />
+          {/* Total cost line — solid red */}
+          <Line
+            type="monotone"
+            dataKey="totalCost"
+            name="Total Cost"
+            stroke="#ef4444"
+            strokeWidth={2}
+            dot={false}
+          />
+          {/* Revenue line — solid green */}
+          <Line
+            type="monotone"
+            dataKey="revenue"
+            name="Revenue"
+            stroke="#22c55e"
+            strokeWidth={2.5}
+            dot={false}
+          />
+          {/* Break-even vertical reference line */}
+          <ReferenceLine
+            x={breakEvenUnits}
+            stroke="#f97316"
+            strokeWidth={2}
+            strokeDasharray="4 2"
+            label={{
+              value: `Break-even: ${breakEvenUnits} projects`,
+              position: 'top',
+              fontSize: 11,
+              fill: '#f97316',
+              fontWeight: 600,
+            }}
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
+      <div className="flex flex-wrap gap-4 mt-2 text-xs text-gray-600">
+        <span className="flex items-center gap-1"><span className="inline-block w-6 border-t-2 border-dashed border-blue-500" /> Fixed Costs (floor)</span>
+        <span className="flex items-center gap-1"><span className="inline-block w-6 border-t-2 border-red-500" /> Total Cost (fixed + variable)</span>
+        <span className="flex items-center gap-1"><span className="inline-block w-6 border-t-2 border-green-500" /> Revenue</span>
+        <span className="flex items-center gap-1"><span className="inline-block w-6 border-t-2 border-dashed border-orange-500" /> Break-even point</span>
+      </div>
+    </div>
+  )
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function buildShuffledItems() {
+  return shuffleArray(INITIAL_COST_ITEMS).map((item, index) => ({
+    ...item,
+    id: `cost-${index}`,
+    placed: false,
+  }))
+}
 
 export function BreakEvenComponents() {
   const [gameState, setGameState] = useState<GameState>({
-    costItems: INITIAL_COST_ITEMS.map((item, index) => ({
-      ...item,
-      id: `cost-${index}`,
-      placed: false
-    })),
-    salesPricePerUnit: 60,
+    costItems: buildShuffledItems(),
+    salesPricePerUnit: 1200,
     fixedCosts: 0,
     variableCostPerUnit: 0,
     contributionMargin: 0,
@@ -248,12 +397,8 @@ export function BreakEvenComponents() {
 
   const resetGame = useCallback(() => {
     setGameState({
-      costItems: INITIAL_COST_ITEMS.map((item, index) => ({
-        ...item,
-        id: `cost-${index}`,
-        placed: false
-      })),
-      salesPricePerUnit: 60,
+      costItems: buildShuffledItems(),
+      salesPricePerUnit: 1200,
       fixedCosts: 0,
       variableCostPerUnit: 0,
       contributionMargin: 0,
@@ -311,8 +456,9 @@ export function BreakEvenComponents() {
             <div>
               <h4 className="font-semibold text-orange-800 mb-2">🎯 Objective</h4>
               <p className="text-orange-700">
-                Learn break-even analysis by correctly categorizing business costs into Fixed Costs and Variable Costs. 
-                Watch as the break-even calculations update in real-time based on your cost categorizations.
+                Help Sarah understand her cost structure by sorting TechStart Solutions' real expenses into
+                Fixed Costs and Variable Costs. As you sort, watch the break-even calculations update live —
+                you'll see exactly how many client projects Sarah needs each month to cover all her costs.
               </p>
             </div>
 
@@ -320,40 +466,40 @@ export function BreakEvenComponents() {
             <div>
               <h4 className="font-semibold text-orange-800 mb-3">📋 Step-by-Step Instructions</h4>
               <ol className="list-decimal list-inside space-y-2 text-orange-700">
-                <li><strong>Drag Cost Items:</strong> Take each cost from the "Unassigned Costs" section and drag it to either Fixed Costs or Variable Costs</li>
-                <li><strong>Think About Behavior:</strong> Fixed costs stay the same regardless of production volume; Variable costs change with each unit produced</li>
-                <li><strong>Set Sales Price:</strong> Adjust the sales price per unit to see how it affects break-even calculations</li>
-                <li><strong>Watch Calculations:</strong> See live updates of contribution margin, break-even units, and break-even dollars</li>
-                <li><strong>Check Your Work:</strong> Click "Check Answers" to see your score and view the break-even analysis results</li>
+                <li><strong>Drag Cost Items:</strong> Take each expense from "Unassigned Costs" and drag it to either Fixed or Variable Costs</li>
+                <li><strong>Think About Behavior:</strong> Would Sarah pay this cost even if she had zero client projects that month?  If yes → Fixed. If it only happens per project → Variable.</li>
+                <li><strong>Set Project Price:</strong> Adjust the average price Sarah charges per project to see how it shifts the break-even point</li>
+                <li><strong>Watch the Chart:</strong> The CVP chart updates live — the break-even intersection moves as you classify costs</li>
+                <li><strong>Check Your Work:</strong> Click "Check Answers" to see your score and confirm the correct categorizations</li>
               </ol>
             </div>
 
             {/* Cost Categories Explanation */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 bg-blue-100 rounded-lg border border-blue-200">
-                <h5 className="font-semibold text-blue-800 mb-2">🏢 Fixed Costs</h5>
-                <p className="text-sm text-blue-700 mb-2">Costs that remain constant regardless of production volume:</p>
+                <h5 className="font-semibold text-blue-800 mb-2">🏢 Fixed Costs (TechStart)</h5>
+                <p className="text-sm text-blue-700 mb-2">Sarah pays these whether she lands 0 or 20 projects:</p>
                 <ul className="text-xs text-blue-600 space-y-1">
-                  <li>• Rent and lease payments</li>
-                  <li>• Insurance premiums</li>
-                  <li>• Salaried employee wages</li>
-                  <li>• Loan payments</li>
-                  <li>• Software licenses</li>
-                  <li>• Property taxes</li>
-                  <li>• Equipment depreciation</li>
+                  <li>• Office lease</li>
+                  <li>• Alex's salary</li>
+                  <li>• Business insurance</li>
+                  <li>• Equipment loan payments</li>
+                  <li>• Software subscriptions (flat rate)</li>
+                  <li>• Domain & hosting</li>
+                  <li>• Laptop depreciation</li>
                 </ul>
               </div>
               <div className="p-4 bg-green-100 rounded-lg border border-green-200">
-                <h5 className="font-semibold text-green-800 mb-2">📦 Variable Costs</h5>
-                <p className="text-sm text-green-700 mb-2">Costs that change directly with production volume:</p>
+                <h5 className="font-semibold text-green-800 mb-2">📦 Variable Costs (TechStart)</h5>
+                <p className="text-sm text-green-700 mb-2">Sarah only pays these when she takes on a project:</p>
                 <ul className="text-xs text-green-600 space-y-1">
-                  <li>• Raw materials per unit</li>
-                  <li>• Direct labor per unit</li>
-                  <li>• Sales commissions</li>
-                  <li>• Packaging materials</li>
-                  <li>• Shipping costs</li>
-                  <li>• Credit card processing fees</li>
-                  <li>• Quality control per unit</li>
+                  <li>• Contractor/freelancer fees</li>
+                  <li>• Client ad spend platform fees</li>
+                  <li>• Per-client reporting tools</li>
+                  <li>• Freelance design work</li>
+                  <li>• Client meeting travel</li>
+                  <li>• Payment processing fees</li>
+                  <li>• Per-project stock photos</li>
                 </ul>
               </div>
             </div>
@@ -363,11 +509,11 @@ export function BreakEvenComponents() {
               <h4 className="font-semibold text-orange-800 mb-3">🧮 Break-Even Formulas</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-3 bg-white rounded-lg border">
-                  <h5 className="font-medium mb-2">Contribution Margin</h5>
-                  <p className="text-sm font-mono bg-gray-100 p-2 rounded">Sales Price - Variable Cost per Unit</p>
+                  <h5 className="font-medium mb-2">Contribution Margin per Project</h5>
+                  <p className="text-sm font-mono bg-gray-100 p-2 rounded">Project Price − Variable Cost per Project</p>
                 </div>
                 <div className="p-3 bg-white rounded-lg border">
-                  <h5 className="font-medium mb-2">Break-Even Units</h5>
+                  <h5 className="font-medium mb-2">Break-Even Projects</h5>
                   <p className="text-sm font-mono bg-gray-100 p-2 rounded">Fixed Costs ÷ Contribution Margin</p>
                 </div>
               </div>
@@ -377,11 +523,10 @@ export function BreakEvenComponents() {
             <div>
               <h4 className="font-semibold text-orange-800 mb-2">💡 Pro Tips</h4>
               <ul className="text-sm text-orange-700 space-y-1">
-                <li>• <strong>Ask "Does it change?"</strong> - If cost increases with more units, it's variable</li>
-                <li>• <strong>Think monthly</strong> - Fixed costs are usually the same every month</li>
-                <li>• <strong>Consider per-unit basis</strong> - Variable costs are often expressed "per unit"</li>
-                <li>• <strong>Higher sales price</strong> = Lower break-even point (fewer units needed)</li>
-                <li>• <strong>Lower variable costs</strong> = Higher contribution margin = Lower break-even</li>
+                <li>• <strong>Zero-project test:</strong> If Sarah had no clients this month, would she still pay it? Yes = Fixed.</li>
+                <li>• <strong>Per-project language:</strong> Variable costs are often described "per client" or "per project"</li>
+                <li>• <strong>Higher project price</strong> = fewer projects needed to break even</li>
+                <li>• <strong>Lower variable costs</strong> = higher contribution margin = fewer projects to break even</li>
               </ul>
             </div>
 
@@ -389,9 +534,10 @@ export function BreakEvenComponents() {
             <div>
               <h4 className="font-semibold text-orange-800 mb-2">🏪 Business Context</h4>
               <p className="text-sm text-orange-700">
-                You're analyzing a small manufacturing business that makes custom furniture. 
-                Understanding break-even helps determine minimum sales needed to cover all costs and start making profit.
-                This analysis is crucial for pricing decisions, budgeting, and business planning.
+                You're analyzing TechStart Solutions, Sarah's growing digital marketing consultancy.
+                She provides website development, SEO, and social media management services.
+                Understanding her cost structure will reveal how many client projects she needs each month
+                to cover her bills — and how her pricing affects that number.
               </p>
             </div>
           </CardContent>
@@ -424,12 +570,12 @@ export function BreakEvenComponents() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-purple-700">
             <DollarSign className="w-5 h-5" />
-            Sales Price Setting
+            Average Project Price
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-4">
-            <Label htmlFor="salesPrice" className="font-medium">Sales Price per Unit:</Label>
+          <div className="flex items-center gap-4 flex-wrap">
+            <Label htmlFor="salesPrice" className="font-medium">Sarah charges per project:</Label>
             <div className="flex items-center gap-2">
               <span className="text-lg">$</span>
               <Input
@@ -437,13 +583,14 @@ export function BreakEvenComponents() {
                 type="number"
                 value={gameState.salesPricePerUnit}
                 onChange={(e) => handlePriceChange(Number(e.target.value) || 0)}
-                className="w-20"
-                min="1"
-                max="200"
+                className="w-28"
+                min="100"
+                max="10000"
+                step="100"
               />
             </div>
             <div className="text-sm text-gray-600">
-              Higher price = Lower break-even point
+              Higher price = fewer projects needed to break even
             </div>
           </div>
         </CardContent>
@@ -627,7 +774,7 @@ export function BreakEvenComponents() {
             <Card className="bg-green-50 border-green-200">
               <CardContent className="p-4 text-center">
                 <TrendingUp className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-green-700">Variable Cost/Unit</p>
+                <p className="text-sm font-medium text-green-700">Variable Cost/Project</p>
                 <p className="text-xl font-bold text-green-800">
                   ${calculations.variableCostPerUnit.toLocaleString()}
                 </p>
@@ -641,16 +788,18 @@ export function BreakEvenComponents() {
                 <p className="text-xl font-bold text-purple-800">
                   ${calculations.contributionMargin.toLocaleString()}
                 </p>
+                <p className="text-xs text-purple-600 mt-1">per project</p>
               </CardContent>
             </Card>
 
             <Card className="bg-orange-50 border-orange-200">
               <CardContent className="p-4 text-center">
                 <Target className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-orange-700">Break-Even Units</p>
+                <p className="text-sm font-medium text-orange-700">Break-Even Projects</p>
                 <p className="text-xl font-bold text-orange-800">
                   {calculations.breakEvenUnits.toLocaleString()}
                 </p>
+                <p className="text-xs text-orange-600 mt-1">per month</p>
               </CardContent>
             </Card>
 
@@ -669,12 +818,22 @@ export function BreakEvenComponents() {
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
               <h4 className="font-semibold mb-2">Break-Even Interpretation:</h4>
               <p className="text-sm text-gray-700">
-                You need to sell <strong>{calculations.breakEvenUnits.toLocaleString()} units</strong> at 
-                <strong> ${gameState.salesPricePerUnit}</strong> each to generate 
-                <strong> ${calculations.breakEvenDollars.toLocaleString()}</strong> in revenue to cover all costs.
-                Each unit sold beyond this point contributes <strong>${calculations.contributionMargin}</strong> to profit.
+                Sarah needs to complete <strong>{calculations.breakEvenUnits.toLocaleString()} client projects</strong> per month at{' '}
+                <strong>${gameState.salesPricePerUnit.toLocaleString()}</strong> each to generate{' '}
+                <strong>${calculations.breakEvenDollars.toLocaleString()}</strong> and cover all her costs.
+                Every project beyond that contributes <strong>${calculations.contributionMargin.toLocaleString()}</strong> to profit.
               </p>
             </div>
+          )}
+
+          {/* CVP Chart */}
+          {calculations.contributionMargin > 0 && calculations.breakEvenUnits > 0 && (
+            <CvpChart
+              breakEvenUnits={calculations.breakEvenUnits}
+              fixedCosts={calculations.fixedCosts}
+              variableCostPerUnit={calculations.variableCostPerUnit}
+              salesPricePerUnit={gameState.salesPricePerUnit}
+            />
           )}
         </CardContent>
       </Card>

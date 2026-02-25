@@ -188,123 +188,131 @@ const lesson02Questions: Unit06Phase5Question[] = [
     id: "lesson02-q1",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "Sarah buys web hosting for $50 and charges a client $125. What is her markup percentage?",
-    correctAnswer: "150%",
-    distractors: ["60%", "40%", "250%"],
+    prompt: "TechStart's variable cost for a web project is $880. Sarah charges $1,200. What is her markup percentage?",
+    correctAnswer: "36.4%",
+    distractors: ["26.7%", "40.0%", "73.3%"],
     explanation:
-      "Markup = (Price − Cost) ÷ Cost. ($125 − $50) ÷ $50 = $75 ÷ $50 = 1.50, or 150%.",
+      "Markup = (Price − Cost) ÷ Cost = ($1,200 − $880) ÷ $880 = $320 ÷ $880 ≈ 36.4%. The denominator is cost, so markup always shows a higher percentage than margin for the same $320 profit.",
     objectiveTags: ["markup", "pricing-basics", "calculations"]
   },
   {
     id: "lesson02-q2",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "Using the same example ($50 cost, $125 price), what is Sarah's margin percentage?",
-    correctAnswer: "60%",
-    distractors: ["150%", "40%", "250%"],
+    prompt: "Using the same TechStart project ($880 cost, $1,200 price), what is the gross margin percentage?",
+    correctAnswer: "26.7%",
+    distractors: ["36.4%", "73.3%", "40.0%"],
     explanation:
-      "Margin = (Price − Cost) ÷ Price. ($125 − $50) ÷ $125 = $75 ÷ $125 = 0.60, or 60%.",
+      "Margin = (Price − Cost) ÷ Price = ($1,200 − $880) ÷ $1,200 = $320 ÷ $1,200 ≈ 26.7%. The denominator shifts to revenue, which is why margin is always lower than markup for the same profit.",
     objectiveTags: ["margin", "pricing-basics", "calculations"]
   },
   {
     id: "lesson02-q3",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "Why do business owners focus more on margin than markup when planning?",
-    correctAnswer: "Margin shows the portion of each sales dollar that becomes profit, which drives planning decisions.",
-    distractors: [
-      "Markup is harder to calculate than margin.",
-      "Margin always produces a higher percentage than markup.",
-      "Financial reports do not allow markup calculations."
-    ],
+    prompt: "Sarah wants a 40% gross margin on projects that cost $880 to deliver. What price must she charge?",
+    correctAnswer: "$1,467",
+    distractors: ["$1,232", "$1,200", "$1,320"],
     explanation:
-      "Margin connects directly to profit planning because it shows how many cents of every dollar stay in the business after costs.",
-    objectiveTags: ["margin", "strategy", "pricing-insight"]
+      "Price = Cost ÷ (1 − Margin) = $880 ÷ 0.60 ≈ $1,467. A common mistake is adding 40% of cost to get $1,232 — but that is a 40% markup, not a 40% margin. The two formulas give very different prices.",
+    objectiveTags: ["margin", "pricing", "calculations"]
   },
   {
     id: "lesson02-q4",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "If Sarah needs a 40% margin on a project that costs $300, what price should she charge?",
-    correctAnswer: "$500",
-    distractors: ["$420", "$120", "$750"],
+    prompt: "TechStart has $8,100 in monthly fixed costs, $880 variable cost per project, and charges $1,200. How many projects per month to break even?",
+    correctAnswer: "26 projects",
+    distractors: ["7 projects", "10 projects", "33 projects"],
     explanation:
-      "Price = Cost ÷ (1 − Margin). $300 ÷ (1 − 0.40) = $300 ÷ 0.60 = $500.",
-    objectiveTags: ["margin", "pricing", "calculations"]
+      "Contribution margin per project = $1,200 − $880 = $320. Break-even = ⌈$8,100 ÷ $320⌉ = ⌈25.3⌉ = 26 projects. At 25 projects, Sarah would still lose about $100 that month.",
+    objectiveTags: ["cvp", "break-even", "calculations"]
   },
   {
     id: "lesson02-q5",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "A competitor charges $400 for the same service that costs Sarah $300. What is her markup if she matches their price?",
-    correctAnswer: "33.3%",
-    distractors: ["25%", "75%", "133.3%"],
+    prompt: "Alex asks for a $600/month raise, raising TechStart's fixed costs from $8,100 to $8,700. How many additional projects per month does Sarah now need to break even?",
+    correctAnswer: "2 more projects",
+    distractors: [
+      "1 more project",
+      "3 more projects",
+      "No change — fixed costs don't affect break-even"
+    ],
     explanation:
-      "Markup = ($400 − $300) ÷ $300 = $100 ÷ $300 = 0.333..., or about 33.3%.",
-    objectiveTags: ["markup", "competitive-analysis", "pricing"]
+      "Old break-even: ⌈$8,100 ÷ $320⌉ = 26. New break-even: ⌈$8,700 ÷ $320⌉ = 28. Sarah needs 2 extra projects each month to absorb Alex's raise — about one extra small project per two weeks.",
+    objectiveTags: ["cvp", "break-even", "cost-structure"]
   },
   {
     id: "lesson02-q6",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "Sarah's fixed costs are $8,000 per month and variable costs are $40 per project. She charges $100. How many projects to break even?",
-    correctAnswer: "133 projects",
-    distractors: ["200 projects", "80 projects", "267 projects"],
+    prompt: "TechStart's break-even is 26 projects per month. Sarah currently completes 25. What does her income statement look like?",
+    correctAnswer: "She's losing approximately $100 per month — just below break-even",
+    distractors: [
+      "She has a 4% margin of safety above break-even",
+      "She's exactly at break-even with zero profit",
+      "She's profitable because 25 is close to 26"
+    ],
     explanation:
-      "Contribution per project = $100 − $40 = $60. Break-even = $8,000 ÷ $60 ≈ 133 projects.",
-    objectiveTags: ["cvp", "break-even", "pricing"]
+      "Revenue = 25 × $1,200 = $30,000. Total costs = $8,100 + 25 × $880 = $30,100. Profit = −$100. Being one project short of break-even is still a loss — there is no cushion at all.",
+    objectiveTags: ["cvp", "margin-of-safety", "analysis"]
   },
   {
     id: "lesson02-q7",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "A competitor boasts about a 200% markup with $60 costs. What is their price?",
-    correctAnswer: "$180",
-    distractors: ["$120", "$160", "$240"],
+    prompt: "Sarah wants $5,000 monthly profit and currently completes 25 projects per month. If volume is fixed, what price must she charge?",
+    correctAnswer: "$1,404",
+    distractors: ["$1,200", "$1,340", "$1,520"],
     explanation:
-      "Price = Cost + (Cost × Markup). $60 + ($60 × 2.00) = $60 + $120 = $180.",
-    objectiveTags: ["markup", "pricing", "competitive-analysis"]
+      "Set profit = 25P − $8,100 − (25 × $880) = $5,000. So 25P = $5,000 + $8,100 + $22,000 = $35,100. Price = $35,100 ÷ 25 = $1,404. This is exactly what the Goal Seek tab calculates automatically.",
+    objectiveTags: ["goal-seek", "pricing", "calculations"]
   },
   {
     id: "lesson02-q8",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "What is the main risk if a business confuses markup and margin?",
-    correctAnswer: "They may price too low and fail to cover costs even with strong sales volume.",
+    prompt: "TechStart's contribution margin per project is $320 and the project price is $1,200. What is the contribution margin ratio, and what does it mean?",
+    correctAnswer: "26.7% — Sarah keeps $0.27 of every revenue dollar after paying variable costs",
     distractors: [
-      "Customers will always notice the mistake right away.",
-      "The IRS fines the business for using markup instead of margin.",
-      "Only large corporations are affected by the difference."
+      "36.4% — Sarah keeps $0.36 of every revenue dollar after paying variable costs",
+      "73.3% — that is the share of revenue that goes to variable costs",
+      "32.0% — that is the ratio of contribution margin to fixed costs"
     ],
     explanation:
-      "Misunderstanding the percentages often tricks owners into believing a price is profitable when it is not, leading to real losses.",
-    objectiveTags: ["margin", "risk", "pricing-strategy"]
+      "CMR = Contribution Margin ÷ Price = $320 ÷ $1,200 = 26.7%. For every dollar Sarah collects, 26.7 cents remain after variable costs. Those cents must first cover fixed costs, and any amount beyond break-even becomes profit.",
+    objectiveTags: ["cvp", "contribution-margin", "calculations"]
   },
   {
     id: "lesson02-q9",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "Sarah wants to raise her margin from 40% to 50% on a $200 cost project. How much must price increase?",
-    correctAnswer: "$66.67",
-    distractors: ["$133.33", "$100", "$50"],
+    prompt: "Sarah tells a client her markup on an $880 project is 36.4%. The client's financial advisor says her margin is only 26.7%. Sarah panics. Who is right?",
+    correctAnswer: "Both are correct — they describe the same $320 profit from different denominators (cost vs. revenue)",
+    distractors: [
+      "Sarah is wrong — professionals only express profitability as margin, never markup",
+      "The advisor is wrong — markup and margin always produce the same percentage",
+      "Neither is right — you need the selling price to calculate either number"
+    ],
     explanation:
-      "Price at 40% margin: $200 ÷ 0.60 = $333.33. Price at 50% margin: $200 ÷ 0.50 = $400. Increase = $66.67.",
-    objectiveTags: ["margin", "pricing", "strategic-adjustment"]
+      "Markup (36.4%) divides $320 profit by the $880 cost base. Margin (26.7%) divides the same $320 by the $1,200 revenue base. Same dollars, different story. Confusing them when setting prices — not just describing them — is where businesses get into trouble.",
+    objectiveTags: ["markup", "margin", "pricing-insight"]
   },
   {
     id: "lesson02-q10",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Markup vs. Margin Concepts",
-    prompt: "Which statement best links cost structure to pricing flexibility in a competitive market?",
-    correctAnswer: "Businesses with higher fixed costs and low variable costs can temporarily reduce price because each sale still contributes a lot toward profit.",
+    prompt: "A competitor offers the same services at $900 per project. An advisor suggests Sarah match the price to win more clients. Given TechStart's $880 variable cost, what does the data show?",
+    correctAnswer: "Break-even would jump to 405 projects per month — completely unachievable for a small agency",
     distractors: [
-      "Cost structure has nothing to do with pricing flexibility.",
-      "Higher variable costs always create better margins.",
-      "Fixed costs are always better than variable costs when pricing."
+      "Break-even would only increase by 2–3 projects, so matching is reasonable",
+      "Lower prices always attract more volume, so revenue would still cover costs",
+      "The break-even point would fall because more clients would hire Sarah"
     ],
     explanation:
-      "A high contribution margin per sale gives room to adjust prices without immediately going negative, which is critical in competition.",
-    objectiveTags: ["cvp", "pricing-strategy", "cost-structure"]
+      "At $900: contribution margin = $900 − $880 = $20 per project. Break-even = $8,100 ÷ $20 = 405 projects per month. TechStart would need to grow 16× its current volume just to break even — the competitor's price would bankrupt a business with TechStart's cost structure.",
+    objectiveTags: ["cvp", "pricing-strategy", "competitive-analysis"]
   }
 ];
 

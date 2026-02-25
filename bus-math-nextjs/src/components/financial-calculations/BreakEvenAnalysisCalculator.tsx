@@ -68,7 +68,7 @@ import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
-import { 
+import {
   Calculator,
   Target,
   TrendingUp,
@@ -93,6 +93,19 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react'
+import {
+  ComposedChart,
+  Line,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ReferenceLine,
+  ResponsiveContainer,
+  ReferenceDot,
+} from 'recharts'
 
 interface BreakEvenInputs {
   fixedCosts: number
@@ -134,23 +147,260 @@ interface TwoVarTableEntry {
   breakEvenMet: boolean
 }
 
-export function BreakEvenAnalysisCalculator() {
-  const [inputs, setInputs] = useState<BreakEvenInputs>({
-    fixedCosts: 50000,
-    variableCostPerUnit: 25,
-    sellingPricePerUnit: 45,
-    targetProfit: 20000,
-    currentSalesVolume: 4000
+// ── CVP Chart ────────────────────────────────────────────────────────────────
+
+interface CvpChartProps {
+  inputs: {
+    fixedCosts: number
+    variableCostPerUnit: number
+    sellingPricePerUnit: number
+    currentSalesVolume: number
+  }
+  results: {
+    breakEvenUnits: number
+    contributionMargin: number
+  }
+}
+
+function CvpChart({ inputs, results }: CvpChartProps) {
+  const { fixedCosts, variableCostPerUnit, sellingPricePerUnit, currentSalesVolume } = inputs
+  const { breakEvenUnits } = results
+
+  if (results.contributionMargin <= 0) return null
+
+  const maxProjects = Math.max(Math.ceil(breakEvenUnits * 2.2), currentSalesVolume + 5, 10)
+  const steps = Math.min(maxProjects, 20)
+  const stepSize = maxProjects / steps
+
+  const data = Array.from({ length: steps + 1 }, (_, i) => {
+    const projects = Math.round(i * stepSize)
+    const revenue = projects * sellingPricePerUnit
+    const totalCost = fixedCosts + projects * variableCostPerUnit
+    return { projects, revenue, totalCost, fixedCost: fixedCosts }
   })
+
+  const formatK = (v: number) =>
+    v >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${v}`
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <LineChart className="w-5 h-5 text-blue-600" />
+          Cost-Volume-Profit Chart
+        </CardTitle>
+        <CardDescription>
+          Adjust any input and watch the break-even intersection update live.
+          The green zone to the right of the orange line is profit territory.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ResponsiveContainer width="100%" height={340}>
+          <ComposedChart data={data} margin={{ top: 10, right: 24, bottom: 24, left: 8 }}>
+            <defs>
+              <linearGradient id="profitFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#22c55e" stopOpacity={0.15} />
+                <stop offset="95%" stopColor="#22c55e" stopOpacity={0.02} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <XAxis
+              dataKey="projects"
+              label={{ value: 'Projects per Month', position: 'insideBottom', offset: -12, fontSize: 12 }}
+              tick={{ fontSize: 11 }}
+            />
+            <YAxis
+              tickFormatter={formatK}
+              tick={{ fontSize: 11 }}
+              label={{ value: 'Monthly Amount ($)', angle: -90, position: 'insideLeft', offset: 12, fontSize: 12 }}
+            />
+            <Tooltip
+              formatter={(value: number, name: string) => {
+                const labels: Record<string, string> = {
+                  revenue: 'Revenue',
+                  totalCost: 'Total Cost',
+                  fixedCost: 'Fixed Costs',
+                }
+                return [`$${Math.round(value).toLocaleString()}`, labels[name] ?? name]
+              }}
+              labelFormatter={(label) => `${label} projects/month`}
+            />
+            <Legend verticalAlign="top" height={36} />
+
+            {/* Shaded profit area above revenue line */}
+            <Area
+              type="monotone"
+              dataKey="revenue"
+              fill="url(#profitFill)"
+              stroke="transparent"
+              legendType="none"
+              tooltipType="none"
+            />
+
+            {/* Fixed cost floor */}
+            <Line
+              type="monotone"
+              dataKey="fixedCost"
+              name="Fixed Costs"
+              stroke="#3b82f6"
+              strokeWidth={2}
+              strokeDasharray="7 3"
+              dot={false}
+            />
+            {/* Total cost */}
+            <Line
+              type="monotone"
+              dataKey="totalCost"
+              name="Total Cost"
+              stroke="#ef4444"
+              strokeWidth={2}
+              dot={false}
+            />
+            {/* Revenue */}
+            <Line
+              type="monotone"
+              dataKey="revenue"
+              name="Revenue"
+              stroke="#22c55e"
+              strokeWidth={2.5}
+              dot={false}
+            />
+
+            {/* Current sales volume */}
+            {currentSalesVolume > 0 && (
+              <ReferenceLine
+                x={currentSalesVolume}
+                stroke="#8b5cf6"
+                strokeWidth={1.5}
+                strokeDasharray="4 2"
+                label={{
+                  value: `Current: ${currentSalesVolume}`,
+                  position: 'top',
+                  fontSize: 10,
+                  fill: '#8b5cf6',
+                  fontWeight: 600,
+                }}
+              />
+            )}
+
+            {/* Break-even */}
+            {breakEvenUnits > 0 && (
+              <ReferenceLine
+                x={breakEvenUnits}
+                stroke="#f97316"
+                strokeWidth={2}
+                strokeDasharray="5 2"
+                label={{
+                  value: `Break-even: ${breakEvenUnits}`,
+                  position: 'insideTopRight',
+                  fontSize: 10,
+                  fill: '#ea580c',
+                  fontWeight: 700,
+                }}
+              />
+            )}
+          </ComposedChart>
+        </ResponsiveContainer>
+        <div className="flex flex-wrap gap-4 mt-1 text-xs text-gray-500">
+          <span className="flex items-center gap-1.5"><span className="inline-block w-5 border-t-2 border-dashed border-blue-500" />Fixed Cost floor</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block w-5 border-t-2 border-red-500" />Total Cost</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block w-5 border-t-2 border-green-500" />Revenue</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block w-5 border-t-2 border-dashed border-orange-500" />Break-even</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block w-5 border-t-2 border-dashed border-purple-500" />Current volume</span>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+// ── Margin of Safety Gauge ───────────────────────────────────────────────────
+
+interface GaugeProps {
+  ratio: number
+  safetyUnits: number
+  safetyDollars: number
+}
+
+function MarginOfSafetyGauge({ ratio, safetyUnits, safetyDollars }: GaugeProps) {
+  const pct = Math.min(Math.round(ratio * 100), 100)
+
+  const zone =
+    pct >= 30 ? { label: 'Low Risk', barColor: 'bg-green-500', textColor: 'text-green-700', bg: 'bg-green-50 border-green-200' }
+    : pct >= 10 ? { label: 'Moderate Risk', barColor: 'bg-yellow-400', textColor: 'text-yellow-700', bg: 'bg-yellow-50 border-yellow-200' }
+    : { label: 'High Risk', barColor: 'bg-red-500', textColor: 'text-red-700', bg: 'bg-red-50 border-red-200' }
+
+  return (
+    <Card className={`border ${zone.bg}`}>
+      <CardHeader className="pb-2">
+        <CardTitle className={`flex items-center gap-2 text-base ${zone.textColor}`}>
+          <Shield className="w-5 h-5" />
+          Margin of Safety — {zone.label}
+        </CardTitle>
+        <CardDescription>
+          How far Sarah can fall short of her sales target before reaching break-even
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        {/* Track */}
+        <div className="relative h-6 bg-gray-200 rounded-full overflow-hidden">
+          {/* Danger zone marker at 10% */}
+          <div className="absolute top-0 bottom-0 left-[10%] w-px bg-yellow-500 z-10" />
+          {/* Safe zone marker at 30% */}
+          <div className="absolute top-0 bottom-0 left-[30%] w-px bg-green-600 z-10" />
+          {/* Fill */}
+          <div
+            className={`h-full rounded-full transition-all duration-500 ${zone.barColor}`}
+            style={{ width: `${pct}%` }}
+          />
+          {/* Label inside bar */}
+          {pct > 8 && (
+            <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-white drop-shadow">
+              {pct}%
+            </span>
+          )}
+        </div>
+        {/* Tick labels */}
+        <div className="relative flex text-xs text-gray-500 select-none" style={{ paddingLeft: '0%' }}>
+          <span>0%</span>
+          <span className="absolute left-[10%]" style={{ transform: 'translateX(-50%)' }}>10%</span>
+          <span className="absolute left-[30%]" style={{ transform: 'translateX(-50%)' }}>30%</span>
+          <span className="ml-auto">100%</span>
+        </div>
+        <p className={`text-sm ${zone.textColor}`}>
+          Sarah can miss{' '}
+          <strong>{safetyUnits.toLocaleString()} project{safetyUnits !== 1 ? 's' : ''}</strong>
+          {' '}(${safetyDollars.toLocaleString()}) before hitting break-even.
+          {pct < 10 && ' Consider raising prices or cutting costs immediately.'}
+          {pct >= 10 && pct < 30 && ' Monitor project pipeline closely.'}
+          {pct >= 30 && ' Healthy cushion — Sarah has room to maneuver.'}
+        </p>
+      </CardContent>
+    </Card>
+  )
+}
+
+// ── TechStart Solutions defaults ─────────────────────────────────────────────
+
+// TechStart Solutions defaults — monthly fixed costs ~$8,100, variable ~$880/project, price $1,200/project
+const TECHSTART_DEFAULTS: BreakEvenInputs = {
+  fixedCosts: 8100,         // office + Alex + insurance + software + loan + hosting + depreciation
+  variableCostPerUnit: 880, // contractor + ad mgmt + reporting + design + travel + payments + PM + photos
+  sellingPricePerUnit: 1200,
+  targetProfit: 5000,       // Sarah's monthly profit goal
+  currentSalesVolume: 25,   // projects per month (realistic growth target)
+}
+
+export function BreakEvenAnalysisCalculator() {
+  const [inputs, setInputs] = useState<BreakEvenInputs>(TECHSTART_DEFAULTS)
 
   const [showInstructions, setShowInstructions] = useState(false)
 
   const [goalSeekMode, setGoalSeekMode] = useState<'units' | 'price' | 'fixedCosts' | 'variableCosts'>('units')
   const [dataTableVariable, setDataTableVariable] = useState<'price' | 'fixedCosts' | 'variableCosts'>('price')
-  const [dataTableRange, setDataTableRange] = useState({ min: 35, max: 55, steps: 11 })
+  const [dataTableRange, setDataTableRange] = useState({ min: 900, max: 1800, steps: 10 })
   const [twoVarTable, setTwoVarTable] = useState({
-    priceRange: { min: 40, max: 50, steps: 6 },
-    volumeRange: { min: 2000, max: 6000, steps: 6 }
+    priceRange: { min: 900, max: 1500, steps: 5 },
+    volumeRange: { min: 10, max: 40, steps: 6 }
   })
 
   // Core break-even calculations
@@ -259,13 +509,7 @@ export function BreakEvenAnalysisCalculator() {
   }, [])
 
   const resetToDefaults = useCallback(() => {
-    setInputs({
-      fixedCosts: 50000,
-      variableCostPerUnit: 25,
-      sellingPricePerUnit: 45,
-      targetProfit: 20000,
-      currentSalesVolume: 4000
-    })
+    setInputs(TECHSTART_DEFAULTS)
   }, [])
 
   const exportToExcel = useCallback(() => {
@@ -374,37 +618,37 @@ export function BreakEvenAnalysisCalculator() {
                 <div className="p-3 bg-white rounded-lg border border-blue-200">
                   <div className="flex items-center gap-2 mb-2">
                     <Settings className="w-4 h-4 text-blue-600" />
-                    <h5 className="font-medium text-blue-800">Inputs</h5>
+                    <h5 className="font-medium text-blue-800">1 · Setup</h5>
                   </div>
-                  <p className="text-xs text-blue-600">Set your business cost structure and pricing parameters</p>
-                </div>
-                <div className="p-3 bg-white rounded-lg border border-blue-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calculator className="w-4 h-4 text-blue-600" />
-                    <h5 className="font-medium text-blue-800">Results</h5>
-                  </div>
-                  <p className="text-xs text-blue-600">View comprehensive break-even calculations and risk assessment</p>
+                  <p className="text-xs text-blue-600">Enter TechStart's cost structure. Every other tab draws from these numbers.</p>
                 </div>
                 <div className="p-3 bg-white rounded-lg border border-blue-200">
                   <div className="flex items-center gap-2 mb-2">
                     <Target className="w-4 h-4 text-blue-600" />
-                    <h5 className="font-medium text-blue-800">Goal Seek</h5>
+                    <h5 className="font-medium text-blue-800">2 · Break-Even</h5>
                   </div>
-                  <p className="text-xs text-blue-600">Reverse-engineer what changes needed for target profit</p>
+                  <p className="text-xs text-blue-600">Read the CVP chart and margin of safety gauge. Is Sarah above or below break-even today?</p>
+                </div>
+                <div className="p-3 bg-white rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Goal className="w-4 h-4 text-blue-600" />
+                    <h5 className="font-medium text-blue-800">3 · Hit My Goal</h5>
+                  </div>
+                  <p className="text-xs text-blue-600">Set the profit target. See which lever — more projects, higher price, or lower costs — gets Sarah there.</p>
                 </div>
                 <div className="p-3 bg-white rounded-lg border border-blue-200">
                   <div className="flex items-center gap-2 mb-2">
                     <Table className="w-4 h-4 text-blue-600" />
-                    <h5 className="font-medium text-blue-800">Data Tables</h5>
+                    <h5 className="font-medium text-blue-800">4 · Scenarios</h5>
                   </div>
-                  <p className="text-xs text-blue-600">Build what-if scenarios with one- and two-variable analysis</p>
+                  <p className="text-xs text-blue-600">Map the full landscape — which price and volume combinations are safe, risky, or impossible?</p>
                 </div>
                 <div className="p-3 bg-white rounded-lg border border-blue-200">
                   <div className="flex items-center gap-2 mb-2">
-                    <BarChart3 className="w-4 h-4 text-blue-600" />
-                    <h5 className="font-medium text-blue-800">Analysis</h5>
+                    <Zap className="w-4 h-4 text-blue-600" />
+                    <h5 className="font-medium text-blue-800">5 · Decide</h5>
                   </div>
-                  <p className="text-xs text-blue-600">Executive summary with strategic recommendations</p>
+                  <p className="text-xs text-blue-600">Pull the analysis together. Write Sarah's pricing recommendation for the Town Hall debate.</p>
                 </div>
               </div>
             </div>
@@ -413,11 +657,11 @@ export function BreakEvenAnalysisCalculator() {
             <div>
               <h4 className="font-semibold text-blue-800 mb-3">🔢 Step-by-Step Instructions</h4>
               <ol className="list-decimal list-inside space-y-2 text-blue-700">
-                <li><strong>Start with Inputs:</strong> Enter your fixed costs, variable cost per unit, selling price, target profit, and current sales volume</li>
-                <li><strong>Review Results:</strong> Examine break-even calculations, margin of safety, and risk assessment indicators</li>
-                <li><strong>Use Goal Seek:</strong> Set a target profit and see what changes are needed (sales volume, price, or cost reductions)</li>
-                <li><strong>Build Data Tables:</strong> Create sensitivity analysis by varying one or two variables across ranges</li>
-                <li><strong>Analyze & Export:</strong> Review executive summary and export professional analysis to Excel</li>
+                <li><strong>1 · Setup:</strong> Enter TechStart's fixed costs ($8,100), variable cost per project ($880), project price ($1,200), target profit, and current monthly volume. Click Reset any time to restore the defaults.</li>
+                <li><strong>2 · Break-Even:</strong> Read the CVP chart — find where the green revenue line crosses the red total-cost line. Check the margin of safety gauge to see how safe Sarah's cushion is above that point.</li>
+                <li><strong>3 · Hit My Goal:</strong> Keep the target profit and compare all four levers: sell more projects, charge more per project, cut fixed costs, or cut variable costs. Which path is most realistic?</li>
+                <li><strong>4 · Scenarios:</strong> Use the one-variable table to scan a price range. Use the heat map to compare price and volume at the same time. Identify the danger zones (deep red) and the sweet spots (dark green).</li>
+                <li><strong>5 · Decide:</strong> Read the executive summary. Choose Sarah's best strategy and prepare to defend it in the Unit 6 Town Hall debate.</li>
               </ol>
             </div>
 
@@ -499,23 +743,23 @@ export function BreakEvenAnalysisCalculator() {
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="inputs">
             <Settings className="w-4 h-4 mr-2" />
-            Inputs
+            1 · Setup
           </TabsTrigger>
           <TabsTrigger value="results">
-            <Calculator className="w-4 h-4 mr-2" />
-            Results
+            <Target className="w-4 h-4 mr-2" />
+            2 · Break-Even
           </TabsTrigger>
           <TabsTrigger value="goalseek">
-            <Target className="w-4 h-4 mr-2" />
-            Goal Seek
+            <Goal className="w-4 h-4 mr-2" />
+            3 · Hit My Goal
           </TabsTrigger>
           <TabsTrigger value="datatables">
             <Table className="w-4 h-4 mr-2" />
-            Data Tables
+            4 · Scenarios
           </TabsTrigger>
           <TabsTrigger value="analysis">
-            <BarChart3 className="w-4 h-4 mr-2" />
-            Analysis
+            <Zap className="w-4 h-4 mr-2" />
+            5 · Decide
           </TabsTrigger>
         </TabsList>
 
@@ -525,10 +769,10 @@ export function BreakEvenAnalysisCalculator() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Settings className="w-5 h-5 text-blue-600" />
-                Business Model Inputs
+                TechStart Solutions — Cost Structure
               </CardTitle>
               <CardDescription>
-                Enter your business cost structure and pricing information
+                Enter Sarah's real numbers. Every calculation, chart, and scenario on the next four tabs updates instantly from these inputs.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -553,7 +797,7 @@ export function BreakEvenAnalysisCalculator() {
                 <div className="space-y-2">
                   <Label htmlFor="variableCost" className="flex items-center gap-2">
                     <Package className="w-4 h-4 text-green-600" />
-                    Variable Cost per Unit ($)
+                    Variable Cost per Project ($)
                   </Label>
                   <Input
                     id="variableCost"
@@ -561,16 +805,16 @@ export function BreakEvenAnalysisCalculator() {
                     value={inputs.variableCostPerUnit}
                     onChange={(e) => handleInputChange('variableCostPerUnit', Number(e.target.value) || 0)}
                     min={0}
-                    step={0.5}
+                    step={10}
                     className="text-lg"
                   />
-                  <p className="text-xs text-gray-600">Materials, labor, commissions per unit</p>
+                  <p className="text-xs text-gray-600">Contractor, design, tools, fees per project</p>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="sellingPrice" className="flex items-center gap-2">
                     <DollarSign className="w-4 h-4 text-purple-600" />
-                    Selling Price per Unit ($)
+                    Project Price ($)
                   </Label>
                   <Input
                     id="sellingPrice"
@@ -578,10 +822,10 @@ export function BreakEvenAnalysisCalculator() {
                     value={inputs.sellingPricePerUnit}
                     onChange={(e) => handleInputChange('sellingPricePerUnit', Number(e.target.value) || 0)}
                     min={0}
-                    step={0.5}
+                    step={50}
                     className="text-lg"
                   />
-                  <p className="text-xs text-gray-600">Revenue per unit sold</p>
+                  <p className="text-xs text-gray-600">Average amount Sarah charges per project</p>
                 </div>
 
                 <div className="space-y-2">
@@ -604,7 +848,7 @@ export function BreakEvenAnalysisCalculator() {
                 <div className="space-y-2">
                   <Label htmlFor="currentVolume" className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-red-600" />
-                    Current Sales Volume (units)
+                    Current Projects per Month
                   </Label>
                   <Input
                     id="currentVolume"
@@ -612,10 +856,10 @@ export function BreakEvenAnalysisCalculator() {
                     value={inputs.currentSalesVolume}
                     onChange={(e) => handleInputChange('currentSalesVolume', Number(e.target.value) || 0)}
                     min={0}
-                    step={100}
+                    step={1}
                     className="text-lg"
                   />
-                  <p className="text-xs text-gray-600">Current or projected unit sales</p>
+                  <p className="text-xs text-gray-600">Sarah's current or projected monthly project count</p>
                 </div>
 
                 <div className="flex items-end">
@@ -635,12 +879,12 @@ export function BreakEvenAnalysisCalculator() {
             <Card className="bg-blue-50 border-blue-200">
               <CardContent className="p-6 text-center">
                 <Target className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-blue-700">Break-Even Units</p>
+                <p className="text-sm font-medium text-blue-700">Break-Even Projects</p>
                 <p className="text-2xl font-bold text-blue-800">
                   {results.breakEvenUnits.toLocaleString()}
                 </p>
                 <p className="text-xs text-blue-600 mt-1">
-                  Units needed to cover costs
+                  projects/month to cover costs
                 </p>
               </CardContent>
             </Card>
@@ -653,7 +897,7 @@ export function BreakEvenAnalysisCalculator() {
                   ${results.breakEvenRevenue.toLocaleString()}
                 </p>
                 <p className="text-xs text-green-600 mt-1">
-                  Revenue needed to break even
+                  monthly revenue to break even
                 </p>
               </CardContent>
             </Card>
@@ -663,10 +907,10 @@ export function BreakEvenAnalysisCalculator() {
                 <TrendingUp className="w-8 h-8 text-purple-600 mx-auto mb-2" />
                 <p className="text-sm font-medium text-purple-700">Contribution Margin</p>
                 <p className="text-2xl font-bold text-purple-800">
-                  ${results.contributionMargin.toFixed(2)}
+                  ${results.contributionMargin.toFixed(0)}
                 </p>
                 <p className="text-xs text-purple-600 mt-1">
-                  {(results.contributionMarginRatio * 100).toFixed(1)}% ratio
+                  {(results.contributionMarginRatio * 100).toFixed(1)}% per project
                 </p>
               </CardContent>
             </Card>
@@ -679,11 +923,21 @@ export function BreakEvenAnalysisCalculator() {
                   {results.marginOfSafetyUnits.toLocaleString()}
                 </p>
                 <p className="text-xs text-orange-600 mt-1">
-                  {(results.marginOfSafetyRatio * 100).toFixed(1)}% cushion
+                  {(results.marginOfSafetyRatio * 100).toFixed(1)}% cushion above break-even
                 </p>
               </CardContent>
             </Card>
           </div>
+
+          {/* CVP Chart */}
+          <CvpChart inputs={inputs} results={results} />
+
+          {/* Margin of Safety Gauge */}
+          <MarginOfSafetyGauge
+            ratio={results.marginOfSafetyRatio}
+            safetyUnits={results.marginOfSafetyUnits}
+            safetyDollars={results.marginOfSafetyDollars}
+          />
 
           <Card>
             <CardHeader>
@@ -703,8 +957,8 @@ export function BreakEvenAnalysisCalculator() {
                         <span className="font-medium">${inputs.fixedCosts.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Variable Cost per Unit:</span>
-                        <span className="font-medium">${inputs.variableCostPerUnit}</span>
+                        <span>Variable Cost per Project:</span>
+                        <span className="font-medium">${inputs.variableCostPerUnit.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Total Variable Costs (at current volume):</span>
@@ -743,30 +997,6 @@ export function BreakEvenAnalysisCalculator() {
                     </div>
                   </div>
                 </div>
-
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Business Risk Assessment</h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      {results.marginOfSafetyRatio > 0.3 ? (
-                        <CheckCircle className="w-4 h-4 text-green-600" />
-                      ) : results.marginOfSafetyRatio > 0.1 ? (
-                        <AlertTriangle className="w-4 h-4 text-yellow-600" />
-                      ) : (
-                        <AlertTriangle className="w-4 h-4 text-red-600" />
-                      )}
-                      <span>
-                        <strong>Margin of Safety:</strong> {(results.marginOfSafetyRatio * 100).toFixed(1)}% 
-                        {results.marginOfSafetyRatio > 0.3 ? ' (Low Risk)' : 
-                         results.marginOfSafetyRatio > 0.1 ? ' (Moderate Risk)' : ' (High Risk)'}
-                      </span>
-                    </div>
-                    <p className="text-gray-600">
-                      You can afford to lose {results.marginOfSafetyUnits.toLocaleString()} units of sales 
-                      (${results.marginOfSafetyDollars.toLocaleString()}) before reaching break-even.
-                    </p>
-                  </div>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -777,11 +1007,11 @@ export function BreakEvenAnalysisCalculator() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="w-5 h-5 text-orange-600" />
-                Goal Seek Analysis
+                <Goal className="w-5 h-5 text-orange-600" />
+                Work Backwards from the Goal
               </CardTitle>
               <CardDescription>
-                Reverse-engineer what needs to change to achieve your target profit of ${inputs.targetProfit.toLocaleString()}
+                Sarah wants ${inputs.targetProfit.toLocaleString()}/month in profit. Each card below shows one path to get there — pick the lever that is most realistic given TechStart's market and capacity.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -1017,31 +1247,56 @@ export function BreakEvenAnalysisCalculator() {
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.from(new Set(twoVarDataTable.map(row => row.price))).sort((a, b) => b - a).map(price => (
-                      <tr key={price}>
-                        <td className="border border-gray-300 p-2 font-medium bg-gray-50">
-                          ${price.toFixed(2)}
-                        </td>
-                        {Array.from(new Set(twoVarDataTable.map(row => row.volume))).sort((a, b) => a - b).map(volume => {
-                          const cell = twoVarDataTable.find(row => row.price === price && row.volume === volume)
-                          return (
-                            <td 
-                              key={volume} 
-                              className={`border border-gray-300 p-2 text-center font-medium ${
-                                cell && cell.profit >= 0 ? 'text-green-600 bg-green-50' : 'text-red-600 bg-red-50'
-                              }`}
-                            >
-                              {cell ? `$${cell.profit.toLocaleString()}` : '-'}
-                            </td>
-                          )
-                        })}
-                      </tr>
-                    ))}
+                    {(() => {
+                      const profits = twoVarDataTable.map(r => r.profit)
+                      const maxProfit = Math.max(...profits)
+                      const minProfit = Math.min(...profits)
+
+                      // Map a profit value → inline bg color using opacity scaling
+                      function cellStyle(profit: number): React.CSSProperties {
+                        if (profit >= 0) {
+                          const intensity = maxProfit > 0 ? profit / maxProfit : 0
+                          // green: 240,253,244 → 22,101,52 (green-50 → green-800)
+                          const r = Math.round(240 - intensity * (240 - 22))
+                          const g = Math.round(253 - intensity * (253 - 101))
+                          const b = Math.round(244 - intensity * (244 - 52))
+                          return { backgroundColor: `rgb(${r},${g},${b})`, color: intensity > 0.5 ? '#fff' : '#166534' }
+                        } else {
+                          const intensity = minProfit < 0 ? profit / minProfit : 0
+                          // red: 254,242,242 → 153,27,27 (red-50 → red-800)
+                          const r = Math.round(254 - intensity * (254 - 153))
+                          const g = Math.round(242 - intensity * (242 - 27))
+                          const bC = Math.round(242 - intensity * (242 - 27))
+                          return { backgroundColor: `rgb(${r},${g},${bC})`, color: intensity > 0.5 ? '#fff' : '#991b1b' }
+                        }
+                      }
+
+                      return Array.from(new Set(twoVarDataTable.map(row => row.price))).sort((a, b) => b - a).map(price => (
+                        <tr key={price}>
+                          <td className="border border-gray-300 p-2 font-medium bg-gray-50">
+                            ${price.toFixed(0)}
+                          </td>
+                          {Array.from(new Set(twoVarDataTable.map(row => row.volume))).sort((a, b) => a - b).map(volume => {
+                            const cell = twoVarDataTable.find(row => row.price === price && row.volume === volume)
+                            const style = cell ? cellStyle(cell.profit) : {}
+                            return (
+                              <td
+                                key={volume}
+                                className="border border-gray-300 p-2 text-center text-xs font-semibold"
+                                style={style}
+                              >
+                                {cell ? `$${cell.profit.toLocaleString()}` : '-'}
+                              </td>
+                            )
+                          })}
+                        </tr>
+                      ))
+                    })()}
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-gray-600 mt-2">
-                Green cells indicate profitable scenarios; Red cells indicate losses
+              <p className="text-xs text-gray-500 mt-2">
+                Darker green = higher profit. Darker red = deeper loss. Lightest cells are near break-even.
               </p>
             </CardContent>
           </Card>
@@ -1052,8 +1307,8 @@ export function BreakEvenAnalysisCalculator() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-blue-600" />
-                Executive Summary & Recommendations
+                <Zap className="w-5 h-5 text-blue-600" />
+                Sarah's Pricing Decision
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
