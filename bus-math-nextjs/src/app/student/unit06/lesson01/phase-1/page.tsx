@@ -3,6 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { PriceLabCommandCenter } from "@/components/business-simulations/PriceLabCommandCenter"
 import { Users, MessageCircle } from "lucide-react"
 import { lesson01Data, unit06Data, lesson01Phases } from "../lesson-data"
 
@@ -13,7 +14,7 @@ export default function Phase1Page() {
   const videoData = {
     title: "The Profit Paradox: Why Higher Revenue Doesn't Always Mean More Profit",
     description: "With a new team member, TechStart's revenue is higher than ever, but a financial review reveals a scary truth: profit margins have plummeted by 22%. Sarah confronts a common entrepreneurial paradox and learns a critical lesson in strategic pricing. Discover how she moved from pricing based on cost to pricing based on value to ensure her business's long-term sustainability.",
-    youtubeId: "Je7SPYOw9Vk",
+    youtubeId: "DQpR1dbtQnc",
     duration: "4:45",
     transcript: "(Sarah is on camera. She looks thoughtful, like someone who has been solving a complex puzzle.)\n\nSo, with Alex, my new developer, on the team, TechStart was a different company. We were a team of two, and we could take on much bigger projects. Our monthly revenue was higher than it had ever been.\n\nBut when I ran my financial review for the quarter, I got this cold, sinking feeling. The numbers didn't make sense. Even though our revenue was way up, our profit margin had actually decreased by 22 percent. All the new expenses—payroll, benefits, expanded software subscriptions—were eating away at our profitability. We were working harder than ever, managing more complex projects, but the business itself was becoming less healthy. It was a scary paradox.\n\nTwo things happened at once that really opened my eyes. First, a competitor launched a service very similar to ours, but they priced it 40 percent higher than we did, and they were successful with it. At the same time, some of my best clients were giving me feedback that we could be charging a premium for the quality we were delivering. That's when it hit me: my entire pricing strategy was wrong. I was pricing to cover my costs, not pricing based on the value I was providing. And that margin squeeze was threatening the long-term sustainability of my business.\n\nThis brings us to the 'PriceLab Challenge'. The driving question I had to answer was, what pricing strategy would let us hit our profit targets while still being competitive?. It forced me to move beyond simple cost-plus pricing. I had to learn about things like Cost-Volume-Profit analysis to understand my break-even points, and more importantly, learn about value-based pricing. It's a fundamental shift, moving from 'what do I need to charge?' to 'what is the result I deliver worth to my client?'\n\nWe completely revamped our pricing model. We repositioned TechStart from a 'budget option' to a 'premium boutique agency'. And it worked. Our profitability rebounded, and the business was finally on a sustainable path. This success and our new premium positioning allowed us to take another huge step: moving into our first real office space. But that came with its own challenge—making major equipment purchases and learning how to manage those physical assets properly for tax and insurance purposes."
   }
@@ -86,6 +87,22 @@ export default function Phase1Page() {
 
         {/* Sarah's Story Video */}
         <VideoPlayer video={videoData} />
+
+        {/* Unit 6 Explore Simulation */}
+        <Card className="border-cyan-200 bg-cyan-50/40">
+          <CardHeader>
+            <CardTitle className="text-cyan-900">
+              Explore: PriceLab Command Center (Unit Preview)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-cyan-900">
+              Try this quick simulation before you learn the full formulas. You will preview the whole Unit 6 journey:
+              market scan, pricing choices, break-even thinking, goal solving, and final recommendation.
+            </p>
+            <PriceLabCommandCenter />
+          </CardContent>
+        </Card>
 
         {/* The Profit Paradox Explanation */}
         <div className="prose prose-lg max-w-none">

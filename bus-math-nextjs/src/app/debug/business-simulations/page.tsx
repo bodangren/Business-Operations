@@ -6,6 +6,7 @@ import { InventoryManager } from '@/components/business-simulations/InventoryMan
 import { LemonadeStand } from '@/components/business-simulations/LemonadeStand'
 import { StartupJourney } from '@/components/business-simulations/StartupJourney'
 import { PitchPresentationBuilder } from '@/components/business-simulations/PitchPresentationBuilder'
+import { PriceLabCommandCenter } from '@/components/business-simulations/PriceLabCommandCenter'
 import ErrorCheckingSystem from '@/components/business-simulations/ErrorCheckingSystem'
 import { RestaurantStaffingSimulator } from '@/components/business-simulations/RestaurantStaffingSimulator'
 
@@ -117,6 +118,18 @@ export default function BusinessSimulationsDebugPage() {
               </p>
             </div>
             <RestaurantStaffingSimulator />
+          </section>
+
+          <section>
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold text-slate-800 mb-2">
+                PriceLab Command Center
+              </h2>
+              <p className="text-slate-600">
+                Unit 6 preview simulation: market position, pricing, break-even, goal solving, and recommendation.
+              </p>
+            </div>
+            <PriceLabCommandCenter />
           </section>
         </div>
       </div>
