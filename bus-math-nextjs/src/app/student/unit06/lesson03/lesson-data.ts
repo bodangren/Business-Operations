@@ -5,19 +5,20 @@ export const lesson03Data = {
   sequence: 3,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Construct and interpret Cost-Volume-Profit (CVP) graphs",
-    "Build dynamic CVP charts with professional formatting"
+    "Compare contribution margin dollars and ratios across multiple price options",
+    "Calculate and rank break-even points using a shared fixed-cost baseline",
+    "Make feasibility and target-profit decisions using capacity constraints and reverse solving"
   ],
   keyConcepts: [
-    "Fixed vs. variable cost behavior and break-even analysis",
-    "Cost-Volume-Profit (CVP) model components and interpretation",
-    "Advanced charting tools for CVP visualization"
+    "Contribution margin ($ and %) as a pricing decision signal",
+    "Break-even ladder analysis under shared fixed costs",
+    "Capacity feasibility and target-profit reverse solving"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Build comprehensive Cost-Volume-Profit models using Excel"
+    "Decision-first CVP flow that moves from pricing options to investor-ready recommendations"
   ],
-  rationale: "To teach students how to build and interpret CVP models, a powerful tool for understanding the relationship between costs, volume, and profit.",
+  rationale: "To move students from cost classification into defensible pricing decisions by connecting contribution margin, break-even, capacity, and target-profit reasoning.",
   status: "Draft"
 }
 
@@ -33,29 +34,29 @@ export const lesson03Phases = [
     id: "phase_hook_3",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for cvp model construction",
+    description: "Capture attention with a pricing puzzle that requires CVP decision making",
     // component: "BreakEvenChart" (id: 17539274978052ynfhvoci) - To show an interactive break-even chart.
   },
   {
     id: "phase_introduction_3",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Fixed vs. variable cost behavior and break-even analysis and connect to business applications",
+    description: "Refresh CVP fundamentals and bridge directly into pricing decisions",
     // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
   },
   {
     id: "phase_guided_practice_3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Step-by-step construction of models with guided coaching and error correction",
-    // component: "BreakEvenComponents" (id: 1753927577170xc66szan0) - To practice categorizing costs and seeing the impact on the break-even point.
+    description: "Run contribution margin sprint, break-even ladder, capacity check, and reverse solve sequence",
+    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - Used for CVP decision support and target solving.
   },
   {
     id: "phase_independent_practice_3",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete model construction demonstrating mastery of technical skills",
-    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - To build a full CVP model.
+    description: "Build an Excel workbook that documents feasible pricing and target-profit recommendations",
+    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - Supports independent CVP decision practice.
   },
   {
     id: "phase_assessment_3",

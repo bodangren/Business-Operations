@@ -321,131 +321,139 @@ const lesson03Questions: Unit06Phase5Question[] = [
     id: "lesson03-q1",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "Fixed costs are $12,000, variable cost per unit is $30, and price is $80. What is break-even in units?",
-    correctAnswer: "240 units",
-    distractors: ["400 units", "150 units", "200 units"],
+    prompt: "If Sarah charges $1,350 and variable cost is $880, what is contribution margin per project?",
+    correctAnswer: "$470",
+    distractors: ["$320", "$620", "$1,350"],
     explanation:
-      "Break-even units = Fixed Costs ÷ (Price − Variable Cost) = $12,000 ÷ ($80 − $30) = 240 units.",
-    objectiveTags: ["cvp", "break-even", "calculations"]
+      "Contribution margin per project = Price − Variable Cost = $1,350 − $880 = $470.",
+    objectiveTags: ["cvp", "contribution-margin", "calculations"]
   },
   {
     id: "lesson03-q2",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "With the same business, how many units are needed to earn $15,000 profit?",
-    correctAnswer: "540 units",
-    distractors: ["300 units", "480 units", "600 units"],
+    prompt: "At a $1,500 price with $880 variable cost, what is the contribution margin ratio?",
+    correctAnswer: "41.3%",
+    distractors: ["58.7%", "32.0%", "62.0%"],
     explanation:
-      "Target units = (Fixed Costs + Target Profit) ÷ Contribution Margin = ($12,000 + $15,000) ÷ $50 = 540 units.",
-    objectiveTags: ["cvp", "target-profit", "calculations"]
+      "CM ratio = ($1,500 − $880) ÷ $1,500 = $620 ÷ $1,500 = 41.3%.",
+    objectiveTags: ["cvp", "contribution-margin", "calculations"]
   },
   {
     id: "lesson03-q3",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "Which Excel feature quickly finds the price needed to hit a profit goal?",
-    correctAnswer: "Goal Seek from the Data tab",
-    distractors: ["VLOOKUP", "PMT", "SUMIF"],
+    prompt: "With fixed costs of $8,100 and CM of $320 at a $1,200 price, what is break-even volume?",
+    correctAnswer: "26 projects",
+    distractors: ["18 projects", "14 projects", "24 projects"],
     explanation:
-      "Goal Seek works backward from a desired outcome to the required input, making it perfect for CVP target setting.",
-    objectiveTags: ["excel-tools", "goal-seek", "cvp"]
+      "Break-even = Ceiling($8,100 ÷ $320) = Ceiling(25.3) = 26 projects.",
+    objectiveTags: ["cvp", "break-even", "calculations"]
   },
   {
     id: "lesson03-q4",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "Contribution margin ratio is 40%. If revenue is $100,000, how much covers fixed costs and profit?",
-    correctAnswer: "$40,000",
-    distractors: ["$60,000", "$100,000", "$25,000"],
+    prompt: "Which option gives the easiest break-even target under the same $8,100 fixed costs?",
+    correctAnswer: "$1,500 price option",
+    distractors: ["$1,200 price option", "$1,350 price option", "All three are equal"],
     explanation:
-      "Contribution = Revenue × Contribution Margin Ratio = $100,000 × 0.40 = $40,000.",
-    objectiveTags: ["cvp", "contribution-margin", "calculations"]
+      "Higher CM lowers break-even. At $1,500 price, CM is $620 and break-even is only 14 projects, the lowest of the three.",
+    objectiveTags: ["cvp", "break-even", "pricing-strategy"]
   },
   {
     id: "lesson03-q5",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "What happens to break-even when fixed costs rise and price and variable cost stay the same?",
-    correctAnswer: "Break-even units increase because more contribution margin is needed to cover fixed costs.",
+    prompt: "Sarah can complete at most 24 projects per month. Which price option is not feasible?",
+    correctAnswer: "$1,200 option, because break-even is 26 projects",
     distractors: [
-      "Break-even units fall because costs are higher.",
-      "Break-even stays the same regardless of fixed costs.",
-      "Break-even cannot be calculated without more information."
+      "$1,350 option, because break-even is 18 projects",
+      "$1,500 option, because break-even is 14 projects",
+      "None of them, because all are below break-even"
     ],
     explanation:
-      "Break-even = Fixed Costs ÷ Contribution Margin. Higher fixed costs require more units to cover them.",
-    objectiveTags: ["cvp", "sensitivity", "risk"]
+      "A 24-project capacity cannot support a 26-project break-even requirement, so the $1,200 option is not feasible.",
+    objectiveTags: ["cvp", "feasibility", "capacity"]
   },
   {
     id: "lesson03-q6",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "Why should Sarah reference input cells in formulas instead of typing numbers directly?",
-    correctAnswer: "Cell references keep the model dynamic so updates ripple through automatically.",
+    prompt: "At a $1,350 price and 24 projects, what is Sarah's monthly profit?",
+    correctAnswer: "$3,180",
     distractors: [
-      "Excel formulas do not allow typed numbers.",
-      "It makes the file smaller when saving to OneDrive.",
-      "It hides the calculations from investors during demos."
+      "$11,280",
+      "$8,100",
+      "$470"
     ],
     explanation:
-      "Professional models adjust instantly as inputs change. Hard-coding numbers freezes the math and causes mistakes.",
-    objectiveTags: ["modeling", "best-practices", "cvp"]
+      "Profit = (CM × Units) − Fixed Costs = ($470 × 24) − $8,100 = $3,180.",
+    objectiveTags: ["cvp", "profit-analysis", "calculations"]
   },
   {
     id: "lesson03-q7",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "A restaurant has a 35% contribution margin ratio and wants $7,000 more profit. How much extra revenue is needed?",
-    correctAnswer: "$20,000",
-    distractors: ["$7,000", "$2,450", "$24,500"],
+    prompt:
+      "Sarah calculates that hitting $12,000 profit at the $1,350 price requires 43 projects. TechStart's capacity is 24 projects. What is the correct decision?",
+    correctAnswer:
+      "The $1,350 option cannot reach $12,000 profit at current capacity — Sarah must raise her price or lower her profit target.",
+    distractors: [
+      "Complete 43 projects by working extra hours this month.",
+      "The $1,350 option is still the best choice because it has the highest client demand.",
+      "Reduce fixed costs to $4,700 so break-even drops to 10 projects."
+    ],
     explanation:
-      "Required revenue increase = Target profit increase ÷ Contribution Margin Ratio = $7,000 ÷ 0.35 = $20,000.",
-    objectiveTags: ["cvp", "margin-of-safety", "calculations"]
+      "Required units (43) far exceeds TechStart's 24-project ceiling. The reverse-solve result is a decision signal: at $1,350, the $12,000 target is operationally impossible. Sarah must either choose a higher price (e.g., $1,500) or set a realistic target within capacity.",
+    objectiveTags: ["cvp", "target-profit", "reverse-solving", "feasibility", "decision-making"]
   },
   {
     id: "lesson03-q8",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "What three lines belong on a classic break-even chart?",
-    correctAnswer: "Fixed Costs (flat), Total Costs (sloped), Revenue (sloped)",
+    prompt: "If Sarah is capped at 24 projects and wants $12,000 profit, what price per project is required?",
+    correctAnswer: "About $1,718",
     distractors: [
-      "Variable Costs, Fixed Costs, Profit",
-      "Revenue, Expenses, Net Income",
-      "Units Sold, Price, Total Sales"
+      "About $1,350",
+      "About $1,500",
+      "About $1,200"
     ],
     explanation:
-      "Those lines show when revenue crosses total cost, making the break-even point easy to see.",
-    objectiveTags: ["cvp", "data-visualization", "communication"]
+      "Required price = Variable Cost + (Fixed Costs + Target Profit) ÷ Units = $880 + ($20,100 ÷ 24) = $1,717.50.",
+    objectiveTags: ["cvp", "target-profit", "reverse-solving"]
   },
   {
     id: "lesson03-q9",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "Why is knowing your break-even point valuable to Sarah?",
-    correctAnswer: "It sets minimum sales targets and guides pricing, budgeting, and risk planning.",
+    prompt: "Why is a capacity reality check required after break-even calculations?",
+    correctAnswer: "A strategy can look profitable in theory but still be impossible to deliver operationally.",
     distractors: [
-      "It automatically increases profit margins overnight.",
-      "It eliminates all business risk no matter what happens.",
-      "It guarantees customer satisfaction even if service slips."
+      "Capacity checks replace contribution margin calculations.",
+      "Capacity only matters when fixed costs are zero.",
+      "If break-even is known, capacity is irrelevant."
     ],
     explanation:
-      "Break-even analysis informs decisions about volume goals and cost management. It does not solve everything but it frames the strategy.",
-    objectiveTags: ["cvp", "strategy", "planning"]
+      "Investor-ready decisions must be mathematically correct and operationally realistic. Capacity is that reality filter.",
+    objectiveTags: ["cvp", "feasibility", "strategy"]
   },
   {
     id: "lesson03-q10",
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - CVP Model Construction",
-    prompt: "If sales volume sits at 150% of break-even, what does that mean?",
-    correctAnswer: "The company is profitable with a 50% margin of safety above minimum requirements.",
+    prompt:
+      "TechStart can only complete 20 projects next month due to Alex's vacation. An investor asks which pricing strategy Sarah should use. What is the BEST answer?",
+    correctAnswer:
+      "$1,500 Premium Plus — it breaks even at 14 projects, giving a 6-project safety cushion and $4,300 profit at 20 projects.",
     distractors: [
-      "The business is losing money and must cut prices.",
-      "The business is exactly at break-even and making no profit.",
-      "The business needs to shut down production immediately."
+      "$1,350 Balanced Core — it's the safest mid-range option and produces positive profit.",
+      "$1,200 Value Launch — lower prices attract more clients and cover the shortfall.",
+      "Any option works because 20 projects is above break-even for all three strategies."
     ],
     explanation:
-      "Operating at 150% of break-even shows a cushion. Profitability is likely, and leadership can withstand some sales dips.",
-    objectiveTags: ["cvp", "margin-of-safety", "risk"]
+      "At 20 projects: $1,200 loses money (break-even needs 26 projects); $1,350 earns $1,300 profit (break-even = 18, just covered); $1,500 earns $4,300 profit (break-even = 14, strong cushion). When capacity drops, the highest-CM option provides the most resilience — a core CVP insight for investor conversations.",
+    objectiveTags: ["cvp", "feasibility", "decision-making", "capacity", "pricing-strategy"]
   }
 ];
 

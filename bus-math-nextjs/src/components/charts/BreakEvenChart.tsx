@@ -67,6 +67,10 @@ interface BreakEvenChartProps {
   showCard?: boolean
   className?: string
   height?: number
+  /** Override the maximum x-axis value. Defaults to max(breakEvenUnits × 2, 100). */
+  maxUnits?: number
+  /** Hide the break-even reference line and break-even units stat so students must identify it themselves. */
+  hideBreakEven?: boolean
 }
 
 interface BreakEvenData {
@@ -105,7 +109,9 @@ export function BreakEvenChart({
   interactive = true,
   showCard = true,
   className = "",
-  height = 400
+  height = 400,
+  maxUnits: maxUnitsProp,
+  hideBreakEven = false,
 }: BreakEvenChartProps) {
   const [fixedCosts, setFixedCosts] = useState(initialFixedCosts)
   const [variableCostRate, setVariableCostRate] = useState(initialVariableCostRate)
@@ -128,7 +134,7 @@ export function BreakEvenChart({
 
   // Generate chart data
   const chartData: BreakEvenData[] = useMemo(() => {
-    const maxUnits = Math.max(results.breakEvenUnits * 2, 100)
+    const maxUnits = maxUnitsProp ?? Math.max(results.breakEvenUnits * 2, 100)
     const step = Math.ceil(maxUnits / 20)
     const data: BreakEvenData[] = []
 
@@ -146,7 +152,7 @@ export function BreakEvenChart({
     }
 
     return data
-  }, [fixedCosts, variableCostRate, sellingPrice, results.breakEvenUnits])
+  }, [fixedCosts, variableCostRate, sellingPrice, results.breakEvenUnits, maxUnitsProp])
 
   const resetToDefaults = () => {
     setFixedCosts(initialFixedCosts)
@@ -241,13 +247,15 @@ export function BreakEvenChart({
           
           <ChartLegend content={<ChartLegendContent />} />
           
-          {/* Break-even point reference line */}
-          <ReferenceLine 
-            x={results.breakEvenUnits} 
-            stroke="hsl(0, 0%, 50%)" 
-            strokeDasharray="5 5"
-            label={{ value: "Break-Even", position: "top" }}
-          />
+          {/* Break-even point reference line — hidden when hideBreakEven is true */}
+          {!hideBreakEven && (
+            <ReferenceLine
+              x={results.breakEvenUnits}
+              stroke="hsl(0, 0%, 50%)"
+              strokeDasharray="5 5"
+              label={{ value: "Break-Even", position: "top" }}
+            />
+          )}
           
           <Line
             type="monotone"
@@ -269,29 +277,33 @@ export function BreakEvenChart({
         </LineChart>
       </ChartContainer>
 
-      {/* Results Display */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-blue-50 rounded-lg">
-        <div className="text-center">
-          <div className="text-sm text-gray-600">Break-Even Units</div>
-          <div className="text-xl font-bold text-gray-900">
-            {results.breakEvenUnits.toLocaleString()}
+      {/* Results Display — break-even units/revenue hidden when hideBreakEven is true */}
+      <div className={`grid grid-cols-1 gap-4 p-4 bg-blue-50 rounded-lg ${hideBreakEven ? "md:grid-cols-2" : "md:grid-cols-4"}`}>
+        {!hideBreakEven && (
+          <div className="text-center">
+            <div className="text-sm text-gray-600">Break-Even Units</div>
+            <div className="text-xl font-bold text-gray-900">
+              {results.breakEvenUnits.toLocaleString()}
+            </div>
           </div>
-        </div>
-        
-        <div className="text-center">
-          <div className="text-sm text-gray-600">Break-Even Revenue</div>
-          <div className="text-xl font-bold text-gray-900">
-            ${results.breakEvenRevenue.toLocaleString()}
+        )}
+
+        {!hideBreakEven && (
+          <div className="text-center">
+            <div className="text-sm text-gray-600">Break-Even Revenue</div>
+            <div className="text-xl font-bold text-gray-900">
+              ${results.breakEvenRevenue.toLocaleString()}
+            </div>
           </div>
-        </div>
-        
+        )}
+
         <div className="text-center">
           <div className="text-sm text-gray-600">Contribution Margin</div>
           <div className="text-xl font-bold text-gray-900">
             ${results.contributionMargin.toFixed(2)}
           </div>
         </div>
-        
+
         <div className="text-center">
           <div className="text-sm text-gray-600">Margin Ratio</div>
           <div className="text-xl font-bold text-gray-900">

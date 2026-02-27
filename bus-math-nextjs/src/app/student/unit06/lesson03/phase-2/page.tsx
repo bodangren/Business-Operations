@@ -2,35 +2,40 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Building2, TrendingUp, DollarSign, Target, Calculator } from "lucide-react";
+import { Building2, TrendingUp, DollarSign, Target, Calculator } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
-import { BreakEvenChart } from "@/components/charts/BreakEvenChart";
+import BreakEvenGraphExplorer from "../BreakEvenGraphExplorer";
 import { lesson03Data, unit06Data, lesson03Phases } from "../lesson-data";
 
 const currentPhase = lesson03Phases[1]; // Introduction phase
 
+// All comprehension questions use TechStart's actual numbers so students
+// build mental models on the same dataset they'll use in Guided Practice.
 const introductionQuestions = [
   {
     id: "intro-1",
     question: "What is the key difference between fixed costs and variable costs?",
     answers: [
-      "Fixed costs stay the same regardless of sales volume; variable costs change with each unit sold",
+      "Fixed costs stay the same regardless of sales volume; variable costs change with each project",
       "Fixed costs are always higher than variable costs",
       "Fixed costs are paid monthly; variable costs are paid daily",
       "Fixed costs are optional; variable costs are required"
     ],
-    explanation: "Fixed costs like rent and insurance remain constant whether you sell 1 unit or 1,000 units. Variable costs like materials and shipping change with each unit produced or sold."
+    explanation:
+      "Fixed costs like rent and salaries remain constant whether TechStart completes 1 project or 24 projects this month. Variable costs like hosting setup and graphics change with every project added."
   },
   {
     id: "intro-2",
-    question: "If your selling price is $50 and your variable costs are $30 per unit, your contribution margin is:",
+    question:
+      "TechStart charges $1,350 per project and spends $880 per project on variable costs. What is the contribution margin per project?",
     answers: [
-      "$20 per unit",
-      "$30 per unit", 
-      "$50 per unit",
-      "$80 per unit"
+      "$470 per project",
+      "$880 per project",
+      "$1,350 per project",
+      "$320 per project"
     ],
-    explanation: "Contribution margin = Selling price - Variable costs per unit = $50 - $30 = $20. This $20 contributes toward covering fixed costs and profit."
+    explanation:
+      "Contribution margin = Selling price − Variable costs = $1,350 − $880 = $470. Each project at this price contributes $470 toward covering TechStart's $8,100 in monthly fixed costs."
   },
   {
     id: "intro-3",
@@ -41,29 +46,33 @@ const introductionQuestions = [
       "Variable Costs ÷ Fixed Costs",
       "Revenue ÷ Total Costs"
     ],
-    explanation: "Break-even units = Fixed Costs ÷ (Selling Price - Variable Cost per Unit). This tells you how many units you must sell to cover all costs."
+    explanation:
+      "Break-even units = Fixed Costs ÷ Contribution Margin per Unit. This tells you exactly how many projects you must complete before you stop losing money and start generating profit."
   },
   {
     id: "intro-4",
-    question: "Why does the CVP formula help with pricing decisions?",
+    question: "Why does a higher selling price make it easier to reach break-even?",
     answers: [
-      "It shows how price changes affect the number of units needed to break even",
-      "It tells you exactly what price customers will pay",
-      "It calculates your income taxes automatically",
-      "It determines your employee wages"
+      "A higher price increases contribution margin, so each sale covers more fixed costs",
+      "A higher price reduces variable costs automatically",
+      "A higher price attracts more clients, increasing total volume",
+      "A higher price reduces total fixed costs"
     ],
-    explanation: "CVP analysis shows the relationship between price, costs, and volume. Higher prices mean fewer units needed to break even; lower prices mean more units needed."
+    explanation:
+      "When price rises and variable cost stays the same, contribution margin grows. A larger contribution margin means fewer projects are needed to cover fixed costs—so break-even is reached sooner."
   },
   {
     id: "intro-5",
-    question: "If Sarah has fixed costs of $8,000, variable costs of $25 per website, and charges $75 per website, her break-even point is:",
+    question:
+      "TechStart has fixed costs of $8,100/month and a contribution margin of $470 per project (at the $1,350 price). What is the break-even volume?",
     answers: [
-      "160 websites",
-      "107 websites",
-      "320 websites",
-      "80 websites"
+      "18 projects",
+      "26 projects",
+      "14 projects",
+      "24 projects"
     ],
-    explanation: "Break-even = $8,000 ÷ ($75 - $25) = $8,000 ÷ $50 = 160 websites. Sarah needs to complete 160 websites to cover all costs."
+    explanation:
+      "Break-even = ⌈$8,100 ÷ $470⌉ = ⌈17.23⌉ = 18 projects. Sarah must complete 18 projects in a month before she earns her first dollar of profit at the $1,350 price."
   }
 ];
 
@@ -71,163 +80,262 @@ export default function Phase2Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="container mx-auto px-4 py-8">
-        <PhaseHeader 
+        <PhaseHeader
           lesson={lesson03Data}
-          unit={unit06Data} 
+          unit={unit06Data}
           phase={currentPhase}
           phases={lesson03Phases}
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Introduction Content */}
+          {/* Opening — picks up from Hook, no re-introduction */}
           <Card className="border-blue-200 bg-white shadow-lg">
             <CardHeader className="text-center pb-4">
               <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <BookOpen className="w-8 h-8 text-blue-600" />
+                <Calculator className="w-8 h-8 text-blue-600" />
               </div>
               <CardTitle className="text-3xl font-bold text-blue-800 mb-2">
-                Cost-Volume-Profit Model Fundamentals
+                The CVP Model: Sarah&apos;s Profit Roadmap
               </CardTitle>
               <Badge variant="secondary" className="text-sm">
-                Building Your Profit Roadmap
+                Building the Tools to Answer the Pricing Puzzle
               </Badge>
             </CardHeader>
-            <CardContent className="prose prose-lg max-w-none">
-              <p className="text-lg leading-relaxed text-gray-800 mb-6">
-                Jennifer showed Sarah a powerful business tool that would solve her pricing puzzle: 
-                the <strong>Cost-Volume-Profit (CVP) Model</strong>. Think of it as a GPS for your 
-                business finances—it shows you exactly where you are, where you need to go, and 
-                the best route to get there profitably.
+            <CardContent className="space-y-6">
+              <p className="text-lg leading-relaxed text-gray-800">
+                Jennifer handed Sarah a blank spreadsheet. &ldquo;Before you pick a price,&rdquo; she said,
+                &ldquo;you need to understand exactly where your money goes and how many projects it takes
+                to break even. Let&apos;s map it out.&rdquo; That map is called a{" "}
+                <strong>Cost-Volume-Profit (CVP) model</strong>.
               </p>
+              <p className="text-gray-700 leading-relaxed">
+                A CVP model has three building blocks: <strong>fixed costs</strong> (what Sarah pays
+                no matter what), <strong>variable costs</strong> (what each project costs to deliver),
+                and <strong>contribution margin</strong> (what each project contributes toward covering
+                those fixed costs). Once you have all three, you can calculate break-even and work
+                backward from any profit target.
+              </p>
+            </CardContent>
+          </Card>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Building2 className="w-6 h-6 text-blue-600" />
-                    <h3 className="font-bold text-blue-900 text-xl">Fixed Costs</h3>
-                  </div>
-                  <p className="text-blue-800 mb-3">
-                    These are expenses that stay the same no matter how much you sell. 
-                    Whether Sarah completes 1 website or 50 websites this month, these costs don't change:
-                  </p>
-                  <ul className="list-disc list-inside text-blue-700 space-y-1 text-sm">
-                    <li>Office rent: $1,500/month</li>
-                    <li>Alex's salary: $3,200/month</li>
-                    <li>Business insurance: $400/month</li>
-                    <li>Software licenses: $300/month</li>
-                    <li>Phone & internet: $150/month</li>
-                  </ul>
-                  <div className="mt-4 p-3 bg-blue-100 rounded border">
-                    <p className="font-semibold text-blue-900">Total Fixed Costs: $5,550/month</p>
-                  </div>
+          {/* Fixed and Variable Costs — using TechStart's real $8,100 / $880 dataset */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="border-blue-200 bg-blue-50">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Building2 className="w-6 h-6 text-blue-600" />
+                  <CardTitle className="text-blue-900 text-xl">Fixed Costs</CardTitle>
                 </div>
-
-                <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <TrendingUp className="w-6 h-6 text-green-600" />
-                    <h3 className="font-bold text-green-900 text-xl">Variable Costs</h3>
-                  </div>
-                  <p className="text-green-800 mb-3">
-                    These expenses change with every project Sarah takes on. 
-                    More projects = higher variable costs:
-                  </p>
-                  <ul className="list-disc list-inside text-green-700 space-y-1 text-sm">
-                    <li>Web hosting per client: $25</li>
-                    <li>Stock photos/graphics: $50</li>
-                    <li>Third-party plugins: $75</li>
-                    <li>Client communication tools: $15</li>
-                    <li>Project management: $35</li>
-                  </ul>
-                  <div className="mt-4 p-3 bg-green-100 rounded border">
-                    <p className="font-semibold text-green-900">Total Variable Cost per Website: $200</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 mb-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <DollarSign className="w-6 h-6 text-purple-600" />
-                  <h3 className="font-bold text-purple-900 text-xl">Contribution Margin</h3>
-                </div>
-                <p className="text-purple-800 mb-4">
-                  This is the money left over from each sale after paying variable costs. 
-                  It "contributes" toward covering fixed costs and generating profit.
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-blue-800 text-sm">
+                  These costs exist every month whether Sarah completes 1 project or 24. They do not
+                  change with volume.
                 </p>
-                <div className="bg-white p-4 rounded border border-purple-200">
-                  <p className="text-center text-lg font-semibold text-purple-900">
-                    Contribution Margin = Selling Price - Variable Costs
-                  </p>
-                  <p className="text-center text-purple-700 mt-2">
-                    If Sarah charges $800 per website: $800 - $200 = <strong>$600 contribution margin</strong>
-                  </p>
+                <ul className="text-blue-700 text-sm space-y-1">
+                  <li className="flex justify-between">
+                    <span>Office rent</span>
+                    <span className="font-medium">$1,500</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Alex&apos;s salary</span>
+                    <span className="font-medium">$3,200</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Business insurance</span>
+                    <span className="font-medium">$400</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Software licenses</span>
+                    <span className="font-medium">$600</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Phone &amp; internet</span>
+                    <span className="font-medium">$150</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Equipment lease</span>
+                    <span className="font-medium">$1,000</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Marketing &amp; client acquisition</span>
+                    <span className="font-medium">$1,250</span>
+                  </li>
+                </ul>
+                <div className="p-3 bg-blue-100 rounded border border-blue-200">
+                  <p className="font-bold text-blue-900 text-center">Total: $8,100 / month</p>
                 </div>
-              </div>
+              </CardContent>
+            </Card>
 
-              <div className="bg-orange-50 p-6 rounded-lg border border-orange-200 mb-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-6 h-6 text-orange-600" />
-                  <h3 className="font-bold text-orange-900 text-xl">Break-Even Point</h3>
+            <Card className="border-green-200 bg-green-50">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <TrendingUp className="w-6 h-6 text-green-600" />
+                  <CardTitle className="text-green-900 text-xl">Variable Costs</CardTitle>
                 </div>
-                <p className="text-orange-800 mb-4">
-                  This is the exact number of sales needed to cover all costs—where profit = $0. 
-                  Every sale beyond this point generates pure profit!
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-green-800 text-sm">
+                  These costs rise with every project Sarah takes on. Deliver more projects and these
+                  costs grow proportionally.
                 </p>
-                <div className="bg-white p-4 rounded border border-orange-200">
-                  <p className="text-center text-lg font-semibold text-orange-900 mb-2">
-                    Break-Even Point (Units) = Fixed Costs ÷ Contribution Margin
-                  </p>
-                  <p className="text-center text-orange-700">
-                    Sarah's break-even: $5,550 ÷ $600 = <strong>9.25 → 10 websites per month</strong>
-                  </p>
-                  <p className="text-center text-orange-700 mt-2 text-sm">
-                    Break-even in dollars: 10 websites × $800 = <strong>$8,000 revenue</strong>
-                  </p>
+                <ul className="text-green-700 text-sm space-y-1">
+                  <li className="flex justify-between">
+                    <span>Domain &amp; hosting setup</span>
+                    <span className="font-medium">$150</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Stock photos &amp; graphics</span>
+                    <span className="font-medium">$180</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Third-party plugins &amp; tools</span>
+                    <span className="font-medium">$200</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Client revisions &amp; communications</span>
+                    <span className="font-medium">$120</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Subcontracted copywriting/SEO</span>
+                    <span className="font-medium">$230</span>
+                  </li>
+                </ul>
+                <div className="p-3 bg-green-100 rounded border border-green-200">
+                  <p className="font-bold text-green-900 text-center">Total: $880 / project</p>
                 </div>
-              </div>
+              </CardContent>
+            </Card>
+          </div>
 
-              <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calculator className="w-6 h-6 text-red-600" />
-                  <h3 className="font-bold text-red-900 text-xl">The Complete CVP Formula</h3>
-                </div>
-                <div className="bg-white p-4 rounded border border-red-200">
-                  <p className="text-center text-lg font-semibold text-red-900 mb-3">
-                    Profit = (Price per Unit × Units Sold) - (Variable Cost per Unit × Units Sold) - Total Fixed Costs
-                  </p>
-                  <p className="text-center text-red-700 text-sm">
-                    Or simplified: <strong>Profit = (Contribution Margin × Units Sold) - Fixed Costs</strong>
-                  </p>
-                </div>
-                <p className="text-red-800 mt-4">
-                  This formula is Sarah's roadmap to profitability. It shows exactly how pricing, 
-                  costs, and sales volume work together to generate profit.
+          {/* Contribution Margin — uses real TechStart prices */}
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <DollarSign className="w-6 h-6 text-purple-600" />
+                <CardTitle className="text-purple-900 text-xl">Contribution Margin</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-purple-800">
+                Each project brings in revenue, but Sarah must first pay her variable costs out of
+                that revenue. Whatever is left over <em>contributes</em> to covering fixed costs and
+                generating profit. That amount is called the{" "}
+                <strong>contribution margin (CM)</strong>.
+              </p>
+              <div className="bg-white p-4 rounded border border-purple-200 text-center space-y-2">
+                <p className="text-lg font-semibold text-purple-900">
+                  Contribution Margin = Selling Price − Variable Cost per Project
+                </p>
+                <p className="text-purple-700 text-sm">
+                  CM also expressed as a percentage of price: CM Ratio = CM ÷ Price
                 </p>
               </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                {[
+                  { label: "Value Launch", price: 1200, cm: 320 },
+                  { label: "Balanced Core", price: 1350, cm: 470 },
+                  { label: "Premium Plus", price: 1500, cm: 620 }
+                ].map(option => (
+                  <div
+                    key={option.label}
+                    className="bg-white p-3 rounded border border-purple-200 text-center"
+                  >
+                    <p className="font-semibold text-purple-900">{option.label}</p>
+                    <p className="text-purple-700">${option.price} − $880</p>
+                    <p className="text-lg font-bold text-purple-800">
+                      CM = ${option.cm}
+                    </p>
+                    <p className="text-xs text-purple-600">
+                      CM ratio: {((option.cm / option.price) * 100).toFixed(1)}%
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-purple-800 text-sm">
+                Notice: the variable cost stays fixed at $880 no matter which price Sarah chooses.
+                Picking a higher price directly increases her CM without adding any cost.
+              </p>
+            </CardContent>
+          </Card>
 
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                <h3 className="font-semibold text-green-900 mb-2">Why This Matters</h3>
-                <p className="text-green-800">
-                  CVP analysis isn't just math—it's strategic thinking. Sarah can now answer critical 
-                  questions: "What if I raise my prices?" "How many sales do I need to afford a new 
-                  employee?" "Should I accept this low-price contract?" The CVP model provides 
-                  data-driven answers that protect and grow her business.
+          {/* Graph explorer — students read the break-even crossing point before seeing the formula */}
+          <BreakEvenGraphExplorer />
+
+          {/* Break-Even */}
+          <Card className="border-orange-200 bg-orange-50">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <Target className="w-6 h-6 text-orange-600" />
+                <CardTitle className="text-orange-900 text-xl">Break-Even Point</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-orange-800">
+                The break-even point is the number of projects Sarah must complete in a month for
+                revenue to exactly cover all costs—where profit equals zero. Every project above
+                break-even is pure profit.
+              </p>
+              <div className="bg-white p-4 rounded border border-orange-200 space-y-3">
+                <p className="text-center text-lg font-semibold text-orange-900">
+                  Break-Even (Projects) = Fixed Costs ÷ Contribution Margin per Project
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-center">
+                  {[
+                    { label: "Value Launch", cm: 320, be: 26 },
+                    { label: "Balanced Core", cm: 470, be: 18 },
+                    { label: "Premium Plus", cm: 620, be: 14 }
+                  ].map(option => (
+                    <div
+                      key={option.label}
+                      className="bg-orange-50 p-3 rounded border border-orange-200"
+                    >
+                      <p className="font-semibold text-orange-900">{option.label}</p>
+                      <p className="text-orange-700">$8,100 ÷ ${option.cm}</p>
+                      <p className="text-lg font-bold text-orange-800">
+                        = {option.be} projects
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-center text-orange-700 text-sm">
+                  Higher price → larger CM → <strong>fewer projects needed to break even.</strong>
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Interactive Break-Even Chart */}
-          <BreakEvenChart
-            fixedCosts={5550}
-            variableCostRate={0.25} // $200 variable cost with $800 price = 25% rate
-            sellingPrice={800}
-            interactive={true}
-          />
+          {/* CVP Formula */}
+          <Card className="border-red-200 bg-red-50">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <Calculator className="w-6 h-6 text-red-600" />
+                <CardTitle className="text-red-900 text-xl">The Complete CVP Formula</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="bg-white p-4 rounded border border-red-200 space-y-2 text-center">
+                <p className="text-lg font-semibold text-red-900">
+                  Profit = (CM per Project × Projects Completed) − Fixed Costs
+                </p>
+                <p className="text-red-700 text-sm">
+                  Example: $470 × 24 projects − $8,100 ={" "}
+                  <strong>$3,180 monthly profit</strong> at the $1,350 price and full capacity.
+                </p>
+              </div>
+              <p className="text-red-800 text-sm">
+                This formula is Sarah&apos;s decision engine. Change the price, and CM changes.
+                Change the volume, and profit changes. In Guided Practice you&apos;ll run all three
+                options through this formula to find the strategy worth defending to investors.
+              </p>
+            </CardContent>
+          </Card>
 
-          {/* Comprehension Check */}
+          {/* Comprehension Check — all questions use TechStart's real numbers */}
           <ComprehensionCheck
-            title="CVP Model Understanding"
-            description="Test your grasp of the key Cost-Volume-Profit concepts."
+            title="CVP Fundamentals Check"
+            description="All questions use TechStart's real cost structure. Get these right before moving to Guided Practice."
             questions={introductionQuestions}
             showExplanations={true}
             allowRetry={true}
@@ -236,33 +344,24 @@ export default function Phase2Page() {
           {/* Key Takeaways */}
           <Card className="border-gray-200 bg-gray-50">
             <CardHeader>
-              <CardTitle className="text-gray-800 flex items-center gap-2">
-                <Target className="w-5 w-5" />
-                Key Takeaways
-              </CardTitle>
+              <CardTitle className="text-gray-800">Key Takeaways Before Guided Practice</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <Badge variant="outline" className="mt-1">1</Badge>
-                  Fixed costs remain constant regardless of sales volume
-                </li>
-                <li className="flex items-start gap-2">
-                  <Badge variant="outline" className="mt-1">2</Badge>
-                  Variable costs increase with each unit sold
-                </li>
-                <li className="flex items-start gap-2">
-                  <Badge variant="outline" className="mt-1">3</Badge>
-                  Contribution margin per unit = Selling price - Variable cost per unit
-                </li>
-                <li className="flex items-start gap-2">
-                  <Badge variant="outline" className="mt-1">4</Badge>
-                  Break-even point = Fixed costs ÷ Contribution margin per unit
-                </li>
-                <li className="flex items-start gap-2">
-                  <Badge variant="outline" className="mt-1">5</Badge>
-                  CVP analysis enables data-driven pricing and volume decisions
-                </li>
+                {[
+                  "TechStart's fixed costs are $8,100/month — the same no matter how many projects she delivers.",
+                  "Variable cost is $880 per project — it rises exactly in step with each new project.",
+                  "Contribution margin = Price − $880. The three options give CM of $320, $470, or $620.",
+                  "Break-even = $8,100 ÷ CM. Higher CM means fewer projects to reach break-even.",
+                  "Every project above break-even adds pure profit equal to the CM per project."
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Badge variant="outline" className="mt-1 shrink-0">
+                      {index + 1}
+                    </Badge>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -270,19 +369,20 @@ export default function Phase2Page() {
           {/* Preview */}
           <Card className="border-gray-200 bg-gray-50">
             <CardContent className="p-6 text-center">
-              <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">Coming Up: Guided Practice</h3>
               <p className="text-gray-700">
-                In the Guided Practice phase, we'll use Excel to build Sarah's actual CVP model 
-                step by step, creating the formulas and charts that bring these concepts to life.
+                You&apos;ll run a four-step decision sequence with these same numbers: Contribution
+                Margin Sprint → Break-Even Ladder → Capacity Reality Check → Target-Profit Reverse
+                Solve. The goal is a pricing recommendation Sarah can defend to investors.
               </p>
             </CardContent>
           </Card>
         </div>
 
-        <PhaseFooter 
+        <PhaseFooter
           lesson={lesson03Data}
           unit={unit06Data}
-          phase={currentPhase} 
+          phase={currentPhase}
           phases={lesson03Phases}
         />
       </div>
