@@ -89,6 +89,30 @@ export default function Phase5Page() {
                 allowRetry={false}
               />
 
+              {/* Dashboard Debrief */}
+              <Card className="border-amber-200 bg-amber-50">
+                <CardHeader>
+                  <CardTitle className="text-amber-900 flex items-center gap-2">
+                    <Rocket className="w-5 h-5" />
+                    90-Second Dashboard Debrief
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-amber-900">
+                  <p>
+                    With your dashboard open, pretend Michael Chen just asked for the short version. Record or script a
+                    90-second response that references live numbers from the toggle-driven KPIs.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>Name the scenario you recommend and cite the exact profit, price, and volume from your dashboard cells.</li>
+                    <li>Describe what the chart shows when you switch to the &ldquo;Downside&rdquo; case and summarize the risk in one sentence.</li>
+                    <li>State one follow-up question you would explore with Goal Seek or Data Tables if the investor pushes back.</li>
+                  </ol>
+                  <p className="text-xs text-amber-800">
+                    Drop the script into the “Investor Notes” sheet or a doc you share with your teacher—the reflection ties the technical work to persuasive communication.
+                  </p>
+                </CardContent>
+              </Card>
+
               {/* Preview */}
               <Card className="border-gray-200 bg-gray-50">
                 <CardContent className="p-6 text-center">

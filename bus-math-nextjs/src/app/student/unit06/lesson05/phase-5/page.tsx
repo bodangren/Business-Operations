@@ -89,6 +89,31 @@ export default function Phase5Page() {
                 allowRetry={false}
               />
 
+              {/* Heat Map Storyboard */}
+              <Card className="border-amber-200 bg-amber-50">
+                <CardHeader>
+                  <CardTitle className="text-amber-900 flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5" />
+                    Translate the Data Table into a Story
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-amber-900">
+                  <p>
+                    Re-open the two Data Tables you built in Phase 4. Use them to draft a three-slide storyboard for Sarah&apos;s
+                    &ldquo;Town Hall&rdquo; update. The goal is to interpret—not re-run—the math.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li><strong>Slide 1 – Safe Zone:</strong> Highlight the price/volume combinations that keep profit above $0 and explain why.</li>
+                    <li><strong>Slide 2 – Risk Trigger:</strong> Identify the first red cell that appears if Sarah drops her price by $100 and stays at 20 projects. Quantify the loss.</li>
+                    <li><strong>Slide 3 – Recommendation:</strong> Choose one row or column from the matrix as Sarah&apos;s default strategy and justify it using the numbers.</li>
+                  </ol>
+                  <p className="text-xs text-amber-800">
+                    Capture your talking points beneath the tables or on a new sheet. You&apos;ll reference them when wiring the dashboard
+                    in Lesson 06.
+                  </p>
+                </CardContent>
+              </Card>
+
               {/* Preview */}
               <Card className="border-gray-200 bg-gray-50">
                 <CardContent className="p-6 text-center">

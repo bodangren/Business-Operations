@@ -2,142 +2,152 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, Users, ShieldCheck } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { PaystubPreview } from "@/components/payroll/PaystubPreview"
+import { AlertTriangle, CheckCircle2, Users, MessageCircle } from "lucide-react"
 import { lesson06Data, unit05Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[0]
 
+const paystubStory = {
+  employeeName: "Sierra Lopez",
+  role: "Bakery Beverage Lead",
+  firstJobNote: "full-time with health benefits",
+  payPeriodLabel: "Bi-weekly · March 14, 2025",
+  grossPay: 1480,
+  employerTaxes: 113.24,
+  netPay: 1082.67,
+  accountBalanceAfterBills: 320.45,
+  emotionalSummary: {
+    expectation: "Sierra expected FIT to match the IRS table and her childcare tax credit to show.",
+    reality: "The pay stub she received showed $0 FIT and no state tax, which looked suspicious and scared her."
+  },
+  deductions: [
+    { label: "FIT", amount: 123.40, description: "Based on single filer bi-weekly table with standard deduction." },
+    { label: "Social Security (6.2%)", amount: 91.76, description: "6.2% of taxable wages up to the wage base." },
+    { label: "Medicare (1.45%)", amount: 21.46, description: "1.45% of every taxable dollar." },
+    { label: "California Income Tax", amount: 38.48, description: "4.5% starter withholding until the full table is loaded." },
+    { label: "Health Premium", amount: 65.00, description: "Pre-tax deduction for TechStart’s plan." }
+  ]
+}
+
 const hookQuestions = [
   {
-    id: "u05l06-hook-1",
-    question:
-      "An investor asks to compare Base, Stretch, and Downside payroll in one view. What keeps switching reliable?",
+    id: "fit",
+    question: "Why did Sierra panic when her pay stub showed $0 federal income tax?",
     answers: [
-      "Driver table + XLOOKUP exact‑match with IFNA",
-      "Three separate sheets with copy‑pasted values",
-      "A toggle that changes colors only",
-      "Manual relinking of charts each time"
+      "Because the payroll sheet never subtracted the standard deduction before calculating FIT",
+      "Because she received a raise",
+      "Because Social Security was doubled",
+      "Because California taxes are optional"
     ],
     explanation:
-      "A single driver table controls assumptions by scenario name. Exact‑match lookup with IFNA prevents silent errors."
+      "If taxable income is wrong, FIT looks wrong. A missing standard deduction can make the FIT line default to zero or the wrong bracket."
   },
   {
-    id: "u05l06-hook-2",
-    question:
-      "Charts break when employees are added. What prevents this?",
+    id: "fica",
+    question: "Which formula guarantees Social Security is correct for every pay stub?",
     answers: [
-      "Structured references (Table[Column]) feeding visuals",
-      "Fixed ranges like A2:A50 updated by hand",
-      "Copying values into a chart worksheet",
-      "Using volatile functions to force recalc"
+      "TaxableWages * 6.2% until the wage base is hit",
+      "Gross Pay * 10%",
+      "Net Pay * 1.45%",
+      "Taxable Income * 22%"
     ],
     explanation:
-      "Tables auto‑expand. Structured references keep charts connected as payroll grows."
+      "FICA is predictable: 6.2% Social Security (capped) and 1.45% Medicare."
   },
   {
-    id: "u05l06-hook-3",
-    question:
-      "What builds investor trust during a live payroll demo?",
+    id: "design",
+    question: "Why do we build a printable pay stub with an Employee ID selector?",
     answers: [
-      "Visible validation badges and a one‑page executive summary",
-      "Hidden scratch tabs and cryptic formulas",
-      "Dozens of tiny sheets with similar names",
-      "A single hard‑coded total cell"
+      "So any employee can see their taxes and net pay instantly without editing formulas",
+      "So we can hide the roster",
+      "Because printers cannot read tables",
+      "Because Excel requires a selector"
     ],
     explanation:
-      "Clear validation and concise summaries give fast decision cues and show auditability."
+      "A selector protects the formulas and creates a professional experience when Sarah shares pay stubs or audits occur."
   }
 ]
 
 export default function Phase1Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-red-50">
-      <PhaseHeader unit={unit05Data} lesson={lesson06Data} phase={currentPhase} phases={lesson06Phases} />
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-orange-50 to-amber-100">
+      <PhaseHeader lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook — Live Demo</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Sarah’s Payroll Dashboard: One Screen, Three Scenarios</h1>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              A client wants to see Base, Stretch, and Downside payroll impacts and decide fast. Sarah’s early model had
-              hard‑coded ranges and fragile charts. Her integrated dashboard uses a driver table, exact‑match lookups,
-              and stable visuals that update when employees change.
-            </p>
-          </div>
+        <section className="space-y-6 text-center">
+          <Badge className="bg-orange-100 text-orange-900 text-lg px-4 py-2">
+            🧾 Phase 1: Hook — Pay Stub Truth Test
+          </Badge>
+          <h1 className="text-3xl font-bold text-slate-900">From Schedule to Pay Stub: No More Guessing</h1>
+          <p className="text-lg text-slate-700 max-w-4xl mx-auto">
+            After Lesson 05, Sarah can forecast hours and gross pay. Lesson 06 turns those numbers into a legally compliant
+            pay stub. One error on a stub is enough to lose trust with employees, banks, and the IRS. Let’s look at what
+            happens when taxable income is wrong—and how a selector-based stub fixes it.
+          </p>
         </section>
 
-        <section className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-red-200 bg-red-50">
-            <CardHeader>
-              <CardTitle className="text-red-900 flex items-center gap-2">
-                <AlertTriangle className="h-5 w-5" />
-                Before: Fragile Switching
-              </CardTitle>
+        <section className="max-w-4xl mx-auto space-y-6">
+          <Card className="border-red-200 bg-white/90">
+            <CardHeader className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-red-600" />
+              <CardTitle className="text-red-900">Before: Incomplete Pay Stub</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm space-y-3 text-red-900">
-              <div className="bg-red-100 p-3 rounded font-mono">
-{`=IF(B2="Base", Base!C10, IF(B2="Stretch", Stretch!C10, Downside!C10))
-=SUM(C2:C50) // breaks when rows grow`}
-              </div>
-              <ul className="list-disc list-inside">
-                <li>Multiple tabs drift out of sync</li>
-                <li>Fixed ranges miss new employees</li>
-                <li>Charts point to static ranges</li>
+            <CardContent className="space-y-3 text-sm text-red-900">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Gross pay entered manually, no link to roster or schedule.</li>
+                <li>Taxable income column missing standard deduction and pre-tax benefits.</li>
+                <li>FIT cell empty because the lookup range was wrong.</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-900 flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5" />
-                After: Integrated Scenario Driver
-              </CardTitle>
+            <CardHeader className="flex items-center gap-2">
+              <CheckCircle2 className="h-5 w-5 text-green-600" />
+              <CardTitle className="text-green-900">After: Selector-Driven Pay Stub</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm space-y-3 text-green-900">
-              <div className="bg-green-100 p-3 rounded font-mono">
-{`=XLOOKUP(SelectedScenario, Drivers[Scenario], Drivers[OTMultiplier], "Missing")
-=IFNA(XLOOKUP(SelectedScenario, Drivers[Scenario], Drivers[StateTaxRatePct]), 0)
-=SUM(PayrollTable[GrossPay]) // structured reference`}
-              </div>
-              <ul className="list-disc list-inside">
-                <li>Switch by name with exact match</li>
-                <li>Validation shows missing or out‑of‑range inputs</li>
-                <li>Charts/tiles read from payroll outputs</li>
+            <CardContent className="space-y-4 text-green-900">
+              <PaystubPreview {...paystubStory} />
+              <ul className="list-disc list-inside text-sm space-y-1">
+                <li>Employee ID selector pulls name, filing status, and standard deduction.</li>
+                <li>Taxable income calculated as <strong>Gross – Pre-tax benefits – Standard Deduction/number of pay periods</strong>.</li>
+                <li>FIT, Social Security, Medicare, and state withholding display with explanations.</li>
               </ul>
             </CardContent>
           </Card>
 
           <ComprehensionCheck
-            title="Integration Pitfalls & Best Practices (Payroll)"
-            description="Predict what fails under growth and what stays reliable."
+            title="Pay Stub Accuracy Check"
+            description="Use Sierra’s story to predict what makes a pay stub trustworthy."
             questions={hookQuestions}
             showExplanations={true}
           />
 
           <Card className="border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-900 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk
-              </CardTitle>
+            <CardHeader className="flex items-center gap-2">
+              <Users className="h-5 w-5 text-purple-700" />
+              <CardTitle className="text-purple-900">Turn and Talk (3 minutes)</CardTitle>
             </CardHeader>
-            <CardContent className="text-purple-900">
-              <p className="font-medium mb-2">Discussion Prompt (3 minutes):</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>What signals help an investor decide in 10 seconds?</li>
-                <li>Where should validation live so problems are impossible to miss?</li>
-                <li>How do you prove your dashboard won’t break during Q&amp;A?</li>
-              </ul>
+            <CardContent className="space-y-2 text-purple-900 text-sm">
+              <div className="flex items-start gap-3">
+                <MessageCircle className="h-5 w-5 text-purple-600 mt-1" />
+                <div>
+                  <p className="font-medium">Discuss with a partner:</p>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>What’s the worst thing that can happen if a pay stub is wrong?</li>
+                    <li>Which inputs must always come from a trusted table (name, filing status, deduction)?</li>
+                    <li>How will Sarah prove to Alex that his taxes were calculated correctly?</li>
+                  </ul>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </section>
       </main>
 
-      <PhaseFooter unit={unit05Data} lesson={lesson06Data} phase={currentPhase} phases={lesson06Phases} />
+      <PhaseFooter lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />
     </div>
   )
 }
-

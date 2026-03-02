@@ -9,55 +9,72 @@ const currentPhase = lesson06Phases[5]
 
 export default function Phase6Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
-      <PhaseHeader unit={unit05Data} lesson={lesson06Data} phase={currentPhase} phases={lesson06Phases} />
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-slate-50 to-emerald-100">
+      <PhaseHeader lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🧭 Phase 6: Closing</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Integrated Automation: Present with Confidence</h1>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              You turned payroll automation into a decision‑ready dashboard. You added scenario controls, stable charts,
-              and validation checks that protect trust during live Q&amp;A.
-            </p>
-          </div>
+        <section className="text-center space-y-4">
+          <Badge className="bg-indigo-100 text-indigo-900 text-lg px-4 py-2">
+            🌅 Phase 6: Closing
+          </Badge>
+          <h1 className="text-3xl font-bold text-slate-900">Pay Stub Studio: Ready to Share</h1>
+          <p className="text-lg text-slate-700 max-w-4xl mx-auto">
+            You now have a workbook that converts the Lesson 05 schedule into compliant pay stubs. Capture the lessons you
+            learned so you can defend every line when Sarah’s employees or investors ask questions.
+          </p>
         </section>
 
-        <section className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-indigo-200 bg-indigo-50">
+        <section className="max-w-4xl mx-auto space-y-6">
+          <Card className="border-green-200 bg-green-50">
             <CardHeader>
-              <CardTitle className="text-indigo-900">Synthesis</CardTitle>
+              <CardTitle className="text-green-900">Key Wins</CardTitle>
             </CardHeader>
-            <CardContent className="text-indigo-900 space-y-2">
-              <ul className="list-disc list-inside text-sm space-y-1">
-                <li>Dashboard shows Base/Stretch/Downside with one click.</li>
-                <li>Charts stay stable with structured references.</li>
-                <li>Validation flags reveal issues before investors do.</li>
-                <li>Executive summary ties KPIs to clear recommendations.</li>
+            <CardContent className="text-green-900 text-sm space-y-1">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Taxable income and FIT logic now live in the same workbook as the schedule.</li>
+                <li>Selectors and structured references keep pay stubs consistent and tamper-proof.</li>
+                <li>Visual polish makes the stub client-ready (logos, color accents, print settings).</li>
               </ul>
             </CardContent>
           </Card>
 
           <ReflectionJournal
-            unitTitle="CAP Reflection — Payroll Integration & Presentation"
-            className="bg-white"
+            unitTitle="CAP Reflection — Pay Stub Studio"
+            prompts={[
+              {
+                id: 'courage-paystub',
+                category: 'courage',
+                prompt: 'Where did you show courage while debugging FIT or State tax logic? How did you know it was correct?',
+                placeholder: 'Describe the risk you took and the result…'
+              },
+              {
+                id: 'adaptability-paystub',
+                category: 'adaptability',
+                prompt: 'When the selector or formatting broke, how did you adapt your design?',
+                placeholder: 'Explain the fix and what you learned…'
+              },
+              {
+                id: 'persistence-paystub',
+                category: 'persistence',
+                prompt: 'What kept you going when the numbers didn’t reconcile on the first try?',
+                placeholder: 'Share the strategy or mindset that helped you finish…'
+              }
+            ] as any}
           />
 
-          <Card>
+          <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle>Preview: Lesson 07</CardTitle>
+              <CardTitle className="text-blue-900">Preview: Lesson 07</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-gray-700">
-              Next, you’ll study worked examples and stakeholder feedback patterns that sharpen your executive summaries.
-              Some units deepen dashboards with pro examples and critique.
+            <CardContent className="text-blue-900 text-sm">
+              Next lesson you will step into stakeholder meetings: presenting these stubs, capturing feedback, and refining
+              automation based on what clients need next.
             </CardContent>
           </Card>
         </section>
       </main>
 
-      <PhaseFooter unit={unit05Data} lesson={lesson06Data} phase={currentPhase} phases={lesson06Phases} />
+      <PhaseFooter lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />
     </div>
   )
 }
-

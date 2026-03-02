@@ -1,0 +1,21 @@
+"Payroll Stub Template"
+"Example Company Inc."
+
+"Employee ID","Employee","Payment Date","Pay Rate","Tax Status","Allowances","Additional Percentage","Additional Amount"
+"MK02","Hannah Reed","2025-03-14","$28.50/hr","Head of Household",2,0.00,"$0"
+
+"PAYMENTS","Amount","DEDUCTIONS","Amount","YEAR-TO-DATE","Amount"
+"Regular Pay","$1,520","Federal Tax (FIT)","$172.14","Regular Pay","$8,640"
+"Additional Pay","$0","State Tax (CA 4.5%)","$61.20","Additional Pay","$0"
+"Overtime Pay","$0","Social Security (6.2%)","$94.24","Federal Tax","$978.32"
+"Bonus","$0","Medicare (1.45%)","$22.17","Medicare Tax","$249.48"
+"Commissions","$0","Health Insurance","$60.00","State Tax","$306.00"
+
+"TIME OFF BALANCES","Balance","Time Off","Balance"
+"Vacation","40 hours","Personal Day","8 hours"
+"Sick Leave","24 hours","Medical Leave","16 hours"
+
+"Totals","Amount"
+"TOTAL GROSS PAY","$1,520"
+"TOTAL DEDUCTIONS","$409.75"
+"TOTAL NET PAY","$1,110.25"

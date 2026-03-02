@@ -60,6 +60,28 @@ export default function Phase4Page() {
               🚀 Phase 4: Independent Practice
             </Badge>
             <div className="max-w-5xl mx-auto space-y-8 text-left">
+
+              {/* Bring the Workbook Forward */}
+              <Card className="border-cyan-200 bg-cyan-50">
+                <CardHeader>
+                  <CardTitle className="text-cyan-900 flex items-center gap-2 text-xl">
+                    <Download className="w-5 h-5" />
+                    Continue Your PriceLab Workbook
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-cyan-900">
+                  <p>
+                    Open the CVP workbook you built in Lesson 03 (Contribution Margin Sprint) and keep it in the
+                    same folder. Every Goal Seek run today should reference that exact model so your numbers stay
+                    consistent across the unit.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>Duplicate the workbook if you want a “Goal Seek” version, but keep the assumptions sheet identical.</li>
+                    <li>Confirm the <strong>Total Profit</strong> cell is still linked to your price and volume inputs before launching Goal Seek.</li>
+                    <li>After each scenario, jot the result in the notes column so you can cite it in the Phase 5 investor brief.</li>
+                  </ol>
+                </CardContent>
+              </Card>
               
               {/* Introduction */}
               <Card className="border-orange-200 bg-white shadow-lg">

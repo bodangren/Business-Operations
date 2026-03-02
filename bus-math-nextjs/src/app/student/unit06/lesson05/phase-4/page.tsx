@@ -59,6 +59,27 @@ export default function Phase4Page() {
               🚀 Phase 4: Independent Practice
             </Badge>
             <div className="max-w-5xl mx-auto space-y-8 text-left">
+
+              {/* Workbook Continuity */}
+              <Card className="border-cyan-200 bg-cyan-50">
+                <CardHeader>
+                  <CardTitle className="text-cyan-900 flex items-center gap-2 text-xl">
+                    <Download className="w-5 h-5" />
+                    Load Your Goal Seek Workbook
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-cyan-900">
+                  <p>
+                    Start from the exact Goal Seek model you completed in Lesson 04. The Data Tables you build today
+                    rely on that same Total Profit formula, so don&apos;t rebuild from scratch.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>Open the workbook, rename a copy to <em>PriceLab_DataTables.xlsx</em>, and keep both sheets in the same folder.</li>
+                    <li>Verify the price and volume input cells still drive the profit cell you linked yesterday.</li>
+                    <li>After each table calculates, paste the key ranges back into your notes tab—you&apos;ll cite them during Phase 5.</li>
+                  </ol>
+                </CardContent>
+              </Card>
               
               {/* Introduction */}
               <Card className="border-orange-200 bg-white shadow-lg">

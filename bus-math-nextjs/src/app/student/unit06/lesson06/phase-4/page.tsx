@@ -4,7 +4,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileSpreadsheet, Compass, CheckCircle, ClipboardList, Star } from "lucide-react";
+import { FileSpreadsheet, Compass, CheckCircle, ClipboardList, Star, Download } from "lucide-react";
 import { SpreadsheetWrapper } from "@/components/spreadsheet/SpreadsheetWrapper";
 import type { SpreadsheetData } from "@/components/spreadsheet/SpreadsheetWrapper";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
@@ -49,6 +49,27 @@ export default function Phase4Page() {
               🚀 Phase 4: Independent Practice
             </Badge>
             <div className="max-w-5xl mx-auto space-y-8 text-left">
+
+              {/* Workbook Continuity */}
+              <Card className="border-cyan-200 bg-cyan-50">
+                <CardHeader>
+                  <CardTitle className="text-cyan-900 flex items-center gap-2 text-xl">
+                    <Download className="w-5 h-5" />
+                    Open Your Scenario Runner Workbook
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-cyan-900">
+                  <p>
+                    The dashboard only works if it reads the same Data Tables you completed in Lesson 05. Keep that
+                    file open and point every XLOOKUP at the existing named ranges instead of copying static numbers.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>Use <strong>Save As</strong> to create <em>PriceLab_Dashboard.xlsx</em> so your Lesson 05 tabs stay intact.</li>
+                    <li>Lock the dropdown cell reference ($B$4) before wiring XLOOKUP so the link persists when you build charts.</li>
+                    <li>Record the Base Case, Price Hike, High Volume, and Downside outputs in your notes—you&apos;ll defend them in Phase 5.</li>
+                  </ol>
+                </CardContent>
+              </Card>
               
               {/* Introduction */}
               <Card className="border-orange-200 bg-white shadow-lg">

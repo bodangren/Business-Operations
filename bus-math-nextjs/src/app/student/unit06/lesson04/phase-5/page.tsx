@@ -131,6 +131,32 @@ export default function Phase5Page() {
                 allowRetry={false}
               />
 
+              {/* Investor Scenario Brief */}
+              <Card className="border-amber-200 bg-amber-50">
+                <CardHeader>
+                  <CardTitle className="text-amber-900 flex items-center gap-2">
+                    <Briefcase className="w-5 h-5" />
+                    Cite Your Model in Plain English
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-amber-900">
+                  <p>
+                    Open the Goal Seek workbook you built in Phase 4 and draft a short voice memo for Michael Chen.
+                    Use real numbers from your scenarios so the assessment reflects business judgment, not just button
+                    clicks.
+                  </p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>State which lever you recommend (price, volume, or fixed-cost reduction) and quote the exact Goal Seek result.</li>
+                    <li>Explain why the alternative lever is unrealistic right now (capacity limit, market ceiling, etc.).</li>
+                    <li>Identify one next experiment you want to run in Lesson 05 to confirm your decision.</li>
+                  </ol>
+                  <p className="text-xs text-amber-800">
+                    Record your answers in your portfolio doc or directly inside the workbook on a new “Investor Notes”
+                    sheet—this reflection will be revisited next lesson.
+                  </p>
+                </CardContent>
+              </Card>
+
               {/* Career Connection */}
               <Card className="border-purple-200 bg-purple-50">
                 <CardHeader>

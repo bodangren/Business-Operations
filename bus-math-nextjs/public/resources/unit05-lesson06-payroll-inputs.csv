@@ -1,0 +1,7 @@
+EmployeeID,EmployeeName,FilingStatus,Allowances,PayRate,RegularHours,OvertimeHours,Bonus,Commissions,PreTaxBenefits,AdditionalWithholding,State,StandardDeduction
+CF01,Sierra Lopez,Single,1,21.50,40,2,0,0,65,15,CA,13850
+CF02,Noah Patel,Single,0,19.25,38,0,0,0,0,0,CA,13850
+BK01,Milo Gaines,Married,2,24.00,42,3,0,0,0,20,WA,27700
+MK02,Hannah Reed,HeadOfHousehold,2,28.50,40,0,0,0,40,0,CA,20800
+SV01,Andre Phelps,Single,1,18.60,32,0,0,0,0,0,OR,13850
+MK04,Nia Brooks,Married,3,29.75,40,5,150,0,120,25,CA,27700

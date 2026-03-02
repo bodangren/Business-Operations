@@ -2,83 +2,93 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2 } from "lucide-react"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { ClipboardList, MonitorCheck, PenTool } from "lucide-react"
 import { lesson06Data, unit05Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[3]
 
+const deliverables = [
+  "Taxable income table completed for every employee in the dataset",
+  "Pay stub layout linked to the selector with no broken references",
+  "Professional styling: logo placeholder, section headers, net pay highlight",
+  "Print-ready formatting (fit to 1 page, margins 0.5 in, readable fonts)",
+  "QA checklist completed (FIT, FICA, state tax match manual calculations)"
+]
+
 export default function Phase4Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
-      <PhaseHeader unit={unit05Data} lesson={lesson06Data} phase={currentPhase} phases={lesson06Phases} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-cyan-100">
+      <PhaseHeader lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">🧩 Phase 4: Independent Practice</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Integration Mastery Challenges</h1>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Build your decision‑ready payroll dashboard. Use scenario toggles by name, link visuals, and create an
-              executive summary tied to KPIs.
-            </p>
-          </div>
+        <section className="text-center space-y-4">
+          <Badge className="bg-emerald-100 text-emerald-900 text-lg px-4 py-2">
+            🛠️ Phase 4: Independent Practice
+          </Badge>
+          <h1 className="text-3xl font-bold text-slate-900">Finish the Pay Stub Studio</h1>
+          <p className="text-lg text-slate-700 max-w-4xl mx-auto">
+            You have 15 minutes. Work with focus, but produce your own file. Every student will export a PDF of one pay stub
+            for peer critique tomorrow.
+          </p>
         </section>
 
-        <section className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-900">Download Practice Data</CardTitle>
+        <section className="grid gap-6 lg:grid-cols-2">
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader className="flex items-center gap-2">
+              <ClipboardList className="h-5 w-5 text-slate-600" />
+              <CardTitle className="text-slate-900">Scenario Expectations</CardTitle>
             </CardHeader>
-            <CardContent className="text-blue-900 space-y-2">
-              <p>
-                Use this dataset with Base/Stretch/Downside lines, KPI targets, and edge cases for validation:
-              </p>
-              <a className="underline font-semibold" href="/resources/unit05-payroll-integration-practice.csv" download>
-                /resources/unit05-payroll-integration-practice.csv
-              </a>
-              <p className="text-sm">
-                Check for: missing scenario names, negative or &gt;100% rates, stale AsOfDate, and broken chart links.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Build Tasks</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2 text-sm">
+            <CardContent className="text-sm text-slate-800 space-y-2">
               <ul className="list-disc list-inside space-y-1">
-                <li>Create a driver table with scenario names and payroll assumptions.</li>
-                <li>Set SelectedScenario (named cell) and switch by exact name using XLOOKUP or INDEX‑MATCH.</li>
-                <li>Link outputs to dashboard charts/tiles using Table[Column] references.</li>
-                <li>Add an audit panel: missing IDs, rate bounds, stale dates.</li>
-                <li>Write a one‑paragraph executive summary that updates with KPIs.</li>
+                <li>Each employee must produce a believable pay stub (no blank taxes unless that state truly has zero).</li>
+                <li>Include Additional Withholding on the stub even if it is 0 this period.</li>
+                <li>Create a memo line that explains the pay period (e.g., "Pay Period: Mar 1–Mar 14, 2025").</li>
+                <li>Optional: Add a QR code or placeholder for a digital signature to show professionalism.</li>
               </ul>
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-900 flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5" />
-                Self‑Assessment Checklist
-              </CardTitle>
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader className="flex items-center gap-2">
+              <MonitorCheck className="h-5 w-5 text-slate-600" />
+              <CardTitle className="text-slate-900">Deliverables Checklist</CardTitle>
             </CardHeader>
-            <CardContent className="text-green-900 text-sm space-y-1">
+            <CardContent className="text-sm text-slate-800">
               <ul className="list-disc list-inside space-y-1">
-                <li>Scenario switches by name; wrong names show a clear message.</li>
-                <li>Charts update when you add employees (no fixed ranges).</li>
-                <li>Validation flags appear for hours &lt;0, rates &lt;0 or &gt;1, and stale dates.</li>
-                <li>Executive summary mentions coverage days, payroll % of revenue, and variance thresholds.</li>
-                <li>All assumptions are documented next to inputs.</li>
+                {deliverables.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </CardContent>
           </Card>
+        </section>
+
+        <section className="max-w-4xl mx-auto grid gap-6 lg:grid-cols-2">
+          <Card className="border-slate-200 bg-white/90">
+            <CardHeader className="flex items-center gap-2">
+              <PenTool className="h-5 w-5 text-slate-600" />
+              <CardTitle className="text-slate-900">Design Tips</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-800 space-y-1">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Use fonts like Source Sans or Calibri for readability.</li>
+                <li>Add thin divider lines between sections to guide the eye.</li>
+                <li>Keep colors subtle (2 accent colors max) so the stub prints clearly in grayscale.</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Alert className="border-amber-200 bg-amber-50">
+            <AlertDescription className="text-amber-900 text-sm">
+              <strong>QA Reminder:</strong> Pick two employees and recalc FIT/FICA/State with a calculator. If your workbook
+              disagrees by more than $0.50, fix it before exporting.
+            </AlertDescription>
+          </Alert>
         </section>
       </main>
 
-      <PhaseFooter unit={unit05Data} lesson={lesson06Data} phase={currentPhase} phases={lesson06Phases} />
+      <PhaseFooter lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />
     </div>
   )
 }
-
