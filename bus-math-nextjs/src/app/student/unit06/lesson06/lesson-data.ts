@@ -40,36 +40,36 @@ export const lesson06Phases = [
     id: "phase_hook_6",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Live demo: one dashboard with Base/Stretch/Downside and instant decision cues",
+    description: "Witness the power of the 'Steering Wheel': Instant scenario switching for investors.",
   },
   {
     id: "phase_introduction_6",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "From model to decision: named driver table, XLOOKUP switching, KPI selection",
+    description: "Master the mechanics of Dynamic Lookups: Connecting the dashboard to the engine.",
   },
   {
     id: "phase_guided_practice_6",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build Sarah’s integration dashboard with validation and linked charts",
+    description: "Practice the XLOOKUP logic that allows Sarah to answer any 'What-If' instantly.",
   },
   {
     id: "phase_independent_practice_6",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Integration mastery: scenario toggles, live visuals, and exec summary text",
+    description: "Build the PriceLab Integration Dashboard: Your final professional steering wheel.",
   },
   {
     id: "phase_assessment_6",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Integration & dashboard mastery check with technical and judgment questions",
+    description: "Defend your dashboard: Prove your integration logic is investor-ready.",
   },
   {
     id: "phase_closing_6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesis: reliability, decision readiness, and preview of next lesson",
+    description: "Reflect on how integrated models build authority and professional trust.",
   }
 ]

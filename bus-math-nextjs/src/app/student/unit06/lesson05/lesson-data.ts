@@ -40,36 +40,36 @@ export const lesson05Phases = [
     id: "phase_hook_5",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Stress test Sarah's model: fragile vs. robust CVP automation for investor trust",
+    description: "Discover why Sarah needs a 'Pricing Map' to survive a competitor's price war.",
   },
   {
     id: "phase_introduction_5",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Data Tables and professional-grade automation: standards, gotchas, benefits",
+    description: "Master the mechanics of Data Tables: Mapping 50 scenarios in 5 seconds.",
   },
   {
     id: "phase_guided_practice_5",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build Sarah's scenario runner with validation and safeguards",
+    description: "Manually bridge the gap between simple math and complex Excel automation.",
   },
   {
     id: "phase_independent_practice_5",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Advanced mastery challenges using edge-case dataset and self-checklist",
+    description: "Build the 'Sensitivity Engine' of Sarah's PriceLab workbook in Excel.",
   },
   {
     id: "phase_assessment_5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Professional mastery assessment: technical knowledge + applied judgment",
+    description: "Stress-test your workbook: Can your pricing map handle real-world pressure?",
   },
   {
     id: "phase_closing_5",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesis and CAP reflection; preview integration and dashboards in Lesson 06",
+    description: "Reflect on how automation transforms you from a calculator to a strategic advisor.",
   }
 ]

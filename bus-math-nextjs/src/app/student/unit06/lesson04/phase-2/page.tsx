@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, BookOpen, Calculator, Target } from "lucide-react";
+import { Users, BookOpen, Calculator, Target, ArrowRight, Zap } from "lucide-react";
 import FillInTheBlank from "@/components/exercises/FillInTheBlank";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
@@ -38,12 +38,6 @@ const vocabularyExercise = [
     text: "Instead of asking 'If I charge $X, what profit will I make?', Goal Seek asks 'If I want $Y profit, what {blank} should I charge?'",
     answer: "price",
     hint: "Goal Seek helps determine what to charge customers"
-  },
-  {
-    id: "vocab-6",
-    text: "Goal Seek makes financial planning much faster and more {blank} than manual trial-and-error.",
-    answer: "accurate",
-    hint: "Goal Seek eliminates guesswork and provides precise results"
   }
 ];
 
@@ -72,87 +66,72 @@ export default function Phase2Page() {
                     <BookOpen className="w-8 h-8 text-green-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-green-800 mb-2">
-                    Goal Seek: The Professional Foundation
+                    Working Backward to Win
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Working Backward from Business Targets
+                    Goal Seek Mechanics & Strategy
                   </Badge>
                 </CardHeader>
-                <CardContent className="prose prose-lg max-w-none">
+                <CardContent className="space-y-6">
+                  <p className="text-lg leading-relaxed text-slate-800">
+                    Sarah realized that knowing her break-even point ($8,100 fixed costs ÷ contribution margin) was just 
+                    the beginning. To attract real investment, she needed to show how TechStart would reach its 
+                    <strong> profit milestones</strong>.
+                  </p>
                   
-                  {/* Main Educational Content - From unit06-text.md Day 6 */}
-                  <div className="space-y-6">
-                    <p className="text-lg leading-relaxed">
-                      Sarah not only needed to know her break-even point; she also needed to know how to reach her 
-                      <em>profit goals</em>. If she wanted to make a certain amount of money, what price should she charge? 
-                      Or how many new clients would she need? Trying to guess these numbers by changing values in a 
-                      spreadsheet over and over again can be really slow and frustrating. This is where a powerful 
-                      Excel tool called <strong>Goal Seek</strong> comes in.
+                  <p className="text-slate-700">
+                    "Jennifer," Sarah asked, "If I want to earn $10,000 profit next month to hire another developer, 
+                    should I raise my price or try to find more clients? How do I find the exact numbers without 
+                    spending all day guessing?"
+                  </p>
+
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+                      <Zap className="w-5 h-5" />
+                      The Goal Seek Solution
+                    </h3>
+                    <p className="text-blue-800 mb-4">
+                      Excel's <strong>Goal Seek</strong> tool is built for this exact problem. While most formulas 
+                      work "forward" (Input → Calculation → Result), Goal Seek works "backward" 
+                      (Target Result → Calculation → Required Input).
                     </p>
-
-                    <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                      <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-                        <Target className="w-5 h-5" />
-                        The Goal Seek Advantage
-                      </h3>
-                      <p className="text-blue-800 mb-4">
-                        Think of Goal Seek as a magic button that helps you work backward. Instead of saying, "If I sell 
-                        100 items at $20, what's my profit?", Goal Seek lets you say, "I want my profit to be $50,000—what 
-                        price do I need to charge to make that happen?"
-                      </p>
-                    </div>
-
-                    <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                      <h3 className="font-semibold text-yellow-900 mb-4 flex items-center gap-2">
-                        <Calculator className="w-5 h-5" />
-                        Goal Seek Has Three Main Parts:
-                      </h3>
-                      <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                          <div className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</div>
-                          <div>
-                            <p className="font-semibold text-yellow-900">Set Cell:</p>
-                            <p className="text-yellow-800">This is the cell in your spreadsheet that contains the formula you want to change, like your "Total Profit" cell.</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</div>
-                          <div>
-                            <p className="font-semibold text-yellow-900">To Value:</p>
-                            <p className="text-yellow-800">This is the specific number you want your "Set Cell" to reach, like $50,000.</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="bg-yellow-200 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</div>
-                          <div>
-                            <p className="font-semibold text-yellow-900">By Changing Cell:</p>
-                            <p className="text-yellow-800">This is the one input cell that Excel will change to reach your target, like your "Price per Unit" cell.</p>
-                          </div>
-                        </div>
+                    <div className="flex flex-col md:flex-row gap-4 items-center justify-center text-sm font-medium">
+                      <div className="bg-white p-3 rounded border border-blue-200 shadow-sm w-full md:w-auto text-center">
+                        Standard: Input → Result
+                      </div>
+                      <ArrowRight className="hidden md:block text-blue-400" />
+                      <div className="bg-blue-600 text-white p-3 rounded shadow-md w-full md:w-auto text-center">
+                        Goal Seek: Target → Input
                       </div>
                     </div>
+                  </div>
 
-                    <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
-                      <h3 className="font-semibold text-purple-900 mb-3">Professional Goal Seek Applications</h3>
-                      <p className="text-purple-800 mb-3">
-                        Today, you'll get hands-on with Goal Seek. You'll practice using it to answer important "what if" 
-                        questions for your CVP model, such as:
-                      </p>
-                      <ul className="list-disc list-inside space-y-2 text-purple-800">
-                        <li>What price do we need to charge to reach a profit target of $X?</li>
-                        <li>How many units do we need to sell to break even if our costs suddenly go up?</li>
-                        <li>What's the maximum variable cost we can have and still be profitable at a certain price?</li>
-                      </ul>
+                  <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">The Three Parameters</h3>
+                  <p className="text-slate-700 mb-6">
+                    To use Goal Seek (found under <em>Data &gt; What-If Analysis</em>), you must define three things:
+                  </p>
+
+                  <div className="grid gap-4">
+                    <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                      <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">1</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900">Set Cell</h4>
+                        <p className="text-slate-600 text-sm">The cell containing the formula you want to change (e.g., your <strong>Total Profit</strong> cell).</p>
+                      </div>
                     </div>
-
-                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                      <h3 className="font-semibold text-green-900 mb-2">Why This Matters</h3>
-                      <p className="text-green-800">
-                        By using Goal Seek, you can quickly explore different scenarios and find the exact numbers you need 
-                        to hit your business targets. This makes your financial planning much faster and more accurate! When 
-                        Sarah shows investors her Goal Seek capabilities, they see a business owner who can instantly adapt 
-                        to changing market conditions and make data-driven decisions.
-                      </p>
+                    <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                      <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">2</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900">To Value</h4>
+                        <p className="text-slate-600 text-sm">The specific number you want that cell to reach (e.g., <strong>$10,000</strong>).</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                      <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">3</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900">By Changing Cell</h4>
+                        <p className="text-slate-600 text-sm">The single input cell Excel should adjust to make the math work (e.g., <strong>Selling Price</strong>).</p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -162,44 +141,40 @@ export default function Phase2Page() {
               <FillInTheBlank
                 sentences={vocabularyExercise}
                 title="Goal Seek Vocabulary Mastery"
-                description="Complete the sentences using the correct Goal Seek terminology."
+                description="Sarah needs to speak the language of professional analysts. Complete the sentences below."
                 showWordList={true}
                 randomizeWordOrder={true}
                 showHints={true}
               />
 
-              {/* Turn and Talk */}
-              <Card className="border-blue-200 bg-blue-50">
+              {/* Business Reality Note */}
+              <Card className="border-amber-200 bg-amber-50">
                 <CardHeader>
-                  <CardTitle className="text-blue-800 flex items-center gap-2">
-                    <Users className="h-5 w-5" />
-                    Turn and Talk
+                  <CardTitle className="text-amber-800 flex items-center gap-2">
+                    <Calculator className="h-5 w-5" />
+                    Strategy Note: Choosing the Right "Lever"
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="font-medium text-blue-900 mb-2">
-                    Discussion Prompt (3 minutes):
+                <CardContent className="space-y-3">
+                  <p className="text-amber-900 text-sm leading-relaxed">
+                    Goal Seek is powerful, but it doesn't know if your answer is <em>realistic</em>. 
+                    If Goal Seek tells Sarah she needs to charge $5,000 per website to hit her goal, 
+                    but competitors charge $1,500, the tool has found a mathematical solution that isn't a 
+                    business solution. 
                   </p>
-                  <p className="text-blue-800 mb-2">
-                    Think about the three components of Goal Seek (Set Cell, To Value, By Changing Cell). 
-                    Share with a partner:
+                  <p className="text-amber-900 text-sm font-semibold">
+                    Always ask: Is the change Goal Seek suggests actually possible in the real market?
                   </p>
-                  <ul className="list-disc list-inside space-y-1 text-blue-800">
-                    <li>How is Goal Seek different from regular Excel formulas that work "forward"?</li>
-                    <li>What business scenarios would benefit from "working backward" from a target?</li>
-                    <li>Why might Goal Seek be essential for professional investor presentations?</li>
-                  </ul>
                 </CardContent>
               </Card>
 
               {/* Preview */}
               <Card className="border-gray-200 bg-gray-50">
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
+                  <h3 className="font-semibold text-gray-800 mb-2">Ready to Solve for Sarah?</h3>
                   <p className="text-gray-700">
-                    In the Guided Practice phase, you'll build Sarah's automated Goal Seek system step-by-step. 
-                    We'll create professional Excel models that can instantly answer complex pricing questions 
-                    and prepare you for real investor meetings.
+                    In Guided Practice, you'll help Sarah pull different "levers" (Price vs. Volume) 
+                    to see how she can hit her $10,000 profit milestone.
                   </p>
                 </CardContent>
               </Card>

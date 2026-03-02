@@ -2,12 +2,12 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Briefcase, AlignLeft } from "lucide-react";
+import { ShieldCheck, Rocket } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { getUnit06Phase5ComprehensionCheckItems } from "@/data/question-banks/unit06-phase5";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
-const currentPhase = lesson06Phases[4]; // Assessment
+const currentPhase = lesson06Phases[4]; // Assessment phase
 
 export default function Phase5Page() {
   const assessmentQuestions = getUnit06Phase5ComprehensionCheckItems({ lessonIds: ["lesson06"] })
@@ -20,58 +20,92 @@ export default function Phase5Page() {
         phase={currentPhase} 
         phases={lesson06Phases} 
       />
-
+      
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">
-              ✅ Phase 5: Assessment
+              📊 Phase 5: Assessment
             </Badge>
-            <div className="max-w-4xl mx-auto space-y-8">
-              <ComprehensionCheck
-                title="Integration & Dashboard Mastery Check"
-                description="Show your understanding of switching, validation, visuals, and decision framing."
-                questions={assessmentQuestions}
-                showExplanations={true}
-                allowRetry={true}
-              />
-
-              <Card className="border-blue-200 bg-blue-50">
-                <CardHeader>
-                  <CardTitle className="text-blue-800 flex items-center gap-2">
-                    <AlignLeft className="h-5 w-5" />
-                    What ‘Investor-Ready’ Looks Like
+            <div className="max-w-4xl mx-auto space-y-8 text-left">
+              
+              {/* Introduction */}
+              <Card className="border-yellow-200 bg-white shadow-lg">
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                    <ShieldCheck className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <CardTitle className="text-3xl font-bold text-yellow-800 mb-2">
+                    The Integration Audit
                   </CardTitle>
+                  <Badge variant="secondary" className="text-sm">
+                    Verifying the Steering Wheel
+                  </Badge>
                 </CardHeader>
-                <CardContent className="text-left">
-                  <ul className="list-disc list-inside space-y-1 text-blue-900">
-                    <li>Clarity: One-screen view with clean labels and readable charts.</li>
-                    <li>Reliability: Exact-match lookups, validation messages, stable references.</li>
-                    <li>Auditability: Documented driver → output → chart links.</li>
-                    <li>Action: KPIs connected to a short, specific recommendation.</li>
-                  </ul>
+                <CardContent className="prose prose-lg max-w-none">
+                  <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200 mb-6 text-center">
+                    <p className="text-lg leading-relaxed text-yellow-900 mb-4">
+                      Your PriceLab dashboard is a powerful tool, but is it <strong>trustworthy</strong>? 
+                      In this assessment, we'll audit your integration logic and test your ability 
+                      to present data-driven insights under pressure.
+                    </p>
+                  </div>
+
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+                      <Rocket className="w-5 h-5" />
+                      Dashboard Readiness Metrics
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-blue-900 text-sm">Technical (50%)</h4>
+                        <ul className="list-disc list-inside space-y-1 text-blue-800 text-xs">
+                          <li>XLOOKUP range anchoring ($A$2)</li>
+                          <li>Dropdown validation (Data &gt; Validation)</li>
+                          <li>Dynamic chart data binding</li>
+                          <li>Error handling (#N/A prevention)</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-blue-900 text-sm">Presentation (50%)</h4>
+                        <ul className="list-disc list-inside space-y-1 text-blue-800 text-xs">
+                          <li>Z-Pattern layout design</li>
+                          <li>Scenario-based risk analysis</li>
+                          <li>Strategic KPI selection</li>
+                          <li>Executive Summary clarity</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-emerald-200 bg-emerald-50">
-                <CardHeader>
-                  <CardTitle className="text-emerald-800 flex items-center gap-2">
-                    <Briefcase className="h-5 w-5" />
-                    Career Tie: Analyst/Consultant Workflow
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-left text-emerald-900">
-                  <p>
-                    Professionals turn scenarios → insights → recommendations. Your dashboard should let a
-                    partner ask “What if?” and get a trustworthy answer in seconds.
+              {/* Comprehensive Assessment */}
+              <ComprehensionCheck
+                title="Integration & Dashboard Mastery Assessment"
+                description="Show the investors that you are in total control of the data steering wheel."
+                questions={assessmentQuestions}
+                showExplanations={true}
+                allowRetry={false}
+              />
+
+              {/* Preview */}
+              <Card className="border-gray-200 bg-gray-50">
+                <CardContent className="p-6 text-center">
+                  <h3 className="font-semibold text-gray-800 mb-2">Final Polish Ahead</h3>
+                  <p className="text-gray-700">
+                    In the Closing phase, we'll reflect on how integration builds professional authority. 
+                    Next lesson, we'll complete the final piece of the puzzle: the <strong>Executive Summary 
+                    Report</strong>.
                   </p>
                 </CardContent>
               </Card>
+              
             </div>
           </div>
         </section>
       </main>
-
+      
       <PhaseFooter 
         unit={unit06Data} 
         lesson={lesson06Data} 

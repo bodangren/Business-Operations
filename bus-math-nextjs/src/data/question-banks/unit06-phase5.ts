@@ -462,151 +462,147 @@ const lesson04Questions: Unit06Phase5Question[] = [
     id: "lesson04-q1",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Sarah wants $60,000 profit next year but her model shows $35,000 at $3,000 per project. What is the smartest Excel move?",
-    correctAnswer: "Run Goal Seek with Set Cell = profit, To Value = 60,000, By Changing Cell = price per project.",
+    prompt: "Sarah currently makes $3,180 profit at 24 projects ($1,350 price). Michael Chen asks what price she needs to hit $10,000 profit. What is the correct Goal Seek setup?",
+    correctAnswer: "Set Cell = Profit, To Value = 10000, By Changing Cell = Price.",
     distractors: [
-      "Use SUM to add every possible project combination.",
-      "Run VLOOKUP on competitor pricing tables.",
-      "Guess higher prices until the profit cell looks right."
+      "Set Cell = Price, To Value = 10000, By Changing Cell = Profit.",
+      "Set Cell = Units, To Value = 24, By Changing Cell = Price.",
+      "Set Cell = Fixed Costs, To Value = 10000, By Changing Cell = Profit."
     ],
     explanation:
-      "Goal Seek is built to reverse engineer the exact price that delivers the target profit, showing investors a precise answer.",
-    objectiveTags: ["goal-seek", "target-profit", "excel-tools"]
+      "Profit is the target formula cell (Set Cell). The desired amount is $10,000 (To Value). We want Excel to find the Price (By Changing Cell).",
+    objectiveTags: ["goal-seek", "target-profit", "mechanics"]
   },
   {
     id: "lesson04-q2",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Within Goal Seek, what does the 'By Changing Cell' field represent?",
-    correctAnswer: "The single input cell Excel adjusts to hit the target value in the formula cell.",
+    prompt: "Goal Seek tells Sarah she needs 39 projects to hit her profit goal. She only has capacity for 24. What is the professional interpretation of this result?",
+    correctAnswer: "The strategy is mathematically correct but operationally impossible without more hiring.",
     distractors: [
-      "The cell that contains the target value.",
-      "The formula that will be overwritten by Goal Seek.",
-      "The output cell that displays the final profit."
+      "The Goal Seek tool is broken and needs to be refreshed.",
+      "Sarah should work 24/7 until all 39 projects are done.",
+      "She should ignore the capacity limit and tell investors she'll hit the target."
     ],
     explanation:
-      "Goal Seek manipulates one input. That cell must contain a value (not a formula) that feeds the formula being solved.",
-    objectiveTags: ["goal-seek", "excel-tools", "modeling"]
+      "Goal Seek finds the math solution, but the entrepreneur must apply the reality filter. If the required volume exceeds capacity, the strategy is a 'no-go'.",
+    objectiveTags: ["goal-seek", "feasibility", "decision-making"]
   },
   {
     id: "lesson04-q3",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "An investor asks how higher fixed costs change the required price. Why is Goal Seek perfect for the answer?",
-    correctAnswer: "Update fixed costs, then Goal Seek the new price that keeps profit on target.",
+    prompt: "Why must the 'By Changing Cell' in Goal Seek contain a value, not a formula?",
+    correctAnswer: "Excel must be able to overwrite the cell with new numbers to see how the target formula responds.",
     distractors: [
-      "Goal Seek pulls live competitor data automatically.",
-      "Goal Seek creates polished charts for the presentation.",
-      "Goal Seek emails the investor a summary without Sarah's help."
+      "Formulas are too complex for Goal Seek to understand.",
+      "By Changing Cells are reserved for text labels only.",
+      "Using a formula in a changing cell would crash the entire workbook."
     ],
     explanation:
-      "Goal Seek quickly recalculates the exact price that maintains profit, proving Sarah can respond in meetings with confidence.",
-    objectiveTags: ["goal-seek", "scenario-analysis", "investor-readiness"]
+      "Goal Seek works by 'plugging in' different numbers. If the cell contains a formula, Excel cannot overwrite it with trial values.",
+    objectiveTags: ["goal-seek", "excel-tools", "mechanics"]
   },
   {
     id: "lesson04-q4",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Break-even is 85 units and Sarah wants it to fall to 60 units using price only. How should Goal Seek be set up?",
-    correctAnswer: "Set Cell = break-even formula, To Value = 60, By Changing Cell = price per unit.",
-    distractors: [
-      "Set Cell = price per unit, To Value = 60, By Changing Cell = break-even formula.",
-      "Set Cell = fixed costs, To Value = 60, By Changing Cell = variable cost.",
-      "Set Cell = sales volume, To Value = 85, By Changing Cell = break-even formula."
-    ],
+    prompt: "If Sarah wants her break-even point to be exactly 15 projects, which parameter should she use for 'To Value'?",
+    correctAnswer: "15",
+    distractors: ["0", "$8,100", "$10,000"],
     explanation:
-      "The break-even formula cell must equal 60. Goal Seek adjusts price until that formula outputs 60 units.",
-    objectiveTags: ["goal-seek", "break-even", "modeling"]
+      "The 'To Value' is always the specific target number you want your 'Set Cell' (the break-even formula) to reach.",
+    objectiveTags: ["goal-seek", "break-even", "mechanics"]
   },
   {
     id: "lesson04-q5",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Why is Goal Seek mastery critical during investor presentations?",
-    correctAnswer: "Investors expect instant, precise answers to \"what if\" questions about pricing and profit targets.",
+    prompt: "In a Town Hall debate, a competitor claims Sarah can't be profitable at low volume. How does Goal Seek help her defend her business?",
+    correctAnswer: "She can instantly show the exact price or cost reduction needed to be profitable at any volume level.",
     distractors: [
-      "Goal Seek automatically creates slide decks for board meetings.",
-      "Investors refuse to fund companies that use manual formulas.",
-      "Goal Seek guarantees higher profit without effort."
+      "She can use Goal Seek to hide her actual expenses from the audience.",
+      "Goal Seek can automatically change the competitor's prices in their models.",
+      "It creates a distraction so she doesn't have to answer the question."
     ],
     explanation:
-      "Being able to show a target-driven calculation in real time builds trust and positions Sarah as a prepared Founder.",
-    objectiveTags: ["investor-readiness", "goal-seek", "communication"]
+      "Goal Seek provides the data-driven proof that a path to profitability exists, allowing Sarah to respond with precision and confidence.",
+    objectiveTags: ["investor-readiness", "communication", "strategy"]
   },
   {
     id: "lesson04-q6",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "A firm wants to know the maximum variable cost per project that still allows a 30% margin. How should Sarah respond?",
-    correctAnswer: "Goal Seek the profit margin formula to 30% by changing the variable cost cell.",
+    prompt: "Sarah's fixed costs are $8,100. She wants to know the maximum variable cost per project that allows her to break even at just 10 projects (at a $1,350 price). What is her 'Set Cell'?",
+    correctAnswer: "The Profit formula cell (which should be set to 0).",
     distractors: [
-      "Goal Seek the variable cost cell to 30% by changing the margin formula.",
-      "Goal Seek total revenue to 30% by changing units sold.",
-      "Goal Seek average selling price to 30% by changing fixed costs."
+      "The Fixed Costs cell ($8,100).",
+      "The Volume cell (10 projects).",
+      "The Variable Cost cell."
     ],
     explanation:
-      "The margin formula is the output. Goal Seek manipulates the variable cost input until the formula equals 30%.",
-    objectiveTags: ["goal-seek", "pricing", "scenario-analysis"]
+      "Break-even is defined as Profit = 0. Therefore, the profit formula cell is the 'Set Cell' we want to reach 0.",
+    objectiveTags: ["goal-seek", "break-even", "mechanics"]
   },
   {
     id: "lesson04-q7",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "What does it show when Sarah reaches $75,000 profit either by raising price or selling more units?",
-    correctAnswer: "Goal Seek can solve the same target by adjusting different decision levers depending on the changing cell.",
+    prompt: "What is the primary risk of relying ONLY on Goal Seek for pricing decisions?",
+    correctAnswer: "It might suggest a price that the market is unwilling to pay.",
     distractors: [
-      "Goal Seek always produces multiple answers automatically.",
-      "Goal Seek only works with price increases, not volume changes.",
-      "Goal Seek results are unreliable when profit goals are large."
+      "It might calculate the math incorrectly.",
+      "It takes too long to run on a standard laptop.",
+      "It requires a paid subscription to use in Excel."
     ],
     explanation:
-      "Sarah can run Goal Seek on price or volume as long as the model links those inputs to profit. It showcases strategic flexibility.",
-    objectiveTags: ["goal-seek", "scenario-analysis", "strategy"]
+      "Goal Seek finds a mathematical solution. The business owner must decide if that solution is competitive and realistic in the marketplace.",
+    objectiveTags: ["strategy", "risk-assessment", "decision-making"]
   },
   {
     id: "lesson04-q8",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Hiring two more developers will raise fixed costs by $8,000. Which Goal Seek setup answers the break-even question?",
-    correctAnswer: "Update fixed costs, set Goal Seek to profit = 0, and change the volume cell to see new break-even units.",
+    prompt: "Sarah finds that to hit her goal, she needs to reduce fixed costs by $2,500. What is the 'By Changing Cell' in this Goal Seek setup?",
+    correctAnswer: "The Fixed Costs input cell.",
     distractors: [
-      "Goal Seek automatically calculates payroll costs without updating the model.",
-      "Goal Seek compares salary levels across different industries.",
-      "Goal Seek writes the job descriptions for the new hires."
+      "The Total Profit cell.",
+      "The $2,500 target cell.",
+      "The Revenue formula cell."
     ],
     explanation:
-      "Goal Seek focuses on one variable at a time. Setting profit to zero finds the exact sales volume needed after adding fixed costs.",
-    objectiveTags: ["goal-seek", "break-even", "planning"]
+      "We want to know the new fixed cost level, so that input cell is what Goal Seek must change.",
+    objectiveTags: ["goal-seek", "cost-optimization", "mechanics"]
   },
   {
     id: "lesson04-q9",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Why is Goal Seek better than manual trial and error for scenario planning?",
-    correctAnswer: "Goal Seek delivers mathematically precise answers fast, even under pressure.",
+    prompt: "Which Excel menu contains the Goal Seek tool?",
+    correctAnswer: "Data > What-If Analysis",
     distractors: [
-      "Goal Seek makes charts more colorful.",
-      "Goal Seek runs faster than a calculator app.",
-      "Goal Seek eliminates the need for financial planning."
+      "Home > Formulas",
+      "Insert > Analysis Tools",
+      "Review > Calculation"
     ],
     explanation:
-      "Precision and speed impress stakeholders and reduce mistakes compared to guessing and retyping numbers.",
-    objectiveTags: ["goal-seek", "professionalism", "analysis"]
+      "Goal Seek is part of the 'What-If Analysis' toolkit located on the Data tab.",
+    objectiveTags: ["excel-tools", "mechanics"]
   },
   {
     id: "lesson04-q10",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Goal Seek for Target Profit Scenarios",
-    prompt: "Sarah must present conservative, optimistic, and stretch profit goals. What's the professional approach?",
-    correctAnswer: "Run Goal Seek for each target, capture the required price or volume, and document the assumptions for the audience.",
+    prompt: "If Goal Seek fails to find a solution, what is the most likely reason?",
+    correctAnswer: "The 'By Changing Cell' is not connected to the 'Set Cell' by any formulas.",
     distractors: [
-      "Run Goal Seek once and guess the other two numbers.",
-      "Build three separate workbooks instead of using Goal Seek.",
-      "Wait for investors to pick a favorite scenario before doing any math."
+      "The internet connection is too slow for the solver.",
+      "Sarah didn't use enough colors in her worksheet.",
+      "The target profit is higher than $1,000,000."
     ],
     explanation:
-      "Investors expect precise comparisons. Running Goal Seek for each scenario ensures Sarah has exact numbers ready with full context.",
-    objectiveTags: ["goal-seek", "scenario-analysis", "communication"]
+      "Goal Seek works by changing an input and watching the output. If there is no formula link between them, changing the input does nothing to the output.",
+    objectiveTags: ["goal-seek", "troubleshooting", "modeling"]
   }
 ];
 
@@ -615,151 +611,151 @@ const lesson05Questions: Unit06Phase5Question[] = [
     id: "lesson05-q1",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "Which statement best describes a one-variable Data Table?",
-    correctAnswer: "It changes one input value and watches how a single output formula responds.",
+    prompt: "Sarah builds a 2-Variable Data Table. She puts Price in the column and Volume in the row. What must she select for the 'Row Input Cell'?",
+    correctAnswer: "The Volume input cell in her model.",
     distractors: [
-      "It changes two inputs and returns two outputs at once.",
-      "It must use VLOOKUP to locate results.",
-      "It requires a macro every time it runs."
+      "The Price input cell in her model.",
+      "The Total Profit formula cell.",
+      "The top-left corner of the grid."
     ],
     explanation:
-      "One-variable tables are perfect for testing pricing or volume changes against one result cell like profit.",
-    objectiveTags: ["data-tables", "automation", "cvp"]
+      "The 'Row Input Cell' tells Excel which cell in the model should be replaced by the values listed in the table's first row (Volume).",
+    objectiveTags: ["data-tables", "mechanics"]
   },
   {
     id: "lesson05-q2",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "When do two-variable Data Tables shine?",
-    correctAnswer: "When Sarah wants to see how combinations of price and units impact profit in one grid.",
+    prompt: "A 2-Variable table shows identical results in every single cell. What is the most likely error Sarah made?",
+    correctAnswer: "She didn't link the top-left corner of the grid to the result formula.",
     distractors: [
-      "When she needs to summarize expenses by department.",
-      "When she must analyze customer names alphabetically.",
-      "When she wants to format dates and times for printing."
+      "She used too many rows in the table.",
+      "She forgot to apply Conditional Formatting.",
+      "She included fixed costs in the table range."
     ],
     explanation:
-      "Two-variable tables handle two inputs simultaneously, giving investors a quick heat map of how profit shifts.",
-    objectiveTags: ["data-tables", "scenario-analysis", "cvp"]
+      "The top-left corner of a 2-variable table must be a direct reference (e.g., =B12) to the formula you want Excel to calculate.",
+    objectiveTags: ["data-tables", "troubleshooting"]
   },
   {
     id: "lesson05-q3",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "Which formula pairing keeps a profit cell professional during demos?",
-    correctAnswer: "Wrap the profit formula in IFERROR (or IFNA) with a clear message if inputs are missing.",
+    prompt: "Looking at her completed 'Pricing Map', Sarah sees that at a $1,200 price, her profit cell is red at 10, 15, and 20 units. What does this tell her?",
+    correctAnswer: "A $1,200 price is too low to break even at current volume levels.",
     distractors: [
-      "Use TEXTJOIN to combine the numbers into one cell.",
-      "Apply HYPERLINK so investors can click the profit cell.",
-      "Merge the profit cell with the title for easy formatting."
+      "The Excel formula is broken.",
+      "The competitor's price is higher than $1,200.",
+      "She should immediately fire Alex to reduce costs."
     ],
     explanation:
-      "Error handling prevents scary #DIV/0! messages and guides the audience if an assumption is blank.",
-    objectiveTags: ["error-handling", "professionalism", "cvp"]
+      "The red cells represent negative profit. If the 'map' is red, the business is losing money in those specific scenarios.",
+    objectiveTags: ["data-tables", "analysis", "decision-making"]
   },
   {
     id: "lesson05-q4",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "Which validation rule should never be skipped in a CVP dashboard?",
-    correctAnswer: "Flag negative variable costs because they are unrealistic and signal a data error.",
+    prompt: "Why is a Data Table considered 'live' automation?",
+    correctAnswer: "If Sarah changes her fixed costs, every single value in the Data Table updates instantly.",
     distractors: [
-      "Allow blank product IDs because investors only care about totals.",
-      "Ignore stale dates as long as last month looked good.",
-      "Skip checks on out-of-range prices to keep the sheet simple."
+      "It plays a sound whenever a target is reached.",
+      "It automatically sends an email to investors.",
+      "It requires a live internet connection to function."
     ],
     explanation:
-      "Strong validation guards against unrealistic inputs and protects Sarah's credibility.",
-    objectiveTags: ["data-validation", "risk", "cvp"]
+      "Data Tables are dynamic. Because they are linked to the underlying model, any change to fixed or variable costs ripples through the entire matrix.",
+    objectiveTags: ["automation", "mechanics"]
   },
   {
     id: "lesson05-q5",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "What does method switching mean in Sarah's model?",
-    correctAnswer: "Using Goal Seek or Driver Table toggles to solve for whichever input (price, units, fixed, variable) matches the question.",
+    prompt: "An investor asks Sarah, 'How sensitive is your profit to a 10% drop in volume?' Which tool provides the best visual proof?",
+    correctAnswer: "A 1-Variable Data Table showing profit across a range of volumes.",
     distractors: [
-      "Changing the color palette between worksheets.",
-      "Swapping data tabs every time she presents.",
-      "Deleting old data so new scenarios feel fresh."
+      "A Goal Seek calculation for one volume level.",
+      "A pie chart of last month's expenses.",
+      "A written list of customer testimonials."
     ],
     explanation:
-      "Professionals flex between tools and inputs so the model answers whatever the stakeholder cares about most.",
-    objectiveTags: ["method-switching", "scenario-analysis", "automation"]
+      "A Data Table (sensitivity analysis) shows the 'sensitivity' by displaying exactly how profit drops as volume decreases across multiple levels.",
+    objectiveTags: ["sensitivity-analysis", "investor-readiness"]
   },
   {
     id: "lesson05-q6",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "Why do investors ask about margin of safety in the CVP summary?",
-    correctAnswer: "It shows how far actual plans sit above break-even, revealing the cushion if sales dip.",
+    prompt: "Sarah wraps her profit formula in =IFERROR(formula, 'Check Inputs'). Why is this a professional standard?",
+    correctAnswer: "It prevents ugly error codes like #DIV/0! from appearing during an investor presentation.",
     distractors: [
-      "It makes the dashboard colors brighter for presentations.",
-      "It speeds up printing handouts before meetings.",
-      "It hides other errors in the model from the audience."
+      "It makes the spreadsheet calculate 2x faster.",
+      "It automatically corrects mathematical mistakes.",
+      "It hides the fact that Sarah hasn't finished the workbook."
     ],
     explanation:
-      "Margin of safety expresses risk in practical terms, giving investors confidence in Sarah's projections.",
-    objectiveTags: ["margin-of-safety", "investor-readiness", "risk"]
+      "Error handling keeps the model polished and user-friendly, ensuring that stakeholders see clear messages instead of confusing technical errors.",
+    objectiveTags: ["professionalism", "error-handling"]
   },
   {
     id: "lesson05-q7",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "What structure screams investor-ready inside Sarah's workbook?",
-    correctAnswer: "Inputs grouped together, calculations in one area, outputs cleanly displayed, plus quick documentation and validation notes.",
+    prompt: "In a Town Hall debate, Sarah shows her 'Pricing Map' with a clear Green Zone. What does this demonstrate to the audience?",
+    correctAnswer: "That she has a wide range of feasible prices that remain profitable, making her business resilient.",
     distractors: [
-      "Hiding key formulas on secret sheets so nobody can edit them.",
-      "Merging cells throughout the data table to save space.",
-      "Replacing formulas with hard-coded numbers right before the presentation."
+      "That she is the best at picking colors in Excel.",
+      "That she doesn't care about making a profit.",
+      "That she is planning to double her prices next month."
     ],
     explanation:
-      "Clarity and documentation show Sarah owns the numbers and understands the system she built.",
-    objectiveTags: ["model-structure", "professionalism", "communication"]
+      "A large 'Green Zone' (Profit) shows resilience—the business can handle fluctuations in volume or price and still survive.",
+    objectiveTags: ["strategy", "communication", "resilience"]
   },
   {
     id: "lesson05-q8",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "When does a Data Table beat Goal Seek?",
-    correctAnswer: "When Sarah wants to explore many \"what if\" combinations at the same time.",
+    prompt: "If Sarah wants to see the impact of Price, Volume, AND Fixed Costs all at once, can she use a single Data Table?",
+    correctAnswer: "No, Data Tables are limited to a maximum of 2 variables.",
     distractors: [
-      "When she needs to change one number to hit a single exact target.",
-      "When formatting slide titles for the investor deck.",
-      "When standardizing customer names during data cleanup."
+      "Yes, she can use a 3-Variable Data Table.",
+      "Yes, but only if she uses the 1-Variable tool three times.",
+      "No, Excel doesn't allow tracking Fixed Costs in tables."
     ],
     explanation:
-      "Goal Seek answers one target, while Data Tables map a whole landscape of options so decision-makers can compare paths.",
-    objectiveTags: ["data-tables", "scenario-analysis", "tool-selection"]
+      "Data Tables have a hard limit of two variables (Row and Column). For three or more variables, analysts use 'Scenario Manager' or multiple tables.",
+    objectiveTags: ["data-tables", "mechanics", "limitations"]
   },
   {
     id: "lesson05-q9",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "Which formula pairing strengthens clarity inside the automation model?",
-    correctAnswer: "IFERROR with structured references like Table[Price] for every key calculation.",
+    prompt: "What is the primary benefit of using 'Structured References' (like Table[Price]) in CVP automation?",
+    correctAnswer: "Formulas become easier to read and automatically expand as new data is added.",
     distractors: [
-      "LEFT and RIGHT to trim chart titles.",
-      "RANDBETWEEN and RAND to generate surprise scenarios.",
-      "TODAY and NOW to timestamp every single cell."
+      "They allow Sarah to use Goal Seek without opening the menu.",
+      "They change the font of the workbook to look more professional.",
+      "They hide the formulas from people who don't have a password."
     ],
     explanation:
-      "Structured references read like sentences and IFERROR keeps the experience polished, signaling professionalism.",
-    objectiveTags: ["structured-references", "error-handling", "automation"]
+      "Structured references act like 'natural language' for Excel, making the math easier for investors to follow and audit.",
+    objectiveTags: ["structured-references", "professionalism"]
   },
   {
     id: "lesson05-q10",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Advanced CVP Automation: Scenario Runner & Data Tables",
-    prompt: "Operating leverage helps Sarah explain what?",
-    correctAnswer: "How sensitive profit is when sales volume goes up or down because of high fixed costs.",
+    prompt: "How does a 'Pricing Map' help Sarah handle a competitor's price drop?",
+    correctAnswer: "She can instantly see the 'break-even volume' for the competitor's price and decide if it's realistic.",
     distractors: [
-      "How many Chrome tabs the team opened while modeling.",
-      "Which theme color to use on the cover slide.",
-      "Which cells have been merged together."
+      "It automatically sends a legal cease-and-desist to the competitor.",
+      "It tells her exactly which customers to call first.",
+      "It lowers her fixed costs automatically to match the competition."
     ],
     explanation:
-      "Operating leverage connects cost structure to risk and upside, language investors care about.",
-    objectiveTags: ["operating-leverage", "cvp", "risk"]
+      "The map shows the trade-off. If price drops, she can see exactly how much volume she needs to maintain her desired profit.",
+    objectiveTags: ["strategy", "competitive-analysis"]
   }
 ];
 
@@ -768,150 +764,151 @@ const lesson06Questions: Unit06Phase5Question[] = [
     id: "lesson06-q1",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "What is the best way to switch scenarios by name inside an investor dashboard?",
-    correctAnswer: "Use XLOOKUP or INDEX-MATCH with validation so each name pulls the right driver set.",
+    prompt: "Sarah wants her dashboard charts to update instantly when she switches scenarios. What is the most professional way to set this up?",
+    correctAnswer: "Link the charts to an XLOOKUP summary area, not the raw data tables.",
     distractors: [
-      "Paste the chosen scenario values into the model before every meeting.",
-      "Depend on SUMIF across multiple hidden scenario sheets.",
-      "Use approximate matches so Excel can guess which scenario you wanted."
+      "Re-build the charts every time she switches scenarios.",
+      "Copy and paste the new numbers into the chart range.",
+      "Hide all the rows that she doesn't want to see in the chart."
     ],
     explanation:
-      "Exact-match lookups tied to a driver table keep the dashboard trustworthy and fast when questions change.",
-    objectiveTags: ["scenario-runner", "lookups", "investor-readiness"]
+      "By linking charts to a dynamic XLOOKUP summary, the visuals become 'live' steering wheels that respond to the scenario toggle.",
+    objectiveTags: ["dashboard-design", "integration"]
   },
   {
     id: "lesson06-q2",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "Charts stop updating as more rows load. What is the correct fix?",
-    correctAnswer: "Build visuals off the Excel Table so structured references expand with the data.",
+    prompt: "In the formula =XLOOKUP(A2, Table[Name], Table[Profit]), what does cell A2 represent?",
+    correctAnswer: "The 'Steering Wheel' toggle where Sarah selects the scenario name.",
     distractors: [
-      "Hard-code the range and add extra colors to distract viewers.",
-      "Turn off automatic calculation before every meeting.",
-      "Move the chart to a separate sheet so the range stays small."
+      "The result of the calculation.",
+      "The entire data table range.",
+      "The name of the investor she is presenting to."
     ],
     explanation:
-      "Charts tied to Tables update automatically, keeping the story aligned with the freshest numbers.",
-    objectiveTags: ["structured-references", "data-visualization", "automation"]
+      "Cell A2 is the Lookup_Value. It is the key that tells Excel which specific scenario to search for in the data table.",
+    objectiveTags: ["xlookup", "mechanics"]
   },
   {
     id: "lesson06-q3",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "Which validation rule earns the most trust from investors?",
-    correctAnswer: "Alert users when the As-Of date is stale or when rate assumptions drift outside approved limits.",
+    prompt: "Why should Sarah use Data Validation (Dropdowns) for her scenario toggle cell?",
+    correctAnswer: "To prevent typing errors that would break the XLOOKUP connection.",
     distractors: [
-      "Hide errors by turning the font color white.",
-      "Delete suspicious rows without documenting why.",
-      "Rely on screenshots instead of live data."
+      "To make the spreadsheet use less memory.",
+      "To prevent investors from seeing the hidden formulas.",
+      "To automatically calculate the fixed costs."
     ],
     explanation:
-      "Clear guardrails protect from old or wild assumptions sneaking into the summary, proving Sarah monitors risk.",
-    objectiveTags: ["data-validation", "risk", "investor-readiness"]
+      "XLOOKUP requires an exact match. Dropdowns ensure the toggle always matches the names in the data table engine.",
+    objectiveTags: ["data-validation", "professionalism"]
   },
   {
     id: "lesson06-q4",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "When is a driver table better than Excel's Scenario Manager?",
-    correctAnswer: "When Sarah needs dynamic switching, aligned charts, and visible documentation on one canvas.",
+    prompt: "An investor asks, 'What happens if we lose 20% of our customers?' How does the Integration Dashboard help Sarah answer?",
+    correctAnswer: "She switches the toggle to 'Downside Case' and reads the updated Profit KPI instantly.",
     distractors: [
-      "When she wants to avoid documenting any assumptions.",
-      "When she prefers spreading logic across many files.",
-      "When she wants to hide assumptions so no one questions them."
+      "She opens her Lesson 1 notes to find the customer list.",
+      "She runs a Goal Seek to find the break-even point.",
+      "She explains that 20% is too high a number to calculate."
     ],
     explanation:
-      "Driver tables embed the logic in rows that can be filtered, audited, and linked to visuals without extra clicks.",
-    objectiveTags: ["scenario-runner", "model-structure", "automation"]
+      "A dashboard allows for instant response. By having pre-calculated scenarios, Sarah shows she has already planned for risks.",
+    objectiveTags: ["investor-readiness", "strategy"]
   },
   {
     id: "lesson06-q5",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "How do you prevent #N/A errors when someone types a scenario name wrong?",
-    correctAnswer: "Wrap the lookup in IFNA (or IFERROR) and show a friendly \"Scenario not found\" message.",
+    prompt: "If Sarah's dashboard shows a #N/A error after she selects a scenario, what is the most likely problem?",
+    correctAnswer: "The name in the toggle does not match any name in the 'Lookup_Array' exactly.",
     distractors: [
-      "Put SUM around the lookup so it averages the mistake.",
-      "Use LEFT to shorten the name and hope it matches.",
-      "Ignore the error so people learn to spell it correctly."
+      "The computer has run out of battery.",
+      "The profit formula is too complex for XLOOKUP.",
+      "The chart has too many colors."
     ],
     explanation:
-      "Friendly error handling keeps the dashboard polished and guides the user to correct the issue quickly.",
-    objectiveTags: ["error-handling", "lookups", "ux"]
+      "#N/A means 'Not Available.' It usually happens when a lookup tool can't find the specific key it was told to search for.",
+    objectiveTags: ["troubleshooting", "xlookup"]
   },
   {
     id: "lesson06-q6",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "Which KPI trio is most decision-ready for pricing strategy?",
-    correctAnswer: "Unit margin, break-even units, and runway months.",
+    prompt: "What is the 'Z-Pattern' in professional dashboard design?",
+    correctAnswer: "Placing the most important information (Logo/Toggles/KPIs) along the top and left paths where the eye travels first.",
     distractors: [
-      "Total row count, number of tabs, cell color usage.",
-      "Days since last save, workbook file size, sheet count.",
-      "Average character count in cell labels."],
+      "Arranging the data tables in the shape of a Z.",
+      "Using only 26 rows of data in every worksheet.",
+      "Applying a diagonal gradient to all charts."
+    ],
     explanation:
-      "Those KPIs translate directly to risk, sustainability, and pricing power, the exact talking points investors want.",
-    objectiveTags: ["kpi-selection", "pricing", "investor-readiness"]
+      "The Z-Pattern follows how people naturally scan a page. Putting the 'Steering Wheel' at the top-left makes the dashboard intuitive for users.",
+    objectiveTags: ["dashboard-design", "ux"]
   },
   {
     id: "lesson06-q7",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "In a live investor Q&A, what should Sarah display first when a scenario is requested?",
-    correctAnswer: "Switch the scenario toggle, display refreshed KPIs, and summarize the recommendation in one sentence.",
+    prompt: "Sarah adds an 'Executive Summary' text box to her dashboard. What should this box contain?",
+    correctAnswer: "A clear recommendation based on the data and a note about the biggest risk.",
     distractors: [
-      "Scroll through raw data exports to show how many rows she imported.",
-      "Open the VBA editor to prove the workbook is advanced.",
-      "Read an email thread explaining why the model exists."
+      "A list of every formula used in the workbook.",
+      "A set of instructions on how to use Excel.",
+      "A copy of the company's employee handbook."
     ],
     explanation:
-      "Leading with the decision view keeps the conversation focused and shows Sarah controls the tool.",
-    objectiveTags: ["communication", "investor-readiness", "scenario-runner"]
+      "A dashboard should provide both the 'What' (Data) and the 'So What' (Strategic recommendation).",
+    objectiveTags: ["communication", "professionalism"]
   },
   {
     id: "lesson06-q8",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "What upgrade most improves auditability for the dashboard?",
-    correctAnswer: "Document driver-to-output connections with clear comments or a mini legend on the page.",
+    prompt: "How does 'Absolute Referencing' ($B$4) help when wiring a dashboard?",
+    correctAnswer: "It allows Sarah to copy her XLOOKUP formula to other cells while keeping the toggle cell locked.",
     distractors: [
-      "Hide supporting sheets behind passwords so nobody can view them.",
-      "Merge cells around every chart to lock the layout.",
-      "Copy values over formulas so nothing changes during review."
+      "It makes the formula results appear in a larger font.",
+      "It prevents other users from changing the profit target.",
+      "It automatically formats the results as currency."
     ],
     explanation:
-      "Investors need to trace assumptions quickly. Short notes or legends point them to the source without derailing the meeting.",
-    objectiveTags: ["audit-trail", "communication", "documentation"]
+      "Dashboard components usually all look at the same one toggle cell. Absolute references keep that link 'sticky' when copying formulas.",
+    objectiveTags: ["excel-mechanics", "efficiency"]
   },
   {
     id: "lesson06-q9",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "Sarah's dashboard feels busy. What redesign keeps the data powerful without overwhelming viewers?",
-    correctAnswer: "Group inputs on the left, KPIs up top, visuals on the right, and leave breathing room between sections.",
+    prompt: "Which function can Sarah use to hide errors if her scenario engine is missing data?",
+    correctAnswer: "IFNA or IFERROR",
     distractors: [
-      "Shrink the font to 6pt so everything fits on one screen.",
-      "Stack all charts in one column without labels.",
-      "Remove the KPIs entirely so investors can calculate them mentally."
+      "SUMIF",
+      "VLOOKUP",
+      "CONCATENATE"
     ],
     explanation:
-      "Clear layout helps decision-makers follow the story instantly, which is critical when time is limited.",
-    objectiveTags: ["dashboard-design", "ux", "communication"]
+      "IFNA allows Sarah to replace an error message with a clean note like 'Select Scenario', keeping the dashboard professional.",
+    objectiveTags: ["error-handling", "professionalism"]
   },
   {
     id: "lesson06-q10",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "How should Sarah close an investor walkthrough of the dashboard?",
-    correctAnswer: "Restate the recommended scenario, note the risk guardrails, and invite questions with the model ready to flex.",
+    prompt: "Sarah's investor is impressed by her dashboard. Why does this build 'Professional Trust'?",
+    correctAnswer: "It shows she has a systematic, data-driven approach to her business and can respond to changes instantly.",
     distractors: [
-      "Email the workbook and end the call without discussion.",
-      "Switch to a random worksheet to show off color coding.",
-      "Delete all scenarios except the one she prefers."
+      "It proves she spent 100 hours working on the spreadsheet.",
+      "It shows she has the most expensive version of Excel.",
+      "It guarantees the business will never have a bad month."
     ],
     explanation:
-      "Summarizing action steps while demonstrating adaptability reinforces confidence in both the numbers and Sarah's leadership.",
-    objectiveTags: ["investor-readiness", "communication", "leadership"]
+      "A dashboard signals leadership and preparation. Investors trust founders who can steer their business using precise tools.",
+    objectiveTags: ["leadership", "investor-readiness"]
   }
 ];
 
