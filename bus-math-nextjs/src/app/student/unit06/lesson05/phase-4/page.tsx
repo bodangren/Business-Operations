@@ -6,40 +6,104 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileSpreadsheet, Rocket, Download, CheckCircle, Calculator, ClipboardList, Star, Table } from "lucide-react";
 import { SpreadsheetWrapper } from "@/components/spreadsheet/SpreadsheetWrapper";
-import type { SpreadsheetData } from "@/components/spreadsheet/SpreadsheetWrapper";
+import type { SpreadsheetData, SpreadsheetCell } from "@/components/spreadsheet/SpreadsheetWrapper";
 import { lesson05Data, unit06Data, lesson05Phases } from "../lesson-data";
 
 const currentPhase = lesson05Phases[3]; // Independent Practice phase
 
-// ── read-only cells ──────────────────────────────────────────────────
-function h(value: string): { value: string; readOnly: true } { return { value, readOnly: true }; }
-function r(value: string | number): { value: string | number; readOnly: true } { return { value, readOnly: true }; }
-const E: { value: string; readOnly: true } = { value: "", readOnly: true };
+// ── spreadsheet cell helpers with styling ────────────────────────────
+const baseCell = (value: string | number, className?: string): SpreadsheetCell => ({
+  value,
+  readOnly: true,
+  className,
+});
+
+const headerCell = (value: string) =>
+  baseCell(value, "bg-slate-100 text-slate-700 font-semibold text-center border border-slate-200");
+
+const labelCell = (value: string) =>
+  baseCell(value, "bg-slate-50 text-slate-600 font-semibold border border-slate-200");
+
+const priceCell = (value: string) =>
+  baseCell(value, "bg-slate-50 text-slate-800 font-semibold text-center border border-slate-200");
+
+const profitPositive = (value: string) =>
+  baseCell(value, "bg-emerald-50 text-emerald-800 font-semibold text-center border border-emerald-200");
+
+const profitNegative = (value: string) =>
+  baseCell(value, "bg-rose-50 text-rose-700 font-semibold text-center border border-rose-200");
+
+const profitNeutral = (value: string) =>
+  baseCell(value, "bg-amber-50 text-amber-700 font-semibold text-center border border-amber-200");
+
+const E = baseCell("");
 
 const sheet1: SpreadsheetData = [
-  [h("Price Sensitivity — 1-Variable Data Table"), E, E, E],
+  [headerCell("Price Sensitivity — 1-Variable Data Table"), E, E, E],
   [E, E, E, E],
-  [h("Corner Formula Link:"), r("=TotalProfit"), E, E],
-  [h("Price (Column Input)"), h("Profit Output"), E, E],
-  [r("$1,000"), r("−$11,100"), E, E],
-  [r("$1,100"), r("−$2,820"), E, E],
-  [r("$1,200"), r("$5,460"), E, E],
-  [r("$1,300"), r("$13,740"), E, E],
-  [r("$1,400"), r("$22,020"), E, E],
-  [r("$1,500"), r("$30,300"), E, E],
+  [labelCell("Corner Formula Link:"), baseCell("=TotalProfit", "font-mono text-slate-700"), E, E],
+  [headerCell("Price (Column Input)"), headerCell("Profit Output"), E, E],
+  [priceCell("$1,000"), profitNegative("−$11,100"), E, E],
+  [priceCell("$1,100"), profitNegative("−$2,820"), E, E],
+  [priceCell("$1,200"), profitPositive("$5,460"), E, E],
+  [priceCell("$1,300"), profitPositive("$13,740"), E, E],
+  [priceCell("$1,400"), profitPositive("$22,020"), E, E],
+  [priceCell("$1,500"), profitPositive("$30,300"), E, E],
   [E, E, E, E],
-  [h("Visual Rule:"), h("Use Conditional Formatting (Red < 0, Green > 0)"), E, E],
+  [labelCell("Visual Rule:"), labelCell("Use Conditional Formatting (Red < 0, Green > 0)"), E, E],
 ];
 
 const sheet2: SpreadsheetData = [
-  [h("Profit Matrix — 2-Variable Data Table"), E, E, E, E, E],
+  [headerCell("Profit Matrix — 2-Variable Data Table"), E, E, E, E, E],
   [E, E, E, E, E, E],
-  [h("=TotalProfit"), h("10 Units"), h("15 Units"), h("20 Units"), h("25 Units"), h("30 Units")],
-  [r("$1,000"), r("−$6,900"), r("−$6,300"), r("−$5,700"), r("−$5,100"), r("−$4,500")],
-  [r("$1,200"), r("−$4,900"), r("−$3,300"), r("−$1,700"), r("−$100"), r("$1,500")],
-  [r("$1,400"), r("−$2,900"), r("−$300"), r("$2,300"), r("$4,900"), r("$7,500")],
-  [r("$1,600"), r("−$900"), r("$2,700"), r("$6,300"), r("$9,900"), r("$13,500")],
-  [r("$1,800"), r("$1,100"), r("$5,700"), r("$10,300"), r("$14,900"), r("$19,500")],
+  [
+    labelCell("=TotalProfit"),
+    headerCell("10 Units"),
+    headerCell("15 Units"),
+    headerCell("20 Units"),
+    headerCell("25 Units"),
+    headerCell("30 Units"),
+  ],
+  [
+    priceCell("$1,000"),
+    profitNegative("−$6,900"),
+    profitNegative("−$6,300"),
+    profitNegative("−$5,700"),
+    profitNegative("−$5,100"),
+    profitNegative("−$4,500"),
+  ],
+  [
+    priceCell("$1,200"),
+    profitNegative("−$4,900"),
+    profitNegative("−$3,300"),
+    profitNegative("−$1,700"),
+    profitNeutral("−$100"),
+    profitPositive("$1,500"),
+  ],
+  [
+    priceCell("$1,400"),
+    profitNegative("−$2,900"),
+    profitNeutral("−$300"),
+    profitPositive("$2,300"),
+    profitPositive("$4,900"),
+    profitPositive("$7,500"),
+  ],
+  [
+    priceCell("$1,600"),
+    profitNegative("−$900"),
+    profitPositive("$2,700"),
+    profitPositive("$6,300"),
+    profitPositive("$9,900"),
+    profitPositive("$13,500"),
+  ],
+  [
+    priceCell("$1,800"),
+    profitPositive("$1,100"),
+    profitPositive("$5,700"),
+    profitPositive("$10,300"),
+    profitPositive("$14,900"),
+    profitPositive("$19,500"),
+  ],
 ];
 
 export default function Phase4Page() {

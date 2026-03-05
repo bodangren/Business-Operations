@@ -35,6 +35,27 @@ export default function TableLogicSimulator() {
 
   return (
     <div className="space-y-6">
+      <Card className="border-emerald-200 bg-emerald-50">
+        <CardHeader>
+          <CardTitle className="text-emerald-900 text-lg">
+            Manual Matrix Assumptions (Keep These Numbers Visible)
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm text-emerald-900 space-y-2">
+          <p>Use the exact TechStart defaults while you build the table in Excel Online:</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li><strong>Fixed Costs:</strong> $8,100 every month (office, salary, insurance, software)</li>
+            <li><strong>Variable Cost Per Project:</strong> $880 (contractors, ads, tools)</li>
+            <li><strong>Price Range:</strong> $1,200, $1,400, $1,600 in the demo — customize if needed, but keep them in column A</li>
+            <li><strong>Volume Range:</strong> 15, 20, 25 projects across the top row (adjust if your scenario calls for it)</li>
+            <li><strong>Profit formula:</strong> <code>(Price − 880) × Volume − 8,100</code> — this is what every interior cell should calculate.</li>
+          </ul>
+          <p className="text-xs text-emerald-700">
+            These assumptions mirror the Get-Started model from Lesson 04. If you change them, write the new numbers in your workbook heading so Goal Seek + Dashboard stay aligned.
+          </p>
+        </CardContent>
+      </Card>
+
       <Card className="border-blue-200 bg-blue-50">
         <CardHeader>
           <CardTitle className="text-blue-800 flex items-center gap-2">
