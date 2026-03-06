@@ -23,14 +23,13 @@ export default function Phase5Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">✅ Phase 5: Assessment</Badge>
-            <div className="max-w-4xl mx-auto space-y-8">
+            <div className="max-w-4xl mx-auto space-y-8 text-left">
               <Card className="border-yellow-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-yellow-900 flex items-center gap-2"><Scale className="w-5 h-5" /> Investor‑Ready Standards</CardTitle>
+                  <CardTitle className="text-yellow-900 flex items-center gap-2"><Scale className="w-5 h-5" /> Project Transfer Check</CardTitle>
                 </CardHeader>
-                <CardContent className="text-yellow-900">
-                  Clarity, reliability, audit trail, and documented assumptions. A pricing model should tell a clean story 
-                  and make decision‑making fast. If an input changes, every linked output must update with no manual edits.
+                <CardContent className="text-yellow-900 text-sm">
+                  This assessment is not just about PedalFast. It checks whether you understand what the upcoming project workbook must contain and how it should behave.
                 </CardContent>
               </Card>
 
@@ -41,7 +40,7 @@ export default function Phase5Page() {
                 <CardContent>
                   <ComprehensionCheck
                     questions={assessmentQuestions}
-                    title="Audit Decisions & Tradeoffs"
+                    title="Workbook Quality and Audit Decisions"
                     showExplanations={true}
                   />
                 </CardContent>
@@ -53,10 +52,13 @@ export default function Phase5Page() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-green-900 mb-3 text-sm">
-                    Use the Definition of Done checklist while completing this peer review. Confirm exact lookups, 
-                    structured references, reconciliation, chart bindings, and error handling.
+                    Review your partner&apos;s rehearsal workbook as if you were checking whether they are ready for the group project.
+                    Confirm the logic chain, the dashboard evidence, and the clarity of the final recommendation.
                   </p>
-                  <PeerCritiqueForm projectTitle="Unit 06 PriceLab – Investor Readiness" peerName="Partner" unitNumber={6} />
+                  <p className="text-green-900 mb-3 text-sm">
+                    Before you submit the form, tell your partner one clear strength, one confusing area, and one improvement they should carry into Lessons 8-10.
+                  </p>
+                  <PeerCritiqueForm projectTitle="Unit 06 Lesson 07 Rehearsal Workbook" peerName="Partner" unitNumber={6} />
                 </CardContent>
               </Card>
             </div>

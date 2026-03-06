@@ -5,45 +5,34 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit06Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, CheckCircle, XCircle, Target, Users } from "lucide-react"
+import { Briefcase, CheckCircle2, Flag, Users } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 
 const currentPhase = lesson07Phases[0]
 
-const standardsQuiz = [
+const hookQuestions = [
   {
-    id: "u6l7-std-1",
-    question: "For scenario pricing, what lookup pattern builds investor trust?",
+    id: 'u6l7-hook-1',
+    question: 'Why is Lesson 07 useful before the group project begins?',
     answers: [
-      "XLOOKUP (or INDEX/MATCH) with exact match wrapped in IFNA",
-      "VLOOKUP approximate match because it's faster",
-      "Manual copy/paste numbers into outputs",
-      "OFFSET() references to auto-shift data"
+      'It lets everyone rehearse the exact workbook structure and quality standard before working more independently.',
+      'It replaces the group project so Lessons 8-10 are optional.',
+      'It gives every group a different business scenario to keep secret.',
+      'It is only for practicing chart colors and slide design.',
     ],
-    explanation: "Exact-match lookups with clear IFNA/IFERROR messages prevent wrong scenarios and build confidence."
+    explanation: 'Lesson 07 is a shared rehearsal. Everyone sees the same workbook expectations before teams move into different project scenarios.'
   },
   {
-    id: "u6l7-std-2",
-    question: "Charts that update with new pricing data should bind to:",
+    id: 'u6l7-hook-2',
+    question: 'What should students learn from the shared PedalFast workbook?',
     answers: [
-      "Tables with structured references (e.g., SalesTbl[Revenue])",
-      "Static ranges like A1:C10",
-      "Hidden sheets with pasted values",
-      "Manually typed series names"
+      'How the final project workbook should be organized, checked, and explained.',
+      'How to memorize one perfect recommendation and use it for every business.',
+      'How to avoid using supporting sheets once a dashboard exists.',
+      'How to skip cost sorting because the dashboard matters more.',
     ],
-    explanation: "Structured references expand automatically so visuals stay accurate as data grows."
+    explanation: 'The point is transfer. Students practice the structure, workflow, and evidence standard they will later apply to a new scenario.'
   },
-  {
-    id: "u6l7-std-3",
-    question: "What proves the model reconciles correctly before presenting?",
-    answers: [
-      "Tie-outs that show totals agree across sources and scenarios",
-      "Color-coded tabs only",
-      "Hiding error cells",
-      "Deleting rows until totals match"
-    ],
-    explanation: "Reconciliation demonstrates integrity: totals tie, sources align, and errors are surfaced—not hidden."
-  }
 ]
 
 export default function Phase1Page() {
@@ -55,77 +44,66 @@ export default function Phase1Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook</Badge>
-            <div className="max-w-4xl mx-auto space-y-8">
+            <div className="max-w-4xl mx-auto space-y-8 text-left">
               <Card className="border-red-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                    <AlertTriangle className="w-8 h-8 text-red-600" />
+                    <Flag className="w-8 h-8 text-red-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-red-800 mb-2">
-                    Production Kickoff: Investor-Ready Today
+                    One Last Guided Rehearsal Before the Project
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <p className="text-lg leading-relaxed text-red-900">
-                    Sarah at TechStart gets a message at 9:00 AM: “We’re reviewing your pricing model at 3 PM. 
-                    Please send an audit‑ready file with a one-screen summary. We will test scenarios live.”
+                    Lessons 1-6 taught you the pricing logic. Lesson 07 shows what a complete, project-ready workbook
+                    should look like before your team starts building its own scenario in Lessons 8-10.
                   </p>
                   <p className="text-lg leading-relaxed text-red-900">
-                    This is high pressure. In pricing work, trust comes from exact references, structured tables, 
-                    clear error messages, and reconciliation. Today, you’ll finish your PriceLab model, harden it 
-                    with QA, and prepare decision‑ready outputs.
+                    Today, the whole class uses the same business case: <strong>PedalFast Bike Repair</strong>.
+                    That means everyone can focus on the real goal: understanding the structure, evidence, and
+                    quality standard for the project workbook.
                   </p>
-                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                     <div className="p-4 rounded-lg border bg-red-50 border-red-200">
-                      <h4 className="font-semibold text-red-800 flex items-center gap-2"><XCircle className="w-5 h-5" /> Failure Case</h4>
+                      <h4 className="font-semibold text-red-800 flex items-center gap-2"><Briefcase className="w-5 h-5" /> What today is</h4>
                       <ul className="list-disc list-inside text-red-900 text-sm">
-                        <li>Approximate match returns wrong scenario</li>
-                        <li>Charts point to static ranges and miss new rows</li>
-                        <li>Hard‑coded outputs break when inputs change</li>
-                        <li>No reconciliation of totals across scenarios</li>
+                        <li>A guided rehearsal with one shared workbook</li>
+                        <li>A model of what the project should include</li>
+                        <li>A chance to practice auditing and explaining your results</li>
                       </ul>
                     </div>
                     <div className="p-4 rounded-lg border bg-green-50 border-green-200">
-                      <h4 className="font-semibold text-green-800 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Ready Example</h4>
+                      <h4 className="font-semibold text-green-800 flex items-center gap-2"><CheckCircle2 className="w-5 h-5" /> What comes next</h4>
                       <ul className="list-disc list-inside text-green-900 text-sm">
-                        <li>Exact‑match XLOOKUP + IFNA("Scenario not found")</li>
-                        <li>Named ranges and structured references</li>
-                        <li>Charts bound to Tables; auto‑expanding</li>
-                        <li>Reconciliation section shows tie‑outs pass</li>
+                        <li>Lessons 8-10 give each group a different scenario</li>
+                        <li>Teams reuse this workbook structure independently</li>
+                        <li>The final project adds presentation and defense</li>
                       </ul>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-blue-200 bg-white">
+              <ComprehensionCheck
+                questions={hookQuestions as any}
+                title="Why Rehearse the Project?"
+                description="Check that you understand the purpose of Lesson 07 before building."
+                showExplanations={true}
+              />
+
+              <Card className="border-blue-200 bg-blue-50">
                 <CardHeader>
                   <CardTitle className="text-blue-900 flex items-center gap-2">
-                    <Target className="w-5 h-5" /> Do you know the standards?
+                    <Users className="w-5 h-5" /> Turn and Talk (3 minutes)
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ComprehensionCheck
-                    questions={standardsQuiz as any}
-                    title="Production Standards Check"
-                    description="Confirm your understanding of exact lookups, structured refs, and reconciliation."
-                    showExplanations={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className="border-yellow-200 bg-yellow-50">
-                <CardHeader>
-                  <CardTitle className="text-yellow-900 flex items-center gap-2">
-                    <Users className="w-5 h-5" /> Turn & Talk (3 minutes)
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-yellow-900 font-medium mb-2">What makes a pricing model trustworthy under pressure?</p>
-                  <ul className="list-disc list-inside text-yellow-900">
-                    <li>Which standards give investors confidence fastest?</li>
-                    <li>Where does your current model still feel fragile?</li>
-                    <li>What would you check first before sending the file?</li>
+                  <p className="text-blue-900 font-medium mb-2">If a teacher or investor opened your workbook for only 30 seconds, what would they need to understand immediately?</p>
+                  <ul className="list-disc list-inside text-blue-900 text-sm space-y-1">
+                    <li>Where would they look first?</li>
+                    <li>What numbers would prove your recommendation?</li>
+                    <li>What would make the workbook feel confusing or weak?</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -138,4 +116,3 @@ export default function Phase1Page() {
     </div>
   )
 }
-

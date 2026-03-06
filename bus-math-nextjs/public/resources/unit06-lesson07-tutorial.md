@@ -1,40 +1,69 @@
-# Unit 06 Lesson 07 – Two-Variable Data Table for Price and Volume
+# Unit 06 Lesson 07 - Production Studio Rehearsal Workbook
 
-Use this walkthrough to finish `unit06-lesson07-student.xlsx` and match the teacher workbook (`unit06-lesson07-teacher.xlsx`). Students analyze how net profit shifts when both unit price and sales volume change.
+Use this walkthrough with `unit06-lesson07-student.xlsx`. Everyone uses the same practice scenario in Lesson 07 so the class can see what the Unit 06 project workbook should look like before Lessons 08-10.
 
-## 1. Review Prior Work
+## Scenario
 
-- The **Model** sheet still holds the Goal Seek price (\$58) and the formulas built in Lessons 04–05.
-- The **UnitsDataTable** sheet contains completed one-variable results from Lesson 06.
-- The new **PriceVolumeMatrix** sheet has price options across the top (54–60) and unit totals down the left (800–1,100) with blank interior cells.
-- Cell `A1` references `=Model!B11`, which the Data Table uses as its output formula.
+- Business: PedalFast Bike Repair
+- Type: Mobile Bike Tune-Up Service
+- Capacity: 80 bikes per month
+- Target profit: $850 per month
 
-## 2. Set Up the Two-Variable Data Table
+## Workbook Tabs
 
-1. Select the entire matrix `A1:E5`.
-2. Go to **Data › What-If Analysis › Data Table**.
-3. Set *Row input cell* to `Model!B2` (Unit Price).
-4. Set *Column input cell* to `Model!B9` (Expected Units Sold).
-5. Click **OK**.
+1. **CostSetup** - Sort each cost as Fixed or Variable.
+2. **PriceOptions** - Compare the three service prices.
+3. **Feasibility** - Check break-even units and capacity.
+4. **TargetProfit** - Reverse-solve for the target.
+5. **PriceSensitivity** - Scan profit across a price range.
+6. **ProfitMatrix** - Compare price and volume combinations.
+7. **Dashboard** - Show the final recommendation and the downside risk.
 
-Excel populates the interior with projected profits for each price-volume combination. For instance:
-- Price \$54 at 800 units → -\$5,700
-- Price \$58 at 1,000 units → \$22,000
-- Price \$60 at 1,100 units → \$36,500
+## Lesson 07 Goal
 
-## 3. Interpret the Grid
+Lesson 07 is not a new project. It is a guided rehearsal for the project structure coming next. Use the workbook to practice the standards that matter most:
 
-- Identify the breakeven boundary (values around \$0) to show the class where profits begin.
-- Highlight the combinations that exceed the \$10,000 target profit for investor presentations.
+- clean cost classification
+- accurate formulas
+- clear scenario logic
+- readable dashboard labels
+- a short investor-ready recommendation
 
-## 4. Optional Visualization
+## Recommended Workflow
 
-- Apply a color scale to emphasize high-profit cells.
-- Add a comment noting “Goal Seek price (58) at 950 units yields \$10,000” as a reference point.
+### 1. Finish the setup
 
-## 5. Save the Teacher Version
+- Classify every cost on **CostSetup**.
+- Confirm the fixed-cost and variable-cost totals.
+- Check the capacity and target profit assumptions.
 
-- Save as `unit06-lesson07-teacher.xlsx`.
-- Encourage students to explore what happens if they adjust the base price in the **Model** sheet—both data tables should refresh automatically.
+### 2. Check the analysis tabs
 
-This two-variable analysis equips TechStart to negotiate pricing and forecast demand simultaneously, a critical skill for the PriceLab Challenge.
+- On **PriceOptions**, compare contribution margin and projected profit.
+- On **Feasibility**, confirm which price options beat break-even and stay inside capacity.
+- On **TargetProfit**, decide whether changing price or units is more realistic.
+
+### 3. Review the sensitivity tabs
+
+- On **PriceSensitivity**, identify where profit turns positive.
+- On **ProfitMatrix**, locate the safer profit zone and the risky combinations.
+
+### 4. Polish the dashboard
+
+- Pick one recommended option.
+- Make sure the dashboard values match the supporting sheets.
+- Write a short recommendation statement and one risk statement.
+
+## What "Good" Looks Like
+
+A strong Lesson 07 workbook should let another student answer these questions quickly:
+
+- What does the business sell?
+- What are the fixed and variable costs?
+- Which price option is best right now?
+- What is the main risk?
+- Where can I see the evidence for that recommendation?
+
+## Why This Matters
+
+In Lessons 08-10, groups will apply the same workbook structure to a brand-new scenario. Lesson 07 is where students learn the standard before they work more independently.

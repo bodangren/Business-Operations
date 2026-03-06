@@ -5,22 +5,22 @@ export const lesson07Data = {
   sequence: 7,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Complete the pricing model with exact-match lookups and structured references",
-    "Implement validation, reconciliation, and clear error handling for reliability",
-    "Prepare an investor-ready summary tied to KPI thresholds and scenarios"
+    "Audit the Lesson 06 dashboard workbook for accuracy, clarity, and investor readiness",
+    "Use a Definition of Done checklist to verify scenario switching, summary tables, charts, and notes",
+    "Prepare a polished workbook that models the standard students will apply in the Unit 06 project"
   ],
   keyConcepts: [
-    "Exact-match lookups with IFNA/IFERROR",
-    "Named ranges, Tables, and structured references",
-    "Validation rules and reconciliation tie-outs",
-    "Sensitivity scenarios and decision-ready summaries"
+    "Exact-match lookups with IFNA or IFERROR",
+    "Scenario summary tables and dashboard tie-outs",
+    "Validation checks, reconciliation, and visible assumptions",
+    "Peer audit and presentation readiness"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Production sprint flow: build → validate → visualize → present",
-    "Peer audit using a Definition of Done checklist"
+    "Production sprint flow: audit -> fix -> polish -> rehearse",
+    "Peer audit using a Definition of Done checklist and concrete workbook evidence"
   ],
-  rationale: "Students finish and harden their Unit 06 PriceLab model with professional QA, then prepare concise, decision-ready outputs for investors.",
+  rationale: "Students use this final guided lesson to harden their TechStart workbook before they begin the more independent group project in Lessons 8-10.",
   status: "Draft"
 }
 
@@ -36,42 +36,36 @@ export const lesson07Phases = [
     id: "phase_hook_7",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for data tables for sensitivity analysis",
-    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - To show a scenario where multiple variables are changing.
+    description: "See what investors notice first when a workbook is polished versus fragile.",
   },
   {
     id: "phase_introduction_7",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Data Tables (one- and two-variable) for what-if analysis and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Learn the Definition of Done for the final TechStart workbook before the capstone project begins.",
   },
   {
     id: "phase_guided_practice_7",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Data Tables (one- and two-variable) for what-if analysis with scaffolded support",
-    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - To practice using data tables.
+    description: "Run a guided audit on scenario toggles, summary tie-outs, and visible error checks.",
   },
   {
     id: "phase_independent_practice_7",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Data Tables (one- and two-variable) for what-if analysis independently with minimal teacher support",
-    // component: "BreakEvenAnalysisCalculator" (id: mdsa6j3qdvl0zd3h4ll) - To practice using data tables.
+    description: "Complete the final QA sprint and polish the workbook for presentation and project handoff.",
   },
   {
     id: "phase_assessment_7",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Demonstrate readiness through a short audit check and peer review.",
   },
   {
     id: "phase_closing_7",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on workbook quality and preview the independent group project in Lessons 8-10.",
   }
 ]

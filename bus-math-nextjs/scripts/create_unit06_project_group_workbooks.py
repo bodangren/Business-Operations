@@ -512,6 +512,43 @@ SCENARIOS: tuple[Scenario, ...] = (
     ),
 )
 
+LESSON07_REHEARSAL = Scenario(
+    group_id="lesson07",
+    workbook_label="Lesson 07 Rehearsal",
+    business_name="PedalFast Bike Repair",
+    business_type="Mobile Bike Tune-Up Service",
+    capacity=80,
+    target_profit=850,
+    base_option_index=1,
+    recommended_option_index=1,
+    price_band_text="$48-$64 per bike service",
+    recommendation_text="Recommend Commuter Care at $56. It clears the target profit while balancing strong demand with a healthier contribution margin than the entry package.",
+    risk_text="If monthly demand drops below about 60 bikes, the cushion gets thin quickly. Watch repeat customers and service time before raising the price further.",
+    costs=(
+        CostItem("Service van lease", 520, "Fixed", "Monthly van payment"),
+        CostItem("Business insurance", 160, "Fixed", "Liability coverage"),
+        CostItem("Repair stand and tools lease", 140, "Fixed", "Monthly tool financing"),
+        CostItem("Scheduling app", 75, "Fixed", "Booking software"),
+        CostItem("Garage storage", 110, "Fixed", "Equipment storage"),
+        CostItem("Phone + hotspot", 95, "Fixed", "Business communications"),
+        CostItem("Flyers and local ads", 100, "Fixed", "Monthly marketing"),
+        CostItem("Replacement parts kit", 10, "Variable", "Per bike parts allowance"),
+        CostItem("Chain lubricant and cleaner", 3, "Variable", "Per service supplies"),
+        CostItem("Travel fuel", 4, "Variable", "Per service travel"),
+        CostItem("Payment processing", 2, "Variable", "Per sale fees"),
+        CostItem("Shop towels and disposables", 1, "Variable", "Per service consumables"),
+        CostItem("Labor support", 2, "Variable", "Per service helper time"),
+    ),
+    options=(
+        PriceOption("Quick Tune", 48, 75),
+        PriceOption("Commuter Care", 56, 62),
+        PriceOption("Performance Tune", 64, 50),
+    ),
+    sensitivity_prices=(48, 52, 56, 60, 64),
+    matrix_prices=(48, 52, 56, 60, 64),
+    matrix_volumes=(40, 50, 60, 70, 80),
+)
+
 
 def build_cost_setup_sheet(scenario: Scenario, include_key: bool) -> str:
     rows = [
@@ -733,8 +770,8 @@ def build_dashboard_sheet(scenario: Scenario, include_key: bool) -> str:
     return build_sheet(rows)
 
 
-def write_scenario_workbooks(scenario: Scenario) -> None:
-    student_sheets = [
+def build_student_sheets(scenario: Scenario) -> List[tuple[str, str]]:
+    return [
         ("CostSetup", build_cost_setup_sheet(scenario, include_key=False)),
         ("PriceOptions", build_price_options_sheet(scenario, include_results=False)),
         ("Feasibility", build_feasibility_sheet(scenario, include_results=False)),
@@ -743,7 +780,10 @@ def write_scenario_workbooks(scenario: Scenario) -> None:
         ("ProfitMatrix", build_profit_matrix_sheet(scenario, include_results=False)),
         ("Dashboard", build_dashboard_sheet(scenario, include_key=False)),
     ]
-    teacher_sheets = [
+
+
+def build_teacher_sheets(scenario: Scenario) -> List[tuple[str, str]]:
+    return [
         ("CostSetup", build_cost_setup_sheet(scenario, include_key=True)),
         ("PriceOptions", build_price_options_sheet(scenario, include_results=True)),
         ("Feasibility", build_feasibility_sheet(scenario, include_results=True)),
@@ -753,23 +793,45 @@ def write_scenario_workbooks(scenario: Scenario) -> None:
         ("Dashboard", build_dashboard_sheet(scenario, include_key=True)),
     ]
 
+
+def write_workbook_pair(
+    scenario: Scenario,
+    student_filename: str,
+    teacher_filename: str,
+) -> None:
+    student_sheets = build_student_sheets(scenario)
+    teacher_sheets = build_teacher_sheets(scenario)
+
     write_workbook_file(
         RESOURCES_DIR,
-        f"unit06-pbl-pricing-project-{scenario.group_id}-student.xlsx",
+        student_filename,
         student_sheets,
         styles=BOLD_STYLES,
     )
     write_workbook_file(
         RESOURCES_DIR,
-        f"unit06-pbl-pricing-project-{scenario.group_id}-teacher.xlsx",
+        teacher_filename,
         teacher_sheets,
         styles=BOLD_STYLES,
+    )
+
+
+def write_scenario_workbooks(scenario: Scenario) -> None:
+    write_workbook_pair(
+        scenario,
+        f"unit06-pbl-pricing-project-{scenario.group_id}-student.xlsx",
+        f"unit06-pbl-pricing-project-{scenario.group_id}-teacher.xlsx",
     )
 
 
 def main() -> None:
     for scenario in SCENARIOS:
         write_scenario_workbooks(scenario)
+    write_workbook_pair(
+        LESSON07_REHEARSAL,
+        "unit06-lesson07-student.xlsx",
+        "unit06-lesson07-teacher.xlsx",
+    )
 
 
 if __name__ == "__main__":

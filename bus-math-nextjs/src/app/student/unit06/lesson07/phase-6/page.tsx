@@ -11,9 +11,9 @@ import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 const currentPhase = lesson07Phases[5]
 
 const capPrompts = [
-  { id: 'u6l7-cap-courage', category: 'courage', prompt: 'Where did you show courage—speaking up about an error or presenting a tough pricing tradeoff?', placeholder: 'Describe the moment and why it mattered to investor trust.' },
-  { id: 'u6l7-cap-adapt', category: 'adaptability', prompt: 'What formula or reference did you change to make scenario switching more reliable?', placeholder: 'Explain what was fragile before and how you improved it.' },
-  { id: 'u6l7-cap-persist', category: 'persistence', prompt: 'What bug took the longest to fix? How did you finally solve it?', placeholder: 'Note the steps you tried and what you learned from the process.' },
+  { id: 'u6l7-cap-courage', category: 'courage', prompt: 'Where did you show courage by naming a weakness or risk in the workbook instead of hiding it?', placeholder: 'Explain why that honesty matters in the project.' },
+  { id: 'u6l7-cap-adapt', category: 'adaptability', prompt: 'What part of the rehearsal workbook would you adapt first when your group gets a new scenario in Lesson 08?', placeholder: 'Name the sheet or structure and explain why.' },
+  { id: 'u6l7-cap-persist', category: 'persistence', prompt: 'What part of the workbook logic still took careful effort even in a guided rehearsal?', placeholder: 'Describe what made it challenging and what helped you finish it.' },
 ]
 
 export default function Phase6Page() {
@@ -28,13 +28,15 @@ export default function Phase6Page() {
             <div className="max-w-4xl mx-auto space-y-8">
               <Card className="border-indigo-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-indigo-900 flex items-center gap-2"><Stars className="w-5 h-5" /> Readiness & Handoff</CardTitle>
+                  <CardTitle className="text-indigo-900 flex items-center gap-2"><Stars className="w-5 h-5" /> From Rehearsal to Real Project</CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <p className="text-indigo-900">
-                    Today you moved from “it calculates” to “it convinces.” Your PriceLab model now has exact references, 
-                    validation, reconciliation, and clear messages. You are ready to share a concise, decision‑ready 
-                    executive summary. Next lesson focuses on final polish and stakeholder review.
+                    Today&apos;s workbook gave you a full guided preview of the project expectations. You practiced the same
+                    seven-sheet structure, the same evidence chain, and the same dashboard standard your group will need next.
+                  </p>
+                  <p className="text-indigo-900">
+                    The business case will change in Lesson 08, but the logic should not. That is the real lesson of Production Studio.
                   </p>
                 </CardContent>
               </Card>
@@ -44,7 +46,7 @@ export default function Phase6Page() {
                   <CardTitle className="text-green-900">CAP Reflection</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ReflectionJournal unitTitle="CAP Reflection: Production Studio" prompts={capPrompts as any} />
+                  <ReflectionJournal unitTitle="CAP Reflection: Lesson 07 Project Rehearsal" prompts={capPrompts as any} />
                 </CardContent>
               </Card>
 
@@ -52,9 +54,9 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-blue-900 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Preview: Lesson 08</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  Final polish, stakeholder review, and professional examples. You’ll refine visuals, tighten the 
-                  executive summary, and practice fast scenario switching for Q&A.
+                <CardContent className="text-blue-900">
+                  In Lesson 08, your group gets a new business scenario and its own workbook. You will use today&apos;s structure
+                  to plan the model, sort costs, and build the first project sheets with much less teacher scaffolding.
                 </CardContent>
               </Card>
             </div>
@@ -66,4 +68,3 @@ export default function Phase6Page() {
     </div>
   )
 }
-

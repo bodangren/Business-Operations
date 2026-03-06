@@ -948,14 +948,14 @@ const lesson07Questions: Unit06Phase5Question[] = [
     lessonId: "lesson07",
     lessonTitle: "Lesson 07 - Production Studio: Completion, QA, and Presentation Readiness",
     prompt: "What belongs on the final QA checklist before investor review?",
-    correctAnswer: "Validate assumptions, refresh all queries, confirm charts update, and lock any helper sheets.",
+    correctAnswer: "Validate the scenario summary, confirm charts update, check the dashboard notes, and verify the workbook tie-outs.",
     distractors: [
       "Add bright colors to every cell so the workbook feels energetic.",
       "Delete comments so investors cannot see the decision trail.",
       "Rename tabs with inside jokes for the team."
     ],
     explanation:
-      "A disciplined QA checklist ensures the model is accurate, current, and professional before going public.",
+      "A disciplined QA checklist ensures the model is accurate, easy to read, and ready to explain under pressure before going public.",
     objectiveTags: ["quality-assurance", "process", "investor-readiness"]
   },
   {
