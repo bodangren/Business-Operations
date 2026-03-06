@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson08Data, unit06Data, lesson08Phases } from "../lesson-data"
+import { projectGroups } from "../../project-workbooks"
 
 export default function Page() {
   const phases = lesson08Phases
@@ -16,21 +17,22 @@ export default function Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge>
-              Phase 1: Project Definition
+              Phase 1: Planning + Workbook Setup
             </Badge>
-            <h1 className="text-2xl font-semibold">Milestone 1 — Define the Pricing Strategy Project</h1>
+            <h1 className="text-2xl font-semibold">Milestone 1 - Plan the Scenario and Set Up Your Workbook</h1>
           </div>
 
           <Card>
             <CardHeader>
-              <CardTitle>Context: Sarah’s PriceLab Decision</CardTitle>
+              <CardTitle>Context: Apply the Unit to a New Business</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-lg leading-relaxed">
-                Sarah Chen runs TechStart Solutions, a digital services startup. She wants to set prices that
-                win customers without hurting profit. This unit uses Cost‑Volume‑Profit (CVP) analysis to make
-                smart pricing choices. Today your team defines the project: the problem, the data you’ll use,
-                and the Excel model you will build.
+                Lessons 1-7 taught you how to sort costs, calculate contribution margin, test break-even,
+                reverse-solve for target profit, build sensitivity tables, and summarize a recommendation.
+                Now your group will apply that same logic to a new business scenario. Today is not about
+                starting from scratch. It is about planning the work, opening the correct workbook, and
+                building the first sheets cleanly.
               </p>
             </CardContent>
           </Card>
@@ -42,10 +44,10 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Calculate markup vs. margin and determine break‑even points</li>
-                  <li>Construct and interpret CVP graphs for decisions</li>
-                  <li>Analyze competitor pricing and market positioning</li>
-                  <li>Develop a clear, data‑driven pricing recommendation</li>
+                  <li>Understand your assigned business, limits, and profit target</li>
+                  <li>Sort raw costs into fixed and variable categories</li>
+                  <li>Choose a starting price strategy to investigate</li>
+                  <li>Plan how your team will justify one final recommendation</li>
                 </ul>
               </CardContent>
             </Card>
@@ -56,11 +58,10 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Power Query for importing and cleaning competitor data</li>
-                  <li>Goal Seek for target profit price/volume scenarios</li>
-                  <li>One‑ and two‑variable Data Tables for sensitivity</li>
-                  <li>Professional CVP charts with clear labels</li>
-                  <li>Data validation and error checks for reliable inputs</li>
+                  <li>Download the correct group workbook and save your team copy</li>
+                  <li>Complete the <strong>CostSetup</strong> sheet by classifying each cost</li>
+                  <li>Check that fixed cost, variable cost, capacity, and target cells update correctly</li>
+                  <li>Build or verify the first analysis tabs: <strong>PriceOptions</strong> and <strong>Feasibility</strong></li>
                 </ul>
               </CardContent>
             </Card>
@@ -68,58 +69,71 @@ export default function Page() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Why This Matters</CardTitle>
+              <CardTitle>Start Here - Download Your Assigned Workbook</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-3">
               <p>
-                Executives and investors want pricing that is both competitive and profitable. A clean CVP model
-                with clear assumptions shows how you think, how you test risk, and how you guide decisions.
-                That builds trust.
+                Use only the workbook for your assigned group. Do not switch scenarios. Your workbook already
+                contains the project tab structure. Your job is to fill it in, test it, and defend your pricing
+                recommendation with evidence.
               </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Milestone 1 — Acceptance Criteria</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <ul className="list-disc list-inside space-y-1">
-                <li>Problem statement, scope, stakeholders, and success metrics</li>
-                <li>Data inventory + source plan + file naming convention</li>
-                <li>Excel model plan (tabs, validations, method switching, dashboards)</li>
-                <li>Risks/assumptions identified with mitigation plan</li>
-                <li>Evidence prepared: 1–2 page brief + workbook skeleton started</li>
+              <ul className="list-disc list-inside space-y-2">
+                {projectGroups.map((group) => (
+                  <li key={group.id}>
+                    <strong>{group.label} - {group.businessName}</strong> ({group.businessType}) - capacity {group.capacity},
+                    target profit ${group.targetProfit} -
+                    {" "}
+                    <a className="underline" href={group.workbookPath} download>
+                      {group.workbookFile}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Workflow Today (45–60 min)</CardTitle>
+              <CardTitle>Workbook Map</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <ul className="list-disc list-inside space-y-1">
+                <li><strong>CostSetup</strong> - sort each cost into fixed or variable and confirm the totals</li>
+                <li><strong>PriceOptions</strong> - compare the three given price ideas using contribution margin and projected profit</li>
+                <li><strong>Feasibility</strong> - check break-even units and capacity limits</li>
+                <li><strong>TargetProfit</strong>, <strong>PriceSensitivity</strong>, <strong>ProfitMatrix</strong> - finish these in Lesson 9</li>
+                <li><strong>Dashboard</strong> - leave notes now, complete the final recommendation later</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Workflow Today (45 minutes)</CardTitle>
             </CardHeader>
             <CardContent>
               <ol className="list-decimal list-inside space-y-1">
-                <li>Plan: define problem, scope, risks, and success metrics</li>
-                <li>Skeleton: set up tabs, validations, and a dashboard outline</li>
-                <li>Download: pick your group dataset (g1–g6) and load to Excel</li>
-                <li>Check‑in: quick review with teacher using acceptance criteria</li>
+                <li>Download your team workbook and rename it with your class period and team name</li>
+                <li>Complete the <strong>CostSetup</strong> sheet by sorting every cost item into fixed or variable</li>
+                <li>Check the totals on the right side and make sure your assumptions block is updating correctly</li>
+                <li>Use those totals to complete <strong>PriceOptions</strong> and <strong>Feasibility</strong></li>
+                <li>Write one sentence about which option looks strongest so far and why</li>
+                <li>Check in with the teacher before moving on</li>
               </ol>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Resources — Group Datasets (Download)</CardTitle>
+              <CardTitle>Milestone 1 - Acceptance Criteria</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-2">
               <ul className="list-disc list-inside space-y-1">
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g1.csv" download>unit06-pbl-pricing-cvp-g1.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g2.csv" download>unit06-pbl-pricing-cvp-g2.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g3.csv" download>unit06-pbl-pricing-cvp-g3.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g4.csv" download>unit06-pbl-pricing-cvp-g4.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g5.csv" download>unit06-pbl-pricing-cvp-g5.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g6.csv" download>unit06-pbl-pricing-cvp-g6.csv</a></li>
+                <li>Your team has the correct workbook open and renamed</li>
+                <li>Every cost item is classified in <strong>CostSetup</strong></li>
+                <li>Fixed cost total and variable cost per unit are correct</li>
+                <li><strong>PriceOptions</strong> and <strong>Feasibility</strong> are complete</li>
+                <li>Your team has a draft claim about the best current option</li>
               </ul>
             </CardContent>
           </Card>
@@ -145,9 +159,9 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-1">
-                <li>Project brief (PDF or cloud doc link)</li>
-                <li>Workbook skeleton (tabs created, validations started)</li>
-                <li>Dataset imported and documented (source + file naming)</li>
+                <li>Team workbook saved with a clear file name</li>
+                <li>Completed <strong>CostSetup</strong>, <strong>PriceOptions</strong>, and <strong>Feasibility</strong> tabs</li>
+                <li>One written sentence naming the most promising option so far</li>
               </ul>
             </CardContent>
           </Card>
@@ -159,4 +173,3 @@ export default function Page() {
     </div>
   )
 }
-

@@ -60,7 +60,8 @@ export default function Phase5Page() {
                       <div className="space-y-2">
                         <h4 className="font-semibold text-blue-900 text-sm">Technical (50%)</h4>
                         <ul className="list-disc list-inside space-y-1 text-blue-800 text-xs">
-                          <li>XLOOKUP range anchoring ($A$2)</li>
+                          <li>XLOOKUP range anchoring ($B$4)</li>
+                          <li>Scenario Summary table is complete and accurate</li>
                           <li>Dropdown validation (Data &gt; Validation)</li>
                           <li>Dynamic chart data binding</li>
                           <li>Error handling (#N/A prevention)</li>
@@ -105,7 +106,7 @@ export default function Phase5Page() {
                   <ol className="list-decimal list-inside space-y-1">
                     <li>Name the scenario you recommend and cite the exact profit, price, and volume from your dashboard cells.</li>
                     <li>Describe what the chart shows when you switch to the &ldquo;Downside&rdquo; case and summarize the risk in one sentence.</li>
-                    <li>State one follow-up question you would explore with Goal Seek or Data Tables if the investor pushes back.</li>
+                    <li>State one follow-up question you would explore with your target-profit sheet or sensitivity grid if the investor pushes back.</li>
                   </ol>
                   <p className="text-xs text-amber-800">
                     Drop the script into the “Investor Notes” sheet or a doc you share with your teacher—the reflection ties the technical work to persuasive communication.
@@ -119,8 +120,8 @@ export default function Phase5Page() {
                   <h3 className="font-semibold text-gray-800 mb-2">Final Polish Ahead</h3>
                   <p className="text-gray-700">
                     In the Closing phase, we'll reflect on how integration builds professional authority. 
-                    Next lesson, we'll complete the final piece of the puzzle: the <strong>Executive Summary 
-                    Report</strong>.
+                    Next lesson, you'll move into <strong>Production Studio</strong> mode to audit the workbook,
+                    tighten the visuals, and get presentation-ready.
                   </p>
                 </CardContent>
               </Card>

@@ -1,0 +1,43 @@
+export const projectGroups = [
+  {
+    id: "g1",
+    label: "Group 1",
+    businessName: "Neighborhood Shine",
+    businessType: "Mobile Car Detailing",
+    capacity: 45,
+    targetProfit: 400,
+    workbookPath: "/resources/unit06-pbl-pricing-project-g1-student.xlsx",
+    workbookFile: "unit06-pbl-pricing-project-g1-student.xlsx",
+  },
+  {
+    id: "g2",
+    label: "Group 2",
+    businessName: "Northside Print Lab",
+    businessType: "Custom Hoodie Print Shop",
+    capacity: 220,
+    targetProfit: 500,
+    workbookPath: "/resources/unit06-pbl-pricing-project-g2-student.xlsx",
+    workbookFile: "unit06-pbl-pricing-project-g2-student.xlsx",
+  },
+  {
+    id: "g3",
+    label: "Group 3",
+    businessName: "Fresh Fork Weekly",
+    businessType: "Meal Prep Delivery",
+    capacity: 420,
+    targetProfit: 900,
+    workbookPath: "/resources/unit06-pbl-pricing-project-g3-student.xlsx",
+    workbookFile: "unit06-pbl-pricing-project-g3-student.xlsx",
+  },
+  {
+    id: "g4",
+    label: "Group 4",
+    businessName: "CitySpark Studio",
+    businessType: "Social Media Content Studio",
+    capacity: 30,
+    targetProfit: 800,
+    workbookPath: "/resources/unit06-pbl-pricing-project-g4-student.xlsx",
+    workbookFile: "unit06-pbl-pricing-project-g4-student.xlsx",
+  },
+] as const
+

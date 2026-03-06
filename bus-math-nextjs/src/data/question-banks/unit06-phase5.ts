@@ -779,7 +779,7 @@ const lesson06Questions: Unit06Phase5Question[] = [
     id: "lesson06-q2",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Integration Dashboard: Scenario Runner + Investor Summary",
-    prompt: "In the formula =XLOOKUP(A2, Table[Name], Table[Profit]), what does cell A2 represent?",
+    prompt: "In the formula =XLOOKUP($B$4, A11:A14, D11:D14), what does cell B4 represent?",
     correctAnswer: "The 'Steering Wheel' toggle where Sarah selects the scenario name.",
     distractors: [
       "The result of the calculation.",
@@ -787,7 +787,7 @@ const lesson06Questions: Unit06Phase5Question[] = [
       "The name of the investor she is presenting to."
     ],
     explanation:
-      "Cell A2 is the Lookup_Value. It is the key that tells Excel which specific scenario to search for in the data table.",
+      "Cell B4 is the Lookup_Value. It is the key that tells Excel which specific scenario to search for in the summary table.",
     objectiveTags: ["xlookup", "mechanics"]
   },
   {

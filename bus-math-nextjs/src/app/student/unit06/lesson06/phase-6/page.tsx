@@ -113,23 +113,23 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-orange-800 flex items-center gap-2">
                     <ArrowRight className="w-5 h-5" />
-                    Next: The Executive Summary
+                    Next: Production Studio
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-orange-700 text-sm">
-                      You have the engine and the steering wheel. Now you need to <strong>tell the story</strong>. 
-                      In Lesson 7, we will complete the final piece: the <strong>Executive Summary Report</strong>. 
-                      This is the written document that investors read *after* they see your dashboard.
+                      You have the engine and the steering wheel. In Lesson 7, you will move into
+                      <strong> Production Studio</strong>: checking formulas, cleaning labels, tightening visuals,
+                      and making sure your workbook is ready to present without confusion.
                     </p>
                     <div className="bg-white p-4 rounded border border-orange-200 flex items-start gap-3">
                       <Compass className="w-5 h-5 text-orange-600 mt-1" />
                       <div>
                         <p className="text-xs font-bold text-orange-900">Unit Final Milestone:</p>
                         <p className="text-[11px] text-orange-800">
-                          Compile your CVP model, Pricing Map, and Dashboard into one unified 
-                          Professional Pricing Workbook for your public Town Hall presentation.
+                          Carry your CVP model, sensitivity work, and dashboard forward into a polished
+                          pricing workbook that is ready for QA, rehearsal, and presentation.
                         </p>
                       </div>
                     </div>

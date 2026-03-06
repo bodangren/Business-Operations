@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson10Data, unit06Data, lesson10Phases } from "../lesson-data"
+import { projectGroups } from "../../project-workbooks"
 
 export default function Page() {
   const phases = lesson10Phases
@@ -17,9 +18,9 @@ export default function Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge>
-              Phase 1: Presentations + Peer Review
+              Phase 1: Practice + Present
             </Badge>
-            <h1 className="text-2xl font-semibold">Milestone 3 — Presentations and Peer Review</h1>
+            <h1 className="text-2xl font-semibold">Milestone 3 - Practice, Present, and Defend Your Recommendation</h1>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -29,9 +30,9 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Demonstrate accurate CVP modeling and clear decision impact</li>
-                  <li>Communicate confidently with a professional audience</li>
-                  <li>Show readiness to answer real business questions</li>
+                  <li>Explain the pricing problem and final recommendation clearly</li>
+                  <li>Show how your analysis supports the business decision</li>
+                  <li>Answer questions about risk, break-even, and target profit</li>
                 </ul>
               </CardContent>
             </Card>
@@ -42,9 +43,9 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Validate final formulas, Goal Seek, and Data Tables</li>
-                  <li>Use dashboards/summary views to tell the pricing story</li>
-                  <li>Document assumptions and error‑handling behaviors</li>
+                  <li>Use the final workbook dashboard as your evidence center</li>
+                  <li>Show at least one supporting sheet such as the sensitivity table or profit matrix</li>
+                  <li>Keep formulas, labels, and notes readable for an outside audience</li>
                 </ul>
               </CardContent>
             </Card>
@@ -52,12 +53,14 @@ export default function Page() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Presentation Flow (40 minutes)</CardTitle>
+              <CardTitle>Presentation Flow (45 minutes)</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-1">
-                <li>5 min setup; Six groups × ~5 min each; 5 min wrap</li>
-                <li>Presenter order posted; keep to timebox</li>
+                <li>First, do a short partner or table-group practice round</li>
+                <li>Then move into full-class presentations</li>
+                <li>Each team should aim for 4-5 minutes plus brief questions</li>
+                <li>Presenter order is posted; stay on the time limit</li>
               </ul>
             </CardContent>
           </Card>
@@ -68,11 +71,26 @@ export default function Page() {
             </CardHeader>
             <CardContent className="space-y-2">
               <ul className="list-disc list-inside space-y-1">
-                <li>Final model and dashboard are accurate and clear</li>
-                <li>Storyline connects analysis to business decision; risks addressed</li>
-                <li>Presentation hits 4–5 minutes; Q&amp;A readiness shown</li>
-                <li>Evidence: final files + slides + peer reviews submitted</li>
+                <li>Final workbook and dashboard are complete and readable</li>
+                <li>Presentation includes claim, evidence, risk, and recommendation</li>
+                <li>Each team cites actual workbook numbers, not guesses</li>
+                <li>Questions are answered with reasoning, not just opinion</li>
               </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What to Show During the Presentation</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ol className="list-decimal list-inside space-y-1">
+                <li>Introduce the business scenario and its main limit: capacity or target profit</li>
+                <li>Show the recommended option on the <strong>Dashboard</strong></li>
+                <li>Use one supporting sheet to prove the decision, usually <strong>PriceSensitivity</strong> or <strong>ProfitMatrix</strong></li>
+                <li>Name one downside risk and explain why the team still supports the choice</li>
+                <li>Finish with a direct recommendation sentence</li>
+              </ol>
             </CardContent>
           </Card>
 
@@ -103,16 +121,19 @@ export default function Page() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Resources — Same Datasets (g1–g6)</CardTitle>
+              <CardTitle>Need to Recover Your Workbook?</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-1">
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g1.csv" download>unit06-pbl-pricing-cvp-g1.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g2.csv" download>unit06-pbl-pricing-cvp-g2.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g3.csv" download>unit06-pbl-pricing-cvp-g3.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g4.csv" download>unit06-pbl-pricing-cvp-g4.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g5.csv" download>unit06-pbl-pricing-cvp-g5.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g6.csv" download>unit06-pbl-pricing-cvp-g6.csv</a></li>
+                {projectGroups.map((group) => (
+                  <li key={group.id}>
+                    <strong>{group.label} - {group.businessName}</strong> -
+                    {" "}
+                    <a className="underline" href={group.workbookPath} download>
+                      {group.workbookFile}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -124,4 +145,3 @@ export default function Page() {
     </div>
   )
 }
-

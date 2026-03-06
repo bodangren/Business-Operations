@@ -25,11 +25,19 @@ const sheet1: SpreadsheetData = [
   [E, E, E, h("Monthly Volume:"), r("24 units")],
   [E, E, E, h("Break-Even Units:"), r("18 units")],
   [E, E, E, E, E],
-  [h("3. XLOOKUP Engine (Hidden or Below)"), E, E, E, E],
-  [h("Field"), h("XLOOKUP Formula"), E, E, E],
-  [h("Profit"), r("=XLOOKUP(B4, Table[Name], Table[Profit])"), E, E, E],
-  [h("Price"), r("=XLOOKUP(B4, Table[Name], Table[Price])"), E, E, E],
-  [h("Volume"), r("=XLOOKUP(B4, Table[Name], Table[Volume])"), E, E, E],
+  [h("3. Scenario Summary Table (Hidden or Below)"), E, E, E, E],
+  [h("Name"), h("Price"), h("Volume"), h("Profit"), h("Break-Even")],
+  [h("Base Case"), r("$1,350"), r("24"), r("$3,180"), r("18")],
+  [h("Price Hike"), r("$1,600"), r("24"), r("$9,180"), r("15")],
+  [h("High Volume"), r("$1,350"), r("35"), r("$8,350"), r("18")],
+  [h("Downside"), r("$1,200"), r("20"), r("-$1,700"), r("23")],
+  [E, E, E, E, E],
+  [h("4. XLOOKUP Engine"), E, E, E, E],
+  [h("Field"), h("Formula"), E, E, E],
+  [h("Profit"), r("=XLOOKUP($B$4,$A$11:$A$14,$D$11:$D$14)"), E, E, E],
+  [h("Price"), r("=XLOOKUP($B$4,$A$11:$A$14,$B$11:$B$14)"), E, E, E],
+  [h("Volume"), r("=XLOOKUP($B$4,$A$11:$A$14,$C$11:$C$14)"), E, E, E],
+  [h("Break-Even"), r("=XLOOKUP($B$4,$A$11:$A$14,$E$11:$E$14)"), E, E, E],
 ];
 
 export default function Phase4Page() {
@@ -60,13 +68,15 @@ export default function Phase4Page() {
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-cyan-900">
                   <p>
-                    The dashboard only works if it reads the same Data Tables you completed in Lesson 05. Keep that
-                    file open and point every XLOOKUP at the existing named ranges instead of copying static numbers.
+                    The dashboard only works if it reads a short scenario summary table built from the work you already
+                    completed in Lessons 04 and 05. Keep that workbook open and pull the final numbers into one clean
+                    four-row table before you write any XLOOKUP formulas.
                   </p>
                   <ol className="list-decimal list-inside space-y-1">
                     <li>Use <strong>Save As</strong> to create <em>PriceLab_Dashboard.xlsx</em> so your Lesson 05 tabs stay intact.</li>
+                    <li>Create a <strong>Scenario Summary</strong> block with four rows: Base Case, Price Hike, High Volume, and Downside.</li>
+                    <li>Use the price, volume, profit, and break-even results from your earlier sheets to fill that block.</li>
                     <li>Lock the dropdown cell reference ($B$4) before wiring XLOOKUP so the link persists when you build charts.</li>
-                    <li>Record the Base Case, Price Hike, High Volume, and Downside outputs in your notes—you&apos;ll defend them in Phase 5.</li>
                   </ol>
                 </CardContent>
               </Card>
@@ -99,8 +109,8 @@ export default function Phase4Page() {
                 <CardContent className="space-y-4">
                   <p className="text-blue-700 text-sm">
                     This is your layout guide. Focus on the <strong>cleanliness</strong> of the dashboard. 
-                    The investor should only see the Control and the KPIs. The XLOOKUP "Engine" can 
-                    be hidden or placed further down the sheet.
+                    The investor should only see the control and the KPIs. The Scenario Summary and the XLOOKUP
+                    engine can sit lower on the sheet or on a helper tab.
                   </p>
 
                   <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
@@ -124,24 +134,32 @@ export default function Phase4Page() {
                 <CardContent className="space-y-4">
                   {[
                     {
-                      title: "1. Create the Scenario Toggle",
+                      title: "1. Build the Scenario Summary Table",
+                      steps: [
+                        "Create four scenario labels: Base Case, Price Hike, High Volume, and Downside.",
+                        "Use your Lesson 4 and Lesson 5 sheets to fill in Price, Volume, Profit, and Break-Even for each row.",
+                        "Check that every scenario row tells one complete story before you move on.",
+                      ],
+                    },
+                    {
+                      title: "2. Create the Scenario Toggle",
                       steps: [
                         "Select cell B4. Go to Data > Data Validation.",
-                        "Allow: List. Source: Highlight your scenario names from Lesson 5.",
+                        "Allow: List. Source: Highlight your four scenario names from the summary table.",
                         "Verify that a dropdown menu appears in B4.",
                       ],
                     },
                     {
-                      title: "2. Wire the XLOOKUPs",
+                      title: "3. Wire the XLOOKUPs",
                       steps: [
-                        "In your KPI Summary area, write XLOOKUP formulas for Profit, Price, and Volume.",
+                        "In your KPI Summary area, write XLOOKUP formulas for Profit, Price, Volume, and Break-Even.",
                         "Lookup Value: $B$4 (Absolute reference so you can copy the formula).",
-                        "Lookup Array: The Name column in your Lesson 5 table.",
+                        "Lookup Array: The Name column in your Scenario Summary table.",
                         "Return Array: The matching column for the result you want.",
                       ],
                     },
                     {
-                      title: "3. Link the Interactive Chart",
+                      title: "4. Link the Interactive Chart",
                       steps: [
                         "Insert a Clustered Column chart.",
                         "Data Source: Your new KPI Summary area (NOT the raw data tables).",
@@ -172,7 +190,7 @@ export default function Phase4Page() {
                   <ul className="list-disc list-inside space-y-2">
                     <li><strong>The Strategy:</strong> Which scenario (Base, Price Hike, etc.) do you recommend and why?</li>
                     <li><strong>The Risk:</strong> What happens to profit in your 'Downside' scenario?</li>
-                    <li><strong>The Defense:</strong> How does this dashboard prove TechStart is a safe investment?</li>
+                    <li><strong>The Defense:</strong> How does this dashboard prove you can explain the numbers quickly and accurately?</li>
                   </ul>
                 </CardContent>
               </Card>

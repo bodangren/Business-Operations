@@ -6,13 +6,13 @@ export const lesson06Data = {
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
     "Integrate CVP model into a single decision-ready dashboard",
-    "Build scenario switching (Base/Stretch/Downside) using named ranges or XLOOKUP",
+    "Build a simple scenario summary table from prior lesson outputs and connect it with XLOOKUP",
     "Link drivers to charts/tables with structured references",
     "Add validation (IFNA/IFERROR) and audit cues for reliability",
     "Communicate KPI insights with an executive summary"
   ],
   keyConcepts: [
-    "Scenario Manager or driver table with named ranges",
+    "Scenario summary table built from prior analysis sheets",
     "Exact-match lookups (XLOOKUP / INDEX-MATCH) for scenario switching",
     "Structured references and chart data binding",
     "Validation rules: stale dates, out-of-range rates, missing names",

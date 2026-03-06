@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson09Data, unit06Data, lesson09Phases } from "../lesson-data"
+import { projectGroups } from "../../project-workbooks"
 
 export default function Page() {
   const phases = lesson09Phases
@@ -17,9 +18,9 @@ export default function Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge>
-              Phase 1: Prototype + Rehearsal
+              Phase 1: Build + Rehearsal
             </Badge>
-            <h1 className="text-2xl font-semibold">Milestone 2 — Working Prototype and Rehearsal</h1>
+            <h1 className="text-2xl font-semibold">Milestone 2 - Finish the Workbook and Rehearse the Pitch</h1>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -29,9 +30,9 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Deliver a functioning CVP model on realistic data</li>
-                  <li>Reduce risk with clear validations and error checks</li>
-                  <li>Document test scenarios and results for stakeholders</li>
+                  <li>Turn your early analysis into one clear pricing recommendation</li>
+                  <li>Test whether that recommendation still works under different price and volume conditions</li>
+                  <li>Prepare to explain the trade-offs to classmates acting as stakeholders</li>
                 </ul>
               </CardContent>
             </Card>
@@ -42,9 +43,9 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Implement Goal Seek for target profit scenarios</li>
-                  <li>Create one‑ and two‑variable Data Tables</li>
-                  <li>Add validation rules and conditional formatting checks</li>
+                  <li>Continue using the same group workbook from Lesson 8</li>
+                  <li>Complete <strong>TargetProfit</strong>, <strong>PriceSensitivity</strong>, <strong>ProfitMatrix</strong>, and <strong>Dashboard</strong></li>
+                  <li>Use manual formulas and clean labels in Excel Online</li>
                 </ul>
               </CardContent>
             </Card>
@@ -52,26 +53,37 @@ export default function Page() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Why This Matters</CardTitle>
+              <CardTitle>Continue the Same Workbook</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-3">
               <p>
-                Investors and clients value prototypes that actually work. A clean, validated CVP model shows
-                that your pricing story is backed by math and can be trusted in decisions.
+                Do not start a new file today. Reopen the workbook your team saved in Lesson 8. If your file is
+                missing, re-download your assigned starter workbook and rebuild quickly from yesterday&apos;s notes.
               </p>
+              <ul className="list-disc list-inside space-y-2">
+                {projectGroups.map((group) => (
+                  <li key={group.id}>
+                    <strong>{group.label} - {group.businessName}</strong> -
+                    {" "}
+                    <a className="underline" href={group.workbookPath} download>
+                      {group.workbookFile}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Milestone 2 — Acceptance Criteria</CardTitle>
+              <CardTitle>What Your Team Builds Today</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <ul className="list-disc list-inside space-y-1">
-                <li>Working prototype implements Goal Seek and Data Tables</li>
-                <li>Validations and error checks pass; test scenarios documented</li>
-                <li>Rehearsal complete; peer feedback incorporated</li>
-                <li>Evidence: prototype workbook + test summary + change notes</li>
+                <li><strong>TargetProfit</strong> - solve for the price or units needed to hit the group target</li>
+                <li><strong>PriceSensitivity</strong> - hold units constant and test how profit changes as price changes</li>
+                <li><strong>ProfitMatrix</strong> - build the full price-by-volume grid manually</li>
+                <li><strong>Dashboard</strong> - state the final recommendation, downside risk, and short explanation</li>
               </ul>
             </CardContent>
           </Card>
@@ -81,7 +93,21 @@ export default function Page() {
               <CardTitle>Timeboxing</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>~60 minutes build + ~20 minutes rehearsal and peer feedback.</p>
+              <p>About 25 minutes to finish the workbook, 10 minutes to organize presentation notes, and 10 minutes to rehearse with peer feedback.</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Simple Pitch Structure</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ol className="list-decimal list-inside space-y-1">
+                <li><strong>Claim:</strong> name the option your team recommends</li>
+                <li><strong>Evidence:</strong> cite projected profit, break-even units, and capacity fit</li>
+                <li><strong>Risk:</strong> explain one weakness or downside case from the sensitivity work</li>
+                <li><strong>Close:</strong> explain why this option is still the best business choice</li>
+              </ol>
             </CardContent>
           </Card>
 
@@ -112,16 +138,14 @@ export default function Page() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Resources — Same Datasets (g1–g6)</CardTitle>
+              <CardTitle>Milestone 2 - Acceptance Criteria</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-1">
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g1.csv" download>unit06-pbl-pricing-cvp-g1.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g2.csv" download>unit06-pbl-pricing-cvp-g2.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g3.csv" download>unit06-pbl-pricing-cvp-g3.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g4.csv" download>unit06-pbl-pricing-cvp-g4.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g5.csv" download>unit06-pbl-pricing-cvp-g5.csv</a></li>
-                <li><a className="underline" href="/resources/unit06-pbl-pricing-cvp-g6.csv" download>unit06-pbl-pricing-cvp-g6.csv</a></li>
+                <li>All seven workbook tabs are complete and readable</li>
+                <li>The dashboard names one final recommendation</li>
+                <li>The team can cite at least three numbers from the workbook as evidence</li>
+                <li>A practice rehearsal has happened and peer feedback is recorded</li>
               </ul>
             </CardContent>
           </Card>
@@ -133,4 +157,3 @@ export default function Page() {
     </div>
   )
 }
-

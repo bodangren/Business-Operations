@@ -11,14 +11,14 @@ const currentPhase = lesson06Phases[1]; // Introduction phase
 const xlookupQuestions = [
   {
     id: "xl-1",
-    question: "Sarah wants her dashboard to pull the 'Total Profit' from her Scenario Table. She has the name of the scenario (e.g., 'Base Case') in cell A2. What is her 'Lookup_Value' in XLOOKUP?",
+    question: "Sarah wants her dashboard to pull the 'Total Profit' from her Scenario Summary table. She has the name of the scenario (e.g., 'Base Case') in cell B4. What is her 'Lookup_Value' in XLOOKUP?",
     answers: [
-      "Cell A2",
+      "Cell B4",
       "The Total Profit column",
       "The entire Scenario Table",
       "The word 'Profit'"
     ],
-    explanation: "The Lookup_Value is the 'key' Excel uses to search. Since A2 contains the scenario Sarah selected, that's what Excel will look for in the table."
+    explanation: "The Lookup_Value is the 'key' Excel uses to search. Since B4 contains the scenario Sarah selected, that's what Excel will look for in the table."
   },
   {
     id: "xl-2",
@@ -67,18 +67,31 @@ export default function Phase2Page() {
                 <CardContent className="space-y-6">
                   <p className="text-lg leading-relaxed text-slate-800">
                     To make Sarah's dashboard work, we need a way for Excel to "look up" the results 
-                    from her complex tables and bring them to the front page. The tool for this job 
-                    is <strong>XLOOKUP</strong>.
+                    from her analysis sheets and bring them to the front page. Before the lookup works,
+                    Sarah needs a small <strong>Scenario Summary</strong> table with one row for each case
+                    she wants to present. The tool that pulls those numbers into the dashboard is
+                    <strong> XLOOKUP</strong>.
                   </p>
 
                   <div className="bg-slate-900 p-6 rounded-lg text-green-400 font-mono text-sm shadow-xl">
                     <p className="text-blue-400 mb-2">{"// The XLOOKUP Anatomy"}</p>
                     <p>=XLOOKUP(<span className="text-white">Lookup_Value</span>, <span className="text-yellow-400">Lookup_Array</span>, <span className="text-purple-400">Return_Array</span>)</p>
                     <div className="mt-4 space-y-2 text-xs">
-                      <p><span className="text-white">1. Lookup_Value:</span> The scenario name Sarah typed (e.g., "Base Case").</p>
-                      <p><span className="text-yellow-400">2. Lookup_Array:</span> The column in the data table that contains all scenario names.</p>
-                      <p><span className="text-purple-400">3. Return_Array:</span> The column that contains the result Sarah wants (e.g., Total Profit).</p>
+                      <p><span className="text-white">1. Lookup_Value:</span> The scenario name in Sarah&apos;s dashboard toggle cell, B4.</p>
+                      <p><span className="text-yellow-400">2. Lookup_Array:</span> The Scenario Name column in the summary table.</p>
+                      <p><span className="text-purple-400">3. Return_Array:</span> The result column Sarah wants, such as Profit, Price, Volume, or Break-Even.</p>
                     </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                    <h3 className="font-semibold text-blue-900 mb-2">Build the bridge first</h3>
+                    <p className="text-blue-800 text-sm">
+                      Lesson 5 gave Sarah a sensitivity table and a profit matrix. Those sheets are great for
+                      analysis, but they are not presentation-friendly. In Lesson 6, she converts those results
+                      into a short four-row summary table: <strong>Base Case</strong>, <strong>Price Hike</strong>,
+                      <strong>High Volume</strong>, and <strong>Downside</strong>. The dashboard reads from that
+                      summary table, not from the entire workbook.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -114,7 +127,7 @@ export default function Phase2Page() {
                       <p className="text-sm font-bold text-amber-900">The "Stale Data" Trap:</p>
                       <p className="text-xs text-amber-800">
                         Always use <strong>Data Validation</strong> (Dropdown Menus) for your toggle cell. 
-                        If someone types "BaseCase" instead of "Base Case", your XLOOKUP will fail. 
+                        If someone types "BaseCase" instead of "Base Case" into B4, your XLOOKUP will fail. 
                         Dropdowns keep your steering wheel locked onto your data engine.
                       </p>
                     </div>
