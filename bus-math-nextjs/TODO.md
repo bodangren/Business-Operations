@@ -111,3 +111,10 @@ Next Steps (capstone pages)
 - Cross-check each subpage against `dev-docs/capstone_content.md` for alignment
 - Ensure all pages clearly link back to `/capstone/rubrics` and `/capstone/guidelines`
 - Optional later: add teacher callouts or tips sections (non-interactive)
+
+---
+
+Unit Planning Follow-up
+- Unit 07 is being refocused to inventory only.
+- Depreciation scope moved to `Unit08-Improvement-Plan.md`.
+- When Unit 07 rewrite begins, remove depreciation-specific lesson goals, activities, questions, and workbook assets from Unit 07 and use `Unit08-Improvement-Plan.md` as the transfer checklist for Unit 8.

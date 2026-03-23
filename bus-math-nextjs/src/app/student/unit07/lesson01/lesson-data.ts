@@ -1,26 +1,26 @@
 // Asset & Inventory Tracker, Lesson 1 data - extracted from MCP curriculum database
 export const lesson01Data = {
   id: "mds5x99htbxib3tjkf",
-  title: "Launch & Data Exploration",
+  title: "Unit Launch: Sarah's Inventory Problem",
   sequence: 1,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Analyze real auditor case study to understand the business impact of asset and inventory valuation decisions",
-    "Explore asset and inventory data to identify patterns and potential valuation challenges",
-    "Formulate initial hypotheses about optimal depreciation and inventory methods for different business scenarios",
-    "Establish team protocols and project management strategies for comprehensive financial analysis"
+    "Describe the business problem Sarah faces when inventory purchases and sales pile up across one month",
+    "Use the ending inventory equation as the scoreboard for the number Sarah must eventually defend",
+    "Observe that buying inventory, selling inventory, and ending the month with inventory on the shelf create different business effects",
+    "Launch a shared business simulation that will carry through the rest of Unit 07"
   ],
   keyConcepts: [
-    "Asset valuation principles and their impact on financial statement accuracy",
-    "Inventory valuation compliance requirements and audit considerations",
-    "Business context analysis for strategic financial method selection",
-    "Data exploration techniques for complex financial datasets"
+    "Ending inventory is a number the business must be able to explain",
+    "The unit formula is the scoreboard for Sarah's month: Beginning Inventory + Purchases - Cost of Goods Sold = Ending Inventory",
+    "Buying inventory, selling inventory, and holding inventory are not the same thing",
+    "Changing prices and incomplete records turn inventory into a real business problem"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Entry event with auditor case study and team formation"
+    "Story-first unit launch with one shared business simulation, light observation tasks, and one formal comprehension checkpoint"
   ],
-  rationale: "To establish a real-world context for the unit and to engage students in a problem-based learning scenario.",
+  rationale: "To launch Unit 07 with a clear founder problem: Sarah can feel the pressure of buying, selling, pricing, and tracking inventory across a month, but she cannot yet defend the ending inventory number with confidence.",
   status: "Draft"
 }
 
@@ -36,42 +36,36 @@ export const lesson01Phases = [
     id: "phase_hook_1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to the lesson topic",
-    // component: "Lesson01Phase1" (id: mdwl1ovg1rb2fimw7zj) - To introduce the unit's story with a video and comprehension questions.
+    description: "Meet Sarah's Unit 07 problem and see why one weak inventory number creates immediate business risk",
   },
   {
     id: "phase_introduction_1",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce the unit challenge and establish learning goals and success criteria",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the introductory text.
+    description: "Set up Sarah's month-long business simulation and learn how to read the inventory scoreboard",
   },
   {
     id: "phase_guided_practice_1",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Investigate data and patterns with structured inquiry protocols",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To explore asset and inventory data.
+    description: "Play through Sarah's month one event at a time and notice which business numbers move first",
   },
   {
     id: "phase_independent_practice_1",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice lesson skills independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To explore asset and inventory data.
+    description: "Make one founder buying decision and one founder pricing decision, then compare the tradeoffs",
   },
   {
     id: "phase_assessment_1",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Show that you understand the unit problem, the formula, and why ending inventory is not the same thing as profit",
   },
   {
     id: "phase_closing_1",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on the founder problem and preview the first accounting rule Sarah will need next",
   }
 ]

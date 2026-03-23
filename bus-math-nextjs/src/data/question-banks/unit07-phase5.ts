@@ -34,92 +34,92 @@ const lesson01Questions: Unit07Phase5Question[] = [
   {
     id: "lesson01-q1",
     lessonId: "lesson01",
-    lessonTitle: "Lesson 01 - Launch & Data Exploration",
-    prompt: "Why do professional teams spread the cost of long-lived equipment across several years instead of expensing it right away?",
-    correctAnswer: "Spreading the cost matches each year's expense to the income that equipment helps generate over its useful life.",
+    lessonTitle: "Lesson 01 - Why Ending Inventory Goes Wrong",
+    prompt: "What does the unit's enduring understanding say about ending inventory?",
+    correctAnswer: "Ending Inventory equals Beginning Inventory plus Purchases minus Cost of Goods Sold.",
     distractors: [
-      "Expensing everything early would make the balance sheet look too strong for lenders.",
-      "Investors prefer to see expenses delayed until the asset needs repairs.",
-      "Tax rules require every company to delay expenses until an audit happens."
+      "Ending Inventory equals Beginning Inventory minus Purchases plus Cost of Goods Sold.",
+      "Ending Inventory equals Sales plus Purchases minus Gross Profit.",
+      "Ending Inventory equals Beginning Inventory plus Revenue minus Expenses."
     ],
     explanation:
-      "The matching principle says expenses should line up with the revenue they help create. Depreciation spreads the cost so the financial statements stay honest across the asset's life.",
-    objectiveTags: ["matching-principle", "depreciation-fundamentals"]
+      "The whole unit centers on one formula: Ending Inventory = Beginning Inventory + Purchases - Cost of Goods Sold. Students need to know what each part means before they compare methods.",
+    objectiveTags: ["ending-inventory-formula", "unit-launch"]
   },
   {
     id: "lesson01-q2",
     lessonId: "lesson01",
-    lessonTitle: "Lesson 01 - Launch & Data Exploration",
-    prompt: "TechStart wants cash for growth but also wants to impress investors. Which blended method choice best supports both goals?",
-    correctAnswer: "Use double-declining balance for upfront tax relief and FIFO inventory for stronger reported profits, then explain the rationale clearly to investors.",
+    lessonTitle: "Lesson 01 - Why Ending Inventory Goes Wrong",
+    prompt: "Which event adds more goods to what Sarah has available to sell this month?",
+    correctAnswer: "A new shipment of launch kits bought for future client sales.",
     distractors: [
-      "Stay on straight-line depreciation and LIFO inventory so statements remain perfectly consistent every year.",
-      "Switch methods every quarter so the reports always match current investor questions.",
-      "Delay equipment and inventory purchases until the fundraising round is complete."
+      "The electricity bill for the store.",
+      "A customer's payment for a completed sale.",
+      "The owner's monthly rent payment."
     ],
     explanation:
-      "Accelerated depreciation protects cash in the early years, while FIFO shows higher profits. Together they balance cash flow and investor optics, as long as Sarah documents the strategy.",
-    objectiveTags: ["method-selection", "investor-readiness"]
+      "Purchases are new inventory coming into the business. Regular bills and customer payments matter, but they do not add goods to the shelf.",
+    objectiveTags: ["purchases", "record-classification"]
   },
   {
     id: "lesson01-q3",
     lessonId: "lesson01",
-    lessonTitle: "Lesson 01 - Launch & Data Exploration",
-    prompt: "When inventory costs climb quickly, what trade-off should Sarah expect when comparing LIFO and FIFO?",
-    correctAnswer: "LIFO boosts cash by reducing taxable income, while FIFO highlights higher profit that investors may want to see.",
+    lessonTitle: "Lesson 01 - Why Ending Inventory Goes Wrong",
+    prompt: "Why does a missing purchase record make ending inventory unreliable?",
+    correctAnswer: "It leaves goods out of the formula, so the business understates what was available for sale and what may still remain on hand.",
     distractors: [
-      "LIFO always wins because it mirrors the physical flow of TechStart's hardware shipments.",
-      "FIFO guarantees the lowest taxes because it keeps the oldest costs in Cost of Goods Sold.",
-      "Both methods lead to the same profit as long as the total inventory purchased is identical."
+      "It only changes revenue, not inventory.",
+      "It affects taxes only if the business changes methods later.",
+      "It matters only when a lender asks for statements."
     ],
     explanation:
-      "Rising costs make LIFO show higher COGS and lower profit, which trims taxes. FIFO uses older, cheaper costs in COGS, so profit looks stronger but taxes increase.",
-    objectiveTags: ["inventory-strategy", "cash-flow"]
+      "If purchases are missing, the records understate the total goods available. That means the reported ending inventory and COGS can both be wrong.",
+    objectiveTags: ["missing-records", "formula-risk"]
   },
   {
     id: "lesson01-q4",
     lessonId: "lesson01",
-    lessonTitle: "Lesson 01 - Launch & Data Exploration",
-    prompt: "Sarah buys equipment for $18,000, expects $2,000 salvage value, and a five-year life. What is the annual straight-line depreciation?",
-    correctAnswer: "$3,200 because ($18,000 - $2,000) divided by 5 equals $3,200 per year.",
+    lessonTitle: "Lesson 01 - Why Ending Inventory Goes Wrong",
+    prompt: "Why is ending inventory not the same thing as profit?",
+    correctAnswer: "Because unsold inventory is still an asset on the shelf until a sale happens and cost moves out of inventory.",
     distractors: [
-      "$3,600 because the asset cost simply spreads into equal $3,600 chunks.",
-      "$2,800 because salvage value should be ignored until the final year.",
-      "$4,000 because investors prefer to see round numbers on depreciation schedules."
+      "Because profit always stays lower than inventory in every business.",
+      "Because inventory becomes profit as soon as the goods are purchased.",
+      "Because ending inventory matters only for taxes, not for business decisions."
     ],
     explanation:
-      "Straight-line depreciation uses the cost minus salvage value, then divides by useful life. ($18,000 - $2,000) ÷ 5 = $3,200.",
-    objectiveTags: ["depreciation-calculation", "excel-functions"]
+      "Inventory can sit on the shelf at month-end as an asset. Profit changes when the business actually sells goods and matches that sale with cost.",
+    objectiveTags: ["cogs", "formula-components"]
   },
   {
     id: "lesson01-q5",
     lessonId: "lesson01",
-    lessonTitle: "Lesson 01 - Launch & Data Exploration",
-    prompt: "Why would a cash-strapped company lean toward LIFO when costs are rising fast?",
-    correctAnswer: "Higher Cost of Goods Sold under LIFO lowers taxable income and protects scarce cash.",
+    lessonTitle: "Lesson 01 - Why Ending Inventory Goes Wrong",
+    prompt: "A manager cannot explain beginning inventory, purchases, and sales clearly. What is the biggest business risk?",
+    correctAnswer: "The ending inventory number becomes hard to trust, which weakens profit analysis, planning, and outside confidence.",
     distractors: [
-      "LIFO always increases book value, which impresses creditors during tough seasons.",
-      "LIFO is easier to explain to auditors, so it shortens the year-end review.",
-      "LIFO eliminates the need for inventory counts, saving payroll immediately."
+      "The business automatically loses the right to keep inventory records.",
+      "Suppliers stop shipping goods until the formulas are corrected.",
+      "The company must close all future stores immediately."
     ],
     explanation:
-      "LIFO assigns the newest, most expensive layers to COGS. That pushes profit and taxes down, which keeps more cash inside the business when it matters most.",
-    objectiveTags: ["cash-flow", "inventory-strategy"]
+      "Weak inventory records do not just create bookkeeping confusion. They damage trust in profit, taxes, planning, and any recommendation based on inventory data.",
+    objectiveTags: ["business-risk", "investor-readiness"]
   },
   {
     id: "lesson01-q6",
     lessonId: "lesson01",
-    lessonTitle: "Lesson 01 - Launch & Data Exploration",
-    prompt: "What guiding question should Sarah ask before locking in any depreciation or inventory method?",
-    correctAnswer: "Does this combination support our cash flow, tax plan, and investor story for the next stage of growth?",
+    lessonTitle: "Lesson 01 - Why Ending Inventory Goes Wrong",
+    prompt: "Why does Lesson 1 focus so heavily on the ending inventory formula before teaching FIFO, LIFO, specific identification, or weighted average?",
+    correctAnswer: "Students need to understand what number they are defending before they learn different methods for calculating it.",
     distractors: [
-      "Which option matches whatever nearby tech companies already use?",
-      "Which method keeps the spreadsheet formulas the shortest and simplest?",
-      "Which approach lets us change accounting policies the least often during audits?"
+      "The methods only matter if the business chooses to ignore the formula later.",
+      "The formula is temporary and gets replaced once Excel is introduced.",
+      "Method choice matters only for presentation design, not for accounting."
     ],
     explanation:
-      "Method choices are strategic. Sarah has to pick the mix that best supports TechStart's goals around cash, taxes, and external reporting.",
-    objectiveTags: ["method-selection", "strategy-alignment"]
+      "The methods are important, but first students need the big picture: what ending inventory is, what records feed it, and why the number matters.",
+    objectiveTags: ["unit-launch", "method-preview"]
   }
 ];
 const lesson02Questions: Unit07Phase5Question[] = [
