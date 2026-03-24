@@ -1,7 +1,7 @@
 // Asset & Inventory Tracker, Lesson 3 data - extracted from MCP curriculum database
 export const lesson03Data = {
   id: "mds5x99ma27hcfuzr0p",
-  title: "Inventory Methods Introduction",
+  title: "FIFO and LIFO: Two Ways to Value the Same Inventory",
   sequence: 3,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [

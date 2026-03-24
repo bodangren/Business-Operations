@@ -112,9 +112,11 @@ Lesson 7 uses one shared business and one shared dataset. Lessons 8-10 repeat th
 
 ## Lesson 1
 
+**Status:** Complete
+
 ### Proposed title
 
-`Unit Launch: Why Ending Inventory Goes Wrong`
+`Unit Launch: Sarah's Inventory Problem`
 
 ### Purpose
 
@@ -122,53 +124,64 @@ Introduce the unit problem, the shared business simulation, and the enduring und
 
 `Ending Inventory = Beginning Inventory + Purchases - COGS`
 
-Lesson 1 should not try to teach all methods. It should establish why the formula matters and what records feed it.
+Lesson 1 should not try to teach all methods. It should establish why the formula matters, let students feel Sarah's founder problem, and show that inventory on the shelf is not the same thing as profit.
 
 ### Phase 1: Hook
 
-- Introduce one business with a broken inventory story.
-- Use a short video or narrative showing that the owner cannot explain ending inventory.
-- Show the formula visually and state that the whole unit is about making this number trustworthy.
-- Ask students what could go wrong if any part of the formula is wrong.
+- Use Sarah's startup-CEO video to introduce the unit problem.
+- Frame the problem as founder risk, not as a vocabulary lesson.
+- Have students complete a risk-triage activity to identify the two biggest warning signs in Sarah's situation.
+- End with the idea that Sarah cannot defend her ending inventory number to an outside audience.
 
 ### Phase 2: Introduction
 
-- Define `Beginning Inventory`, `Purchases`, `COGS`, and `Ending Inventory` in plain language.
-- Explain how sales activity and purchase activity affect the formula.
-- Clarify that inventory is different from ordinary expenses because unsold goods still remain on the balance sheet.
-- Introduce the shared client business and its inventory problem.
+- Introduce Sarah's month setup: starting shelf, starting cash, and the unit scoreboard.
+- Keep the formula visible as the unit scoreboard, not as a full accounting lecture.
+- Use a month-scanner activity so students identify where the business pressure shows up first.
+- Emphasize that Sarah is feeling cash, shelf, and margin pressure at the same time.
 
 ### Phase 3: Guided Practice
 
-- Give students a set of business records and ask where each one belongs:
-  - beginning inventory
-  - purchase
-  - sale affecting COGS
-  - not part of the inventory formula
-- Include teacher-led explanation of why misclassification breaks ending inventory.
+- Use an event-by-event prediction lab tied to one shared month.
+- Before each reveal, students predict what changes:
+  - cash
+  - units on shelf
+  - inventory value
+  - revenue
+  - gross profit
+- Reveal the result after each event so students can compare their mental model to the live business outcomes.
 
 ### Phase 4: Independent Practice
 
-- Students analyze a small business case and identify which missing or incorrect records would distort ending inventory.
-- Students complete a simple sorting or labeling activity tied directly to the formula.
+- Use a ten-step pricing simulator with light restocking decisions.
+- Track a mini income statement:
+  - sales
+  - COGS
+  - gross profit
+- Track a mini balance sheet:
+  - cash
+  - inventory
+  - total assets
+- Give students a clear win condition: maximize gross profit while keeping a minimum cash cushion and minimum ending inventory level.
 
 ### Phase 5: Assessment
 
 - Check the meaning of each formula part.
 - Check whether students can identify which transactions affect ending inventory.
-- Include one short explanation of why a weak ending inventory number hurts business decisions.
+- Keep the formal check short and focused on the launch problem.
 
 ### Phase 6: Closing
 
 - Repeat the enduring understanding.
-- Preview Lesson 2 as the first lesson on how inventory cost actually flows through the formula.
+- Preview Lesson 2 as the first lesson on how inventory costs flow when the same goods are bought at different prices.
 
 ### Implementation sub-tasks
 
-- Rewrite `lesson01/lesson-data.ts` to center the ending inventory formula.
-- Rewrite all six phase pages so they stop previewing later strategy too early.
-- Keep the video, but make the hook explicitly about an unreliable ending inventory number.
-- Replace broad asset-versus-inventory framing with formula-centered inventory recordkeeping.
+- Rewrite `lesson01/lesson-data.ts` to center Sarah's inventory problem and the unit scoreboard.
+- Replace passive checks with lesson-specific interactive components.
+- Keep the Sarah video and restore the startup narrative.
+- Build a shared month simulation that supports both the prediction lab and the pricing studio.
+- Keep the launch lesson focused on the problem, not on teaching FIFO/LIFO yet.
 
 ## Lesson 2
 

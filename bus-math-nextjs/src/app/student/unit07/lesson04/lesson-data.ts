@@ -1,7 +1,7 @@
 // Asset & Inventory Tracker, Lesson 4 data - extracted from MCP curriculum database
 export const lesson04Data = {
   id: "mds5x99o393t4h40nm3",
-  title: "FIFO/LIFO Inventory Valuation with Excel Tables",
+  title: "Specific Identification and Weighted Average in Simple Excel",
   sequence: 4,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [

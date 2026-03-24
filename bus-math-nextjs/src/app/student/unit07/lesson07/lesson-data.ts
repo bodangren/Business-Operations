@@ -1,7 +1,7 @@
 // Asset & Inventory Tracker, Lesson 7 data - Production Studio focus
 export const lesson07Data = {
   id: "mds5x9a0ilvdijl97xj",
-  title: "Production Studio: Model Completion, QA, and Presentation",
+  title: "Dress Rehearsal: One Shared Inventory Dataset, One Shared Workbook",
   sequence: 7,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [

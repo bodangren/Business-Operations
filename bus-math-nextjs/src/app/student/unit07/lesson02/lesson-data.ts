@@ -1,7 +1,7 @@
 // Asset & Inventory Tracker, Lesson 2 data - extracted from MCP curriculum database
 export const lesson02Data = {
   id: "mds5x99kx7ah9f1wjde",
-  title: "Depreciation Techniques",
+  title: "Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS",
   sequence: 2,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [

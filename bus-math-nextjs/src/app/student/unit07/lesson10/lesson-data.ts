@@ -1,6 +1,6 @@
 export const lesson10Data = {
   id: "u07_l10_pbl_m3",
-  title: "PBL Milestone 3: Presentations + Peer Review",
+  title: "Final Presentation: Defend Ending Inventory, Method Choice, and Business Recommendation",
   sequence: 10,
   unitId: "unit07",
   learningObjectives: [

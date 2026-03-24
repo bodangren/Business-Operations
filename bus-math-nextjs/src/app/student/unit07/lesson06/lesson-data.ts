@@ -2,7 +2,7 @@
 // Asset & Inventory Tracker, Lesson 6 — Integration & Presentation: Decision‑Ready Inventory Dashboard
 export const lesson06Data = {
   id: "u07_l06_integration",
-  title: "Integration & Presentation: Inventory Decision Dashboard",
+  title: "Highest-Complexity Excel: Inventory Decision Dashboard and Method Recommendation",
   sequence: 6,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [

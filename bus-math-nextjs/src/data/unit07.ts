@@ -112,7 +112,7 @@ export const unit07Data: UnitData = {
         days: [
           {
             day: 1,
-            focus: "Launch & Data Exploration",
+            focus: "Unit Launch: Sarah's Inventory Problem",
             activities: [
               "Entry Event with auditor sharing real case study",
               "Team formation and role assignment",
@@ -125,7 +125,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 2,
-            focus: "Depreciation Techniques",
+            focus: "Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS",
             activities: [
               "Teach SLN & DDB formulas and business applications",
               "Demo depreciation schedule setup in Excel",
@@ -138,7 +138,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 3,
-            focus: "Inventory Methods Introduction",
+            focus: "FIFO and LIFO: Two Ways to Value the Same Inventory",
             activities: [
               "Explain FIFO vs. LIFO logic and business implications",
               "Guided practice with sample transactions",
@@ -152,7 +152,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 4,
-            focus: "FIFO/LIFO Inventory Valuation with Excel Tables",
+            focus: "Specific Identification and Weighted Average in Simple Excel",
             activities: [
               "Build Excel Tables and array formulas for FIFO/LIFO layer costing",
               "Implement structured references with automated COGS and Ending Inventory",
@@ -166,7 +166,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 5,
-            focus: "Checkpoint & Reflection",
+            focus: "Medium-Complexity Excel: Build a Method Comparison Workbook",
             activities: [
               "Sprint retrospective on technical progress",
               "Concept quiz on method differences",
@@ -186,7 +186,7 @@ export const unit07Data: UnitData = {
         days: [
           {
             day: 6,
-            focus: "Advanced Modeling",
+            focus: "Highest-Complexity Excel: Inventory Decision Dashboard and Method Recommendation",
             activities: [
               "Automate method selection with dropdowns",
               "Implement INDEX/MATCH logic for dynamic switching",
@@ -200,7 +200,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 7,
-            focus: "Ratio & Visualization",
+            focus: "Dress Rehearsal: One Shared Inventory Dataset, One Shared Workbook",
             activities: [
               "Calculate inventory turnover ratio",
               "Chart COGS impact under each method",
@@ -213,7 +213,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 8,
-            focus: "Advisory Brief Draft",
+            focus: "Group Project Kickoff: New Business, New Inventory Data, Same Workbook Logic",
             activities: [
               "Outline strategic rationale for method selection",
               "Draft written brief with supporting analysis",
@@ -226,7 +226,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 9,
-            focus: "Mock Board Presentation",
+            focus: "Group Project Build: Complete the Workbook and Rehearse the Recommendation",
             activities: [
               "5‑minute pitch rehearsal to classmates",
               "Practice Q&A with difficult questions",
@@ -239,7 +239,7 @@ export const unit07Data: UnitData = {
           },
           {
             day: 10,
-            focus: "Public Presentation",
+            focus: "Final Presentation: Defend Ending Inventory, Method Choice, and Business Recommendation",
             activities: [
               "Deliver advisory brief + pitch to Board of Directors panel",
               "Professional Q&A session",

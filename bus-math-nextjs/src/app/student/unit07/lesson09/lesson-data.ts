@@ -1,6 +1,6 @@
 export const lesson09Data = {
   id: "u07_l09_pbl_m2",
-  title: "PBL Milestone 2: Prototype + Rehearsal",
+  title: "Group Project Build: Complete the Workbook and Rehearse the Recommendation",
   sequence: 9,
   unitId: "unit07",
   learningObjectives: [

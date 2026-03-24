@@ -1,6 +1,6 @@
 export const lesson08Data = {
   id: "u07_l08_pbl_m1",
-  title: "PBL Milestone 1: Project Definition",
+  title: "Group Project Kickoff: New Business, New Inventory Data, Same Workbook Logic",
   sequence: 8,
   unitId: "unit07",
   learningObjectives: [

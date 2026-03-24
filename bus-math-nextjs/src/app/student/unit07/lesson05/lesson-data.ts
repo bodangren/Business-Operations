@@ -1,7 +1,7 @@
 // Asset & Inventory Tracker, Lesson 5 data - extracted from MCP curriculum database
 export const lesson05Data = {
   id: "mds5x99sosgzubr6xz",
-  title: "Advanced Inventory Automation",
+  title: "Medium-Complexity Excel: Build a Method Comparison Workbook",
   sequence: 5,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
