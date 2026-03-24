@@ -50,7 +50,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
     "Statistical analysis presentation to café owners",
     "Payroll system demo to HR professionals",
     "Pricing strategy presentation to business executives",
-    "Asset tracking system demo to inventory managers",
+    "Inventory valuation and recommendation demo to business professionals",
     "Startup pitch to venture capital panel"
   ]
   
@@ -100,11 +100,11 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         "Tip: Complete Lesson 07 first so you can apply production QA, presentation readiness checks, and investor-ready polish while reviewing your answers."
     },
     7: {
-      title: "Practice Test & Asset Strategy Mastery",
+      title: "Practice Test & Inventory Valuation Mastery",
       description:
-        "Ready to prove your depreciation and inventory expertise? Launch the Unit 7 practice test to rehearse method selection, FIFO vs. LIFO trade-offs, cash-flow impacts, and board-ready strategic reasoning with randomized questions from every asset and inventory lesson.",
+        "Ready to prove your inventory expertise? Launch the Unit 7 practice test to rehearse cost flow, FIFO vs. LIFO trade-offs, weighted average logic, workbook checks, and ending-inventory reasoning with randomized questions from the whole unit.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply peer audit checks, model QA standards, and presentation polish while reviewing your answers."
+        "Tip: Complete Lesson 07 first so you can apply workbook QA checks, recommendation logic, and presentation polish while reviewing your answers."
     },
     8: {
       title: "Practice Test & Investor Readiness",
