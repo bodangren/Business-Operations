@@ -13,7 +13,7 @@ const videoData = {
   title: "Sarah's Inventory Wake-Up Call",
   description:
     "Sarah Chen thought TechStart Solutions was ready for its next funding conversation. Then a simple question about ending inventory exposed a weak system. This launch video introduces the shared business problem for Unit 07.",
-  youtubeId: "Je7SPYOw9Vk",
+  youtubeId: "Z5XM90DfSeg",
   duration: "4:28",
   transcript:
     "I thought TechStart Solutions was finally looking polished. We had better systems, stronger pricing, and bigger clients. I had even started adding physical client launch kits to some service packages. These kits included printed promo cards, branded materials, and event supplies that we ordered in batches and sold as part of our work. When I met with my mentor to prepare for a lender conversation, she stopped on one number: ending inventory. I had a count from the shelf, but I could not clearly explain how the number was built. Some purchase records were still buried in email, some sales were recorded late, and a few items were counted without matching cost details. She told me that if I could not defend ending inventory, then I could not fully defend profit either. That was the moment I realized ending inventory is not just a stockroom number. It affects profit, taxes, planning, and trust. If I could not explain that number clearly, then I was not as investor-ready as I thought. Unit 07 begins with that problem. Your job is to learn how businesses build, check, and defend ending inventory with records that make sense to owners, lenders, and investors."
