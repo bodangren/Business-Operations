@@ -1,327 +1,324 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader";
-import { PhaseFooter } from "@/components/student/PhaseFooter";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { FillInTheBlank } from "@/components/exercises/FillInTheBlank";
-import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data";
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
+import { Layers, AlertTriangle } from "lucide-react"
+import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data"
+import InventoryFlowExplorer from "../InventoryFlowExplorer"
 
-const currentPhase = lesson02Phases[1]; // Introduction phase
+const currentPhase = lesson02Phases[1]
 
-const depreciationSentences = [
+const vocabularySentences = [
   {
-    id: "concept-1",
-    text: "Depreciation is a way of {blank} the cost of a long-term asset over the years it will be used.",
-    answer: "spreading",
-    hint: "Like butter on toast - you distribute it evenly",
-    category: "Core Concept"
+    id: "vocab-1",
+    text: "Beginning Inventory + Purchases = {blank} Available for Sale",
+    answer: "Goods",
+    hint: "The total amount of product you could potentially sell",
+    category: "Core Formula"
   },
   {
-    id: "concept-2", 
-    text: "The {blank} method spreads the cost evenly over the asset's useful life.",
-    answer: "Straight-Line",
-    hint: "Think of a straight, even line on a graph",
-    category: "SLN Method"
+    id: "vocab-2",
+    text: "{blank} flow tracks how units move on and off the shelf.",
+    answer: "Physical",
+    hint: "This is about counting boxes, not dollars",
+    category: "Flow Types"
   },
   {
-    id: "formula-1",
-    text: "The Straight-Line formula is: Annual Depreciation = (Cost - {blank} Value) ÷ Useful Life",
-    answer: "Salvage",
-    hint: "The value you expect to get when you sell or dispose of the asset",
-    category: "SLN Formula"
+    id: "vocab-3",
+    text: "{blank} flow tracks which dollar amounts move from inventory to COGS.",
+    answer: "Cost",
+    hint: "This is about assigning value to what was sold",
+    category: "Flow Types"
   },
   {
-    id: "concept-3",
-    text: "The {blank} Balance method charges more depreciation in the early years of an asset's life.",
-    answer: "Double-Declining",
-    hint: "This accelerated method declines rapidly at first",
-    category: "DDB Method"
+    id: "vocab-4",
+    text: "An inventory {blank} is a group of units purchased at the same cost.",
+    answer: "layer",
+    hint: "Think of stacking purchases on top of each other",
+    category: "Inventory Structure"
   },
   {
-    id: "excel-1",
-    text: "In Excel, the function {blank} calculates Straight-Line depreciation.",
-    answer: "SLN",
-    hint: "Three letters that stand for Straight-Line",
-    category: "Excel Functions"
+    id: "vocab-5",
+    text: "When prices change between purchases, different {blank} have different values.",
+    answer: "layers",
+    hint: "The same product bought at different times can have different costs",
+    category: "Inventory Structure"
   },
   {
-    id: "excel-2",
-    text: "The Excel function {blank} calculates Double-Declining Balance depreciation.",
-    answer: "DDB", 
-    hint: "Three letters that match the method name",
-    category: "Excel Functions"
+    id: "vocab-6",
+    text: "{blank} is the account that receives the cost of inventory that was sold.",
+    answer: "COGS",
+    hint: "Cost of Goods Sold - the expense side of the equation",
+    category: "Core Formula"
   },
   {
-    id: "business-1",
-    text: "Depreciation helps match the cost of the asset to the {blank} it helps generate.",
-    answer: "income",
-    hint: "What businesses earn from their operations",
-    category: "Business Principle"
+    id: "vocab-7",
+    text: "Cost {blank} is the process of deciding which layer costs go to COGS and which stay in inventory.",
+    answer: "assignment",
+    hint: "You're assigning specific dollar amounts to specific outcomes",
+    category: "Process"
   },
   {
-    id: "tax-1",
-    text: "Depreciation reduces a company's taxable income each year, which means they pay {blank} in taxes.",
-    answer: "less",
-    hint: "The opposite of more",
-    category: "Tax Impact"
+    id: "vocab-8",
+    text: "Ending Inventory value depends on which costs remain {blank} the business.",
+    answer: "in",
+    hint: "Costs that stay vs. costs that leave",
+    category: "Core Formula"
   }
-];
+]
 
-export default function Unit07Lesson02Phase2() {
+export default function Phase2Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-sky-50">
+      <PhaseHeader unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
 
-      <div className="max-w-4xl mx-auto px-4 pb-8 space-y-8">
-        
-        {/* Core Concept Introduction */}
-        <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-2xl text-blue-800">
-              📊 Understanding Depreciation: Spreading the Cost
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-blue-900">
-              When Sarah bought $18,000 worth of new equipment for TechStart Solutions, it was a big expense. 
-              But Jennifer, her CPA, explained that it's not like buying a coffee. That equipment will last 
-              for many years and help TechStart earn money over that time. So, instead of counting the whole 
-              $18,000 as an expense in one go, businesses <strong>depreciate</strong> these long-term assets.
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-sky-100 text-sky-800 text-lg px-4 py-2">Phase 2: Introduction</Badge>
+            <h1 className="text-3xl font-bold text-slate-900">How Inventory Moves Through the Formula</h1>
+            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
+              Before you can compare FIFO, LIFO, or other methods, you need to understand the basic mechanics 
+              of inventory movement. Let's learn the concepts, then explore them hands-on.
             </p>
-            
-            <p className="text-lg leading-relaxed text-blue-900">
-              Depreciation is basically a way of spreading the cost of a long-term asset (like a building, 
-              machine, or computer) over the years it will be used. Think of it like a car. You don't pay 
-              for the entire car's "usefulness" in the first month. Instead, its value slowly decreases as 
-              you use it over several years. Depreciation matches this idea – it recognizes that an asset's 
-              value is used up over time.
-            </p>
+          </div>
+        </section>
 
-            <div className="bg-white p-4 rounded-lg border border-blue-300">
-              <h3 className="font-semibold text-blue-800 mb-3">Why do businesses depreciate assets?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div className="space-y-2">
-                  <Badge variant="outline" className="bg-green-100 text-green-800">Matching Principle</Badge>
-                  <p className="text-blue-800">
-                    It helps match the cost of the asset to the income it helps generate. If a machine 
-                    helps you make products for five years, it makes sense to spread its cost over those five years.
+        <section className="max-w-6xl mx-auto space-y-8">
+          {/* Quick setup context */}
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900">Sarah's Month at a Glance</CardTitle>
+            </CardHeader>
+            <CardContent className="text-blue-950">
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="bg-white p-3 rounded-lg border border-blue-300">
+                  <p className="text-sm text-blue-700 font-medium">Beginning Inventory</p>
+                  <p className="text-xl font-bold text-blue-900">10 kits @ $18</p>
+                  <p className="text-sm text-blue-600">= $180</p>
+                </div>
+                <div className="bg-white p-3 rounded-lg border border-blue-300">
+                  <p className="text-sm text-blue-700 font-medium">Purchases</p>
+                  <p className="text-xl font-bold text-blue-900">20 kits @ $20</p>
+                  <p className="text-sm text-blue-600">= $400</p>
+                </div>
+                <div className="bg-white p-3 rounded-lg border border-blue-300">
+                  <p className="text-sm text-blue-700 font-medium">Sales to Make</p>
+                  <p className="text-xl font-bold text-blue-900">15 kits</p>
+                  <p className="text-sm text-blue-600">selling @ $38 each</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Physical Flow vs Cost Flow - CONCEPT FIRST */}
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900">Physical Flow vs. Cost Flow</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-purple-950">
+              <p className="text-lg leading-relaxed">
+                This is the key concept of Lesson 2. <strong>Physical flow</strong> and <strong>cost flow</strong> 
+                are two different things, and understanding the difference is essential.
+              </p>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="bg-white p-4 rounded-lg border border-purple-300">
+                  <h4 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                    <Layers className="h-4 w-4" />
+                    Physical Flow
+                  </h4>
+                  <p className="text-purple-800 text-sm mb-3">
+                    How actual units move on and off the shelf.
+                  </p>
+                  <ul className="text-purple-700 text-sm space-y-1">
+                    <li>• Kits arrive from the supplier</li>
+                    <li>• Kits sit on the shelf</li>
+                    <li>• Kits get packed and shipped to customers</li>
+                  </ul>
+                  <p className="text-purple-600 text-sm mt-3 italic">
+                    This is about counting boxes.
                   </p>
                 </div>
-                <div className="space-y-2">
-                  <Badge variant="outline" className="bg-purple-100 text-purple-800">Tax Benefits</Badge>
-                  <p className="text-blue-800">
-                    Depreciation reduces a company's taxable income each year, which means they pay less 
-                    in taxes. This directly improves their <strong>cash flow</strong> – how much cash they have available.
+
+                <div className="bg-white p-4 rounded-lg border border-purple-300">
+                  <h4 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">$</span>
+                    Cost Flow
+                  </h4>
+                  <p className="text-purple-800 text-sm mb-3">
+                    How dollar values move between accounts.
+                  </p>
+                  <ul className="text-purple-700 text-sm space-y-1">
+                    <li>• Purchase costs go into Inventory</li>
+                    <li>• When a sale happens, costs move from Inventory to COGS</li>
+                    <li>• Remaining costs stay in Ending Inventory</li>
+                  </ul>
+                  <p className="text-purple-600 text-sm mt-3 italic">
+                    This is about assigning value.
                   </p>
                 </div>
+              </div>
+
+              <div className="bg-purple-100 p-4 rounded-lg border border-purple-300 mt-4">
+                <p className="text-purple-800">
+                  <strong>Why they're different:</strong> When Sarah sells a kit, she physically hands one box 
+                  to the customer. But for accounting purposes, she has to decide: did that box come from 
+                  the $18 layer or the $20 layer? The physical box is the same either way, but the 
+                  <em> cost assignment</em> changes her numbers.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Inventory Layers explanation */}
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-900 flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                What Is an Inventory Layer?
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-amber-950">
+              <p className="text-lg leading-relaxed">
+                An <strong>inventory layer</strong> is a group of units purchased at the same cost. 
+                Each time Sarah buys kits at a new price, she creates a new layer.
+              </p>
+
+              <div className="bg-white p-4 rounded-lg border border-amber-300">
+                <h4 className="font-semibold text-amber-900 mb-3">Sarah's Inventory Layers This Month:</h4>
                 <div className="space-y-2">
-                  <Badge variant="outline" className="bg-orange-100 text-orange-800">Company Value</Badge>
-                  <p className="text-blue-800">
-                    It helps show the true value of a company's assets on its financial statements, 
-                    which is important for investors and lenders.
+                  <div className="flex items-center justify-between p-3 bg-amber-100 rounded">
+                    <span className="font-medium text-amber-900">Layer 1 (Beginning)</span>
+                    <span className="text-amber-800">10 kits @ $18 = $180</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-amber-200 rounded">
+                    <span className="font-medium text-amber-900">Layer 2 (Purchased)</span>
+                    <span className="text-amber-800">20 kits @ $20 = $400</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-amber-300 rounded border-t-2 border-amber-400">
+                    <span className="font-medium text-amber-900">Total Available</span>
+                    <span className="text-amber-800 font-semibold">30 kits = $580</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-amber-800">
+                When Sarah sells 15 kits, she has to "pull" cost from these layers. But which layer 
+                does she pull from first? That's where <strong>cost assignment</strong> comes in—and 
+                that's what you'll learn in Lesson 3 (FIFO and LIFO).
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Interactive Explorer - THE MAIN ACTIVITY */}
+          <Card className="border-sky-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-sky-900 flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                Now Try It: Explore Inventory Cost Flow
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-slate-600 mb-4">
+                Now that you understand physical flow, cost flow, and inventory layers, it's time to 
+                see how cost assignment works in practice. Make 15 sales and watch how your choices 
+                affect COGS and Ending Inventory.
+              </p>
+              <InventoryFlowExplorer />
+            </CardContent>
+          </Card>
+
+          {/* Where Mistakes Happen */}
+          <Card className="border-red-200 bg-red-50">
+            <CardHeader>
+              <CardTitle className="text-red-900 flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5" />
+                Where Mistakes Usually Happen
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-red-950">
+              <p className="text-lg leading-relaxed">
+                Inventory tracking goes wrong in predictable places. Here are the most common errors:
+              </p>
+
+              <div className="grid gap-3">
+                <div className="bg-white p-3 rounded-lg border border-red-300">
+                  <p className="font-medium text-red-900">1. Mixing up units and dollars</p>
+                  <p className="text-red-700 text-sm">
+                    Counting 15 kits on the shelf doesn't automatically tell you their dollar value.
+                    You have to trace which layer they came from.
+                  </p>
+                </div>
+
+                <div className="bg-white p-3 rounded-lg border border-red-300">
+                  <p className="font-medium text-red-900">2. Forgetting that Goods Available = Beginning + Purchases</p>
+                  <p className="text-red-700 text-sm">
+                    If you skip beginning inventory or miss a purchase, your entire calculation is off.
+                    Always verify that BI + P = GAFS before assigning costs.
+                  </p>
+                </div>
+
+                <div className="bg-white p-3 rounded-lg border border-red-300">
+                  <p className="font-medium text-red-900">3. Not realizing COGS and Ending Inventory share the same pool</p>
+                  <p className="text-red-700 text-sm">
+                    Every dollar of cost has to go somewhere—either COGS or Ending Inventory. 
+                    If one is wrong, the other is automatically wrong too.
+                  </p>
+                </div>
+
+                <div className="bg-white p-3 rounded-lg border border-red-300">
+                  <p className="font-medium text-red-900">4. Choosing a method without understanding why</p>
+                  <p className="text-red-700 text-sm">
+                    Different methods give different results. Picking FIFO just because it "looks better" 
+                    without understanding the tradeoffs can create problems with investors, lenders, and taxes.
                   </p>
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
 
-        {/* Straight-Line Method */}
-        <Card className="border-green-200 bg-green-50">
-          <CardHeader>
-            <CardTitle className="text-xl text-green-800">
-              📏 Straight-Line (SLN) Depreciation: The Simple Method
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-green-900">
-              The <strong>Straight-Line method</strong> is the simplest way to calculate depreciation. 
-              It spreads the cost evenly over the asset's useful life, like dividing a pizza into equal slices.
-            </p>
+          {/* Fill in the Blank */}
+          <FillInTheBlank
+            sentences={vocabularySentences}
+            title="Inventory Movement Vocabulary"
+            description="Complete these sentences to show you understand how inventory moves through the formula."
+            showWordList={true}
+            randomizeWordOrder={true}
+            showHints={true}
+          />
 
-            <div className="bg-white p-4 rounded-lg border border-green-300">
-              <h4 className="font-semibold text-green-800 mb-3">The Formula:</h4>
-              <div className="text-center bg-gray-100 p-3 rounded text-lg font-mono">
-                Annual Depreciation = (Cost - Salvage Value) ÷ Useful Life
-              </div>
-              <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div>
-                  <strong className="text-green-800">Cost:</strong> How much the asset originally cost.
-                </div>
-                <div>
-                  <strong className="text-green-800">Salvage Value:</strong> What the asset is expected 
-                  to be worth at the end of its useful life (like trade-in value).
-                </div>
-                <div>
-                  <strong className="text-green-800">Useful Life:</strong> How many years the business 
-                  expects to use the asset.
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
-              <h4 className="font-semibold text-blue-800 mb-2">TechStart Example:</h4>
-              <p className="text-blue-800 mb-2">
-                If TechStart buys a computer system for $3,000, expects it to be worth $300 after 3 years, 
-                and plans to use it for 3 years, the calculation would be:
-              </p>
-              <div className="text-center bg-white p-2 rounded font-mono text-sm">
-                Annual Depreciation = ($3,000 - $300) ÷ 3 = $900
-              </div>
-              <p className="text-blue-800 mt-2 text-sm">
-                And for monthly depreciation: $900 ÷ 12 = $75 per month
-              </p>
-            </div>
-
-            <p className="text-green-900">
-              Straight-Line depreciation gives a <strong>predictable, steady expense</strong> each year, 
-              making it easy for budgeting and financial planning.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Double-Declining Balance Method */}
-        <Card className="border-purple-200 bg-purple-50">
-          <CardHeader>
-            <CardTitle className="text-xl text-purple-800">
-              ⚡ Double-Declining Balance (DDB): The Accelerated Method
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-purple-900">
-              The <strong>Double-Declining Balance method</strong> is "accelerated," meaning it charges 
-              more depreciation expense in the early years of an asset's life and less in later years. 
-              This can be good for taxes because it means higher tax deductions sooner, improving cash flow.
-            </p>
-
-            <div className="bg-white p-4 rounded-lg border border-purple-300">
-              <h4 className="font-semibold text-purple-800 mb-3">How it works:</h4>
-              <p className="text-purple-800 mb-3">
-                This method uses <strong>double</strong> the straight-line rate and applies it to the 
-                asset's current book value (not the original cost). The depreciation amount gets smaller 
-                each year as the book value decreases.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div className="space-y-2">
-                  <Badge variant="outline" className="bg-green-100 text-green-800">Year 1</Badge>
-                  <p className="text-purple-800">Highest depreciation expense</p>
-                </div>
-                <div className="space-y-2">
-                  <Badge variant="outline" className="bg-yellow-100 text-yellow-800">Later Years</Badge>
-                  <p className="text-purple-800">Decreasing depreciation expense</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-green-100 p-4 rounded-lg border border-green-300">
-              <h4 className="font-semibold text-green-800 mb-2">Business Benefits:</h4>
-              <ul className="text-green-800 space-y-1 text-sm">
-                <li>• <strong>Maximum tax benefits early</strong> - reduces taxes when cash flow is most needed</li>
-                <li>• <strong>Improved cash flow</strong> - more money available for business growth</li>
-                <li>• <strong>Matches reality</strong> - many assets lose value quickly in early years (like technology)</li>
-                <li>• <strong>Conservative approach</strong> - recognizes that newer assets are more productive</li>
+          {/* Summary */}
+          <Card className="border-slate-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-slate-900">Key Takeaways</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-slate-800">
+              <ul className="list-disc list-inside space-y-2">
+                <li>
+                  <strong>Goods Available for Sale</strong> = Beginning Inventory + Purchases (both units and dollars)
+                </li>
+                <li>
+                  <strong>Physical flow</strong> tracks units; <strong>cost flow</strong> tracks dollars
+                </li>
+                <li>
+                  <strong>Inventory layers</strong> form when you buy the same product at different prices
+                </li>
+                <li>
+                  <strong>Cost assignment</strong> is the process of deciding which layer costs go to COGS 
+                  and which stay in Ending Inventory
+                </li>
+                <li>
+                  The same physical inventory can have different dollar values depending on how costs are assigned
+                </li>
               </ul>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
 
-        {/* Excel Integration */}
-        <Card className="border-orange-200 bg-orange-50">
-          <CardHeader>
-            <CardTitle className="text-xl text-orange-800">
-              💻 Excel Functions: Professional Depreciation Calculations
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-orange-900">
-              In Excel, there are built-in functions to help you with these calculations, making it easy 
-              to build professional depreciation schedules. Sarah will use these functions to create 
-              investor-ready financial models.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-lg border border-blue-300">
-                <h4 className="font-semibold text-blue-800 mb-2">SLN Function</h4>
-                <div className="bg-gray-100 p-2 rounded font-mono text-sm mb-2">
-                  =SLN(cost, salvage, life)
-                </div>
-                <p className="text-blue-800 text-sm">
-                  Example: =SLN(15000, 1000, 10) calculates straight-line depreciation 
-                  for a $15,000 asset with $1,000 salvage value over 10 years.
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-purple-300">
-                <h4 className="font-semibold text-purple-800 mb-2">DDB Function</h4>
-                <div className="bg-gray-100 p-2 rounded font-mono text-sm mb-2">
-                  =DDB(cost, salvage, life, period)
-                </div>
-                <p className="text-purple-800 text-sm">
-                  Example: =DDB(15000, 1000, 10, 1) calculates first-year double-declining 
-                  balance depreciation for the same asset.
-                </p>
-              </div>
-            </div>
-
-            <p className="text-orange-900">
-              You'll get hands-on practice building depreciation schedules in Excel for sample equipment, 
-              comparing how the two methods affect the annual expense. You'll see how SLN gives an even 
-              number each year, while DDB starts high and then goes down.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Fill in the Blank Exercise */}
-        <FillInTheBlank
-          sentences={depreciationSentences}
-          title="Depreciation Concepts Mastery"
-          description="Fill in the blanks to complete these key depreciation relationships and demonstrate your understanding."
-          showWordList={true}
-          randomizeWordOrder={true}
-          showHints={true}
-        />
-
-        {/* Why This Matters */}
-        <Card className="border-amber-200 bg-amber-50">
-          <CardHeader>
-            <CardTitle className="text-amber-800">Why This Matters for TechStart Solutions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-amber-800 mb-4">
-              Sarah's choice between Straight-Line and Double-Declining Balance depreciation for her $18,000 
-              equipment purchase will affect her business in multiple ways:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div>
-                <h4 className="font-semibold text-amber-800 mb-2">Cash Flow Impact:</h4>
-                <p className="text-amber-700">
-                  DDB provides larger tax deductions early, improving cash flow when the business needs 
-                  it most for growth and expansion.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-amber-800 mb-2">Investor Perspective:</h4>
-                <p className="text-amber-700">
-                  Understanding depreciation methods shows investors that Sarah can make sophisticated 
-                  financial decisions and optimize her business's tax strategy.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-      </div>
-
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+      <PhaseFooter unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
     </div>
-  );
+  )
 }

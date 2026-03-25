@@ -126,152 +126,152 @@ const lesson02Questions: Unit07Phase5Question[] = [
   {
     id: "lesson02-q1",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "A company buys equipment for $60,000, expects $6,000 salvage value, and plans to use it for nine years. What is the annual straight-line depreciation expense?",
-    correctAnswer: "$6,000 because ($60,000 - $6,000) divided by 9 years equals $6,000.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "Sarah starts the month with 10 kits valued at $180 total. She buys 15 more kits for $300. What is her Goods Available for Sale (GAFS)?",
+    correctAnswer: "25 units worth $480, because Beginning Inventory ($180) plus Purchases ($300) equals GAFS.",
     distractors: [
-      "$6,667 because each year should show one-ninth of the original purchase price.",
-      "$5,400 because depreciation should match the equipment's expected salvage value.",
-      "$7,333 because the first year receives a bonus deduction before leveling off."
+      "25 units worth $300, because only the new purchases count toward what's available.",
+      "15 units worth $300, because the beginning inventory was already sold last month.",
+      "10 units worth $180, because purchases stay separate until the next accounting period."
     ],
     explanation:
-      "Straight-line depreciation spreads the depreciable base (cost minus salvage value) evenly across the useful life. ($60,000 – $6,000) ÷ 9 = $6,000 per year.",
-    objectiveTags: ["depreciation-calculation", "excel-functions"]
+      "Goods Available for Sale combines everything the business could sell: Beginning Inventory + Purchases. The formula gives both units (10 + 15 = 25) and value ($180 + $300 = $480).",
+    objectiveTags: ["gafs-calculation", "inventory-formula"]
   },
   {
     id: "lesson02-q2",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "Which Excel function correctly returns the third year of double-declining balance depreciation for a $45,000 asset with $3,000 salvage value and six-year life?",
-    correctAnswer: "=DDB(45000,3000,6,3)",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "What is the relationship between physical flow and cost flow?",
+    correctAnswer: "Physical flow tracks boxes moving on and off the shelf, while cost flow tracks which dollar amounts move into COGS or stay in inventory.",
     distractors: [
-      "=DDB(45000,3000,3,6)",
-      "=SLN(45000,3000,6)*2",
-      "=DDB(42000,3000,6,3)"
+      "Physical flow and cost flow always match exactly—the same boxes equal the same dollars.",
+      "Physical flow matters for accounting, but cost flow is only used for tax purposes.",
+      "Cost flow determines how many boxes are on the shelf at month-end."
     ],
     explanation:
-      "The DDB function syntax is DDB(cost, salvage, life, period). Plugging in the third period returns the third-year depreciation charge.",
-    objectiveTags: ["excel-functions", "depreciation-calculation"]
+      "Physical flow is about quantity (boxes, units). Cost flow is about value (dollars). When costs vary across purchases, the same physical sale can produce different cost assignments.",
+    objectiveTags: ["physical-flow", "cost-flow", "inventory-concepts"]
   },
   {
     id: "lesson02-q3",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "Why would a fast-growing tech firm choose double-declining balance (DDB) over straight-line depreciation for laptops and servers?",
-    correctAnswer: "DDB front-loads depreciation, creating larger early tax deductions that free cash for reinvestment.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "Sarah has three layers: 10 units @ $18, 20 units @ $20, and 10 units @ $22. She sells 15 units. Why can't we immediately say exactly what COGS should be?",
+    correctAnswer: "Because we don't know which cost layers the 15 sold units came from—they could be from the $18 layer, the $20 layer, or a mix.",
     distractors: [
-      "DDB spreads costs evenly, which keeps the budget the same every month.",
-      "DDB raises the book value of the assets so the balance sheet looks stronger.",
-      "DDB is a legal requirement whenever a company buys computer equipment."
+      "Because COGS is always calculated at the end of the year, not per sale.",
+      "Because Sarah hasn't told us the selling price of the units.",
+      "Because inventory accounting doesn't track individual sales."
     ],
     explanation:
-      "High-growth firms value cash. Accelerated depreciation lowers taxable income sooner, matching the rapid obsolescence of technology assets.",
-    objectiveTags: ["method-selection", "cash-flow"]
+      "When the same type of item was purchased at different costs, a sale doesn't automatically tell us which cost to assign. That's why businesses need consistent methods like FIFO or LIFO.",
+    objectiveTags: ["cost-layers", "cogs-uncertainty"]
   },
   {
     id: "lesson02-q4",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "An $80,000 machine has a four-year life and $8,000 salvage value. How much more Year 1 depreciation does DDB provide compared with straight-line?",
-    correctAnswer: "$22,000 more because DDB records $40,000 while straight-line records $18,000 in the first year.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "If GAFS equals $800 and COGS equals $320, what is Ending Inventory?",
+    correctAnswer: "$480, because Ending Inventory = GAFS - COGS ($800 - $320 = $480).",
     distractors: [
-      "$18,000 more because straight-line starts lower and catches up later.",
-      "$15,000 more because both methods average out by the second year.",
-      "$12,000 more because DDB doubles the straight-line amount for the first half of the life."
+      "$1,120, because you add COGS to GAFS to find what's left.",
+      "$320, because Ending Inventory always equals COGS.",
+      "Cannot be determined without knowing how many units were sold."
     ],
     explanation:
-      "Straight-line Year 1 = ($80,000 – $8,000) ÷ 4 = $18,000. DDB Year 1 = $80,000 × (2 ÷ 4) = $40,000. The difference is $22,000.",
-    objectiveTags: ["depreciation-calculation", "cash-flow"]
+      "The formula is: Ending Inventory = Beginning Inventory + Purchases - COGS, or simply Ending Inventory = GAFS - COGS. The units don't change the dollar calculation.",
+    objectiveTags: ["ending-inventory-formula", "inventory-formula"]
   },
   {
     id: "lesson02-q5",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "A manufacturer whose equipment usage rises and falls with production volume wants the fairest expense pattern. Which method should it consider?",
-    correctAnswer: "Units of Production, because it ties depreciation to the actual hours or units the equipment produces.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "Why do inventory 'layers' form in the first place?",
+    correctAnswer: "Layers form when a business purchases the same type of item at different costs over time.",
     distractors: [
-      "Straight-line, because identical annual amounts simplify the monthly close.",
-      "Double-declining balance, because bigger early deductions always improve decisions.",
-      "Rotating methods each year, because variety keeps the statements adaptable."
+      "Layers form when items are stacked on different shelves in the warehouse.",
+      "Layers form only when a business uses the LIFO method.",
+      "Layers form when some items are damaged and others are not."
     ],
     explanation:
-      "Units of Production aligns expense with usage. When production varies, matching depreciation to output provides the most accurate story.",
-    objectiveTags: ["method-selection", "operations-fit"]
+      "Each purchase at a new cost creates a new 'layer' of inventory. Even though the items are identical physically, their recorded costs differ based on when they were bought.",
+    objectiveTags: ["cost-layers", "inventory-concepts"]
   },
   {
     id: "lesson02-q6",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "How do straight-line and double-declining balance differ on the financial statements in the first year?",
-    correctAnswer: "DDB shows lower net income and a lower book value because the expense is higher right away.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "Sarah's GAFS is $736 and she sells 20 units. Her costs range from $18 to $22 per unit. What is the possible range for COGS?",
+    correctAnswer: "$360 to $440, because 20 units × $18 = $360 (minimum) and 20 units × $22 = $440 (maximum).",
     distractors: [
-      "DDB shows higher net income because the expense is deferred until later years.",
-      "Both methods produce identical income statements in every period, so only disclosures change.",
-      "DDB affects only the cash flow statement while the income statement stays the same as straight-line."
+      "$736, because COGS always equals GAFS when items are sold.",
+      "$400, because you should always use the average cost.",
+      "$18 to $22, because that's the cost per unit range."
     ],
     explanation:
-      "Accelerated methods record more expense up front, which cuts net income and increases accumulated depreciation compared to straight-line.",
-    objectiveTags: ["financial-reporting", "depreciation-analysis"]
+      "COGS depends on which layers the sold units came from. The minimum assumes all sold units came from the cheapest layer; the maximum assumes all came from the most expensive layer.",
+    objectiveTags: ["cogs-range", "inventory-valuation"]
   },
   {
     id: "lesson02-q7",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "Why would investors care about the depreciation method a leadership team selects?",
-    correctAnswer: "Method choice signals how management balances tax strategy, cash timing, and performance storytelling.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "What happens to the inventory formula when Sarah forgets to record a $250 purchase?",
+    correctAnswer: "GAFS is understated by $250, which means either COGS is understated or Ending Inventory is understated (or both are wrong).",
     distractors: [
-      "Investors only care about the total dollar amount of depreciation, not when it hits.",
-      "Depreciation methods never influence investor decisions because GAAP requires one option.",
-      "All companies must use the same method, so it cannot reveal anything about leadership."
+      "Nothing happens because purchases don't affect the inventory formula.",
+      "Only the balance sheet is affected, not the income statement.",
+      "COGS automatically increases to compensate for the missing record."
     ],
     explanation:
-      "Sophisticated investors read method choices as evidence of strategic thinking. They look for clear reasoning around cash, taxes, and comparability.",
-    objectiveTags: ["investor-readiness", "strategy-alignment"]
+      "Every purchase feeds the GAFS calculation. If a purchase is missing, the whole formula breaks down—GAFS is too low, and the split between COGS and Ending Inventory cannot be trusted.",
+    objectiveTags: ["missing-records", "formula-integrity"]
   },
   {
     id: "lesson02-q8",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "TechStart's $100,000 asset has a five-year life, $10,000 salvage value, and a 30% tax rate. How much extra cash does DDB free up in Year 1 compared with straight-line?",
-    correctAnswer: "$6,600 because the extra $22,000 depreciation saves $6,600 in taxes at 30%.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "Why does this lesson avoid teaching FIFO and LIFO rules explicitly?",
+    correctAnswer: "Students need to understand WHY cost assignment matters before learning the formal rules for HOW to assign costs.",
     distractors: [
-      "$9,900 because accelerated methods always double the tax benefit in Year 1.",
-      "$4,500 because the tax savings equal one quarter of the extra depreciation.",
-      "$12,000 because DDB eliminates taxes for the first half of the asset's life."
+      "FIFO and LIFO are no longer used in modern accounting.",
+      "The lesson ran out of time to cover the methods.",
+      "FIFO and LIFO only matter for tax purposes, not for understanding inventory."
     ],
     explanation:
-      "Straight-line records $18,000, while DDB records $40,000. The $22,000 difference × 30% tax rate equals $6,600 of cash preserved.",
-    objectiveTags: ["cash-flow", "depreciation-analysis"]
+      "Lesson 2 builds the foundation: GAFS, cost layers, and the range of possible COGS values. Once students see why the answer isn't obvious, Lesson 3 introduces FIFO and LIFO as the formal rules that solve the puzzle.",
+    objectiveTags: ["lesson-design", "inventory-concepts"]
   },
   {
     id: "lesson02-q9",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "Why do auditors insist that companies apply depreciation methods consistently period after period?",
-    correctAnswer: "Consistency keeps statements comparable over time, supporting credible valuations and trend analysis.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "A business has 40 units available for sale worth $800 total. They sell 30 units. If COGS could be anywhere from $540 to $660, what does this mean for Ending Inventory?",
+    correctAnswer: "Ending Inventory could range from $140 to $260, because higher COGS means lower Ending Inventory ($800 - $660 = $140) and lower COGS means higher Ending Inventory ($800 - $540 = $260).",
     distractors: [
-      "Consistency maximizes profit every year without additional work.",
-      "Consistency reduces the number of journal entries needed during the close.",
-      "Consistency automatically unlocks every available tax incentive with no planning."
+      "Ending Inventory is fixed at $200 because 10 units remain.",
+      "Ending Inventory equals COGS, so it's also between $540 and $660.",
+      "Ending Inventory is $800 regardless of COGS."
     ],
     explanation:
-      "Reliable financial reporting depends on seeing changes in performance, not changes caused by switching accounting methods.",
-    objectiveTags: ["financial-reporting", "controls"]
+      "GAFS must split between COGS and Ending Inventory. When COGS has a range, Ending Inventory has the inverse range. They always sum to GAFS.",
+    objectiveTags: ["cogs-range", "ending-inventory-formula"]
   },
   {
     id: "lesson02-q10",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Depreciation Techniques",
-    prompt: "Sarah wants early cash savings but also wants investors to understand her plan. How should she handle depreciation on her $18,000 purchase?",
-    correctAnswer: "Use DDB for tax purposes and document why the acceleration supports TechStart's growth story.",
+    lessonTitle: "Lesson 02 - Inventory Cost Flow Foundations",
+    prompt: "Sarah shows her inventory records to a potential investor. Why might the investor ask which inventory valuation method she uses?",
+    correctAnswer: "Because different methods can produce different COGS and Ending Inventory numbers from the exact same transactions, which affects reported profit.",
     distractors: [
-      "Stick with straight-line only because investors dislike any method differences.",
-      "Switch back and forth each quarter to keep the reported profit aligned with investor meetings.",
-      "Expense the full $18,000 immediately so no one has to monitor the schedule."
+      "Investors are just curious about accounting rules.",
+      "The method determines whether Sarah can sell the inventory at all.",
+      "Investors want to make sure Sarah uses the same method as her competitors."
     ],
     explanation:
-      "Strategic accounting combines valid tax benefits with transparent storytelling. Sarah can choose DDB as long as she explains the reasoning.",
-    objectiveTags: ["method-selection", "investor-readiness"]
+      "Sophisticated investors know that FIFO, LIFO, and other methods can change profit by hundreds or thousands of dollars. Understanding the method helps them interpret the numbers correctly.",
+    objectiveTags: ["investor-readiness", "method-choice"]
   }
 ];
 const lesson03Questions: Unit07Phase5Question[] = [

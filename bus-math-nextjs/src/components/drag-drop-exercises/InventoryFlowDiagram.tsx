@@ -572,19 +572,235 @@ export default function InventoryFlowDiagram() {
           Arrange inventory costs in FIFO or LIFO patterns to understand cost flow assumptions 
           and their impact on financial statements. Essential for Unit 7's inventory valuation strategies.
         </p>
-        
-        <div className="mt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowInstructions(!showInstructions)}
-            className="flex items-center gap-2"
-          >
-            <HelpCircle className="w-4 h-4" />
-            How to Play
-            {showInstructions ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-          </Button>
-        </div>
+      </div>
+
+      {/* Daily Activity Guide - ALWAYS VISIBLE */}
+      <Card className="border-2 border-indigo-300 bg-gradient-to-r from-indigo-50 to-purple-50 shadow-lg">
+        <CardHeader className="pb-3">
+          <CardTitle className="text-xl text-indigo-800 flex items-center gap-2">
+            <Target className="w-6 h-6" />
+            📋 Today's Activity: Complete All 5 Steps
+          </CardTitle>
+          <p className="text-sm text-indigo-600">
+            Work through this activity step-by-step. Check off each step as you complete it.
+          </p>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Step 1 */}
+          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm">
+            <div className="flex items-start gap-3">
+              <span className="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg shrink-0">1</span>
+              <div className="flex-1">
+                <h4 className="font-semibold text-indigo-900">Select "TechZone Laptop Sales" Scenario</h4>
+                <p className="text-sm text-gray-600 mt-1">
+                  Click on <strong>"TechZone Laptop Sales"</strong> in the Business Scenario panel on the left. 
+                  This scenario shows a technology retailer managing laptop inventory during chip shortage price volatility.
+                </p>
+                <div className="mt-2 text-xs text-indigo-600 bg-indigo-50 p-2 rounded">
+                  💡 <strong>Context:</strong> Your electronics store purchased laptops over 4 months at different prices. 
+                  You need to fulfill customer orders and decide which inventory costs to use.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 2 */}
+          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm">
+            <div className="flex items-start gap-3">
+              <span className="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg shrink-0">2</span>
+              <div className="flex-1">
+                <h4 className="font-semibold text-indigo-900">Complete FIFO Method</h4>
+                <p className="text-sm text-gray-600 mt-1">
+                  Select <strong>"FIFO (First-In, First-Out)"</strong> as your method, then:
+                </p>
+                <ol className="list-decimal list-inside text-sm text-gray-700 mt-2 space-y-1 ml-4">
+                  <li>Drag inventory lots from "Available" to the "FIFO Cost Flow Arrangement" zone</li>
+                  <li>Arrange them in <strong>chronological order (oldest purchase first)</strong></li>
+                  <li>Click <strong>"Check Arrangement"</strong> to verify your answer</li>
+                  <li>Record your results in the table below (Step 4)</li>
+                </ol>
+                <div className="mt-2 text-xs bg-green-50 p-2 rounded border border-green-200">
+                  <strong className="text-green-800">FIFO Rule:</strong> 
+                  <span className="text-green-700"> The oldest inventory costs are assigned to COGS first. 
+                  In rising prices, this means LOWER COGS and HIGHER ending inventory.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm">
+            <div className="flex items-start gap-3">
+              <span className="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg shrink-0">3</span>
+              <div className="flex-1">
+                <h4 className="font-semibold text-indigo-900">Complete LIFO Method</h4>
+                <p className="text-sm text-gray-600 mt-1">
+                  Select <strong>"LIFO (Last-In, First-Out)"</strong> as your method, then:
+                </p>
+                <ol className="list-decimal list-inside text-sm text-gray-700 mt-2 space-y-1 ml-4">
+                  <li>Click <strong>"Reset"</strong> to clear your previous arrangement</li>
+                  <li>Drag inventory lots from "Available" to the "LIFO Cost Flow Arrangement" zone</li>
+                  <li>Arrange them in <strong>reverse chronological order (newest purchase first)</strong></li>
+                  <li>Click <strong>"Check Arrangement"</strong> to verify your answer</li>
+                  <li>Record your results in the table below (Step 4)</li>
+                </ol>
+                <div className="mt-2 text-xs bg-orange-50 p-2 rounded border border-orange-200">
+                  <strong className="text-orange-800">LIFO Rule:</strong> 
+                  <span className="text-orange-700"> The newest inventory costs are assigned to COGS first. 
+                  In rising prices, this means HIGHER COGS and LOWER ending inventory.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 4: Recording Table */}
+          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm">
+            <div className="flex items-start gap-3">
+              <span className="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg shrink-0">4</span>
+              <div className="flex-1">
+                <h4 className="font-semibold text-indigo-900">Record Your Results in This Comparison Table</h4>
+                <p className="text-sm text-gray-600 mt-1 mb-3">
+                  After completing both FIFO and LIFO, record the values shown in the "Real-Time Cost Calculations" panel:
+                </p>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-indigo-100">
+                        <th className="border border-indigo-300 px-3 py-2 text-left">Metric</th>
+                        <th className="border border-indigo-300 px-3 py-2 text-center">FIFO Value</th>
+                        <th className="border border-indigo-300 px-3 py-2 text-center">LIFO Value</th>
+                        <th className="border border-indigo-300 px-3 py-2 text-center">Difference</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-indigo-300 px-3 py-2 font-medium">Cost of Goods Sold</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-green-50">$_______</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-orange-50">$_______</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-yellow-50">$_______</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-indigo-300 px-3 py-2 font-medium">Ending Inventory Value</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-green-50">$_______</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-orange-50">$_______</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-yellow-50">$_______</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-indigo-300 px-3 py-2 font-medium">Gross Profit (if sales = $25,000)</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-green-50">$_______</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-orange-50">$_______</td>
+                        <td className="border border-indigo-300 px-3 py-2 text-center bg-yellow-50">$_______</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div className="mt-3 text-xs text-gray-600 bg-gray-50 p-2 rounded">
+                  💡 <strong>Hint:</strong> Gross Profit = Sales Revenue - Cost of Goods Sold. 
+                  Calculate this for both methods using $25,000 as sales revenue.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 5: Reflection */}
+          <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm">
+            <div className="flex items-start gap-3">
+              <span className="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg shrink-0">5</span>
+              <div className="flex-1">
+                <h4 className="font-semibold text-indigo-900">Answer These Reflection Questions</h4>
+                <p className="text-sm text-gray-600 mt-1 mb-3">
+                  Discuss with your partner or write your answers:
+                </p>
+                <div className="space-y-3">
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    <p className="text-sm font-medium text-blue-800">a) Which method resulted in HIGHER Cost of Goods Sold? Why does this happen in a rising-price environment?</p>
+                    <p className="text-xs text-blue-600 mt-1">Your answer: ___________________________________________</p>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    <p className="text-sm font-medium text-blue-800">b) If you were the laptop store owner, which method would you choose to report to INVESTORS? Why?</p>
+                    <p className="text-xs text-blue-600 mt-1">Your answer: ___________________________________________</p>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    <p className="text-sm font-medium text-blue-800">c) If you were the laptop store owner, which method would you choose for TAX purposes? Why?</p>
+                    <p className="text-xs text-blue-600 mt-1">Your answer: ___________________________________________</p>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    <p className="text-sm font-medium text-blue-800">d) How would your answers change if laptop prices were FALLING instead of rising?</p>
+                    <p className="text-xs text-blue-600 mt-1">Your answer: ___________________________________________</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bonus Challenge */}
+          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-lg border-2 border-amber-300">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">⭐</span>
+              <div className="flex-1">
+                <h4 className="font-semibold text-amber-900">Bonus Challenge (If Time Permits)</h4>
+                <p className="text-sm text-amber-800 mt-1">
+                  Try the <strong>"Roasted Bean Café"</strong> or <strong>"AutoPro Parts Dealer"</strong> scenarios 
+                  and repeat Steps 2-5. Do you notice the same patterns between FIFO and LIFO?
+                </p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Method Reference Card - Quick Reference */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card className="border-green-200 bg-green-50">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-lg text-green-800 flex items-center gap-2">
+              📈 FIFO Quick Reference
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm text-green-700">
+            <p><strong>Order:</strong> Oldest inventory first (earliest dates at top)</p>
+            <p><strong>In Rising Prices:</strong></p>
+            <ul className="list-disc list-inside ml-2">
+              <li>Lower COGS → Higher Gross Profit</li>
+              <li>Higher Ending Inventory → Better Balance Sheet</li>
+              <li>Higher Taxes (more profit = more tax)</li>
+            </ul>
+            <p className="mt-2"><strong>Best For:</strong> Investors, showing profitability</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-orange-200 bg-orange-50">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-lg text-orange-800 flex items-center gap-2">
+              📉 LIFO Quick Reference
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm text-orange-700">
+            <p><strong>Order:</strong> Newest inventory first (latest dates at top)</p>
+            <p><strong>In Rising Prices:</strong></p>
+            <ul className="list-disc list-inside ml-2">
+              <li>Higher COGS → Lower Gross Profit</li>
+              <li>Lower Ending Inventory → Weaker Balance Sheet</li>
+              <li>Lower Taxes (less profit = less tax)</li>
+            </ul>
+            <p className="mt-2"><strong>Best For:</strong> Tax savings, matching current costs</p>
+          </CardContent>
+        </Card>
+      </div>
+      
+      <div className="mt-4 text-center">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setShowInstructions(!showInstructions)}
+          className="flex items-center gap-2"
+        >
+          <HelpCircle className="w-4 h-4" />
+          More Detailed Instructions
+          {showInstructions ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        </Button>
       </div>
 
       {/* Instructions Panel */}

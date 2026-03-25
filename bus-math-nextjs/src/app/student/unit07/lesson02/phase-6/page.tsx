@@ -1,82 +1,73 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader";
-import { PhaseFooter } from "@/components/student/PhaseFooter";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Lightbulb, BookOpen, ArrowRight, Star, TrendingUp } from "lucide-react";
-import ReflectionJournal from "@/components/exercises/ReflectionJournal";
-import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data";
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Lightbulb, BookOpen, ArrowRight, Star, TrendingUp } from "lucide-react"
+import ReflectionJournal from "@/components/exercises/ReflectionJournal"
+import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data"
 
-const currentPhase = lesson02Phases[5]; // Closing phase
+const currentPhase = lesson02Phases[5]
 
 const lesson02Prompts = [
   {
-    id: 'courage-depreciation',
+    id: 'courage-inventory',
     category: 'courage' as const,
-    prompt: 'What was the most challenging aspect of learning depreciation calculations that required you to push through initial confusion or uncertainty?',
-    placeholder: 'Think about moments when Excel formulas seemed complex, when business scenarios felt overwhelming, or when you had to tackle challenging assessment questions. How did you find the courage to persist and work through these difficulties?'
+    prompt: 'What was the most confusing part of today\'s lesson about inventory cost flow? How did you work through it?',
+    placeholder: 'Think about moments when the difference between physical flow and cost flow seemed unclear, or when calculating COGS ranges felt challenging. What helped you understand?'
   },
   {
-    id: 'adaptability-methods',
-    category: 'adaptability' as const, 
-    prompt: 'How did you adjust your approach when switching between different depreciation methods (SLN vs DDB) or when analyzing various business scenarios?',
-    placeholder: 'Reflect on how you adapted your thinking as you moved from simple calculations to complex strategic decisions. How did you modify your analysis approach for different industries like restaurants, tech companies, or manufacturing?'
+    id: 'adaptability-layers',
+    category: 'adaptability' as const,
+    prompt: 'How did your thinking change when you realized the same sale could produce different COGS values?',
+    placeholder: 'Reflect on the moment when you saw that selling 20 units could result in COGS anywhere from $360 to $440. How did that change how you think about inventory accounting?'
   },
   {
-    id: 'persistence-mastery',
+    id: 'persistence-formula',
     category: 'persistence' as const,
-    prompt: 'Describe a specific moment during this lesson when you wanted to give up on a complex calculation or business analysis, but kept working until you achieved understanding.',
-    placeholder: 'Consider times when Excel functions didn\'t work as expected, when assessment questions seemed too difficult, or when connecting technical skills to business strategy felt challenging. What kept you motivated to continue learning?'
+    prompt: 'Describe a moment during the practice activities when you made a calculation mistake but kept working until you got it right.',
+    placeholder: 'Consider times when GAFS didn\'t balance, when you forgot to include beginning inventory, or when the COGS range seemed wrong. What kept you going?'
   }
-];
+]
 
-export default function Unit07Lesson02Phase6() {
+export default function Phase6Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+      <PhaseHeader unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
 
-      <div className="max-w-4xl mx-auto px-4 pb-8 space-y-8">
+      <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         
         {/* Lesson Synthesis */}
         <Card className="border-amber-200 bg-amber-50">
           <CardHeader>
             <CardTitle className="text-2xl text-amber-800 flex items-center gap-2">
               <Lightbulb className="h-6 w-6" />
-              Lesson Synthesis: Mastering Depreciation Techniques
+              Lesson Summary: Inventory Cost Flow Foundations
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-lg leading-relaxed text-amber-900">
-              Congratulations! You've successfully mastered depreciation techniques and their strategic 
-              business applications. From Sarah's $18,000 equipment purchase challenge to analyzing complex 
-              multi-industry scenarios, you've developed both technical expertise and strategic thinking 
-              skills that are essential for business success.
+              Great work today! You've built the foundation for understanding inventory valuation. 
+              You now know <strong>why</strong> the ending inventory number isn't always obvious — 
+              and why businesses need consistent rules to assign costs.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-4 rounded-lg border border-amber-300">
-                <h4 className="font-semibold text-amber-800 mb-3">🎯 Technical Mastery Achieved:</h4>
-                <ul className="text-amber-700 space-y-1 text-sm">
-                  <li>✓ Calculate Straight-Line depreciation using the fundamental formula</li>
-                  <li>✓ Apply Double-Declining Balance for accelerated depreciation</li>
-                  <li>✓ Use Excel SLN and DDB functions for professional modeling</li>
-                  <li>✓ Build comprehensive depreciation schedules and compare methods</li>
-                  <li>✓ Analyze cash flow and tax implications of method selection</li>
+                <h4 className="font-semibold text-amber-800 mb-3">🎯 Key Formulas:</h4>
+                <ul className="text-amber-700 space-y-2 text-sm">
+                  <li>✓ <strong>GAFS</strong> = Beginning Inventory + Purchases</li>
+                  <li>✓ <strong>Ending Inventory</strong> = GAFS - COGS</li>
+                  <li>✓ <strong>COGS + Ending Inventory</strong> = GAFS (always!)</li>
                 </ul>
               </div>
               
               <div className="bg-white p-4 rounded-lg border border-amber-300">
-                <h4 className="font-semibold text-amber-800 mb-3">💼 Strategic Skills Developed:</h4>
-                <ul className="text-amber-700 space-y-1 text-sm">
-                  <li>✓ Connect depreciation choices to business growth strategies</li>
-                  <li>✓ Evaluate industry-specific asset management considerations</li>
-                  <li>✓ Communicate financial decisions to stakeholders and investors</li>
-                  <li>✓ Balance tax optimization with financial reporting objectives</li>
-                  <li>✓ Apply professional judgment to complex business scenarios</li>
+                <h4 className="font-semibold text-amber-800 mb-3">💡 Key Insights:</h4>
+                <ul className="text-amber-700 space-y-2 text-sm">
+                  <li>✓ Physical flow ≠ Cost flow</li>
+                  <li>✓ Layers form when costs change</li>
+                  <li>✓ Same sale → different possible COGS</li>
+                  <li>✓ Investors care which method you use</li>
                 </ul>
               </div>
             </div>
@@ -88,32 +79,32 @@ export default function Unit07Lesson02Phase6() {
           <CardHeader>
             <CardTitle className="text-green-800 flex items-center gap-2">
               <Star className="h-5 w-5" />
-              Key Learning Takeaways
+              What You Learned Today
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-lg border border-green-300">
-                <h5 className="font-semibold text-green-800 mb-2">1. Technical Foundation</h5>
+                <h5 className="font-semibold text-green-800 mb-2">1. The Formula</h5>
                 <p className="text-green-700 text-sm">
-                  Depreciation isn't just accounting—it's a strategic tool for managing cash flow, 
-                  optimizing taxes, and making informed asset investment decisions.
+                  Ending Inventory = Beginning Inventory + Purchases - COGS. 
+                  This formula is the spine of the whole unit.
                 </p>
               </div>
               
               <div className="bg-white p-4 rounded-lg border border-green-300">
-                <h5 className="font-semibold text-green-800 mb-2">2. Business Integration</h5>
+                <h5 className="font-semibold text-green-800 mb-2">2. The Puzzle</h5>
                 <p className="text-green-700 text-sm">
-                  Method selection depends on business needs: DDB for growing companies needing cash flow, 
-                  SLN for stable operations prioritizing predictable expenses.
+                  When costs vary, the same sale can produce different COGS values. 
+                  That's why we need formal methods.
                 </p>
               </div>
               
               <div className="bg-white p-4 rounded-lg border border-green-300">
-                <h5 className="font-semibold text-green-800 mb-2">3. Professional Application</h5>
+                <h5 className="font-semibold text-green-800 mb-2">3. The Stakes</h5>
                 <p className="text-green-700 text-sm">
-                  Excel proficiency and clear communication of financial strategies are essential 
-                  for success in business, whether as an entrepreneur or corporate professional.
+                  Investors and lenders need to trust your ending inventory number. 
+                  Method choice affects profit and taxes.
                 </p>
               </div>
             </div>
@@ -123,34 +114,33 @@ export default function Unit07Lesson02Phase6() {
         {/* Connection to Sarah's Journey */}
         <Card className="border-blue-200 bg-blue-50">
           <CardHeader>
-            <CardTitle className="text-blue-800">🚀 Sarah's TechStart Evolution</CardTitle>
+            <CardTitle className="text-blue-800">🚀 Sarah's Inventory Challenge</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-blue-800 mb-4">
-              Think about how far Sarah has come in her business journey. From manually tracking transactions 
-              in notebooks to making sophisticated asset depreciation decisions, she's evolved into a strategic 
-              business leader who understands financial optimization.
+              Remember Sarah from Lesson 1? She couldn't defend her ending inventory number to an investor. 
+              Now you understand why that's such a problem.
             </p>
             
             <div className="bg-white p-4 rounded-lg border border-blue-300">
               <div className="flex items-center gap-3 mb-3">
-                <Badge variant="outline" className="bg-gray-100">Before</Badge>
+                <Badge variant="outline" className="bg-red-100 text-red-800">Problem</Badge>
                 <ArrowRight className="h-4 w-4 text-blue-600" />
-                <Badge variant="outline" className="bg-green-100 text-green-800">After This Lesson</Badge>
+                <Badge variant="outline" className="bg-green-100 text-green-800">Today's Insight</Badge>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <h5 className="font-semibold text-blue-800 mb-2">Sarah's Challenge:</h5>
+                  <h5 className="font-semibold text-blue-800 mb-2">Sarah's Problem:</h5>
                   <p className="text-blue-700">
-                    Wanted to expense $18,000 equipment purchase immediately, not understanding 
-                    the strategic implications for taxes and investor presentations.
+                    She bought kits at different prices throughout the month. 
+                    When she sold them, she couldn't explain which costs went to COGS.
                   </p>
                 </div>
                 <div>
-                  <h5 className="font-semibold text-blue-800 mb-2">Sarah's Growth:</h5>
+                  <h5 className="font-semibold text-blue-800 mb-2">What You Now Know:</h5>
                   <p className="text-blue-700">
-                    Now understands how to use depreciation strategically—choosing DDB to improve 
-                    cash flow for reinvestment while explaining the rationale to investors.
+                    Without a consistent method (FIFO, LIFO, etc.), Sarah is basically guessing. 
+                    No wonder investors don't trust her numbers!
                   </p>
                 </div>
               </div>
@@ -160,7 +150,7 @@ export default function Unit07Lesson02Phase6() {
 
         {/* CAP Framework Reflection */}
         <ReflectionJournal
-          unitTitle="Unit 7 Lesson 2: Depreciation Techniques Reflection"
+          unitTitle="Unit 7 Lesson 2: Inventory Cost Flow Reflection"
           prompts={lesson02Prompts}
         />
 
@@ -169,93 +159,82 @@ export default function Unit07Lesson02Phase6() {
           <CardHeader>
             <CardTitle className="text-purple-800 flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
-              Looking Ahead: Unit 7 Progression
+              Coming Up: Lesson 3
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-purple-800 mb-4">
-              Your mastery of depreciation techniques sets the foundation for the next phase of Unit 7, 
-              where you'll explore inventory valuation methods (FIFO and LIFO) and their impact on 
-              financial reporting and tax strategy.
+              In the next lesson, you'll learn the formal rules that solve the COGS puzzle:
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-4 rounded-lg border border-purple-300">
-                <h4 className="font-semibold text-purple-800 mb-2">Next Learning Steps:</h4>
+                <h4 className="font-semibold text-purple-800 mb-2">FIFO and LIFO</h4>
                 <ul className="text-purple-700 text-sm space-y-1">
-                  <li>• <strong>Lesson 3:</strong> Inventory Methods Introduction (FIFO/LIFO basics)</li>
-                  <li>• <strong>Lesson 4:</strong> Technical Application with array formulas</li>
-                  <li>• <strong>Lesson 5:</strong> Integrated asset and inventory analysis</li>
-                  <li>• <strong>Lesson 6+:</strong> Advanced modeling and board presentation prep</li>
+                  <li>• Learn the step-by-step rules for each method</li>
+                  <li>• Practice calculating COGS and Ending Inventory</li>
+                  <li>• See how rising costs change the results</li>
                 </ul>
               </div>
               
               <div className="bg-white p-4 rounded-lg border border-purple-300">
-                <h4 className="font-semibold text-purple-800 mb-2">Building Toward Unit Goal:</h4>
+                <h4 className="font-semibold text-purple-800 mb-2">Business Impact</h4>
                 <ul className="text-purple-700 text-sm space-y-1">
-                  <li>• Integrate depreciation and inventory methods</li>
-                  <li>• Answer the driving question about cash-flow alignment</li>
-                  <li>• Create comprehensive Asset &amp; Inventory Tracker</li>
-                  <li>• Present strategic recommendations to business leaders</li>
+                  <li>• When does FIFO make sense for a business?</li>
+                  <li>• When might LIFO be strategically better?</li>
+                  <li>• How do these choices affect investors?</li>
                 </ul>
               </div>
             </div>
             
             <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg border">
-              <h4 className="font-semibold text-gray-800 mb-2">🎯 Your Growing Expertise</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">🎯 Building Toward the Unit Goal</h4>
               <p className="text-gray-800 text-sm">
-                With each lesson in Unit 7, you're building toward becoming a trusted financial advisor 
-                who can help real businesses optimize their asset and inventory strategies. The depreciation 
-                skills you've mastered today will be essential when you present to local business leaders 
-                and demonstrate how strategic financial management drives business success.
+                Every lesson brings you closer to being able to defend an ending inventory number 
+                to a real investor. By the end of Unit 7, you'll recommend the best inventory method 
+                for Sarah's business — with evidence to back it up.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Celebration of Achievement */}
+        {/* Lesson Complete */}
         <Card className="border-yellow-200 bg-gradient-to-r from-yellow-50 to-orange-50">
           <CardHeader>
-            <CardTitle className="text-center text-yellow-800 text-2xl">🌟 Lesson Complete! 🌟</CardTitle>
+            <CardTitle className="text-center text-yellow-800 text-2xl">🌟 Lesson 2 Complete! 🌟</CardTitle>
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <p className="text-lg text-yellow-800 font-medium">
-              You've successfully mastered Depreciation Techniques and taken another important step 
-              in your Unit 7 Asset &amp; Inventory Tracker journey!
+              You've built a solid foundation in inventory cost flow!
             </p>
             
-            <div className="flex justify-center gap-4 text-sm">
+            <div className="flex justify-center gap-4 text-sm flex-wrap">
               <Badge variant="outline" className="bg-green-100 text-green-800 px-3 py-1">
-                ✓ SLN Mastery
+                ✓ GAFS Formula
               </Badge>
               <Badge variant="outline" className="bg-blue-100 text-blue-800 px-3 py-1">
-                ✓ DDB Proficiency  
+                ✓ Cost Layers
               </Badge>
               <Badge variant="outline" className="bg-purple-100 text-purple-800 px-3 py-1">
-                ✓ Excel Functions
+                ✓ COGS Ranges
               </Badge>
               <Badge variant="outline" className="bg-orange-100 text-orange-800 px-3 py-1">
-                ✓ Strategic Thinking
+                ✓ Investor Awareness
               </Badge>
             </div>
             
             <div className="bg-white p-4 rounded-lg border border-yellow-300 inline-block">
               <p className="text-yellow-800 font-medium flex items-center gap-2">
                 <BookOpen className="h-4 w-4" />
-                Ready to continue with Lesson 3: Inventory Methods Introduction
+                Ready for Lesson 3: FIFO and LIFO
               </p>
             </div>
           </CardContent>
         </Card>
 
-      </div>
+      </main>
 
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+      <PhaseFooter unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
     </div>
-  );
+  )
 }

@@ -48,33 +48,15 @@ export default function Phase3Page() {
           </CardContent>
         </Card>
 
-        {/* Interactive Exercise */}
+        {/* Transition to Interactive Activity */}
         <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-blue-800 flex items-center gap-2">
-              <Calculator className="h-6 w-6" />
-              Interactive Inventory Flow Exercise
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-blue-900 mb-6">
-              <p className="text-lg leading-relaxed mb-4">
-                <strong>Instructions:</strong> Use the interactive diagram below to practice FIFO and LIFO calculations. 
-                Start with the "TechZone Laptop Sales" scenario, then try the other businesses to see how different 
-                industries handle inventory challenges.
+          <CardContent className="pt-6">
+            <div className="text-blue-900 text-center">
+              <p className="text-lg leading-relaxed">
+                <strong>👇 Scroll down to the interactive activity below.</strong> You'll find a 
+                <span className="font-semibold text-indigo-700"> "Today's Activity: Complete All 5 Steps"</span> guide 
+                with clear instructions for what to do at each step.
               </p>
-              
-              <div className="bg-white p-4 rounded-lg border border-blue-200">
-                <h3 className="font-semibold text-blue-900 mb-2">Step-by-Step Guidance</h3>
-                <ol className="list-decimal list-inside text-blue-800 space-y-1">
-                  <li>Choose FIFO or LIFO method at the top of the diagram</li>
-                  <li>Read the business scenario to understand the context</li>
-                  <li>Drag inventory lots from "Available" to "Arrangement" in the correct order</li>
-                  <li>Watch the real-time Cost of Goods Sold calculation update</li>
-                  <li>Click "Check Arrangement" to verify your understanding</li>
-                  <li>Switch methods to compare FIFO vs LIFO results</li>
-                </ol>
-              </div>
             </div>
           </CardContent>
         </Card>
@@ -82,106 +64,60 @@ export default function Phase3Page() {
         {/* Inventory Flow Diagram Component */}
         <InventoryFlowDiagram />
 
-        {/* Think-Pair-Share Activities */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk #1
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="font-medium text-purple-900 mb-2">
-                Discussion Prompt (3 minutes):
-              </p>
-              <p className="text-purple-800 mb-3">
-                After trying both FIFO and LIFO in the laptop scenario, discuss with a partner:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-purple-800">
-                <li>Which method resulted in higher Cost of Goods Sold? Why?</li>
-                <li>If you were the laptop store owner, which method would you prefer and why?</li>
-                <li>How might your choice change if laptop prices were falling instead of rising?</li>
-                <li>What would you tell an investor about your inventory method choice?</li>
-              </ul>
-            </CardContent>
-          </Card>
+        {/* After-Activity Discussion - Complements the component's reflection questions */}
+        <Card className="border-purple-200 bg-purple-50">
+          <CardHeader>
+            <CardTitle className="text-purple-800 flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              After Completing the Activity: Class Discussion
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="font-medium text-purple-900 mb-3">
+              Once you've completed the 5-step activity above and answered the reflection questions, 
+              discuss these extension questions with your partner or table group:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-3 rounded-lg border border-purple-200">
+                <h4 className="font-semibold text-purple-900 mb-2">Industry Differences</h4>
+                <p className="text-sm text-purple-800">
+                  How do weather events and global commodity prices affect inventory decisions for the 
+                  coffee café scenario? Why might a small business choose differently than a large corporation?
+                </p>
+              </div>
+              <div className="bg-white p-3 rounded-lg border border-purple-200">
+                <h4 className="font-semibold text-purple-900 mb-2">Inventory Turnover</h4>
+                <p className="text-sm text-purple-800">
+                  How does inventory turnover speed (how quickly you sell products) impact the 
+                  FIFO vs LIFO decision? What would you recommend for a business with very fast turnover?
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-          <Card className="border-orange-200 bg-orange-50">
-            <CardHeader>
-              <CardTitle className="text-orange-800 flex items-center gap-2">
-                <MessageSquare className="h-5 w-5" />
-                Turn and Talk #2
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="font-medium text-orange-900 mb-2">
-                Discussion Prompt (3 minutes):
-              </p>
-              <p className="text-orange-800 mb-3">
-                Think about the coffee café scenario and share with your partner:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-orange-800">
-                <li>How do weather events and global commodity prices affect inventory decisions?</li>
-                <li>What advice would you give to café owners about inventory management?</li>
-                <li>Why might a small business choose differently than a large corporation?</li>
-                <li>How does inventory turnover speed impact the FIFO vs LIFO decision?</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Collaborative Analysis */}
+        {/* Bonus Group Activity - For the Auto Parts Dealer scenario */}
         <Card className="border-indigo-200 bg-indigo-50">
           <CardHeader>
             <CardTitle className="text-indigo-800 flex items-center gap-2">
               <BarChart3 className="h-6 w-6" />
-              Collaborative Analysis Activity
+              Bonus: Group Challenge with Auto Parts Dealer Scenario
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="text-lg leading-relaxed text-indigo-900">
               <p className="mb-4">
-                Work with your table group to complete this analysis using the interactive diagram:
+                <strong>If you completed the "Bonus Challenge"</strong> in the activity above using the 
+                "Auto Parts Dealer" scenario, discuss these questions with your table group:
               </p>
               
               <div className="bg-white p-4 rounded-lg border border-indigo-200">
-                <h3 className="font-semibold text-indigo-900 mb-3">Group Challenge: Complete the Comparison Chart</h3>
-                <p className="text-indigo-800 mb-3">
-                  Using the "Auto Parts Dealer" scenario, have each team member try different approaches and 
-                  record your findings:
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-indigo-900">FIFO Results:</h4>
-                    <ul className="text-sm text-indigo-800 space-y-1">
-                      <li>• Cost of Goods Sold: $_____</li>
-                      <li>• Ending Inventory Value: $_____</li>
-                      <li>• Gross Profit (if sales = $25,000): $_____</li>
-                      <li>• Tax Impact: Higher/Lower than LIFO?</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-indigo-900">LIFO Results:</h4>
-                    <ul className="text-sm text-indigo-800 space-y-1">
-                      <li>• Cost of Goods Sold: $_____</li>
-                      <li>• Ending Inventory Value: $_____</li>
-                      <li>• Gross Profit (if sales = $25,000): $_____</li>
-                      <li>• Tax Impact: Higher/Lower than FIFO?</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-indigo-200">
                 <h3 className="font-semibold text-indigo-900 mb-2">Group Discussion Questions</h3>
-                <ol className="list-decimal list-inside text-indigo-800 space-y-1">
-                  <li>What was the dollar difference between FIFO and LIFO Cost of Goods Sold?</li>
+                <ol className="list-decimal list-inside text-indigo-800 space-y-2">
+                  <li>What was the dollar difference between FIFO and LIFO Cost of Goods Sold in this scenario?</li>
                   <li>Which method would you recommend to this auto parts dealer and why?</li>
-                  <li>How might seasonal demand patterns affect their inventory strategy?</li>
-                  <li>What other factors should businesses consider beyond just tax savings?</li>
+                  <li>How might <strong>seasonal demand patterns</strong> (busy spring/summer, slower fall/winter) affect their inventory strategy?</li>
+                  <li>What other factors should businesses consider beyond just tax savings when choosing an inventory method?</li>
                 </ol>
               </div>
             </div>

@@ -185,6 +185,8 @@ Lesson 1 should not try to teach all methods. It should establish why the formul
 
 ## Lesson 2
 
+**Status:** In Progress (Phases 1-3 complete, Phase 4 partial, Phases 5-6 pending)
+
 ### Proposed title
 
 `Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS`
@@ -192,6 +194,32 @@ Lesson 1 should not try to teach all methods. It should establish why the formul
 ### Purpose
 
 Teach the basic accounting logic of inventory movement before method comparison begins.
+
+### Implementation Progress (Session 2025-03-25)
+
+**Completed Files:**
+- `lesson02/lesson-data.ts` - Rewritten with inventory-focused learning objectives and key concepts
+- `lesson02/phase-1/page.tsx` - Complete rewrite with Sarah's inventory puzzle, uses `inventory-equation.png` infographic, 4-question ComprehensionCheck
+- `lesson02/phase-2/page.tsx` - Complete rewrite with Physical Flow vs Cost Flow concepts, includes `InventoryFlowExplorer.tsx` interactive component
+- `lesson02/InventoryFlowExplorer.tsx` - NEW interactive component where students make 15 sales choosing which layer costs to assign, see live formula updates
+- `lesson02/phase-3/page.tsx` - Complete rewrite with Review → Teach Deeper → Activity structure
+- `lesson02/InventoryTimelineLab.tsx` - NEW interactive component with 6-event timeline walkthrough, students calculate units on hand and inventory value at each step
+- `lesson02/CostAssignmentPractice.tsx` - NEW interactive component with 3 practice scenarios for computing GAFS and COGS/Ending Inventory ranges
+
+**Pending Files:**
+- `lesson02/phase-4/page.tsx` - Needs rewrite to use CostAssignmentPractice component (currently has old depreciation content)
+- `lesson02/phase-5/page.tsx` - Needs rewrite with inventory-focused assessment questions
+- `lesson02/phase-6/page.tsx` - Needs rewrite with inventory reflection prompts
+
+**Question Bank Updates Needed:**
+- `src/data/question-banks/unit07-phase5.ts` - Lesson 2 questions still reference depreciation, need to be replaced with inventory flow questions
+
+### Key Design Decisions Made:
+1. Each phase uses Review → Teach Deeper → Activity structure
+2. Interactive components let students discover concepts through hands-on practice
+3. No FIFO/LIFO formal rules yet - students learn WHY cost assignment matters, not HOW methods work
+4. Three inventory layers used in Phase 3 timeline (Day 1 @ $18, Day 3 @ $20, Day 15 @ $22)
+5. Phase 4 practice scenarios include varied business contexts (Client Kits, Office Supplies, Electronics)
 
 ### Phase 1: Hook
 

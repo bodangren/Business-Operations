@@ -1,277 +1,157 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader";
-import { PhaseFooter } from "@/components/student/PhaseFooter";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Users, Calculator, TrendingDown, Lightbulb } from "lucide-react";
-import DepreciationMethodBuilder from "@/components/financial-calculations/DepreciationMethodBuilder";
-import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data";
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, Layers, Users, Calendar } from "lucide-react"
+import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data"
+import InventoryTimelineLab from "../InventoryTimelineLab"
 
-const currentPhase = lesson02Phases[2]; // Guided Practice phase
+const currentPhase = lesson02Phases[2]
 
-export default function Unit07Lesson02Phase3() {
+export default function Phase3Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50">
+      <PhaseHeader unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
 
-      <div className="max-w-7xl mx-auto px-4 pb-8 space-y-8">
-        
-        {/* Guided Practice Introduction */}
-        <Card className="border-purple-200 bg-purple-50">
-          <CardHeader>
-            <CardTitle className="text-2xl text-purple-800 flex items-center gap-2">
-              <Calculator className="h-6 w-6" />
-              Hands-On Depreciation Practice
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-purple-900">
-              Now it's time to put your depreciation knowledge into practice! You'll work with realistic 
-              business scenarios to see how different depreciation methods affect Sarah's financial decisions. 
-              This guided practice will help you understand the practical implications of each method.
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">Phase 3: Guided Practice</Badge>
+            <h1 className="text-3xl font-bold text-slate-900">Track Inventory Through Time</h1>
+            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
+              Now let's walk through Sarah's month day by day and see how inventory changes at each step.
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-3 rounded-lg border border-purple-300 text-center">
-                <Badge variant="outline" className="bg-blue-100 text-blue-800 mb-2">Step 1</Badge>
-                <h4 className="font-semibold text-purple-800 mb-1">Explore Scenarios</h4>
-                <p className="text-sm text-purple-700">Choose from realistic business asset scenarios</p>
-              </div>
-              <div className="bg-white p-3 rounded-lg border border-purple-300 text-center">
-                <Badge variant="outline" className="bg-green-100 text-green-800 mb-2">Step 2</Badge>
-                <h4 className="font-semibold text-purple-800 mb-1">Compare Methods</h4>
-                <p className="text-sm text-purple-700">See SLN vs DDB calculations side-by-side</p>
-              </div>
-              <div className="bg-white p-3 rounded-lg border border-purple-300 text-center">
-                <Badge variant="outline" className="bg-orange-100 text-orange-800 mb-2">Step 3</Badge>
-                <h4 className="font-semibold text-purple-800 mb-1">Analyze Impact</h4>
-                <p className="text-sm text-purple-700">Understand cash flow and tax implications</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+          </div>
+        </section>
 
-        {/* Interactive Depreciation Builder */}
-        <DepreciationMethodBuilder />
-
-        {/* Think-Pair-Share Discussion 1 */}
-        <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-blue-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk: Method Selection Strategy
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium text-blue-900 mb-2">
-              Discussion Prompt (4 minutes):
-            </p>
-            <p className="text-blue-800 mb-3">
-              After exploring different asset scenarios in the Depreciation Method Builder, discuss with a partner:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-blue-800">For Discussion:</h4>
-                <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                  <li>Which method gave Sarah the biggest tax benefit in Year 1? Why?</li>
-                  <li>If TechStart needs more cash flow early on, which method would you recommend?</li>
-                  <li>How might Sarah's choice affect what investors think about her business?</li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-blue-800">Key Insights to Share:</h4>
-                <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                  <li>Compare the first-year depreciation amounts between SLN and DDB</li>
-                  <li>Think about when a business would prioritize cash flow vs. steady expenses</li>
-                  <li>Consider how depreciation choice connects to business growth strategy</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Scaffolded Learning Activity */}
-        <Card className="border-green-200 bg-green-50">
-          <CardHeader>
-            <CardTitle className="text-green-800 flex items-center gap-2">
-              <TrendingDown className="h-5 w-5" />
-              Guided Analysis: TechStart's $18,000 Decision
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-green-900">
-              Let's work through Sarah's actual situation using what you've learned. Sarah's $18,000 
-              equipment purchase includes computers, software, and office furniture that she expects 
-              to use for 5 years, with an estimated salvage value of $2,000.
-            </p>
-
-            <div className="bg-white p-4 rounded-lg border border-green-300">
-              <h4 className="font-semibold text-green-800 mb-3">TechStart Asset Details:</h4>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
-                <div>
-                  <strong className="text-green-800">Total Cost:</strong>
-                  <p className="text-green-700">$18,000</p>
+        <section className="max-w-5xl mx-auto space-y-8">
+          {/* REVIEW: Quick recap from Phase 2 */}
+          <Card className="border-slate-200 bg-slate-50">
+            <CardHeader>
+              <CardTitle className="text-slate-800 text-lg">Review: What You Learned</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-700">
+              <div className="grid gap-3 md:grid-cols-3">
+                <div className="flex items-start gap-2">
+                  <ArrowRight className="h-4 w-4 text-emerald-600 mt-1 flex-shrink-0" />
+                  <p className="text-sm"><strong>Physical flow</strong> tracks boxes on the shelf</p>
                 </div>
-                <div>
-                  <strong className="text-green-800">Salvage Value:</strong>
-                  <p className="text-green-700">$2,000</p>
+                <div className="flex items-start gap-2">
+                  <ArrowRight className="h-4 w-4 text-emerald-600 mt-1 flex-shrink-0" />
+                  <p className="text-sm"><strong>Cost flow</strong> tracks dollars into COGS or inventory</p>
                 </div>
-                <div>
-                  <strong className="text-green-800">Useful Life:</strong>
-                  <p className="text-green-700">5 years</p>
-                </div>
-                <div>
-                  <strong className="text-green-800">Depreciable Base:</strong>
-                  <p className="text-green-700">$16,000</p>
+                <div className="flex items-start gap-2">
+                  <ArrowRight className="h-4 w-4 text-emerald-600 mt-1 flex-shrink-0" />
+                  <p className="text-sm"><strong>Layers</strong> form when purchases happen at different costs</p>
                 </div>
               </div>
-            </div>
+            </CardContent>
+          </Card>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
-                <h5 className="font-semibold text-blue-800 mb-3">Straight-Line Method</h5>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Annual Depreciation:</span>
-                    <span className="font-semibold">$16,000 ÷ 5 = $3,200</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Monthly Depreciation:</span>
-                    <span className="font-semibold">$3,200 ÷ 12 = $267</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Excel Formula:</span>
-                    <span className="font-mono text-xs">=SLN(18000,2000,5)</span>
-                  </div>
-                </div>
-                <div className="mt-3 p-2 bg-blue-50 rounded text-xs text-blue-700">
-                  <strong>Business Impact:</strong> Predictable, steady expense for budgeting. 
-                  Conservative approach that spreads tax benefits evenly.
-                </div>
-              </div>
-
-              <div className="bg-purple-100 p-4 rounded-lg border border-purple-300">
-                <h5 className="font-semibold text-purple-800 mb-3">Double-Declining Balance</h5>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Depreciation Rate:</span>
-                    <span className="font-semibold">2 ÷ 5 = 40%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Year 1 Depreciation:</span>
-                    <span className="font-semibold">$18,000 × 40% = $7,200</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Excel Formula:</span>
-                    <span className="font-mono text-xs">=DDB(18000,2000,5,1)</span>
-                  </div>
-                </div>
-                <div className="mt-3 p-2 bg-purple-50 rounded text-xs text-purple-700">
-                  <strong>Business Impact:</strong> Accelerated tax benefits improve early cash flow. 
-                  $4,000 more deduction in Year 1 compared to straight-line!
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Think-Pair-Share Discussion 2 */}
-        <Card className="border-orange-200 bg-orange-50">
-          <CardHeader>
-            <CardTitle className="text-orange-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk: Strategic Recommendations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium text-orange-900 mb-2">
-              Discussion Prompt (3 minutes):
-            </p>
-            <p className="text-orange-800 mb-3">
-              Based on the TechStart analysis above, work with a partner to make a strategic recommendation:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-orange-800">Consider Sarah's Situation:</h4>
-                <ul className="list-disc list-inside space-y-1 text-orange-800 text-sm">
-                  <li>TechStart is a growing technology company</li>
-                  <li>Sarah wants to reinvest profits into business expansion</li>
-                  <li>She needs to maintain investor confidence</li>
-                  <li>Technology equipment typically loses value quickly</li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-orange-800">Your Recommendation:</h4>
-                <ul className="list-disc list-inside space-y-1 text-orange-800 text-sm">
-                  <li>Which method would you recommend: SLN or DDB?</li>
-                  <li>What are the key reasons for your choice?</li>
-                  <li>How would this help Sarah achieve her business goals?</li>
-                  <li>What would you tell investors about this decision?</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Learning Reflection */}
-        <Card className="border-amber-200 bg-amber-50">
-          <CardHeader>
-            <CardTitle className="text-amber-800 flex items-center gap-2">
-              <Lightbulb className="h-5 w-5" />
-              Key Takeaways from Guided Practice
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-amber-800 mb-4">
-              Through this guided practice, you've seen how depreciation method selection is a strategic 
-              business decision that affects cash flow, taxes, and financial reporting.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-lg border border-amber-300">
-                <h4 className="font-semibold text-amber-800 mb-2">📊 Mathematical Mastery</h4>
-                <p className="text-amber-700 text-sm">
-                  You can now calculate both SLN and DDB depreciation using formulas and Excel functions, 
-                  understanding how each method spreads asset costs differently over time.
-                </p>
-              </div>
-              <div className="bg-white p-4 rounded-lg border border-amber-300">
-                <h4 className="font-semibold text-amber-800 mb-2">💰 Business Impact</h4>
-                <p className="text-amber-700 text-sm">
-                  You understand how method selection affects cash flow timing, tax obligations, and 
-                  investor perceptions, connecting technical calculations to strategic business goals.
-                </p>
-              </div>
-              <div className="bg-white p-4 rounded-lg border border-amber-300">
-                <h4 className="font-semibold text-amber-800 mb-2">🎯 Real-World Application</h4>
-                <p className="text-amber-700 text-sm">
-                  You can analyze specific business scenarios and make informed recommendations about 
-                  depreciation methods based on company needs and industry characteristics.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg border">
-              <p className="text-center text-gray-800 font-medium">
-                🌟 Ready for independent practice? In the next phase, you'll tackle more complex scenarios 
-                and build comprehensive depreciation schedules without scaffolding!
+          {/* TEACH DEEPER: Layer tracking */}
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-900 flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                Going Deeper: Tracking Layers Over Time
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-amber-950">
+              <p className="leading-relaxed">
+                In Phase 2, you saw layers at a single point. Now let's think about what happens as time passes:
               </p>
-            </div>
-          </CardContent>
-        </Card>
 
-      </div>
+              <div className="bg-white p-4 rounded-lg border border-amber-300 space-y-3">
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-blue-600 text-white mt-0.5">1</Badge>
+                  <p className="text-amber-900">
+                    <strong>Month starts</strong> with Layer 1 already on the shelf (Beginning Inventory)
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-amber-600 text-white mt-0.5">2</Badge>
+                  <p className="text-amber-900">
+                    <strong>Day 3</strong> adds Layer 2 when Sarah buys more kits at a new price
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-green-600 text-white mt-0.5">3</Badge>
+                  <p className="text-amber-900">
+                    <strong>Day 15</strong> adds Layer 3 when supplier prices rise again
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-purple-600 text-white mt-0.5">4</Badge>
+                  <p className="text-amber-900">
+                    <strong>Each sale</strong> pulls from one or more layers, changing what remains
+                  </p>
+                </div>
+              </div>
 
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+              <p className="text-amber-800">
+                The key skill is tracking both <strong>quantity</strong> and <strong>value</strong> at each step. 
+                In this activity, you'll walk through Sarah's month event by event. At each step, 
+                calculate what happens to <strong>units on hand</strong> and <strong>inventory value</strong>.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* ACTIVITY: Timeline Lab */}
+          <Card className="border-emerald-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-emerald-900 flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                Activity: Walk Through Sarah's Month
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-slate-600 mb-4">
+                Now it's your turn. Walk through each day of Sarah's month. Calculate what happens to 
+                units on hand and inventory value at each step, then check your answer.
+              </p>
+              <InventoryTimelineLab />
+            </CardContent>
+          </Card>
+
+          {/* Turn and Talk */}
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Turn and Talk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-purple-950 space-y-3">
+              <p className="font-medium">Discussion prompt (3 minutes):</p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>At which event in the timeline did inventory value change the most? Why?</li>
+                <li>Why does a sale affect both units AND inventory value at the same time?</li>
+                <li>What would happen if Sarah forgot to record one of the purchases?</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Key Insight */}
+          <Card className="border-slate-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-slate-900">Key Insight from This Activity</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-slate-800">
+              <p>
+                By the end of Sarah's month, you can see exactly where every unit went and how much 
+                value remains. But notice something: we had to make <strong>assumptions</strong> about 
+                which layer costs went to COGS on each sale.
+              </p>
+              <p className="font-medium text-slate-900">
+                That's what Lesson 3 is about: learning the formal rules (FIFO, LIFO) that tell you 
+                exactly how to assign costs, so you don't have to guess.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+
+      <PhaseFooter unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
     </div>
-  );
+  )
 }

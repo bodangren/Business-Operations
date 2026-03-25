@@ -1,204 +1,247 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader";
-import { PhaseFooter } from "@/components/student/PhaseFooter";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Users } from "lucide-react";
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
-import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data";
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Users, HelpCircle, TrendingUp } from "lucide-react"
+import Image from "next/image"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { lesson02Data, unit07Data, lesson02Phases } from "../lesson-data"
 
-const currentPhase = lesson02Phases[0]; // Hook phase
+const currentPhase = lesson02Phases[0]
 
 const hookQuestions = [
   {
     id: "hook-1",
-    question: "When Sarah spent $18,000 on new computers and office furniture for TechStart Solutions, why did her CPA Jennifer tell her to stop recording this as a simple expense?",
+    question: "Sarah started the month with 10 launch kits worth $180 total. She bought 20 more kits for $400. After selling 15 kits, she has 15 kits left on the shelf. Why can't she immediately tell you the dollar value of those 15 remaining kits?",
     answers: [
-      "These items are long-term assets that will help her business for years, not just one month",
-      "She doesn't have enough cash to cover the expense right now",
-      "The items cost too much money to be considered business expenses", 
-      "Jennifer wanted Sarah to return the equipment to save money"
+      "Because the kits were purchased at different costs, and she doesn't know which specific kits were sold",
+      "Because she lost the receipts for some of the purchases",
+      "Because the kits have all spoiled and are now worthless",
+      "Because inventory value is always the same as the selling price"
     ],
-    explanation: "Jennifer recognized that computers and office furniture are long-term assets that will benefit TechStart Solutions over multiple years, making them candidates for depreciation rather than immediate expensing."
+    explanation: "When the same product is purchased at different prices, knowing how many units remain doesn't tell you their value. You need to decide which costs stayed in inventory and which costs moved to COGS."
   },
   {
-    id: "hook-2", 
-    question: "What is the main business concept that Sarah discovered when she realized her new computers would help her business for years?",
+    id: "hook-2",
+    question: "Sarah's bookkeeper tells her the 15 remaining kits are worth either $255 or $285 depending on how costs are assigned. What does this mean for Sarah's business?",
     answers: [
-      "Depreciation - spreading the cost of long-term assets over their useful life",
-      "Appreciation - increasing the value of assets over time",
-      "Amortization - paying off loans in equal monthly payments",
-      "Capitalization - borrowing money to buy expensive equipment"
+      "Her ending inventory value and her profit both depend on a choice she hasn't made yet",
+      "The bookkeeper made a calculation error and needs to redo the math",
+      "One of those numbers is definitely wrong because inventory can only have one value",
+      "Sarah should just pick the higher number because it makes her business look better"
     ],
-    explanation: "Sarah discovered depreciation, which is the accounting method of spreading the cost of long-term assets over the years they will be used to generate revenue."
+    explanation: "Both numbers could be correct under different inventory methods. Sarah's job is to understand the options, choose one, and be able to defend it to investors and lenders."
   },
   {
     id: "hook-3",
-    question: "Why is choosing the right depreciation method important for a business like TechStart Solutions?",
+    question: "Why does the ending inventory number matter to someone outside the business, like a lender or investor?",
     answers: [
-      "It affects cash flow, tax obligations, and the company's official value",
-      "It determines how much money Sarah can spend on new equipment",
-      "It decides which insurance company she should choose for coverage",
-      "It controls how many employees she can hire for the business"
+      "Because ending inventory affects both the balance sheet value and the reported profit",
+      "Because lenders only care about physical items, not dollars",
+      "Because investors want to know exactly which products are on the shelf",
+      "Because ending inventory determines how much tax the business will pay next year"
     ],
-    explanation: "Depreciation method selection has significant financial implications - it affects taxable income (and thus taxes), cash flow timing, and how assets appear on financial statements that investors review."
+    explanation: "Ending inventory is an asset on the balance sheet, and it directly affects COGS, which affects gross profit. An investor or lender needs to trust that number to evaluate the business."
   },
   {
     id: "hook-4",
-    question: "What triggered Sarah's need to understand asset depreciation beyond just the $18,000 purchase?",
+    question: "In Lesson 1, you learned the formula: Ending Inventory = Beginning Inventory + Purchases - COGS. Which part of this formula is Sarah unsure about in this lesson?",
     answers: [
-      "Her business insurance policy needed a detailed list of all physical assets",
-      "The bank required a list of assets before approving a business loan", 
-      "Her customers wanted to see a list of her business equipment",
-      "The government required all businesses to file asset depreciation reports"
+      "COGS - she knows how many units sold, but not which cost dollars to assign to those units",
+      "Beginning Inventory - she forgot what she started with",
+      "Purchases - she lost track of what she bought",
+      "All of them - Sarah's records are completely missing"
     ],
-    explanation: "Sarah's new business insurance policy needed a detailed asset list, which highlighted the importance of properly tracking and valuing her business assets over time."
+    explanation: "Sarah can count units easily. The problem is assigning dollar values. When she sells 15 kits, were they the cheaper ones or the more expensive ones? That choice determines COGS and what's left in inventory."
   }
-];
+]
 
-export default function Unit07Lesson02Phase1() {
+export default function Phase1Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <PhaseHeader 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
+      <PhaseHeader unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
 
-      <div className="max-w-4xl mx-auto px-4 pb-8 space-y-8">
-        
-        {/* Opening Scenario */}
-        <Card className="border-green-200 bg-green-50">
-          <CardHeader>
-            <CardTitle className="text-2xl text-green-800 flex items-center gap-2">
-              🏢 Sarah's Big Milestone: TechStart's First Real Office
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-lg leading-relaxed text-green-900">
-              Remember Sarah from TechStart Solutions? She's been on an amazing journey, building a smart ledger, 
-              automating her month-end close, creating professional financial statements, analyzing data, managing 
-              payroll, and revamping her pricing strategy. Each step has made her business stronger and more professional.
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-amber-100 text-amber-800 text-lg px-4 py-2">Phase 1: Hook</Badge>
+            <h1 className="text-3xl font-bold text-slate-900">Why Counting Units Isn't Enough</h1>
+            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
+              Sarah can count what's on the shelf. She can count what she bought. She can count what she sold.
+              But when she tries to put a dollar value on what remains, she runs into a problem.
             </p>
-            
-            <p className="text-lg leading-relaxed text-green-900">
-              Now, TechStart Solutions has moved into its first real office! This is a huge milestone, a sign that 
-              her business is growing and becoming a serious company. But with a new office comes new challenges.
-            </p>
+          </div>
+        </section>
 
-            <div className="bg-white p-4 rounded-lg border border-green-300">
-              <h3 className="font-semibold text-green-800 mb-2">The $18,000 Investment</h3>
-              <p className="text-green-800">
-                Sarah made a significant investment, spending about <strong>$18,000</strong> on brand new computers, 
-                software, and office furniture to get everything set up perfectly. Her first thought was simple: 
-                just record this $18,000 as a big expense, like buying paper clips or paying the internet bill.
+        <section className="max-w-5xl mx-auto space-y-8">
+          {/* Opening Scenario */}
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900 flex items-center gap-2">
+                <TrendingUp className="h-5 w-5" />
+                Sarah's Inventory Puzzle
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-blue-950">
+              <p className="text-lg leading-relaxed">
+                Remember Sarah's Client Launch Kits from Lesson 1? She's been buying them in batches throughout 
+                the month. Here's what happened:
               </p>
-            </div>
+              
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="bg-white p-4 rounded-lg border border-blue-300">
+                  <p className="text-sm text-blue-700 font-medium">Beginning Inventory</p>
+                  <p className="text-2xl font-bold text-blue-900">10 kits</p>
+                  <p className="text-sm text-blue-600">$18 each = $180 total</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg border border-blue-300">
+                  <p className="text-sm text-blue-700 font-medium">Purchases</p>
+                  <p className="text-2xl font-bold text-blue-900">20 kits</p>
+                  <p className="text-sm text-blue-600">$20 each = $400 total</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg border border-blue-300">
+                  <p className="text-sm text-blue-700 font-medium">Sold</p>
+                  <p className="text-2xl font-bold text-blue-900">15 kits</p>
+                  <p className="text-sm text-blue-600">Selling price: $38 each</p>
+                </div>
+              </div>
 
-            <div className="bg-yellow-100 p-4 rounded-lg border border-yellow-300">
-              <h3 className="font-semibold text-yellow-800 mb-2">⚠️ Jennifer's Warning</h3>
-              <p className="text-yellow-800">
-                But her CPA, Jennifer Kim, immediately told her to <strong>stop</strong>. Jennifer explained that 
-                these items weren't just simple expenses; they were <em>long-term assets</em>. How Sarah accounted 
-                for them would have a big impact on her taxes and the official value of her company.
+              <div className="bg-white p-4 rounded-lg border border-amber-300 mt-4">
+                <p className="text-amber-800 font-medium mb-2">Quick math check:</p>
+                <p className="text-amber-900">
+                  10 + 20 - 15 = <strong>15 kits remaining</strong> on the shelf.
+                </p>
+                <p className="text-amber-900 mt-2">
+                  But here's the puzzle: <strong>What are those 15 kits worth in dollars?</strong>
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* The Core Problem */}
+          <Card className="border-red-200 bg-red-50">
+            <CardHeader>
+              <CardTitle className="text-red-900 flex items-center gap-2">
+                <HelpCircle className="h-5 w-5" />
+                The Problem Sarah Can't Solve Yet
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-red-950">
+              <p className="text-lg leading-relaxed">
+                Sarah knows she has 15 kits left. But when she asks her bookkeeper for the dollar value, 
+                she gets a surprising answer:
               </p>
-            </div>
-
-            <p className="text-lg leading-relaxed text-green-900">
-              This was a big "aha!" moment for Sarah. She realized that these new items, like her powerful new 
-              computers, would help her business for years, not just for a single month. This introduced her to 
-              a powerful accounting concept: <strong>depreciation</strong>.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Why This Matters */}
-        <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-xl text-blue-800">Why This Matters</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-blue-800">
-              Understanding depreciation isn't just about following accounting rules—it's about making smart 
-              financial decisions that affect cash flow, tax obligations, and investor confidence. When Sarah 
-              shows potential investors her asset management strategy, they can immediately see that she 
-              understands how to optimize her business's financial resources over time.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Turn and Talk */}
-        <Card className="border-purple-200 bg-purple-50">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium text-purple-900 mb-2">
-              Discussion Prompt (3 minutes):
-            </p>
-            <p className="text-purple-800 mb-2">
-              Think about Sarah's experience with the $18,000 equipment purchase. Share with a partner:
-            </p>
-            <ul className="list-disc list-inside space-y-1 text-purple-800">
-              <li>What would happen if Sarah treated all equipment purchases as immediate expenses?</li>
-              <li>How might this affect her taxes and cash flow in the first year versus future years?</li>
-              <li>Why would investors care about how she accounts for these assets?</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Comprehension Check */}
-        <ComprehensionCheck
-          questions={hookQuestions}
-          title="Understanding Sarah's Asset Challenge"
-          description="Test your understanding of why depreciation matters for business decision-making."
-          showExplanations={true}
-        />
-
-        {/* Connection to Learning */}
-        <Card className="border-amber-200 bg-amber-50">
-          <CardHeader>
-            <CardTitle className="text-amber-800">🎯 Today's Learning Focus</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-amber-800 mb-4">
-              Today we'll explore the <strong>Depreciation Techniques</strong> that Sarah needs to master. 
-              You'll learn how to calculate and apply different depreciation methods, understanding their 
-              impact on cash flow and tax strategy.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-semibold text-amber-800 mb-2">Key Concepts:</h4>
-                <ul className="text-amber-700 text-sm space-y-1">
-                  <li>• Straight-Line (SLN) depreciation method</li>
-                  <li>• Double-Declining Balance (DDB) method</li>
-                  <li>• Excel SLN and DDB functions</li>
-                  <li>• Business impact of method selection</li>
-                </ul>
+              
+              <div className="bg-white p-4 rounded-lg border border-red-300">
+                <p className="text-red-800 italic mb-3">
+                  "Well, that depends. The 15 kits remaining could be worth <strong>$255</strong> or 
+                  they could be worth <strong>$285</strong>. I need to know which cost assignment method 
+                  you want to use."
+                </p>
               </div>
-              <div>
-                <h4 className="font-semibold text-amber-800 mb-2">Learning Objectives:</h4>
-                <ul className="text-amber-700 text-sm space-y-1">
-                  <li>• Calculate depreciation schedules using multiple methods</li>
-                  <li>• Build automated depreciation schedules with Excel functions</li>
-                  <li>• Analyze cash flow and tax implications</li>
-                </ul>
+
+              <p className="text-lg leading-relaxed">
+                Two different answers. Both could be correct. Sarah stares at her spreadsheet, confused.
+                How can the same 15 kits have two different values?
+              </p>
+
+              <div className="bg-red-100 p-4 rounded-lg border border-red-300">
+                <p className="text-red-800 font-medium">
+                  The kits were bought at different prices: some at $18, some at $20.
+                  When Sarah sold 15 kits, which ones did she sell? The cheaper ones? The more expensive ones?
+                  A mix? That choice determines what's left.
+                </p>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
 
-      </div>
+          {/* The Formula Image */}
+          <Card className="border-slate-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-slate-900">The Unit Scoreboard</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-slate-700">
+                In Lesson 1, you learned the formula that drives this entire unit. Here it is again:
+              </p>
+              <div className="flex justify-center">
+                <Image 
+                  src="/images/inventory-equation.png" 
+                  alt="Ending Inventory = Beginning Inventory + Purchases - Cost of Goods Sold"
+                  width={600}
+                  height={120}
+                  className="rounded-lg"
+                />
+              </div>
+              <p className="text-slate-700">
+                Today's lesson focuses on one question: <strong>How does inventory move through this formula?</strong>
+                You'll learn that the formula works perfectly for counting units, but when dollars are involved, 
+                you need a rule for which costs go where.
+              </p>
+            </CardContent>
+          </Card>
 
-      <PhaseFooter 
-        lesson={lesson02Data}
-        unit={unit07Data}
-        phase={currentPhase}
-        phases={lesson02Phases}
-      />
+          {/* Turn and Talk */}
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Turn and Talk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-purple-950 space-y-3">
+              <p className="font-medium">Discussion prompt (3 minutes):</p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>If Sarah sold 15 kits, why can't we just say the remaining 15 kits are worth $285 (the average cost)?</li>
+                <li>Why might an investor care whether Sarah reports $255 or $285 as her ending inventory?</li>
+                <li>What would happen if Sarah just guessed and picked a number without understanding the rules?</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Comprehension Check */}
+          <ComprehensionCheck
+            questions={hookQuestions}
+            title="Understanding the Inventory Puzzle"
+            description="Check your understanding of why ending inventory value isn't always obvious."
+            showExplanations={true}
+          />
+
+          {/* Today's Focus */}
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-900">Today's Learning Focus</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-amber-950">
+              <p>
+                Lesson 2 is about <strong>how inventory moves</strong> through the accounting system. 
+                You'll learn to track the flow of units and the flow of costs separately.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-amber-800 mb-2">Key Concepts:</h4>
+                  <ul className="text-amber-700 text-sm space-y-1">
+                    <li>• Physical flow vs. cost flow</li>
+                    <li>• Goods Available for Sale</li>
+                    <li>• Inventory layers</li>
+                    <li>• Where mistakes happen</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-amber-800 mb-2">Learning Objectives:</h4>
+                  <ul className="text-amber-700 text-sm space-y-1">
+                    <li>• Trace inventory through the formula</li>
+                    <li>• Separate unit tracking from value tracking</li>
+                    <li>• Explain why cost assignment matters</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+
+      <PhaseFooter unit={unit07Data} lesson={lesson02Data} phase={currentPhase} phases={lesson02Phases} />
     </div>
-  );
+  )
 }
