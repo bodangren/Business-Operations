@@ -1,20 +1,33 @@
-// Asset & Inventory Tracker, Lesson 3 data - extracted from MCP curriculum database
+// Asset & Inventory Tracker, Lesson 3 data - FIFO and LIFO Methods
 export const lesson03Data = {
   id: "mds5x99ma27hcfuzr0p",
   title: "FIFO and LIFO: Two Ways to Value the Same Inventory",
   sequence: 3,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Compute Cost of Goods Sold using FIFO and LIFO methods"
+    "Calculate Cost of Goods Sold and Ending Inventory using FIFO (First-In, First-Out) method",
+    "Calculate Cost of Goods Sold and Ending Inventory using LIFO (Last-In, First-Out) method",
+    "Explain how FIFO and LIFO produce different COGS and Ending Inventory values from identical transactions",
+    "Identify business situations where FIFO or LIFO may be strategically preferred",
+    "Analyze the impact of rising vs. falling prices on FIFO vs. LIFO outcomes"
   ],
   keyConcepts: [
-    "FIFO and LIFO inventory valuation principles and calculations"
+    "Inventory layers and cost assignment",
+    "FIFO (First-In, First-Out) cost flow assumption",
+    "LIFO (Last-In, First-Out) cost flow assumption",
+    "Cost of Goods Sold (COGS) calculation",
+    "Ending Inventory valuation",
+    "Rising price environment and its effect on method choice",
+    "Profit reporting, tax planning, and cash flow implications"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "FIFO vs. LIFO logic and business implications"
+    "Step-by-step visual demonstration of FIFO and LIFO layer movement",
+    "Scaffolded practice with progressively less structure",
+    "Business context for strategic method selection",
+    "Side-by-side comparison to highlight differences"
   ],
-  rationale: "To introduce students to the two most common inventory valuation methods and to explore the strategic implications of each.",
+  rationale: "Lesson 2 established that cost assignment is ambiguous when inventory layers have different prices. Lesson 3 introduces the first two standardized methods—FIFO and LIFO—that resolve this ambiguity. Students learn both the mechanics and the business consequences of each method, preparing them to make and defend method recommendations.",
   status: "Draft"
 }
 
@@ -30,42 +43,36 @@ export const lesson03Phases = [
     id: "phase_hook_3",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to the lesson topic",
-    // component: "InventoryFlowDiagram" (id: mdsae8htm5xukuohi7) - To visually introduce the concept of inventory flow.
+    description: "Connect to Lesson 2's ambiguity and introduce FIFO and LIFO as two standardized solutions",
   },
   {
     id: "phase_introduction_3",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce FIFO and LIFO inventory valuation principles and calculations and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Teach FIFO and LIFO mechanics with visual layer movement, then explore business consequences",
   },
   {
     id: "phase_guided_practice_3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying FIFO and LIFO inventory valuation principles and calculations with scaffolded support",
-    // component: "InventoryFlowDiagram" (id: mdsae8htm5xukuohi7) - To practice applying FIFO and LIFO.
+    description: "Scaffolded practice assigning costs to sales using FIFO and LIFO with validation",
   },
   {
     id: "phase_independent_practice_3",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice FIFO and LIFO inventory valuation principles and calculations independently with minimal teacher support",
-    // component: "InventoryManager" (id: 1753927452727xpb8ayrii) - To see the impact of inventory decisions in a simulation.
+    description: "Independent calculation of FIFO and LIFO with business recommendation",
   },
   {
     id: "phase_assessment_3",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Assess understanding of FIFO and LIFO calculations and appropriate use cases",
   },
   {
     id: "phase_closing_3",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on FIFO vs LIFO tradeoffs and preview Specific Identification and Weighted Average in Lesson 4",
   }
 ]

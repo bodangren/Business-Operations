@@ -1,9 +1,10 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { CheckCircle2, Trophy, Target, TrendingUp, Calculator, Briefcase } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { getUnit07Phase5ComprehensionCheckItems } from "@/data/question-banks/unit07-phase5"
-import { CheckCircle, Award, TrendingUp, Calculator, Briefcase } from "lucide-react"
 import { lesson03Data, unit07Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[4] // Assessment phase
@@ -12,174 +13,126 @@ const assessmentQuestions = getUnit07Phase5ComprehensionCheckItems({ lessonIds: 
 
 export default function Phase5Page() {
   return (
-    <div className="max-w-4xl mx-auto">
-      <PhaseHeader lesson={lesson03Data} unit={unit07Data} phase={currentPhase} phases={lesson03Phases} />
-      
-      <div className="space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
+      <PhaseHeader unit={unit07Data} lesson={lesson03Data} phase={currentPhase} phases={lesson03Phases} />
+
+      <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+        
         {/* Assessment Introduction */}
-        <Card className="border-indigo-200 bg-indigo-50">
+        <Card className="border-amber-200 bg-amber-50">
           <CardHeader>
-            <CardTitle className="text-indigo-800 flex items-center gap-2">
-              <Award className="h-6 w-6" />
-              Comprehensive Assessment: FIFO & LIFO Mastery
+            <CardTitle className="text-2xl text-amber-800 flex items-center gap-2">
+              <CheckCircle2 className="h-6 w-6" />
+              Exit Ticket: FIFO and LIFO
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="text-lg leading-relaxed text-indigo-900">
-              <p className="mb-4">
-                Time to demonstrate your mastery of inventory valuation methods! This comprehensive assessment covers 
-                everything you've learned about FIFO and LIFO, from basic calculations to strategic business applications.
-              </p>
-              
-              <p className="mb-4">
-                The questions below will test your ability to:
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-lg border border-blue-200">
-                  <h3 className="font-semibold text-indigo-900 mb-2 flex items-center gap-2">
-                    <Calculator className="h-5 w-5" />
-                    Technical Skills
-                  </h3>
-                  <ul className="text-sm text-indigo-800 space-y-1">
-                    <li>• Calculate COGS using both FIFO and LIFO methods</li>
-                    <li>• Determine ending inventory values</li>
-                    <li>• Understand financial statement impacts</li>
-                    <li>• Apply methods to realistic business scenarios</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border border-green-200">
-                  <h3 className="font-semibold text-indigo-900 mb-2 flex items-center gap-2">
-                    <Briefcase className="h-5 w-5" />
-                    Strategic Thinking
-                  </h3>
-                  <ul className="text-sm text-indigo-800 space-y-1">
-                    <li>• Recommend methods for different business types</li>
-                    <li>• Explain tax and cash flow implications</li>
-                    <li>• Understand industry-specific considerations</li>
-                    <li>• Connect to real-world business decisions</li>
-                  </ul>
-                </div>
+            <p className="text-lg leading-relaxed text-amber-900">
+              Time to check your understanding! This assessment covers both the mechanics and 
+              the business consequences of FIFO and LIFO inventory methods.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-lg border border-amber-300 text-center">
+                <Calculator className="h-8 w-8 mx-auto mb-2 text-amber-600" />
+                <h4 className="font-semibold text-amber-800 mb-1">FIFO Calculations</h4>
+                <p className="text-sm text-amber-700">Assign oldest costs to COGS first</p>
               </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-indigo-200">
-                <h3 className="font-semibold text-indigo-900 mb-2">Assessment Tips</h3>
-                <p className="text-indigo-800">
-                  Take your time with calculations, consider the business context for each scenario, and remember 
-                  that the "best" inventory method often depends on the company's specific situation and goals. 
-                  Good luck!
-                </p>
+              <div className="bg-white p-4 rounded-lg border border-amber-300 text-center">
+                <TrendingUp className="h-8 w-8 mx-auto mb-2 text-amber-600" />
+                <h4 className="font-semibold text-amber-800 mb-1">LIFO Calculations</h4>
+                <p className="text-sm text-amber-700">Assign newest costs to COGS first</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg border border-amber-300 text-center">
+                <Briefcase className="h-8 w-8 mx-auto mb-2 text-amber-600" />
+                <h4 className="font-semibold text-amber-800 mb-1">Business Strategy</h4>
+                <p className="text-sm text-amber-700">When each method makes sense</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Comprehensive Assessment */}
+        {/* Key Concept Reference */}
+        <Card className="border-blue-200 bg-blue-50">
+          <CardHeader>
+            <CardTitle className="text-blue-800">📋 Quick Reference</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <h4 className="font-semibold text-blue-900">FIFO (First-In, First-Out)</h4>
+                <ul className="text-blue-800 text-sm space-y-1">
+                  <li>• Oldest costs flow to COGS first</li>
+                  <li>• Newer costs stay in ending inventory</li>
+                  <li>• Higher reported profit when costs rise</li>
+                  <li>• Often preferred for investor presentations</li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h4 className="font-semibold text-blue-900">LIFO (Last-In, First-Out)</h4>
+                <ul className="text-blue-800 text-sm space-y-1">
+                  <li>• Newest costs flow to COGS first</li>
+                  <li>• Older costs stay in ending inventory</li>
+                  <li>• Lower reported profit when costs rise</li>
+                  <li>• Can reduce taxable income in inflationary periods</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 p-3 bg-blue-100 rounded-lg border border-blue-200">
+              <p className="text-blue-900 text-sm">
+                <strong>Key Insight:</strong> From the exact same transactions, FIFO and LIFO produce 
+                different COGS and Ending Inventory values. That's why method choice matters for 
+                profit reporting, tax planning, and business decisions.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Assessment */}
         <ComprehensionCheck
-          title="FIFO & LIFO: Comprehensive Knowledge Assessment"
-          description="Demonstrate your mastery of inventory valuation methods through calculations, analysis, and strategic thinking."
           questions={assessmentQuestions}
+          title="FIFO and LIFO Mastery Assessment"
+          description="Demonstrate your understanding of both calculation methods and when to use each one."
           showExplanations={true}
           allowRetry={true}
         />
 
-        {/* Performance Standards */}
-        <Card className="border-green-200 bg-green-50">
+        {/* What's Next */}
+        <Card className="border-purple-200 bg-purple-50">
           <CardHeader>
-            <CardTitle className="text-green-800 flex items-center gap-2">
-              <TrendingUp className="h-6 w-6" />
-              Performance Standards & Next Steps
-            </CardTitle>
+            <CardTitle className="text-purple-800">🎯 Looking Ahead: Lesson 4</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="text-lg leading-relaxed text-green-900">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <div className="bg-white p-4 rounded-lg border border-green-300">
-                  <h3 className="font-semibold text-green-800 mb-2">Mastery Level (90-100%)</h3>
-                  <p className="text-sm text-green-700 mb-2">Outstanding performance!</p>
-                  <ul className="text-xs text-green-600 space-y-1">
-                    <li>• Ready for advanced inventory modeling</li>
-                    <li>• Can advise businesses on method selection</li>
-                    <li>• Understands complex strategic implications</li>
-                    <li>• Prepared for Unit 7's Excel applications</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border border-yellow-300">
-                  <h3 className="font-semibold text-yellow-800 mb-2">Proficient Level (70-89%)</h3>
-                  <p className="text-sm text-yellow-700 mb-2">Solid understanding with room to grow</p>
-                  <ul className="text-xs text-yellow-600 space-y-1">
-                    <li>• Review complex calculation scenarios</li>
-                    <li>• Practice business strategy connections</li>
-                    <li>• Strengthen understanding of tax impacts</li>
-                    <li>• Ready to continue with support</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border border-red-300">
-                  <h3 className="font-semibold text-red-800 mb-2">Developing Level (&lt;70%)</h3>
-                  <p className="text-sm text-red-700 mb-2">Need additional practice and review</p>
-                  <ul className="text-xs text-red-600 space-y-1">
-                    <li>• Revisit FIFO vs LIFO basic concepts</li>
-                    <li>• Practice calculation methods</li>
-                    <li>• Work through guided examples again</li>
-                    <li>• Seek additional support before advancing</li>
-                  </ul>
-                </div>
+            <p className="text-purple-800">
+              Today you learned <strong>two</strong> ways toassign costs when inventory has different price layers. 
+              In Lesson 4, you'll learn two more methods:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-lg border border-purple-300">
+                <h4 className="font-semibold text-purple-800 mb-2">Specific Identification</h4>
+                <p className="text-purple-700 text-sm">
+                  Track the exact cost of each individual item. Perfect for unique, expensive, 
+                  or serialized inventory like cars or jewelry.
+                </p>
               </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-green-200">
-                <h3 className="font-semibold text-green-900 mb-2">Career Relevance</h3>
-                <p className="text-green-800">
-                  <strong>Why This Matters:</strong> Inventory method knowledge is essential for financial analysts, 
-                  business consultants, accountants, and entrepreneurs. Whether you're analyzing a company's financial 
-                  statements, advising clients on tax strategy, or making decisions for your own business, understanding 
-                  FIFO and LIFO impacts gives you a significant professional advantage.
+              <div className="bg-white p-4 rounded-lg border border-purple-300">
+                <h4 className="font-semibold text-purple-800 mb-2">Weighted Average</h4>
+                <p className="text-purple-700 text-sm">
+                  Blend all costs into one average. Ideal for similar items purchased frequently, 
+                  like bulk materials or commodities.
                 </p>
               </div>
             </div>
+            <p className="text-purple-700 text-sm italic">
+              By the end of Lesson 4, you'll know all four inventory methods and be able to 
+              recommend the best one for any business situation.
+            </p>
           </CardContent>
         </Card>
 
-        {/* Looking Ahead */}
-        <Card className="border-purple-200 bg-purple-50">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <CheckCircle className="h-6 w-6" />
-              Looking Ahead: Building on Your Success
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="text-lg leading-relaxed text-purple-900">
-              <p className="mb-4">
-                Congratulations on completing this comprehensive assessment of FIFO and LIFO concepts! Your 
-                understanding of inventory valuation methods positions you well for the advanced topics coming 
-                in Unit 7.
-              </p>
-              
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <h3 className="font-semibold text-purple-900 mb-2">What's Coming Next in Unit 7</h3>
-                <ul className="text-purple-800 space-y-1">
-                  <li>• <strong>Excel Array Formulas:</strong> Build sophisticated FIFO and LIFO calculators</li>
-                  <li>• <strong>Dynamic Modeling:</strong> Create models that switch between methods with dropdowns</li>
-                  <li>• <strong>Depreciation Integration:</strong> Combine asset depreciation with inventory management</li>
-                  <li>• <strong>Strategic Analysis:</strong> Present recommendations to real business leaders</li>
-                  <li>• <strong>Professional Presentations:</strong> Pitch inventory strategies to a board of directors</li>
-                </ul>
-              </div>
-              
-              <p className="text-purple-800">
-                In the final closing phase, you'll reflect on your learning journey and prepare for the exciting 
-                technical applications ahead. You're building the exact skills that Sarah uses with her clients 
-                every day!
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      
-      <PhaseFooter lesson={lesson03Data} unit={unit07Data} phase={currentPhase} phases={lesson03Phases} />
+      </main>
+
+      <PhaseFooter unit={unit07Data} lesson={lesson03Data} phase={currentPhase} phases={lesson03Phases} />
     </div>
   )
 }

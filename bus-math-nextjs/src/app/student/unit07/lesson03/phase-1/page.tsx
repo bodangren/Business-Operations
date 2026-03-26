@@ -1,211 +1,284 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Users, AlertTriangle, DollarSign, TrendingUp, TrendingDown, Layers } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { Package, TrendingUp, TrendingDown, DollarSign, AlertTriangle } from "lucide-react"
 import { lesson03Data, unit07Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[0] // Hook phase
 
 const hookQuestions = [
   {
-    id: "q1",
-    question: "Imagine a bakery buying flour at different prices throughout the month. In January, they bought flour for $2 per pound. In February, prices rose to $3 per pound due to wheat shortages. When they use flour to bake bread, which cost should they assign to their Cost of Goods Sold?",
+    id: "hook-1",
+    question: "In Lesson 2, you learned that Sarah has inventory layers at different costs. When she sells products, she must decide which layer's costs move to COGS. Why does this matter?",
     answers: [
-      "It depends on the inventory method they choose (FIFO or LIFO)",
-      "Always use the most recent purchase price",
-      "Always use the oldest purchase price", 
-      "Use the average of all purchase prices"
+      "Because the choice affects her reported profit, taxes, and ending inventory value",
+      "Because she needs to track which physical units were sold",
+      "Because the government requires all businesses to use the same method",
+      "Because her accountant needs to know exactly which box was sold"
     ],
-    explanation: "The cost assigned to Cost of Goods Sold depends entirely on which inventory method the business chooses - FIFO (First-In, First-Out) or LIFO (Last-In, First-Out). This choice has huge implications for taxes and reported profits!"
+    explanation: "The choice doesn't change what physically happened, but it does change what Sarah reports on her financial statements. Different methods produce different profit numbers and different tax bills."
   },
   {
-    id: "q2", 
-    question: "If prices are rising and a business wants to minimize their tax bill this year, which inventory method would be more beneficial?",
+    id: "hook-2",
+    question: "Sarah sold 20 Premium Client Kits this month. Under one method, her COGS is $936. Under another method, her COGS is $1,000. What does this mean?",
     answers: [
-      "LIFO (Last-In, First-Out) - uses newer, higher costs for COGS",
-      "FIFO (First-In, First-Out) - uses older, lower costs for COGS",
-      "Both methods result in identical tax bills",
-      "The choice doesn't affect taxes"
+      "Both calculations are correct — they just use different assumptions about which costs to assign",
+      "One calculation must be wrong because inventory can only have one value",
+      "The higher COGS number is always the correct one",
+      "The lower COGS number is always the correct one"
     ],
-    explanation: "LIFO assigns the newest, most expensive costs to Cost of Goods Sold when prices are rising. Higher COGS means lower profits, which means lower taxes. This improves cash flow by reducing tax payments."
+    explanation: "Accounting standards recognize that there isn't one 'right' answer when inventory comes from different purchases at different prices. FIFO and LIFO are two accepted methods for making this assignment."
   },
   {
-    id: "q3",
-    question: "Why would Sarah at TechStart Solutions need to understand inventory methods, even though she's primarily a service business?",
+    id: "hook-3",
+    question: "Why would Sarah care which method she uses when presenting to investors vs. filing taxes?",
     answers: [
-      "She's buying computer equipment and office furniture that need proper valuation",
-      "Service businesses don't need to worry about inventory methods",
-      "Only retail businesses use FIFO and LIFO",
-      "Inventory methods only apply to manufacturing companies"
+      "Investors want to see higher profits, but lower profits mean lower taxes — so different methods serve different goals",
+      "Investors and the IRS require the same method, so there's no choice",
+      "Investors don't care about inventory methods at all",
+      "Tax filing doesn't involve inventory calculations"
     ],
-    explanation: "Even service businesses have inventory! Sarah bought $18,000 worth of computers and office furniture. While these are typically treated as fixed assets (not inventory), understanding cost flow principles helps with depreciation decisions and business purchases."
+    explanation: "This is exactly why the choice matters. In rising-cost environments, FIFO shows higher profit (attractive to investors) while LIFO shows lower profit (reduces taxes). Sarah might strategically prefer different methods for different audiences."
   },
   {
-    id: "q4",
-    question: "What makes this inventory method choice so critical for business strategy?",
+    id: "hook-4",
+    question: "Sarah's Premium Client Kits cost $45, $48, and $52 per unit in three different purchases. Prices are rising. Which method would produce the lowest COGS when she sells 20 units?",
     answers: [
-      "It directly impacts reported profits, taxes, and cash flow",
-      "It only affects internal record-keeping",
-      "The choice can be changed daily based on market conditions",
-      "It has no impact on financial statements"
+      "FIFO — it uses the oldest, cheapest costs first",
+      "LIFO — it uses the newest, most expensive costs first",
+      "Both methods would produce the same COGS",
+      "The method doesn't affect COGS at all"
     ],
-    explanation: "Inventory method choice is a strategic business decision because it affects three crucial areas: how much profit you report to investors, how much tax you pay to the government, and how much cash you have available for operations."
+    explanation: "In a rising-price environment, FIFO pulls the cheaper $45 and $48 costs into COGS first, leaving the expensive $52 costs in inventory. This makes COGS lower and profit higher compared to LIFO."
   }
 ]
 
 export default function Phase1Page() {
   return (
-    <div className="max-w-4xl mx-auto">
-      <PhaseHeader lesson={lesson03Data} unit={unit07Data} phase={currentPhase} phases={lesson03Phases} />
-      
-      <div className="space-y-8">
-        {/* Engaging Hook Scenario */}
-        <Card className="border-orange-200 bg-orange-50">
-          <CardHeader>
-            <CardTitle className="text-orange-800 flex items-center gap-2">
-              <Package className="h-6 w-6" />
-              The Great Flour Dilemma
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="text-lg leading-relaxed text-orange-900">
-              <p className="mb-4">
-                Picture this: You walk into your favorite local bakery on a busy Saturday morning. The owner, Maria, 
-                greets you with a worried expression. "I'm having an accounting nightmare," she says. "Let me show you 
-                what's driving me crazy."
-              </p>
-              
-              <p className="mb-4">
-                She pulls out her purchase records: "In January, I bought 100 pounds of premium flour for $2 per pound. 
-                Then wheat prices shot up due to poor weather, so in February I had to pay $3 per pound for another 100 pounds. 
-                By March, prices hit $4 per pound for my latest 100-pound purchase."
-              </p>
-              
-              <p className="mb-4">
-                "Now here's my problem," Maria continues, pointing to a tray of fresh croissants. "When I bake these croissants 
-                today using 50 pounds of flour, what did that flour actually cost me? Was it the $2 flour from January, 
-                the $3 flour from February, or the $4 flour from March?"
-              </p>
-              
-              <div className="bg-white p-4 rounded-lg border border-orange-200">
-                <h3 className="font-semibold text-orange-900 mb-2">Why This Matters</h3>
-                <p className="text-orange-800">
-                  Maria's dilemma isn't just about record-keeping - it's about strategy. Her choice will determine 
-                  how much profit she reports, how much tax she pays, and how much cash she has left for expanding 
-                  her business. The wrong choice could cost her thousands of dollars!
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
+      <PhaseHeader unit={unit07Data} lesson={lesson03Data} phase={currentPhase} phases={lesson03Phases} />
 
-        {/* Business Impact Visualization */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-green-200 bg-green-50">
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">Phase 1: Hook</Badge>
+            <h1 className="text-3xl font-bold text-slate-900">One Inventory, Two Different Values</h1>
+            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
+              In Lesson 2, you discovered that inventory layers create ambiguity. Today, you'll learn 
+              how accounting turns that ambiguity into a strategic decision.
+            </p>
+          </div>
+        </section>
+
+        <section className="max-w-5xl mx-auto space-y-8">
+          {/* Connection to Lesson 2 */}
+          <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-green-800 flex items-center gap-2">
-                <TrendingUp className="h-5 w-5" />
-                FIFO Method Impact
-              </CardTitle>
+              <CardTitle className="text-blue-900">What You Discovered in Lesson 2</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-3 text-green-900">
-                <p><strong>Uses oldest costs first:</strong> $2 flour for COGS</p>
-                <p><strong>Result:</strong> Lower costs = Higher reported profits</p>
-                <p><strong>Tax impact:</strong> Higher taxes due to higher profits</p>
-                <p><strong>Investor view:</strong> Business looks more profitable</p>
-                <div className="bg-white p-3 rounded border border-green-200">
-                  <p className="text-sm font-medium">Best when: You want to show strong profits to investors</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-red-200 bg-red-50">
-            <CardHeader>
-              <CardTitle className="text-red-800 flex items-center gap-2">
-                <TrendingDown className="h-5 w-5" />
-                LIFO Method Impact
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 text-red-900">
-                <p><strong>Uses newest costs first:</strong> $4 flour for COGS</p>
-                <p><strong>Result:</strong> Higher costs = Lower reported profits</p>
-                <p><strong>Tax impact:</strong> Lower taxes due to lower profits</p>
-                <p><strong>Cash flow:</strong> More cash saved from tax savings</p>
-                <div className="bg-white p-3 rounded border border-red-200">
-                  <p className="text-sm font-medium">Best when: You want to minimize taxes and save cash</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Sarah's Connection */}
-        <Card className="border-purple-200 bg-purple-50">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <DollarSign className="h-6 w-6" />
-              Sarah's TechStart Connection
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-lg leading-relaxed text-purple-900">
-              <p className="mb-4">
-                Remember Sarah's big milestone? TechStart Solutions just moved into its first real office and invested 
-                $18,000 in computers, software, and furniture. While these are fixed assets (not inventory), Sarah is 
-                facing similar strategic decisions.
-              </p>
-              
-              <p className="mb-4">
-                Her CPA, Jennifer Kim, explained that even service businesses work with clients who struggle with 
-                inventory decisions. "Sarah, when you help that bakery client with their financial statements, 
-                or that electronics retailer with their Excel models, you need to understand how FIFO and LIFO 
-                impact their bottom line."
-              </p>
-              
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <p className="text-purple-800 font-medium">
-                  This knowledge makes Sarah more valuable to her clients and helps her build sophisticated 
-                  financial models that account for different inventory strategies.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Comprehension Check */}
-        <ComprehensionCheck
-          title="Understanding the Stakes: FIFO vs LIFO"
-          description="Test your understanding of why inventory method choice is such a big deal for businesses."
-          questions={hookQuestions}
-          showExplanations={true}
-          allowRetry={true}
-        />
-
-        {/* Looking Ahead */}
-        <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-blue-800 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6" />
-              Coming Up Next
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-blue-900">
+            <CardContent className="space-y-4 text-blue-950">
               <p className="text-lg leading-relaxed">
-                In the next phase, we'll dive deep into the mechanics of FIFO and LIFO calculations. You'll learn 
-                exactly how to calculate Cost of Goods Sold and ending inventory values using both methods, and 
-                see the dramatic difference they can make to a business's financial statements.
+                Remember Sarah's Client Launch Kits? She started with 10 kits at $18 each, 
+                then bought 20 more at $20 each. When she sold 15 kits, you learned that 
+                knowing how many units remain (15 kits) doesn't tell you their dollar value.
               </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      
-      <PhaseFooter lesson={lesson03Data} unit={unit07Data} phase={currentPhase} phases={lesson03Phases} />
+              
+              <p className="text-lg leading-relaxed">
+                The same question kept appearing: <strong>Which $X should move to Cost of Goods Sold, 
+                and which $X should stay in Ending Inventory?</strong>
+              </p>
+
+              <div className="bg-white p-4 rounded-lg border border-blue-300">
+                <p className="text-blue-800 font-medium">
+                  Sarah's bookkeeper told her: "Your ending inventory could be worth either 
+                  $255 or $285 depending on how you assign costs. Both numbers could be correct."
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* New Scenario Introduction */}
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900 flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                Sarah's Premium Client Kits — A New Challenge
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-purple-950">
+              <p className="text-lg leading-relaxed">
+                Sarah's business is growing. She's now offering <strong>Premium Client Kits</strong> for 
+                larger corporate clients. These kits include more resources and sell for higher prices. 
+                But they also come with a cost challenge that's even more dramatic than her original kits.
+              </p>
+
+              <div className="bg-white p-4 rounded-lg border border-purple-200">
+                <h4 className="font-semibold text-purple-900 mb-3">Sarah's Premium Kits This Month:</h4>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center p-2 bg-purple-100 rounded">
+                    <span className="font-medium text-purple-800">Beginning Inventory</span>
+                    <span className="text-purple-900">8 kits at $45 each</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 bg-purple-100 rounded">
+                    <span className="font-medium text-purple-800">Purchase 1 (Day 5)</span>
+                    <span className="text-purple-900">12 kits at $48 each</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 bg-purple-100 rounded">
+                    <span className="font-medium text-purple-800">Purchase 2 (Day 12)</span>
+                    <span className="text-purple-900">10 kits at $52 each</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 bg-purple-200 rounded font-semibold">
+                    <span className="text-purple-900">Total Available</span>
+                    <span className="text-purple-900">30 units × $45-$52</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-lg leading-relaxed">
+                Sarah sold <strong>20 kits</strong> this month at $75 each. But here's the question: 
+                <em>Which 20 kits?</em> The $45 ones? The $48 ones? The $52 ones? Or some combination?
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* The Accounting Solution */}
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-900 flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5" />
+                The Standardized Solution
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-amber-950">
+              <p className="text-lg leading-relaxed">
+                Accounting doesn't leave this question unanswered. Over decades, the accounting profession 
+                developed <strong>four standardized methods</strong> for assigning costs when inventory comes 
+                from different layers. Today, we'll learn the first two.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                  <Badge className="bg-green-600 mb-2">Method 1</Badge>
+                  <h4 className="font-semibold text-green-900 text-lg">FIFO — First-In, First-Out</h4>
+                  <p className="text-green-800 text-sm mt-2">
+                    Assign the oldest costs to COGS first. When you sell products, 
+                    assume they came from your earliest purchases.
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+                  <Badge className="bg-red-600 mb-2">Method 2</Badge>
+                  <h4 className="font-semibold text-red-900 text-lg">LIFO — Last-In, First-Out</h4>
+                  <p className="text-red-800 text-sm mt-2">
+                    Assign the newest costs to COGS first. When you sell products, 
+                    assume they came from your most recent purchases.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-amber-100 p-4 rounded-lg border border-amber-300">
+                <p className="text-amber-900 text-sm">
+                  <strong>Coming in Lesson 4:</strong> We'll add two more methods — 
+                  <strong>Specific Identification</strong> and <strong>Weighted Average</strong> — 
+                  to complete your toolkit.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* The Stakes */}
+          <Card className="border-slate-200 bg-white">
+            <CardHeader>
+              <CardTitle className="text-slate-900 flex items-center gap-2">
+                <DollarSign className="h-5 w-5" />
+                Why This Choice Matters
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Sarah's Premium Kits are rising in cost — $45, then $48, then $52. This rising-price 
+                environment is exactly where FIFO and LIFO produce dramatically different results.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg bg-green-50 border border-green-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingUp className="h-5 w-5 text-green-600" />
+                    <span className="font-semibold text-green-900">FIFO in Rising Costs</span>
+                  </div>
+                  <ul className="text-sm text-green-800 space-y-1">
+                    <li>• Uses older, cheaper costs for COGS</li>
+                    <li>• Lower COGS → Higher gross profit</li>
+                    <li>• Higher profit → Higher taxes</li>
+                    <li>• Higher ending inventory value</li>
+                    <li>• <em>Looks better to investors and lenders</em></li>
+                  </ul>
+                </div>
+
+                <div className="p-4 rounded-lg bg-red-50 border border-red-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingDown className="h-5 w-5 text-red-600" />
+                    <span className="font-semibold text-red-900">LIFO in Rising Costs</span>
+                  </div>
+                  <ul className="text-sm text-red-800 space-y-1">
+                    <li>• Uses newer, expensive costs for COGS</li>
+                    <li>• Higher COGS → Lower gross profit</li>
+                    <li>• Lower profit → Lower taxes</li>
+                    <li>• Lower ending inventory value</li>
+                    <li>• <em>Conserves cash by reducing tax burden</em></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                <p className="text-slate-800">
+                  <strong>The same 20 units sold.</strong> The same 10 units remaining. 
+                  <strong>Two different stories</strong> about profit, taxes, and asset value. 
+                  Which one Sarah tells depends on her goals — and today you'll learn how to calculate both.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Discussion */}
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Turn and Talk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="font-medium text-blue-900 mb-2">
+                Discussion Prompt (2 minutes):
+              </p>
+              <p className="text-blue-800">
+                If you were Sarah, and you had a meeting with potential investors next month, 
+                which method would you instinctively prefer? Why?
+              </p>
+              <div className="bg-white p-3 rounded border border-blue-200 mt-3">
+                <p className="text-sm text-blue-700">
+                  <strong>Hint:</strong> Think about what each method does to your profit numbers. 
+                  Investors want to see growth and profitability. Does one method make those numbers look stronger?
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Comprehension Check */}
+          <ComprehensionCheck
+            title="Check Your Understanding"
+            description="Before diving into the mechanics, make sure you understand why FIFO and LIFO exist."
+            questions={hookQuestions}
+            showExplanations={true}
+            allowRetry={true}
+          />
+        </section>
+      </main>
+
+      <PhaseFooter unit={unit07Data} lesson={lesson03Data} phase={currentPhase} phases={lesson03Phases} />
     </div>
   )
 }
