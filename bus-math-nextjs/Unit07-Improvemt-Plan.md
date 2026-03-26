@@ -185,7 +185,7 @@ Lesson 1 should not try to teach all methods. It should establish why the formul
 
 ## Lesson 2
 
-**Status:** In Progress (Phases 1-3 complete, Phase 4 partial, Phases 5-6 pending)
+**Status:** ✅ Complete (All 6 phases + 3 new interactive components)
 
 ### Proposed title
 
@@ -195,24 +195,26 @@ Lesson 1 should not try to teach all methods. It should establish why the formul
 
 Teach the basic accounting logic of inventory movement before method comparison begins.
 
-### Implementation Progress (Session 2025-03-25)
+### Implementation Progress
 
-**Completed Files:**
+**Completed Files (Session 2025-03-25):**
 - `lesson02/lesson-data.ts` - Rewritten with inventory-focused learning objectives and key concepts
 - `lesson02/phase-1/page.tsx` - Complete rewrite with Sarah's inventory puzzle, uses `inventory-equation.png` infographic, 4-question ComprehensionCheck
 - `lesson02/phase-2/page.tsx` - Complete rewrite with Physical Flow vs Cost Flow concepts, includes `InventoryFlowExplorer.tsx` interactive component
-- `lesson02/InventoryFlowExplorer.tsx` - NEW interactive component where students make 15 sales choosing which layer costs to assign, see live formula updates
-- `lesson02/phase-3/page.tsx` - Complete rewrite with Review → Teach Deeper → Activity structure
-- `lesson02/InventoryTimelineLab.tsx` - NEW interactive component with 6-event timeline walkthrough, students calculate units on hand and inventory value at each step
-- `lesson02/CostAssignmentPractice.tsx` - NEW interactive component with 3 practice scenarios for computing GAFS and COGS/Ending Inventory ranges
+- `lesson02/phase-3/page.tsx` - Complete rewrite with Review → Teach Deeper → Activity structure, uses `InventoryTimelineLab.tsx`
+- `lesson02/phase-4/page.tsx` - Complete rewrite with `CostAssignmentPractice.tsx` component, 3 practice scenarios
+- `lesson02/phase-5/page.tsx` - Complete rewrite with inventory-focused assessment using updated question bank
+- `lesson02/phase-6/page.tsx` - Complete rewrite with inventory reflection prompts and closing activities
 
-**Pending Files:**
-- `lesson02/phase-4/page.tsx` - Needs rewrite to use CostAssignmentPractice component (currently has old depreciation content)
-- `lesson02/phase-5/page.tsx` - Needs rewrite with inventory-focused assessment questions
-- `lesson02/phase-6/page.tsx` - Needs rewrite with inventory reflection prompts
+**New Interactive Components:**
+- `lesson02/InventoryFlowExplorer.tsx` - Interactive component where students make 15 sales choosing which layer costs to assign, see live formula updates
+- `lesson02/InventoryTimelineLab.tsx` - Interactive component with 6-event timeline walkthrough, students calculate units on hand and inventory value at each step
+- `lesson02/CostAssignmentPractice.tsx` - Interactive component with 3 practice scenarios for computing GAFS and COGS/Ending Inventory ranges
 
-**Question Bank Updates Needed:**
-- `src/data/question-banks/unit07-phase5.ts` - Lesson 2 questions still reference depreciation, need to be replaced with inventory flow questions
+**Supporting Assets:**
+- `public/images/inventory-equation.png` - NEW infographic showing the inventory equation visually
+- `src/components/drag-drop-exercises/InventoryFlowDiagram.tsx` - Enhanced with additional flow visualization features
+- `src/data/question-banks/unit07-phase5.ts` - Updated with inventory flow questions (depreciation references removed)
 
 ### Key Design Decisions Made:
 1. Each phase uses Review → Teach Deeper → Activity structure
@@ -220,6 +222,8 @@ Teach the basic accounting logic of inventory movement before method comparison 
 3. No FIFO/LIFO formal rules yet - students learn WHY cost assignment matters, not HOW methods work
 4. Three inventory layers used in Phase 3 timeline (Day 1 @ $18, Day 3 @ $20, Day 15 @ $22)
 5. Phase 4 practice scenarios include varied business contexts (Client Kits, Office Supplies, Electronics)
+6. Phase 5 assessment focuses on formula understanding and cost flow mechanics
+7. Phase 6 reflection connects lesson concepts to upcoming FIFO/LIFO methods in Lesson 3
 
 ### Phase 1: Hook
 
