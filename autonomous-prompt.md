@@ -6,6 +6,8 @@ You are working in:
 
 Your job is to complete exactly **one** lesson rewrite per run, using the correct project-local lesson skill and the unit-specific improvement plan.
 
+For this workflow, an unchecked lesson in `Improvement_plan.md` is **not complete yet**, even if files already exist for that lesson. Do not treat the presence of existing pages, a passing build, or your own judgment that the lesson "looks done" as permission to mark it complete.
+
 ## Required files to read first
 
 1. `/Users/daniel.bodanske/Desktop/Business-Operations/AGENTS.md`
@@ -27,6 +29,7 @@ Then identify the next unfinished lesson and read:
 - Work from the lowest-numbered unit that still has an unchecked lesson.
 - Within that unit, work on the lowest-numbered unchecked lesson.
 - Complete exactly one lesson and stop.
+- Treat the unchecked box as authoritative. Do not skip an unchecked lesson because the current implementation looks strong.
 
 At the start of the run, print which unit and lesson you selected.
 
@@ -69,16 +72,36 @@ For the selected lesson, complete all required student-facing work for that less
 
 The lesson should be complete enough that a junior developer would not need to reinterpret the pedagogy on that lesson.
 
+## Non-Negotiable Completion Rule
+
+You may mark the selected lesson complete in `Improvement_plan.md` only if all of the following are true:
+
+- you made **substantive student-facing changes** for that specific lesson during this run
+- the git diff includes changes inside the selected lesson's folder or directly related lesson resource files
+- the selected lesson is now more aligned with `AGENTS.md`, the unit improvement plan, and the lesson skill than it was before this run
+- `npm run build` passes after your changes
+
+Substantive changes mean pedagogy, content, structure, UX, components, resources, or lesson metadata improvements. Formatting-only edits, import reordering, whitespace cleanup, or merely confirming that the lesson already exists do **not** count.
+
+If you inspect the selected lesson and believe it is already complete, treat that as a tracker inconsistency:
+
+- do **not** check the lesson box
+- do **not** commit a "mark complete" change
+- print a blocker saying the tracker and current code disagree
+- stop the run
+
 ## Required workflow
 
 1. Read the required files.
 2. Inspect the current lesson files before changing anything.
 3. Use the lesson skill as the writing and structure standard.
-4. Make the lesson-specific edits.
-5. Run `npm run build` in:
+4. Identify the specific gaps between the current lesson and the improvement-plan requirements.
+5. Make the lesson-specific edits.
+6. Confirm that the selected lesson now has a substantive diff.
+7. Run `npm run build` in:
    - `/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs`
-6. If the build fails, fix the errors and run `npm run build` again.
-7. Do not stop until the build passes, or until you hit a real blocker that cannot be safely resolved in the selected lesson.
+8. If the build fails, fix the errors and run `npm run build` again.
+9. Do not stop until the build passes, or until you hit a real blocker that cannot be safely resolved in the selected lesson.
 
 The user has explicitly authorized `npm run build` for this autonomous workflow.
 
@@ -103,12 +126,15 @@ After the lesson is complete and the build passes:
 4. Push to remote:
    - `git push origin HEAD`
 
+Before updating `Improvement_plan.md`, run a diff check and verify that the selected lesson has real content changes in this run. If there is no substantive diff for the selected lesson, stop without updating the tracker.
+
 ## Stop conditions
 
 Stop without committing only if:
 
 - the worktree is dirty before you begin
 - you cannot determine the next lesson from `Improvement_plan.md`
+- the selected lesson appears already complete and there is no substantive lesson diff to make in this run
 - the build fails for a clearly unrelated reason you cannot safely fix
 - the lesson would require a broad unit rewrite rather than one-lesson scope
 

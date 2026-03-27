@@ -12,25 +12,36 @@ export default function Phase3Page() {
   const practiceQuestions = [
     {
       id: 'q1',
-      question: 'Sarah receives payment for completing a client project. What type of transaction is this?',
+      question: 'When Sarah receives $2,200 payment from the bakery, which part of the accounting equation increases?',
       answers: [
-        'Revenue transaction - money coming into the business',
-        'Expense transaction - money going out of the business',
-        'Asset transaction - something the business owns',
-        'Liability transaction - something the business owes'
+        'Assets (cash goes up) and equity (owner\'s stake goes up)',
+        'Only assets increase because cash came in',
+        'Liabilities increase because bakery owes her',
+        'Nothing changes until she spends the money'
       ],
-      explanation: 'When Sarah receives payment for services, it\'s revenue - money coming into the business for work completed.'
+      explanation: 'Receiving payment increases cash (an asset) and increases equity because the business is now worth more. Both sides of the equation increase equally, keeping the balance.'
     },
     {
       id: 'q2',
-      question: 'What makes tracking business transactions challenging when using Sarah\'s notebook system?',
+      question: 'Sarah pays $49 for monthly design software. How does the accounting equation respond?',
       answers: [
-        'Hard to categorize transactions and calculate totals accurately',
-        'Notebooks are too expensive to maintain',
-        'Handwriting takes too much time',
-        'Clients prefer digital receipts'
+        'Assets (cash goes down) and equity (expense reduces owner\'s stake)',
+        'Liabilities increase because she now owes money for the software',
+        'Only assets change because cash went out',
+        'Equity increases because software helps the business'
       ],
-      explanation: 'The main challenge is that notebook entries are hard to organize, categorize, and total accurately, especially when preparing taxes or investor reports.'
+      explanation: 'Paying for software decreases cash (an asset) and decreases equity through an expense. Both sides decrease equally, keeping the accounting equation balanced.'
+    },
+    {
+      id: 'q3',
+      question: 'What is the key rule Sarah must understand before building her ledger?',
+      answers: [
+        'Every transaction must keep the accounting equation in balance',
+        'Record revenue first, then expenses later',
+        'Focus only on cash transactions for now',
+        'The equation only matters at year-end'
+      ],
+      explanation: 'The fundamental rule is that every single transaction must keep both sides of the accounting equation equal. This is what makes the ledger trustworthy and self-auditing.'
     }
   ]
 
@@ -45,87 +56,114 @@ export default function Phase3Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Deep Dive into Business Transactions - Textbook Content */}
+          {/* Transactions Move the Equation - Textbook Content */}
           <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Badge className="bg-green-600 text-white">Guided Practice</Badge>
                 <CardTitle className="text-green-800 dark:text-green-200">
-                  Understanding Business Transactions: The Building Blocks of Financial Records
+                  How Transactions Move the Accounting Equation
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="prose prose-green max-w-none">
                 <p className="text-lg leading-relaxed">
-                  Now that you understand Sarah's challenge and the critical importance of financial credibility, 
-                  let's dive deeper into the fundamental building blocks of any professional ledger system: business transactions.
+                  Now that you understand the accounting equation is our scoreboard, let's practice watching business events 
+                  move numbers around that scoreboard. This is how Sarah will build her self-auditing ledger—by 
+                  recording exactly how every transaction keeps her equation in balance.
                 </p>
 
-                <h3 className="text-xl font-semibold text-green-800 mt-8">What is a Business Transaction?</h3>
+                <h3 className="text-xl font-semibold text-green-800 mt-8">Predict Before You See</h3>
                 <p className="text-lg leading-relaxed">
-                  A <strong>business transaction</strong> is any event that involves money and affects the company's financial position. 
-                  Every time Sarah receives payment from a client, pays for software, buys equipment, or covers business expenses, 
-                  she creates a transaction that must be properly recorded and categorized.
+                  Before looking at the answers below, try this: When Sarah receives $2,200 from the bakery for 
+                  website work, which parts of the accounting equation change? Think about it for a moment.
                 </p>
 
-                <p className="text-lg leading-relaxed">
-                  Think about Sarah's chaotic notebook system. She was scribbling down transactions randomly: 
-                  "Got $2,200 from bakery," "Paid $49 for design software," "New laptop $1,500." 
-                  While these notes capture that something happened, they don't provide the organized, categorized information 
-                  that investors and accountants need to understand the business's financial health.
-                </p>
+                <div className="bg-green-100 p-5 rounded-lg border-2 border-green-400 my-6">
+                  <h4 className="text-lg font-semibold text-green-800 mb-4">Transaction 1: Sarah Receives $2,200 from Bakery</h4>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+                      <div>
+                        <p className="font-semibold text-green-900">Cash Goes Up</p>
+                        <p className="text-sm text-green-700">Sarah has $2,200 more in her bank account</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
+                      <div>
+                        <p className="font-semibold text-green-900">Equity Goes Up</p>
+                        <p className="text-sm text-green-700">Sarah's business is now worth $2,200 more</p>
+                      </div>
+                    </div>
+                  </div>
 
-                <h3 className="text-xl font-semibold text-green-800 mt-8">Why Transaction Categorization Matters</h3>
-                <p className="text-lg leading-relaxed">
-                  Professional financial management requires that every transaction be properly categorized. This isn't just about organization—it's about 
-                  creating meaningful financial insights that support business decision-making and demonstrate competence to stakeholders.
-                </p>
-
-                <div className="bg-white p-6 rounded-lg border-2 border-green-300 my-6">
-                  <h4 className="text-lg font-semibold text-green-800 mb-4">Sarah's Real Transaction Examples</h4>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center p-3 bg-green-50 rounded">
-                      <span className="font-medium">Bakery website payment</span>
-                      <span className="text-green-700 font-semibold">+$2,200 Revenue</span>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-red-50 rounded">
-                      <span className="font-medium">Monthly design software</span>
-                      <span className="text-red-700 font-semibold">-$49 Business Expense</span>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-green-50 rounded">
-                      <span className="font-medium">Pet grooming social media setup</span>
-                      <span className="text-green-700 font-semibold">+$650 Revenue</span>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-red-50 rounded">
-                      <span className="font-medium">New laptop for client work</span>
-                      <span className="text-red-700 font-semibold">-$1,500 Business Expense</span>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-green-50 rounded">
-                      <span className="font-medium">Dental office SEO project</span>
-                      <span className="text-green-700 font-semibold">+$1,100 Revenue</span>
-                    </div>
+                  <div className="mt-4 pt-4 border-t-2 border-green-300">
+                    <p className="text-base font-semibold text-green-800">
+                      Both sides of the equation increased by $2,200. The balance stayed equal.
+                    </p>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-green-800 mt-8">The Foundation of Clean Books</h3>
+                <h3 className="text-xl font-semibold text-green-800 mt-8">Try Another One</h3>
                 <p className="text-lg leading-relaxed">
-                  Notice how proper categorization immediately makes Sarah's financial picture clearer. Instead of random notebook scribbles, 
-                  we can see that she earned $3,950 in revenue and spent $1,549 on business expenses, giving her a profit of $2,401 
-                  from just these transactions.
+                  Now predict: When Sarah pays $49 for her monthly design software subscription, what happens to the 
+                  accounting equation? Does it look different from the bakery payment?
+                </p>
+
+                <div className="bg-red-50 p-5 rounded-lg border-2 border-red-300 my-6">
+                  <h4 className="text-lg font-semibold text-red-800 mb-4">Transaction 2: Sarah Pays $49 for Design Software</h4>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+                      <div>
+                        <p className="font-semibold text-red-900">Cash Goes Down</p>
+                        <p className="text-sm text-red-700">Sarah has $49 less in her bank account</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
+                      <div>
+                        <p className="font-semibold text-red-900">Equity Goes Down</p>
+                        <p className="text-sm text-red-700">The expense reduces Sarah's ownership stake by $49</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t-2 border-red-300">
+                    <p className="text-base font-semibold text-red-800">
+                      Both sides of the equation decreased by $49. The balance stayed equal.
+                    </p>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold text-green-800 mt-8">The Pattern You'll See Everywhere</h3>
+                <p className="text-lg leading-relaxed">
+                  Notice the pattern? Every single business event moves at least two parts of the accounting equation, 
+                  and they always move by the same amount. This is why the equation is called "double-entry"—every 
+                  transaction has two equal and opposite effects that keep the scoreboard perfectly balanced.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  This is the foundation of "clean books"—organized, categorized financial records that provide instant insights into 
-                  business performance. When an investor asks about Sarah's revenue or expenses, she can provide clear, accurate answers 
-                  instead of saying "let me dig through my notebooks."
+                  Sarah's notebook system failed because it recorded one-sided notes: "Got $2,200," "Paid $49." 
+                  Those notes don't show the accounting equation impact. A professional ledger shows the full story: 
+                  <strong>Which assets changed? Which liabilities changed? How did equity change?</strong>
                 </p>
 
-                <p className="text-lg leading-relaxed">
-                  But proper transaction categorization is just the beginning. As we'll discover throughout this unit, 
-                  a truly professional ledger system must also ensure mathematical accuracy, provide error-checking capabilities, 
-                  and present information in formats that stakeholders can quickly understand and verify.
-                </p>
+                <div className="bg-blue-100 p-4 rounded-lg border-2 border-blue-300 my-6">
+                  <h4 className="font-semibold text-blue-800 mb-2">Why This Matters for Sarah's Ledger</h4>
+                  <p className="text-sm text-blue-700">
+                    When Sarah builds her self-auditing system in Excel, she'll design it to automatically check that 
+                    every transaction keeps the accounting equation balanced. If someone makes a mistake and the equation 
+                    doesn't balance, the ledger will flag it immediately. That's what makes it "self-auditing"—it 
+                    catches errors by proving the scoreboard still works.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>

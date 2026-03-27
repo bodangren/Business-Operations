@@ -12,36 +12,36 @@ export default function Phase4Page() {
   const independentQuestions = [
     {
       id: 'q1',
-      question: 'Sarah is preparing to meet with a potential angel investor. What would be the investor\'s biggest concern about her current notebook system?',
+      question: 'Sarah must choose between hiring an assistant ($2,500/month) or buying accounting software ($99/month). If she wants to build a self-auditing ledger, which choice supports her goal better?',
       answers: [
-        'The investor cannot verify the accuracy or completeness of financial information',
-        'The notebook pages are not the right size',
-        'Sarah\'s handwriting is difficult to read',
-        'Notebooks are outdated technology'
+        'Software creates a system that checks her own work automatically',
+        'Hiring an assistant means someone else tracks everything',
+        'Either choice works because money isn\'t the issue',
+        'Neither choice solves her notebook chaos problem'
       ],
-      explanation: 'An angel investor needs to verify financial information for due diligence. A notebook system makes it impossible to quickly validate numbers, check calculations, or ensure all transactions are properly recorded and categorized.'
+      explanation: 'Accounting software that Sarah can build and customize gives her a self-auditing system that checks her own work. An assistant can help record transactions but doesn\'t create the automatic verification that investors demand.'
     },
     {
       id: 'q2',
-      question: 'If Sarah\'s business grows from 3 clients to 30 clients, which problem will become most critical with her notebook system?',
+      question: 'Sarah is offered a quick solution: just write summaries in Excel at month-end instead of tracking every transaction. Why would an investor reject this approach?',
       answers: [
-        'The time required to manually calculate totals and find specific transactions will become overwhelming',
-        'She will run out of notebook pages',
-        'Her clients will be unhappy with handwritten invoices',
-        'She will need to hire someone to help with the writing'
+        'Investors need to verify every number, not just see the final totals',
+        'Excel is too complicated for a beginner',
+        'Summaries take too much time to write',
+        'Investors prefer handwritten ledgers'
       ],
-      explanation: 'As transaction volume increases, the manual effort to organize, find, and calculate totals becomes exponentially more time-consuming and error-prone, making it impossible to efficiently manage the business or prepare investor-ready reports.'
+      explanation: 'Investors need to trace every number back to actual transactions to verify accuracy. Month-end summaries cannot be verified or audited, which destroys the "clean books" credibility that Sarah needs.'
     },
     {
       id: 'q3',
-      question: 'What is the most important benefit of a "self-auditing" ledger system for Sarah\'s business credibility?',
+      question: 'What is the most important feature Sarah\'s ledger must have to convince an investor she keeps "clean books"?',
       answers: [
-        'It automatically checks for errors and ensures mathematical accuracy, giving investors confidence in the numbers',
-        'It makes the ledger look more professional and modern',
-        'It reduces the amount of paperwork Sarah needs to store',
-        'It allows Sarah to work faster on client projects'
+        'Automatic checks that prove every transaction keeps the accounting equation balanced',
+        'Colorful charts and dashboards that look impressive',
+        'Hundreds of transactions recorded every day',
+        'Handwritten notes in the margins explaining entries'
       ],
-      explanation: 'A self-auditing system provides automatic error checking and mathematical verification, which is crucial for investor confidence. When numbers can be instantly verified as accurate and complete, it demonstrates professional financial management.'
+      explanation: 'The key feature is automatic verification that every transaction follows the accounting equation rules. Colorful designs look nice, but automatic error-checking is what actually proves the ledger is trustworthy and self-auditing.'
     }
   ]
 
@@ -77,105 +77,169 @@ export default function Phase4Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* The Self-Auditing Ledger Concept - Textbook Content */}
+          {/* Bounded Decision Practice - Textbook Content */}
           <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Badge className="bg-purple-600 text-white">Independent Practice</Badge>
                 <CardTitle className="text-purple-800 dark:text-purple-200">
-                  Designing the Solution: What Makes a Ledger "Self-Auditing"?
+                  Make Business Decisions: What Would You Choose?
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="prose prose-purple max-w-none">
                 <p className="text-lg leading-relaxed">
-                  Now it's time to work independently and think critically about the solution Sarah needs. 
-                  You've learned about her business model, understood the importance of transaction categorization, 
-                  and seen how chaotic record-keeping creates serious business risks. 
-                  In this phase, you'll analyze what it means to build a "self-auditing" ledger system.
-                </p>
-
-                <h3 className="text-xl font-semibold text-purple-800 mt-8">What Does "Self-Auditing" Mean?</h3>
-                <p className="text-lg leading-relaxed">
-                  Remember our driving question: <strong>"How can we design a self-auditing ledger that would convince a potential angel investor we keep 'clean books' from day 1?"</strong> 
-                  But what exactly does "self-auditing" mean in the context of financial record-keeping?
+                  Now it's time to work independently and make some business decisions. Sarah faces real choices 
+                  as she tries to fix her financial chaos. Each decision affects whether she'll be able to 
+                  convince an investor that she keeps "clean books."
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  A self-auditing ledger is a financial system that automatically checks its own accuracy and flags potential errors. 
-                  Instead of relying on manual calculations and hoping for the best, the system continuously validates that:
+                  For each decision below, think carefully about what matters most to building a self-auditing 
+                  ledger that investors will trust. Don't worry about technical details yet—focus on what makes 
+                  a financial system credible and professional.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Decision 1: Staffing vs. Technology */}
+          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+            <CardHeader>
+              <CardTitle className="text-blue-800 dark:text-blue-200">
+                Decision 1: Who Should Track Transactions?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  Sarah is overwhelmed with paperwork. She has two immediate options:
                 </p>
 
-                <div className="bg-white p-6 rounded-lg border-2 border-purple-300 my-6">
-                  <h4 className="text-lg font-semibold text-purple-800 mb-4">Key Features of a Self-Auditing System</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-800 font-bold text-sm">1</div>
-                      <div>
-                        <p className="font-semibold">Mathematical Accuracy</p>
-                        <p className="text-sm text-purple-700">All calculations are performed automatically and verified for correctness</p>
-                      </div>
+                <div className="grid md:grid-cols-2 gap-4 my-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-blue-300">
+                    <h4 className="font-bold text-blue-800 mb-2">Option A: Hire an Assistant</h4>
+                    <p className="text-sm text-blue-700 mb-2">
+                      Pay someone $2,500/month to record all transactions in notebooks, just like Sarah does now.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Cost: $30,000/year | Status: Still manual, still notebook-based
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-800 font-bold text-sm">2</div>
-                      <div>
-                        <p className="font-semibold">Balance Verification</p>
-                        <p className="text-sm text-purple-700">The system ensures that all entries maintain proper accounting balance</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-800 font-bold text-sm">3</div>
-                      <div>
-                        <p className="font-semibold">Error Detection</p>
-                        <p className="text-sm text-purple-700">Automatic identification of inconsistencies, missing data, or unusual patterns</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-800 font-bold text-sm">4</div>
-                      <div>
-                        <p className="font-semibold">Instant Reporting</p>
-                        <p className="text-sm text-purple-700">Real-time generation of financial summaries and investor-ready reports</p>
-                      </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-2">Option B: Build a Ledger System</h4>
+                    <p className="text-sm text-green-700 mb-2">
+                      Spend time learning to build a self-auditing ledger in Excel that checks its own work.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Cost: Time investment | Status: Automatic, verifies every entry
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-purple-800 mt-8">Why Investors Demand Self-Auditing Systems</h3>
+                <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
+                  <h4 className="font-semibold text-blue-800 mb-2">Think Independently:</h4>
+                  <p className="text-sm text-blue-700">
+                    From an investor's perspective, which option builds more trust? Why? If Sarah pays $30,000/year 
+                    for an assistant, what will investors ask about that assistant's work? What would they ask about a 
+                    system that checks itself automatically?
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Decision 2: Recording Frequency */}
+          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+            <CardHeader>
+              <CardTitle className="text-orange-800 dark:text-orange-200">
+                Decision 2: When Should Sarah Record Transactions?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Think about it from an investor's perspective. If you were considering investing $50,000 or $100,000 in Sarah's business, 
-                  you would need confidence that the financial information she provides is accurate and complete. 
-                  A self-auditing ledger provides that confidence in several critical ways:
+                  Sarah wonders if she needs to record every transaction right away, or if month-end summaries would work:
                 </p>
 
+                <div className="grid md:grid-cols-2 gap-4 my-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-orange-300">
+                    <h4 className="font-bold text-orange-800 mb-2">Option A: Month-End Summaries</h4>
+                    <p className="text-sm text-orange-700 mb-2">
+                      Keep doing what she does now: record totals in notebooks at the end of each month when preparing taxes.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Time saved: Yes | Investor verifiable: No
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-2">Option B: Real-Time Recording</h4>
+                    <p className="text-sm text-green-700 mb-2">
+                      Record every transaction immediately in a system that maintains the accounting equation continuously.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Time saved: No | Investor verifiable: Yes, completely
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-orange-100 p-4 rounded-lg border border-orange-300">
+                  <h4 className="font-semibold text-orange-800 mb-2">Think Independently:</h4>
+                  <p className="text-sm text-orange-700">
+                    If an investor asks to see how Sarah calculated her December revenue, which option lets her show 
+                    every single transaction? Which option lets her prove the numbers are correct? Why does that 
+                    matter for "clean books" credibility?
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Decision 3: Verification Strategy */}
+          <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
+            <CardHeader>
+              <CardTitle className="text-green-800 dark:text-green-200">
+                Decision 3: How Will Sarah Prove Her Numbers Are Right?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
-                  <strong>Due Diligence Efficiency:</strong> Instead of spending weeks manually verifying Sarah's notebook entries, 
-                  investors can quickly review system-generated reports that are mathematically guaranteed to be correct.
+                  Sarah realizes that investors won't just trust her word about financial numbers. She needs proof:
                 </p>
 
-                <p className="text-lg leading-relaxed">
-                  <strong>Ongoing Monitoring:</strong> After investment, investors can receive regular updates knowing that the numbers 
-                  are systematically verified, not just hopeful estimates from scattered records.
-                </p>
+                <div className="grid md:grid-cols-2 gap-4 my-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+                    <h4 className="font-bold text-red-800 mb-2">Option A: Manual Math Checks</h4>
+                    <p className="text-sm text-red-700 mb-2">
+                      Add up all numbers by hand on a calculator when investors ask for verification.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Credible to investors: Low | Error-prone: Yes
+                    </div>
+                  </div>
 
-                <p className="text-lg leading-relaxed">
-                  <strong>Professional Standards:</strong> A self-auditing system demonstrates that Sarah understands and implements 
-                  professional business practices, reducing the perceived risk of the investment.
-                </p>
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-2">Option B: Automatic Equation Check</h4>
+                    <p className="text-sm text-green-700 mb-2">
+                      Build a system that automatically proves the accounting equation balances after every entry.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Credible to investors: High | Error-prone: No, it catches errors
+                    </div>
+                  </div>
+                </div>
 
-                <h3 className="text-xl font-semibold text-purple-800 mt-8">The Technology Behind the Solution</h3>
-                <p className="text-lg leading-relaxed">
-                  While the concept of self-auditing might sound complex, the technology is actually quite accessible. 
-                  Throughout this unit, you'll learn to build Sarah's Smart Ledger using Microsoft Excel—a tool that's both 
-                  powerful enough to handle professional financial management and familiar enough for entrepreneurs to use confidently.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  The key is learning to harness Excel's advanced features: structured tables for organization, 
-                  automated formulas for calculations, and conditional formatting for error detection. 
-                  When these features work together, they create a system that's far more reliable and professional 
-                  than any manual record-keeping approach.
-                </p>
+                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
+                  <h4 className="font-semibold text-green-800 mb-2">Think Independently:</h4>
+                  <p className="text-sm text-green-700">
+                    If Sarah uses Option A and makes one tiny math mistake, what happens? If she uses Option B and makes 
+                    a mistake, what happens? Which option shows investors that she takes "clean books" seriously?
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>

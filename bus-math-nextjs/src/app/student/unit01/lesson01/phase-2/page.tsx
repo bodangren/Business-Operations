@@ -13,36 +13,36 @@ export default function Phase2Page() {
   const businessModelQuestions = [
     {
       id: 'q1',
-      question: 'What services does TechStart Solutions offer to clients?',
+      question: 'What is the accounting equation that serves as the scoreboard for all businesses?',
       answers: [
-        'Website design, social media setup, and SEO work',
-        'Only website development',
-        'Software programming and app development',
-        'Digital advertising and email marketing'
+        'Assets = Liabilities + Equity',
+        'Revenue = Expenses + Profit',
+        'Cash = Income - Outflows',
+        'Debits = Credits'
       ],
-      explanation: 'TechStart Solutions offers three main services: website design (like the $2,200 bakery project), social media setup (like the $650 pet grooming project), and SEO work (like the $1,100 dental office project).'
+      explanation: 'The accounting equation Assets = Liabilities + Equity is the fundamental scoreboard that must always stay in balance. It shows what a business owns, what it owes, and what it\'s worth.'
     },
     {
       id: 'q2',
-      question: 'What was Sarah\'s main problem with her record-keeping system?',
+      question: 'In the accounting equation, what does the term "assets" represent?',
       answers: [
-        'She tracked everything by hand in notebooks',
-        'She used too many different software programs',
-        'She forgot to invoice her clients',
-        'She didn\'t understand her business expenses'
+        'Everything of value the business owns or controls',
+        'Money the business has in the bank only',
+        'The amount of profit the business earned',
+        'Debts and loans the business owes to others'
       ],
-      explanation: 'Sarah was tracking every payment, invoice, and subscription by scribbling it down in notebooks, thinking she could keep it all straight in her head, which quickly became overwhelming.'
+      explanation: 'Assets include everything of value that the business owns or controls: cash, equipment, supplies, and anything else that will bring future benefit to the company.'
     },
     {
       id: 'q3',
-      question: 'Why is having "clean books" essential for investor confidence?',
+      question: 'Why must the accounting equation always stay in balance?',
       answers: [
-        'It shows the business owner is organized and trustworthy',
-        'Investors want to see neat handwriting',
-        'Clean books are required by law',
-        'It makes the business look more profitable'
+        'Every business transaction keeps both sides of the equation equal',
+        'It\'s a requirement for getting a business license',
+        'Only profitable businesses use the accounting equation',
+        'The equation is optional for small businesses'
       ],
-      explanation: 'Clean books demonstrate that the business owner is organized, detail-oriented, and have established proper financial controls, which gives investors confidence in the business\'s credibility and management.'
+      explanation: 'The accounting equation must stay in balance because every transaction affects both sides equally. This ensures that every piece of financial information fits together correctly, which is essential for investor confidence.'
     }
   ]
 
@@ -78,81 +78,86 @@ export default function Phase2Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Complete Sarah's Story - Textbook Content */}
+          {/* The Accounting Equation: Our Unit Scoreboard - Textbook Content */}
           <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <Badge className="bg-blue-600 text-white">Core Concepts</Badge>
+                <Badge className="bg-blue-600 text-white">Core Concept</Badge>
                 <CardTitle className="text-blue-800 dark:text-blue-200">
-                  The Foundation of Business Success: Building Trust Through Financial Systems
+                  The Accounting Equation: Your Unit Scoreboard
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="prose prose-blue max-w-none">
                 <p className="text-lg leading-relaxed">
-                  Welcome to the world of business operations! It's a place where a great idea needs a great plan to succeed. 
-                  This unit is all about building one of the most important parts of that plan: a trustworthy system for managing money. 
-                  To guide us, we'll follow the story of a new entrepreneur named Sarah Chen, the founder of a digital marketing startup called TechStart Solutions.
+                  Sarah has a great business idea and plenty of client work, but she's drowning in financial chaos. 
+                  Before she can build her Smart Ledger, she needs to understand the fundamental scoreboard that runs every business in the world.
                 </p>
 
-                <h3 className="text-xl font-semibold text-blue-800 mt-8">Sarah's Initial Success</h3>
+                <h3 className="text-xl font-semibold text-blue-800 mt-8">The Universal Rule of Business</h3>
                 <p className="text-lg leading-relaxed">
-                  When Sarah first launched her company, the feeling was incredible. She was passionate and talented, and clients noticed. 
-                  She landed three projects back-to-back: a new website for a local bakery worth $2,200, a social media setup for a pet grooming service for $650, 
-                  and search engine optimization (SEO) work for a dental office for $1,100. The money was coming in, and it felt like her dream was becoming a reality.
+                  All business, from the smallest startup to the largest corporation, operates under one unbreakable rule. 
+                  It's a rule of perfect balance, and it's the foundation of all financial tracking. This is the 
+                  <strong>Accounting Equation</strong>:
                 </p>
 
-                <div className="bg-white p-6 rounded-lg border-2 border-blue-300 my-6">
-                  <h4 className="text-lg font-semibold text-blue-800 mb-4">TechStart Solutions' Services & Revenue</h4>
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="text-center p-4 bg-green-50 rounded-lg border border-green-200">
-                      <h5 className="font-semibold text-green-800">Website Design</h5>
-                      <p className="text-sm text-green-600">Local Bakery Project</p>
-                      <p className="text-2xl font-bold text-green-800">$2,200</p>
-                    </div>
-                    <div className="text-center p-4 bg-orange-50 rounded-lg border border-orange-200">
-                      <h5 className="font-semibold text-orange-800">Social Media Setup</h5>
-                      <p className="text-sm text-orange-600">Pet Grooming Service</p>
-                      <p className="text-2xl font-bold text-orange-800">$650</p>
-                    </div>
-                    <div className="text-center p-4 bg-purple-50 rounded-lg border border-purple-200">
-                      <h5 className="font-semibold text-purple-800">SEO Optimization</h5>
-                      <p className="text-sm text-purple-600">Dental Office Project</p>
-                      <p className="text-2xl font-bold text-purple-800">$1,100</p>
-                    </div>
+                <div className="bg-white p-6 rounded-lg border-4 border-blue-400 my-6 text-center">
+                  <div className="text-3xl font-bold text-blue-800 mb-4">
+                    ASSETS = LIABILITIES + EQUITY
                   </div>
-                  <div className="text-center mt-4 p-3 bg-blue-100 rounded-lg">
-                    <p className="text-lg font-bold text-blue-800">Total Revenue: $3,950</p>
+                  <p className="text-blue-700">
+                    Everything a business owns = Everything it owes + The owner's stake
+                  </p>
+                </div>
+
+                <h3 className="text-xl font-semibold text-blue-800 mt-8">Breaking Down the Equation</h3>
+                <p className="text-lg leading-relaxed">
+                  Think of this equation as a scoreboard that tells the story of any business at any moment in time:
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-4 my-6">
+                  <div className="bg-white p-4 rounded-lg border-2 border-blue-300">
+                    <h4 className="font-bold text-blue-800 mb-2">ASSETS</h4>
+                    <p className="text-sm text-blue-700">
+                      Everything the business owns or controls: cash, equipment, supplies, money customers owe
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-purple-300">
+                    <h4 className="font-bold text-purple-800 mb-2">LIABILITIES</h4>
+                    <p className="text-sm text-purple-700">
+                      Everything the business owes to others: loans, unpaid bills, money owed to suppliers
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-2">EQUITY</h4>
+                    <p className="text-sm text-green-700">
+                      The owner's stake in the business: what's left after paying all debts
+                    </p>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-blue-800 mt-8">The Hidden Crisis</h3>
+                <h3 className="text-xl font-semibold text-blue-800 mt-8">Why This Scoreboard Matters</h3>
                 <p className="text-lg leading-relaxed">
-                  But as Sarah herself admits, there was chaos behind the curtain. While she was focused on delivering great work for her clients, 
-                  her own business records were a disaster. She was tracking every payment, every invoice, and every small software subscription by 
-                  scribbling it down in a notebook. She thought she could keep it all straight in her head, but she quickly felt overwhelmed.
+                  This equation must stay in balance with <strong>every single transaction</strong>. When Sarah receives payment from the bakery, 
+                  her cash (an asset) goes up, and her equity goes up by the same amount. When she pays for design software, 
+                  her cash goes down, but that payment creates an expense that reduces equity. The equation always stays equal.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  The real wake-up call came when she started thinking about taxes. Looking at her stack of notebooks, a wave of panic hit her. 
-                  How could she possibly pull accurate numbers from that mess? If an accountant asked for a specific receipt, would it take her a week to find it? 
-                  She realized her system wasn't just messy; it was a huge risk to her business.
+                  This is exactly why investors, lenders, and banks demand to see financial records. They want to know: 
+                  <strong>Does this business actually understand its own scoreboard?</strong> Sarah's notebook system makes this impossible. 
+                  She can't quickly tell anyone what her assets, liabilities, or equity actually are because her records are scattered and unorganized.
                 </p>
 
-                <h3 className="text-xl font-semibold text-blue-800 mt-8">Our Challenge</h3>
-                <p className="text-lg leading-relaxed">
-                  This is the exact challenge we are taking on. Our driving question for this entire unit is this: 
-                  <strong>"How can we design a self-auditing ledger that would convince a potential angel investor we keep 'clean books' from day 1?"</strong> 
-                  Sarah's story is our case study. We are going to step in and help her build the system she needs.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  Before you can build, however, you must understand the fundamental language of business. The disconnect between Sarah's operational success 
-                  and her financial chaos illustrates a critical truth: even the most talented entrepreneurs can face serious business risks without proper 
-                  financial systems. This is why investors, lenders, and business partners all look for evidence of "clean books" before they're willing 
-                  to trust their money with a business.
-                </p>
+                <div className="bg-blue-100 p-4 rounded-lg border-2 border-blue-300 my-6">
+                  <h4 className="font-semibold text-blue-800 mb-2">Why This Matters to Investors</h4>
+                  <p className="text-sm text-blue-700">
+                    An angel investor looking at Sarah's business would immediately ask: "What are your assets? What are your liabilities? 
+                    What's your equity?" If Sarah has to dig through notebooks and guess at numbers, that investor walks away. 
+                    Clean books mean instant answers to the accounting equation—proof that a business truly understands its financial position.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>

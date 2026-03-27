@@ -5,6 +5,7 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 ## Status Rules
 
 - A lesson is complete only after its student-facing files are updated, `npm run build` passes, and the changes are committed and pushed.
+- An unchecked lesson is incomplete for this workflow even if the current code already looks strong. Do not check a lesson without a substantive diff for that lesson in the current run.
 - A unit is finished only when all 10 lesson boxes are checked.
 - The autonomous runner should complete exactly one lesson per run and then update this file.
 
@@ -21,7 +22,7 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 - Notes: investor-trust and clean-books foundation
 
 Lessons:
-- [x] Lesson 01
+- [ ] Lesson 01
 - [ ] Lesson 02
 - [ ] Lesson 03
 - [ ] Lesson 04
