@@ -12,55 +12,55 @@ export default function Phase4Page() {
   const independentQuestions = [
     {
       id: 'q1',
-      question: 'Sarah must choose between hiring an assistant ($2,500/month) or buying accounting software ($99/month). If she wants to build a self-auditing ledger, which choice supports her goal better?',
+      question: 'When Sarah hires an assistant instead of building a professional ledger system, what\'s the biggest problem from an investor\'s perspective?',
       answers: [
-        'Software creates a system that checks her own work automatically',
-        'Hiring an assistant means someone else tracks everything',
-        'Either choice works because money isn\'t the issue',
-        'Neither choice solves her notebook chaos problem'
+        'An assistant doesn\'t provide automatic verification that the accounting equation stays balanced',
+        'An assistant costs too much money',
+        'An assistant can\'t write fast enough',
+        'An assistant doesn\'t know Excel formulas'
       ],
-      explanation: 'Accounting software that Sarah can build and customize gives her a self-auditing system that checks her own work. An assistant can help record transactions but doesn\'t create the automatic verification that investors demand.'
+      explanation: 'Investors care about automatic checks and verification systems. An assistant can record transactions, but doesn\'t create the self-auditing proof that every transaction keeps the accounting equation balanced—that\'s what "clean books" really means.'
     },
     {
       id: 'q2',
-      question: 'Sarah is offered a quick solution: just write summaries in Excel at month-end instead of tracking every transaction. Why would an investor reject this approach?',
+      question: 'Sarah considers updating her accounting equation only at month-end to save time. Why would this fail the investor trust test?',
       answers: [
-        'Investors need to verify every number, not just see the final totals',
-        'Excel is too complicated for a beginner',
-        'Summaries take too much time to write',
-        'Investors prefer handwritten ledgers'
+        'Investors need to see current financial position anytime, not just once per month',
+        'Month-end calculations take too long',
+        'Updating the equation monthly is illegal',
+        'Investors only care about year-end totals'
       ],
-      explanation: 'Investors need to trace every number back to actual transactions to verify accuracy. Month-end summaries cannot be verified or audited, which destroys the "clean books" credibility that Sarah needs.'
+      explanation: 'The accounting equation is a real-time scoreboard. Investors ask "What\'s your equity right now?" and expect an immediate answer. Month-end updates mean Sarah can\'t tell anyone her financial position between updates—exactly the problem her notebook system already has.'
     },
     {
       id: 'q3',
-      question: 'What is the most important feature Sarah\'s ledger must have to convince an investor she keeps "clean books"?',
+      question: 'What does the accounting equation ASSETS = LIABILITIES + EQUITY actually track for Sarah?',
       answers: [
-        'Automatic checks that prove every transaction keeps the accounting equation balanced',
-        'Colorful charts and dashboards that look impressive',
-        'Hundreds of transactions recorded every day',
-        'Handwritten notes in the margins explaining entries'
+        'Everything Sarah owns, everything she owes, and what the business is worth at any moment',
+        'Just Sarah\'s bank account balance and monthly expenses',
+        'Only the loans Sarah has taken from banks',
+        'The profit Sarah earned this month only'
       ],
-      explanation: 'The key feature is automatic verification that every transaction follows the accounting equation rules. Colorful designs look nice, but automatic error-checking is what actually proves the ledger is trustworthy and self-auditing.'
+      explanation: 'The accounting equation is the complete scoreboard: assets (what she owns), liabilities (what she owes), and equity (what\'s left for the owner). This must stay balanced after every single transaction—that\'s why automatic equation checking is essential for investor confidence.'
     }
   ]
 
   const scenarioSentences = [
     {
       id: 'scenario1',
-      text: "When Sarah's potential angel investor asks to see her financial records, the biggest risk is that the notebook system cannot provide {blank} and organized financial information.",
-      answer: 'accurate',
-      hint: "Think about what investors need to see"
+      text: "When Sarah's potential angel investor asks 'What are your assets, liabilities, and equity?', the biggest risk is that her notebook system cannot provide {blank} to that question instantly.",
+      answer: 'an answer',
+      hint: "Think about the accounting equation as a scoreboard"
     },
     {
       id: 'scenario2',
-      text: "Sarah realizes that as her business grows, she needs a system that can automatically categorize transactions and {blank} mathematical accuracy.",
-      answer: 'verify',
-      hint: "What would a smart ledger do automatically?"
+      text: "Sarah realizes that as her business grows, she needs a system that can automatically update the accounting equation so she always knows what she owns, what she owes, and what her business is {blank}.",
+      answer: 'worth',
+      hint: "What does equity represent in the accounting equation?"
     },
     {
       id: 'scenario3',
-      text: "The driving question for this unit asks how to design a {blank} ledger that would convince investors that Sarah keeps clean books from day 1.",
+      text: "The driving question for this unit asks how to design a {blank} ledger that would convince investors that Sarah keeps her accounting equation balanced from day 1.",
       answer: 'self-auditing',
       hint: "This is our main unit goal"
     }
@@ -104,47 +104,172 @@ export default function Phase4Page() {
             </CardContent>
           </Card>
 
-          {/* Decision 1: Staffing vs. Technology */}
+          {/* Scoreboard Reminder */}
           <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
             <CardHeader>
-              <CardTitle className="text-blue-800 dark:text-blue-200">
-                Decision 1: Who Should Track Transactions?
+              <div className="flex items-center gap-3">
+                <Badge className="bg-blue-600 text-white">Unit Scoreboard</Badge>
+                <CardTitle className="text-blue-800 dark:text-blue-200">
+                  Remember: The Accounting Equation
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="prose prose-blue max-w-none">
+                <p className="text-lg leading-relaxed">
+                  Every decision Sarah makes must support her ability to keep this scoreboard accurate and balanced:
+                </p>
+                <div className="bg-white p-6 rounded-lg border-4 border-blue-400 my-6 text-center">
+                  <div className="text-3xl font-bold text-blue-800 mb-4">
+                    ASSETS = LIABILITIES + EQUITY
+                  </div>
+                  <p className="text-blue-700">
+                    Every transaction must keep both sides equal
+                  </p>
+                </div>
+                <p className="text-base leading-relaxed">
+                  When Sarah makes decisions about how to track her finances, she's really deciding how she'll maintain this equation. 
+                  Think about how each option below affects her ability to know what her assets, liabilities, and equity actually are.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Decision 1: Staffing vs. Technology */}
+          <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
+            <CardHeader>
+              <CardTitle className="text-purple-800 dark:text-purple-200">
+                Decision 1: What System Best Supports the Accounting Equation?
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Sarah is overwhelmed with paperwork. She has two immediate options:
+                  Sarah is overwhelmed with paperwork. She has two immediate options for improving her system:
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 my-4">
-                  <div className="bg-white p-4 rounded-lg border-2 border-blue-300">
-                    <h4 className="font-bold text-blue-800 mb-2">Option A: Hire an Assistant</h4>
-                    <p className="text-sm text-blue-700 mb-2">
+                  <div className="bg-white p-4 rounded-lg border-2 border-purple-300">
+                    <h4 className="font-bold text-purple-800 mb-2">Option A: Hire an Assistant</h4>
+                    <p className="text-sm text-purple-700 mb-2">
                       Pay someone $2,500/month to record all transactions in notebooks, just like Sarah does now.
                     </p>
                     <div className="text-xs text-gray-600">
-                      Cost: $30,000/year | Status: Still manual, still notebook-based
+                      Cost: $30,000/year | System: Still manual, still notebook-based
                     </div>
                   </div>
 
                   <div className="bg-white p-4 rounded-lg border-2 border-green-300">
-                    <h4 className="font-bold text-green-800 mb-2">Option B: Build a Ledger System</h4>
+                    <h4 className="font-bold text-green-800 mb-2">Option B: Build a Professional Ledger</h4>
                     <p className="text-sm text-green-700 mb-2">
-                      Spend time learning to build a self-auditing ledger in Excel that checks its own work.
+                      Spend time building a system that automatically checks whether every transaction keeps the accounting equation balanced.
                     </p>
                     <div className="text-xs text-gray-600">
-                      Cost: Time investment | Status: Automatic, verifies every entry
+                      Cost: Time investment | System: Automatic, verifies equation balance
+                    </div>
+                </div>
+                </div>
+
+                <div className="bg-purple-100 p-4 rounded-lg border border-purple-300">
+                  <h4 className="font-semibold text-purple-800 mb-2">Think Independently:</h4>
+                  <p className="text-sm text-purple-700">
+                    From an investor's perspective, which option makes it easier to see the accounting equation at any moment? 
+                    If Sarah pays $30,000/year for an assistant, can she instantly tell you her assets, liabilities, and equity? 
+                    What would investors ask about each option?
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Decision 2: Recording Frequency */}
+          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+            <CardHeader>
+              <CardTitle className="text-orange-800 dark:text-orange-200">
+                Decision 2: When Should Sarah Update Her Scoreboard?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  Sarah wonders if she needs to update the accounting equation after every transaction, or if month-end updates would work:
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-4 my-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-orange-300">
+                    <h4 className="font-bold text-orange-800 mb-2">Option A: Month-End Updates</h4>
+                    <p className="text-sm text-orange-700 mb-2">
+                      Keep doing what she does now: update the accounting equation at the end of each month when preparing taxes.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Time saved: Yes | Know your equation right now? No
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-2">Option B: Real-Time Updates</h4>
+                    <p className="text-sm text-green-700 mb-2">
+                      Update the accounting equation after every transaction so it's always current and accurate.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Time saved: No | Know your equation right now? Yes, always
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-800 mb-2">Think Independently:</h4>
-                  <p className="text-sm text-blue-700">
-                    From an investor's perspective, which option builds more trust? Why? If Sarah pays $30,000/year 
-                    for an assistant, what will investors ask about that assistant's work? What would they ask about a 
-                    system that checks itself automatically?
+                <div className="bg-orange-100 p-4 rounded-lg border border-orange-300">
+                  <h4 className="font-semibold text-orange-800 mb-2">Think Independently:</h4>
+                  <p className="text-sm text-orange-700">
+                    If an investor asks "What's your equity right now?", which option lets Sarah answer? 
+                    If Sarah waits until month-end to update the equation, what risks does she create for business decisions? 
+                    Why does maintaining a current scoreboard matter for investor confidence?
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Decision 3: Verification Strategy */}
+          <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
+            <CardHeader>
+              <CardTitle className="text-green-800 dark:text-green-200">
+                Decision 3: How Will Sarah Prove Her Equation Stays Balanced?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  Sarah realizes that investors need proof that her accounting equation actually works—they won't just trust her word:
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-4 my-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+                    <h4 className="font-bold text-red-800 mb-2">Option A: Manual Math Checks</h4>
+                    <p className="text-sm text-red-700 mb-2">
+                      Add up all accounts by hand with a calculator when investors ask for verification.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Proves equation balances? Maybe, when you remember to check | Catches mistakes? No
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-2">Option B: Automatic Equation Check</h4>
+                    <p className="text-sm text-green-700 mb-2">
+                      Build a system that automatically proves the accounting equation balances after every entry.
+                    </p>
+                    <div className="text-xs text-gray-600">
+                      Proves equation balances? Yes, every time | Catches mistakes? Yes, immediately
+                    </div>
+                </div>
+                </div>
+
+                <div className="bg-green-100 p-4 rounded-lg border border-green-300">
+                  <h4 className="font-semibold text-green-800 mb-2">Think Independently:</h4>
+                  <p className="text-sm text-green-700">
+                    If Sarah uses Option A and makes one tiny math mistake, what happens? If she uses Option B and makes 
+                    a mistake, what happens? Which option shows investors that Sarah understands why the accounting equation matters 
+                    for trustworthy financial records?
                   </p>
                 </div>
               </div>
