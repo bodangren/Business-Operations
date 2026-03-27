@@ -13,7 +13,7 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 
 - Planning docs ready: Units 01-08
 - Units finished: 0/8
-- Next target: Unit 01 Lesson 02
+- Next target: Unit 01 Lesson 03
 
 ## Unit 01
 
