@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { BusinessTransactionCategorization } from "@/components/drag-drop/BusinessTransactionCategorization"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 import { lesson01Data, unit01Data, lesson01Phases } from "../lesson-data"
 
@@ -194,18 +193,60 @@ export default function Phase2Page() {
             </CardContent>
           </Card>
 
-          {/* Business Transaction Categorization Exercise */}
+          {/* Quick Check: What Moves the Scoreboard */}
           <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
             <CardHeader>
               <CardTitle className="text-green-800 dark:text-green-200">
-                Interactive Exercise: Categorize TechStart's Business Transactions
+                Quick Check: Recognizing Transaction Types
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg mb-4">
-                Practice identifying and categorizing the types of business transactions that Sarah needs to track in her Smart Ledger:
-              </p>
-              <BusinessTransactionCategorization />
+              <div className="prose prose-green max-w-none">
+                <p className="text-lg leading-relaxed">
+                  Sarah's business will have many types of transactions. Before we track them, let's make sure 
+                  we can recognize what we're looking at. Each type affects the accounting equation differently.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6 my-6">
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                    <h4 className="font-bold text-green-800 mb-3">Transactions That INCREASE Both Sides</h4>
+                    <ul className="text-sm space-y-2 text-green-700">
+                      <li>• <strong>Revenue earned and received:</strong> Cash increases, equity increases</li>
+                      <li>• <strong>Borrowing money:</strong> Cash increases, liabilities increase</li>
+                      <li>• <strong>Owner investment:</strong> Cash increases, equity increases</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-white p-4 rounded-lg border-2 border-blue-300">
+                    <h4 className="font-bold text-blue-800 mb-3">Transactions That DECREASE Both Sides</h4>
+                    <ul className="text-sm space-y-2 text-blue-700">
+                      <li>• <strong>Expense paid:</strong> Cash decreases, equity decreases</li>
+                      <li>• <strong>Paying off loan:</strong> Cash decreases, liabilities decrease</li>
+                      <li>• <strong>Owner withdrawal:</strong> Cash decreases, equity decreases</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg border-2 border-purple-300">
+                  <h4 className="font-bold text-purple-800 mb-3">Transactions That Trade One Asset for Another</h4>
+                  <ul className="text-sm space-y-2 text-purple-700">
+                    <li>• <strong>Buying equipment with cash:</strong> Equipment increases, cash decreases</li>
+                    <li>• <strong>Collecting accounts receivable:</strong> Cash increases, receivables decrease</li>
+                  </ul>
+                  <p className="text-sm text-purple-600 mt-2">
+                    Note: Equity and liabilities don't change in these transactions — only assets trade places.
+                  </p>
+                </div>
+
+                <div className="bg-blue-100 p-4 rounded-lg border-2 border-blue-300 my-6">
+                  <h4 className="font-semibold text-blue-800 mb-2">Why This Matters to Sarah</h4>
+                  <p className="text-sm text-blue-700">
+                    Sarah needs to track every transaction type correctly. If she misrecords a transaction, her accounting 
+                    equation won't balance. That's exactly the kind of mistake that destroys investor confidence. Her 
+                    Smart Ledger must catch these errors automatically.
+                  </p>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
