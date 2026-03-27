@@ -1,29 +1,29 @@
 // Unit 1, Lesson 2 data - extracted from MCP curriculum database
 export const lesson02Data = {
   id: "mds5t7qqo8d6q2al4v",
-  title: "Core Concepts: The Accounting Equation",
+  title: "Classifying Transactions: How Business Events Change the Accounting Equation",
   sequence: 2,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
-    "Apply accounting equation (Assets = Liabilities + Equity) to business transactions",
-    "Identify transaction effects on each component of the accounting equation",
-    "Explain the universal nature of the accounting equation across all businesses",
-    "Connect accounting equation principles to Sarah's TechStart Solutions context"
+    "Classify business transactions into assets, liabilities, and equity",
+    "Explain how each transaction affects the accounting equation components",
+    "Apply the accounting equation to verify transaction balance",
+    "Connect transaction analysis to Sarah's TechStart Solutions business events"
   ],
   keyConcepts: [
-    "Accounting equation (Assets = Liabilities + Equity)",
-    "Transaction analysis and effects on equation components",
-    "Asset, liability, and equity identification",
-    "Mathematical balance verification"
+    "Transaction classification into equation components",
+    "Double-effect principle (every transaction affects at least two components)",
+    "Asset, liability, and equity identification in business events",
+    "Equation balance verification after transactions"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Direct instruction with visual aids",
-    "Guided practice with TechStart scenarios",
-    "Partner verification activities",
-    "Real-world context application"
+    "Direct instruction with concrete transaction examples",
+    "Guided practice with TechStart startup transactions",
+    "Algorithmic deliberate practice for fluency",
+    "MCQ exit ticket on understanding"
   ],
-  rationale: "This lesson establishes the fundamental accounting equation that forms the foundation for all ledger work and financial statement preparation.",
+  rationale: "This lesson teaches students to classify transactions and show how business events move the accounting equation, building fluency before introducing debits and credits.",
   status: "Draft"
 }
 
@@ -39,42 +39,42 @@ export const lesson02Phases = [
     id: "phase02-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Explore the accounting equation through Sarah's business balance and discover why every transaction must balance",
-    // component: "TAccountsVisualization" (id: mdsie6qfkrdny3sqlyf) - To visually introduce the concept of balance in the accounting equation.
+    description: "Reactivate accounting equation and discover the challenge: how do we track what happens when Sarah's business has complex events?",
+    // component: ComprehensionCheck - Quick check on equation recall and problem-framing
   },
   {
     id: "phase02-intro", 
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn the universal accounting equation and understand how it applies to all business transactions",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the core concepts of the accounting equation.
+    description: "Learn to classify concrete transactions into assets, liabilities, and equity using Sarah's real business events",
+    // component: AccountCategorization - Guided classification with representational supports
   },
   {
     id: "phase02-guided",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice identifying how TechStart transactions affect assets, liabilities, and equity components",
-    // component: "AccountCategorization" (id: 1753927567045ixw1v9vdp) - Students can drag and drop accounts into the accounting equation categories.
+    description: "Practice analyzing transaction effects with reduced scaffolding and move toward accounting-style representation",
+    // component: ComprehensionCheck + structured practice on transaction analysis
   },
   {
     id: "phase02-independent",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Analyze complex transactions independently and verify mathematical balance",
-    // component: "TransactionJournal" (id: mdsirjnug8tn2wqhrjt) - Students can practice creating full transactions and ensuring they balance.
+    description: "Algorithmic deliberate practice: classify and verify equation balance for varied transactions until mastery",
+    // component: Deliberate practice component with transaction variation and automatic checking
   },
   {
     id: "phase02-assessment",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on accounting equation application and transaction analysis",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess understanding of the accounting equation and transaction analysis.
+    description: "MCQ exit ticket on transaction classification, equation effects, and common misconceptions",
+    // component: ComprehensionCheck - Short aligned assessment on knowledge and understanding
   },
   {
     id: "phase02-closing",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the accounting equation's role in maintaining financial accuracy and preview debit/credit rules",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the importance of the accounting equation.
+    description: "Reflect on transaction classification skills and preview how debits and credits formalize this work",
+    // component: ReflectionJournal - Consolidation and preview
   }
 ]

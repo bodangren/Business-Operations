@@ -18,13 +18,13 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 ## Unit 01
 
 - Plan: [bus-math-nextjs/Unit01-Improvement-Plan.md](bus-math-nextjs/Unit01-Improvement-Plan.md)
-- Status: `in progress`
-- Notes: investor-trust and clean-books foundation
+  - Status: `in progress`
+  - Notes: investor-trust and clean-books foundation
 
-Lessons:
-- [ ] Lesson 01
-- [ ] Lesson 02
-- [ ] Lesson 03
+  Lessons:
+  - [ ] Lesson 01
+  - [x] Lesson 02
+  - [ ] Lesson 03
 - [ ] Lesson 04
 - [ ] Lesson 05
 - [ ] Lesson 06
