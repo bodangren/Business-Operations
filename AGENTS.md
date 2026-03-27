@@ -575,6 +575,46 @@ Match components to specific lesson objectives from teacher lesson plans:
 4. **Write Educational Content**: 8th grade reading level with Sarah's TechStart context
 5. **Document Updates**: Record new component usage in MCP server for future reference
 
+## Project-Local Lesson Skills
+
+Base lesson standards live in this `AGENTS.md` file. Specialized lesson behavior lives in the project-local skill files under `agents/skills/`.
+
+### Lesson-writing skills in this repository
+
+- `agents/skills/launch-lesson/SKILL.md`
+- `agents/skills/accounting-principles/SKILL.md`
+- `agents/skills/excel-lessons/SKILL.md`
+- `agents/skills/project-rehearsal/SKILL.md`
+- `agents/skills/group-project/SKILL.md`
+
+### Default lesson-archetype map
+
+Use this map unless a unit improvement plan explicitly says otherwise:
+
+- **Lesson 01**: `launch-lesson`
+- **Lessons 02-03**: `accounting-principles`
+- **Lesson 04**: decide explicitly between `accounting-principles` and `excel-lessons`; do not assume
+- **Lessons 05-06**: `excel-lessons` unless the unit plan says concept work must continue longer
+- **Lesson 07**: `project-rehearsal`
+- **Lessons 08-10**: `group-project`
+
+### Important interpretation rule
+
+`accounting-principles` is currently the default textbook-first conceptual/procedural skill for any non-Excel technical lesson, even in units that are not strictly accounting-only. Use it for statistics, payroll reasoning, financial-statement logic, or other non-Excel concept lessons until a more specific conceptual skill exists.
+
+### Project lesson exception
+
+- Lessons using `launch-lesson`, `accounting-principles`, `excel-lessons`, and `project-rehearsal` should follow the normal six-phase student page structure unless the unit plan says otherwise.
+- Lessons using `group-project` should default to **milestone-style project pages**, not six-phase textbook pages, unless the unit plan explicitly requires a different structure.
+
+### Unit execution documents
+
+The files `bus-math-nextjs/Unit01-Improvement-Plan.md` through `bus-math-nextjs/Unit08-Improvement-Plan.md` are execution documents for junior developers.
+
+- Treat them as the source of truth for lesson-by-lesson skill selection.
+- If a unit improvement plan disagrees with the default lesson-number map above, follow the unit improvement plan.
+- Do not change a lesson's archetype casually; update the improvement plan first.
+
 ## Important Notes
 - The project includes both modern Next.js components and legacy HTML files
 - Interactive elements rely heavily on React state and drag-drop libraries
