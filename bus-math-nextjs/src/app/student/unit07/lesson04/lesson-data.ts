@@ -1,28 +1,32 @@
-// Asset & Inventory Tracker, Lesson 4 data - extracted from MCP curriculum database
+// Asset & Inventory Tracker, Lesson 4 data - Specific Identification and Weighted Average
 export const lesson04Data = {
-  id: "mds5x99o393t4h40nm3",
-  title: "Specific Identification and Weighted Average in Simple Excel",
+  id: "lesson04-specific-weighted",
+  title: "Specific Identification and Weighted Average",
   sequence: 4,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Build structured Excel Tables to track inventory purchases and sales",
-    "Implement FIFO and LIFO layer calculations using array formulas",
-    "Use structured references and XLOOKUP to automate COGS and Ending Inventory",
-    "Validate models with error checks and edge cases"
+    "Identify business contexts where Specific Identification is the appropriate inventory method",
+    "Identify business contexts where Weighted Average is the appropriate inventory method",
+    "Calculate Cost of Goods Sold and Ending Inventory using Specific Identification",
+    "Calculate Cost of Goods Sold and Ending Inventory using Weighted Average",
+    "Compare all four inventory methods (FIFO, LIFO, Specific ID, Weighted Average) and explain when each is appropriate"
   ],
   keyConcepts: [
-    "Inventory layers and cost flow assumptions",
-    "Structured references with Excel Tables",
-    "XLOOKUP and SUMPRODUCT for valuation",
-    "Professional validation and error checking"
+    "Specific Identification: tracking exact cost of each unique item",
+    "Weighted Average: pooling costs across similar items",
+    "Business fit: matching method to inventory type",
+    "Rounding rules for weighted average calculations",
+    "Method comparison matrix: FIFO, LIFO, Specific ID, Weighted Average"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Hands-on Excel tutorial with TechStart inventory scenarios",
-    "Guided practice building a FIFO/LIFO valuation engine",
-    "Interactive validation using business error-checking patterns"
+    "Start with business fit before arithmetic",
+    "Teach one new method at a time",
+    "Use fixed, teacher-controlled scenarios",
+    "Show one fully worked example before independent work",
+    "Four-method comparison matrix after both methods are understood"
   ],
-  rationale: "Students connect inventory theory to professional Excel practice by building an automated FIFO/LIFO valuation system that investors can trust.",
+  rationale: "Students learn the third and fourth inventory methods with the same calculation-first, textbook-first scaffolding used in Lessons 2-3. They should understand WHY these methods exist and WHAT kinds of businesses use them BEFORE any workbook build happens in Lesson 5.",
   status: "Draft"
 }
 
@@ -32,48 +36,42 @@ export const unit07Data = {
   sequence: 7
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases - following I Do, We Do, You Do structure
 export const lesson04Phases = [
-  {
-    id: "phase_hook_4",
-    phaseName: "Hook" as const,
-    sequence: 1,
-    description: "Review previous learning and connect to today's application activities",
-    // No component needed for this phase.
-  },
   {
     id: "phase_introduction_4",
     phaseName: "Introduction" as const,
-    sequence: 2,
-    description: "Introduce Array formulas for FIFO and LIFO layer calculations and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    sequence: 1,
+    description: "Discover why not every inventory method fits every business. Sort methods to business contexts and establish the key distinction between traceable items and pooled costs.",
   },
   {
-    id: "phase_guided_practice_4",
+    id: "phase_i_do_4",
+    phaseName: "Introduction" as const,
+    sequence: 2,
+    description: "Teacher models Specific Identification step by step using a small inventory of unique, tagged items. Focus on exact-item tracking, not flow assumptions.",
+  },
+  {
+    id: "phase_we_do_4",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Work through structured examples applying Array formulas for FIFO and LIFO layer calculations with teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice using array formulas in a template.
+    description: "Teacher and students solve a Weighted Average scenario together with visible running totals and explicit rounding rule support.",
   },
   {
-    id: "phase_independent_practice_4",
+    id: "phase_you_do_4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Apply Array formulas for FIFO and LIFO layer calculations independently to solve authentic business problems",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice using array formulas in a template.
+    description: "Students complete two independent practice tasks (Specific ID and Weighted Average), then synthesize with a four-method comparison matrix.",
   },
   {
     id: "phase_assessment_4",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Multiple-choice exit ticket checking method recognition, method fit, specific identification logic, and weighted average calculation including rounding.",
   },
   {
     id: "phase_closing_4",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Consolidate learning and connect to broader unit goals and real-world applications",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on which method felt intuitive vs difficult, preview Lesson 5 workbook construction, and surface confusion points before Excel work begins.",
   }
 ]

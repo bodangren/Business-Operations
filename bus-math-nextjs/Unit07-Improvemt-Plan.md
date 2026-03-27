@@ -95,14 +95,15 @@ Students should ultimately build a workbook with this structure:
 - `Dashboard`
 - `Recommendation`
 
-Lesson 7 uses one shared business and one shared dataset. Lessons 8-10 repeat the same workbook logic with four different businesses and four different datasets.
+Lesson 7 uses one shared business and one shared dataset. Lessons 8-10 repeat the same workbook logic with four different businesses and four different datasets through one-phase group project milestone lessons.
 
 ## Unit-wide implementation tasks
 
 - Rewrite all Unit 07 `lesson-data.ts` files around an inventory-only progression.
 - Remove depreciation language, activities, workbook references, and assessment expectations from Unit 07.
 - Rewrite lesson titles and rationales so the ending inventory formula stays central.
-- Standardize Lessons 1-10 around six student phases, including project lessons.
+- Standardize Lessons 1-7 around six student phases.
+- Keep Lessons 8-10 as one-phase group project milestone lessons.
 - Reduce project groups from six to four.
 - Create one shared rehearsal dataset and workbook for Lesson 7.
 - Create four project datasets for Lessons 8-10.
@@ -265,6 +266,8 @@ Teach the basic accounting logic of inventory movement before method comparison 
 
 ## Lesson 3
 
+**Status:** ✅ Complete
+
 ### Proposed title
 
 `FIFO and LIFO: Two Ways to Value the Same Inventory`
@@ -314,55 +317,225 @@ Teach FIFO and LIFO deeply enough that students understand both the mechanics an
 
 ## Lesson 4
 
+**Status:** ✅ Complete (All 6 phases + 6 interactive components)
+
 ### Proposed title
 
-`Specific Identification and Weighted Average in Simple Excel`
+`Specific Identification and Weighted Average`
 
 ### Purpose
 
-Teach the third and fourth inventory methods and begin simple spreadsheet implementation.
+Teach the third and fourth inventory methods with the same calculation-first, textbook-first scaffolding used in Lessons 2-3.
 
-### Phase 1: Hook
+Lesson 4 should not begin with Excel. Students first need to understand why these two methods exist, what kinds of businesses use them, and how the cost assignment works by hand before any workbook build happens in Lesson 5.
 
-- Compare a jewelry store, a car dealership, and a bulk grocery supplier.
-- Ask why one method would not fit all three businesses.
+The scaffolding for this lesson should be tighter than the original draft:
 
-### Phase 2: Introduction
+- start with business fit before arithmetic
+- teach one new method at a time
+- use fixed, teacher-controlled scenarios before any open or randomized practice
+- show one fully worked example before asking for independent calculation
+- reduce duplicate entry whenever possible so students are not re-solving the same logic twice
+- state the weighted-average rounding rule explicitly
+- use the four-method matrix only after students understand the two new methods
+- do not ask for a full recommendation argument yet; Lesson 4 is still a method-understanding lesson
 
-- Teach `Specific Identification` and when it should be used.
-- Teach `Weighted Average` and when it is a better fit than layer-by-layer tracking.
-- Compare all four methods at a high level:
+### Implementation Progress
+
+**Completed Files (Session 2025-03-27):**
+- `lesson04/lesson-data.ts` - Rewritten with inventory-focused learning objectives for Specific ID and Weighted Average
+- `lesson04/phase-1/page.tsx` - Complete rewrite with method-fit sorting activity, 4 business scenarios, conceptual focus
+- `lesson04/phase-2/page.tsx` - Complete rewrite with "I Do" teacher demonstration + interactive practice
+- `lesson04/phase-3/page.tsx` - Complete rewrite with "We Do" Weighted Average walkthrough and demo component
+- `lesson04/phase-4/page.tsx` - Complete rewrite with independent practice + four-method comparison matrix
+- `lesson04/phase-5/page.tsx` - Complete assessment using unit07-phase5 question bank
+- `lesson04/phase-6/page.tsx` - Complete reflection prompts and closing activities
+
+**Interactive Components:**
+- `lesson04/SpecificIDTracker.tsx` - **I Do (Teacher Models)**: 6-step demonstration walkthrough
+  - Step 1: Understand the business context
+  - Step 2: Meet your inventory (5 laptops with serials and costs)
+  - Step 3: Track each sale (3 customers, exact serials recorded)
+  - Step 4: Calculate COGS (sum of exact costs sold)
+  - Step 5: Calculate Ending Inventory (remaining items)
+  - Step 6: Verify equation balances
+  - Students observe, click "Next" to advance
+
+- `lesson04/SpecificIDPractice.tsx` - **You Try (Interactive)**: 6-step active practice with progressive unlocking
+  - Step 0: Prediction question ("Which method fits unique laptops?")
+  - Step 1: Click-to-reveal laptops, build GAFS total, swift check on calculation
+  - Step 2: Click serial numbers to match customers to their purchases
+  - Step 3: Build COGS table by clicking sold items, calculate total
+  - Step 4: Click remaining items to build ending inventory
+  - Step 5: Type verification sum to balance equation
+  - Each step locks until previous task complete
+
+- `lesson04/WeightedAvgDemo.tsx` - **We Do (Weighted Average)**: 7-step teacher-led walkthrough
+  - Step 1: Business context (gas station inventory)
+  - Step 2: Build Goods Available for Sale (running totals)
+  - Step 3: Calculate Weighted Average Cost per unit
+  - Step 4: Apply to units sold → COGS
+  - Step 5: Apply to units remaining → Ending Inventory
+  - Step 6: Verify the equation balances
+  - Step 7: Review and compare to FIFO/LIFO
+  - Explicit rounding rule: 2 decimal places for dollars
+  - Shows common mistakes (averaging prices vs. pooling costs)
+
+- `lesson04/WeightedAvgPractice.tsx` - **You Try (Weighted Average)**: Interactive practice with:
+  - Gas station scenario with multiple fuel deliveries
+  - Click-to-reveal deliveries, build GAFS
+  - Calculate weighted average per gallon
+  - Apply to both COGS and Ending Inventory
+  - Real-time validation of rounding decisions
+  - Progressive unlocking similar to Specific ID practice
+
+- `lesson04/MethodPracticeCombined.tsx` - **Independent Practice**: Tabbed interface
+  - Tab 1: Specific ID practice scenario
+  - Tab 2: Weighted Average practice scenario
+  - "New Numbers" button for reattempt with different data
+  - Side-by-side comparison of both methods
+
+- `lesson04/MethodComparisonMatrix.tsx` - **Synthesis Activity**: Four-method comparison
+  - Interactive matrix: FIFO, LIFO, Specific ID, Weighted Average
+  - Columns: How It Works, When to Use, Business Examples, Pros/Cons
+  - Drag-and-drop or click-to-select for business contexts
+  - Provides integrated synthesis across all 4 methods
+
+**Key Design Decisions Made:**
+1. Phase 1 is purely conceptual - no calculations, focus on business context
+2. Method-fit sorting activity with 4 businesses (jewelry, cars, computers, bulk goods)
+3. Immediate feedback on sorting with detailed explanations
+4. Phase 2 uses TWO components: demonstration (SpecificIDTracker) + practice (SpecificIDPractice)
+5. Phase 3 uses TWO components: demonstration (WeightedAvgDemo) + practice (WeightedAvgPractice)
+6. Serial numbers and exact costs make Specific ID tracking tangible
+7. Small numbers ($1,450-$1,525 for laptops) easy to follow mentally
+8. COGS calculation: $1,450 + $1,510 + $1,525 = $4,485 (sum of exact items sold)
+9. Emphasis: "Not a flow assumption - you KNOW which item sold"
+10. Interactive practice requires student action (clicking, typing) to advance
+11. Swift checks verify understanding before proceeding
+12. Phase 4 combines both methods in MethodPracticeCombined with tabs
+13. Phase 4 concludes with MethodComparisonMatrix for four-method synthesis
+14. Explicit rounding rule for Weighted Average: 2 decimal places
+15. Common mistakes shown: averaging prices (wrong) vs. pooling costs (right)
+
+### Phase 1: Introduction
+
+**Status:** ✅ Complete
+
+- Introduce the business problem: not every inventory method fits every business.
+- Compare a jewelry store, a car dealership, a custom computer builder, and a bulk grocery supplier.
+- Establish the key distinction:
+  - `Specific Identification` works when exact items can be traced.
+  - `Weighted Average` works when items are similar and pooled together.
+- Use a method-fit sorting activity so students see the business purpose before the math.
+- Keep this phase conceptual. Do not mix in full calculation yet.
+- Make students explain why a method does or does not fit a business, not just sort the label correctly.
+
+### Phase 2: I Do
+
+**Status:** ✅ Complete (with TWO components)
+
+- Teacher models `Specific Identification` step by step using a small inventory of unique, tagged items.
+- Show how exact sold items move to COGS and how unsold tagged items remain in ending inventory.
+- Emphasize that this is not a flow assumption like FIFO or LIFO. It is exact-item tracking.
+- Keep the numbers small and visible so students can follow the reasoning easily.
+- Use one fully worked example before asking students to do any assignment themselves.
+- Use actual item tags or serial numbers so students see that the method depends on traceability, not on old/new layer order.
+- Auto-calculate remaining ending inventory after sold items are selected so students focus on the logic first.
+
+**Components Built:**
+1. `SpecificIDTracker.tsx` - Teacher demonstration (students watch and click "Next" to advance)
+2. `SpecificIDPractice.tsx` - Interactive practice (students must complete tasks to unlock next step)
+   - Prediction question at start
+   - Click-to-reveal inventory items
+   - Swift check on GAFS calculation
+   - Click-to-match sales to serials
+   - Build COGS table by clicking
+   - Build ending inventory by clicking
+   - Type verification sum
+
+### Phase 3: We Do
+
+**Status:** ✅ Complete
+
+- Teacher and students solve a `Weighted Average` scenario together using `WeightedAvgDemo.tsx`.
+- Walk through the sequence:
+  - total units available
+  - total cost available
+  - average cost per unit
+  - COGS for units sold
+  - ending inventory value
+- Use one event at a time with visible running totals so students do not lose the logic.
+- State the rounding rule explicitly (2 decimal places for dollars).
+- Use one fixed scenario with clean numbers (gas station fuel inventory).
+- Show where students commonly make mistakes:
+  - averaging prices instead of pooling costs (common error)
+  - forgetting to recompute the pooled cost after a purchase
+  - rounding too early
+- Keep the interaction sequential so students only compute one new quantity at a time.
+- Follow with `WeightedAvgPractice.tsx` for interactive student engagement.
+
+### Phase 4: You Do
+
+**Status:** ✅ Complete
+
+- Students complete two independent practice tasks using `MethodPracticeCombined.tsx`:
+  - Tab 1: `Specific Identification` scenario where they assign exact sold items to COGS
+  - Tab 2: `Weighted Average` scenario where they compute average cost, COGS, and ending inventory
+- End with a four-method comparison matrix using `MethodComparisonMatrix.tsx`:
   - FIFO
   - LIFO
   - Specific Identification
   - Weighted Average
-
-### Phase 3: Guided Practice
-
-- Students calculate one specific-identification case by hand.
-- Students calculate one weighted-average case by hand.
-- Teacher models a simple Excel sheet that computes weighted average cleanly.
-
-### Phase 4: Independent Practice
-
-- Students use a small spreadsheet to calculate ending inventory under weighted average.
-- Students decide which of the four methods best fits several business types.
+- The matrix helps students explain:
+  - how each method works
+  - what type of business should use it
+  - why a manager might prefer it
+- The comparison matrix comes after the two practice tasks, not before.
+- Focus is on accurate method recognition and method fit (no full business recommendation yet).
+- Includes "Turn and Talk" discussion prompts for collaborative reflection.
 
 ### Phase 5: Assessment
 
-- Check method recognition, method fit, and basic weighted-average calculation.
-- Include one item asking why specific identification is only realistic for certain businesses.
+**Status:** ✅ Complete
+
+- Use ComprehensionCheck with questions from `unit07-phase5` question bank.
+- Check method recognition, method fit, specific identification logic, and weighted-average calculation.
+- Include questions on why specific identification is only realistic for certain businesses.
+- Include questions on why weighted average works best for similar, pooled inventory.
+- Include items testing the rounding rule and correct weighted-average setup.
+- Students can retry and see explanations for each answer.
 
 ### Phase 6: Closing
 
-- Summarize when to use each of the four methods.
-- Preview Lesson 5 as the move from method knowledge to a medium-complexity comparison workbook.
+**Status:** ✅ Complete
+
+- Uses ReflectionJournal with three prompts:
+  - Which method felt most intuitive?
+  - What concept was most challenging?
+  - Apply methods to a real business context
+- Students reflect on which method felt most intuitive, which method felt most difficult, and what business context helped the most.
+- Preview Lesson 5 as the point where students move from hand calculation and method comparison into workbook design.
+- Key takeaways card summarizes both methods and provides a method selection guide.
+- Reflection surfaces confusion points before workbook construction begins.
 
 ### Implementation sub-tasks
 
-- Rewrite `lesson04/lesson-data.ts` around specific identification and weighted average.
-- Keep Excel scope simple: one workbook, one or two tables, visible formulas, no heavy automation yet.
-- Add a tutorial and practice file built around weighted average and method selection.
+**Completed:**
+- ✅ Rewrite `lesson04/lesson-data.ts` around specific identification and weighted average with the six-phase structure
+- ✅ Build a method-fit sorting activity for business contexts (Phase 1)
+- ✅ Build a specific-identification tracker for teacher demonstration (Phase 2 - SpecificIDTracker.tsx)
+- ✅ Build an interactive practice component for student engagement (Phase 2 - SpecificIDPractice.tsx)
+- ✅ Add prediction question, swift checks, and progressive unlocking to practice component
+- ✅ Build a weighted-average guided lab with visible running totals and explicit rounding support (Phase 3 - WeightedAvgDemo.tsx)
+- ✅ Build interactive Weighted Average practice component (Phase 3 - WeightedAvgPractice.tsx)
+- ✅ Build independent practice scenarios for both Specific ID and Weighted Average (Phase 4 - MethodPracticeCombined.tsx)
+- ✅ Build a four-method comparison matrix for synthesis and method selection (Phase 4 - MethodComparisonMatrix.tsx)
+- ✅ Add assessment questions to question bank for Lesson 4 (Phase 5 - unit07-phase5.ts)
+- ✅ Create reflection prompts for Lesson 4 closing (Phase 6)
+- ✅ Write all 6 phase pages with complete educational content
+
+**All sub-tasks complete for Lesson 4.**
 
 ## Lesson 5
 
@@ -548,7 +721,7 @@ Begin independent group transfer by repeating the Lesson 7 workflow on four diff
 
 ### Implementation sub-tasks
 
-- Expand `lesson08/lesson-data.ts` from a one-phase milestone into a six-phase lesson.
+- Keep `lesson08/lesson-data.ts` as a one-phase project milestone lesson.
 - Reduce project scenarios to four businesses.
 - Create four project datasets aligned to the four-method inventory unit.
 
@@ -588,7 +761,7 @@ Groups complete the technical model, test it, and rehearse the business recommen
 
 ### Implementation sub-tasks
 
-- Expand `lesson09/lesson-data.ts` into a six-phase lesson.
+- Keep `lesson09/lesson-data.ts` as a one-phase project milestone lesson.
 - Add peer critique aligned to workbook quality and recommendation clarity.
 
 ## Lesson 10
@@ -627,7 +800,7 @@ Assess whether students can independently explain and defend a method recommenda
 
 ### Implementation sub-tasks
 
-- Expand `lesson10/lesson-data.ts` into a six-phase lesson.
+- Keep `lesson10/lesson-data.ts` as a one-phase final presentation lesson.
 - Ensure the final rubric weights model integrity and recommendation quality together.
 
 ## Suggested resource plan
@@ -668,4 +841,5 @@ Assess whether students can independently explain and defend a method recommenda
   - Weighted Average
 - Lesson 7 clearly rehearses the exact workflow used in Lessons 8-10.
 - Lessons 8-10 use four different businesses and four different datasets.
+- Lessons 8-10 remain one-phase group project lessons by design.
 - Phase pages are textbook-first, business-authentic, and aligned to the new inventory scope.

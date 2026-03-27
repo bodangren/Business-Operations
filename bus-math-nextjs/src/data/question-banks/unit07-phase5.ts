@@ -430,152 +430,152 @@ const lesson04Questions: Unit07Phase5Question[] = [
   {
     id: "lesson04-q1",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "When purchase costs are rising, which inventory method usually reports the lower profit and why?",
-    correctAnswer: "LIFO, because it pushes the newest, higher costs into Cost of Goods Sold right away.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "A car dealership sells vehicles with unique VIN numbers. Which inventory method is most appropriate?",
+    correctAnswer: "Specific Identification, because each vehicle can be tracked individually by its VIN.",
     distractors: [
-      "FIFO, because it leaves the newest costs on the balance sheet as inventory layers.",
-      "Weighted Average, because it blends the costs and always lowers profit first.",
-      "Specific Identification, because it assigns every item the most recent supplier price."
+      "Weighted Average, because all vehicles should have the same cost.",
+      "FIFO, because the oldest vehicles should be sold first.",
+      "LIFO, because the newest vehicles cost the most."
     ],
     explanation:
-      "In inflationary periods, LIFO moves the priciest layers to COGS sooner, shrinking profit and taxable income compared to FIFO.",
-    objectiveTags: ["inventory-strategy", "financial-reporting"]
+      "When items are unique and traceable (like cars with VINs), you track each item's exact cost. There's no need to assume which layer sold.",
+    objectiveTags: ["specific-identification", "method-choice"]
   },
   {
     id: "lesson04-q2",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "Which Excel feature keeps formulas expanding automatically as Sarah adds new purchase or sales rows?",
-    correctAnswer: "Excel Tables with structured references that grow and update links automatically.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "A bulk grain supplier receives multiple shipments of wheat at different prices, but all grain mixes together in the silo. Which method makes the most sense?",
+    correctAnswer: "Weighted Average, because the grain cannot be separated by shipment once mixed.",
     distractors: [
-      "Manual named ranges that require editing whenever the data changes.",
-      "Absolute references like $A$2:$A$100 that lock the range size permanently.",
-      "Paste Special values so the formulas stay frozen after each refresh."
+      "Specific Identification, because each pound should be tracked separately.",
+      "FIFO, because the oldest grain must be sold first for safety.",
+      "LIFO, because the newest grain is at the top of the silo."
     ],
     explanation:
-      "Tables turn ranges into living data sources so lookups, charts, and Totals follow the data without manual rewiring.",
-    objectiveTags: ["excel-automation", "structured-references"]
+      "When identical items are physically mixed and can't be distinguished, you pool all costs and calculate one average price per unit.",
+    objectiveTags: ["weighted-average", "method-choice"]
   },
   {
     id: "lesson04-q3",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "A validation rule catches a negative UnitCost entry. What should the model do?",
-    correctAnswer: "Flag the record with a clear error until the team corrects the bad input.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "When calculating weighted average cost, a common mistake is to average the prices. What should you do instead?",
+    correctAnswer: "Divide total cost by total units to get the weighted average cost per unit.",
     distractors: [
-      "Ignore the row so totals continue without interruption.",
-      "Convert the cost to zero so the calculation can finish quietly.",
-      "Hide the row from reports so auditors never see the problem."
+      "Add all prices together and divide by the number of purchases.",
+      "Use the most recent price as the average.",
+      "Use the price from the largest purchase quantity."
     ],
     explanation:
-      "Professional models surface data issues immediately. Blocking the error protects COGS, margins, and investor trust.",
-    objectiveTags: ["validation-controls", "data-integrity"]
+      "Averaging prices ignores the different quantities at each price. You must divide the total cost (all purchases combined) by the total units available.",
+    objectiveTags: ["weighted-average", "calculation"]
   },
   {
     id: "lesson04-q4",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "Which modern Excel function replaces brittle VLOOKUP formulas in TechStart's inventory model?",
-    correctAnswer: "XLOOKUP, because it supports left/right searches, exact matches, and graceful error handling.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "A jewelry store has three necklaces: one at $2,000, one at $2,200, and one at $2,500. They sell the $2,200 necklace. Using Specific Identification, what is COGS?",
+    correctAnswer: "$2,200, because you track the exact cost of the necklace that was sold.",
     distractors: [
-      "HLOOKUP, which only searches across rows but still has the same limits as VLOOKUP.",
-      "OFFSET, which is volatile and harder to audit for stakeholders.",
-      "INDEX alone, without MATCH, which cannot pick the correct row by itself."
+      "$2,233, the average of all three necklaces.",
+      "$2,000, the cost of the cheapest necklace.",
+      "$2,500, the cost of the most expensive necklace."
     ],
     explanation:
-      "XLOOKUP delivers flexible lookups with readable syntax and built-in defaults, reducing formula risk.",
-    objectiveTags: ["excel-functions", "excel-automation"]
+      "With Specific Identification, COGS is the sum of the exact costs of items sold. You don't average or assume — you know which one sold.",
+    objectiveTags: ["specific-identification", "calculation"]
   },
   {
     id: "lesson04-q5",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "Purchases arrive at 30 units @$20, 30 units @$22, and 50 units @$24. A 60-unit sale occurs. What FIFO Cost of Goods Sold does the table produce?",
-    correctAnswer: "$1,260 because it takes 30 units at $20 plus 30 units at $22.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "A gas station receives deliveries at $3.00/gallon, $3.20/gallon, and $3.40/gallon. After mixing in the underground tank, they have 10,000 gallons with a total cost of $32,000. What is the weighted average cost per gallon?",
+    correctAnswer: "$3.20 per gallon, calculated as $32,000 ÷ 10,000 gallons.",
     distractors: [
-      "$1,200 because FIFO averages the two oldest costs evenly.",
-      "$1,320 because it blends the first three layers together.",
-      "$1,440 because the most recent $24 layer gets consumed first."
+      "$3.20 per gallon, calculated as ($3.00 + $3.20 + $3.40) ÷ 3.",
+      "$3.40 per gallon, using the most recent delivery price.",
+      "$3.00 per gallon, using the first delivery price."
     ],
     explanation:
-      "FIFO clears the oldest layers: 30 × $20 = $600 and 30 × $22 = $660. Together the sale costs $1,260.",
-    objectiveTags: ["fifo-lifo-calculations", "inventory-valuation"]
+      "Weighted average = Total Cost ÷ Total Units. You cannot average the prices because each delivery had different quantities.",
+    objectiveTags: ["weighted-average", "calculation"]
   },
   {
     id: "lesson04-q6",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "Which practice aligns with investor expectations for Sarah's workbook?",
-    correctAnswer: "Label methods clearly and pair dashboards with validation checks that prove accuracy.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "Why would a custom computer builder use Specific Identification instead of Weighted Average?",
+    correctAnswer: "Each computer has different components and costs, so they can track each machine's exact cost.",
     distractors: [
-      "Rely on bright colors alone if the grand totals appear reasonable.",
-      "Hide input sheets to keep the file clean for presentations.",
-      "Update results manually each month as long as changes are documented."
+      "All computers should have the same cost for simplicity.",
+      "The builder wants to reduce taxes by using the highest cost.",
+      "FIFO would be better because computers should be sold oldest first."
     ],
     explanation:
-      "Investors value transparency. Clear labels plus automated checks show Sarah controls her data and stands behind the results.",
-    objectiveTags: ["investor-readiness", "validation-controls"]
+      "Custom builds have different components and costs. Specific Identification tracks each machine's exact build cost, which is essential when each unit is unique.",
+    objectiveTags: ["specific-identification", "method-choice"]
   },
   {
     id: "lesson04-q7",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "What formula pattern safely calculates weighted totals for a specific condition inside the table?",
-    correctAnswer: "Use SUMPRODUCT with logical tests to multiply quantities and costs for the matching rows.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "Under Weighted Average, what rate do you use for both COGS and Ending Inventory?",
+    correctAnswer: "The same weighted average rate, calculated as Total Cost ÷ Total Units.",
     distractors: [
-      "Apply SUM to visible cells and hope filters remove any unwanted values.",
-      "Multiply each row manually and paste the results into a summary tab.",
-      "Combine COUNTIF and SUM, which cannot multiply quantities by price in one step."
+      "Different rates: use the oldest price for COGS and newest for inventory.",
+      "Different rates: use FIFO for COGS and LIFO for inventory.",
+      "The rate from the most recent purchase only."
     ],
     explanation:
-      "SUMPRODUCT handles filtered calculations in a single, auditable formula—crucial for inventory valuation and KPI tiles.",
-    objectiveTags: ["excel-functions", "inventory-valuation"]
+      "Weighted Average calculates ONE rate and uses it for both calculations. That's the simplicity of the method — no layer tracking needed.",
+    objectiveTags: ["weighted-average", "calculation"]
   },
   {
     id: "lesson04-q8",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "If supplier prices fall instead of rise, which method often reports the higher profit and why?",
-    correctAnswer: "FIFO, because it moves the older, higher-cost layers into COGS first, leaving cheaper stock on the balance sheet.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "Why can't Weighted Average work for a jewelry store selling one-of-a-kind diamond rings?",
+    correctAnswer: "Each ring has a different cost and needstracking — blending them would hide the true value.",
     distractors: [
-      "LIFO, because it keeps old costs in COGS until the market settles.",
-      "Both methods tie because price direction does not influence profit.",
-      "Neither method changes profit because quantity sold stays the same."
+      "Jewelry stores are required to use FIFO by law.",
+      "Diamonds appreciate in value, so averaging doesn't work.",
+      "Weighted Average only works for items that cost less than $1,000."
     ],
     explanation:
-      "When costs drop, selling the older, higher layers first (FIFO) elevates COGS and leaves lower-cost inventory, which can increase reported profit.",
-    objectiveTags: ["inventory-strategy", "financial-reporting"]
+      "Weighted Average works for identical items. Unique, expensive items with different costs require Specific Identification to track their true value.",
+    objectiveTags: ["method-choice", "specific-identification"]
   },
   {
     id: "lesson04-q9",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "What is an inventory 'layer' in Sarah's model?",
-    correctAnswer: "A group of units purchased at the same cost that moves through the valuation engine together.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "A business has Beginning Inventory of 100 units at $5 each, purchases 200 units at $6 each, and purchases 100 units at $7 each. What is the weighted average cost per unit?",
+    correctAnswer: "$6.00 per unit, calculated as ($500 + $1,200 + $700) ÷ 400 units = $2,400 ÷ 400.",
     distractors: [
-      "A color-coding template applied to rows for readability.",
-      "A worksheet tab dedicated to a specific supplier order.",
-      "A pivot table filter used to slice the data by region."
+      "$6.00 per unit, calculated as ($5 + $6 + $7) ÷ 3.",
+      "$6.33 per unit, because you should use the middle price.",
+      "$7.00 per unit, using the most recent purchase price."
     ],
     explanation:
-      "Each purchase event becomes its own cost layer. FIFO and LIFO choose which layers move to COGS and which remain in inventory.",
-    objectiveTags: ["inventory-valuation", "data-structure"]
+      "You must pool all costs ($500 + $1,200 + $700 = $2,400) and divide by all units (400) to get the correct weighted average of $6.00.",
+    objectiveTags: ["weighted-average", "calculation"]
   },
   {
     id: "lesson04-q10",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - FIFO/LIFO Inventory Valuation with Excel Tables",
-    prompt: "After adding two new purchases, what is the best stress test for the workbook?",
-    correctAnswer: "Confirm COGS and ending inventory recalculate without touching any formulas.",
+    lessonTitle: "Lesson 04 - Specific Identification and Weighted Average",
+    prompt: "What is the key difference between Specific Identification and the other three inventory methods?",
+    correctAnswer: "Specific Identification tracks the exact cost of each item sold, while FIFO, LIFO, and Weighted Average all make assumptions about cost flow.",
     distractors: [
-      "Rebuild each formula from scratch just to be safe.",
-      "Change the protection settings so edits are easier next time.",
-      "Take a screenshot of the table before anyone else makes changes."
+      "Specific Identification is the only method allowed for tax purposes.",
+      "Specific Identification can only be used for inexpensive items.",
+      "Specific Identification always produces the lowest COGS."
     ],
     explanation:
-      "Robust models update automatically as tables grow. If totals adjust without rewiring formulas, the design is investor ready.",
-    objectiveTags: ["validation-controls", "excel-automation"]
+      "With Specific Identification, you KNOW which item sold and its exact cost. With FIFO/LIFO/Weighted Average, you don't track individual items — you apply a rule to assign costs.",
+    objectiveTags: ["method-comparison", "specific-identification"]
   }
 ];
 const lesson05Questions: Unit07Phase5Question[] = [
