@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, MessageCircle } from "lucide-react"
+import { Users } from "lucide-react"
 
 interface VideoData {
   title: string
@@ -71,35 +71,13 @@ export default function Lesson01Phase1({
       />
       
       <div className="max-w-4xl mx-auto space-y-8 pb-8 px-4">
-        {/* Introductory Text */}
-        <div className="prose prose-lg max-w-none">
-          <div className="bg-card/50 backdrop-blur-sm rounded-lg border border-border/50 p-6 shadow-sm">
-            <p className="text-lg leading-relaxed text-foreground">
-              {unitConfig.introText.welcomeText}
-            </p>
-            
-            <p className="text-base leading-relaxed text-muted-foreground mt-4">
-              {unitConfig.introText.contextText}
-            </p>
-          </div>
-        </div>
-
-        {/* Additional Content Section (for unit-specific content) */}
+        {/* Additional Content - For units with extra intro context */}
         {additionalContent}
 
-        {/* Video Player */}
+        {/* Video Player - FIRST: Start with Sarah's interview video per launch-lesson skill */}
         <VideoPlayer video={videoData} />
 
-        {/* Reflection Text */}
-        <div className="prose prose-lg max-w-none">
-          <div className="bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg border border-blue-200/50 dark:border-blue-800/30 p-6">
-            <p className="text-base leading-relaxed text-foreground">
-              {unitConfig.reflectionText}
-            </p>
-          </div>
-        </div>
-
-        {/* Comprehension Check */}
+        {/* Short Processing After Video */}
         <ComprehensionCheck
           questions={comprehensionQuestions}
           title="Understanding Sarah's Challenge"
@@ -107,38 +85,52 @@ export default function Lesson01Phase1({
           showExplanations={true}
         />
 
-        {/* Turn and Talk */}
-        <Card className="card-ledger border-primary/20">
-          <CardHeader className="excel-header">
-            <CardTitle className="text-primary flex items-center gap-2">
+        {/* Turn and Talk - Short discussion after initial processing */}
+        <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+          <CardHeader>
+            <CardTitle className="text-blue-800 dark:text-blue-200 flex items-center gap-2">
               <Users className="h-5 w-5" />
-              Turn and Talk
+              Turn and Talk (3 minutes)
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex items-start gap-3">
-              <MessageCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-              <div>
-                <p className="font-medium text-foreground mb-2">
-                  Discussion Prompt (3 minutes):
-                </p>
-                <p className="text-muted-foreground">
-                  {unitConfig.turnAndTalkPrompt.description}
-                </p>
-                <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
-                  {unitConfig.turnAndTalkPrompt.questions.map((question, index) => (
-                    <li key={index}>{question}</li>
-                  ))}
-                </ul>
-              </div>
+            <p className="font-medium text-blue-900 mb-2">
+              {unitConfig.turnAndTalkPrompt.description}
+            </p>
+            <ul className="list-disc list-inside space-y-1 text-blue-800">
+              {unitConfig.turnAndTalkPrompt.questions.map((question, index) => (
+                <li key={index}>{question}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* Investor-Trust Problem - The Core Tension */}
+        <Card className="border-red-200 bg-red-50 dark:bg-red-950/10">
+          <CardHeader>
+            <CardTitle className="text-red-800 dark:text-red-200">
+              The Investor-Trust Problem
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-lg leading-relaxed">
+              {unitConfig.reflectionText}
+            </p>
+            <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+              <p className="font-semibold text-red-800 mb-2">Our Unit Challenge:</p>
+              <p className="text-red-700">
+                How can Sarah design a <strong>self-auditing ledger</strong> that would convince a potential 
+                angel investor that she keeps "clean books" from day one? That's exactly what we'll learn 
+                to build over the next several lessons.
+              </p>
             </div>
           </CardContent>
         </Card>
 
         {/* Transition Text */}
         <div className="prose prose-lg max-w-none">
-          <div className="bg-accent/10 rounded-lg border border-accent/20 p-6">
-            <p className="text-base leading-relaxed text-foreground">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg border border-blue-200/50 dark:border-blue-800/30 p-6">
+            <p className="text-base leading-relaxed">
               {unitConfig.transitionText}
             </p>
           </div>

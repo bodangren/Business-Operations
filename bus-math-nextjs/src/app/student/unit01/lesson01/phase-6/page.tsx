@@ -43,6 +43,33 @@ export default function Phase6Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* Unit Scoreboard - Final Reminder */}
+          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <Badge className="bg-blue-600 text-white">Unit Scoreboard</Badge>
+                <CardTitle className="text-blue-800 dark:text-blue-200">
+                  The Accounting Equation: Your Foundation
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-white p-6 rounded-lg border-4 border-blue-400 text-center">
+                <div className="text-3xl font-bold text-blue-800 mb-4">
+                  ASSETS = LIABILITIES + EQUITY
+                </div>
+                <p className="text-blue-700">
+                  This scoreboard never lies and never goes out of balance
+                </p>
+              </div>
+              <p className="text-base text-blue-800 mt-4 leading-relaxed">
+                You now understand the fundamental equation that rules every business in the world. 
+                Sarah's Smart Ledger will be built to prove this equation stays balanced after every 
+                single transaction. That's what makes it trustworthy to investors.
+              </p>
+            </CardContent>
+          </Card>
+
           {/* Lesson Synthesis */}
           <Card className="border-indigo-200 bg-indigo-50 dark:bg-indigo-950/10">
             <CardHeader>
@@ -150,36 +177,40 @@ export default function Phase6Page() {
                       <Target className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-800">Next Lessons: Core Accounting Principles</h4>
-                      <p className="text-sm text-blue-700">
-                        Learn the fundamental language of business: the Accounting Equation, debit and credit rules, 
-                        and how every transaction maintains perfect mathematical balance.
+                      <h4 className="font-semibold text-blue-800">Next Up: Debits and Credits</h4>
+                      <p className="text-sm text-blue-700 mt-1">
+                        <strong>Lesson2 will teach you the rules</strong> for how every transaction affects the accounting equation. 
+                        You'll learn why "debits" and "credits" are just the language for moving numbers around your scoreboard—
+                        not mysterious accounting terms, but the practical rules Sarah needs to record transactions correctly.
+                      </p>
+                      <p className="text-xs text-blue-600 mt-2 italic">
+                        Preview: Every transaction has equal debits and credits. This is what keeps the equation balanced.
                       </p>
                     </div>
                   </div>
 
-                  <div className="bg-white p-4 rounded-lg border-2 border-blue-300 flex items-start gap-4">
-                    <div className="bg-blue-100 p-2 rounded-full">
-                      <Lightbulb className="h-5 w-5 text-blue-600" />
+                  <div className="bg-white p-4 rounded-lg border-2 border-purple-300 flex items-start gap-4">
+                    <div className="bg-purple-100 p-2 rounded-full">
+                      <Lightbulb className="h-5 w-5 text-purple-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-800">Excel Mastery: Building the Smart System</h4>
-                      <p className="text-sm text-blue-700">
-                        Master Excel Tables, SUMIF functions, and conditional formatting to create Sarah's 
-                        self-auditing ledger with automatic error-checking capabilities.
+                      <h4 className="font-semibold text-purple-800">Lessons 2-3: Accounting Logic</h4>
+                      <p className="text-sm text-purple-700">
+                        Master how transactions move through accounts, why the trial balance ties out, 
+                        and the rules that make every entry mathematically correct.
                       </p>
                     </div>
                   </div>
 
-                  <div className="bg-white p-4 rounded-lg border-2 border-blue-300 flex items-start gap-4">
-                    <div className="bg-blue-100 p-2 rounded-full">
-                      <CheckCircle className="h-5 w-5 text-blue-600" />
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-300 flex items-start gap-4">
+                    <div className="bg-green-100 p-2 rounded-full">
+                      <CheckCircle className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-800">Investor Presentation: Demonstrating Clean Books</h4>
-                      <p className="text-sm text-blue-700">
-                        Present your completed Smart Ledger system to real business professionals, demonstrating 
-                        how it solves Sarah's challenges and builds investor confidence.
+                      <h4 className="font-semibold text-green-800">Lessons 4-6: Build the Smart Ledger in Excel</h4>
+                      <p className="text-sm text-green-700">
+                        Take everything you learned and build Sarah's self-auditing ledger with tables, 
+                        formulas, and automatic error-checking that proves investor-ready accuracy.
                       </p>
                     </div>
                   </div>
@@ -220,12 +251,12 @@ export default function Phase6Page() {
                 
                 <div className="flex items-center justify-between pt-4">
                   <div className="text-sm text-amber-700">
-                    <strong>Coming up in Lesson 2:</strong> The Accounting Equation and the language of business
+                    <strong>Coming up in Lesson 2:</strong> The rules of debits and credits—how every transaction keeps the scoreboard balanced
                   </div>
                   
                   <Button asChild className="bg-amber-600 hover:bg-amber-700">
                     <Link href="/student/unit01/lesson02" className="flex items-center gap-2">
-                      Continue to Lesson 2
+                      Continue to Lesson2
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>

@@ -56,6 +56,31 @@ export default function Phase3Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* Unit Scoreboard Reminder */}
+          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <Badge className="bg-blue-600 text-white">Unit Scoreboard</Badge>
+                <CardTitle className="text-blue-800 dark:text-blue-200">
+                  Remember: The Accounting Equation
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-white p-6 rounded-lg border-4 border-blue-400 text-center">
+                <div className="text-3xl font-bold text-blue-800 mb-4">
+                  ASSETS = LIABILITIES + EQUITY
+                </div>
+                <p className="text-blue-700">
+                  This scoreboard stays in balance with every single transaction
+                </p>
+              </div>
+              <p className="text-sm text-blue-600 mt-3 text-center">
+                In this phase, we'll watch how Sarah's business events move numbers around this scoreboard.
+              </p>
+            </CardContent>
+          </Card>
+
           {/* Transactions Move the Equation - Textbook Content */}
           <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
             <CardHeader>

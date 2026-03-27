@@ -22,6 +22,28 @@ export default function Phase5Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* Unit Scoreboard Reminder - Visible during Assessment */}
+          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <Badge className="bg-blue-600 text-white">Unit Scoreboard</Badge>
+                <CardTitle className="text-blue-800 dark:text-blue-200">
+                  Remember: The Accounting Equation
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-white p-4 rounded-lg border-4 border-blue-400 text-center">
+                <div className="text-2xl font-bold text-blue-800 mb-2">
+                  ASSETS = LIABILITIES + EQUITY
+                </div>
+                <p className="text-blue-700 text-sm">
+                  The scoreboard that stays in balance with every transaction
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Assessment Introduction */}
           <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
             <CardHeader>
