@@ -57,6 +57,7 @@ Use these paths as the source of truth:
 ## Structure rule
 
 - Follow `AGENTS.md`, then the unit improvement plan, then the lesson skill.
+- The lesson objective is the north star for every text and activity.
 - For `launch-lesson`, `accounting-principles`, `excel-lessons`, and `project-rehearsal`, keep or build the full six-phase lesson structure unless the unit plan says otherwise.
 - For `group-project`, default to the existing milestone-style structure. If the lesson folder already contains both `page.tsx` and phase pages, preserve the existing project structure instead of inventing a new one.
 
@@ -77,6 +78,8 @@ The lesson should be complete enough that a junior developer would not need to r
 You may mark the selected lesson complete in `Improvement_plan.md` only if all of the following are true:
 
 - you made **substantive student-facing changes** for that specific lesson during this run
+- you wrote or refactored at least one of the components to more align with the lesson objective
+- no activity components (outside of comprehension check component) repeat across phases. Variations increasing in difficulty are acceptable, but exact repitition isn't
 - the git diff includes changes inside the selected lesson's folder or directly related lesson resource files
 - the selected lesson is now more aligned with `AGENTS.md`, the unit improvement plan, and the lesson skill than it was before this run
 - `npm run build` passes after your changes
