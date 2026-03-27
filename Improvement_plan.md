@@ -13,7 +13,7 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 
 - Planning docs ready: Units 01-08
 - Units finished: 0/8
-- Next target: Unit 01 Lesson 01
+- Next target: Unit 01 Lesson 02
 
 ## Unit 01
 
@@ -22,7 +22,7 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 - Notes: investor-trust and clean-books foundation
 
 Lessons:
-- [ ] Lesson 01
+- [x] Lesson 01
 - [ ] Lesson 02
 - [ ] Lesson 03
 - [ ] Lesson 04
