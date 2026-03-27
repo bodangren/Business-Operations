@@ -22,7 +22,7 @@ This file is the master implementation tracker for the textbook rewrite. Unit-sp
 - Notes: investor-trust and clean-books foundation
 
 Lessons:
-- [x] Lesson 01
+- [ ] Lesson 01
 - [ ] Lesson 02
 - [ ] Lesson 03
 - [ ] Lesson 04
