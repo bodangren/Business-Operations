@@ -3,8 +3,8 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Brain, AlertTriangle, CheckCircle } from 'lucide-react'
-import { TransactionJournal } from "@/components/accounting/TransactionJournal"
 import { TrialBalanceSorting } from "@/components/drag-drop-exercises/TrialBalanceSorting"
+import { TransactionJournal } from "@/components/accounting/TransactionJournal"
 import { lesson03Data, unit01Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[3]
