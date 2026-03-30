@@ -9,6 +9,10 @@
 - Lesson 04: Complete
 - Lessons 05-10: Pending in the Conductor track
 
+## Migration Checkpoint
+- Commit: `1c6a5e4`
+- This commit migrated the legacy Unit 07 and Unit 08 planning content into Conductor and removed the retired `Unitxx-Improvement-Plan.md` files.
+
 ## Completion Details Migrated From Legacy Plans
 - Lesson 02 included three new interactive components and supporting assets.
 - Lesson 04 included six interactive components plus the full four-method synthesis matrix.
