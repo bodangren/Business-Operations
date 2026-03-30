@@ -5,4 +5,8 @@
 - [Metadata](./metadata.json)
 
 ## Description
-Implement Unit 07 - inventory accounting with FIFO/LIFO and Excel.
+Implement Unit 07 inventory accounting with FIFO/LIFO and Excel.
+
+## Progress
+- Lessons 01-04 are complete in the legacy implementation record.
+- Lessons 05-10 remain to be implemented in the Conductor track.

@@ -6,6 +6,29 @@ Implement Unit 07 - Inventory-only unit. Remove depreciation content. Focus on i
 ## Unit Direction
 Unit 07 should become inventory-only. Remove depreciation content from this unit and keep the instructional spine focused on inventory flow, COGS, ending inventory, method choice, and statement impact. This is the best current model for Lessons 1-4, but it still needs clearer boundaries before Excel starts.
 
+## Legacy Completion Summary
+- Lesson 01: Complete
+- Lesson 02: Complete
+- Lesson 03: Complete
+- Lesson 04: Complete
+- Lessons 05-10: Remaining in the Conductor track
+
+## Why This Change Is Better
+- Inventory already provides enough accounting depth for a full unit.
+- The ending inventory formula gives the unit one memorable anchor.
+- FIFO, LIFO, specific identification, and weighted average create enough conceptual and Excel complexity on their own.
+- The final workbook artifact becomes much clearer: prove that your ending inventory and COGS are reliable.
+- Lessons 7-10 can now mirror Unit 6 more closely: guided rehearsal first, then independent transfer by group.
+
+## Unit-Wide Design Principles
+- Teach one visible workflow from raw transactions to ending inventory recommendation.
+- Keep one shared business simulation through Lessons 1-7.
+- Make the ending inventory formula visible in lesson copy, graphics, checks, and workbook design.
+- Introduce methods only when students understand what part of the formula they are trying to defend.
+- Teach not only how each method works, but when a business might prefer it.
+- Use Lessons 4-6 to escalate Excel complexity gradually.
+- Use Lesson 7 as a dress rehearsal for the exact project workflow used in Lessons 8-10.
+
 ## Locked Skill Map
 - Lesson 01 → `agents/skills/launch-lesson/SKILL.md`
 - Lesson 02 → `agents/skills/accounting-principles/SKILL.md`
@@ -33,6 +56,33 @@ Unit 07 should become inventory-only. Remove depreciation content from this unit
 - Rewrite unit-facing copy so Unit 07 is inventory-only
 - Remove SLN, DDB, fixed-asset, and depreciation-schedule language from Unit 07 lesson titles and descriptions
 - Keep the strongest inventory pedagogy from the current version: prediction before reveal, visible layers, and statement connections
+
+## Shared Business Simulation
+- Lessons 1-7 should use one common client business with beginning inventory, dated purchases, dated sales, and item-level detail sufficient to support all four methods.
+- The shared simulation should support hand calculation in Lessons 2-3, simple Excel structure in Lesson 4, method comparison and workbook safeguards in Lesson 5, integrated dashboard and recommendation logic in Lesson 6, and rehearsal workbook build in Lesson 7.
+
+## Shared Workbook Model for Lessons 7-10
+- `ReadMe` or `Brief`
+- `Inputs`
+- `BeginningInventory`
+- `Purchases`
+- `Sales`
+- `Valuation`
+- `MethodCompare`
+- `Checks`
+- `Dashboard`
+- `Recommendation`
+
+## Unit-Wide Implementation Tasks
+- Rewrite all Unit 07 `lesson-data.ts` files around an inventory-only progression.
+- Remove depreciation language, activities, workbook references, and assessment expectations from Unit 07.
+- Rewrite lesson titles and rationales so the ending inventory formula stays central.
+- Standardize Lessons 1-7 around six student phases.
+- Keep Lessons 8-10 as one-phase group project milestone lessons.
+- Reduce project groups from six to four.
+- Create one shared rehearsal dataset and workbook for Lesson 7.
+- Create four project datasets for Lessons 8-10.
+- Ensure every lesson includes both accounting reasoning and workbook quality expectations appropriate to that lesson's complexity.
 
 ### Lesson 01: Launch Inventory-Trust Problem
 - **Skill**: `agents/skills/launch-lesson/SKILL.md`
@@ -71,6 +121,11 @@ Unit 07 should become inventory-only. Remove depreciation content from this unit
 - **Done When**:
   - Students can explain why inventory counts affect profit and the balance sheet
   - The lesson points clearly to the movement logic in Lesson 02
+
+#### Completion Notes
+- Status: Complete
+- The first lesson establishes Sarah's founder problem and the shared inventory formula.
+- The lesson should keep the business story visible rather than treating the launch as vocabulary-only.
 
 ### Lesson 02: Beginning Inventory, Purchases, COGS
 - **Skill**: `agents/skills/accounting-principles/SKILL.md`
@@ -114,6 +169,33 @@ Unit 07 should become inventory-only. Remove depreciation content from this unit
   - Students can explain why the same sales volume can produce different COGS outcomes
   - Phase 5 checks understanding of inventory flow, not workbook logic
 
+#### Completion Notes
+- Status: Complete
+- Completed files in the legacy implementation record:
+  - `lesson02/lesson-data.ts`
+  - `lesson02/phase-1/page.tsx`
+  - `lesson02/phase-2/page.tsx`
+  - `lesson02/phase-3/page.tsx`
+  - `lesson02/phase-4/page.tsx`
+  - `lesson02/phase-5/page.tsx`
+  - `lesson02/phase-6/page.tsx`
+- New interactive components in the legacy implementation record:
+  - `lesson02/InventoryFlowExplorer.tsx`
+  - `lesson02/InventoryTimelineLab.tsx`
+  - `lesson02/CostAssignmentPractice.tsx`
+- Supporting assets in the legacy implementation record:
+  - `public/images/inventory-equation.png`
+  - `src/components/drag-drop-exercises/InventoryFlowDiagram.tsx`
+  - `src/data/question-banks/unit07-phase5.ts`
+- Key design decisions from the legacy implementation:
+  - Each phase uses Review → Teach Deeper → Activity structure
+  - Interactive components let students discover concepts through hands-on practice
+  - No FIFO/LIFO formal rules yet
+  - Three inventory layers used in Phase 3 timeline
+  - Phase 4 practice scenarios include varied business contexts
+  - Phase 5 assessment focuses on formula understanding and cost flow mechanics
+  - Phase 6 reflection connects lesson concepts to upcoming FIFO/LIFO methods in Lesson 3
+
 ### Lesson 03: FIFO and LIFO
 - **Skill**: `agents/skills/accounting-principles/SKILL.md`
 - **Focus**: FIFO and LIFO as competing cost-flow assumptions
@@ -156,6 +238,11 @@ Unit 07 should become inventory-only. Remove depreciation content from this unit
   - Students can calculate FIFO and LIFO by hand
   - Students can explain how each method changes reported profit and inventory
 
+#### Completion Notes
+- Status: Complete
+- The legacy implementation recorded Lesson 3 as a fully completed calculation-first lesson.
+- The lesson should remain focused on the mechanics and consequences of FIFO/LIFO before any Excel build work.
+
 ### Lesson 04: Specific ID and Weighted Average
 - **Skill**: `agents/skills/accounting-principles/SKILL.md`
 - **Focus**: Specific Identification and Weighted Average, plus four-method comparison
@@ -197,6 +284,31 @@ Unit 07 should become inventory-only. Remove depreciation content from this unit
 - **Done When**:
   - Students can recognize when each inventory method fits best
   - The closing phase points cleanly to the workbook lessons
+
+#### Completion Notes
+- Status: Complete
+- Completed files in the legacy implementation record:
+  - `lesson04/lesson-data.ts`
+  - `lesson04/phase-1/page.tsx`
+  - `lesson04/phase-2/page.tsx`
+  - `lesson04/phase-3/page.tsx`
+  - `lesson04/phase-4/page.tsx`
+  - `lesson04/phase-5/page.tsx`
+  - `lesson04/phase-6/page.tsx`
+- Interactive components in the legacy implementation record:
+  - `lesson04/SpecificIDTracker.tsx`
+  - `lesson04/SpecificIDPractice.tsx`
+  - `lesson04/WeightedAvgDemo.tsx`
+  - `lesson04/WeightedAvgPractice.tsx`
+  - `lesson04/MethodPracticeCombined.tsx`
+  - `lesson04/MethodComparisonMatrix.tsx`
+- Key design decisions from the legacy implementation:
+  - Phase 1 is conceptual, with method-fit sorting before calculation
+  - Specific identification uses teacher-led demonstration plus student practice
+  - Weighted average uses a visible running-total walkthrough with explicit rounding
+  - Phase 4 combines both methods before the four-method synthesis matrix
+  - Assessment and reflection are aligned to method recognition and method fit
+  - The lesson stays textbook-first and does not begin Excel too early
 
 ### Lesson 05: Build Inventory Method Workbook
 - **Skill**: `agents/skills/excel-lessons/SKILL.md`
@@ -396,3 +508,38 @@ Unit 07 should become inventory-only. Remove depreciation content from this unit
 ## Out of Scope
 - Changes to the locked skill map (must remain as specified)
 - Unit 01-06, 08 improvements (separate tracks)
+
+## Legacy Resource Plan
+- `unit07-lesson01-ending-inventory-launch.csv`
+- `unit07-lesson02-inventory-flow-practice.csv`
+- `unit07-lesson03-fifo-lifo-practice.csv`
+- `unit07-lesson04-specific-weighted-practice.csv`
+- `unit07-lesson04-student.xlsx`
+- `unit07-lesson04-teacher.xlsx`
+- `unit07-lesson04-tutorial.md`
+- `unit07-lesson05-method-compare-practice.csv`
+- `unit07-lesson05-student.xlsx`
+- `unit07-lesson05-teacher.xlsx`
+- `unit07-lesson05-tutorial.md`
+- `unit07-lesson06-inventory-dashboard-practice.csv`
+- `unit07-lesson06-student.xlsx`
+- `unit07-lesson06-teacher.xlsx`
+- `unit07-lesson06-tutorial.md`
+- `unit07-lesson07-shared-rehearsal.csv`
+- `unit07-lesson07-student.xlsx`
+- `unit07-lesson07-teacher.xlsx`
+- `unit07-lesson07-tutorial.md`
+- `unit07-pbl-asset-inventory-g1.csv`
+- `unit07-pbl-asset-inventory-g2.csv`
+- `unit07-pbl-asset-inventory-g3.csv`
+- `unit07-pbl-asset-inventory-g4.csv`
+
+## Definition of Done for the Unit Rewrite
+- Unit 07 is inventory-only.
+- The ending inventory formula is visible throughout the unit.
+- Lessons 1-6 escalate cleanly from concept to high-complexity Excel.
+- All four inventory methods are taught: FIFO, LIFO, Specific Identification, Weighted Average.
+- Lesson 7 clearly rehearses the exact workflow used in Lessons 8-10.
+- Lessons 8-10 use four different businesses and four different datasets.
+- Lessons 8-10 remain one-phase group project lessons by design.
+- Phase pages are textbook-first, business-authentic, and aligned to the new inventory scope.

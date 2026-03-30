@@ -2,6 +2,21 @@
 
 ## Track ID: unit07_20260330
 
+## Legacy Completion Snapshot
+- Lesson 01: Complete
+- Lesson 02: Complete
+- Lesson 03: Complete
+- Lesson 04: Complete
+- Lessons 05-10: Pending in the Conductor track
+
+## Completion Details Migrated From Legacy Plans
+- Lesson 02 included three new interactive components and supporting assets.
+- Lesson 04 included six interactive components plus the full four-method synthesis matrix.
+- Lesson 05 is the first medium-complexity Excel workbook lesson.
+- Lesson 06 is the high-complexity workbook and recommendation lesson.
+- Lesson 07 is the shared rehearsal lesson.
+- Lessons 08-10 are one-phase group project milestones.
+
 ### Phase 1: Setup & Skills Loading
 - [ ] 1.1 Load `agents/skills/launch-lesson/SKILL.md` and review requirements
   - Understand the launch-lesson phase contract
@@ -27,6 +42,14 @@
   - Remove SLN, DDB, fixed-asset, and depreciation-schedule language from titles and descriptions
   - Keep the strongest inventory pedagogy: prediction before reveal, visible layers, statement connections
   - Rewrite unit-facing copy so Unit 07 is inventory-only
+
+### Progress Notes From Legacy Plan
+- Lesson 01: Complete
+- Lesson 02: Complete
+- Lesson 03: Complete
+- Lesson 04: Complete
+- The legacy implementation used a shared rehearsal workbook and four group datasets for Lessons 7-10.
+- The legacy resource plan covered lesson-specific CSVs, workbook files, and tutorial docs for Lessons 1-7.
 
 ### Phase 2: Lessons 01-04 (Textbook-First)
 - [ ] 2.1 **Lesson 01** - Implement launch-lesson skill
@@ -195,3 +218,38 @@
 - [ ] 5.3 Verify alignment between page content, workbook downloads, assessment language
 - [ ] 5.4 Run `npm run lint` to check for errors
 - [ ] 5.5 Document any component changes in MCP knowledge base
+
+## Legacy Resource Plan
+- `unit07-lesson01-ending-inventory-launch.csv`
+- `unit07-lesson02-inventory-flow-practice.csv`
+- `unit07-lesson03-fifo-lifo-practice.csv`
+- `unit07-lesson04-specific-weighted-practice.csv`
+- `unit07-lesson04-student.xlsx`
+- `unit07-lesson04-teacher.xlsx`
+- `unit07-lesson04-tutorial.md`
+- `unit07-lesson05-method-compare-practice.csv`
+- `unit07-lesson05-student.xlsx`
+- `unit07-lesson05-teacher.xlsx`
+- `unit07-lesson05-tutorial.md`
+- `unit07-lesson06-inventory-dashboard-practice.csv`
+- `unit07-lesson06-student.xlsx`
+- `unit07-lesson06-teacher.xlsx`
+- `unit07-lesson06-tutorial.md`
+- `unit07-lesson07-shared-rehearsal.csv`
+- `unit07-lesson07-student.xlsx`
+- `unit07-lesson07-teacher.xlsx`
+- `unit07-lesson07-tutorial.md`
+- `unit07-pbl-asset-inventory-g1.csv`
+- `unit07-pbl-asset-inventory-g2.csv`
+- `unit07-pbl-asset-inventory-g3.csv`
+- `unit07-pbl-asset-inventory-g4.csv`
+
+## Definition of Done for the Unit Rewrite
+- Unit 07 is inventory-only.
+- The ending inventory formula is visible throughout the unit.
+- Lessons 1-6 escalate cleanly from concept to high-complexity Excel.
+- All four inventory methods are taught: FIFO, LIFO, Specific Identification, Weighted Average.
+- Lesson 7 clearly rehearses the exact workflow used in Lessons 8-10.
+- Lessons 8-10 use four different businesses and four different datasets.
+- Lessons 8-10 remain one-phase group project lessons by design.
+- Phase pages are textbook-first, business-authentic, and aligned to the new inventory scope.

@@ -4,19 +4,18 @@ You are working in:
 
 `/Users/daniel.bodanske/Desktop/Business-Operations`
 
-Your job is to complete exactly **one** lesson rewrite per run, using the correct project-local lesson skill and the unit-specific improvement plan.
-
-For this workflow, an unchecked lesson in `Improvement_plan.md` is **not complete yet**, even if files already exist for that lesson. Do not treat the presence of existing pages, a passing build, or your own judgment that the lesson "looks done" as permission to mark it complete.
+Your job is to complete exactly **one** lesson rewrite per run, using the correct project-local lesson skill and the active Conductor track plan.
 
 ## Required files to read first
 
 1. `/Users/daniel.bodanske/Desktop/Business-Operations/AGENTS.md`
-2. `/Users/daniel.bodanske/Desktop/Business-Operations/Improvement_plan.md`
+2. `/Users/daniel.bodanske/Desktop/Business-Operations/conductor/tracks.md`
 
-Then identify the next unfinished lesson and read:
+Then identify the next unfinished track and read:
 
-3. `/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/UnitXX-Improvement-Plan.md`
-4. The required skill file named in that unit plan:
+3. `/Users/daniel.bodanske/Desktop/Business-Operations/conductor/tracks/<track_id>/spec.md`
+4. `/Users/daniel.bodanske/Desktop/Business-Operations/conductor/tracks/<track_id>/plan.md`
+5. The required skill file named in that track:
    - `/Users/daniel.bodanske/Desktop/Business-Operations/agents/skills/launch-lesson/SKILL.md`
    - `/Users/daniel.bodanske/Desktop/Business-Operations/agents/skills/accounting-principles/SKILL.md`
    - `/Users/daniel.bodanske/Desktop/Business-Operations/agents/skills/excel-lessons/SKILL.md`
@@ -25,11 +24,11 @@ Then identify the next unfinished lesson and read:
 
 ## Lesson selection rule
 
-- Open `Improvement_plan.md`.
-- Work from the lowest-numbered unit that still has an unchecked lesson.
-- Within that unit, work on the lowest-numbered unchecked lesson.
-- Complete exactly one lesson and stop.
-- Treat the unchecked box as authoritative. Do not skip an unchecked lesson because the current implementation looks strong.
+- Open `conductor/tracks.md`.
+- Work from the lowest-numbered incomplete track that still has pending work.
+- Within that track, work on the lowest-numbered unchecked task or lesson.
+- Complete exactly one lesson worth of work and stop.
+- Treat the track plan as authoritative. Do not skip pending work because the current implementation looks strong.
 
 At the start of the run, print which unit and lesson you selected.
 
@@ -75,7 +74,7 @@ The lesson should be complete enough that a junior developer would not need to r
 
 ## Non-Negotiable Completion Rule
 
-You may mark the selected lesson complete in `Improvement_plan.md` only if all of the following are true:
+You may mark the selected lesson complete in the track plan only if all of the following are true:
 
 - you made **substantive student-facing changes** for that specific lesson during this run
 - you wrote or refactored at least one of the components to more align with the lesson objective
@@ -98,7 +97,7 @@ If you inspect the selected lesson and believe it is already complete, treat tha
 1. Read the required files.
 2. Inspect the current lesson files before changing anything.
 3. Use the lesson skill as the writing and structure standard.
-4. Identify the specific gaps between the current lesson and the improvement-plan requirements.
+4. Identify the specific gaps between the current lesson and the track-plan requirements.
 5. Make the lesson-specific edits.
 6. Confirm that the selected lesson now has a substantive diff.
 7. Run `npm run build` in:
@@ -117,31 +116,30 @@ Before editing:
 
 After the lesson is complete and the build passes:
 
-1. Update `/Users/daniel.bodanske/Desktop/Business-Operations/Improvement_plan.md`
-   - check the completed lesson box
-   - update the unit status if needed
-   - if all 10 lessons for a unit are now complete, mark that unit `finished`
-   - update `Next target`
-   - update `Units finished` if needed
+1. Update the selected Conductor track plan
+   - check the completed lesson box or task
+   - update the track status if needed
+   - if all work in the track is complete, mark it finished
 2. Stage only the files relevant to this run.
 3. Commit with a conventional commit message in this format:
    - `feat: improve unitXX lessonXX`
 4. Push to remote:
    - `git push origin HEAD`
 
-Before updating `Improvement_plan.md`, run a diff check and verify that the selected lesson has real content changes in this run. If there is no substantive diff for the selected lesson, stop without updating the tracker.
+Before updating the track plan, run a diff check and verify that the selected lesson has real content changes in this run. If there is no substantive diff for the selected lesson, stop without updating the tracker.
 
 ## Stop conditions
 
 Stop without committing only if:
 
 - the worktree is dirty before you begin
-- you cannot determine the next lesson from `Improvement_plan.md`
+- you cannot determine the next lesson from `conductor/tracks.md`
 - the selected lesson appears already complete and there is no substantive lesson diff to make in this run
 - the build fails for a clearly unrelated reason you cannot safely fix
 - the lesson would require a broad unit rewrite rather than one-lesson scope
 
-If you stop, print a short blocker summary and do not update `Improvement_plan.md`.
+If you stop, print a short blocker summary and do not update the selected track plan.
+If you stop, print a short blocker summary and do not update the selected track plan.
 
 ## Final run summary
 

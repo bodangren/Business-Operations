@@ -116,5 +116,5 @@ Next Steps (capstone pages)
 
 Unit Planning Follow-up
 - Unit 07 is being refocused to inventory only.
-- Depreciation scope moved to `Unit08-Improvement-Plan.md`.
-- When Unit 07 rewrite begins, remove depreciation-specific lesson goals, activities, questions, and workbook assets from Unit 07 and use `Unit08-Improvement-Plan.md` as the transfer checklist for Unit 8.
+- Depreciation scope now lives in the Conductor Unit 08 track plan.
+- Use `conductor/tracks.md` and the Unit 07 / Unit 08 track folders as the transfer checklist instead of legacy improvement-plan files.
