@@ -55,8 +55,8 @@
   - [x] 2.2.3 Include strong representational supports in Phases 2-3
   - [x] 2.2.4 Make Phase 4 a repeatable classification/practice loop
   - **Done when**:
-    - [ ] Students can explain how a transaction changes assets, liabilities, or equity
-    - [ ] Phase 5 checks understanding of transaction effects, not spreadsheet steps
+    - [x] Students can explain how a transaction changes assets, liabilities, or equity
+    - [x] Phase 5 checks understanding of transaction effects, not spreadsheet steps
 
 - [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
   - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
