@@ -3,29 +3,29 @@
 ## Track ID: unit01_20260330
 
 ### Phase 1: Setup & Skills Loading
-- [~] 1.1 Load `agents/skills/launch-lesson/SKILL.md` and review requirements
+- [x] 1.1 Load `agents/skills/launch-lesson/SKILL.md` and review requirements
   - Understand the launch-lesson phase contract
   - Review component rules for launch lessons
   - Review writing rules specific to launch lessons
-- [ ] 1.2 Load `agents/skills/accounting-principles/SKILL.md` and review requirements
+- [x] 1.2 Load `agents/skills/accounting-principles/SKILL.md` and review requirements
   - Understand the accounting-principles phase contract
   - Review CRA (Concrete-Representational-Abstract) guidance
   - Review phase-4 component contract
-- [ ] 1.3 Load `agents/skills/excel-lessons/SKILL.md` and review requirements
+- [x] 1.3 Load `agents/skills/excel-lessons/SKILL.md` and review requirements
   - Understand the excel-lessons phase contract
   - Review SpreadsheetWrapper rules and formula guidance
   - Review simulator rules and workbook continuity rules
-- [ ] 1.4 Load `agents/skills/project-rehearsal/SKILL.md` and review requirements
+- [x] 1.4 Load `agents/skills/project-rehearsal/SKILL.md` and review requirements
   - Understand the project-rehearsal phase contract
   - Review shared artifact rules
   - Review peer audit rules and transfer rules
-- [ ] 1.5 Load `agents/skills/group-project/SKILL.md` and review requirements
+- [x] 1.5 Load `agents/skills/group-project/SKILL.md` and review requirements
   - Understand the group-project milestone contract
   - Review dataset and workbook assignment rules
   - Review recommendation rules and peer feedback rules
 
 ### Phase 2: Lessons 01-03 (Textbook-First)
-- [ ] 2.1 **Lesson 01** - Implement launch-lesson skill
+- [~] 2.1 **Lesson 01** - Implement launch-lesson skill
   - [ ] 2.1.1 Update lesson-data.ts for Lesson 01
   - [ ] 2.1.2 Implement Phase 1 with Sarah's interview video and investor-trust problem
     - Use the shared `VideoPlayer` component
