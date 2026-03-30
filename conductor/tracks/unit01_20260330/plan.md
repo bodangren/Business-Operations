@@ -75,21 +75,21 @@
     - [x] The closing phase clearly hands off to the first Excel build lesson
 
 ### Phase 3: Lessons 04-06 (Excel-Focused)
-- [ ] 3.1 **Lesson 04** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 04
-  - [ ] 3.1.2 Implement Phase 1-6 with Excel workbook structure
+- [x] 3.1 **Lesson 04** - Implement excel-lessons skill
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 04
+  - [x] 3.1.2 Implement Phase 1-6 with Excel workbook structure
     - Phase 1: Open with business/investor scenario where speed/clarity/flexibility matters, make tool feel necessary, connect to existing workbook
     - Phase 2: Name tool/workbook pattern clearly, explain feature parts, show where tool lives in Excel, teach common failure mode
     - Phase 3: Use custom simulator/manual logic trainer mirroring real workbook logic, give immediate feedback, make bridge to phase 4 explicit
     - Phase 4: State exact starting workbook/download path, state output, include reference model, provide short build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical/conceptual check, brief artifact task focusing on trustworthiness and business communication
     - Phase 6: Reflect on tool use and professional judgment, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Phase 2: Teach workbook anatomy and naming conventions
-  - [ ] 3.1.4 Phase 3: Rehearse table structure or formula logic before real workbook sprint
-  - [ ] 3.1.5 Phase 4: Produce clean starter ledger workbook, not just a mockup
+  - [x] 3.1.3 Phase 2: Teach workbook anatomy and naming conventions
+  - [x] 3.1.4 Phase 3: Rehearse table structure or formula logic before real workbook sprint
+  - [x] 3.1.5 Phase 4: Produce clean starter ledger workbook, not just a mockup
   - **Done when**:
-    - [ ] Students finish a readable ledger structure in Excel
-    - [ ] The workbook state is ready for formula-based self-auditing in Lesson 05
+    - [x] Students finish a readable ledger structure in Excel
+    - [x] The workbook state is ready for formula-based self-auditing in Lesson 05
 
 - [ ] 3.2 **Lesson 05** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 05

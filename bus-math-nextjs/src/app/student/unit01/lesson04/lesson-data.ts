@@ -6,14 +6,14 @@ export const lesson04Data = {
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
     "Create a professional Excel Table from manual transaction data",
-    "Apply structured references and professional ledger formatting",
+    "Apply professional formatting and structure to transaction data",
     "Build a clean, readable Excel workbook structure ready for formulas",
-    "Verify workbook integrity and professional presentation standards"
+    "Define and verify workbook completion standards"
   ],
   keyConcepts: [
     "Excel Table structure and properties",
     "Professional ledger formatting standards",
-    "Structured references for readability",
+    "Excel Table naming conventions",
     "Workbook organization best practices",
     "Professional data presentation"
   ],
