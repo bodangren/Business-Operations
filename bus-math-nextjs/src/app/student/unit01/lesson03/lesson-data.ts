@@ -1,31 +1,33 @@
 // Unit 1, Lesson 3 data - extracted from MCP curriculum database
 export const lesson03Data = {
   id: "mds5t7qrc36pdfr61an",
-  title: "Core Concepts: Debit & Credit Rules",
+  title: "Debit, Credit, and Trial Balance",
   sequence: 3,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
-    "Master debit and credit rules for all account types",
-    "Record TechStart Solutions transactions using proper debit/credit format",
-    "Verify that total debits equal total credits in all journal entries",
-    "Create accurate T-accounts for transaction analysis"
+    "Apply DEA LER rules to determine correct debit/credit entries for all account types",
+    "Construct accurate journal entries that maintain balance in every transaction",
+    "Post transactions to T-accounts using systematic procedures",
+    "Explain why the trial balance must tie out and what errors it detects",
+    "Connect manual debit/credit skills to the foundation of Sarah's self-auditing ledger"
   ],
   keyConcepts: [
-    "Debit and credit rules by account type",
-    "T-account structure and organization",
-    "Journal entry construction and format",
-    "Transaction recording verification",
-    "TechStart Solutions chart of accounts"
+    "DEA LER mnemonic for debit/credit rules",
+    "T-account structure as representational support",
+    "Journal entry format and balance verification",
+    "Trial balance preparation and interpretation",
+    "Double-entry bookkeeping principles"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "T-account visual demonstrations",
-    "Guided practice with TechStart transactions",
-    "Partner verification of journal entries",
-    "Progressive skill building"
+    "Concrete-to-Representational-to-Abstract (CRA) progression",
+    "Systematic procedure modeling with worked examples",
+    "Algorithmic deliberate practice in Phase 4",
+    "Exit ticket on debit/credit logic and trial balance",
+    "CAP reflection on learning journey"
   ],
-  rationale: "This lesson teaches the fundamental debit/credit rules that are essential for accurate ledger construction and transaction recording.",
-  status: "Draft"
+  rationale: "This lesson establishes the systematic debit/credit framework that makes Sarah's ledger self-auditing. Students move from understanding the left/right logic to applying it reliably with minimal scaffolding.",
+  status: "Active"
 }
 
 export const unit01Data = {
