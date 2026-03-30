@@ -1,30 +1,31 @@
-// Unit 1, Lesson 4 data - extracted from MCP curriculum database
+// Unit 1, Lesson 4 data
 export const lesson04Data = {
   id: "mds5t7qs1o7y0k5y45z",
-  title: "Excel Model: Tables & SUMIF Functions",
+  title: "Excel Model: Move Manual Ledger to Excel Table",
   sequence: 4,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
-    "Create Excel Tables with structured references for professional ledger organization",
-    "Build SUMIF functions to automatically calculate account balances",
-    "Demonstrate professional Excel structure and formatting standards",
-    "Test and validate formula functionality with sample transaction data"
+    "Create a professional Excel Table from manual transaction data",
+    "Apply structured references and professional ledger formatting",
+    "Build a clean, readable Excel workbook structure ready for formulas",
+    "Verify workbook integrity and professional presentation standards"
   ],
   keyConcepts: [
-    "Excel Table creation and formatting",
-    "Structured references vs. cell references",
-    "SUMIF function syntax and application",
-    "Dynamic formula expansion",
-    "Professional ledger structure"
+    "Excel Table structure and properties",
+    "Professional ledger formatting standards",
+    "Structured references for readability",
+    "Workbook organization best practices",
+    "Professional data presentation"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Hands-on Excel demonstration",
-    "Guided practice with TechStart data",
-    "Partner testing of formula functionality",
-    "Progressive skill building"
+    "Business-pressure hook",
+    "Tool anatomy explanation",
+    "Safe simulator rehearsal",
+    "Workbook build sprint",
+    "Brief artifact task"
   ],
-  rationale: "This lesson introduces essential Excel skills for building automated ledger systems that will scale with business growth and impress investors.",
+  rationale: "This lesson moves Sarah's manual transaction data into a professional Excel Table structure, establishing the foundation for automated formulas in the next lesson.",
   status: "Draft"
 }
 
@@ -34,48 +35,42 @@ export const unit01Data = {
   sequence: 1
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases - aligned with excel-lessons skill
 export const lesson04Phases = [
   {
-    id: "phase04-hook",
+    id: "phase04-tool-pressure",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Experience the power of Excel Tables and automated calculations through a before/after demonstration",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To show a basic, non-automated table vs. an Excel Table.
+    description: "Business scenario showing why professional Excel structure matters for investor trust",
   },
   {
-    id: "phase04-intro", 
+    id: "phase04-tool-anatomy",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn Excel Table creation, structured references, and SUMIF function syntax for ledger automation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of Excel Tables and SUMIF syntax.
+    description: "Excel Table structure, formatting, and common failure modes",
   },
   {
-    id: "phase04-guided",
+    id: "phase04-safe-rehearsal",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build Excel Tables and SUMIF formulas step-by-step using TechStart transaction data",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can work within a pre-built template to practice the new skills.
+    description: "Rehearse table structure and professional formatting before real workbook build",
   },
   {
-    id: "phase04-independent",
+    id: "phase04-workbook-sprint",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Create additional account categories and test formula expansion with new transaction types",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can extend the template with new categories and formulas.
+    description: "Build the real Excel workbook with clean table structure and professional formatting",
   },
   {
-    id: "phase04-assessment",
+    id: "phase04-audit-explain",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Complete formative assessment on Excel Table creation and SUMIF formula construction",
-    // component: "FillInTheBlank" (id: 17539276608411j3ll7eqa) - To assess the ability to construct SUMIF formulas correctly.
+    description: "Short technical check and brief artifact explaining workbook structure choices",
   },
   {
-    id: "phase04-closing",
+    id: "phase04-reflection-handoff",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on Excel automation benefits and preview conditional formatting for error detection",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on tool use and preview self-auditing formulas in next lesson",
   }
 ]

@@ -11,36 +11,36 @@ const currentPhase = lesson04Phases[0]
 const comprehensionQuestions = [
   {
     id: "q1",
-    question: "What Excel feature do you predict will be most challenging for Sarah to master?",
+    question: "What is the biggest risk for Sarah with her current manual ledger system?",
     answers: [
-      "Writing SUMIF formulas correctly",
-      "Creating basic Excel Tables",
-      "Setting up automated calculations", 
-      "Organizing transaction data professionally"
+      "Human errors are almost impossible to catch",
+      "She runs out of paper",
+      "She can't find her pen",
+      "Her handwriting is messy"
     ],
-    explanation: "SUMIF formulas require understanding syntax and logical criteria, making them typically the most challenging Excel skill to master initially."
+    explanation: "Manual ledgers suffer from calculation errors that are difficult to detect and verify, making them risky for investor due diligence."
   },
   {
     id: "q2",
-    question: "Based on the manual vs. automated demonstration, what's the biggest benefit of Excel automation?",
+    question: "What is the primary benefit of moving Sarah's ledger to an Excel Table?",
     answers: [
-      "Both eliminates errors and saves time",
-      "Makes spreadsheets look more colorful",
-      "Eliminates human calculation errors",
-      "Reduces time spent on repetitive tasks"
+      "Built-in structure, automatic expansion, and easy verification",
+      "It looks nicer with colors",
+      "It takes more time to create",
+      "It requires no thinking"
     ],
-    explanation: "Excel automation provides dual benefits: mathematical accuracy and time efficiency, both critical for professional ledger management."
+    explanation: "Excel Tables provide professional structure, automatically grow with new data, and make transactions easy to verify and audit."
   },
   {
     id: "q3",
-    question: "Why would investors care about Sarah's Excel skills?",
+    question: "Why would an investor prefer an Excel Table over a manual ledger?",
     answers: [
-      "It demonstrates systematic financial controls",
-      "It shows she knows how to use computers",
-      "It proves she can make colorful spreadsheets",
-      "It indicates she doesn't need an accountant"
+      "Systematic structure and verifiable accuracy",
+      "Manual ledgers are more honest",
+      "Excel Tables are harder to read",
+      "Manual ledgers are faster to build"
     ],
-    explanation: "Investors value systematic financial controls because they indicate responsible management and reduce investment risk."
+    explanation: "Investors need verifiable, systematic financial records. Excel Tables provide structure that manual ledgers cannot match."
   }
 ]
 
@@ -79,21 +79,20 @@ export default function Phase1Page() {
             <CardHeader>
               <CardTitle className="text-orange-900 flex items-center gap-2">
                 <Lightbulb className="h-6 w-6" />
-                The Manual Process Problem
+                The Manual Ledger Problem
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="prose prose-lg max-w-none text-orange-800">
                 <p>
-                  "There has to be a better way," she mutters, rubbing her temples. With three 
-                  new clients and transactions flowing in weekly, her simple list of entries 
-                  isn't cutting it anymore. She needs a system that can handle the complexity 
-                  and do the math automatically—without errors.
+                  "There has to be a better way," she mutters, rubbing her temples. Her notebook ledger 
+                  was fine when Tech had three transactions a month. Now she has thirty—and the volume is 
+                  growing fast. Every time she tries to verify her work, she gets a different answer.
                 </p>
                 <p>
-                  Little does Sarah know, she's about to discover Excel Tables and SUMIF functions—
-                  professional tools that will transform her chaotic manual calculations into an 
-                  automated, self-updating financial system that scales with her business growth.
+                  Next week, Sarah meets with an angel investor. He wants to see her books. Her notebook 
+                  ledger will look amateurish at best—and impossible to verify without hours of cross-checking 
+                  at worst. She needs professional structure, yesterday.
                 </p>
               </div>
             </CardContent>
@@ -103,24 +102,24 @@ export default function Phase1Page() {
         {/* Before vs After Demonstration */}
         <section className="max-w-4xl mx-auto space-y-6">
           <h2 className="text-2xl font-bold text-gray-900 text-center">
-            Manual vs. Automated: The Transformation
+            Manual Ledger vs. Excel Table: The Transformation
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="border-red-200">
               <CardHeader>
                 <CardTitle className="text-red-700 flex items-center gap-2">
                   <Calculator className="h-5 w-5" />
-                  Manual Process (Before)
+                  Manual Notebook Ledger
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm">
                 <ul className="space-y-2 text-red-700">
-                  <li>• Scroll through entire transaction list</li>
-                  <li>• Find all "Cash" transactions manually</li>
-                  <li>• Add debits and credits separately</li>
-                  <li>• Calculate final balance by hand</li>
-                  <li>• Repeat for every account</li>
-                  <li>• <strong>Result:</strong> 20+ minutes, multiple errors</li>
+                  <li>• No built-in structure or validation</li>
+                  <li>• Easy to skip or duplicate entries</li>
+                  <li>• No way to verify trial balance automatically</li>
+                  <li>• Handwriting can be hard to read</li>
+                  <li>• Looks amateurish to investors</li>
+                  <li>• <strong>Result:</strong> Risky, unverifiable, unprofessional</li>
                 </ul>
               </CardContent>
             </Card>
@@ -129,17 +128,17 @@ export default function Phase1Page() {
               <CardHeader>
                 <CardTitle className="text-green-700 flex items-center gap-2">
                   <Zap className="h-5 w-5" />
-                  Automated Process (After)
+                  Excel Table Structure
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm">
                 <ul className="space-y-2 text-green-700">
-                  <li>• Excel Table automatically organizes data</li>
-                  <li>• SUMIF formulas find transactions instantly</li>
-                  <li>• All calculations update automatically</li>
-                  <li>• Account balances always current</li>
-                  <li>• Professional formatting included</li>
-                  <li>• <strong>Result:</strong> 30 seconds, perfect accuracy</li>
+                  <li>• Professional headers, consistent formatting</li>
+                  <li>• Built-in column filtering and sorting</li>
+                  <li>• Automatic expansion when adding rows</li>
+                  <li>• Structured references instead of cell addresses</li>
+                  <li>• Clear, readable structure for verification</li>
+                  <li>• <strong>Result:</strong> Verifiable, professional, scalable</li>
                 </ul>
               </CardContent>
             </Card>
@@ -150,15 +149,17 @@ export default function Phase1Page() {
         <section className="max-w-4xl mx-auto">
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-blue-900">Why This Matters</CardTitle>
+              <CardTitle className="text-blue-900">Why This Matters for Investor Trust</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-blue-800 text-lg leading-relaxed">
-                Mastering Excel Tables and SUMIF functions isn't just about following 
-                formulas—it's about building the foundation for investor confidence. When 
-                Sarah shows potential investors her self-auditing ledger, they can 
-                immediately see that she understands how to systematically manage business 
-                finances with professional-grade tools.
+                Sarah's angel investor wants to see "clean books"—financial records that are 
+                systematic, verifiable, and professional. Her manual notebook ledger fails on all three counts.
+              </p>
+              <p className="text-blue-800 text-lg leading-relaxed mt-4">
+                By moving her transaction data into an Excel Table, Sarah creates the foundation of a 
+                ledger that an investor can review in minutes, not hours. The structure signals serious 
+                financial control. The clarity allows instant verification. This is how trust begins.
               </p>
             </CardContent>
           </Card>
@@ -189,18 +190,17 @@ export default function Phase1Page() {
                 Discussion Prompt (3 minutes):
               </p>
               <p className="text-purple-800 mb-2">
-                Think about Sarah's experience with manual calculations versus Excel automation. 
-                Share with a partner:
+                Think about Sarah's investor meeting next week. Share with a partner:
               </p>
               <ul className="list-disc list-inside space-y-1 text-purple-800">
-                <li>What specific problems do you see with her current manual approach?</li>
-                <li>How might these problems affect her relationship with clients?</li>
-                <li>What Excel features do you predict will be most challenging to master?</li>
+                <li>Would you trust a founder who kept a handwritten notebook ledger? Why or why not?</li>
+                <li>What three things does an investor need to see to feel confident about financial controls?</li>
+                <li>How would moving to an Excel Table address all three investor concerns?</li>
               </ul>
               <div className="mt-4 p-3 bg-purple-100 rounded border border-purple-200">
                 <p className="text-sm text-purple-700">
-                  <strong>Discussion Goal:</strong> Students should identify the business risks 
-                  of manual processes and begin to see Excel automation as a professional necessity.
+                  <strong>Discussion Goal:</strong> Students should connect professional Excel structure 
+                  directly to investor trust and financial control standards.
                 </p>
               </div>
             </CardContent>

@@ -41,9 +41,9 @@ export default function Phase3Page() {
         <section className="max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              As you work through each transaction, pay attention to how the Excel Table 
-              structure and SUMIF formulas create a self-updating system that grows 
-              automatically with Sarah's expanding business.
+              Before you open Excel and build the real workbook, you'll practice the key decisions 
+              and patterns here in a safe environment. This rehearsal will help you avoid common 
+              mistakes and understand exactly why professional structure matters for investor trust.
             </p>
           </div>
         </section>
@@ -54,42 +54,45 @@ export default function Phase3Page() {
           <CardHeader>
             <CardTitle className="text-blue-800 flex items-center gap-2">
               <Construction className="h-5 w-5" />
-              Building Sarah's Smart Ledger: Step by Step
+              Building Sarah's Professional Table: Practice Steps
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 className="font-semibold text-blue-900 mb-2">Step 1: Set Up Excel Table Structure</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">Step 1: Define Column Structure</h4>
                 <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
-                  <li>Create columns: Date, Description, Account, Debit, Credit</li>
-                  <li>Format as Excel Table (Ctrl+T)</li>
-                  <li>Rename table to "LedgerTable"</li>
-                  <li>Apply professional formatting</li>
+                  <li>Decide columns: Date, Description, Account, Type, Debit, Credit</li>
+                  <li>Ensure consistent column order across all rows</li>
+                  <li>Plan for Account Type column (Asset, Liability, Equity, Revenue, Expense)</li>
+                  <li>Think about how investors will read and verify this structure</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-blue-900 mb-2">Step 2: Enter TechStart Transactions</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">Step 2: Apply Currency Formatting</h4>
                 <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
-                  <li>Record client payments: Bakery ($2,200), Pet Grooming ($650), Dental ($1,100)</li>
-                  <li>Track business expenses: Software subscriptions, equipment purchases</li>
-                  <li>Watch table expand automatically as you add rows</li>
+                  <li>Debit and Credit columns need 2 decimal places</li>
+                  <li>Use comma separators for thousands</li>
+                  <li>Add dollar signs consistently</li>
+                  <li>Format negative values in red or parentheses</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-blue-900 mb-2">Step 3: Build SUMIF Formulas</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">Step 3: Create Excel Table</h4>
                 <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
-                  <li>Cash balance: =SUMIF(LedgerTable[Account], "Cash", LedgerTable[Debit]) - SUMIF(LedgerTable[Account], "Cash", LedgerTable[Credit])</li>
-                  <li>Total revenue: =SUMIF(LedgerTable[Account], "Revenue", LedgerTable[Credit])</li>
-                  <li>Test with Sarah's actual transaction data</li>
+                  <li>Select any cell in your data range</li>
+                  <li>Press Ctrl+T (Windows) or Cmd+T (Mac)</li>
+                  <li>CRITICAL: Confirm "My table has headers" checkbox is checked</li>
+                  <li>Rename table to "LedgerTable" in Table Design tab</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-blue-900 mb-2">Step 4: Validate and Test</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">Step 4: Verify Professional Presentation</h4>
                 <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
-                  <li>Verify trial balance: Total Debits = Total Credits</li>
-                  <li>Add test transaction to confirm automatic updates</li>
-                  <li>Check formula accuracy with sample calculations</li>
+                  <li>Check that table banding colors are professional</li>
+                  <li>Verify headers are clear and readable</li>
+                  <li>Test column filtering works correctly</li>
+                  <li>Confirm table structure looks investor-ready</li>
                 </ul>
               </div>
             </div>
@@ -97,18 +100,17 @@ export default function Phase3Page() {
           </Card>
         </section>
 
-        {/* Interactive Transaction Journal */}
+        {/* Interactive Structure Practice */}
         <section className="max-w-4xl mx-auto space-y-4">
           <h2 className="text-2xl font-semibold text-gray-800 flex items-center gap-2">
             <Target className="h-6 w-6 text-green-600" />
-            Practice with TechStart Solutions Data
+            Practice: Organizing TechStart Transaction Data
           </h2>
-          
+
           <p className="text-lg leading-relaxed">
-            Use this interactive journal to practice recording Sarah's actual business 
-            transactions. This tool simulates the Excel environment and helps you understand 
-            how each transaction affects the accounting equation and builds toward the 
-            automated SUMIF calculations.
+            Use this interactive journal to practice recording Sarah's actual business transactions 
+            and see how proper data organization works. This tool helps you understand 
+            the structure decisions you'll make when building the Excel Table in Phase 4.
           </p>
 
           {(() => {
@@ -139,8 +141,8 @@ export default function Phase3Page() {
               }
             ]
             return (
-              <TransactionJournal 
-                title="Smart Ledger Practice Journal"
+              <TransactionJournal
+                title="Professional Table Structure Practice"
                 clientTypes={["TechStart Solutions","E-commerce Business","Creative Agency"]}
                 initialTransactions={initialTransactions}
                 maxTransactions={15}
