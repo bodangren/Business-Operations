@@ -38,10 +38,10 @@
     - Phase 4: Keep task constrained, allow 1-2 meaningful choices, show consequences visibly
     - Phase 5: Short MCQ exit ticket assessing founder problem, scoreboard, core distinctions
     - Phase 6: Restate enduring formula, summarize understanding, preview next lesson, include reflection
-  - [ ] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
+  - [x] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
   - **Done when**:
-    - [ ] Students can state why "clean books" matter to an investor
-    - [ ] The lesson previews debits/credits without teaching them formally yet
+    - [x] Students can state why "clean books" matter to an investor
+    - [x] The lesson previews debits/credits without teaching them formally yet
 
 - [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
   - [ ] 2.2.1 Update lesson-data.ts for Lesson 02

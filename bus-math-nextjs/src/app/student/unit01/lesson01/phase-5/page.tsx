@@ -3,12 +3,68 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
 import { lesson01Data, unit01Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 5)!
-  const assessmentQuestions = getUnit01Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] }).slice(0, 5)
+  
+  const assessmentQuestions = [
+    {
+      id: 'q1',
+      question: 'Why does "clean books" matter to an investor evaluating Sarah\'s business?',
+      answers: [
+        'Investors need instant access to accurate, verifiable financial records to make funding decisions',
+        'Clean books only matter during tax season',
+        'Investors prefer handwritten records because they feel more personal',
+        'Clean books are only necessary for large corporations'
+      ],
+      explanation: 'Investors evaluate businesses by examining their financial records. "Clean books" means organized, accurate, and instantly verifiable records that demonstrate professional management and build confidence in the business\'s controls.'
+    },
+    {
+      id: 'q2',
+      question: 'What is the accounting equation that serves as our unit scoreboard?',
+      answers: [
+        'Assets = Liabilities + Equity',
+        'Revenue = Expenses + Profit',
+        'Cash In = Cash Out',
+        'Debits = Credits'
+      ],
+      explanation: 'The accounting equation Assets = Liabilities + Equity is the fundamental scoreboard for every business. It tracks everything the business owns, everything it owes, and the owner\'s stake—all while staying perfectly balanced.'
+    },
+    {
+      id: 'q3',
+      question: 'What must stay true for the accounting equation with every single transaction?',
+      answers: [
+        'Both sides must always be equal',
+        'Only assets change',
+        'The equation is optional for small businesses',
+        'Liabilities and equity never change'
+      ],
+      explanation: 'The accounting equation is a rule of perfect balance. Every transaction affects at least two parts of the equation, and those changes must be equal to keep both sides balanced. This is why investors trust the equation as a scoreboard.'
+    },
+    {
+      id: 'q4',
+      question: 'Sarah wants to build a "self-auditing" ledger. What does that mean?',
+      answers: [
+        'A system that automatically checks whether every transaction keeps the accounting equation balanced',
+        'A ledger that Sarah can read by herself',
+        'A system that only tracks revenue',
+        'A ledger with colorful formatting'
+      ],
+      explanation: 'A self-auditing ledger has built-in checks that verify the accounting equation stays balanced after every transaction. This catches errors automatically and provides proof to investors that the records are reliable.'
+    },
+    {
+      id: 'q5',
+      question: 'What is the core distinction Sarah must understand about tracking business finances?',
+      answers: [
+        'It\'s not just recording transactions—it\'s proving the accounting equation stays balanced',
+        'Handwritten records are always better than digital',
+        'Only revenue matters for business success',
+        'Investors don\'t care about day-to-day operations'
+      ],
+      explanation: 'The core distinction is that professional financial management isn\'t just making lists—it\'s building a system where every transaction can be verified and the accounting equation automatically stays balanced. This is what "clean books" really means.'
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-background">
