@@ -1,0 +1,393 @@
+# Specification: Unit 03 Improvement Plan
+
+## Overview
+Implement Unit 03 curriculum - turn transaction-level work into financial story. Lessons 2-4 textbook-first for statement connections before Excel dashboards.
+
+## Unit Direction
+Unit 03 should turn transaction-level work into a financial story that executives can trust. Keep Lessons 2-4 textbook-first so students understand how the statements connect before they build cross-sheet links and dashboards in Excel.
+
+## Locked Skill Map
+- Lesson 01 → `agents/skills/launch-lesson/SKILL.md`
+- Lesson 02 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 03 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 04 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 05 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 06 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 07 → `agents/skills/project-rehearsal/SKILL.md`
+- Lesson 08 → `agents/skills/group-project/SKILL.md`
+- Lesson 09 → `agents/skills/group-project/SKILL.md`
+- Lesson 10 → `agents/skills/group-project/SKILL.md`
+
+## Functional Requirements
+
+### Junior Dev Rules
+- Read `AGENTS.md` and the named skill before editing any lesson
+- For Lessons 01-07, update `lesson-data.ts`, all six phase pages, and any lesson-specific components/imports
+- For Lessons 08-10, update the milestone page, `lesson-data.ts`, workbook links, checklists, rubric language, and reflection
+- Keep the same business story visible from transaction source to final executive summary
+- Align statement logic, workbook structure, and any dashboards or one-pagers
+- Do not change the locked skill map without updating this file
+
+### Lesson 01: Launch Investor Question
+- **Skill**: `agents/skills/launch-lesson/SKILL.md`
+- **Focus**: Launch the investor question, "What story do these numbers tell?"
+- **Phase 1 Requirements**:
+  - Start with Sarah's interview video using the TechStart narrative arc
+  - Use the shared `VideoPlayer` component
+  - Include title, description, YouTube ID, duration, and full transcript data
+  - Create business tension and credibility
+  - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
+- **Phase 2 Requirements**:
+  - Name the scoreboard explicitly (profit, solvency, and cash)
+  - Show the main moving parts of the system
+  - Explain what students will track across the unit
+  - Use one bounded interactive to help students scan the system
+- **Phase 3 Requirements**:
+  - Use a shared dataset or simulation
+  - Ask students to predict before reveal
+  - Show before/after changes clearly
+  - Focus on noticing business effects, not full formal calculation
+- **Phase 4 Requirements**:
+  - Keep the task constrained
+  - Allow 1-2 meaningful choices
+  - Show consequences in a visible way
+  - Reinforce the difference between surface activity and the deeper accounting problem
+  - No workbook build steps yet
+- **Phase 5 Requirements**:
+  - Short MCQ exit ticket
+  - Assess the founder problem, scoreboard, and core distinction(s)
+  - Keep it narrow and aligned to the launch lesson
+- **Phase 6 Requirements**:
+  - Restate the enduring formula, scoreboard, or key unit question
+  - Summarize what students should now understand
+  - Preview the first formal rule or principle coming next
+  - Include reflection
+- **Done When**:
+  - Students can explain why one statement alone is not enough
+  - The lesson previews the three-statement flow
+
+### Lesson 02: Build Income Statement
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Build the income statement from trial balance or journal data
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes income statement construction necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as grouping logic for revenue and expense lines
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex transactions or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner accounting-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, accounting-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess income statement construction, interpretation, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can prepare and interpret a basic income statement
+  - The close points forward to balance-sheet effects
+
+### Lesson 03: Build Balance Sheet and Retained Earnings
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Build the balance sheet and retained earnings logic
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes balance sheet construction necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as mini balance-sheet representations
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as retained earnings links or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner accounting-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, accounting-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess balance sheet construction, retained earnings logic, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can tie assets, liabilities, and equity correctly
+  - Students can explain how income affects equity
+
+### Lesson 04: Indirect Cash Flow and Ratios
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Indirect cash flow statement and ratio/story interpretation
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes cash flow statement construction necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as operating, investing, financing categories
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as ratio interpretation or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner accounting-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, accounting-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess cash flow statement construction, ratio interpretation, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the first Excel build lesson
+- **Done When**:
+  - Students can explain operating, investing, and financing flow at a basic level
+  - Students can connect the three statements conceptually
+
+### Lesson 05: Build Cross-Sheet Links
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Build cross-sheet links and statement checks in Excel
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the cross-sheet links and statement checks
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task such as a memo, voice script, recommendation, or audit response
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - Statements are linked correctly
+  - The workbook shows visible integrity checks
+
+### Lesson 06: Build KPI Dashboard
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Build KPI dashboard and executive summary layer
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the KPI dashboard and executive summary layer
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task requiring students to defend the financial story in plain language
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The workbook supports a credible executive-facing summary
+  - Students can cite ratios and statement evidence clearly
+
+### Lesson 07: Project Rehearsal
+- **Skill**: `agents/skills/project-rehearsal/SKILL.md`
+- **Focus**: Rehearse the exact workbook and presentation structure with shared teacher data
+- **Phase 1 Requirements**:
+  - Frame the lesson as a final guided rehearsal before the project
+  - Explain that every group is using the same data today on purpose
+  - Explain what students should learn from this guided-practice version of the project
+  - Contrast today's shared practice with the more independent project to come
+  - Include one short comprehension or discussion move about workbook quality or audience expectations
+- **Phase 2 Requirements**:
+  - Provide the shared workbook or artifact download path
+  - State that the student workbook uses the same data as the teacher workbook
+  - Name each major sheet, section, or evidence block and what it is supposed to prove
+  - Define what success looks like today
+  - Include a short vocabulary or structure check if needed
+- **Phase 3 Requirements**:
+  - Keep the data set constant across the class so students can compare reasoning and quality directly
+  - Use previews, guided routines, or annotated examples to trace the logic chain
+  - Ask students to identify where the recommendation comes from
+  - Ask students what would make the artifact feel weak, confusing, or untrustworthy
+  - Keep the teacher guidance high
+- **Phase 4 Requirements**:
+  - Continue the shared rehearsal workbook or artifact
+  - Keep the work teacher-guided enough that students are practicing the project structure, not inventing a new one
+  - Ask students to complete remaining weak spots, polish clarity, and check alignment
+  - Require at least one recommendation statement and one risk or limitation statement
+  - Ask students to name the features or structures they must transfer into the real project
+- **Phase 5 Requirements**:
+  - Include a short comprehension or transfer check
+  - Include a peer audit, critique, or review routine tied to the Definition of Done
+  - Make the review focus on logic chain, evidence, and clarity
+  - Require at least one clear strength and one clear improvement
+- **Phase 6 Requirements**:
+  - Reflect on what the rehearsal clarified
+  - Name what must be carried into the project
+  - Explain what changes in the next lesson when students get their own scenario or team task
+  - Keep the handoff concrete and specific
+- **Done When**:
+  - Students know what their own project workbook must include
+  - Audit criteria are explicit and reusable
+
+### Lesson 08: Project Kickoff
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Kickoff for group-specific business data using the same workbook structure
+- **Requirements**:
+  - Assign each group its own dataset or starter workbook
+  - Explain the business scenario, constraints, and target outcome
+  - Require teams to rename, save, and organize the correct workbook
+  - Start the first required sheets or sections
+  - Define milestone 1 acceptance criteria
+  - Keep workbook tabs and evidence chain identical to the rehearsal version
+- **Evidence to Require**:
+  - Correct workbook opened and named
+  - Early sheets or setup blocks completed
+  - One draft claim or early direction statement
+- **Done When**:
+  - Each group is working on the correct data
+  - Early statement structure is complete
+
+### Lesson 09: Complete Workbook and Board Explanation
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Complete workbook, test links, and rehearse board-style explanation
+- **Requirements**:
+  - Continue the same workbook from Lesson 08
+  - Complete the remaining sheets or evidence blocks
+  - Require scenario testing, checks, and dashboard completion
+  - Require a short recommendation structure using claim, evidence, and risk
+  - Include peer critique and revision
+  - Define milestone 2 acceptance criteria
+  - Make teams cite numbers from all three statements, not only one sheet
+- **Evidence to Require**:
+  - Complete workbook
+  - Final recommendation draft
+  - Cited workbook numbers from all three statements
+  - Peer feedback notes
+- **Done When**:
+  - The workbook is complete and coherent
+  - The team can explain the financial story clearly
+
+### Lesson 10: Final Presentation
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Final mock investor/board presentation, submission, and reflection
+- **Requirements**:
+  - Require final polish of workbook and presentation notes
+  - Make the audience, presentation standard, and submission standard explicit
+  - Include final checklist and timing guidance
+  - Require reflection after presentation or submission
+  - Make final artifact requirements explicit
+  - End with reflection on what made the model trustworthy
+- **Evidence to Require**:
+  - Final workbook
+  - Final recommendation or presentation artifact
+  - Submission confirmation
+  - Reflection
+- **Done When**:
+  - Final deliverables are submitted
+  - Reflection captures technical and communication growth
+
+## Non-Functional Requirements
+- Educational content at 8th grade reading level
+- Interactive components properly imported (default exports for exercises, named exports for UI)
+- Phase-specific gradient backgrounds and styling
+- Accessible design with keyboard navigation
+- Alignment between page content, workbook/tutorial downloads, and assessment language
+
+## Acceptance Criteria
+- [ ] All 10 lessons implemented with correct skill assignments
+- [ ] Three-statement flow visible throughout
+- [ ] Textbook-first in Lessons 02-04
+- [ ] Excel cross-sheet links in Lesson 05
+- [ ] KPI dashboard in Lesson 06
+- [ ] Lesson 07: Project rehearsal with shared dataset
+- [ ] Lessons 08-10: Group project with milestones and presentation
+- [ ] All phase pages have substantial explanatory content + interactive components
+- [ ] Alignment between page content, workbook downloads, and assessment language
+- [ ] Sarah/TechStart continuity visible throughout all lessons
+- [ ] Component rules followed for each skill type
+
+## Out of Scope
+- Changes to the locked skill map (must remain as specified)
+- Unit 01-02, 04-08 improvements (separate tracks)

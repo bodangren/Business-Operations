@@ -1,0 +1,392 @@
+# Specification: Unit 04 Improvement Plan
+
+## Overview
+Implement Unit 04 - Data-Driven Café with statistics and forecasting. Stay data-first, decision-first. Excel enters after conceptual understanding in Lessons 02-04.
+
+## Unit Direction
+Unit 04 should stay data-first and decision-first, not tool-first. Use `accounting-principles` as the current non-Excel conceptual skill for Lessons 2-4, but do not force accounting language into the statistics content. Excel should enter only after students can explain the data story without the software.
+
+## Locked Skill Map
+- Lesson 01 → `agents/skills/launch-lesson/SKILL.md`
+- Lesson 02 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 03 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 04 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 05 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 06 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 07 → `agents/skills/project-rehearsal/SKILL.md`
+- Lesson 08 → `agents/skills/group-project/SKILL.md`
+- Lesson 09 → `agents/skills/group-project/SKILL.md`
+- Lesson 10 → `agents/skills/group-project/SKILL.md`
+
+## Functional Requirements
+
+### Junior Dev Rules
+- Read `AGENTS.md` and the named skill before editing any lesson
+- For Lessons 01-07, update `lesson-data.ts`, all six phase pages, and any lesson-specific components/imports
+- For Lessons 08-10, update the milestone page, `lesson-data.ts`, dataset links, checklists, rubric language, and reflection
+- Keep the café operations problem visible in every lesson
+- Use the named skill structure, but adapt examples and vocabulary to statistics and forecasting
+- Do not change the locked skill map without updating this file
+
+### Lesson 01: Launch Weekend-Profit Problem
+- **Skill**: `agents/skills/launch-lesson/SKILL.md`
+- **Focus**: Launch the weekend-profit vs waste problem with café data
+- **Phase 1 Requirements**:
+  - Start with Sarah's interview video or equivalent narrative pressure around café operations
+  - Use the shared `VideoPlayer` component
+  - Include title, description, YouTube ID, duration, and full transcript data
+  - Create business tension and credibility
+  - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
+- **Phase 2 Requirements**:
+  - Name the scoreboard explicitly (weekend decision frame and main metrics)
+  - Show the main moving parts of the system
+  - Explain what students will track across the unit
+  - Use one bounded interactive to help students scan the system
+- **Phase 3 Requirements**:
+  - Use a shared dataset or simulation
+  - Ask students to predict before reveal
+  - Show before/after changes clearly
+  - Focus on noticing business effects, not full formal calculation
+- **Phase 4 Requirements**:
+  - Keep the task constrained
+  - Allow 1-2 meaningful choices
+  - Show consequences in a visible way
+  - Reinforce the difference between surface activity and the deeper data problem
+  - No workbook build steps yet
+- **Phase 5 Requirements**:
+  - Short MCQ exit ticket
+  - Assess the founder problem, scoreboard, and core distinction(s)
+  - Keep it narrow and aligned to the launch lesson
+- **Phase 6 Requirements**:
+  - Restate the enduring formula, scoreboard, or key unit question
+  - Summarize what students should now understand
+  - Preview the first formal rule or principle coming next
+  - Include reflection
+- **Done When**:
+  - Students can explain the business problem before any calculations begin
+  - The unit scoreboard or decision frame is visible
+
+### Lesson 02: Descriptive Statistics
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Descriptive statistics and what "normal" café data looks like
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes descriptive statistics necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as tables, diagrams, or visual representations
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex data or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner statistical-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, statistics-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess definitions, method recognition, reasoning, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can explain average, median, and spread in business terms
+  - Phase 5 checks interpretation, not Excel tools
+
+### Lesson 03: Outliers and Data Quality
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Outliers, variability, and data-quality decisions
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes outlier detection necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as visual representations of bad or extreme café weekends
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex data or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner statistical-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, statistics-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess outlier detection, data quality, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can explain why an outlier matters to planning
+  - Students can defend a data-cleaning decision
+
+### Lesson 04: Forecasting Logic and Regression
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Forecasting logic and the business meaning of regression
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes forecasting necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as trend lines, fit, and business interpretation
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex forecasting or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner statistical-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, statistics-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess forecasting logic, regression interpretation, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the first Excel build lesson
+- **Done When**:
+  - Students can explain what the forecast means and what it does not promise
+  - The closing phase points cleanly to the Excel build lessons
+
+### Lesson 05: Data Cleaning and Analysis
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Build the data-cleaning and statistical-analysis workflow in Excel
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the data-cleaning and statistical-analysis workflow
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task such as a memo, voice script, recommendation, or audit response
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The dataset is cleaned and analysis-ready
+  - Students can explain why each Excel step matters
+
+### Lesson 06: Visualizations and Recommendation
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Build visualizations and the recommendation layer
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the visualizations and recommendation layer
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task requiring explanation and trustworthiness
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The workbook or deliverable shows a clear visual story
+  - Students can explain the recommendation using evidence
+
+### Lesson 07: Project Rehearsal
+- **Skill**: `agents/skills/project-rehearsal/SKILL.md`
+- **Focus**: Rehearse the exact café-analysis project structure with shared teacher data
+- **Phase 1 Requirements**:
+  - Frame the lesson as a final guided rehearsal before the project
+  - Explain that every group is using the same data today on purpose
+  - Explain what students should learn from this guided-practice version of the project
+  - Contrast today's shared practice with the more independent project to come
+  - Include one short comprehension or discussion move about workbook quality or audience expectations
+- **Phase 2 Requirements**:
+  - Provide the shared workbook or artifact download path
+  - State that the student workbook uses the same data as the teacher workbook
+  - Name each major sheet, section, or evidence block and what it is supposed to prove
+  - Define what success looks like today
+  - Include a short vocabulary or structure check if needed
+- **Phase 3 Requirements**:
+  - Keep the data set constant across the class so students can compare reasoning and quality directly
+  - Use previews, guided routines, or annotated examples to trace the logic chain
+  - Ask students to identify where the recommendation comes from
+  - Ask students what would make the artifact feel weak, confusing, or untrustworthy
+  - Keep the teacher guidance high
+- **Phase 4 Requirements**:
+  - Continue the shared rehearsal workbook or artifact
+  - Keep the work teacher-guided enough that students are practicing the project structure, not inventing a new one
+  - Ask students to complete remaining weak spots, polish clarity, and check alignment
+  - Require at least one recommendation statement and one risk or limitation statement
+  - Ask students to name the features or structures they must transfer into the real project
+- **Phase 5 Requirements**:
+  - Include a short comprehension or transfer check
+  - Include a peer audit, critique, or review routine tied to the Definition of Done
+  - Make the review focus on logic chain, evidence, and clarity
+  - Require at least one clear strength and one clear improvement
+- **Phase 6 Requirements**:
+  - Reflect on what the rehearsal clarified
+  - Name what must be carried into the project
+  - Explain what changes in the next lesson when students get their own scenario or team task
+  - Keep the handoff concrete and specific
+- **Done When**:
+  - Students know the project structure they must reuse
+  - The class shares one quality standard for evidence and visuals
+
+### Lesson 08: Project Kickoff
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Kickoff with group-specific datasets and the same deliverable structure as rehearsal
+- **Requirements**:
+  - Assign each group its own dataset or starter workbook
+  - Explain the business scenario, constraints, and target outcome
+  - Require teams to rename, save, and organize the correct workbook
+  - Start the first required sheets or sections
+  - Define milestone 1 acceptance criteria
+  - Keep the workbook or deliverable structure identical to Lesson 07
+- **Evidence to Require**:
+  - Correct workbook opened and named
+  - Early sheets or setup blocks completed
+  - One draft claim or early direction statement
+- **Done When**:
+  - Each team is working with the correct data
+  - Initial project setup is complete
+
+### Lesson 09: Complete Analysis and Pitch
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Complete the analysis, visuals, and pitch rehearsal
+- **Requirements**:
+  - Continue the same workbook from Lesson 08
+  - Complete the remaining sheets or evidence blocks
+  - Require scenario testing, checks, and dashboard completion
+  - Require a short recommendation structure using claim, evidence, and risk
+  - Include peer critique and revision
+  - Define milestone 2 acceptance criteria
+  - Make teams cite exact data evidence in their explanation
+- **Evidence to Require**:
+  - Complete workbook
+  - Final recommendation draft
+  - Cited workbook numbers
+  - Peer feedback notes
+- **Done When**:
+  - The project artifact is complete and readable
+  - The team can deliver a short evidence-based pitch
+
+### Lesson 10: Final Presentation
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Final presentation/submission and reflection
+- **Requirements**:
+  - Require final polish of workbook and presentation notes
+  - Make the audience, presentation standard, and submission standard explicit
+  - Include final checklist and timing guidance
+  - Require reflection after presentation or submission
+  - Make final deliverables explicit
+  - End with reflection on data quality, analysis, and communication
+- **Evidence to Require**:
+  - Final workbook
+  - Final recommendation or presentation artifact
+  - Submission confirmation
+  - Reflection
+- **Done When**:
+  - Final deliverables are submitted
+  - Reflection captures what made the recommendation believable
+
+## Non-Functional Requirements
+- Educational content at 8th grade reading level
+- Interactive components properly imported (default exports for exercises, named exports for UI)
+- Phase-specific gradient backgrounds and styling
+- Accessible design with keyboard navigation
+- Alignment between page content, workbook/tutorial downloads, and assessment language
+
+## Acceptance Criteria
+- [ ] All 10 lessons implemented with correct skill assignments
+- [ ] Data-first approach in Lessons 01-04
+- [ ] Excel analytics in Lessons 05-06
+- [ ] Statistics vocabulary adapted to business context
+- [ ] Lesson 07: Project rehearsal with shared dataset
+- [ ] Lessons 08-10: Group project with milestones and presentation
+- [ ] All phase pages have substantial explanatory content + interactive components
+- [ ] Alignment between page content, workbook downloads, and assessment language
+- [ ] Sarah/TechStart continuity visible throughout all lessons
+- [ ] Component rules followed for each skill type
+
+## Out of Scope
+- Changes to the locked skill map (must remain as specified)
+- Unit 01-03, 05-08 improvements (separate tracks)

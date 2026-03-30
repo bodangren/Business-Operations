@@ -1,0 +1,191 @@
+# Implementation Plan: Unit 02 Improvement
+
+## Phase 1: Setup & Skills Loading
+- [ ] 1.1 Load `agents/skills/launch-lesson/SKILL.md` and review requirements
+  - Understand the launch-lesson phase contract
+  - Review component rules for launch lessons
+  - Review writing rules specific to launch lessons
+- [ ] 1.2 Load `agents/skills/accounting-principles/SKILL.md` and review requirements
+  - Understand the accounting-principles phase contract
+  - Review CRA (Concrete-Representational-Abstract) guidance
+  - Review phase-4 component contract
+- [ ] 1.3 Load `agents/skills/excel-lessons/SKILL.md` and review requirements
+  - Understand the excel-lessons phase contract
+  - Review SpreadsheetWrapper rules and formula guidance
+  - Review simulator rules and workbook continuity rules
+- [ ] 1.4 Load `agents/skills/project-rehearsal/SKILL.md` and review requirements
+  - Understand the project-rehearsal phase contract
+  - Review shared artifact rules
+  - Review peer audit rules and transfer rules
+- [ ] 1.5 Load `agents/skills/group-project/SKILL.md` and review requirements
+  - Understand the group-project milestone contract
+  - Review dataset and workbook assignment rules
+  - Review recommendation rules and peer feedback rules
+
+## Phase 2: Lessons 01-04 (Textbook-First)
+- [ ] 2.1 **Lesson 01** - Implement launch-lesson skill
+  - [ ] 2.1.1 Update lesson-data.ts for Lesson 01
+  - [ ] 2.1.2 Implement Phase 1 with Sarah's interview video and closing-time failure
+    - Use the shared `VideoPlayer` component
+    - Include title, description, YouTube ID, duration, and full transcript data
+    - Create business tension and credibility
+    - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
+  - [ ] 2.1.3 Implement Phase 2-6 with month-end scoreboard visible
+    - Phase 2: Name the scoreboard explicitly (month-end close workflow), show main moving parts, use one bounded interactive
+    - Phase 3: Use shared dataset/simulation, predict before reveal, show before/after changes
+    - Phase 4: Keep task constrained, allow 1-2 meaningful choices, show consequences visibly
+    - Phase 5: Short MCQ exit ticket assessing founder problem, scoreboard, core distinctions
+    - Phase 6: Restate enduring formula, summarize understanding, preview next lesson, include reflection
+  - [ ] 2.1.4 Keep Phase 4 bounded - no macro building yet
+  - **Done when**:
+    - [ ] Students understand why slow closes hurt the business
+    - [ ] The lesson points cleanly to adjusting-entry logic next
+
+- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
+  - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
+  - [ ] 2.2.2 Implement Phase 1-6 with accruals and deferrals
+    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
+    - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and strong representational supports
+    - Phase 3: Add meaningful complication, reduce prompts, shift toward cleaner accounting layouts, ask students to explain choices
+    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+    - Phase 5: Short MCQ exit ticket on definitions, method recognition, reasoning, misconceptions
+    - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
+  - [ ] 2.2.3 Use concrete business timing problems before formal definitions
+  - [ ] 2.2.4 Show how adjustments change the statements
+  - [ ] 2.2.5 Make Phase 4 a deliberate-practice loop on identifying and recording adjustments
+  - **Done when**:
+    - [ ] Students can tell when revenue/expense timing is wrong
+    - [ ] Phase 5 checks adjustment reasoning, not Excel navigation
+
+- [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
+  - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
+  - [ ] 2.3.2 Implement Phase 1-6 with closing entries logic
+    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
+    - Phase 2: Name closing entry rules clearly, model procedure step-by-step, explain why each step exists, use T-accounts and mini ledgers
+    - Phase 3: Add meaningful complication (more complex transactions), reduce prompts, shift toward authentic accounting notation
+    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+    - Phase 5: Short MCQ exit ticket on closing entries, temporary/permanent accounts, misconceptions
+    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview next lesson
+  - [ ] 2.3.3 Keep the flow visible from adjusted trial balance to closing entries
+  - [ ] 2.3.4 Use representational supports before full journal-format abstraction
+  - [ ] 2.3.5 Make students explain why closing is necessary, not just how to do it
+  - **Done when**:
+    - [ ] Students can explain what gets closed and why
+    - [ ] The lesson prepares students for a full close checklist in Lesson 04
+
+- [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
+  - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
+  - [ ] 2.4.2 Implement Phase 1-6 with complete manual month-end flow
+    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
+    - Phase 2: Name month-end close workflow clearly, model procedure step-by-step, explain why each step exists, use checklists and flow diagrams
+    - Phase 3: Add meaningful complication (more complex adjustments), reduce prompts, shift toward authentic accounting notation
+    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+    - Phase 5: Short MCQ exit ticket on month-end close workflow, adjustments, misconceptions
+    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
+  - [ ] 2.4.3 Keep this lesson non-Excel and textbook-first
+  - [ ] 2.4.4 Use a full month-end checklist or sequence so students see the workflow clearly
+  - [ ] 2.4.5 Make Phase 4 a repeated manual close routine with minimal scaffolding
+  - **Done when**:
+    - [ ] Students can walk through the month-end close in order
+    - [ ] The closing phase clearly sets up the automation lesson
+
+## Phase 3: Lessons 05-06 (Excel Automation)
+- [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
+  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [ ] 3.1.2 Implement Phase 1-6 with first automation layer
+    - Phase 1: Open with business scenario where automation matters, make tool feel necessary
+    - Phase 2: Name automation pattern (named ranges, inputs, buttons, macro trigger flow), explain parts, teach common failure mode
+    - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
+    - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
+    - Phase 5: Short technical check, brief artifact task focusing on trustworthiness and business communication
+    - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
+  - [ ] 3.1.3 Teach the feature anatomy directly: named ranges, inputs, buttons, or macro trigger flow
+  - [ ] 3.1.4 Include a safe rehearsal before students touch the workbook
+  - [ ] 3.1.5 Require a real workbook artifact by the end of Phase 4
+  - **Done when**:
+    - [ ] The workbook can automate at least one key closing routine
+    - [ ] Students can explain which manual step the automation replaced
+
+- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [ ] 3.2.2 Implement Phase 1-6 with wizard polish
+    - Phase 1: Open with business scenario where polished interface matters, make tool feel necessary
+    - Phase 2: Name validation/auditability pattern, explain parts, teach common failure mode
+    - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
+    - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
+    - Phase 5: Short technical check, brief artifact task testing trustworthiness and explanation
+    - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
+  - [ ] 3.2.3 Add visible checks and user-facing controls
+  - [ ] 3.2.4 Keep the workbook professional and easy to use
+  - [ ] 3.2.5 Phase 5 must test trustworthiness and explanation, not just clicks
+  - **Done when**:
+    - [ ] The workbook feels like a usable month-end tool, not a prototype pile
+    - [ ] Students can explain how the tool maintains GAAP accuracy
+
+## Phase 4: Lessons 07-10 (Project)
+- [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
+  - [ ] 4.1.1 Update lesson-data.ts for Lesson 07
+  - [ ] 4.1.2 Implement Phase 1-6 with shared teacher data
+    - Phase 1: Frame as final guided rehearsal, explain same-data purpose, contrast with independent project
+    - Phase 2: Provide shared workbook download path, state same-data requirement, name each sheet/evidence block, define success
+    - Phase 3: Keep data constant, use previews/guided routines to trace logic chain, ask where recommendation comes from, ask what makes artifact weak
+    - Phase 4: Continue shared workbook, keep teacher-guided, complete weak spots, require recommendation and risk statement, ask what features to transfer
+    - Phase 5: Short comprehension/transfer check, peer audit routine tied to Definition of Done, require strength and improvement
+    - Phase 6: Reflect on rehearsal, name what must carry into project, explain what changes next lesson
+  - [ ] 4.1.3 Keep the teacher and all groups on the same workbook data
+  - [ ] 4.1.4 Trace each control or output back to supporting logic
+  - [ ] 4.1.5 Run a peer audit against the Definition of Done
+  - **Done when**:
+    - [ ] Students know the exact project structure and quality bar
+    - [ ] The audit language is concrete enough to reuse in project work
+
+- [ ] 4.2 **Lesson 08** - Implement group-project skill
+  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+  - [ ] 4.2.2 Implement kickoff with group-specific closing scenarios
+    - Assign each group its own dataset/starter workbook
+    - Explain business scenario, constraints, target outcome
+    - Require teams to rename, save, organize correct workbook
+    - Start first required sheets/sections
+    - Define milestone 1 acceptance criteria
+  - [ ] 4.2.3 Assign each team its own scenario/workbook
+  - [ ] 4.2.4 Keep the structure identical to Lesson 07
+  - **Done when**:
+    - [ ] Each team is working in the correct workbook
+    - [ ] Setup and early close routines are in place
+
+- [ ] 4.3 **Lesson 09** - Implement group-project skill
+  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+  - [ ] 4.3.2 Implement completion and rehearsal
+    - Continue same workbook from Lesson 08
+    - Complete remaining sheets/evidence blocks
+    - Require scenario testing, checks, dashboard completion
+    - Require short recommendation structure (claim, evidence, risk)
+    - Include peer critique and revision
+    - Define milestone 2 acceptance criteria
+  - [ ] 4.3.3 Complete remaining automation, checks, and explanation notes
+  - [ ] 4.3.4 Require peer critique and revision
+  - [ ] 4.3.5 Make teams cite measurable time savings or accuracy gains
+  - **Done when**:
+    - [ ] The workbook and demo flow are complete
+    - [ ] The team can defend both speed and accuracy
+
+- [ ] 4.4 **Lesson 10** - Implement group-project skill
+  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [ ] 4.4.2 Implement final presentation and submission
+    - Require final polish of workbook and presentation notes
+    - Make audience, presentation standard, submission standard explicit
+    - Include final checklist and timing guidance
+    - Require reflection after presentation or submission
+  - [ ] 4.4.3 Make final demo expectations explicit
+  - [ ] 4.4.4 Require final workbook submission and polished speaking notes
+  - [ ] 4.4.5 End with reflection on automation, controls, and usability
+  - **Done when**:
+    - [ ] Final artifacts are submitted
+    - [ ] Reflection captures how the team balanced speed with accuracy
+
+## Phase 5: Verification & Polish
+- [ ] 5.1 Verify all lesson-data.ts files are updated
+- [ ] 5.2 Verify month-end timeline and business urgency visible throughout
+- [ ] 5.3 Verify alignment between page content, workbook downloads, assessment language
+- [ ] 5.4 Run `npm run lint` to check for errors
+- [ ] 5.5 Document any component changes in MCP knowledge base

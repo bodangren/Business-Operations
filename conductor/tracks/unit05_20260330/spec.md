@@ -1,0 +1,392 @@
+# Specification: Unit 05 Improvement Plan
+
+## Overview
+Implement Unit 05 - Payroll Systems. Teach payroll as timing-and-control system first, automation second. Conceptual payroll accounting in Lessons 02-04 before Excel.
+
+## Unit Direction
+Unit 05 should teach payroll as a timing-and-control system first and an automation challenge second. Keep enough conceptual payroll accounting in Lessons 2-4 so students understand gross pay, deductions, employer obligations, and cash timing before they start building the workbook.
+
+## Locked Skill Map
+- Lesson 01 → `agents/skills/launch-lesson/SKILL.md`
+- Lesson 02 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 03 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 04 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 05 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 06 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 07 → `agents/skills/project-rehearsal/SKILL.md`
+- Lesson 08 → `agents/skills/group-project/SKILL.md`
+- Lesson 09 → `agents/skills/group-project/SKILL.md`
+- Lesson 10 → `agents/skills/group-project/SKILL.md`
+
+## Functional Requirements
+
+### Junior Dev Rules
+- Read `AGENTS.md` and the named skill before editing any lesson
+- For Lessons 01-07, update `lesson-data.ts`, all six phase pages, and any lesson-specific components/imports
+- For Lessons 08-10, update the milestone page, `lesson-data.ts`, workbook links, checklists, rubric language, and reflection
+- Keep the cash-crunch story visible: payroll timing, taxes, and rent pressure
+- Align payroll logic, workbook structure, and any CSV/tutorial assets
+- Do not change the locked skill map without updating this file
+
+### Lesson 01: Launch Payroll Cash-Crunch
+- **Skill**: `agents/skills/launch-lesson/SKILL.md`
+- **Focus**: Launch the payroll cash-crunch problem and why payroll errors hurt trust fast
+- **Phase 1 Requirements**:
+  - Start with Sarah's interview video and the overdraft or missed-cash-timing problem
+  - Use the shared `VideoPlayer` component
+  - Include title, description, YouTube ID, duration, and full transcript data
+  - Create business tension and credibility
+  - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
+- **Phase 2 Requirements**:
+  - Name the scoreboard explicitly (gross pay, deductions, employer cost, cash out)
+  - Show the main moving parts of the system
+  - Explain what students will track across the unit
+  - Use one bounded interactive to help students scan the system
+- **Phase 3 Requirements**:
+  - Use a shared dataset or simulation
+  - Ask students to predict before reveal
+  - Show before/after changes clearly
+  - Focus on noticing business effects, not full formal calculation
+- **Phase 4 Requirements**:
+  - Keep the task constrained
+  - Allow 1-2 meaningful choices
+  - Show consequences in a visible way
+  - Reinforce the difference between surface activity and the deeper payroll problem
+  - No workbook construction yet
+- **Phase 5 Requirements**:
+  - Short MCQ exit ticket
+  - Assess the founder problem, scoreboard, and core distinction(s)
+  - Keep it narrow and aligned to the launch lesson
+- **Phase 6 Requirements**:
+  - Restate the enduring formula, scoreboard, or key unit question
+  - Summarize what students should now understand
+  - Preview the first formal rule or principle coming next
+  - Include reflection
+- **Done When**:
+  - Students can explain why payroll is both a people issue and a cash-flow issue
+  - The lesson points clearly to payroll calculation logic next
+
+### Lesson 02: Gross Pay
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Gross pay across hourly, salaried, and tipped employees
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes gross pay calculation necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as employee scenarios
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex pay calculations or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner payroll-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, payroll-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess gross pay logic, not Excel function names
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can calculate gross pay for multiple employee types
+  - Phase 5 checks pay logic, not Excel function names
+
+### Lesson 03: Deductions and Net Pay
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Deductions, net pay, and employer payroll obligations
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes deductions and net pay necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as mini payroll register or pay-stub representations
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex deductions or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner payroll-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, payroll-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess deductions, net pay, and employer obligations
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can move from gross pay to net pay accurately
+  - Students can explain the difference between employee deductions and employer payroll expense
+
+### Lesson 04: Payroll Timing and Liabilities
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Payroll timing, liabilities, and bank reconciliation logic
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes payroll timing necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as payroll timing and cash-flow diagrams
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex timing or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner payroll-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, payroll-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess payroll timing, liabilities, and bank reconciliation
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the first Excel build lesson
+- **Done When**:
+  - Students can explain why a payroll register and the bank can disagree temporarily
+  - The closing phase sets up the workbook automation cleanly
+
+### Lesson 05: Build Payroll Calculator
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Build the payroll calculator and data-mapping foundation in Excel
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the payroll calculator and data-mapping foundation
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task such as a memo, voice script, recommendation, or audit response
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The workbook can produce accurate pay results for at least one employee scenario
+  - Students can explain what each major workbook section does
+
+### Lesson 06: Validation and Stub Output
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Validation, bilingual stub output, reconciliation checks, and workbook polish
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the validation, stub output, and reconciliation checks
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task requiring a short explanation of how the workbook prevents payroll mistakes
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The workbook catches common entry errors and produces a clean output
+  - Students can defend the workbook as reliable for payroll use
+
+### Lesson 07: Project Rehearsal
+- **Skill**: `agents/skills/project-rehearsal/SKILL.md`
+- **Focus**: Rehearse the exact payroll-project structure with shared teacher data
+- **Phase 1 Requirements**:
+  - Frame the lesson as a final guided rehearsal before the project
+  - Explain that every group is using the same data today on purpose
+  - Explain what students should learn from this guided-practice version of the project
+  - Contrast today's shared practice with the more independent project to come
+  - Include one short comprehension or discussion move about workbook quality or audience expectations
+- **Phase 2 Requirements**:
+  - Provide the shared workbook or artifact download path
+  - State that the student workbook uses the same data as the teacher workbook
+  - Name each major sheet, section, or evidence block and what it is supposed to prove
+  - Define what success looks like today
+  - Include a short vocabulary or structure check if needed
+- **Phase 3 Requirements**:
+  - Keep the data set constant across the class so students can compare reasoning and quality directly
+  - Use previews, guided routines, or annotated examples to trace the logic chain
+  - Ask students to identify where the recommendation comes from
+  - Ask students what would make the artifact feel weak, confusing, or untrustworthy
+  - Keep the teacher guidance high
+- **Phase 4 Requirements**:
+  - Continue the shared rehearsal workbook or artifact
+  - Keep the work teacher-guided enough that students are practicing the project structure, not inventing a new one
+  - Ask students to complete remaining weak spots, polish clarity, and check alignment
+  - Require at least one recommendation statement and one risk or limitation statement
+  - Ask students to name the features or structures they must transfer into the real project
+- **Phase 5 Requirements**:
+  - Include a short comprehension or transfer check
+  - Include a peer audit, critique, or review routine tied to the Definition of Done
+  - Make the review focus on logic chain, evidence, and clarity
+  - Require at least one clear strength and one clear improvement
+- **Phase 6 Requirements**:
+  - Reflect on what the rehearsal clarified
+  - Name what must be carried into the project
+  - Explain what changes in the next lesson when students get their own scenario or team task
+  - Keep the handoff concrete and specific
+- **Done When**:
+  - Students know the exact workbook structure they must reuse in the project
+  - Peer critique focuses on accuracy, evidence, and payroll clarity
+
+### Lesson 08: Project Kickoff
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Project kickoff with group-specific payroll scenarios and the same rehearsal workbook structure
+- **Requirements**:
+  - Assign each group its own payroll dataset or starter workbook
+  - Explain the business scenario, constraints, and target outcome
+  - Require teams to rename, save, and organize the correct workbook
+  - Start the first required sheets or sections
+  - Define milestone 1 acceptance criteria
+  - Keep workbook tabs and logic identical to Lesson 07
+- **Evidence to Require**:
+  - Correct workbook opened and named
+  - Early sheets or setup blocks completed
+  - One draft claim or early direction statement
+- **Done When**:
+  - Each team is working in the correct workbook
+  - Initial calculation and setup work is complete
+
+### Lesson 09: Complete System and Edge Cases
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Complete the payroll system, test edge cases, and rehearse the tutorial/demo
+- **Requirements**:
+  - Continue the same workbook from Lesson 08
+  - Complete the remaining sheets or evidence blocks
+  - Require scenario testing, checks, and dashboard completion
+  - Require a short recommendation structure using claim, evidence, and risk
+  - Include peer critique and revision
+  - Define milestone 2 acceptance criteria
+  - Make teams cite workbook evidence for at least three payroll-control or cash-flow claims
+- **Evidence to Require**:
+  - Complete workbook
+  - Final recommendation draft
+  - Cited workbook numbers
+  - Peer feedback notes
+- **Done When**:
+  - The payroll workbook is complete and tested
+  - The team can explain how the system prevents payroll mistakes and cash surprises
+
+### Lesson 10: Final Tutorial and Reflection
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Final tutorial/demo, submission, and reflection
+- **Requirements**:
+  - Require final polish of workbook and presentation notes
+  - Make the audience, presentation standard, and submission standard explicit
+  - Include final checklist and timing guidance
+  - Require reflection after presentation or submission
+  - Make final artifact and speaking expectations explicit
+  - End with reflection on payroll accuracy, controls, and usability
+- **Evidence to Require**:
+  - Final workbook
+  - Final recommendation or presentation artifact
+  - Submission confirmation
+  - Reflection
+- **Done When**:
+  - Final workbook and presentation/tutorial artifacts are submitted
+  - Reflection captures what made the payroll system trustworthy
+
+## Non-Functional Requirements
+- Educational content at 8th grade reading level
+- Interactive components properly imported (default exports for exercises, named exports for UI)
+- Phase-specific gradient backgrounds and styling
+- Accessible design with keyboard navigation
+- Alignment between page content, workbook/tutorial downloads, and assessment language
+
+## Acceptance Criteria
+- [ ] All 10 lessons implemented with correct skill assignments
+- [ ] Payroll timing and control in Lessons 01-04
+- [ ] Excel automation in Lessons 05-06
+- [ ] Cash-flow story aligned across lessons
+- [ ] Lesson 07: Project rehearsal with shared dataset
+- [ ] Lessons 08-10: Group project with milestones and presentation
+- [ ] All phase pages have substantial explanatory content + interactive components
+- [ ] Alignment between page content, workbook downloads, and assessment language
+- [ ] Sarah/TechStart continuity visible throughout all lessons
+- [ ] Component rules followed for each skill type
+
+## Out of Scope
+- Changes to the locked skill map (must remain as specified)
+- Unit 01-04, 06-08 improvements (separate tracks)

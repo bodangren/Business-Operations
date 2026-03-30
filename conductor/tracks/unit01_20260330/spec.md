@@ -1,0 +1,391 @@
+# Specification: Unit 01 Improvement Plan
+
+## Overview
+Implement the complete Unit 01 curriculum improvements following the locked skill map and junior dev rules. Unit 01 establishes the investor-trust story for the whole course: clean books, visible logic, and a workbook that can catch mistakes early.
+
+## Unit Direction
+Unit 01 should establish the investor-trust story for the whole course: clean books, visible logic, and a workbook that can catch mistakes early. Keep lessons 1-3 textbook-first and move into Excel only after students can explain the accounting logic without the spreadsheet.
+
+## Locked Skill Map
+- Lesson 01 → `agents/skills/launch-lesson/SKILL.md`
+- Lesson 02 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 03 → `agents/skills/accounting-principles/SKILL.md`
+- Lesson 04 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 05 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 06 → `agents/skills/excel-lessons/SKILL.md`
+- Lesson 07 → `agents/skills/project-rehearsal/SKILL.md`
+- Lesson 08 → `agents/skills/group-project/SKILL.md`
+- Lesson 09 → `agents/skills/group-project/SKILL.md`
+- Lesson 10 → `agents/skills/group-project/SKILL.md`
+
+## Functional Requirements
+
+### Junior Dev Rules
+- Read `AGENTS.md` and the named skill before editing any lesson
+- For Lessons 01-07, update `lesson-data.ts`, all six phase pages, and any lesson-specific components/imports
+- For Lessons 08-10, update the milestone page, `lesson-data.ts`, workbook links, checklists, rubric language, and reflection
+- Keep Sarah/TechStart continuity visible
+- Align page content, workbook/tutorial downloads, and assessment language
+- Do not change the locked skill map without updating this file
+
+### Lesson 01: Launch Clean-Books Problem
+- **Skill**: `agents/skills/launch-lesson/SKILL.md`
+- **Focus**: Launch the clean-books problem and the accounting equation as the unit scoreboard
+- **Phase 1 Requirements**:
+  - Start with Sarah's interview video using the TechStart narrative arc
+  - Use the shared `VideoPlayer` component
+  - Include title, description, YouTube ID, duration, and full transcript data
+  - Create business tension and credibility
+  - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
+- **Phase 2 Requirements**:
+  - Name the scoreboard explicitly (accounting equation)
+  - Show the main moving parts of the system
+  - Explain what students will track across the unit
+  - Use one bounded interactive to help students scan the system
+- **Phase 3 Requirements**:
+  - Use a shared dataset or simulation
+  - Ask students to predict before reveal
+  - Show before/after changes clearly
+  - Focus on noticing business effects, not full formal calculation
+- **Phase 4 Requirements**:
+  - Keep the task constrained
+  - Allow 1-2 meaningful choices
+  - Show consequences in a visible way
+  - Reinforce the difference between surface activity and the deeper accounting problem
+  - Do not introduce workbook build steps yet
+- **Phase 5 Requirements**:
+  - Short MCQ exit ticket
+  - Assess the founder problem, scoreboard, and core distinction(s)
+  - Keep it narrow and aligned to the launch lesson
+- **Phase 6 Requirements**:
+  - Restate the enduring formula, scoreboard, or key unit question
+  - Summarize what students should now understand
+  - Preview the first formal rule or principle coming next
+  - Include reflection
+- **Done When**:
+  - Students can state why "clean books" matter to an investor
+  - The lesson previews debits/credits without teaching them formally yet
+
+### Lesson 02: Classify Transactions
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Classify transactions and show how business events move the accounting equation
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes a new rule or method necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as layers, diagrams, highlighted fields, or mini financial connections
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more layers, ambiguity, comparison, or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner accounting-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, accounting-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess definitions, method recognition, reasoning, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the next accounting principle or comparison
+- **Done When**:
+  - Students can explain how a transaction changes assets, liabilities, or equity
+  - Phase 5 checks understanding of transaction effects, not spreadsheet steps
+
+### Lesson 03: Debits, Credits, and Trial-Balance
+- **Skill**: `agents/skills/accounting-principles/SKILL.md`
+- **Focus**: Debits, credits, and trial-balance logic
+- **Phase 1 Requirements**:
+  - Reconnect to the prior lesson, dataset, or business scenario
+  - Show the exact friction point that makes debits/credits necessary
+  - Use one short launch move such as prediction, notice-and-wonder, or compare-the-results
+  - Keep the representation highly concrete and story-anchored
+- **Phase 2 Requirements**:
+  - Name the method or principle clearly (debit/credit rules)
+  - Model the procedure step by step
+  - Explain why each step exists
+  - Use worked examples, guided prompts, and visible intermediate values
+  - Use strong representational supports such as T-accounts, mini ledgers, or highlighted fields
+- **Phase 3 Requirements**:
+  - Add one meaningful complication such as more complex transactions or rounding discipline
+  - Keep the skill target the same
+  - Reduce prompts and hints compared with phase 2
+  - Begin shifting toward cleaner accounting-style layouts and more authentic notation
+  - Ask students to explain choices, not only compute answers
+- **Phase 4 Requirements**:
+  - Use the same underlying procedure each round
+  - Vary the numbers or valid permutations algorithmically
+  - Provide automatic checking
+  - Give feedback after submission, not during every step
+  - Include brief reteach guidance tied to the error pattern
+  - Allow a new isomorphic problem immediately after feedback
+  - Define a mastery target such as consecutive correct answers or a threshold score
+  - Present the work in a more abstract, accounting-aligned format with minimal visual support
+- **Phase 5 Requirements**:
+  - Use a short MCQ exit ticket
+  - Assess debit/credit rules, trial balance logic, and common misconceptions
+  - Keep the scope narrow and aligned to the lesson's main target
+- **Phase 6 Requirements**:
+  - Ask students to reflect on both confidence and understanding
+  - Connect the lesson back to the business problem
+  - Identify what signal tells a student to use this method
+  - Preview the first Excel build lesson
+- **Done When**:
+  - Students can post transactions and explain why the trial balance should tie out
+  - The closing phase clearly hands off to the first Excel build lesson
+
+### Lesson 04: Move Manual Ledger to Excel
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Move the manual ledger into a structured Excel workbook with clean table design
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Produce a clean starter ledger workbook, not just a mockup
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task such as a memo, voice script, recommendation, or audit response
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - Students finish a readable ledger structure in Excel
+  - The workbook state is ready for formula-based self-auditing in Lesson 05
+
+### Lesson 05: Build Self-Auditing Formulas
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Build self-auditing formulas, totals, and error flags
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the self-auditing formulas, totals, and error flags
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task explaining which check matters most
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The workbook catches common posting or balance errors
+  - Students can explain how the checks prove reliability
+
+### Lesson 06: Investor-Facing Summary
+- **Skill**: `agents/skills/excel-lessons/SKILL.md`
+- **Focus**: Investor-facing summary, workbook polish, and clear evidence chain
+- **Phase 1 Requirements**:
+  - Open with a business or investor scenario where speed, clarity, or flexibility matters
+  - Make the tool feel necessary, not decorative
+  - Connect the lesson to the existing workbook or model
+  - Include one short comprehension or discussion move
+- **Phase 2 Requirements**:
+  - Name the tool or workbook pattern clearly
+  - Explain the parts of the feature directly
+  - Show where the tool lives in Excel when relevant
+  - Include one short check on vocabulary, anatomy, or setup logic
+  - Teach at least one common failure mode
+- **Phase 3 Requirements**:
+  - Use a custom simulator, manual logic trainer, or tightly bounded guided interaction
+  - Mirror the real workbook logic as closely as possible
+  - Give immediate feedback or reveal after an attempt
+  - Make the bridge to phase 4 explicit
+- **Phase 4 Requirements**:
+  - State the exact starting workbook or download path
+  - State the output students should finish by the end of class
+  - Include one reference model or layout guide
+  - Provide a short build sequence with no more than a few major blocks
+  - Include verification checkpoints after major build steps
+  - Include a Definition of Done or rubric
+  - Build the summary layer that shows accuracy and readiness quickly
+  - Add workbook checks, labels, and formatting that feel investor-ready
+- **Phase 5 Requirements**:
+  - Use a short technical or conceptual check
+  - Add one brief artifact task requiring a brief defense of the workbook, not another build sprint
+  - Focus on trustworthiness, interpretation, and business communication
+- **Phase 6 Requirements**:
+  - Reflect on both tool use and professional judgment
+  - Name what the student can now do faster or more reliably
+  - Preview the next workbook layer or next lesson's build
+- **Done When**:
+  - The workbook has a clear summary or dashboard layer
+  - Students can cite workbook evidence in plain language
+
+### Lesson 07: Project Rehearsal
+- **Skill**: `agents/skills/project-rehearsal/SKILL.md`
+- **Focus**: Rehearse the exact ledger project structure with the same teacher data for every group
+- **Phase 1 Requirements**:
+  - Frame the lesson as a final guided rehearsal before the project
+  - Explain that every group is using the same data today on purpose
+  - Explain what students should learn from this guided-practice version of the project
+  - Contrast today's shared practice with the more independent project to come
+  - Include one short comprehension or discussion move about workbook quality or audience expectations
+- **Phase 2 Requirements**:
+  - Provide the shared workbook or artifact download path
+  - State that the student workbook uses the same data as the teacher workbook
+  - Name each major sheet, section, or evidence block and what it is supposed to prove
+  - Define what success looks like today
+  - Include a short vocabulary or structure check if needed
+- **Phase 3 Requirements**:
+  - Keep the data set constant across the class so students can compare reasoning and quality directly
+  - Use previews, guided routines, or annotated examples to trace the logic chain
+  - Ask students to identify where the recommendation comes from
+  - Ask students what would make the artifact feel weak, confusing, or untrustworthy
+  - Keep the teacher guidance high
+- **Phase 4 Requirements**:
+  - Continue the shared rehearsal workbook or artifact
+  - Keep the work teacher-guided enough that students are practicing the project structure, not inventing a new one
+  - Ask students to complete remaining weak spots, polish clarity, and check alignment
+  - Require at least one recommendation statement and one risk or limitation statement
+  - Ask students to name the features or structures they must transfer into the real project
+- **Phase 5 Requirements**:
+  - Include a short comprehension or transfer check
+  - Include a peer audit, critique, or review routine tied to the Definition of Done
+  - Make the review focus on logic chain, evidence, and clarity
+  - Require at least one clear strength and one clear improvement
+- **Phase 6 Requirements**:
+  - Reflect on what the rehearsal clarified
+  - Name what must be carried into the project
+  - Explain what changes in the next lesson when students get their own scenario or team task
+  - Keep the handoff concrete and specific
+- **Done When**:
+  - Every student knows the structure they must reuse in the project
+  - Peer audit focuses on evidence, logic chain, and clarity
+
+### Lesson 08: Project Kickoff
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Project kickoff with group-specific startup data and the same rehearsal workbook structure
+- **Requirements**:
+  - Assign each group its own dataset or starter workbook
+  - Explain the business scenario, constraints, and target outcome
+  - Require teams to rename, save, and organize the correct workbook
+  - Start the first required sheets or sections
+  - Define milestone 1 acceptance criteria
+  - Keep the tab structure identical to Lesson 07
+- **Evidence to Require**:
+  - Correct workbook opened and named
+  - Early sheets or setup blocks completed
+  - One draft claim or early direction statement
+- **Done When**:
+  - Each team has the correct workbook open and renamed
+  - Early setup and analysis sheets are complete
+
+### Lesson 09: Complete Workbook and Recommendation
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Complete the workbook, prepare the recommendation, and rehearse the pitch
+- **Requirements**:
+  - Continue the same workbook from Lesson 08
+  - Complete the remaining sheets or evidence blocks
+  - Require scenario testing, checks, and dashboard completion
+  - Require a short recommendation structure using claim, evidence, and risk
+  - Include peer critique and revision
+  - Define milestone 2 acceptance criteria
+  - Require at least three cited numbers from the workbook
+- **Evidence to Require**:
+  - Complete workbook
+  - Final recommendation draft
+  - Cited workbook numbers
+  - Peer feedback notes
+- **Done When**:
+  - The workbook is complete and readable
+  - The team can deliver a claim-evidence-risk explanation
+
+### Lesson 10: Final Investor Pitch
+- **Skill**: `agents/skills/group-project/SKILL.md`
+- **Focus**: Final investor pitch, submission, and reflection
+- **Requirements**:
+  - Require final polish of workbook and presentation notes
+  - Make the audience, presentation standard, and submission standard explicit
+  - Include final checklist and timing guidance
+  - Require reflection after presentation or submission
+  - Make submission requirements explicit
+  - End with reflection on trust, control, and workbook design
+- **Evidence to Require**:
+  - Final workbook
+  - Final recommendation or presentation artifact
+  - Submission confirmation
+  - Reflection
+- **Done When**:
+  - Final workbook and presentation artifact are submitted
+  - Reflection captures what the team would keep or change next time
+
+## Non-Functional Requirements
+- Educational content at 8th grade reading level
+- Interactive components properly imported (default exports for exercises, named exports for UI)
+- Phase-specific gradient backgrounds and styling
+- Accessible design with keyboard navigation
+- Alignment between page content, workbook/tutorial downloads, and assessment language
+
+## Acceptance Criteria
+- [ ] All 10 lessons implemented with correct skill assignments
+- [ ] Lesson 01: Students can state why "clean books" matter to an investor
+- [ ] Lesson 01: Scoreboard (accounting equation) visible from Phase 2 through Phase 6
+- [ ] Lesson 02-03: Textbook-first with strong representational supports
+- [ ] Lesson 04-06: Excel workbook builds with proper structure
+- [ ] Lesson 07: Project rehearsal with shared dataset
+- [ ] Lessons 08-10: Group project with milestones and presentation
+- [ ] All phase pages have substantial explanatory content + interactive components
+- [ ] Alignment between page content, workbook downloads, and assessment language
+- [ ] Sarah/TechStart continuity visible throughout all lessons
+- [ ] Component rules followed for each skill type
+
+## Out of Scope
+- Changes to the locked skill map (must remain as specified)
+- Unit 02-08 improvements (separate tracks)
