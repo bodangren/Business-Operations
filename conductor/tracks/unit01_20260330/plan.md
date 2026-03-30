@@ -91,21 +91,21 @@
     - [x] Students finish a readable ledger structure in Excel
     - [x] The workbook state is ready for formula-based self-auditing in Lesson 05
 
-- [ ] 3.2 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.2.2 Implement Phase 1-6 with self-auditing formulas
-    - Phase 1: Open with business scenario where self-auditing matters, make tool feel necessary
-    - Phase 2: Name self-auditing formula pattern, explain parts, teach common failure mode
-    - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
-    - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
-    - Phase 5: Short technical check, brief artifact task explaining which check matters most
-    - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Teach totals, debit/credit checks, red-flag formulas
-  - [ ] 3.2.4 Keep SpreadsheetWrapper previews as static references, not live unsupported formulas
-  - [ ] 3.2.5 Require short artifact task in Phase 5 explaining which check matters most
-  - **Done when**:
-    - [ ] The workbook catches common posting or balance errors
-    - [ ] Students can explain how the checks prove reliability
+- [x] 3.2 **Lesson 05** - Implement excel-lessons skill
+   - [x] 3.2.1 Update lesson-data.ts for Lesson 05
+   - [x] 3.2.2 Implement Phase 1-6 with self-auditing formulas
+     - Phase 1: Open with business scenario where self-auditing matters, make tool feel necessary
+     - Phase 2: Name self-auditing formula pattern, explain parts, teach common failure mode
+     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
+     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
+     - Phase 5: Short technical check, brief artifact task explaining which check matters most
+     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
+   - [x] 3.2.3 Teach totals, debit/credit checks, red-flag formulas
+   - [x] 3.2.4 Keep SpreadsheetWrapper previews as static references, not live unsupported formulas
+   - [x] 3.2.5 Require short artifact task in Phase 5 explaining which check matters most
+   - **Done when**:
+     - [x] The workbook catches common posting or balance errors
+     - [x] Students can explain how the checks prove reliability
 
 - [ ] 3.3 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.3.1 Update lesson-data.ts for Lesson 06

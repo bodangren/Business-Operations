@@ -77,7 +77,7 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
     <div className="space-y-6">
       <div className="flex items-center gap-3 mb-4">
         <div className={`flex items-center gap-2 ${structureComplete ? "text-green-600" : "text-gray-400"}`}>
-          {structureComplete ? <CheckCircle2 className="h-5 w-5" />` : <div className="h-5 w-5 rounded-full border border-current" />}
+          {structureComplete ? <CheckCircle2 className="h-5 w-5" /> : <div className="h-5 w-5 rounded-full border border-current" />}
           <span className="font-medium">1. Column Structure</span>
         </div>
         <div className="h-px w-8 bg-gray-300" />
@@ -85,7 +85,7 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
           {formattingComplete ? <CheckCircle2 className="h-5 w-5" /> : <div className="h-5 w-5 rounded-full border border-current" />}
           <span className="font-medium">2. Formatting</span>
         </div>
-        <div className="h-pxw-8 bg-gray-300" />
+        <div className="h-px w-8 bg-gray-300" />
         <div className={`flex items-center gap-2 ${namingComplete ? "text-green-600" : "text-gray-400"}`}>
           {namingComplete ? <CheckCircle2 className="h-5 w-5" /> : <div className="h-5 w-5 rounded-full border border-current" />}
           <span className="font-medium">3. Naming</span>
@@ -229,7 +229,7 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
                     id="tableName"
                     placeholder="Enter table name..."
                     value={tableName}
-                    onChange={(e) => set {e.target.value}}
+                    onChange={(e) => setTableName(e.target.value)}
                     className="mt-2"
                   />
                   <p className="text-xs text-gray-600 mt-2">

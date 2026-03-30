@@ -1,31 +1,32 @@
-// Unit 1, Lesson 5 data - extracted from MCP curriculum database
+// Unit 1, Lesson 5 data
 export const lesson05Data = {
   id: "mds5t7qth7rdjsqegg",
-  title: "Advanced Ledger Automation: Dynamic Trial Balance & Posting Validator",
+  title: "Build Self-Auditing Formulas and Error Flags",
   sequence: 5,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
-    "Automate posting validation using structured references and SUMIFS across tables",
-    "Use XLOOKUP with IFERROR for robust account mapping and missing-ID checks",
-    "Build dynamic trial balance controls that flag out-of-balance states instantly",
-    "Implement professional data validation (lists, ranges, stale dates, negative values)",
-    "Stress test the model with edge cases to prove investor-ready reliability"
+    "Build SUMIF formulas to calculate account totals automatically",
+    "Create debit/credit balance checks that flag out-of-balance states",
+    "Add red-flag formulas that highlight common posting errors",
+    "Document audit controls so reviewers can verify reliability",
+    "Explain which self-audit check matters most for investor trust"
   ],
   keyConcepts: [
-    "Structured References (Table[Column])",
-    "XLOOKUP with IFERROR and validation",
-    "SUMIFS and SUMPRODUCT for ledger checks",
-    "Dynamic method switching (cash vs accrual)",
-    "Audit trails and self-auditing controls"
+    "SUMIF for totaling debits and credits by account",
+    "Balance verification formulas",
+    "Conditional formatting for red flags",
+    "Audit trail documentation",
+    "Self-auditing workbook design"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Demonstration of advanced automation patterns",
-    "Guided build of validation and control formulas",
-    "Independent stress testing with edge cases",
-    "Professional documentation and auditability standards"
+    "Business-pressure hook",
+    "Tool anatomy explanation",
+    "Safe simulator rehearsal",
+    "Workbook build sprint",
+    "Brief artifact task explaining which check matters most"
   ],
-  rationale: "Students deepen Lesson04 skills by building a self-auditing ledger with dynamic trial balance and robust validation. This reliability builds investor trust and prepares the model for growth.",
+  rationale: "Students build self-auditing formulas that catch common posting errors and verify the trial balance, proving Sarah's ledger is reliable and investor-ready.",
   status: "Draft"
 }
 
@@ -35,48 +36,42 @@ export const unit01Data = {
   sequence: 1
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases - aligned with excel-lessons skill
 export const lesson05Phases = [
   {
-    id: "phase05-hook",
+    id: "phase05-tool-pressure",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "See a fragile ledger fail under stress—then watch a dynamic, self-auditing build catch issues instantly.",
-    // component: "ComprehensionCheck" for diagnostic/prediction questions
+    description: "Business scenario where self-auditing matters for investor trust",
   },
   {
-    id: "phase05-intro", 
+    id: "phase05-tool-anatomy",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Deep dive on XLOOKUP error handling, SUMIFS controls, and structured references for professional-grade automation.",
-    // component: "FillInTheBlank" for advanced vocabulary
+    description: "Self-auditing formula pattern, parts, and common failure modes",
   },
   {
-    id: "phase05-guided",
+    id: "phase05-safe-rehearsal",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build Sarah’s posting validator and trial balance checks step-by-step with safeguards and documentation.",
-    // component: "ErrorCheckingSystem" for validation logic practice
+    description: "Rehearse formula logic before building in real workbook",
   },
   {
-    id: "phase05-independent",
+    id: "phase05-workbook-sprint",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Download advanced practice data with edge cases; implement dynamic updates and document your checks.",
-    // dataset: public/resources/unit01-ledger-advanced-practice.csv
+    description: "Build real Excel workbook with self-auditing formulas and error flags",
   },
   {
-    id: "phase05-assessment",
+    id: "phase05-audit-explain",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Professional mastery assessment: technical knowledge + applied business judgment for investor-readiness.",
-    // component: "ComprehensionCheck" with 8–10 comprehensive questions
+    description: "Short technical check and brief artifact explaining which check matters most",
   },
   {
-    id: "phase05-closing",
+    id: "phase05-reflection-handoff",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesize wins and reliability improvements; reflect on CAP skills; preview Lesson06 integration.",
-    // component: "ReflectionJournal"
-  }
+    description: "Reflect on tool use and preview investor-facing summary in next lesson"
+  },
 ]

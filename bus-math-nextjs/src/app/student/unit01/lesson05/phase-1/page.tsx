@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { Users, AlertTriangle, Shield, Zap } from "lucide-react"
+import { AlertTriangle, Shield, TrendingUp } from "lucide-react"
 import { lesson05Data, unit01Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[0]
@@ -11,36 +11,36 @@ const currentPhase = lesson05Phases[0]
 const hookQuestions = [
   {
     id: "q1",
-    question: "A client payment is posted with a missing AccountID. What should a robust model do?",
+    question: "Sarah discovers a debit entry of $500 is missing from her Cash account. What should a self-auditing ledger do?",
     answers: [
-      "Flag the missing ID and prevent totals from updating silently",
-      "Ignore the row and keep totals unchanged",
-      "Guess the account based on description text",
-      "Hide the error to keep the sheet clean"
+      "Flag the imbalance automatically and show exactly which accounts don't match",
+      "Wait for a human to notice during year-end audit",
+      "Ignore it and assume it will fix itself",
+      "Show a generic error without identifying the problem"
     ],
-    explanation: "Investor-ready models surface problems clearly and never hide data issues."
+    explanation: "Self-auditing ledgers catch errors immediately, preventing them from growing into costly problems."
   },
   {
     id: "q2",
-    question: "Sarah switches from cash to accrual view. What should change?",
+    question: "An investor asks Sarah to prove her books are accurate. What demonstrates reliability most convincingly?",
     answers: [
-      "Recognition timing updates dynamically without breaking formulas",
-      "Only chart colors change",
-      "Nothing changes—method doesn't affect totals",
-      "The workbook requires manual copy-paste updates"
+      "Formulas that verify debits equal credits and highlight any discrepancies in real time",
+      "A spreadsheet with no visible error messages",
+      "Printing the ledger and showing it looks neat",
+      "Stating that she checks it manually each month"
     ],
-    explanation: "Dynamic method switching is a hallmark of professional automation."
+    explanation: "Automated verification is objective, transparent, and builds investor confidence."
   },
   {
     id: "q3",
-    question: "Debit and credit totals disagree by $125. The right behavior is to:",
+    question: "Sarah's trial balance shows total debits of $45,200 and total credits of $45,325. What's the most important action?",
     answers: [
-      "Show a visible Out-of-Balance warning and isolate the issue",
-      "Round totals to make them match",
-      "Delete the last row to reset the error",
-      "Export to PDF to lock the numbers"
+      "Find and correct the $125 error immediately before using any totals for decisions",
+      "Round both totals to $45,000 and continue",
+      "Ignore the small difference since it's less than 1%",
+      "Copy the ledger to a new file to start fresh"
     ],
-    explanation: "A self-auditing ledger must highlight imbalances and help trace the cause."
+    explanation: "Even small errors compound over time and undermine trust in the financial system."
   }
 ]
 
@@ -58,15 +58,15 @@ export default function Phase1Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              🎯 Phase 1: Hook — Sarah’s Advanced Automation Stress Test
+              Phase 1: Why Self-Auditing Formulas Matter
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Fragile vs. Robust: Can Sarah’s Ledger Survive Growth?
+              Can Sarah Prove Her Books Are Accurate to an Investor?
             </h1>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Sarah’s TechStart Solutions is growing fast. New invoices, partial payments, and
-              refunds hit her books every week. A fragile spreadsheet breaks under this stress.
-              A robust, self-auditing model adapts and keeps investor trust.
+              Sarah needs to convince a potential investor that TechStart Solutions keeps clean books.
+              Manual checks aren't enough—she needs formulas that automatically catch errors and 
+              verify her ledger is trustworthy.
             </p>
           </div>
         </section>
@@ -76,16 +76,15 @@ export default function Phase1Page() {
             <CardHeader>
               <CardTitle className="text-red-700 flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5" />
-                Fragile Build (Before)
+                Manual Ledger Risk
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-red-800 space-y-2">
-              <ul className="list-disc list-inside space-y-1">
-                <li>Hard-coded totals that ignore new rows</li>
-                <li>No warning for missing AccountIDs</li>
-                <li>Manual method switching (cash vs. accrual)</li>
-                <li>Out-of-balance errors go unnoticed</li>
-                <li>Hidden mistakes damage investor confidence</li>
+              <ul className="list-disc list list-inside space-y-1">
+                <li>Posting errors go unnoticed until a formal audit</li>
+                <li>Trial balance might not tie out—nobody knows</li>
+                <li>Investors see risk, not reliability</li>
+                <li>Time wasted hunting for mistakes after they cause problems</li>
               </ul>
             </CardContent>
           </Card>
@@ -94,25 +93,44 @@ export default function Phase1Page() {
             <CardHeader>
               <CardTitle className="text-green-700 flex items-center gap-2">
                 <Shield className="h-5 w-5" />
-                Robust Build (After)
+                Self-Auditing Advantage
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-green-800 space-y-2">
               <ul className="list-disc list-inside space-y-1">
-                <li>Structured references update with new rows</li>
-                <li>XLOOKUP + IFERROR flags missing IDs</li>
-                <li>Dynamic method switch with clear labels</li>
-                <li>Trial balance control shows balance status</li>
-                <li>Professional documentation and audit trail</li>
+                <li>Formulas verify debits equal credits automatically</li>
+                <li>Red flags highlight problems the moment they appear</li>
+                <li>Investors see built-in controls and trust</li>
+                <li>Errors caught early—before they affect decisions</li>
               </ul>
             </CardContent>
           </Card>
         </section>
 
         <section className="max-w-4xl mx-auto">
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900">
+                Connecting to Your Workbook from Lesson 04
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-blue-900">
+              <p className="text-sm mb-2">
+                You built Sarah's professional Excel Table in Lesson 04. Today you'll add the 
+                self-auditing formulas that make that table powerful and trustworthy.
+              </p>
+              <p className="text-sm">
+                Think of your Lesson 04 table as the <strong>structure</strong>. Today you're building 
+                the <strong>checks</strong> that prove the structure works correctly.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="max-w-4xl mx-auto">
           <ComprehensionCheck
-            title="Diagnostic: Advanced Automation Readiness"
-            description="Predict how a professional ledger should behave under stress."
+            title="Quick Check: How Self-Auditing Helps Sarah"
+            description="Think about what happens when things go wrong in Sarah's ledger."
             questions={hookQuestions}
             showExplanations={true}
             allowRetry={true}
@@ -123,38 +141,24 @@ export default function Phase1Page() {
           <Card className="border-purple-200 bg-purple-50">
             <CardHeader>
               <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk: Risk and Investor Trust
+                <TrendingUp className="h-5 w-5" />
+                Why This Matters for Sarah's Investor Pitch
               </CardTitle>
             </CardHeader>
             <CardContent className="text-purple-800 space-y-2">
-              <p>
-                Sarah just learned her totals were off by $125 for two weeks. Discuss with a partner:
+              <p className="text-sm">
+                When Sarah presents to investors, she'll show more than a list of transactions. 
+                She'll demonstrate:
               </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>What business risks does this create?</li>
-                <li>What would convince an investor that her model is reliable?</li>
-                <li>Which safeguard would you build first, and why?</li>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Formulas that prove debits equal credits in real time</li>
+                <li>Red flags that surface errors before reports are sent</li>
+                <li>Documentation explaining each control and why it matters</li>
               </ul>
-              <div className="mt-3 p-3 bg-purple-100 rounded border border-purple-200 text-sm">
-                <strong className="mr-1">Goal:</strong> Name one control that prevents silent errors and
-                one control that speeds up reviews.
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        <section className="max-w-4xl mx-auto">
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Zap className="h-5 w-5" />
-                Why This Matters
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-blue-800">
-              A self-auditing ledger protects cash flow, prevents tax mistakes, and builds investor
-              confidence. Automation reduces closing time and frees Sarah to focus on clients.
+              <p className="text-sm mt-2">
+                These aren't nice-to-have features—they're essential for proving Sarah's financial 
+                systems are professional, reliable, and investor-ready.
+              </p>
             </CardContent>
           </Card>
         </section>
@@ -169,4 +173,3 @@ export default function Phase1Page() {
     </div>
   )
 }
-
