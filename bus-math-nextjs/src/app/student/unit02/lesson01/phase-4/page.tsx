@@ -2,7 +2,7 @@
 
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import { lesson01Data, unit02Data, lesson01Phaseskt } from "../lesson-data"
+import { lesson01Data, unit02Data, lesson01Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
