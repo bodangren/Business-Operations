@@ -39,11 +39,11 @@
     - Phase 5: Short MCQ exit ticket assessing founder problem, scoreboard, core distinctions
     - Phase 6: Restate enduring formula, summarize understanding, preview next lesson, include reflection
   - [x] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
-  - **Done when**:
-    - [x] Students can state why "clean books" matter to an investor
-    - [x] The lesson previews debits/credits without teaching them formally yet
+   - **Done when:**
+     - [x] Students can state why "clean books" matter to an investor
+     - [x] The lesson previews debits/credits without teaching them formally yet
 
-- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
+- [~] 2.2 **Lesson 02** - Implement accounting-principles skill
   - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
   - [ ] 2.2.2 Implement Phase 1-6 with concrete startup transactions before abstract account labels
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
