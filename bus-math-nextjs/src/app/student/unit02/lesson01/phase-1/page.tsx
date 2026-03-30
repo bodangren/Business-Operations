@@ -3,41 +3,43 @@ import { lesson01Data, unit02Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase1Page() {
   const videoData = {
-    title: "The Automation Breakthrough: Conquering the Month-End Nightmare",
-    description: "Sarah's business is growing, but so is her administrative workload. A weekend-long 'bank reconciliation nightmare' reveals the flaws in her manual system. With advice from her mentor, Marcus, Sarah discovers the power of automation to cut her month-end closing time from days to hours. Learn why this step is crucial for freeing up time to focus on growth.",
+    title: "The Closing Crisis: Growing Pains",
+    description: "Sarah's business is growing, but her month-end closing process isn't scaling. A weekend-long reconciliation reveals a serious bottleneck that could jeopardize her next big opportunity. Learn why accurate and timely month-end closing is critical for business growth.",
     youtubeId: "1O_YHSGpZDo",
     duration: "2:55",
     transcript: `(Sarah is on camera, appearing more settled and professional than in the first video. The setting is the same.)
 
-So, I had my smart ledger, and I was feeling pretty good. The business was growing. I even landed my first monthly retainer client, a local fitness studio. That was a big deal—it meant consistent revenue every month. But it also meant more transactions, more data entry, more things to keep track of.
+So, I had my smart ledger from Unit 1, and I was feeling pretty good. I think I had solved my bookkeeping problem, but I had just created a new one: a process that took way too much of my time.
 
-And that's when I hit the next wall. It happened at the end of the month. I sat down to do my first real 'month-end closing,' you know, reconcile my books with my bank account. It turned into a complete nightmare. I spent my entire weekend on it. My 'smart' ledger was still manual, and I found so many little errors—a typo here, a missed transaction there—and they threw all my numbers off. It was incredibly frustrating. I thought I had solved my bookkeeping problem, but I had just created a new one: a process that took way too much of my time.
+The real problem hit at the end of the month. I sat down to close my books for the first time properly—you know, match everything to the bank, account for any accrued expenses, make sure the income statement matched reality. I expected it to take a few hours. Instead, I spent my entire weekend.
 
-I was talking about it with my mentor, Marcus Rodriguez. I was just venting, really, about how I wasted a whole weekend. He was pretty direct. He told me my time was the most valuable asset in my business, and I was wasting it on tasks that a machine could do better. He pointed out that those little errors I found weren't so little; they could have serious tax consequences down the road. He was the one who pushed me to stop thinking about just *recording* my finances and start thinking about *automating* them.
+Here's the thing: I had more transactions than ever before. I had a new retainer client, a local fitness studio, that pays monthly in advance. I had software subscriptions I'd forgotten to record. I had expenses I'd incurred but not yet paid. My cash ledger didn't show the whole picture.
 
-That's where the idea of the 'Month-End Wizard' came from. The driving question for me became, how can I cut this process from two days down to two hours without sacrificing accuracy?. I dove into learning how to use things like macros and advanced formulas right there in my spreadsheet. The goal was to build a system that could do the heavy lifting for me—the routine checks, the calculations, the reconciliations. It's all about making the system work for you, not the other way around.
+I started making adjusting entries—things I knew I should have been recording all month. Every time I added one adjustment, I found another place where the numbers didn't match. I was chasing my own tail. By Sunday night, I was exhausted and my financials still didn't feel trustworthy.
 
-And it worked. That weekend-long nightmare literally became a two-hour task. The feeling was just... empowering. All that time I got back, I could now spend on what actually grows the business—finding bigger clients and improving my services. But this new efficiency created a new kind of ambition. I started going after bigger projects, but I quickly found out that serious people—like banks and investors—don't just want to hear that your books are accurate. They want to see them presented in a very specific way. They want professional financial statements. And learning how to create those... well, that was the next major hurdle.`
+And then came the scary part. I got a call from a banker I'd been talking to. They were interested in a loan to help me scale, but they asked for my most recent financial statements. I looked at what I had and... I wasn't confident enough to send it. What if the numbers were wrong? What if they found errors and decided my business wasn't as solid as I said it was?
+
+I realized then that slow, manual month-end closing isn't just annoying. It's a risk. It delays decision-making. It creates uncertainty. And it can cost you real opportunities when you can't produce accurate financials on demand.`
   }
 
   const comprehensionQuestions = [
     {
       id: 'q1',
-      question: 'What milestone achievement marked the beginning of Sarah\'s new challenges in Unit 2?',
-      answers: ['Landing her first monthly retainer client (fitness studio)', 'Getting her first $10,000 project', 'Hiring her first employee', 'Opening a business bank account'],
-      explanation: 'Sarah landed her first monthly retainer client, a local fitness studio, which meant consistent revenue but also more transactions and complexity in her month-end processes.'
+      question: 'Why was Sarah\'s "smart ledger" from Unit 1 no longer sufficient for her growing business?',
+      answers: ['It didn\'t handle accruals, deferrals, and adjusting entries needed for proper month-end closing', 'It was too expensive to maintain', 'It couldn\'t connect to her bank account', 'It didn\'t support multiple clients'],
+      explanation: 'Sarah\'s cash-based ledger worked when transactions were simple, but as her business grew with retainer clients, software subscriptions, and accrued expenses, she needed accrual recording and adjusting entries to show the full picture.'
     },
     {
       id: 'q2',
-      question: 'How long did Sarah\'s first month-end closing process take, and why was this a problem?',
-      answers: ['An entire weekend, which was an unsustainable use of her valuable time', 'One full day, which interfered with client work', 'Three hours, which was too long for a small business', 'Two weeks, which delayed her financial reporting'],
-      explanation: 'Sarah spent her entire weekend on month-end closing, and her mentor Marcus pointed out that this was wasting her most valuable asset—her time—on tasks a machine could do better.'
+      question: 'What happened when Sarah tried to close her books for the first time properly?',
+      answers: ['She spent her entire weekend chasing errors and adjusting entries', 'She finished in 2 hours with no problems', 'She realized her ledger was already perfect', 'She found all transactions automatically matched'],
+      explanation: 'Sarah expected month-end closing to take a few hours but spent her entire weekend because she had to discover and record accruals, deferrals, and other adjusting entries that her cash ledger hadn\'t been tracking.'
     },
     {
       id: 'q3',
-      question: 'What was Sarah\'s driving question that led to the "Month-End Wizard" concept?',
-      answers: ['How can I cut this process from two days down to two hours without sacrificing accuracy?', 'How can I hire someone to do my bookkeeping for me?', 'How can I avoid doing month-end closing altogether?', 'How can I convince my clients to pay faster?'],
-      explanation: 'Sarah\'s specific goal was to reduce her month-end closing time from two days to two hours while maintaining accuracy through automation and advanced Excel features like macros and formulas.'
+      question: 'What was the immediate business consequence of Sarah\'s slow, uncertain month-end closing process?',
+      answers: ['She couldn\'t confidently send financial statements to a banker considering a loan', 'She lost her biggest client', 'She had to pay a fine to the IRS', 'Her bank account was frozen'],
+      explanation: 'When a banker asked for Sarah\'s most recent financial statements for a loan application, she wasn\'t confident enough to send them because her month-end closing process was slow and uncertain about accuracy.'
     }
   ]
 
@@ -50,28 +52,43 @@ And it worked. That weekend-long nightmare literally became a two-hour task. The
       cardBorder: "orange-200"
     },
     introText: {
-      welcomeText: 'After launching TechStart Solutions, Sarah had her "Smart Ledger" from Unit 1, and for a while, she was feeling pretty good. Her business was growing, and she even landed her first monthly retainer client, a local fitness studio. This meant more consistent revenue, but it also meant more transactions, more data entry, and more complexity. And that\'s when she hit the next wall.',
-      contextText: 'It happened at the end of the month. Sarah sat down to do her first real "month-end closing," the process of finalizing her books and reconciling them with her bank account. It turned into what she later called a "complete nightmare." She spent her entire weekend hunched over her laptop. Her "smart" ledger was still completely manual, and as she cross-referenced every transaction, she found dozens of tiny errors—a typo in one number, a missed software subscription fee in another. Each small mistake threw her totals off, sending her on long, frustrating hunts for the source of the problem. She thought she had solved her bookkeeping problem, but she realized she had just created a new one: a process that was eating up her most valuable resource—time.'
+      welcomeText: 'Sarah\'s business is growing, but her financial reporting reporting process isn\'t keeping up. What happens when a founder can\'t close the books quickly and accurately? In this unit, you\'ll experience the month-end closing crisis and learn the accounting workflow that every growing business must master.',
+      contextText: 'Month-end closing is the process of finalizing financial records for a reporting period. It requires accruals, deferrals, adjusting entries, and closing entries—accounting moves that ensure financial statements accurately represent business performance. When this process is slow or unreliable, businesses can\'t make decisions, can\'t report to stakeholders, and can\'t access capital when they need it most.'
     },
-    reflectionText: 'Frustrated, she vented to her mentor, Marcus Rodriguez, about how she had wasted a whole weekend on administrative work. Marcus was direct. He told her that her time was the most valuable asset in her business, and she was wasting it on tasks that a machine could do better and more accurately. He pointed out that those little errors weren\'t so little; they could have serious consequences down the road. He was the one who pushed her to stop thinking about just recording her finances and start thinking about automating them.',
-    transitionText: "Sarah's story demonstrates that business growth isn't just about getting more customers—it's about building systems that can scale efficiently. In the next phase, we'll dive deeper into the specific challenges of month-end closing procedures and explore why GAAP compliance makes automation both necessary and complex.",
+    reflectionText: 'Sarah\'s story shows that month-end closing isn\'t just an accounting exercise—it\'s a business control issue. Delayed closing means delayed decisions. Uncertain numbers mean uncertain strategy. In the next phase, you\'ll see the complete month-end close workflow and understand what every business must track to grow confidently.',
+    transitionText: "In this unit, we'll master the month-end close workflow. You'll learn why adjusting entries are necessary, how closing entries reset accounts, and how to build a system that turns a weekend nightmare into a reliable, repeatable process.",
     turnAndTalkPrompt: {
-      description: "Think about a time when you or someone you know spent way too much time on a repetitive task that could have been made more efficient. Share with a partner:",
+      description: "Discuss with a partner: Why would a bank or investor care about timely, accurate month-end closing?",
       questions: [
-        "What was the task and why was it so time-consuming?",
-        "What errors or problems occurred because of the manual process?",
-        "How could technology or automation have helped?",
-        "How does this connect to Sarah's month-end closing challenge?"
+        "What decisions can a business make with current financials that it can't make without them?",
+        "What would it signal if a business owner couldn't produce financial statements when asked?",
+        "How might delayed closing affect a business's ability to get a loan or attract investors?",
+        "Why is accuracy just as important as speed in month-end closing?"
       ]
     }
   }
 
   const additionalContent = (
     <div className="prose prose-lg max-w-none">
-      <h3 className="text-xl font-semibold text-gray-900 mb-4">The Weekend Nightmare: Why Automation Matters</h3>
+      <h3 className="text-xl font-semibold text-gray-900 mb-4">The Month-End Closing Problem</h3>
       
+      <p className="text-base leading-relaxed mb-4">
+        Sarah's experience reveals the core question for this unit: <strong>How can a growing business close the month quickly and accurately while maintaining GAAP compliance?</strong>
+      </p>
+
       <p className="text-base leading-relaxed">
-        This conversation sparked a new goal for Sarah, which has become the essential question for our unit. She asked herself, <strong>"What automation can cut our month-end closing time from two days to two hours without sacrificing GAAP accuracy?"</strong> Before you can build your own solution to this problem, it's important to understand the challenge firsthand.
+        Month-end closing isn't just about matching transactions to a bank statement. It requires:
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2 mb-4">
+        <li><strong>Accruals:</strong> Recording revenue when earned and expenses when incurred, even if cash hasn't changed hands</li>
+        <li><strong>Deferrals:</strong> Handling prepaid expenses and unearned revenue correctly</li>
+        <li><strong>Adjusting entries:</strong> Updating account balances before closing the period</li>
+        <li><strong>Closing entries:</strong> Resetting temporary accounts to prepare for the next period</li>
+      </ul>
+
+      <p className="text-base leading-relaxed">
+        When this process takes days instead of hours, business decisions are delayed, opportunities are missed, and stakeholder confidence is at risk.
       </p>
     </div>
   )

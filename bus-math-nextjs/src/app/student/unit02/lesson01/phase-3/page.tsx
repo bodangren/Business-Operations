@@ -1,35 +1,48 @@
+"use client"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson01Data, unit02Data, lesson01Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { DragAndDrop } from "@/components/exercises/DragAndDrop"
 import { Button } from "@/components/ui/button"
-import { Timer, Users, Target } from "lucide-react"
+import { useState } from "react"
+import { ArrowRight, Clock, CheckCircle, AlertTriangle } from "lucide-react"
 
 export default function Phase3Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 3)!
+  const [step, setStep] = useState<'predict' | 'reveal'>('predict')
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
 
-  const processAnalysisItems = [
-    { id: '1', content: 'Manual data entry from receipts', matchId: '5', hint: 'Time-consuming and error-prone' },
-    { id: '2', content: 'Cross-referencing bank statements', matchId: '6', hint: 'Requires careful matching' },
-    { id: '3', content: 'Hunting for error sources', matchId: '7', hint: 'Takes hours to find small mistakes' },
-    { id: '4', content: 'Reconciling account balances', matchId: '8', hint: 'Must balance to the penny' },
-    { id: '5', content: 'High Error Risk', matchId: '1' },
-    { id: '6', content: 'Tedious Matching', matchId: '2' },
-    { id: '7', content: 'Frustrating Debugging', matchId: '3' },
-    { id: '8', content: 'Precise Calculations', matchId: '4' }
-  ]
+  const simulationData = {
+    scenario: "TechStart Fitness Studio Retainer Client",
+    cashBalance: 24500,
+    retainerFee: 1200,
+    earnedButUnbilled: 800,
+    prepaidSoftwareExpense: 300,
+    usedThisMonth: 150
+  }
 
-  const automationOpportunities = [
-    { id: '9', content: 'Automatic bank transaction import', matchId: '13', hint: 'Direct data connection' },
-    { id: '10', content: 'Formula-based error checking', matchId: '14', hint: 'Real-time validation' },
-    { id: '11', content: 'Conditional formatting alerts', matchId: '15', hint: 'Visual error detection' },
-    { id: '12', content: 'One-click reconciliation', matchId: '16', hint: 'Automated matching' },
-    { id: '13', content: 'Eliminates Manual Entry', matchId: '9' },
-    { id: '14', content: 'Prevents Human Error', matchId: '10' },
-    { id: '15', content: 'Immediate Feedback', matchId: '11' },
-    { id: '16', content: 'Saves Hours of Work', matchId: '12' }
-  ]
+  const businessImpacts = {
+    delayed: {
+      decisionSpeed: "CEO waits 4 days for accurate profitability data",
+      decisionQuality: "Make pricing decision with incomplete information",
+      stakeholderConfidence: "Banker receives outdated financials after 2-day delay",
+      opportunityCost: "Miss weekend window to present to potential investor"
+    },
+    timely: {
+      decisionSpeed: "CEO has accurate profitability data in 4 hours",
+      decisionQuality: "Make pricing decision with complete, reliable information",
+      stakeholderConfidence: "Banker receives current financials immediately upon request",
+      opportunityCost: "Ready for investor meeting with confidence in numbers"
+    }
+  }
+
+  const handleAnswer = (answer: string) => {
+    setSelectedAnswer(answer)
+  }
+
+  const handleReveal = () => {
+    setStep('reveal')
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,180 +55,281 @@ export default function Phase3Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-        {/* Introduction to Guided Practice */}
+        {/* Guided Practice: Timing Simulation */}
         <Card className="border-green-200 bg-white shadow-lg">
           <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
             <CardTitle className="text-2xl flex items-center gap-2">
-              <Users className="h-6 w-6" />
-              Guided Practice: Analyzing the Manual Process
+              <Clock className="h-6 w-6" />
+              Guided Practice: The Business Impact of Closing Timing
             </CardTitle>
           </CardHeader>
           <CardContent className="p-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-base leading-relaxed mb-6">
-                Now that you understand Sarah's "weekend nightmare," it's time to dive deeper into the specific problems that make manual month-end closing so time-consuming and error-prone. By breaking down each step of the manual process, you'll better understand why automation is so valuable and where the biggest opportunities for improvement exist.
+                Now you'll experience exactly how month-end closing timing affects business decisions. In this simulation, you'll predict business consequences of slow vs. fast closing, then see the real impacts.
               </p>
-
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">The Anatomy of a Manual Month-End Close</h3>
-              
-              <p className="text-base leading-relaxed mb-4">
-                Sarah's "complete nightmare" wasn't just bad luck—it was the predictable result of trying to manage growing business complexity with manual processes. Let's examine what she had to do:
-              </p>
-
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 my-6">
-                <h4 className="font-semibold text-red-800 mb-3">The Manual Process Breakdown:</h4>
-                <ul className="space-y-2 text-red-700">
-                  <li>• <strong>Data Collection:</strong> Gather all receipts, invoices, and bank statements</li>
-                  <li>• <strong>Manual Entry:</strong> Type each transaction into the ledger system</li>
-                  <li>• <strong>Cross-Reference:</strong> Match ledger entries to bank statement items</li>
-                  <li>• <strong>Error Detection:</strong> Hunt for discrepancies and typos</li>
-                  <li>• <strong>Correction:</strong> Fix errors and re-check all calculations</li>
-                  <li>• <strong>Reconciliation:</strong> Ensure all accounts balance properly</li>
-                </ul>
-              </div>
-
-              <p className="text-base leading-relaxed mb-6">
-                Each of these steps creates opportunities for error and consumes valuable time. When Sarah found "dozens of tiny errors," she experienced the compounding effect of manual processes: one small mistake can throw off multiple accounts, requiring extensive detective work to identify and fix.
-              </p>
-
-              <div className="bg-green-50 border-l-4 border-green-500 p-6 my-6">
-                <h4 className="font-semibold text-green-800 mb-3">The Power of Automation:</h4>
-                <p className="text-green-700 leading-relaxed">
-                  Automation doesn't just make processes faster—it makes them more reliable. When a machine performs calculations, it doesn't get tired, doesn't make typos, and doesn't skip steps. This reliability is what allows businesses to scale without proportionally increasing their administrative overhead.
-                </p>
-              </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Shoebox Receipt Challenge Setup */}
-        <Card className="border-orange-200 bg-orange-50 shadow-lg">
+        {/* Scenario Setup */}
+        <Card className="border-blue-200 bg-blue-50 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-orange-800 flex items-center gap-2">
-              <Timer className="h-6 w-6" />
-              The Shoebox Receipt Challenge
-            </CardTitle>
+            <CardTitle className="text-blue-800">Shared Simulation: TechStart's Retainer Timing Problem</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <p className="text-orange-700 leading-relaxed">
-                Before we analyze automation solutions, you need to experience the manual process firsthand. Your teacher will provide your team with a "shoebox" of mock business receipts and transactions that need to be processed for month-end closing.
+              <p className="text-blue-700 leading-relaxed">
+                Sarah has a new retainer client: TechStart Fitness Studio pays <strong>${simulationData.retainerFee}/month</strong> in advance for consulting services. By the end of the month, Sarah has completed <strong>${simulationData.earnedButUnbilled}</strong> of work that she hasn't billed yet. She also has <strong>${simulationData.prepaidSoftwareExpense}</strong> in prepaid software expenses, of which <strong>${simulationData.usedThisMonth}</strong> has been used this month.
               </p>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-4 rounded-lg border border-orange-200">
-                  <h4 className="font-semibold text-orange-800 mb-3 flex items-center gap-2">
-                    <Target className="h-4 w-4" />
-                    Your Challenge:
-                  </h4>
-                  <ul className="space-y-2 text-orange-700 text-sm">
-                    <li>• Sort receipts by category (office supplies, meals, travel, etc.)</li>
-                    <li>• Enter each transaction into a simple ledger</li>
-                    <li>• Calculate totals for each category</li>
-                    <li>• Verify that your entries match the receipt amounts</li>
-                    <li>• Record how long each step takes</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border border-orange-200">
-                  <h4 className="font-semibold text-orange-800 mb-3">Expected Frustrations:</h4>
-                  <ul className="space-y-2 text-orange-700 text-sm">
-                    <li>• Hard-to-read handwriting on receipts</li>
-                    <li>• Unclear expense categories</li>
-                    <li>• Math errors that don't balance</li>
-                    <li>• Time pressure and tedious repetition</li>
-                    <li>• The urge to rush and make mistakes</li>
-                  </ul>
-                </div>
-              </div>
 
-              <div className="bg-yellow-100 p-4 rounded-lg">
-                <p className="text-yellow-800 text-sm font-medium">
-                  ⏱️ <strong>Time Tracking is Key:</strong> Keep careful notes about how long each step takes. This data will help you understand exactly why Sarah's process took an entire weekend and why automation is so valuable.
+              <div className="bg-white p-4 rounded-lg border border-blue-200">
+                <h4 className="font-semibold text-blue-800 mb-3">The Timing Dilemma</h4>
+                <p className="text-blue-700 text-sm mb-4">
+                  Sarah needs to make an important pricing decision for a new client proposal. She also needs to send current financial statements to a banker considering a loan. The question is: <strong>How does month-end closing timing affect her ability to make these decisions confidently?</strong>
                 </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* Process Analysis Drag and Drop */}
-        <Card className="border-green-200 shadow-lg">
-          <CardContent className="p-6">
-            <DragAndDrop
-              title="Manual Process Analysis"
-              description="Match each manual process step with its primary challenge"
-              leftColumnTitle="Manual Process Steps"
-              rightColumnTitle="Primary Challenges"
-              items={processAnalysisItems}
-              showHints={true}
-              shuffleItems={true}
-            />
-          </CardContent>
-        </Card>
-
-        {/* Automation Opportunities */}
-        <Card className="border-green-200 shadow-lg">
-          <CardContent className="p-6">
-            <DragAndDrop
-              title="Automation Solution Matching"
-              description="Connect each automation technology with its primary benefit"
-              leftColumnTitle="Automation Technologies"
-              rightColumnTitle="Primary Benefits"
-              items={automationOpportunities}
-              showHints={true}
-              shuffleItems={true}
-            />
-          </CardContent>
-        </Card>
-
-        {/* Think-Pair-Share: Team Formation */}
-        <Card className="border-purple-200 bg-purple-50 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <Users className="h-6 w-6" />
-              Think-Pair-Share: Automation Focus Areas
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <p className="text-purple-700 font-medium">
-                After completing the Shoebox Receipt Challenge, discuss with your team:
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-800 mb-3">Step 1: Individual Reflection (2 minutes)</h4>
-                  <ul className="space-y-2 text-purple-700 text-sm">
-                    <li>• Which step of the manual process was most frustrating for you?</li>
-                    <li>• Where did your team make the most errors?</li>
-                    <li>• What took much longer than you expected?</li>
-                    <li>• Which automation would have helped you most?</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-800 mb-3">Step 2: Team Discussion (5 minutes)</h4>
-                  <ul className="space-y-2 text-purple-700 text-sm">
-                    <li>• Compare your individual experiences</li>
-                    <li>• Identify the top 3 automation priorities</li>
-                    <li>• Choose your team's focus area for the Month-End Wizard project</li>
-                    <li>• Discuss team roles and responsibilities</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-green-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-green-800 mb-2">Automation Focus Area Options:</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-green-700 text-sm">
-                  <span className="bg-green-200 px-2 py-1 rounded">• Accruals</span>
-                  <span className="bg-green-200 px-2 py-1 rounded">• Deferrals</span>
-                  <span className="bg-green-200 px-2 py-1 rounded">• Depreciation</span>
-                  <span className="bg-green-200 px-2 py-1 rounded">• Closing Entries</span>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    <p className="text-blue-800 font-bold text-sm mb-1">Cash-Based Ledger (Current)</p>
+                    <p className="text-blue-600 text-xs">Shows: Cash received ${simulationData.retainerFee}</p>
+                    <p className="text-blue-600 text-xs">Doesn't show: Earned but unbilled ${simulationData.earnedButUnbilled}</p>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    <p className="text-blue-800 font-bold text-sm mb-1">Accrual-Based Closing (Needed)</p>
+                    <p className="text-blue-600 text-xs">Will show: Total revenue ${simulationData.retainerFee + simulationData.earnedButUnbilled}</p>
+                    <p className="text-blue-600 text-xs">Plus: Proper expense recognition</p>
+                  </div>
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
+
+        {/* Predict Step */}
+        {step === 'predict' && (
+          <Card className="border-purple-200 bg-purple-50 shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-purple-800">🎯 Predict: What Happens If Closing Takes 4 Days?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-purple-700 leading-relaxed">
+                  Imagine Sarah's month-end closing takes <strong>4 days instead of 4 hours</strong> (her target). What business consequences will this delay create? Make your prediction before we reveal the actual impacts.
+                </p>
+
+                <div className="space-y-3">
+                  <div className="bg-white p-4 rounded-lg border border-purple-200">
+                    <p className="text-purple-800 font-medium mb-3">1. Decision Speed: How quickly can Sarah make her pricing decision?</p>
+                    <div className="space-y-2">
+                      {[
+                        "She can make it immediately with current cash data",
+                        "She waits 4 days for accurate profitability data",
+                        "She makes the decision without financial data",
+                        "She delays the decision until next month"
+                      ].map((answer, idx) => (
+                        <label key={idx} className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-purple-100 rounded">
+                          <input
+                            type="radio"
+                            name="q1"
+                            value={answer}
+                            checked={selectedAnswer === `q1-${idx}`}
+                            onChange={() => handleAnswer(`q1-${idx}`)}
+                            className="text-purple-600"
+                          />
+                          <span className="text-purple-700 text-sm">{answer}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border border-purple-200">
+                    <p className="text-purple-800 font-medium mb-3">2. Opportunity Cost: What business opportunity might she miss?</p>
+                    <div className="space-y-2">
+                      {[
+                        "She misses the weekend investor meeting",
+                        "She loses the fitness studio client",
+                        "She can't pay her software subscription",
+                        "She has to delay her next project"
+                      ].map((answer, idx) => (
+                        <label key={idx} className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-purple-100 rounded">
+                          <input
+                            type="radio"
+                            name="q2"
+                            value={answer}
+                            checked={selectedAnswer === `q2-${idx}`}
+                            onChange={() => handleAnswer(`q2-${idx}`)}
+                            className="text-purple-600"
+                          />
+                          <span className="text-purple-700 text-sm">{answer}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border border-purple-200">
+                    <p className="text-purple-800 font-medium mb-3">3. Stakeholder Confidence: What does the banker experience?</p>
+                    <div className="space-y-2">
+                      {[
+                        "Receives current financials immediately",
+                        "Receives outdated financials after 2-day delay",
+                        "Receives no financial statements at all",
+                        "Gets worried about the business viability"
+                      ].map((answer, idx) => (
+                        <label key={idx} className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-purple-100 rounded">
+                          <input
+                            type="radio"
+                            name="q3"
+                            value={answer}
+                            checked={selectedAnswer === `q3-${idx}`}
+                            onChange={() => handleAnswer(`q3-${idx}`)}
+                            className="text-purple-600"
+                          />
+                          <span className="text-purple-700 text-sm">{answer}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center mt-6">
+                  <Button
+                    onClick={handleReveal}
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-8"
+                  >
+                    Reveal the Real Impacts
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Reveal Step */}
+        {step === 'reveal' && (
+          <>
+            <Card className="border-red-200 bg-red-50 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-red-800 flex items-center gap-2">
+                  <AlertTriangle className="h-6 w-6" />
+                  Reality: 4-Day Closing Delay Creates Real Problems
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <p className="text-red-700 leading-relaxed">
+                    When month-end closing takes days instead of hours, it's not just an annoyance—it creates real business consequences. Here's what Sarah experienced:
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+                      <div className="flex items-start gap-3">
+                        <Clock className="h-5 w-5 text-red-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-red-800 mb-2">Decision Speed: Delayed by 4 Days</h4>
+                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswer?.startsWith('q1-1') ? '✓ Correct!' : '✗ Different prediction'}</p>
+                          <p className="text-red-600 text-sm"><strong>Reality:</strong> CEO waits 4 days for accurate profitability data, making the pricing decision under time pressure with incomplete information.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+                      <div className="flex items-start gap-3">
+                        <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-red-800 mb-2">Opportunity Cost: Missed Investor Meeting</h4>
+                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswer?.startsWith('q2-0') ? '✓ Correct!' : '✗ Different prediction'}</p>
+                          <p className="text-red-600 text-sm"><strong>Reality:</strong> Missed the weekend window to present to a potential investor because financial statements weren't ready to support the pitch.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg border-2 border-red-300">
+                      <div className="flex items-start gap-3">
+                        <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-red-800 mb-2">Stakeholder Confidence: Banker Receives Delayed Financials</h4>
+                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswer?.startsWith('q3-1') ? '✓ Correct!' : '✗ Different prediction'}</p>
+                          <p className="text-red-600 text-sm"><strong>Reality:</strong> Banker receives outdated financials after a 2-day delay, creating uncertainty about whether the business has its financial house in order.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Comparison Table */}
+            <Card className="border-green-200 bg-white shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+                <CardTitle className="text-2xl">Before & After: The Business Impact</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-green-100">
+                        <th className="p-3 text-left font-semibold text-green-800">Business Dimension</th>
+                        <th className="p-3 text-left font-semibold text-red-800">4-Day Closing Delay</th>
+                        <th className="p-3 text-left font-semibold text-green-800">4-Hour Target Closing</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-200">
+                        <td className="p-3 font-medium">Decision Speed</td>
+                        <td className="p-3 text-red-700">{businessImpacts.delayed.decisionSpeed}</td>
+                        <td className="p-3 text-green-700">{businessImpacts.timely.decisionSpeed}</td>
+                      </tr>
+                      <tr className="border-b border-gray-200">
+                        <td className="p-3 font-medium">Decision Quality</td>
+                        <td className="p-3 text-red-700">{businessImpacts.delayed.decisionQuality}</td>
+                        <td className="p-3 text-green-700">{businessImpacts.timely.decisionQuality}</td>
+                      </tr>
+                      <tr className="border-b border-gray-200">
+                        <td className="p-3 font-medium">Stakeholder Confidence</td>
+                        <td className="p-3 text-red-700">{businessImpacts.delayed.stakeholderConfidence}</td>
+                        <td className="p-3 text-green-700">{businessImpacts.timely.stakeholderConfidence}</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-medium">Opportunity Cost</td>
+                        <td className="p-3 text-red-700">{businessImpacts.delayed.opportunityCost}</td>
+                        <td className="p-3 text-green-700">{businessImpacts.timely.opportunityCost}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Key Insight */}
+            <Card className="border-amber-200 bg-amber-50 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-amber-800 flex items-center gap-2">
+                  <CheckCircle className="h-6 w-6" />
+                  Key Insight: Month-End Closing is Business Control
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <p className="text-amber-700 leading-relaxed">
+                    This simulation shows that month-end closing isn't just an accounting exercise—it's a business control system. When closing is slow, decisions are delayed, confidence erodes, and opportunities are missed. When closing is fast and accurate, the business operates with real-time insight and professional credibility.
+                  </p>
+
+                  <div className="bg-white p-4 rounded-lg border border-amber-200">
+                    <h4 className="font-semibold text-amber-800 mb-3">What This Means for Your Month-End Wizard Project</h4>
+                    <ul className="space-y-2 text-amber-700 text-sm">
+                      <li>• Your automation must ensure <strong>accuracy</strong>—no errors or incomplete adjustments</li>
+                      <li>• Your automation must deliver <strong>speed</strong>—closing in hours, not days</li>
+                      <li>• Your automation must maintain <strong>compliance</strong>—all GAAP adjustments complete</li>
+                      <li>• Success means business leaders can make decisions confidently, not accountants can work faster</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </>
+        )}
         </div>
 
         <PhaseFooter 

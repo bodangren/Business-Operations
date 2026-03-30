@@ -3,26 +3,67 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson01Data, unit02Data, lesson01Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { DragAndDrop } from "@/components/exercises/DragAndDrop"
-import { CheckCircle2, Award, Target } from "lucide-react"
-import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
+import { CheckCircle } from "lucide-react"
 
 export default function Phase5Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 5)!
 
-  const summativeAssessmentQuestions = toComprehensionCheckFormat(
-    getQuestionsForLesson("lesson01")
-  )
-
-  const businessScenarioItems = [
-    { id: '1', content: 'A dental practice manually scheduling 200+ appointments weekly', matchId: '5', hint: 'High-volume, repetitive administrative task' },
-    { id: '2', content: 'A lawyer negotiating settlement terms with opposing counsel', matchId: '6', hint: 'Requires professional judgment and expertise' },
-    { id: '3', content: 'A bakery calculating daily ingredient inventory needs', matchId: '7', hint: 'Mathematical calculations based on standard recipes' },
-    { id: '4', content: 'A therapist conducting patient counseling sessions', matchId: '8', hint: 'Requires human empathy and professional expertise' },
-    { id: '5', content: 'High Automation Priority', matchId: '1' },
-    { id: '6', content: 'Keep Human Control', matchId: '2' },
-    { id: '7', content: 'High Automation Priority', matchId: '3' },
-    { id: '8', content: 'Keep Human Control', matchId: '4' }
+  const assessmentQuestions = [
+    {
+      id: 'q1',
+      question: 'What was Sarah\'s founder problem that launched the month-end closing crisis?',
+      answers: [
+        'She couldn\'t close her month quickly or accurately enough to support business decisions and stakeholder requests',
+        'She didn\'t know how to use Excel macros and automation',
+        'Her business wasn\'t growing fast enough to need formal accounting',
+        'Her cash balance was too low to support her business operations'
+      ],
+      explanation: 'Sarah\'s founder problem was that she couldn\'t produce accurate, timely month-end financials when her growing business needed them for pricing decisions and loan applications. This is the core problem that drives the unit.'
+    },
+    {
+      id: 'q2',
+      question: 'What three dimensions does the Month-End Close Workflow Scoreboard track?',
+      answers: [
+        'Timing (speed), Accuracy (error-free), and Compliance (GAAP adjustments)',
+        'Revenue, expenses, and profit',
+        'Cash flow, bank balance, and loan payments',
+        'Client satisfaction, project completion, and team productivity'
+      ],
+      explanation: 'The Month-End Close Workflow Scoreboard measures timing (how fast), accuracy (how error-free), and compliance (how complete the GAAP adjustments are). These are the three critical dimensions for any growing business\'s closing process.'
+    },
+    {
+      id: 'q3',
+      question: 'Why is a cash-only ledger insufficient for month-end closing as a business grows?',
+      answers: [
+        'Cash ledger can\'t show earned but unbilled revenue or expenses incurred but not yet paid',
+        'Cash ledger is too slow for modern business needs',
+        'Cash ledger can\'t connect to bank accounts automatically',
+        'Cash ledger doesn\'t support multiple clients or projects'
+      ],
+      explanation: 'A cash-only ledger records transactions only when money changes hands. It misses accruals (earned but unbilled revenue, incurred but unpaid expenses), which are essential for accurate financial statements under GAAP.'
+    },
+    {
+      id: 'q4',
+      question: 'What did the closing timing simulation reveal about the business impact of slow month-end closing?',
+      answers: [
+        'Slow closing delays decision-making, reduces stakeholder confidence, and creates missed opportunities',
+        'Slow closing only affects the accounting department\'s productivity',
+        'Slow closing doesn\'t matter as long as the final numbers are accurate',
+        'Slow closing is actually better because it gives more time to review work'
+      ],
+      explanation: 'The simulation showed that slow closing (days instead of hours) directly impacts business: pricing decisions are delayed, bankers receive outdated financials, and investor meetings are missed. Closing timing is a business control issue, not just an accounting task.'
+    },
+    {
+      id: 'q5',
+      question: 'What is the core distinction between surface-level activity and the deeper month-end closing problem?',
+      answers: [
+        'Surface activity tries to make cash ledger work; the deeper problem is need for accrual accounting workflow',
+        'Surface activity is manual work; the deeper problem is lack of technology',
+        'Surface activity is slow; the deeper problem is lack of staff',
+        'Surface activity is about taxes; the deeper problem is about profit'
+      ],
+      explanation: 'Sarah\'s weekend nightmare was surface-level activity—trying harder and longer on a cash ledger that can\'t support accrual accounting. The deeper problem is the need for a fundamentally different workflow: accruals, def adjusting entries, and closing entries to show true business performance.'
+    }
   ]
 
   return (
@@ -40,159 +81,73 @@ export default function Phase5Page() {
         <Card className="border-green-200 bg-white shadow-lg">
           <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
             <CardTitle className="text-2xl flex items-center gap-2">
-              <CheckCircle2 className="h-6 w-6" />
-              Formative Assessment: Automation Analysis Mastery
+              <CheckCircle className="h-6 w-6" />
+              Formative Assessment: Founder Problem & Scoreboard Understanding
             </CardTitle>
           </CardHeader>
           <CardContent className="p-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-base leading-relaxed mb-6">
-                This assessment evaluates your understanding of the key concepts from Sarah's automation journey and your ability to apply automation analysis skills to new business scenarios. You'll demonstrate mastery of process analysis, cost-benefit thinking, and strategic automation decision-making.
+                This exit ticket checks your understanding of Sarah's founder problem, the month-end close workflow scoreboard, and the core distinctions you've learned. These concepts are the foundation for everything you'll build in this unit.
               </p>
 
               <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">Assessment Focus Areas</h3>
+                <h3 className="text-xl font-semibold text-blue-800 mb-3">What You Should Understand</h3>
                 <ul className="space-y-2 text-blue-700">
-                  <li>• <strong>Conceptual Understanding:</strong> Sarah's automation journey and the business case for process improvement</li>
-                  <li>• <strong>Analytical Skills:</strong> Identifying bottlenecks, evaluating costs, and prioritizing automation opportunities</li>
-                  <li>• <strong>Strategic Application:</strong> Applying automation principles to new business contexts and scenarios</li>
+                  <li>• <strong>Sarah's Founder Problem:</strong> Can't close month quickly or accurately enough for business needs</li>
+                  <li>• <strong>Month-End Close Workflow Scoreboard:</strong> Timing, Accuracy, and Compliance dimensions</li>
+                  <li>• <strong>Why Cash Ledger Isn't Enough:</strong> Missing accruals, deferrals, adjusting entries</li>
+                  <li>• <strong>Business Impact of Slow Closing:</strong> Delayed decisions, lost opportunities, stakeholder mistrust</li>
+                  <li>• <strong>Surface vs. Deep Problem:</strong> Working harder on wrong approach vs. needing different workflow</li>
                 </ul>
               </div>
 
               <p className="text-base leading-relaxed">
-                Take your time and think carefully about each question. This assessment will help you demonstrate your readiness to build your own Month-End Wizard in the upcoming lessons.
+                Take your time on each question. These concepts will guide your work through Lessons 2-10 as you learn to build the complete month-end close workflow.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Main Summative Assessment */}
+        {/* Main Assessment */}
         <Card className="border-green-200 shadow-lg">
           <CardContent className="p-6">
             <ComprehensionCheck
-              title="Automation Analysis Mastery Assessment"
-              description="Demonstrate your understanding of automation principles and business process analysis"
-              questions={summativeAssessmentQuestions}
+              title="Month-End Closing Launch Assessment"
+              description="Demonstrate your understanding of the founder problem, scoreboard, and core month-end closing concepts"
+              questions={assessmentQuestions}
               showExplanations={true}
-              allowRetry={false}
+              allowRetry={true}
             />
           </CardContent>
         </Card>
 
-        {/* Applied Skills Assessment */}
-        <Card className="border-purple-200 bg-purple-50 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <Target className="h-6 w-6" />
-              Applied Skills Assessment: Professional Service Automation
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4 mb-6">
-              <p className="text-purple-700 leading-relaxed">
-                Apply your automation analysis skills to professional service scenarios. Demonstrate your ability to distinguish between tasks that should be automated and those that require human expertise and judgment.
-              </p>
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <p className="text-purple-800 font-medium text-sm">
-                  🎯 <strong>Assessment Task:</strong> Analyze each professional service activity and determine the appropriate automation strategy.
-                </p>
-              </div>
-            </div>
-            <DragAndDrop
-              title="Professional Service Automation Analysis"
-              description="Classify each professional service task as either automation-ready or requiring human control"
-              leftColumnTitle="Professional Service Tasks"
-              rightColumnTitle="Automation Strategy"
-              items={businessScenarioItems}
-              showHints={true}
-              shuffleItems={true}
-            />
-          </CardContent>
-        </Card>
-
-        {/* Self-Assessment and Reflection */}
+        {/* What's Coming Next */}
         <Card className="border-amber-200 bg-amber-50 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-amber-800 flex items-center gap-2">
-              <Award className="h-6 w-6" />
-              Learning Objectives Self-Assessment
-            </CardTitle>
+            <CardTitle className="text-amber-800">What's Coming in Lessons 2-4</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <p className="text-amber-700 leading-relaxed mb-4">
-                Review the lesson's learning objectives and honestly assess your current mastery level:
+              <p className="text-amber-700 leading-relaxed">
+                Now that you understand the founder problem and scoreboard, you'll learn the technical accounting knowledge needed to solve it. The next three lessons teach you the procedural foundations of month-end closing.
               </p>
 
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg border border-amber-200">
-                  <h4 className="font-semibold text-amber-800 mb-3">Learning Objective 1</h4>
-                  <p className="text-amber-700 text-sm mb-3">
-                    <strong>"Understand that automation reduces human error and increases efficiency in financial processes"</strong>
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj1" value="mastered" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Mastered</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj1" value="developing" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Developing</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj1" value="beginning" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Beginning</span>
-                    </label>
-                  </div>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-white p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-800 mb-2">Lesson 2: Accruals and Deferrals</h4>
+                  <p className="text-amber-600 text-sm">Learn to identify and record revenue and expenses when earned or incurred, even if cash hasn't changed hands.</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-amber-200">
-                  <h4 className="font-semibold text-amber-800 mb-3">Learning Objective 2</h4>
-                  <p className="text-amber-700 text-sm mb-3">
-                    <strong>"Explain how time savings through automation creates competitive advantage for businesses"</strong>
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj2" value="mastered" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Mastered</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj2" value="developing" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Developing</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj2" value="beginning" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Beginning</span>
-                    </label>
-                  </div>
+                <div className="bg-white p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-800 mb-2">Lesson 3: Closing Entries</h4>
+                  <p className="text-amber-600 text-sm">Understand why and how to close temporary accounts at month-end, transferring net income to retained earnings.</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-amber-200">
-                  <h4 className="font-semibold text-amber-800 mb-3">Learning Objective 3</h4>
-                  <p className="text-amber-700 text-sm mb-3">
-                    <strong>"Identify how user interface design determines the usability and adoption of financial tools"</strong>
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj3" value="mastered" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Mastered</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj3" value="developing" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Developing</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="radio" name="obj3" value="beginning" className="text-amber-600" />
-                      <span className="text-amber-700 text-sm">Beginning</span>
-                    </label>
-                  </div>
+                <div className="bg-white p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-800 mb-2">Lesson 4: Complete Manual Flow</h4>
+                  <p className="text-amber-600 text-sm">Practice the complete month-end close workflow with all adjustments and closing entries before automating in later lessons.</p>
                 </div>
-              </div>
-
-              <div className="bg-green-100 p-4 rounded-lg">
-                <p className="text-green-800 text-sm font-medium">
-                  ✅ <strong>Assessment Complete:</strong> Your responses help identify areas for continued learning as you move into building your own Month-End Wizard automation system.
-                </p>
               </div>
             </div>
           </CardContent>

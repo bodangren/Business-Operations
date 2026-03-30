@@ -1,84 +1,69 @@
+"use client"
+
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import { lesson01Data, unit02Data, lesson01Phases } from "../lesson-data"
+import { lesson01Data, unit02Data, lesson01Phaseskt } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { DragAndDrop } from "@/components/exercises/DragAndDrop"
-import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { Target, Clock, TrendingUp, AlertTriangle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
+import { Target, CheckCircle, AlertTriangle, TrendingDown, TrendingUp } from "lucide-react"
+
+type Choice = 'cash-ledger' | 'add-accruals' | 'full-adjusting'
 
 export default function Phase4Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 4)!
+  const [choice, setChoice] = useState<Choice | null>(null)
 
-  // Independent practice with NEW business scenarios - different from guided practice
-  const restaurantBottleneckItems = [
-    { id: '1', content: 'Manually counting daily cash register receipts', matchId: '5', hint: 'Daily revenue reconciliation bottleneck' },
-    { id: '2', content: 'Calculating employee tip distributions by hand', matchId: '6', hint: 'Payroll processing delay' },
-    { id: '3', content: 'Tracking inventory usage with paper forms', matchId: '7', hint: 'Stock management inefficiency' },
-    { id: '4', content: 'Entering vendor invoices one by one', matchId: '8', hint: 'Accounts payable bottleneck' },
-    { id: '5', content: 'Revenue Processing Bottleneck', matchId: '1' },
-    { id: '6', content: 'Payroll Distribution Delay', matchId: '2' },
-    { id: '7', content: 'Inventory Tracking Gap', matchId: '3' },
-    { id: '8', content: 'Invoice Processing Backlog', matchId: '4' }
-  ]
-
-  const ecommerceScalingItems = [
-    { id: '9', content: 'Processing 500+ orders daily takes 6 hours', matchId: '13', hint: 'Order volume creates time pressure' },
-    { id: '10', content: 'Manually updating inventory across 3 platforms', matchId: '14', hint: 'Multi-channel complexity' },
-    { id: '11', content: 'Customer service team overwhelmed with order status calls', matchId: '15', hint: 'Communication inefficiency' },
-    { id: '12', content: 'Monthly financial reports take a full week to complete', matchId: '16', hint: 'Reporting delay impact' },
-    { id: '13', content: 'Volume Scalability Crisis', matchId: '9' },
-    { id: '14', content: 'Multi-Platform Sync Problem', matchId: '10' },
-    { id: '15', content: 'Customer Communication Gap', matchId: '11' },
-    { id: '16', content: 'Decision-Making Delay', matchId: '12' }
-  ]
-
-  const automationPrinciplesItems = [
-    { id: '1', content: 'High-volume repetitive data entry', matchId: '5', hint: 'Tasks done the same way many times' },
-    { id: '2', content: 'Error-prone manual calculations', matchId: '6', hint: 'Mathematical operations with mistake risk' },
-    { id: '3', content: 'Time-sensitive reporting deadlines', matchId: '7', hint: 'Regular deadlines that create pressure' },
-    { id: '4', content: 'Complex decision-making with judgment calls', matchId: '8', hint: 'Requires human expertise and experience' },
-    { id: '5', content: 'High Automation Priority', matchId: '1' },
-    { id: '6', content: 'High Automation Priority', matchId: '2' },
-    { id: '7', content: 'High Automation Priority', matchId: '3' },
-    { id: '8', content: 'Keep Human Control', matchId: '4' }
-  ]
-
-  const automationAssessmentQuestions = [
-    {
-      id: 'q1',
-      question: 'Which of the following represents the highest-value automation opportunity for Sarah\'s business?',
-      answers: [
-        'Eliminating manual data entry through direct bank feeds and automated transaction categorization',
-        'Buying more powerful computer hardware to speed up calculations',
-        'Hiring an assistant to help with the manual processes',
-        'Working longer hours to get through the closing faster'
-      ],
-      explanation: 'Eliminating manual data entry addresses the root cause of errors and time consumption, providing the highest return on automation investment.'
+  const scenarios = {
+    'cash-ledger': {
+      title: "Keep Using Cash Ledger Only",
+      description: "Continue recording transactions as money changes hands. Make month-end decisions based on cash balances.",
+      timing: "2 hours (fast)",
+      accuracy: "Low - misses earned but unbilled revenue",
+      compliance: "Poor - no accruals or deferrals",
+      decisionQuality: "Low - based on incomplete data",
+      stakeholderConfidence: "Low - financials don't match reality",
+      scoreboard: {
+        timing: 95,
+        accuracy: 30,
+        compliance: 20
+      }
     },
-    {
-      id: 'q2', 
-      question: 'What is the primary business risk of continuing with manual month-end processes as TechStart Solutions grows?',
-      answers: [
-        'The process will become exponentially more time-consuming and error-prone with more transactions',
-        'Sarah will need to buy more file cabinets for paper storage',
-        'The computer might run out of storage space',
-        'Clients might prefer digital invoices over paper ones'
-      ],
-      explanation: 'Manual processes don\'t scale efficiently - doubling transactions more than doubles the time and complexity, creating an unsustainable growth bottleneck.'
+    'add-accruals': {
+      title: "Add Manual Accruals Only",
+      description: "Continue using cash ledger but manually calculate and add accruals at month-end.",
+      timing: "1-2 days (slow)",
+      accuracy: "Medium - better but error-prone",
+      compliance: "Partial - has accruals but may miss deferrals",
+      decisionQuality: "Medium - better data but delayed",
+      stakeholderConfidence: "Medium - accurate but late",
+      scoreboard: {
+        timing: 40,
+        accuracy: 70,
+        compliance: 60
+      }
     },
-    {
-      id: 'q3',
-      question: 'How does automation create competitive advantage beyond just time savings?',
-      answers: [
-        'It enables real-time financial reporting, faster decision-making, and professional credibility with investors',
-        'It makes the business look more high-tech and modern to customers', 
-        'It reduces the need for office space and equipment',
-        'It allows working from anywhere in the world'
-      ],
-      explanation: 'Automation provides strategic advantages: real-time insights for better decisions, professional systems that impress investors, and scalable processes that support rapid growth.'
+    'full-adjusting': {
+      title: "Build Month-End Close Workflow",
+      description: "Implement complete month-end closing: accruals, deferrals, adjusting entries, and closing entries.",
+      timing: "&lt; 4 hours (target)",
+      accuracy: "High - complete and accurate",
+      compliance: "Excellent - all GAAP adjustments",
+      decisionQuality: "High - complete, timely, reliable data",
+      stakeholderConfidence: "High - professional, current financials",
+      scoreboard: {
+        timing: 90,
+        accuracy: 95,
+        compliance: 100
+      }
     }
-  ]
+  }
+
+  const handleSelectChoice = (selectedChoice: Choice) => {
+    setChoice(selectedChoice)
+  }
+
+  const selectedScenario = choice ? scenarios[choice] : null
 
   return (
     <div className="min-h-screen bg-background">
@@ -91,201 +76,291 @@ export default function Phase4Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-        {/* Introduction to Independent Practice */}
+        {/* Independent Practice: Closing Approach Decision */}
         <Card className="border-green-200 bg-white shadow-lg">
           <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
             <CardTitle className="text-2xl flex items-center gap-2">
               <Target className="h-6 w-6" />
-              Independent Practice: Automation Analysis Skills
+              Independent Practice: Choose Your Month-End Closing Approach
             </CardTitle>
           </CardHeader>
           <CardContent className="p-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-base leading-relaxed mb-6">
-                Now you'll work independently to master the key skills from this lesson: identifying process bottlenecks, analyzing automation opportunities, and building business cases for technology investments. These are the same analytical skills Sarah used to transform her "weekend nightmare" into a two-hour automated process.
+                Sarah is deciding how to handle month-end closing as TechStart grows. You'll help her evaluate three different approaches. Each choice has consequences for timing, accuracy, compliance, and business confidence. Choose one approach to see its impacts.
               </p>
 
               <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">Skills You're Practicing</h3>
-                <ul className="space-y-2 text-blue-700">
-                  <li>• <strong>Process Bottleneck Identification:</strong> Spotting the steps that consume the most time and create the most errors</li>
-                  <li>• <strong>Cost-Benefit Analysis:</strong> Understanding the true cost of manual processes beyond just time</li>
-                  <li>• <strong>Automation Opportunity Assessment:</strong> Evaluating which improvements would provide the highest return on investment</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Independent Skill Practice 1: Restaurant Process Analysis */}
-        <Card className="border-red-200 bg-red-50 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-red-800 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6" />
-              Independent Analysis 1: Restaurant Operations Bottlenecks
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4 mb-6">
-              <p className="text-red-700 leading-relaxed">
-                Apply your bottleneck identification skills to a new business scenario. "Mario's Bistro" is a growing restaurant facing operational challenges similar to Sarah's month-end problems. Identify where their manual processes are creating the biggest bottlenecks.
-              </p>
-              <div className="bg-white p-4 rounded-lg border border-red-200">
-                <p className="text-red-800 font-medium text-sm">
-                  🎯 <strong>Your Challenge:</strong> Analyze Mario's daily operations and match each manual process with its bottleneck type.
+                <h3 className="text-xl font-semibold text-blue-800 mb-3">Your Decision Impact</h3>
+                <p className="text-blue-700 leading-relaxed">
+                  The approach you choose will directly affect Sarah's ability to make decisions, report to stakeholders, and grow confidently. Pay attention to how each option performs on the month-end close workflow scoreboard.
                 </p>
               </div>
             </div>
-            <DragAndDrop
-              title="Restaurant Process Bottleneck Analysis"
-              description="Match each manual process at Mario's Bistro with its primary bottleneck category"
-              leftColumnTitle="Mario's Manual Processes"
-              rightColumnTitle="Bottleneck Categories"
-              items={restaurantBottleneckItems}
-              showHints={true}
-              shuffleItems={true}
-            />
           </CardContent>
         </Card>
 
-        {/* Independent Skill Practice 2: E-commerce Scaling Challenges */}
-        <Card className="border-orange-200 bg-orange-50 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-orange-800 flex items-center gap-2">
-              <TrendingUp className="h-6 w-6" />
-              Independent Analysis 2: E-commerce Growth Challenges
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4 mb-6">
-              <p className="text-orange-700 leading-relaxed">
-                "TechGear Online" started as a small e-commerce business but is now struggling with growth. Apply your cost-benefit analysis skills to identify how their manual processes are limiting scalability and creating hidden costs.
-              </p>
-              <div className="bg-white p-4 rounded-lg border border-orange-200">
-                <p className="text-orange-800 font-medium text-sm">
-                  🎯 <strong>Your Challenge:</strong> Connect each scaling challenge with its business impact category.
+        {/* Choice Cards */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {Object.entries(scenarios).map(([key, scenario]) => (
+            <Card
+              key={key}
+              className={`cursor-pointer transition-all hover:shadow-xl ${
+                choice === key 
+                  ? 'ring-4 ring-green-500 border-green-500' 
+                  : 'border-gray-200 hover:border-green-300'
+              }`}
+              onClick={() => handleSelectChoice(key as Choice)}
+            >
+              <CardHeader className={`p-4 ${
+                choice === key 
+                  ? 'bg-green-100' 
+                  : 'bg-gray-50'
+              }`}>
+                <CardTitle className="text-base font-semibold text-gray-900">
+                  {scenario.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600 mb-3">
+                  {scenario.description}
                 </p>
-              </div>
-            </div>
-            <DragAndDrop
-              title="E-commerce Scaling Analysis" 
-              description="Match TechGear Online's operational challenges with their business impact types"
-              leftColumnTitle="TechGear's Challenges"
-              rightColumnTitle="Business Impact Types"
-              items={ecommerceScalingItems}
-              showHints={true}
-              shuffleItems={true}
-            />
-          </CardContent>
-        </Card>
 
-        {/* Independent Skill Practice 3: Automation Prioritization */}
-        <Card className="border-purple-200 bg-purple-50 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <Clock className="h-6 w-6" />
-              Independent Analysis 3: Automation Priority Assessment
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4 mb-6">
-              <p className="text-purple-700 leading-relaxed">
-                Not all business processes should be automated. Apply your analytical skills to determine which tasks are good candidates for automation and which should remain under human control. This prioritization skill is crucial for successful automation projects.
-              </p>
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <p className="text-purple-800 font-medium text-sm">
-                  🎯 <strong>Your Challenge:</strong> Classify each business task as either a high automation priority or one that should keep human control.
-                </p>
-              </div>
-            </div>
-            <DragAndDrop
-              title="Automation Priority Decision Making"
-              description="Determine which business processes should be automated vs. kept under human control"
-              leftColumnTitle="Business Process Types"
-              rightColumnTitle="Automation Strategy"
-              items={automationPrinciplesItems}
-              showHints={true}
-              shuffleItems={true}
-            />
-          </CardContent>
-        </Card>
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500">Timing:</span>
+                    <span className={`font-medium ${
+                      scenario.scoreboard.timing >= 80 ? 'text-green-700' : 
+                      scenario.scoreboard.timing >= 50 ? 'text-yellow-700' : 
+                      'text-red-700'
+                    }`}>
+                      {scenario.timing}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500">Accuracy:</span>
+                    <span className={`font-medium ${
+                      scenario.scoreboard.accuracy >= 80 ? 'text-green-700' : 
+                      scenario.scoreboard.accuracy >= 50 ? 'text-yellow-700' : 
+                      'text-red-700'
+                    }`}>
+                      {scenario.accuracy}
+                    </span>
+                  </div>
+                  <div className="flex items-center-center justify-between">
+                    <span className="text-gray-500">Compliance:</span>
+                    <span className={`font-medium ${
+                      scenario.scoreboard.compliance >= 80 ? 'text-green-700' : 
+                      scenario.scoreboard.compliance >= 50 ? 'text-yellow-700' : 
+                      'text-red-700'
+                    }`}>
+                      {scenario.compliance}
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        {/* Independent Assessment: Automation Strategy */}
-        <Card className="border-green-200 shadow-lg">
-          <CardContent className="p-6">
-            <ComprehensionCheck
-              title="Independent Automation Analysis Assessment"
-              description="Apply your analytical skills to evaluate automation opportunities and business impact"
-              questions={automationAssessmentQuestions}
-              showExplanations={true}
-              allowRetry={true}
-            />
-          </CardContent>
-        </Card>
+        {/* Consequences Display */}
+        {selectedScenario && (
+          <>
+            <Card className="border-blue-200 bg-white shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                <CardTitle className="text-2xl">Consequences of Your Choice</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <TrendingUp className="h-5 w-5 text-green-600" />
+                      Business Benefits
+                    </h4>
+                    <div className="space-y-3">
+                      <div className="bg-green-50 p-4 rounded-lg">
+                        <p className="text-green-800 font-medium text-sm mb-1">Decision Quality</p>
+                        <p className="text-green-700 text-xs">{selectedScenario.decisionQuality}</p>
+                      </div>
+                      <div className="bg-green-50 p-4 rounded-lg">
+                        <p className="text-green-800 font-medium text-sm mb-1">Stakeholder Confidence</p>
+                        <p className="text-green-700 text-xs">{selectedScenario.stakeholderConfidence}</p>
+                      </div>
+                    </div>
+                  </div>
 
-        {/* Self-Assessment and Preparation */}
-        <Card className="border-indigo-200 bg-indigo-50 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-indigo-800">Independent Practice Self-Check</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <p className="text-indigo-700 leading-relaxed">
-                Before moving to the formal assessment, evaluate your mastery of these automation analysis skills:
-              </p>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <TrendingDown className="h-5 w-5 text-red-600" />
+                      Business Risks
+                    </h4>
+                    <div className="space-y-3">
+                      {choice === 'cash-ledger' && (
+                        <>
+                          <div className="bg-red-50 p-4 rounded-lg">
+                            <AlertTriangle className="h-4 w-4 text-red-600 mb-1" />
+                            <p className="text-red-700 text-xs">Financials don't show true profitability. Lenders may reject loan applications due to incomplete accounting.</p>
+                          </div>
+                          <div className="bg-red-50 p-4 rounded-lg">
+                            <AlertTriangle className="h-4 w-4 text-red-600 mb-1" />
+                            <p className="text-red-700 text-xs">Missing accruals means understated revenue and expenses. Can't make informed pricing decisions.</p>
+                          </div>
+                        </>
+                      )}
+                      {choice === 'add-accruals' && (
+                        <>
+                          <div className="bg-yellow-50 p-4 rounded-lg">
+                            <AlertTriangle className="h-4 w-4 text-yellow-600 mb-1" />
+                            <p className="text-yellow-700 text-xs">Manual accrual calculations are error-prone. One mistake invalidates entire month's financials.</p>
+                          </div>
+                          <div className="bg-yellow-50 p-4 rounded-lg">
+                            <AlertTriangle className="h-4 w-4 text-yellow-600 mb-1" />
+                            <p className="text-yellow-700 text-xs">2-day closing delay means missing time-sensitive opportunities and stakeholder impatience.</p>
+                          </div>
+                        </>
+                      )}
+                      {choice === 'full-adjusting' && (
+                        <div className="bg-green-50 p-4 rounded-lg">
+                          <CheckCircle className="h-4 w-4 text-green-600 mb-1" />
+                          <p className="text-green-700 text-xs">With proper automation (which you'll build in later lessons), this approach delivers speed, accuracy, and compliance.</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-white p-4 rounded-lg border border-indigo-200">
-                  <h4 className="font-semibold text-indigo-800 mb-2">Process Analysis</h4>
-                  <div className="space-y-2 text-sm">
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="rounded border-indigo-300" />
-                      <span className="text-indigo-700">I can identify process bottlenecks</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="rounded border-indigo-300" />
-                      <span className="text-indigo-700">I understand manual process risks</span>
-                    </label>
+            {/* Scoreboard Comparison */}
+            <Card className="border-purple-200 bg-white shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+                <CardTitle className="text-2xl">Month-End Close Workflow Scoreboard</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-4">Your Choice Performance</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-700">Timing (target: &lt; 2 days)</span>
+                          <span className={`font-semibold ${
+                            selectedScenario.scoreboard.timing >= 80 ? 'text-green-700' : 
+                            selectedScenario.scoreboard.timing >= 50 ? 'text-yellow-700' : 
+                            'text-red-700'
+                          }`}>
+                            {selectedScenario.scoreboard.timing}%
+                          </span>
+                        </div>
+                        <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full transition-all ${
+                              selectedScenario.scoreboard.timing >= 80 ? 'bg-green-600' : 
+                              selectedScenario.scoreboard.timing >= 50 ? 'bg-yellow-600' : 
+                              'bg-red-600'
+                            }`}
+                            style={{ width: `${selectedScenario.scoreboard.timing}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-700">Accuracy (target: zero errors)</span>
+                          <span className={`font-semibold ${
+                            selectedScenario.scoreboard.accuracy >= 80 ? 'text-green-700' : 
+                            selectedScenario.scoreboard.accuracy >= 50 ? 'text-yellow-700' : 
+                            'text-red-700'
+                          }`}>
+                            {selectedScenario.scoreboard.accuracy}%
+                          </span>
+                        </div>
+                        <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full transition-all ${
+                              selectedScenario.scoreboard.accuracy >= 80 ? 'bg-green-600' : 
+                              selectedScenario.scoreboard.accuracy >= 50 ? 'bg-yellow-600' : 
+                              'bg-red-600'
+                            }`}
+                            style={{ width: `${selectedScenario.scoreboard.accuracy}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-700">Compliance (target: all GAAP adjustments)</span>
+                          <span className={`font-semibold ${
+                            selectedScenario.scoreboard.compliance >= 80 ? 'text-green-700' : 
+                            selectedScenario.scoreboard.compliance >= 50 ? 'text-yellow-700' : 
+                            'text-red-700'
+                          }`}>
+                            {selectedScenario.scoreboard.compliance}%
+                          </span>
+                        </div>
+                        <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full transition-all ${
+                              selectedScenario.scoreboard.compliance >= 80 ? 'bg-green-600' : 
+                              selectedScenario.scoreboard.compliance >= 50 ? 'bg-yellow-600' : 
+                              'bg-red-600'
+                            }`}
+                            style={{ width: `${selectedScenario.scoreboard.compliance}%` }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-lg">
+                    <h4 className="font-semibold text-amber-800 mb-2">Key Insight</h4>
+                    <p className="text-amber-700 text-sm">
+                      {choice === 'cash-ledger' && "Fast timing doesn't matter if accuracy and compliance are low. Sarah needs to move beyond cash-only recording as TechStart grows."}
+                      {choice === 'add-accruals' && "Adding accruals improves accuracy but kills timing. The manual process creates a new bottleneck—now accuracy is high, but business decisions are still delayed."}
+                      {choice === 'full-adjusting' && "This is the right direction. The challenge is making this complete workflow fast enough to meet business needs—which is where automation comes in."}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Surface vs. Deep Problem */}
+            <Card className="border-gray-200 bg-gray-50 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-gray-800">Surface Activity vs. Deeper Accounting Problem</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white p-6 rounded-lg border border-gray-200">
+                    <h4 className="font-semibold text-gray-700 mb-3">Surface Activity (What Sarah Did)</h4>
+                    <p className="text-gray-600 text-sm mb-3">
+                      Sarah spent her entire weekend trying to make her cash ledger work for month-end closing. She found errors, fixed them, cross-referenced transactions, and tried to match everything to the bank.
+                    </p>
+                    <p className="text-gray-500 text-xs italic">
+                      This is a surface-level fix to the wrong problem.
+                    </p>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg border border-gray-200">
+                    <h4 className="font-semibold text-gray-700 mb-3">Deeper Accounting Problem (Root Cause)</h4>
+                    <p className="text-gray-600 text-sm mb-3">
+                      The real problem is that a cash ledger cannot support accrual accounting. Month-end closing requires accruals, deferrals, adjusting entries, and closing entries to show true business performance. No amount of cash ledger cleanup can solve this fundamental gap.
+                    </p>
+                    <p className="text-gray-500 text-xs italic">
+                      This requires a different approach, not harder work on the same approach.
+                    </p>
                   </div>
                 </div>
 
-                <div className="bg-white p-4 rounded-lg border border-indigo-200">
-                  <h4 className="font-semibold text-indigo-800 mb-2">Cost-Benefit Skills</h4>
-                  <div className="space-y-2 text-sm">
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="rounded border-indigo-300" />
-                      <span className="text-indigo-700">I can identify hidden costs</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="rounded border-indigo-300" />
-                      <span className="text-indigo-700">I understand opportunity costs</span>
-                    </label>
-                  </div>
+                <div className="mt-6 bg-blue-50 p-4 rounded-lg">
+                  <p className="text-blue-800 text-sm font-medium">
+                    <strong>Lesson Takeaway:</strong> Month-end closing is an accounting workflow problem, not a data-entry problem. Sarah needs to learn accrual and deferral principles (which you'll do in Lessons 2-4) and then automate this workflow (which you'll do in Lessons 5-6).
+                  </p>
                 </div>
-
-                <div className="bg-white p-4 rounded-lg border border-indigo-200">
-                  <h4 className="font-semibold text-indigo-800 mb-2">Strategic Thinking</h4>
-                  <div className="space-y-2 text-sm">
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="rounded border-indigo-300" />
-                      <span className="text-indigo-700">I can prioritize automation opportunities</span>
-                    </label>
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="rounded border-indigo-300" />
-                      <span className="text-indigo-700">I understand competitive advantages</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-yellow-100 p-4 rounded-lg">
-                <p className="text-yellow-800 text-sm font-medium">
-                  ✅ <strong>Ready for Assessment:</strong> If you can check most boxes above, you've mastered the key analytical skills from this lesson and are prepared for the formal assessment in Phase 5.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          </>
+        )}
         </div>
 
         <PhaseFooter 
