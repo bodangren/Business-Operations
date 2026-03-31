@@ -1,74 +1,72 @@
-// Unit 2, Lesson 6 — Integration & Dashboards: Decision‑Ready Month‑End
+// Unit 2, Lesson 6 — Polish Wizard Interface: Validation, Controls, and Auditability
 export const lesson06Data = {
   id: "unit02_lesson06",
-  title: "Integration & Dashboards: Decision‑Ready Month‑End",
+  title: "Polish Wizard Interface: Validation, Controls, and Auditability",
   sequence: 6,
   unitId: "unit02",
   learningObjectives: [
-    "Integrate scenario controls (Base/Stretch/Downside) using named ranges or driver tables",
-    "Link drivers to outputs with XLOOKUP/INDEX‑MATCH and structured references",
-    "Build a live dashboard with charts and KPI tiles tied to the model",
-    "Implement validation for missing names, stale dates, and out‑of‑range rates",
-    "Write executive summaries that guide investor decisions"
+    "Add visible validation rules that catch bad inputs before the close runs",
+    "Build user-facing controls that let scenarios change without touching formulas",
+    "Create an audit panel that shows what changed and why",
+    "Explain how the polished tool maintains GAAP accuracy"
   ],
   keyConcepts: [
-    "Scenario Manager vs. driver tables",
-    "Named ranges and structured references",
-    "XLOOKUP with IFNA/IFERROR for safe switching",
-    "Chart linkage to expanding ranges",
-    "KPI thresholds and decision cues"
+    "Validation rules as the first line of defense against bad data",
+    "User-facing controls (dropdowns, toggle cells) that drive scenario changes",
+    "Audit panel: a visible summary of inputs, outputs, and change history",
+    "GAAP accuracy: how validation and documentation make the workbook trustworthy"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Textbook‑first explanations grounded in TechStart context",
-    "Interactive practice with vocabulary and scenario switching",
-    "Professional standards: clarity, reliability, auditability"
+    "Business pressure: why a prototype pile is not usable by a real accountant",
+    "Safe rehearsal of validation logic before touching the live workbook",
+    "Workbook sprint with verification checkpoints and Definition of Done"
   ],
-  rationale: "Students turn robust month‑end logic into a single, decision‑ready dashboard with scenario toggles, live charts, validation, and investor‑style summaries.",
+  rationale: "Students have a working automation layer from Lesson 5. Now they must make it usable, trustworthy, and professional. This lesson adds validation rules, user-facing controls, and an audit panel so the workbook feels like a usable month-end tool—not a prototype.",
   status: "Draft"
 }
 
 export const unit02Data = {
   id: "unit02",
-  title: "Unit 2: Month‑End Wizard",
+  title: "Unit 2: Month-End Wizard",
   sequence: 2
 }
 
 export const lesson06Phases = [
   {
     id: "phase-1",
-    phaseName: "Hook" as const,
+    phaseName: "Tool Pressure" as const,
     sequence: 1,
-    description: "Sarah’s live demo: one dashboard, scenario toggles, and clear investor cues.",
+    description: "Business scenario where a polished interface matters—make tool feel necessary",
   },
   {
     id: "phase-2",
-    phaseName: "Introduction" as const,
+    phaseName: "Tool Anatomy" as const,
     sequence: 2,
-    description: "From model to decision: drivers, XLOOKUP switching, and chart linkage.",
+    description: "Validation rules, user-facing controls, and audit panel explained directly",
   },
   {
     id: "phase-3",
-    phaseName: "Guided Practice" as const,
+    phaseName: "Safe Rehearsal" as const,
     sequence: 3,
-    description: "Build scenario controls, link outputs, connect visuals, and add validation.",
+    description: "Simulator mirroring real workbook validation logic with immediate feedback",
   },
   {
     id: "phase-4",
-    phaseName: "Independent Practice" as const,
+    phaseName: "Workbook Sprint" as const,
     sequence: 4,
-    description: "Mastery challenges with dataset: toggles by name, live charts, exec summary.",
+    description: "Build the polished wizard with verification checkpoints and Definition of Done",
   },
   {
     id: "phase-5",
-    phaseName: "Assessment" as const,
+    phaseName: "Audit and Explain" as const,
     sequence: 5,
-    description: "Integration quiz: switching logic, structured references, KPI judgment.",
+    description: "Technical check plus artifact task: defend trustworthiness and explain GAAP accuracy",
   },
   {
     id: "phase-6",
-    phaseName: "Closing" as const,
+    phaseName: "Reflection and Handoff" as const,
     sequence: 6,
-    description: "Synthesis, CAP reflection, and preview of Lesson07 stakeholder review.",
+    description: "What the tool added, what students can now do faster, preview project rehearsal",
   }
 ]
