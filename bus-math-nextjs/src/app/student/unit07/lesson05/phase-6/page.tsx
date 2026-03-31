@@ -2,6 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ArrowRight, CheckCircle } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson05Data, unit07Data, lesson05Phases } from "../lesson-data"
 
@@ -11,19 +12,19 @@ const prompts = [
   {
     id: 'adapt-1',
     category: 'adaptability' as const,
-    prompt: 'When your model first failed under new rows or a method toggle, how did you adjust your approach?',
+    prompt: 'When your workbook first failed under new rows or a method toggle, how did you adjust your approach?',
     placeholder: 'Describe the specific change you made and why it worked...'
   },
   {
     id: 'persist-1',
     category: 'persistence' as const,
-    prompt: 'What validation or error‑handling took the longest to get right? How did you keep going?',
+    prompt: 'What validation or error-handling took the longest to get right? How did you keep going?',
     placeholder: 'Explain your debugging steps and how you finally resolved it...'
   },
   {
     id: 'courage-1',
     category: 'courage' as const,
-    prompt: 'How will you confidently explain method trade‑offs (profit, tax, cash) to investors next time?',
+    prompt: 'How will you confidently explain method trade-offs (profit, tax, cash) to investors next time?',
     placeholder: 'Write a short script you could use during Q&A...'
   }
 ]
@@ -36,11 +37,13 @@ export default function Unit07Lesson05Phase6() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🎯 Phase 6: Closing</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Advanced Automation: Ready for the Next Step</h1>
+            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">Phase 6: Reflection and Handoff</Badge>
+            <h1 className="text-3xl font-bold text-gray-900">What You Can Now Do Faster and More Reliably</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              You built a method switch, added validation, and explained business impact. These reliability gains prepare you for
-              Lesson06: integration and dashboards — turning robust logic into clear visuals for decision‑makers.
+              You built a method-comparison workbook that switches between FIFO, LIFO, and Weighted Average from one
+              control cell. You added validation so bad inputs cannot corrupt COGS. You defended a method recommendation
+              with workbook evidence. These skills prepare you for Lesson 06, where you will turn this logic into a
+              dashboard that tells the full business story.
             </p>
           </div>
         </section>
@@ -48,19 +51,45 @@ export default function Unit07Lesson05Phase6() {
         <section className="max-w-4xl mx-auto space-y-8">
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
-              <CardTitle className="text-green-900">Synthesis</CardTitle>
+              <CardTitle className="text-green-900 flex items-center gap-2">
+                <CheckCircle className="h-5 w-5" /> What You Accomplished Today
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-green-900 space-y-2">
               <ul className="list-disc list-inside space-y-1">
-                <li>Dynamic method switching unifies logic and reduces copy‑paste risk</li>
-                <li>Tables and structured refs keep the model stable as data grows</li>
-                <li>Validation + IFNA/IFERROR protect trust and auditability</li>
-                <li>Clear notes connect outputs to tax and cash‑flow choices</li>
+                <li>Set up Excel Tables with structured references so the model scales</li>
+                <li>Built FIFO, LIFO, and Weighted Average calculations in one workbook</li>
+                <li>Added a method selector that drives all three methods from one cell</li>
+                <li>Added validation that blocks negative costs and missing SKUs</li>
+                <li>Wrote a recommendation memo with evidence from your workbook</li>
               </ul>
             </CardContent>
           </Card>
 
-          <ReflectionJournal unitTitle="CAP Reflection: Advanced Inventory Automation" prompts={prompts} />
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800 flex items-center gap-2">
+                <ArrowRight className="h-5 w-5" /> Preview: Lesson 06
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-blue-900 space-y-2">
+              <p className="font-medium">In Lesson 06 you will:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Turn your method-comparison workbook into an investor-facing dashboard</li>
+                <li>Add dynamic charts that update when the method changes</li>
+                <li>Include turnover analysis and days-on-hand metrics</li>
+                <li>Build a recommendation section that ties KPIs to your method choice</li>
+              </ul>
+              <p className="text-sm text-blue-700 mt-2">
+                The workbook you built today is the foundation. Lesson 06 adds the presentation layer.
+              </p>
+            </CardContent>
+          </Card>
+
+          <ReflectionJournal
+            unitTitle="Reflection: Build the Inventory Method Workbook"
+            prompts={prompts}
+          />
         </section>
       </main>
 
@@ -68,4 +97,3 @@ export default function Unit07Lesson05Phase6() {
     </div>
   )
 }
-

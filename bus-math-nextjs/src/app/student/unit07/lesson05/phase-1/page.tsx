@@ -12,54 +12,54 @@ const hookQuestions = [
   {
     id: "u07l05-hook-1",
     question:
-      "Sarah’s inventory model breaks when 80 new rows are added. What design choice prevents this?",
+      "Sarah's investor asks her to show COGS under FIFO, LIFO, and Weighted Average during the same meeting. What workbook design lets her switch methods without rebuilding the file?",
     answers: [
-      "Excel Tables with structured references (e.g., Purchases[Qty])",
-      "Fixed ranges like A2:A100 and manual copy",
-      "Hiding extra rows until needed",
-      "Merging header cells for clarity"
+      "A single method-selector cell that drives all three method calculations",
+      "Three separate workbooks, one per method",
+      "Manually retyping formulas each time the method changes",
+      "Hardcoding COGS totals and adjusting them later"
     ],
     explanation:
-      "Tables expand automatically and structured references follow growth, avoiding broken ranges when data scales."
+      "One control cell that feeds helper formulas keeps the model stable. Separate files or manual rewrites invite errors during live presentations."
   },
   {
     id: "u07l05-hook-2",
     question:
-      "Prices rise all quarter. Which method lowers reported profit (and likely taxes) this period?",
+      "Sarah's current workbook uses ranges like A2:A100. When she adds 50 new transactions, several formulas break. What design choice prevents this?",
     answers: [
-      "LIFO — newest, higher costs flow to COGS",
-      "FIFO — oldest, lower costs flow to COGS",
-      "Weighted Average — same as FIFO",
-      "All methods show the same profit"
+      "Convert the data range into an Excel Table and use structured references like Purchases[Qty]",
+      "Extend the range to A2:A1000 so there is room for growth",
+      "Hide extra rows until she needs them",
+      "Merge header cells so the sheet looks cleaner"
     ],
     explanation:
-      "LIFO uses newer, higher costs in rising markets, which increases COGS and lowers profit and taxes."
+      "Tables expand automatically and structured references follow new rows. Fixed ranges always break when data grows beyond the original boundary."
   },
   {
     id: "u07l05-hook-3",
     question:
-      "Which failure most damages investor trust during a live demo?",
+      "During a live demo, a formula shows #N/A on the dashboard. What damage does this cause?",
     answers: [
-      "A fragile formula chain that errors when inputs change",
-      "A clearly labeled method selector",
-      "Documented assumptions beside key outputs",
-      "Validation rules that flag bad data"
+      "It signals weak controls and makes the whole model look unreliable",
+      "Nothing, because investors know lookups sometimes fail",
+      "It only affects the chart, not the numbers",
+      "It proves the method choice was wrong"
     ],
     explanation:
-      "Fragile models that error under change signal weak controls; professional models remain stable with clear checks."
+      "Unwrapped errors on a dashboard tell investors the model was not stress-tested. Professional workbooks wrap lookups in IFNA or IFERROR."
   },
   {
     id: "u07l05-hook-4",
     question:
-      "Sarah must compare FIFO, LIFO, and Weighted Avg quickly. What’s the right approach?",
+      "Prices are rising. Which method lowers reported profit and likely taxes this period?",
     answers: [
-      "Dynamic method switch that recalculates COGS/Ending Inventory",
-      "Separate spreadsheets for each method with copy‑paste",
-      "Manually retype formulas for each method",
-      "Hardcode period totals and adjust later"
+      "LIFO, because the newest, higher costs flow to COGS first",
+      "FIFO, because the oldest, lower costs flow to COGS first",
+      "Weighted Average, because it always matches FIFO",
+      "All methods show the same COGS"
     ],
     explanation:
-      "A single, well‑documented switch drives consistent logic and reduces errors across methods."
+      "LIFO pulls the newest, most expensive layers into COGS when prices rise. That raises expense, lowers profit, and reduces the tax bill."
   }
 ]
 
@@ -71,12 +71,13 @@ export default function Unit07Lesson05Phase1() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Sarah’s Advanced Inventory Stress Test</h1>
+            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">Phase 1: Tool Pressure</Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Sarah Needs to Compare Methods Under Pressure</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              During a live investor meeting, Sarah toggles methods and adds new sales rows. The outputs jump and
-              a formula breaks. Models that crumble under pressure scare investors. Today you’ll design automation that
-              scales cleanly, communicates clearly, and earns trust.
+              Sarah is meeting with a potential investor. The investor wants to see how COGS and ending inventory change
+              under FIFO, LIFO, and Weighted Average. Sarah opens her workbook, toggles the method, and a formula breaks.
+              The investor frowns. Models that crumble under change scare investors away. Today you will build a workbook
+              that switches methods cleanly, scales as data grows, and earns trust.
             </p>
           </div>
         </section>
@@ -92,17 +93,19 @@ export default function Unit07Lesson05Phase1() {
               <div className="bg-red-50 p-4 rounded border border-red-200">
                 <p className="font-semibold mb-2">Fragile (Before)</p>
                 <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Fixed ranges that miss new rows</li>
-                  <li>Separate sheets per method; copy‑paste drift</li>
+                  <li>Fixed ranges like A2:A100 that miss new rows</li>
+                  <li>Separate sheets per method with copy-paste drift</li>
                   <li>No checks for missing SKU or negative cost</li>
+                  <li>#N/A errors visible on the dashboard</li>
                 </ul>
               </div>
               <div className="bg-green-50 p-4 rounded border border-green-200">
                 <p className="font-semibold mb-2">Robust (After)</p>
                 <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Excel Tables + structured references</li>
-                  <li>Dynamic method switch (FIFO/LIFO/Weighted Avg)</li>
-                  <li>Validation for IDs, dates, and quantities</li>
+                  <li>Excel Tables with structured references</li>
+                  <li>One method selector drives all three calculations</li>
+                  <li>Validation blocks bad inputs before they reach COGS</li>
+                  <li>IFNA wraps lookups so dashboards stay clean</li>
                 </ul>
               </div>
             </CardContent>
@@ -110,7 +113,7 @@ export default function Unit07Lesson05Phase1() {
 
           <ComprehensionCheck
             title="Predict the Professional Approach"
-            description="Choose designs that keep models stable under change."
+            description="Choose the designs that keep Sarah's model stable under investor scrutiny."
             questions={hookQuestions}
             showExplanations={true}
             allowRetry={true}
@@ -125,13 +128,13 @@ export default function Unit07Lesson05Phase1() {
             <CardContent className="space-y-2 text-blue-900">
               <p className="font-medium">Discussion Prompt (3 minutes):</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Where do inventory models usually break as data grows?</li>
-                <li>How do validation and documentation reduce risk in meetings?</li>
-                <li>Which outputs matter most to investors and why?</li>
+                <li>Where do inventory workbooks usually break as data grows?</li>
+                <li>Why does an investor care whether Sarah can switch methods in one file?</li>
+                <li>What outputs matter most to someone deciding whether to fund this business?</li>
               </ul>
               <div className="mt-2 flex items-center gap-2 text-slate-700">
                 <Shield className="w-4 h-4" />
-                <span className="text-sm">Professional standard: stress‑test with added rows before presenting.</span>
+                <span className="text-sm">Professional standard: stress-test with added rows before presenting.</span>
               </div>
             </CardContent>
           </Card>
@@ -142,4 +145,3 @@ export default function Unit07Lesson05Phase1() {
     </div>
   )
 }
-

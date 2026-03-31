@@ -2,8 +2,8 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Wrench, ShieldCheck } from "lucide-react"
-import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem"
+import { Wrench, ArrowRight } from "lucide-react"
+import MethodComparisonSimulator from "@/components/business-simulations/MethodComparisonSimulator"
 import { lesson05Data, unit07Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[2]
@@ -16,10 +16,12 @@ export default function Unit07Lesson05Phase3() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">🔧 Phase 3: Guided Practice</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Building Sarah’s Method Switch + Validation</h1>
+            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">Phase 3: Safe Rehearsal</Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Practice the Method Logic Before Building the Workbook</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Implement a reliable method selector and safeguards. Then verify behavior using the interactive validation tool.
+              Before you open Excel, practice the method-comparison logic in this simulator. Each scenario gives you
+              purchase data and units sold. Calculate COGS and Ending Inventory for FIFO, LIFO, and Weighted Average.
+              This is the same logic your formulas will execute in Phase 4.
             </p>
           </div>
         </section>
@@ -28,31 +30,25 @@ export default function Unit07Lesson05Phase3() {
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
               <CardTitle className="text-green-800 flex items-center gap-2">
-                <Wrench className="h-5 w-5" /> Hands‑On Steps
+                <Wrench className="h-5 w-5" /> How to Use This Simulator
               </CardTitle>
             </CardHeader>
             <CardContent className="text-green-900 space-y-2">
               <ol className="list-decimal list-inside space-y-1">
-                <li>Create a <strong>Method</strong> dropdown with Data Validation: FIFO, LIFO, Weighted Avg.</li>
-                <li>Use Tables for Purchases and Sales; reference with <code>Table[Column]</code> only.</li>
-                <li>Build helper columns for layer math (FIFO/LIFO) and running averages.</li>
-                <li>Wrap lookups with <code>IFNA</code> to protect dashboards from #N/A.</li>
-                <li>Add checks: missing SKU, negative or zero UnitCost, stale dates, negative on‑hand.</li>
+                <li>Read the purchase data and note the units sold.</li>
+                <li>Calculate COGS and Ending Inventory for each method by hand or with a calculator.</li>
+                <li>Enter your answers and submit to check.</li>
+                <li>Use the hint if you are stuck, then try again.</li>
+                <li>Move to the next scenario to build speed.</li>
               </ol>
+              <div className="mt-3 flex items-center gap-2 text-sm">
+                <ArrowRight className="w-4 h-4" />
+                <span>When you can get all three methods right consistently, you are ready for the real workbook build.</span>
+              </div>
             </CardContent>
           </Card>
 
-          <Card className="border-indigo-200 bg-white">
-            <CardHeader>
-              <CardTitle className="text-indigo-800 flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5" /> Validation Practice
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-indigo-900">
-              <p>Use the tool below to rehearse validation patterns you will build into Excel.</p>
-              <ErrorCheckingSystem />
-            </CardContent>
-          </Card>
+          <MethodComparisonSimulator />
         </section>
       </main>
 
@@ -60,4 +56,3 @@ export default function Unit07Lesson05Phase3() {
     </div>
   )
 }
-

@@ -33,7 +33,7 @@ export const unit01Data = {
 export const lesson09Phases = [
   {
     id: "u01l09-milestone2",
-    phaseName: "Milestone 2" as const,
+    phaseName: "Independent Practice" as const,
     sequence: 1,
     description: "Complete workbook, write recommendation, peer critique, and rehearsal"
   }

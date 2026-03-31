@@ -1,77 +1,72 @@
-// Asset & Inventory Tracker, Lesson 5 data - extracted from MCP curriculum database
 export const lesson05Data = {
-  id: "mds5x99sosgzubr6xz",
-  title: "Medium-Complexity Excel: Build a Method Comparison Workbook",
+  id: "u07l05",
+  title: "Build the Inventory Method Workbook",
   sequence: 5,
-  unitId: "mdrhlhv4ov691yonkpi",
+  unitId: "u07",
   learningObjectives: [
-    "Build a dynamic method switch (FIFO/LIFO/Weighted Avg) using structured references",
-    "Implement robust validation for inventory data (missing IDs, negative costs, stale dates)",
-    "Design investor-ready outputs: clear COGS/ending inventory with documentation and checks",
-    "Apply scenario analysis to show tax and cash-flow impacts under different methods"
+    "Build a workbook that computes COGS and ending inventory for FIFO, LIFO, and Weighted Average",
+    "Use Excel Tables and structured references so the model scales as transactions grow",
+    "Add validation rules that block bad inputs before they reach COGS",
+    "Document assumptions so an investor can audit the method comparison"
   ],
   keyConcepts: [
-    "Dynamic method selection via control cell + helper logic",
-    "Structured references with Excel Tables for scalable models",
-    "Error handling with IFERROR/IFNA and validation rules",
-    "Professional standards: documentation, auditability, reproducibility"
+    "Dynamic method selector drives all three methods from one control cell",
+    "Tables + structured references replace fixed ranges",
+    "Validation catches missing SKUs, negative costs, and stale dates",
+    "Professional workbooks explain choices beside the outputs"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Textbook-first explanations with guided practice and formative assessment"
+    "Business pressure hook",
+    "Tool anatomy with failure modes",
+    "Safe rehearsal simulator",
+    "Real workbook build with verification checkpoints"
   ],
-  rationale: "Students advance from correct method knowledge to professional-grade automation that scales reliably and earns investor confidence.",
-  status: "Draft"
+  rationale: "Students move from correct hand calculations to a working method-comparison workbook. The same logic they learned by hand in Lessons 2-4 now lives in one file that switches methods, scales with data, and earns trust.",
+  status: "Complete"
 }
 
 export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
-  title: "Asset & Inventory Tracker",
+  id: "u07",
+  title: "Inventory Accounting",
   sequence: 7
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson05Phases = [
   {
-    id: "phase_hook_5",
+    id: "u07l05-p1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Stress test fragile vs. robust inventory automation under real‑world changes",
-    // No component needed for this phase.
+    description: "Open with a business scenario where Sarah needs to compare methods fast under investor scrutiny",
   },
   {
-    id: "phase_introduction_5",
+    id: "u07l05-p2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Deep‑dive on dynamic method switching and professional standards",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Name the workbook pattern: Tables, method selector, helper columns, and common failure modes",
   },
   {
-    id: "phase_guided_practice_5",
+    id: "u07l05-p3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Hands‑on validation and safeguards for reliable inventory models",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide the retrospective process.
+    description: "Practice method-comparison logic in a bounded simulator before touching the real workbook",
   },
   {
-    id: "phase_independent_practice_5",
+    id: "u07l05-p4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Escalating challenges using advanced practice data with edge cases",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide the retrospective process.
+    description: "Build the real method-comparison workbook with verification checkpoints",
   },
   {
-    id: "phase_assessment_5",
+    id: "u07l05-p5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Comprehensive mastery check mixing technical skill and business judgment",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Technical check plus a brief artifact task: defend your method recommendation",
   },
   {
-    id: "phase_closing_5",
+    id: "u07l05-p6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesize reliability improvements and preview dashboard integration",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on what the tool added and preview the dashboard integration in Lesson 06",
   }
 ]

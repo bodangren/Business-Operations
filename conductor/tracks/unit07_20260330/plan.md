@@ -123,21 +123,21 @@
     - [ ] The closing phase points cleanly to the workbook lessons
 
 ### Phase 3: Lessons 05-06 (Excel)
-- [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.1.2 Implement Phase 1-6 with inventory method workbook
+- [x] 3.1 **Lesson 05** - Implement excel-lessons skill
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [x] 3.1.2 Implement Phase 1-6 with inventory method workbook
     - Phase 1: Open with business/investor scenario where method comparison matters, make tool feel necessary, connect to existing workbook
     - Phase 2: Name tool/workbook pattern clearly, explain feature parts, show where tool lives in Excel, teach common failure mode
     - Phase 3: Use custom simulator/manual logic trainer mirroring real workbook logic, give immediate feedback, make bridge to phase 4 explicit
     - Phase 4: State exact starting workbook/download path, state output, include reference model, provide short build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical/conceptual check, brief artifact task focusing on trustworthiness and business communication
     - Phase 6: Reflect on tool use and professional judgment, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Teach workbook anatomy and method-calculation structure directly
-  - [ ] 3.1.4 Include a safe rehearsal that mirrors the phase-4 workbook logic
-  - [ ] 3.1.5 Require a real workbook artifact by the end of Phase 4
+  - [x] 3.1.3 Teach workbook anatomy and method-calculation structure directly
+  - [x] 3.1.4 Include a safe rehearsal that mirrors the phase-4 workbook logic
+  - [x] 3.1.5 Require a real workbook artifact by the end of Phase 4
   - **Done when**:
-    - [ ] Students have a working method-comparison workbook
-    - [ ] The workbook reflects the same method logic already learned by hand
+    - [x] Students have a working method-comparison workbook
+    - [x] The workbook reflects the same method logic already learned by hand
 
 - [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
