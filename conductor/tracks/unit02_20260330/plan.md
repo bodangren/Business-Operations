@@ -145,19 +145,19 @@
     - [x] Students know the exact project structure and quality bar
     - [x] The audit language is concrete enough to reuse in project work
 
-- [ ] 4.2 **Lesson 08** - Implement group-project skill
-  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
-  - [ ] 4.2.2 Implement kickoff with group-specific closing scenarios
+- [x] 4.2 **Lesson 08** - Implement group-project skill
+  - [x] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+  - [x] 4.2.2 Implement kickoff with group-specific closing scenarios
     - Assign each group its own dataset/starter workbook
     - Explain business scenario, constraints, target outcome
     - Require teams to rename, save, organize correct workbook
     - Start first required sheets/sections
     - Define milestone 1 acceptance criteria
-  - [ ] 4.2.3 Assign each team its own scenario/workbook
-  - [ ] 4.2.4 Keep the structure identical to Lesson 07
-  - **Done when**:
-    - [ ] Each team is working in the correct workbook
-    - [ ] Setup and early close routines are in place
+  - [x] 4.2.3 Assign each team its own scenario/workbook
+  - [x] 4.2.4 Keep the structure identical to Lesson 07
+  **Done when**:
+    - [x] Each team is working in the correct workbook
+    - [x] Setup and early close routines are in place
 
 - [ ] 4.3 **Lesson 09** - Implement group-project skill
   - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
