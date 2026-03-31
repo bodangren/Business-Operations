@@ -2,100 +2,69 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { BookOpen, Calculator, TrendingUp, Calendar } from "lucide-react"
+import { BookOpen, CheckCircle2, AlertTriangle } from "lucide-react"
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson03Data, unit02Data, lesson03Phases } from "../lesson-data"
 
-const currentPhase = lesson03Phases[1] // Phase 2
+const currentPhase = lesson03Phases[1]
 
-const gaapConcepts = [
+const conceptBlanks = [
   {
-    id: "concept1",
-    text: "The {blank} principle requires matching revenues with the expenses that generate them in the correct accounting period.",
-    answer: "matching",
-    hint: "This principle ensures revenues and related expenses appear in the same period",
-    category: "GAAP Principles"
+    id: "blank1",
+    text: "Revenue, expense, and dividend accounts are called {blank} accounts because they track activity for only one accounting period.",
+    answer: "temporary",
+    hint: "These accounts reset to zero at the end of each period",
+    category: "Account Types"
   },
   {
-    id: "concept2", 
-    text: "Under {blank} accounting, transactions are recorded when they occur, not when cash is received or paid.",
-    answer: "accrual",
-    hint: "This is the opposite of cash-basis accounting",
-    category: "Accounting Methods"
+    id: "blank2",
+    text: "Asset, liability, and equity accounts are called {blank} accounts because their balances carry forward to the next period.",
+    answer: "permanent",
+    alternativeAnswers: ["real"],
+    hint: "These accounts never reset to zero",
+    category: "Account Types"
   },
   {
-    id: "concept3",
-    text: "When Sarah completes work but hasn't yet invoiced the client, she records {blank} revenue.",
-    answer: "accrued",
-    hint: "Revenue has been earned but not yet billed",
-    category: "Adjusting Entries"
+    id: "blank3",
+    text: "The {blank} account is a temporary clearing account used only during the closing process to hold the net income or net loss amount.",
+    answer: "Income Summary",
+    alternativeAnswers: ["income summary", "income"],
+    hint: "This account exists only during closing and has a zero balance the rest of the year",
+    category: "Closing Process"
   },
   {
-    id: "concept4",
-    text: "When a client pays for services before Sarah performs them, she records {blank} revenue (a liability).",
-    answer: "deferred",
-    alternativeAnswers: ["unearned"],
-    hint: "The company owes services to the customer",
-    category: "Adjusting Entries"
-  },
-  {
-    id: "concept5",
-    text: "The {blank} method spreads the cost of a long-term asset evenly over its useful life.",
-    answer: "straight-line",
-    hint: "This is the most common depreciation method",
-    category: "Depreciation"
-  },
-  {
-    id: "concept6",
-    text: "Annual Depreciation = (Cost - {blank} Value) ÷ Useful Life",
-    answer: "salvage",
-    alternativeAnswers: ["residual"],
-    hint: "This is the estimated value at the end of the asset's useful life",
-    category: "Depreciation Formula"
-  },
-  {
-    id: "concept7",
-    text: "{blank} entries transfer net income from temporary accounts to permanent equity accounts.",
-    answer: "closing",
-    hint: "These entries reset revenue and expense accounts to zero",
-    category: "Month-End Process"
+    id: "blank4",
+    text: "After all closing entries are posted, the balance in Retained Earnings should equal the beginning balance plus {blank} minus any dividends.",
+    answer: "net income",
+    alternativeAnswers: ["net income amount", "the net income", "profit", "net profit"],
+    hint: "This is revenue minus expenses for the period",
+    category: "Retained Earnings"
   }
 ]
 
 const conceptQuestions = [
   {
-    id: "concept-check1",
-    question: "Why does GAAP require the matching principle in financial reporting?",
+    id: "check1",
+    question: "Which of the following is a temporary account?",
     answers: [
-      "To provide an accurate picture of business performance by matching revenues with related expenses in the correct period",
-      "To make bookkeeping easier for small businesses",
-      "To reduce the amount of paperwork required",
-      "To ensure all transactions are recorded in cash"
+      "Service Revenue",
+      "Cash",
+      "Accounts Payable",
+      "Retained Earnings"
     ],
-    explanation: "The matching principle ensures that financial statements accurately reflect the true profitability of each period by pairing revenues with the expenses that helped generate them."
+    explanation: "Service Revenue is a temporary account — it tracks revenue earned during one period and resets to zero at the end. Cash, Accounts Payable, and Retained Earnings are permanent accounts."
   },
   {
-    id: "concept-check2", 
-    question: "What is the key difference between accrued revenue and deferred revenue?",
+    id: "check2",
+    question: "What is the purpose of the Income Summary account?",
     answers: [
-      "Accrued revenue is earned but not yet billed; deferred revenue is received but not yet earned",
-      "Accrued revenue is cash received; deferred revenue is cash paid",
-      "Accrued revenue is an expense; deferred revenue is an asset",
-      "There is no difference between them"
+      "It temporarily holds the net income or net loss amount before it is transferred to Retained Earnings",
+      "It tracks all revenue earned during the year",
+      "It records depreciation expense each month",
+      "It is used to adjust prepaid expenses"
     ],
-    explanation: "Accrued revenue represents work completed but not yet invoiced (asset). Deferred revenue represents cash received for work not yet completed (liability)."
-  },
-  {
-    id: "concept-check3",
-    question: "Sarah's $3,000 computer has a 3-year useful life and $300 salvage value. What is her monthly depreciation expense?",
-    answers: [
-      "$75 per month",
-      "$100 per month", 
-      "$83.33 per month",
-      "$250 per month"
-    ],
-    explanation: "Annual depreciation = ($3,000 - $300) ÷ 3 years = $900/year. Monthly = $900 ÷ 12 = $75."
+    explanation: "Income Summary is a temporary clearing account used only during closing. Revenue and expenses are closed into it first, then its balance (net income or loss) is closed to Retained Earnings."
   }
 ]
 
@@ -103,185 +72,67 @@ export default function Phase2Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">
-        <PhaseHeader 
+        <PhaseHeader
           lesson={lesson03Data}
-          unit={unit02Data} 
+          unit={unit02Data}
           phase={currentPhase}
           phases={lesson03Phases}
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          
-          {/* Core GAAP Principles */}
+
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
               <CardTitle className="text-2xl text-blue-800 flex items-center gap-2">
                 <BookOpen className="h-6 w-6" />
-                The Foundation: GAAP Principles for Month-End Adjustments
+                The Rule: Temporary vs Permanent Accounts
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="prose prose-lg max-w-none text-blue-900">
                 <p>
-                  When Sarah sat down with her mentor Marcus to understand why her month-end closing was so 
-                  complicated, he explained that the issue wasn't her bookkeeping skills—it was that she 
-                  was transitioning from simple cash-basis accounting to professional-grade accrual accounting.
-                </p>
-
-                <p>
-                  "The rules that guide these adjusting entries," Marcus explained, "are part of 
-                  <strong>Generally Accepted Accounting Principles (GAAP)</strong>. These aren't arbitrary 
-                  rules—they're the foundation that makes financial statements reliable and comparable 
-                  across all businesses."
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4 not-prose">
-                <Card className="border-green-200 bg-green-50">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-green-600" />
-                      <Badge className="bg-green-200 text-green-800">Matching Principle</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <h4 className="font-semibold text-green-900 mb-2">Match Revenue with Expenses</h4>
-                    <p className="text-sm text-green-800">
-                      Revenues must be matched with the expenses that helped generate them, in the same 
-                      accounting period. This provides an accurate picture of profitability.
-                    </p>
-                    <p className="text-xs text-green-700 mt-2 italic">
-                      "If Sarah's computer helps her earn revenue all year, she should record a portion 
-                      of its cost as expense each month, not all at once."
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-purple-200 bg-purple-50">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-5 w-5 text-purple-600" />
-                      <Badge className="bg-purple-200 text-purple-800">Revenue Recognition</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <h4 className="font-semibold text-purple-900 mb-2">When Work is Done, Not When Cash is Received</h4>
-                    <p className="text-sm text-purple-800">
-                      Revenue should be recorded when services are performed or goods are delivered, 
-                      regardless of when payment is received.
-                    </p>
-                    <p className="text-xs text-purple-700 mt-2 italic">
-                      "Sarah earned that $500 SEO audit revenue in March when she completed the work, 
-                      even though she won't invoice until April."
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg border border-blue-200">
-                <h3 className="font-semibold text-blue-900 mb-2">Why This Matters for TechStart Solutions</h3>
-                <p className="text-blue-800">
-                  Following GAAP principles means Sarah's financial statements will be trusted by investors, 
-                  lenders, and business partners. When she eventually seeks funding or applies for business 
-                  loans, her adherence to these professional standards will demonstrate that she understands 
-                  how to run a serious business operation.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* The Four Types of Adjusting Entries */}
-          <Card className="border-amber-200 bg-amber-50">
-            <CardHeader>
-              <CardTitle className="text-2xl text-amber-800 flex items-center gap-2">
-                <Calculator className="h-6 w-6" />
-                The Four Scenarios: Types of Adjusting Entries
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="prose prose-lg max-w-none text-amber-900">
-                <p>
-                  Every adjusting entry Sarah needs falls into one of four categories. Understanding these 
-                  categories is the key to building her automated Month-End Wizard.
+                  Every account in the ledger belongs to one of two teams. Understanding which team
+                  an account is on tells you whether it needs to be closed at the end of the period.
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 not-prose">
                 <Card className="border-red-200 bg-red-50">
                   <CardHeader className="pb-3">
-                    <Badge className="bg-red-200 text-red-800 w-fit">Type 1: Accrued Revenue</Badge>
+                    <Badge className="bg-red-200 text-red-800 w-fit">Temporary Accounts</Badge>
                   </CardHeader>
                   <CardContent>
-                    <h4 className="font-semibold text-red-900 mb-2">Work Done, Invoice Later</h4>
                     <p className="text-sm text-red-800 mb-2">
-                      <strong>Situation:</strong> Sarah completes services but hasn't billed the client yet.
+                      <strong>Reset to $0</strong> at the end of each period.
                     </p>
-                    <div className="text-xs text-red-700 bg-white p-2 rounded border">
-                      <strong>Journal Entry:</strong><br/>
-                      Debit: Accounts Receivable<br/>
-                      Credit: Service Revenue
-                    </div>
-                    <p className="text-xs text-red-700 mt-2">
-                      This increases both assets (what's owed to Sarah) and revenue (what she's earned).
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-blue-200 bg-blue-50">
-                  <CardHeader className="pb-3">
-                    <Badge className="bg-blue-200 text-blue-800 w-fit">Type 2: Deferred Revenue</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <h4 className="font-semibold text-blue-900 mb-2">Cash Received, Work Pending</h4>
-                    <p className="text-sm text-blue-800 mb-2">
-                      <strong>Situation:</strong> Client pays in advance for services Sarah hasn't completed.
-                    </p>
-                    <div className="text-xs text-blue-700 bg-white p-2 rounded border">
-                      <strong>Journal Entry (to recognize earned portion):</strong><br/>
-                      Debit: Deferred Revenue<br/>
-                      Credit: Service Revenue
-                    </div>
-                    <p className="text-xs text-blue-700 mt-2">
-                      This reduces the liability (debt to client) and increases revenue as work is completed.
+                    <ul className="text-xs text-red-700 space-y-1">
+                      <li>• All <strong>Revenue</strong> accounts (Service Revenue, Interest Revenue, etc.)</li>
+                      <li>• All <strong>Expense</strong> accounts (Rent, Salaries, Supplies, Depreciation, etc.)</li>
+                      <li>• <strong>Dividends</strong> (or Owner's Drawings)</li>
+                    </ul>
+                    <p className="text-xs text-red-700 mt-2 italic">
+                      Think of these as the "scoreboard" for one game. After the game ends, the
+                      scoreboard resets for the next game.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-green-200 bg-green-50">
                   <CardHeader className="pb-3">
-                    <Badge className="bg-green-200 text-green-800 w-fit">Type 3: Depreciation</Badge>
+                    <Badge className="bg-green-200 text-green-800 w-fit">Permanent Accounts</Badge>
                   </CardHeader>
                   <CardContent>
-                    <h4 className="font-semibold text-green-900 mb-2">Asset Cost Over Time</h4>
                     <p className="text-sm text-green-800 mb-2">
-                      <strong>Formula:</strong> (Cost - Salvage Value) ÷ Useful Life
+                      <strong>Carry forward</strong> — their balances continue into the next period.
                     </p>
-                    <div className="text-xs text-green-700 bg-white p-2 rounded border">
-                      <strong>Journal Entry:</strong><br/>
-                      Debit: Depreciation Expense<br/>
-                      Credit: Accumulated Depreciation
-                    </div>
-                    <p className="text-xs text-green-700 mt-2">
-                      For Sarah's $3,000 computer: ($3,000 - $300) ÷ 36 months = $75/month
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-purple-200 bg-purple-50">
-                  <CardHeader className="pb-3">
-                    <Badge className="bg-purple-200 text-purple-800 w-fit">Type 4: Closing Entries</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <h4 className="font-semibold text-purple-900 mb-2">Reset for New Period</h4>
-                    <p className="text-sm text-purple-800 mb-2">
-                      <strong>Purpose:</strong> Transfer net income to equity and reset temporary accounts.
-                    </p>
-                    <div className="text-xs text-purple-700 bg-white p-2 rounded border">
-                      <strong>Step 1:</strong> Close Revenue to Retained Earnings<br/>
-                      <strong>Step 2:</strong> Close Expenses to Retained Earnings
-                    </div>
-                    <p className="text-xs text-purple-700 mt-2">
-                      This prepares revenue and expense accounts for the next accounting period.
+                    <ul className="text-xs text-green-700 space-y-1">
+                      <li>• All <strong>Asset</strong> accounts (Cash, Accounts Receivable, Equipment, etc.)</li>
+                      <li>• All <strong>Liability</strong> accounts (Accounts Payable, Notes Payable, etc.)</li>
+                      <li>• All <strong>Equity</strong> accounts (Common Stock, Retained Earnings)</li>
+                    </ul>
+                    <p className="text-xs text-green-700 mt-2 italic">
+                      Think of these as the "season standings." They accumulate over time and
+                      never reset.
                     </p>
                   </CardContent>
                 </Card>
@@ -289,57 +140,186 @@ export default function Phase2Page() {
             </CardContent>
           </Card>
 
-          {/* Fill in the Blank Exercise */}
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-2xl text-amber-800 flex items-center gap-2">
+                <BookOpen className="h-6 w-6" />
+                The Four-Step Closing Procedure
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="prose prose-lg max-w-none text-amber-900">
+                <p>
+                  Closing entries always follow the same four steps. The order matters because each
+                  step feeds into the next. We'll use Sarah's March adjusted balances to walk through
+                  each step.
+                </p>
+              </div>
+
+              <div className="space-y-4 not-prose">
+                <Card className="border-amber-300 bg-white">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2">
+                      <Badge className="bg-amber-500 text-white">Step 1</Badge>
+                      <h4 className="font-semibold text-amber-900">Close Revenue Accounts to Income Summary</h4>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <p className="text-sm text-amber-800">
+                      Revenue accounts have <strong>credit</strong> balances. To zero them out, we
+                      <strong> debit</strong> each revenue account and <strong>credit</strong> Income Summary.
+                    </p>
+                    <div className="bg-amber-50 p-3 rounded border border-amber-200 text-sm font-mono">
+                      <p className="text-amber-900">DR Service Revenue ............ $8,700</p>
+                      <p className="text-amber-900 ml-8">CR Income Summary ............ $8,700</p>
+                    </div>
+                    <div className="flex items-start gap-2 text-xs text-amber-700">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-600" />
+                      <p>Service Revenue is now $0. Income Summary has a credit of $8,700.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-amber-300 bg-white">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2">
+                      <Badge className="bg-amber-500 text-white">Step 2</Badge>
+                      <h4 className="font-semibold text-amber-900">Close Expense Accounts to Income Summary</h4>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <p className="text-sm text-amber-800">
+                      Expense accounts have <strong>debit</strong> balances. To zero them out, we
+                      <strong> credit</strong> each expense account and <strong>debit</strong> Income Summary
+                      for the total.
+                    </p>
+                    <div className="bg-amber-50 p-3 rounded border border-amber-200 text-sm font-mono">
+                      <p className="text-amber-900">DR Income Summary ............ $4,695</p>
+                      <p className="text-amber-900 ml-8">CR Rent Expense ............ $1,500</p>
+                      <p className="text-amber-900 ml-8">CR Salaries Expense ............ $2,800</p>
+                      <p className="text-amber-900 ml-8">CR Depreciation Expense ............ $75</p>
+                      <p className="text-amber-900 ml-8">CR Supplies Expense ............ $320</p>
+                    </div>
+                    <div className="flex items-start gap-2 text-xs text-amber-700">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-600" />
+                      <p>All expense accounts are now $0. Income Summary: $8,700 CR − $4,695 DR = $4,005 CR (net income).</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-amber-300 bg-white">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2">
+                      <Badge className="bg-amber-500 text-white">Step 3</Badge>
+                      <h4 className="font-semibold text-amber-900">Close Income Summary to Retained Earnings</h4>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <p className="text-sm text-amber-800">
+                      Income Summary now holds the <strong>net income</strong> of $4,005 as a credit balance.
+                      To close it, we <strong>debit</strong> Income Summary and <strong>credit</strong> Retained Earnings.
+                    </p>
+                    <div className="bg-amber-50 p-3 rounded border border-amber-200 text-sm font-mono">
+                      <p className="text-amber-900">DR Income Summary ............ $4,005</p>
+                      <p className="text-amber-900 ml-8">CR Retained Earnings ............ $4,005</p>
+                    </div>
+                    <div className="flex items-start gap-2 text-xs text-amber-700">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-600" />
+                      <p>Income Summary is now $0. Retained Earnings increased by $4,005.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-amber-300 bg-white">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2">
+                      <Badge className="bg-amber-500 text-white">Step 4</Badge>
+                      <h4 className="font-semibold text-amber-900">Close Dividends to Retained Earnings</h4>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <p className="text-sm text-amber-800">
+                      Dividends have a <strong>debit</strong> balance. To close, we <strong>credit</strong>
+                      Dividends and <strong>debit</strong> Retained Earnings. (If Sarah paid no dividends
+                      in March, this step is skipped.)
+                    </p>
+                    <div className="bg-amber-50 p-3 rounded border border-amber-200 text-sm font-mono">
+                      <p className="text-amber-900">DR Retained Earnings ............ $500</p>
+                      <p className="text-amber-900 ml-8">CR Dividends ............ $500</p>
+                    </div>
+                    <div className="flex items-start gap-2 text-xs text-amber-700">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-600" />
+                      <p>Dividends is now $0. Retained Earnings decreased by $500.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg border border-amber-200">
+                <h3 className="font-semibold text-amber-900 mb-2">Visualizing with T-Accounts</h3>
+                <p className="text-sm text-amber-800 mb-3">
+                  T-accounts make it easy to see how closing entries zero out temporary accounts.
+                  Here's what Income Summary looks like after all four steps:
+                </p>
+                <div className="not-prose max-w-sm mx-auto">
+                  <div className="border-2 border-amber-400 rounded">
+                    <div className="text-center font-bold text-amber-900 bg-amber-100 py-1 border-b-2 border-amber-400">
+                      Income Summary
+                    </div>
+                    <div className="grid grid-cols-2 divide-x-2 divide-amber-400">
+                      <div className="p-2">
+                        <div className="text-xs font-semibold text-amber-700 mb-1">Debit</div>
+                        <div className="text-xs font-mono text-amber-900">$4,695 (Step 2)</div>
+                        <div className="text-xs font-mono text-amber-900">$4,005 (Step 3)</div>
+                        <div className="text-xs font-mono text-amber-900 border-t border-amber-300 mt-1 pt-1 font-bold">$8,700</div>
+                      </div>
+                      <div className="p-2">
+                        <div className="text-xs font-semibold text-amber-700 mb-1">Credit</div>
+                        <div className="text-xs font-mono text-amber-900">$8,700 (Step 1)</div>
+                        <div className="text-xs font-mono text-amber-900 border-t border-amber-300 mt-1 pt-1 font-bold">$8,700</div>
+                      </div>
+                    </div>
+                    <div className="text-center text-xs text-green-700 bg-green-50 py-1 border-t border-amber-400 font-semibold">
+                      Balance: $0 ✓
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                <h3 className="font-semibold text-red-900 mb-2 flex items-center gap-2">
+                  <AlertTriangle className="h-5 w-5" />
+                  Common Mistake
+                </h3>
+                <p className="text-sm text-red-800">
+                  Students sometimes close revenue directly to Retained Earnings, skipping Income Summary.
+                  While the final Retained Earnings number would be the same, GAAP requires the Income Summary
+                  step because it creates a clear audit trail showing exactly how net income was calculated
+                  during the closing process.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
           <FillInTheBlank
-            sentences={gaapConcepts}
-            title="Master the Key Concepts"
-            description="Fill in the blanks to complete these fundamental principles of adjusting entries"
+            sentences={conceptBlanks}
+            title="Lock in the Vocabulary"
+            description="Fill in the blanks to confirm you understand the key terms for closing entries."
             showWordList={true}
             randomizeWordOrder={true}
             showHints={true}
           />
 
-          {/* Comprehension Check */}
           <ComprehensionCheck
-            title="Concept Verification"
-            description="Test your understanding of GAAP principles and adjusting entry types."
+            title="Concept Check"
+            description="Verify your understanding of the closing-entry procedure."
             questions={conceptQuestions}
             showExplanations={true}
           />
 
-          {/* Sarah's Realization */}
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-xl text-green-800">Sarah's Breakthrough Moment</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="prose prose-lg max-w-none text-green-900">
-                <p>
-                  After Marcus explained these four types of adjusting entries, Sarah had her breakthrough moment. 
-                  "So these aren't random rules," she said. "They're all designed to make sure my financial 
-                  statements show the true story of what happened in each month."
-                </p>
-                
-                <p>
-                  "Exactly," Marcus replied. "And once you understand the logic behind each type, you can start 
-                  building systems to automate them. That's how you'll cut your month-end closing from days to hours."
-                </p>
-
-                <div className="bg-white p-4 rounded-lg border border-green-200 not-prose">
-                  <h4 className="font-semibold text-green-900 mb-2">Next Step: From Theory to Practice</h4>
-                  <p className="text-green-800">
-                    Now that you understand the principles and types, you're ready to work through actual scenarios. 
-                    In the next phase, you'll help Sarah create the specific journal entries for each of her 
-                    four month-end situations.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
         </div>
 
-        <PhaseFooter 
+        <PhaseFooter
           lesson={lesson03Data}
           unit={unit02Data}
           phase={currentPhase}

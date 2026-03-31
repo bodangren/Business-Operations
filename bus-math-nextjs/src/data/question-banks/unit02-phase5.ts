@@ -180,105 +180,105 @@ const lesson03Questions: Unit02Phase5Question[] = [
   {
     id: "lesson03-q1",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "Sarah completed $800 of website design work on March 28th but won't invoice until April 2nd. What adjusting entry should she make on March 31st?",
-    correctAnswer: "Debit Accounts Receivable $800, Credit Service Revenue $800",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "Which of the following is a temporary account that must be closed at the end of the period?",
+    correctAnswer: "Service Revenue",
     distractors: [
-      "Debit Cash $800, Credit Service Revenue $800",
-      "Debit Service Revenue $800, Credit Accounts Receivable $800",
-      "No entry needed until the invoice is sent"
+      "Cash",
+      "Accounts Payable",
+      "Retained Earnings"
     ],
-    explanation: "Under accrual accounting, revenue is recorded when earned, not when billed. Sarah earned this revenue in March by completing the work, creating a receivable (asset) and revenue.",
-    objectiveTags: ["accrued-revenue", "revenue-recognition"]
+    explanation: "Service Revenue is a temporary account — it tracks revenue for one period and resets to zero. Cash, Accounts Payable, and Retained Earnings are permanent accounts that carry forward.",
+    objectiveTags: ["temporary-accounts", "account-classification"]
   },
   {
     id: "lesson03-q2",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "A client paid Sarah $2,400 on March 10th for 8 months of social media services. By March 31st, how much should she recognize as revenue?",
-    correctAnswer: "$200 (approximately 2.5 weeks of the 8-month contract)",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "A company has Service Revenue of $15,000, Rent Expense of $4,000, and Salaries Expense of $6,000. After completing Steps 1 and 2 of the closing process, what is the balance in Income Summary?",
+    correctAnswer: "$5,000 credit balance",
     distractors: [
-      "$300 (one full month of the contract)",
-      "$600 (25% of the total payment)",
-      "$2,400 (the full amount received)"
+      "$5,000 debit balance",
+      "$25,000 credit balance",
+      "$0 — it has already been closed"
     ],
-    explanation: "March service period: March 10-31 = 22 days = approximately 2.5 weeks. Monthly rate: $2,400 ÷ 8 months = $300/month. Partial month: $300 × (22 ÷ 31) = approximately $200.",
-    objectiveTags: ["deferred-revenue", "proration"]
+    explanation: "Step 1 credits Income Summary $15,000 (revenues). Step 2 debits Income Summary $10,000 ($4,000 + $6,000 expenses). The balance is $15,000 − $10,000 = $5,000 credit, which represents net income.",
+    objectiveTags: ["income-summary", "closing-calculation"]
   },
   {
     id: "lesson03-q3",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "Sarah's equipment cost $4,500, has a useful life of 5 years, and salvage value of $500. What is the monthly straight-line depreciation?",
-    correctAnswer: "$66.67",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "Why does the closing process use an Income Summary account instead of closing revenue and expenses directly to Retained Earnings?",
+    correctAnswer: "It creates a clear audit trail showing how net income was calculated during the closing process",
     distractors: [
-      "$75.00",
-      "$90.00",
-      "$900.00"
+      "It is required by the IRS for tax reporting purposes",
+      "It prevents errors in the revenue and expense accounts",
+      "It allows the company to defer taxes on net income"
     ],
-    explanation: "Annual depreciation = ($4,500 - $500) ÷ 5 years = $800/year. Monthly depreciation = $800 ÷ 12 months = $66.67/month.",
-    objectiveTags: ["depreciation", "straight-line-calculation"]
+    explanation: "Income Summary provides a visible, auditable record of the net income calculation within the closing entries themselves, making it easy for auditors and managers to verify the closing process.",
+    objectiveTags: ["income-summary", "audit-trail"]
   },
   {
     id: "lesson03-q4",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "When recording monthly depreciation, which accounts are affected?",
-    correctAnswer: "Debit Depreciation Expense, Credit Accumulated Depreciation",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "After all closing entries are posted, which of the following accounts should have a zero balance?",
+    correctAnswer: "Depreciation Expense",
     distractors: [
-      "Debit Equipment, Credit Depreciation Expense",
-      "Debit Accumulated Depreciation, Credit Equipment",
-      "Debit Cash, Credit Depreciation Expense"
+      "Accumulated Depreciation",
+      "Retained Earnings",
+      "Accounts Payable"
     ],
-    explanation: "Depreciation expense increases (debit) to match the asset's usage with revenue generation. Accumulated Depreciation increases (credit) as a contra-asset to reduce the equipment's book value.",
-    objectiveTags: ["depreciation-entry", "matching-principle"]
+    explanation: "Depreciation Expense is a temporary account and is closed to zero. Accumulated Depreciation is a permanent contra-asset account and carries forward. Retained Earnings and Accounts Payable are also permanent.",
+    objectiveTags: ["temporary-accounts", "post-closing"]
   },
   {
     id: "lesson03-q5",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "Why is Accumulated Depreciation used instead of directly reducing the Equipment account?",
-    correctAnswer: "It preserves the original cost information while showing value used up",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "Sarah's business has beginning Retained Earnings of $8,000, net income of $3,500, and dividends of $1,000. What is the ending Retained Earnings after closing?",
+    correctAnswer: "$10,500",
     distractors: [
-      "It makes the accounting equation easier to balance",
-      "It's required by tax law but not by GAAP",
-      "It allows the company to avoid recording depreciation expense"
+      "$11,500",
+      "$12,500",
+      "$8,000"
     ],
-    explanation: "Using Accumulated Depreciation (a contra-asset) preserves the historical cost of the asset while clearly showing how much depreciation has been recorded over time.",
-    objectiveTags: ["contra-accounts", "financial-reporting"]
+    explanation: "Ending RE = Beginning RE + Net Income − Dividends = $8,000 + $3,500 − $1,000 = $10,500.",
+    objectiveTags: ["retained-earnings", "closing-calculation"]
   },
   {
     id: "lesson03-q6",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "Sarah has $5,200 in Service Revenue and $2,800 in total expenses at year-end. What is her first closing entry?",
-    correctAnswer: "Debit Service Revenue $5,200, Credit Retained Earnings $5,200",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "What is the correct first step in the closing process?",
+    correctAnswer: "Debit all revenue accounts and credit Income Summary for the total",
     distractors: [
-      "Debit Retained Earnings $2,400, Credit Net Income $2,400",
-      "Debit Total Expenses $2,800, Credit Retained Earnings $2,800",
-      "Debit Cash $2,400, Credit Retained Earnings $2,400"
+      "Credit all expense accounts and debit Income Summary for the total",
+      "Debit Retained Earnings and credit Dividends",
+      "Debit Income Summary and credit Retained Earnings"
     ],
-    explanation: "The first closing entry closes revenue accounts by debiting them (to zero them out) and crediting Retained Earnings (to transfer the revenue to equity).",
-    objectiveTags: ["closing-entries", "temporary-accounts"]
+    explanation: "Step 1 closes revenue accounts. Since revenues have credit balances, they are debited to zero them out, and Income Summary is credited for the total.",
+    objectiveTags: ["closing-sequence", "journal-entries"]
   },
   {
     id: "lesson03-q7",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "After the first closing entry above, what is Sarah's second closing entry?",
-    correctAnswer: "Debit Retained Earnings $2,800, Credit Total Expenses $2,800",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "Dividends of $800 are closed by which entry?",
+    correctAnswer: "Debit Retained Earnings $800, Credit Dividends $800",
     distractors: [
-      "Debit Service Revenue $5,200, Credit Total Expenses $2,800",
-      "Debit Net Income $2,400, Credit Retained Earnings $2,400",
-      "No second entry is needed"
+      "Debit Dividends $800, Credit Retained Earnings $800",
+      "Debit Income Summary $800, Credit Dividends $800",
+      "Debit Dividends $800, Credit Income Summary $800"
     ],
-    explanation: "The second closing entry closes expense accounts by crediting them (to zero them out) and debiting Retained Earnings (to transfer the expenses, which reduce equity).",
-    objectiveTags: ["closing-entries", "equity-transfer"]
+    explanation: "Dividends have a debit balance. To close, credit Dividends to zero it out and debit Retained Earnings to reduce equity.",
+    objectiveTags: ["dividends", "closing-entries"]
   },
   {
     id: "lesson03-q8",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
     prompt: "What is the primary purpose of closing entries at the end of an accounting period?",
     correctAnswer: "Reset temporary accounts to zero and transfer net income to permanent equity",
     distractors: [
@@ -287,35 +287,35 @@ const lesson03Questions: Unit02Phase5Question[] = [
       "Record all cash transactions that occurred during the period"
     ],
     explanation: "Closing entries transfer the balances from temporary accounts (revenues and expenses) to permanent equity accounts and reset the temporary accounts to zero for the next period.",
-    objectiveTags: ["accounting-cycle", "permanent-vs-temporary"]
+    objectiveTags: ["closing-purpose", "accounting-cycle"]
   },
   {
     id: "lesson03-q9",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "Which principle of GAAP requires that Sarah record revenue when work is completed rather than when cash is received?",
-    correctAnswer: "Revenue Recognition Principle",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "Which account types are permanent and do NOT get closed?",
+    correctAnswer: "Assets, liabilities, and equity accounts",
     distractors: [
-      "Matching Principle",
-      "Conservatism Principle",
-      "Materiality Principle"
+      "Revenue and expense accounts",
+      "Dividends and retained earnings",
+      "Income Summary and revenue accounts"
     ],
-    explanation: "The Revenue Recognition Principle requires revenue to be recorded when it is earned (work completed or goods delivered), not necessarily when cash is received.",
-    objectiveTags: ["gaap-principles", "revenue-recognition"]
+    explanation: "Assets, liabilities, and equity (including Retained Earnings) are permanent accounts that carry their balances forward. Revenue, expenses, and dividends are temporary and must be closed.",
+    objectiveTags: ["permanent-accounts", "account-classification"]
   },
   {
     id: "lesson03-q10",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Four Scenarios into Ledger",
-    prompt: "Sarah's March financial statements show $8,000 in Service Revenue and $3,500 in expenses. If she forgets to record a $600 accrued revenue adjustment, what happens to her net income?",
-    correctAnswer: "Net income is understated by $600",
+    lessonTitle: "Lesson 03 - Closing Entries: Resetting Temporary Accounts",
+    prompt: "After closing, Income Summary should have what balance?",
+    correctAnswer: "$0 — it is a temporary account used only during closing",
     distractors: [
-      "Net income is overstated by $600",
-      "Net income is correctly stated because the cash wasn't received",
-      "Net income changes by $300 because only half the revenue is earned"
+      "The net income amount for the period",
+      "The total revenue amount",
+      "The same balance as Retained Earnings"
     ],
-    explanation: "Missing the accrued revenue means both the receivable (asset) and revenue are understated by $600. Since revenue increases net income, net income is also understated by $600.",
-    objectiveTags: ["adjusting-entries", "financial-statement-impact"]
+    explanation: "Income Summary exists only during the closing process. After Step 3 (closing Income Summary to Retained Earnings), it should have a zero balance.",
+    objectiveTags: ["income-summary", "post-closing"]
   }
 ];
 

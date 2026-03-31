@@ -1,24 +1,28 @@
-// Unit 2, Lesson 3 data - extracted from MCP curriculum database
+// Unit 2, Lesson 3 data - Closing Entries
 export const lesson03Data = {
   id: "mds5v4u1inmd8zoj1fi",
-  title: "Guided Practice: Four Scenarios into Ledger",
+  title: "Closing Entries: Resetting Temporary Accounts",
   sequence: 3,
   unitId: "mdrhkhm79v8qau43696",
   learningObjectives: [
-    "Record accruals and deferrals in accordance with GAAP standards",
-    "Calculate and post straight-line depreciation entries",
-    "Execute proper closing entries to zero temporary accounts"
+    "Identify which accounts are temporary and which are permanent",
+    "Explain why closing entries are necessary at the end of each accounting period",
+    "Prepare closing entries to zero out revenue, expense, and dividend accounts",
+    "Post closing entries to update Retained Earnings"
   ],
   keyConcepts: [
-    "Accrual accounting principles and their application to month-end procedures",
-    "Straight-line depreciation calculation and recording methods",
-    "Closing entries purpose and proper execution"
+    "Temporary accounts (revenues, expenses, dividends) track activity for one period only",
+    "Permanent accounts (assets, liabilities, equity) carry balances forward",
+    "The Income Summary account is a temporary clearing account used only during closing",
+    "Closing entries transfer net income or loss to Retained Earnings"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Application of adjusting entry knowledge to systematic ledger recording"
+    "Concrete-to-abstract progression from business story to journal-entry format",
+    "T-account visual supports before abstract journal notation",
+    "Algorithmic deliberate practice on closing-entry procedure"
   ],
-  rationale: "To ensure students can apply theoretical knowledge to practical scenarios.",
+  rationale: "Students must understand why and how temporary accounts are reset before they can build an automated closing-entry system in later lessons.",
   status: "Draft"
 }
 
@@ -34,42 +38,36 @@ export const lesson03Phases = [
     id: "phase-1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Discover real adjusting entry scenarios from actual business month-end procedures",
-    // component: "JournalEntry" (id: 1753927405954gyryagjje) - To show a real-world example of an adjusting entry.
+    description: "Discover why Sarah's revenue and expense accounts must be reset after March",
   },
   {
     id: "phase-2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Review GAAP principles for accruals, deferrals, and depreciation calculations",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Learn the closing-entry procedure step by step with T-account supports",
   },
   {
     id: "phase-3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Work through four practice scenarios with instructor guidance and peer collaboration",
-    // component: "JournalEntryBuilding" (id: 1753927672484sg6mzsmy6) - To practice creating the four types of adjusting entries.
+    description: "Close a more complex set of accounts with reduced scaffolding",
   },
   {
     id: "phase-4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete additional adjusting entry scenarios independently with self-checking",
-    // component: "TransactionJournal" (id: mdsirjnug8tn2wqhrjt) - To independently create and validate adjusting entries.
+    description: "Algorithmic deliberate practice on closing entries until mastery",
   },
   {
     id: "phase-5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate mastery of adjusting entry recording through practical application",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "MCQ exit ticket on temporary vs permanent accounts and closing-entry logic",
   },
   {
     id: "phase-6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on the systematic approach to month-end adjusting entries",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on closing-entry mastery and preview the full month-end checklist",
   }
 ]

@@ -2,45 +2,34 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertCircle, Calendar, DollarSign } from "lucide-react"
+import { AlertCircle, RotateCcw, ArrowRight } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson03Data, unit02Data, lesson03Phases } from "../lesson-data"
 
-const currentPhase = lesson03Phases[0] // Phase 1
+const currentPhase = lesson03Phases[0]
 
 const hookQuestions = [
   {
     id: "hook1",
-    question: "Why would a business like TechStart Solutions need to record revenue before sending an invoice?",
+    question: "After Sarah records all her adjusting entries for March, her Service Revenue account shows $8,700. What should the Service Revenue balance be on April 1st?",
     answers: [
-      "To match revenue with the period when the work was actually completed",
-      "To increase the company's profits artificially",
-      "To avoid paying taxes on the revenue",
-      "To simplify bookkeeping by reducing the number of entries"
+      "$0 — the account resets so it can track April revenue separately",
+      "$8,700 — the balance carries forward to April",
+      "$4,350 — half carries forward and half resets",
+      "It depends on how much cash Sarah collected"
     ],
-    explanation: "Accrual accounting requires matching revenue with the period when services are performed, not when cash is received. This provides a more accurate picture of business performance."
+    explanation: "Revenue accounts are temporary. At the start of each new period they must be zeroed out so the business can measure that period's performance independently."
   },
   {
-    id: "hook2", 
-    question: "What accounting challenge does Sarah face when a client pays for 6 months of services in advance?",
+    id: "hook2",
+    question: "Why can't Sarah just keep adding each month's revenues and expenses into the same running totals forever?",
     answers: [
-      "She cannot count all the money as revenue immediately because she hasn't done all the work yet",
-      "She must return the money to the client immediately",
-      "She should record it all as an expense",
-      "She needs to put the money in a separate bank account"
+      "She would lose the ability to see how well the business performed in any single month",
+      "The accounting software would crash from too much data",
+      "GAAP forbids any account from exceeding $100,000",
+      "Investors prefer round numbers"
     ],
-    explanation: "When payment is received for future services, it creates a liability called deferred revenue. The business owes services to the customer, not money."
-  },
-  {
-    id: "hook3",
-    question: "Why doesn't Sarah record her entire computer purchase ($3,000) as an expense in the month she bought it?",
-    answers: [
-      "The computer will help generate revenue over several years, so the cost should be spread over its useful life",
-      "She doesn't have enough cash to cover the expense",
-      "Computers are not considered business expenses",
-      "She plans to sell the computer next month"
-    ],
-    explanation: "Depreciation matches the cost of long-term assets with the periods they help generate revenue. This provides a more accurate measure of monthly profitability."
+    explanation: "Temporary accounts exist to measure one period at a time. Without closing them, Sarah could not tell whether March was profitable or whether April was worse."
   }
 ]
 
@@ -48,155 +37,134 @@ export default function Phase1Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">
-        <PhaseHeader 
+        <PhaseHeader
           lesson={lesson03Data}
-          unit={unit02Data} 
+          unit={unit02Data}
           phase={currentPhase}
           phases={lesson03Phases}
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          
-          {/* Hook: The Complexity Behind Success */}
+
           <Card className="border-red-200 bg-red-50">
             <CardHeader>
               <CardTitle className="text-2xl text-red-800 flex items-center gap-2">
                 <AlertCircle className="h-6 w-6" />
-                The Moment Everything Got Complicated
+                The Problem: Sarah's Books Won't Reset
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="prose prose-lg max-w-none text-red-900">
                 <p>
-                  Sarah's TechStart Solutions was finally hitting its stride. Three months after launching with her "Smart Ledger" 
-                  from Unit 1, she had landed her first monthly retainer client—a local fitness studio that needed ongoing social 
-                  media management. The $1,200 monthly fee was a game-changer for her cash flow predictability.
+                  In Lesson 02 you helped Sarah record her adjusting entries for March — accrued revenue,
+                  deferred revenue, depreciation, and everything else that makes her financial statements
+                  accurate. Her adjusted trial balance finally balanced, and she was relieved.
                 </p>
-                
+
                 <p>
-                  But as March 31st approached, Sarah faced four situations that her basic ledger system wasn't designed to handle:
+                  But then Marcus, her mentor, dropped another bomb:
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-4 not-prose">
-                  <Card className="border-amber-200 bg-amber-50">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="h-5 w-5 text-amber-600" />
-                        <Badge className="bg-amber-200 text-amber-800">Scenario 1</Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <h4 className="font-semibold text-amber-900 mb-2">Work Done, Invoice Pending</h4>
-                      <p className="text-sm text-amber-800">
-                        Sarah completed a $500 SEO audit for a client on March 29th, but she wouldn't send the invoice 
-                        until April 5th. Should this count as March revenue?
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-blue-200 bg-blue-50">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="h-5 w-5 text-blue-600" />
-                        <Badge className="bg-blue-200 text-blue-800">Scenario 2</Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <h4 className="font-semibold text-blue-900 mb-2">Payment for Future Work</h4>
-                      <p className="text-sm text-blue-800">
-                        A new client paid $1,200 upfront on March 15th for six months of social media services. 
-                        Can she count this as $1,200 in March revenue?
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-green-200 bg-green-50">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center gap-2">
-                        <AlertCircle className="h-5 w-5 text-green-600" />
-                        <Badge className="bg-green-200 text-green-800">Scenario 3</Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <h4 className="font-semibold text-green-900 mb-2">The Computer Dilemma</h4>
-                      <p className="text-sm text-green-800">
-                        Sarah bought a $3,000 computer system in March. Recording it all as a March expense would make 
-                        her look unprofitable, but the computer will help her business for years.
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-purple-200 bg-purple-50">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="h-5 w-5 text-purple-600" />
-                        <Badge className="bg-purple-200 text-purple-800">Scenario 4</Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <h4 className="font-semibold text-purple-900 mb-2">Month-End Reset</h4>
-                      <p className="text-sm text-purple-800">
-                        At month-end, she needed to "close the books"—transfer her profit to equity and reset 
-                        her revenue and expense accounts to zero for April.
-                      </p>
-                    </CardContent>
-                  </Card>
+                <div className="bg-white p-4 rounded-lg border border-red-300 italic text-red-900">
+                  "Sarah, your adjusted trial balance is correct. But if you start April with these same
+                  revenue and expense balances, you'll never know whether April was profitable. Every
+                  month needs a fresh scoreboard. That's what <strong>closing entries</strong> do."
                 </div>
 
-                <div className="bg-white p-4 rounded-lg border border-red-200">
-                  <h3 className="font-semibold text-red-900 mb-2">Why This Matters</h3>
-                  <p className="text-red-800">
-                    These aren't just accounting technicalities—they're the foundation of accurate financial reporting. 
-                    When Sarah eventually approaches investors or applies for business loans, they'll scrutinize her financial 
-                    statements. Getting these "adjusting entries" right is what separates amateur bookkeeping from 
-                    professional-grade financial records that investors can trust.
+                <p>
+                  Sarah looked at her ledger. After all the adjustments, her March accounts showed:
+                </p>
+
+                <div className="not-prose">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-red-100">
+                        <th className="border border-red-300 px-3 py-2 text-left">Account</th>
+                        <th className="border border-red-300 px-3 py-2 text-right">March Balance</th>
+                        <th className="border border-red-300 px-3 py-2 text-center">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-red-200 px-3 py-2">Service Revenue</td>
+                        <td className="border border-red-200 px-3 py-2 text-right">$8,700</td>
+                        <td className="border border-red-200 px-3 py-2 text-center">Revenue</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-red-200 px-3 py-2">Rent Expense</td>
+                        <td className="border border-red-200 px-3 py-2 text-right">$1,500</td>
+                        <td className="border border-red-200 px-3 py-2 text-center">Expense</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-red-200 px-3 py-2">Salaries Expense</td>
+                        <td className="border border-red-200 px-3 py-2 text-right">$2,800</td>
+                        <td className="border border-red-200 px-3 py-2 text-center">Expense</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-red-200 px-3 py-2">Depreciation Expense</td>
+                        <td className="border border-red-200 px-3 py-2 text-right">$75</td>
+                        <td className="border border-red-200 px-3 py-2 text-center">Expense</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-red-200 px-3 py-2">Supplies Expense</td>
+                        <td className="border border-red-200 px-3 py-2 text-right">$320</td>
+                        <td className="border border-red-200 px-3 py-2 text-center">Expense</td>
+                      </tr>
+                      <tr className="bg-red-100 font-semibold">
+                        <td className="border border-red-300 px-3 py-2">Net Income</td>
+                        <td className="border border-red-300 px-3 py-2 text-right">$4,005</td>
+                        <td className="border border-red-300 px-3 py-2 text-center">—</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>
+                  If Sarah does nothing, April 1st starts with Service Revenue already at $8,700 and
+                  expenses already sitting in their accounts. Her April "profit" would be meaningless.
+                </p>
+
+                <div className="bg-amber-50 p-4 rounded-lg border border-amber-300">
+                  <h3 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
+                    <RotateCcw className="h-5 w-5" />
+                    The Fix: Closing Entries
+                  </h3>
+                  <p className="text-amber-800">
+                    Closing entries zero out every <strong>temporary account</strong> (revenues, expenses,
+                    and dividends) and transfer the net result into <strong>Retained Earnings</strong>,
+                    a permanent account. After closing, every temporary account starts the new period at $0.
                   </p>
                 </div>
-
-                <p>
-                  Each of these scenarios requires a special type of journal entry called an <strong>adjusting entry</strong>. 
-                  These entries ensure Sarah's financial statements accurately reflect what really happened in March, 
-                  following the accounting principles that investors and lenders expect to see.
-                </p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Comprehension Check */}
           <ComprehensionCheck
-            title="Understanding the Challenge"
-            description="Test your understanding of why these scenarios require special accounting treatment."
+            title="Notice the Friction"
+            description="Check that you understand why closing entries are necessary before we learn how to do them."
             questions={hookQuestions}
             showExplanations={true}
           />
 
-          {/* Business Impact */}
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-xl text-blue-800">The Stakes: Why Perfect Adjusting Entries Matter</CardTitle>
+              <CardTitle className="text-xl text-blue-800 flex items-center gap-2">
+                <ArrowRight className="h-5 w-5" />
+                What You'll Learn in This Lesson
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="prose prose-lg max-w-none text-blue-900">
-                <p>
-                  Sarah's mentor Marcus was clear: "Investors don't just look at your revenue numbers—they look at 
-                  <em>when</em> you recognize revenue and expenses. They want to see that you understand accrual accounting, 
-                  because it shows you're thinking like a serious business owner, not just tracking cash in your pocket."
-                </p>
-                
-                <p>
-                  Professional financial statements require these four types of adjusting entries:
-                </p>
-                
+                <p>By the end of this lesson you will be able to:</p>
                 <ul className="text-blue-800">
-                  <li><strong>Accruals</strong>: Recording transactions when they occur, not when cash changes hands</li>
-                  <li><strong>Deferrals</strong>: Properly timing revenue and expenses across accounting periods</li>
-                  <li><strong>Depreciation</strong>: Spreading asset costs over their useful lives</li>
-                  <li><strong>Closing Entries</strong>: Transferring period results to permanent accounts</li>
+                  <li>Tell which accounts are temporary and which are permanent</li>
+                  <li>Explain why closing entries happen after adjusting entries, not before</li>
+                  <li>Prepare the four-step closing sequence for any set of account balances</li>
+                  <li>Verify that all temporary accounts are zero after closing</li>
                 </ul>
-                
                 <p>
-                  Master these concepts, and you'll have the foundation for the automated "Month-End Wizard" that can 
-                  cut Sarah's closing time from days to hours—our ultimate goal for Unit 2.
+                  This is the last manual step before Lesson 04, where you'll pull the entire month-end
+                  close together into one checklist.
                 </p>
               </div>
             </CardContent>
@@ -204,7 +172,7 @@ export default function Phase1Page() {
 
         </div>
 
-        <PhaseFooter 
+        <PhaseFooter
           lesson={lesson03Data}
           unit={unit02Data}
           phase={currentPhase}

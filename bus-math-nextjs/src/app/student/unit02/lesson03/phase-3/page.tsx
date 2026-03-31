@@ -1,272 +1,241 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
-import { PhaseFooter } from "@/components/student/PhaseFooter" 
+import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Target, Lightbulb, ArrowRight } from "lucide-react"
-import { JournalEntryBuilding } from "@/components/exercises/JournalEntryBuilding"
+import { Target, AlertTriangle, ArrowRight } from "lucide-react"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson03Data, unit02Data, lesson03Phases } from "../lesson-data"
 
-const currentPhase = lesson03Phases[2] // Phase 3
+const currentPhase = lesson03Phases[2]
+
+const practiceQuestions = [
+  {
+    id: "practice1",
+    question: "Sarah's business now has two revenue accounts: Service Revenue ($8,700) and Interest Revenue ($45). What is the correct Step 1 closing entry?",
+    answers: [
+      "DR Service Revenue $8,700, DR Interest Revenue $45, CR Income Summary $8,745",
+      "DR Income Summary $8,745, CR Service Revenue $8,700, CR Interest Revenue $45",
+      "DR Service Revenue $8,700, CR Income Summary $8,700 (Interest Revenue is permanent)",
+      "DR Service Revenue $8,700, DR Interest Revenue $45, CR Retained Earnings $8,745"
+    ],
+    explanation: "Both revenue accounts have credit balances. To close them, debit each revenue account and credit Income Summary for the total: $8,700 + $45 = $8,745."
+  },
+  {
+    id: "practice2",
+    question: "After closing revenues ($8,745) and expenses ($5,200) to Income Summary, what is the balance in Income Summary before Step 3?",
+    answers: [
+      "$3,545 credit balance (net income)",
+      "$3,545 debit balance (net loss)",
+      "$13,945 credit balance",
+      "$0 — it's already closed"
+    ],
+    explanation: "Income Summary has a credit of $8,745 from Step 1 and a debit of $5,200 from Step 2. The net is $8,745 − $5,200 = $3,545 credit, which represents net income."
+  },
+  {
+    id: "practice3",
+    question: "Sarah's Retained Earnings had a beginning balance of $12,000. Net income is $3,545 and she paid $800 in dividends. What is the ending Retained Earnings after all closing entries?",
+    answers: [
+      "$14,745",
+      "$15,545",
+      "$16,345",
+      "$12,000"
+    ],
+    explanation: "Ending RE = Beginning RE + Net Income − Dividends = $12,000 + $3,545 − $800 = $14,745."
+  }
+]
 
 export default function Phase3Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
       <div className="container mx-auto px-4 py-8">
-        <PhaseHeader 
+        <PhaseHeader
           lesson={lesson03Data}
-          unit={unit02Data} 
+          unit={unit02Data}
           phase={currentPhase}
           phases={lesson03Phases}
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
 
-          {/* Guided Practice Introduction */}
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
               <CardTitle className="text-2xl text-green-800 flex items-center gap-2">
                 <Target className="h-6 w-6" />
-                Guided Practice: Creating the Four Essential Adjusting Entries
+                Guided Practice: A More Complex Close
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="prose prose-lg max-w-none text-green-900">
                 <p>
-                  Now it's time to apply what you've learned. Sarah needs to record adjusting entries for 
-                  her four March scenarios. You'll work through each one step-by-step, learning to analyze 
-                  business situations and create the correct journal entries.
+                  Sarah's March was straightforward — one revenue account, four expenses, no dividends.
+                  Now let's make it more realistic. Her business has grown, and the April adjusted trial
+                  balance looks more complicated.
                 </p>
-
                 <p>
-                  Remember, each adjusting entry follows the fundamental accounting equation: 
-                  <strong>Assets = Liabilities + Equity</strong>. Every entry must maintain this balance 
-                  while accurately reflecting the economic reality of what happened in March.
+                  Your job: work through all four closing steps for this new set of accounts. The
+                  procedure is the same, but there are more accounts to track and one extra wrinkle.
                 </p>
               </div>
 
-              <div className="bg-white p-4 rounded-lg border border-green-200 not-prose">
-                <h4 className="font-semibold text-green-900 mb-2">Your Mission</h4>
-                <p className="text-green-800">
-                  Work through each scenario in the Journal Entry Builder below. For each transaction, 
-                  you'll need to:
+              <div className="not-prose">
+                <div className="bg-white p-4 rounded-lg border border-green-300">
+                  <h4 className="font-semibold text-green-900 mb-3">TechStart Solutions — Adjusted Trial Balances (April 30)</h4>
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-green-100">
+                        <th className="border border-green-300 px-3 py-2 text-left">Account</th>
+                        <th className="border border-green-300 px-3 py-2 text-right">Balance</th>
+                        <th className="border border-green-300 px-3 py-2 text-center">Normal Side</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Service Revenue</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$12,400</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Credit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Interest Revenue</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$45</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Credit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Rent Expense</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$1,500</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Debit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Salaries Expense</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$3,200</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Debit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Depreciation Expense</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$75</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Debit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Supplies Expense</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$480</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Debit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Utilities Expense</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$210</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Debit</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-green-200 px-3 py-2">Dividends</td>
+                        <td className="border border-green-200 px-3 py-2 text-right">$800</td>
+                        <td className="border border-green-200 px-3 py-2 text-center">Debit</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg border border-green-300">
+                <h4 className="font-semibold text-green-900 mb-2">Your Task</h4>
+                <p className="text-sm text-green-800 mb-3">
+                  Work through all four closing steps. For each step, write the journal entry and
+                  calculate the running balance in Income Summary.
                 </p>
-                <ul className="list-disc list-inside text-green-800 mt-2 space-y-1">
-                  <li>Analyze what really happened in the business transaction</li>
-                  <li>Determine which accounts are affected and how</li>
-                  <li>Apply the correct debit/credit rules</li>
-                  <li>Ensure the entry balances (debits = credits)</li>
-                </ul>
+                <div className="space-y-2 text-sm text-green-800">
+                  <p><strong>Step 1:</strong> Close all revenue accounts. What is the total credit to Income Summary?</p>
+                  <p><strong>Step 2:</strong> Close all expense accounts. What is the total debit to Income Summary?</p>
+                  <p><strong>Step 3:</strong> Close Income Summary to Retained Earnings. Is it net income or net loss? What amount?</p>
+                  <p><strong>Step 4:</strong> Close Dividends to Retained Earnings.</p>
+                </div>
+              </div>
+
+              <div className="bg-amber-50 p-4 rounded-lg border border-amber-300">
+                <h4 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
+                  <AlertTriangle className="h-5 w-5" />
+                  Watch Out
+                </h4>
+                <p className="text-sm text-amber-800">
+                  There are now <strong>two revenue accounts</strong> and <strong>five expense accounts</strong>.
+                  Each one must be closed individually — do not combine them into one line unless the
+                  problem explicitly tells you to. Also, remember that <strong>Dividends is NOT an expense</strong>.
+                  It closes directly to Retained Earnings, not through Income Summary.
+                </p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Think-Pair-Share Discussion Framework */}
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk: Scenario Analysis
-              </CardTitle>
+              <CardTitle className="text-xl text-blue-800">Explain Your Reasoning</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-blue-900 mb-4">
-                Before creating each journal entry, discuss with a partner:
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <Card className="border-blue-300 bg-blue-100">
-                  <CardHeader className="pb-3">
-                    <Badge className="bg-blue-600 text-blue-100 w-fit">Scenario 1: Accrued Revenue</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-blue-800 mb-2">
-                      <strong>Business situation:</strong> Sarah completed a $500 SEO audit on March 29th 
-                      but won't send the invoice until April 5th.
-                    </p>
-                    <div className="text-xs text-blue-700">
-                      <p className="font-medium">Discussion questions:</p>
-                      <ul className="list-disc list-inside space-y-1 mt-1">
-                        <li>Has Sarah earned this revenue in March? Why or why not?</li>
-                        <li>What does the client owe her right now?</li>
-                        <li>Which accounts increase and which account type are they?</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-blue-300 bg-blue-100">
-                  <CardHeader className="pb-3">
-                    <Badge className="bg-blue-600 text-blue-100 w-fit">Scenario 2: Deferred Revenue</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-blue-800 mb-2">
-                      <strong>Business situation:</strong> A client paid $1,200 on March 15th for 6 months 
-                      of services. How much should Sarah recognize as March revenue?
-                    </p>
-                    <div className="text-xs text-blue-700">
-                      <p className="font-medium">Discussion questions:</p>
-                      <ul className="list-disc list-inside space-y-1 mt-1">
-                        <li>How much work has she actually completed by March 31st?</li>
-                        <li>What does she still owe the client?</li>
-                        <li>How do you calculate the revenue earned portion?</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-blue-300 bg-blue-100">
-                  <CardHeader className="pb-3">
-                    <Badge className="bg-blue-600 text-blue-100 w-fit">Scenario 3: Depreciation</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-blue-800 mb-2">
-                      <strong>Business situation:</strong> Sarah's $3,000 computer (3-year life, $300 salvage) 
-                      needs monthly depreciation recorded.
-                    </p>
-                    <div className="text-xs text-blue-700">
-                      <p className="font-medium">Discussion questions:</p>
-                      <ul className="list-disc list-inside space-y-1 mt-1">
-                        <li>What is the monthly depreciation amount?</li>
-                        <li>Why use Accumulated Depreciation instead of reducing the asset directly?</li>
-                        <li>How does this expense match with the revenue the computer helps generate?</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-blue-300 bg-blue-100">
-                  <CardHeader className="pb-3">
-                    <Badge className="bg-blue-600 text-blue-100 w-fit">Scenario 4: Closing Entries</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-blue-800 mb-2">
-                      <strong>Business situation:</strong> Sarah had $4,000 in Service Revenue and 
-                      $1,500 in total expenses for March.
-                    </p>
-                    <div className="text-xs text-blue-700">
-                      <p className="font-medium">Discussion questions:</p>
-                      <ul className="list-disc list-inside space-y-1 mt-1">
-                        <li>What is Sarah's net income for March?</li>
-                        <li>Why do revenue and expense accounts need to be "closed"?</li>
-                        <li>Where does the net income go in the closing process?</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg border border-blue-200 mt-4">
-                <p className="text-blue-800 text-sm">
-                  <strong>Discussion Time:</strong> Take 3-4 minutes with your partner to work through these questions 
-                  before attempting each journal entry. Understanding the business logic makes the accounting much clearer!
+              <div className="prose prose-lg max-w-none text-blue-900">
+                <p>
+                  Answer the questions below. These test not just whether you can compute the entries,
+                  but whether you understand <em>why</em> each step works the way it does.
                 </p>
               </div>
+              <ComprehensionCheck
+                title="Reasoning Check"
+                description="These questions ask you to explain, not just calculate."
+                questions={practiceQuestions}
+                showExplanations={true}
+              />
             </CardContent>
           </Card>
 
-          {/* Journal Entry Building Component */}
-          <Card>
+          <Card className="border-purple-200 bg-purple-50">
             <CardHeader>
-              <CardTitle className="text-green-800 flex items-center gap-2">
+              <CardTitle className="text-xl text-purple-800 flex items-center gap-2">
                 <ArrowRight className="h-5 w-5" />
-                Practice with Real Scenarios
+                Solution Walkthrough
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                Work through these adjusting entry scenarios step by step. The component includes multiple 
-                business situations that mirror Sarah's month-end challenges.
-              </p>
-              
-              <JournalEntryBuilding />
-            </CardContent>
-          </Card>
-
-          {/* Learning Strategies */}
-          <Card className="border-amber-200 bg-amber-50">
-            <CardHeader>
-              <CardTitle className="text-amber-800 flex items-center gap-2">
-                <Lightbulb className="h-5 w-5" />
-                Success Strategies for Adjusting Entries
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-amber-900 mb-3">Step-by-Step Approach</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <Badge variant="outline" className="text-xs">1</Badge>
-                      <p className="text-sm text-amber-800">
-                        <strong>Read carefully:</strong> What actually happened in the business?
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Badge variant="outline" className="text-xs">2</Badge>
-                      <p className="text-sm text-amber-800">
-                        <strong>Identify the type:</strong> Is it accrual, deferral, depreciation, or closing?
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Badge variant="outline" className="text-xs">3</Badge>
-                      <p className="text-sm text-amber-800">
-                        <strong>Choose accounts:</strong> What accounts are affected by this transaction?
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Badge variant="outline" className="text-xs">4</Badge>
-                      <p className="text-sm text-amber-800">
-                        <strong>Apply rules:</strong> Remember your debit/credit rules for each account type
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Badge variant="outline" className="text-xs">5</Badge>
-                      <p className="text-sm text-amber-800">
-                        <strong>Check balance:</strong> Do your total debits equal total credits?
-                      </p>
-                    </div>
+            <CardContent className="space-y-4">
+              <div className="space-y-3 not-prose">
+                <details className="bg-white rounded border border-purple-200">
+                  <summary className="cursor-pointer p-3 font-semibold text-purple-900">Step 1: Close Revenues</summary>
+                  <div className="p-3 border-t border-purple-200 text-sm font-mono text-purple-900">
+                    <p>DR Service Revenue ............ $12,400</p>
+                    <p>DR Interest Revenue ............ $45</p>
+                    <p className="ml-8">CR Income Summary ............ $12,445</p>
+                    <p className="mt-2 text-purple-700 not-font-mono">Income Summary balance: $12,445 credit</p>
                   </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-amber-900 mb-3">Common Mistakes to Avoid</h4>
-                  <div className="space-y-2">
-                    <div className="p-2 bg-white rounded border border-amber-200">
-                      <p className="text-sm text-amber-800">
-                        <strong>❌ Recording cash basis:</strong> Don't wait for cash to change hands—record when earned/incurred
-                      </p>
-                    </div>
-                    <div className="p-2 bg-white rounded border border-amber-200">
-                      <p className="text-sm text-amber-800">
-                        <strong>❌ Confusing deferred revenue:</strong> It's a liability (you owe services), not an asset
-                      </p>
-                    </div>
-                    <div className="p-2 bg-white rounded border border-amber-200">
-                      <p className="text-sm text-amber-800">
-                        <strong>❌ Wrong depreciation accounts:</strong> Use Accumulated Depreciation, not the asset account directly
-                      </p>
-                    </div>
-                    <div className="p-2 bg-white rounded border border-amber-200">
-                      <p className="text-sm text-amber-800">
-                        <strong>❌ Unbalanced entries:</strong> Every entry must have equal debits and credits
-                      </p>
-                    </div>
+                </details>
+                <details className="bg-white rounded border border-purple-200">
+                  <summary className="cursor-pointer p-3 font-semibold text-purple-900">Step 2: Close Expenses</summary>
+                  <div className="p-3 border-t border-purple-200 text-sm font-mono text-purple-900">
+                    <p>DR Income Summary ............ $5,465</p>
+                    <p className="ml-8">CR Rent Expense ............ $1,500</p>
+                    <p className="ml-8">CR Salaries Expense ............ $3,200</p>
+                    <p className="ml-8">CR Depreciation Expense ............ $75</p>
+                    <p className="ml-8">CR Supplies Expense ............ $480</p>
+                    <p className="ml-8">CR Utilities Expense ............ $210</p>
+                    <p className="mt-2 text-purple-700 not-font-mono">Income Summary balance: $12,445 CR − $5,465 DR = $6,980 credit</p>
                   </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg border border-amber-200 mt-4">
-                <p className="text-amber-800 text-sm">
-                  <strong>Remember:</strong> If you're struggling with a particular entry, go back to the business 
-                  situation. Ask yourself: "What really happened here?" The accounting should reflect the economic reality.
-                </p>
+                </details>
+                <details className="bg-white rounded border border-purple-200">
+                  <summary className="cursor-pointer p-3 font-semibold text-purple-900">Step 3: Close Income Summary</summary>
+                  <div className="p-3 border-t border-purple-200 text-sm font-mono text-purple-900">
+                    <p>DR Income Summary ............ $6,980</p>
+                    <p className="ml-8">CR Retained Earnings ............ $6,980</p>
+                    <p className="mt-2 text-purple-700 not-font-mono">Net income of $6,980. Income Summary is now $0.</p>
+                  </div>
+                </details>
+                <details className="bg-white rounded border border-purple-200">
+                  <summary className="cursor-pointer p-3 font-semibold text-purple-900">Step 4: Close Dividends</summary>
+                  <div className="p-3 border-t border-purple-200 text-sm font-mono text-purple-900">
+                    <p>DR Retained Earnings ............ $800</p>
+                    <p className="ml-8">CR Dividends ............ $800</p>
+                    <p className="mt-2 text-purple-700 not-font-mono">Dividends is now $0. Retained Earnings increased by $6,980 − $800 = $6,180 net.</p>
+                  </div>
+                </details>
               </div>
             </CardContent>
           </Card>
 
         </div>
 
-        <PhaseFooter 
+        <PhaseFooter
           lesson={lesson03Data}
           unit={unit02Data}
           phase={currentPhase}
