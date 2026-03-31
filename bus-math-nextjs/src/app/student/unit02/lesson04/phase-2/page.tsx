@@ -2,9 +2,9 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Table, Lightbulb, Database, TrendingUp } from "lucide-react"
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { CheckCircle2, ClipboardList, ArrowRight } from "lucide-react"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, unit02Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[1]
@@ -13,79 +13,79 @@ export default function Phase2Page() {
   const fillInTheBlankSentences = [
     {
       id: "fill1",
-      text: "Excel {blank} automatically expand when new data is added, ensuring formulas continue to work correctly.",
-      answer: "Tables",
-      hint: "This Excel feature creates structured references that grow with your data"
+      text: "The month-end close begins with the {blank} trial balance, which shows account balances before any adjusting entries.",
+      answer: "unadjusted",
+      hint: "This trial balance is prepared directly from the ledger, before corrections"
     },
     {
-      id: "fill2", 
-      text: "The {blank} function allows you to sum values based on specific criteria or conditions.",
-      answer: "SUMIF",
-      hint: "This function has three arguments: range, criteria, and sum_range"
+      id: "fill2",
+      text: "After recording all adjustments, the accountant prepares the {blank} trial balance to verify debits still equal credits.",
+      answer: "adjusted",
+      hint: "This trial balance reflects all adjusting entries"
     },
     {
       id: "fill3",
-      text: "Structured references use {blank} instead of cell ranges like A1:A10.",
-      answer: "table names",
-      hint: "These references look like TableName[ColumnName] for clarity and flexibility"
+      text: "Temporary accounts—revenue, expenses, and dividends—are closed to {blank} Summary before being transferred to Retained Earnings.",
+      answer: "Income",
+      hint: "This account collects all revenue and expense balances during the closing process"
     },
     {
       id: "fill4",
-      text: "Excel Tables provide {blank} formatting that makes data easier to read and analyze.",
-      answer: "automatic",
-      hint: "Excel applies banded rows and professional styling without manual formatting"
+      text: "The final step is preparing the {blank} trial balance, which contains only permanent accounts.",
+      answer: "post-closing",
+      hint: "This trial balance proves the books are ready for the next period"
     }
   ]
 
   const comprehensionQuestions = [
     {
       id: "q1",
-      question: "What is the main advantage of structured references in Excel Tables?",
+      question: "Why must adjustments be recorded before closing entries?",
       answers: [
-        "They make formulas easier to understand and automatically adjust when data is added",
-        "They reduce the file size of Excel workbooks significantly",
-        "They allow you to use different fonts and colors in your spreadsheet",
-        "They automatically save your work to the cloud"
+        "Because closing entries zero out temporary accounts, and any missed adjustment cannot be corrected without reopening them",
+        "Because the bank requires adjustments first",
+        "Because Excel formulas will break if the order is wrong",
+        "Because the IRS requires a specific order"
       ],
-      explanation: "Structured references like =SUM(SalesTable[Amount]) are self-documenting and automatically expand when new rows are added to the table, eliminating the need to manually update cell ranges."
+      explanation: "Closing entries zero out all revenue and expense accounts. If an adjustment is missed, the temporary accounts are already at zero and the error flows into Retained Earnings. Adjustments must be complete before closing begins."
     },
     {
       id: "q2",
-      question: "In the SUMIF function =SUMIF(A1:A10,\"Revenue\",B1:B10), what does the middle argument represent?",
+      question: "Which of the following is a recurring adjustment that must be caught during the month-end close?",
       answers: [
-        "The criteria that determines which cells to include in the sum",
-        "The range of cells to sum up",
-        "The formatting style to apply to the result",
-        "The name of the Excel worksheet"
+        "Depreciation on equipment",
+        "Owner's initial investment",
+        "Purchasing a new building with cash",
+        "Receiving a loan from the bank"
       ],
-      explanation: "The criteria argument specifies the condition that must be met for a cell to be included in the sum. In this case, only cells containing 'Revenue' will have their corresponding values summed."
+      explanation: "Depreciation is a recurring monthly adjustment that allocates the cost of a long-term asset over its useful life. It must be recorded each month as part of the close workflow. The other options are regular transactions, not month-end adjustments."
     },
     {
       id: "q3",
-      question: "Why are Excel Tables particularly valuable for month-end closing procedures?",
+      question: "What is the purpose of the adjusted trial balance?",
       answers: [
-        "They automatically accommodate new transactions without breaking formula references",
-        "They change the color scheme of your spreadsheet to look more professional",
-        "They automatically email your financial statements to investors",
-        "They reduce the time needed to enter data by 90%"
+        "To verify that total debits equal total credits after all adjustments are recorded",
+        "To show the company's stock price",
+        "To close the temporary accounts",
+        "To prepare the bank reconciliation"
       ],
-      explanation: "Excel Tables eliminate the common problem of formulas breaking when new data is added. This is crucial for month-end procedures where new transactions are constantly being added to existing datasets."
+      explanation: "The adjusted trial balance confirms the accounting equation is still in balance after all adjusting entries. It also serves as the source for preparing the financial statements."
     },
     {
       id: "q4",
-      question: "How does SUMIF support TechStart's automated month-end wizard?",
+      question: "Which accounts appear on the post-closing trial balance?",
       answers: [
-        "It can automatically categorize and total different types of adjusting entries",
-        "It creates backup copies of all financial data",
-        "It sends automatic reminders when month-end tasks are due",
-        "It converts all numbers to different currencies"
+        "Only permanent accounts: assets, liabilities, and equity",
+        "All accounts including revenue and expenses",
+        "Only revenue and expense accounts",
+        "Only cash accounts"
       ],
-      explanation: "SUMIF functions allow Sarah to automatically calculate totals for specific categories like 'Accrual' entries or 'Deferral' entries, eliminating manual categorization and reducing errors in month-end procedures."
+      explanation: "After closing, all temporary accounts (revenue, expenses, dividends) have zero balances. Only permanent accounts—assets, liabilities, and equity—remain with balances on the post-closing trial balance."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50">
       <PhaseHeader 
         unit={unit02Data} 
         lesson={lesson04Data} 
@@ -96,266 +96,262 @@ export default function Phase2Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
-              📚 Phase 2: Introduction
+            <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">
+              Phase 2: Explicit Instruction
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Excel Tables & SUMIF: The Professional Foundation
+              The Month-End Close Workflow
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Master the Excel techniques that transform chaotic month-end procedures into automated, professional-grade financial systems.
+              A step-by-step procedure that ensures every adjustment is caught before the books are closed.
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-8">
-          {/* Core Concept Explanation */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              Excel Tables and SUMIF functions are the backbone of professional financial automation. 
-              While basic Excel users struggle with broken formulas and manual updates, professionals 
-              use these tools to create self-maintaining systems that scale with business growth.
+              The month-end close is not a random collection of tasks. It follows a specific sequence that professional accountants use every month. Each step builds on the one before it, and skipping a step means the financial statements will be wrong.
             </p>
           </div>
 
-          {/* Excel Tables Benefits for Business */}
-          <Card className="border-blue-200 bg-blue-50">
+          <Card className="border-emerald-200 bg-emerald-50">
             <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Table className="h-6 w-6" />
-                Excel Tables: The Business Game-Changer
+              <CardTitle className="text-emerald-800 flex items-center gap-2">
+                <ClipboardList className="h-6 w-6" />
+                The Complete Month-End Close Checklist
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-blue-900 mb-3">What Excel Tables Do:</h4>
-                  <ul className="space-y-2 text-blue-800">
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Automatically expand when new data is added</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Create structured references that don't break</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Apply professional formatting automatically</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Enable powerful filtering and sorting features</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-blue-900 mb-3">Business Impact:</h4>
-                  <ul className="space-y-2 text-blue-800">
-                    <li className="flex items-start gap-2">
-                      <TrendingUp className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                      <span>Reduce month-end closing time by 75%</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <TrendingUp className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                      <span>Eliminate formula errors from manual updates</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <TrendingUp className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                      <span>Impress investors with scalable systems</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <TrendingUp className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                      <span>Focus on analysis instead of data maintenance</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Step-by-Step Tutorial */}
-          <Card className="border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Database className="h-6 w-6" />
-                Creating Excel Tables: The Foundation
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="bg-purple-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-purple-900 mb-3">Step-by-Step Process:</h4>
-                <ol className="list-decimal list-inside space-y-2 text-purple-800">
-                  <li><strong>Select your data range</strong> including headers</li>
-                  <li><strong>Press Ctrl+T</strong> or go to Insert → Table</li>
-                  <li><strong>Confirm the data range</strong> and check "My table has headers"</li>
-                  <li><strong>Name your table</strong> in Table Design → Table Name (e.g., "TransactionTable")</li>
-                  <li><strong>Use structured references</strong> in formulas: =SUM(TransactionTable[Amount])</li>
-                </ol>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded border border-purple-200">
-                  <h5 className="font-semibold text-purple-900 mb-2">❌ Old Way (Breaks easily):</h5>
-                  <code className="text-sm text-red-700 bg-red-50 p-2 rounded block">
-                    =SUM(A2:A50)
-                    <br />
-                    =SUMIF(B2:B50,"Accrual",C2:C50)
-                  </code>
-                  <p className="text-xs text-purple-700 mt-2">Breaks when row 51 is added!</p>
-                </div>
-                <div className="bg-white p-4 rounded border border-purple-200">
-                  <h5 className="font-semibold text-purple-900 mb-2">✅ Table Way (Self-maintaining):</h5>
-                  <code className="text-sm text-green-700 bg-green-50 p-2 rounded block">
-                    =SUM(TransactionTable[Amount])
-                    <br />
-                    =SUMIF(TransactionTable[Type],"Accrual",TransactionTable[Amount])
-                  </code>
-                  <p className="text-xs text-purple-700 mt-2">Automatically includes new rows!</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* TechStart Application Examples */}
-          <Card className="border-orange-200 bg-orange-50">
-            <CardHeader>
-              <CardTitle className="text-orange-800">TechStart Solutions: Real-World Applications</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-orange-800">
-                Here's how Sarah uses Excel Tables and SUMIF functions to automate her month-end procedures:
+              <p className="text-emerald-800">
+                Follow this sequence exactly. Each step produces an output that the next step depends on.
               </p>
-              
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-white p-4 rounded border border-orange-200">
-                  <h5 className="font-semibold text-orange-900 mb-2">Transaction Tracking</h5>
-                  <code className="text-xs text-gray-700 bg-gray-100 p-2 rounded block mb-2">
-                    =SUMIF(TransactionTable[Type],"Revenue",TransactionTable[Amount])
-                  </code>
-                  <p className="text-sm text-orange-800">Automatically totals all revenue transactions</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded border border-orange-200">
-                  <h5 className="font-semibold text-orange-900 mb-2">Adjusting Entries</h5>
-                  <code className="text-xs text-gray-700 bg-gray-100 p-2 rounded block mb-2">
-                    =SUMIF(AdjustingTable[Category],"Accrual",AdjustingTable[Amount])
-                  </code>
-                  <p className="text-sm text-orange-800">Categorizes accruals vs deferrals automatically</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded border border-orange-200">
-                  <h5 className="font-semibold text-orange-900 mb-2">Client Analysis</h5>
-                  <code className="text-xs text-gray-700 bg-gray-100 p-2 rounded block mb-2">
-                    =SUMIF(TransactionTable[Client],"FitnessStudio",TransactionTable[Amount])
-                  </code>
-                  <p className="text-sm text-orange-800">Tracks revenue by individual client</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* Fill in the Blank Exercise */}
-          <FillInTheBlank
-            title="Excel Tables & SUMIF Vocabulary Mastery"
-            description="Complete these sentences with the correct Excel terminology."
-            sentences={fillInTheBlankSentences}
-            showHints={true}
-          />
-
-          {/* Professional Standards Focus */}
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-800 flex items-center gap-2">
-                <Lightbulb className="h-6 w-6" />
-                Professional Standards: Why This Matters
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="prose prose-lg max-w-none text-green-800">
-                <p>
-                  Professional accountants and financial analysts rely on Excel Tables and SUMIF functions because 
-                  they create audit trails and maintain data integrity. When Sarah shows potential investors her 
-                  financial models, they'll immediately recognize these professional techniques.
-                </p>
-                
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300 not-prose">
-                  <h4 className="font-semibold text-green-900 mb-2">Investor Expectations:</h4>
-                  <ul className="text-green-800 space-y-1">
-                    <li>• <strong>Scalable systems</strong> that grow with the business</li>
-                    <li>• <strong>Error-resistant formulas</strong> that maintain accuracy</li>
-                    <li>• <strong>Clear documentation</strong> through structured references</li>
-                    <li>• <strong>Professional formatting</strong> that's easy to audit</li>
-                  </ul>
-                </div>
-
-                <p>
-                  These aren't just Excel tricks—they're the foundation of business intelligence systems 
-                  that separate amateur spreadsheets from professional-grade financial models.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* The Power of Collaboration */}
-          <Card className="border-indigo-200 bg-indigo-50">
-            <CardHeader>
-              <CardTitle className="text-indigo-800">The Power of a Second Opinion</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="prose prose-lg max-w-none text-indigo-800">
-                <p>
-                  In the world of business and technology, great things are never built in isolation. Sarah knew 
-                  that even with her carefully planned Excel Tables system, she might have missed something. Before 
-                  spending hours building automation, she needed a second pair of eyes on her logic. This is a normal 
-                  and essential part of developing any new tool or system.
-                </p>
-                
-                <p>
-                  Getting feedback early and often saves a huge amount of time and prevents you from building on a 
-                  flawed foundation. In professional software development, this process is called a "design review," 
-                  where teams share their work and get valuable feedback from peers.
-                </p>
-
-                <div className="bg-indigo-100 p-4 rounded-lg border border-indigo-300 not-prose">
-                  <h4 className="font-semibold text-indigo-900 mb-2">What Makes Good Feedback?</h4>
-                  <p className="text-indigo-800 mb-3">
-                    Simply saying "it looks good" isn't very helpful. The goal is to be specific, actionable, and kind. 
-                    A great framework to use is <strong>"Stars and Steps."</strong>
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
                     <div>
-                      <h5 className="font-semibold text-indigo-900 mb-2">⭐ Stars:</h5>
-                      <p className="text-sm text-indigo-800">
-                        What did this team do really well? Is their Excel Tables logic crystal clear? 
-                        Did they organize their SUMIF formulas in a way that's easy to understand? 
-                        Point out specific strengths they should continue doing.
+                      <h4 className="font-semibold text-emerald-900">Prepare the Unadjusted Trial Balance</h4>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        List all account balances from the general ledger. Verify that total debits equal total credits. This is your starting point—no adjustments yet.
                       </p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-indigo-900 mb-2">📈 Steps:</h5>
-                      <p className="text-sm text-indigo-800">
-                        What are one or two specific, actionable steps they could take to make their work even better? 
-                        Perhaps their structured references could be clearer, or they could add error-checking. 
-                        Offer suggestions for improvement, not just criticism.
+                      <p className="text-xs text-emerald-700 mt-2">
+                        <strong>Output:</strong> Unadjusted Trial Balance
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <p>
-                  This collaborative approach to building Excel Tables systems mirrors how professional teams develop 
-                  financial automation tools. By seeking feedback and iterating on your design, you'll create more 
-                  robust, reliable systems that can truly transform month-end procedures.
-                </p>
+                <div className="flex justify-center">
+                  <ArrowRight className="h-6 w-6 text-emerald-400 rotate-90" />
+                </div>
+
+                <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 className="font-semibold text-emerald-900">Identify and Record Adjusting Entries</h4>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        Review every account for required adjustments. This is the most critical step. Check for:
+                      </p>
+                      <ul className="text-sm text-emerald-800 mt-2 space-y-1 ml-4">
+                        <li><strong>Accrued revenues:</strong> Revenue earned but not yet recorded</li>
+                        <li><strong>Accrued expenses:</strong> Expenses incurred but not yet paid (wages, interest, utilities)</li>
+                        <li><strong>Deferred revenues:</strong> Cash received in advance—recognize what was earned</li>
+                        <li><strong>Prepaid expenses:</strong> Cash paid in advance—expense what was used (supplies, insurance)</li>
+                        <li><strong>Depreciation:</strong> Allocate equipment/building cost for the month</li>
+                      </ul>
+                      <p className="text-xs text-emerald-700 mt-2">
+                        <strong>Output:</strong> All adjusting journal entries recorded
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <ArrowRight className="h-6 w-6 text-emerald-400 rotate-90" />
+                </div>
+
+                <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 className="font-semibold text-emerald-900">Prepare the Adjusted Trial Balance</h4>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        Update all account balances with the adjusting entries. Verify debits still equal credits. This trial balance is the source for the financial statements.
+                      </p>
+                      <p className="text-xs text-emerald-700 mt-2">
+                        <strong>Output:</strong> Adjusted Trial Balance
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <ArrowRight className="h-6 w-6 text-emerald-400 rotate-90" />
+                </div>
+
+                <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 className="font-semibold text-emerald-900">Prepare Financial Statements</h4>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        Use the adjusted trial balance to prepare:
+                      </p>
+                      <ul className="text-sm text-emerald-800 mt-2 space-y-1 ml-4">
+                        <li><strong>Income Statement:</strong> Revenues - Expenses = Net Income</li>
+                        <li><strong>Statement of Retained Earnings:</strong> Beginning RE + Net Income - Dividends = Ending RE</li>
+                        <li><strong>Balance Sheet:</strong> Assets = Liabilities + Equity</li>
+                      </ul>
+                      <p className="text-xs text-emerald-700 mt-2">
+                        <strong>Output:</strong> Complete set of financial statements
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <ArrowRight className="h-6 w-6 text-emerald-400 rotate-90" />
+                </div>
+
+                <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 className="font-semibold text-emerald-900">Record Closing Entries</h4>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        Close all temporary accounts to zero:
+                      </p>
+                      <ul className="text-sm text-emerald-800 mt-2 space-y-1 ml-4">
+                        <li><strong>Close revenues</strong> to Income Summary (debit revenues, credit Income Summary)</li>
+                        <li><strong>Close expenses</strong> to Income Summary (credit expenses, debit Income Summary)</li>
+                        <li><strong>Close Income Summary</strong> to Retained Earnings</li>
+                        <li><strong>Close Dividends</strong> to Retained Earnings (debit RE, credit Dividends)</li>
+                      </ul>
+                      <p className="text-xs text-emerald-700 mt-2">
+                        <strong>Output:</strong> All temporary accounts at zero; Retained Earnings updated
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <ArrowRight className="h-6 w-6 text-emerald-400 rotate-90" />
+                </div>
+
+                <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 className="font-semibold text-emerald-900">Prepare the Post-Closing Trial Balance</h4>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        List only permanent accounts (assets, liabilities, equity). Verify debits equal credits. The books are now ready for the next period.
+                      </p>
+                      <p className="text-xs text-emerald-700 mt-2">
+                        <strong>Output:</strong> Post-Closing Trial Balance — books are closed and ready
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Comprehension Check */}
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800">
+                TechStart Solutions: Worked Example — Step 2 (Adjusting Entries)
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-blue-800">
+                Let's walk through Step 2 with Sarah's actual March data. Her unadjusted trial balance shows these accounts that need adjustment:
+              </p>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border border-blue-300 bg-white rounded">
+                  <thead className="bg-blue-100">
+                    <tr>
+                      <th className="border border-blue-300 px-3 py-2 text-left text-blue-900">Account</th>
+                      <th className="border border-blue-300 px-3 py-2 text-left text-blue-900">Unadjusted Balance</th>
+                      <th className="border border-blue-300 px-3 py-2 text-left text-blue-900">Adjustment Needed</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-blue-800 text-sm">
+                    <tr>
+                      <td className="border border-blue-300 px-3 py-2">Supplies</td>
+                      <td className="border border-blue-300 px-3 py-2">$8,000 (debit)</td>
+                      <td className="border border-blue-300 px-3 py-2">Physical count: $2,500 remaining → $5,500 used</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-blue-300 px-3 py-2">Prepaid Insurance</td>
+                      <td className="border border-blue-300 px-3 py-2">$3,600 (debit)</td>
+                      <td className="border border-blue-300 px-3 py-2">12-month policy, 1 month expired → $300/month</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-blue-300 px-3 py-2">Equipment</td>
+                      <td className="border border-blue-300 px-3 py-2">$24,000 (debit)</td>
+                      <td className="border border-blue-300 px-3 py-2">5-year life, no salvage → $400/month depreciation</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-blue-300 px-3 py-2">Wages Payable</td>
+                      <td className="border border-blue-300 px-3 py-2">$0</td>
+                      <td className="border border-blue-300 px-3 py-2">Wages earned Mar 28-31 not yet paid → $1,800</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-blue-300 px-3 py-2">Unearned Revenue</td>
+                      <td className="border border-blue-300 px-3 py-2">$2,400 (credit)</td>
+                      <td className="border border-blue-300 px-3 py-2">Half of prepaid project completed → $1,200 earned</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-blue-100 p-4 rounded border border-blue-300">
+                <h5 className="font-semibold text-blue-900 mb-2">Adjusting Journal Entries:</h5>
+                <div className="space-y-2 text-sm font-mono text-blue-800">
+                  <div>
+                    <p className="font-semibold">Entry A — Supplies Used:</p>
+                    <p className="ml-4">Debit Supplies Expense ........ $5,500</p>
+                    <p className="ml-4">Credit Supplies ........................ $5,500</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Entry B — Insurance Expired:</p>
+                    <p className="ml-4">Debit Insurance Expense ....... $300</p>
+                    <p className="ml-4">Credit Prepaid Insurance ........ $300</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Entry C — Depreciation:</p>
+                    <p className="ml-4">Debit Depreciation Expense .. $400</p>
+                    <p className="ml-4">Credit Accum. Depreciation ... $400</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Entry D — Accrued Wages:</p>
+                    <p className="ml-4">Debit Wages Expense ............ $1,800</p>
+                    <p className="ml-4">Credit Wages Payable ............ $1,800</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Entry E — Revenue Earned:</p>
+                    <p className="ml-4">Debit Unearned Revenue ...... $1,200</p>
+                    <p className="ml-4">Credit Service Revenue ......... $1,200</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <FillInTheBlank
+            title="Month-End Close Vocabulary"
+            description="Complete these sentences with the correct accounting terminology."
+            sentences={fillInTheBlankSentences}
+            showHints={true}
+          />
+
           <ComprehensionCheck
-            title="Excel Tables & SUMIF Mastery Check"
-            description="Test your understanding of Excel Tables and SUMIF functions for business automation."
+            title="Workflow Understanding Check"
+            description="Test your understanding of the month-end close sequence."
             questions={comprehensionQuestions}
             showExplanations={true}
           />

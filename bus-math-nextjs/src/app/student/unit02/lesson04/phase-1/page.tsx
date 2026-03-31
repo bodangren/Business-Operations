@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Clock, Users } from "lucide-react"
+import { AlertTriangle, ArrowRight } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, unit02Data, lesson04Phases } from "../lesson-data"
 
@@ -12,41 +12,41 @@ export default function Phase1Page() {
   const comprehensionQuestions = [
     {
       id: "q1",
-      question: "Based on Sarah's month-end challenge, what do you predict would be the BIGGEST benefit of Excel Tables for her TechStart Solutions business?",
+      question: "Sarah has recorded her adjusting entries and closing entries. What is the biggest risk if she skips any step during month-end close?",
       answers: [
-        "Making her spreadsheets look more professional for investors",
-        "Automatically expanding to include new transactions without breaking formulas",
-        "Reducing the file size of her Excel workbooks",
-        "Making it easier to change font colors and formatting"
+        "Her Excel file will become corrupted",
+        "Her financial statements will misstate revenue, expenses, or net income",
+        "She will have to redo all her journal entries from scratch",
+        "The bank will reject her deposit"
       ],
-      explanation: "Excel Tables automatically expand when new data is added, ensuring that all formulas and references continue to work correctly. This is crucial for month-end procedures where new transactions are constantly being added."
+      explanation: "If any step in the month-end close is skipped, the financial statements will not accurately reflect the business's performance. Missing an adjusting entry means revenue or expenses are reported in the wrong period, which misleads anyone reading the statements."
     },
     {
-      id: "q2", 
-      question: "If Sarah currently spends 2 days each month manually updating formulas and ranges, what would be a realistic time savings goal with Excel Tables?",
+      id: "q2",
+      question: "In Lesson 3, Sarah closed her temporary accounts to Income Summary. What problem does she still face that Lesson 4 must solve?",
       answers: [
-        "From 2 days to 1.5 days (25% improvement)",
-        "From 2 days to 4 hours (75% improvement)", 
-        "From 2 days to 30 minutes (95% improvement)",
-        "No time savings - just better accuracy"
+        "She hasn't recorded any revenue yet this month",
+        "She needs to make sure every recurring adjustment was caught before closing",
+        "She needs to open a new bank account",
+        "She forgot how to use T-accounts"
       ],
-      explanation: "Excel Tables with structured references can dramatically reduce manual formula updates, realistically achieving 75% time savings by automating range expansion and formula updates."
+      explanation: "Closing entries reset temporary accounts, but Sarah still needs a reliable system to make sure she didn't miss any adjustments—accruals, deferrals, depreciation, prepaid expenses—before she closes. That's what the complete month-end flow provides."
     },
     {
       id: "q3",
-      question: "Why would SUMIF functions be essential for Sarah's automated month-end wizard?",
+      question: "Predict: If Sarah's unadjusted trial balance shows $8,000 in Supplies but a physical count shows only $2,500 remaining, what adjusting entry is needed?",
       answers: [
-        "To add up all numbers in her spreadsheet faster",
-        "To conditionally sum only specific types of transactions (like accruals vs deferrals)",
-        "To create colorful charts for investor presentations", 
-        "To automatically save her Excel files to the cloud"
+        "Debit Supplies $5,500; Credit Supplies Expense $5,500",
+        "Debit Supplies Expense $5,500; Credit Supplies $5,500",
+        "No entry needed—Supplies is an asset",
+        "Debit Cash $5,500; Credit Supplies $5,500"
       ],
-      explanation: "SUMIF functions allow conditional summing based on criteria, perfect for categorizing and totaling different types of adjusting entries in month-end procedures."
+      explanation: "Supplies used = $8,000 - $2,500 = $5,500. The adjusting entry debits Supplies Expense (to record the cost of supplies used) and credits Supplies (to reduce the asset to what remains). This is exactly the kind of recurring adjustment the full close workflow must catch."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-red-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
       <PhaseHeader 
         unit={unit02Data} 
         lesson={lesson04Data} 
@@ -57,175 +57,108 @@ export default function Phase1Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              🎯 Phase 1: Hook
+            <Badge className="bg-amber-100 text-amber-800 text-lg px-4 py-2">
+              Phase 1: Recycle & Introduce
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Sarah's Excel Tables Challenge
+              The Close Is Not Done Yet
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover how Excel Tables and SUMIF functions can transform Sarah's chaotic month-end process into an automated wizard that saves days of work.
+              Sarah closed her temporary accounts—but did she catch every adjustment first?
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-8">
-          {/* Hook Introduction */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              Sarah thought she had it made. TechStart Solutions was growing fast—three new clients this month, 
-              revenue up 40%, and even her first potential investor meeting scheduled. But then came month-end closing. 
-              What should have been a celebration turned into a nightmare.
+              In Lesson 3, Sarah learned how to close temporary accounts—revenue, expenses, and dividends—to Income Summary and then to Retained Earnings. That was a critical step. But there is a dangerous gap between "the entries are closed" and "the close is correct."
             </p>
           </div>
 
-          {/* Sarah's Dilemma Card */}
-          <Card className="border-orange-200 bg-orange-50">
+          <Card className="border-amber-200 bg-amber-50">
             <CardHeader>
-              <CardTitle className="text-orange-800 flex items-center gap-2">
-                ⚠️ Sarah's Month-End Crisis
+              <CardTitle className="text-amber-800 flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5" />
+                Sarah's Realization
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-orange-800">
-                <strong>The Problem:</strong> Sarah's Excel spreadsheets are a tangled mess. Every month, she has to:
+              <p className="text-amber-800">
+                After closing her books, Sarah's accountant reviewed her work and asked one question:
               </p>
-              <ul className="list-disc list-inside space-y-2 text-orange-800">
-                <li>Manually update 47 different formula ranges as new transactions get added</li>
-                <li>Copy and paste SUMIF formulas, often breaking references or missing new data</li>
-                <li>Spend 2 full days just getting her adjusting entries to calculate correctly</li>
-                <li>Triple-check everything because one wrong cell reference ruins everything</li>
-              </ul>
-              <div className="bg-orange-100 p-4 rounded border border-orange-300">
-                <p className="font-semibold text-orange-900">
-                  "I spent 16 hours last month just fixing broken formulas. My investor meeting is in 3 days, 
-                  and I still don't trust my numbers. There has to be a better way!"
+              <div className="bg-amber-100 p-4 rounded border border-amber-300">
+                <p className="font-semibold text-amber-900 italic">
+                  "Did you catch the depreciation on the new laptops? The prepaid insurance that expired? The wages your part-timer earned on March 31 but hasn't been paid for yet?"
                 </p>
-                <p className="text-sm text-orange-700 mt-2">— Sarah Chen, TechStart Solutions</p>
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Before vs After Comparison */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-red-200 bg-red-50">
-              <CardHeader>
-                <CardTitle className="text-red-800 flex items-center gap-2">
-                  😫 Before: Manual Formula Hell
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="bg-red-100 p-3 rounded font-mono text-sm text-red-900">
-                  =SUM(A1:A23) {/* Breaks when row 24 is added */}
-                  <br />
-                  =SUMIF(B1:B23,"Accrual",C1:C23) {/* Missing new data */}
-                  <br />
-                  =SUMIF(D1:D47,"Deferral",E1:E47) {/* Manual range update */}
-                </div>
-                <ul className="text-red-800 space-y-1 text-sm">
-                  <li>• Fixed ranges that break with new data</li>
-                  <li>• Manual formula updates every month</li>
-                  <li>• Error-prone copy/paste operations</li>
-                  <li>• 2 days of troubleshooting time</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="text-green-800 flex items-center gap-2">
-                  ✨ After: Excel Tables Automation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="bg-green-100 p-3 rounded font-mono text-sm text-green-900">
-                  =SUM(TransactionTable[Amount]) {/* Auto-expands */}
-                  <br />
-                  =SUMIF(TransactionTable[Type],"Accrual",TransactionTable[Amount])
-                  <br />
-                  =SUMIF(AdjustingTable[Category],"Deferral",AdjustingTable[Value])
-                </div>
-                <ul className="text-green-800 space-y-1 text-sm">
-                  <li>• Structured references that auto-expand</li>
-                  <li>• Zero manual formula updates needed</li>
-                  <li>• Self-maintaining table relationships</li>
-                  <li>• 2 hours total for month-end close</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Why This Matters */}
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-800">Why This Matters for Your Future</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-blue-800 mb-4">
-                Excel Tables and SUMIF functions aren't just about making spreadsheets work better—they're about 
-                building the foundation for professional financial automation that investors expect to see.
+              <p className="text-amber-800">
+                Sarah froze. She had closed her books—but she had not made sure every recurring adjustment was recorded <em>before</em> closing. Her net income was wrong. Her balance sheet was wrong. And she had already zeroed out her temporary accounts.
               </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl text-blue-600 mb-2">⏱️</div>
-                  <h4 className="font-semibold text-blue-900">Time Efficiency</h4>
-                  <p className="text-sm text-blue-700">Reduce month-end closing from days to hours</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl text-blue-600 mb-2">🎯</div>
-                  <h4 className="font-semibold text-blue-900">Investor Confidence</h4>
-                  <p className="text-sm text-blue-700">Demonstrate scalable, professional systems</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl text-blue-600 mb-2">🚀</div>
-                  <h4 className="font-semibold text-blue-900">Business Growth</h4>
-                  <p className="text-sm text-blue-700">Focus on strategy instead of manual processes</p>
-                </div>
-              </div>
             </CardContent>
           </Card>
 
-          {/* Comprehension Check */}
-          <ComprehensionCheck
-            title="Hook Understanding Check"
-            description="Test your understanding of Excel Tables benefits for month-end automation."
-            questions={comprehensionQuestions}
-            showExplanations={true}
-          />
-
-          {/* Turn and Talk Discussion */}
-          <Card className="border-purple-200 bg-purple-50">
+          <Card className="border-red-200 bg-red-50">
             <CardHeader>
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk
+              <CardTitle className="text-red-800">
+                What Happens When You Close Too Early
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex items-start gap-3 mb-4">
-                <Clock className="h-5 w-5 text-purple-600 mt-1" />
-                <div>
-                  <p className="font-medium text-purple-900 mb-2">
-                    Discussion Prompt (3 minutes):
-                  </p>
-                  <p className="text-purple-800 mb-3">
-                    Think about Sarah's Excel Tables challenge. Share with a partner:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-purple-800">
-                    <li>What other business processes could benefit from "auto-expanding" Excel features?</li>
-                    <li>How might Excel Tables change the way you approach data organization in business?</li>
-                    <li>What questions do you have about building these automated systems?</li>
+            <CardContent className="space-y-4">
+              <p className="text-red-800">
+                Sarah's unadjusted trial balance looked fine. But the unadjusted trial balance is never the final answer. Here is what she missed:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-red-100 p-4 rounded border border-red-300">
+                  <h4 className="font-semibold text-red-900 mb-2">Missed Adjustments:</h4>
+                  <ul className="text-sm text-red-800 space-y-1">
+                    <li>Depreciation on equipment purchased in February</li>
+                    <li>Prepaid insurance that expired during March</li>
+                    <li>Accrued wages for the last week of March</li>
+                    <li>Unearned revenue that was earned in March</li>
+                    <li>Supplies used during the month</li>
+                  </ul>
+                </div>
+                <div className="bg-red-100 p-4 rounded border border-red-300">
+                  <h4 className="font-semibold text-red-900 mb-2">Impact on Statements:</h4>
+                  <ul className="text-sm text-red-800 space-y-1">
+                    <li>Net income overstated by $3,450</li>
+                    <li>Assets overstated (supplies, prepaid insurance)</li>
+                    <li>Liabilities understated (accrued wages)</li>
+                    <li>Retained Earnings wrong after closing</li>
                   </ul>
                 </div>
               </div>
-              <div className="bg-purple-100 p-3 rounded border border-purple-300">
-                <p className="text-sm text-purple-700">
-                  <strong>Key Insight:</strong> Excel Tables aren't just about convenience—they're about building 
-                  scalable business systems that grow with your company and impress professional stakeholders.
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800 flex items-center gap-2">
+                The Solution: A Complete Close Workflow
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-blue-800">
+                The fix is not to work harder—it is to work in order. Professional accountants use a <strong>month-end close checklist</strong> that forces every adjustment to be identified, recorded, and verified <em>before</em> any closing entries are made.
+              </p>
+              <p className="text-blue-800">
+                In this lesson, you will learn the complete month-end close workflow from start to finish. By the end, you will be able to walk through every step in order—without missing a single adjustment.
+              </p>
+              <div className="bg-blue-100 p-4 rounded border border-blue-300">
+                <p className="text-sm text-blue-700">
+                  <strong>Today's target:</strong> Understand why a structured close workflow matters and predict what happens when steps are skipped.
                 </p>
               </div>
             </CardContent>
           </Card>
+
+          <ComprehensionCheck
+            title="Phase 1 Understanding Check"
+            description="Test your understanding of why a complete close workflow matters."
+            questions={comprehensionQuestions}
+            showExplanations={true}
+          />
         </section>
       </main>
 

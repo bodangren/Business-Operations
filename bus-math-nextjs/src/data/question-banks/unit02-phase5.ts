@@ -323,142 +323,142 @@ const lesson04Questions: Unit02Phase5Question[] = [
   {
     id: "lesson04-q1",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "What is the primary advantage of using Excel Tables instead of regular cell ranges for month-end procedures?",
-    correctAnswer: "Tables automatically expand and maintain formula references when new data is added",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "What is the correct order of the month-end close workflow?",
+    correctAnswer: "Unadjusted TB → Adjusting entries → Adjusted TB → Financial statements → Closing entries → Post-closing TB",
     distractors: [
-      "Tables use less computer memory and make files smaller",
-      "Tables can only be used with SUMIF functions and not other formulas",
-      "Tables automatically save your work to the cloud every 5 minutes"
+      "Adjusting entries → Closing entries → Unadjusted TB → Financial statements → Post-closing TB",
+      "Unadjusted TB → Financial statements → Adjusting entries → Closing entries → Post-closing TB",
+      "Closing entries → Adjusting entries → Unadjusted TB → Adjusted TB → Financial statements"
     ],
-    explanation: "Excel Tables automatically expand when new rows are added and maintain structured references, eliminating the need to manually update formula ranges during month-end procedures.",
-    objectiveTags: ["excel-tables", "automation"]
+    explanation: "The month-end close follows a strict sequence: start with the unadjusted trial balance, record all adjustments, prepare the adjusted trial balance, create financial statements, close temporary accounts, and finish with the post-closing trial balance.",
+    objectiveTags: ["close-sequence", "accounting-cycle"]
   },
   {
     id: "lesson04-q2",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "In the formula =SUMIF(TransactionTable[Type],'Accrual',TransactionTable[Amount]), what does the middle argument ('Accrual') represent?",
-    correctAnswer: "The criteria that determines which rows to include in the sum",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "Why must adjusting entries be recorded before closing entries?",
+    correctAnswer: "Because closing entries zero out temporary accounts, and any missed adjustment would permanently misstate net income",
     distractors: [
-      "The name of the Excel worksheet where the data is stored",
-      "The column where the sum result should be displayed",
-      "The format for displaying currency in the result"
+      "Because the bank requires adjustments before accepting deposits",
+      "Because Excel formulas will break if the order is wrong",
+      "Because the IRS requires a specific order for tax filings"
     ],
-    explanation: "The criteria argument specifies the condition that must be met for a row to be included in the sum. Only transactions with Type = 'Accrual' will be summed.",
-    objectiveTags: ["sumif", "conditional-logic"]
+    explanation: "Closing entries zero out all revenue and expense accounts. If an adjustment is missed, the temporary accounts are already at zero and the error flows into Retained Earnings. Adjustments must be complete before closing begins.",
+    objectiveTags: ["adjusting-entries", "close-sequence"]
   },
   {
     id: "lesson04-q3",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "Why are structured references like TransactionTable[Amount] better than cell references like C2:C50 for Sarah's month-end automation?",
-    correctAnswer: "Structured references are easier to understand and automatically adjust when tables grow",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "Which of the following is NOT a recurring month-end adjustment?",
+    correctAnswer: "Owner's initial investment of cash into the business",
     distractors: [
-      "Structured references can only be used with tables, making them exclusive",
-      "Structured references run faster and use less processing power",
-      "Structured references automatically format numbers as currency"
+      "Depreciation on equipment",
+      "Accrued wages for the last week of the month",
+      "Supplies used during the month"
     ],
-    explanation: "Structured references are self-documenting (you can understand what they refer to) and automatically expand when new data is added to the table, making them ideal for automated systems.",
-    objectiveTags: ["structured-references", "readability"]
+    explanation: "An owner's investment is a regular transaction recorded when it occurs, not a month-end adjustment. Depreciation, accrued wages, and supplies used are all recurring adjustments that must be caught during the close.",
+    objectiveTags: ["adjustment-identification", "recurring-items"]
   },
   {
     id: "lesson04-q4",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "If Sarah adds 5 new transactions to her TransactionTable, what happens to her existing SUMIF formulas that use structured references?",
-    correctAnswer: "The formulas automatically include the new transactions without any changes needed",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "Sarah's unadjusted trial balance shows Supplies of $8,000. A physical count shows $2,500 remaining. What is the adjusting entry?",
+    correctAnswer: "Debit Supplies Expense $5,500; Credit Supplies $5,500",
     distractors: [
-      "The formulas break and show #REF! errors until manually updated",
-      "The formulas need to be rewritten using the new cell ranges",
-      "The formulas continue working but ignore the new transactions"
+      "Debit Supplies $5,500; Credit Supplies Expense $5,500",
+      "Debit Supplies Expense $2,500; Credit Supplies $2,500",
+      "No entry needed—Supplies is an asset account"
     ],
-    explanation: "This is the key benefit of Excel Tables - formulas with structured references automatically include new data added to the table without any manual intervention.",
-    objectiveTags: ["scalability", "automation"]
+    explanation: "Supplies used = $8,000 - $2,500 = $5,500. Debit Supplies Expense to record the cost of supplies consumed; credit Supplies to reduce the asset to its actual remaining balance.",
+    objectiveTags: ["adjusting-entries", "supplies"]
   },
   {
     id: "lesson04-q5",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "In a professional business context, what makes Excel Tables particularly valuable for investor presentations?",
-    correctAnswer: "Tables demonstrate scalable, automated systems that can grow with the business",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "Equipment costs $24,000 with a 5-year life and no salvage value. What is the monthly depreciation entry?",
+    correctAnswer: "Debit Depreciation Expense $400; Credit Accumulated Depreciation $400",
     distractors: [
-      "Tables make spreadsheets load faster during presentations",
-      "Tables automatically create charts and graphs for visual appeal",
-      "Tables can only be opened by professional versions of Excel"
+      "Debit Equipment $400; Credit Cash $400",
+      "Debit Depreciation Expense $4,800; Credit Equipment $4,800",
+      "Debit Accumulated Depreciation $400; Credit Depreciation Expense $400"
     ],
-    explanation: "Investors value scalable systems. Excel Tables show that the business uses professional automation that can handle growth without requiring constant manual intervention.",
-    objectiveTags: ["investor-readiness", "professionalism"]
+    explanation: "Monthly depreciation = ($24,000 - $0) / 60 months = $400. Debit Depreciation Expense to record the cost; credit Accumulated Depreciation (a contra-asset) to track cumulative depreciation.",
+    objectiveTags: ["depreciation", "adjusting-entries"]
   },
   {
     id: "lesson04-q6",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "What type of business scenario would require a COUNTIF function instead of a SUMIF function?",
-    correctAnswer: "When you need to count how many transactions meet certain criteria",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "Which accounts appear on the post-closing trial balance?",
+    correctAnswer: "Only permanent accounts: assets, liabilities, and equity",
     distractors: [
-      "When you need to total the dollar amounts of all transactions",
-      "When you need to calculate the average value of transactions",
-      "When you need to find the maximum transaction amount"
+      "All accounts including revenue, expenses, and dividends",
+      "Only revenue and expense accounts",
+      "Only cash and bank accounts"
     ],
-    explanation: "COUNTIF counts the number of items that meet criteria, while SUMIF adds up the values. Use COUNTIF when you need frequency analysis (e.g., 'How many times did we invoice this client?').",
-    objectiveTags: ["countif", "function-selection"]
+    explanation: "After closing, all temporary accounts (revenue, expenses, dividends) have zero balances. Only permanent accounts—assets, liabilities, and equity—remain with balances on the post-closing trial balance.",
+    objectiveTags: ["post-closing", "permanent-accounts"]
   },
   {
     id: "lesson04-q7",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "In the context of Sarah's Month-End Wizard, how do named ranges enhance the professional quality of the system?",
-    correctAnswer: "Named ranges make formulas easier to read and maintain, improving audit trails",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "If Sarah forgot to record $1,800 of accrued wages, what is the effect on net income?",
+    correctAnswer: "Net income is overstated by $1,800",
     distractors: [
-      "Named ranges automatically backup data to prevent loss",
-      "Named ranges can only be created by certified Excel professionals",
-      "Named ranges make the file size smaller for email attachments"
+      "Net income is understated by $1,800",
+      "Net income is not affected because no cash was paid",
+      "Only the balance sheet is affected"
     ],
-    explanation: "Named ranges like 'MonthlyRevenue' make formulas self-documenting and easier to audit. When someone reviews the model, they can immediately understand what each formula calculates.",
-    objectiveTags: ["named-ranges", "audit-trails"]
+    explanation: "Without the accrued wages entry, Wages Expense is $1,800 too low. Since expenses are understated, net income is overstated by $1,800. The balance sheet is also affected—Wages Payable is understated.",
+    objectiveTags: ["financial-statement-impact", "accrued-expenses"]
   },
   {
     id: "lesson04-q8",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "Which formula would correctly calculate the total revenue for a specific client using Excel Tables?",
-    correctAnswer: "=SUMIF(TransactionTable[Client],'FitnessStudio',TransactionTable[Amount])",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "What is the purpose of the adjusted trial balance?",
+    correctAnswer: "To verify debits equal credits after adjustments and serve as the source for financial statements",
     distractors: [
-      "=SUM(TransactionTable[Amount],'FitnessStudio')",
-      "=COUNT(TransactionTable[Client],'FitnessStudio')",
-      "=AVERAGE(TransactionTable[Amount],'FitnessStudio')"
+      "To close the temporary accounts to Retained Earnings",
+      "To record the adjusting entries for the first time",
+      "To prepare the bank reconciliation"
     ],
-    explanation: "SUMIF requires three arguments: the range to check (Client column), the criteria ('FitnessStudio'), and the range to sum (Amount column).",
-    objectiveTags: ["sumif-syntax", "formula-structure"]
+    explanation: "The adjusted trial balance confirms the accounting equation is still in balance after all adjusting entries. It also provides the account balances used to prepare the income statement, statement of retained earnings, and balance sheet.",
+    objectiveTags: ["adjusted-trial-balance", "close-sequence"]
   },
   {
     id: "lesson04-q9",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "Why is error-checking crucial in Excel Tables systems for month-end procedures?",
-    correctAnswer: "Error-checking ensures accuracy and maintains investor confidence in financial reports",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "TechStart received $2,400 in advance for a 2-month project. By month-end, one month is complete. What is the adjusting entry?",
+    correctAnswer: "Debit Unearned Revenue $1,200; Credit Service Revenue $1,200",
     distractors: [
-      "Error-checking prevents the computer from crashing during calculations",
-      "Error-checking is required by law for all business spreadsheets",
-      "Error-checking automatically fixes all formula mistakes"
+      "Debit Service Revenue $1,200; Credit Unearned Revenue $1,200",
+      "Debit Cash $1,200; Credit Service Revenue $1,200",
+      "No entry needed—cash was already recorded"
     ],
-    explanation: "Financial accuracy is critical for investor trust and business decisions. Error-checking helps catch mistakes before they impact financial statements and business analysis.",
-    objectiveTags: ["quality-assurance", "investor-confidence"]
+    explanation: "Half of the advance ($2,400 / 2 = $1,200) has been earned. Debit Unearned Revenue to reduce the liability; credit Service Revenue to recognize the earned portion.",
+    objectiveTags: ["deferred-revenue", "adjusting-entries"]
   },
   {
     id: "lesson04-q10",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Tables & SUMIF",
-    prompt: "What is the ultimate goal of mastering Excel Tables and SUMIF functions in the context of the Month-End Wizard project?",
-    correctAnswer: "To reduce month-end closing time from days to hours while maintaining GAAP accuracy",
+    lessonTitle: "Lesson 04 - Complete Manual Month-End Flow",
+    prompt: "After the adjusted trial balance shows debits of $142,300 and credits of $141,900, what should Sarah do?",
+    correctAnswer: "Find and correct the error before preparing financial statements",
     distractors: [
-      "To impress teachers with advanced Excel knowledge",
-      "To create the most complex spreadsheet possible",
-      "To replace all accounting software with Excel"
+      "Proceed to financial statements—the $400 difference is small enough",
+      "Close the temporary accounts immediately",
+      "Record a $400 adjusting entry to force the balance"
     ],
-    explanation: "The goal is business efficiency - dramatically reducing the time required for month-end procedures while ensuring the accuracy and compliance that investors and stakeholders expect.",
-    objectiveTags: ["business-efficiency", "gaap-compliance"]
+    explanation: "The adjusted trial balance must balance exactly. A $400 difference means there is an error. Sarah must find and fix it before proceeding—financial statements from an unbalanced trial balance will be wrong.",
+    objectiveTags: ["trial-balance", "error-detection"]
   }
 ];
 

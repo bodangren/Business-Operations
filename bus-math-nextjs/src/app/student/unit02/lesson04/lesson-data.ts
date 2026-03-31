@@ -1,28 +1,28 @@
-// Unit 2, Lesson 4 data - Excel Tables & SUMIF: Building the Month-End Wizard Foundation
+// Unit 2, Lesson 4 data - Complete Manual Month-End Flow
 export const lesson04Data = {
   id: "unit02_lesson04",
-  title: "Excel Tables & SUMIF: Building the Month-End Wizard Foundation",
+  title: "Complete Manual Month-End Flow",
   sequence: 4,
   unitId: "unit02",
   learningObjectives: [
-    "Create Excel Tables with structured references for dynamic month-end processes",
-    "Build SUMIF functions to automate adjusting entry calculations",
-    "Design scalable table structures that grow with business transactions",
-    "Integrate professional Excel techniques for GAAP-compliant automation"
+    "Walk through the complete month-end close in the correct order",
+    "Identify and record all required recurring adjustments including depreciation",
+    "Use a month-end close checklist to ensure no steps are missed",
+    "Explain how each adjustment affects the financial statements"
   ],
   keyConcepts: [
-    "Excel Tables with structured references and automatic expansion",
-    "SUMIF function syntax for conditional data aggregation",
-    "Named ranges and table references for professional automation",
-    "Error-proofing strategies for month-end closing procedures"
+    "The month-end close workflow from unadjusted trial balance to post-closing trial balance",
+    "Recurring adjustments: accruals, deferrals, depreciation, and other month-end entries",
+    "Checklists and flow diagrams as control tools for accurate closing",
+    "How the complete close prepares the books for the next period"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Hands-on Excel demonstration with TechStart month-end scenarios",
-    "Progressive skill building from basic tables to advanced automation",
-    "Real-world application connecting to investor presentation standards"
+    "Textbook-first instruction with concrete TechStart scenarios",
+    "Progressive scaffold fade from guided checklists to independent close routines",
+    "Algorithmic deliberate practice on the full month-end sequence"
   ],
-  rationale: "Students must master Excel Tables and SUMIF functions as the foundation for automated month-end processes, essential for the Month-End Wizard project that reduces closing time from days to hours.",
+  rationale: "Students must master the complete manual month-end flow before any automation is introduced. This lesson ties together adjusting entries, closing entries, and recurring adjustments into one ordered workflow so students understand what the automation will eventually replace.",
   status: "Draft"
 }
 
@@ -32,42 +32,42 @@ export const unit02Data = {
   sequence: 2
 }
 
-// Lesson phases (standard 6-phase structure for Excel skills introduction)
+// Lesson phases (standard 6-phase structure for accounting-principles lessons)
 export const lesson04Phases = [
   {
     id: "phase-1",
-    phaseName: "Hook" as const,
+    phaseName: "Recycle & Introduce" as const,
     sequence: 1,
-    description: "Discover Sarah's Excel Tables Challenge: From chaos to automated month-end efficiency",
+    description: "Reconnect to closing entries and surface the need for a complete close workflow",
   },
   {
     id: "phase-2", 
-    phaseName: "Introduction" as const,
+    phaseName: "Explicit Instruction" as const,
     sequence: 2,
-    description: "Excel Tables & SUMIF: The Professional Foundation for automated financial processes",
+    description: "The month-end close workflow: step-by-step procedure with checklists and flow diagrams",
   },
   {
     id: "phase-3",
-    phaseName: "Guided Practice" as const,
+    phaseName: "Deepening" as const,
     sequence: 3,
-    description: "Building Sarah's Excel Tables System: Step-by-step month-end automation",
+    description: "Complex adjustments and reduced scaffolding with authentic accounting notation",
   },
   {
     id: "phase-4",
-    phaseName: "Independent Practice" as const,
+    phaseName: "Deliberate Practice" as const,
     sequence: 4,
-    description: "Advanced Excel Tables Mastery Challenges: Professional automation scenarios",
+    description: "Repeated manual close routine with algorithmic variation and mastery tracking",
   },
   {
     id: "phase-5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Excel Tables & SUMIF: Professional Mastery Assessment for month-end automation",
+    description: "MCQ exit ticket on month-end close workflow, adjustments, and misconceptions",
   },
   {
     id: "phase-6",
-    phaseName: "Closing" as const,
+    phaseName: "Reflection" as const,
     sequence: 6,
-    description: "Excel Tables Mastery Complete: Building Your Automated Future",
+    description: "Reflect on the complete close and preview the first Excel build lesson",
   }
 ]

@@ -2,14 +2,62 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Settings, Users, AlertTriangle, CheckCircle2 } from "lucide-react"
+import { AlertCircle, FileText, ArrowRight } from "lucide-react"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, unit02Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[2]
 
 export default function Phase3Page() {
+  const comprehensionQuestions = [
+    {
+      id: "q1",
+      question: "Sarah's unadjusted trial balance shows Supplies of $8,000. A physical count shows $2,500 remaining. She also has Equipment costing $24,000 with a 5-year life and no salvage value. What is the total effect on Net Income from these two adjustments?",
+      answers: [
+        "Net Income decreases by $5,900",
+        "Net Income decreases by $5,500",
+        "Net Income decreases by $400",
+        "Net Income increases by $5,900"
+      ],
+      explanation: "Supplies used = $8,000 - $2,500 = $5,500 expense. Monthly depreciation = $24,000 / 60 months = $400 expense. Total expense increase = $5,500 + $400 = $5,900. Since expenses increase, Net Income decreases by $5,900."
+    },
+    {
+      id: "q2",
+      question: "TechStart received $2,400 in advance for a 2-month project. By March 31, one month of work is complete. The accountant forgot to record the adjusting entry for unearned revenue. What is the effect on the financial statements?",
+      answers: [
+        "Revenue is understated by $1,200 and Net Income is understated by $1,200",
+        "Revenue is overstated by $1,200 and Liabilities are understated by $1,200",
+        "No effect—cash was already received",
+        "Assets are understated by $1,200"
+      ],
+      explanation: "Without the adjustment, Unearned Revenue (a liability) stays at $2,400 instead of being reduced to $1,200, and Service Revenue stays at $0 for this transaction instead of showing $1,200 earned. Revenue and Net Income are both understated by $1,200, and Liabilities are overstated by $1,200."
+    },
+    {
+      id: "q3",
+      question: "After recording all adjustments, Sarah's adjusted trial balance shows total debits of $142,300 and total credits of $141,900. What should she do next?",
+      answers: [
+        "Proceed to prepare the financial statements—the difference is small enough",
+        "Find and correct the error before preparing financial statements",
+        "Close the temporary accounts immediately",
+        "Record a $400 adjusting entry to balance"
+      ],
+      explanation: "The adjusted trial balance must balance exactly. A $400 difference means there is an error in the adjusting entries or the trial balance itself. Sarah must find and fix the error before proceeding—financial statements prepared from an unbalanced trial balance will be wrong."
+    },
+    {
+      id: "q4",
+      question: "Which adjustment requires an estimate rather than a precise calculation?",
+      answers: [
+        "Accrued wages for the last week of the month",
+        "Supplies used (based on physical count)",
+        "Depreciation expense (based on estimated useful life and salvage value)",
+        "Revenue earned from a completed project"
+      ],
+      explanation: "Depreciation requires estimates: the asset's useful life and its salvage value at the end of that life. These are management estimates, not exact measurements. Accrued wages, supplies used, and earned revenue can all be determined from actual records or counts."
+    }
+  ]
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
       <PhaseHeader 
         unit={unit02Data} 
         lesson={lesson04Data} 
@@ -20,341 +68,214 @@ export default function Phase3Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">
-              🔧 Phase 3: Guided Practice
+            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
+              Phase 3: Deepening
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Building Sarah's Excel Tables System
+              Complex Adjustments and the Full Close
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Step-by-step construction of a professional Excel Tables system for automated month-end procedures.
+              Put the full workflow into practice with more complex scenarios and less guidance.
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-8">
-          {/* Step-by-Step Instructions Card */}
-          <Card className="border-blue-200 bg-blue-50">
+          <div className="prose prose-lg max-w-none">
+            <p className="text-lg leading-relaxed">
+              In Phase 2, you walked through each step of the month-end close with heavy guidance. Now the scaffolding comes down. You will work with a more complex set of adjustments, use authentic accounting formats, and explain your reasoning—not just compute answers.
+            </p>
+          </div>
+
+          <Card className="border-orange-200 bg-orange-50">
             <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <Settings className="h-6 w-6" />
-                Building Your Month-End Excel Tables System
+              <CardTitle className="text-orange-800 flex items-center gap-2">
+                <FileText className="h-6 w-6" />
+                TechStart Solutions: March Month-End Challenge
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="prose prose-lg max-w-none text-blue-800">
-                <p>
-                  Now we'll build Sarah's Excel Tables system step-by-step. Follow these instructions carefully 
-                  to create a professional automation foundation that will support your Month-End Wizard.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-blue-100 p-6 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-900 mb-4 text-lg">Step 1: Create the Transaction Table</h4>
-                  <ol className="list-decimal list-inside space-y-3 text-blue-800">
-                    <li><strong>Open Excel and create headers:</strong> Date, Description, Account, Type, Amount</li>
-                    <li><strong>Add sample transactions:</strong> Include at least 10 sample business transactions</li>
-                    <li><strong>Select all data (Ctrl+A)</strong> and press <kbd className="bg-blue-200 px-2 py-1 rounded">Ctrl+T</kbd></li>
-                    <li><strong>Name your table:</strong> Go to Table Design → Table Name and enter "TransactionTable"</li>
-                    <li><strong>Test auto-expansion:</strong> Add a new row below the table and watch it expand automatically</li>
-                  </ol>
-                </div>
-
-                <div className="bg-blue-100 p-6 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-900 mb-4 text-lg">Step 2: Build SUMIF Functions</h4>
-                  <ol className="list-decimal list-inside space-y-3 text-blue-800">
-                    <li><strong>Revenue Total:</strong> <code className="bg-blue-200 px-2 py-1 rounded text-sm">=SUMIF(TransactionTable[Type],"Revenue",TransactionTable[Amount])</code></li>
-                    <li><strong>Expense Total:</strong> <code className="bg-blue-200 px-2 py-1 rounded text-sm">=SUMIF(TransactionTable[Type],"Expense",TransactionTable[Amount])</code></li>
-                    <li><strong>Accrual Total:</strong> <code className="bg-blue-200 px-2 py-1 rounded text-sm">=SUMIF(TransactionTable[Type],"Accrual",TransactionTable[Amount])</code></li>
-                    <li><strong>Test formulas:</strong> Add new transactions and verify formulas update automatically</li>
-                  </ol>
-                </div>
-
-                <div className="bg-blue-100 p-6 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-900 mb-4 text-lg">Step 3: Create Named Ranges</h4>
-                  <ol className="list-decimal list-inside space-y-3 text-blue-800">
-                    <li><strong>Go to Formulas tab → Name Manager</strong></li>
-                    <li><strong>Create "MonthlyRevenue":</strong> Link to your revenue SUMIF formula</li>
-                    <li><strong>Create "MonthlyExpenses":</strong> Link to your expense SUMIF formula</li>
-                    <li><strong>Create "NetIncome":</strong> =MonthlyRevenue-MonthlyExpenses</li>
-                    <li><strong>Test references:</strong> Use these names in other formulas</li>
-                  </ol>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Interactive Practice Component */}
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-800">Interactive Practice: TechStart Solutions Example</CardTitle>
-            </CardHeader>
             <CardContent className="space-y-4">
-              <div className="prose prose-lg max-w-none text-green-800">
-                <p>
-                  Let's practice with Sarah's actual TechStart Solutions data. Use the following sample transactions 
-                  to build your Excel Tables system:
-                </p>
-              </div>
+              <p className="text-orange-800">
+                Here is Sarah's unadjusted trial balance as of March 31, 2024. Your task: identify every adjustment, record the entries, and walk through the complete close.
+              </p>
 
               <div className="overflow-x-auto">
-                <table className="w-full border border-green-300 bg-white rounded">
-                  <thead className="bg-green-100">
+                <table className="w-full border border-orange-300 bg-white rounded">
+                  <thead className="bg-orange-100">
                     <tr>
-                      <th className="border border-green-300 px-3 py-2 text-left text-green-900">Date</th>
-                      <th className="border border-green-300 px-3 py-2 text-left text-green-900">Description</th>
-                      <th className="border border-green-300 px-3 py-2 text-left text-green-900">Account</th>
-                      <th className="border border-green-300 px-3 py-2 text-left text-green-900">Type</th>
-                      <th className="border border-green-300 px-3 py-2 text-left text-green-900">Amount</th>
+                      <th className="border border-orange-300 px-3 py-2 text-left text-orange-900">Account</th>
+                      <th className="border border-orange-300 px-3 py-2 text-right text-orange-900">Debit</th>
+                      <th className="border border-orange-300 px-3 py-2 text-right text-orange-900">Credit</th>
                     </tr>
                   </thead>
-                  <tbody className="text-green-800 text-sm">
-                    <tr>
-                      <td className="border border-green-300 px-3 py-2">3/1/2024</td>
-                      <td className="border border-green-300 px-3 py-2">Website design - Fitness Studio</td>
-                      <td className="border border-green-300 px-3 py-2">Service Revenue</td>
-                      <td className="border border-green-300 px-3 py-2">Revenue</td>
-                      <td className="border border-green-300 px-3 py-2">$1,200</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-green-300 px-3 py-2">3/5/2024</td>
-                      <td className="border border-green-300 px-3 py-2">Office supplies</td>
-                      <td className="border border-green-300 px-3 py-2">Office Expenses</td>
-                      <td className="border border-green-300 px-3 py-2">Expense</td>
-                      <td className="border border-green-300 px-3 py-2">$150</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-green-300 px-3 py-2">3/15/2024</td>
-                      <td className="border border-green-300 px-3 py-2">SEO consulting - earned</td>
-                      <td className="border border-green-300 px-3 py-2">Accounts Receivable</td>
-                      <td className="border border-green-300 px-3 py-2">Accrual</td>
-                      <td className="border border-green-300 px-3 py-2">$500</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-green-300 px-3 py-2">3/20/2024</td>
-                      <td className="border border-green-300 px-3 py-2">Software subscription</td>
-                      <td className="border border-green-300 px-3 py-2">Software Expenses</td>
-                      <td className="border border-green-300 px-3 py-2">Expense</td>
-                      <td className="border border-green-300 px-3 py-2">$89</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-green-300 px-3 py-2">3/25/2024</td>
-                      <td className="border border-green-300 px-3 py-2">Social media package - upfront payment</td>
-                      <td className="border border-green-300 px-3 py-2">Deferred Revenue</td>
-                      <td className="border border-green-300 px-3 py-2">Deferral</td>
-                      <td className="border border-green-300 px-3 py-2">$600</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-green-300 px-3 py-2">3/31/2024</td>
-                      <td className="border border-green-300 px-3 py-2">Computer equipment depreciation</td>
-                      <td className="border border-green-300 px-3 py-2">Depreciation Expense</td>
-                      <td className="border border-green-300 px-3 py-2">Adjustment</td>
-                      <td className="border border-green-300 px-3 py-2">$75</td>
-                    </tr>
+                  <tbody className="text-orange-800 text-sm">
+                    <tr><td className="border border-orange-300 px-3 py-2">Cash</td><td className="border border-orange-300 px-3 py-2 text-right">$18,500</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Accounts Receivable</td><td className="border border-orange-300 px-3 py-2 text-right">$6,200</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Supplies</td><td className="border border-orange-300 px-3 py-2 text-right">$8,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Prepaid Insurance</td><td className="border border-orange-300 px-3 py-2 text-right">$3,600</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Equipment</td><td className="border border-orange-300 px-3 py-2 text-right">$24,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Accumulated Depreciation</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$800</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Accounts Payable</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$4,500</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Unearned Revenue</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$2,400</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Common Stock</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$30,000</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Retained Earnings (beginning)</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$5,000</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Dividends</td><td className="border border-orange-300 px-3 py-2 text-right">$2,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Service Revenue</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$28,000</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Wages Expense</td><td className="border border-orange-300 px-3 py-2 text-right">$12,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Rent Expense</td><td className="border border-orange-300 px-3 py-2 text-right">$3,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2 font-semibold">Totals</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$70,700</td></tr>
                   </tbody>
                 </table>
               </div>
 
-              <div className="bg-green-100 p-4 rounded border border-green-300">
-                <h5 className="font-semibold text-green-900 mb-2">Practice Challenge:</h5>
-                <ol className="list-decimal list-inside space-y-1 text-green-800 text-sm">
-                  <li>Create an Excel Table with this data</li>
-                  <li>Build SUMIF formulas to calculate totals by Type</li>
-                  <li>Add one new transaction and verify your formulas update automatically</li>
-                  <li>Create named ranges for key totals</li>
+              <div className="bg-orange-100 p-4 rounded border border-orange-300">
+                <h5 className="font-semibold text-orange-900 mb-2">Additional Information for Adjustments:</h5>
+                <ol className="text-sm text-orange-800 space-y-2 list-decimal list-inside">
+                  <li>Supplies on hand at March 31: $2,500</li>
+                  <li>Prepaid insurance is a 12-month policy purchased March 1</li>
+                  <li>Equipment was purchased February 1. Useful life: 5 years. Salvage value: $0. Straight-line depreciation.</li>
+                  <li>Wages earned March 28-31 but not yet paid: $1,800</li>
+                  <li>Unearned revenue of $2,400 was for a 2-month project. One month is complete by March 31.</li>
+                  <li>Services worth $900 were performed in March but not yet billed or recorded.</li>
                 </ol>
               </div>
             </CardContent>
           </Card>
 
-          {/* Professional Standards Focus */}
-          <Card className="border-orange-200 bg-orange-50">
+          <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-orange-800">Professional Excel Standards</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="prose prose-lg max-w-none text-orange-800">
-                <p>
-                  Professional Excel models follow specific standards that make them reliable, auditable, 
-                  and scalable. Here are the key principles Sarah follows:
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-orange-900">✅ Best Practices:</h4>
-                  <ul className="space-y-2 text-orange-800 text-sm">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Use descriptive table and range names</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Structured references for all formulas</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Consistent formatting and layouts</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Document assumptions and calculations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>Test with sample data before automation</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-orange-900">⚠️ Common Mistakes to Avoid:</h4>
-                  <ul className="space-y-2 text-orange-800 text-sm">
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0" />
-                      <span>Hard-coded cell references (A1:A50)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0" />
-                      <span>Unnamed or poorly named ranges</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0" />
-                      <span>Inconsistent table structures</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0" />
-                      <span>No validation or error checking</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <AlertTriangle className="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0" />
-                      <span>Overly complex single formulas</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Turn and Talk Discussion */}
-          <Card className="border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Users className="h-5 w-5" />
-                Turn and Talk: Building Review
+              <CardTitle className="text-blue-800">
+                Your Task: Complete the Month-End Close
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <p className="font-medium text-purple-900">
-                  Discussion Prompt (5 minutes):
-                </p>
-                <p className="text-purple-800">
-                  Share your Excel Tables building experience with a partner:
-                </p>
-                <ul className="list-disc list-inside space-y-1 text-purple-800">
-                  <li>Which step was most challenging when creating your table?</li>
-                  <li>How did the auto-expansion feature change your understanding of Excel?</li>
-                  <li>What differences do you notice between structured references and cell references?</li>
-                  <li>What questions do you have about SUMIF functions or named ranges?</li>
-                </ul>
-                
-                <div className="bg-purple-100 p-3 rounded border border-purple-300">
-                  <p className="text-sm text-purple-700">
-                    <strong>Peer Review:</strong> Exchange Excel files with your partner and test each other's 
-                    formulas by adding new transactions. Do the SUMIF functions update correctly?
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Error Prevention & Testing */}
-          <Card className="border-red-200 bg-red-50">
-            <CardHeader>
-              <CardTitle className="text-red-800">Error Prevention & Testing</CardTitle>
-            </CardHeader>
             <CardContent className="space-y-4">
-              <div className="prose prose-lg max-w-none text-red-800">
-                <p>
-                  Before moving to automation, we must test our system thoroughly. Professional Excel models 
-                  include robust error-checking and validation.
-                </p>
-              </div>
+              <p className="text-blue-800">
+                Work through each step of the close workflow. Use the authentic journal entry format below.
+              </p>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-red-100 p-4 rounded border border-red-300">
-                  <h5 className="font-semibold text-red-900 mb-3">Testing Checklist:</h5>
-                  <ul className="space-y-2 text-red-800 text-sm">
-                    <li className="flex items-center gap-2">
-                      <input type="checkbox" className="rounded" />
-                      <span>Add 3 new transactions - do formulas update?</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <input type="checkbox" className="rounded" />
-                      <span>Delete a row - does table resize correctly?</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <input type="checkbox" className="rounded" />
-                      <span>Test with different transaction types</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <input type="checkbox" className="rounded" />
-                      <span>Verify named ranges link correctly</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <input type="checkbox" className="rounded" />
-                      <span>Check calculation accuracy manually</span>
-                    </li>
-                  </ul>
+              <div className="space-y-4">
+                <div className="bg-blue-100 p-5 rounded-lg border border-blue-300">
+                  <h4 className="font-semibold text-blue-900 mb-3">Step 1: Record All Adjusting Entries</h4>
+                  <p className="text-sm text-blue-800 mb-3">
+                    For each adjustment, write the journal entry in proper format. Show the account names, debit/credit amounts, and a brief explanation.
+                  </p>
+                  <div className="bg-white p-4 rounded border border-blue-200 space-y-3">
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm">Adjustment A — Supplies:</p>
+                      <div className="ml-4 text-sm font-mono text-blue-800">
+                        <p>Debit Supplies Expense ........ $______</p>
+                        <p>Credit Supplies ........................ $______</p>
+                        <p className="text-xs text-blue-600 italic">(To record supplies used: $8,000 - $2,500 = $5,500)</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm">Adjustment B — Insurance:</p>
+                      <div className="ml-4 text-sm font-mono text-blue-800">
+                        <p>Debit Insurance Expense ....... $______</p>
+                        <p>Credit Prepaid Insurance ........ $______</p>
+                        <p className="text-xs text-blue-600 italic">(To record 1 month expired: $3,600 / 12 = $300)</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm">Adjustment C — Depreciation:</p>
+                      <div className="ml-4 text-sm font-mono text-blue-800">
+                        <p>Debit Depreciation Expense .. $______</p>
+                        <p>Credit Accum. Depreciation ... $______</p>
+                        <p className="text-xs text-blue-600 italic">(To record monthly depreciation: $24,000 / 60 = $400)</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm">Adjustment D — Accrued Wages:</p>
+                      <div className="ml-4 text-sm font-mono text-blue-800">
+                        <p>Debit Wages Expense ............ $______</p>
+                        <p>Credit Wages Payable ............ $______</p>
+                        <p className="text-xs text-blue-600 italic">(To record wages earned but not yet paid)</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm">Adjustment E — Revenue Earned:</p>
+                      <div className="ml-4 text-sm font-mono text-blue-800">
+                        <p>Debit Unearned Revenue ...... $______</p>
+                        <p>Credit Service Revenue ......... $______</p>
+                        <p className="text-xs text-blue-600 italic">(To record revenue earned: $2,400 / 2 = $1,200)</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm">Adjustment F — Accrued Revenue:</p>
+                      <div className="ml-4 text-sm font-mono text-blue-800">
+                        <p>Debit Accounts Receivable ... $______</p>
+                        <p>Credit Service Revenue ......... $______</p>
+                        <p className="text-xs text-blue-600 italic">(To record services performed but not yet billed)</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-red-100 p-4 rounded border border-red-300">
-                  <h5 className="font-semibold text-red-900 mb-3">Common Error Fixes:</h5>
-                  <ul className="space-y-2 text-red-800 text-sm">
-                    <li><strong>#REF! Error:</strong> Table references broken - recreate table</li>
-                    <li><strong>#NAME? Error:</strong> Table name misspelled in formula</li>
-                    <li><strong>Zero results:</strong> Check criteria spelling in SUMIF</li>
-                    <li><strong>Wrong totals:</strong> Verify data types (text vs numbers)</li>
-                    <li><strong>Missing data:</strong> Ensure table headers are correct</li>
-                  </ul>
+                <div className="bg-blue-100 p-5 rounded-lg border border-blue-300">
+                  <h4 className="font-semibold text-blue-900 mb-3">Step 2: Compute Adjusted Balances</h4>
+                  <p className="text-sm text-blue-800 mb-3">
+                    For each account that changed, compute the adjusted balance.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-3 text-sm">
+                    <div className="bg-white p-3 rounded border border-blue-200">
+                      <p className="font-semibold">Supplies: $8,000 - $5,500 = $2,500</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-blue-200">
+                      <p className="font-semibold">Prepaid Insurance: $3,600 - $300 = $3,300</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-blue-200">
+                      <p className="font-semibold">Accum. Depr.: $800 + $400 = $1,200</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-blue-200">
+                      <p className="font-semibold">Wages Payable: $0 + $1,800 = $1,800</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-blue-200">
+                      <p className="font-semibold">Unearned Revenue: $2,400 - $1,200 = $1,200</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-blue-200">
+                      <p className="font-semibold">A/R: $6,200 + $900 = $7,100</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-100 p-5 rounded-lg border border-blue-300">
+                  <h4 className="font-semibold text-blue-900 mb-3">Step 3: Explain Your Reasoning</h4>
+                  <p className="text-sm text-blue-800 mb-3">
+                    Answer these questions in your own words:
+                  </p>
+                  <ol className="text-sm text-blue-800 space-y-2 list-decimal list-inside">
+                    <li>Why does depreciation use a contra-asset account (Accumulated Depreciation) instead of directly reducing Equipment?</li>
+                    <li>How does the accrued revenue adjustment (Adjustment F) affect both the Income Statement and the Balance Sheet?</li>
+                    <li>If Sarah skipped Adjustment D (accrued wages), which financial statement would be most affected and how?</li>
+                  </ol>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Sarah's Success Story */}
-          <Card className="border-green-200 bg-green-50">
+          <Card className="border-amber-200 bg-amber-50">
             <CardHeader>
-              <CardTitle className="text-green-800">Sarah's Success: The Foundation is Set</CardTitle>
+              <CardTitle className="text-amber-800 flex items-center gap-2">
+                <AlertCircle className="h-5 w-5" />
+                Common Pitfalls to Watch For
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="prose prose-lg max-w-none text-green-800">
-                <p>
-                  With her Excel Tables system in place, Sarah had built the foundation for her Month-End Wizard. 
-                  Her structured references meant she would never again have to manually update formula ranges. 
-                  Her SUMIF functions automatically categorized transactions by type. And her named ranges made 
-                  the entire system readable and maintainable.
-                </p>
-                
-                <div className="bg-green-100 p-4 rounded-lg border border-green-300 not-prose">
-                  <blockquote className="text-green-900 italic">
-                    "For the first time, I felt like my Excel system was actually smarter than me. 
-                    Adding new transactions didn't break anything—it just worked. That's when I knew 
-                    I was ready for the next step: full automation."
-                  </blockquote>
-                  <p className="text-sm text-green-700 mt-2">— Sarah Chen, TechStart Solutions</p>
-                </div>
-
-                <p>
-                  You've now built the same professional foundation. In the next phase, we'll explore 
-                  advanced applications and challenge scenarios that will prepare you for real-world 
-                  month-end automation.
-                </p>
-              </div>
+            <CardContent className="space-y-3">
+              <ul className="text-sm text-amber-800 space-y-2">
+                <li><strong>Depreciation is cumulative:</strong> Accumulated Depreciation carries forward from month to month. March's $400 adds to February's $800 balance.</li>
+                <li><strong>Unearned Revenue is a liability:</strong> When you earn part of it, you reduce the liability and increase revenue—not the other way around.</li>
+                <li><strong>Accrued revenue creates an asset:</strong> Services performed but not billed means Accounts Receivable increases, not Cash.</li>
+                <li><strong>Adjusted trial balance must balance:</strong> If debits and credits don't match after adjustments, find the error before proceeding.</li>
+              </ul>
             </CardContent>
           </Card>
+
+          <ComprehensionCheck
+            title="Phase 3 Understanding Check"
+            description="Test your ability to handle complex adjustments and explain your reasoning."
+            questions={comprehensionQuestions}
+            showExplanations={true}
+          />
         </section>
       </main>
 
