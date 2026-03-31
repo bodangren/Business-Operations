@@ -93,6 +93,7 @@
     - [x] The closing phase clearly sets up the automation lesson
 
 ## Phase 3: Lessons 05-06 (Excel Automation)
+- [x] Phase 3 complete — both Excel automation lessons implemented
 - [x] 3.1 **Lesson 05** - Implement excel-lessons skill
   - [x] 3.1.1 Update lesson-data.ts for Lesson 05
   - [x] 3.1.2 Implement Phase 1-6 with first automation layer
