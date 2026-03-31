@@ -1,78 +1,72 @@
-// Asset & Inventory Tracker, Lesson 7 data - Production Studio focus
+// Unit 07, Lesson 7 — Project Rehearsal: Shared Inventory Dataset
 export const lesson07Data = {
-  id: "mds5x9a0ilvdijl97xj",
-  title: "Dress Rehearsal: One Shared Inventory Dataset, One Shared Workbook",
+  id: "u07_l07_project_rehearsal",
+  title: "Project Rehearsal: One Shared Dataset, One Shared Workbook",
   sequence: 7,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Complete the inventory/asset model and remove hard‑coded outputs",
-    "Enforce exact‑match lookups with IFNA/IFERROR and clear messages",
-    "Bind visuals to structured references and verify reconciliation checks",
-    "Publish an investor‑ready summary with KPI‑driven insights"
+    "Trace a method recommendation back to specific workbook evidence (COGS, turnover, days-on-hand)",
+    "Apply the Definition of Done checklist to evaluate workbook quality",
+    "Identify weak spots in an inventory workbook: missing evidence, unclear logic chain, absent risk statements",
+    "Name the exact structures and habits you must carry into the independent project in Lessons 08-10"
   ],
   keyConcepts: [
-    "Named ranges and structured references (Tables)",
-    "XLOOKUP / INDEX‑MATCH (exact) with IFNA/IFERROR",
-    "Validation + reconciliation (inventory ledger ↔ financial statements)",
-    "KPI thresholds (turnover, days‑on‑hand) driving executive summaries"
+    "Shared rehearsal dataset: everyone uses the same numbers to compare reasoning quality",
+    "Workbook map: Inputs → Purchases → Sales → Valuation → MethodCompare → Checks → Dashboard → Recommendation",
+    "Evidence chain: every recommendation statement must cite specific workbook numbers",
+    "Definition of Done: method logic, validation, reconciliation, and communication quality",
+    "Transfer checklist: what changes in the real project (own dataset, own team, own recommendation)"
   ],
   durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Production‑style sprint with standards, QA, peer audit, and presentation readiness"
+    "Guided rehearsal with shared teacher data, audit routine, peer critique, and transfer check"
   ],
-  rationale:
-    "Students harden the Unit 07 inventory & asset tracker for real stakeholders by enforcing exact references, documenting assumptions, reconciling stock movements, and packaging insights for fast investor review.",
+  rationale: "This lesson is a dress rehearsal before the independent project. Every student works with the same shared dataset and the same workbook structure. The goal is not to learn new content but to practice the exact project workflow: build the workbook, trace the recommendation to evidence, audit quality, and identify what must transfer into Lessons 08-10 when each group gets its own business scenario.",
   status: "Draft"
 }
 
 export const unit07Data = {
   id: "mdrhlhv4ov691yonkpi",
-  title: "Asset & Inventory Tracker",
+  title: "Inventory Accounting",
   sequence: 7
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases
 export const lesson07Phases = [
   {
-    id: "phase_hook_7",
+    id: "phase_rehearsal_purpose_7",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Production kickoff and stakes: investor expects an audit‑ready tracker today",
-    // component: "ComprehensionCheck" – Standards quick check
+    description: "Frame the lesson as a guided rehearsal before the independent project"
   },
   {
-    id: "phase_introduction_7",
+    id: "phase_shared_artifact_7",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Standards, Definition of Done checklist, and short build plan",
-    // component: "FillInTheBlank" – Vocabulary on lookups, validation, reconciliation
+    description: "Orient to the shared workbook: sheet map, evidence blocks, and success criteria"
   },
   {
-    id: "phase_guided_practice_7",
+    id: "phase_guided_audit_7",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Production Sprint I: Finish core links, enforce exact lookups, no hard‑codes",
-    // component: "ErrorCheckingSystem" – Initial rules and safeguards
+    description: "Trace the recommendation back to evidence; identify what makes a workbook weak or trustworthy"
   },
   {
-    id: "phase_independent_practice_7",
+    id: "phase_polish_transfer_7",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Production Sprint II: QA + reconciliation, visuals bound to tables, executive summary",
-    // component: "FinancialDashboard" – Visual verification and KPI readout
+    description: "Complete weak spots, write recommendation and risk statements, name transfer features"
   },
   {
-    id: "phase_assessment_7",
+    id: "phase_peer_audit_7",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "QA review + peer audit with checklist; mini comprehension check on tradeoffs",
-    // component: "PeerCritiqueForm" – Peer audit capture
+    description: "Transfer check comprehension and peer audit tied to the Definition of Done"
   },
   {
-    id: "phase_closing_7",
+    id: "phase_handoff_7",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesis, readiness check, CAP reflection, preview to Lesson08",
-    // component: "ReflectionJournal" – CAP prompts
+    description: "Reflect on what the rehearsal clarified and what changes in the real project"
   }
 ]
