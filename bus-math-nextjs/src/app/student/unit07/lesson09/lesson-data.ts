@@ -4,28 +4,29 @@ export const lesson09Data = {
   sequence: 9,
   unitId: "unit07",
   learningObjectives: [
-    "Build a working prototype on realistic data",
-    "Implement dynamic method switching (SLN/DDB, FIFO/LIFO)",
-    "Add validations and error checks; document test scenarios",
-    "Rehearse and incorporate peer feedback"
+    "Complete all remaining workbook sheets: Valuation, MethodCompare, Checks, Dashboard, and Recommendation",
+    "Calculate ending inventory and COGS using all four methods (FIFO, LIFO, Specific ID, Weighted Average)",
+    "Write a method recommendation with a clear claim, cited workbook evidence, and risk statement",
+    "Test the workbook with scenario checks and incorporate peer feedback"
   ],
   keyConcepts: [
-    "Dynamic method switching with INDEX/MATCH and validation",
-    "SLN vs. DDB depreciation; FIFO vs. LIFO inventory",
-    "Test scenarios, error checks, and documentation",
-    "Rehearsal techniques and feedback integration"
+    "Four-method inventory valuation: FIFO, LIFO, Specific Identification, Weighted Average",
+    "Ending inventory formula: Beginning Inventory + Purchases − COGS = Ending Inventory",
+    "Evidence chain: every claim must cite specific workbook numbers",
+    "Scenario testing and validation checks for workbook reliability",
+    "Recommendation structure: claim, evidence, risk, and defense"
   ],
   pedagogicalApproach: [
-    "Hands-on prototype build followed by structured rehearsal and critique"
+    "Hands-on workbook completion followed by structured peer critique and revision"
   ],
-  rationale: "Working prototypes and rehearsed stories build trust. Validated models and clear explanations show leaders that your recommendations are reliable.",
+  rationale: "A complete, tested workbook with a defensible recommendation shows that your team can translate raw inventory data into a business decision that stakeholders can trust.",
   durationEstimateMinutes: 80,
   status: "Planned"
 }
 
 export const unit07Data = {
   id: "unit07",
-  title: "Asset & Inventory Tracker",
+  title: "Inventory Accounting",
   sequence: 7
 }
 
@@ -34,6 +35,6 @@ export const lesson09Phases = [
     id: "pbl_m2",
     phaseName: "Assessment" as const,
     sequence: 1,
-    description: "Prototype build, testing, and rehearsal with peer critique"
+    description: "Complete the workbook, write the recommendation, test scenarios, and rehearse with peer critique"
   }
 ]
