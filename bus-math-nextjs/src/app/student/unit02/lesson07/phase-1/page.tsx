@@ -9,39 +9,39 @@ import { lesson07Data, unit02Data, lesson07Phases } from "../lesson-data"
 
 const currentPhase = lesson07Phases[0]
 
-const kickoffQuestions = [
+const rehearsalQuestions = [
   {
     id: 'q1',
-    question: 'Which lookup setting best prevents silent mismatches?',
+    question: 'Why is every group using the same data today?',
     answers: [
-      'Exact match (XLOOKUP with match_mode 0 or INDEX/MATCH exact)',
-      'Approximate match (default VLOOKUP)',
-      'Wildcard match by default',
-      'Manual retyping of values'
+      'So the whole class can compare reasoning and quality directly',
+      'Because there is only one dataset available',
+      'To make grading easier for the teacher',
+      'So groups can copy each other\'s work'
     ],
-    explanation: 'Exact match ensures only correct keys return results; approximations can hide errors.'
+    explanation: 'Shared rehearsal data lets every group see the same quality bar and compare how they trace evidence to recommendations.'
   },
   {
     id: 'q2',
-    question: 'Why convert ranges to Tables with structured references?',
+    question: 'What is the main difference between today\'s rehearsal and the real project?',
     answers: [
-      'Ranges auto‑expand and keep formulas working as data grows',
-      'It looks nicer but behaves the same',
-      'Tables make lookups slower',
-      'It disables sorting and filtering'
+      'Today is teacher-guided practice; the project requires independent work with your own scenario',
+      'Today uses Excel; the project uses Google Sheets',
+      'Today has no deadline; the project has a strict deadline',
+      'There is no difference—they are the same'
     ],
-    explanation: 'Tables auto‑expand and structured refs reduce broken ranges and manual fixes.'
+    explanation: 'Today you rehearse with shared data and high guidance. In the project, your team works independently with a unique scenario.'
   },
   {
     id: 'q3',
-    question: 'What should error handling show the user?',
+    question: 'What should a strong project workbook include that today\'s rehearsal models?',
     answers: [
-      'Clear, friendly messages and next steps',
-      'A blank cell only',
-      'A cryptic #N/A and nothing else',
-      'Hidden errors to keep the sheet clean'
+      'A clear evidence chain linking data to the final recommendation',
+      'As many charts as possible',
+      'Hidden formulas to protect intellectual property',
+      'A long narrative summary with no numbers'
     ],
-    explanation: 'Error messages should guide the user to fix the problem.'
+    explanation: 'The rehearsal models an evidence chain—each sheet or section proves something that supports the final recommendation.'
   }
 ]
 
@@ -53,34 +53,46 @@ export default function Phase1Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🚀 Phase 1: Hook</Badge>
+            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">Phase 1: Rehearsal Purpose</Badge>
             <div className="max-w-4xl mx-auto space-y-6">
               <Card className="border-red-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-red-900">Production Kickoff: Investor Arrives at 3 PM</CardTitle>
+                  <CardTitle className="text-red-900">Why We Rehearse Before the Real Project</CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none text-red-900">
                   <p>
-                    Sarah at TechStart Solutions needs your model ready today. She will show an investor a
-                    clean, reliable month‑end dashboard and a short summary. Under pressure, small mistakes
-                    can break trust. Your job is to finish, harden, and prove it’s investor‑ready.
+                    Today is a <strong>guided rehearsal</strong>—not the real project. Every group in this class is working with the same data on purpose. This means you can compare your reasoning, your evidence chain, and your workbook quality directly with other teams.
                   </p>
-                  <p className="mt-4"><strong>Failure cases you must prevent:</strong></p>
+                  <p className="mt-4">
+                    In Lessons 08–10, your team will receive its own unique scenario and dataset. You will work more independently. Today's rehearsal exists so you can see exactly what a complete project workbook looks like before you build your own.
+                  </p>
+                  <p className="mt-4"><strong>What you should learn from today:</strong></p>
                   <ul className="list-disc list-inside">
-                    <li>Lookup returns a wrong client due to non‑exact match</li>
-                    <li>Chart breaks because the data range didn’t auto‑expand</li>
-                    <li>Totals don’t tie out with the bank register</li>
+                    <li>The exact structure every project workbook must follow</li>
+                    <li>How to trace a recommendation back to supporting evidence</li>
+                    <li>What the Definition of Done looks like in practice</li>
+                    <li>Which checks and communication moves your team must carry into the real project</li>
                   </ul>
-                  <p className="mt-4"><strong>Ready example:</strong> Exact‑match lookups, structured references, flags for issues, and a one‑screen dashboard that updates by scenario.</p>
+                  <p className="mt-4">
+                    Sarah at TechStart Solutions needs a reliable month-end close system. Today you rehearse the quality standard. In the project, you will own it.
+                  </p>
                 </CardContent>
               </Card>
 
-              <ComprehensionCheck 
-                questions={kickoffQuestions}
-                title="Standards for Trustworthy Models"
-                description="Quick check on exact matches, structured references, and error handling"
-                showExplanations={true}
-              />
+              <Card className="border-red-200 bg-red-50">
+                <CardHeader>
+                  <CardTitle className="text-red-900">Quick Check: Rehearsal vs. Project</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-red-900 mb-4">Answer these questions to confirm you understand today's purpose.</p>
+                  <ComprehensionCheck 
+                    questions={rehearsalQuestions}
+                    title="Rehearsal Purpose Check"
+                    description="Confirm you understand why we rehearse with shared data before the independent project"
+                    showExplanations={true}
+                  />
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
@@ -90,4 +102,3 @@ export default function Phase1Page() {
     </div>
   )
 }
-

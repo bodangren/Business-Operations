@@ -1,27 +1,29 @@
-// Month-End Wizard, Lesson 7 data - extracted from MCP curriculum database
+// Month-End Wizard, Lesson 7 data - Project Rehearsal
 export const lesson07Data = {
   id: "mds5v4udik3kb3x51po",
-  title: "Production Studio: Completion, QA, and Investor Readiness",
+  title: "Project Rehearsal: Guided Practice with Shared Data",
   sequence: 7,
   unitId: "mdrhkhm79v8qau43696",
   learningObjectives: [
-    "Finish and harden the month‑end automation with exact-match lookups and structured references",
-    "Implement comprehensive validation, reconciliation, and error handling",
-    "Prepare an investor‑ready summary with clear visuals and decision‑focused messaging"
+    "Rehearse the exact workbook structure and quality standard you will use in the group project",
+    "Trace a recommendation back to supporting evidence using the shared teacher dataset",
+    "Run a peer audit against the Definition of Done and identify one strength and one improvement",
+    "Name the structures, checks, and communication moves your team must carry into the real project"
   ],
   keyConcepts: [
-    "XLOOKUP/INDEX‑MATCH with exact match",
-    "IFNA/IFERROR and user‑friendly messages",
-    "Named ranges, Tables, structured references",
-    "Reconciliation tie‑outs and auditability",
-    "Scenario drivers and KPI thresholds"
+    "Shared rehearsal data vs. independent project data",
+    "Definition of Done and quality checklist",
+    "Evidence chain and recommendation logic",
+    "Peer audit with explicit criteria",
+    "Transfer of workbook structures to new scenarios"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Production‑style sprint with Definition of Done checklist",
-    "Peer audit and concise executive communication"
+    "Guided rehearsal with shared teacher-provided data",
+    "Peer audit and evidence-tracing routine",
+    "Transfer check and project handoff"
   ],
-  rationale: "Students complete and quality‑assure the Unit 02 automation, then present a concise, decision‑ready model that builds investor confidence.",
+  rationale: "Students rehearse the exact project workbook structure with shared data so every group sees the same quality bar before working independently in Lessons 08-10.",
   status: "Draft"
 }
 
@@ -34,45 +36,39 @@ export const unit02Data = {
 // Lesson phases from MCP curriculum database
 export const lesson07Phases = [
   {
-    id: "phase_hook_7",
-    phaseName: "Hook" as const,
+    id: "phase_rehearsal_purpose_7",
+    phaseName: "Rehearsal Purpose" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for time-to-close simulation: testing automation",
-    // component: "CashFlowChallenge" (id: 1753927444725skvt2zipj) - A timed simulation to get students in the mindset of a race against the clock.
+    description: "Explain why the class is pausing for one guided rehearsal before independent project work begins",
   },
   {
-    id: "phase_introduction_7",
-    phaseName: "Introduction" as const,
+    id: "phase_shared_artifact_7",
+    phaseName: "Shared Artifact Orientation" as const,
     sequence: 2,
-    description: "Introduce Error-checking routines and data validation techniques and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Orient students to the shared workbook, workbook map, deliverable structure, and success criteria",
   },
   {
-    id: "phase_guided_practice_7",
-    phaseName: "Guided Practice" as const,
+    id: "phase_guided_audit_7",
+    phaseName: "Guided Audit" as const,
     sequence: 3,
-    description: "Collaborative practice applying Error-checking routines and data validation techniques with scaffolded support",
-    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) - To guide the creation of error-checking rules.
+    description: "Model how to inspect the shared artifact and trace the final recommendation back to supporting evidence",
   },
   {
-    id: "phase_independent_practice_7",
-    phaseName: "Independent Practice" as const,
+    id: "phase_polish_transfer_7",
+    phaseName: "Polish and Transfer Practice" as const,
     sequence: 4,
-    description: "Practice Error-checking routines and data validation techniques independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building error-checking rules in a template.
+    description: "Let students complete or polish the shared artifact and identify what project features they must later recreate independently",
   },
   {
-    id: "phase_assessment_7",
-    phaseName: "Assessment" as const,
+    id: "phase_transfer_audit_7",
+    phaseName: "Transfer Check and Peer Audit" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Check that students understand the project standard and can evaluate it in another student's work",
   },
   {
-    id: "phase_closing_7",
-    phaseName: "Closing" as const,
+    id: "phase_reflection_handoff_7",
+    phaseName: "Reflection and Project Handoff" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Lock in the quality standard and preview how students will apply it in their own project scenario",
   }
 ]
