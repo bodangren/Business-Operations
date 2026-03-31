@@ -107,7 +107,7 @@ const lesson02Questions: Unit02Phase5Question[] = [
   {
     id: "lesson02-q1",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Adjusting Entries Foundation",
+    lessonTitle: "Lesson 02 - Accruals and Deferrals",
     prompt: "A business receives $3,000 cash for a 12-month service contract. The correct initial entry is:",
     correctAnswer: "Debit Cash $3,000, Credit Deferred Revenue $3,000",
     distractors: [
@@ -121,7 +121,7 @@ const lesson02Questions: Unit02Phase5Question[] = [
   {
     id: "lesson02-q2",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Adjusting Entries Foundation",
+    lessonTitle: "Lesson 02 - Accruals and Deferrals",
     prompt: "After one month of the above contract, the adjusting entry should be:",
     correctAnswer: "Debit Deferred Revenue $250, Credit Service Revenue $250",
     distractors: [
@@ -135,44 +135,44 @@ const lesson02Questions: Unit02Phase5Question[] = [
   {
     id: "lesson02-q3",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Adjusting Entries Foundation",
-    prompt: "Equipment costing $12,000 with 4-year useful life and $2,000 salvage value has monthly depreciation of:",
-    correctAnswer: "$208.33",
+    lessonTitle: "Lesson 02 - Accruals and Deferrals",
+    prompt: "Sarah completed $800 of work in March but will not invoice until April. The March 31 adjusting entry is:",
+    correctAnswer: "Debit Accounts Receivable $800, Credit Service Revenue $800",
     distractors: [
-      "$250.00",
-      "$300.00",
-      "$1,000.00"
+      "Debit Cash $800, Credit Service Revenue $800",
+      "Debit Service Revenue $800, Credit Accounts Receivable $800",
+      "No entry is needed until the invoice is sent"
     ],
-    explanation: "Annual depreciation = ($12,000 - $2,000) ÷ 4 years = $2,500 per year. Monthly depreciation = $2,500 ÷ 12 months = $208.33.",
-    objectiveTags: ["depreciation", "straight-line-method"]
+    explanation: "Under accrual accounting, revenue is recorded when earned, not when billed. Sarah earned this revenue in March by completing the work, creating a receivable (asset) and revenue.",
+    objectiveTags: ["accrued-revenue", "revenue-recognition"]
   },
   {
     id: "lesson02-q4",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Adjusting Entries Foundation",
-    prompt: "The purpose of closing entries is to:",
-    correctAnswer: "Reset temporary accounts to zero and transfer net income to retained earnings",
+    lessonTitle: "Lesson 02 - Accruals and Deferrals",
+    prompt: "A company paid $600 on March 1 for a 3-month insurance policy. The March 31 adjusting entry should include:",
+    correctAnswer: "Debit Insurance Expense $200, Credit Prepaid Insurance $200",
     distractors: [
-      "Record all cash transactions for the month",
-      "Calculate depreciation on all company assets",
-      "Adjust accounts receivable for uncollectible amounts"
+      "Debit Prepaid Insurance $600, Credit Cash $600",
+      "Debit Insurance Expense $600, Credit Cash $600",
+      "Debit Insurance Expense $200, Credit Cash $200"
     ],
-    explanation: "Closing entries transfer balances from temporary accounts (revenues and expenses) to permanent equity accounts and reset temporary accounts for the next period.",
-    objectiveTags: ["closing-entries", "accounting-cycle"]
+    explanation: "The cash payment was already recorded as Prepaid Insurance (asset). Each month, 1/3 of the cost ($600 ÷ 3 = $200) is expensed. Debit Insurance Expense and credit Prepaid Insurance to reduce the asset.",
+    objectiveTags: ["deferred-expense", "prepaid-items"]
   },
   {
     id: "lesson02-q5",
     lessonId: "lesson02",
-    lessonTitle: "Lesson 02 - Adjusting Entries Foundation",
-    prompt: "Accumulated Depreciation is a contra-asset account, which means it:",
-    correctAnswer: "Reduces the book value of assets while keeping original cost visible",
+    lessonTitle: "Lesson 02 - Accruals and Deferrals",
+    prompt: "If a company forgets to record $500 of accrued revenue, what happens to net income?",
+    correctAnswer: "Net income is understated by $500",
     distractors: [
-      "Increases the total value of assets on the balance sheet",
-      "Records the cash spent on asset maintenance",
-      "Tracks the current market value of company assets"
+      "Net income is overstated by $500",
+      "Net income is not affected because no cash moved",
+      "Only the balance sheet is affected, not net income"
     ],
-    explanation: "A contra-asset account has a credit balance that offsets an asset account's debit balance. This preserves historical cost while showing accumulated depreciation separately.",
-    objectiveTags: ["contra-accounts", "balance-sheet"]
+    explanation: "Missing accrued revenue means revenue is $500 too low. Since revenue increases net income, net income is also understated by $500.",
+    objectiveTags: ["accrued-revenue", "financial-statement-impact"]
   }
 ];
 

@@ -1,234 +1,327 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Calculator, TrendingUp, DollarSign } from "lucide-react"
+import { BookOpen, ArrowRight, TrendingUp, DollarSign } from "lucide-react"
 import { lesson02Data, unit02Data, lesson02Phases } from "../lesson-data"
 
 export default function Unit02Lesson02Phase2() {
   const currentPhase = lesson02Phases.find(p => p.sequence === 2)!
-  
+
   const conceptQuestions = [
     {
       id: "concept1",
-      question: "What is the main purpose of adjusting entries in accrual accounting?",
+      question: "Accrual accounting records revenue when:",
       answers: [
-        "To match revenues to expenses in the correct accounting period",
-        "To record all cash transactions immediately",
-        "To calculate tax obligations for the business",
-        "To update bank account balances"
+        "The work is earned, regardless of when cash arrives",
+        "Cash is received from the customer",
+        "The invoice is sent to the customer",
+        "The month-end close is completed"
       ]
     },
     {
       id: "concept2",
-      question: "When Sarah completes work for a client but won't invoice until next month, she should record:",
+      question: "A client pays Sarah $1,200 upfront for six months of service. On the day cash is received, Sarah should record:",
       answers: [
-        "Accrued revenue (debit Accounts Receivable, credit Service Revenue)",
-        "Deferred revenue (debit Cash, credit Unearned Revenue)",
-        "Nothing until the invoice is sent",
-        "Cash receipt (debit Cash, credit Service Revenue)"
+        "Debit Cash $1,200, Credit Deferred Revenue $1,200 (a liability)",
+        "Debit Cash $1,200, Credit Service Revenue $1,200",
+        "No entry until the work is done",
+        "Debit Deferred Revenue $1,200, Credit Cash $1,200"
       ]
     },
     {
       id: "concept3",
-      question: "The straight-line depreciation formula spreads an asset's cost over its useful life to:",
+      question: "An accrued expense means:",
       answers: [
-        "Match the asset's cost to all periods it helps generate revenue",
-        "Reduce the company's tax liability each year",
-        "Prepare for the asset's eventual replacement",
-        "Calculate the asset's current market value"
+        "A cost has been incurred but not yet paid or billed",
+        "Cash was paid before the expense was incurred",
+        "An invoice has been paid in full",
+        "The expense will never be paid"
       ]
     }
   ]
 
-  const vocabularyBlanks = [
-    {
-      id: "vocab1",
-      text: "When a client pays Sarah for services before she performs the work, she records {blank} because she owes the client future services.",
-      answer: "deferred revenue",
-      hint: "This creates a liability because work is owed to the client",
-      alternativeAnswers: ["unearned revenue"]
-    },
-    {
-      id: "vocab2",
-      text: "Sarah's computer system cost $3,000 with a 3-year useful life and $300 salvage value. Her monthly depreciation expense is {blank}.",
-      answer: "$75",
-      hint: "Calculate: ($3,000 - $300) ÷ 3 years ÷ 12 months"
-    },
-    {
-      id: "vocab3",
-      text: "The {blank} account reduces an asset's book value over time while keeping the original cost on the balance sheet.",
-      answer: "Accumulated Depreciation",
-      hint: "This is a contra-asset account that works with depreciation",
-      alternativeAnswers: ["accumulated depreciation"]
-    }
-  ]
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PhaseHeader 
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50">
+      <PhaseHeader
         lesson={lesson02Data}
         unit={unit02Data}
         phase={currentPhase}
         phases={lesson02Phases}
       />
-      
+
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="prose prose-lg max-w-none">
-          
+
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200 mb-8">
             <h2 className="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-2">
               <BookOpen className="h-6 w-6" />
-              The Building Blocks of Automation
+              The Four Adjustment Types
             </h2>
-            
+
             <p className="text-lg leading-relaxed mb-4">
-              Sarah's ambitious goal—cutting closing time from two days to two hours—required 
-              mastering the specific accounting rules that make month-end closes accurate and 
-              GAAP-compliant. The entire process relies on <strong>adjusting entries</strong>.
+              In Phase 1 you felt the tension: cash timing and work timing do not match.
+              GAAP solves this with <strong>adjusting entries</strong>—journal entries made at
+              month-end to move revenue and expenses into the correct period.
+            </p>
+
+            <p className="text-lg leading-relaxed mb-4">
+              There are exactly four types. Each one answers a simple question:
+              <em>Did cash move before or after the work?</em>
             </p>
 
             <div className="bg-white p-4 rounded border-l-4 border-blue-400">
-              <p className="font-bold text-blue-900 mb-2">What are Adjusting Entries?</p>
+              <p className="font-bold text-blue-900 mb-2">The Rule:</p>
               <p className="text-blue-800">
-                Special entries made at the end of an accounting period to ensure financial 
-                statements accurately reflect what happened during that period, even if cash 
-                hasn't changed hands yet. This is the core of <em>accrual accounting</em>.
+                Adjusting entries <strong>never involve Cash</strong>. They only reclassify
+                amounts that are already on the books or add amounts that should be on the books
+                but are not yet recorded. Cash was already recorded (or will be recorded later)
+                in a separate transaction.
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <Card className="border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="text-green-800 flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5" />
-                  Accrued Revenue
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-green-800 mb-3">
-                  <strong>The Scenario:</strong> Sarah completes a month of social media work for 
-                  the fitness studio but won't send the invoice until the 5th of next month.
-                </p>
-                <div className="bg-white p-3 rounded border border-green-200">
-                  <p className="text-sm font-medium text-green-900 mb-1">The Solution:</p>
-                  <p className="text-sm text-green-800">
-                    Record the revenue in the current month because that's when she earned it, 
-                    following the matching principle.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-200 bg-orange-50">
-              <CardHeader>
-                <CardTitle className="text-orange-800 flex items-center gap-2">
-                  <DollarSign className="h-5 w-5" />
-                  Deferred Revenue
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-orange-800 mb-3">
-                  <strong>The Scenario:</strong> A client pays Sarah $1,200 on March 15th for a 
-                  six-month social media package.
-                </p>
-                <div className="bg-white p-3 rounded border border-orange-200">
-                  <p className="text-sm font-medium text-orange-900 mb-1">The Solution:</p>
-                  <p className="text-sm text-orange-800">
-                    She can't count all that money as revenue immediately—she hasn't done the 
-                    work yet. She recognizes revenue monthly as she completes the service.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-purple-200 bg-purple-50 mb-8">
+          {/* Type 1: Accrued Revenue */}
+          <Card className="border-green-200 bg-green-50 mb-6">
             <CardHeader>
-              <CardTitle className="text-purple-800 flex items-center gap-2">
-                <Calculator className="h-5 w-5" />
-                Straight-Line Depreciation: The Formula That Matters
+              <CardTitle className="text-green-800 flex items-center gap-2">
+                <TrendingUp className="h-5 w-5" />
+                Type 1: Accrued Revenue — Work Done, Cash Not Yet Received
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-purple-800 mb-4">
-                When Sarah bought her computer system, it was misleading to record the entire 
-                cost as an expense in one month. The computer helps her business for years, so 
-                accountants spread the cost over its useful life.
+              <p className="text-green-800 mb-3">
+                <strong>What happened:</strong> Sarah completed a $500 social media campaign
+                for the fitness studio on March 28. She will not invoice until April 5. Cash
+                will arrive in mid-April.
               </p>
-              
-              <div className="bg-white p-4 rounded border border-purple-200 mb-4">
-                <div className="text-center mb-4">
-                  <div className="text-lg font-mono bg-gray-100 p-2 rounded">
-                    Annual Depreciation = (Cost of Asset - Salvage Value) ÷ Useful Life
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-semibold text-purple-900 mb-2">Sarah's Example:</h4>
-                    <ul className="text-sm space-y-1 text-purple-800">
-                      <li>• Computer cost: $3,000</li>
-                      <li>• Useful life: 3 years</li>
-                      <li>• Salvage value: $300</li>
-                      <li>• Annual depreciation: $900</li>
-                      <li>• <strong>Monthly depreciation: $75</strong></li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-purple-900 mb-2">The Calculation:</h4>
-                    <div className="text-sm space-y-1 text-purple-800">
-                      <div>($3,000 - $300) ÷ 3 years = $900/year</div>
-                      <div>$900 ÷ 12 months = $75/month</div>
-                      <div className="font-semibold">Each month: $75 expense</div>
-                    </div>
-                  </div>
+
+              <p className="text-green-800 mb-3">
+                <strong>Why it matters:</strong> Without an adjustment, March revenue is missing
+                $500 of work that actually happened. The income statement understates performance.
+              </p>
+
+              <div className="bg-white p-4 rounded border border-green-200 mb-3">
+                <p className="font-semibold text-green-900 mb-2">The Adjusting Entry (March 31):</p>
+                <div className="font-mono text-sm space-y-1">
+                  <p className="text-green-800">Debit: Accounts Receivable — $500</p>
+                  <p className="text-green-800 ml-8">Credit: Service Revenue — $500</p>
                 </div>
               </div>
 
-              <p className="text-purple-800 text-sm">
-                This ensures the computer's cost is matched to all the months it helps Sarah 
-                earn revenue—a perfect example of the matching principle in action.
+              <div className="bg-green-100 p-3 rounded border border-green-300">
+                <p className="text-sm text-green-800">
+                  <strong>What changed:</strong> Accounts Receivable (asset) goes up by $500.
+                  Service Revenue (equity) goes up by $500. The accounting equation stays balanced.
+                  March now shows the revenue it actually earned.
+                </p>
+              </div>
+
+              <p className="text-green-800 text-sm mt-3">
+                <strong>Signal to use this entry:</strong> You completed work this period but
+                have not yet billed or been paid.
               </p>
             </CardContent>
           </Card>
 
-          <ComprehensionCheck 
+          {/* Type 2: Accrued Expense */}
+          <Card className="border-orange-200 bg-orange-50 mb-6">
+            <CardHeader>
+              <CardTitle className="text-orange-800 flex items-center gap-2">
+                <DollarSign className="h-5 w-5" />
+                Type 2: Accrued Expense — Cost Incurred, Cash Not Yet Paid
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-orange-800 mb-3">
+                <strong>What happened:</strong> Sarah's freelance designer completed $350 of
+                graphic work in the last week of March. The designer will invoice in April.
+                Sarah will pay in April.
+              </p>
+
+              <p className="text-orange-800 mb-3">
+                <strong>Why it matters:</strong> Without an adjustment, March expenses are missing
+                $350. Net income looks higher than it really was.
+              </p>
+
+              <div className="bg-white p-4 rounded border border-orange-200 mb-3">
+                <p className="font-semibold text-orange-900 mb-2">The Adjusting Entry (March 31):</p>
+                <div className="font-mono text-sm space-y-1">
+                  <p className="text-orange-800">Debit: Design Expense — $350</p>
+                  <p className="text-orange-800 ml-8">Credit: Accounts Payable — $350</p>
+                </div>
+              </div>
+
+              <div className="bg-orange-100 p-3 rounded border border-orange-300">
+                <p className="text-sm text-orange-800">
+                  <strong>What changed:</strong> Design Expense (reduces equity) goes up by $350.
+                  Accounts Payable (liability) goes up by $350. March expenses now reflect the
+                  cost that was actually incurred.
+                </p>
+              </div>
+
+              <p className="text-orange-800 text-sm mt-3">
+                <strong>Signal to use this entry:</strong> A cost was incurred this period but
+                no bill has arrived and no cash has been paid.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Type 3: Deferred Revenue */}
+          <Card className="border-purple-200 bg-purple-50 mb-6">
+            <CardHeader>
+              <CardTitle className="text-purple-800 flex items-center gap-2">
+                <ArrowRight className="h-5 w-5" />
+                Type 3: Deferred Revenue — Cash Received Before Work Is Done
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-purple-800 mb-3">
+                <strong>What happened:</strong> A client paid Sarah $1,200 on March 15 for a
+                six-month social media package. By March 31, Sarah has delivered about half a
+                month of service.
+              </p>
+
+              <p className="text-purple-800 mb-3">
+                <strong>What was already recorded:</strong> When the cash arrived, Sarah recorded:
+              </p>
+              <div className="bg-white p-3 rounded border border-purple-200 mb-3 font-mono text-sm">
+                <p className="text-purple-800">Debit: Cash — $1,200</p>
+                <p className="text-purple-800 ml-8">Credit: Deferred Revenue — $1,200</p>
+              </div>
+
+              <p className="text-purple-800 mb-3">
+                <strong>Why an adjustment is needed:</strong> Deferred Revenue is a liability—Sarah
+                owes future service. By March 31 she has earned a portion. She must move that
+                portion from the liability into actual revenue.
+              </p>
+
+              <div className="bg-white p-4 rounded border border-purple-200 mb-3">
+                <p className="font-semibold text-purple-900 mb-2">The Adjusting Entry (March 31):</p>
+                <div className="font-mono text-sm space-y-1">
+                  <p className="text-purple-800">Debit: Deferred Revenue — $100</p>
+                  <p className="text-purple-800 ml-8">Credit: Service Revenue — $100</p>
+                </div>
+                <p className="text-purple-700 text-xs mt-2">
+                  Calculation: $1,200 ÷ 6 months = $200/month. Half of March = ~$100.
+                </p>
+              </div>
+
+              <div className="bg-purple-100 p-3 rounded border border-purple-300">
+                <p className="text-sm text-purple-800">
+                  <strong>What changed:</strong> Deferred Revenue (liability) decreases by $100.
+                  Service Revenue (equity) increases by $100. The liability now reflects only
+                  the work still owed.
+                </p>
+              </div>
+
+              <p className="text-purple-800 text-sm mt-3">
+                <strong>Signal to use this entry:</strong> Cash was received in advance and some
+                (or all) of the work has now been completed.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Type 4: Deferred Expense (Prepaid) */}
+          <Card className="border-teal-200 bg-teal-50 mb-6">
+            <CardHeader>
+              <CardTitle className="text-teal-800 flex items-center gap-2">
+                <DollarSign className="h-5 w-5" />
+                Type 4: Deferred Expense — Cash Paid Before Cost Is Incurred
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-teal-800 mb-3">
+                <strong>What happened:</strong> Sarah paid $600 on March 1 for a three-month
+                insurance policy covering March, April, and May.
+              </p>
+
+              <p className="text-teal-800 mb-3">
+                <strong>What was already recorded:</strong> When cash was paid:
+              </p>
+              <div className="bg-white p-3 rounded border border-teal-200 mb-3 font-mono text-sm">
+                <p className="text-teal-800">Debit: Prepaid Insurance — $600</p>
+                <p className="text-teal-800 ml-8">Credit: Cash — $600</p>
+              </div>
+
+              <p className="text-teal-800 mb-3">
+                <strong>Why an adjustment is needed:</strong> Prepaid Insurance is an asset—it
+                represents future coverage. By March 31, one month of coverage has been "used up."
+                That portion must move from the asset into an expense.
+              </p>
+
+              <div className="bg-white p-4 rounded border border-teal-200 mb-3">
+                <p className="font-semibold text-teal-900 mb-2">The Adjusting Entry (March 31):</p>
+                <div className="font-mono text-sm space-y-1">
+                  <p className="text-teal-800">Debit: Insurance Expense — $200</p>
+                  <p className="text-teal-800 ml-8">Credit: Prepaid Insurance — $200</p>
+                </div>
+                <p className="text-teal-700 text-xs mt-2">
+                  Calculation: $600 ÷ 3 months = $200/month.
+                </p>
+              </div>
+
+              <div className="bg-teal-100 p-3 rounded border border-teal-300">
+                <p className="text-sm text-teal-800">
+                  <strong>What changed:</strong> Prepaid Insurance (asset) decreases by $200.
+                  Insurance Expense (reduces equity) increases by $200. The asset now reflects
+                  only the two months of coverage remaining.
+                </p>
+              </div>
+
+              <p className="text-teal-800 text-sm mt-3">
+                <strong>Signal to use this entry:</strong> Cash was paid in advance for something
+                that provides benefit over multiple periods, and some of that benefit has now been used.
+              </p>
+            </CardContent>
+          </Card>
+
+          <ComprehensionCheck
             questions={conceptQuestions}
-            title="Understanding Adjusting Entries"
+            title="Concept Check: Four Adjustment Types"
             showExplanations={true}
           />
 
-          <FillInTheBlank 
-            sentences={vocabularyBlanks}
-            title="Key Concepts Practice"
-            description="Fill in the blanks to complete these important accounting concepts"
-            showHints={true}
-          />
-
           <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200 mt-8">
-            <h3 className="text-xl font-bold text-yellow-900 mb-3">🎯 Why This Foundation Matters</h3>
-            <p className="text-yellow-800 mb-4">
-              Mastering accruals, deferrals, and depreciation was Sarah's first step in creating 
-              the logic for her Month-End Wizard. You can't automate what you don't understand!
-            </p>
-            
-            <div className="bg-white p-4 rounded border border-yellow-200">
-              <p className="font-semibold text-yellow-900 mb-2">Next up:</p>
-              <p className="text-yellow-800">
-                Now that you understand the <em>what</em> and <em>why</em> of adjusting entries, 
-                you'll learn to create the precise debit and credit mappings that will become 
-                the blueprint for your automation.
-              </p>
+            <h3 className="text-xl font-bold text-yellow-900 mb-3">Summary: The Four Types at a Glance</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b-2 border-yellow-300">
+                    <th className="text-left py-2 px-3 text-yellow-900">Type</th>
+                    <th className="text-left py-2 px-3 text-yellow-900">Cash Timing</th>
+                    <th className="text-left py-2 px-3 text-yellow-900">Adjustment Moves</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-yellow-200">
+                    <td className="py-2 px-3 font-medium">Accrued Revenue</td>
+                    <td className="py-2 px-3">Cash comes <em>after</em> work</td>
+                    <td className="py-2 px-3">A/R up, Revenue up</td>
+                  </tr>
+                  <tr className="border-b border-yellow-200">
+                    <td className="py-2 px-3 font-medium">Accrued Expense</td>
+                    <td className="py-2 px-3">Cash goes <em>after</em> cost</td>
+                    <td className="py-2 px-3">Expense up, A/P up</td>
+                  </tr>
+                  <tr className="border-b border-yellow-200">
+                    <td className="py-2 px-3 font-medium">Deferred Revenue</td>
+                    <td className="py-2 px-3">Cash comes <em>before</em> work</td>
+                    <td className="py-2 px-3">Deferred Rev down, Revenue up</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-3 font-medium">Deferred Expense</td>
+                    <td className="py-2 px-3">Cash goes <em>before</em> cost</td>
+                    <td className="py-2 px-3">Expense up, Prepaid down</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-      
-      <PhaseFooter 
+
+      <PhaseFooter
         lesson={lesson02Data}
         unit={unit02Data}
         phase={currentPhase}

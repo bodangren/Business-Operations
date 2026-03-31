@@ -41,21 +41,21 @@
     - [x] Students understand why slow closes hurt the business
     - [x] The lesson points cleanly to adjusting-entry logic next
 
-- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
-  - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
-  - [ ] 2.2.2 Implement Phase 1-6 with accruals and deferrals
+- [x] 2.2 **Lesson 02** - Implement accounting-principles skill
+  - [x] 2.2.1 Update lesson-data.ts for Lesson 02
+  - [x] 2.2.2 Implement Phase 1-6 with accruals and deferrals
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and strong representational supports
     - Phase 3: Add meaningful complication, reduce prompts, shift toward cleaner accounting layouts, ask students to explain choices
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on definitions, method recognition, reasoning, misconceptions
     - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
-  - [ ] 2.2.3 Use concrete business timing problems before formal definitions
-  - [ ] 2.2.4 Show how adjustments change the statements
-  - [ ] 2.2.5 Make Phase 4 a deliberate-practice loop on identifying and recording adjustments
+  - [x] 2.2.3 Use concrete business timing problems before formal definitions
+  - [x] 2.2.4 Show how adjustments change the statements
+  - [x] 2.2.5 Make Phase 4 a deliberate-practice loop on identifying and recording adjustments
   - **Done when**:
-    - [ ] Students can tell when revenue/expense timing is wrong
-    - [ ] Phase 5 checks adjustment reasoning, not Excel navigation
+    - [x] Students can tell when revenue/expense timing is wrong
+    - [x] Phase 5 checks adjustment reasoning, not Excel navigation
 
 - [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
   - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
