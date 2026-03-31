@@ -107,21 +107,21 @@
      - [x] The workbook catches common posting or balance errors
      - [x] Students can explain how the checks prove reliability
 
-- [ ] 3.3 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.3.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.3.2 Implement Phase 1-6 with investor-facing summary
-    - Phase 1: Open with investor scenario where summary matters, make tool feel necessary
-    - Phase 2: Name summary/dashboard pattern, explain parts, teach common failure mode
-    - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
-    - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
-    - Phase 5: Short technical check, brief artifact task requiring workbook defense, not another build sprint
-    - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.3.3 Build summary layer showing accuracy and readiness quickly
-  - [ ] 3.3.4 Add investor-ready formatting and labels
-  - [ ] 3.3.5 Phase 5: Brief defense of the workbook, not another build sprint
-  - **Done when**:
-    - [ ] The workbook has a clear summary or dashboard layer
-    - [ ] Students can cite workbook evidence in plain language
+- [x] 3.3 **Lesson 06** - Implement excel-lessons skill
+   - [x] 3.3.1 Update lesson-data.ts for Lesson 06
+   - [x] 3.3.2 Implement Phase 1-6 with investor-facing summary
+     - Phase 1: Open with investor scenario where summary matters, make tool feel necessary
+     - Phase 2: Name summary/dashboard pattern, explain parts, teach common failure mode
+     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
+     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
+     - Phase 5: Short technical check, brief artifact task requiring workbook defense, not another build sprint
+     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
+   - [x] 3.3.3 Build summary layer showing accuracy and readiness quickly
+   - [x] 3.3.4 Add investor-ready formatting and labels
+   - [x] 3.3.5 Phase 5: Brief defense of the workbook, not another build sprint
+   - **Done when**:
+     - [x] The workbook has a clear summary or dashboard layer
+     - [x] Students can cite workbook evidence in plain language
 
 ### Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill

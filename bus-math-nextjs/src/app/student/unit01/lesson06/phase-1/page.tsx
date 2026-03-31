@@ -3,50 +3,44 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { Users, AlertTriangle, MonitorSmartphone } from "lucide-react"
-// Import dashboard directly; it's a client component with its own boundary
-// This avoids using next/dynamic with ssr:false in a Server Component
-import { FinancialDashboard } from "@/components/charts/FinancialDashboard"
+import { AlertTriangle, Clock, TrendingUp, Users } from "lucide-react"
 import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[0]
 
-// Note: FinancialDashboard is a client component ('use client' in file)
-// Importing it directly from this Server Component is supported by Next.js
-
 const hookQuestions = [
   {
     id: "q1",
-    question: "Sarah needs a single dashboard that switches Base/Stretch/Downside by name. What is the safest lookup setting?",
+    question: "An investor asks Sarah: 'How do you know your books are accurate?' What makes the strongest impression?",
     answers: [
-      "Exact match (0/FALSE) with IFNA/IFERROR",
-      "Approximate match (1/TRUE) for faster speed",
-      "Wildcard match so any spelling works",
-      "No lookup—hard‑code each chart to a tab"
+      "A clean summary layer showing debits equal credits, all error checks pass, and a clear evidence trail",
+      "A detailed explanation of every SUMIF formula used",
+      "A promise that she checked everything manually yesterday",
+      "A printout of all 50 transactions for the investor to verify"
     ],
-    explanation: "Dashboards must be stable. Use exact match plus IFNA/IFERROR to prevent silent failures."
+    explanation: "Investors want to trust your system, not audit it personally. A clean summary with visible error checks proves reliability quickly."
   },
   {
     id: "q2",
-    question: "A chart stops updating when Sarah adds new rows. What likely caused it?",
+    question: "Sarah's trial balance shows debits equal credits ($10,000), but the summary says 'Review Needed' because several Check column cells are red. What should she tell the investor?",
     answers: [
-      "Chart points to a static A2:A20 range, not a Table column",
-      "Excel can only show 20 rows in a chart",
-      "The dataset must be sorted A→Z to refresh",
-      "The sheet tab name changed and breaks all charts"
+      "'The totals balance, but I've identified three specific accounts that need review and correction.'",
+      "'Everything is perfect—debits equal credits.'",
+      "'I don't know what the red cells mean, but the numbers look right.'",
+      "'I'll need to re-enter all transactions to make sure.'"
     ],
-    explanation: "Bind charts to Tables/structured references so ranges expand automatically."
+    explanation: "Professional transparency builds trust. Admit what works and what needs attention—don't hide problems."
   },
   {
     id: "q3",
-    question: "An investor asks, ‘What should we do if margin drops below 20%?’ What belongs on Sarah’s dashboard?",
+    question: "Why is plain language important on an investor-facing summary?",
     answers: [
-      "A clear KPI card and an executive summary note tied to the threshold",
-      "Hidden calculations so the dashboard stays simple",
-      "Ten tabs of supporting math for later reading",
-      "A one‑time screenshot pasted into a slide deck"
+      "Investors may not know accounting terms—they need clear status and next steps in plain words",
+      "Using technical jargon makes the workbook look more professional",
+      "Plain language is only needed for internal team documents",
+      "The summary is just for Sarah's reference, not for investors"
     ],
-    explanation: "Decision‑ready dashboards pair KPIs with plain‑language guidance at key thresholds."
+    explanation: "Your workbook speaks to the audience. Use plain language to communicate status, risks, and actions clearly."
   }
 ]
 
@@ -64,54 +58,99 @@ export default function Unit01Lesson06Phase1() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              📊 Phase 1: Hook — Sarah’s Live Dashboard Demo
+              ⏰ Phase 1: Hook — 2 Minutes to Prove Reliability
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              From Hard‑Coded Tabs to Integrated, Decision‑Ready Dashboards
+              From Working Ledger to Investor-Ready Summary
             </h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              A real client asks Sarah for one clean view with scenario toggles and clear
-              decision cues. Her old workbook uses separate sheets for each case. It breaks.
-              The integrated version uses a driver table, exact‑match lookups, and charts that
-              expand automatically.
+              Sarah Chen sits down with a potential investor. Her ledger is accurate and her error
+              checks catch mistakes, but the presentation is messy. The investor asks: <strong>"How do you know
+              your books are clean?"</strong> Sarah has 2 minutes to prove reliability.
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto grid gap-6">
-          <Card className="border-blue-200 bg-white">
-            <CardHeader>
-              <CardTitle className="text-blue-800 flex items-center gap-2">
-                <MonitorSmartphone className="h-5 w-5" />
-                Live Preview: Investor‑Ready Dashboard
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <FinancialDashboard title="TechStart Scenario Dashboard (Quick Preview)" />
-            </CardContent>
-          </Card>
-
           <Card className="border-red-200 bg-red-50">
             <CardHeader>
               <CardTitle className="text-red-800 flex items-center gap-2">
+                <Clock className="h-5 w-5" />
+                The Pressure Test
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-red-900 space-y-3">
+              <p>
+                Sarah needs to show that her accounting system is trustworthy. The investor doesn't want to
+                audit 50 transactions—they want to see:
+              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>A clear status</strong> — Are the books balanced or not?</li>
+                <li><strong>Visible safeguards</strong> — What error checks are in place?</li>
+                <li><strong>Plain language</strong> — What does this mean for the business?</li>
+                <li><strong>Next steps</strong> — What action should be taken?</li>
+              </ul>
+              <div className="bg-white border border-red-200 rounded p-3 mt-3">
+                <p className="font-semibold text-red-800">The Problem</p>
+                <p className="mt-1">
+                  Sarah's current workbook has all the right formulas, but there's no summary layer.
+                  She has to scroll through multiple sheets to answer basic questions. Under time pressure,
+                  this looks disorganized and raises doubts.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-900 flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5" />
                 Before vs After
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-red-900 space-y-2">
-              <ul className="list-disc list-inside space-y-1">
-                <li><strong>Before:</strong> Hard‑coded ranges; charts miss new rows; manual tab switching</li>
-                <li><strong>After:</strong> Named driver table; XLOOKUP exact‑match; charts bound to Table columns</li>
-                <li><strong>Result:</strong> Fast scenario toggles, clear KPIs, and investor trust</li>
-              </ul>
+            <CardContent className="text-sm text-amber-900 space-y-2">
+              <div className="bg-white border border-amber-200 rounded p-3 space-y-2">
+                <p className="font-semibold">Before: Scattered, Technical</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Debits = Credits hidden in Trial Balance sheet</li>
+                  <li>Error checks only visible on specific tabs</li>
+                  <li>Formulas exposed but status unclear</li>
+                  <li>No single view for quick assessment</li>
+                </ul>
+              </div>
+              <div className="bg-white border border-amber-200 rounded p-3 space-y-2">
+                <p className="font-semibold">After: Clear, Investor-Ready</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Dedicated Summary sheet with key metrics</li>
+                  <li>Visual status indicators (green/red/yellow)</li>
+                  <li>Plain language explanations</li>
+                  <li>Evidence chain visible in one place</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-900 flex items-center gap-2">
+                <TrendingUp className="h-5 w-5" />
+                Why This Matters
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-blue-900">
+              <p>
+                Professional accounting systems don't just calculate correctly—they communicate
+                reliability. Investors, auditors, and stakeholders need to trust your books without
+                digging into the details. Today you'll build that trust signal.
+              </p>
             </CardContent>
           </Card>
 
           <Card className="border-gray-200">
             <CardContent>
               <ComprehensionCheck
-                title="Integration Pitfalls and Dashboard Best Practices"
-                description="Predict stable build choices that make dashboards decision‑ready."
+                title="Quick Comprehension Check"
+                description="Think through what makes an investor-facing summary trustworthy."
                 questions={hookQuestions}
                 showExplanations={true}
                 allowRetry={true}
@@ -123,24 +162,23 @@ export default function Unit01Lesson06Phase1() {
             <CardHeader>
               <CardTitle className="text-purple-800 flex items-center gap-2">
                 <Users className="h-5 w-5" />
-                Turn and Talk: Clarity Under Pressure
+                Think-Pair-Share
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-purple-900 space-y-2 text-sm">
+            <CardContent className="text-purple-900 text-sm space-y-2">
               <p>
-                Sarah has 2 minutes to explain a downside result. Discuss with a partner:
+                With a partner, discuss: What three pieces of information would you put on a one-page
+                summary to prove your ledger is trustworthy?
               </p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Which KPIs should she show first, and why?</li>
-                <li>How do scenario names help decision‑makers compare quickly?</li>
-                <li>What one sentence should appear in the executive summary?</li>
-              </ul>
+              <p className="mt-2">
+                Be ready to share one idea with the class.
+              </p>
             </CardContent>
           </Card>
         </section>
       </main>
 
-      <PhaseFooter 
+      <PhaseFooter
         lesson={lesson06Data}
         unit={unit01Data}
         phase={currentPhase}

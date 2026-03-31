@@ -22,14 +22,14 @@ export default function Unit01Lesson06Phase6() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-              🧭 Phase 6: Closing — Present with Confidence
+              🧭 Phase 6: Closing — From Ledger to Trust
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Integrated Automation: Your Best One‑Minute Story
+              Investor-Ready Summary: Your Trust Signal
             </h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Summarize what changed: faster switching, stable charts, clear KPIs, and better
-              decisions. Prepare a short script you could use in a live investor call.
+              Summarize what you built: a summary layer that turns a working ledger into an investor-ready document.
+              Prepare for the project rehearsal lesson where you'll practice with shared data.
             </p>
           </div>
         </section>
@@ -43,21 +43,20 @@ export default function Unit01Lesson06Phase6() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-amber-900 text-sm">
-              You built a decision‑ready dashboard for Sarah. In Lesson07, you will refine
-              examples, review with stakeholders, and strengthen your executive summaries with
-              professional models.
+              You built an investor-facing summary layer that shows ledger accuracy, error-checking status, and key metrics in a clean, professional format.
+              In Lesson 07 (Project Rehearsal), you'll use a shared teacher dataset to practice the exact structure you'll need for your group project.
             </CardContent>
           </Card>
         </section>
 
         <section className="max-w-4xl mx-auto">
-          <ReflectionJournal 
-            unitTitle="CAP Reflection — Integration & Dashboards"
+          <ReflectionJournal
+            unitTitle="CAP Reflection — Investor Summary"
           />
         </section>
       </main>
 
-      <PhaseFooter 
+      <PhaseFooter
         lesson={lesson06Data}
         unit={unit01Data}
         phase={currentPhase}

@@ -9,7 +9,7 @@ import {
   ClipboardList,
   Download,
   FileText,
-  Gauge,
+  Shield,
   Target
 } from "lucide-react"
 import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
@@ -18,67 +18,67 @@ const currentPhase = lesson06Phases[3]
 
 const independentPracticeQuestions = [
   {
-    id: "scenario-switch",
+    id: "summary-structure",
     question:
-      "After importing the CSV, what is the very first feature you should build so every other part of the workbook responds to the same choice?",
+      "What is the first thing you should build on your Summary sheet?",
     answers: [
-      "Create the Selected_Scenario dropdown that reads Drivers[Scenario].",
-      "Insert the revenue chart because visuals motivate the team.",
-      "Write the executive summary sentence so you know the tone.",
-      "Format the Drivers table with colors before doing formulas."
+      "A clear title and version/date so investors know when it was last updated.",
+      "Complex conditional formatting rules.",
+      "All the raw transaction data.",
+      "A chart before any numbers are linked."
     ],
     explanation:
-      "The dropdown controls every lookup. Without it, the rest of the workbook cannot respond to scenario changes."
+      "Start with context: title, date, and version. Investors need to trust that the information is current before they look at numbers."
   },
   {
-    id: "validation",
+    id: "evidence-chain",
     question:
-      "Sarah tests an edge case with a negative UnitCost. What should happen in a finished model?",
+      "What belongs in the 'Evidence Chain' section of your summary?",
     answers: [
-      "A validation flag should appear so she knows the data is unsafe to present.",
-      "The workbook should ignore the row and keep yesterday's numbers.",
-      "Excel should close automatically because the input is not real.",
-      "Nothing should happen because negatives are impossible to prevent."
+      "What the workbook proves, how it proves it, and where the data comes from.",
+      "Every formula used in the workbook.",
+      "Personal feelings about the project.",
+      "Only the final balance number."
     ],
     explanation:
-      "Professional models do not hide bad data. They surface it quickly so the analyst can decide what to fix."
+      "The evidence chain tells investors why they can trust your numbers without auditing every transaction themselves."
   },
   {
-    id: "summary",
+    id: "plain-language",
     question:
-      "Which detail belongs in Sarah’s one-sentence investor summary?",
+      "Which status message is best for investors?",
     answers: [
-      "A clear callout of the key KPI compared to its target.",
-      "The full list of every formula in the workbook.",
-      "A step-by-step guide for adding chart titles.",
-      "Personal feelings about how fun the assignment was."
+      "'Debits equal credits ($12,500). All error checks pass. Ledger is audit-ready.'",
+      "'SUM(B:B)=SUM(C:C) and COUNTIF(Check, \"<>\")=0.'",
+      "'Everything looks good, I guess.'",
+      "'The spreadsheet is perfect.'"
     ],
     explanation:
-      "Investors want signal, not noise. Mention the KPI, the target, and the next action in one tight sentence."
+      "Investors want conclusions, not formulas. State what's true, cite the numbers, and say what that means for the business."
   }
 ]
 
 const reflectionPrompts = [
   {
-    id: "courage-scenario",
+    id: "courage-summary",
     category: "courage" as const,
     prompt:
-      "Where did you have to take a risk or try a new Excel skill while wiring the scenario switchboard?",
-    placeholder: "Describe the exact step that felt bold (for example, writing IFNA around XLOOKUP)..."
+      "Where did you have to take a risk or try a new formatting or formula skill while building the summary sheet?",
+    placeholder: "Describe the exact step that felt bold (for example, writing the nested IF status formula)..."
   },
   {
-    id: "adaptability-flags",
+    id: "adaptability-formatting",
     category: "adaptability" as const,
     prompt:
-      "What validation warning surprised you during testing, and how did you adjust the model to respond?",
-    placeholder: "Explain how the flag helped you catch an issue and the change you made..."
+      "What formatting choice surprised you during testing, and how did you adjust the summary to respond?",
+    placeholder: "Explain how the change helped make the summary clearer..."
   },
   {
-    id: "persistence-summary",
+    id: "persistence-evidence",
     category: "persistence" as const,
     prompt:
-      "When your executive summary sentence did not read clearly at first, what revisions did you make to keep going?",
-    placeholder: "Share the edits you tried and how you kept the message data-driven..."
+      "When your evidence chain didn't read clearly at first, what revisions did you make to keep going?",
+    placeholder: "Share the edits you tried and how you kept the message clear..."
   }
 ]
 
@@ -96,14 +96,14 @@ export default function Unit01Lesson06Phase4() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
-              🚀 Phase 4: Independent Practice — Integration Mastery Challenges
+              🚀 Phase 4: Independent Practice — Build the Investor Summary
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Build Sarah’s Investor-Ready Scenario Switchboard
+              Build Sarah's Investor-Facing Summary Layer
             </h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Now it is your turn to lead the build. Combine the Drivers table, scenario dropdown,
-              calculations, charts, and validation into one workbook Sarah can show to investors in under a minute.
+              Now it's your turn to build the summary sheet that turns a working ledger into an investor-ready document.
+              You'll link key metrics, add visual status cues, and document the evidence chain.
             </p>
           </div>
         </section>
@@ -113,25 +113,29 @@ export default function Unit01Lesson06Phase4() {
             <CardHeader>
               <CardTitle className="text-blue-900 flex items-center gap-2">
                 <Download className="h-5 w-5" />
-                Integration Dataset
+                Starting Workbook
               </CardTitle>
             </CardHeader>
             <CardContent className="text-blue-900 space-y-3 leading-relaxed">
               <p>
-                Start with the authentic practice data Sarah collected. Import it as an Excel Table named
-                <strong> Drivers</strong>. Every row represents a full scenario ready for analysis.
+                Start with your completed Lesson 05 workbook (or use the checkpoint workbook below).
+                It should have a working ledger, trial balance, and self-auditing formulas.
               </p>
               <a
-                href="/resources/unit01-ledger-integration-practice.csv"
+                href="/resources/unit01-lesson05-checkpoint.xlsx"
                 download
                 className="inline-flex items-center gap-2 font-semibold underline text-blue-700"
               >
-                Download: unit01-ledger-integration-practice.csv
+                Download Checkpoint: unit01-lesson05-checkpoint.xlsx
               </a>
               <p>
-                The edge-case rows (MissingScenario, Typo-Case, stale dates) exist to stress-test your
-                validation logic. Do not delete them—use them.
+                If you use your own workbook, verify that:
               </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Debits and credits balance</li>
+                <li>Check column shows 0 for all rows</li>
+                <li>Error flags are working</li>
+              </ul>
             </CardContent>
           </Card>
 
@@ -139,41 +143,41 @@ export default function Unit01Lesson06Phase4() {
             <CardHeader>
               <CardTitle className="text-gray-900 flex items-center gap-2">
                 <ClipboardList className="h-5 w-5" />
-                Independent Build Steps
+                Build Sequence
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-800 space-y-4 leading-relaxed">
               <ol className="list-decimal list-inside space-y-2 text-base">
                 <li>
-                  <strong>Settings Sheet</strong>: Create <code>Selected_Scenario</code> (B2) with Data Validation pointing to
-                  <code>=Drivers[Scenario]</code>. Add a note reminding users that names are case-sensitive.
+                  <strong>Create Summary Sheet</strong>: Insert a new sheet named "Summary" at the front of the workbook.
+                  Add a title, your name, and the current date using =TEXT(TODAY(), "mm/dd/yyyy").
                 </li>
                 <li>
-                  <strong>Model Sheet</strong>: Use XLOOKUP+IFNA to pull price, unit cost, volume, AR/AP days, overhead,
-                  and target thresholds into a clean input block.
+                  <strong>Link Key Metrics</strong>: Pull Debits Total, Credits Total, Difference, Account Count, and Transaction Count
+                  from the Trial Balance sheet using cell references (e.g., ='Trial Balance'!B10).
                 </li>
                 <li>
-                  <strong>KPIs</strong>: Calculate Revenue, Margin %, Cash Days, and Runway in their own section. Reference
-                  the pulled inputs with structured names (no A1:C10).
+                  <strong>Build Status Formulas</strong>: Use IF formulas to create plain-language status messages
+                  (e.g., =IF(Difference=0, "Balanced", "Review Needed")).
                 </li>
                 <li>
-                  <strong>Visuals</strong>: Insert a clustered column chart comparing scenarios and KPI cards (large numbers)
-                  that update the moment the dropdown changes.
+                  <strong>Apply Conditional Formatting</strong>: Add green/red/yellow fill to status cells based on values.
+                  Green for perfect balance, red for issues, yellow for warnings.
                 </li>
                 <li>
-                  <strong>Validation + Flags</strong>: Build messages for missing scenario, stale AsOfDate, negative costs,
-                  and AR Days &gt; 90. Color-code them so investors see the status quickly.
+                  <strong>Write Evidence Chain</strong>: In a labeled section, document what the workbook proves,
+                  how it proves it, and where the data comes from.
                 </li>
                 <li>
-                  <strong>Executive Summary</strong>: Craft a one-sentence formula using IF statements. Mention the KPI,
-                  the target, and the recommended action when targets are missed.
+                  <strong>Professional Polish</strong>: Apply consistent fonts, alignment, borders, and spacing.
+                  Lock formula cells so users can't accidentally edit them.
                 </li>
               </ol>
               <div className="bg-orange-100 border border-orange-200 rounded-lg p-4 text-orange-900 flex gap-3">
-                <Gauge className="h-6 w-6 flex-shrink-0" />
+                <Shield className="h-6 w-6 flex-shrink-0" />
                 <p>
-                  Quick test: switch to the Typo-Case scenario. If your summary warns about the missing name and your charts
-                  do not crash, your wiring is strong.
+                  Quick test: intentionally break one transaction (change a debit amount).
+                  If your Summary sheet shows "Review Needed" and turns red immediately, your status system is working.
                 </p>
               </div>
             </CardContent>
@@ -183,17 +187,17 @@ export default function Unit01Lesson06Phase4() {
             <CardHeader>
               <CardTitle className="text-green-900 flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5" />
-                Investor-Ready Quality Checklist
+                Definition of Done
               </CardTitle>
             </CardHeader>
             <CardContent className="text-green-900 space-y-2 leading-relaxed">
               <ul className="list-disc list-inside space-y-2 text-base">
-                <li>Scenario switching by name works and shows a human-readable warning when it fails.</li>
-                <li>Charts and KPI tiles refresh instantly with every scenario change or new row.</li>
-                <li>Validation flags catch stale dates, negative costs, and AR Days above 90.</li>
-                <li>Margin % and Cash Days are compared to their targets with clear OK/Beyond Target language.</li>
-                <li>All formulas use tables or named ranges; no hard-coded cell coordinates.</li>
-                <li>The executive summary names the KPI, cites the target, and offers an action verb.</li>
+                <li>Summary sheet is first tab with clear title, author, and date.</li>
+                <li>Key metrics are linked from Trial Balance (no hard-coded numbers).</li>
+                <li>Status cells show plain-language messages with conditional formatting colors.</li>
+                <li>Evidence chain section explains what the workbook proves and how.</li>
+                <li>Professional formatting: consistent fonts, alignment, borders, and spacing.</li>
+                <li>Formula cells are locked to prevent accidental edits.</li>
               </ul>
             </CardContent>
           </Card>
@@ -202,26 +206,23 @@ export default function Unit01Lesson06Phase4() {
             <CardHeader>
               <CardTitle className="text-amber-900 flex items-center gap-2">
                 <FileText className="h-5 w-5" />
-                Executive Summary Inspiration
+                Evidence Chain Template
               </CardTitle>
             </CardHeader>
             <CardContent className="text-amber-900 space-y-3 leading-relaxed">
-              <p>
-                Investors read for signal, not story time. Use these sentence stems to stay focused:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-base">
-                <li>
-                  <strong>When targets are met</strong>: “Stretch scenario holds <strong>{"{Margin%}"}</strong> above the{' '}
-                  <strong>{"{Target}"}</strong>, so keep marketing spend steady.”
-                </li>
-                <li>
-                  <strong>When targets miss</strong>: “Downside cash gap is <strong>{"{CashDays}"}</strong> days (goal{' '}
-                  <strong>{"{Target}"}</strong>). Delay vendor payments 5 days and monitor collections daily.”
-                </li>
-              </ul>
-              <p>
-                Challenge yourself to keep the sentence under 25 words. Investors should understand the risk and your suggested fix at a glance.
-              </p>
+              <p>Use this template for your evidence chain section:</p>
+              <div className="bg-white border border-amber-200 rounded p-3">
+                <p className="font-semibold">What This Workbook Proves</p>
+                <p className="text-sm mt-1">Debits equal credits for all transactions from [date range].</p>
+                <p className="font-semibold mt-2">How It Proves It</p>
+                <ul className="list-disc list-inside text-sm mt-1">
+                  <li>Trial balance compares total debits and total credits</li>
+                  <li>Check column verifies each transaction balances individually</li>
+                  <li>Error flags catch common posting mistakes</li>
+                </ul>
+                <p className="font-semibold mt-2">Data Source</p>
+                <p className="text-sm mt-1">[Number] transactions from [start date] to [end date] for TechStart Solutions.</p>
+              </div>
             </CardContent>
           </Card>
 
@@ -234,24 +235,28 @@ export default function Unit01Lesson06Phase4() {
             </CardHeader>
             <CardContent className="text-gray-800 space-y-3 leading-relaxed">
               <p>
-                Ready for the next level? Duplicate the Model sheet and add a waterfall chart that shows how revenue drops to margin after each cost layer. Use the
-                same dropdown so both sheets stay in sync.
+                Ready for the next level? Add a "Quick Stats" section with:
               </p>
-              <p>
-                Bonus idea: create a slicer or timeline so Sarah can filter scenarios by AsOfDate when she loads future data.
+              <ul className="list-disc list-inside space-y-1">
+                <li>Percentage of accounts with debit balances</li>
+                <li>Largest single transaction amount</li>
+                <li>Number of unique accounts used</li>
+              </ul>
+              <p className="mt-3">
+                Bonus idea: add a small line chart showing monthly balance trends if you have historical data.
               </p>
             </CardContent>
           </Card>
 
           <ComprehensionCheck
             title="Quick Self-Check"
-            description="Make sure you understand the must-have features before you call the model complete."
+            description="Make sure you understand the must-have features before you call the summary complete."
             questions={independentPracticeQuestions}
             showExplanations
           />
 
           <ReflectionJournal
-            unitTitle="Scenario Switchboard Reflection"
+            unitTitle="Investor Summary Reflection"
             prompts={reflectionPrompts}
           />
         </section>

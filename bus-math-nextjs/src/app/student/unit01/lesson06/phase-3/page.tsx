@@ -3,59 +3,50 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem"
-import {
-  ArrowRightCircle,
-  Calculator,
-  Lightbulb,
-  Settings,
-  ShieldAlert,
-  Users,
-  Workflow
-} from "lucide-react"
+import { ArrowRight, Calculator, Eye, Shield, Users } from "lucide-react"
 import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[2]
 
 const guidedPracticeQuestions = [
   {
-    id: "scenario-lookup",
+    id: "status-formula",
     question:
-      "Why do we wrap our XLOOKUP formula in IFNA when we pull the Price from the Drivers table?",
+      "Sarah's Difference cell shows $0. What IF formula should she use to display 'Balanced' in plain language?",
     answers: [
-      "It shows a friendly message if the scenario name is mistyped or missing.",
-      "It makes the lookup run faster than normal.",
-      "It allows approximate matches for new scenarios.",
-      "It turns the result into a chart automatically."
+      "=IF(Difference=0, 'Balanced', 'Review Needed')",
+      "=IF(Difference=0, 'Review Needed', 'Balanced')",
+      "=Difference & ' Balancing...'",
+      "The Difference value alone is enough"
     ],
     explanation:
-      "IFNA catches errors so students see a plain-language note instead of a raw Excel error. That supports professional model QA."
+      "The IF formula checks if the balance is perfect (0) and shows 'Balanced.' If not, it prompts action with 'Review Needed.'"
   },
   {
-    id: "structured-references",
+    id: "conditional-color",
     question:
-      "Sarah wants her charts to stay linked when she adds a new scenario row. What should she do when she creates formulas?",
+      "Sarah wants the Balance Status cell to turn red when not balanced. What conditional formatting rule should she use?",
     answers: [
-      "Use structured references like Drivers[Volume] so Excel expands ranges automatically.",
-      "Copy the current cell references and lock them with dollar signs.",
-      "Convert the table back to a normal range before charting.",
-      "Type the numbers by hand into the chart setup."
+      "Cell Value > 0 or < 0 with red fill; Cell Value = 0 with green fill",
+      "Cell Value = 'Review Needed' with red fill only",
+      "All cells should be green to look positive",
+      "Use a formula-based rule that checks today's date"
     ],
     explanation:
-      "Structured references follow the table even as it grows, so the visuals update with every new scenario."
+      "Check the numeric difference directly. If it's not exactly 0, there's an issue—show red. Use green for the perfect 0 case."
   },
   {
-    id: "cash-days",
+    id: "plain-language",
     question:
-      "If AR Days are 32 and AP Days are 24, what should the Cash Days formula return, and what does it tell Sarah?",
+      "Which explanation belongs in Sarah's executive summary note for investors?",
     answers: [
-      "8 cash days, meaning money waits 8 days longer to arrive than it takes to leave.",
-      "56 cash days, because you add the two numbers together to see the gap.",
-      "0 cash days, because the numbers cancel each other out.",
-      "-8 cash days, showing Sarah collects cash 8 days faster than she pays vendors."
+      "'Debits and credits balance perfectly at $12,500 with no errors detected—ledger is audit-ready.'",
+      "'SUMIF formulas in B2:B50 match SUMIF in C2:C50 and difference is zero.'",
+      "'I checked all 50 transactions manually and nothing seemed wrong.'",
+      "'The Excel formulas all work and nothing is red right now.'"
     ],
     explanation:
-      "Cash Days = AR Days – AP Days, so 32 – 24 = 8. A positive number warns Sarah that cash is tied up before expenses are paid."
+      "Investors want the conclusion, not the technical details. State what's true in clear language and what that means for business."
   }
 ]
 
@@ -73,161 +64,68 @@ export default function Unit01Lesson06Phase3() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">
-              🔧 Phase 3: Guided Practice — Build the Integration
+              🔧 Phase 3: Guided Practice — Build Summary Skills
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Guide Sarah’s Scenario Switchboard in Excel
+              Practice Status Formulas and Visual Cues
             </h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Sarah Chen is prepping an investor update for TechStart Solutions. She needs a
-              scenario dropdown that pulls clean numbers, powers live charts, and warns her when
-              the model drifts away from targets. Follow these steps to coach her through the build.
+              Before building the live summary sheet, let's practice the key skills in a safe environment.
+              You'll write status formulas, apply conditional formatting, and craft plain-language
+              explanations.
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-6">
-          <Card>
+          <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-gray-900 flex items-center gap-2">
-                <Workflow className="h-5 w-5" />
-                Step 1 — Wire the Scenario Controls
+              <CardTitle className="text-blue-900 flex items-center gap-2">
+                <Eye className="h-5 w-5" />
+                Practice 1 — Status Formulas
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-800 space-y-4 leading-relaxed">
+            <CardContent className="text-blue-900 space-y-4 leading-relaxed">
+              <p className="font-semibold">Turn technical results into readable status messages</p>
               <p>
-                Import <strong>unit01-ledger-integration-practice.csv</strong> as a table named{' '}
-                <strong>Drivers</strong>. The first three rows (Base, Stretch, Downside) are Sarah’s main
-                scenarios. The rows below the divider are “edge cases” you will use later to test
-                validation.
+                Imagine these values from your workbook:
               </p>
-              <ol className="list-decimal list-inside space-y-2 text-base">
-                <li>
-                  On a sheet called <strong>Settings</strong>, place <strong>Selected_Scenario</strong> in B2. Create a
-                  dropdown list that points to <code>=Drivers[Scenario]</code>. This powers the entire model.
-                </li>
-                <li>
-                  In the <strong>Model</strong> sheet, pull each driver with XLOOKUP. Example:
-                  <code className="block bg-purple-100 text-purple-900 px-3 py-2 rounded">
-                    =IFNA(XLOOKUP(Settings!B2, Drivers[Scenario], Drivers[Price]), "Type a scenario name from Drivers")
-                  </code>
-                  Repeat for unit cost, volume, AR Days, AP Days, overhead, and targets.
-                </li>
-                <li>
-                  Keep every formula in structured-reference form. If Sarah inserts Base2 or a new
-                  investor case, your links will still work.
-                </li>
-              </ol>
-              <div className="bg-purple-100 border border-purple-200 rounded-lg p-4 text-purple-900 flex gap-3">
-                <Lightbulb className="h-6 w-6 flex-shrink-0" />
-                <p className="text-base">
-                  Student coach tip: ask your partner to mistype “Stretch” as “Strech.” If IFNA returns the
-                  helper message, your scenario switch is investor ready.
-                </p>
+              <div className="bg-white border border-blue-200 rounded-lg p-4 space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold">Debits Total:</span>
+                  <span className="font-mono bg-blue-100 px-2 py-1 rounded">$12,500</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold">Credits Total:</span>
+                  <span className="font-mono bg-blue-100 px-2 py-1 rounded">$12,500</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold">Difference:</span>
+                  <span className="font-mono bg-blue-100 px-2 py-1 rounded">$0</span>
+                </div>
+                <div className="flex justify-between items-center pt-2 border-t border-blue-200">
+                  <span className="font-semibold">Balance Status:</span>
+                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded">Write formula →</span>
+                </div>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-gray-900 flex items-center gap-2">
-                <Calculator className="h-5 w-5" />
-                Step 2 — Build the Calculation Engine
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-800 space-y-4 leading-relaxed">
-              <p>
-                Translate each driver into a live KPI. Remind students the math tells TechStart if the
-                plan protects cash or puts runway at risk.
-              </p>
-              <div className="space-y-4">
-                <Card className="bg-white border border-slate-200">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-slate-900 text-lg flex items-center gap-2">
-                      <ArrowRightCircle className="h-5 w-5" /> Revenue and Margin
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm text-slate-800">
-                    <p>
-                      <strong>Revenue</strong> shows how much money comes in before costs.
-                    </p>
-                    <pre className="bg-slate-100 p-3 rounded text-slate-900 text-sm overflow-x-auto">
-=[@Price] * [@Volume]
-                    </pre>
-                    <p>
-                      <strong>Gross Margin %</strong> compares profit to sales. It drives the investor summary.
-                    </p>
-                    <pre className="bg-slate-100 p-3 rounded text-slate-900 text-sm overflow-x-auto">
-=(([@Price]*[@Volume]) - ([@UnitCost]*[@Volume]) - [@Overhead]) / ([@Price]*[@Volume])
-                    </pre>
-                  </CardContent>
-                </Card>
-                <Card className="bg-white border border-slate-200">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-slate-900 text-lg flex items-center gap-2">
-                      <ArrowRightCircle className="h-5 w-5" /> Runway and Cash Days
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm text-slate-800">
-                    <p>
-                      <strong>Runway (months)</strong> estimates how long TechStart can cover overhead with the
-                      current margin cushion.
-                    </p>
-                    <pre className="bg-slate-100 p-3 rounded text-slate-900 text-sm overflow-x-auto">
-=([@Revenue] * [@Margin_Pct]) / [@Overhead]
-                    </pre>
-                    <p>
-                      <strong>Cash Days</strong> compares cash-in timing to cash-out timing.
-                    </p>
-                    <pre className="bg-slate-100 p-3 rounded text-slate-900 text-sm overflow-x-auto">
-=[@AR_Days] - [@AP_Days]
-                    </pre>
-                    <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 text-indigo-900">
-                      <p className="font-semibold">Why This Matters</p>
-                      <p>
-                        Positive Cash Days mean money leaves before it returns. Investors want to see Sarah
-                        shrinking that gap or proving she can handle it.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-gray-900 flex items-center gap-2">
-                <Settings className="h-5 w-5" />
-                Step 3 — Layer on Live Feedback
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-800 space-y-4 leading-relaxed">
-              <p>
-                Students should prove the model guards against mistakes and communicates clearly.
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-base">
-                <li>
-                  Build <strong>Data Validation</strong> alerts: stale <code>AsOfDate</code>, negative costs, AR above 90 days.
-                </li>
-                <li>
-                  Set conditional formatting tiles: green when Margin % ≥ Target, amber when Cash Days exceeds the target.
-                </li>
-                <li>
-                  Write an <strong>Executive Summary</strong> formula (e.g., nested IF) that snaps to the latest KPI
-                  story in one short sentence.
-                </li>
-                <li>
-                  Connect charts to the Drivers table so they refresh the instant a student switches scenarios.
-                </li>
-              </ul>
-              <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-emerald-900 flex gap-3">
-                <Users className="h-6 w-6 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Think-Pair-Share (3 minutes)</p>
-                  <p>
-                    Partner A tests the dropdown and reads the executive sentence aloud. Partner B double-checks the validation flags.
-                    Swap roles and note one improvement you would make before presenting to an investor.
+              <div className="bg-white border border-blue-200 rounded-lg p-4">
+                <p className="font-semibold text-blue-900 mb-2">Write an IF formula:</p>
+                <div className="space-y-3">
+                  <div className="flex gap-2 items-center">
+                    <ArrowRight className="h-4 w-4 text-blue-600" />
+                    <code>=IF(Difference=0, "Balanced", "Review Needed")</code>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <ArrowRight className="h-4 w-4 text-blue-600" />
+                    <code>=IF(Difference&lt;&gt;0, "Check " &amp; Count(RedCells) &amp; " accounts", "All Clear")</code>
+                  </div>
+                </div>
+                <div className="bg-blue-100 border border-blue-300 rounded p-3 mt-3">
+                  <p className="font-semibold text-blue-800">Why this works:</p>
+                  <p className="text-sm text-blue-900 mt-1">
+                    The IF formula checks the condition and returns two possible messages.
+                    When balance is perfect, you get a clean confirmation. When there's an issue,
+                    the formula tells you exactly what needs attention.
                   </p>
                 </div>
               </div>
@@ -237,23 +135,137 @@ export default function Unit01Lesson06Phase3() {
           <Card className="border-amber-200 bg-amber-50">
             <CardHeader>
               <CardTitle className="text-amber-900 flex items-center gap-2">
-                <ShieldAlert className="h-5 w-5" />
-                Practice: Trigger the Error Checking System
+                <Calculator className="h-5 w-5" />
+                Practice 2 — Conditional Formatting
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-amber-900 text-base leading-relaxed">
-                Use the simulation to see how professional models call out risky inputs. Notice how each alert ties back to the checklist you will use in Phase 4.
+            <CardContent className="text-amber-900 space-y-4 leading-relaxed">
+              <p className="font-semibold">Make status visible at a glance</p>
+              <p>
+                Apply conditional formatting rules to your status cells:
               </p>
-              <ErrorCheckingSystem />
+              <div className="space-y-3">
+                <div className="bg-white border border-green-300 rounded-lg p-4">
+                  <p className="font-semibold text-green-800 mb-2">Rule 1: Balanced (Green)</p>
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>Condition: <strong>Cell Value = 0</strong></li>
+                    <li>Format: Green background, bold text</li>
+                    <li>Apply to: Difference cell, Balance Status cell</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-red-300 rounded-lg p-4">
+                  <p className="font-semibold text-red-800 mb-2">Rule 2: Not Balanced (Red)</p>
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                     <li>Condition: <strong>Cell Value &gt; 0 OR Cell Value &lt; 0</strong></li>
+                    <li>Format: Red background, bold text</li>
+                    <li>Apply to: Difference cell, Balance Status cell</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-white border border-amber-200 rounded-lg p-4">
+                <p className="font-semibold text-amber-800 mb-2">Practice scenario:</p>
+                <p className="text-sm text-amber-900">
+                  When Difference shows -$50, the cell turns red immediately. This visual cue
+                  tells Sarah there's a problem before she reads any numbers. She knows to
+                  investigate without checking every value manually.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-green-200 bg-green-50">
+            <CardHeader>
+              <CardTitle className="text-green-900 flex items-center gap-2">
+                <Shield className="h-5 w-5" />
+                Practice 3 — Plain Language Explanations
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-green-900 space-y-4 leading-relaxed">
+              <p className="font-semibold">Write for your audience, not yourself</p>
+              <div className="space-y-3">
+                <div className="bg-white border border-green-200 rounded-lg p-4">
+                  <p className="font-semibold text-green-800 mb-2">Technical vs. Plain</p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="font-semibold text-red-700 mb-1">Technical (Don't show investors):</p>
+                      <p className="text-sm text-gray-700">
+                        "SUMIF(TotalDebits) equals $12,500 and SUMIF(TotalCredits) equals $12,500,
+                        so the difference is exactly zero."
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-green-700 mb-1">Plain Language (Show investors):</p>
+                      <p className="text-sm text-gray-700">
+                        "Ledger is balanced: $12,500 in debits matches $12,500 in credits.
+                        No errors detected—ready for audit."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white border border-green-200 rounded-lg p-4">
+                  <p className="font-semibold text-green-800 mb-2">Practice scenarios:</p>
+                  <div className="space-y-2">
+                    <div className="flex gap-2">
+                      <span className="bg-green-200 text-green-800 px-2 py-0.5 rounded text-xs whitespace-nowrap">Perfect:</span>
+                      <span className="text-sm text-gray-700">
+                        "All accounts balance with zero errors—ledger is investor-ready."
+                      </span>
+                    </div>
+                    <div className="flex gap-2">
+                      <span className="bg-red-200 text-red-800 px-2 py-0.5 rounded text-xs whitespace-nowrap">Has Issues:</span>
+                      <span className="text-sm text-gray-700">
+                        "3 accounts show imbalances. Review Cash, Revenue, and Expenses before presenting."
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-900 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Think-Pair-Share
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-purple-900 space-y-3 leading-relaxed">
+              <p className="font-semibold">Apply skills to a new situation:</p>
+              <div className="bg-white border border-purple-200 rounded-lg p-4 space-y-3">
+                <p className="text-sm">
+                  Sarah shows her summary to two different investors. They have different questions.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex gap-2 items-start">
+                    <span className="bg-purple-200 text-purple-800 px-2 py-0.5 rounded text-xs font-semibold whitespace-nowrap mt-0.5">Investor A:</span>
+                    <span className="text-sm text-gray-700">
+                      "What do these colors mean?"
+                    </span>
+                  </div>
+                  <div className="flex gap-2 items-start">
+                    <span className="bg-purple-200 text-purple-800 px-2 py-0.5 rounded text-xs font-semibold whitespace-nowrap mt-0.5">Investor B:</span>
+                    <span className="text-sm text-gray-700">
+                      "Should I trust these numbers?"
+                    </span>
+                  </div>
+                </div>
+                <div className="bg-purple-100 border border-purple-300 rounded p-3 mt-3">
+                  <p className="font-semibold text-purple-800">Partner Task:</p>
+                  <p className="text-sm text-purple-900 mt-1">
+                    Write a one-sentence response for each investor that uses the
+                    status formulas and visual cues you practiced. Be ready to share.
+                  </p>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
           <ComprehensionCheck
-            title="Check Your Guided Practice"
-            description="Confirm you can explain the heart of Sarah’s scenario switchboard before moving on."
+            title="Check Your Summary Skills"
+            description="Confirm you understand the key patterns before building the live summary sheet."
             questions={guidedPracticeQuestions}
-            showExplanations
+            showExplanations={true}
           />
         </section>
       </main>
