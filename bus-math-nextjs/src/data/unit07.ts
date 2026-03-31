@@ -2,31 +2,31 @@ import { UnitData } from "@/types/unit"
 
 export const unit07Data: UnitData = {
   id: "Unit 7",
-  title: "Asset & Inventory Tracker",
+  title: "Inventory Accounting",
   duration: "2 weeks",
   difficulty: "Intermediate",
-  description: "Which depreciation and inventory methods best align with our cash‑flow and tax strategy?",
+  description: "Which inventory valuation method best reflects our business reality and supports sound decision-making?",
   
   drivingQuestion: {
-    question: "Which depreciation and inventory methods best align with our cash‑flow and tax strategy?",
-    context: "Local auditor shares a real case of a company fined for inventory misvaluation and provides anonymized asset and inventory data.",
-    scenario: "Teams will analyze real asset and inventory data to develop strategic recommendations for depreciation and inventory valuation methods."
+    question: "Which inventory valuation method best reflects our business reality and supports sound decision-making?",
+    context: "Sarah Chen runs TechStart Solutions and needs help choosing the right inventory valuation method for her growing business.",
+    scenario: "Teams will analyze real inventory data to develop strategic recommendations for inventory valuation methods."
   },
   
   objectives: {
     content: [
-      "Explain and apply Straight‑Line (SLN) and Double‑Declining Balance (DDB) depreciation methods",
-      "Compute Cost of Goods Sold and ending inventory using FIFO and LIFO inventory valuation",
-      "Calculate the Inventory Turnover Ratio and analyze implications for cash management and tax planning"
+      "Explain and apply FIFO, LIFO, Specific Identification, and Weighted Average inventory methods",
+      "Compute Cost of Goods Sold and ending inventory using all four inventory valuation methods",
+      "Calculate the Inventory Turnover Ratio and analyze implications for cash management"
     ],
     skills: [
-      "Build depreciation schedules using Excel's SLN and DDB functions",
-      "Implement FIFO and LIFO layer calculations with array formulas",
+      "Build inventory valuation schedules in Excel with method comparison",
+      "Implement FIFO and LIFO layer calculations with structured references",
       "Create dynamic ratio calculations and visualizations (e.g., turnover ratio chart)"
     ],
     deliverables: [
-      "Written advisory brief (2–3 pages)",
-      "5‑minute live pitch to Board of Directors panel",
+      "Written advisory brief (2–3 pages) with method recommendation",
+      "5‑minute live pitch to executive audience",
       "Dynamic Excel model with method selection features",
       "Professional visualization of COGS impact analysis"
     ]
@@ -34,26 +34,26 @@ export const unit07Data: UnitData = {
   
   assessment: {
     performanceTask: {
-      title: "Advisory Brief + Board Presentation",
-      description: "Deliver strategic recommendations on depreciation and inventory methods to a Board of Directors panel.",
-      context: "This mirrors real corporate decision-making where CFOs present strategic financial method choices to board members for approval.",
+      title: "Advisory Brief + Executive Presentation",
+      description: "Deliver strategic recommendations on inventory valuation methods to an executive audience.",
+      context: "This mirrors real corporate decision-making where finance teams present inventory method choices to leadership for approval.",
       requirements: [
         "2-3 page written advisory brief with strategic rationale",
-        "5-minute live pitch presentation to Board panel",
-        "Dynamic Excel model demonstrating both depreciation methods",
+        "5-minute live pitch presentation to executive panel",
+        "Dynamic Excel model demonstrating all four inventory methods",
         "Professional visualization showing COGS impact under different methods",
-        "Q&A response addressing board questions about cash flow and tax implications"
+        "Q&A response addressing questions about cash flow and reporting implications"
       ]
     },
     milestones: [
       {
         id: "milestone1",
         day: 2,
-        title: "Basic Depreciation Schedule",
-        description: "Complete functional depreciation schedules for both SLN and DDB methods",
+        title: "Basic Inventory Schedule",
+        description: "Complete functional inventory schedules showing beginning inventory, purchases, and goods available for sale",
         criteria: [
-          "Accurate SLN depreciation calculations using Excel formulas",
-          "Correct DDB depreciation schedule implementation",
+          "Accurate beginning inventory and purchases data entry",
+          "Correct goods available for sale calculations",
           "Professional formatting and clear documentation",
           "Peer accuracy verification completed"
         ]
@@ -61,7 +61,7 @@ export const unit07Data: UnitData = {
       {
         id: "milestone2",
         day: 6,
-        title: "Dynamic Selection Feature",
+        title: "Dynamic Method Selection Feature",
         description: "Automated method selection system with dropdowns and INDEX/MATCH logic",
         criteria: [
           "Working dropdown menus for method selection",
@@ -75,14 +75,14 @@ export const unit07Data: UnitData = {
       {
         name: "Technical Accuracy",
         weight: "50%",
-        exemplary: "All depreciation schedules and inventory valuations are mathematically correct; formulas handle edge cases flawlessly",
+        exemplary: "All inventory valuations are mathematically correct; formulas handle edge cases flawlessly",
         proficient: "Most calculations correct with minor errors; formulas work for standard cases",
         developing: "Multiple calculation errors; formulas have significant issues"
       },
       {
         name: "Strategic Rationale",
         weight: "20%",
-        exemplary: "Justification clearly aligns with cash‑flow and tax objectives; demonstrates deep understanding of business implications",
+        exemplary: "Justification clearly aligns with business objectives; demonstrates deep understanding of method implications",
         proficient: "Basic justification provided; shows understanding of key concepts",
         developing: "Limited or unclear rationale; missing connection to business strategy"
       },
@@ -96,7 +96,7 @@ export const unit07Data: UnitData = {
       {
         name: "Responsiveness to Critique",
         weight: "15%",
-        exemplary: "Thoughtful integration of all peer and Board feedback into final deliverables",
+        exemplary: "Thoughtful integration of all peer and executive feedback into final deliverables",
         proficient: "Good incorporation of most feedback",
         developing: "Limited responsiveness to feedback or superficial changes"
       }
@@ -108,31 +108,31 @@ export const unit07Data: UnitData = {
       {
         weekNumber: 13,
         title: "Model Construction & Analysis",
-        description: "Build foundational depreciation and inventory models with peer verification",
+        description: "Build foundational inventory models with peer verification",
         days: [
           {
             day: 1,
             focus: "Unit Launch: Sarah's Inventory Problem",
             activities: [
-              "Entry Event with auditor sharing real case study",
+              "Entry Event with Sarah sharing her inventory tracking challenge",
               "Team formation and role assignment",
-              "Review raw asset and inventory dataset"
+              "Review raw inventory dataset"
             ],
             resources: [
-              "Auditor case brief",
-              "Asset/inventory CSV files"
+              "Sarah's case brief",
+              "Inventory CSV files"
             ]
           },
           {
             day: 2,
             focus: "Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS",
             activities: [
-              "Teach SLN & DDB formulas and business applications",
-              "Demo depreciation schedule setup in Excel",
-              "Guided practice with sample asset data"
+              "Teach inventory flow concepts and the ending inventory formula",
+              "Demo inventory schedule setup in Excel",
+              "Guided practice with sample inventory data"
             ],
             resources: [
-              "SLN/DDB function guide",
+              "Inventory flow guide",
               "Sample workbook template"
             ]
           },
@@ -148,13 +148,13 @@ export const unit07Data: UnitData = {
               "FIFO/LIFO examples",
               "Inventory template"
             ],
-            milestone: "Basic depreciation schedule completed"
+            milestone: "Basic inventory schedule completed"
           },
           {
             day: 4,
             focus: "Specific Identification and Weighted Average in Simple Excel",
             activities: [
-              "Build Excel Tables and array formulas for FIFO/LIFO layer costing",
+              "Build Excel Tables and formulas for Specific ID and Weighted Average",
               "Implement structured references with automated COGS and Ending Inventory",
               "Validate with error checks and edge cases"
             ],
@@ -241,12 +241,12 @@ export const unit07Data: UnitData = {
             day: 10,
             focus: "Final Presentation: Defend Ending Inventory, Method Choice, and Business Recommendation",
             activities: [
-              "Deliver advisory brief + pitch to Board of Directors panel",
+              "Deliver advisory brief + pitch to executive panel",
               "Professional Q&A session",
               "Collect feedback for portfolio reflection"
             ],
             resources: [
-              "Board feedback sheet",
+              "Executive feedback sheet",
               "Recording setup for portfolio"
             ],
             milestone: "Final deliverable presentation"
@@ -260,12 +260,12 @@ export const unit07Data: UnitData = {
     ventures: [
       "Retail industry context",
       "Manufacturing business scenario", 
-      "Technology assets focus",
+      "Technology products focus",
       "Propose your own industry context"
     ],
     roles: [
       "Financial Analyst",
-      "Tax Strategy Specialist", 
+      "Inventory Strategy Specialist", 
       "Presentation Coordinator"
     ],
     presentationFormats: [
@@ -281,7 +281,7 @@ export const unit07Data: UnitData = {
       "Understanding of basic accounting principles and the accounting equation",
       "Familiarity with Excel formulas and functions",
       "Basic understanding of business operations and cash flow concepts",
-      "Knowledge of inventory and asset management principles"
+      "Knowledge of inventory management principles"
     ],
     technology: [
       "Microsoft Excel with advanced function capabilities",
@@ -291,7 +291,7 @@ export const unit07Data: UnitData = {
     ],
     resources: [
       {
-        title: "Unit 7 Excel Template with SLN/DDB Functions",
+        title: "Unit 7 Excel Template with Inventory Functions",
         url: "/resources/unit07-template.xlsx",
         type: "download"
       },
@@ -311,8 +311,8 @@ export const unit07Data: UnitData = {
         type: "download"
       },
       {
-        title: "Sample Asset and Inventory Dataset",
-        url: "/resources/sample-asset-inventory-data.csv",
+        title: "Sample Inventory Dataset",
+        url: "/resources/sample-inventory-data.csv",
         type: "download"
       },
       {
@@ -325,20 +325,20 @@ export const unit07Data: UnitData = {
   
   differentiation: {
     struggling: [
-      "Step‑by‑step tutorials for depreciation calculations with visual examples",
+      "Step‑by‑step tutorials for inventory calculations with visual examples",
       "Guided formula examples with completed sections for reference",
       "Scaffolded templates with partial formulas already implemented",
       "Peer tutoring partnerships with stronger Excel users"
     ],
     advanced: [
-      "Explore MACRS depreciation method as extension activity",
-      "Perform sensitivity analysis on salvage values and useful life variations",
+      "Explore LIFO reserve and tax implications as extension activity",
+      "Perform sensitivity analysis on purchase timing and volume variations",
       "Create automated dashboard with multiple scenario comparisons",
       "Mentor struggling teammates and lead technical troubleshooting"
     ],
     ell: [
       "Financial terminology glossary with visual aids and translations",
-      "Key depreciation and inventory concepts available in home language",
+      "Key inventory concepts available in home language",
       "Partner with fluent English speakers for presentation preparation",
       "Visual workflow diagrams for complex calculation processes"
     ]
