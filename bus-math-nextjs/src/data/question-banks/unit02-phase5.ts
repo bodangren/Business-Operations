@@ -466,142 +466,142 @@ const lesson05Questions: Unit02Phase5Question[] = [
   {
     id: "lesson05-q1",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Best pattern to map AccountID to Method with graceful failure?",
-    correctAnswer: "XLOOKUP with if_not_found and structured references",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "Why are named ranges safer than hard-coded cell references like A2:A50 in an automation workbook?",
+    correctAnswer: "Named ranges follow the data when rows are inserted or deleted, so formulas do not break",
     distractors: [
-      "VLOOKUP approximate match across fixed ranges",
-      "INDEX/MATCH without error handling",
-      "Manual mapping on the summary page"
+      "Named ranges make the workbook file smaller",
+      "Named ranges prevent users from seeing the formulas",
+      "Named ranges automatically fix calculation errors"
     ],
-    explanation: "Use XLOOKUP's if_not_found and Table[Column] references for reliable, readable mapping.",
-    objectiveTags: ["xlookup", "error-handling"]
+    explanation: "When you insert or delete rows, hard-coded ranges like A2:A50 point to the wrong cells. Named ranges adjust automatically, keeping formulas connected to the correct data.",
+    objectiveTags: ["named-ranges", "workbook-design"]
   },
   {
     id: "lesson05-q2",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "When do you prefer SWITCH over nested IFs?",
-    correctAnswer: "When matching exact text options for routing logic",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "What is the most important reason to separate input areas from calculation blocks?",
+    correctAnswer: "So users cannot accidentally overwrite formulas when entering data",
     distractors: [
-      "When comparing numeric thresholds with < and >",
-      "When building a single SUMIF",
-      "When formatting the sheet header"
+      "Because Excel requires inputs and formulas on different sheets",
+      "So the workbook prints more cleanly",
+      "Because named ranges only work on separate sheets"
     ],
-    explanation: "SWITCH handles exact-option routing with cleaner syntax and fewer errors.",
-    objectiveTags: ["switch-function", "conditional-logic"]
+    explanation: "If users type data into cells that contain formulas, the automation breaks. Physically separating and color-coding input areas prevents this common error.",
+    objectiveTags: ["input-areas", "workbook-design"]
   },
   {
     id: "lesson05-q3",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Which validation rule best catches out-of-period rows?",
-    correctAnswer: "Date NOT between PeriodStart and PeriodEnd flags the row",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "What should the verification checkpoint cell check before the close flow completes?",
+    correctAnswer: "That total adjusting debits equal total adjusting credits",
     distractors: [
-      "Date equals today() flags the row",
-      "Amount equals zero flags the row",
-      "AccountID contains letters flags the row"
+      "That the workbook is saved as .xlsm format",
+      "That all cells are formatted with the same font",
+      "That the button is visible on the sheet"
     ],
-    explanation: "Month-end relies on accurate period boundaries; enforce date windows.",
-    objectiveTags: ["data-validation", "period-checking"]
+    explanation: "The fundamental accounting rule is that debits must equal credits. A verification checkpoint that confirms this proves the automation produced valid results.",
+    objectiveTags: ["verification", "accounting-integrity"]
   },
   {
     id: "lesson05-q4",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Your total changes after adding 15 rows. What should be true?",
-    correctAnswer: "No formulas were edited; totals updated automatically via structured references",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "What file format must the workbook be saved in to support macro buttons?",
+    correctAnswer: ".xlsm (Excel Macro-Enabled Workbook)",
     distractors: [
-      "Several ranges were extended manually",
-      "You rebuilt the pivot from scratch",
-      "You re-typed two SUM formulas"
+      ".xlsx (standard Excel workbook)",
+      ".csv (comma-separated values)",
+      ".pdf (portable document format)"
     ],
-    explanation: "Auto-expansion proves scalable design and saves time.",
-    objectiveTags: ["scalability", "structured-references"]
+    explanation: "Standard .xlsx files cannot store macros. The workbook must be saved as .xlsm to preserve the button-triggered automation.",
+    objectiveTags: ["macro-basics", "file-formats"]
   },
   {
     id: "lesson05-q5",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Which summary proves investor readiness most clearly?",
-    correctAnswer: "A dashboard showing totals plus an Audit Panel with open issues",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "Which manual step does the button-triggered flow replace?",
+    correctAnswer: "Running the six-step close checklist in order by hand every month",
     distractors: [
-      "A list of raw transactions",
-      "A single cell with net income",
-      "A color theme update"
+      "Deciding which accounting principle to apply",
+      "Reading the financial statements",
+      "Choosing the fiscal year-end date"
     ],
-    explanation: "Totals plus visible audit status communicates both results and reliability.",
-    objectiveTags: ["investor-readiness", "dashboard-design"]
+    explanation: "The button automates the repetitive sequence of the close checklist. It does not replace accounting judgment—only the mechanical execution of known steps.",
+    objectiveTags: ["automation-purpose", "manual-vs-automated"]
   },
   {
     id: "lesson05-q6",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Multi-criteria aggregation approach for complex rules?",
-    correctAnswer: "SUMPRODUCT with boolean tests across columns",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "The CloseStatus cell shows 'Error—check flagged items.' What should the user do first?",
+    correctAnswer: "Check the verification checkpoint to see which step failed the debits-equal-credits test",
     distractors: [
-      "SUM over a fixed range",
-      "AVERAGEIFS with text criteria",
-      "COUNTBLANK over Map table"
+      "Delete the workbook and start over",
+      "Ignore the error and present the numbers anyway",
+      "Change the button color to make it more visible"
     ],
-    explanation: "SUMPRODUCT handles multiple logical conditions when SUMIFS is insufficient.",
-    objectiveTags: ["sumproduct", "multi-criteria"]
+    explanation: "The CloseStatus is a signal that the verification checkpoint found a problem. The user should trace back to find which adjusting entry or calculation caused the mismatch.",
+    objectiveTags: ["error-handling", "troubleshooting"]
   },
   {
     id: "lesson05-q7",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Which error should be surfaced, not hidden?",
-    correctAnswer: "Missing AccountID mapping displayed as 'Unknown' with a flag",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "What is the most common failure mode for a button-triggered macro flow?",
+    correctAnswer: "The macro references cells that moved or were renamed, causing it to run on the wrong data",
     distractors: [
-      "Temporary calculation delay hidden with IFERROR('')",
-      "All flags removed before a demo",
-      "Suppressing validation to avoid questions"
+      "The button is the wrong color and users cannot find it",
+      "Excel does not support buttons in workbooks",
+      "Macros always delete the original data when they run"
     ],
-    explanation: "Surface and fix issues; transparency builds trust.",
-    objectiveTags: ["error-transparency", "audit-quality"]
+    explanation: "Hard-coded cell references break when someone inserts a row or renames a sheet. Named ranges reduce this risk because they follow the data even when cells move.",
+    objectiveTags: ["common-errors", "macro-basics"]
   },
   {
     id: "lesson05-q8",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Why document methods and assumptions on-sheet?",
-    correctAnswer: "Promotes auditability and speeds reviews by mentors/investors",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "Which named range naming convention is best for a month-end automation workbook?",
+    correctAnswer: "Supplies, PrepaidInsurance, AdjustingEntries—meaningful names that describe the data",
     distractors: [
-      "Increases file size only",
-      "Makes the sheet colorful",
-      "Prevents anyone else from understanding the model"
+      "Data1, Data2, Data3—short names that save typing",
+      "Sheet1!A1, Sheet1!A2—exact cell addresses",
+      "TempRange1, TempRange2—temporary names for testing"
     ],
-    explanation: "Clear documentation is a professional standard and improves collaboration.",
-    objectiveTags: ["documentation", "professionalism"]
+    explanation: "Meaningful names make the workbook self-documenting. Anyone can understand what each block does without reading the formulas. Generic names provide no context.",
+    objectiveTags: ["named-ranges", "workbook-design"]
   },
   {
     id: "lesson05-q9",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Best practice for duplicates in TxnID?",
-    correctAnswer: "Flag duplicates with a COUNTIF check and link to source",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "Why should each calculation block be testable independently?",
+    correctAnswer: "So you can isolate errors without running the entire flow",
     distractors: [
-      "Ignore duplicates to keep the model simple",
-      "Delete one duplicate without review",
-      "Hide the column"
+      "Because Excel requires independent blocks to save the file",
+      "So each block can be on a different sheet",
+      "Because named ranges only work with independent blocks"
     ],
-    explanation: "Duplicates can distort results; flag and resolve with traceability.",
-    objectiveTags: ["data-integrity", "duplicate-detection"]
+    explanation: "If Block 2 fails but Block 1 works, you should be able to test Block 1 alone to confirm it is correct. Independent testability makes debugging much faster.",
+    objectiveTags: ["calculation-blocks", "testing"]
   },
   {
     id: "lesson05-q10",
     lessonId: "lesson05",
-    lessonTitle: "Lesson 05 - Advanced Excel Automation",
-    prompt: "Career connection: which role most relies on these skills?",
-    correctAnswer: "Financial analyst building month-end automation",
+    lessonTitle: "Lesson 05 - Build First Automation Layer",
+    prompt: "Which statement best explains the value of the automation you built to someone who did not build it?",
+    correctAnswer: "The button runs the same six-step close checklist every month, checks its own work, and tells you immediately if something is wrong",
     distractors: [
-      "Front desk receptionist",
-      "Graphic designer",
-      "Facilities custodian"
+      "The workbook has colorful cells and a button that looks professional",
+      "The automation replaces all accounting judgment so you never need to think",
+      "The file is saved in .xlsm format which is required by the IRS"
     ],
-    explanation: "Analysts and consultants use scenario engines and validation every month-end.",
-    objectiveTags: ["career-connection", "analyst-skills"]
+    explanation: "The value is not in appearance or format—it is in reliability. The automation executes a known sequence, verifies its results, and flags problems. That is what makes it trustworthy.",
+    objectiveTags: ["communication", "automation-purpose"]
   }
 ];
 

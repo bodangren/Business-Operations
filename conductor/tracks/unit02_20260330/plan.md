@@ -90,21 +90,21 @@
     - [ ] The closing phase clearly sets up the automation lesson
 
 ## Phase 3: Lessons 05-06 (Excel Automation)
-- [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.1.2 Implement Phase 1-6 with first automation layer
+- [x] 3.1 **Lesson 05** - Implement excel-lessons skill
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [x] 3.1.2 Implement Phase 1-6 with first automation layer
     - Phase 1: Open with business scenario where automation matters, make tool feel necessary
     - Phase 2: Name automation pattern (named ranges, inputs, buttons, macro trigger flow), explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task focusing on trustworthiness and business communication
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Teach the feature anatomy directly: named ranges, inputs, buttons, or macro trigger flow
-  - [ ] 3.1.4 Include a safe rehearsal before students touch the workbook
-  - [ ] 3.1.5 Require a real workbook artifact by the end of Phase 4
+  - [x] 3.1.3 Teach the feature anatomy directly: named ranges, input areas, buttons, and macro trigger flow
+  - [x] 3.1.4 Include a safe rehearsal before students touch the workbook
+  - [x] 3.1.5 Require a real workbook artifact by the end of Phase 4
   - **Done when**:
-    - [ ] The workbook can automate at least one key closing routine
-    - [ ] Students can explain which manual step the automation replaced
+    - [x] The workbook can automate at least one key closing routine
+    - [x] Students can explain which manual step the automation replaced
 
 - [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
