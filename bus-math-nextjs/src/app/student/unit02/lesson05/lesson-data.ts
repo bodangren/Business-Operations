@@ -35,37 +35,37 @@ export const unit02Data = {
 export const lesson05Phases = [
   {
     id: "phase-1",
-    phaseName: "Tool Pressure" as const,
+    phaseName: "Hook" as const,
     sequence: 1,
     description: "Business scenario where manual close speed matters—make automation feel necessary",
   },
   {
     id: "phase-2",
-    phaseName: "Tool Anatomy" as const,
+    phaseName: "Introduction" as const,
     sequence: 2,
     description: "Named ranges, input areas, buttons, and macro trigger flow explained directly",
   },
   {
     id: "phase-3",
-    phaseName: "Safe Rehearsal" as const,
+    phaseName: "Guided Practice" as const,
     sequence: 3,
     description: "Simulator mirroring real workbook logic with immediate feedback",
   },
   {
     id: "phase-4",
-    phaseName: "Workbook Sprint" as const,
+    phaseName: "Independent Practice" as const,
     sequence: 4,
     description: "Build the real automation artifact with verification checkpoints and Definition of Done",
   },
   {
     id: "phase-5",
-    phaseName: "Audit and Explain" as const,
+    phaseName: "Assessment" as const,
     sequence: 5,
     description: "Technical check plus artifact task: defend the automation's trustworthiness",
   },
   {
     id: "phase-6",
-    phaseName: "Reflection and Handoff" as const,
+    phaseName: "Closing" as const,
     sequence: 6,
     description: "What the tool added, what students can now do faster, preview next layer",
   }

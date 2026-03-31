@@ -36,25 +36,25 @@ export const unit02Data = {
 export const lesson04Phases = [
   {
     id: "phase-1",
-    phaseName: "Recycle & Introduce" as const,
+    phaseName: "Hook" as const,
     sequence: 1,
     description: "Reconnect to closing entries and surface the need for a complete close workflow",
   },
   {
     id: "phase-2", 
-    phaseName: "Explicit Instruction" as const,
+    phaseName: "Introduction" as const,
     sequence: 2,
     description: "The month-end close workflow: step-by-step procedure with checklists and flow diagrams",
   },
   {
     id: "phase-3",
-    phaseName: "Deepening" as const,
+    phaseName: "Guided Practice" as const,
     sequence: 3,
     description: "Complex adjustments and reduced scaffolding with authentic accounting notation",
   },
   {
     id: "phase-4",
-    phaseName: "Deliberate Practice" as const,
+    phaseName: "Independent Practice" as const,
     sequence: 4,
     description: "Repeated manual close routine with algorithmic variation and mastery tracking",
   },
@@ -66,7 +66,7 @@ export const lesson04Phases = [
   },
   {
     id: "phase-6",
-    phaseName: "Reflection" as const,
+    phaseName: "Closing" as const,
     sequence: 6,
     description: "Reflect on the complete close and preview the first Excel build lesson",
   }

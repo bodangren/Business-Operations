@@ -164,8 +164,7 @@ export default function Phase6Page() {
           </Card>
 
           <ReflectionJournal
-            title="Lesson 5 Reflection"
-            description="Reflect on what you built and what it means for your accounting workflow."
+            unitTitle="Lesson 5 Reflection"
             prompts={reflectionPrompts}
           />
         </section>

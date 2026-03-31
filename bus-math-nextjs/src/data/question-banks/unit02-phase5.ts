@@ -617,7 +617,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "Excel will refuse to run macros without validation",
       "The button will disappear from the sheet"
     ],
-    explanation: "Without validation, there is no guard between bad input and the automation. The macro will still execute—but on garbage data—producing wrong financial results that look correct."
+    explanation: "Without validation, there is no guard between bad input and the automation. The macro will still execute—but on garbage data—producing wrong financial results that look correct.",
+    objectiveTags: ["validation", "workbook-design"]
   },
   {
     id: "lesson06-q2",
@@ -630,7 +631,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "The file is saved as .xlsm, which means it is correct",
       "You have to check every formula by hand"
     ],
-    explanation: "An audit panel provides visible, verifiable evidence that the automation ran correctly. It shows what went in, what came out, and whether the fundamental accounting checks (like debits = credits) passed."
+    explanation: "An audit panel provides visible, verifiable evidence that the automation ran correctly. It shows what went in, what came out, and whether the fundamental accounting checks (like debits = credits) passed.",
+    objectiveTags: ["auditability", "verification"]
   },
   {
     id: "lesson06-q3",
@@ -643,7 +645,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "The dropdown is placed at the top of the sheet",
       "The dropdown uses a different color from the rest of the sheet"
     ],
-    explanation: "A dropdown that changes a cell but is not referenced by any formula is decorative. The control must be wired into the calculation logic—formulas must read from the dropdown's linked cell."
+    explanation: "A dropdown that changes a cell but is not referenced by any formula is decorative. The control must be wired into the calculation logic—formulas must read from the dropdown's linked cell.",
+    objectiveTags: ["controls", "workbook-design"]
   },
   {
     id: "lesson06-q4",
@@ -656,7 +659,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "It should be hidden on a separate sheet to save space",
       "It should use as many colors as possible to look professional"
     ],
-    explanation: "An audit panel with 20 items is not readable. Limit it to the most important values: period, total adjustments, verification status, and key outputs. Use clear labels and green/red indicators."
+    explanation: "An audit panel with 20 items is not readable. Limit it to the most important values: period, total adjustments, verification status, and key outputs. Use clear labels and green/red indicators.",
+    objectiveTags: ["auditability", "workbook-design"]
   },
   {
     id: "lesson06-q5",
@@ -669,7 +673,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "The button should silently correct the negative value to zero",
       "The button should delete the invalid input and continue"
     ],
-    explanation: "A polished wizard checks validation before running. If any check fails, it stops and tells the user exactly what is wrong. This prevents wrong outputs from ever being produced."
+    explanation: "A polished wizard checks validation before running. If any check fails, it stops and tells the user exactly what is wrong. This prevents wrong outputs from ever being produced.",
+    objectiveTags: ["validation", "error-handling"]
   },
   {
     id: "lesson06-q6",
@@ -682,7 +687,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "The workbook maintains GAAP accuracy because it uses named ranges",
       "GAAP accuracy only matters for the financial statements, not the workbook design"
     ],
-    explanation: "GAAP accuracy means the workbook follows consistent accounting rules and produces verifiable results. Validation prevents bad data, the audit panel provides traceability, and the enforced sequence ensures adjustments happen before closing."
+    explanation: "GAAP accuracy means the workbook follows consistent accounting rules and produces verifiable results. Validation prevents bad data, the audit panel provides traceability, and the enforced sequence ensures adjustments happen before closing.",
+    objectiveTags: ["gaap-accuracy", "auditability"]
   },
   {
     id: "lesson06-q7",
@@ -695,7 +701,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "Excel will not allow validation in macro code",
       "The validation will only work on certain versions of Excel"
     ],
-    explanation: "If validation only exists in the macro code, users cannot see what rules are being enforced or which inputs violated them. Always make validation visible on the sheet with flags, error messages, or conditional formatting."
+    explanation: "If validation only exists in the macro code, users cannot see what rules are being enforced or which inputs violated them. Always make validation visible on the sheet with flags, error messages, or conditional formatting.",
+    objectiveTags: ["validation", "common-errors"]
   },
   {
     id: "lesson06-q8",
@@ -708,7 +715,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
       "It makes the workbook file smaller and faster to open",
       "It is only important for workbooks with more than 100 rows"
     ],
-    explanation: "When inputs and calculations are separated (with color-coding, labels, and protected formula cells), users cannot accidentally break the automation. It also makes the workbook easier to audit because the data flow is clear."
+    explanation: "When inputs and calculations are separated (with color-coding, labels, and protected formula cells), users cannot accidentally break the automation. It also makes the workbook easier to audit because the data flow is clear.",
+    objectiveTags: ["workbook-design", "auditability"]
   }
 ];
 
@@ -716,30 +724,86 @@ const lesson07Questions: Unit02Phase5Question[] = [
   {
     id: "lesson07-q1",
     lessonId: "lesson07",
-    lessonTitle: "Lesson 07 - Audit & QA Readiness",
-    prompt: "Which definition best fits 'investor-ready'?",
-    correctAnswer: "Clear, reliable, auditable with documented assumptions and concise summary",
+    lessonTitle: "Lesson 07 - Project Rehearsal",
+    prompt: "Why does every group use the same data during rehearsal but different data in the real project?",
+    correctAnswer: "Shared data lets the whole class compare reasoning and quality; independent data tests whether teams can transfer the structure",
     distractors: [
-      "Lots of hidden logic with perfect formatting",
-      "Only visuals, no formulas",
-      "Manual inputs with no checks"
+      "Because there is only one dataset available for the rehearsal",
+      "To make it easier for the teacher to grade everyone the same way",
+      "So groups can compare final answers and copy the correct one"
     ],
-    explanation: "Investor-ready means trustworthy numbers, transparent logic, and clear communication.",
-    objectiveTags: ["investor-readiness", "audit-quality"]
+    explanation: "Rehearsal uses shared data so every student sees the same quality bar and can compare evidence chains. The real project uses different data to test whether teams can independently apply the same structure.",
+    objectiveTags: ["rehearsal-purpose", "transfer"]
   },
   {
     id: "lesson07-q2",
     lessonId: "lesson07",
-    lessonTitle: "Lesson 07 - Audit & QA Readiness",
-    prompt: "What is the purpose of reconciliation tie-outs?",
-    correctAnswer: "Prove totals match across sources and catch integrity issues",
+    lessonTitle: "Lesson 07 - Project Rehearsal",
+    prompt: "A recommendation says 'TechStart should cut marketing spend.' The only evidence cited is 'net income is low.' What is missing?",
+    correctAnswer: "Specific numbers from the workbook that link low net income to marketing spend",
     distractors: [
-      "Make the sheet look nice",
-      "Add complexity for advanced users",
-      "Speed up volatile functions"
+      "Nothing — low net income is enough evidence for any recommendation",
+      "A chart showing the trend over the past year",
+      "The recommendation should be on a different sheet"
     ],
-    explanation: "Tie-outs confirm correctness across systems and prevent hidden errors.",
-    objectiveTags: ["reconciliation", "data-integrity"]
+    explanation: "A strong evidence chain cites specific numbers. 'Net income is low' is vague — the recommendation needs exact figures from the Financial Statements sheet and ideally a comparison showing marketing's share of expenses.",
+    objectiveTags: ["evidence-chain", "recommendation-logic"]
+  },
+  {
+    id: "lesson07-q3",
+    lessonId: "lesson07",
+    lessonTitle: "Lesson 07 - Project Rehearsal",
+    prompt: "Which of the following is NOT a required element of every project workbook?",
+    correctAnswer: "A dashboard with at least three interactive charts",
+    distractors: [
+      "An Assumptions sheet with date, version, and data source",
+      "A recommendation statement with cited evidence and a risk acknowledgment",
+      "A trial balance that shows debits equal credits"
+    ],
+    explanation: "Interactive dashboards are optional polish. The required elements are: evidence chain, recommendation with cited numbers, risk statement, Assumptions sheet, and a balanced trial balance.",
+    objectiveTags: ["definition-of-done", "workbook-structure"]
+  },
+  {
+    id: "lesson07-q4",
+    lessonId: "lesson07",
+    lessonTitle: "Lesson 07 - Project Rehearsal",
+    prompt: "During a peer audit, you find that a group's recommendation cites a number from the Adjustments sheet, but that number does not appear on the Financial Statements sheet. What should your feedback say?",
+    correctAnswer: "The evidence chain is broken — the recommendation references data that did not flow into the financial statements",
+    distractors: [
+      "The recommendation is fine as long as the Adjustments sheet number is correct",
+      "They should move the recommendation to the Adjustments sheet",
+      "This is a minor formatting issue that does not affect the recommendation"
+    ],
+    explanation: "If a recommendation cites a number that exists on one sheet but not on the Financial Statements sheet, the data did not flow through the workbook correctly. This is a broken evidence chain, not a formatting issue.",
+    objectiveTags: ["peer-audit", "evidence-chain"]
+  },
+  {
+    id: "lesson07-q5",
+    lessonId: "lesson07",
+    lessonTitle: "Lesson 07 - Project Rehearsal",
+    prompt: "What is the most important thing your team must carry from today's rehearsal into the real project?",
+    correctAnswer: "The workbook structure, evidence-tracing routine, and Definition of Done checklist",
+    distractors: [
+      "The exact numbers from today's shared dataset",
+      "The teacher's tutorial guide word for word",
+      "The same recommendation that the teacher's workbook uses"
+    ],
+    explanation: "The rehearsal teaches structure and process, not answers. Your team must carry the workbook structure, the habit of tracing evidence, and the quality checklist — but apply them to a new dataset and scenario.",
+    objectiveTags: ["transfer", "project-handoff"]
+  },
+  {
+    id: "lesson07-q6",
+    lessonId: "lesson07",
+    lessonTitle: "Lesson 07 - Project Rehearsal",
+    prompt: "A peer's workbook has all seven required sheets, but the Risk statement says 'There may be some risks we did not consider.' How should you rate this?",
+    correctAnswer: "Weak — the risk statement is a generic disclaimer, not a specific limitation tied to the data",
+    distractors: [
+      "Strong — acknowledging uncertainty is always good practice",
+      "Acceptable — the team met the requirement of including a risk statement",
+      "Strong — it shows the team is being honest about their limitations"
+    ],
+    explanation: "A generic risk disclaimer does not demonstrate analytical thinking. A strong risk statement names a specific uncertainty tied to the data — for example, 'If the largest client delays payment by 30 days, cash runway drops below 4 weeks.'",
+    objectiveTags: ["peer-audit", "recommendation-logic"]
   }
 ];
 

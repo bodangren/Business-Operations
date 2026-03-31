@@ -37,37 +37,37 @@ export const unit02Data = {
 export const lesson07Phases = [
   {
     id: "phase_rehearsal_purpose_7",
-    phaseName: "Rehearsal Purpose" as const,
+    phaseName: "Hook" as const,
     sequence: 1,
     description: "Explain why the class is pausing for one guided rehearsal before independent project work begins",
   },
   {
     id: "phase_shared_artifact_7",
-    phaseName: "Shared Artifact Orientation" as const,
+    phaseName: "Introduction" as const,
     sequence: 2,
     description: "Orient students to the shared workbook, workbook map, deliverable structure, and success criteria",
   },
   {
     id: "phase_guided_audit_7",
-    phaseName: "Guided Audit" as const,
+    phaseName: "Guided Practice" as const,
     sequence: 3,
     description: "Model how to inspect the shared artifact and trace the final recommendation back to supporting evidence",
   },
   {
     id: "phase_polish_transfer_7",
-    phaseName: "Polish and Transfer Practice" as const,
+    phaseName: "Independent Practice" as const,
     sequence: 4,
     description: "Let students complete or polish the shared artifact and identify what project features they must later recreate independently",
   },
   {
     id: "phase_transfer_audit_7",
-    phaseName: "Transfer Check and Peer Audit" as const,
+    phaseName: "Assessment" as const,
     sequence: 5,
     description: "Check that students understand the project standard and can evaluate it in another student's work",
   },
   {
     id: "phase_reflection_handoff_7",
-    phaseName: "Reflection and Project Handoff" as const,
+    phaseName: "Closing" as const,
     sequence: 6,
     description: "Lock in the quality standard and preview how students will apply it in their own project scenario",
   }

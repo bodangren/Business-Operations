@@ -129,21 +129,21 @@
     - [x] Students can explain how the tool maintains GAAP accuracy
 
 ## Phase 4: Lessons 07-10 (Project)
-- [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
-  - [ ] 4.1.1 Update lesson-data.ts for Lesson 07
-  - [ ] 4.1.2 Implement Phase 1-6 with shared teacher data
+- [x] 4.1 **Lesson 07** - Implement project-rehearsal skill
+  - [x] 4.1.1 Update lesson-data.ts for Lesson 07
+  - [x] 4.1.2 Implement Phase 1-6 with shared teacher data
     - Phase 1: Frame as final guided rehearsal, explain same-data purpose, contrast with independent project
     - Phase 2: Provide shared workbook download path, state same-data requirement, name each sheet/evidence block, define success
     - Phase 3: Keep data constant, use previews/guided routines to trace logic chain, ask where recommendation comes from, ask what makes artifact weak
     - Phase 4: Continue shared workbook, keep teacher-guided, complete weak spots, require recommendation and risk statement, ask what features to transfer
     - Phase 5: Short comprehension/transfer check, peer audit routine tied to Definition of Done, require strength and improvement
     - Phase 6: Reflect on rehearsal, name what must carry into project, explain what changes next lesson
-  - [ ] 4.1.3 Keep the teacher and all groups on the same workbook data
-  - [ ] 4.1.4 Trace each control or output back to supporting logic
-  - [ ] 4.1.5 Run a peer audit against the Definition of Done
-  - **Done when**:
-    - [ ] Students know the exact project structure and quality bar
-    - [ ] The audit language is concrete enough to reuse in project work
+  - [x] 4.1.3 Keep the teacher and all groups on the same workbook data
+  - [x] 4.1.4 Trace each control or output back to supporting logic
+  - [x] 4.1.5 Run a peer audit against the Definition of Done
+  **Done when**:
+    - [x] Students know the exact project structure and quality bar
+    - [x] The audit language is concrete enough to reuse in project work
 
 - [ ] 4.2 **Lesson 08** - Implement group-project skill
   - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08

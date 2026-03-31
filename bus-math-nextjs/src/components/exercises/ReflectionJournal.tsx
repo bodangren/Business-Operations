@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 interface ReflectionPrompt {
   id: string;
-  category: 'courage' | 'adaptability' | 'persistence';
+  category: 'courage' | 'adaptability' | 'persistence' | 'confidence' | 'understanding' | 'application' | 'transfer' | 'method-signal' | 'tool-use' | 'professional-judgment' | 'speed-and-reliability';
   prompt: string;
   placeholder: string;
 }
