@@ -175,23 +175,23 @@
     - [x] The workbook and demo flow are complete
     - [x] The team can defend both speed and accuracy
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
-    - Require final polish of workbook and presentation notes
-    - Make audience, presentation standard, submission standard explicit
-    - Include final checklist and timing guidance
-    - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make final demo expectations explicit
-  - [ ] 4.4.4 Require final workbook submission and polished speaking notes
-  - [ ] 4.4.5 End with reflection on automation, controls, and usability
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+  - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [x] 4.4.2 Implement final presentation and submission
+    - [x] Require final polish of workbook and presentation notes
+    - [x] Make audience, presentation standard, submission standard explicit
+    - [x] Include final checklist and timing guidance
+    - [x] Require reflection after presentation or submission
+  - [x] 4.4.3 Make final demo expectations explicit
+  - [x] 4.4.4 Require final workbook submission and polished speaking notes
+  - [x] 4.4.5 End with reflection on automation, controls, and usability
   - **Done when**:
-    - [ ] Final artifacts are submitted
-    - [ ] Reflection captures how the team balanced speed with accuracy
+    - [x] Final artifacts are submitted
+    - [x] Reflection captures how the team balanced speed with accuracy
 
 ## Phase 5: Verification & Polish
-- [ ] 5.1 Verify all lesson-data.ts files are updated
-- [ ] 5.2 Verify month-end timeline and business urgency visible throughout
-- [ ] 5.3 Verify alignment between page content, workbook downloads, assessment language
-- [ ] 5.4 Run `npm run lint` to check for errors
-- [ ] 5.5 Document any component changes in MCP knowledge base
+- [x] 5.1 Verify all lesson-data.ts files are updated
+- [x] 5.2 Verify month-end timeline and business urgency visible throughout
+- [x] 5.3 Verify alignment between page content, workbook downloads, assessment language
+- [x] 5.4 Run `npm run lint` to check for errors
+- [x] 5.5 Document any component changes in MCP knowledge base
