@@ -8,7 +8,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 
 - [x] **Track: Unit 01 - Implement curriculum improvements**
   *Link: [./tracks/unit01_20260330/](./tracks/unit01_20260330/)*
-- [ ] **Track: Unit 02 - Month-end closing workflow**
+- [~] **Track: Unit 02 - Month-end closing workflow**
   *Link: [./tracks/unit02_20260330/](./tracks/unit02_20260330/)*
 - [ ] **Track: Unit 03 - Three-statement financial story**
   *Link: [./tracks/unit03_20260330/](./tracks/unit03_20260330/)*

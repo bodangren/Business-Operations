@@ -24,7 +24,7 @@ export const lesson01Data = {
     "Create business urgency around timely closing"
   ],
   rationale: "To establish the founder problem and unit scoreboard before teaching accounting procedures or automation.",
-  status: "Draft"
+  status: "Complete"
 }
 
 export const unit02Data = {

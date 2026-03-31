@@ -147,7 +147,7 @@ export default function Phase4Page() {
                       {scenario.accuracy}
                     </span>
                   </div>
-                  <div className="flex items-center-center justify-between">
+                  <div className="flex items-center justify-between">
                     <span className="text-gray-500">Compliance:</span>
                     <span className={`font-medium ${
                       scenario.scoreboard.compliance >= 80 ? 'text-green-700' : 

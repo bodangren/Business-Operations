@@ -52,7 +52,7 @@ I realized then that slow, manual month-end closing isn't just annoying. It's a 
       cardBorder: "orange-200"
     },
     introText: {
-      welcomeText: 'Sarah\'s business is growing, but her financial reporting reporting process isn\'t keeping up. What happens when a founder can\'t close the books quickly and accurately? In this unit, you\'ll experience the month-end closing crisis and learn the accounting workflow that every growing business must master.',
+      welcomeText: 'Sarah\'s business is growing, but her financial reporting process isn\'t keeping up. What happens when a founder can\'t close the books quickly and accurately? In this unit, you\'ll experience the month-end closing crisis and learn the accounting workflow that every growing business must master.',
       contextText: 'Month-end closing is the process of finalizing financial records for a reporting period. It requires accruals, deferrals, adjusting entries, and closing entries—accounting moves that ensure financial statements accurately represent business performance. When this process is slow or unreliable, businesses can\'t make decisions, can\'t report to stakeholders, and can\'t access capital when they need it most.'
     },
     reflectionText: 'Sarah\'s story shows that month-end closing isn\'t just an accounting exercise—it\'s a business control issue. Delayed closing means delayed decisions. Uncertain numbers mean uncertain strategy. In the next phase, you\'ll see the complete month-end close workflow and understand what every business must track to grow confidently.',
