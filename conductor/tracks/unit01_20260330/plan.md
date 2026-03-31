@@ -124,20 +124,20 @@
      - [x] Students can cite workbook evidence in plain language
 
 ### Phase 4: Lessons 07-10 (Project)
-- [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
-  - [ ] 4.1.1 Update lesson-data.ts for Lesson 07
-  - [ ] 4.1.2 Implement Phase 1-6 with shared teacher data
+- [x] 4.1 **Lesson 07** - Implement project-rehearsal skill
+  - [x] 4.1.1 Update lesson-data.ts for Lesson 07
+  - [x] 4.1.2 Implement Phase 1-6 with shared teacher data
     - Phase 1: Frame as final guided rehearsal, explain same-data purpose, contrast with independent project
     - Phase 2: Provide shared workbook download path, state same-data requirement, name each sheet/evidence block, define success
     - Phase 3: Keep data constant, use previews/guided routines to trace logic chain, ask where recommendation comes from, ask what makes artifact weak
     - Phase 4: Continue shared workbook, keep teacher-guided, complete weak spots, require recommendation and risk statement, ask what features to transfer
     - Phase 5: Short comprehension/transfer check, peer audit routine tied to Definition of Done, require strength and improvement
     - Phase 6: Reflect on rehearsal, name what must carry into project, explain what changes next lesson
-  - [ ] 4.1.3 Use one shared workbook structure and dataset for class
-  - [ ] 4.1.4 Include Definition of Done and peer audit routine
+  - [x] 4.1.3 Use one shared workbook structure and dataset for class
+  - [x] 4.1.4 Include Definition of Done and peer audit routine
   - **Done when**:
-    - [ ] Every student knows the structure they must reuse in the project
-    - [ ] Peer audit focuses on evidence, logic chain, and clarity
+    - [x] Every student knows the structure they must reuse in the project
+    - [x] Peer audit focuses on evidence, logic chain, and clarity
 
 - [ ] 4.2 **Lesson 08** - Implement group-project skill
   - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08

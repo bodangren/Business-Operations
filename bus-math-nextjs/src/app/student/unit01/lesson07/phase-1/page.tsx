@@ -5,112 +5,105 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit01Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, CheckCircle, XCircle, Target, Users } from "lucide-react"
+import { Users, Target, PlayCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 
 const currentPhase = lesson07Phases[0]
 
-const standardsQuiz = [
+const comprehensionQuestions = [
   {
-    id: "std-1",
-    question: "In an investor-ready model, which lookup approach is correct?",
+    id: "q1",
+    question: "Why is everyone using the same data today?",
     answers: [
-      "Use XLOOKUP (or INDEX/MATCH) with exact match and wrap with IFNA",
-      "Use VLOOKUP with approximate match for speed",
-      "Type values by hand to avoid formula errors",
-      "Use OFFSET with volatile recalculation"
+      "So we can all compare the same quality bar directly",
+      "Because the teacher couldn't find more datasets",
+      "To make the project easier for everyone",
+      "Because the data is too hard to change"
     ],
-    explanation: "Professional models require exact-match lookups and clear error handling (IFNA/IFERROR)."
+    explanation: "Using the same data lets every student see the same quality standard and compare reasoning directly."
   },
   {
-    id: "std-2",
-    question: "Charts should reference which kind of ranges?",
+    id: "q2",
+    question: "What's the difference between today and the real project?",
     answers: [
-      "Tables/structured references so visuals auto-expand",
-      "Static ranges (A1:C10) for stability",
-      "Hidden sheets with copied numbers",
-      "Manual values entered into the chart"
+      "Today is guided practice; the real project is more independent with your own data",
+      "Today is optional; the real project is required",
+      "Today uses Excel; the real project uses Google Sheets",
+      "There is no difference"
     ],
-    explanation: "Charts bound to structured references update as data grows and reduce maintenance risk."
-  },
-  {
-    id: "std-3",
-    question: "Which is the best definition of reconciliation?",
-    answers: [
-      "Tie-outs that prove totals match across sources (e.g., bank vs ledger)",
-      "A colorful status page",
-      "Deleting rows until the totals agree",
-      "Hiding formulas to make the model cleaner"
-    ],
-    explanation: "Reconciliation creates trust by showing totals agree and errors are surfaced—not hidden."
-  },
+    explanation: "Today is a guided rehearsal with shared data; the real project will have your group's own data and more independence."
+  }
 ]
 
 export default function Phase1Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-red-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
       <PhaseHeader unit={unit01Data} lesson={lesson07Data} phase={currentPhase} phases={lesson07Phases} />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook</Badge>
+            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🎯 Phase 1: Rehearsal Purpose</Badge>
+            
             <div className="max-w-4xl mx-auto space-y-8">
-              <Card className="border-red-200 bg-white shadow-lg">
+              <Card className="border-indigo-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                    <AlertTriangle className="w-8 h-8 text-red-600" />
+                  <div className="mx-auto w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                    <PlayCircle className="w-8 h-8 text-indigo-600" />
                   </div>
-                  <CardTitle className="text-3xl font-bold text-red-800 mb-2">
-                    Production Kickoff: Investor-Ready by Today
+                  <CardTitle className="text-3xl font-bold text-indigo-800 mb-2">
+                    Project Rehearsal: Shared Data, Shared Standard
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
-                  <p className="text-lg leading-relaxed text-red-900">
-                    Sarah Chen’s morning starts with a message from a potential investor:
-                    “We’re reviewing your model at 3 PM. Please send an audit‑ready version with
-                    a one‑screen summary. We’ll ask follow‑up questions live.”
+                  <p className="text-lg leading-relaxed text-gray-800">
+                    Before you jump into your independent group project, we're going to do a guided rehearsal together.
                   </p>
-                  <p className="text-lg leading-relaxed text-red-900">
-                    This is high‑pressure and very real. Investors trust models that are built
-                    with exact references, clear error handling, and reconciliation checks. Today,
-                    you’ll finish your Smart Ledger, harden it with QA, and prepare decision‑ready
-                    outputs.
-                  </p>
-                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-lg border bg-red-50 border-red-200">
-                      <h4 className="font-semibold text-red-800 flex items-center gap-2"><XCircle className="w-5 h-5" /> Failure Case</h4>
-                      <ul className="list-disc list-inside text-red-900 text-sm">
-                        <li>Hard‑coded numbers overwrite formulas</li>
-                        <li>VLOOKUP approximate match returns wrong client</li>
-                        <li>Charts point to A1:C10 and miss new rows</li>
-                        <li>No tie‑out to prove totals match</li>
-                      </ul>
-                    </div>
-                    <div className="p-4 rounded-lg border bg-green-50 border-green-200">
-                      <h4 className="font-semibold text-green-800 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Ready Example</h4>
-                      <ul className="list-disc list-inside text-green-900 text-sm">
-                        <li>XLOOKUP with exact match + IFNA("Not found")</li>
-                        <li>Named ranges and structured references</li>
-                        <li>Charts bound to tables; auto‑expanding</li>
-                        <li>Reconciliation section shows balance checks</li>
-                      </ul>
-                    </div>
+                  <div className="grid md:grid-cols-2 gap-6 mt-6">
+                    <Card className="border-blue-200 bg-blue-50">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-blue-800 flex items-center gap-2">
+                          <Users className="w-5 h-5" /> Today: Guided Rehearsal
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="text-blue-900">
+                        <ul className="list-disc list-inside space-y-1">
+                          <li>Everyone uses the same teacher-provided data</li>
+                          <li>High teacher guidance</li>
+                          <li>Practice the project structure</li>
+                          <li>Compare quality directly with classmates</li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="border-purple-200 bg-purple-50">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-purple-800 flex items-center gap-2">
+                          <Target className="w-5 h-5" /> Next: Real Project
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="text-purple-900">
+                        <ul className="list-disc list-inside space-y-1">
+                          <li>Your group gets its own unique dataset</li>
+                          <li>More independent work</li>
+                          <li>Apply what you rehearse today</li>
+                          <li>Create your own investor-ready deliverable</li>
+                        </ul>
+                      </CardContent>
+                    </Card>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-blue-200 bg-white">
+              <Card className="border-green-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-blue-900 flex items-center gap-2">
-                    <Target className="w-5 h-5" /> Do you know the standards?
-                  </CardTitle>
+                  <CardTitle className="text-green-800">Quick Check: Why Rehearse?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={standardsQuiz as any}
-                    title="Production Standards Check"
-                    description="Confirm your understanding of exact lookups, structured refs, and reconciliation."
+                    questions={comprehensionQuestions as any}
+                    title="Rehearsal Purpose Check"
+                    description="Confirm you understand why we're doing this guided rehearsal first."
                     showExplanations={true}
                   />
                 </CardContent>
@@ -123,11 +116,10 @@ export default function Phase1Page() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-yellow-900 font-medium mb-2">What makes a model trustworthy under pressure?</p>
-                  <ul className="list-disc list-inside text-yellow-900">
-                    <li>Which standards give investors confidence most quickly?</li>
-                    <li>Where does your current model still feel fragile?</li>
-                    <li>What would you check first before sending the file?</li>
+                  <p className="text-yellow-900 font-medium mb-2">What are you most curious about in the project?</p>
+                  <ul className="list-disc list-inside text-yellow-900 space-y-1">
+                    <li>What makes a workbook feel trustworthy to an investor?</li>
+                    <li>What parts of today's rehearsal do you think will be hardest to transfer?</li>
                   </ul>
                 </CardContent>
               </Card>

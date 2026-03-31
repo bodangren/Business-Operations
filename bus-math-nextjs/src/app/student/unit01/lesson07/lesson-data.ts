@@ -1,81 +1,75 @@
-// Unit 1, Lesson 7 data - extracted from MCP curriculum database
+// Unit 1, Lesson 7 data - Project Rehearsal
 export const lesson07Data = {
-  id: "mds5t7qyamtivn9oq6",
-  title: "Production Studio: Complete • QA • Present",
+  id: "lesson07-unit01",
+  title: "Project Rehearsal: Shared Data, Shared Standard",
   sequence: 7,
-  unitId: "mdrha5ziiupuou6dqt",
+  unitId: "unit01",
   learningObjectives: [
-    "Finish the Smart Ledger model with exact-match lookups and structured references",
-    "Apply error handling (IFNA/IFERROR) and build a clear reconciliation trail",
-    "Validate inputs and performance; ensure chart links use tables (no static ranges)",
-    "Demonstrate investor-ready communication with an executive summary and peer audit"
+    "Rehearse the exact project workbook structure using shared teacher data",
+    "Trace the recommendation back to supporting evidence in the workbook",
+    "Complete a peer audit focusing on logic chain, evidence, and clarity",
+    "Identify exactly which structures must be transferred to the real project"
   ],
   keyConcepts: [
-    "Definition of Done checklist",
-    "Exact-match lookups (XLOOKUP or INDEX/MATCH)",
-    "Structured references and named ranges",
-    "QA, reconciliation, and auditability",
-    "Scenario behavior and threshold-driven summaries"
+    "Project workbook structure",
+    "Evidence chain tracing",
+    "Definition of Done",
+    "Peer audit",
+    "Transfer to independent project"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 90,
   pedagogicalApproach: [
-    "Production sprints with standards-based QA",
-    "Peer audit against a published checklist",
-    "Formative checks embedded in the flow",
-    "Presentation readiness and decision-focused outputs"
+    "Guided rehearsal with shared teacher data",
+    "Workbook orientation and evidence tracing",
+    "Peer audit against concrete criteria",
+    "Transfer identification and reflection"
   ],
-  rationale: "Students complete the ledger system started in Lessons 04–06, harden it with validation and reconciliation, and prepare concise, decision-ready outputs that inspire investor confidence.",
-  status: "Draft"
+  rationale: "This lesson is a guided rehearsal with shared teacher data so every student sees the same quality bar before starting their independent group project.",
+  status: "Ready"
 }
 
 export const unit01Data = {
-  id: "mdrha5ziiupuou6dqt",
+  id: "unit01",
   title: "Unit 1: Smart Ledger Launch",
   sequence: 1
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases for Project Rehearsal
 export const lesson07Phases = [
   {
-    id: "phase07-hook",
+    id: "phase07-rehearsal-purpose",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Production kickoff: stakes, standards, and what investor-ready means",
-    // component: "StudentChoices" (id: 1753928158697pz6b4sjet) - To allow students to select their business venture.
+    description: "Explain why we're doing a guided rehearsal with shared teacher data"
   },
   {
-    id: "phase07-intro", 
+    id: "phase07-shared-artifact",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Standards, plan, and Definition of Done checklist for completion and QA",
-    // component: "AssessmentOverview" (id: 1753928098855pkynqh56h) - To review the rubric and expectations.
+    description: "Orient to the shared workbook, workbook map, and success criteria"
   },
   {
-    id: "phase07-guided",
+    id: "phase07-guided-audit",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Production Sprint I: build core links and enforce exact-match lookups",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students can use a blank template to start their work.
+    description: "Model how to inspect the shared artifact and trace the recommendation"
   },
   {
-    id: "phase07-independent",
+    id: "phase07-polish-transfer",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Production Sprint II: validation, reconciliation, visuals, and executive summary",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - Students continue their work.
+    description: "Polish the shared artifact and identify what to transfer to the real project"
   },
   {
-    id: "phase07-assessment",
+    id: "phase07-transfer-check",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "QA review and structured peer audit against investor-ready standards",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer review process.
+    description: "Check transfer understanding and complete a peer audit"
   },
   {
-    id: "phase07-closing",
+    id: "phase07-reflection-handoff",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Readiness reflection and handoff to Lesson 08 (final polish)",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect and preview what changes in the real project"
   }
 ]

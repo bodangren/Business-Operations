@@ -5,255 +5,143 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit01Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { CheckCircle, Target, ArrowRightCircle, FileText } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import {
-  Beaker,
-  CheckCircle2,
-  ClipboardList,
-  Download,
-  FileText,
-  Gauge,
-  Target
-} from "lucide-react"
 
 const currentPhase = lesson07Phases[3]
 
-const independentQuestions = [
-  {
-    id: "trial-balance",
-    question: "What does it mean if SUM(Debit) - SUM(Credit) returns a non-zero number after you import the dataset?",
-    answers: [
-      "Your ledger is out of balance and you should investigate which rows caused the difference.",
-      "Excel miscalculated, so you should close the workbook and reopen it.",
-      "It proves the ledger is clean and you can publish the report immediately.",
-      "You must delete all rows that contain negative numbers." 
-    ],
-    explanation: "A non-zero difference signals the ledger is out of balance. The next step is to trace the rows that created the gap."
-  },
-  {
-    id: "stale-date",
-    question: "How should the Stale? column respond when TODAY() - Date is greater than 90?",
-    answers: [
-      "Show a warning like 'Stale' so Sarah knows to follow up on old invoices.",
-      "Display a dash because the age of data never matters in a ledger.",
-      "Automatically delete the row so the ledger balances again.",
-      "Convert the date to text so it cannot change." 
-    ],
-    explanation: "Flagging stale transactions helps Sarah spot invoices that need attention without deleting historical records."
-  },
-  {
-    id: "audit-note",
-    question: "Which detail makes an audit note investor-ready?",
-    answers: [
-      "Stating the number of errors found and the next corrective action.",
-      "Listing every formula used in the workbook alphabetically.",
-      "Sharing how many minutes the build required.",
-      "Thanking the reader for their patience." 
-    ],
-    explanation: "Investors need signal: the count of issues and the recommended next move."
-  }
-]
-
 const reflectionPrompts = [
   {
-    id: "courage-ledger",
+    id: "rehearsal-clarity",
     category: "courage" as const,
-    prompt: "Where did you push yourself outside your comfort zone while chasing a ledger error today?",
-    placeholder: "Describe the error, the Excel feature you tried, and how it felt to keep digging..."
+    prompt: "What part of the workbook structure became clearer today as you practiced?",
+    placeholder: "Describe which sheet or link you now understand better..."
   },
   {
-    id: "adaptability-checks",
+    id: "transfer-items",
     category: "adaptability" as const,
-    prompt: "What is one QA flag you could reuse on the next project, and how would you adapt it?",
-    placeholder: "Explain which rule worked here and what you would tweak for a different dataset..."
+    prompt: "What 3 specific structures or checks will your group definitely reuse in the real project?",
+    placeholder: "List the 3 things you must transfer..."
   },
   {
-    id: "persistence-audit",
+    id: "weakness-spotting",
     category: "persistence" as const,
-    prompt: "How did you refine your audit sentence until it was clear and data-driven?",
-    placeholder: "Share the edits you made and what finally made the sentence feel ready for an investor..."
+    prompt: "What's one weak spot you fixed today, and how will you prevent it in your project?",
+    placeholder: "Explain the weak spot and your prevention plan..."
   }
 ]
 
 export default function Phase4Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
-      <PhaseHeader
-        unit={unit01Data}
-        lesson={lesson07Data}
-        phase={currentPhase}
-        phases={lesson07Phases}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
+      <PhaseHeader unit={unit01Data} lesson={lesson07Data} phase={currentPhase} phases={lesson07Phases} />
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
-              🚀 Phase 4: Independent Practice — QA Stress Test
-            </Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Build a Ledger that Spots Its Own Problems</h1>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Sarah’s investors want proof that her ledger can catch mistakes before they reach a boardroom. Use this
-              practice time to work through the QA ladder: start with trial balance basics, then layer in pro checks and
-              stretch challenges as you gain confidence.
-            </p>
+            <Badge className="bg-amber-100 text-amber-800 text-lg px-4 py-2">✨ Phase 4: Polish and Transfer Practice</Badge>
+            
+            <div className="max-w-4xl mx-auto space-y-8">
+              <Card className="border-amber-200 bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                    <CheckCircle className="w-6 h-6 text-amber-700" /> Polish the Shared Workbook
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6 text-left">
+                  <p className="text-gray-800 leading-relaxed">
+                    Now it's your turn to polish the shared rehearsal workbook. Complete these steps to make it investor-ready!
+                  </p>
+
+                  <ol className="list-decimal list-inside space-y-4">
+                    <li>
+                      <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
+                        <h4 className="font-semibold text-amber-900 mb-2">Step 1: Fix the Weak Spots</h4>
+                        <p className="text-amber-900">Find and fix at least 2 issues in the workbook (e.g., broken formula, unclear label, missing check).</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <h4 className="font-semibold text-blue-900 mb-2">Step 2: Write the Recommendation</h4>
+                        <p className="text-blue-900">In the Executive Summary sheet, write a clear recommendation with:</p>
+                        <ul className="list-disc list-inside text-blue-900 mt-2 space-y-1">
+                          <li>One clear claim</li>
+                          <li>Three cited numbers from the workbook</li>
+                          <li>One risk or limitation</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                        <h4 className="font-semibold text-purple-900 mb-2">Step 3: Identify Transfer Items</h4>
+                        <p className="text-purple-900">List 3 specific things your group will reuse in the real project (e.g., sheet structure, error check formula, recommendation format).</p>
+                      </div>
+                    </li>
+                  </ol>
+
+                  <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                    <h4 className="font-semibold text-green-900 flex items-center gap-2 mb-2">
+                      <Target className="w-5 h-5" /> Done Checklist
+                    </h4>
+                    <ul className="list-disc list-inside text-green-900 space-y-1">
+                      <li>All 4 sheets are complete and linked</li>
+                      <li>Recommendation has 1 claim + 3 numbers + 1 risk</li>
+                      <li>2+ weak spots fixed</li>
+                      <li>3 transfer items listed</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-indigo-200 bg-white">
+                <CardHeader>
+                  <CardTitle className="text-indigo-900 flex items-center gap-2">
+                    <ArrowRightCircle className="w-5 h-5" /> What Changes in the Real Project?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-indigo-900">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-indigo-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Same:</h4>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>Sheet structure (4 tabs)</li>
+                        <li>Definition of Done</li>
+                        <li>Error check patterns</li>
+                        <li>Recommendation format</li>
+                      </ul>
+                    </div>
+                    <div className="bg-pink-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Different:</h4>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>Your group's own dataset</li>
+                        <li>More independent work</li>
+                        <li>Your own business scenario</li>
+                        <li>Final investor presentation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-emerald-200 bg-emerald-50">
+                <CardHeader>
+                  <CardTitle className="text-emerald-900 flex items-center gap-2">
+                    <FileText className="w-5 h-5" /> Reflection
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ReflectionJournal
+                    unitTitle="Project Rehearsal Reflection"
+                    prompts={reflectionPrompts}
+                  />
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto space-y-6">
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-900 flex items-center gap-2">
-                <Download className="h-5 w-5" /> Practice Dataset
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-blue-900 space-y-3 leading-relaxed">
-              <p>
-                Import <strong>unit01-ledger-lesson07-practice.csv</strong> as a Table named <strong>Transactions</strong>.
-                The mix of clean entries and messy edge cases is intentional—you are here to catch them.
-              </p>
-              <a
-                href="/resources/unit01-ledger-lesson07-practice.csv"
-                download
-                className="inline-flex items-center gap-2 font-semibold underline text-blue-700"
-              >
-                Download: unit01-ledger-lesson07-practice.csv
-              </a>
-              <div className="bg-white border border-blue-200 rounded-lg p-3 text-blue-900 text-sm leading-relaxed">
-                <p className="font-semibold">Edge cases to test:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Duplicate scenario names</li>
-                  <li>Stale <code>AsOfDate</code> values (&gt; 90 days old)</li>
-                  <li>Negative liabilities and zero-dollar rows</li>
-                  <li>Ledger entries that unbalance debits and credits</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-gray-900 flex items-center gap-2">
-                <ClipboardList className="h-5 w-5" /> Independent Build Steps
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-800 space-y-4 leading-relaxed">
-              <div className="space-y-4">
-                <div className="bg-white border border-gray-200 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-900 flex items-center gap-2">
-                    <Target className="w-5 h-5" /> Tier 1 — Core (everyone completes)
-                  </h3>
-                  <ol className="list-decimal list-inside text-base text-gray-800 space-y-1">
-                    <li>Confirm <code>=SUM(Transactions[Debit])</code> equals <code>=SUM(Transactions[Credit])</code>. Highlight the variance if it is not zero.</li>
-                    <li>Create an <strong>ErrorNote</strong> column that flags invalid accounts or negative liabilities with plain-language messages.</li>
-                    <li>Document two issues you found in a comments cell (what went wrong, how to fix it).</li>
-                  </ol>
-                </div>
-                <div className="bg-white border border-blue-200 rounded-lg p-4">
-                  <h3 className="font-semibold text-blue-900 flex items-center gap-2">
-                    <Gauge className="w-5 h-5" /> Tier 2 — Pro (add after Tier 1 is stable)
-                  </h3>
-                  <ol className="list-decimal list-inside text-base text-blue-900 space-y-1">
-                    <li>Wrap lookups with <code>IFNA</code> so typos return friendly prompts instead of error codes.</li>
-                    <li>Add a <strong>Stale?</strong> column: <code>=IF(TODAY()-[@Date]&gt;90,"Stale","OK")</code>.</li>
-                    <li>Use <code>ROUND(total,2)</code> or <code>MROUND</code> to present dollars with clean cents.</li>
-                  </ol>
-                </div>
-                <div className="bg-white border border-purple-200 rounded-lg p-4">
-                  <h3 className="font-semibold text-purple-900 flex items-center gap-2">
-                    <Beaker className="w-5 h-5" /> Tier 3 — Analyst Stretch
-                  </h3>
-                  <ol className="list-decimal list-inside text-base text-purple-900 space-y-1">
-                    <li>Build a mini QA dashboard: error counts, balanced/unbalanced status, traffic-light icons.</li>
-                    <li>Replace any A1:C10 references with structured table names or named ranges.</li>
-                    <li>Write a one-sentence audit note such as “Ledger caught 3 invalid accounts and 1 stale invoice; all other entries reconcile.”</li>
-                  </ol>
-                </div>
-              </div>
-              <div className="bg-orange-100 border border-orange-200 rounded-lg p-4 text-orange-900 flex gap-3">
-                <Gauge className="h-6 w-6 flex-shrink-0" />
-                <p>
-                  Pro tip: duplicate your sheet before stress testing an edge case. Compare “Before QA” and “After QA” to measure how much cleaner your ledger becomes.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-900 flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5" /> Investor-Ready Quality Checklist
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-green-900 space-y-2 leading-relaxed">
-              <ul className="list-disc list-inside space-y-2 text-base">
-                <li>Trial balance check returns zero when the ledger is clean and flags a gap when it is not.</li>
-                <li>ErrorNote column pinpoints specific problems (invalid account, negative liability, stale date).</li>
-                <li>All lookup formulas that can fail are wrapped in <code>IFNA</code> or <code>IFERROR</code> with plain-language messages.</li>
-                <li>Structured references or named ranges power every formula, chart, and validation rule.</li>
-                <li>Your audit note states the number of issues and the next action in under 25 words.</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-amber-200 bg-amber-50">
-            <CardHeader>
-              <CardTitle className="text-amber-900 flex items-center gap-2">
-                <FileText className="h-5 w-5" /> Audit Note Examples
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-amber-900 space-y-3 leading-relaxed">
-              <p>
-                Investors read for signal, not story time. Use one of these stems to keep your message sharp:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-base">
-                <li><strong>Balanced with flags:</strong> “Ledger balances but flagged <strong>{"{count}"}</strong> invalid accounts; update vendor list before publishing.”</li>
-                <li><strong>Out of balance:</strong> “Debits trail credits by <strong>${"{variance}"}</strong>; review invoices dated before <strong>{"{date}"}</strong> for typos.”</li>
-                <li><strong>Clean pass:</strong> “All transactions reconcile and no validation flags triggered; ready for investor packet.”</li>
-              </ul>
-              <p>
-                Keep the sentence under 25 words. Mention the key KPI or flag and the action you recommend next.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-gray-900 flex items-center gap-2">
-                <Target className="h-5 w-5" /> Stretch Yourself
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-800 space-y-3 leading-relaxed">
-              <p>
-                Ready for more? Build a pivot table that groups error types by account family. Add a slicer by month so Sarah can spot patterns quickly.
-              </p>
-              <p>
-                Bonus challenge: write a second audit sentence aimed at a different audience (bookkeeper vs. investor) and notice how the language shifts.
-              </p>
-            </CardContent>
-          </Card>
-
-          <ComprehensionCheck
-            title="QA Readiness Check"
-            description="Confirm you can explain the core QA moves before submitting your ledger."
-            questions={independentQuestions}
-            showExplanations
-          />
-
-          <ReflectionJournal
-            unitTitle="Ledger QA Reflection"
-            prompts={reflectionPrompts}
-          />
         </section>
       </main>
 
-      <PhaseFooter
-        unit={unit01Data}
-        lesson={lesson07Data}
-        phase={currentPhase}
-        phases={lesson07Phases}
-      />
+      <PhaseFooter unit={unit01Data} lesson={lesson07Data} phase={currentPhase} phases={lesson07Phases} />
     </div>
   )
 }
