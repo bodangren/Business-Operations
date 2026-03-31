@@ -139,19 +139,19 @@
     - [x] Every student knows the structure they must reuse in the project
     - [x] Peer audit focuses on evidence, logic chain, and clarity
 
-- [ ] 4.2 **Lesson 08** - Implement group-project skill
-  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
-  - [ ] 4.2.2 Implement kickoff with group-specific startup data
-    - Assign each group its own dataset/starter workbook
-    - Explain business scenario, constraints, target outcome
-    - Require teams to rename, save, organize correct workbook
-    - Start first required sheets/sections
-    - Define milestone 1 acceptance criteria
-  - [ ] 4.2.3 Assign each group its own dataset or starter workbook
-  - [ ] 4.2.4 Keep tab structure identical to Lesson 07
-  - **Done when**:
-    - [ ] Each team has the correct workbook open and renamed
-    - [ ] Early setup and analysis sheets are complete
+- [x] 4.2 **Lesson 08** - Implement group-project skill
+   - [x] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+   - [x] 4.2.2 Implement kickoff with group-specific startup data
+     - Assign each group its own dataset/starter workbook
+     - Explain business scenario, constraints, target outcome
+     - Require teams to rename, save, organize correct workbook
+     - Start first required sheets/sections
+     - Define milestone 1 acceptance criteria
+   - [x] 4.2.3 Assign each group its own dataset or starter workbook
+   - [x] 4.2.4 Keep tab structure identical to Lesson 07
+   - **Done when**:
+     - [x] Each team has the correct workbook open and renamed
+     - [x] Early setup and analysis sheets are complete
 
 - [ ] 4.3 **Lesson 09** - Implement group-project skill
   - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09

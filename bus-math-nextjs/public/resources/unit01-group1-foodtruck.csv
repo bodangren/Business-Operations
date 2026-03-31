@@ -1,0 +1,55 @@
+date,txn_id,description,account,counter_account,debit,credit,notes
+2025-01-03,T001,Bakery website invoice paid,Cash,Service Revenue,2200,0,Client payment received
+2025-01-04,T002,Adobe Creative Cloud subscription,Software Expense,Cash,52.99,0,Monthly SaaS
+2025-01-05,T003,Social media setup invoice issued,Accounts Receivable,Service Revenue,650,0,Net 15 days
+2025-01-09,T004,Office supplies (paper, pens),Supplies Expense,Cash,38.24,0,Receipt #145
+2025-01-10,T005,Dental SEO deposit,Cash,Unearned Revenue,500,0,Work starts next week
+2025-01-12,T006,Phone bill (business line),Utilities Expense,Cash,46.17,0,Auto‑pay
+2025-01-13,T007,Owner investment, Cash,Owner's Equity,1000,0,Capital contribution
+2025-01-15,T008,Client payment received (AR),Cash,Accounts Receivable,650,0,Settles T003
+2025-01-16,T009,Software add‑on plugin,Software Expense,Accounts Payable,89,0,Pay next month
+2025-01-18,T010,Travel to client meeting,Travel Expense,Cash,24.50,0,Mileage + parking
+2025-01-20,T011,Pay A/P from T009,Accounts Payable,Cash,0,89,Check #1021
+2025-01-22,T012,Dental SEO final payment,Cash,Service Revenue,600,0,Revenue recognized now
+2025-01-24,T013,Web hosting for client previews,Hosting Expense,Cash,18.00,0,Monthly
+2025-01-26,T014,Client refund (minor scope cut),Sales Returns and Allowances,Cash,75,0,Goodwill adj.
+2025-01-28,T015,Bank service charge,Bank Fees Expense,Cash,6.00,0,Monthly fee
+2025-01-30,T016,Month‑end adjustment error check,Trial Balance Check,Trial Balance Check,0,0,Use for testing only
+2025-01-31,T017,End of month phone proration,Utilities Expense,Cash,12.00,0,Prorated
+2025-01-31,T018,Recognize portion of prepay,Unearned Revenue,Service Revenue,0,200,Revenue recognition
+2025-01-02,T019,Client kickoff deposit,Cash,Unearned Revenue,300,0,New project
+2025-01-06,T020,Stock photos,Software Expense,Cash,14.00,0,One‑off
+2025-01-07,T021,Logo icon pack,Software Expense,Accounts Payable,25.00,0,Pay next month
+2025-01-08,T022,Pay A/P for T021,Accounts Payable,Cash,0,25.00,Online
+2025-01-11,T023,Bus fare to site,Travel Expense,Cash,9.50,0,Local transit
+2025-01-13,T024,AR issued (mini site),Accounts Receivable,Service Revenue,420,0,Net 15
+2025-01-17,T025,Collect AR (T024),Cash,Accounts Receivable,420,0,Settled
+2025-01-19,T026,Domain + DNS,Hosting Expense,Cash,21.00,0,Bundle
+2025-01-21,T027,Client presentation snacks,Supplies Expense,Cash,12.40,0,Meeting
+2025-01-23,T028,Small goodwill refund,Sales Returns and Allowances,Cash,30,0,Scope change
+2025-01-24,T029,Owner draw,Owner's Equity,Cash,0,150,Personal transfer
+2025-01-25,T030,AR invoice (support),Accounts Receivable,Service Revenue,280,0,Net 15
+2025-01-27,T031,Collect AR (T030),Cash,Accounts Receivable,280,0,ACH
+2025-01-28,T032,Email tool,Supplies Expense,Cash,8.60,0,Stamps/add‑ons
+2025-01-29,T033,Analytics add‑on,Software Expense,Cash,17.00,0,App
+2025-01-30,T034,Client pay (new site),Cash,Service Revenue,1350,0,Card
+2025-01-31,T035,Bank fee,Bank Fees Expense,Cash,6.00,0,Monthly
+2025-01-31,T036,QA balance check,Trial Balance Check,Trial Balance Check,0,0,Verification
+2025-01-03,T037,Recognize Jan portion,Unearned Revenue,Service Revenue,0,100,Prepay monthly piece
+2025-01-04,T038,Invoice correction,Accounts Receivable,Service Revenue,50,0,Scope add
+2025-01-06,T039,Collect partial AR,Cash,Accounts Receivable,25,0,Partial
+2025-01-07,T040,Write‑off small balance,Bad Debt Expense,Accounts Receivable,15,0,Policy threshold
+2025-01-09,T041,Client ACH fee,Bank Fees Expense,Cash,2.50,0,Pass‑through
+2025-01-10,T042,Marketing boost,Advertising Expense,Cash,35.00,0,Social post
+2025-01-12,T043,Printer paper,Supplies Expense,Cash,7.80,0,Office
+2025-01-14,T044,Cloud storage,Software Expense,Cash,9.99,0,Monthly
+2025-01-16,T045,Client overpayment return,Sales Returns and Allowances,Cash,20,0,Correction
+2025-01-18,T046,Taxi to client,Travel Expense,Cash,16.30,0,Trip
+2025-01-20,T047,Owner investment,Cash,Owner's Equity,500,0,Boost
+2025-01-22,T048,AR invoice (ads mgmt),Accounts Receivable,Service Revenue,560,0,Net 15
+2025-01-24,T049,Collect AR (T048),Cash,Accounts Receivable,560,0,Wire
+2025-01-26,T050,Meetup room fee,Utilities Expense,Cash,18.00,0,Shared space
+2025-01-27,T051,Tech support plugin,Software Expense,Accounts Payable,29.00,0,Due 30 days
+2025-01-29,T052,Pay A/P (T051),Accounts Payable,Cash,0,29.00,Online
+2025-01-31,T053,End‑month recognition,Unearned Revenue,Service Revenue,0,150,Earned portion
+2025-01-31,T054,Month close check,Trial Balance Check,Trial Balance Check,0,0,Close out
