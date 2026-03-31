@@ -109,21 +109,23 @@
     - [x] The workbook can automate at least one key closing routine
     - [x] Students can explain which manual step the automation replaced
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with wizard polish
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with wizard polish
     - Phase 1: Open with business scenario where polished interface matters, make tool feel necessary
     - Phase 2: Name validation/auditability pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task testing trustworthiness and explanation
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Add visible checks and user-facing controls
-  - [ ] 3.2.4 Keep the workbook professional and easy to use
-  - [ ] 3.2.5 Phase 5 must test trustworthiness and explanation, not just clicks
-  - **Done when**:
-    - [ ] The workbook feels like a usable month-end tool, not a prototype pile
-    - [ ] Students can explain how the tool maintains GAAP accuracy
+  - [x] 3.2.3 Add visible checks and user-facing controls
+  - [x] 3.2.4 Keep the workbook professional and easy to use
+  - [x] 3.2.5 Phase 5 must test trustworthiness and explanation, not just clicks
+  - [x] 3.2.6 Fix Phase 6 reflection prompts to match validation/controls/auditability focus (removed stale scenario/dashboard content)
+  - [x] 3.2.7 Fix Phase 5 question bank to match validation/auditability content (replaced stale XLOOKUP/dashboard questions)
+  **Done when**:
+    - [x] The workbook feels like a usable month-end tool, not a prototype pile
+    - [x] Students can explain how the tool maintains GAAP accuracy
 
 ## Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill

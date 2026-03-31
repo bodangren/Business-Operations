@@ -609,114 +609,106 @@ const lesson06Questions: Unit02Phase5Question[] = [
   {
     id: "lesson06-q1",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "Best method to switch scenarios by name without breaking references?",
-    correctAnswer: "Driver table + XLOOKUP exact-match with IFNA",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "What is the biggest risk of a workbook that runs automation but has no validation rules?",
+    correctAnswer: "A user can enter invalid data and the automation will produce wrong results without any warning",
     distractors: [
-      "Approximate VLOOKUP on sorted list",
-      "Three separate tabs with manual links",
-      "A dropdown that only changes colors"
+      "The workbook will become too large to save",
+      "Excel will refuse to run macros without validation",
+      "The button will disappear from the sheet"
     ],
-    explanation: "Exact-match XLOOKUP with a driver table is reliable and transparent; IFNA handles missing names.",
-    objectiveTags: ["scenario-switching", "xlookup"]
+    explanation: "Without validation, there is no guard between bad input and the automation. The macro will still execute—but on garbage data—producing wrong financial results that look correct."
   },
   {
     id: "lesson06-q2",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "Charts break when data grows. What fixes this?",
-    correctAnswer: "Structured references and tables feeding chart series",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "An accountant opens your workbook and asks: 'How do I know the close ran correctly?' What is the best answer?",
+    correctAnswer: "The audit panel shows the inputs used, the outputs produced, and whether verification checks passed",
     distractors: [
-      "Static ranges that are updated monthly",
-      "Copying values to a 'Chart Data' tab",
-      "Volatile OFFSET formulas everywhere"
+      "The button is green, so it must have worked",
+      "The file is saved as .xlsm, which means it is correct",
+      "You have to check every formula by hand"
     ],
-    explanation: "Tables with structured references auto-expand, keeping visuals current.",
-    objectiveTags: ["charts", "dynamic-data"]
+    explanation: "An audit panel provides visible, verifiable evidence that the automation ran correctly. It shows what went in, what came out, and whether the fundamental accounting checks (like debits = credits) passed."
   },
   {
     id: "lesson06-q3",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "Which validation should appear near the top of the dashboard?",
-    correctAnswer: "Missing scenario, stale AsOfDate, negative or >100% rates",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "What makes a dropdown control functional rather than decorative?",
+    correctAnswer: "The dropdown is linked to a cell that the workbook's formulas actually reference",
     distractors: [
-      "Sheet color theme and font size",
-      "User initials for style points",
-      "Hidden named ranges and helper cells"
+      "The dropdown has many options to choose from",
+      "The dropdown is placed at the top of the sheet",
+      "The dropdown uses a different color from the rest of the sheet"
     ],
-    explanation: "Visible validation flags catch critical issues early and build trust.",
-    objectiveTags: ["dashboard-validation", "data-quality"]
+    explanation: "A dropdown that changes a cell but is not referenced by any formula is decorative. The control must be wired into the calculation logic—formulas must read from the dropdown's linked cell."
   },
   {
     id: "lesson06-q4",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "You need a fallback when lookup has no match. Which formula addition helps?",
-    correctAnswer: "IFNA or IFERROR around XLOOKUP",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "What is the most important design rule for an audit panel?",
+    correctAnswer: "It should be readable in 10 seconds with no more than 5-7 key values",
     distractors: [
-      "Nesting more IFs inside SWITCH",
-      "Turning calculation to Manual",
-      "Approximate VLOOKUP"
+      "It should include every formula in the workbook for full transparency",
+      "It should be hidden on a separate sheet to save space",
+      "It should use as many colors as possible to look professional"
     ],
-    explanation: "IFNA/IFERROR returns a readable message instead of #N/A.",
-    objectiveTags: ["error-handling", "graceful-failure"]
+    explanation: "An audit panel with 20 items is not readable. Limit it to the most important values: period, total adjustments, verification status, and key outputs. Use clear labels and green/red indicators."
   },
   {
     id: "lesson06-q5",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "Professional KPI selection for month-end dashboard should prioritize…",
-    correctAnswer: "Runway, profit margin, cash coverage days",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "Your validation rule catches a negative Supplies amount. What should happen when the user clicks the Run Close button?",
+    correctAnswer: "The button should refuse to run and display a message explaining which validation check failed",
     distractors: [
-      "Tab count, chart colors, animation speed",
-      "Random ratios from textbooks",
-      "All available metrics at once"
+      "The button should run anyway and let the user fix it afterward",
+      "The button should silently correct the negative value to zero",
+      "The button should delete the invalid input and continue"
     ],
-    explanation: "Investor-relevant KPIs connect the model to decisions.",
-    objectiveTags: ["kpi-selection", "investor-focus"]
+    explanation: "A polished wizard checks validation before running. If any check fails, it stops and tells the user exactly what is wrong. This prevents wrong outputs from ever being produced."
   },
   {
     id: "lesson06-q6",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "A student wires a chart directly to raw data that doesn't filter by scenario. Risk?",
-    correctAnswer: "Chart won't reflect scenario changes and misleads viewers",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "How does a polished workbook maintain GAAP accuracy?",
+    correctAnswer: "Validation rules prevent invalid inputs, the audit panel traces outputs back to inputs, and the button flow enforces the correct sequence",
     distractors: [
-      "Chart loads faster with fewer formulas",
-      "No impact—charts ignore source differences",
-      "It auto-detects the SelectedScenario"
+      "GAAP accuracy is guaranteed by saving the file as .xlsm format",
+      "The workbook maintains GAAP accuracy because it uses named ranges",
+      "GAAP accuracy only matters for the financial statements, not the workbook design"
     ],
-    explanation: "Charts must reference outputs that respond to scenario switching.",
-    objectiveTags: ["chart-linkage", "data-integrity"]
+    explanation: "GAAP accuracy means the workbook follows consistent accounting rules and produces verifiable results. Validation prevents bad data, the audit panel provides traceability, and the enforced sequence ensures adjustments happen before closing."
   },
   {
     id: "lesson06-q7",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "Which statement fits an investor-ready executive summary?",
-    correctAnswer: "Downside margin 18% (target 20%). Cut spend 10%; raise price $2.",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "What is the common failure mode of validation that exists only in macro code?",
+    correctAnswer: "Users will not see errors until the output is already wrong because the validation is not visible on the sheet",
     distractors: [
-      "Our team worked very hard this month on Excel.",
-      "We have many tabs and colorful charts.",
-      "Revenue is good; expenses are okay; we will try our best."
+      "The macro will run slower if validation is in the code",
+      "Excel will not allow validation in macro code",
+      "The validation will only work on certain versions of Excel"
     ],
-    explanation: "Be specific, tie to targets, and offer actions.",
-    objectiveTags: ["executive-summary", "communication"]
+    explanation: "If validation only exists in the macro code, users cannot see what rules are being enforced or which inputs violated them. Always make validation visible on the sheet with flags, error messages, or conditional formatting."
   },
   {
     id: "lesson06-q8",
     lessonId: "lesson06",
-    lessonTitle: "Lesson 06 - Scenario Switching & Dashboards",
-    prompt: "INDEX/MATCH vs XLOOKUP for switching—what's a safe pattern?",
-    correctAnswer: "INDEX(Map[Value], MATCH(Key, Map[Key], 0)) with exact match",
+    lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
+    prompt: "Why is separating inputs from calculations important for workbook trustworthiness?",
+    correctAnswer: "It prevents users from accidentally overwriting formulas and makes the workbook auditable",
     distractors: [
-      "MATCH without 0 for approximate match",
-      "INDEX with a hard-coded row number",
-      "MATCH on a formatted text column only"
+      "Excel requires inputs and formulas to be on different sheets",
+      "It makes the workbook file smaller and faster to open",
+      "It is only important for workbooks with more than 100 rows"
     ],
-    explanation: "Exact-match lookup avoids silent mis-matches. XLOOKUP is simpler, but INDEX/MATCH is fine when used correctly.",
-    objectiveTags: ["lookup-functions", "best-practices"]
+    explanation: "When inputs and calculations are separated (with color-coding, labels, and protected formula cells), users cannot accidentally break the automation. It also makes the workbook easier to audit because the data flow is clear."
   }
 ];
 
