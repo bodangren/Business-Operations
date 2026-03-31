@@ -1,29 +1,28 @@
-// Asset & Inventory Tracker, Lesson 6 data - extracted from MCP curriculum database
-// Asset & Inventory Tracker, Lesson 6 — Integration & Presentation: Decision‑Ready Inventory Dashboard
+// Unit 07, Lesson 6 — Dynamic Method Selection and Turnover Analysis
 export const lesson06Data = {
-  id: "u07_l06_integration",
-  title: "Highest-Complexity Excel: Inventory Decision Dashboard and Method Recommendation",
+  id: "u07_l06_dynamic_method_turnover",
+  title: "Dynamic Method Selection and Turnover Analysis",
   sequence: 6,
   unitId: "mdrhlhv4ov691yonkpi",
   learningObjectives: [
-    "Integrate inventory method outputs into one, decision‑ready dashboard",
-    "Implement scenario switching (Base/Stretch/Downside) by exact name",
-    "Link COGS/Ending Inventory to charts/tiles using structured references",
-    "Add validation for missing SKU, negative costs/qty, bounds, and stale AsOfDate",
-    "Communicate KPIs (gross margin, turnover, days on hand) with recommendations"
+    "Build a scenario-controlled workbook that switches between FIFO, LIFO, and Weighted Average with one selection",
+    "Calculate and compare inventory turnover and days-on-hand across methods",
+    "Link KPI tiles and charts to structured Table outputs so visuals update automatically",
+    "Add validation flags for missing SKU, negative/zero UnitCost, stale AsOfDate, and out-of-range rates",
+    "Write a short recommendation defending the best inventory method using workbook evidence"
   ],
   keyConcepts: [
-    "Driver table or named‑range scenario control",
-    "XLOOKUP/INDEX‑MATCH exact‑match switching with IFNA/IFERROR",
-    "Structured references (Table[Column]) for stable visuals",
-    "KPI thresholds (gross margin %, inventory turnover, days on hand)",
-    "Auditability, documentation, and performance standards"
+    "Scenario driver table with named assumptions (Base/Stretch/Downside)",
+    "Exact-match lookup switching (XLOOKUP or INDEX-MATCH) with IFNA/IFERROR",
+    "Structured references (Table[Column]) for auto-expanding chart ranges",
+    "Inventory turnover = COGS ÷ Average Inventory; Days on Hand = 365 ÷ Turnover",
+    "Validation-before-totals pattern for investor-ready workbooks"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Integrate prior automation into a scenario‑driven dashboard and present"
+    "Build a dynamic method-switching workbook with turnover KPIs and investor-ready outputs"
   ],
-  rationale: "Students turn Lesson04–05 automation (FIFO/LIFO/Weighted Avg) into a live, investor‑ready system: scenario controls, linked visuals, validation, and clear decision cues.",
+  rationale: "Students extend their method-comparison workbook from Lesson 05 into a live, scenario-driven system. One dropdown controls the inventory method and scenario assumptions. KPI tiles and charts update automatically. Students practice defending their method choice with evidence from turnover, margin, and cash-flow impact.",
   status: "Draft"
 }
 
@@ -33,48 +32,42 @@ export const unit07Data = {
   sequence: 7
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases
 export const lesson06Phases = [
   {
     id: "phase_hook_6",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Live demo: one dashboard view with Base/Stretch/Downside and inventory decision cues",
-    // component: "ComprehensionCheck" – integration pitfalls & best practices
+    description: "Investor scenario: one screen must show Base/Stretch/Downside results and method impact in seconds"
   },
   {
     id: "phase_introduction_6",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "From model to decision: scenario tools, exact‑match linking, visuals, and KPI selection",
-    // component: "FillInTheBlank" – vocabulary on scenario drivers, structured refs, IFNA/IFERROR
+    description: "Anatomy of dynamic method switching, turnover KPIs, and the validation-before-totals pattern"
   },
   {
     id: "phase_guided_practice_6",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Build Sarah’s inventory dashboard with scenario controls, linked charts, and validation",
-    // component: "ErrorCheckingSystem" – integration + validation practice
+    description: "Safe rehearsal: method-switching simulator with instant feedback before the real workbook build"
   },
   {
     id: "phase_independent_practice_6",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Integration mastery challenges with downloadable dataset; executive summary outputs",
-    // resources: /public/resources/unit07-inventory-valuation-integration-practice.csv
+    description: "Workbook sprint: build the dynamic method-selection and turnover-analysis workbook with verification checkpoints"
   },
   {
     id: "phase_assessment_6",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Mastery check: scenario switching, linking, chart stability, and KPI judgment",
-    // component: "ComprehensionCheck" – 8–10 questions
+    description: "Technical check and a short written defense of the recommended inventory method"
   },
   {
     id: "phase_closing_6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesis and reflection: reliability improvements and presentation readiness",
-    // component: "ReflectionJournal" – CAP prompts
+    description: "Reflection on tool fluency, what the dashboard now proves, and preview of Lesson 07 project rehearsal"
   }
 ]

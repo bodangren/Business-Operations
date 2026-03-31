@@ -139,21 +139,21 @@
     - [x] Students have a working method-comparison workbook
     - [x] The workbook reflects the same method logic already learned by hand
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with dynamic method selection, turnover analysis, and investor-ready explanation
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with dynamic method selection, turnover analysis, and investor-ready explanation
     - Phase 1: Open with investor scenario where method choice and turnover matter, make tool feel necessary
     - Phase 2: Name dynamic selection/turnover pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task requiring short defense of recommended inventory method
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Teach the exact logic for dynamic method switching and comparison displays
-  - [ ] 3.2.4 Keep statement impact visible in the workbook outputs
-  - [ ] 3.2.5 Phase 5 must require a short defense of the recommended inventory method
+  - [x] 3.2.3 Teach the exact logic for dynamic method switching and comparison displays
+  - [x] 3.2.4 Keep statement impact visible in the workbook outputs
+  - [x] 3.2.5 Phase 5 must require a short defense of the recommended inventory method
   - **Done when**:
-    - [ ] The workbook supports comparison across methods and shows the business impact clearly
-    - [ ] Students can explain their method choice using workbook evidence
+    - [x] The workbook supports comparison across methods and shows the business impact clearly
+    - [x] Students can explain their method choice using workbook evidence
 
 ### Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
