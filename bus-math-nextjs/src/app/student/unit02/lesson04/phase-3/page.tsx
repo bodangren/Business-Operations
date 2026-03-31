@@ -2,11 +2,69 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertCircle, FileText, ArrowRight } from "lucide-react"
+import { AlertCircle, FileText } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import MonthEndChallenge from "@/components/exercises/MonthEndChallenge"
 import { lesson04Data, unit02Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[2]
+
+const challengeEntries = [
+  {
+    id: "adj-a",
+    label: "Supplies",
+    debitAccount: "Supplies Expense",
+    creditAccount: "Supplies",
+    amount: 5500,
+    explanation: "Supplies used = $8,000 - $2,500 = $5,500. Debit Supplies Expense to record the cost used; credit Supplies to reduce the asset to what remains.",
+    hint: "Supplies on hand at March 31: $2,500. Unadjusted Supplies balance: $8,000."
+  },
+  {
+    id: "adj-b",
+    label: "Insurance",
+    debitAccount: "Insurance Expense",
+    creditAccount: "Prepaid Insurance",
+    amount: 300,
+    explanation: "One month of a 12-month policy has expired: $3,600 / 12 = $300. Debit Insurance Expense; credit Prepaid Insurance.",
+    hint: "Prepaid insurance is a 12-month policy purchased March 1. Unadjusted balance: $3,600."
+  },
+  {
+    id: "adj-c",
+    label: "Depreciation",
+    debitAccount: "Depreciation Expense",
+    creditAccount: "Accumulated Depreciation",
+    amount: 400,
+    explanation: "Monthly depreciation = $24,000 / 60 months = $400. Debit Depreciation Expense; credit Accumulated Depreciation (a contra-asset that reduces the book value of Equipment).",
+    hint: "Equipment purchased February 1. Cost: $24,000. Useful life: 5 years. Salvage: $0. Straight-line method."
+  },
+  {
+    id: "adj-d",
+    label: "Accrued Wages",
+    debitAccount: "Wages Expense",
+    creditAccount: "Wages Payable",
+    amount: 1800,
+    explanation: "Employees earned $1,800 for work March 28-31 but have not been paid. Debit Wages Expense to record the cost; credit Wages Payable to record the liability.",
+    hint: "Wages earned March 28-31 but not yet paid: $1,800."
+  },
+  {
+    id: "adj-e",
+    label: "Revenue Earned",
+    debitAccount: "Unearned Revenue",
+    creditAccount: "Service Revenue",
+    amount: 1200,
+    explanation: "Half of the $2,400 advance payment has been earned: $2,400 / 2 = $1,200. Debit Unearned Revenue to reduce the liability; credit Service Revenue to recognize earned revenue.",
+    hint: "Unearned revenue of $2,400 was for a 2-month project. One month is complete by March 31."
+  },
+  {
+    id: "adj-f",
+    label: "Accrued Revenue",
+    debitAccount: "Accounts Receivable",
+    creditAccount: "Service Revenue",
+    amount: 900,
+    explanation: "Services worth $900 were performed in March but not yet billed. Debit Accounts Receivable to record the amount owed; credit Service Revenue to recognize the revenue.",
+    hint: "Services worth $900 were performed in March but not yet billed or recorded."
+  }
+]
 
 export default function Phase3Page() {
   const comprehensionQuestions = [
@@ -145,111 +203,74 @@ export default function Phase3Page() {
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
               <CardTitle className="text-blue-800">
-                Your Task: Complete the Month-End Close
+                Your Task: Record All Adjusting Entries
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-blue-800 mb-4">
+                Use the unadjusted trial balance and additional information above to identify every required adjustment. Select the correct debit and credit accounts, calculate the amount, and check all entries at once. Feedback is given after submission.
+              </p>
+              <MonthEndChallenge
+                entries={challengeEntries}
+                trialBalanceTotal={{ debits: 77300, credits: 70700 }}
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800">
+                Step 2: Compute Adjusted Balances
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-blue-800">
-                Work through each step of the close workflow. Use the authentic journal entry format below.
+              <p className="text-sm text-blue-800">
+                After recording all adjustments, update each affected account balance. These adjusted balances feed into the adjusted trial balance and the financial statements.
               </p>
-
-              <div className="space-y-4">
-                <div className="bg-blue-100 p-5 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-900 mb-3">Step 1: Record All Adjusting Entries</h4>
-                  <p className="text-sm text-blue-800 mb-3">
-                    For each adjustment, write the journal entry in proper format. Show the account names, debit/credit amounts, and a brief explanation.
-                  </p>
-                  <div className="bg-white p-4 rounded border border-blue-200 space-y-3">
-                    <div>
-                      <p className="font-semibold text-blue-900 text-sm">Adjustment A — Supplies:</p>
-                      <div className="ml-4 text-sm font-mono text-blue-800">
-                        <p>Debit Supplies Expense ........ $______</p>
-                        <p>Credit Supplies ........................ $______</p>
-                        <p className="text-xs text-blue-600 italic">(To record supplies used: $8,000 - $2,500 = $5,500)</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-blue-900 text-sm">Adjustment B — Insurance:</p>
-                      <div className="ml-4 text-sm font-mono text-blue-800">
-                        <p>Debit Insurance Expense ....... $______</p>
-                        <p>Credit Prepaid Insurance ........ $______</p>
-                        <p className="text-xs text-blue-600 italic">(To record 1 month expired: $3,600 / 12 = $300)</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-blue-900 text-sm">Adjustment C — Depreciation:</p>
-                      <div className="ml-4 text-sm font-mono text-blue-800">
-                        <p>Debit Depreciation Expense .. $______</p>
-                        <p>Credit Accum. Depreciation ... $______</p>
-                        <p className="text-xs text-blue-600 italic">(To record monthly depreciation: $24,000 / 60 = $400)</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-blue-900 text-sm">Adjustment D — Accrued Wages:</p>
-                      <div className="ml-4 text-sm font-mono text-blue-800">
-                        <p>Debit Wages Expense ............ $______</p>
-                        <p>Credit Wages Payable ............ $______</p>
-                        <p className="text-xs text-blue-600 italic">(To record wages earned but not yet paid)</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-blue-900 text-sm">Adjustment E — Revenue Earned:</p>
-                      <div className="ml-4 text-sm font-mono text-blue-800">
-                        <p>Debit Unearned Revenue ...... $______</p>
-                        <p>Credit Service Revenue ......... $______</p>
-                        <p className="text-xs text-blue-600 italic">(To record revenue earned: $2,400 / 2 = $1,200)</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-blue-900 text-sm">Adjustment F — Accrued Revenue:</p>
-                      <div className="ml-4 text-sm font-mono text-blue-800">
-                        <p>Debit Accounts Receivable ... $______</p>
-                        <p>Credit Service Revenue ......... $______</p>
-                        <p className="text-xs text-blue-600 italic">(To record services performed but not yet billed)</p>
-                      </div>
-                    </div>
-                  </div>
+              <div className="grid md:grid-cols-2 gap-3 text-sm">
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Supplies: $8,000 - $5,500 = $2,500</p>
                 </div>
-
-                <div className="bg-blue-100 p-5 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-900 mb-3">Step 2: Compute Adjusted Balances</h4>
-                  <p className="text-sm text-blue-800 mb-3">
-                    For each account that changed, compute the adjusted balance.
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-3 text-sm">
-                    <div className="bg-white p-3 rounded border border-blue-200">
-                      <p className="font-semibold">Supplies: $8,000 - $5,500 = $2,500</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border border-blue-200">
-                      <p className="font-semibold">Prepaid Insurance: $3,600 - $300 = $3,300</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border border-blue-200">
-                      <p className="font-semibold">Accum. Depr.: $800 + $400 = $1,200</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border border-blue-200">
-                      <p className="font-semibold">Wages Payable: $0 + $1,800 = $1,800</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border border-blue-200">
-                      <p className="font-semibold">Unearned Revenue: $2,400 - $1,200 = $1,200</p>
-                    </div>
-                    <div className="bg-white p-3 rounded border border-blue-200">
-                      <p className="font-semibold">A/R: $6,200 + $900 = $7,100</p>
-                    </div>
-                  </div>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Prepaid Insurance: $3,600 - $300 = $3,300</p>
                 </div>
-
-                <div className="bg-blue-100 p-5 rounded-lg border border-blue-300">
-                  <h4 className="font-semibold text-blue-900 mb-3">Step 3: Explain Your Reasoning</h4>
-                  <p className="text-sm text-blue-800 mb-3">
-                    Answer these questions in your own words:
-                  </p>
-                  <ol className="text-sm text-blue-800 space-y-2 list-decimal list-inside">
-                    <li>Why does depreciation use a contra-asset account (Accumulated Depreciation) instead of directly reducing Equipment?</li>
-                    <li>How does the accrued revenue adjustment (Adjustment F) affect both the Income Statement and the Balance Sheet?</li>
-                    <li>If Sarah skipped Adjustment D (accrued wages), which financial statement would be most affected and how?</li>
-                  </ol>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Accum. Depr.: $800 + $400 = $1,200</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Wages Payable: $0 + $1,800 = $1,800</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Unearned Revenue: $2,400 - $1,200 = $1,200</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">A/R: $6,200 + $900 = $7,100</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Supplies Expense: $0 + $5,500 = $5,500</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-blue-200">
+                  <p className="font-semibold">Service Revenue: $28,000 + $1,200 + $900 = $30,100</p>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800">
+                Step 3: Explain Your Reasoning
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-blue-800">
+                Answer these questions in your own words. These test your understanding of why adjustments work the way they do—not just the mechanics.
+              </p>
+              <ol className="text-sm text-blue-800 space-y-3 list-decimal list-inside">
+                <li>Why does depreciation use a contra-asset account (Accumulated Depreciation) instead of directly reducing the Equipment account? What information would be lost if we reduced Equipment directly?</li>
+                <li>How does the accrued revenue adjustment (Adjustment F) affect both the Income Statement and the Balance Sheet? Trace the impact through both statements.</li>
+                <li>If Sarah skipped Adjustment D (accrued wages), which financial statement would be most affected and how? Would the error carry forward into the next period?</li>
+              </ol>
             </CardContent>
           </Card>
 

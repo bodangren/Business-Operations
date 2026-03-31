@@ -23,6 +23,7 @@
   - Review recommendation rules and peer feedback rules
 
 ## Phase 2: Lessons 01-04 (Textbook-First)
+- [x] Phase 2 complete — all four textbook-first lessons implemented
 - [x] 2.1 **Lesson 01** - Implement launch-lesson skill
   - [x] 2.1.1 Update lesson-data.ts for Lesson 01
   - [x] 2.1.2 Implement Phase 1 with Sarah's interview video and closing-time failure
@@ -73,21 +74,23 @@
     - [x] Students can explain what gets closed and why
     - [x] The lesson prepares students for a full close checklist in Lesson 04
 
-- [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
-  - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
-  - [ ] 2.4.2 Implement Phase 1-6 with complete manual month-end flow
+- [x] 2.4 **Lesson 04** - Implement accounting-principles skill
+  - [x] 2.4.1 Update lesson-data.ts for Lesson 04
+  - [x] 2.4.2 Implement Phase 1-6 with complete manual month-end flow
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name month-end close workflow clearly, model procedure step-by-step, explain why each step exists, use checklists and flow diagrams
     - Phase 3: Add meaningful complication (more complex adjustments), reduce prompts, shift toward authentic accounting notation
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on month-end close workflow, adjustments, misconceptions
     - Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
-  - [ ] 2.4.3 Keep this lesson non-Excel and textbook-first
-  - [ ] 2.4.4 Use a full month-end checklist or sequence so students see the workflow clearly
-  - [ ] 2.4.5 Make Phase 4 a repeated manual close routine with minimal scaffolding
+  - [x] 2.4.3 Keep this lesson non-Excel and textbook-first
+  - [x] 2.4.4 Use a full month-end checklist or sequence so students see the workflow clearly
+  - [x] 2.4.5 Make Phase 4 a repeated manual close routine with minimal scaffolding
+  - [x] 2.4.6 Make Phase 3 interactive with MonthEndChallenge component for adjusting entries
+  - [x] 2.4.7 Remove unused imports across phase pages
   - **Done when**:
-    - [ ] Students can walk through the month-end close in order
-    - [ ] The closing phase clearly sets up the automation lesson
+    - [x] Students can walk through the month-end close in order
+    - [x] The closing phase clearly sets up the automation lesson
 
 ## Phase 3: Lessons 05-06 (Excel Automation)
 - [x] 3.1 **Lesson 05** - Implement excel-lessons skill
