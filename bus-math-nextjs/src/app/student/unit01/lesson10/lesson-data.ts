@@ -1,23 +1,24 @@
-// Unit 1, Lesson 10 — Single-phase PBL milestone setup
+// Unit 1, Lesson 10 — Final Presentation and Submission
 export const lesson10Data = {
-  id: "u01l10-pbl-present",
-  title: "PBL Milestone 3: Presentations + Peer Review",
+  id: "u01l10-pbl-final",
+  title: "Project Milestone 3: Final Presentation & Submission",
   sequence: 10,
   unitId: "unit01",
   learningObjectives: [
-    "Present final model and dashboard clearly to an authentic audience",
-    "Connect analysis to a business decision and address risks",
-    "Provide and receive structured peer feedback; reflect on growth"
+    "Present your team's Smart Ledger and recommendation to the class",
+    "Submit your final workbook and presentation notes",
+    "Reflect on what you learned about clean books and investor trust"
   ],
   keyConcepts: [
-    "Executive communication and timeboxing",
-    "Final validation and investor readiness",
-    "Peer review and reflection"
+    "Final presentation",
+    "Workbook submission",
+    "Investor readiness",
+    "Reflection on trust and control"
   ],
-  durationEstimateMinutes: 45,
-  pedagogicalApproach: ["Presentations", "Peer assessment", "Reflection"],
-  rationale: "Students synthesize their work, present professionally, and capture feedback.",
-  status: "Planned"
+  durationEstimateMinutes: 90,
+  pedagogicalApproach: ["Final presentations", "Submission", "Reflection"],
+  rationale: "Students present their final Smart Ledger, submit their work, and reflect on the unit's core lessons about clean books and investor trust.",
+  status: "Ready"
 }
 
 export const unit01Data = {
@@ -28,10 +29,9 @@ export const unit01Data = {
 
 export const lesson10Phases = [
   {
-    id: "u01l10-p1",
-    phaseName: "Assessment" as const,
+    id: "u01l10-milestone3",
+    phaseName: "Milestone 3" as const,
     sequence: 1,
-    description: "Final presentations with peer review and reflection"
+    description: "Final presentation, submission, and reflection"
   }
 ]
-

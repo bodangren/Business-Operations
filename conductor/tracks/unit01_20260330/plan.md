@@ -153,33 +153,33 @@
      - [x] Each team has the correct workbook open and renamed
      - [x] Early setup and analysis sheets are complete
 
-- [ ] 4.3 **Lesson 09** - Implement group-project skill
-  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
-  - [ ] 4.3.2 Implement completion and rehearsal
+- [x] 4.3 **Lesson 09** - Implement group-project skill
+  - [x] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+  - [x] 4.3.2 Implement completion and rehearsal
     - Continue same workbook from Lesson 08
     - Complete remaining sheets/evidence blocks
     - Require scenario testing, checks, dashboard completion
     - Require short recommendation structure (claim, evidence, risk)
     - Include peer critique and revision
     - Define milestone 2 acceptance criteria
-  - [ ] 4.3.3 Continue same workbook from Lesson 08
-  - [ ] 4.3.4 Require at least three cited numbers from workbook
+  - [x] 4.3.3 Continue same workbook from Lesson 08
+  - [x] 4.3.4 Require at least three cited numbers from workbook
   - **Done when**:
-    - [ ] The workbook is complete and readable
-    - [ ] The team can deliver a claim-evidence-risk explanation
+    - [x] The workbook is complete and readable
+    - [x] The team can deliver a claim-evidence-risk explanation
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+  - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [x] 4.4.2 Implement final presentation and submission
     - Require final polish of workbook and presentation notes
     - Make audience, presentation standard, submission standard explicit
     - Include final checklist and timing guidance
     - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make submission requirements explicit
-  - [ ] 4.4.4 End with reflection on trust, control, workbook design
+  - [x] 4.4.3 Make submission requirements explicit
+  - [x] 4.4.4 End with reflection on trust, control, workbook design
   - **Done when**:
-    - [ ] Final workbook and presentation artifact are submitted
-    - [ ] Reflection captures what the team would keep or change next time
+    - [x] Final workbook and presentation artifact are submitted
+    - [x] Reflection captures what the team would keep or change next time
 
 ### Phase 5: Verification & Polish
 - [ ] 5.1 Verify all lesson-data.ts files are updated

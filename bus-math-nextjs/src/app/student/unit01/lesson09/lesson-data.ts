@@ -1,23 +1,27 @@
-// Unit 1, Lesson 9 — Single-phase PBL milestone setup
+// Unit 1, Lesson 9 — Group Project Completion and Rehearsal
 export const lesson09Data = {
-  id: "u01l09-pbl-proto",
-  title: "PBL Milestone 2: Prototype + Rehearsal",
+  id: "u01l09-pbl-completion",
+  title: "Project Milestone 2: Complete Workbook & Rehearse",
   sequence: 9,
   unitId: "unit01",
   learningObjectives: [
-    "Build a working prototype that implements the planned Excel controls",
-    "Test validations and scenarios; document fixes and changes",
-    "Rehearse presentation flow and incorporate peer feedback"
+    "Complete all remaining sheets in your group's Smart Ledger workbook",
+    "Verify all error checks and trial balance totals are working correctly",
+    "Draft a recommendation using claim-evidence-risk structure",
+    "Participate in peer critique and revise your work",
+    "Rehearse your explanation with your team"
   ],
   keyConcepts: [
-    "Prototype completeness against acceptance criteria",
-    "Validation, error-checks, and test documentation",
-    "Rehearsal and peer feedback integration"
+    "Workbook completeness",
+    "Error check validation",
+    "Claim-evidence-risk recommendation",
+    "Peer critique and revision",
+    "Presentation rehearsal"
   ],
-  durationEstimateMinutes: 60,
-  pedagogicalApproach: ["Rapid prototyping", "Peer feedback", "Structured rehearsal"],
-  rationale: "Students demonstrate a functional build and strengthen it through testing and rehearsal.",
-  status: "Planned"
+  durationEstimateMinutes: 90,
+  pedagogicalApproach: ["Group project completion", "Recommendation writing", "Peer feedback", "Rehearsal"],
+  rationale: "Students finish their group's Smart Ledger workbook, write a structured recommendation, get peer feedback, and rehearse their explanation for the final presentation.",
+  status: "Ready"
 }
 
 export const unit01Data = {
@@ -28,10 +32,9 @@ export const unit01Data = {
 
 export const lesson09Phases = [
   {
-    id: "u01l09-p1",
-    phaseName: "Assessment" as const,
+    id: "u01l09-milestone2",
+    phaseName: "Milestone 2" as const,
     sequence: 1,
-    description: "Complete a working prototype and rehearse with peer feedback"
+    description: "Complete workbook, write recommendation, peer critique, and rehearsal"
   }
 ]
-
