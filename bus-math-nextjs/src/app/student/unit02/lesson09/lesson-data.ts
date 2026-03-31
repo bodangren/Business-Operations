@@ -1,38 +1,43 @@
+// Month-End Wizard, Lesson 09 data - Completion and Rehearsal
 export const lesson09Data = {
   id: "unit02_lesson09",
-  title: "PBL Milestone 2: Prototype + Rehearsal",
+  title: "Complete Workbook and Rehearse Demo",
   sequence: 9,
   unitId: "unit02",
   learningObjectives: [
-    "Implement Excel automation with dynamic method switching and validation",
-    "Test with realistic data and document scenarios and results",
-    "Rehearse presentation; incorporate structured peer feedback"
+    "Complete all remaining workbook sheets from your group's scenario",
+    "Build a recommendation statement with three cited workbook numbers and one risk acknowledgment",
+    "Run scenario testing and document checks on your workbook",
+    "Conduct peer critique and incorporate at least one revision before final presentation"
   ],
   keyConcepts: [
-    "XLOOKUP mapping, SWITCH/IFS routing, data validation",
-    "Test plans, error checks, and change notes",
-    "Rehearsal and peer critique for improvement"
+    "Evidence chain completion from data through financial statements",
+    "Recommendation structure: claim, evidence, risk",
+    "Peer feedback as revision input, not formality",
+    "Milestone 2 acceptance criteria"
   ],
   durationEstimateMinutes: 60,
   pedagogicalApproach: [
-    "Prototype development, user testing, and rehearsal with peer feedback"
+    "Group-project milestone: workbook completion and testing",
+    "Peer critique with required revision move",
+    "Recommendation writing with cited evidence"
   ],
-  rationale: "Teams produce a working prototype, validate with tests, and strengthen delivery through rehearsal and feedback.",
+  rationale: "Teams finish their project workbook, test their analysis, write a defensible recommendation, and rehearse their demo with peer feedback. This lesson bridges the kickoff setup from Lesson 08 and the final presentation in Lesson 10.",
   status: "Draft"
 }
 
 export const unit02Data = {
   id: "unit02",
-  title: "Unit 2: Month-End Wizard",
+  title: "Month-End Wizard",
   sequence: 2
 }
 
+// Milestone-style lesson (no six-phase structure)
 export const lesson09Phases = [
   {
-    id: "pbl_m2",
-    phaseName: "Assessment" as const,
+    id: "milestone_2",
+    phaseName: "Milestone 2" as const,
     sequence: 1,
-    description: "PBL Milestone 2 — Prototype + Rehearsal: working model, validations, test summary, and peer feedback."
+    description: "Complete workbook, write recommendation, run peer critique, and rehearse demo."
   }
 ]
-

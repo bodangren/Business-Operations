@@ -159,21 +159,21 @@
     - [x] Each team is working in the correct workbook
     - [x] Setup and early close routines are in place
 
-- [ ] 4.3 **Lesson 09** - Implement group-project skill
-  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
-  - [ ] 4.3.2 Implement completion and rehearsal
+- [x] 4.3 **Lesson 09** - Implement group-project skill
+  - [x] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+  - [x] 4.3.2 Implement completion and rehearsal
     - Continue same workbook from Lesson 08
     - Complete remaining sheets/evidence blocks
     - Require scenario testing, checks, dashboard completion
     - Require short recommendation structure (claim, evidence, risk)
     - Include peer critique and revision
     - Define milestone 2 acceptance criteria
-  - [ ] 4.3.3 Complete remaining automation, checks, and explanation notes
-  - [ ] 4.3.4 Require peer critique and revision
-  - [ ] 4.3.5 Make teams cite measurable time savings or accuracy gains
+  - [x] 4.3.3 Complete remaining automation, checks, and explanation notes
+  - [x] 4.3.4 Require peer critique and revision
+  - [x] 4.3.5 Make teams cite measurable time savings or accuracy gains
   - **Done when**:
-    - [ ] The workbook and demo flow are complete
-    - [ ] The team can defend both speed and accuracy
+    - [x] The workbook and demo flow are complete
+    - [x] The team can defend both speed and accuracy
 
 - [ ] 4.4 **Lesson 10** - Implement group-project skill
   - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
