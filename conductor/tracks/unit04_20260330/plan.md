@@ -125,18 +125,18 @@
     - [x] The class shares one quality standard for evidence and visuals
 
 - [ ] 4.2 **Lesson 08** - Implement group-project skill
-  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
-  - [ ] 4.2.2 Implement kickoff with group-specific datasets
+  - [x] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+  - [x] 4.2.2 Implement kickoff with group-specific datasets
     - Assign each group its own dataset/starter workbook
     - Explain business scenario, constraints, target outcome
     - Require teams to rename, save, organize correct workbook
     - Start first required sheets/sections
     - Define milestone 1 acceptance criteria
-  - [ ] 4.2.3 Assign each group its own dataset
-  - [ ] 4.2.4 Keep the workbook or deliverable structure identical to Lesson 07
+  - [x] 4.2.3 Assign each group its own dataset
+  - [x] 4.2.4 Keep the workbook or deliverable structure identical to Lesson 07
   - **Done when**:
-    - [ ] Each team is working with the correct data
-    - [ ] Initial project setup is complete
+    - [x] Each team is working with the correct data
+    - [x] Initial project setup is complete
 
 - [ ] 4.3 **Lesson 09** - Implement group-project skill
   - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09

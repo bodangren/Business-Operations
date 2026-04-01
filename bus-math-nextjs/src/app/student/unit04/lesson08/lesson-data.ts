@@ -1,20 +1,26 @@
-// Data-Driven Café, Lesson 8 data - extracted from MCP curriculum database
+// Data-Driven Café, Lesson 8 - Group Project Kickoff
+import { LessonPhase } from "@/contexts/LessonProgressContext"
+
 export const lesson08Data = {
   id: "mds5vu0feh581clfpa",
-  title: "Presentation Prep: Infographic Design",
+  title: "Project Kickoff: Team Setup",
   sequence: 8,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Design infographic presentations for business stakeholder audiences"
+    "Define the project scope, stakeholders, and success metrics for the weekend‑ops analysis",
+    "Set up the Excel workbook skeleton matching the rehearsal structure",
+    "Import and organize the group‑specific dataset for analysis"
   ],
   keyConcepts: [
-    "Professional infographic design principles for business communication"
+    "Project definition and scope planning",
+    "Excel workbook structure and tab organization",
+    "Data inventory and file management"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Transform statistical analysis into compelling visual business communication"
+    "Team‑based project launch with assigned datasets, workbook setup, and milestone acceptance criteria"
   ],
-  rationale: "To teach students how to communicate their findings effectively to a business audience using infographics.",
+  rationale: "Students launch their team project with a clear problem definition, workbook skeleton, and their group's assigned dataset. The structure mirrors the rehearsal lesson exactly so teams can focus on their specific business scenario.",
   status: "Draft"
 }
 
@@ -24,12 +30,11 @@ export const unit04Data = {
   sequence: 4
 }
 
-// Lesson phases from MCP curriculum database
-export const lesson08Phases = [
+export const lesson08Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
   {
-    id: "pbl_m1",
-    phaseName: "Introduction" as const,
+    id: "phase_project_kickoff",
+    phaseName: "Project Launch" as LessonPhase,
     sequence: 1,
-    description: "PBL Milestone 1 — Project Definition: scope, datasets, Excel model plan, risks, and acceptance criteria."
+    description: "Kickoff the team project with business scenario and data assignment"
   }
 ]
