@@ -1,12 +1,14 @@
+"use client";
+
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Wrench, Map, Lightbulb, Users } from "lucide-react";
-import TableLogicSimulator from "../TableLogicSimulator";
+import { Wrench, Target, Lightbulb, Users } from "lucide-react";
+import GoalSeekSimulator from "../GoalSeekSimulator";
 import { lesson05Data, unit06Data, lesson05Phases } from "../lesson-data";
 
-const currentPhase = lesson05Phases[2]; // Guided Practice phase
+const currentPhase = lesson05Phases[2];
 
 export default function Phase3Page() {
   return (
@@ -33,47 +35,48 @@ export default function Phase3Page() {
                     <Wrench className="w-8 h-8 text-purple-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-purple-800 mb-2">
-                    Bridging the Automation Gap
+                    Safe Rehearsal: Goal Seek Workflow
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Manual Logic vs. Automated Matrix
+                    Practice the Dialog Before the Real Workbook
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 mb-6">
                     <p className="text-lg leading-relaxed text-purple-900 mb-4">
-                      "I trust the math," Sarah said, looking at the empty grid, "but I want to see exactly 
-                      how Excel fills in these cells. If I understand the pattern, I'll know if the 
-                      automation is working correctly."
+                      "I want to make sure I understand the three boxes before I touch my workbook," 
+                      Sarah said. "If I mess up the Set Cell vs. By Changing Cell, I could get a 
+                      completely wrong answer and not even know it."
                     </p>
                     <p className="text-purple-800">
-                      Before we let Excel's 'Data Table' tool handle 50 scenarios, we're going to 
-                      manually map a small 3x3 section. This will help you see the <strong>Pricing Map</strong> 
-                      emerge from the raw numbers.
+                      Before we run Goal Seek on the real CVP workbook, you'll practice the exact 
+                      workflow in this simulator. Think of it as a flight simulator for Excel—
+                      safe to make mistakes here, and you'll learn exactly what each box does.
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Table Logic Simulator */}
-              <TableLogicSimulator />
+              {/* Goal Seek Simulator */}
+              <GoalSeekSimulator />
 
               {/* Key Insight */}
               <Card className="border-blue-200 bg-blue-50">
                 <CardHeader>
                   <CardTitle className="text-blue-800 flex items-center gap-2">
                     <Lightbulb className="w-5 h-5" />
-                    Key Insight: The Sensitivity Pattern
+                    Key Insight: The Power of Reverse Engineering
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-blue-900 text-sm">
-                    As you filled out the matrix, did you notice how quickly the profit shifts? 
+                    Notice what just happened: we told Excel the <em>result</em> we wanted, and it 
+                    found the <em>input</em> we needed.
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-blue-800 text-xs">
-                    <li><strong>Vertical Shift:</strong> Increasing Price at the same Volume significantly boosts margin.</li>
-                    <li><strong>Horizontal Shift:</strong> Increasing Volume at the same Price helps cover fixed costs faster.</li>
-                    <li><strong>The Matrix Effect:</strong> The most dangerous scenarios are in the top-left (Low Price + Low Volume), while the "Investor Sweet Spot" is in the bottom-right.</li>
+                    <li><strong>Forward Math:</strong> Price × Volume − Costs = Profit (you know inputs, find result)</li>
+                    <li><strong>Goal Seek:</strong> Profit = Target, solve for Price (you know result, find input)</li>
+                    <li><strong>The Business Value:</strong> Investors ask "what do we need to charge?"—Goal Seek answers instantly.</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -91,12 +94,12 @@ export default function Phase3Page() {
                     Discussion Prompt (3 minutes):
                   </p>
                   <p className="text-blue-800 mb-2 text-sm">
-                    Look at the matrix you just completed. Share with a partner:
+                    Share with a partner:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                    <li>Which variable (Price or Volume) had the biggest impact on Sarah's profit in this grid?</li>
-                    <li>If Sarah's competitor drops their price to $1,200, what volume does she need just to break even (hit $0)?</li>
-                    <li>How does seeing this grid compare to just having one answer from Goal Seek?</li>
+                    <li>What business decision would require you to "work backward" like Goal Seek?</li>
+                    <li>Why is it faster to use Goal Seek than to guess-and-check prices manually?</li>
+                    <li>What could go wrong if you put the wrong cell in "By Changing Cell"?</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -104,10 +107,10 @@ export default function Phase3Page() {
               {/* Preview */}
               <Card className="border-gray-200 bg-gray-50">
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
+                  <h3 className="font-semibold text-gray-800 mb-2">Ready for the Real Workbook</h3>
                   <p className="text-gray-700">
-                    Now it's time to build the real thing. In Independent Practice, you'll use the 
-                    automated Data Table tool in Excel to map 50+ scenarios for Sarah's PriceLab workbook.
+                    In Independent Practice, you'll build the CVP model from scratch in Excel 
+                    and run Goal Seek to answer Sarah's investor question.
                   </p>
                 </CardContent>
               </Card>

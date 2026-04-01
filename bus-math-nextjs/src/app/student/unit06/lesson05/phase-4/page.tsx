@@ -4,14 +4,13 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileSpreadsheet, Rocket, Download, CheckCircle, Calculator, ClipboardList, Star, Table } from "lucide-react";
+import { FileSpreadsheet, Rocket, Download, CheckCircle, Calculator, ClipboardList, Star, Target } from "lucide-react";
 import { SpreadsheetWrapper } from "@/components/spreadsheet/SpreadsheetWrapper";
 import type { SpreadsheetData, SpreadsheetCell } from "@/components/spreadsheet/SpreadsheetWrapper";
 import { lesson05Data, unit06Data, lesson05Phases } from "../lesson-data";
 
-const currentPhase = lesson05Phases[3]; // Independent Practice phase
+const currentPhase = lesson05Phases[3];
 
-// ── spreadsheet cell helpers with styling ────────────────────────────
 const baseCell = (value: string | number, className?: string): SpreadsheetCell => ({
   value,
   readOnly: true,
@@ -24,86 +23,32 @@ const headerCell = (value: string) =>
 const labelCell = (value: string) =>
   baseCell(value, "bg-slate-50 text-slate-600 font-semibold border border-slate-200");
 
-const priceCell = (value: string) =>
-  baseCell(value, "bg-slate-50 text-slate-800 font-semibold text-center border border-slate-200");
+const inputCell = (value: string) =>
+  baseCell(value, "bg-white text-blue-800 font-mono border border-blue-200");
 
-const profitPositive = (value: string) =>
-  baseCell(value, "bg-emerald-50 text-emerald-800 font-semibold text-center border border-emerald-200");
-
-const profitNegative = (value: string) =>
-  baseCell(value, "bg-rose-50 text-rose-700 font-semibold text-center border border-rose-200");
-
-const profitNeutral = (value: string) =>
-  baseCell(value, "bg-amber-50 text-amber-700 font-semibold text-center border border-amber-200");
+const formulaCell = (value: string) =>
+  baseCell(value, "bg-amber-50 text-amber-800 font-mono border border-amber-200");
 
 const E = baseCell("");
 
 const sheet1: SpreadsheetData = [
-  [headerCell("Price Sensitivity — 1-Variable Data Table"), E, E, E],
+  [headerCell("Sarah's CVP Model - Target Profit Analysis"), E, E, E],
   [E, E, E, E],
-  [labelCell("Corner Formula Link:"), baseCell("=TotalProfit", "font-mono text-slate-700"), E, E],
-  [headerCell("Price (Column Input)"), headerCell("Profit Output"), E, E],
-  [priceCell("$1,000"), profitNegative("−$11,100"), E, E],
-  [priceCell("$1,100"), profitNegative("−$2,820"), E, E],
-  [priceCell("$1,200"), profitPositive("$5,460"), E, E],
-  [priceCell("$1,300"), profitPositive("$13,740"), E, E],
-  [priceCell("$1,400"), profitPositive("$22,020"), E, E],
-  [priceCell("$1,500"), profitPositive("$30,300"), E, E],
+  [labelCell("INPUTS"), E, E, E],
+  [labelCell("Price per Project:"), inputCell("$1,350"), E, E],
+  [labelCell("Projects (Volume):"), inputCell("25"), E, E],
+  [labelCell("Fixed Costs:"), inputCell("$12,000"), E, E],
+  [labelCell("Variable Cost/Project:"), inputCell("$880"), E, E],
   [E, E, E, E],
-  [labelCell("Visual Rule:"), labelCell("Use Conditional Formatting (Red < 0, Green > 0)"), E, E],
-];
-
-const sheet2: SpreadsheetData = [
-  [headerCell("Profit Matrix — 2-Variable Data Table"), E, E, E, E, E],
-  [E, E, E, E, E, E],
-  [
-    labelCell("=TotalProfit"),
-    headerCell("10 Units"),
-    headerCell("15 Units"),
-    headerCell("20 Units"),
-    headerCell("25 Units"),
-    headerCell("30 Units"),
-  ],
-  [
-    priceCell("$1,000"),
-    profitNegative("−$6,900"),
-    profitNegative("−$6,300"),
-    profitNegative("−$5,700"),
-    profitNegative("−$5,100"),
-    profitNegative("−$4,500"),
-  ],
-  [
-    priceCell("$1,200"),
-    profitNegative("−$4,900"),
-    profitNegative("−$3,300"),
-    profitNegative("−$1,700"),
-    profitNeutral("−$100"),
-    profitPositive("$1,500"),
-  ],
-  [
-    priceCell("$1,400"),
-    profitNegative("−$2,900"),
-    profitNeutral("−$300"),
-    profitPositive("$2,300"),
-    profitPositive("$4,900"),
-    profitPositive("$7,500"),
-  ],
-  [
-    priceCell("$1,600"),
-    profitNegative("−$900"),
-    profitPositive("$2,700"),
-    profitPositive("$6,300"),
-    profitPositive("$9,900"),
-    profitPositive("$13,500"),
-  ],
-  [
-    priceCell("$1,800"),
-    profitPositive("$1,100"),
-    profitPositive("$5,700"),
-    profitPositive("$10,300"),
-    profitPositive("$14,900"),
-    profitPositive("$19,500"),
-  ],
+  [labelCell("CALCULATIONS"), E, E, E],
+  [labelCell("Contribution Margin:"), formulaCell("=B4-B7"), E, E],
+  [labelCell("Total Revenue:"), formulaCell("=B4*B5"), E, E],
+  [labelCell("Total Variable Cost:"), formulaCell("=B7*B5"), E, E],
+  [labelCell("Total Profit:"), formulaCell("=B9-B6"), E, E],
+  [E, E, E, E],
+  [labelCell("GOAL SEEK RESULT"), E, E, E],
+  [labelCell("Target Profit:"), inputCell("$15,000"), E, E],
+  [labelCell("Required Price:"), inputCell("$1,388"), E, E],
 ];
 
 export default function Phase4Page() {
@@ -124,27 +69,6 @@ export default function Phase4Page() {
             </Badge>
             <div className="max-w-5xl mx-auto space-y-8 text-left">
 
-              {/* Workbook Continuity */}
-              <Card className="border-cyan-200 bg-cyan-50">
-                <CardHeader>
-                  <CardTitle className="text-cyan-900 flex items-center gap-2 text-xl">
-                    <Download className="w-5 h-5" />
-                    Load Your Goal Seek Workbook
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-sm text-cyan-900">
-                  <p>
-                    Start from the exact Goal Seek model you completed in Lesson 04. The Data Tables you build today
-                    rely on that same Total Profit formula, so don&apos;t rebuild from scratch.
-                  </p>
-                  <ol className="list-decimal list-inside space-y-1">
-                    <li>Open the workbook, rename a copy to <em>PriceLab_DataTables.xlsx</em>, and keep both sheets in the same folder.</li>
-                    <li>Verify the price and volume input cells still drive the profit cell you linked yesterday.</li>
-                    <li>After each table calculates, paste the key ranges back into your notes tab—you&apos;ll cite them during Phase 5.</li>
-                  </ol>
-                </CardContent>
-              </Card>
-              
               {/* Introduction */}
               <Card className="border-orange-200 bg-white shadow-lg">
                 <CardHeader className="pb-4">
@@ -152,51 +76,35 @@ export default function Phase4Page() {
                     <Rocket className="w-8 h-8 text-orange-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-orange-800 mb-2">
-                    Build Sprint: The Pricing Engine
+                    Build Sprint: CVP Workbook with Goal Seek
                   </CardTitle>
                   <p className="text-slate-600 leading-relaxed">
-                    It&apos;s time to build the "Mathematical Heart" of your PriceLab workbook. 
-                    You will create two automated Data Tables that map Sarah&apos;s sensitivity to market 
-                    changes. This is the core deliverable that will drive Lesson 6&apos;s dashboard.
+                    It's time to build the CVP model from scratch and use Goal Seek to answer 
+                    the investor's question. By the end of this sprint, you'll have a workbook 
+                    that can find any target price in seconds.
                   </p>
                 </CardHeader>
               </Card>
 
-              {/* Reference Spreadsheet */}
+              {/* Reference Model */}
               <Card className="border-blue-200 bg-blue-50">
                 <CardHeader>
                   <CardTitle className="text-blue-900 flex items-center gap-2 text-xl">
                     <FileSpreadsheet className="w-6 h-6" />
-                    Reference Models — Completed Data Tables
+                    Reference Model — Sarah's Completed CVP Workbook
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-8">
-                  <div className="space-y-4">
-                    <h4 className="font-bold text-blue-900 flex items-center gap-2">
-                      <Table className="w-4 h-4" />
-                      1. Price Sensitivity (1-Variable)
-                    </h4>
-                    <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
-                      <SpreadsheetWrapper
-                        initialData={sheet1}
-                        columnLabels={["A", "B", "C", "D"]}
-                        readOnly={true}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h4 className="font-bold text-blue-900 flex items-center gap-2">
-                      <Table className="w-4 h-4" />
-                      2. Profit Matrix (2-Variable)
-                    </h4>
-                    <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
-                      <SpreadsheetWrapper
-                        initialData={sheet2}
-                        columnLabels={["A", "B", "C", "D", "E", "F"]}
-                        readOnly={true}
-                      />
-                    </div>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-blue-800">
+                    This is the exact structure you'll build. The yellow cells are inputs, 
+                    the green cells are formulas.
+                  </p>
+                  <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
+                    <SpreadsheetWrapper
+                      initialData={sheet1}
+                      columnLabels={["A", "B", "C", "D"]}
+                      readOnly={true}
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -209,36 +117,55 @@ export default function Phase4Page() {
                     Build Sequence — Excel Instructions
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  {[
-                    {
-                      title: "1. The 1-Variable Sensitivity Table",
-                      steps: [
-                        "Create a column of prices from $1,000 to $1,800 (increments of $100).",
-                        "In the cell one row above and one column right (B3 in the reference), link to your Profit formula: =TotalProfit.",
-                        "Highlight the range, go to Data > What-If Analysis > Data Table.",
-                        "Select your Price input cell in the Column Input Cell box.",
-                        "Apply Conditional Formatting: Red for negative profit, Green for positive.",
-                      ],
-                    },
-                    {
-                      title: "2. The 2-Variable Profit Matrix",
-                      steps: [
-                        "Create a grid: Prices ($1,000–$1,800) in the first column, Volume (10–30 units) in the first row.",
-                        "In the top-left corner (A3 in the reference), link to your Profit formula: =TotalProfit.",
-                        "Highlight the entire grid, open the Data Table dialog.",
-                        "Row Input: Your Volume cell. Column Input: Your Price cell.",
-                        "Note: If results look identical across rows, check that your Corner Link is correct.",
-                      ],
-                    },
-                  ].map((task, i) => (
-                    <div key={i} className="bg-slate-50 p-4 rounded border border-slate-200">
-                      <h4 className="font-bold text-slate-900 mb-2">{task.title}</h4>
-                      <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
-                        {task.steps.map((step, si) => <li key={si}>{step}</li>)}
-                      </ul>
-                    </div>
-                  ))}
+                <CardContent className="space-y-6">
+                  <div className="bg-slate-50 p-4 rounded border border-slate-200">
+                    <h4 className="font-bold text-slate-900 mb-3">Step 1: Set Up the CVP Model</h4>
+                    <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
+                      <li>Open a new Excel workbook, rename Sheet1 to "CVP Model"</li>
+                      <li>Create the INPUTS section with labels and input cells for Price, Volume, Fixed Costs, Variable Cost</li>
+                      <li>Create the CALCULATIONS section with formulas for Contribution Margin, Revenue, Variable Costs, and Total Profit</li>
+                      <li>Verify the Profit formula works: it should calculate correctly when you change Price or Volume</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-slate-50 p-4 rounded border border-slate-200">
+                    <h4 className="font-bold text-slate-900 mb-3">Step 2: Run Goal Seek</h4>
+                    <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
+                      <li>With the workbook open, go to <strong>Data → What-If Analysis → Goal Seek</strong></li>
+                      <li><strong>Set Cell:</strong> Click your Total Profit cell (the formula cell, not the label)</li>
+                      <li><strong>To Value:</strong> Type <code className="bg-slate-100 px-1">15000</code></li>
+                      <li><strong>By Changing Cell:</strong> Click your Price input cell</li>
+                      <li>Click OK and watch Excel find the answer</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-slate-50 p-4 rounded border border-slate-200">
+                    <h4 className="font-bold text-slate-900 mb-3">Step 3: Test Different Scenarios</h4>
+                    <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
+                      <li>Run Goal Seek again to find the price needed for different target profits: $10,000, $20,000</li>
+                      <li>Try changing the approach: keep Price at $1,350, find the volume needed for $15,000 profit</li>
+                      <li>Document each scenario in your notes with the target, the result, and the business meaning</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Verification Checkpoints */}
+              <Card className="border-green-200 bg-green-50">
+                <CardHeader>
+                  <CardTitle className="text-green-800 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" />
+                    Verification Checkpoints
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-sm text-green-800">
+                  <p className="font-medium">Before you move on, verify each of these:</p>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Changing the Price input updates the Profit formula automatically</li>
+                    <li>Goal Seek successfully changes the Price to approximately $1,388</li>
+                    <li>The resulting price makes mathematical sense (higher than variable cost + proportional to target)</li>
+                    <li>You can run Goal Seek again with a different target and get a new answer</li>
+                  </ul>
                 </CardContent>
               </Card>
 
@@ -263,22 +190,22 @@ export default function Phase4Page() {
                       </thead>
                       <tbody className="text-violet-800">
                         <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Data Table Setup</td>
-                          <td className="p-2 border border-violet-200">Tables show #VALUE or errors.</td>
-                          <td className="p-2 border border-violet-200">Both 1V and 2V tables calculate correctly.</td>
-                          <td className="p-2 border border-violet-200">Includes professional labeling and range anchors.</td>
+                          <td className="p-2 border border-violet-200 font-medium">CVP Model Setup</td>
+                          <td className="p-2 border border-violet-200">Formulas don't calculate correctly.</td>
+                          <td className="p-2 border border-violet-200">All formulas work, Profit updates with inputs.</td>
+                          <td className="p-2 border border-violet-200">Clear labeling, organized sections, easy to read.</td>
                         </tr>
                         <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Visual Polish</td>
-                          <td className="p-2 border border-violet-200">No formatting applied.</td>
-                          <td className="p-2 border border-violet-200">Conditional formatting used on one table.</td>
-                          <td className="p-2 border border-violet-200">Heat map (Green/Red) applied consistently to both.</td>
+                          <td className="p-2 border border-violet-200 font-medium">Goal Seek Execution</td>
+                          <td className="p-2 border border-violet-200">Can't find the tool or wrong cells selected.</td>
+                          <td className="p-2 border border-violet-200">Goal Seek runs and finds correct price.</td>
+                          <td className="p-2 border border-violet-200">Tests multiple scenarios and documents results.</td>
                         </tr>
                         <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Analysis</td>
-                          <td className="p-2 border border-violet-200">Table exists but values aren't explained.</td>
-                          <td className="p-2 border border-violet-200">Student can identify the break-even zone.</td>
-                          <td className="p-2 border border-violet-200">Identifies the 'safest' pricing range for market shocks.</td>
+                          <td className="p-2 border border-violet-200 font-medium">Business Interpretation</td>
+                          <td className="p-2 border border-violet-200">Can't explain what the result means.</td>
+                          <td className="p-2 border border-violet-200">Explains the price in business context.</td>
+                          <td className="p-2 border border-violet-200">Connects results to investor scenario and pricing strategy.</td>
                         </tr>
                       </tbody>
                     </table>

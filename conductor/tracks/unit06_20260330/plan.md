@@ -81,21 +81,21 @@
     - [x] The closing phase clearly sets up Goal Seek and Data Tables as useful tools, not premature content
 
 ## Phase 3: Lessons 05-06 (Excel)
-- [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.1.2 Implement Phase 1-6 with CVP workbook and Goal Seek
-    - Phase 1: Open with business scenario where Goal Seek matters, make tool feel necessary
-    - Phase 2: Name Goal Seek pattern, explain parts, teach common failure mode
-    - Phase 3: Use simulator mirroring real workbook logic (Set Cell / To Value / By Changing Cell), give immediate feedback
-    - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
-    - Phase 5: Short technical check, brief artifact task focusing on trustworthiness and business communication
-    - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Teach the workbook anatomy and Goal Seek inputs directly
-  - [ ] 3.1.4 Include a safe rehearsal that mirrors Set Cell / To Value / By Changing Cell logic
-  - [ ] 3.1.5 Require a real workbook artifact by the end of Phase 4
+- [x] 3.1 **Lesson 05** - Implement excel-lessons skill
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [x] 3.1.2 Implement Phase 1-6 with CVP workbook and Goal Seek
+    - [x] Phase 1: Open with business scenario where Goal Seek matters, make tool feel necessary
+    - [x] Phase 2: Name Goal Seek pattern, explain parts, teach common failure mode
+    - [x] Phase 3: Use simulator mirroring real workbook logic (Set Cell / To Value / By Changing Cell), give immediate feedback
+    - [x] Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
+    - [x] Phase 5: Short technical check, brief artifact task focusing on trustworthiness and business communication
+    - [x] Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
+  - [x] 3.1.3 Teach the workbook anatomy and Goal Seek inputs directly
+  - [x] 3.1.4 Include a safe rehearsal that mirrors Set Cell / To Value / By Changing Cell logic
+  - [x] 3.1.5 Require a real workbook artifact by the end of Phase 4
   - **Done when**:
-    - [ ] Students can run Goal Seek on a valid CVP model
-    - [ ] The workbook produces a defensible target-profit scenario
+    - [x] Students can run Goal Seek on a valid CVP model
+    - [x] The workbook produces a defensible target-profit scenario
 
 - [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
