@@ -1,22 +1,27 @@
-// Three-Statement Storyboard, Lesson 3 data - extracted from MCP curriculum database
+// Three-Statement Storyboard, Lesson 3 data - Balance Sheet & Retained Earnings
 export const lesson03Data = {
   id: "mds5via1qgutbwmfa3s",
-  title: "Application Practice: Income Statement Independent Build",
+  title: "Build the Balance Sheet and Retained Earnings",
   sequence: 3,
   unitId: "mdrhlhuxj2zkbimaqfd",
   learningObjectives: [
-    "Construct accurate Income Statement from trial balance data",
-    "Use INDEX/MATCH functions for dynamic cross-sheet data retrieval"
+    "Construct a balance sheet that correctly groups assets, liabilities, and equity",
+    "Explain how net income flows into retained earnings and connects the income statement to the balance sheet",
+    "Verify that assets equal liabilities plus equity after every build"
   ],
   keyConcepts: [
-    "Income Statement construction from journal entry data",
-    "Cross-sheet linking with INDEX/MATCH and named ranges"
+    "The accounting equation: Assets = Liabilities + Equity",
+    "Retained earnings as the bridge between periods",
+    "Classifying accounts into current vs. long-term categories",
+    "How the income statement feeds the balance sheet through net income"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Students independently build Income Statement with peer debugging support"
+    "Direct instruction on balance sheet construction from trial balance data",
+    "Worked examples showing retained earnings roll-forward",
+    "Algorithmic deliberate practice for mastery"
   ],
-  rationale: "To provide students with hands-on practice and to develop their problem-solving and collaboration skills.",
+  rationale: "To equip students with the ability to prepare and interpret a balance sheet and explain how income affects equity, completing the two-statement link before cash flow is introduced.",
   status: "Draft"
 }
 
@@ -26,48 +31,42 @@ export const unit03Data = {
   sequence: 3
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases following the accounting-principles skill contract
 export const lesson03Phases = [
   {
-    id: "phase_hook_3",
+    id: "phase_1_recycle_3",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Review previous learning and connect to today's application activities",
-    // No component needed for this phase.
+    description: "Reconnect to Lesson 02 income statement and surface the friction point: profit alone does not tell you what the business owns or owes.",
   },
   {
-    id: "phase_introduction_3",
+    id: "phase_2_explicit_3",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Income Statement construction from journal entry data and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Name the method, model the balance sheet step by step, show the retained earnings roll-forward, and walk through a worked example with mini balance-sheet representations.",
   },
   {
-    id: "phase_guided_practice_3",
+    id: "phase_3_deepen_3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Work through structured examples applying Income Statement construction from journal entry data with teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building an income statement in a template.
+    description: "Add a meaningful complication (retained earnings links, dividends, or ambiguous classifications), reduce prompts, and shift toward authentic accounting notation.",
   },
   {
-    id: "phase_independent_practice_3",
+    id: "phase_4_mastery_3",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Apply Income Statement construction from journal entry data independently to solve authentic business problems",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building an income statement in a template.
+    description: "Repeated balance sheet construction practice with varied numbers, automatic checking, feedback after submission, and a mastery target.",
   },
   {
-    id: "phase_assessment_3",
+    id: "phase_5_assessment_3",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - For peer evaluation of the income statement.
+    description: "Short MCQ exit ticket on balance sheet construction, retained earnings logic, and common misconceptions.",
   },
   {
-    id: "phase_closing_3",
+    id: "phase_6_reflection_3",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Consolidate learning and connect to broader unit goals and real-world applications",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on confidence and understanding, connect to the business problem, identify method signals, and preview the cash flow statement lesson.",
   }
 ]

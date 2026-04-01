@@ -5,204 +5,167 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, ArrowRight, TrendingUp, Users } from "lucide-react";
 import { lesson03Data, unit03Data, lesson03Phases } from "../lesson-data";
 
-const currentPhase = lesson03Phases[5]; // Closing phase
+const currentPhase = lesson03Phases[5];
 
 const reflectionPrompts = [
   {
-    id: 'courage-income-statement',
-    category: 'courage' as const,
-    prompt: 'Building professional INDEX/MATCH formulas can feel intimidating. What was the most challenging Excel technique you tackled today, and how did you push through your comfort zone to master it?',
-    placeholder: 'Think about specific moments when you felt uncertain about a formula or technique but persisted anyway. What gave you the courage to keep trying when Excel seemed complex or overwhelming?'
+    id: 'confidence-balance-sheet',
+    category: 'confidence' as const,
+    prompt: 'How confident do you feel about building a Balance Sheet from a trial balance? What part of the process feels most solid to you right now?',
+    placeholder: 'Think about classifying accounts, calculating retained earnings, and verifying the accounting equation. Which step do you trust yourself to do correctly without help?'
   },
   {
-    id: 'adaptability-formulas',
-    category: 'adaptability' as const,
-    prompt: 'When your INDEX/MATCH formulas returned errors or unexpected results, how did you adapt your approach? Describe a specific time you had to troubleshoot or adjust your strategy.',
-    placeholder: 'Reflect on how you handled formula errors, missing data, or unexpected results. How did you modify your approach when your first attempt didn\'t work as planned?'
+    id: 'understanding-retained-earnings',
+    category: 'understanding' as const,
+    prompt: 'Explain in your own words how Net Income from the Income Statement ends up on the Balance Sheet. Why does this connection matter for understanding a business?',
+    placeholder: 'Try to explain the retained earnings roll-forward as if you were teaching it to a classmate who missed today\'s lesson. What is the key idea they need to understand?'
   },
   {
-    id: 'persistence-professional-modeling',
-    category: 'persistence' as const,
-    prompt: 'Professional financial modeling requires attention to detail and persistence through complex formulas. When did you feel like giving up today, but chose to persist? What motivated you to continue?',
-    placeholder: 'Consider moments when the technical details felt overwhelming or when you wanted to use shortcuts instead of proper professional techniques. What kept you committed to building a truly professional model?'
+    id: 'signal-recognition',
+    category: 'understanding' as const,
+    prompt: 'What signals tell you that a problem requires a Balance Sheet rather than an Income Statement? When would you know to use this method?',
+    placeholder: 'Think about the kinds of questions a bank, investor, or business owner might ask. What kind of question would make you reach for the Balance Sheet procedure?'
   }
 ];
 
 export default function Unit03Lesson03Phase6() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white">
-      <PhaseHeader 
+      <PhaseHeader
         lesson={lesson03Data}
-        unit={unit03Data} 
+        unit={unit03Data}
         phase={currentPhase}
         phases={lesson03Phases}
       />
-      
+
       <div className="max-w-4xl mx-auto p-6 space-y-8">
         <div className="prose prose-lg max-w-none">
           <h2 className="text-3xl font-bold text-indigo-900 mb-6 flex items-center gap-3">
             <Lightbulb className="h-8 w-8" />
-            Closing: The First Chapter of Your Financial Story
+            Closing: The Story Now Has a Setting
           </h2>
-          
+
           <div className="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-lg border border-indigo-200 mb-8">
             <p className="text-lg leading-relaxed text-indigo-900">
-              Congratulations! You've just written the first chapter of your business's financial storyboard. Like Sarah, 
-              you've moved beyond basic spreadsheets to create a professional Income Statement that investors can trust 
-              and understand. But this is just the beginning—the plot of your story is only one part of the complete 
-              three-statement narrative.
+              You started this lesson knowing that Sarah's Income Statement showed profit — but that was not enough for
+              the bank. Now you can build the Balance Sheet that answers the question the Income Statement could not:
+              <strong> "What does the business own, and what does it owe?"</strong> The financial story now has both a
+              plot and a setting.
             </p>
           </div>
 
           <h3 className="text-2xl font-semibold text-indigo-800 mb-4">
-            What You've Accomplished Today
+            What You Can Now Do
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
-                <CardTitle className="text-green-800 text-lg">🔧 Technical Mastery</CardTitle>
+                <CardTitle className="text-green-800 text-lg">The Accounting Equation</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-green-700 space-y-2 text-sm">
-                  <li>• Built dynamic INDEX/MATCH formulas</li>
-                  <li>• Used named table references professionally</li>
-                  <li>• Created automatically updating financial models</li>
-                  <li>• Applied validation checks for accuracy</li>
-                  <li>• Demonstrated Excel modeling best practices</li>
+                  <li>• State and apply Assets = Liabilities + Equity</li>
+                  <li>• Classify accounts into the correct category</li>
+                  <li>• Spot tricky accounts like Unearned Revenue and Prepaid Rent</li>
+                  <li>• Diagnose why a Balance Sheet does not balance</li>
                 </ul>
               </CardContent>
             </Card>
-            
+
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="text-blue-800 text-lg">💼 Business Understanding</CardTitle>
+                <CardTitle className="text-blue-800 text-lg">The Retained Earnings Bridge</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="text-blue-700 space-y-2 text-sm">
-                  <li>• Analyzed expense ratios and profit margins</li>
-                  <li>• Connected Income Statement to investor needs</li>
-                  <li>• Understood financial statement integration</li>
-                  <li>• Developed strategic insights from financial data</li>
-                  <li>• Built credible, professional presentations</li>
+                  <li>• Calculate Ending RE from Beginning RE, Net Income, and Dividends</li>
+                  <li>• Explain how the Income Statement feeds the Balance Sheet</li>
+                  <li>• Separate permanent accounts from temporary accounts</li>
+                  <li>• Build a complete Balance Sheet from a trial balance</li>
                 </ul>
               </CardContent>
             </Card>
           </div>
 
           <h3 className="text-2xl font-semibold text-indigo-800 mb-4">
-            Sarah's Journey Continues
+            Why Retained Earnings Matters
           </h3>
-          
+
           <p className="text-lg leading-relaxed mb-6">
-            Remember where Sarah started this lesson—with perfectly organized internal records that weren't enough for 
-            investors. Now she has the first part of her professional financial storyboard: an Income Statement that 
-            automatically tells the "plot" of her business profitability. But investors need the complete story.
+            Retained Earnings is the most important account on the Balance Sheet for understanding a business's
+            history. It tells you how much profit the business has kept over its entire life — not just this period,
+            but every period since it started. A growing Retained Earnings balance means the business is profitable
+            and reinvesting in itself. A shrinking one means the business is losing money or paying out more than it earns.
           </p>
 
           <div className="bg-amber-50 p-6 rounded-lg border border-amber-200 mb-8">
             <h4 className="font-semibold text-amber-900 mb-3 text-lg flex items-center gap-2">
               <ArrowRight className="h-5 w-5" />
-              Looking Ahead: Completing the Storyboard
+              Looking Ahead: The Third Statement
             </h4>
             <p className="text-amber-800 mb-3">
-              The Income Statement answers "Is the business profitable?" But investors have two more critical questions:
+              You now have two of the three financial statements. But there is one more question investors ask that
+              neither the Income Statement nor the Balance Sheet answers cleanly:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded border border-amber-300">
-                <h5 className="font-medium text-amber-900 mb-2">🏢 The Balance Sheet</h5>
-                <p className="text-amber-700 text-sm">
-                  "What does the business own vs. owe?" This shows the financial position and connects to 
-                  your Income Statement through Retained Earnings.
-                </p>
-              </div>
-              <div className="bg-white p-4 rounded border border-amber-300">
-                <h5 className="font-medium text-amber-900 mb-2">💰 Cash Flow Statement</h5>
-                <p className="text-amber-700 text-sm">
-                  "How is cash actually moving?" Profitability and cash flow are different—this statement 
-                  shows the real liquidity story.
-                </p>
-              </div>
+            <div className="bg-white p-4 rounded border border-amber-300">
+              <p className="text-amber-900 font-medium">
+                "If the business made a profit, why is there no cash in the bank?"
+              </p>
             </div>
+            <p className="text-amber-800 mt-3">
+              Profit and cash are not the same thing. A business can be profitable and still run out of cash. The
+              next lesson introduces the <strong>Statement of Cash Flows</strong> — the document that explains exactly
+              where cash came from and where it went. You will learn why operating, investing, and financing activities
+              tell a different story than net income alone.
+            </p>
           </div>
 
           <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
             <h4 className="font-semibold text-blue-900 mb-3 text-lg flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
-              Your Growth as a Business Leader
+              Sarah's Story So Far
             </h4>
             <p className="text-blue-800">
-              Today you moved from student to practitioner. You built the same professional financial models that 
-              successful entrepreneurs use to secure funding, make strategic decisions, and communicate with stakeholders. 
-              The INDEX/MATCH skills you mastered are the foundation for every advanced Excel technique you'll encounter 
-              in business.
+              Sarah now has two professional financial statements. The Income Statement shows her business is profitable.
+              The Balance Sheet shows she has real assets and manageable debts. But the bank still wants to understand
+              her cash position. In the next lesson, you will help her build the final piece of the financial story.
             </p>
           </div>
 
           <h3 className="text-2xl font-semibold text-indigo-800 mb-4">
-            Reflection: Your Learning Journey
+            Reflect on Your Learning
           </h3>
-          
+
           <p className="text-lg leading-relaxed mb-6">
-            Take a few minutes to reflect on your experience building professional Income Statements. How did you 
-            demonstrate courage, adaptability, and persistence through the technical challenges? This metacognitive 
-            reflection helps you recognize your growth and prepare for even more complex financial modeling ahead.
+            Take a few minutes to think about what you learned today. How has your understanding of financial statements
+            grown? What feels clear, and what still needs practice?
           </p>
         </div>
 
         <ReflectionJournal
-          unitTitle="Income Statement Construction Reflection"
+          unitTitle="Balance Sheet & Retained Earnings Reflection"
           prompts={reflectionPrompts}
         />
 
         <div className="prose prose-lg max-w-none mt-8">
-          <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
-            <h3 className="font-semibold text-purple-900 mb-2 text-lg flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Community & Collaboration
-            </h3>
-            <p className="text-purple-800 mb-3">
-              You didn't just learn Excel formulas today—you practiced the collaborative skills that make businesses 
-              successful. Through peer critique, discussion, and problem-solving together, you built both technical 
-              competence and professional communication skills.
-            </p>
-            <p className="text-purple-700 text-sm">
-              <strong>Remember:</strong> In the real world, financial models are always reviewed by teams. The peer 
-              feedback process you practiced mirrors how professionals ensure accuracy and improve their work.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg border border-green-200 mt-6">
-            <h3 className="font-semibold text-green-900 mb-3 text-lg">🌟 Unit 3 Progress: The Journey Continues</h3>
-            <p className="text-green-800 mb-3">
-              You've completed the first major milestone of Unit 3. Sarah now has her Income Statement—the "plot" of 
-              her business story. But the complete three-statement storyboard requires integration with the Balance 
-              Sheet and Cash Flow Statement.
-            </p>
-            <p className="text-blue-800 text-sm">
-              <strong>Next Steps:</strong> You'll learn how Net Income flows into Retained Earnings, how cash flow 
-              differs from profit, and how to build KPI dashboards that summarize complex financial stories for busy 
-              investors. The foundation you built today makes everything ahead possible.
-            </p>
-          </div>
-
-          <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-200 mt-6">
-            <h3 className="font-semibold text-indigo-900 mb-2 text-lg">🎯 Key Takeaway</h3>
+          <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-200">
+            <h3 className="font-semibold text-indigo-900 mb-2 text-lg">Key Takeaway</h3>
             <p className="text-indigo-800">
-              Professional financial modeling isn't just about Excel formulas—it's about building trust, telling 
-              compelling stories with data, and creating systems that scale with business growth. Today you took 
-              a major step toward thinking like an entrepreneur who can confidently present to investors, banks, 
-              and business partners.
+              The Balance Sheet is not just a list of numbers — it is a snapshot of a business's financial health at a
+              single moment. The accounting equation must always balance. Retained Earnings is the bridge that connects
+              the Income Statement to the Balance Sheet, showing how profit builds the owner's stake in the business over
+              time.
             </p>
             <p className="text-indigo-700 text-sm mt-3 italic">
-              "The difference between amateur and professional isn't perfection—it's methodology, transparency, 
-              and the ability to build systems that others can trust and understand."
+              "A business can survive without profit for a while. It cannot survive without cash. The Balance Sheet
+              tells you what exists. The Cash Flow Statement — next — tells you whether it is enough."
             </p>
           </div>
         </div>
       </div>
 
-      <PhaseFooter 
+      <PhaseFooter
         lesson={lesson03Data}
         unit={unit03Data}
         phase={currentPhase}

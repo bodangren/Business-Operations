@@ -57,21 +57,21 @@
     - [x] Students can prepare and interpret a basic income statement
     - [x] The close points forward to balance-sheet effects
 
-- [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
-  - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
-  - [ ] 2.3.2 Implement Phase 1-6 with balance sheet and retained earnings
+- [x] 2.3 **Lesson 03** - Implement accounting-principles skill
+  - [x] 2.3.1 Update lesson-data.ts for Lesson 03
+  - [x] 2.3.2 Implement Phase 1-6 with balance sheet and retained earnings
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and mini balance-sheet representations
     - Phase 3: Add meaningful complication (retained earnings links), reduce prompts, shift toward authentic accounting notation
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on balance sheet construction, retained earnings logic, misconceptions
     - Phase 6: Reflect on confidence and understanding, connect to business problem, preview next lesson
-  - [ ] 2.3.3 Keep the equation and statement tie-outs visible
-  - [ ] 2.3.4 Use mini balance-sheet representations before fully abstract forms
-  - [ ] 2.3.5 Include explanation of why retained earnings links the story across periods
+  - [x] 2.3.3 Keep the equation and statement tie-outs visible
+  - [x] 2.3.4 Use mini balance-sheet representations before fully abstract forms
+  - [x] 2.3.5 Include explanation of why retained earnings links the story across periods
   - **Done when**:
-    - [ ] Students can tie assets, liabilities, and equity correctly
-    - [ ] Students can explain how income affects equity
+    - [x] Students can tie assets, liabilities, and equity correctly
+    - [x] Students can explain how income affects equity
 
 - [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
   - [ ] 2.4.1 Update lesson-data.ts for Lesson 04

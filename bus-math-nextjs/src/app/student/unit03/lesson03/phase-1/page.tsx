@@ -4,200 +4,179 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { lesson03Data, unit03Data, lesson03Phases } from "../lesson-data";
 
-const currentPhase = lesson03Phases[0]; // Hook phase
+const currentPhase = lesson03Phases[0];
 
 const hookQuestions = [
   {
     id: "hook-q1",
-    question: "When Sarah from TechStart Solutions met with her CPA Jennifer Kim to build professional financial statements, what was the biggest challenge they needed to solve?",
+    question: "In Lesson 02, Sarah built an Income Statement showing $4,220 in net income. But when the bank asked 'What does your business actually own?' she had no answer. Why was the Income Statement alone not enough?",
     answers: [
-      "How to make journal entries automatically flow into a narrative that investors can trust and understand",
-      "How to make their spreadsheet look more professional with better formatting",
-      "How to calculate taxes for the business more accurately",
-      "How to track cash flow on a daily basis"
+      "The Income Statement shows profit over time but does not show what the business owns or owes at a specific date",
+      "The Income Statement only tracks cash, not the full financial picture",
+      "The Income Statement is only useful for tax purposes, not for banks",
+      "The Income Statement was missing her revenue accounts"
     ],
-    explanation: "The central challenge was creating a 'storyboard' where today's journal entries flow into a compelling financial narrative showing profit, solvency, and cash health that external stakeholders like investors and banks can trust."
+    explanation: "The Income Statement answers 'Is the business profitable?' but says nothing about what the business owns (assets) or owes (liabilities). A bank needs to see the full financial position, not just profitability."
   },
   {
-    id: "hook-q2", 
-    question: "Why did Sarah need to create dynamic reports that automatically update when new data is added to her ledger?",
+    id: "hook-q2",
+    question: "Sarah's net income was $4,220 this month. If she started with $15,000 in retained earnings and paid $2,000 in dividends, what happened to that $4,220?",
     answers: [
-      "Because professional financial models must be living documents that always reflect the true state of the business",
-      "Because her computer was too slow to handle manual updates",
-      "Because she wanted to impress her investors with fancy Excel features",
-      "Because Jennifer Kim required it for tax purposes"
+      "It flowed into Retained Earnings, increasing equity from $15,000 to $17,220",
+      "It went into her personal bank account as profit",
+      "It disappeared because expenses used it up",
+      "It was added to the Cash account on the balance sheet"
     ],
-    explanation: "Professional financial models are living documents. When built with dynamic formulas like INDEX/MATCH, they automatically update whenever new transactions are added, ensuring the reports always show current, accurate information."
+    explanation: "Net income flows into Retained Earnings on the Balance Sheet. Beginning RE ($15,000) + Net Income ($4,220) − Dividends ($2,000) = Ending RE ($17,220). This is the bridge between the two statements."
   },
   {
     id: "hook-q3",
-    question: "In Excel, why is INDEX/MATCH considered superior to VLOOKUP for building dynamic Income Statements?",
+    question: "Which of these accounts would NOT appear on an Income Statement but WOULD appear on a Balance Sheet?",
     answers: [
-      "INDEX/MATCH is more flexible and can look in any direction, making it perfect for complex financial models",
-      "INDEX/MATCH is faster than VLOOKUP in all situations",
-      "INDEX/MATCH has better formatting options",
-      "INDEX/MATCH can only be used for financial statements"
+      "Equipment, Accounts Receivable, and Notes Payable",
+      "Service Revenue and Rent Expense",
+      "Cost of Goods Sold and Sales Revenue",
+      "Advertising Expense and Salary Expense"
     ],
-    explanation: "INDEX/MATCH is more flexible than VLOOKUP because it can look left or right, up or down, and doesn't break when columns are inserted or moved. This makes it ideal for building robust financial models."
+    explanation: "Equipment (asset), Accounts Receivable (asset), and Notes Payable (liability) are balance sheet accounts. They represent what the business owns and owes, not revenues or expenses earned/incurred during a period."
   },
   {
     id: "hook-q4",
-    question: "What happens to Net Income from the Income Statement in a complete financial storyboard?",
+    question: "The accounting equation is Assets = Liabilities + Equity. If Sarah's business has $25,000 in assets and $10,000 in liabilities, what is her equity?",
     answers: [
-      "Net Income flows directly into the Retained Earnings section of the Balance Sheet, connecting the two statements",
-      "Net Income stays separate and is only used for tax calculations",
-      "Net Income gets transferred to a savings account automatically", 
-      "Net Income is only used to pay dividends to shareholders"
+      "$15,000 — Equity is what remains after liabilities are subtracted from assets",
+      "$35,000 — You add assets and liabilities together",
+      "$10,000 — Equity equals liabilities",
+      "$25,000 — Equity equals assets"
     ],
-    explanation: "This is the key integration point: Net Income from the Income Statement flows into Retained Earnings on the Balance Sheet, creating the connection between the 'plot' and 'setting' of the financial story."
+    explanation: "The accounting equation must always balance. Assets ($25,000) = Liabilities ($10,000) + Equity. So Equity = $25,000 − $10,000 = $15,000."
   }
 ];
 
 export default function Unit03Lesson03Phase1() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <PhaseHeader 
+      <PhaseHeader
         lesson={lesson03Data}
-        unit={unit03Data} 
+        unit={unit03Data}
         phase={currentPhase}
         phases={lesson03Phases}
       />
-      
+
       <div className="max-w-4xl mx-auto p-6 space-y-8">
         <div className="prose prose-lg max-w-none">
           <h2 className="text-3xl font-bold text-blue-900 mb-6">
-            Sarah's Financial Story Challenge
+            The Missing Chapter: What Does the Business Actually Own?
           </h2>
-          
+
           <div className="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-lg border border-blue-200 mb-8">
             <p className="text-lg leading-relaxed text-blue-900">
-              Sarah thought she had mastered business finances after building her automated ledger system in Unit 2. 
-              Her books balanced perfectly, her month-end process was smooth, and she finally had time to focus on growing 
-              TechStart Solutions. But when a huge opportunity came her way—a regional retail chain needing a massive 
-              e-commerce solution—she realized her internal records weren't enough.
+              Last lesson, Sarah built a clean Income Statement showing $4,220 in net income. She was proud. But when
+              she walked into the bank for a small business loan, the loan officer asked a question she could not answer:
+              <strong> "What does your business own, and what does it owe?"</strong>
             </p>
-            
+
             <p className="text-lg leading-relaxed text-blue-900 mt-4">
-              The bank loan officer looked at her detailed spreadsheet and asked, "Where are your financial statements?" 
-              At the same time, a potential investor wanted to see "real financial statements." Sarah's perfectly organized 
-              ledger was for <em>her</em>—but the business world needed the official story told through three specific documents.
+              Her Income Statement told the <em>plot</em> — how profitable the business was. But it said nothing about
+              the <em>setting</em> — the financial position at a specific point in time. Sarah had $8,500 in cash,
+              $6,400 that customers still owed her, a $12,000 piece of equipment, and a $5,000 loan she still needed
+              to repay. None of that appeared on the Income Statement.
             </p>
           </div>
 
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">
-            The Three-Statement Storyboard
+            The Friction Point
           </h3>
-          
+
           <p className="text-lg leading-relaxed mb-6">
-            Jennifer Kim, Sarah's CPA, explained that financial statements are like a "storyboard" for business:
+            Sarah stared at her trial balance — a long list of accounts with dollar amounts. She could see Cash,
+            Equipment, Accounts Payable, Common Stock, and dozens of other lines. But she did not know how to organize
+            them into a document that would answer the bank's question. She needed a new tool.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
-                <CardTitle className="text-green-800 text-lg">The Plot</CardTitle>
+                <CardTitle className="text-green-800 text-lg">What the Income Statement Tells You</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-green-700 text-sm">
-                  <strong>Income Statement:</strong> Is the business profitable? 
-                  Shows Revenues - Expenses = Net Income over time.
-                </p>
+                <ul className="text-green-700 space-y-1 text-sm">
+                  <li>• Revenues earned during a period</li>
+                  <li>• Expenses incurred during a period</li>
+                  <li>• Net Income (profit or loss)</li>
+                  <li>• Answers: "Is the business profitable?"</li>
+                </ul>
               </CardContent>
             </Card>
-            
+
             <Card className="border-purple-200 bg-purple-50">
               <CardHeader>
-                <CardTitle className="text-purple-800 text-lg">The Setting</CardTitle>
+                <CardTitle className="text-purple-800 text-lg">What the Income Statement Does NOT Tell You</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-purple-700 text-sm">
-                  <strong>Balance Sheet:</strong> What does the business own vs. owe? 
-                  Assets = Liabilities + Equity at a point in time.
-                </p>
+                <ul className="text-purple-700 space-y-1 text-sm">
+                  <li>• How much cash the business has right now</li>
+                  <li>• What equipment or property the business owns</li>
+                  <li>• What debts are still unpaid</li>
+                  <li>• How much the owners have invested</li>
+                </ul>
               </CardContent>
             </Card>
-            
-            <Card className="border-orange-200 bg-orange-50">
-              <CardHeader>
-                <CardTitle className="text-orange-800 text-lg">The Action</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-orange-700 text-sm">
-                  <strong>Cash Flow Statement:</strong> How is cash actually moving? 
-                  Shows real money in and out of the business.
-                </p>
-              </CardContent>
-            </Card>
+          </div>
+
+          <h3 className="text-2xl font-semibold text-blue-800 mb-4">
+            The Balance Sheet: A Snapshot in Time
+          </h3>
+
+          <p className="text-lg leading-relaxed mb-6">
+            The Balance Sheet answers the question the Income Statement cannot: <strong>"What is the financial position
+            of this business at a specific date?"</strong> It lists everything the business owns (assets), everything
+            it owes (liabilities), and what is left over for the owners (equity).
+          </p>
+
+          <div className="bg-white p-6 rounded-lg border-2 border-blue-200 mb-6 text-center">
+            <div className="text-3xl font-bold text-blue-900 mb-4">
+              Assets = Liabilities + Equity
+            </div>
+            <p className="text-blue-700 text-lg">
+              The accounting equation must always balance. What you own equals what you owe plus what you are worth.
+            </p>
           </div>
 
           <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
-            <h3 className="font-semibold text-blue-900 mb-3 text-xl">Why This Matters</h3>
+            <h3 className="font-semibold text-blue-900 mb-3 text-xl">Why This Matters for Sarah</h3>
             <p className="text-blue-800 leading-relaxed">
-              Today, you'll take the journal entries from your Unit 1 venture and transform them into the first chapter 
-              of your financial story—a professional Income Statement. But you won't just copy and paste numbers. You'll 
-              build it like a pro, using <strong>INDEX/MATCH formulas</strong> to create dynamic links between your ledger 
-              and your statement. This means when new transactions hit your books, your Income Statement updates automatically. 
-              This is how you build trust with investors: by showing them a living, breathing financial model that always 
-              tells the current truth about your business.
+              Without a Balance Sheet, Sarah cannot prove to the bank that she has enough assets to support a loan,
+              or that her debts are manageable. The bank needs to see the full picture — not just whether she made
+              a profit, but whether the business is financially stable. Today you will learn to build that picture
+              from a trial balance, just like Sarah needed to do.
             </p>
           </div>
 
-          <h3 className="text-2xl font-semibold text-blue-800 mb-4">
-            The Power of INDEX/MATCH
-          </h3>
-          
-          <p className="text-lg leading-relaxed mb-6">
-            Jennifer taught Sarah that professional financial models use <strong>INDEX/MATCH</strong> instead of basic lookup 
-            functions because it's more flexible and reliable. Here's why this matters:
-          </p>
-
-          <div className="bg-gray-50 p-6 rounded-lg border mb-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">✅ INDEX/MATCH Benefits:</h4>
-                <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
-                  <li>Can look in any direction (left, right, up, down)</li>
-                  <li>Doesn't break when columns are inserted or moved</li>
-                  <li>More flexible for complex financial models</li>
-                  <li>Industry standard for professional spreadsheets</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">⚠️ VLOOKUP Limitations:</h4>
-                <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
-                  <li>Only looks to the right</li>
-                  <li>Breaks when columns are moved</li>
-                  <li>Limited flexibility for complex models</li>
-                  <li>Not preferred by financial professionals</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
           <p className="text-lg leading-relaxed mb-8">
-            Today's challenge: Can you build an Income Statement that dynamically pulls from your trial balance and 
-            automatically updates to show Sarah's true profitability story?
+            Today's challenge: Can you take Sarah's trial balance and organize it into a Balance Sheet that proves
+            the business is stable — and shows exactly how last month's profit connects to this month's equity?
           </p>
         </div>
 
         <ComprehensionCheck
-          title="Understanding the Financial Storyboard Challenge"
-          description="Test your understanding of Sarah's challenge and the power of integrated financial statements."
+          title="Understanding the Balance Sheet Need"
+          description="Test your understanding of why the Income Statement alone is not enough and what the Balance Sheet adds."
           questions={hookQuestions}
           showExplanations={true}
         />
 
         <div className="bg-amber-50 p-6 rounded-lg border border-amber-200">
-          <h3 className="font-semibold text-amber-900 mb-2 text-lg">🎯 Phase 1 Learning Target</h3>
+          <h3 className="font-semibold text-amber-900 mb-2 text-lg">Phase 1 Learning Target</h3>
           <p className="text-amber-800">
-            By the end of this phase, you should understand why Sarah needs professional financial statements, 
-            how the Income Statement serves as the "plot" of her business story, and why dynamic formulas like 
-            INDEX/MATCH are essential for building investor-ready financial models.
+            By the end of this phase, you should understand why a Balance Sheet is needed in addition to the Income
+            Statement, what the accounting equation means, and how net income from the Income Statement connects to
+            equity on the Balance Sheet through Retained Earnings.
           </p>
         </div>
       </div>
 
-      <PhaseFooter 
+      <PhaseFooter
         lesson={lesson03Data}
         unit={unit03Data}
         phase={currentPhase}
