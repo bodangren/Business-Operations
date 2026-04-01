@@ -9,6 +9,18 @@ import { getUnit04Phase5ComprehensionCheckItems } from "@/data/question-banks/un
 const currentPhase = lesson06Phases[4]
 const assessmentQuestions = getUnit04Phase5ComprehensionCheckItems({ lessonIds: ["lesson06"] })
 
+const artifactTask = {
+  title: "Executive Summary Artifact",
+  description: "Write a brief executive summary (2-3 sentences) that a café owner would use to make a decision about expanding operations. Your summary must cite specific KPIs from your dashboard.",
+  guidance: [
+    "Name the scenario you recommend (Base/Stretch/Downside)",
+    "Cite at least one specific KPI value and threshold",
+    "State the action (expand/hold/reduce) and the reason",
+    "Include one risk or limitation"
+  ],
+  exampleSummary: "Based on the Base scenario with a 12% profit margin exceeding our 10% threshold, I recommend expanding weekend hours. However, the Stretch scenario shows cash runway dropping to 8 weeks, which creates risk if customer traffic doesn't materialize."
+}
+
 
 export default function Phase5Page() {
   return (
@@ -33,6 +45,27 @@ export default function Phase5Page() {
             questions={assessmentQuestions}
             showExplanations={true}
           />
+
+          <Card className="mt-8 border-green-200 bg-green-50">
+            <CardHeader>
+              <CardTitle className="text-green-900">{artifactTask.title}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-green-800">{artifactTask.description}</p>
+              <div className="bg-white p-4 rounded-lg border border-green-200">
+                <p className="text-sm font-medium text-gray-700 mb-2">Your summary should include:</p>
+                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                  {artifactTask.guidance.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <p className="text-sm font-medium text-blue-800 mb-2">Example:</p>
+                <p className="text-sm text-blue-700 italic">{artifactTask.exampleSummary}</p>
+              </div>
+            </CardContent>
+          </Card>
         </section>
       </main>
 

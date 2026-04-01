@@ -61,9 +61,9 @@ export default function Phase1Page() {
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook — Live Demo</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Sarah’s Café Dashboard: One Screen, Three Scenarios</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              A client wants to see Base, Stretch, and Downside side‑by‑side and make a call fast. Sarah’s
-              early model had hard‑coded ranges and fragile charts. Her integrated model uses a driver table,
-              XLOOKUP links, and stable visuals that update instantly.
+              An investor walks into Sarah's office. She has <strong>10 seconds</strong> to show three scenarios and make a 
+              recommendation. If her charts break or her numbers don't add up, she loses funding. Her integrated model 
+              must switch instantly, show clear KPIs, and prove it's investor-ready.
             </p>
           </div>
         </section>

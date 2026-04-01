@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FinancialDashboard } from "@/components/charts/FinancialDashboard"
 import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem"
+import ChartLinkingSimulator from "@/components/business-simulations/ChartLinkingSimulator"
 import { lesson06Data, unit04Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[2]
@@ -53,6 +54,18 @@ export default function Phase3Page() {
                 0% and 100%,” and “AsOfDate within 30 days.” Transfer these patterns into your spreadsheet model.
               </p>
               <ErrorCheckingSystem />
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200">
+            <CardHeader>
+              <CardTitle className="text-blue-900">Chart Linking Simulator</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-700 mb-3">
+                Practice linking charts to data using structured references, then build recommendations based on KPI thresholds.
+              </p>
+              <ChartLinkingSimulator />
             </CardContent>
           </Card>
         </section>

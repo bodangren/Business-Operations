@@ -91,21 +91,21 @@
     - [x] The dataset is cleaned and analysis-ready
     - [x] Students can explain why each Excel step matters
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with visualizations and recommendation
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with visualizations and recommendation
     - Phase 1: Open with business scenario where visualizations matter, make tool feel necessary
     - Phase 2: Name visualization/recommendation pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task requiring explanation and trustworthiness
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Create charts or visuals tied directly to the cleaned data
-  - [ ] 3.2.4 Require one concise recommendation supported by numbers
-  - [ ] 3.2.5 Keep Phase 5 focused on explanation and trustworthiness
+  - [x] 3.2.3 Create charts or visuals tied directly to the cleaned data
+  - [x] 3.2.4 Require one concise recommendation supported by numbers
+  - [x] 3.2.5 Keep Phase 5 focused on explanation and trustworthiness
   - **Done when**:
-    - [ ] The workbook or deliverable shows a clear visual story
-    - [ ] Students can explain the recommendation using evidence
+    - [x] The workbook or deliverable shows a clear visual story
+    - [x] Students can explain the recommendation using evidence
 
 ## Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
