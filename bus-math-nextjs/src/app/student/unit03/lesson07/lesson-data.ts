@@ -1,77 +1,72 @@
-// Three-Statement Storyboard, Lesson 7 data - extracted from MCP curriculum database
+// Unit 03 - Lesson 07: Project Rehearsal data
+import { LessonPhase } from "@/contexts/LessonProgressContext"
+
 export const lesson07Data = {
-  id: "mds5viab1kdrr0r5bqv",
-  title: "Production Studio: Model Completion, QA, and Presentation",
+  id: "u3l7",
+  title: "Project Rehearsal: Three-Statement Workbook Audit",
   sequence: 7,
-  unitId: "mdrhlhuxj2zkbimaqfd",
+  unitId: "u3",
   learningObjectives: [
-    "Complete the three-statement model and remove hard‑coded outputs",
-    "Implement exact‑match lookups with error handling (IFNA/IFERROR)",
-    "Bind visuals to structured references and verify reconciliation tie‑outs",
-    "Produce an investor‑ready one‑screen dashboard and executive summary"
+    "Rehearse the exact workbook structure used in the group project",
+    "Trace final recommendations back to supporting evidence across all three statements",
+    "Apply audit criteria to evaluate workbook quality and completeness",
+    "Identify which features must transfer to independent project work"
   ],
   keyConcepts: [
-    "Named ranges and structured references",
-    "XLOOKUP / INDEX‑MATCH with exact match + IFNA/IFERROR",
-    "Validation and reconciliation checks for auditability",
-    "KPI thresholds driving decision‑ready narratives"
+    "Workbook structure and evidence chain",
+    "Recommendation, evidence, and risk",
+    "Peer audit and quality criteria",
+    "Transfer and preparation for independent project"
   ],
   durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Production‑style sprint with standards, QA, peer audit, and presentation readiness"
+    "Guided rehearsal with shared teacher data, audit routine, and peer critique"
   ],
-  rationale: "Students harden the Unit 03 model for real stakeholders by enforcing exact references, adding visible controls, and packaging insights for fast investor review.",
-  status: "Draft"
+  rationale: "Students rehearse the project workbook structure using shared data before receiving their own business scenario. This guided practice establishes the quality standard and evidence expectations for the independent project.",
+  status: "Active"
 }
 
 export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
+  id: "u3",
   title: "Three-Statement Storyboard",
   sequence: 3
 }
 
-// Lesson phases from MCP curriculum database
-export const lesson07Phases = [
+export const lesson07Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
   {
     id: "phase_hook_7",
-    phaseName: "Hook" as const,
+    phaseName: "Hook" as LessonPhase,
     sequence: 1,
-    description: "Production kickoff and stakes: investor expects an audit‑ready model today",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) – Standards quick check
+    description: "Frame the lesson as guided rehearsal before the independent project"
   },
   {
     id: "phase_introduction_7",
-    phaseName: "Introduction" as const,
+    phaseName: "Introduction" as LessonPhase,
     sequence: 2,
-    description: "Standards, Definition of Done checklist, and short build plan",
-    // component: "FillInTheBlank" (id: 175392777770z3y8kqv) – Vocabulary on lookups, validation, reconciliation
+    description: "Orient to the shared workbook, structure, and success criteria"
   },
   {
     id: "phase_guided_practice_7",
-    phaseName: "Guided Practice" as const,
+    phaseName: "Guided Practice" as LessonPhase,
     sequence: 3,
-    description: "Production Sprint I: Finish core links, enforce exact lookups, no hard‑codes",
-    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) – Initial rules and safeguards
+    description: "Trace the recommendation back through the evidence chain"
   },
   {
     id: "phase_independent_practice_7",
-    phaseName: "Independent Practice" as const,
+    phaseName: "Independent Practice" as LessonPhase,
     sequence: 4,
-    description: "Production Sprint II: QA + reconciliation, visuals bound to tables, executive summary",
-    // component: "FinancialDashboard" (id: 1753927800dash) – Visual verification
+    description: "Complete weak spots and identify what must transfer to the project"
   },
   {
     id: "phase_assessment_7",
-    phaseName: "Assessment" as const,
+    phaseName: "Assessment" as LessonPhase,
     sequence: 5,
-    description: "QA review + peer audit with checklist; mini comprehension check on tradeoffs",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) – Peer audit capture
+    description: "Comprehension check and peer audit with explicit criteria"
   },
   {
     id: "phase_closing_7",
-    phaseName: "Closing" as const,
+    phaseName: "Closing" as LessonPhase,
     sequence: 6,
-    description: "Synthesis, readiness check, CAP reflection, preview to Lesson08",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) – CAP prompts
+    description: "Synthesize learning and preview independent project work"
   }
 ]

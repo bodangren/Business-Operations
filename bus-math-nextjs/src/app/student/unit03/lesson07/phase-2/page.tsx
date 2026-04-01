@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit03Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ClipboardCheck, ListChecks } from "lucide-react"
+import { FileSpreadsheet, ListChecks, BookOpen, Link2 } from "lucide-react"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 
 const currentPhase = lesson07Phases[1]
@@ -13,33 +13,61 @@ const currentPhase = lesson07Phases[1]
 const vocabItems = [
   {
     id: "fib-1",
-    text: "Use {blank} or INDEX/MATCH with exact match, wrapped in IFNA or IFERROR.",
-    answer: "XLOOKUP",
-    hint: "Modern exact‑match lookup that replaces VLOOKUP for many cases."
+    text: "The {blank} proves Assets = Liabilities + Equity at any point in time.",
+    answer: "balance sheet",
+    hint: "The snapshot statement showing financial position."
   },
   {
     id: "fib-2",
-    text: "Use XLOOKUP or {blank} with exact match, wrapped in IFNA or IFERROR.",
-    answer: "INDEX/MATCH",
-    hint: "Classic two‑function lookup combination."
+    text: "The {blank} shows revenue, expenses, and net income over a period.",
+    answer: "income statement",
+    hint: "The flow statement showing profitability."
   },
   {
     id: "fib-3",
-    text: "Convert ranges to {blank} so structured references auto‑expand for formulas and charts.",
-    answer: "Tables",
-    hint: "Insert Table → formulas use [Table][#All] style refs."
+    text: "The {blank} explains how cash changed - operating, investing, and financing activities.",
+    answer: "cash flow statement",
+    hint: "The flow statement showing cash movement."
   },
   {
     id: "fib-4",
-    text: "Create a {blank} section that checks totals (e.g., bank vs register).",
-    answer: "reconciliation",
-    hint: "Tie‑outs that prove numbers match."
+    text: "Retained earnings links the income statement to the balance sheet through {blank}.",
+    answer: "net income",
+    hint: "The bottom line of the income statement."
   },
   {
     id: "fib-5",
-    text: "Executive summary text should change based on {blank} across scenarios.",
-    answer: "KPI thresholds",
-    hint: "Metrics that trigger different messages."
+    text: "Cross‑sheet {blank} ensure numbers stay in sync when inputs change.",
+    answer: "links",
+    hint: "Formulas that reference cells in other sheets."
+  }
+]
+
+const workbookStructure = [
+  {
+    sheet: "Income Statement",
+    purpose: "Shows revenue, expenses, and net income. Links to balance sheet via retained earnings.",
+    evidence: "Revenue growth rate, expense ratios, net profit margin"
+  },
+  {
+    sheet: "Balance Sheet",
+    purpose: "Shows assets, liabilities, and equity at a point in time. Balances (A = L + E).",
+    evidence: "Current ratio, debt-to-equity, working capital"
+  },
+  {
+    sheet: "Cash Flow Statement",
+    purpose: "Reconciles net income to cash. Shows operating, investing, and financing flows.",
+    evidence: "Operating cash flow, free cash flow, cash burn rate"
+  },
+  {
+    sheet: "Assumptions",
+    purpose: "Documents all inputs, rates, and drivers used in the model.",
+    evidence: "Growth rates, cost assumptions, scenario parameters"
+  },
+  {
+    sheet: "Dashboard",
+    purpose: "One‑screen summary with key KPIs and executive summary text.",
+    evidence: "Visual charts, KPI table, recommendation statement"
   }
 ]
 
@@ -51,53 +79,92 @@ export default function Phase2Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">🧭 Phase 2: Introduction</Badge>
+            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">🧭 Phase 2: Shared Artifact Orientation</Badge>
             <div className="max-w-4xl mx-auto space-y-8">
               <Card className="border-green-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-green-900 flex items-center gap-2"><ListChecks className="w-5 h-5" /> Definition of Done (Student Checklist)</CardTitle>
+                  <CardTitle className="text-green-900 flex items-center gap-2"><FileSpreadsheet className="w-5 h-5" /> Shared Workbook Structure</CardTitle>
                 </CardHeader>
                 <CardContent className="text-left text-green-900">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Exact references: no hard‑coded outputs; use named ranges and structured refs</li>
-                    <li>Lookups: XLOOKUP or INDEX/MATCH with exact match; wrap with IFNA/IFERROR and clear messages</li>
-                    <li>Tables: ranges converted to Tables so formulas and charts auto‑expand</li>
-                    <li>Charts: visuals bound to tables, not static A1:C10 ranges</li>
-                    <li>Validation: inputs constrained (no invalid negatives; ≤100% rates; fresh AsOfDate)</li>
-                    <li>Reconciliation: tie‑outs pass (totals, bank vs register, accounting equation)</li>
-                    <li>Performance: avoid volatile functions; confirm responsive updates</li>
-                    <li>Auditability: assumptions sheet, date/version note; no hidden logic</li>
-                    <li>Scenario behavior: KPIs update across Base/Stretch/Downside; thresholds drive summary text</li>
-                    <li>Error handling: clear messages; all ErrorCheckingSystem rules pass</li>
-                    <li>Presentation: single‑screen dashboard + concise executive summary</li>
-                  </ul>
+                  <p className="mb-4">
+                    The shared workbook contains the same data your teacher uses. Every group in class
+                    is working with identical numbers today. This lets us compare reasoning and quality directly.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border-collapse">
+                      <thead>
+                        <tr className="bg-green-100">
+                          <th className="text-left p-2 border border-green-200">Sheet</th>
+                          <th className="text-left p-2 border border-green-200">What It Shows</th>
+                          <th className="text-left p-2 border border-green-200">Evidence It Provides</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {workbookStructure.map((item, idx) => (
+                          <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-green-50"}>
+                            <td className="p-2 border border-green-100 font-medium">{item.sheet}</td>
+                            <td className="p-2 border border-green-100">{item.purpose}</td>
+                            <td className="p-2 border border-green-100">{item.evidence}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </CardContent>
               </Card>
 
               <Card className="border-blue-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-blue-900 flex items-center gap-2"><ClipboardCheck className="w-5 h-5" /> Build Plan (Short)</CardTitle>
+                  <CardTitle className="text-blue-900 flex items-center gap-2"><ListChecks className="w-5 h-5" /> Definition of Done (Quality Checklist)</CardTitle>
                 </CardHeader>
-                <CardContent className="text-left">
-                  <ol className="list-decimal list-inside space-y-1">
-                    <li>Finish core links; remove hard‑codes</li>
-                    <li>Enforce exact‑match lookups with IFNA/IFERROR</li>
-                    <li>Convert ranges to Tables; update chart references</li>
-                    <li>Add validation and reconciliation checks</li>
-                    <li>Bind dashboard visuals and write executive summary</li>
-                  </ol>
+                <CardContent className="text-left text-blue-900">
+                  <p className="mb-3">Your completed rehearsal workbook must meet these standards:</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h5 className="font-semibold mb-2">Structure</h5>
+                      <ul className="list-disc list-inside text-sm space-y-1">
+                        <li>All five sheets present and named correctly</li>
+                        <li>Income Statement → Balance Sheet → Cash Flow linked</li>
+                        <li>Assumptions documented with sources</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold mb-2">Accuracy</h5>
+                      <ul className="list-disc list-inside text-sm space-y-1">
+                        <li>Balance sheet balances (A = L + E)</li>
+                        <li>Cash flow ties to balance sheet changes</li>
+                        <li>All cross‑sheet links are formulas, not values</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold mb-2">Communication</h5>
+                      <ul className="list-disc list-inside text-sm space-y-1">
+                        <li>Dashboard shows KPIs with clear labels</li>
+                        <li>Executive summary includes a recommendation</li>
+                        <li>At least one risk or limitation stated</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold mb-2">Audit</h5>
+                      <ul className="list-disc list-inside text-sm space-y-1">
+                        <li>Reconciliation checks visible and passing</li>
+                        <li>No hidden sheets or hard‑coded outputs</li>
+                        <li>Assumptions have date/version</li>
+                      </ul>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
               <Card className="border-emerald-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-emerald-900">Vocabulary Check</CardTitle>
+                  <CardTitle className="text-emerald-900 flex items-center gap-2"><BookOpen className="w-5 h-5" /> Vocabulary Check</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <FillInTheBlank
                     sentences={vocabItems as any}
-                    title="Production Vocabulary"
-                    description="Key terms for exact lookups, structured refs, validation, and reconciliation"
+                    title="Three-Statement Vocabulary"
+                    description="Key terms for understanding the evidence chain"
                   />
                 </CardContent>
               </Card>
