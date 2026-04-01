@@ -5,26 +5,26 @@ import { ArrowRight, CheckCircle, Lightbulb, TrendingUp } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson03Data, lesson03Phases, unit05Data } from "../lesson-data"
 
-const currentPhase = lesson03Phases[5] // Closing phase
+const currentPhase = lesson03Phases[5]
 
 const reflectionPrompts = [
   {
-    id: "courage-selector",
+    id: "courage-net-pay",
     category: "courage" as const,
-    prompt: "Describe a moment today when you felt unsure about the selector or the lookup formula. What steps did you take to push through that uncertainty?",
-    placeholder: "Maybe the INDIRECT reference broke, or the drop-down wouldn't display correctly..."
+    prompt: "Describe a moment when you felt unsure about which deduction to apply first or how to handle a specific situation. What did you do to work through it?",
+    placeholder: "Maybe you weren't sure about the order of deductions, or how 401k affects the calculation..."
   },
   {
-    id: "adaptability-lookup",
+    id: "adaptability-employer",
     category: "adaptability" as const,
-    prompt: "How did you adjust your calculator when a partner asked you to test a different tax table or taxable income?",
-    placeholder: "Think about changes you made to named ranges, validation lists, or explanation notes..."
+    prompt: "How did you explain to someone why employer cost is higher than gross pay? How would you help a new business owner understand this?",
+    placeholder: "Think about how you would make the 7.65% employer match make sense to someone who has never run payroll..."
   },
   {
-    id: "persistence-mini-calculator",
+    id: "persistence-deductions",
     category: "persistence" as const,
-    prompt: "What required the most persistence while building this single-period calculator, and how did you keep moving despite limited time?",
-    placeholder: "Maybe you had to reorganize the layout or document your math more clearly..."
+    prompt: "What was most challenging about calculating net pay for different employee types (hourly vs. salary vs. tipped)? How did you keep going when the numbers got complex?",
+    placeholder: "Maybe handling the tipped employee scenario or making sure you didn't forget any deduction..."
   }
 ]
 
@@ -41,11 +41,11 @@ export default function Phase6Page() {
       <div className="space-y-8">
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-bold text-blue-900 mb-3">
-            Wrap-Up: Tiny Calculator, Big Confidence
+            Wrap-Up: From Gross to Net to Total Cost
           </h2>
           <p className="text-lg leading-relaxed">
-            In one class period you built a tool that answers the question investors care about: “How much tax will you set aside?” 
-            That selector + lookup combo may be small, but it proves you can connect Lesson 2's tax tables to Lesson 3's cash-flow decisions.
+            Today you learned the complete picture of what payroll really costs: what employees take home (net pay) 
+            and what employers actually pay (total cost). Sarah can now answer both questions.
           </p>
         </div>
 
@@ -53,16 +53,17 @@ export default function Phase6Page() {
           <CardHeader>
             <CardTitle className="text-green-900 flex items-center gap-2">
               <CheckCircle className="h-5 w-5" />
-              What You Finished Today
+              What You Learned Today
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-green-900">
             <ul className="list-disc list-inside space-y-1">
-              <li>Progressive bracket table with lower/upper bounds, base tax, and marginal rates.</li>
-              <li>Selector linked to valid federal and state tax tables.</li>
-              <li>Clear taxable income math that anyone can audit.</li>
-              <li>Lookup output that tells Sarah the yearly tax instantly.</li>
-              <li>Peer feedback captured through a critique form.</li>
+              <li>Gross pay minus all deductions equals net pay (take-home)</li>
+              <li>Employee deductions: federal tax, Social Security (6.2%), Medicare (1.45%), state tax</li>
+              <li>Employer matches Social Security (6.2%) and Medicare (1.45%) on top of gross</li>
+              <li>Employer total cost is approximately gross × 1.0765</li>
+              <li>Pre-tax 401k contributions reduce taxable income</li>
+              <li>Tipped employees must report tips as taxable gross</li>
             </ul>
           </CardContent>
         </Card>
@@ -71,15 +72,16 @@ export default function Phase6Page() {
           <CardHeader>
             <CardTitle className="text-purple-900 flex items-center gap-2">
               <Lightbulb className="h-5 w-5" />
-              Connecting to the Unit Roadmap
+              Connection to the Cash-Crunch Story
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-purple-900">
-            <p>Lesson 4 will extend this tiny calculator into a validated, error-proof system. Here's how today's work fits:</p>
+            <p>Here's why today's lesson matters for TechStart's cash crunch:</p>
             <ul className="list-disc list-inside text-sm space-y-1">
-              <li>Your selector becomes the foundation for multi-employee registers.</li>
-              <li>Your lookup logic feeds overtime and deduction rules in later lessons.</li>
-              <li>Your documentation habit makes the Lesson 5 screencast easier to script.</li>
+              <li><strong>Budgeting:</strong> Sarah must budget for employer cost, not just gross wages</li>
+              <li><strong>Cash timing:</strong> Deductions are collected from employees but paid to the government on different schedules</li>
+              <li><strong>Decision-making:</strong> A $50k salary actually costs ~$53,800 - that matters for hiring decisions</li>
+              <li><strong>Compliance:</strong> Missing FICA matches or withholding can result in penalties</li>
             </ul>
           </CardContent>
         </Card>
@@ -88,21 +90,22 @@ export default function Phase6Page() {
           <CardHeader>
             <CardTitle className="text-slate-900 flex items-center gap-2">
               <ArrowRight className="h-5 w-5" />
-              Preview of Next Steps
+              Preview: Lesson 4 - Payroll Timing and Liabilities
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-slate-800">
-            <p>Next lesson you'll “bulletproof” this calculator with validation and visual alerts. Expect to:</p>
+            <p>Next lesson tackles the timing problem:</p>
             <ul className="list-disc list-inside text-sm space-y-1">
-              <li>Add guardrails that stop invalid table selections.</li>
-              <li>Highlight taxable income inputs that are missing deductions.</li>
-              <li>Document your formulas so an auditor can follow every click.</li>
+              <li>When does the employer actually pay the taxes to the government?</li>
+              <li>Why might the bank balance disagree with the payroll register?</li>
+              <li>What happens if Sarah misses a tax deposit deadline?</li>
+              <li>How do paycheck dates affect cash flow timing?</li>
             </ul>
           </CardContent>
         </Card>
 
         <ReflectionJournal
-          unitTitle="Unit 5 Lesson 3: Tax Table Selector Sprint"
+          unitTitle="Unit 5 Lesson 3: Deductions and Net Pay"
           prompts={reflectionPrompts}
         />
 
@@ -114,8 +117,11 @@ export default function Phase6Page() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-amber-900">
-            <p>Between now and Lesson 4, duplicate your worksheet and try swapping in a different state's tax table. 
-              Can your selector + lookup handle it without rewriting the formulas? Bring your answer tomorrow.</p>
+            <p>
+              Before next class, calculate your own (hypothetical) budget: If you earned $25/hour and worked 40 hours 
+              per week, what would your bi-weekly gross be? Then calculate your estimated net pay after typical deductions. 
+              Bring your numbers to class.
+            </p>
           </CardContent>
         </Card>
       </div>
