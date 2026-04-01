@@ -48,21 +48,21 @@
     - [x] Students can calculate and distinguish markup and margin accurately
     - [x] Phase 5 checks reasoning and method choice, not spreadsheet features
 
-- [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
-  - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
-  - [ ] 2.3.2 Implement Phase 1-6 with break-even and contribution margin
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and units/dollars/contribution logic
-    - Phase 3: Add meaningful complication (more complex CVP scenarios), reduce prompts, shift toward authentic pricing notation
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
-    - Phase 5: Short MCQ exit ticket on break-even calculation and contribution margin interpretation
-    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview next lesson
-  - [ ] 2.3.3 Keep the lesson textbook-first and visual
-  - [ ] 2.3.4 Use representational supports for units, dollars, and contribution logic
-  - [ ] 2.3.5 Make students explain what shifts break-even and why
+- [x] 2.3 **Lesson 03** - Implement accounting-principles skill
+  - [x] 2.3.1 Update lesson-data.ts for Lesson 03
+  - [x] 2.3.2 Implement Phase 1-6 with break-even and contribution margin
+    - [x] Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
+    - [x] Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and units/dollars/contribution logic
+    - [x] Phase 3: Add meaningful complication (more complex CVP scenarios), reduce prompts, shift toward authentic pricing notation
+    - [x] Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+    - [x] Phase 5: Short MCQ exit ticket on break-even calculation and contribution margin interpretation
+    - [x] Phase 6: Reflect on confidence and understanding, connect to business problem, preview next lesson
+  - [x] 2.3.3 Keep the lesson textbook-first and visual
+  - [x] 2.3.4 Use representational supports for units, dollars, and contribution logic
+  - [x] 2.3.5 Make students explain what shifts break-even and why
   - **Done when**:
-    - [ ] Students can calculate break-even and interpret the result
-    - [ ] Students can connect contribution margin to pricing choices
+    - [x] Students can calculate break-even and interpret the result
+    - [x] Students can connect contribution margin to pricing choices
 
 - [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
   - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
