@@ -1,18 +1,18 @@
 // Data-Driven Café, Lesson 3 data - extracted from MCP curriculum database
 export const lesson03Data = {
   id: "mds5vtzvyf1dspv83qk",
-  title: "Application Practice: Outliers & Descriptive Statistics",
+  title: "Outliers and Data Quality",
   sequence: 3,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Compute and interpret descriptive statistics for business decision-making",
     "Identify outliers using z-score analysis and business context",
-    "Use Analysis ToolPak to generate comprehensive statistical reports"
+    "Evaluate data quality and defend cleaning decisions",
+    "Explain why outliers matter to planning and forecasting"
   ],
   keyConcepts: [
-    "Descriptive statistics: mean, median, standard deviation, and z-scores",
-    "Outlier identification and handling techniques in business data",
-    "Excel Analysis ToolPak: Descriptive Statistics, Regression, Histograms"
+    "Z-scores: measuring how unusual a data point is",
+    "Outlier detection: the ±2 standard deviation rule",
+    "Data quality decisions: keep, flag, or remove"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [

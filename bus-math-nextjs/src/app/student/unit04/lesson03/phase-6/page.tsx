@@ -8,22 +8,22 @@ const currentPhase = lesson03Phases[5]
 
 const reflectionPrompts = [
   {
-    id: 'courage-statistical-thinking',
-    category: 'courage' as const,
-    prompt: 'Statistical analysis can be intimidating at first. Describe a moment in this lesson when you felt uncertain about your calculations or interpretations but pushed through anyway. What gave you the courage to trust your analytical process?',
-    placeholder: 'Think about times when you questioned your z-score calculations, felt unsure about outlier decisions, or hesitated before using Analysis ToolPak...'
+    id: 'outlier-confidence',
+    category: 'confidence' as const,
+    prompt: 'Outlier detection requires making judgment calls that aren\'t always clear-cut. Describe a time in this lesson when you felt unsure whether a value was an error or legitimate business. How did you build confidence in your decision?',
+    placeholder: 'Think about the $127.50 catering order vs. the $0.05 error. Both were unusual, but very different decisions...'
   },
   {
-    id: 'adaptability-data-detective',
+    id: 'statistics-business-judgment',
     category: 'adaptability' as const,
-    prompt: 'When you discovered outliers in the café data, you had to shift from pure mathematical thinking to business detective work. How did you adapt your approach when statistics alone wasn\'t enough to make decisions?',
-    placeholder: 'Consider how you adjusted when faced with the $127 catering order vs. the $0.05 error, or when explaining technical concepts in business terms...'
+    prompt: 'The z-score told us the $0.05 was "normal" mathematically, but you still identified it as an error. How did you adapt your approach to combine statistical rules with practical business judgment?',
+    placeholder: 'Consider how you balanced the math (z-score) with the reality (no items cost 5 cents)...'
   },
   {
-    id: 'persistence-complex-analysis',
+    id: 'data-quality-persistence',
     category: 'persistence' as const,
-    prompt: 'Working through comprehensive statistical analysis requires sustained focus and attention to detail. Describe a specific moment when you wanted to give up on a complex calculation or Excel formula but kept working. What strategies helped you persist?',
-    placeholder: 'Reflect on challenges with Analysis ToolPak, formula troubleshooting, or making sense of conflicting data patterns...'
+    prompt: 'Cleaning data takes patience - you can\'t just delete everything that looks unusual. Describe a moment when you had to persist through the careful thinking required to make good data quality decisions.',
+    placeholder: 'Reflect on the work of calculating z-scores, comparing with/without outliers, and documenting decisions...'
   }
 ]
 
@@ -38,49 +38,36 @@ export default function Phase6Page() {
       />
       
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
-        {/* Closing Content */}
         <div className="prose prose-lg max-w-none">
           <Card className="border-indigo-200 bg-indigo-50">
             <CardHeader>
-              <CardTitle className="text-indigo-900 text-2xl">From Numbers to Insights: Your Statistical Journey</CardTitle>
+              <CardTitle className="text-indigo-900 text-2xl">Your Data Detective Toolkit</CardTitle>
             </CardHeader>
             <CardContent className="text-indigo-800">
               <p className="text-lg leading-relaxed">
-                Today you've experienced what it feels like to be a professional data detective. You started 
-                with a chaotic pile of café transaction data - numbers that seemed meaningless at first glance. 
-                But through the power of descriptive statistics, z-score analysis, and Excel's Analysis ToolPak, 
-                you transformed that chaos into actionable business intelligence.
+                You've completed your first data quality investigation. Sarah is confident you can now 
+                handle messy real-world data with the same rigor professional analysts use.
               </p>
               
-              <p className="text-lg leading-relaxed">
-                More importantly, you've learned to think like Sarah Chen - combining statistical rigor with 
-                business judgment to make decisions that matter. When you investigated that $127.50 transaction, 
-                you weren't just calculating z-scores; you were asking the critical question every consultant 
-                must answer: "What does this data mean for the business?"
-              </p>
-
               <div className="bg-white p-4 rounded-lg border border-indigo-200 mt-4">
-                <h3 className="font-semibold text-indigo-900 mb-2">Your Statistical Detective Toolkit</h3>
-                <p className="text-indigo-800 mb-3">
-                  You now possess the same analytical tools that professional data consultants use every day:
-                </p>
+                <h3 className="font-semibold text-indigo-900 mb-2">What You Can Now Do</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-medium text-indigo-900 text-sm">Core Statistical Skills</h4>
+                    <h4 className="font-medium text-indigo-900 text-sm">Statistical Tools</h4>
                     <ul className="text-xs text-indigo-800 space-y-1 mt-1">
-                      <li>• Calculate mean, median, and standard deviation</li>
-                      <li>• Interpret z-scores for outlier detection</li>
-                      <li>• Use Analysis ToolPak for professional reports</li>
-                      <li>• Apply AVERAGEIF and SUMIF for category analysis</li>
+                      <li>• Calculate z-scores: z = (x - μ) / σ</li>
+                      <li>• Apply the ±2 rule for outlier detection</li>
+                      <li>• Compare statistics with and without outliers</li>
+                      <li>• Measure impact on planning calculations</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-medium text-indigo-900 text-sm">Business Intelligence Skills</h4>
+                    <h4 className="font-medium text-indigo-900 text-sm">Business Judgment</h4>
                     <ul className="text-xs text-indigo-800 space-y-1 mt-1">
-                      <li>• Distinguish data errors from business insights</li>
-                      <li>• Translate statistics into actionable recommendations</li>
-                      <li>• Communicate findings to non-technical stakeholders</li>
-                      <li>• Apply statistical thinking to real-world problems</li>
+                      <li>• Distinguish errors from real events</li>
+                      <li>• Decide: keep, flag, or correct outliers</li>
+                      <li>• Document decisions with reasoning</li>
+                      <li>• Explain choices to stakeholders</li>
                     </ul>
                   </div>
                 </div>
@@ -89,167 +76,92 @@ export default function Phase6Page() {
           </Card>
         </div>
 
-        {/* Connection to Unit Goals */}
         <Card className="border-green-200 bg-green-50">
           <CardHeader>
-            <CardTitle className="text-green-900 text-xl">Building Toward the Café's Success</CardTitle>
+            <CardTitle className="text-green-900 text-xl">How This Connects to the Café's Goal</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-800 space-y-4">
-            <p className="text-lg leading-relaxed">
-              Your statistical analysis work today is the foundation for everything that follows in the 
-              Data-Driven Café unit. Sarah now has clean, reliable data and knows which patterns are 
-              real versus which are errors. This is the bedrock that supports all future analysis.
+          <CardContent className="text-green-800">
+            <p className="text-lg leading-relaxed mb-4">
+              Sarah can now build her forecasting models on clean, reliable data. The café's waste reduction 
+              plan depends on accurate predictions - and accurate predictions depend on clean data.
             </p>
-
+            
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white p-3 rounded border border-green-200">
-                <h4 className="font-semibold text-green-900 text-sm">Coming Next: Visualization</h4>
+                <h4 className="font-semibold text-green-900 text-sm">Today</h4>
                 <p className="text-xs text-green-800 mt-1">
-                  You'll create histograms, box plots, and scatterplots to reveal patterns that statistics 
-                  alone can't show - turning your numbers into compelling visual stories.
+                  Clean data + identified outliers
                 </p>
               </div>
               <div className="bg-white p-3 rounded border border-green-200">
-                <h4 className="font-semibold text-green-900 text-sm">Then: Forecasting Models</h4>
+                <h4 className="font-semibold text-green-900 text-sm">Next Lesson</h4>
                 <p className="text-xs text-green-800 mt-1">
-                  Using linear regression and correlation analysis, you'll predict future café demand 
-                  to optimize inventory and staffing decisions.
+                  Use clean data to predict future sales
                 </p>
               </div>
               <div className="bg-white p-3 rounded border border-green-200">
-                <h4 className="font-semibold text-green-900 text-sm">Finally: Client Presentation</h4>
+                <h4 className="font-semibold text-green-900 text-sm">Unit Goal</h4>
                 <p className="text-xs text-green-800 mt-1">
-                  You'll present your complete analysis to the café manager with professional recommendations 
-                  for achieving their 3% waste reduction goal.
+                  Reduce waste from 8-12% to 3%
                 </p>
               </div>
-            </div>
-
-            <div className="bg-green-100 p-4 rounded-lg border border-green-200">
-              <h4 className="font-semibold text-green-900 mb-2">The Power of Statistical Foundation</h4>
-              <p className="text-green-800 text-sm">
-                Without today's rigorous statistical groundwork, all future analysis would be built on 
-                shaky assumptions. By mastering descriptive statistics and outlier detection, you've 
-                ensured that every recommendation you make will be backed by solid, reliable data. 
-                This is what separates professional consultants from amateurs.
-              </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Real-World Impact */}
         <Card className="border-blue-200 bg-blue-50">
           <CardHeader>
-            <CardTitle className="text-blue-900 text-xl">Beyond the Classroom: Where These Skills Lead</CardTitle>
+            <CardTitle className="text-blue-900 text-xl">When Will You Use This?</CardTitle>
           </CardHeader>
           <CardContent className="text-blue-800">
-            <p className="text-lg leading-relaxed mb-4">
-              The statistical detective skills you've developed today extend far beyond analyzing café data. 
-              You're now equipped with the analytical foundation that drives decision-making in every 
-              modern industry.
-            </p>
-
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded border border-blue-200">
-                <h4 className="font-semibold text-blue-900 mb-2">Healthcare</h4>
-                <p className="text-xs text-blue-800 mb-2">
-                  <strong>Application:</strong> Analyzing patient outcome data to identify treatment patterns
+                <h4 className="font-semibold text-blue-900 mb-2">Any Data Analysis Job</h4>
+                <p className="text-sm text-blue-800">
+                  Every dataset has outliers. Banks flag suspicious transactions, healthcare identifies 
+                  unusual test results, retailers spot异常的 purchase patterns.
                 </p>
-                <ul className="text-xs text-blue-800 space-y-1">
-                  <li>• Detect unusual medical test results requiring investigation</li>
-                  <li>• Calculate average recovery times by treatment type</li>
-                  <li>• Identify hospitals with statistically different success rates</li>
-                </ul>
               </div>
               <div className="bg-white p-4 rounded border border-blue-200">
-                <h4 className="font-semibold text-blue-900 mb-2">Manufacturing</h4>
-                <p className="text-xs text-blue-800 mb-2">
-                  <strong>Application:</strong> Quality control and process optimization
+                <h4 className="font-semibold text-blue-900 mb-2">Business Consulting</h4>
+                <p className="text-sm text-blue-800">
+                  When you present numbers to clients, they will ask "why is this different from the raw data?"
+                  You need documentation and reasoning for every decision.
                 </p>
-                <ul className="text-xs text-blue-800 space-y-1">
-                  <li>• Identify defective products using control charts</li>
-                  <li>• Calculate production efficiency by shift and operator</li>
-                  <li>• Detect equipment problems before they cause failures</li>
-                </ul>
               </div>
               <div className="bg-white p-4 rounded border border-blue-200">
-                <h4 className="font-semibold text-blue-900 mb-2">Finance</h4>
-                <p className="text-xs text-blue-800 mb-2">
-                  <strong>Application:</strong> Risk assessment and fraud detection
+                <h4 className="font-semibold text-blue-900 mb-2">Research & Science</h4>
+                <p className="text-sm text-blue-800">
+                  Every scientific study begins with data cleaning. Your outlier detection skills are 
+                  foundational to any research career.
                 </p>
-                <ul className="text-xs text-blue-800 space-y-1">
-                  <li>• Flag unusual spending patterns for fraud investigation</li>
-                  <li>• Calculate portfolio risk using standard deviation</li>
-                  <li>• Analyze market volatility and trading anomalies</li>
-                </ul>
               </div>
               <div className="bg-white p-4 rounded border border-blue-200">
-                <h4 className="font-semibold text-blue-900 mb-2">Marketing</h4>
-                <p className="text-xs text-blue-800 mb-2">
-                  <strong>Application:</strong> Customer behavior analysis and campaign optimization
+                <h4 className="font-semibold text-blue-900 mb-2">Quality Control</h4>
+                <p className="text-sm text-blue-800">
+                  Manufacturing uses the same ±2 rule to identify defective products. The same 
+                  statistical thinking applies everywhere.
                 </p>
-                <ul className="text-xs text-blue-800 space-y-1">
-                  <li>• Identify high-value customer segments</li>
-                  <li>• Detect unusual purchasing patterns for targeting</li>
-                  <li>• Calculate campaign effectiveness by demographic</li>
-                </ul>
               </div>
-            </div>
-
-            <div className="bg-blue-100 p-4 rounded-lg border border-blue-200 mt-4">
-              <p className="text-blue-800 text-sm">
-                <strong>The Common Thread:</strong> In every one of these applications, professionals start 
-                exactly where you started today - with messy data that needs cleaning, outliers that need 
-                investigation, and patterns that need statistical analysis to become actionable insights.
-              </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Reflection Journal */}
         <ReflectionJournal
-          unitTitle="Statistical Analysis & Data Detective Work - Lesson 3 Reflection"
+          unitTitle="Outlier Detection & Data Quality - Lesson 3 Reflection"
           prompts={reflectionPrompts}
         />
 
-        {/* Looking Forward */}
         <Card className="border-purple-200 bg-purple-50">
           <CardHeader>
-            <CardTitle className="text-purple-900 text-xl">Ready for Data Visualization Adventures</CardTitle>
+            <CardTitle className="text-purple-900 text-xl">Coming Up Next</CardTitle>
           </CardHeader>
           <CardContent className="text-purple-800">
             <p className="text-lg leading-relaxed">
-              You've built a strong statistical foundation, but numbers in tables can only tell part of 
-              the story. In our next lesson, Sarah will show you how to transform your statistical analysis 
-              into powerful visualizations that instantly reveal patterns invisible in spreadsheet cells.
+              With clean data in hand, Sarah can now build forecasting models to predict future sales. 
+              In the next lesson, you'll learn how to use the patterns in past data to predict what 
+              might happen next - the foundation of every business plan.
             </p>
-
-            <div className="bg-white p-4 rounded-lg border border-purple-200 mt-4">
-              <h3 className="font-semibold text-purple-900 mb-2">Preview: From Statistics to Stories</h3>
-              <p className="text-purple-800 text-sm mb-2">
-                Coming up, you'll learn to create:
-              </p>
-              <ul className="text-purple-800 space-y-1 text-sm">
-                <li>• <strong>Histograms</strong> that show the true shape of customer spending patterns</li>
-                <li>• <strong>Box plots</strong> that instantly compare weekend vs. weekday performance</li>
-                <li>• <strong>Scatterplots</strong> that reveal hidden relationships between variables</li>
-                <li>• <strong>Professional dashboards</strong> that communicate insights at a glance</li>
-              </ul>
-              <p className="text-purple-800 text-sm mt-3">
-                By combining today's statistical rigor with compelling visualizations, you'll have 
-                everything needed to deliver the complete consulting package that transforms the café's operations.
-              </p>
-            </div>
-
-            <div className="bg-purple-100 p-4 rounded-lg border border-purple-200 mt-4">
-              <h4 className="font-semibold text-purple-900 mb-2">Congratulations on Your Progress!</h4>
-              <p className="text-purple-800 text-sm">
-                Today you've taken a major step in your journey from student to data professional. 
-                You've proven you can handle complex statistical concepts, use professional-grade tools, 
-                and most importantly, think critically about what data means for business success. 
-                Sarah would be proud to have you as her analysis partner!
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>

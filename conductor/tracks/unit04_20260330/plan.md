@@ -48,21 +48,21 @@
     - [x] Students can explain average, median, and spread in business terms
     - [x] Phase 5 checks interpretation, not Excel tools
 
-- [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
-  - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
-  - [ ] 2.3.2 Implement Phase 1-6 with outliers and data quality
+- [x] 2.3 **Lesson 03** - Implement accounting-principles skill
+  - [x] 2.3.1 Update lesson-data.ts for Lesson 03
+  - [x] 2.3.2 Implement Phase 1-6 with outliers and data quality
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and visual representations
     - Phase 3: Add meaningful complication (more complex data), reduce prompts, shift toward authentic statistical notation
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on outlier detection, data quality, misconceptions
     - Phase 6: Reflect on confidence and understanding, connect to business problem, preview next lesson
-  - [ ] 2.3.3 Keep the lesson textbook-first and concept-heavy
-  - [ ] 2.3.4 Use visible examples of bad or extreme café weekends
-  - [ ] 2.3.5 Make students justify whether a value should stay or be flagged
+  - [x] 2.3.3 Keep the lesson textbook-first and concept-heavy
+  - [x] 2.3.4 Use visible examples of bad or extreme café weekends
+  - [x] 2.3.5 Make students justify whether a value should stay or be flagged
   - **Done when**:
-    - [ ] Students can explain why an outlier matters to planning
-    - [ ] Students can defend a data-cleaning decision
+    - [x] Students can explain why an outlier matters to planning
+    - [x] Students can defend a data-cleaning decision
 
 - [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
   - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
