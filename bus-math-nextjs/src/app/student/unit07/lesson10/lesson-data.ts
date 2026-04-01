@@ -4,28 +4,30 @@ export const lesson10Data = {
   sequence: 10,
   unitId: "unit07",
   learningObjectives: [
-    "Present a clear business story backed by accurate models",
-    "Demonstrate dashboard insights and defend recommendations",
-    "Address risks and assumptions with confident Q&A",
-    "Provide and receive structured peer feedback"
+    "Present a clear inventory valuation story backed by accurate workbook evidence",
+    "Demonstrate method comparison and defend your recommended inventory method",
+    "Address risks and assumptions with confident Q&A using cited workbook numbers",
+    "Submit final deliverables and reflect on what made your recommendation believable"
   ],
   keyConcepts: [
     "Executive presentation: Problem → Analysis → Recommendation",
-    "Rubric-aligned peer critique and reflection",
-    "Timeboxing and Q&A readiness",
-    "Communicating method impacts on business decisions"
+    "Every claim must cite exact numbers from your group's workbook",
+    "Inventory method choice affects COGS, ending inventory, and reported profit",
+    "Rubric-aligned peer critique and structured reflection",
+    "Timeboxing and Q&A readiness for an authentic business audience"
   ],
   pedagogicalApproach: [
-    "Public presentation with authentic audience and rubric-aligned feedback"
+    "Public presentation with authentic audience and rubric-aligned feedback",
+    "Reflection on method choice, evidence quality, and reporting credibility"
   ],
-  rationale: "Clear, concise presentations translate analysis into action. Sharing your model and reasoning earns trust and leads to better decisions.",
+  rationale: "Clear, concise presentations translate inventory analysis into business action. Sharing your model and reasoning earns trust and helps leaders make confident decisions about inventory valuation.",
   durationEstimateMinutes: 45,
   status: "Planned"
 }
 
 export const unit07Data = {
   id: "unit07",
-  title: "Asset & Inventory Tracker",
+  title: "Inventory Accounting",
   sequence: 7
 }
 
@@ -34,6 +36,6 @@ export const lesson10Phases = [
     id: "pbl_m3",
     phaseName: "Assessment" as const,
     sequence: 1,
-    description: "Team presentations with rubric‑aligned peer review and reflection"
+    description: "Final presentations, submission, and reflection on method choice and evidence"
   }
 ]

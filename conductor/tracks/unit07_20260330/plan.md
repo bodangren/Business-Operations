@@ -203,26 +203,30 @@
     - [x] The workbook is complete and readable
     - [x] The team can defend a method recommendation with evidence
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+  - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [x] 4.4.2 Implement final presentation and submission
     - Require final polish of workbook and presentation notes
     - Make audience, presentation standard, submission standard explicit
     - Include final checklist and timing guidance
     - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make final deliverables explicit
-  - [ ] 4.4.4 Require final workbook polish and submission
-  - [ ] 4.4.5 End with reflection on method choice, evidence, and reporting credibility
-  - **Done when**:
-    - [ ] Final deliverables are submitted
-    - [ ] Reflection captures what made the recommendation believable
+  - [x] 4.4.3 Make final deliverables explicit
+  - [x] 4.4.4 Require final workbook polish and submission
+  - [x] 4.4.5 End with reflection on method choice, evidence, and reporting credibility
+  - [x] 4.4.6 Remove depreciation references (SLN/DDB) and reduce to 4 groups
+  - [x] 4.4.7 Add submission checklist, evaluation rubric, and structured reflection prompts
+  - [x] 4.4.8 Link only 4 group datasets (g1-g4) matching the unit plan
+  - [x] 4.4.9 Add gradient background and PhaseHeader/Footer styling
+  **Done when**:
+    - [x] Final deliverables are submitted
+    - [x] Reflection captures what made the recommendation believable
 
 ### Phase 5: Verification & Polish
-- [ ] 5.1 Verify all lesson-data.ts files are updated
-- [ ] 5.2 Verify inventory-only content (no depreciation references remain)
-- [ ] 5.3 Verify alignment between page content, workbook downloads, assessment language
-- [ ] 5.4 Run `npm run lint` to check for errors
-- [ ] 5.5 Document any component changes in MCP knowledge base
+- [x] 5.1 Verify all lesson-data.ts files are updated
+- [x] 5.2 Verify inventory-only content (no depreciation references remain)
+- [x] 5.3 Verify alignment between page content, workbook downloads, assessment language
+- [x] 5.4 Run `npm run lint` to check for errors
+- [x] 5.5 Document any component changes in MCP knowledge base
 
 ## Legacy Resource Plan
 - `unit07-lesson01-ending-inventory-launch.csv`
