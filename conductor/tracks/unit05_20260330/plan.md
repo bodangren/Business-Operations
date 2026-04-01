@@ -91,20 +91,20 @@
 
 ## Phase 3: Lessons 05-06 (Excel)
 - [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.1.2 Implement Phase 1-6 with payroll calculator
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [x] 3.1.2 Implement Phase 1-6 with payroll calculator
     - Phase 1: Open with business scenario where payroll calculator matters, make tool feel necessary
     - Phase 2: Name payroll calculator pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task focusing on trustworthiness and business communication
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Teach workbook anatomy, lookup structure, and input/output zones directly
-  - [ ] 3.1.4 Include a safe rehearsal for employee-data and tax-table mapping before the live workbook sprint
-  - [ ] 3.1.5 Require a real payroll-calculator artifact by the end of Phase 4
+  - [x] 3.1.3 Teach workbook anatomy, lookup structure, and input/output zones directly
+  - [x] 3.1.4 Include a safe rehearsal for employee-data and tax-table mapping before the live workbook sprint
+  - [x] 3.1.5 Require a real payroll-calculator artifact by the end of Phase 4
   - **Done when**:
-    - [ ] The workbook can produce accurate pay results for at least one employee scenario
-    - [ ] Students can explain what each major workbook section does
+    - [x] The workbook can produce accurate pay results for at least one employee scenario
+    - [x] Students can explain what each major workbook section does
 
 - [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
