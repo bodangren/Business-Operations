@@ -12,8 +12,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/unit02_20260330/](./tracks/unit02_20260330/)*
 - [x] **Track: Unit 03 - Three-statement financial story**
    *Link: [./tracks/unit03_20260330/](./tracks/unit03_20260330/)*
-- [ ] **Track: Unit 04 - Data-driven café with statistics**
-  *Link: [./tracks/unit04_20260330/](./tracks/unit04_20260330/)*
+- [x] **Track: Unit 04 - Data-driven café with statistics**
+   *Link: [./tracks/unit04_20260330/](./tracks/unit04_20260330/)*
 - [ ] **Track: Unit 05 - Payroll systems with automation**
   *Link: [./tracks/unit05_20260330/](./tracks/unit05_20260330/)*
 - [ ] **Track: Unit 06 - Pricing with CVP analysis**
