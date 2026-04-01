@@ -1,28 +1,28 @@
-// Data-Driven Café, Lesson 5 data - extracted from MCP curriculum database
+// Data-Driven Café, Lesson 5: Data Cleaning and Analysis
 export const lesson05Data = {
-  id: "mds5vu037acxztit45w",
-  title: "Advanced Forecast Automation (Regression)",
+  id: "u04_l05_data_cleaning",
+  title: "Data Cleaning and Analysis",
   sequence: 5,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Automate forecasts with FORECAST.LINEAR using structured references",
-    "Build scenario toggles and what‑if analysis for demand planning",
-    "Install robust validation to catch outliers, stale dates, and missing keys",
-    "Produce investor‑ready summaries with clear assumptions and audit checks"
+    "Clean raw café POS data using Excel tools (TRIM, Text-to-Columns, Remove Duplicates)",
+    "Identify and handle outliers using z-score analysis",
+    "Apply filters and sorting to prepare data for statistical analysis",
+    "Document data quality decisions for audit and investor review"
   ],
   keyConcepts: [
-    "Structured references (Table[Column]) and dynamic ranges",
-    "FORECAST.LINEAR vs. AVERAGE growth baselines with method switching",
-    "SUMIFS/SUMPRODUCT filters for segmented forecasts",
-    "Error handling with IFERROR and XLOOKUP defaults",
-    "Scenario inputs and goal‑based checks"
+    "Data cleaning workflow: import, inspect, clean, validate",
+    "TRIM, PROPER, Text-to-Columns for messy text data",
+    "Remove Duplicates and filter functions for data quality",
+    "Outlier detection using z-scores and IQR methods",
+    "Documentation and audit trail for data decisions"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Deepen Lesson04 skills with automation, validation, and scenario tools"
+    "Use excel-lessons skill: business pressure first, then tool mechanics, safe rehearsal, workbook sprint"
   ],
-  rationale: "Students harden a forecasting model for TechStart’s café client: dynamic method switching, scenario inputs, and visible validations make outputs reliable at scale—key for investor trust.",
-  status: "Draft"
+  rationale: "Clean data is the foundation of reliable forecasts. Before predicting future sales, students must transform raw POS data into an analysis-ready format using professional Excel tools.",
+  status: "Revised"
 }
 
 export const unit04Data = {
@@ -31,48 +31,42 @@ export const unit04Data = {
   sequence: 4
 }
 
-// Lesson phases from MCP curriculum database
+// Excel-lessons skill uses standard six-phase names
 export const lesson05Phases = [
   {
-    id: "phase_hook_5",
+    id: "phase-1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for model completion: regression forecasting",
-    // component: "LineChart" (id: 1753927528418ku6yyo9go) - To show a chart with a clear trendline.
+    description: "Business scenario where data cleaning matters for investor decisions"
   },
   {
-    id: "phase_introduction_5",
+    id: "phase-2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Linear regression principles and business forecasting applications and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Data cleaning patterns, Excel tool locations, common failure modes"
   },
   {
-    id: "phase_guided_practice_5",
+    id: "phase-3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Linear regression principles and business forecasting applications with scaffolded support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building a regression model in a template.
+    description: "Practice cleaning logic before touching the real workbook"
   },
   {
-    id: "phase_independent_practice_5",
+    id: "phase-4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete model construction demonstrating mastery of technical skills",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building a regression model in a template.
+    description: "Build the cleaned dataset with verification checkpoints"
   },
   {
-    id: "phase_assessment_5",
+    id: "phase-5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Technical check and business communication artifact"
   },
   {
-    id: "phase_closing_5",
+    id: "phase-6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Synthesize cleaning work, preview statistical analysis"
   }
 ]

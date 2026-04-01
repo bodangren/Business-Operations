@@ -2,6 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { CheckCircle } from "lucide-react"
 import { lesson05Data, unit04Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[3]
@@ -14,10 +15,10 @@ export default function Phase4Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">🚀 Phase 4: Independent Practice</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Advanced Forecast Mastery Challenges</h1>
+            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">Phase 4: Workbook Sprint</Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Clean the Real Café Data</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Download the practice data, build scenario toggles, and prove your automation stays reliable as inputs grow.
+              Download the raw POS data, apply each cleaning tool, and create your analysis-ready dataset.
             </p>
           </div>
         </section>
@@ -25,68 +26,110 @@ export default function Phase4Page() {
         <section className="max-w-4xl mx-auto space-y-8">
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
-              <CardTitle className="text-blue-900">Download Dataset</CardTitle>
+              <CardTitle className="text-blue-900">Starting Point</CardTitle>
             </CardHeader>
             <CardContent className="text-blue-900 space-y-2">
               <p>
-                Use this dataset with edge cases (outliers, missing keys, stale dates) to stress‑test your model:
+                Download the raw café weekend sales data. This data has realistic problems:
               </p>
-              <a className="underline font-semibold" href="/resources/unit04-forecasting-advanced-practice.csv" download>
-                /resources/unit04-forecasting-advanced-practice.csv
+              <a className="underline font-semibold" href="/resources/unit04-pbl-cafe-weekend-ops-g1.csv" download>
+                /resources/unit04-pbl-cafe-weekend-ops-g1.csv
               </a>
-              <p className="text-sm">Place it on a sheet and convert to an Excel Table named <strong>Sales</strong>.</p>
+              <ul className="list-disc list-inside space-y-1 text-sm mt-2">
+                <li>Inconsistent spacing in product names</li>
+                <li>Currency symbols in price column</li>
+                <li>Some duplicate transactions</li>
+                <li>Missing values in the category column</li>
+                <li>Dates in mixed formats</li>
+              </ul>
+              <p className="text-sm mt-2"><strong>Goal:</strong> Produce a clean dataset ready for statistical analysis.</p>
             </CardContent>
           </Card>
 
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
-              <CardTitle className="text-green-900">Challenges</CardTitle>
+              <CardTitle className="text-green-900">Build Sequence</CardTitle>
             </CardHeader>
             <CardContent className="text-green-900 space-y-3">
               <ol className="list-decimal list-inside space-y-1">
-                <li>Create <strong>Sales</strong> Table with columns: <em>Date, Week, Units, Price, PromoFlag, HolidayFlag</em>.</li>
-                <li>Add <strong>Scenario</strong> input and switch between <em>Baseline</em> and <em>PromoAdjusted</em>.</li>
-                <li>Build <strong>Forecast</strong> table and use <code>FORECAST.LINEAR</code> with structured references.</li>
-                <li>Exclude promo outliers for PromoAdjusted using <code>FILTER</code> or helper column.</li>
-                <li>Install an <strong>Audit Panel</strong> with counts: missing IDs, negative Units, outliers, stale dates (&gt;30 days).</li>
-                <li>Document assumptions next to inputs in 2–3 clear sentences.</li>
+                <li><strong>Open the CSV</strong> in Excel (or import if using Google Sheets)</li>
+                <li><strong>Copy the raw sheet</strong> → Rename "Raw Data" and "Clean Data"</li>
+                <li><strong>Clean in order</strong>:
+                  <ul className="list-disc list-inside ml-6">
+                    <li>Select Product column → Data → Text to Columns (delimited) if needed</li>
+                    <li>Use Find & Replace: Find "$", Replace with nothing</li>
+                    <li>Add a helper column for TRIMmed product names</li>
+                    <li>Select all columns → Data → Remove Duplicates → Note the count</li>
+                    <li>Filter and identify blank categories → Fill or flag</li>
+                  </ul>
+                </li>
+                <li><strong>Calculate before/after row counts</strong> for your audit trail</li>
+                <li><strong>Add documentation</strong> in a new sheet: what you cleaned, how many rows affected</li>
               </ol>
             </CardContent>
           </Card>
 
           <Card className="border-indigo-200 bg-indigo-50">
             <CardHeader>
-              <CardTitle className="text-indigo-900">Helper Table Spec (Recommended)</CardTitle>
+              <CardTitle className="text-indigo-900">Reference: What a Clean Dataset Looks Like</CardTitle>
             </CardHeader>
             <CardContent className="text-indigo-900 text-sm space-y-2">
+              <p>After cleaning, your data should have:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li><strong>Sales</strong> (Excel Table): Date (date), Week (number), Units (number &ge; 0), Price (currency &gt; 0), PromoFlag (0/1), HolidayFlag (0/1), MenuID (text).</li>
-                <li><strong>Validation flags</strong> (helper cols):
-                  <div className="mt-1 grid gap-1">
-                    <div>• Stale date: <code>=TODAY()-[@Date]&gt;30</code></div>
-                    <div>• Negative units: <code>=[@Units]&lt;0</code></div>
-                    <div>• Invalid price: <code>=[@Price]&lt;=0</code></div>
-                    <div>• Missing MenuID: <code>=OR([@MenuID]=\"\",[@MenuID]=\"Unknown\")</code></div>
-                  </div>
-                </li>
-                <li><strong>Scenario switch</strong>: <code>=SWITCH(Scenario, "Baseline", FORECAST.LINEAR([@Week], Sales[Units], Sales[Week]), "PromoAdjusted", FORECAST.LINEAR([@Week], FILTER(Sales[Units], Sales[PromoFlag]=0), FILTER(Sales[Week], Sales[PromoFlag]=0)), NA())</code></li>
-                <li><strong>Segment filter (Drinks)</strong>: <code>=SUMPRODUCT((Sales[Type]=\"Drink\")*(Sales[Week]=[@Week])*Sales[Units])</code></li>
+                <li><strong>No leading/trailing spaces</strong> in any text column</li>
+                <li><strong>Prices as numbers</strong> (no $ symbols)</li>
+                <li><strong>No duplicate rows</strong></li>
+                <li><strong>Consistent date format</strong> (Excel date type, not text)</li>
+                <li><strong>No blank categories</strong> (filled or marked as "Unknown")</li>
+                <li><strong>Product names</strong> with proper capitalization (e.g., "Latte", not "latte" or "LATTE")</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="border-purple-200 bg-purple-50">
             <CardHeader>
-              <CardTitle className="text-purple-900">Self‑Assessment Checklist</CardTitle>
+              <CardTitle className="text-purple-900">Verification Checkpoints</CardTitle>
             </CardHeader>
             <CardContent className="text-purple-900">
-              <ul className="list-disc list-inside space-y-1 text-sm">
-                <li>Formulas use Tables and structured references (no fixed ranges).</li>
-                <li>Scenario toggle updates outputs instantly without edits.</li>
-                <li>Audit Panel shows zero critical errors before presenting.</li>
-                <li>IFERROR and XLOOKUP defaults prevent #N/A/#VALUE in outputs.</li>
-                <li>Notes explain assumptions and limits in plain language.</li>
-                <li>Charts (optional) communicate the forecast clearly.</li>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <span>After Remove Duplicates: Row count reduced (note the difference)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <span>All price values are numeric (no $ signs)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <span>TRIM formula or cleaned values in product name column</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <span>No blank cells in Category column (filled or "Unknown")</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <span>Documentation sheet created with cleaning summary</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-red-200 bg-red-50">
+            <CardHeader>
+              <CardTitle className="text-red-900">Definition of Done</CardTitle>
+            </CardHeader>
+            <CardContent className="text-red-900">
+              <p className="font-medium">Your cleaned dataset is complete when:</p>
+              <ul className="list-disc list-inside space-y-1 mt-2">
+                <li>All text columns have consistent spacing (no "  Latte  ")</li>
+                <li>Prices are numbers, not text with $ signs</li>
+                <li>Duplicate rows removed (before/after counts documented)</li>
+                <li>Category column has no blanks</li>
+                <li>You can sort by any column without errors</li>
+                <li>You can run basic calculations (SUM, AVERAGE) on numeric columns</li>
+                <li>A documentation sheet explains what was cleaned</li>
               </ul>
             </CardContent>
           </Card>
