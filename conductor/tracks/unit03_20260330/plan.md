@@ -1,45 +1,45 @@
 # Implementation Plan: Unit 03 Improvement
 
 ## Phase 1: Setup & Skills Loading
-- [ ] 1.1 Load `agents/skills/launch-lesson/SKILL.md` and review requirements
+- [x] 1.1 Load `agents/skills/launch-lesson/SKILL.md` and review requirements
   - Understand the launch-lesson phase contract
   - Review component rules for launch lessons
   - Review writing rules specific to launch lessons
-- [ ] 1.2 Load `agents/skills/accounting-principles/SKILL.md` and review requirements
+- [x] 1.2 Load `agents/skills/accounting-principles/SKILL.md` and review requirements
   - Understand the accounting-principles phase contract
   - Review CRA (Concrete-Representational-Abstract) guidance
   - Review phase-4 component contract
-- [ ] 1.3 Load `agents/skills/excel-lessons/SKILL.md` and review requirements
+- [x] 1.3 Load `agents/skills/excel-lessons/SKILL.md` and review requirements
   - Understand the excel-lessons phase contract
   - Review SpreadsheetWrapper rules and formula guidance
   - Review simulator rules and workbook continuity rules
-- [ ] 1.4 Load `agents/skills/project-rehearsal/SKILL.md` and review requirements
+- [x] 1.4 Load `agents/skills/project-rehearsal/SKILL.md` and review requirements
   - Understand the project-rehearsal phase contract
   - Review shared artifact rules
   - Review peer audit rules and transfer rules
-- [ ] 1.5 Load `agents/skills/group-project/SKILL.md` and review requirements
+- [x] 1.5 Load `agents/skills/group-project/SKILL.md` and review requirements
   - Understand the group-project milestone contract
   - Review dataset and workbook assignment rules
   - Review recommendation rules and peer feedback rules
 
 ## Phase 2: Lessons 01-04 (Textbook-First)
-- [ ] 2.1 **Lesson 01** - Implement launch-lesson skill
-  - [ ] 2.1.1 Update lesson-data.ts for Lesson 01
-  - [ ] 2.1.2 Implement Phase 1 with Sarah's interview video and statement-confusion problem
+- [x] 2.1 **Lesson 01** - Implement launch-lesson skill
+  - [x] 2.1.1 Update lesson-data.ts for Lesson 01
+  - [x] 2.1.2 Implement Phase 1 with Sarah's interview video and statement-confusion problem
     - Use the shared `VideoPlayer` component
     - Include title, description, YouTube ID, duration, and full transcript data
     - Create business tension and credibility
     - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
-  - [ ] 2.1.3 Implement Phase 2-6 with profit, solvency, and cash scoreboard visible
+  - [x] 2.1.3 Implement Phase 2-6 with profit, solvency, and cash scoreboard visible
     - Phase 2: Name the scoreboard explicitly (profit, solvency, cash), show main moving parts, use one bounded interactive
     - Phase 3: Use shared dataset/simulation, predict before reveal, show before/after changes
     - Phase 4: Keep task constrained, allow 1-2 meaningful choices, show consequences visibly
     - Phase 5: Short MCQ exit ticket assessing founder problem, scoreboard, core distinctions
     - Phase 6: Restate enduring formula, summarize understanding, preview next lesson, include reflection
-  - [ ] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
+  - [x] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
   - **Done when**:
-    - [ ] Students can explain why one statement alone is not enough
-    - [ ] The lesson previews the three-statement flow
+    - [x] Students can explain why one statement alone is not enough
+    - [x] The lesson previews the three-statement flow
 
 - [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
   - [ ] 2.2.1 Update lesson-data.ts for Lesson 02

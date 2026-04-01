@@ -1,27 +1,27 @@
-// Three-Statement Storyboard, Lesson 1 data - extracted from MCP curriculum database
+// Three-Statement Storyboard, Lesson 1 data - Launch Lesson
 export const lesson01Data = {
   id: "mds5vi9yev6tq5zzl1a",
-  title: "Launch & Explore: Financial Statement Detective Work",
+  title: "Launch: The Investor Question",
   sequence: 1,
   unitId: "mdrhlhuxj2zkbimaqfd",
   learningObjectives: [
-    "Financial statements tell the complete story of business performance and position",
-    "Integrated financial statements reveal connections between profit, balance sheet strength, and cash flow",
-    "Dynamic dashboards transform raw financial data into actionable business insights",
-    "Professional financial communication builds investor confidence and trust"
+    "Explain why one financial statement alone is not enough to evaluate a business",
+    "Identify the three-statement scoreboard: profit, solvency, and cash",
+    "Describe how business events affect the financial story across statements",
+    "Recognize the need for standardized financial communication with investors and lenders"
   ],
   keyConcepts: [
-    "Income Statement construction from journal entry data",
-    "Balance Sheet account linking and Retained Earnings reconciliation",
-    "Indirect Cash Flow Statement preparation and interpretation",
-    "Key financial ratios (Current Ratio, Return on Assets) and their meaning",
-    "Integration between the three primary financial statements"
+    "The three-statement storyboard: Income Statement, Balance Sheet, Cash Flow Statement",
+    "The unit scoreboard: profit, solvency, and cash",
+    "Why internal records are not the same as external financial statements",
+    "How business decisions create visible effects across the financial story"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Entry event using real 10-Q filing to understand integrated financial statements"
+    "Entry event using Sarah's TechStart narrative to launch the investor question",
+    "Shared simulation to notice business effects before formal rules"
   ],
-  rationale: "To connect the abstract concepts of financial statements to real-world business narratives.",
+  rationale: "To launch the unit with urgency around the founder problem and establish the three-statement scoreboard before formal instruction begins.",
   status: "Draft"
 }
 

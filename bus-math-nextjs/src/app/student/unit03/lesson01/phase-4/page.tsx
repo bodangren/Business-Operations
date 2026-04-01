@@ -1,16 +1,99 @@
+"use client"
+
+import { useState } from "react"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Target, Brain, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Target, TrendingUp, FileText, Activity, AlertTriangle, CheckCircle2, ArrowRight } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
 import { lesson01Data, unit03Data, lesson01Phases } from "../lesson-data"
 
-export default function Phase4Page() {
-  const currentPhase = lesson01Phases[3] // Independent Practice phase
+const INITIAL_SCOREBOARD = {
+  profit: 2800,
+  solvencyAssets: 22850,
+  solvencyLiabilities: 9600,
+  solvencyEquity: 13250,
+  cash: 12950
+}
 
-  const comprehensionQuestions1 = [
+const DECISIONS = [
+  {
+    id: "decision-1",
+    scenario: "Sarah has $12,950 in the bank. A client offers to pay $4,000 upfront for a 3-month maintenance contract. But delivering the work will cost $600/month in contractor fees. Should Sarah take the deal?",
+    title: "Decision 1: The Maintenance Contract",
+    choices: [
+      {
+        id: "accept",
+        label: "Accept the contract",
+        consequence: {
+          profit: 2800 + 4000 - 1800,
+          solvencyAssets: 22850 + 4000,
+          solvencyLiabilities: 9600,
+          solvencyEquity: 13250 + 2200,
+          cash: 12950 + 4000,
+          explanation: "Sarah collects $4,000 cash immediately. Over 3 months she pays $1,800 in contractor fees. Net profit increases by $2,200. Cash jumps to $16,950. All three scoreboard lines improve."
+        }
+      },
+      {
+        id: "decline",
+        label: "Decline — focus on the retail chain project",
+        consequence: {
+          profit: 2800,
+          solvencyAssets: 22850,
+          solvencyLiabilities: 9600,
+          solvencyEquity: 13250,
+          cash: 12950,
+          explanation: "Sarah keeps her current position. No risk, but no growth either. The scoreboard stays flat. This is safe but doesn't move the business forward."
+        }
+      }
+    ]
+  },
+  {
+    id: "decision-2",
+    scenario: "Sarah's credit card bill is $9,600. The minimum payment is $300/month, but interest is 22% APR. She could pay $5,000 now to reduce the balance, or keep the cash for emergencies.",
+    title: "Decision 2: The Credit Card Dilemma",
+    choices: [
+      {
+        id: "pay-down",
+        label: "Pay $5,000 toward the credit card now",
+        consequence: {
+          profit: 2800,
+          solvencyAssets: 22850 - 5000,
+          solvencyLiabilities: 9600 - 5000,
+          solvencyEquity: 13250,
+          cash: 12950 - 5000,
+          explanation: "Cash drops to $7,950 but liabilities shrink to $4,600. Solvency improves — the business owes less. Profit is unchanged because paying debt principal is not an expense. Interest savings will help future months."
+        }
+      },
+      {
+        id: "keep-cash",
+        label: "Keep the cash and make minimum payments",
+        consequence: {
+          profit: 2800 - 176,
+          solvencyAssets: 22850,
+          solvencyLiabilities: 9600 + 176 - 300,
+          solvencyEquity: 13250 - 176,
+          cash: 12950 - 300,
+          explanation: "Cash drops only $300 for the minimum payment. But interest of ~$176/month hits profit immediately. Liabilities barely budge. Over time, this choice eats away at profit and equity. Short-term cash looks fine, but the scoreboard bleeds."
+        }
+      }
+    ]
+  }
+]
+
+export default function Phase4Page() {
+  const currentPhase = lesson01Phases[3]
+  const [selectedChoices, setSelectedChoices] = useState<Record<string, string>>({})
+  const [showConsequences, setShowConsequences] = useState<Record<string, boolean>>({})
+
+  const handleChoice = (decisionId: string, choiceId: string) => {
+    setSelectedChoices(prev => ({ ...prev, [decisionId]: choiceId }))
+    setShowConsequences(prev => ({ ...prev, [decisionId]: true }))
+  }
+
+  const comprehensionQuestions = [
     {
       id: 'q1',
       question: 'GreenTech Manufacturing shows $85,000 revenue and $95,000 expenses on their Income Statement. What does this tell investors about the business?',
@@ -24,17 +107,6 @@ export default function Phase4Page() {
     },
     {
       id: 'q2',
-      question: 'CloudSoft Solutions has $25,000 in cash, $15,000 in equipment, and $8,000 in liabilities. What is their equity position?',
-      answers: [
-        '$32,000 in equity (Assets $40,000 - Liabilities $8,000)',
-        '$25,000 in equity (just the cash amount)',
-        '$17,000 in equity ($25,000 - $8,000)',
-        '$48,000 in equity ($40,000 + $8,000)'
-      ],
-      explanation: 'Using the accounting equation (Assets = Liabilities + Equity), we calculate: Total Assets ($25,000 cash + $15,000 equipment = $40,000) minus Liabilities ($8,000) equals Equity ($32,000). This shows the owner\'s financial stake in the business.'
-    },
-    {
-      id: 'q3',
       question: 'Digital Marketing Pro shows positive net income but negative operating cash flow. What does this suggest?',
       answers: [
         'The business is profitable on paper but may have cash flow timing issues',
@@ -43,44 +115,9 @@ export default function Phase4Page() {
         'The business has too much inventory'
       ],
       explanation: 'This situation indicates the business is earning profit but experiencing cash flow timing problems - perhaps customers haven\'t paid their invoices yet, or the company has invested heavily in accounts receivable. This highlights why all three statements are needed for a complete picture.'
-    }
-  ]
-
-  const scenarioAnalysis = [
-    {
-      id: '1',
-      text: 'MedTech Innovations has consistent {blank} revenue growth but their cash flow statement shows they collect payments slowly from hospitals.',
-      answer: 'profitable',
-      hint: 'The business makes money but has collection timing issues'
     },
     {
-      id: '2', 
-      text: 'RetailMax shows strong {blank} cash flow from operations, indicating excellent day-to-day financial management.',
-      answer: 'positive',
-      hint: 'Good operating cash flow shows the business generates cash from core activities'
-    },
-    {
-      id: '3',
-      text: 'AutoRepair Express has high {blank} on their balance sheet, suggesting they owe significant money to suppliers and lenders.',
-      answer: 'liabilities',
-      hint: 'Money owed to others appears on the balance sheet'
-    }
-  ]
-
-  const comprehensionQuestions2 = [
-    {
-      id: 'q4',
-      question: 'EcoClean Services wants to expand but needs a loan. Which financial statement story would be most convincing to a bank?',
-      answers: [
-        'Consistent profitability on Income Statement, strong asset base on Balance Sheet, and positive operating cash flow',
-        'Just showing high revenue numbers',
-        'Only demonstrating low expenses',
-        'Having expensive equipment but no other information'
-      ],
-      explanation: 'Banks want to see the complete integrated story: profitability proves the business model works, strong assets provide security for the loan, and positive operating cash flow demonstrates the ability to service debt payments.'
-    },
-    {
-      id: 'q5',
+      id: 'q3',
       question: 'Two similar businesses both show $50,000 net income. Business A has $10,000 operating cash flow while Business B has $45,000 operating cash flow. Which is financially healthier?',
       answers: [
         'Business B - higher operating cash flow indicates better cash conversion and collection',
@@ -108,215 +145,190 @@ export default function Phase4Page() {
             <CardHeader className="bg-purple-100">
               <CardTitle className="text-purple-800 flex items-center gap-2">
                 <Target className="w-5 h-5" />
-                Independent Practice: Financial Detective Work
+                Independent Practice: Make the Call
               </CardTitle>
               <CardDescription>
-                Apply your knowledge to new business scenarios without guided support
+                You are Sarah's advisor. Make two business decisions and watch the scoreboard change.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6">
               <div className="prose prose-lg max-w-none">
                 <p className="text-base leading-relaxed mb-4">
-                  Now it's time to demonstrate your financial detective skills independently. You'll analyze different business scenarios using the same integrated three-statement approach that Sarah learned, but with new companies and situations you haven't seen before.
+                  Sarah is at a crossroads. She has momentum from her first month with Jennifer Kim, but two decisions are on her desk right now. Each choice will move the scoreboard differently. There is no single right answer — but every answer has a consequence.
                 </p>
 
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
-                  <h4 className="font-semibold text-yellow-800 mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4" />
-                    Challenge Level: Independent Analysis
-                  </h4>
-                  <p className="text-yellow-700 text-sm">
-                    These scenarios require you to apply the concepts we've learned to completely new situations. Use your understanding of how the three statements work together to tell complete business stories.
-                  </p>
+                  <h4 className="font-semibold text-yellow-800 mb-2">How This Works</h4>
+                  <ul className="text-yellow-700 text-sm space-y-1 list-disc list-inside">
+                    <li>Read each scenario carefully.</li>
+                    <li>Choose the option you think is best for TechStart.</li>
+                    <li>See how your choice changes the scoreboard.</li>
+                    <li>After both decisions, answer the analysis questions.</li>
+                  </ul>
                 </div>
 
                 <p className="text-base leading-relaxed">
-                  Remember: you're not just looking at numbers—you're reading the story those numbers tell about business performance, financial stability, and cash management.
+                  <strong>Starting scoreboard:</strong>
                 </p>
+                <div className="grid grid-cols-3 gap-3 mb-4">
+                  <div className="rounded-lg bg-purple-50 border border-purple-200 p-3 text-center">
+                    <p className="text-xs font-semibold text-purple-900 uppercase">Profit</p>
+                    <p className="text-lg font-bold text-purple-700">${INITIAL_SCOREBOARD.profit.toLocaleString()}</p>
+                  </div>
+                  <div className="rounded-lg bg-blue-50 border border-blue-200 p-3 text-center">
+                    <p className="text-xs font-semibold text-blue-900 uppercase">Solvency</p>
+                    <p className="text-sm text-blue-700">Assets ${INITIAL_SCOREBOARD.solvencyAssets.toLocaleString()} = Liabilities ${INITIAL_SCOREBOARD.solvencyLiabilities.toLocaleString()} + Equity ${INITIAL_SCOREBOARD.solvencyEquity.toLocaleString()}</p>
+                  </div>
+                  <div className="rounded-lg bg-indigo-50 border border-indigo-200 p-3 text-center">
+                    <p className="text-xs font-semibold text-indigo-900 uppercase">Cash</p>
+                    <p className="text-lg font-bold text-indigo-700">${INITIAL_SCOREBOARD.cash.toLocaleString()}</p>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Scenario 1: GreenTech Manufacturing */}
-          <Card className="border-purple-200">
-            <CardHeader className="bg-green-50">
-              <CardTitle className="text-green-800">Scenario 1: GreenTech Manufacturing</CardTitle>
-              <CardDescription>Analyze this renewable energy equipment manufacturer's financial story</CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-base leading-relaxed mb-4">
-                  GreenTech Manufacturing produces solar panel mounting systems for commercial buildings. They're seeking investment to expand their operations to serve the growing renewable energy market.
-                </p>
+          {/* Decision Cards */}
+          {DECISIONS.map((decision) => {
+            const selected = selectedChoices[decision.id]
+            const revealed = showConsequences[decision.id]
+            const choice = decision.choices.find(c => c.id === selected)
 
-                <div className="grid md:grid-cols-3 gap-4 mb-4">
-                  <div className="bg-gray-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4" />
-                      Income Statement Key Items
-                    </h4>
-                    <ul className="text-sm space-y-1">
-                      <li>Revenue: $85,000</li>
-                      <li>Cost of Materials: $45,000</li>
-                      <li>Operating Expenses: $50,000</li>
-                      <li>Net Income: ?</li>
-                    </ul>
+            return (
+              <Card key={decision.id} className="border-purple-200 shadow-sm">
+                <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+                  <CardTitle className="text-purple-900">{decision.title}</CardTitle>
+                  <CardDescription>{decision.scenario}</CardDescription>
+                </CardHeader>
+                <CardContent className="p-6 space-y-6">
+                  {/* Choice Buttons */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {decision.choices.map((c) => (
+                      <Button
+                        key={c.id}
+                        onClick={() => handleChoice(decision.id, c.id)}
+                        variant={selected === c.id ? "default" : "outline"}
+                        className={`h-auto py-4 px-4 text-left justify-start ${
+                          selected === c.id
+                            ? "bg-purple-600 text-white hover:bg-purple-700"
+                            : "text-gray-700"
+                        }`}
+                        disabled={revealed}
+                      >
+                        <div>
+                          <p className="font-semibold text-sm">{c.label}</p>
+                        </div>
+                      </Button>
+                    ))}
                   </div>
 
-                  <div className="bg-gray-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-blue-700 mb-2">Balance Sheet Highlights</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>Cash: $12,000</li>
-                      <li>Manufacturing Equipment: $65,000</li>
-                      <li>Accounts Payable: $18,000</li>
-                      <li>Bank Loan: $25,000</li>
-                    </ul>
-                  </div>
+                  {/* Consequence Reveal */}
+                  {revealed && choice && (
+                    <div className="space-y-4">
+                      <div className="rounded-lg bg-green-50 border border-green-200 p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <CheckCircle2 className="w-4 h-4 text-green-600" />
+                          <p className="text-sm font-semibold text-green-800">You chose: {choice.label}</p>
+                        </div>
 
-                  <div className="bg-gray-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-purple-700 mb-2">Cash Flow Information</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>Operating Cash Flow: ($8,000)</li>
-                      <li>Equipment Purchase: ($15,000)</li>
-                      <li>Loan Proceeds: $20,000</li>
+                        {/* Scoreboard After */}
+                        <div className="grid grid-cols-3 gap-3 mb-4">
+                          <div className="rounded-lg bg-purple-50 border border-purple-200 p-3 text-center">
+                            <p className="text-xs font-semibold text-purple-900 uppercase">Profit</p>
+                            <p className="text-lg font-bold text-purple-700">
+                              ${choice.consequence.profit.toLocaleString()}
+                            </p>
+                            <p className="text-xs text-purple-600">
+                              {choice.consequence.profit > INITIAL_SCOREBOARD.profit ? "↑" : choice.consequence.profit < INITIAL_SCOREBOARD.profit ? "↓" : "—"} from start
+                            </p>
+                          </div>
+                          <div className="rounded-lg bg-blue-50 border border-blue-200 p-3 text-center">
+                            <p className="text-xs font-semibold text-blue-900 uppercase">Solvency</p>
+                            <p className="text-xs text-blue-700">
+                              Assets ${choice.consequence.solvencyAssets.toLocaleString()}
+                            </p>
+                            <p className="text-xs text-blue-700">
+                              Liabilities ${choice.consequence.solvencyLiabilities.toLocaleString()}
+                            </p>
+                            <p className="text-xs text-blue-700">
+                              Equity ${choice.consequence.solvencyEquity.toLocaleString()}
+                            </p>
+                          </div>
+                          <div className="rounded-lg bg-indigo-50 border border-indigo-200 p-3 text-center">
+                            <p className="text-xs font-semibold text-indigo-900 uppercase">Cash</p>
+                            <p className="text-lg font-bold text-indigo-700">
+                              ${choice.consequence.cash.toLocaleString()}
+                            </p>
+                            <p className="text-xs text-indigo-600">
+                              {choice.consequence.cash > INITIAL_SCOREBOARD.cash ? "↑" : choice.consequence.cash < INITIAL_SCOREBOARD.cash ? "↓" : "—"} from start
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="rounded-lg bg-yellow-50 border border-yellow-200 p-3">
+                          <p className="text-sm text-yellow-800">
+                            <strong>Why:</strong> {choice.consequence.explanation}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Comparison with other choice */}
+                      <div className="rounded-lg bg-gray-50 border border-gray-200 p-4">
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>The other option would have looked like this:</strong>
+                        </p>
+                        <p className="text-sm text-gray-600 italic">
+                          {decision.choices.find(c => c.id !== selected)?.label} — {decision.choices.find(c => c.id !== selected)?.consequence.explanation}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )
+          })}
+
+          {/* Analysis Questions */}
+          {Object.keys(selectedChoices).length === DECISIONS.length && (
+            <Card className="border-purple-200">
+              <CardHeader className="bg-purple-100">
+                <CardTitle className="text-purple-800 flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5" />
+                  Analyze Your Decisions
+                </CardTitle>
+                <CardDescription>
+                  Now answer these questions about the decisions you made
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-base leading-relaxed mb-4">
+                    Look back at how your choices changed the scoreboard. Think about what trade-offs you made.
+                  </p>
+                  <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+                    <p className="text-sm text-blue-800 font-semibold mb-2">Reflection prompts (discuss with a partner or write down):</p>
+                    <ul className="text-sm text-blue-700 space-y-1 list-disc list-inside">
+                      <li>Which decision had the biggest impact on cash? Why?</li>
+                      <li>Did any of your choices improve one scoreboard line but hurt another?</li>
+                      <li>If Sarah needs to show investors a strong story next month, which choice matters most?</li>
+                      <li>What does this teach you about why one financial statement alone is not enough?</li>
                     </ul>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+          )}
 
-                <p className="text-sm text-gray-600 italic">
-                  What story do these numbers tell about GreenTech's business performance and investment readiness?
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Comprehension Check 1 */}
+          {/* Comprehension Check */}
           <ComprehensionCheck
-            questions={comprehensionQuestions1}
+            questions={comprehensionQuestions}
             title="Business Scenario Analysis"
             description="Demonstrate your ability to interpret financial information and draw business conclusions"
             showExplanations={true}
             allowRetry={false}
           />
 
-          {/* Scenario 2: CloudSoft Solutions */}
-          <Card className="border-purple-200">
-            <CardHeader className="bg-blue-50">
-              <CardTitle className="text-blue-800">Scenario 2: CloudSoft Solutions</CardTitle>
-              <CardDescription>Evaluate this software consulting firm's financial position</CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-base leading-relaxed mb-4">
-                  CloudSoft Solutions provides cloud migration services to small businesses. The owner wants to understand if the company is ready to hire additional developers and expand service offerings.
-                </p>
-
-                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold text-blue-700 mb-2">Quarter 1 Performance</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>Service Revenue: $42,000</li>
-                        <li>Contractor Costs: $18,000</li>
-                        <li>Office Expenses: $8,000</li>
-                        <li>Net Income: $16,000</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-blue-700 mb-2">Current Financial Position</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>Cash: $25,000</li>
-                        <li>Equipment: $15,000</li>
-                        <li>Accounts Receivable: $12,000</li>
-                        <li>Accounts Payable: $8,000</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 bg-yellow-50 rounded-lg">
-                  <AlertTriangle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-sm text-yellow-800 font-semibold">Business Decision Context</p>
-                    <p className="text-sm text-yellow-700">
-                      The owner is considering hiring two full-time developers at $4,000/month each. Can the business support this expansion based on current financial performance?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Fill in the Blank with New Scenarios */}
-          <FillInTheBlank
-            sentences={scenarioAnalysis}
-            title="Independent Scenario Analysis"
-            description="Complete these business analysis statements using your financial statement knowledge"
-            showWordList={false}
-            randomizeWordOrder={false}  
-            showHints={true}
-          />
-
-          {/* Scenario 3: Digital Marketing Pro */}
-          <Card className="border-purple-200">
-            <CardHeader className="bg-orange-50">
-              <CardTitle className="text-orange-800">Scenario 3: Digital Marketing Pro</CardTitle>
-              <CardDescription>Diagnose why this profitable business struggles with cash flow</CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-base leading-relaxed mb-4">
-                  Digital Marketing Pro manages social media and advertising campaigns for restaurants and retail stores. Despite showing consistent profits, the owner frequently worries about making payroll and paying suppliers on time.
-                </p>
-
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4" />
-                      Income Statement (Monthly)
-                    </h4>
-                    <ul className="text-sm space-y-1">
-                      <li>Service Revenue: $28,000</li>
-                      <li>Advertising Costs: $12,000</li>
-                      <li>Salaries: $8,000</li>
-                      <li>Office Rent: $2,500</li>
-                      <li><strong>Net Income: $5,500</strong></li>
-                    </ul>
-                    <p className="text-xs text-green-600 mt-2">✓ Profitable every month</p>
-                  </div>
-
-                  <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
-                      <AlertTriangle className="w-4 h-4" />
-                      Cash Flow Reality
-                    </h4>
-                    <ul className="text-sm space-y-1">
-                      <li>Operating Cash Flow: ($2,000)</li>
-                      <li>Accounts Receivable: $35,000</li>
-                      <li>Average Collection Time: 75 days</li>
-                      <li>Current Cash Balance: $3,200</li>
-                    </ul>
-                    <p className="text-xs text-red-600 mt-2">⚠ Cash flow problems despite profits</p>
-                  </div>
-                </div>
-
-                <p className="text-sm text-gray-600 italic">
-                  This scenario demonstrates why all three financial statements are essential for understanding true business health.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Final Comprehension Check */}
-          <ComprehensionCheck
-            questions={comprehensionQuestions2}
-            title="Advanced Financial Analysis"
-            description="Apply integrated three-statement thinking to complex business situations"
-            showExplanations={true}
-            allowRetry={false}
-          />
-
-          {/* Self-Assessment Reflection */}
+          {/* Self-Assessment */}
           <Card className="border-purple-200">
             <CardHeader className="bg-purple-100">
               <CardTitle className="text-purple-800">Independent Practice Self-Assessment</CardTitle>

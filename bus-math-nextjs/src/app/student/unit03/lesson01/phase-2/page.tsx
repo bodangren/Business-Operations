@@ -8,7 +8,7 @@ import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
 import { lesson01Data, unit03Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase2Page() {
-  const currentPhase = lesson01Phases[1] // Introduction phase
+  const currentPhase = lesson01Phases[1]
 
   const comprehensionQuestions1 = [
     {
@@ -103,21 +103,102 @@ export default function Phase2Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* The Scoreboard Card */}
+          <Card className="border-purple-200 shadow-sm">
+            <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+              <CardTitle className="text-purple-900 flex flex-col gap-1">
+                The Unit Scoreboard
+                <span className="text-base font-normal text-purple-700">
+                  Three numbers that tell whether Sarah's business is healthy.
+                </span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 space-y-6">
+              <p className="text-base text-gray-700">
+                Every business leader tracks a scoreboard. Sarah's scoreboard has three lines. If any one of them is weak, the whole story falls apart.
+              </p>
+
+              <div className="grid gap-4 md:grid-cols-3">
+                {/* Profit */}
+                <div className="rounded-xl border-2 border-purple-200 bg-white p-5 shadow-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Badge className="bg-purple-100 text-purple-800 text-xs uppercase tracking-wide">Profit</Badge>
+                    <TrendingUp className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Did the business earn more than it spent this period?
+                  </p>
+                  <div className="bg-purple-50 rounded-lg p-3 border border-purple-200">
+                    <p className="text-xs font-semibold text-purple-900 uppercase">Equation</p>
+                    <p className="text-lg font-bold text-purple-700 mt-1">
+                      Revenue − Expenses = Net Income
+                    </p>
+                  </div>
+                  <p className="text-xs text-purple-700 mt-3">
+                    <strong>Why it matters:</strong> Profit is the plot. Without it, the story has no momentum.
+                  </p>
+                </div>
+
+                {/* Solvency */}
+                <div className="rounded-xl border-2 border-blue-200 bg-white p-5 shadow-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Badge className="bg-blue-100 text-blue-800 text-xs uppercase tracking-wide">Solvency</Badge>
+                    <FileText className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Does the business own more than it owes?
+                  </p>
+                  <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                    <p className="text-xs font-semibold text-blue-900 uppercase">Equation</p>
+                    <p className="text-lg font-bold text-blue-700 mt-1">
+                      Assets = Liabilities + Equity
+                    </p>
+                  </div>
+                  <p className="text-xs text-blue-700 mt-3">
+                    <strong>Why it matters:</strong> Solvency is the setting. It tells lenders whether the business can survive a bad month.
+                  </p>
+                </div>
+
+                {/* Cash */}
+                <div className="rounded-xl border-2 border-indigo-200 bg-white p-5 shadow-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Badge className="bg-indigo-100 text-indigo-800 text-xs uppercase tracking-wide">Cash</Badge>
+                    <Activity className="w-4 h-4 text-indigo-600" />
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Is there enough cash on hand to pay bills today?
+                  </p>
+                  <div className="bg-indigo-50 rounded-lg p-3 border border-indigo-200">
+                    <p className="text-xs font-semibold text-indigo-900 uppercase">Equation</p>
+                    <p className="text-lg font-bold text-indigo-700 mt-1">
+                      Operating + Investing + Financing = Δ Cash
+                    </p>
+                  </div>
+                  <p className="text-xs text-indigo-700 mt-3">
+                    <strong>Why it matters:</strong> Cash is the action. A profitable business with no cash still can't make payroll.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+                <strong>Memory device:</strong> Profit = plot. Solvency = setting. Cash = action. Every spreadsheet you build this unit should trace back to these three lines.
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Introduction Section */}
           <Card className="border-purple-200">
             <CardHeader className="bg-purple-100">
               <CardTitle className="text-purple-800 flex items-center gap-2">
                 <BookOpen className="w-5 h-5" />
-                Introduction: The Three-Statement Storyboard
+                The Three-Statement Storyboard
               </CardTitle>
               <CardDescription>
-                Understanding how financial statements work together to tell a complete business story
+                How the scoreboard connects to the three financial statements
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6">
               <div className="prose prose-lg max-w-none">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">The Day the Spreadsheet Wasn't Enough</h3>
-                
                 <p className="text-base leading-relaxed mb-4">
                   With her back-office operations finally running smoothly, Sarah's confidence was at an all-time high. The automation you helped her build was working perfectly, and it gave her the time she needed to focus on growth. A huge opportunity suddenly came her way—a regional retail chain needed a massive e-commerce solution. This was the kind of project that could put TechStart Solutions on the map. But a project of that size required more resources than she had on hand. To manage it, she knew she'd need to secure a business line of credit from a bank.
                 </p>
@@ -137,9 +218,9 @@ export default function Phase2Page() {
                   </p>
                 </div>
 
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">The Three-Part Storyboard</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">How Each Statement Feeds the Scoreboard</h4>
                 <p className="text-base leading-relaxed mb-4">
-                  Jennifer described the three financial statements as a <strong>"storyboard" for the business</strong>, and this idea immediately clicked for Sarah. Jennifer explained that this storyboard has three parts that work together to tell one coherent story:
+                  Jennifer described the three financial statements as a <strong>"storyboard" for the business</strong>, and this idea immediately clicked for Sarah. Each statement feeds one line on the scoreboard:
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -147,7 +228,7 @@ export default function Phase2Page() {
                     <CardHeader className="pb-3">
                       <CardTitle className="text-sm flex items-center gap-2 text-purple-700">
                         <TrendingUp className="w-4 h-4" />
-                        Income Statement
+                        Income Statement → Profit
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -156,11 +237,11 @@ export default function Phase2Page() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-2 border-purple-200">
+                  <Card className="border-2 border-blue-200">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm flex items-center gap-2 text-purple-700">
+                      <CardTitle className="text-sm flex items-center gap-2 text-blue-700">
                         <FileText className="w-4 h-4" />
-                        Balance Sheet
+                        Balance Sheet → Solvency
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -169,11 +250,11 @@ export default function Phase2Page() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-2 border-purple-200">
+                  <Card className="border-2 border-indigo-200">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm flex items-center gap-2 text-purple-700">
+                      <CardTitle className="text-sm flex items-center gap-2 text-indigo-700">
                         <Activity className="w-4 h-4" />
-                        Statement of Cash Flows
+                        Cash Flow → Cash
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -208,6 +289,55 @@ export default function Phase2Page() {
             randomizeWordOrder={true}
             showHints={true}
           />
+
+          {/* Scoreboard Scan Activity */}
+          <Card className="border-purple-200">
+            <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
+              <CardTitle className="text-purple-900 flex items-center gap-2">
+                <Target className="w-5 h-5" />
+                Scoreboard Scan: Read the Story in 30 Seconds
+              </CardTitle>
+              <CardDescription>
+                Practice reading all three scoreboard lines at once
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <p className="text-base text-gray-700 mb-4">
+                Investors don't read one statement and stop. They scan all three lines of the scoreboard at once. Try it with this simplified TechStart snapshot.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="rounded-lg border border-purple-200 bg-purple-50 p-4">
+                  <p className="text-xs font-semibold text-purple-900 uppercase mb-2">Profit (Income Statement)</p>
+                  <p className="text-sm text-purple-800">Revenue: $4,350</p>
+                  <p className="text-sm text-purple-800">Expenses: $1,170</p>
+                  <p className="text-sm font-bold text-purple-900 mt-1">Net Income: $3,180</p>
+                </div>
+                <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
+                  <p className="text-xs font-semibold text-blue-900 uppercase mb-2">Solvency (Balance Sheet)</p>
+                  <p className="text-sm text-blue-800">Total Assets: $22,700</p>
+                  <p className="text-sm text-blue-800">Total Liabilities: $8,400</p>
+                  <p className="text-sm font-bold text-blue-900 mt-1">Equity: $14,300</p>
+                </div>
+                <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4">
+                  <p className="text-xs font-semibold text-indigo-900 uppercase mb-2">Cash (Cash Flow)</p>
+                  <p className="text-sm text-indigo-800">Operating: +$2,900</p>
+                  <p className="text-sm text-indigo-800">Investing: −$1,200</p>
+                  <p className="text-sm font-bold text-indigo-900 mt-1">Net Change: +$2,500</p>
+                </div>
+              </div>
+
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p className="text-sm text-yellow-800 font-semibold mb-1">Quick scan questions:</p>
+                <ul className="text-sm text-yellow-700 space-y-1 list-disc list-inside">
+                  <li>Is TechStart profitable? Which line told you that?</li>
+                  <li>Could TechStart survive a slow month? Which line tells you that?</li>
+                  <li>Did cash go up or down? Which line tells you that?</li>
+                  <li>If you had to flag one risk, what would it be?</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Why This Matters Section */}
           <Card className="border-purple-200">
@@ -268,141 +398,6 @@ export default function Phase2Page() {
               <Badge variant="outline" className="text-purple-700 border-purple-300">
                 Be ready to share one insight with the class
               </Badge>
-            </CardContent>
-        </Card>
-
-        {/* Three-Statement Skeletons */}
-        <Card className="border-purple-200 shadow-sm">
-          <CardHeader className="bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
-            <CardTitle className="text-purple-900 flex flex-col gap-1">
-              Three-Statement Skeletons
-              <span className="text-base font-normal text-purple-700">
-                Anchor the top-level equations before layering on details.
-              </span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-6 space-y-6">
-            <div className="grid gap-6 md:grid-cols-3">
-              {/* Income Statement Skeleton */}
-              <div className="space-y-4 bg-white rounded-xl border border-purple-200 p-5 shadow-sm">
-                <Badge className="bg-purple-100 text-purple-800 text-sm">Income Statement</Badge>
-                <div className="space-y-3">
-                  <p className="text-sm text-gray-600">
-                    The plot of the story: how money earned becomes profit that investors can evaluate.
-                  </p>
-                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-                    <p className="text-sm font-semibold text-purple-900 uppercase tracking-wide">Equation</p>
-                    <p className="text-xl font-bold text-purple-700 mt-2">
-                      Revenue <span className="text-gray-500">−</span> Expenses <span className="text-gray-500">=</span> Net Income
-                    </p>
-                  </div>
-                  <div className="grid gap-2">
-                    <div className="rounded-lg border border-purple-100 bg-purple-50/50 p-3 text-sm text-purple-800">
-                      <span className="font-semibold text-purple-900">Revenue:</span> Fees and sales Sarah earns.
-                    </div>
-                    <div className="rounded-lg border border-purple-100 bg-purple-50/50 p-3 text-sm text-purple-800">
-                      <span className="font-semibold text-purple-900">Expenses:</span> Software, contractors, marketing—costs of doing business.
-                    </div>
-                    <div className="rounded-lg border border-purple-200 bg-purple-100 p-3 text-sm font-semibold text-purple-900">
-                      Net Income: Profit (or loss) after expenses.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Balance Sheet Skeleton */}
-              <div className="space-y-4 bg-white rounded-xl border border-blue-200 p-5 shadow-sm">
-                <Badge className="bg-blue-100 text-blue-800 text-sm">Balance Sheet</Badge>
-                <div className="space-y-3">
-                  <p className="text-sm text-gray-600">
-                    The setting of the story: everything the business owns must balance with obligations and owner value.
-                  </p>
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                    <p className="text-sm font-semibold text-blue-900 uppercase tracking-wide">Equation</p>
-                    <p className="text-xl font-bold text-blue-700 mt-2">
-                      Assets <span className="text-gray-500">=</span> Liabilities <span className="text-gray-500">+</span> Equity
-                    </p>
-                  </div>
-                  <div className="grid gap-2">
-                    <div className="rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-sm text-blue-800">
-                      <span className="font-semibold text-blue-900">Assets:</span> Cash, laptops, receivables—resources Sarah controls.
-                    </div>
-                    <div className="rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-sm text-blue-800">
-                      <span className="font-semibold text-blue-900">Liabilities:</span> Amounts owed to banks, suppliers, or credit cards.
-                    </div>
-                    <div className="rounded-lg border border-blue-200 bg-blue-100 p-3 text-sm font-semibold text-blue-900">
-                      Equity: Owner investment plus profits kept inside the company.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Cash Flow Skeleton */}
-              <div className="space-y-4 bg-white rounded-xl border border-indigo-200 p-5 shadow-sm">
-                <Badge className="bg-indigo-100 text-indigo-800 text-sm">Cash Flow Statement</Badge>
-                <div className="space-y-3">
-                  <p className="text-sm text-gray-600">
-                    The action of the story: tracks how cash actually moves so Sarah can make payroll on time.
-                  </p>
-                  <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
-                    <p className="text-sm font-semibold text-indigo-900 uppercase tracking-wide">Equation</p>
-                    <p className="text-xl font-bold text-indigo-700 mt-2">
-                      Operating Cash <span className="text-gray-500">+</span> Investing Cash <span className="text-gray-500">+</span> Financing Cash <span className="text-gray-500">=</span> Net Change in Cash
-                    </p>
-                  </div>
-                  <div className="grid gap-2">
-                    <div className="rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-sm text-indigo-800">
-                      <span className="font-semibold text-indigo-900">Operating:</span> Cash from client work and everyday bills.
-                    </div>
-                    <div className="rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-sm text-indigo-800">
-                      <span className="font-semibold text-indigo-900">Investing:</span> Purchases or sales of long-term tools.
-                    </div>
-                    <div className="rounded-lg border border-indigo-200 bg-indigo-100 p-3 text-sm font-semibold text-indigo-900">
-                      Financing: Loans, owner draws, or new capital from investors.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
-              <strong>Helpful memory device:</strong> Income Statement solves for profit, Balance Sheet must balance, Cash Flow explains why cash rose or fell. Every spreadsheet you build later should trace back to these three sentences.
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Learning Objectives Preview */}
-        <Card className="border-purple-200">
-          <CardHeader className="bg-purple-100">
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <Target className="w-5 h-5" />
-                What We'll Build Together
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <p className="text-base mb-4">
-                By the end of this unit, you'll be able to create the same integrated financial storyboard that helped Sarah secure her business growth funding:
-              </p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Technical Skills</h4>
-                  <ul className="list-disc list-inside space-y-1 text-sm">
-                    <li>Build Income Statements with INDEX/MATCH formulas</li>
-                    <li>Create Balance Sheets with integrated Retained Earnings</li>
-                    <li>Construct Cash Flow Statements using the Indirect Method</li>
-                    <li>Design KPI dashboards with financial ratios</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Business Communication</h4>
-                  <ul className="list-disc list-inside space-y-1 text-sm">
-                    <li>Present financial stories to investor panels</li>
-                    <li>Explain business performance using integrated statements</li>
-                    <li>Demonstrate Excel model functionality professionally</li>
-                    <li>Answer stakeholder questions with confidence</li>
-                  </ul>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>
