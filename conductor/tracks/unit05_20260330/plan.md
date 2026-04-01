@@ -23,23 +23,23 @@
   - Review recommendation rules and peer feedback rules
 
 ## Phase 2: Lessons 01-04 (Textbook-First)
-- [ ] 2.1 **Lesson 01** - Implement launch-lesson skill
-  - [ ] 2.1.1 Update lesson-data.ts for Lesson 01
-  - [ ] 2.1.2 Implement Phase 1 with Sarah's interview video and overdraft/missed-cash-timing problem
+- [x] 2.1 **Lesson 01** - Implement launch-lesson skill
+  - [x] 2.1.1 Update lesson-data.ts for Lesson 01
+  - [x] 2.1.2 Implement Phase 1 with Sarah's interview video and overdraft/missed-cash-timing problem
     - Use the shared `VideoPlayer` component
     - Include title, description, YouTube ID, duration, and full transcript data
     - Create business tension and credibility
     - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
-  - [ ] 2.1.3 Implement Phase 2-6 with payroll scoreboard visible
+  - [x] 2.1.3 Implement Phase 2-6 with payroll scoreboard visible
     - Phase 2: Name the scoreboard explicitly (gross pay, deductions, employer cost, cash out), show main moving parts, use one bounded interactive
     - Phase 3: Use shared dataset/simulation, predict before reveal, show before/after changes
     - Phase 4: Keep task constrained, allow 1-2 meaningful choices, show consequences visibly
     - Phase 5: Short MCQ exit ticket assessing founder problem, scoreboard, core distinctions
     - Phase 6: Restate enduring formula, summarize understanding, preview next lesson, include reflection
-  - [ ] 2.1.4 Keep Phase 4 bounded - no workbook construction yet
+  - [x] 2.1.4 Keep Phase 4 bounded - no workbook construction yet
   - **Done when**:
-    - [ ] Students can explain why payroll is both a people issue and a cash-flow issue
-    - [ ] The lesson points clearly to payroll calculation logic next
+    - [x] Students can explain why payroll is both a people issue and a cash-flow issue
+    - [x] The lesson points clearly to payroll calculation logic next
 
 - [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
   - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
