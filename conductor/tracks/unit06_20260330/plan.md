@@ -32,21 +32,21 @@
     - [x] Students can explain why price is both a math decision and a market decision
     - [x] The lesson points cleanly to markup and margin logic next
 
-- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
-  - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
-  - [ ] 2.2.2 Implement Phase 1-6 with markup vs margin
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and selling-price/cost examples
-    - Phase 3: Add meaningful complication (more complex pricing), reduce prompts, shift toward cleaner pricing layouts
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
-    - Phase 5: Short MCQ exit ticket on markup/margin reasoning and method choice, not spreadsheet features
-    - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
-  - [ ] 2.2.3 Use concrete selling-price and cost examples before formulas
-  - [ ] 2.2.4 Keep strong representational supports in Phases 2-3
-  - [ ] 2.2.5 Make Phase 4 a repeatable markup-vs-margin mastery loop
+- [x] 2.2 **Lesson 02** - Implement accounting-principles skill
+  - [x] 2.2.1 Update lesson-data.ts for Lesson 02
+  - [x] 2.2.2 Implement Phase 1-6 with markup vs margin
+    - [x] Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
+    - [x] Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and selling-price/cost examples
+    - [x] Phase 3: Add meaningful complication (more complex pricing), reduce prompts, shift toward cleaner pricing layouts
+    - [x] Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+    - [x] Phase 5: Short MCQ exit ticket on markup/margin reasoning and method choice, not spreadsheet features
+    - [x] Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
+  - [x] 2.2.3 Use concrete selling-price and cost examples before formulas
+  - [x] 2.2.4 Keep strong representational supports in Phases 2-3
+  - [x] 2.2.5 Make Phase 4 a repeatable markup-vs-margin mastery loop
   - **Done when**:
-    - [ ] Students can calculate and distinguish markup and margin accurately
-    - [ ] Phase 5 checks reasoning and method choice, not spreadsheet features
+    - [x] Students can calculate and distinguish markup and margin accurately
+    - [x] Phase 5 checks reasoning and method choice, not spreadsheet features
 
 - [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
   - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
