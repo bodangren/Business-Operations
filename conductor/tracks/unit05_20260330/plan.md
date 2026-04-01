@@ -153,35 +153,35 @@
     - [x] Each team is working in the correct workbook
     - [x] Initial calculation and setup work is complete
 
-- [ ] 4.3 **Lesson 09** - Implement group-project skill
-  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
-  - [ ] 4.3.2 Implement completion and rehearsal
+- [x] 4.3 **Lesson 09** - Implement group-project skill
+  - [x] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+  - [x] 4.3.2 Implement completion and rehearsal
     - Continue same workbook from Lesson 08
     - Complete remaining sheets/evidence blocks
     - Require scenario testing, checks, dashboard completion
     - Require short recommendation structure (claim, evidence, risk)
     - Include peer critique and revision
     - Define milestone 2 acceptance criteria
-  - [ ] 4.3.3 Continue the same workbook from Lesson 08
-  - [ ] 4.3.4 Require peer critique and revision
-  - [ ] 4.3.5 Make teams cite workbook evidence for at least three payroll-control or cash-flow claims
+  - [x] 4.3.3 Continue the same workbook from Lesson 08
+  - [x] 4.3.4 Require peer critique and revision
+  - [x] 4.3.5 Make teams cite workbook evidence for at least three payroll-control or cash-flow claims
   - **Done when**:
-    - [ ] The payroll workbook is complete and tested
-    - [ ] The team can explain how the system prevents payroll mistakes and cash surprises
+    - [x] The payroll workbook is complete and tested
+    - [x] The team can explain how the system prevents payroll mistakes and cash surprises
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+  - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [x] 4.4.2 Implement final presentation and submission
     - Require final polish of workbook and presentation notes
     - Make audience, presentation standard, submission standard explicit
     - Include final checklist and timing guidance
     - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make final artifact and speaking expectations explicit
-  - [ ] 4.4.4 Require final workbook polish and submission check
-  - [ ] 4.4.5 End with reflection on payroll accuracy, controls, and usability
+  - [x] 4.4.3 Make final artifact and speaking expectations explicit
+  - [x] 4.4.4 Require final workbook polish and submission check
+  - [x] 4.4.5 End with reflection on payroll accuracy, controls, and usability
   - **Done when**:
-    - [ ] Final workbook and presentation/tutorial artifacts are submitted
-    - [ ] Reflection captures what made the payroll system trustworthy
+    - [x] Final workbook and presentation/tutorial artifacts are submitted
+    - [x] Reflection captures what made the payroll system trustworthy
 
 ## Phase 5: Verification & Polish
 - [ ] 5.1 Verify all lesson-data.ts files are updated
