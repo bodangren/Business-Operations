@@ -32,21 +32,21 @@
     - [x] Students can explain the business problem before any calculations begin
     - [x] The unit scoreboard or decision frame is visible
 
-- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
-  - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
-  - [ ] 2.2.2 Implement Phase 1-6 with descriptive statistics
+- [x] 2.2 **Lesson 02** - Implement accounting-principles skill
+  - [x] 2.2.1 Update lesson-data.ts for Lesson 02
+  - [x] 2.2.2 Implement Phase 1-6 with descriptive statistics
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and strong representational supports
     - Phase 3: Add meaningful complication, reduce prompts, shift toward cleaner statistical layouts, ask students to explain choices
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on definitions, method recognition, reasoning, misconceptions
     - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
-  - [ ] 2.2.3 Use concrete café examples before abstract statistical language
-  - [ ] 2.2.4 Keep strong representational supports in Phases 2-3
-  - [ ] 2.2.5 Use Phase 4 for repeated reasoning on center and spread
+  - [x] 2.2.3 Use concrete café examples before abstract statistical language
+  - [x] 2.2.4 Keep strong representational supports in Phases 2-3
+  - [x] 2.2.5 Use Phase 4 for repeated reasoning on center and spread
   - **Done when**:
-    - [ ] Students can explain average, median, and spread in business terms
-    - [ ] Phase 5 checks interpretation, not Excel tools
+    - [x] Students can explain average, median, and spread in business terms
+    - [x] Phase 5 checks interpretation, not Excel tools
 
 - [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
   - [ ] 2.3.1 Update lesson-data.ts for Lesson 03

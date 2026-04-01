@@ -1,20 +1,28 @@
-// Data-Driven Café, Lesson 2 data - extracted from MCP curriculum database
+// Data-Driven Café, Lesson 2 - Descriptive Statistics
 export const lesson02Data = {
   id: "mds5vtztsax7pn96bi",
-  title: "Skill Introduction: Data Cleaning Fundamentals",
+  title: "Descriptive Statistics: What Does Normal Look Like?",
   sequence: 2,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Clean and prepare raw POS data for statistical analysis"
+    "Calculate and interpret the mean as a measure of typical performance",
+    "Calculate and interpret the median as a resistant measure of center",
+    "Explain what spread tells us about data variability",
+    "Distinguish between mean and median and know when to use each"
   ],
   keyConcepts: [
-    "Data cleaning: Text-to-Columns, TRIM, duplicate removal, advanced filters"
+    "Mean: arithmetic average",
+    "Median: middle value when sorted",
+    "Spread: range and variability",
+    "Outlier impact on statistics"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Master essential data preparation techniques using café POS data"
+    "Concrete-to-representational-to-abstract progression",
+    "Café sales data provides authentic business context",
+    "Multiple representations before abstraction"
   ],
-  rationale: "To equip students with the fundamental skills of data cleaning, which is a critical first step in any data analysis project.",
+  rationale: "Before making predictions about weekend sales, students need to understand what \"normal\" looks like. Descriptive statistics form the foundation for identifying outliers and building forecasts.",
   status: "Draft"
 }
 
@@ -24,48 +32,41 @@ export const unit04Data = {
   sequence: 4
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson02Phases = [
   {
     id: "phase_hook_2",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to Data Cleaning Fundamentals",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To show a messy, uncleaned data set.
+    description: "Activate prior knowledge and surface the need for statistics"
   },
   {
     id: "phase_introduction_2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Direct instruction on Data cleaning: Text-to-Columns, TRIM, duplicate removal, advanced filters with clear examples and business context",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Explicit instruction on mean, median, and spread with café examples"
   },
   {
     id: "phase_guided_practice_2",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Data cleaning: Text-to-Columns, TRIM, duplicate removal, advanced filters with scaffolded support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice data cleaning in a template.
+    description: "Extended practice with varied data and reduced scaffolding"
   },
   {
     id: "phase_independent_practice_2",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Data cleaning: Text-to-Columns, TRIM, duplicate removal, advanced filters independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice data cleaning in a template.
+    description: "Algorithmic practice with automatic checking and mastery targets"
   },
   {
     id: "phase_assessment_2",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "MCQ exit ticket on definitions, interpretation, and misconceptions"
   },
   {
     id: "phase_closing_2",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflection and preview of next lesson"
   }
 ]

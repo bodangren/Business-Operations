@@ -4,55 +4,14 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FillInTheBlank } from "@/components/exercises/FillInTheBlank";
+import { ArrowRight, Calculator, Users } from "lucide-react";
 import { lesson02Data, lesson02Phases, unit04Data } from "../lesson-data";
 
 export default function Phase2Page() {
   const currentPhase = lesson02Phases.find(p => p.sequence === 2)!;
 
-  const dataCleaningVocabulary = [
-    {
-      id: "vocab-1",
-      text: "The {blank} function removes extra spaces at the beginning and end of text entries, ensuring consistency in data categories.",
-      answer: "TRIM",
-      hint: "This Excel function tidies up text by removing unwanted spaces",
-      category: "Excel Functions"
-    },
-    {
-      id: "vocab-2", 
-      text: "The {blank} tool splits data that's crammed together in one column into separate, organized columns.",
-      answer: "Text-to-Columns",
-      hint: "This tool helps separate combined data like 'DateTimeStamp' into 'Date' and 'Time'",
-      alternativeAnswers: ["Text to Columns"],
-      category: "Data Tools"
-    },
-    {
-      id: "vocab-3",
-      text: "The {blank} feature automatically finds and eliminates identical rows in your dataset that could throw off your analysis.",
-      answer: "Remove Duplicates",
-      hint: "This prevents counting the same transaction twice",
-      category: "Data Tools"
-    },
-    {
-      id: "vocab-4",
-      text: "When raw data is exported from POS systems, it's almost always {blank} and requires cleaning before analysis.",
-      answer: "messy",
-      hint: "Real-world data is never perfect and organized",
-      alternativeAnswers: ["dirty", "inconsistent", "unorganized"],
-      category: "Data Concepts"
-    },
-    {
-      id: "vocab-5",
-      text: "Data {blank} is the process of transforming raw, messy data into a reliable format ready for analysis.",
-      answer: "cleaning",
-      hint: "This is the essential first step of any data analysis project",
-      alternativeAnswers: ["preparation", "processing"],
-      category: "Data Concepts"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100">
       <div className="container mx-auto px-4 py-8">
         <PhaseHeader 
           lesson={lesson02Data}
@@ -62,161 +21,251 @@ export default function Phase2Page() {
         />
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Core Concepts Introduction */}
+          {/* Explicit Instruction Introduction */}
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
               <CardTitle className="text-2xl text-blue-800 flex items-center gap-2">
-                🧹 Cleaning Up the Mess
+                📐 Explicit Instruction: Finding "Typical" with Statistics
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-lg max-w-none">
               <p className="text-blue-800 text-lg leading-relaxed">
-                Before you can find any brilliant insights, you have to face a universal truth of data analysis: 
-                <strong>real-world data is always messy</strong>. Think back to Sarah's early days with her notebooks—that 
-                was a messy system. Digital data can be just as chaotic.
+                When Sarah asks "What's a typical weekend?" she needs more than a gut feeling. 
+                Statistics gives her three reliable ways to answer that question. Let's walk through each one.
               </p>
-              
-              <p className="text-blue-700">
-                The raw data from the café's POS system might have extra spaces, inconsistent names for menu items, 
-                or even accidental duplicate entries from a cashier hitting a button twice. If you try to analyze 
-                messy data, you'll get messy results. It's like trying to build a house on a crooked foundation.
-              </p>
-
-              <div className="bg-white p-4 rounded-lg border border-blue-200 mt-6">
-                <h3 className="font-semibold text-blue-900 mb-3">Why Data Cleaning Matters</h3>
-                <p className="text-blue-800">
-                  Data cleaning is the essential first step of every professional analysis project. It's the process 
-                  of transforming raw, messy data into a clean, organized, and reliable format that's ready for analysis. 
-                  This is exactly what separates amateur work from professional-grade analysis.
-                </p>
-              </div>
             </CardContent>
           </Card>
 
-          {/* The Three Essential Tools */}
+          {/* Mean - The Balance Point */}
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
               <CardTitle className="text-green-800 flex items-center gap-2">
-                🛠️ Your Data Cleaning Arsenal
+                <Calculator className="h-5 w-5" />
+                Mean: The Arithmetic Average
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-green-800 text-lg leading-relaxed mb-6">
-                We're going to use three powerful Excel tools to clean the café's messy data. These are the exact 
-                techniques data analysts use every day in professional settings.
+              <p className="text-green-800 mb-4">
+                The mean is what most people think of when they hear "average." You add up all the values 
+                and divide by how many there are.
               </p>
 
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white p-6 rounded-lg border border-green-200">
-                  <Badge className="bg-green-100 text-green-800 mb-3">Text-to-Columns</Badge>
-                  <h4 className="font-semibold text-green-900 mb-2">Split Combined Data</h4>
-                  <p className="text-green-700 text-sm mb-3">
-                    Sometimes, data gets clumped together. For example, the date and time of a transaction 
-                    might be in a single cell like "2023-10-15 14:30:22".
-                  </p>
-                  <p className="text-green-600 text-xs">
-                    <strong>Solution:</strong> Text-to-Columns lets you easily split that one column into two 
-                    separate, usable columns: one for the date and one for the time.
-                  </p>
+              <div className="bg-white p-6 rounded-lg border border-green-200 mb-6">
+                <h4 className="font-semibold text-green-900 mb-4">Worked Example: Last 5 weekends</h4>
+                <div className="font-mono text-lg mb-4">
+                  Weekend sales: $480, $520, $495, $510, $470
+                </div>
+                
+                <div className="space-y-2 text-green-700">
+                  <p><strong>Step 1:</strong> Add up all the values</p>
+                  <p className="pl-4">$480 + $520 + $495 + $510 + $470 = <strong>$2,475</strong></p>
+                  
+                  <p><strong>Step 2:</strong> Count how many values</p>
+                  <p className="pl-4">5 weekends</p>
+                  
+                  <p><strong>Step 3:</strong> Divide sum by count</p>
+                  <p className="pl-4">$2,475 ÷ 5 = <strong className="text-green-900 text-xl">$495</strong></p>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg border border-green-200">
-                  <Badge className="bg-green-100 text-green-800 mb-3">TRIM Function</Badge>
-                  <h4 className="font-semibold text-green-900 mb-2">Remove Extra Spaces</h4>
-                  <p className="text-green-700 text-sm mb-3">
-                    This is your data-tidying superhero. Often, exported data has extra, invisible spaces 
-                    at the beginning or end of text.
-                  </p>
-                  <p className="text-green-600 text-xs">
-                    <strong>Problem:</strong> "Espresso " and "Espresso" look the same to you, but Excel sees them 
-                    as two different things. TRIM fixes this automatically.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg border border-green-200">
-                  <Badge className="bg-green-100 text-green-800 mb-3">Remove Duplicates</Badge>
-                  <h4 className="font-semibold text-green-900 mb-2">Eliminate Copies</h4>
-                  <p className="text-green-700 text-sm mb-3">
-                    This powerful tool scans your dataset and eliminates any rows that are exact copies of each other.
-                  </p>
-                  <p className="text-green-600 text-xs">
-                    <strong>Critical:</strong> This prevents you from accidentally counting the same sale twice, 
-                    which would throw off all your totals and analysis.
+                <div className="mt-6 p-4 bg-green-100 rounded-lg">
+                  <p className="text-green-800 font-medium">
+                    The mean of $495 means: if the sales were spread out evenly across all 5 weekends, 
+                    each weekend would have made $495.
                   </p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
 
-          {/* Professional Best Practice */}
-          <Card className="border-amber-200 bg-amber-50">
-            <CardHeader>
-              <CardTitle className="text-amber-800 flex items-center gap-2">
-                ⚡ Professional Best Practice
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-white p-4 rounded-lg border border-amber-200">
-                <h3 className="font-semibold text-amber-900 mb-2">Always Work on a Copy</h3>
-                <p className="text-amber-800 text-lg leading-relaxed">
-                  Remember what the pros do: <strong>always work on a copy of the original data</strong>. 
-                  This way, you can always go back to the original file if you make a mistake. Follow a checklist, 
-                  document your steps, and soon you'll have a sparkling clean dataset—the solid foundation you 
-                  need to build your analysis.
-                </p>
-              </div>
-
-              <div className="mt-6 grid md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-lg border border-amber-200">
-                  <h4 className="font-semibold text-amber-900 mb-2">✅ The Right Way</h4>
-                  <ul className="text-amber-700 text-sm space-y-1">
-                    <li>• Save a backup copy first</li>
-                    <li>• Document each cleaning step</li>
-                    <li>• Check your work at each stage</li>
-                    <li>• Use consistent naming conventions</li>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <h4 className="font-semibold text-green-900 mb-2">✅ When Mean Works Well</h4>
+                  <ul className="text-green-700 text-sm space-y-1">
+                    <li>• Data is roughly symmetric (no extreme outliers)</li>
+                    <li>• You want to use every data point</li>
+                    <li>• The data represents a rate or ratio</li>
                   </ul>
                 </div>
-                <div className="bg-white p-4 rounded-lg border border-amber-200">
-                  <h4 className="font-semibold text-amber-900 mb-2">❌ What to Avoid</h4>
+                <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-900 mb-2">⚠️ When Mean Gets Distorted</h4>
                   <ul className="text-amber-700 text-sm space-y-1">
-                    <li>• Working directly on original files</li>
-                    <li>• Skipping documentation steps</li>
-                    <li>• Rushing through the cleaning process</li>
-                    <li>• Ignoring data validation checks</li>
+                    <li>• One extreme value pulls the average up or down</li>
+                    <li>• Data is highly skewed</li>
+                    <li>• You have outliers (like that $2,100 weekend!)</li>
                   </ul>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Vocabulary Practice */}
-          <FillInTheBlank
-            title="Master the Data Cleaning Vocabulary"
-            description="Fill in the blanks to complete these essential data cleaning concepts. This vocabulary is used in every professional data analysis project."
-            sentences={dataCleaningVocabulary}
-            showWordList={true}
-            randomizeWordOrder={true}
-            showHints={true}
-          />
-
-          {/* Why This Matters Connection */}
+          {/* Median - The Middle Value */}
           <Card className="border-purple-200 bg-purple-50">
             <CardHeader>
               <CardTitle className="text-purple-800 flex items-center gap-2">
-                🎯 Connecting to Sarah's Success
+                <Users className="h-5 w-5" />
+                Median: The Middle Value
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-purple-800 text-lg leading-relaxed">
-                When Sarah moved from her messy notebook system to building TechStart Solutions' smart ledger, 
-                the first thing she had to master was data cleaning. Every time she imported client information, 
-                expense receipts, or project timelines, she faced the same challenge you're learning to solve now.
+              <p className="text-purple-800 mb-4">
+                The median is the value exactly in the middle when you sort all values from smallest to largest.
+                Half the data is above it, half is below it.
               </p>
-              
-              <p className="text-purple-700 mt-4">
-                By mastering these three tools—Text-to-Columns, TRIM, and Remove Duplicates—Sarah was able to 
-                build reliable systems that impressed her clients and investors. These aren't just academic exercises; 
-                they're the building blocks of data-driven business success.
+
+              <div className="bg-white p-6 rounded-lg border border-purple-200 mb-6">
+                <h4 className="font-semibold text-purple-900 mb-4">Worked Example: Same 5 weekends</h4>
+                <div className="font-mono text-lg mb-4">
+                  Weekend sales: $480, $520, $495, $510, $470
+                </div>
+                
+                <div className="space-y-2 text-purple-700">
+                  <p><strong>Step 1:</strong> Sort the values from smallest to largest</p>
+                  <p className="pl-4">$470, $480, $495, $510, $520</p>
+                  
+                  <p><strong>Step 2:</strong> Find the middle position</p>
+                  <p className="pl-4">5 values → middle is position 3</p>
+                  
+                  <p><strong>Step 3:</strong> Read the middle value</p>
+                  <p className="pl-4">$470, $480, <strong>$495</strong>, $510, $520</p>
+                  
+                  <p className="mt-4"><strong>Median = $495</strong></p>
+                </div>
+
+                <div className="mt-6 p-4 bg-purple-100 rounded-lg">
+                  <p className="text-purple-800 font-medium">
+                    The median tells us: half the weekends made less than $495, and half made more. 
+                    It's not affected by one extreme value.
+                  </p>
+                </div>
+              </div>
+
+              {/* Odd vs Even Example */}
+              <div className="bg-white p-6 rounded-lg border border-purple-200">
+                <h4 className="font-semibold text-purple-900 mb-4">What if there's an even number of values?</h4>
+                <p className="text-purple-700 mb-4">
+                  6 weekends: $480, $520, $495, $510, $470, $460
+                </p>
+                <p className="text-purple-700">
+                  Sort: $460, $470, $480, $495, $510, $520
+                </p>
+                <p className="text-purple-700 mt-2">
+                  With 6 values, there are two middle positions (3 and 4). Take their average:
+                </p>
+                <p className="text-purple-800 font-mono mt-2">
+                  ($480 + $495) ÷ 2 = $487.50
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Spread - The Variability */}
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-800 flex items-center gap-2">
+                📏 Spread: How Much Do Values Vary?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-amber-800 mb-4">
+                Knowing the "typical" value isn't enough. Sarah also needs to know how consistent the data is.
+                Is sales pretty much the same every weekend, or does it jump around wildly?
+              </p>
+
+              <div className="bg-white p-6 rounded-lg border border-amber-200 mb-6">
+                <h4 className="font-semibold text-amber-900 mb-4">Two cafés, same average, very different</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="font-semibold text-amber-800 mb-2">Café A (Low Spread)</p>
+                    <p className="text-amber-700 text-sm mb-2">Weekends: $490, $500, $495, $505, $510</p>
+                    <p className="text-amber-700 text-sm">Mean: $500 | Range: $20</p>
+                    <p className="text-amber-600 text-sm mt-2">
+                      Predictable! Can plan inventory closely.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-amber-800 mb-2">Café B (High Spread)</p>
+                    <p className="text-amber-700 text-sm mb-2">Weekends: $200, $300, $500, $700, $900</p>
+                    <p className="text-amber-700 text-sm">Mean: $500 | Range: $700</p>
+                    <p className="text-amber-600 text-sm mt-2">
+                      Wild variation! Harder to plan inventory.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-900 mb-2">Range</h4>
+                  <p className="text-amber-700 text-sm">
+                    <strong>Maximum - Minimum</strong><br/>
+                    Quick measure of spread. Tells you the full span, but sensitive to outliers.
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-900 mb-2">Interpreting Spread</h4>
+                  <p className="text-amber-700 text-sm">
+                    <strong>Low spread</strong> = values cluster near center, easier to predict<br/>
+                    <strong>High spread</strong> = values scatter widely, harder to forecast
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Quick Reference Table */}
+          <Card className="border-slate-200 bg-slate-50">
+            <CardHeader>
+              <CardTitle className="text-slate-800">📋 Quick Reference</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full text-sm">
+                <thead className="bg-slate-100">
+                  <tr>
+                    <th className="p-3 text-left">Measure</th>
+                    <th className="p-3 text-left">What It Tells You</th>
+                    <th className="p-3 text-left">Best When...</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr>
+                    <td className="p-3 font-medium">Mean</td>
+                    <td className="p-3">Balancing point of all data</td>
+                    <td className="p-3">Data is symmetric, no outliers</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-medium">Median</td>
+                    <td className="p-3">True middle value</td>
+                    <td className="p-3">Data has outliers or is skewed</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-medium">Range</td>
+                    <td className="p-3">Full span from min to max</td>
+                    <td className="p-3">Quick check, no outliers</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          {/* Connection to Business */}
+          <Card className="border-indigo-200 bg-indigo-50">
+            <CardHeader>
+              <CardTitle className="text-indigo-800 flex items-center gap-2">
+                🎯 Sarah's Business Decision
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-indigo-800 mb-4">
+                Now Sarah can answer her "What's normal?" question with real statistics:
+              </p>
+              <div className="bg-white p-4 rounded-lg border border-indigo-200 mb-4">
+                <ul className="text-indigo-700 space-y-2">
+                  <li><strong>Mean:</strong> $495 (but remember that $2,100 outlier!)</li>
+                  <li><strong>Median:</strong> $495 (same as mean here—coincidence?)</li>
+                  <li><strong>Range:</strong> $1,715 (from $445 to $2,160)</li>
+                </ul>
+              </div>
+              <p className="text-indigo-700">
+                The median and mean being equal is a clue—the outlier might be pulling the mean up. 
+                In the next lesson, we'll learn what to do when a value seems "wrong."
               </p>
             </CardContent>
           </Card>
