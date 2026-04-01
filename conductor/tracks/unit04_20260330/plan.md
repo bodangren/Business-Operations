@@ -76,20 +76,20 @@
 
 ## Phase 3: Lessons 05-06 (Excel)
 - [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.1.2 Implement Phase 1-6 with data cleaning and analysis
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [x] 3.1.2 Implement Phase 1-6 with data cleaning and analysis
     - Phase 1: Open with business scenario where data cleaning matters, make tool feel necessary
     - Phase 2: Name data-cleaning pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task focusing on trustworthiness and business communication
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Teach the exact tool anatomy for cleaning and analysis
-  - [ ] 3.1.4 Include a safe rehearsal before the workbook or tool sprint
-  - [ ] 3.1.5 Require a real cleaned dataset and first statistical outputs
+  - [x] 3.1.3 Teach the exact tool anatomy for cleaning and analysis
+  - [x] 3.1.4 Include a safe rehearsal before the workbook or tool sprint
+  - [x] 3.1.5 Require a real cleaned dataset and first statistical outputs
   - **Done when**:
-    - [ ] The dataset is cleaned and analysis-ready
-    - [ ] Students can explain why each Excel step matters
+    - [x] The dataset is cleaned and analysis-ready
+    - [x] Students can explain why each Excel step matters
 
 - [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
