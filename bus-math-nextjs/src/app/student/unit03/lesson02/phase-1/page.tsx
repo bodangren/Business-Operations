@@ -10,41 +10,41 @@ import { lesson02Data, lesson02Phases, unit03Data } from "../lesson-data"
 const hookQuestions = [
   {
     id: 'hook-1',
-    question: 'Sarah has her automated ledger working perfectly. What problem does she face when trying to get a business loan?',
+    question: 'Sarah has her automated ledger working perfectly from Unit 01. What problem does she face when the bank asks for financial statements?',
     answers: [
-      'The bank wants to see "real financial statements" instead of her internal ledger',
+      'The bank wants a formal Income Statement, not a list of individual transactions',
       'Her ledger has calculation errors',
-      'She doesn\'t have enough money in her business',
-      'Her CPA Jennifer Kim won\'t help her'
+      'She does not have enough money in her business',
+      'Her CPA Jennifer Kim will not help her'
     ],
-    explanation: 'Banks and investors need standardized financial statements that follow accounting principles, not just internal tracking systems.'
+    explanation: 'A ledger records every transaction, but a bank needs to see the summarized story: how much revenue came in, how much went out as expenses, and what profit remains. That summary is the Income Statement.'
   },
   {
     id: 'hook-2',
-    question: 'What does Jennifer Kim call the three financial statements?',
+    question: 'Look at this list of Sarah\'s March transactions. Which single number tells the bank if her business was profitable?',
     answers: [
-      'A "storyboard" for the business',
-      'A "financial report card"',
-      'A "money tracking system"',
-      'A "business summary"'
+      'You cannot tell from the raw list—you must group revenues and expenses and calculate Net Income',
+      'The largest single transaction amount',
+      'The total of all cash received',
+      'The number of transactions completed'
     ],
-    explanation: 'Jennifer describes the financial statements as a storyboard because they tell a complete narrative about the business\'s financial health.'
+    explanation: 'A raw transaction list mixes revenue, expense, asset, and liability entries together. You must sort and group them before any profit number appears.'
   },
   {
     id: 'hook-3',
-    question: 'The Income Statement tells which part of the business story?',
+    question: 'Jennifer Kim tells Sarah that the Income Statement answers one main question. What is it?',
     answers: [
-      'The plot - is the business profitable?',
-      'The setting - what the business owns',
-      'The action - how cash moves',
-      'The ending - future predictions'
+      'Did the business earn more than it spent during this period?',
+      'What does the business own right now?',
+      'How much cash is in the bank today?',
+      'How many customers did the business serve?'
     ],
-    explanation: 'The Income Statement reveals the "plot" by showing whether the business made or lost money over a period of time.'
+    explanation: 'The Income Statement shows financial performance over a period by answering: Revenues minus Expenses equals what? That answer is Net Income—the profit signal.'
   }
 ]
 
 export default function Phase1Page() {
-  const currentPhase = lesson02Phases[0] // Hook phase
+  const currentPhase = lesson02Phases[0]
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -56,138 +56,112 @@ export default function Phase1Page() {
       />
 
       <div className="space-y-8">
-        {/* Opening Hook */}
         <Card className="border-red-200 bg-red-50">
           <CardHeader>
-            <CardTitle className="text-red-800 text-2xl">The Day the Spreadsheet Wasn't Enough</CardTitle>
+            <CardTitle className="text-red-800 text-2xl">The Day the Ledger Was Not Enough</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg leading-relaxed">
-                Sarah walked into the bank with complete confidence. Her automated ledger from Unit 2 was 
-                working perfectly—every transaction tracked, every formula calculating correctly, and her 
-                month-end chaos was finally under control. This massive e-commerce project could put 
-                TechStart Solutions on the map, but she needed a business line of credit to handle the 
-                additional resources.
+                Sarah walked into the bank with her Unit 01 ledger open on her laptop. Every transaction 
+                was recorded. Every formula calculated correctly. She was proud of how far she had come 
+                from the spreadsheet chaos of her first month.
               </p>
 
               <p className="text-lg leading-relaxed">
-                After reviewing Sarah's detailed spreadsheet, the loan officer said something that stopped 
-                her in her tracks: <strong>"This is nice, but where are your financial statements?"</strong>
+                The loan officer scrolled through the rows of journal entries for a long moment. Then 
+                she looked up and said: <strong>"This is thorough, but I cannot read a profit story from 
+                a transaction list. Can you bring me an Income Statement?"</strong>
               </p>
 
               <p className="text-lg leading-relaxed">
-                At almost the same moment, her mentor introduced her to a potential investor who asked 
-                the exact same question. Sarah realized that her internal records, as accurate as they 
-                were, were for <em>her</em>. The rest of the professional world needed to see the official 
-                story of her company's health through three specific documents.
+                Sarah froze. She knew her numbers were right. But the loan officer was also right—a 
+                ledger shows <em>what happened</em>, not <em>what it means</em>. Sarah needed to 
+                transform her raw entries into a structured report that answered one question clearly: 
+                <strong>did the business earn more than it spent?</strong>
               </p>
             </div>
 
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <h3 className="font-semibold text-blue-900 mb-2">Why This Matters</h3>
+              <h3 className="font-semibold text-blue-900 mb-2">The Friction Point</h3>
               <p className="text-blue-800">
-                Understanding how to build professional financial statements isn't just about following 
-                accounting rules—it's about speaking the language that investors, banks, and business 
-                partners understand. When you can present your financial story clearly, you unlock 
-                opportunities for funding, partnerships, and growth.
+                A trial balance or ledger lists every account with its ending balance. But it does not 
+                tell you which accounts belong together, which ones measure profit, and which ones 
+                belong on a different statement entirely. Today you will learn the rule that turns a 
+                flat list of accounts into a clear Income Statement.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* The Financial Storyboard Concept */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl">Jennifer's Financial Storyboard</CardTitle>
+            <CardTitle className="text-xl">Sarah's March Trial Balance (Partial)</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="prose prose-lg max-w-none space-y-4">
               <p>
-                Jennifer Kim, Sarah's CPA, described the three financial statements as a <strong>"storyboard" 
-                for the business"</strong>. This became Sarah's central challenge: <strong>How do today's journal 
-                entries flow into a narrative of profit, solvency, and cash health that investors can trust?</strong>
+                Here is what Sarah handed the loan officer—a partial trial balance from her March 
+                ledger. Look at it for a moment. Can you tell if her business was profitable?
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-                <Card className="border-green-200 bg-green-50">
-                  <CardHeader>
-                    <CardTitle className="text-green-800 text-lg flex items-center gap-2">
-                      📈 The Income Statement
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-green-700 text-sm">
-                      <strong>The Plot:</strong> Is the business profitable? This shows revenues minus 
-                      expenses over a specific time period.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-blue-200 bg-blue-50">
-                  <CardHeader>
-                    <CardTitle className="text-blue-800 text-lg flex items-center gap-2">
-                      ⚖️ The Balance Sheet
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-blue-700 text-sm">
-                      <strong>The Setting:</strong> What does the business own versus what does it owe? 
-                      This shows the financial position at one moment in time.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-purple-200 bg-purple-50">
-                  <CardHeader>
-                    <CardTitle className="text-purple-800 text-lg flex items-center gap-2">
-                      💰 Statement of Cash Flows
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-purple-700 text-sm">
-                      <strong>The Action:</strong> How is cash actually moving through the business? 
-                      This tracks real money flow, not just accounting profits.
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="overflow-x-auto">
+                <table className="min-w-full text-sm border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Account</th>
+                      <th className="border border-gray-300 px-4 py-2 text-right">Debit</th>
+                      <th className="border border-gray-300 px-4 py-2 text-right">Credit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td className="border border-gray-300 px-4 py-2">Cash</td><td className="border border-gray-300 px-4 py-2 text-right">$8,500</td><td className="border border-gray-300 px-4 py-2"></td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Accounts Receivable</td><td className="border border-gray-300 px-4 py-2 text-right">$2,200</td><td className="border border-gray-300 px-4 py-2"></td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Service Revenue</td><td className="border border-gray-300 px-4 py-2"></td><td className="border border-gray-300 px-4 py-2 text-right">$6,800</td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Rent Expense</td><td className="border border-gray-300 px-4 py-2 text-right">$1,200</td><td className="border border-gray-300 px-4 py-2"></td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Salary Expense</td><td className="border border-gray-300 px-4 py-2 text-right">$2,400</td><td className="border border-gray-300 px-4 py-2"></td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Supplies Expense</td><td className="border border-gray-300 px-4 py-2 text-right">$350</td><td className="border border-gray-300 px-4 py-2"></td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Common Stock</td><td className="border border-gray-300 px-4 py-2"></td><td className="border border-gray-300 px-4 py-2 text-right">$5,000</td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Equipment</td><td className="border border-gray-300 px-4 py-2 text-right">$3,500</td><td className="border border-gray-300 px-4 py-2"></td></tr>
+                    <tr><td className="border border-gray-300 px-4 py-2">Accounts Payable</td><td className="border border-gray-300 px-4 py-2"></td><td className="border border-gray-300 px-4 py-2 text-right">$1,150</td></tr>
+                  </tbody>
+                </table>
               </div>
 
               <p>
-                Today we'll focus on the first part of this storyboard—learning how to build an Income 
-                Statement that dynamically pulls from Sarah's ledger data. This is where the plot of 
-                her business story begins to unfold.
+                The loan officer cannot answer the profit question from this table alone. The revenue 
+                and expense accounts are mixed in with assets, liabilities, and equity. Someone needs 
+                to <strong>pull out only the revenue and expense accounts, group them, and subtract</strong>. 
+                That is exactly what you will learn to do in this lesson.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Comprehension Check */}
         <ComprehensionCheck
-          title="Hook: Understanding the Challenge"
-          description="Test your understanding of why Sarah needed to move beyond her internal spreadsheet."
+          title="Notice the Problem"
+          description="Check that you can see why the trial balance alone does not answer the profit question."
           questions={hookQuestions}
           showExplanations={true}
         />
 
-        {/* Preview of What's Coming */}
         <Card className="border-indigo-200 bg-indigo-50">
           <CardHeader>
-            <CardTitle className="text-indigo-800">What We'll Learn Today</CardTitle>
+            <CardTitle className="text-indigo-800">What You Will Learn Today</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <Badge className="bg-indigo-600">1</Badge>
-                <p className="text-indigo-700">How to structure an Income Statement using the formula: Revenues - Expenses = Net Income</p>
+                <p className="text-indigo-700">How to identify which accounts belong on the Income Statement and which belong elsewhere</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge className="bg-indigo-600">2</Badge>
-                <p className="text-indigo-700">How to use INDEX/MATCH formulas to create dynamic links between your ledger and financial statements</p>
+                <p className="text-indigo-700">How to group revenue accounts and expense accounts into clear sections</p>
               </div>
               <div className="flex items-start gap-3">
                 <Badge className="bg-indigo-600">3</Badge>
-                <p className="text-indigo-700">How to build professional financial reports that automatically update when new transactions are added</p>
+                <p className="text-indigo-700">How to calculate Net Income and explain what it tells you about the business</p>
               </div>
             </div>
           </CardContent>

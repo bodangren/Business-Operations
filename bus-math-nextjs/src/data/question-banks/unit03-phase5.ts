@@ -151,11 +151,11 @@ const lesson02Questions: Unit03Phase5Question[] = [
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
     prompt: "Sarah needs to show her bank that TechStart Solutions is profitable. Which financial statement tells this part of her business story?",
-    correctAnswer: "Income Statement - it shows whether revenues exceed expenses over a time period",
+    correctAnswer: "Income Statement — it shows whether revenues exceed expenses over a time period",
     distractors: [
-      "Balance Sheet - it shows what she owns versus what she owes",
-      "Statement of Cash Flows - it shows how cash moves through the business",
-      "Trial Balance - it shows all account balances at a point in time"
+      "Balance Sheet — it shows what she owns versus what she owes",
+      "Statement of Cash Flows — it shows how cash moves through the business",
+      "Trial Balance — it shows all account balances at a point in time"
     ],
     explanation: "The Income Statement is the financial statement that reveals profitability by comparing revenues to expenses, making it the 'plot' of the business story.",
     objectiveTags: ["income-statement", "profitability", "financial-statements"]
@@ -164,99 +164,99 @@ const lesson02Questions: Unit03Phase5Question[] = [
     id: "lesson02-q2",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "Why does Jennifer Kim recommend using INDEX/MATCH instead of copying and pasting numbers into the Income Statement?",
-    correctAnswer: "INDEX/MATCH creates dynamic formulas that automatically update when new transactions are added to the ledger",
+    prompt: "You receive a trial balance with 14 accounts. What is the first step in building an Income Statement from it?",
+    correctAnswer: "Identify and pull out only the revenue and expense accounts from the full list",
     distractors: [
-      "INDEX/MATCH is faster to type than copying and pasting values manually",
-      "Banks require the use of complex formulas for all loan approval decisions",
-      "INDEX/MATCH prevents all calculation errors from occurring in spreadsheets"
+      "Add up all the debit balances and subtract all the credit balances",
+      "Copy every number into a new table in the same order",
+      "Start with the largest account and work downward"
     ],
-    explanation: "Dynamic formulas like INDEX/MATCH create live links between the trial balance and financial statements, ensuring automatic updates and maintaining data integrity.",
-    objectiveTags: ["excel-automation", "INDEX-MATCH", "dynamic-formulas"]
+    explanation: "The first step is to separate revenue and expense accounts from assets, liabilities, and equity. Only revenue and expense accounts belong on the Income Statement.",
+    objectiveTags: ["income-statement", "account-classification", "procedure"]
   },
   {
     id: "lesson02-q3",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "If Sarah's Service Revenue account shows $8,500 and her total Operating Expenses are $4,200, what is her Net Income and what does this tell investors?",
-    correctAnswer: "Net Income is $4,300, showing the business is profitable and generating positive returns",
+    prompt: "A trial balance shows: Service Revenue $8,500, Rent Expense $1,800, Salary Expense $3,200, Supplies Expense $650, Cash $9,200, Equipment $4,500. What is Net Income?",
+    correctAnswer: "$2,850 (Revenue $8,500 minus Expenses $1,800 + $3,200 + $650 = $5,650)",
     distractors: [
-      "Net Income is $12,700, calculated by adding revenue and expenses together",
-      "Net Income cannot be determined without more detailed financial information",
-      "Net Income is negative, indicating the business is losing money each month"
+      "$11,050 (adding all positive numbers together)",
+      "$8,500 (using only the revenue amount)",
+      "$1,350 (subtracting Cash from Revenue)"
     ],
-    explanation: "Net Income = Revenues - Expenses = $8,500 - $4,200 = $4,300. Positive Net Income demonstrates profitability, which is a key indicator investors look for.",
-    objectiveTags: ["net-income", "calculation", "profitability"]
+    explanation: "Net Income = Total Revenue minus Total Expenses. Revenue is $8,500. Expenses are $1,800 + $3,200 + $650 = $5,650. Net Income = $8,500 − $5,650 = $2,850. Cash and Equipment are Balance Sheet accounts and do not appear on the Income Statement.",
+    objectiveTags: ["net-income", "calculation", "account-classification"]
   },
   {
     id: "lesson02-q4",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "In the accounting equation (Assets = Liabilities + Equity), which accounts from the trial balance flow into the Income Statement?",
-    correctAnswer: "Revenue and Expense accounts flow into the Income Statement to calculate Net Income",
+    prompt: "A trial balance includes 'Owner's Draw' of $1,500 (debit). Should this appear on the Income Statement?",
+    correctAnswer: "No — Owner's Draw is an equity withdrawal, not a business expense. It belongs on the Statement of Equity, not the Income Statement.",
     distractors: [
-      "Asset and Liability accounts are used to build the Income Statement structure",
-      "Only Equity accounts appear on the Income Statement for ownership reporting",
-      "All trial balance accounts are included in the Income Statement without exception"
+      "Yes — it is money leaving the business, so it is an expense",
+      "Yes — but only if the amount is larger than $1,000",
+      "Only on the Cash Flow Statement, never on the Income Statement"
     ],
-    explanation: "Only Revenue and Expense accounts from the trial balance flow into the Income Statement. Assets, Liabilities, and Equity accounts appear on the Balance Sheet.",
-    objectiveTags: ["accounting-equation", "account-classification", "trial-balance"]
+    explanation: "Owner's Draw is a withdrawal of the owner's equity stake, not a cost of running the business. It reduces equity on the Balance Sheet but does not affect Net Income. Including it as an expense would understate profitability.",
+    objectiveTags: ["account-classification", "owners-draw", "misconception"]
   },
   {
     id: "lesson02-q5",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "What happens to Sarah's Income Statement if she adds a new client project worth $3,000 to her trial balance and her statements are built with INDEX/MATCH formulas?",
-    correctAnswer: "The Income Statement automatically updates to include the new revenue and recalculates Net Income",
+    prompt: "Why do you add up all revenue accounts separately and all expense accounts separately before subtracting?",
+    correctAnswer: "It lets you verify each group is complete and makes it easier to find errors if the final number looks wrong",
     distractors: [
-      "She must manually add the $3,000 to her Income Statement line by line",
-      "The Income Statement shows an error until she rebuilds it completely from scratch",
-      "Nothing changes until she updates her Excel formulas to reference the new data"
+      "It is required by GAAP accounting standards for all businesses",
+      "It makes the Income Statement look longer and more professional",
+      "It prevents any calculation errors from ever occurring"
     ],
-    explanation: "Dynamic INDEX/MATCH formulas create live links, so when new transactions are added to the trial balance, the Income Statement automatically reflects these changes.",
-    objectiveTags: ["dynamic-formulas", "INDEX-MATCH", "automation"]
+    explanation: "Adding each group separately creates a checkpoint. If Total Revenue or Total Expenses looks off, you can trace back to the individual accounts. Subtracting one account at a time makes errors harder to spot.",
+    objectiveTags: ["procedure", "accuracy", "verification"]
   },
   {
     id: "lesson02-q6",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "Why is it crucial for Sarah to categorize her Rent Expense correctly in the trial balance when building her Income Statement?",
-    correctAnswer: "Incorrect categorization could misstate her business expenses and mislead investors about her true profitability",
+    prompt: "After building the Income Statement, Sarah's Net Income is negative $420. What does this mean?",
+    correctAnswer: "Total expenses exceeded total revenue — the business had a net loss for this period",
     distractors: [
-      "Rent is the largest expense so it matters most for total calculations",
-      "The bank specifically looks at rent expenses when making all loan decisions",
-      "Excel formulas won't work properly if expense categories are labeled wrong"
+      "She made a calculation error because businesses always make a profit",
+      "The Income Statement is missing revenue accounts",
+      "The business needs to raise its prices immediately"
     ],
-    explanation: "Proper categorization ensures accurate financial reporting. Misclassifying expenses could make the business appear more or less profitable than it actually is, misleading investors and lenders.",
-    objectiveTags: ["categorization", "accuracy", "data-integrity"]
+    explanation: "A negative Net Income (a net loss) means expenses were greater than revenue. It does not automatically indicate an error — some businesses operate at a loss, especially early on. But it is a signal the owner must address.",
+    objectiveTags: ["net-income", "interpretation", "net-loss"]
   },
   {
     id: "lesson02-q7",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "Jennifer Kim describes the three financial statements as a 'storyboard.' In this analogy, what specific story does the Income Statement tell?",
-    correctAnswer: "The plot: whether the business made or lost money during a specific period",
+    prompt: "A trial balance has two revenue accounts: Service Revenue $8,400 and Sales Revenue $2,100. What is the correct Total Revenue line on the Income Statement?",
+    correctAnswer: "$10,500 — add all revenue accounts together",
     distractors: [
-      "The setting: what the business owns and what it owes at a moment in time",
-      "The action: how cash actually moved in and out of the business operations",
-      "The ending: predictions about future business performance and growth potential"
+      "$8,400 — use only the largest revenue account",
+      "$6,300 — subtract Sales Revenue from Service Revenue",
+      "$2,100 — use only the Sales Revenue account"
     ],
-    explanation: "The Income Statement tells the 'plot' by revealing whether the business was profitable over a specific time period, answering the fundamental question: did the business make money?",
-    objectiveTags: ["financial-storytelling", "income-statement", "concepts"]
+    explanation: "Total Revenue is the sum of all revenue accounts. Both Service Revenue and Sales Revenue represent money earned, so they add together: $8,400 + $2,100 = $10,500.",
+    objectiveTags: ["revenue", "calculation", "procedure"]
   },
   {
     id: "lesson02-q8",
     lessonId: "lesson02",
     lessonTitle: "Lesson 02 - Income Statement Construction",
-    prompt: "A potential investor asks Sarah, 'How do I know your business can consistently generate profit?' Which aspect of Income Statement construction best addresses this question?",
-    correctAnswer: "Dynamic formulas that automatically update monthly Income Statements showing consistent profitability trends",
+    prompt: "Which accounts from a trial balance should NOT appear on the Income Statement?",
+    correctAnswer: "Cash, Equipment, Accounts Payable, Common Stock, and Owner's Draw — these are Balance Sheet accounts",
     distractors: [
-      "A single Income Statement showing one profitable month of operations",
-      "The total amount of revenue without considering any business expenses",
-      "A detailed list of all business assets owned by the company"
+      "All accounts from the trial balance should appear on the Income Statement",
+      "Only the largest accounts should be left off the Income Statement",
+      "Revenue accounts should not appear on the Income Statement"
     ],
-    explanation: "Consistent profitability over time is best demonstrated through a series of Income Statements that automatically update with dynamic formulas, showing sustainable profit generation rather than a one-time result.",
-    objectiveTags: ["investor-communication", "profitability-trends", "automation"]
+    explanation: "The Income Statement includes only revenue and expense accounts. Assets (Cash, Equipment), Liabilities (Accounts Payable), and Equity (Common Stock, Owner's Draw) belong on the Balance Sheet or Statement of Equity.",
+    objectiveTags: ["account-classification", "balance-sheet", "income-statement"]
   }
 ];
 

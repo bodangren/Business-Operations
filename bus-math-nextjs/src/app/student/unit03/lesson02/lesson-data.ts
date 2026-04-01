@@ -1,22 +1,26 @@
-// Three-Statement Storyboard, Lesson 2 data - extracted from MCP curriculum database
+// Three-Statement Storyboard, Lesson 2 data - Income Statement Construction
 export const lesson02Data = {
   id: "mds5via0a28uttjod1",
-  title: "Skill Introduction: Income Statement Construction",
+  title: "Build the Income Statement",
   sequence: 2,
   unitId: "mdrhlhuxj2zkbimaqfd",
   learningObjectives: [
-    "Construct accurate Income Statement from trial balance data",
-    "Use INDEX/MATCH functions for dynamic cross-sheet data retrieval"
+    "Construct an accurate Income Statement from trial balance or journal data",
+    "Group revenue and expense accounts into correct Income Statement categories",
+    "Interpret Net Income as the profitability signal for business decisions"
   ],
   keyConcepts: [
-    "Income Statement construction from journal entry data",
-    "Cross-sheet linking with INDEX/MATCH and named ranges"
+    "Income Statement construction from trial balance data",
+    "Revenue and expense grouping logic",
+    "Net Income calculation and interpretation"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Direct instruction on building Income Statement from trial balance data"
+    "Direct instruction on building Income Statement from trial balance data",
+    "Worked examples with visible intermediate values",
+    "Algorithmic deliberate practice for mastery"
   ],
-  rationale: "To equip students with the technical skills needed to build dynamic financial statements.",
+  rationale: "To equip students with the ability to prepare and interpret a basic income statement before automating it in Excel.",
   status: "Draft"
 }
 
@@ -26,48 +30,42 @@ export const unit03Data = {
   sequence: 3
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases following the accounting-principles skill contract
 export const lesson02Phases = [
   {
-    id: "phase_hook_2",
+    id: "phase_1_recycle_2",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to Income Statement Construction",
-    // component: "IncomeStatementDetailed" (id: 1753927745716dmlfuxuab) - To show a detailed, professional income statement.
+    description: "Reconnect to Unit 01 journal entries and surface the friction point: a list of transactions is not a financial statement.",
   },
   {
-    id: "phase_introduction_2",
+    id: "phase_2_explicit_2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Direct instruction on Income Statement construction from journal entry data with clear examples and business context",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Name the method, model the procedure step by step, and walk through a worked example with visible intermediate values and grouping logic.",
   },
   {
-    id: "phase_guided_practice_2",
+    id: "phase_3_deepen_2",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Step-by-step construction of models with guided coaching and error correction",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building an income statement in a template.
+    description: "Add a meaningful complication (more accounts, rounding, or ambiguous items), reduce prompts, and shift toward authentic accounting notation.",
   },
   {
-    id: "phase_independent_practice_2",
+    id: "phase_4_mastery_2",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Income Statement construction from journal entry data independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice building an income statement in a template.
+    description: "Repeated income statement construction practice with varied numbers, automatic checking, feedback after submission, and a mastery target.",
   },
   {
-    id: "phase_assessment_2",
+    id: "phase_5_assessment_2",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Short MCQ exit ticket on income statement construction, interpretation, and common misconceptions.",
   },
   {
-    id: "phase_closing_2",
+    id: "phase_6_reflection_2",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on confidence and understanding, connect to the business problem, identify method signals, and preview balance sheet effects.",
   }
 ]
