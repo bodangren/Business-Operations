@@ -83,6 +83,43 @@ export default function Phase2Page() {
           </p>
         </section>
 
+        <Card className="border-blue-200 bg-blue-50">
+          <CardHeader>
+            <CardTitle className="text-blue-900 flex items-center gap-2">
+              <Calculator className="h-5 w-5" />
+              Payroll Scoreboard: The Four Numbers That Matter
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-blue-900">
+            <p className="text-sm font-medium">Before calculating any deductions, Sarah must know the gross pay. Here's the scoreboard she'll track for every employee:</p>
+            <div className="grid gap-4 md:grid-cols-4">
+              <div className="bg-white p-3 rounded-lg border border-blue-200 text-center">
+                <div className="text-xs uppercase tracking-wide text-slate-500 mb-1">1. Gross Pay</div>
+                <div className="text-2xl font-bold text-blue-700">$2,240.00</div>
+                <div className="text-xs text-slate-600 mt-1">Hourly × Hours or Salary ÷ Periods</div>
+              </div>
+              <div className="bg-white p-3 rounded-lg border border-blue-200 text-center">
+                <div className="text-xs uppercase tracking-wide text-slate-500 mb-1">2. Employee Deductions</div>
+                <div className="text-2xl font-bold text-blue-700">−$642.18</div>
+                <div className="text-xs text-slate-600 mt-1">Fed + State + FICA + Benefits</div>
+              </div>
+              <div className="bg-white p-3 rounded-lg border border-blue-200 text-center">
+                <div className="text-xs uppercase tracking-wide text-slate-500 mb-1">3. Net Pay (Employee)</div>
+                <div className="text-2xl font-bold text-emerald-700">$1,597.82</div>
+                <div className="text-xs text-slate-600 mt-1">What lands in the bank</div>
+              </div>
+              <div className="bg-white p-3 rounded-lg border border-blue-200 text-center">
+                <div className="text-xs uppercase tracking-wide text-slate-500 mb-1">4. Employer Cost</div>
+                <div className="text-2xl font-bold text-amber-700">$171.36</div>
+                <div className="text-xs text-slate-600 mt-1">SS + Medicare match</div>
+              </div>
+            </div>
+            <p className="text-sm">
+              <strong>Sarah's cash requirement:</strong> Net Pay ($1,597.82) + Employer Cost ($171.36) = <strong>$1,769.18</strong> per bi-weekly period for Alex alone.
+            </p>
+          </CardContent>
+        </Card>
+
         <section className="grid gap-6 md:grid-cols-2">
           <Card className="border-slate-200 bg-white/90">
             <CardHeader>

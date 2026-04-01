@@ -6,7 +6,7 @@ import { lesson02Data, lesson02Phases, unit05Data } from "../lesson-data"
 import { PaystubPreview } from "@/components/payroll/PaystubPreview"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users } from "lucide-react"
+import { Users, Calculator, TrendingUp } from "lucide-react"
 
 const currentPhase = lesson02Phases[0]
 
@@ -63,7 +63,7 @@ const hookQuestions = [
       "He had to lend money to a coworker."
     ],
     explanation:
-      "Alex's first paycheck shows the classic gap between gross pay and take-home pay. The deductions reduced his spending power by more than $600."
+      "Alex's first paycheck shows the classic gap between gross pay and net pay. The deductions reduced his spending power by more than $600."
   },
   {
     id: "paystub_expectation",
@@ -91,6 +91,28 @@ const hookQuestions = [
   }
 ]
 
+const hourlyScenario = {
+  hourlyRate: 28,
+  hoursWorked: 80,
+  grossPay: 2240,
+  employeeType: "hourly"
+}
+
+const salariedScenario = {
+  annualSalary: 90000,
+  payPeriods: 26,
+  grossPay: 3461.54,
+  employeeType: "salaried"
+}
+
+const tippedScenario = {
+  regularWages: 480,
+  tipsReported: 312,
+  totalHours: 40,
+  grossPay: 792,
+  employeeType: "tipped"
+}
+
 export default function Phase1Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-100">
@@ -117,6 +139,45 @@ export default function Phase1Page() {
 
           <PaystubPreview {...paystubStory} />
         </section>
+
+        <Card className="border-amber-200 bg-amber-50">
+          <CardHeader>
+            <CardTitle className="text-amber-900 flex items-center gap-2">
+              <TrendingUp className="h-5 w-5" />
+              The Friction Point: Before Deductions, We Need Gross Pay
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-amber-900">
+            <p className="font-medium">Here's the problem Sarah faces:</p>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="bg-white p-4 rounded-lg border border-amber-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="h-4 w-4" />
+                  <span className="font-semibold">Hourly Worker</span>
+                </div>
+                <p className="text-sm">Alex earns <strong>$28/hour</strong> × <strong>80 hours</strong> = <span className="font-mono">${hourlyScenario.grossPay.toLocaleString()}</span></p>
+              </div>
+              <div className="bg-white p-4 rounded-lg border border-amber-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <Calculator className="h-4 w-4" />
+                  <span className="font-semibold">Salaried Manager</span>
+                </div>
+                <p className="text-sm">$90,000/year ÷ <strong>26 pay periods</strong> = <span className="font-mono">${salariedScenario.grossPay.toLocaleString(undefined, {minimumFractionDigits: 2})}</span></p>
+              </div>
+              <div className="bg-white p-4 rounded-lg border border-amber-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="h-4 w-4" />
+                  <span className="font-semibold">Tipped Server</span>
+                </div>
+                <p className="text-sm">$12/hour × 40 + <strong>$312 tips</strong> = <span className="font-mono">${tippedScenario.grossPay.toLocaleString()}</span></p>
+              </div>
+            </div>
+            <p className="text-sm">
+              <strong>Question:</strong> Before Sarah can calculate any deductions, she needs to know the starting number. 
+              How does she calculate gross pay for each employee type? What happens if she uses the wrong formula?
+            </p>
+          </CardContent>
+        </Card>
 
         <section className="grid gap-8 lg:grid-cols-[2fr,1fr]">
           <Card className="border-blue-200 bg-white/80 shadow-md">

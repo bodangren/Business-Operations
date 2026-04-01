@@ -41,21 +41,21 @@
     - [x] Students can explain why payroll is both a people issue and a cash-flow issue
     - [x] The lesson points clearly to payroll calculation logic next
 
-- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
-  - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
-  - [ ] 2.2.2 Implement Phase 1-6 with gross pay calculations
+- [x] 2.2 **Lesson 02** - Implement accounting-principles skill
+  - [x] 2.2.1 Update lesson-data.ts for Lesson 02
+  - [x] 2.2.2 Implement Phase 1-6 with gross pay calculations
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and employee scenarios
     - Phase 3: Add meaningful complication (more complex pay calculations), reduce prompts, shift toward cleaner payroll layouts
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on gross pay logic, not Excel function names
     - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
-  - [ ] 2.2.3 Use concrete employee scenarios before abstract formula language
-  - [ ] 2.2.4 Keep strong representational supports in Phases 2-3
-  - [ ] 2.2.5 Use Phase 4 for repeated gross-pay calculation with reduced scaffolding
+  - [x] 2.2.3 Use concrete employee scenarios before abstract formula language
+  - [x] 2.2.4 Keep strong representational supports in Phases 2-3
+  - [x] 2.2.5 Use Phase 4 for repeated gross-pay calculation with reduced scaffolding
   - **Done when**:
-    - [ ] Students can calculate gross pay for multiple employee types
-    - [ ] Phase 5 checks pay logic, not Excel function names
+    - [x] Students can calculate gross pay for multiple employee types
+    - [x] Phase 5 checks pay logic, not Excel function names
 
 - [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
   - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
