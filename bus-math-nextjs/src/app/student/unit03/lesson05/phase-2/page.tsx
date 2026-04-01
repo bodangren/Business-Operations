@@ -10,33 +10,33 @@ const currentPhase = lesson05Phases[1]
 const vocabSentences = [
   {
     id: 'v1',
-    text: 'Use {blank} like Table[Amount] so formulas auto‑expand with new rows.',
-    answer: 'structured references',
-    hint: 'Table[Column] style references'
+    text: 'A cross-sheet reference like ={blank}!B12 pulls a value from another tab into your current sheet.',
+    answer: "'Income Statement'",
+    hint: 'The sheet name in single quotes followed by an exclamation point'
   },
   {
     id: 'v2',
-    text: 'Map AccountID → StatementLine with {blank} and the if_not_found argument.',
-    answer: 'XLOOKUP',
-    hint: 'Safer than VLOOKUP, supports exact match by default'
+    text: 'Net Income from the Income Statement flows into {blank} on the Balance Sheet.',
+    answer: 'Retained Earnings',
+    hint: 'The equity account that accumulates profits over time'
   },
   {
     id: 'v3',
-    text: 'Aggregate rows for a line item with {blank}(Amount, Line, "Revenue").',
-    answer: 'SUMIFS',
-    hint: 'Multi‑criteria summing for rollups'
+    text: 'An integrity check formula like =IF(ABS(Assets - (Liab + Equity)) < 0.01, "OK", "{blank}") flags mismatches.',
+    answer: 'CHECK',
+    hint: 'A clear warning word that stands out when something is wrong'
   },
   {
     id: 'v4',
-    text: 'Switch scenarios using a control cell and {blank}(Selector, "Base",1,"Stretch",2,"Conservative",3).',
-    answer: 'SWITCH',
-    hint: 'Cleaner than nested IFs for modes'
+    text: 'A {blank} lets you type =NetIncome instead of =\'Income Statement\'!B12, making formulas easier to read.',
+    answer: 'named range',
+    hint: 'A label assigned to a cell or range of cells'
   },
   {
     id: 'v5',
-    text: 'Show a clear error if a key is missing: XLOOKUP(id, map[AccountID], map[Line], {blank}).',
-    answer: '"Unknown"',
-    hint: 'Use if_not_found to prevent #N/A'
+    text: 'The most common failure mode is using a bare cell reference like Sheet1!B12 without a label, which breaks silently when the {blank} changes.',
+    answer: 'layout',
+    hint: 'The arrangement of rows and columns on a sheet'
   }
 ]
 
@@ -54,12 +54,12 @@ export default function Phase2Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
-              📚 Phase 2: Introduction
+              Phase 2: Tool Anatomy
             </Badge>
-            <h2 className="text-3xl font-bold text-gray-900">Three‑Statement Link Engine: Professional‑Grade Automation</h2>
+            <h2 className="text-3xl font-bold text-gray-900">How Cross-Sheet Links Work</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Build reliable connections from transaction tables to Income Statement, Balance Sheet, and Cash Flow.
-              We’ll use structured references, XLOOKUP, SUMIFS, and a simple scenario switch.
+              Cross-sheet references are the glue that holds a three-statement model together.
+              Learn the syntax, the three critical links, and the traps that break models.
             </p>
           </div>
         </section>
@@ -67,24 +67,76 @@ export default function Phase2Page() {
         <section className="max-w-4xl mx-auto space-y-6">
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
-              <CardTitle className="text-green-800">Core Patterns and Gotchas</CardTitle>
+              <CardTitle className="text-green-800">The Three Critical Links</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-green-900">
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>Tables first:</strong> Convert data to Tables. Example: <span className="font-mono">TransactionTable[Amount]</span>.</li>
-                <li><strong>Safe mapping:</strong> <span className="font-mono">=XLOOKUP([@AccountID], Map[AccountID], Map[StatementLine], "Unknown")</span>.</li>
-                <li><strong>Rollups:</strong> <span className="font-mono">=SUMIFS(TransactionTable[Amount], TransactionTable[StatementLine], "COGS")</span>.</li>
-                <li><strong>Scenario control:</strong> <span className="font-mono">=SWITCH(Scenario, "Base",1, "Stretch",2, "Conservative",3)</span> → use result as a multiplier or index.</li>
-                <li><strong>Professional standards:</strong> document assumptions, name key ranges, and add visible validation flags.</li>
-                <li><strong>Common mistakes:</strong> fixed ranges, approximate matches, hidden errors, and silent ties not checked.</li>
+              <div className="space-y-3">
+                <div className="p-3 bg-white rounded border-l-4 border-green-500">
+                  <p className="font-semibold text-sm text-green-800">Link 1: Net Income → Retained Earnings</p>
+                  <p className="font-mono text-xs mt-1 bg-gray-50 p-2 rounded">
+                    ='Income Statement'!B12
+                  </p>
+                  <p className="text-xs mt-1">
+                    Net Income from the Income Statement becomes the &ldquo;Net Income added&rdquo; line in Retained Earnings on the Balance Sheet.
+                    This is how profit grows equity.
+                  </p>
+                </div>
+
+                <div className="p-3 bg-white rounded border-l-4 border-blue-500">
+                  <p className="font-semibold text-sm text-green-800">Link 2: Ending Cash ↔ Cash Flow Statement</p>
+                  <p className="font-mono text-xs mt-1 bg-gray-50 p-2 rounded">
+                    ='Cash Flow'!B20
+                  </p>
+                  <p className="text-xs mt-1">
+                    The ending cash on the Balance Sheet must equal the ending cash on the Cash Flow Statement.
+                    If these don&apos;t match, something is wrong.
+                  </p>
+                </div>
+
+                <div className="p-3 bg-white rounded border-l-4 border-purple-500">
+                  <p className="font-semibold text-sm text-green-800">Link 3: Integrity Checks</p>
+                  <p className="font-mono text-xs mt-1 bg-gray-50 p-2 rounded">
+                    =IF(ABS(TotalAssets - (TotalLiab + TotalEquity)) &lt; 0.01, &quot;OK&quot;, &quot;CHECK&quot;)
+                  </p>
+                  <p className="text-xs mt-1">
+                    A formula that verifies the balance sheet equation still holds. Place this check
+                    where anyone reviewing the model can see it.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-amber-200 bg-amber-50">
+            <CardHeader>
+              <CardTitle className="text-amber-800">Common Failure Modes</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-amber-900">
+              <ul className="list-disc list-inside space-y-2 text-sm">
+                <li>
+                  <strong>Bare cell references:</strong> <span className="font-mono">=Sheet1!B12</span> breaks silently
+                  when someone inserts a row above row 12. Always use named ranges or labeled cells.
+                </li>
+                <li>
+                  <strong>Wrong sheet name:</strong> <span className="font-mono">=&apos;Income Stmnt&apos;!B12</span> returns
+                  a #REF! error if the tab is actually named &ldquo;Income Statement.&rdquo; Double-check tab names.
+                </li>
+                <li>
+                  <strong>Hard-coded values instead of links:</strong> Typing &ldquo;10,800&rdquo; instead of linking to Net Income
+                  means the Balance Sheet never updates when revenue changes.
+                </li>
+                <li>
+                  <strong>Circular references:</strong> If Sheet A references Sheet B and Sheet B references Sheet A,
+                  Excel shows a circular reference warning. Plan your link direction: Income Statement → Balance Sheet → Cash Flow.
+                </li>
               </ul>
             </CardContent>
           </Card>
 
           <FillInTheBlank 
             sentences={vocabSentences}
-            title="Advanced Vocabulary Check"
-            description="Reinforce the exact tools used to build investor‑grade automation."
+            title="Cross-Sheet Linking Vocabulary"
+            description="Reinforce the exact terms and patterns you will use in the workbook build."
             showWordList={true}
             randomizeWordOrder={true}
             showHints={true}
@@ -101,4 +153,3 @@ export default function Phase2Page() {
     </div>
   )
 }
-

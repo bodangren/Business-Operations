@@ -1,26 +1,26 @@
-// Unit03 Lesson05 — Advanced Excel Automation for Three‑Statement Models
+// Unit03 Lesson05 — Build Cross-Sheet Links and Statement Checks
 export const lesson05Data = {
-  id: "unit03_lesson05_advanced",
-  title: "Advanced Automation: Three‑Statement Link Engine",
+  id: "unit03_lesson05_cross_sheet",
+  title: "Link the Three Statements: Cross‑Sheet References and Integrity Checks",
   sequence: 5,
   unitId: "mdrhlhuxj2zkbimaqfd",
   learningObjectives: [
-    "Build a robust three‑statement link engine using structured references and XLOOKUP/SUMIFS",
-    "Implement scenario‑driven toggles with SWITCH/CHOOSE for driver‑based planning",
-    "Add professional validation checks (balance ties, cash reconciliation, missing IDs)",
-    "Produce investor‑ready summaries that update correctly as data grows"
+    "Link Net Income from the Income Statement into Retained Earnings on the Balance Sheet",
+    "Link Balance Sheet cash into the Cash Flow Statement ending cash",
+    "Build visible integrity checks that prove the three statements tie together",
+    "Explain how a change on one statement ripples through the others"
   ],
   keyConcepts: [
-    "Structured references (Table[Column]) for auto‑expanding models",
-    "XLOOKUP with if_not_found and SUMIFS for mapping and aggregation",
-    "Scenario control with SWITCH and named ranges",
-    "Audit flags for A=L+E, Net Income → Retained Earnings, and cash movement ties"
+    "Cross‑sheet references (e.g., ='Income Statement'!B12) pull values between tabs",
+    "Named ranges make cross‑sheet formulas readable and harder to break",
+    "Integrity checks (A=L+E, NI→RE, cash tie) prove the model is correct",
+    "One change should ripple through all three statements automatically"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Textbook‑first explanation with interactive checks and validation practice"
+    "Excel‑lesson skill: business pressure → tool anatomy → safe rehearsal → workbook sprint → audit → reflection"
   ],
-  rationale: "Students deepen Lesson04 skills by engineering a resilient, investor‑grade model that scales with new rows, methods, and scenarios.",
+  rationale: "Students move from building individual statements (Lessons 02–04) to linking them into one model. Cross‑sheet links are the backbone of any three‑statement financial model.",
   status: "Draft"
 }
 
@@ -30,42 +30,42 @@ export const unit03Data = {
   sequence: 3
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases following the excel-lessons skill contract
 export const lesson05Phases = [
   {
-    id: "phase_hook_5",
+    id: "phase_tool_pressure_5",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Stress‑test fragile vs robust three‑statement links to protect investor trust",
+    description: "Open with a business scenario where linked statements matter for investor confidence",
   },
   {
-    id: "phase_introduction_5",
+    id: "phase_tool_anatomy_5",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Professional‑grade automation patterns, constraints, and gotchas",
+    description: "Name cross‑sheet linking patterns, explain parts, teach common failure modes",
   },
   {
-    id: "phase_guided_practice_5",
+    id: "phase_safe_rehearsal_5",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Implement scenario switch, mapping, and validation checks step‑by‑step",
+    description: "Practice linking logic in a simulator before touching the live workbook",
   },
   {
-    id: "phase_independent_practice_5",
+    id: "phase_workbook_sprint_5",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Apply automation to advanced dataset with edge cases",
+    description: "Build cross‑sheet links and statement checks in the real workbook",
   },
   {
-    id: "phase_assessment_5",
+    id: "phase_audit_explain_5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Mastery check: technical accuracy and business judgment",
+    description: "Technical check and brief artifact task on trustworthiness and communication",
   },
   {
-    id: "phase_closing_5",
+    id: "phase_reflection_5",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Synthesize automation wins and preview dashboard integration",
+    description: "Reflect on tool use, name what is faster now, preview next workbook layer",
   }
 ]

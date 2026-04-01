@@ -1,8 +1,9 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem"
+import { ArrowRight, Lightbulb } from "lucide-react"
+import CrossSheetLinkSimulator from "@/components/business-simulations/CrossSheetLinkSimulator"
 import { lesson05Data, unit03Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[2]
@@ -21,12 +22,12 @@ export default function Phase3Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">
-              🔧 Phase 3: Guided Practice
+              Phase 3: Safe Rehearsal
             </Badge>
-            <h2 className="text-3xl font-bold text-gray-900">Building Sarah’s Three‑Statement Link System</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Practice Cross-Sheet Links Before the Real Build</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Implement the link engine step‑by‑step with mapping, rollups, a scenario switch, and
-              professional validation checks that surface issues instantly.
+              Before you open the workbook, practice identifying the correct cross-sheet reference
+              for each critical link. This simulator mirrors the exact linking logic you will build next.
             </p>
           </div>
         </section>
@@ -34,44 +35,55 @@ export default function Phase3Page() {
         <section className="max-w-4xl mx-auto space-y-6">
           <Card className="border-purple-200 bg-purple-50">
             <CardHeader>
-              <CardTitle className="text-purple-800">Step‑by‑Step Build</CardTitle>
+              <CardTitle className="text-purple-800 flex items-center gap-2">
+                <Lightbulb className="h-5 w-5" />
+                How This Works
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-purple-900">
-              <ol className="list-decimal list-inside space-y-2">
-                <li>Convert transactions and account map to Tables.</li>
-                <li>Map <span className="font-mono">AccountID → StatementLine</span> with XLOOKUP (use <span className="font-mono">if_not_found</span>).</li>
-                <li>Create rollups with <span className="font-mono">SUMIFS</span> for each statement section.</li>
-                <li>Add a control cell <span className="font-mono">Scenario</span> and route logic with <span className="font-mono">SWITCH</span>.</li>
-                <li>Wire validations: A=L+E, NI → RE, and Cash Flow Δ matches balance sheet Δ Cash.</li>
-              </ol>
-              <div className="bg-white p-3 rounded border">
-                <div className="font-mono text-sm">
-                  =XLOOKUP([@AccountID], Map[AccountID], Map[StatementLine], "Unknown")<br/>
-                  =SUMIFS(TransactionTable[Amount], TransactionTable[StatementLine], "Revenue")<br/>
-                  =SWITCH(Scenario, "Base",1, "Stretch",1.1, "Conservative",0.9)
-                </div>
-              </div>
-              <p className="text-purple-900 text-sm">
-                Tip: Name key ranges (e.g., <span className="font-mono">Scenario</span>) and document assumptions near your summary block.
+              <p className="text-sm">
+                Each challenge shows you a <strong>source</strong> cell on one sheet and a <strong>target</strong> cell on another.
+                Your job is to pick the correct cross-sheet formula that links them.
               </p>
+              <ul className="list-disc list-inside text-sm space-y-1">
+                <li>Read the source and target carefully</li>
+                <li>Choose the formula that creates a live link (not a hard-coded value)</li>
+                <li>Submit to see whether you are correct and why</li>
+                <li>Complete all 5 challenges before moving to the workbook sprint</li>
+              </ul>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-purple-200 bg-white">
             <CardHeader>
-              <CardTitle>Validation & Error Surfacing</CardTitle>
+              <CardTitle className="text-gray-900">Link Logic Trainer</CardTitle>
+              <CardDescription>
+                Select the correct cross-sheet formula for each scenario.
+              </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-gray-700">
-                Professionals never hide errors. Use clear flags for:
+            <CardContent>
+              <CrossSheetLinkSimulator />
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="text-blue-800 flex items-center gap-2">
+                <ArrowRight className="h-5 w-5" />
+                Bridge to Phase 4: The Workbook Sprint
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-blue-900">
+              <p className="text-sm">
+                In the next phase, you will open the actual TechStart workbook and build these links yourself.
+                Here is what you need to know before you start:
               </p>
-              <ul className="list-disc list-inside text-gray-700">
-                <li>Balance tie: <span className="font-mono">=ABS(TotalAssets - (TotalLiab + TotalEquity)) &lt; 0.01</span></li>
-                <li>Cash reconciliation: <span className="font-mono">=ABS(EndCash - (BegCash + NetCashFlow)) &lt; 0.01</span></li>
-                <li>Net income roll‑forward: <span className="font-mono">=ABS(EndingRE - (BeginningRE + NetIncome - Dividends)) &lt; 0.01</span></li>
-                <li>Missing keys: any <span className="font-mono">"Unknown"</span> from mapping must highlight.</li>
+              <ul className="list-disc list-inside text-sm space-y-1">
+                <li><strong>Starting file:</strong> <span className="font-mono">/resources/unit03-lesson05-student.xlsx</span></li>
+                <li><strong>What is already built:</strong> Three separate tabs (Income Statement, Balance Sheet, Cash Flow) with correct numbers but no links between them</li>
+                <li><strong>Your job:</strong> Add cross-sheet references and integrity checks so the three statements work as one model</li>
+                <li><strong>Definition of Done:</strong> All three links work, all integrity checks show &ldquo;OK&rdquo;, and changing one number updates all statements</li>
               </ul>
-              <ErrorCheckingSystem />
             </CardContent>
           </Card>
         </section>
@@ -86,4 +98,3 @@ export default function Phase3Page() {
     </div>
   )
 }
-

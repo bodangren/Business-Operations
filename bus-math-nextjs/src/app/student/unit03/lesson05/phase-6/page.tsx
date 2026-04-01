@@ -21,12 +21,12 @@ export default function Phase6Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-              🎯 Phase 6: Closing
+              Phase 6: Reflection and Handoff
             </Badge>
-            <h2 className="text-3xl font-bold text-gray-900">Advanced Automation: Ready for the Next Step</h2>
+            <h2 className="text-3xl font-bold text-gray-900">What You Can Do Now</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              You engineered a three‑statement link engine that scales, validates ties, and communicates clearly. 
-              Next, you’ll connect this engine to dashboards and investor presentations.
+              You built the links that turn three separate statements into one connected financial model.
+              Reflect on what changed in your understanding and what comes next.
             </p>
           </div>
         </section>
@@ -34,30 +34,55 @@ export default function Phase6Page() {
         <section className="max-w-4xl mx-auto space-y-6">
           <Card className="border-indigo-200 bg-indigo-50">
             <CardHeader>
-              <CardTitle className="text-indigo-800">What You Built</CardTitle>
+              <CardTitle className="text-indigo-800">What You Built Today</CardTitle>
             </CardHeader>
             <CardContent className="text-indigo-900 space-y-2">
               <ul className="list-disc list-inside">
-                <li>Auto‑expanding links from transactions to all three statements</li>
-                <li>Scenario switch that adjusts drivers and KPIs</li>
-                <li>Visible validation flags for A=L+E, cash ties, and NI → RE</li>
-                <li>Investor‑ready summary with assumptions and results</li>
+                <li>Net Income flows from the Income Statement into Retained Earnings on the Balance Sheet</li>
+                <li>Ending Cash on the Cash Flow Statement links to Cash on the Balance Sheet</li>
+                <li>Integrity checks prove the model balances and ties across all three statements</li>
+                <li>One change on any statement ripples through the entire model automatically</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-indigo-200 bg-indigo-50">
+            <CardHeader>
+              <CardTitle className="text-indigo-800">What Is Faster Now</CardTitle>
+            </CardHeader>
+            <CardContent className="text-indigo-900 space-y-2">
+              <p className="text-sm">
+                Before today, Sarah had to update each statement by hand when a number changed.
+                Now she can:
+              </p>
+              <ul className="list-disc list-inside text-sm space-y-1">
+                <li>Change one assumption and see the impact across all three statements instantly</li>
+                <li>Show an investor that the model ties without manual recalculation</li>
+                <li>Spot errors immediately through visible integrity checks instead of hunting for them</li>
               </ul>
             </CardContent>
           </Card>
 
           <ReflectionJournal 
-            unitTitle="CAP Reflection: Debugging, Validation, and Persistence"
+            unitTitle="CAP Reflection: Cross-Sheet Links and Model Trustworthiness"
           />
 
           <Card>
             <CardHeader>
-              <CardTitle>Preview: Lesson06 Integration</CardTitle>
+              <CardTitle>Preview: Lesson 06 — KPI Dashboard</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-gray-700">
-                You’ll integrate this link engine with dashboards: KPI cards, variance bridges, and clear visuals for investors.
-                Keep the validation flags in view—professional models make reliability obvious.
+            <CardContent className="space-y-3">
+              <p className="text-gray-700 text-sm">
+                Now that your three statements are linked, the next lesson adds a <strong>KPI dashboard</strong>
+                on top of the model. You will build:
+              </p>
+              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                <li>Key ratio cards (Current Ratio, Return on Assets, Profit Margin)</li>
+                <li>A visual summary page that investors can read in 30 seconds</li>
+                <li>Dashboard links that pull from your now-connected statements</li>
+              </ul>
+              <p className="text-gray-700 text-sm">
+                Keep your linked workbook saved. You will use it as the starting point for Lesson 06.
               </p>
             </CardContent>
           </Card>
@@ -73,4 +98,3 @@ export default function Phase6Page() {
     </div>
   )
 }
-

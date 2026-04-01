@@ -10,37 +10,37 @@ const currentPhase = lesson05Phases[0]
 
 const hookQuestions = [
   {
-    id: "u3h1",
-    question: "Which pattern best survives new rows and account changes across all three statements?",
+    id: "u3l5h1",
+    question: "Sarah changes a revenue number on her Income Statement. How should the Balance Sheet and Cash Flow Statement respond in a linked model?",
     answers: [
-      "Tables + structured references with XLOOKUP/SUMIFS mapping",
-      "Fixed ranges (A2:A200) with nested IFs and VLOOKUP",
-      "Copy/paste monthly totals to each statement",
-      "Turn off automatic calculation while editing"
+      "Both should update automatically through cross-sheet links",
+      "Only the Income Statement changes; the others stay the same",
+      "She must copy and paste the new number into each statement manually",
+      "Only the Cash Flow Statement updates because revenue is cash"
     ],
-    explanation: "Structured references auto‑expand and keep formulas readable; XLOOKUP/SUMIFS map accounts and rollups reliably."
+    explanation: "In a properly linked three-statement model, changing one input ripples through all statements via cross-sheet references. Net Income flows to Retained Earnings, and cash changes flow through the Cash Flow Statement."
   },
   {
-    id: "u3h2",
-    question: "An investor asks: ‘How do you know A = L + E still ties when data grows?’ What proves reliability?",
+    id: "u3l5h2",
+    question: "An investor asks Sarah: 'How do you know your Balance Sheet still balances after you updated the Income Statement?' What proves reliability?",
     answers: [
-      "Visible audit flags with balance checks and cash reconciliation",
-      "Manual spot checks after each change",
-      "One giant formula that seems to work",
-      "Emailing the workbook for a second opinion"
+      "A visible integrity check that shows A = L + E is still true",
+      "She checked it once last week and it was fine",
+      "The numbers look about right when she scrolls through",
+      "She uses different colored fonts for each statement"
     ],
-    explanation: "Professional models surface validation results (tie checks, retained earnings roll‑forward, cash ties) every refresh."
+    explanation: "Professional models include visible integrity checks—formulas that verify the balance sheet equation, retained earnings roll-forward, and cash reconciliation—so anyone can see the model ties."
   },
   {
-    id: "u3h3",
-    question: "Which XLOOKUP pattern reduces #N/A when mapping AccountID → StatementLine?",
+    id: "u3l5h3",
+    question: "Which cross-sheet reference pattern is clearest and least likely to break?",
     answers: [
-      '=XLOOKUP([@AccountID], Map[AccountID], Map[StatementLine], "Unknown")',
-      '=XLOOKUP([@AccountID], Map[AccountID], Map[StatementLine])',
-      '=VLOOKUP([@AccountID], Map, 2, TRUE)',
-      '=INDEX(Map[StatementLine], MATCH([@AccountID], Map[AccountID], 0))'
+      "='Income Statement'!B12 using a named range like NetIncome",
+      "=Sheet1!B12 with no labels or names",
+      "=B12 assuming both sheets have the same layout",
+      "Copy and paste the value from the Income Statement tab"
     ],
-    explanation: "Use if_not_found to guard missing keys; table references keep ranges dynamic and clear."
+    explanation: "Named ranges or clear sheet references with labeled cells make cross-sheet links readable and maintainable. Bare cell references like Sheet1!B12 break silently when layouts change."
   }
 ]
 
@@ -58,12 +58,13 @@ export default function Phase1Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              🎯 Phase 1: Hook
+              Phase 1: Tool Pressure
             </Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Sarah’s Three‑Statement Link Engine Stress Test</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Sarah&apos;s Investor Meeting: The Three-Statement Problem</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              See how fragile models break when TechStart adds new accounts—and how a link engine with
-              structured references, XLOOKUP, and SUMIFS protects investor trust at scale.
+              Sarah built three separate statements in Lessons 02–04. Now an investor asks:
+              &ldquo;If I change one assumption, how does the whole picture shift?&rdquo;
+              Without cross-sheet links, Sarah has to update every statement by hand—and risk errors.
             </p>
           </div>
         </section>
@@ -73,19 +74,19 @@ export default function Phase1Page() {
             <CardHeader>
               <CardTitle className="text-red-800 flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5" />
-                Before: Fragile Links
+                The Problem: Three Separate Workbooks
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-red-900">
-              <div className="bg-red-100 p-3 rounded font-mono text-sm">
-                =SUM(C2:C200)  // misses new rows<br />
-                =VLOOKUP(A2, Map!A:B, 2, TRUE) // wrong matches<br />
-                =IF(B2="COGS", -C2, C2) // brittle category logic
-              </div>
-              <ul className="list-disc list-inside text-red-800 text-sm">
-                <li>Fixed ranges miss new transactions</li>
-                <li>Approximate matches return wrong lines</li>
-                <li>Nested IFs collapse as categories grow</li>
+              <p className="text-sm">
+                Sarah has three tabs: <strong>Income Statement</strong>, <strong>Balance Sheet</strong>, and <strong>Cash Flow</strong>.
+                Each one was built independently. When she updates revenue from $16,500 to $18,000:
+              </p>
+              <ul className="list-disc list-inside text-red-800 text-sm space-y-1">
+                <li>Net Income changes on the Income Statement—but Retained Earnings on the Balance Sheet does not update</li>
+                <li>Ending Cash on the Balance Sheet stays the same even though cash flow changed</li>
+                <li>She has to recalculate and re-enter numbers on two other tabs by hand</li>
+                <li>One typo and the Balance Sheet no longer balances—and nobody notices</li>
               </ul>
             </CardContent>
           </Card>
@@ -94,26 +95,25 @@ export default function Phase1Page() {
             <CardHeader>
               <CardTitle className="text-green-800 flex items-center gap-2">
                 <ShieldCheck className="h-5 w-5" />
-                After: Robust Link Engine
+                The Solution: Cross-Sheet Links
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-green-900">
-              <div className="bg-green-100 p-3 rounded font-mono text-sm">
-                =SUM(TransactionTable[Amount])<br />
-                =XLOOKUP([@AccountID], Map[AccountID], Map[StatementLine], "Unknown")<br />
-                =SUMIFS(TransactionTable[Amount], TransactionTable[StatementLine], "Revenue")
-              </div>
-              <ul className="list-disc list-inside text-green-800 text-sm">
-                <li>Tables auto‑expand with new rows</li>
-                <li>Safe mapping with if_not_found guards</li>
-                <li>Clear rollups via SUMIFS for each statement</li>
+              <p className="text-sm">
+                With cross-sheet references, one change flows everywhere:
+              </p>
+              <ul className="list-disc list-inside text-green-800 text-sm space-y-1">
+                <li>Net Income on the Income Statement <strong>links to</strong> Retained Earnings on the Balance Sheet</li>
+                <li>Ending Cash on the Balance Sheet <strong>links to</strong> the Cash Flow Statement</li>
+                <li>Integrity checks flag any mismatch automatically</li>
+                <li>One update, three statements, zero manual re-entry</li>
               </ul>
             </CardContent>
           </Card>
 
           <ComprehensionCheck
-            title="Diagnostic: Will it scale and stay tied?"
-            description="Predict which patterns protect A=L+E and cash reconciliation as data grows."
+            title="Diagnostic: Will Your Model Hold Up?"
+            description="Predict which patterns protect the three-statement story when numbers change."
             questions={hookQuestions}
             showExplanations={true}
           />
@@ -128,9 +128,9 @@ export default function Phase1Page() {
             <CardContent>
               <p className="text-purple-800 mb-2 font-medium">Discussion Prompt (3 minutes):</p>
               <ul className="list-disc list-inside space-y-1 text-purple-800">
-                <li>How does a fragile link break investor confidence?</li>
-                <li>Which audit flags would make issues impossible to miss?</li>
-                <li>What one‑page summary would you show to prove the model’s reliability?</li>
+                <li>What happens to investor trust if Sarah&apos;s statements don&apos;t tie together?</li>
+                <li>Which two numbers must flow between statements for the model to be credible?</li>
+                <li>What would you check first if the Balance Sheet suddenly didn&apos;t balance?</li>
               </ul>
             </CardContent>
           </Card>
@@ -146,4 +146,3 @@ export default function Phase1Page() {
     </div>
   )
 }
-
