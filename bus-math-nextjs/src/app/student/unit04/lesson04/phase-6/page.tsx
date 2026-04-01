@@ -3,48 +3,35 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import { FinancialDashboard } from "@/components/charts/FinancialDashboard"
-import { Award, ArrowRight, TrendingUp, Users } from "lucide-react"
+import { Award, ArrowRight, TrendingUp, Target } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[5]
 
 const reflectionPrompts = [
   {
-    id: "courage-charts",
-    category: "courage" as const,
-    prompt: "Describe a moment when you showed courage while learning Excel chart creation. What was challenging about moving from raw data to visual insights?",
-    placeholder: "The most challenging part of chart creation was... but I showed courage by..."
+    id: "confidence-forecast",
+    category: "confidence" as const,
+    prompt: "How confident do you feel interpreting trend lines and understanding what forecasts can and cannot tell you? What's still unclear?",
+    placeholder: "I feel confident about... but I'm still unclear about..."
   },
   {
-    id: "courage-business",
-    category: "courage" as const,
-    prompt: "How did you push through any uncertainty when interpreting business data and making recommendations? What gave you confidence?",
-    placeholder: "I felt uncertain about... but I built confidence by..."
+    id: "confidence-business",
+    category: "confidence" as const,
+    prompt: "How would you explain to the café manager what a trend line can and cannot tell them about next weekend's sales?",
+    placeholder: "I would explain that the trend line shows... but it cannot tell us..."
   },
   {
-    id: "adaptability-feedback",
-    category: "adaptability" as const,
-    prompt: "How did you adapt your chart designs when you discovered they weren't telling the right business story? What changes did you make?",
-    placeholder: "I had to change my approach when... by adapting in this way..."
+    id: "application-forecasting",
+    category: "application" as const,
+    prompt: "What business decisions could use forecasting? What decisions shouldn't rely on forecasts?",
+    placeholder: "Forecasting could help with... but should NOT be used for..."
   },
   {
-    id: "adaptability-audience",
-    category: "adaptability" as const,
-    prompt: "How did you adjust your visualization style to communicate effectively with different audiences (technical vs. executive)? What did you learn?",
-    placeholder: "I adapted my communication style by... and learned that different audiences need..."
-  },
-  {
-    id: "persistence-complexity",
-    category: "persistence" as const,
-    prompt: "Describe how you persisted through the complexity of creating professional dashboards. What kept you motivated when the work got challenging?",
-    placeholder: "The most complex part was... but I persisted because..."
-  },
-  {
-    id: "persistence-mastery",
-    category: "persistence" as const,
-    prompt: "How did you persist in developing chart interpretation skills that connect data patterns to business decisions? What breakthrough moments did you experience?",
-    placeholder: "I kept working on interpretation skills even when... and my breakthrough came when..."
+    id: "application-excel",
+    category: "application" as const,
+    prompt: "How does understanding trend line logic prepare you for using Excel's FORECAST functions? Why does the logic matter before the tools?",
+    placeholder: "Understanding the logic helps because... Without this understanding, I might..."
   }
 ]
 
@@ -62,239 +49,158 @@ export default function Phase6Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-              🎯 Phase 6: Closing
+              Phase 6: Closing
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Excel Chart Mastery Complete
+              Forecasting Logic Complete
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Building your future with professional data visualization skills and strategic business insights
+              You've learned to read trend lines and understand what predictions can and cannot do
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Achievement Celebration */}
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
                 <CardTitle className="text-green-900 text-2xl flex items-center gap-2">
                   <Award className="h-6 w-6" />
-                  Sarah's Data Visualization Breakthrough
+                  What You've Learned
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-green-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Sarah stands in front of the café board of directors, confidently presenting her Excel dashboard. 
-                  Gone are the days of 47-page spreadsheet reports that confused rather than clarified. Her charts 
-                  tell a compelling story: optimal staffing schedules, inventory strategies, and waste reduction 
-                  plans that will save the café $12,000 annually while improving customer satisfaction.
+                  Sarah now understands that forecasting isn't about predicting the exact future - it's about 
+                  understanding the range of reasonable outcomes and planning accordingly. She's ready to move 
+                  from understanding the logic to using Excel to automate the process.
                 </p>
                 
-                <div className="bg-white p-4 rounded-lg border border-green-200">
-                  <h3 className="font-semibold text-green-900 mb-2">What Sarah Achieved in This Lesson</h3>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <h4 className="font-medium text-green-900">Technical Mastery</h4>
-                      <ul className="text-green-800 space-y-1 list-disc list-inside">
-                        <li>Excel chart type selection for any business scenario</li>
-                        <li>Professional formatting that meets executive standards</li>
-                        <li>Trendline analysis for forecasting and decision support</li>
-                        <li>Dashboard integration for comprehensive business intelligence</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-green-900">Strategic Impact</h4>
-                      <ul className="text-green-800 space-y-1 list-disc list-inside">
-                        <li>Transform raw data into actionable business insights</li>
-                        <li>Support executive decision-making with visual evidence</li>
-                        <li>Communicate complex analysis in seconds, not hours</li>
-                        <li>Build credibility as a strategic business advisor</li>
-                      </ul>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg border border-green-200">
+                    <h3 className="font-semibold text-green-900 mb-2">Core Concepts Mastered</h3>
+                    <ul className="text-green-800 text-sm space-y-1 list-disc list-inside">
+                      <li>Trend lines show pattern, not certainty</li>
+                      <li>Slope quantifies rate of change</li>
+                      <li>R-squared shows consistency, not quality</li>
+                      <li>Predictions become unreliable far from data</li>
+                      <li>Relationships can be positive or negative</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-green-200">
+                    <h3 className="font-semibold text-green-900 mb-2">Business Skills Developed</h3>
+                    <ul className="text-green-800 text-sm space-y-1 list-disc list-inside">
+                      <li>Interpret scatter plots for business decisions</li>
+                      <li>Calculate simple predictions from patterns</li>
+                      <li>Recognize diminishing returns patterns</li>
+                      <li>Know when to trust and question forecasts</li>
+                      <li>Communicate limits of predictions clearly</li>
+                    </ul>
                   </div>
                 </div>
-                
-                <p className="text-lg leading-relaxed">
-                  The board approves Sarah's recommendations unanimously. More importantly, they ask her to design 
-                  similar analytics systems for their other business ventures. Sarah's Excel chart mastery has 
-                  transformed her from a bookkeeper into a strategic consultant commanding premium rates.
-                </p>
               </CardContent>
             </Card>
 
-            {/* Skills Integration Summary */}
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl">Your Data Visualization Toolkit</CardTitle>
+                <CardTitle className="text-blue-900 text-2xl">Connection to Unit Problem</CardTitle>
               </CardHeader>
               <CardContent className="text-blue-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  You've mastered the same Excel chart skills that Sarah uses to create business-grade visualizations. 
-                  This toolkit positions you to tackle complex data analysis challenges and communicate insights 
-                  effectively to any business audience.
+                  Remember the unit's driving question: <em>"Given two years of weekend POS data, what inventory 
+                  and staffing plan will maximize weekend profits without raising waste above 3%?"</em>
                 </p>
                 
-                <FinancialDashboard 
-                  title="Your Professional Chart Mastery Portfolio"
-                  refreshable={false}
-                  exportable={true}
-                  className="bg-white rounded-lg border border-gray-200 p-6"
-                />
-                
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4" />
-                      Foundation Skills
-                    </h3>
-                    <ul className="text-blue-800 text-sm space-y-1 list-disc list-inside">
-                      <li>Strategic chart type selection</li>
-                      <li>Professional formatting standards</li>
-                      <li>Business-focused title and labeling</li>
-                      <li>Data source organization and preparation</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                      <Users className="h-4 w-4" />
-                      Advanced Techniques
-                    </h3>
-                    <ul className="text-blue-800 text-sm space-y-1 list-disc list-inside">
-                      <li>Trendline analysis and forecasting</li>
-                      <li>Dashboard design and integration</li>
-                      <li>Interactive elements and dynamic ranges</li>
-                      <li>Executive-level presentation quality</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                      <Award className="h-4 w-4" />
-                      Business Impact
-                    </h3>
-                    <ul className="text-blue-800 text-sm space-y-1 list-disc list-inside">
-                      <li>Chart interpretation for decision-making</li>
-                      <li>Strategic insight extraction from data patterns</li>
-                      <li>Business recommendation development</li>
-                      <li>Professional stakeholder communication</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Connection to Unit Driving Question */}
-            <Card className="border-purple-200 bg-purple-50">
-              <CardHeader>
-                <CardTitle className="text-purple-900 text-2xl">Solving the Café's Challenge</CardTitle>
-              </CardHeader>
-              <CardContent className="text-purple-800 space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Remember the unit's driving question: <em>"Given two years of POS data, what inventory and 
-                  staffing plan will maximize weekend profits without raising waste above 3%?"</em> Your Excel 
-                  chart mastery provides the visualization foundation for answering this complex question.
-                </p>
-                
-                <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h3 className="font-semibold text-purple-900 mb-2">How Charts Support Data-Driven Decisions</h3>
+                <div className="bg-white p-4 rounded-lg border border-blue-200">
+                  <h3 className="font-semibold text-blue-900 mb-2">How Forecasting Helps Answer This</h3>
                   <div className="space-y-3 text-sm">
-                    <div className="border-l-4 border-purple-400 pl-3">
-                      <p className="font-medium text-purple-900">Staffing Optimization</p>
-                      <p className="text-purple-800">Line charts reveal peak customer traffic patterns, enabling precise staffing schedules that reduce labor costs while maintaining service quality.</p>
-                    </div>
                     <div className="border-l-4 border-blue-400 pl-3">
-                      <p className="font-medium text-purple-900">Inventory Management</p>
-                      <p className="text-purple-800">Column charts compare item-level sales performance, identifying which products to stock heavily and which to minimize to reduce waste.</p>
+                      <p className="font-medium text-blue-900">Predict demand</p>
+                      <p className="text-blue-800">Use past weekend patterns to forecast next weekend's customer count, guiding inventory and staffing decisions.</p>
+                    </div>
+                    <div className="border-l-4 border-purple-400 pl-3">
+                      <p className="font-medium text-blue-900">Identify optimal levels</p>
+                      <p className="text-blue-800">Find where adding more staff or inventory stops giving returns - the "sweet spot" that maximizes profit.</p>
                     </div>
                     <div className="border-l-4 border-green-400 pl-3">
-                      <p className="font-medium text-purple-900">Profit Maximization</p>
-                      <p className="text-purple-800">Pie charts show profit margin distribution, highlighting which menu categories deserve promotion and resource allocation.</p>
-                    </div>
-                    <div className="border-l-4 border-orange-400 pl-3">
-                      <p className="font-medium text-purple-900">Waste Reduction</p>
-                      <p className="text-purple-800">Scatter plots with trendlines identify relationships between ordering patterns and waste levels, enabling predictive inventory management.</p>
+                      <p className="font-medium text-blue-900">Plan for waste limits</p>
+                      <p className="text-blue-800">Balance ordering enough to meet demand while staying under the 3% waste threshold.</p>
                     </div>
                   </div>
                 </div>
                 
                 <p className="text-lg leading-relaxed">
-                  In lesson05, you'll build on these visualization skills to create the statistical models and 
-                  forecasting systems that provide the quantitative answers to the café's optimization challenge.
+                  In upcoming Excel lessons, you'll build the tools that actually calculate these forecasts automatically, 
+                  starting with data cleaning and statistical analysis.
                 </p>
               </CardContent>
             </Card>
 
-            {/* CAP Framework Reflection */}
             <ReflectionJournal
-              unitTitle="Unit 4: Data-Driven Café - Excel Chart Mastery"
+              unitTitle="Unit 4: Data-Driven Café - Forecasting Logic"
               prompts={reflectionPrompts}
             />
 
-            {/* Future Learning Path */}
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
                 <CardTitle className="text-green-900 text-2xl flex items-center gap-2">
-                  Building Your Future with Data Visualization Skills
+                  Next: Building Forecasts in Excel
                   <ArrowRight className="h-6 w-6" />
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-green-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Your Excel chart mastery opens doors to exciting career opportunities and advanced analytical skills. 
-                  Like Sarah, you now possess professional-grade data visualization capabilities that businesses value highly.
+                  You're now ready to move from understanding forecasting logic to building the Excel tools that automate it. 
+                  In Lessons 5-6, you'll learn to:
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">🎯 Immediate Opportunities</h3>
+                    <h3 className="font-semibold text-green-900 mb-2">Lesson 5: Data Cleaning & Analysis</h3>
                     <ul className="text-green-800 text-sm space-y-1 list-disc list-inside">
-                      <li>Volunteer to create charts for school or community organizations</li>
-                      <li>Offer dashboard design services to local small businesses</li>
-                      <li>Apply for business analyst internships or entry-level positions</li>
-                      <li>Build a portfolio of chart examples using real business data</li>
-                      <li>Join data visualization communities and competitions</li>
+                      <li>Import and organize café data</li>
+                      <li>Identify and handle outliers</li>
+                      <li>Calculate basic statistics</li>
+                      <li>Prepare data for visualization</li>
                     </ul>
                   </div>
                   <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">📈 Advanced Skills Pipeline</h3>
+                    <h3 className="font-semibold text-green-900 mb-2">Lesson 6: Visualizations & Recommendations</h3>
                     <ul className="text-green-800 text-sm space-y-1 list-disc list-inside">
-                      <li><strong>Lesson05:</strong> Statistical forecasting and regression modeling</li>
-                      <li><strong>Unit 5:</strong> Financial modeling and cash flow optimization</li>
-                      <li><strong>Unit 6:</strong> Cost-volume-profit analysis and pricing strategy</li>
-                      <li><strong>Capstone:</strong> Integrated business model with investor presentation</li>
-                      <li><strong>Career:</strong> Business intelligence, data science, strategic consulting</li>
+                      <li>Build scatter plots automatically</li>
+                      <li>Add trend lines and R-squared</li>
+                      <li>Use FORECAST and TREND functions</li>
+                      <li>Create evidence-based recommendations</li>
                     </ul>
                   </div>
                 </div>
                 
                 <div className="bg-green-100 p-4 rounded border border-green-200">
-                  <h4 className="font-medium text-green-900 mb-2">🌟 Your Competitive Advantage</h4>
+                  <h4 className="font-medium text-green-900 mb-2">Why This Lesson Was Essential</h4>
                   <p className="text-green-800 text-sm">
-                    In an increasingly data-driven business environment, your ability to transform complex information 
-                    into clear, actionable visualizations sets you apart. Employers value candidates who can not only 
-                    analyze data but also communicate insights effectively to stakeholders at all levels. You're 
-                    building skills that will remain valuable throughout your career as businesses continue to rely 
-                    more heavily on data-driven decision making.
+                    You now understand what those Excel tools are actually doing. A analyst who just clicks "add trendline" 
+                    without understanding slope, fit, and danger zones will make dangerous over-confident predictions. 
+                    You're prepared to use these tools wisely.
                   </p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Lesson Completion Celebration */}
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl text-center">🎉 Lesson 4 Complete: Excel Chart Mastery Achieved</CardTitle>
+                <CardTitle className="text-blue-900 text-2xl text-center">
+                  Lesson 4 Complete: Forecasting Logic Achieved
+                </CardTitle>
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <p className="text-blue-800 text-lg leading-relaxed">
-                  You've successfully mastered professional Excel chart creation and business data visualization. 
-                  Like Sarah, you can now transform confusing spreadsheets into compelling visual stories that 
-                  drive smart business decisions.
+                  You've mastered the foundational concepts of forecasting logic. You can now read trend lines, 
+                  interpret slope and fit, and most importantly - understand what predictions can and cannot tell you.
+                  This makes you ready for the Excel build lessons that will automate these calculations.
                 </p>
                 
                 <div className="bg-white p-6 rounded-lg border border-blue-200">
-                  <h3 className="font-semibold text-blue-900 mb-4">Ready for Lesson 5: Advanced Forecasting & Statistical Analysis</h3>
+                  <h3 className="font-semibold text-blue-900 mb-4">Ready for Lesson 5: Data Cleaning and Analysis</h3>
                   <p className="text-blue-800 mb-4">
-                    Build on your chart mastery to create predictive models that forecast café demand, optimize 
-                    inventory levels, and provide quantitative answers to complex business questions.
+                    Move from understanding the logic to building the Excel tools that apply it.
                   </p>
                   <div className="inline-flex items-center gap-2 text-blue-700 font-medium">
                     <span>Continue to Lesson 5</span>
@@ -303,8 +209,8 @@ export default function Phase6Page() {
                 </div>
                 
                 <p className="text-blue-800 font-medium">
-                  Your journey from data confusion to strategic insight continues. The advanced analytical skills 
-                  you'll learn next will complete your transformation into a professional business intelligence expert.
+                  You're building skills that will make you a smarter analyst - one who uses tools wisely rather than 
+                  blindly trusting any number.
                 </p>
               </CardContent>
             </Card>

@@ -64,21 +64,15 @@
     - [x] Students can explain why an outlier matters to planning
     - [x] Students can defend a data-cleaning decision
 
-- [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
-  - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
-  - [ ] 2.4.2 Implement Phase 1-6 with forecasting logic
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and trend lines
-    - Phase 3: Add meaningful complication (more complex forecasting), reduce prompts, shift toward authentic statistical notation
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
-    - Phase 5: Short MCQ exit ticket on forecasting logic, regression interpretation, misconceptions
-    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
-  - [ ] 2.4.3 Keep this lesson non-Excel and textbook-first
-  - [ ] 2.4.4 Use representational supports for trend, fit, and business interpretation
-  - [ ] 2.4.5 Use Phase 4 for repeated forecast interpretation under reduced scaffolding
+- [x] 2.4 **Lesson 04** - Implement accounting-principles skill
+  - [x] 2.4.1 Update lesson-data.ts for Lesson 04
+  - [x] 2.4.2 Implement Phase 1-6 with forecasting logic
+  - [x] 2.4.3 Keep this lesson non-Excel and textbook-first
+  - [x] 2.4.4 Use representational supports for trend, fit, and business interpretation
+  - [x] 2.4.5 Use Phase 4 for repeated forecast interpretation under reduced scaffolding
   - **Done when**:
-    - [ ] Students can explain what the forecast means and what it does not promise
-    - [ ] The closing phase points cleanly to the Excel build lessons
+    - [x] Students can explain what the forecast means and what it does not promise
+    - [x] The closing phase points cleanly to the Excel build lessons
 
 ## Phase 3: Lessons 05-06 (Excel)
 - [ ] 3.1 **Lesson 05** - Implement excel-lessons skill

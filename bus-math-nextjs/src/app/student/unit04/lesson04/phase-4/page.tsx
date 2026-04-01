@@ -2,69 +2,103 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import DragAndDrop from "@/components/exercises/DragAndDrop"
-import { FinancialDashboard } from "@/components/charts/FinancialDashboard"
-import { Target, CheckSquare, TrendingUp } from "lucide-react"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { ScatterChart } from "@/components/charts/ScatterChart"
+import { Target, CheckSquare, TrendingUp, AlertTriangle } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[3]
 
-const chartSelectionExercise = [
+const forecastQuestions = [
   {
-    id: "1",
-    content: "Compare monthly revenue across different product categories",
-    matchId: "column",
-    hint: "Best for side-by-side category comparisons"
+    id: "p4-q1",
+    question: "A trend line shows café sales increasing by $350 per month. If January sales were $8,000, what would you predict for April?",
+    answers: [
+      "$8,000 + (3 × $350) = $9,050",
+      "$8,000 + $350 = $8,350",
+      "$8,000 × 4 = $32,000",
+      "$8,000 - (3 × $350) = $6,950"
+    ],
+    explanation: "Starting from January ($8,000), April is 3 months later. $8,000 + (3 × $350) = $9,050"
   },
   {
-    id: "2", 
-    content: "Show how customer satisfaction scores change over 12 months",
-    matchId: "line",
-    hint: "Perfect for displaying trends over time"
+    id: "p4-q2",
+    question: "A scatter plot shows a negative relationship between temperature and hot chocolate sales. What does this mean?",
+    answers: [
+      "As temperature goes up, hot chocolate sales go down",
+      "Hot chocolate causes temperature to change",
+      "Temperature and hot chocolate sales are unrelated",
+      "Cold days cause lower sales"
+    ],
+    explanation: "Negative relationship means the variables move in opposite directions. Hotter days = less demand for hot drinks."
   },
   {
-    id: "3",
-    content: "Display what percentage of total costs each expense category represents",
-    matchId: "pie",
-    hint: "Shows parts of a whole as percentages"
+    id: "p4-q3",
+    question: "A trend line has R-squared = 0.85. What does this tell you about predictions?",
+    answers: [
+      "The pattern is fairly consistent - predictions are reasonably reliable",
+      "The trend line is definitely 100% accurate",
+      "85% of data points are exactly on the line",
+      "The relationship is negative"
+    ],
+    explanation: "R-squared of 0.85 means 85% of the variation in sales is explained by the trend. Predictions are fairly reliable but not perfect."
   },
   {
-    id: "4",
-    content: "Analyze the relationship between advertising spend and weekly sales",
-    matchId: "scatter",
-    hint: "Reveals relationships between two variables"
+    id: "p4-q4",
+    question: "Sarah uses 6 months of data to predict 5 years into the future. Why is this problematic?",
+    answers: [
+      "Predictions far outside the data range become unreliable",
+      "Excel cannot handle predictions that far",
+      "The data is definitely wrong",
+      "Long-term predictions are always more accurate"
+    ],
+    explanation: "The danger zone - predictions become less reliable the further you go from your known data. 5 years from 6 months of data is unreliable."
   },
   {
-    id: "5",
-    content: "Track daily cash flow changes during a busy holiday season",
-    matchId: "line",
-    hint: "Shows patterns and trends over time periods"
+    id: "p4-q5",
+    question: "A trend line shows that for every $1 spent on advertising, café sales increase by $2.50. What is the slope in this context?",
+    answers: [
+      "2.5 (for each $1 increase in advertising, sales increase by $2.50)",
+      "1 (advertising and sales are equal)",
+      "-2.5 (negative relationship)",
+      "0.4 (the inverse)"
+    ],
+    explanation: "The slope of 2.5 means a positive return on advertising investment - $1 in ads generates $2.50 in sales."
   },
   {
-    id: "6",
-    content: "Compare Q4 performance across different store locations",
-    matchId: "column",
-    hint: "Compares performance across categories or groups"
+    id: "p4-q6",
+    question: "The trend line goes up steeply. What does a steep slope tell you?",
+    answers: [
+      "The change is happening fast - each time unit has a big impact",
+      "The data must be wrong",
+      "The relationship is negative",
+      "Predictions will be 100% accurate"
+    ],
+    explanation: "Steep slope = fast change. If it's a monthly sales trend with slope of $500, sales increase by $500 every month."
+  }
+]
+
+const practiceScenarios = [
+  {
+    id: "scenario-1",
+    scenario: "A café tracks weekend sales and finds: Month 1: $9,200, Month 2: $9,600, Month 3: $10,000, Month 4: $10,400",
+    question: "Based on this pattern, predict Month 6 sales.",
+    answer: "$11,200",
+    hint: "The pattern shows $400 increase per month. Month 6 is 5 months after Month 1."
   },
   {
-    id: "column",
-    content: "Column Chart",
-    matchId: "1"
+    id: "scenario-2", 
+    scenario: "A restaurant finds that when they have 4 staff members, sales are $5,200. With 5 staff, sales are $5,600. With 6 staff, sales are $5,900.",
+    question: "What is happening to the relationship as staff increases beyond 4?",
+    answer: "Diminishing returns - each additional staff member adds less than the previous one",
+    hint: "4→5 adds $400, 5→6 adds $300. The additional benefit is shrinking."
   },
   {
-    id: "line",
-    content: "Line Chart", 
-    matchId: "2"
-  },
-  {
-    id: "pie",
-    content: "Pie Chart",
-    matchId: "3"
-  },
-  {
-    id: "scatter",
-    content: "Scatter Plot",
-    matchId: "4"
+    id: "scenario-3",
+    scenario: "A coffee shop's data shows a strong positive relationship between morning temperature and iced coffee sales.",
+    question: "What would you predict for a very hot day (95°F)?",
+    answer: "High iced coffee sales - the pattern suggests more hot weather = more iced coffee demand",
+    hint: "Positive relationship means both increase together. Very hot = very high predicted sales."
   }
 ]
 
@@ -82,386 +116,183 @@ export default function Phase4Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
-              🚀 Phase 4: Independent Practice
+              Phase 4: Independent Practice
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Advanced Excel Chart Mastery Challenges
+              Forecasting Challenges
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Complex dashboard creation and business insight development using professional chart techniques
+              Apply your trend line interpretation skills to new scenarios with auto-checking
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Challenge Introduction */}
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl">Sarah's Advanced Chart Mastery Challenge</CardTitle>
+                <CardTitle className="text-blue-900 text-2xl flex items-center gap-2">
+                  <Target className="h-6 w-6" />
+                  Challenge 1: Prediction Calculations
+                </CardTitle>
               </CardHeader>
-              <CardContent className="text-blue-800 space-y-4">
-                <p className="text-lg leading-relaxed">
-                  The café manager is so impressed with Sarah's initial charts that they've asked her to create 
-                  a comprehensive executive dashboard. This advanced challenge requires Sarah to make strategic 
-                  chart selection decisions and combine multiple visualizations into a cohesive business intelligence system.
+              <CardContent className="space-y-4">
+                <p className="text-blue-800 text-lg leading-relaxed">
+                  Test your ability to calculate predictions from trend lines. Use the pattern to forecast the answer.
                 </p>
                 
-                <div className="bg-white p-4 rounded-lg border border-blue-200">
-                  <h3 className="font-semibold text-blue-900 mb-2">The Executive Dashboard Requirements</h3>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <h4 className="font-medium text-blue-900">Performance Metrics</h4>
-                      <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                        <li>Weekend vs. weekday revenue comparison</li>
-                        <li>Seasonal trends over 2 years of data</li>
-                        <li>Profit margin analysis by menu category</li>
-                        <li>Customer traffic patterns throughout the day</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-blue-900">Operational Insights</h4>
-                      <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                        <li>Staff productivity during peak vs. off-peak hours</li>
-                        <li>Inventory turnover rates for perishable items</li>
-                        <li>Weather impact on beverage vs. food sales</li>
-                        <li>Cost breakdown with waste reduction opportunities</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <p className="text-lg leading-relaxed">
-                  Sarah needs to choose the most effective chart types for each business question and create 
-                  a dashboard that tells a complete story about café operations. This is her chance to demonstrate 
-                  true data visualization mastery.
-                </p>
+                <ComprehensionCheck
+                  title="Trend Line Prediction Practice"
+                  description="Apply the trend pattern to calculate the answer"
+                  questions={forecastQuestions}
+                  showExplanations={true}
+                  allowRetry={true}
+                />
               </CardContent>
             </Card>
 
-            {/* Chart Selection Exercise */}
             <Card className="border-purple-200 bg-purple-50">
               <CardHeader>
                 <CardTitle className="text-purple-900 text-2xl flex items-center gap-2">
-                  <Target className="h-6 w-6" />
-                  Challenge 1: Strategic Chart Selection
+                  <TrendingUp className="h-6 w-6" />
+                  Challenge 2: Pattern Recognition
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-purple-800 text-lg leading-relaxed">
-                  Before building her dashboard, Sarah must choose the right chart type for each business scenario. 
-                  Match each business question to the most effective Excel chart type.
+                  Read each scenario and identify what the pattern suggests. Focus on the relationship shape and what it implies.
                 </p>
                 
-                <DragAndDrop
-                  title="Business Question to Chart Type Matching"
-                  description="Drag each business scenario to its most effective chart type"
-                  items={chartSelectionExercise}
-                  leftColumnTitle="Business Scenarios"
-                  rightColumnTitle="Excel Chart Types"
-                  showHints={true}
-                  shuffleItems={true}
-                />
+                {practiceScenarios.map((scenario, idx) => (
+                  <div key={scenario.id} className="bg-white p-4 rounded-lg border border-purple-200">
+                    <h4 className="font-semibold text-purple-900 mb-2">Scenario {idx + 1}: {scenario.question}</h4>
+                    <p className="text-purple-800 text-sm mb-2">{scenario.scenario}</p>
+                    <div className="bg-purple-100 p-3 rounded border border-purple-200">
+                      <p className="text-purple-800 text-sm">
+                        <strong>Hint:</strong> {scenario.hint}
+                      </p>
+                    </div>
+                  </div>
+                ))}
                 
                 <div className="bg-purple-100 p-4 rounded border border-purple-200">
-                  <h4 className="font-medium text-purple-900 mb-2">🎯 Professional Decision-Making</h4>
-                  <p className="text-purple-800 text-sm">
-                    Notice how each business question has a natural "shape" that corresponds to a specific chart type. 
-                    Mastering this pattern recognition is what separates amateur chart makers from professional 
-                    data visualization consultants like Sarah.
-                  </p>
+                  <h4 className="font-medium text-purple-900 mb-2">Discussion: What patterns do you notice?</h4>
+                  <ul className="text-purple-800 text-sm space-y-2 list-disc list-inside">
+                    <li>How did you calculate the Month 6 prediction?</li>
+                    <li>What does "diminishing returns" mean for business planning?</li>
+                    <li>Why is it important to think about the relationship shape, not just the final number?</li>
+                  </ul>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Dashboard Building Challenge */}
+            <Card className="border-orange-200 bg-orange-50">
+              <CardHeader>
+                <CardTitle className="text-orange-900 text-2xl flex items-center gap-2">
+                  <AlertTriangle className="h-6 w-6" />
+                  Challenge 3: When NOT to Trust Predictions
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-orange-800 text-lg leading-relaxed">
+                  Good analysts know the limits of their models. Here's where forecasting breaks down.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg border border-orange-200">
+                    <h3 className="font-semibold text-orange-900 mb-2">Danger Signs</h3>
+                    <ul className="text-orange-800 text-sm space-y-2 list-disc list-inside">
+                      <li>Low R-squared - pattern is weak</li>
+                      <li>Predicting far outside data range</li>
+                      <li>Major changes in business conditions</li>
+                      <li>New competitors or regulations</li>
+                      <li>Single unusual event in the data</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-orange-200">
+                    <h3 className="font-semibold text-orange-900 mb-2">What To Do Instead</h3>
+                    <ul className="text-orange-800 text-sm space-y-2 list-disc list-inside">
+                      <li>Use ranges, not single numbers</li>
+                      <li>Build in safety margins</li>
+                      <li>Plan for multiple scenarios</li>
+                      <li>Update predictions frequently</li>
+                      <li>Combine with expert judgment</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="bg-red-100 p-4 rounded border border-red-200">
+                  <h4 className="font-medium text-red-900 mb-2">Common Forecasting Mistakes</h4>
+                  <div className="space-y-2 text-red-800 text-sm">
+                    <p><strong>False precision:</strong> "Sales will be exactly $9,847" - instead say "likely between $9,000-$10,500"</p>
+                    <p><strong>Ignoring uncertainty:</strong> Treating the prediction as a guarantee rather than a reasonable estimate</p>
+                    <p><strong>Extrapolation abuse:</strong> Using a short trend to predict far into the future</p>
+                    <p><strong>Assuming no change:</strong> "The pattern will continue exactly" when conditions may change</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
                 <CardTitle className="text-green-900 text-2xl flex items-center gap-2">
-                  <TrendingUp className="h-6 w-6" />
-                  Challenge 2: Executive Dashboard Creation
+                  <CheckSquare className="h-6 w-6" />
+                  Self-Assessment Checklist
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-green-800 text-lg leading-relaxed">
-                  Now Sarah combines her individual charts into a comprehensive executive dashboard. This integrated 
-                  approach tells a complete business story and provides the café manager with a "control panel" 
-                  for making data-driven decisions.
+                  Before moving to the assessment, check that you can do each of these:
                 </p>
                 
-                <div className="bg-white p-4 rounded-lg border border-green-200">
-                  <h3 className="font-semibold text-green-900 mb-2">Sarah's Professional Dashboard Strategy</h3>
-                  <div className="grid md:grid-cols-3 gap-4 text-sm">
-                    <div className="border-l-4 border-green-400 pl-3">
-                      <h4 className="font-medium text-green-900">Layout Design</h4>
-                      <ul className="text-green-800 space-y-1 list-disc list-inside">
-                        <li>Most important metrics at top</li>
-                        <li>Related charts grouped together</li>
-                        <li>Consistent color scheme throughout</li>
-                        <li>Clear navigation and labels</li>
-                      </ul>
-                    </div>
-                    <div className="border-l-4 border-blue-400 pl-3">
-                      <h4 className="font-medium text-green-900">Technical Excellence</h4>
-                      <ul className="text-green-800 space-y-1 list-disc list-inside">
-                        <li>Linked data sources for auto-updates</li>
-                        <li>Professional formatting standards</li>
-                        <li>Appropriate chart sizes for screen viewing</li>
-                        <li>Interactive elements where helpful</li>
-                      </ul>
-                    </div>
-                    <div className="border-l-4 border-purple-400 pl-3">
-                      <h4 className="font-medium text-green-900">Business Focus</h4>
-                      <ul className="text-green-800 space-y-1 list-disc list-inside">
-                        <li>Each chart answers specific questions</li>
-                        <li>Insights lead to actionable decisions</li>
-                        <li>Performance against targets highlighted</li>
-                        <li>Problem areas clearly identified</li>
-                      </ul>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg border border-green-200">
+                    <h3 className="font-semibold text-green-900 mb-2">Conceptual Understanding</h3>
+                    <ul className="text-green-800 text-sm space-y-1">
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I can explain what a trend line shows and what it doesn't promise</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I can distinguish between positive and negative relationships</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I understand what R-squared means (consistency, not quality)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I know when predictions become unreliable</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-green-200">
+                    <h3 className="font-semibold text-green-900 mb-2">Applied Skills</h3>
+                    <ul className="text-green-800 text-sm space-y-1">
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I can calculate a simple prediction from slope and starting value</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I can interpret what the slope means in business terms</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I can identify diminishing returns patterns</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold">✓</span>
+                        <span>I can explain why forecasting has limits</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                
-                <FinancialDashboard 
-                  title="Café Operations Executive Dashboard"
-                  refreshable={true}
-                  exportable={true}
-                  className="bg-white rounded-lg border border-gray-200 p-6"
-                />
                 
                 <div className="bg-green-100 p-4 rounded border border-green-200">
-                  <h4 className="font-medium text-green-900 mb-2">Dashboard Impact Analysis</h4>
-                  <p className="text-green-800 text-sm mb-2">
-                    Sarah's integrated dashboard transforms raw POS data into executive-level business intelligence:
+                  <h4 className="font-medium text-green-900 mb-2">Mastery Target</h4>
+                  <p className="text-green-800 text-sm">
+                    If you can check all 8 items, you're ready for the assessment. If you have gaps, review the relevant phase before continuing.
                   </p>
-                  <ul className="text-green-800 text-sm space-y-1 list-disc list-inside">
-                    <li><strong>Revenue Trends:</strong> Identifies seasonal patterns for inventory planning</li>
-                    <li><strong>Product Performance:</strong> Reveals which categories drive profitability</li>
-                    <li><strong>Cash Flow Management:</strong> Shows when working capital needs are highest</li>
-                    <li><strong>Operational Efficiency:</strong> Tracks profit margins and operational metrics</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Advanced Techniques */}
-            <Card className="border-orange-200 bg-orange-50">
-              <CardHeader>
-                <CardTitle className="text-orange-900 text-2xl">Challenge 3: Advanced Excel Chart Techniques</CardTitle>
-              </CardHeader>
-              <CardContent className="text-orange-800 space-y-4">
-                <p className="text-lg leading-relaxed">
-                  To create truly professional dashboards, Sarah learns advanced Excel chart techniques that go 
-                  beyond basic chart creation. These techniques make her visualizations more impactful and actionable.
-                </p>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-lg border border-orange-200">
-                    <h3 className="font-semibold text-orange-900 mb-2">🎯 Trendline Mastery</h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-orange-800">Add forecasting power to line and scatter charts:</p>
-                      <ul className="text-orange-800 space-y-1 list-disc list-inside">
-                        <li>Right-click data series &gt; Add Trendline</li>
-                        <li>Select Linear for steady growth patterns</li>
-                        <li>Display equation and R-squared value</li>
-                        <li>Extend trendline to forecast future periods</li>
-                        <li>Use R-squared &gt; 0.7 for reliable predictions</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-orange-200">
-                    <h3 className="font-semibold text-orange-900 mb-2">📊 Dynamic Data Ranges</h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-orange-800">Create charts that update automatically:</p>
-                      <ul className="text-orange-800 space-y-1 list-disc list-inside">
-                        <li>Use Excel Tables (Ctrl+T) for source data</li>
-                        <li>Reference table columns in chart data</li>
-                        <li>Charts expand automatically with new data</li>
-                        <li>Structured references update formulas</li>
-                        <li>Professional naming conventions for clarity</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-orange-200">
-                    <h3 className="font-semibold text-orange-900 mb-2">🎨 Professional Formatting</h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-orange-800">Apply business-grade visual standards:</p>
-                      <ul className="text-orange-800 space-y-1 list-disc list-inside">
-                        <li>Consistent color schemes across all charts</li>
-                        <li>Professional fonts (Calibri, Arial, or Segoe UI)</li>
-                        <li>Appropriate chart sizes for presentation medium</li>
-                        <li>Strategic use of white space and alignment</li>
-                        <li>Data labels only where they add clear value</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-orange-200">
-                    <h3 className="font-semibold text-orange-900 mb-2">💡 Business Intelligence Features</h3>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-orange-800">Transform charts into decision-making tools:</p>
-                      <ul className="text-orange-800 space-y-1 list-disc list-inside">
-                        <li>Conditional formatting for performance alerts</li>
-                        <li>Target lines showing goals vs. actual performance</li>
-                        <li>Color coding for problem identification</li>
-                        <li>Interactive elements using form controls</li>
-                        <li>Export-ready formatting for presentations</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Self-Assessment Checklist */}
-            <Card className="border-blue-200 bg-blue-50">
-              <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl flex items-center gap-2">
-                  <CheckSquare className="h-6 w-6" />
-                  Self-Assessment: Chart Mastery Checklist
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-blue-800 space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Before moving to the assessment phase, use this checklist to evaluate your Excel chart mastery. 
-                  Sarah uses this same checklist to ensure her charts meet professional standards.
-                </p>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-2">✅ Technical Proficiency</h3>
-                    <ul className="text-sm text-blue-800 space-y-1">
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can select the appropriate chart type for any business scenario</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can format charts with professional titles, labels, and legends</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can add and interpret trendlines for forecasting</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can create charts linked to dynamic data ranges</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can combine multiple charts into a cohesive dashboard</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-2">🎯 Business Application</h3>
-                    <ul className="text-sm text-blue-800 space-y-1">
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>My charts answer specific business questions clearly</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can extract actionable insights from chart patterns</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>My visualizations lead to concrete business recommendations</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>I can explain chart insights to non-technical audiences</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-green-600 font-bold">□</span>
-                        <span>My dashboards tell complete business stories</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="bg-blue-100 p-4 rounded border border-blue-200">
-                  <h4 className="font-medium text-blue-900 mb-2">🌟 Mastery Indicator</h4>
-                  <p className="text-blue-800 text-sm">
-                    <strong>Advanced Proficiency:</strong> Check 8+ boxes - You're ready for complex business 
-                    intelligence projects like Sarah's executive dashboard work.<br/>
-                    <strong>Developing Skills:</strong> Check 5-7 boxes - You have solid foundations but need 
-                    more practice with advanced techniques.<br/>
-                    <strong>Building Foundations:</strong> Check 1-4 boxes - Focus on mastering basic chart 
-                    creation before advancing to dashboard design.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Creative Application Challenge */}
-            <Card className="border-purple-200 bg-purple-50">
-              <CardHeader>
-                <CardTitle className="text-purple-900 text-2xl">Challenge 4: Creative Business Application</CardTitle>
-              </CardHeader>
-              <CardContent className="text-purple-800 space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Sarah's final challenge is to apply her chart mastery to a new business scenario. Choose one 
-                  of these real-world situations and create a comprehensive Excel chart solution that demonstrates 
-                  professional-level data visualization skills.
-                </p>
-                
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">🏪 Retail Store Analysis</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      A clothing store wants to optimize their inventory and staffing for the holiday season.
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Compare sales by product category</li>
-                      <li>Analyze seasonal shopping patterns</li>
-                      <li>Track customer foot traffic trends</li>
-                      <li>Show profit margins by department</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">🏥 Healthcare Practice</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      A medical practice needs to analyze patient satisfaction and operational efficiency.
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Patient satisfaction trends over time</li>
-                      <li>Appointment types and duration analysis</li>
-                      <li>Resource utilization by department</li>
-                      <li>Revenue per service category</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">🎓 Educational Institution</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      A community college wants to improve student success and optimize course offerings.
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Enrollment trends by program</li>
-                      <li>Student retention and completion rates</li>
-                      <li>Course demand vs. capacity analysis</li>
-                      <li>Financial performance by department</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="bg-purple-100 p-4 rounded border border-purple-200">
-                  <h4 className="font-medium text-purple-900 mb-2">📁 Excel Practice Data Files</h4>
-                  <p className="text-purple-800 text-sm mb-2">Use these CSV files to build your advanced dashboards:</p>
-                  <ul className="text-purple-800 text-sm space-y-1 list-disc list-inside">
-                    <li><strong><a href="/cafe-hourly-sales.csv" download className="underline">Hourly Sales Data</a>:</strong> For line chart time series analysis</li>
-                    <li><strong><a href="/cafe-menu-sales.csv" download className="underline">Menu Category Sales</a>:</strong> For column chart category comparisons</li>
-                    <li><strong><a href="/cafe-expenses.csv" download className="underline">Operating Expenses</a>:</strong> For pie chart percentage breakdowns</li>
-                    <li><strong><a href="/cafe-seasonal-trends.csv" download className="underline">Seasonal Trends</a>:</strong> For scatter plot relationship analysis</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-purple-100 p-4 rounded border border-purple-200">
-                  <h4 className="font-medium text-purple-900 mb-2">🎯 Success Criteria for Your Creative Challenge</h4>
-                  <ul className="text-purple-800 text-sm space-y-1 list-disc list-inside">
-                    <li>Use at least 3 different chart types appropriately matched to data patterns</li>
-                    <li>Create an integrated dashboard layout with consistent professional formatting</li>
-                    <li>Include at least one chart with trendline analysis for forecasting</li>
-                    <li>Write business insight statements for each chart explaining actionable recommendations</li>
-                    <li>Demonstrate understanding of your chosen industry's specific data visualization needs</li>
-                  </ul>
                 </div>
               </CardContent>
             </Card>

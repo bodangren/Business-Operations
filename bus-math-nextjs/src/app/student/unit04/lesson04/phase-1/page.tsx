@@ -3,8 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { FinancialDashboard } from "@/components/charts/FinancialDashboard"
-import { Users } from "lucide-react"
+import { Users, TrendingUp, AlertTriangle } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[0]
@@ -12,47 +11,47 @@ const currentPhase = lesson04Phases[0]
 const hookQuestions = [
   {
     id: "hook-q1",
-    question: "Sarah shows the café manager two different presentations of their weekend sales data. Version A is a spreadsheet with 500 rows of numbers. Version B is a colorful chart showing sales peaks and valleys. Which version will help the manager make faster business decisions?",
+    question: "The café manager looks at last year's data and sees that the first weekend of November had $4,200 in sales. She says, 'This year we'll probably make around $4,200 again.' What's wrong with this prediction?",
     answers: [
-      "Version B (the chart) because visual patterns are easier to understand quickly",
-      "Version A (the spreadsheet) because exact numbers are always better",
-      "Both versions are equally effective for business decisions",
-      "Neither version matters - gut feelings are better than data"
+      "Past sales don't guarantee future results - there could be many new factors",
+      "The manager should predict exactly the same amount since history repeats",
+      "November is always the same as last year no matter what",
+      "The café should just copy whatever they did last year exactly"
     ],
-    explanation: "Charts transform data into visual stories. A well-designed chart can reveal patterns in seconds that might take hours to find in a spreadsheet. This is why Sarah's data visualization skills are so valuable to businesses."
+    explanation: "Forecasting is useful but never certain. The manager can use past data as a reasonable starting point, but must acknowledge that weather, competition, staffing, and many other factors can change the outcome."
   },
   {
-    id: "hook-q2", 
-    question: "In Excel, Sarah wants to show how café sales change throughout the day (9 AM, 10 AM, 11 AM, etc.). Which chart type would best reveal the sales pattern over time?",
+    id: "hook-q2",
+    question: "Sarah notices that café sales have been increasing each month: January $12,000, February $12,800, March $13,600. She predicts April will be $14,400. What assumption is Sarah making?",
     answers: [
-      "Line chart - shows trends and changes over time",
-      "Pie chart - shows proportions of a whole",
-      "Column chart - compares categories side by side", 
-      "Scatter plot - shows relationships between two variables"
+      "The upward pattern will continue at the same rate",
+      "Sales will definitely hit exactly $14,400 no matter what",
+      "The café should stop advertising because the pattern will break",
+      "All months will now have the exact same sales"
     ],
-    explanation: "Line charts are perfect for showing trends over time. They help Sarah and the café manager see when sales peak and valley throughout the day, making staffing decisions much easier."
+    explanation: "Sarah is extrapolating - extending the pattern forward. This can be reasonable when the underlying causes haven't changed, but it's an assumption, not a certainty. The pattern could continue, slow down, or reverse."
   },
   {
     id: "hook-q3",
-    question: "The café manager looks at Sarah's chart and says, 'I see sales spike at 10 AM and 2 PM. Should we schedule more staff during those times?' What has Sarah's chart accomplished?",
+    question: "A café owner uses a 10-year trend to predict next year's sales. Why might this be less reliable than using a 2-year trend?",
     answers: [
-      "Transformed raw data into actionable business insights",
-      "Made the data look more professional but provided no value",
-      "Confused the manager with too much visual information",
-      "Replaced the need for business experience with statistics"
+      "Old patterns may no longer apply to current business conditions",
+      "More data always gives worse predictions",
+      "Long-term trends are always more accurate than short-term",
+      "The owner should use 50 years of data for perfect accuracy"
     ],
-    explanation: "This is the power of data visualization! Sarah's chart didn't just display numbers - it revealed a pattern that leads directly to a business decision about staffing. Good charts bridge the gap between data and action."
+    explanation: "Business conditions change. A 10-year trend might include a major competitor opening nearby, a recession, or changing customer preferences. Recent data often reflects current conditions better than ancient history."
   },
   {
     id: "hook-q4",
-    question: "Sarah creates a dashboard combining three charts: daily sales trends, popular menu items, and customer traffic patterns. What advantage does this integrated approach provide?",
+    question: "Sarah shows the café manager a trend line and says, 'We can predict sales for next month.' The manager asks, 'But what if a competitor opens next door?' What should Sarah acknowledge?",
     answers: [
-      "Tells a complete business story by connecting related data patterns",
-      "Makes the presentation longer and more impressive",
-      "Shows off Sarah's technical skills but has no practical value",
-      "Guarantees that all business decisions will be correct"
+      "That forecasting can't account for unknown future events",
+      "That trend lines work perfectly no matter what happens",
+      "That the prediction is guaranteed to be exactly correct",
+      "That forecasting is useless and should never be attempted"
     ],
-    explanation: "A dashboard is like a business control panel. By combining related charts, Sarah helps the café manager see how different aspects of the business connect, leading to smarter, more informed decisions."
+    explanation: "Trend lines are powerful tools but they can't predict the unpredictable. Good forecasting acknowledges uncertainty and builds in reasonable margins rather than presenting single-point estimates as facts."
   }
 ]
 
@@ -70,142 +69,129 @@ export default function Phase1Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              🎯 Phase 1: Hook
+              Phase 1: Hook
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Sarah's Data Visualization Challenge
+              Can We Predict Next Weekend's Sales?
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From spreadsheet chaos to compelling business insights with Excel charts
+              The café manager needs to know how much inventory and staff to plan for - but the future is uncertain
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Sarah's Story */}
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl">The Visual Breakthrough Moment</CardTitle>
+                <CardTitle className="text-blue-900 text-2xl">The Manager's Question</CardTitle>
               </CardHeader>
               <CardContent className="text-blue-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Remember Sarah Chen from TechStart Solutions? After mastering bookkeeping and month-end automation, 
-                  she faced a new challenge. A potential client looked at her 47-page financial report and said, 
-                  "Sarah, I don't have time to read through all these numbers. Can you show me what this means in 
-                  30 seconds?"
-                </p>
-                
-                <p className="text-lg leading-relaxed">
-                  That night, Sarah realized something crucial: having perfect data means nothing if you can't 
-                  communicate its story. She needed to learn data visualization - the art of transforming 
-                  spreadsheets into compelling visual narratives that business leaders could understand instantly.
+                  It's Thursday afternoon. The café manager is looking at her records from the past 104 weekends and 
+                  turns to Sarah: "Last year this weekend, we had $4,850 in sales. Next weekend is the same holiday 
+                  weekend - what should I expect this year?"
                 </p>
                 
                 <div className="bg-white p-4 rounded-lg border border-blue-200">
-                  <h3 className="font-semibold text-blue-900 mb-2">Sarah's "Before" Problem</h3>
-                  <p className="text-blue-800 mb-2">
-                    Sarah's client presentations included:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                    <li>Massive Excel spreadsheets with hundreds of rows</li>
-                    <li>Multiple tabs requiring constant clicking to find information</li>
-                    <li>Numbers that told the truth but not the story</li>
-                    <li>Clients struggling to understand what the data meant for their business</li>
+                  <h3 className="font-semibold text-blue-900 mb-2">Why This Matters</h3>
+                  <ul className="list-disc list-inside space-y-1 text-blue-800">
+                    <li>Too much inventory = food waste and lost money</li>
+                    <li>Too little inventory = missed sales and unhappy customers</li>
+                    <li>Overstaffing = unnecessary labor costs</li>
+                    <li>Understaffing = slow service and damaged reputation</li>
                   </ul>
                 </div>
                 
                 <p className="text-lg leading-relaxed">
-                  Now Sarah has a new mission: help the campus café analyze their weekend operations. But this time, 
-                  she's determined to present her findings as clear, compelling charts that reveal actionable insights 
-                  at a glance.
+                  Sarah realizes this is exactly the kind of question that data can help answer - but she also knows 
+                  that past patterns don't guarantee future results. Before building any Excel model, she needs to 
+                  understand what forecasting can and cannot do.
                 </p>
               </CardContent>
             </Card>
 
-            {/* The Café's Challenge */}
             <Card className="border-orange-200 bg-orange-50">
               <CardHeader>
-                <CardTitle className="text-orange-900 text-2xl">The Café Manager's Frustration</CardTitle>
+                <CardTitle className="text-orange-900 text-2xl flex items-center gap-2">
+                  <AlertTriangle className="h-6 w-6" />
+                  The Forecasting Tension
+                </CardTitle>
               </CardHeader>
               <CardContent className="text-orange-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  The café manager sits across from Sarah, surrounded by printouts of Excel spreadsheets. 
-                  "I have all this POS data," she says, "but I can't make sense of it. When are we busiest? 
-                  Which items should I order more of? How can I reduce our 8-12% food waste?"
+                  Here's the key tension the café manager faces:
                 </p>
                 
-                <div className="bg-white p-4 rounded-lg border border-orange-200">
-                  <h3 className="font-semibold text-orange-900 mb-2">The Raw Data Reality</h3>
-                  <ul className="list-disc list-inside space-y-1 text-orange-800">
-                    <li>15,000+ individual transactions across 104 weekend days</li>
-                    <li>50+ menu items with varying popularity and profit margins</li>
-                    <li>Hourly sales patterns hidden in timestamp data</li>
-                    <li>Seasonal trends buried in months of numbers</li>
-                  </ul>
-                  <p className="text-orange-800 mt-2 text-sm font-medium">
-                    Problem: All this valuable information is trapped in spreadsheet rows!
-                  </p>
-                </div>
-                
-                <p className="text-lg leading-relaxed">
-                  Sarah realizes this is her chance to demonstrate the power of Excel data visualization. 
-                  She'll transform the café's confusing data into clear, professional charts that reveal 
-                  exactly when to schedule staff, what to order, and how to cut waste.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Dashboard Comparison */}
-            <Card className="border-purple-200 bg-purple-50">
-              <CardHeader>
-                <CardTitle className="text-purple-900 text-2xl">The Power of Visual Storytelling</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-purple-800 text-lg leading-relaxed">
-                  To show the café manager what's possible, Sarah creates a sample dashboard using Excel's 
-                  chart tools. Look at the difference between raw data and visual insights:
-                </p>
-                
-                <FinancialDashboard 
-                  title="Business Financial Overview"
-                  refreshable={true}
-                  exportable={true}
-                  className="bg-white rounded-lg border border-gray-200 p-6"
-                />
-                
-                <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h3 className="font-semibold text-purple-900 mb-2">What This Dashboard Reveals</h3>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <h4 className="font-medium text-purple-900">Revenue Trends</h4>
-                      <p className="text-purple-800">Line chart shows seasonal patterns and growth opportunities</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-purple-900">Product Mix</h4>
-                      <p className="text-purple-800">Pie chart reveals which categories drive profitability</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-purple-900">Cash Flow</h4>
-                      <p className="text-purple-800">Bar chart identifies when the café needs more working capital</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-purple-900">Profitability</h4>
-                      <p className="text-purple-800">Trend analysis shows if margins are improving over time</p>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg border border-orange-200">
+                    <h3 className="font-semibold text-orange-900 mb-2">Why Use Historical Data</h3>
+                    <ul className="text-sm text-orange-800 space-y-2 list-disc list-inside">
+                      <li>Patterns exist - weekends aren't completely random</li>
+                      <li>Seasonal trends are real - summer is different from winter</li>
+                      <li>Growth or decline shows direction of the business</li>
+                      <li>Better than guessing with no information</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-orange-200">
+                    <h3 className="font-semibold text-orange-900 mb-2">Why Past Doesn't Guarantee Future</h3>
+                    <ul className="text-sm text-orange-800 space-y-2 list-disc list-inside">
+                      <li>New competitors could open nearby</li>
+                      <li>Weather patterns change from year to year</li>
+                      <li>Staff quality and management can shift</li>
+                      <li>Economic conditions affect customer spending</li>
+                    </ul>
                   </div>
                 </div>
+                
+                <p className="text-lg leading-relaxed font-medium">
+                  Good forecasting isn't about predicting the exact number - it's about understanding the range 
+                  of reasonable outcomes and planning for uncertainty.
+                </p>
               </CardContent>
             </Card>
 
-            {/* Comprehension Check */}
+            <Card className="border-purple-200 bg-purple-50">
+              <CardHeader>
+                <CardTitle className="text-purple-900 text-2xl flex items-center gap-2">
+                  <TrendingUp className="h-6 w-6" />
+                  What a Trend Line Can (and Can't) Tell Us
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-purple-800 space-y-4">
+                <p className="text-lg leading-relaxed">
+                  Sarah pulls up a scatter plot showing monthly sales for the past year. She draws a line through 
+                  the dots that represents the general direction the data is moving - a <strong>trend line</strong>.
+                </p>
+                
+                <div className="bg-white p-4 rounded-lg border border-purple-200">
+                  <h3 className="font-semibold text-purple-900 mb-2">What a Trend Line Reveals</h3>
+                  <ul className="text-sm text-purple-800 space-y-2 list-disc list-inside">
+                    <li><strong>Direction:</strong> Is sales going up, down, or staying flat?</li>
+                    <li><strong>Speed:</strong> How fast is it changing? (The slope)</li>
+                    <li><strong>Consistency:</strong> How tightly do points cluster around the line?</li>
+                    <li><strong>Pattern:</strong> Any clear relationship between time and sales?</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-4 rounded-lg border border-purple-200">
+                  <h3 className="font-semibold text-purple-900 mb-2">What a Trend Line Does NOT Promise</h3>
+                  <ul className="text-sm text-purple-800 space-y-2 list-disc list-inside">
+                    <li><strong>Exact predictions:</strong> The line is an estimate, not a guarantee</li>
+                    <li><strong>Account for surprises:</strong> It can't predict competitor openings, weather, etc.</li>
+                    <li><strong>Work forever:</strong> Patterns that held in the past might not continue</li>
+                    <li><strong>Be equally accurate:</strong> Predictions further from known data are less reliable</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+
             <ComprehensionCheck
-              title="Data Visualization Readiness Check"
-              description="Test your understanding of why Excel charts are crucial for business communication"
+              title="Can We Predict the Future?"
+              description="Test your understanding of what forecasting can and cannot do"
               questions={hookQuestions}
               showExplanations={true}
               allowRetry={true}
             />
 
-            {/* Turn and Talk */}
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
                 <CardTitle className="text-blue-800 flex items-center gap-2">
@@ -218,53 +204,50 @@ export default function Phase1Page() {
                   Discussion Prompt (3 minutes):
                 </p>
                 <p className="text-blue-800 mb-2">
-                  Think about Sarah's challenge with the café data. Share with a partner:
+                  Think about the café manager's question about next weekend's sales:
                 </p>
                 <ul className="list-disc list-inside space-y-1 text-blue-800">
-                  <li>Why might a busy café manager prefer charts over spreadsheets?</li>
-                  <li>What business decisions could the dashboard above help the manager make?</li>
-                  <li>How could Sarah's chart skills help her win more TechStart clients?</li>
+                  <li>What information from past weekends could help her plan?</li>
+                  <li>What future events could completely change the prediction?</li>
+                  <li>Why might relying only on last year's number be risky?</li>
                 </ul>
               </CardContent>
             </Card>
 
-            {/* Why This Matters */}
             <div className="bg-green-50 p-6 rounded-lg border border-green-200">
               <h3 className="font-semibold text-green-900 mb-2 text-xl">Why This Matters</h3>
               <p className="text-green-800 text-lg leading-relaxed">
-                Excel data visualization isn't just about making pretty pictures. It's about transforming 
-                information into intelligence. When Sarah masters Excel charts, she gains the ability to 
-                communicate complex business insights in seconds instead of hours. This skill will make 
-                her presentations more persuasive, her analysis more actionable, and her value to clients 
-                dramatically higher.
+                Before building any Excel forecast model, you must understand what that model can and cannot tell you. 
+                A manager who treats a forecast as exact will over-order or under-order. A manager who understands the 
+                range and uncertainty can plan for multiple scenarios. The goal isn't to predict the future perfectly - 
+                it's to make better decisions given reasonable expectations.
               </p>
             </div>
 
-            {/* Preview of Learning */}
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
-                <CardTitle className="text-green-900 text-xl">Coming Up: Your Excel Chart Mastery Toolkit</CardTitle>
+                <CardTitle className="text-green-900 text-xl">Coming Up: Drawing and Interpreting Trend Lines</CardTitle>
               </CardHeader>
               <CardContent className="text-green-800">
                 <p className="text-lg leading-relaxed mb-4">
-                  In this lesson, you'll learn the exact Excel techniques Sarah uses to create compelling business visualizations:
+                  In this lesson, you'll learn to:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-white p-3 rounded border border-green-200">
-                    <h4 className="font-semibold text-green-900">📊 Chart Type Selection</h4>
-                    <p className="text-sm text-green-800">Master when to use column, line, pie, and scatter charts for maximum impact</p>
+                    <h4 className="font-semibold text-green-900">Interpret Trend Lines</h4>
+                    <p className="text-sm text-green-800">Read what the slope and direction tell you about the business</p>
                   </div>
                   <div className="bg-white p-3 rounded border border-green-200">
-                    <h4 className="font-semibold text-green-900">🎨 Professional Formatting</h4>
-                    <p className="text-sm text-green-800">Create charts with proper titles, legends, and data labels that look investor-ready</p>
+                    <h4 className="font-semibold text-green-900">Understand "Fit"</h4>
+                    <p className="text-sm text-green-800">Know how consistent the pattern is - not if it's good or bad</p>
                   </div>
                   <div className="bg-white p-3 rounded border border-green-200">
-                    <h4 className="font-semibold text-green-900">📈 Trendline Analysis</h4>
-                    <p className="text-sm text-green-800">Add linear trendlines to reveal patterns and forecast future performance</p>
+                    <h4 className="font-semibold text-green-900">Recognize Danger Zones</h4>
+                    <p className="text-sm text-green-800">Know when predictions become unreliable</p>
                   </div>
                   <div className="bg-white p-3 rounded border border-green-200">
-                    <h4 className="font-semibold text-green-900">🎯 Dashboard Design</h4>
-                    <p className="text-sm text-green-800">Combine multiple charts into cohesive dashboards that tell complete business stories</p>
+                    <h4 className="font-semibold text-green-900">Connect to Excel</h4>
+                    <p className="text-sm text-green-800">Prepare for the Excel forecasting tools in upcoming lessons</p>
                   </div>
                 </div>
               </CardContent>

@@ -3,32 +3,100 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { BarChart } from "@/components/charts/BarChart"
-import { LineChart } from "@/components/charts/LineChart"
-import { Award, TrendingUp, Target } from "lucide-react"
+import { Award, Target } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
-import { getUnit04Phase5ComprehensionCheckItems } from "@/data/question-banks/unit04-phase5"
 
 const currentPhase = lesson04Phases[4]
-const assessmentQuestions = getUnit04Phase5ComprehensionCheckItems({ lessonIds: ["lesson04"] })
 
-// Sample data for demonstration charts
-const hourlyRevenueData = [
-  { hour: '8 AM', revenue: 1200 },
-  { hour: '9 AM', revenue: 1800 },
-  { hour: '10 AM', revenue: 2800 },
-  { hour: '11 AM', revenue: 3400 },
-  { hour: '12 PM', revenue: 4200 },
-  { hour: '1 PM', revenue: 3600 },
-  { hour: '2 PM', revenue: 2400 },
-  { hour: '3 PM', revenue: 1500 }
-]
-
-const performanceLevels = [
-  { level: 'Expert (8/8)', score: 100, color: '#22c55e' },
-  { level: 'Advanced (6-7/8)', score: 87, color: '#3b82f6' },
-  { level: 'Proficient (4-5/8)', score: 62, color: '#f59e0b' },
-  { level: 'Developing (1-3/8)', score: 25, color: '#ef4444' }
+const assessmentQuestions = [
+  {
+    id: "assess-q1",
+    question: "A trend line shows sales increasing by $200 per month. If this month's sales are $10,000, what would you predict for 3 months from now?",
+    answers: [
+      "$10,600",
+      "$10,200",
+      "$10,400",
+      "$9,800"
+    ],
+    explanation: "Starting from $10,000, add $200 × 3 months = $600. $10,000 + $600 = $10,600"
+  },
+  {
+    id: "assess-q2",
+    question: "What does a trend line with a negative slope tell you?",
+    answers: [
+      "The outcome decreases as the input increases",
+      "The prediction is definitely wrong",
+      "You should not use forecasting",
+      "The data must be incorrect"
+    ],
+    explanation: "Negative slope means the variables move in opposite directions - as one increases, the other decreases."
+  },
+  {
+    id: "assess-q3",
+    question: "R-squared = 0.4. What does this tell you about the pattern?",
+    answers: [
+      "The pattern is weak - predictions will be uncertain",
+      "The data is definitely wrong",
+      "The relationship is negative",
+      "You should never use this data"
+    ],
+    explanation: "R-squared of 0.4 means only 40% of variation is explained by the pattern. 60% is unexplained - predictions will be uncertain."
+  },
+  {
+    id: "assess-q4",
+    question: "Why is predicting 5 years into the future from 6 months of data problematic?",
+    answers: [
+      "Predictions become unreliable far outside the known data range",
+      "Excel cannot calculate that far",
+      "Longer predictions are always more accurate",
+      "Short-term data cannot show trends"
+    ],
+    explanation: "The forecasting danger zone - the further you predict from your data, the less reliable the prediction becomes."
+  },
+  {
+    id: "assess-q5",
+    question: "You find that more staff = more sales, but the relationship flattens out at higher staffing levels. What is this called?",
+    answers: [
+      "Diminishing returns",
+      "A negative relationship",
+      "High R-squared",
+      "A positive error"
+    ],
+    explanation: "Diminishing returns means each additional unit of input adds less benefit than the previous one."
+  },
+  {
+    id: "assess-q6",
+    question: "What is the most important thing to remember about any forecast?",
+    answers: [
+      "It shows what might happen, not what will definitely happen",
+      "It is always exactly correct",
+      "It accounts for all future events",
+      "It replaces business judgment"
+    ],
+    explanation: "Good forecasting acknowledges uncertainty. A forecast is a reasonable estimate, not a guarantee."
+  },
+  {
+    id: "assess-q7",
+    question: "A scatter plot shows a strong positive relationship between advertising spend and sales. What does this mean?",
+    answers: [
+      "More advertising → more sales",
+      "More advertising → less sales",
+      "Advertising and sales are unrelated",
+      "The café should stop advertising"
+    ],
+    explanation: "Positive relationship means both variables increase together - more advertising is associated with more sales."
+  },
+  {
+    id: "assess-q8",
+    question: "When interpreting a trend line, what does the slope tell you?",
+    answers: [
+      "The rate of change - how much the outcome changes per unit increase in the input",
+      "Whether the data is correct",
+      "What will definitely happen next month",
+      "If the business is good or bad"
+    ],
+    explanation: "Slope quantifies the relationship - for each unit increase in the input (like $100 in ads or 1 month), the outcome changes by the slope amount."
+  }
 ]
 
 export default function Phase5Page() {
@@ -45,310 +113,139 @@ export default function Phase5Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">
-              📊 Phase 5: Assessment
+              Phase 5: Assessment
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Excel Charts: Professional Mastery Assessment
+              Forecasting Logic Exit Ticket
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Chart interpretation and business analysis with professional standards evaluation
+              Short MCQ check on trend line interpretation and forecasting concepts
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Assessment Introduction */}
             <Card className="border-blue-200 bg-blue-50">
               <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl">Sarah's Professional Chart Certification</CardTitle>
+                <CardTitle className="text-blue-900 text-2xl">Assessment Overview</CardTitle>
               </CardHeader>
               <CardContent className="text-blue-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Sarah has reached the moment of truth. The café manager is presenting her analysis to the board 
-                  of directors next week, and they're relying on Sarah's charts to make critical business decisions. 
-                  This assessment measures your mastery of the same professional data visualization skills that 
-                  Sarah uses to create business-grade charts.
+                  This assessment checks your understanding of what forecasting can and cannot do - the foundational 
+                  concepts you need before building Excel models in upcoming lessons.
                 </p>
                 
                 <div className="bg-white p-4 rounded-lg border border-blue-200">
-                  <h3 className="font-semibold text-blue-900 mb-2">Professional Assessment Standards</h3>
+                  <h3 className="font-semibold text-blue-900 mb-2">What This Assessment Tests</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
-                      <h4 className="font-medium text-blue-900">Technical Skills (50%)</h4>
+                      <h4 className="font-medium text-blue-900">Conceptual Understanding</h4>
                       <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                        <li>Chart type selection for business scenarios</li>
-                        <li>Professional formatting and design principles</li>
-                        <li>Trendline analysis and forecasting accuracy</li>
-                        <li>Dashboard integration and layout design</li>
+                        <li>What trend lines do and don't show</li>
+                        <li>Positive vs. negative relationships</li>
+                        <li>What R-squared means (and doesn't mean)</li>
+                        <li>When predictions become unreliable</li>
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-medium text-blue-900">Business Application (50%)</h4>
+                      <h4 className="font-medium text-blue-900">Applied Skills</h4>
                       <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                        <li>Chart interpretation and insight extraction</li>
-                        <li>Business decision support and recommendations</li>
-                        <li>Strategic thinking and data-driven analysis</li>
-                        <li>Professional communication standards</li>
+                        <li>Calculating predictions from slope</li>
+                        <li>Interpreting slope in business terms</li>
+                        <li>Recognizing patterns like diminishing returns</li>
+                        <li>Identifying forecasting limitations</li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 
                 <p className="text-lg leading-relaxed">
-                  Each question tests both your Excel technical knowledge and your ability to translate chart insights 
-                  into actionable business recommendations. This mirrors the real-world challenges that Sarah faces 
-                  when consulting for businesses that depend on data-driven decisions.
+                  Focus on understanding the concepts, not just memorizing formulas. These ideas will make your 
+                  Excel forecasting work much more meaningful.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Sample Chart for Context */}
-            <Card className="border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="text-green-900 text-2xl flex items-center gap-2">
-                  <TrendingUp className="h-6 w-6" />
-                  Assessment Context: Café Hourly Revenue Analysis
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-green-800 text-lg leading-relaxed">
-                  Several assessment questions refer to charts like this one. Study the pattern and consider 
-                  what business insights and decisions this data visualization supports.
-                </p>
-                
-                <LineChart 
-                  title="Saturday Revenue by Hour - Peak Performance Analysis"
-                  description="Revenue flow reveals optimal staffing and operational timing"
-                  data={hourlyRevenueData}
-                  config={{
-                    revenue: {
-                      label: 'Revenue ($)',
-                      color: 'hsl(142, 71%, 45%)'
-                    }
-                  }}
-                  xAxisKey="hour"
-                  height={300}
-                  showGrid={true}
-                  showLegend={false}
-                />
-                
-                <div className="bg-green-100 p-4 rounded border border-green-200">
-                  <h4 className="font-medium text-green-900 mb-2">What Business Insights Does This Chart Reveal?</h4>
-                  <p className="text-green-800 text-sm">
-                    Consider: peak hours, staffing implications, inventory timing, customer experience optimization, 
-                    cost management opportunities, and operational efficiency improvements. The assessment questions 
-                    will test your ability to extract these insights and translate them into actionable business recommendations.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Main Assessment */}
             <ComprehensionCheck
-              title="Professional Excel Chart Mastery Assessment"
-              description="Apply chart interpretation and business analysis skills to real-world scenarios"
+              title="Forecasting Logic Exit Ticket"
+              description="Complete this short assessment to check your understanding"
               questions={assessmentQuestions}
               showExplanations={true}
               allowRetry={true}
             />
 
-            {/* Performance Standards */}
             <Card className="border-purple-200 bg-purple-50">
               <CardHeader>
                 <CardTitle className="text-purple-900 text-2xl flex items-center gap-2">
                   <Award className="h-6 w-6" />
-                  Professional Proficiency Standards
+                  Proficiency Standards
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-purple-800 text-lg leading-relaxed">
-                  Your assessment score indicates your readiness for different levels of professional data 
-                  visualization work. These standards align with industry expectations for Excel chart expertise.
-                </p>
-                
-                <div className="bg-white p-6 rounded-lg border border-purple-200">
-                  <h3 className="font-semibold text-purple-900 mb-4 text-center">📊 Your Assessment Results</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {performanceLevels.map((level, index) => (
-                      <div key={index} className="text-center p-4 rounded-lg border" style={{ backgroundColor: `${level.color}15`, borderColor: level.color }}>
-                        <div className="text-2xl font-bold mb-2" style={{ color: level.color }}>
-                          {level.score}%
-                        </div>
-                        <div className="text-sm font-medium text-gray-700">
-                          {level.level}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-center text-purple-800 mt-4 text-sm">
-                    Your assessment score will place you in one of these proficiency levels, indicating your readiness for different Excel chart responsibilities.
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">🏆 Expert Level (8/8 correct)</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      <strong>Ready for:</strong> Executive dashboard design, strategic business consulting, 
-                      advanced analytics projects
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Lead data visualization projects independently</li>
-                      <li>Train others in professional chart standards</li>
-                      <li>Design complex integrated dashboards</li>
-                      <li>Present to C-level executives with confidence</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">⭐ Advanced Level (6-7/8 correct)</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      <strong>Ready for:</strong> Department-level reporting, business analysis roles, 
-                      client-facing presentations
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Create professional charts for management reporting</li>
-                      <li>Support strategic planning with data visualizations</li>
-                      <li>Collaborate on cross-functional analytics projects</li>
-                      <li>Mentor colleagues in chart design principles</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">✅ Proficient Level (4-5/8 correct)</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      <strong>Ready for:</strong> Operational reporting, team-level analysis, 
-                      internal business presentations
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Create standard business charts and reports</li>
-                      <li>Support day-to-day operational decision-making</li>
-                      <li>Present findings to immediate supervisors</li>
-                      <li>Continue developing advanced visualization skills</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border border-purple-200">
-                    <h3 className="font-semibold text-purple-900 mb-2">📚 Developing Level (1-3/8 correct)</h3>
-                    <p className="text-purple-800 text-sm mb-2">
-                      <strong>Focus on:</strong> Foundational chart skills, guided practice, 
-                      basic business applications
-                    </p>
-                    <ul className="text-purple-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Practice basic chart creation and formatting</li>
-                      <li>Study business context for data visualization</li>
-                      <li>Work with mentors on chart interpretation</li>
-                      <li>Build experience with simple dashboard design</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Career Connection */}
-            <Card className="border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="text-green-900 text-2xl flex items-center gap-2">
-                  <Target className="h-6 w-6" />
-                  Career Connections: Where Chart Skills Lead
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-green-800 space-y-4">
+              <CardContent className="text-purple-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Sarah's Excel chart mastery opened doors to high-value consulting opportunities and strategic 
-                  business roles. Your performance on this assessment indicates your readiness for similar 
-                  career paths that value data visualization expertise.
+                  Your performance on this assessment indicates your readiness for the Excel forecasting tools coming next.
                 </p>
                 
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">💼 Business Analyst</h3>
-                    <p className="text-green-800 text-sm mb-2">
-                      Transform data into strategic insights for executive decision-making
+                    <h3 className="font-semibold text-green-900 mb-2">Expert (7-8 correct)</h3>
+                    <p className="text-green-800 text-sm">
+                      Ready for Excel forecasting. You understand the logic behind the tools you'll use.
                     </p>
-                    <ul className="text-green-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Average salary: $65,000-$95,000</li>
-                      <li>High demand across all industries</li>
-                      <li>Remote work opportunities available</li>
-                      <li>Clear promotion path to senior roles</li>
-                    </ul>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">📊 Data Consultant</h3>
-                    <p className="text-green-800 text-sm mb-2">
-                      Help businesses optimize operations through professional data visualization
+                  <div className="bg-white p-4 rounded-lg border border-yellow-200">
+                    <h3 className="font-semibold text-yellow-900 mb-2">Proficient (5-6 correct)</h3>
+                    <p className="text-yellow-800 text-sm">
+                      Good foundation. Review any missed concepts before Excel lessons.
                     </p>
-                    <ul className="text-green-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Hourly rates: $75-$150+</li>
-                      <li>Flexible project-based work</li>
-                      <li>Diverse client industries</li>
-                      <li>Entrepreneurial opportunities</li>
-                    </ul>
                   </div>
-                  <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">🎯 Business Intelligence</h3>
-                    <p className="text-green-800 text-sm mb-2">
-                      Design enterprise dashboards and reporting systems for major corporations
+                  <div className="bg-white p-4 rounded-lg border border-red-200">
+                    <h3 className="font-semibold text-red-900 mb-2">Developing (1-4 correct)</h3>
+                    <p className="text-red-800 text-sm">
+                      Review phases 1-3 before continuing. Make sure you understand the concepts.
                     </p>
-                    <ul className="text-green-800 text-xs space-y-1 list-disc list-inside">
-                      <li>Average salary: $75,000-$120,000</li>
-                      <li>Technology-forward work environment</li>
-                      <li>Strategic impact on business success</li>
-                      <li>Continuous learning and growth</li>
-                    </ul>
                   </div>
-                </div>
-                
-                <div className="bg-green-100 p-4 rounded border border-green-200">
-                  <h4 className="font-medium text-green-900 mb-2">🚀 Next Steps Based on Your Performance</h4>
-                  <p className="text-green-800 text-sm">
-                    <strong>Advanced/Expert:</strong> Consider applying for business analyst internships, 
-                    data visualization competitions, or freelance consulting projects.<br/>
-                    <strong>Proficient:</strong> Build a portfolio of Excel dashboards using real business 
-                    data to demonstrate your skills to potential employers.<br/>
-                    <strong>Developing:</strong> Focus on completing additional practice projects and 
-                    seeking mentorship from professionals in data analysis roles.
-                  </p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Next Steps Preview */}
-            <Card className="border-blue-200 bg-blue-50">
+            <Card className="border-green-200 bg-green-50">
               <CardHeader>
-                <CardTitle className="text-blue-900 text-2xl">Looking Ahead: Advanced Forecasting Skills</CardTitle>
+                <CardTitle className="text-green-900 text-2xl flex items-center gap-2">
+                  <Target className="h-6 w-6" />
+                  Connection to Excel Lessons
+                </CardTitle>
               </CardHeader>
-              <CardContent className="text-blue-800 space-y-4">
+              <CardContent className="text-green-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Your chart mastery creates the foundation for even more powerful Excel skills. In lesson05, 
-                  Sarah will learn regression forecasting and statistical modeling - the advanced techniques 
-                  that transform good analysts into strategic business advisors.
+                  Now that you understand what forecasting does (and doesn't do), you're ready to learn the Excel 
+                  tools that automate this process. In upcoming lessons, you'll use Excel to:
                 </p>
                 
-                <div className="bg-white p-4 rounded-lg border border-blue-200">
-                  <h3 className="font-semibold text-blue-900 mb-2">Preview: Lesson05 Advanced Skills</h3>
+                <div className="bg-white p-4 rounded-lg border border-green-200">
+                  <h3 className="font-semibold text-green-900 mb-2">What's Coming in Lessons 5-6</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
-                      <h4 className="font-medium text-blue-900">Statistical Forecasting</h4>
-                      <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                        <li>LINEAR FORECAST and TREND functions</li>
-                        <li>Regression analysis for demand prediction</li>
-                        <li>Confidence intervals and error analysis</li>
-                        <li>Seasonal adjustment techniques</li>
+                      <h4 className="font-medium text-green-900">Data Cleaning</h4>
+                      <ul className="text-green-800 space-y-1 list-disc list-inside">
+                        <li>Import and organize café data</li>
+                        <li>Handle missing or unusual values</li>
+                        <li>Prepare data for analysis</li>
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-medium text-blue-900">Business Intelligence</h4>
-                      <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                        <li>Scenario modeling and what-if analysis</li>
-                        <li>Automated reporting systems</li>
-                        <li>KPI dashboard development</li>
-                        <li>Strategic planning support tools</li>
+                      <h4 className="font-medium text-green-900">Statistical Analysis</h4>
+                      <ul className="text-green-800 space-y-1 list-disc list-inside">
+                        <li>Build scatter plots automatically</li>
+                        <li>Add trend lines with R-squared</li>
+                        <li>Use FORECAST and TREND functions</li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 
                 <p className="text-lg leading-relaxed">
-                  Strong chart skills ensure your forecasting models will be clearly communicated and 
-                  actionable for business decision-makers. Sarah's journey from spreadsheet confusion 
-                  to strategic consultant continues with even more powerful analytical tools.
+                  The concepts from this lesson - slope, fit, danger zones - will now have real Excel implementations. 
+                  Understanding the logic first makes you a better analyst than just clicking buttons without knowing what they do.
                 </p>
               </CardContent>
             </Card>
