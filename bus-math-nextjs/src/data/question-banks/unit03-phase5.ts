@@ -264,7 +264,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q1",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "In the INDEX/MATCH formula =INDEX('Trial Balance'[Amount], MATCH(\"Software Subscriptions\", 'Trial Balance'[Account Name], 0)), what happens if the account name \"Software Subscriptions\" doesn't exist in the trial balance?",
     correctAnswer: "The MATCH function returns #N/A error, which causes INDEX to also return #N/A, alerting you to the missing data",
     distractors: [
@@ -278,7 +278,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q2",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "Sarah's Q2 Income Statement shows revenues of $16,500 and expenses of $5,700. If she wants to achieve a 25% profit margin next quarter, what revenue target should she set (assuming expenses stay constant)?",
     correctAnswer: "$7,600 in revenue (expenses of $5,700 ÷ 0.75 = $7,600 to achieve 25% margin)",
     distractors: [
@@ -292,7 +292,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q3",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "Why is it critical that Sarah's Income Statement automatically updates when she adds new transactions to her trial balance?",
     correctAnswer: "Dynamic updating ensures investors always see current financial performance, building trust and credibility",
     distractors: [
@@ -306,7 +306,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q4",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "When building professional financial models, why do experts use named table references like 'TrialBalance[Amount]' instead of cell ranges like 'A2:A20'?",
     correctAnswer: "Named references are more readable, less prone to breaking when data moves, and make formulas self-documenting",
     distractors: [
@@ -320,7 +320,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q5",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "Sarah's largest expense is Contractor Payments at $2,800. From a business analysis perspective, what does this suggest about her business model?",
     correctAnswer: "TechStart Solutions uses a scalable model where she can increase capacity by hiring contractors rather than full-time employees",
     distractors: [
@@ -334,7 +334,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q6",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "If Sarah's trial balance contained both \"Website Development Revenue\" and \"Web Development Revenue\" (note the difference), how would her INDEX/MATCH formula behave?",
     correctAnswer: "The formula would return the first exact match it finds, but this highlights the importance of consistent naming conventions",
     distractors: [
@@ -348,7 +348,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q7",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "Sarah's Net Income of $10,800 flows into which section of her Balance Sheet, and why is this connection important for investors?",
     correctAnswer: "Retained Earnings in the Equity section - this connection proves the financial statements are integrated and tell one coherent story",
     distractors: [
@@ -362,7 +362,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q8",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "What business insight can Sarah gain by comparing her 75% expense ratio (expenses ÷ revenues = $5,700 ÷ $16,500) to industry benchmarks?",
     correctAnswer: "If industry average is 80%, Sarah's 75% ratio indicates efficient cost management and competitive advantage",
     distractors: [
@@ -376,7 +376,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q9",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "When presenting her Income Statement to potential investors, what makes Sarah's INDEX/MATCH approach more credible than manually entered numbers?",
     correctAnswer: "Investors can trace every number back to source data, see the formulas, and trust the model's accuracy and methodology",
     distractors: [
@@ -390,7 +390,7 @@ const lesson03Questions: Unit03Phase5Question[] = [
   {
     id: "lesson03-q10",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Dynamic Income Statement with INDEX/MATCH",
+    lessonTitle: "Lesson 03 - Balance Sheet and Retained Earnings",
     prompt: "Based on Sarah's Q2 performance (revenues $16,500, expenses $5,700, net income $10,800), what strategic question should she be asking for Q3 planning?",
     correctAnswer: "How can I scale revenue while maintaining expense control to achieve even higher profitability?",
     distractors: [
@@ -407,114 +407,114 @@ const lesson04Questions: Unit03Phase5Question[] = [
   {
     id: "lesson04-q1",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "Which INDEX/MATCH formula correctly uses named ranges to create a professional, maintainable lookup for 'Marketing Expense' in Sarah's trial balance?",
-    correctAnswer: "=INDEX(TrialBalance_Amounts,MATCH(\"Marketing Expense\",TrialBalance_Accounts,0))",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "In the indirect method of the cash flow statement, what is the starting point for calculating cash flow from operating activities?",
+    correctAnswer: "Net Income from the Income Statement",
     distractors: [
-      "=INDEX(B2:B50,MATCH(\"Marketing Expense\",A2:A50,0))",
-      "=VLOOKUP(\"Marketing Expense\",TrialBalance_Data,2,0)",
-      "=LOOKUP(\"Marketing Expense\",TrialBalance_Accounts,TrialBalance_Amounts)"
+      "Total cash received from customers",
+      "Beginning cash balance from the Balance Sheet",
+      "Total revenue minus total cash expenses"
     ],
-    explanation: "Professional financial models use named ranges like 'TrialBalance_Amounts' and 'TrialBalance_Accounts' instead of cell references. This makes formulas self-documenting, maintainable, and audit-ready for investors.",
-    objectiveTags: ["named-ranges", "INDEX-MATCH", "professional-standards"]
+    explanation: "The indirect method starts with Net Income and adjusts it for non-cash items and changes in working capital to arrive at cash flow from operations.",
+    objectiveTags: ["cash-flow", "indirect-method", "procedure"]
   },
   {
     id: "lesson04-q2",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "Why do professional financial analysts prefer INDEX/MATCH over VLOOKUP for building investor-ready financial models?",
-    correctAnswer: "INDEX/MATCH is more robust, flexible, and won't break when columns are inserted or moved, which is essential for models that evolve over time",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "A company reports Net Income of $5,000 and Depreciation Expense of $800. Accounts Receivable increased by $1,200. What is the cash flow from operating activities?",
+    correctAnswer: "$4,600 (Net Income $5,000 + Depreciation $800 − Increase in AR $1,200)",
     distractors: [
-      "INDEX/MATCH is always faster than VLOOKUP in every situation and performance scenario",
-      "INDEX/MATCH automatically formats cells with professional colors and borders for reports",
-      "INDEX/MATCH is required by GAAP accounting standards for all financial statements"
+      "$5,800 (Net Income plus Depreciation only, ignoring AR)",
+      "$3,800 (Net Income minus both Depreciation and AR increase)",
+      "$5,000 (Net Income equals operating cash flow)"
     ],
-    explanation: "INDEX/MATCH is preferred because it's robust against structural changes, can look in any direction, doesn't use hard-coded column numbers, and is the industry standard for maintainable financial models.",
-    objectiveTags: ["INDEX-MATCH", "best-practices", "maintainability"]
+    explanation: "Operating cash flow = Net Income ($5,000) + Depreciation ($800, non-cash add-back) − Increase in AR ($1,200, revenue not yet collected) = $4,600.",
+    objectiveTags: ["cash-flow", "calculation", "working-capital"]
   },
   {
     id: "lesson04-q3",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "What advanced technique would Sarah use to automatically sum all accounts containing 'Marketing' in their name, regardless of the specific account titles?",
-    correctAnswer: "=SUMPRODUCT((ISNUMBER(SEARCH(\"*Marketing*\",TrialBalance_Accounts)))*(TrialBalance_Amounts))",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "Why is depreciation added back to Net Income in the indirect cash flow method?",
+    correctAnswer: "Depreciation reduced Net Income but did not require any cash payment, so it must be added back to find actual cash flow",
     distractors: [
-      "=INDEX(TrialBalance_Amounts,MATCH(\"*Marketing*\",TrialBalance_Accounts,0))",
-      "=SUMIF(TrialBalance_Accounts,\"Marketing\",TrialBalance_Amounts)",
-      "=VLOOKUP(\"Marketing\",TrialBalance_Data,2,0)"
+      "Depreciation is a cash inflow from selling old equipment",
+      "Depreciation is not a real accounting entry and should be ignored",
+      "Adding depreciation makes the cash flow statement look better for investors"
     ],
-    explanation: "SUMPRODUCT with SEARCH function allows wildcard pattern matching to automatically group similar accounts. This technique enables dynamic categorization that updates as new marketing-related accounts are added.",
-    objectiveTags: ["advanced-formulas", "SUMPRODUCT", "dynamic-categorization"]
+    explanation: "Depreciation is a non-cash expense. It reduces reported profit on the Income Statement, but no cash actually leaves the business. Adding it back removes this accounting-only reduction.",
+    objectiveTags: ["cash-flow", "non-cash-items", "misconception"]
   },
   {
     id: "lesson04-q4",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "How should Sarah handle potential errors when an account might not exist in her trial balance, to maintain professional presentation standards?",
-    correctAnswer: "=IFERROR(INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0)),0)",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "A business purchased equipment for $4,000 cash and took out a $6,000 bank loan. How do these appear on the cash flow statement?",
+    correctAnswer: "Equipment purchase is an investing outflow ($4,000); the loan is a financing inflow ($6,000)",
     distractors: [
-      "=INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0),0)",
-      "=IF(INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0)))",
-      "=TRY(INDEX(TrialBalance_Amounts,MATCH(\"Account Name\",TrialBalance_Accounts,0)))"
+      "Both are operating activities since they affect the business",
+      "Both are investing activities since they involve long-term items",
+      "The equipment is financing and the loan is investing"
     ],
-    explanation: "IFERROR wrapping prevents #N/A errors from displaying when accounts don't exist. Professional models never show error values to investors - they either return 0 or a meaningful message.",
-    objectiveTags: ["error-handling", "IFERROR", "professional-standards"]
+    explanation: "Purchasing long-term assets is an investing activity (cash outflow). Borrowing from a bank is a financing activity (cash inflow). They belong in different sections.",
+    objectiveTags: ["cash-flow", "classification", "investing-financing"]
   },
   {
     id: "lesson04-q5",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "What makes a financial model 'dynamic' and why is this crucial for growing businesses like TechStart Solutions?",
-    correctAnswer: "Dynamic models automatically update all calculations when new data is added, ensuring reports always reflect current business reality without manual formula updates",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "If Accounts Payable increased by $900 during the period, how is this treated in the indirect method?",
+    correctAnswer: "Added to Net Income — expenses were recorded but cash was not yet paid, so cash is higher than profit suggests",
     distractors: [
-      "Dynamic models change colors automatically based on profit levels and performance metrics",
-      "Dynamic models can email stakeholders when key financial metrics change significantly",
-      "Dynamic models automatically backup data to the cloud every time they're modified"
+      "Subtracted from Net Income — more payables means the business owes more cash",
+      "Reported as a financing activity cash inflow",
+      "Ignored — Accounts Payable does not affect cash flow"
     ],
-    explanation: "Dynamic models maintain live connections between data sources and calculations. When Sarah adds new transactions to her trial balance, her Income Statement updates automatically, ensuring accuracy and saving hours of manual work.",
-    objectiveTags: ["dynamic-formulas", "automation", "efficiency"]
+    explanation: "An increase in Accounts Payable means the company recorded expenses but has not yet paid cash for them. This saved cash relative to Net Income, so it is added back.",
+    objectiveTags: ["cash-flow", "working-capital", "adjustments"]
   },
   {
     id: "lesson04-q6",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "In a professional financial model, which naming convention for ranges demonstrates the highest level of Excel sophistication?",
-    correctAnswer: "TrialBalance_Accounts, IncomeStatement_Revenue, BalanceSheet_Assets with consistent, descriptive naming that clearly indicates content and purpose",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "A company has Current Assets of $18,000 and Current Liabilities of $6,000. What is the current ratio and what does it indicate?",
+    correctAnswer: "3.0 — the company has $3 in current assets for every $1 of current liabilities, indicating strong short-term liquidity",
     distractors: [
-      "TB_Accts, IS_Rev, BS_Assets with abbreviated names for faster typing",
-      "Data1, Data2, Data3 with simple sequential numbering for easy reference",
-      "A2:A50, B2:B50, C2:C50 using cell references instead of named ranges"
+      "0.33 — the company cannot pay its short-term debts",
+      "3.0 — the company is over-leveraged and should reduce assets",
+      "$12,000 — the difference between current assets and liabilities"
     ],
-    explanation: "Professional naming conventions use full, descriptive names that make formulas self-documenting. Names like 'TrialBalance_Accounts' immediately tell any reader what data the range contains, which is essential for auditing and maintenance.",
-    objectiveTags: ["naming-conventions", "documentation", "maintainability"]
+    explanation: "Current Ratio = Current Assets ÷ Current Liabilities = $18,000 ÷ $6,000 = 3.0. A ratio above 2.0 generally indicates the company can comfortably meet its short-term obligations.",
+    objectiveTags: ["ratios", "current-ratio", "liquidity"]
   },
   {
     id: "lesson04-q7",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "How would Sarah create a formula that automatically pulls revenue data from the correct quarter based on today's date?",
-    correctAnswer: "=INDEX(TrialBalance_Amounts,MATCH(\"Q\"&QUARTER(TODAY())&\"_Revenue\",TrialBalance_Accounts,0))",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "A business has Net Income of $12,000 and Total Assets of $80,000. What is its Return on Assets (ROA) and what does it mean?",
+    correctAnswer: "15% — the business generates 15 cents of profit for every dollar of assets it owns",
     distractors: [
-      "=INDEX(TrialBalance_Amounts,MATCH(\"Q1_Revenue\",TrialBalance_Accounts,0))",
-      "=VLOOKUP(\"Current Quarter Revenue\",TrialBalance_Data,2,0)",
-      "=SUM(INDEX(TrialBalance_Amounts,MATCH(\"Revenue\",TrialBalance_Accounts,0)))"
+      "6.7 — Total Assets divided by Net Income",
+      "$68,000 — Total Assets minus Net Income",
+      "15% — the business is losing money because ROA should be above 50%"
     ],
-    explanation: "Using QUARTER(TODAY()) dynamically determines the current quarter (1-4) and builds the account name accordingly. This formula automatically updates as quarters change, requiring no manual intervention.",
-    objectiveTags: ["dynamic-formulas", "date-functions", "automation"]
+    explanation: "ROA = Net Income ÷ Total Assets = $12,000 ÷ $80,000 = 15%. This measures how efficiently the business uses its assets to generate profit. For many industries, 10-20% is considered solid.",
+    objectiveTags: ["ratios", "ROA", "efficiency"]
   },
   {
     id: "lesson04-q8",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Advanced INDEX/MATCH & Named Ranges",
-    prompt: "What business advantage does Sarah gain by mastering these advanced INDEX/MATCH techniques beyond just having working formulas?",
-    correctAnswer: "Professional-grade Excel skills signal attention to detail and technical competence, building investor confidence in her overall business management capabilities",
+    lessonTitle: "Lesson 04 - Indirect Cash Flow and Ratios",
+    prompt: "A profitable company reports positive Net Income but negative operating cash flow. What is the most likely explanation?",
+    correctAnswer: "The company has large increases in accounts receivable or inventory that tie up cash, or significant non-cash revenue",
     distractors: [
-      "Advanced Excel functions make her computer run faster and more efficiently",
-      "INDEX/MATCH formulas automatically comply with tax regulations and GAAP standards",
-      "These techniques allow her to eliminate the need for accounting software entirely"
+      "The company made accounting errors on the Income Statement",
+      "Negative operating cash flow is impossible if Net Income is positive",
+      "The company must have paid out all its profit as dividends"
     ],
-    explanation: "Technical excellence in financial modeling demonstrates professional competence and attention to detail. Investors judge business owners partly by the quality of their financial systems - sophisticated models suggest sophisticated business management.",
-    objectiveTags: ["investor-communication", "credibility", "professionalism"]
+    explanation: "When Net Income is positive but operating cash flow is negative, it usually means revenue was recorded but cash not yet collected (increased receivables), or cash was spent on inventory that has not yet been sold.",
+    objectiveTags: ["cash-flow", "profit-vs-cash", "analysis"]
   }
 ];
 

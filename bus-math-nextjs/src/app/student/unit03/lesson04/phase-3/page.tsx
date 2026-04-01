@@ -3,314 +3,264 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Wrench, AlertTriangle, CheckCircle, Users } from "lucide-react";
+import { Wrench, Users } from "lucide-react";
 import { lesson04Data, unit03Data, lesson04Phases } from "../lesson-data";
 
-const currentPhase = lesson04Phases[2]; // Guided Practice phase
+const currentPhase = lesson04Phases[2];
 
-const formulaMatchingItems = [
+const classificationItems = [
   {
-    id: "formula-1",
-    content: "=INDEX(TrialBalance_Amounts,MATCH(\"Revenue\",TrialBalance_Accounts,0))",
-    matchId: "explanation-1",
-    hint: "Look for the formula that uses named ranges professionally"
+    id: "cf-1",
+    content: "Depreciation expense of $300",
+    matchId: "cat-1",
+    hint: "This reduced net income but required no cash"
   },
   {
-    id: "explanation-1",
-    content: "Professional dynamic lookup using named ranges - investor-ready and maintainable",
-    matchId: "formula-1"
+    id: "cat-1",
+    content: "Operating — Add back to Net Income (non-cash expense)",
+    matchId: "cf-1"
   },
   {
-    id: "formula-2",
-    content: "=INDEX(B2:B50,MATCH(\"Cash\",A2:A50,0))",
-    matchId: "explanation-2",
-    hint: "This formula uses INDEX/MATCH but still has cell references"
+    id: "cf-2",
+    content: "Increase in Accounts Receivable of $2,100",
+    matchId: "cat-2",
+    hint: "Revenue recorded but cash not yet collected"
   },
   {
-    id: "explanation-2",
-    content: "INDEX/MATCH with cell references - better than VLOOKUP but not yet professional grade",
-    matchId: "formula-2"
+    id: "cat-2",
+    content: "Operating — Subtract from Net Income (cash not yet received)",
+    matchId: "cf-2"
   },
   {
-    id: "formula-3",
-    content: "=VLOOKUP(\"Revenue\",A2:B50,2,FALSE)",
-    matchId: "explanation-3",
-    hint: "This is the old, fragile formula type"
+    id: "cf-3",
+    content: "Purchase of equipment for $3,000 cash",
+    matchId: "cat-3",
+    hint: "Cash spent on a long-term asset"
   },
   {
-    id: "explanation-3",
-    content: "VLOOKUP formula - fragile, will break when columns are inserted or moved",
-    matchId: "formula-3"
+    id: "cat-3",
+    content: "Investing — Cash outflow",
+    matchId: "cf-3"
   },
   {
-    id: "formula-4",
-    content: "=INDEX(IncomeStatement_Amounts,MATCH(\"Total Revenue\",IncomeStatement_Labels,0))",
-    matchId: "explanation-4",
-    hint: "This shows advanced named range usage for Income Statements"
+    id: "cf-4",
+    content: "Increase in Accounts Payable of $600",
+    matchId: "cat-4",
+    hint: "Expenses recorded but cash not yet paid"
   },
   {
-    id: "explanation-4",
-    content: "Advanced named range formula for Income Statement automation - Wall Street quality",
-    matchId: "formula-4"
+    id: "cat-4",
+    content: "Operating — Add to Net Income (cash saved by not paying yet)",
+    matchId: "cf-4"
+  },
+  {
+    id: "cf-5",
+    content: "Repayment of bank loan principal $2,000",
+    matchId: "cat-5",
+    hint: "Cash paid to a creditor"
+  },
+  {
+    id: "cat-5",
+    content: "Financing — Cash outflow",
+    matchId: "cf-5"
+  },
+  {
+    id: "cf-6",
+    content: "Dividends paid to shareholders $1,500",
+    matchId: "cat-6",
+    hint: "Cash distributed to owners"
+  },
+  {
+    id: "cat-6",
+    content: "Financing — Cash outflow",
+    matchId: "cf-6"
   }
 ];
 
 export default function Unit03Lesson04Phase3() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
-      <PhaseHeader 
-        unit={unit03Data}
+    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+      <PhaseHeader
         lesson={lesson04Data}
+        unit={unit03Data}
         phase={currentPhase}
         phases={lesson04Phases}
       />
-      
-      <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">
-              🔧 Phase 3: Building Sarah's Dynamic Income Statement System
-            </Badge>
-            
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl font-bold text-gray-900 mb-6">
-                Step-by-Step: From Broken VLOOKUP to Professional INDEX/MATCH
-              </h1>
-              
-              <div className="bg-gradient-to-r from-purple-100 to-violet-100 p-6 rounded-lg border border-purple-200 mb-8">
-                <p className="text-lg leading-relaxed text-purple-900">
-                  After her investor meeting disaster, Sarah sat down with Jennifer Kim for an emergency Excel training session. 
-                  "We're going to rebuild your Income Statement from scratch," Jennifer said, "but this time we'll use professional-grade 
-                  formulas that won't break under pressure." Today, you'll follow the exact same step-by-step process they used to 
-                  transform Sarah's fragile financial model into an investor-ready system.
-                </p>
+
+      <div className="max-w-4xl mx-auto p-6 space-y-8">
+        <div className="prose prose-lg max-w-none">
+          <h2 className="text-3xl font-bold text-purple-900 mb-6">
+            Deepening: Cash Flow Adjustments and Ratio Interpretation
+          </h2>
+
+          <div className="bg-gradient-to-r from-purple-100 to-violet-100 p-6 rounded-lg border border-purple-200 mb-8">
+            <p className="text-lg leading-relaxed text-purple-900">
+              Sarah's basic cash flow statement gave the bank what they needed — but Jennifer pushed further.
+              <strong> "Now let's read the story behind the numbers,"</strong> she said. <strong>"A cash flow
+              statement is not just a calculation — it's a diagnostic tool. Combined with ratios, it tells you
+              whether the business is healthy or heading for trouble."</strong>
+            </p>
+          </div>
+
+          <h3 className="text-2xl font-semibold text-purple-800 mb-4">
+            Step 1: Classify Each Cash Movement
+          </h3>
+
+          <p className="text-lg leading-relaxed mb-6">
+            Before building the full statement, practice identifying where each transaction belongs. This is the
+            most common error students make — misclassifying cash movements between operating, investing, and
+            financing activities.
+          </p>
+
+          <div className="bg-gray-50 p-6 rounded-lg border mb-8">
+            <h4 className="font-semibold text-gray-800 mb-3 text-lg">Classification Rules</h4>
+            <div className="space-y-3 text-sm">
+              <div className="bg-green-50 p-3 rounded border">
+                <p className="font-medium text-green-900">Operating Activities — Day-to-day business</p>
+                <p className="text-green-800 mt-1">Net Income, depreciation, changes in current assets and current liabilities. If it affects Net Income or working capital, it is usually operating.</p>
               </div>
-
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Step 1: Creating Professional Named Ranges
-              </h2>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                Jennifer started by fixing the foundation. "Before we write any formulas," she explained, "we need to give meaningful 
-                names to our data ranges. This isn't just for show—it's what separates amateur spreadsheets from professional financial models."
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <Card className="border-blue-200 bg-blue-50">
-                  <CardHeader>
-                    <CardTitle className="text-blue-800 text-lg">🎯 Trial Balance Named Ranges</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="bg-white p-3 rounded border font-mono text-sm">
-                        <strong>TrialBalance_Accounts:</strong> A2:A50<br/>
-                        <em>Contains all account names</em>
-                      </div>
-                      <div className="bg-white p-3 rounded border font-mono text-sm">
-                        <strong>TrialBalance_Amounts:</strong> B2:B50<br/>
-                        <em>Contains all account balances</em>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-green-200 bg-green-50">
-                  <CardHeader>
-                    <CardTitle className="text-green-800 text-lg">📊 Income Statement Named Ranges</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="bg-white p-3 rounded border font-mono text-sm">
-                        <strong>IncomeStatement_Labels:</strong> D2:D25<br/>
-                        <em>Revenue and expense categories</em>
-                      </div>
-                      <div className="bg-white p-3 rounded border font-mono text-sm">
-                        <strong>IncomeStatement_Amounts:</strong> E2:E25<br/>
-                        <em>Calculated amounts using INDEX/MATCH</em>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <div className="bg-blue-50 p-3 rounded border">
+                <p className="font-medium text-blue-900">Investing Activities — Long-term assets</p>
+                <p className="text-blue-800 mt-1">Buying or selling equipment, buildings, vehicles, or investments. Look at changes in long-term asset accounts on the Balance Sheet.</p>
               </div>
-
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Step 2: Building the Dynamic Revenue Section
-              </h2>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                With named ranges in place, Jennifer showed Sarah how to build the revenue section of her Income Statement. 
-                "Each line item needs to pull dynamically from your trial balance," she explained. "That way, when you add new 
-                revenue transactions, your Income Statement updates automatically."
-              </p>
-
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200 mb-6">
-                <h3 className="font-semibold text-green-900 mb-3 text-xl">Revenue Formula Construction</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-green-800 mb-2">For Website Development Revenue:</h4>
-                    <div className="bg-white p-4 rounded border font-mono text-sm">
-                      =INDEX(TrialBalance_Amounts,MATCH("Website Development Revenue",TrialBalance_Accounts,0))
-                    </div>
-                    <p className="text-green-700 text-sm mt-2">
-                      This formula searches for "Website Development Revenue" in the account names and returns its balance.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-green-800 mb-2">For Total Revenue Calculation:</h4>
-                    <div className="bg-white p-4 rounded border font-mono text-sm">
-                      =SUM(INDEX(TrialBalance_Amounts,MATCH("*Revenue*",TrialBalance_Accounts,0)):INDEX(TrialBalance_Amounts,MATCH("*Revenue*",TrialBalance_Accounts,0)+2))
-                    </div>
-                    <p className="text-green-700 text-sm mt-2">
-                      Advanced: This sums all revenue accounts automatically, regardless of how many Sarah adds.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Step 3: Building the Dynamic Expense Section
-              </h2>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                Next, Jennifer tackled the expense section. "Expenses are trickier," she noted, "because we need to organize them 
-                by category and ensure proper classification between operating and non-operating expenses."
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <Card className="border-orange-200 bg-orange-50">
-                  <CardHeader>
-                    <CardTitle className="text-orange-800 text-lg">Operating Expenses</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2 font-mono text-xs">
-                      <div className="bg-white p-2 rounded border">
-                        <strong>Software Subscriptions:</strong><br/>
-                        =INDEX(TrialBalance_Amounts,MATCH("Software Expense",TrialBalance_Accounts,0))
-                      </div>
-                      <div className="bg-white p-2 rounded border">
-                        <strong>Marketing Costs:</strong><br/>
-                        =INDEX(TrialBalance_Amounts,MATCH("Marketing Expense",TrialBalance_Accounts,0))
-                      </div>
-                      <div className="bg-white p-2 rounded border">
-                        <strong>Professional Services:</strong><br/>
-                        =INDEX(TrialBalance_Amounts,MATCH("Professional Fees",TrialBalance_Accounts,0))
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-red-200 bg-red-50">
-                  <CardHeader>
-                    <CardTitle className="text-red-800 text-lg">Error Prevention</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-2">
-                        <AlertTriangle className="h-4 w-4 text-red-600 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="text-red-800 text-sm font-medium">IFERROR Wrapper</p>
-                          <p className="text-red-700 text-xs">Wrap formulas in IFERROR to handle missing accounts gracefully</p>
-                        </div>
-                      </div>
-                      <div className="bg-white p-2 rounded border font-mono text-xs">
-                        =IFERROR(INDEX(TrialBalance_Amounts,MATCH("Account Name",TrialBalance_Accounts,0)),0)
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                Step 4: Professional Quality Control
-              </h2>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                Jennifer's final lesson was about quality control. "Professional financial models include built-in checks," 
-                she explained. "Investors expect to see validation that your numbers add up correctly."
-              </p>
-
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-8">
-                <h3 className="font-semibold text-blue-900 mb-3 text-xl flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5" />
-                  Sarah's Quality Control Checklist
-                </h3>
-                <ul className="space-y-2 text-blue-800">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold">✓</span>
-                    <span>All formulas use named ranges for clarity and maintainability</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold">✓</span>
-                    <span>INDEX/MATCH formulas won't break when trial balance columns change</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold">✓</span>
-                    <span>IFERROR functions handle missing accounts without displaying errors</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold">✓</span>
-                    <span>Revenue minus expenses equals net income calculation validates</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold">✓</span>
-                    <span>Professional formatting with clear section headers and totals</span>
-                  </li>
-                </ul>
+              <div className="bg-purple-50 p-3 rounded border">
+                <p className="font-medium text-purple-900">Financing Activities — Owners and creditors</p>
+                <p className="text-purple-800 mt-1">Borrowing or repaying loans, issuing stock, paying dividends. Look at changes in long-term liabilities and equity accounts.</p>
               </div>
             </div>
           </div>
-        </section>
+
+          <h3 className="text-2xl font-semibold text-purple-800 mb-4">
+            Step 2: Interpreting Ratios Alongside Cash Flow
+          </h3>
+
+          <p className="text-lg leading-relaxed mb-6">
+            Numbers alone do not tell the full story. Ratios provide context. Two key ratios help assess whether
+            Sarah's cash situation is a temporary timing issue or a deeper problem.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <Card className="border-green-200 bg-green-50">
+              <CardHeader>
+                <CardTitle className="text-green-800 text-lg">Current Ratio</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-white p-3 rounded border font-mono text-sm mb-3">
+                  Current Ratio = Current Assets ÷ Current Liabilities
+                </div>
+                <p className="text-green-700 text-sm mb-2">
+                  <strong>What it measures:</strong> Can the business pay its short-term debts?
+                </p>
+                <p className="text-green-700 text-sm">
+                  <strong>Sarah's numbers:</strong> Current Assets ($17,900) ÷ Current Liabilities ($3,200) = <strong>5.59</strong>
+                </p>
+                <p className="text-green-700 text-sm mt-2">
+                  <strong>Interpretation:</strong> Above 2.0 is generally healthy. Sarah has more than enough current assets to cover short-term obligations. Her cash issue is timing, not solvency.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-200 bg-blue-50">
+              <CardHeader>
+                <CardTitle className="text-blue-800 text-lg">Return on Assets (ROA)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-white p-3 rounded border font-mono text-sm mb-3">
+                  ROA = Net Income ÷ Total Assets
+                </div>
+                <p className="text-blue-700 text-sm mb-2">
+                  <strong>What it measures:</strong> How efficiently does the business use its assets to generate profit?
+                </p>
+                <p className="text-blue-700 text-sm">
+                  <strong>Sarah's numbers:</strong> $4,450 ÷ $29,900 = <strong>14.9%</strong>
+                </p>
+                <p className="text-blue-700 text-sm mt-2">
+                  <strong>Interpretation:</strong> For every dollar of assets, Sarah generates about 15 cents of profit. This is a solid return for a service business.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h3 className="text-2xl font-semibold text-purple-800 mb-4">
+            Step 3: Reading the Full Story
+          </h3>
+
+          <p className="text-lg leading-relaxed mb-6">
+            Now combine all three statements. A strong business shows:
+          </p>
+
+          <div className="bg-white p-6 rounded-lg border mb-8">
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-3">
+                <span className="text-green-600 font-bold">1.</span>
+                <p className="text-gray-800"><strong>Positive operating cash flow</strong> — The core business generates cash. Sarah's $2,850 is positive, which is good.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold">2.</span>
+                <p className="text-gray-800"><strong>Negative investing cash flow</strong> — The business is investing in growth. Sarah's ($3,000) equipment purchase shows she is building capacity.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-purple-600 font-bold">3.</span>
+                <p className="text-gray-800"><strong>Healthy ratios</strong> — Current ratio above 2.0 and positive ROA signal the business is fundamentally sound.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 p-6 rounded-lg border border-amber-200 mb-8">
+            <h4 className="font-semibold text-amber-900 mb-3 text-lg">The Complete Picture</h4>
+            <p className="text-amber-800 leading-relaxed">
+              Sarah's business is <strong>profitable</strong> (Net Income $4,450), <strong>growing</strong> (investing
+              in equipment), and <strong>liquid</strong> (current ratio 5.59). The low cash increase is a temporary
+              timing issue — customers owe her $2,100 that she will collect soon. This is the story she needs to
+              tell the bank, backed by all three statements.
+            </p>
+          </div>
+
+          <Card className="border-purple-200 bg-purple-50 mb-6">
+            <CardHeader>
+              <CardTitle className="text-purple-800 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Think-Pair-Share
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium text-purple-900 mb-2">
+                Discussion Prompt (5 minutes):
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-purple-800">
+                <li>If Sarah's current ratio were 0.8 instead of 5.59, how would that change the bank's decision?</li>
+                <li>Why is it actually a good sign that investing cash flow is negative for a growing business?</li>
+                <li>What would happen to Sarah's ROA if she bought more equipment but revenue stayed the same?</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
 
         <DragAndDrop
-          title="Formula Quality Assessment"
-          description="Match each Excel formula with its professional quality level and explanation."
-          leftColumnTitle="Excel Formulas"
-          rightColumnTitle="Quality Assessment"
-          items={formulaMatchingItems}
+          title="Cash Flow Classification Practice"
+          description="Match each transaction to its correct cash flow category and treatment."
+          leftColumnTitle="Transaction"
+          rightColumnTitle="Category and Treatment"
+          items={classificationItems}
           showHints={true}
         />
 
-        <Card className="border-purple-200 bg-purple-50 max-w-4xl mx-auto">
-          <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Think-Pair-Share Activity
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium text-purple-900 mb-2">
-              Discussion Prompt (5 minutes):
-            </p>
-            <p className="text-purple-800 mb-2">
-              Consider the transformation from Sarah's broken VLOOKUP model to her professional INDEX/MATCH system. 
-              Discuss with a partner:
-            </p>
-            <ul className="list-disc list-inside space-y-1 text-purple-800">
-              <li>Why is it worth the extra effort to create named ranges instead of using simple cell references?</li>
-              <li>How might this attention to Excel details reflect on Sarah's overall business professionalism?</li>
-              <li>What would you do differently if you were building a financial model for your own startup?</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        <div className="bg-amber-50 p-6 rounded-lg border border-amber-200 max-w-4xl mx-auto">
-          <h3 className="font-semibold text-amber-900 mb-2 text-xl flex items-center gap-2">
+        <div className="bg-amber-50 p-6 rounded-lg border border-amber-200">
+          <h3 className="font-semibold text-amber-900 mb-2 text-lg flex items-center gap-2">
             <Wrench className="h-5 w-5" />
             Your Practice Challenge
           </h3>
           <p className="text-amber-800 leading-relaxed">
-            Now it's your turn to build what Sarah built. Using your Unit 1 trial balance data, you'll create a dynamic 
-            Income Statement with INDEX/MATCH formulas and named ranges. Follow Jennifer's step-by-step process: create 
-            named ranges first, then build revenue formulas, add expense calculations, and finish with quality control checks. 
-            When you're done, your Income Statement will automatically update whenever you add new transactions to your trial balance.
+            Now you will practice building complete cash flow statements from scratch. In the next phase, you will
+            receive trial balance data and comparative Balance Sheets. Your task: classify each change, build the
+            indirect-method cash flow statement, and calculate the current ratio and ROA to assess business health.
           </p>
         </div>
-      </main>
+      </div>
 
-      <PhaseFooter 
-        unit={unit03Data}
+      <PhaseFooter
         lesson={lesson04Data}
+        unit={unit03Data}
         phase={currentPhase}
         phases={lesson04Phases}
       />
