@@ -1,9 +1,10 @@
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import DashboardArtifact from "@/components/accounting/DashboardArtifact"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2, FileText } from "lucide-react"
 import { lesson06Data, unit03Data, lesson06Phases } from "../lesson-data"
 import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5"
 
@@ -36,6 +37,18 @@ export default function Phase5Page() {
             questions={assessmentQuestions}
             showExplanations={true}
           />
+
+          <Card className="border-emerald-200 bg-emerald-50">
+            <CardHeader>
+              <CardTitle className="text-emerald-800 flex items-center gap-2"><FileText className="h-5 w-5"/>Artifact Task: Defend Your Financial Story</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-emerald-900 mb-4">
+                Complete the dashboard artifact to demonstrate you can communicate the financial story to an investor in plain language.
+              </p>
+              <DashboardArtifact />
+            </CardContent>
+          </Card>
 
           <Card className="border-emerald-200 bg-emerald-50">
             <CardHeader>

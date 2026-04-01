@@ -23,7 +23,7 @@ export const lesson06Data = {
     "Iterative build with validation and professional standards"
   ],
   rationale: "Students convert their three‑statement links into a decision‑ready dashboard with scenarios, live visuals, and a concise executive summary that builds investor trust.",
-  status: "Draft"
+  status: "Implemented"
 }
 
 export const unit03Data = {

@@ -108,21 +108,21 @@
     - [x] Statements are linked correctly
     - [x] The workbook shows visible integrity checks
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with KPI dashboard
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with KPI dashboard
     - Phase 1: Open with investor scenario where dashboard matters, make tool feel necessary
     - Phase 2: Name dashboard/KPI pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task requiring students to defend the financial story in plain language
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Keep the dashboard tied to the underlying statements
-  - [ ] 3.2.4 Require at least one visual plus one written takeaway
-  - [ ] 3.2.5 Phase 5 must ask students to defend the financial story in plain language
+  - [x] 3.2.3 Keep the dashboard tied to the underlying statements
+  - [x] 3.2.4 Require at least one visual plus one written takeaway
+  - [x] 3.2.5 Phase 5 must ask students to defend the financial story in plain language
   - **Done when**:
-    - [ ] The workbook supports a credible executive-facing summary
-    - [ ] Students can cite ratios and statement evidence clearly
+    - [x] The workbook supports a credible executive-facing summary
+    - [x] Students can cite ratios and statement evidence clearly
 
 ## Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
