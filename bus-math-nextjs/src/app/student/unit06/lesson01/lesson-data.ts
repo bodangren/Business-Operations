@@ -1,71 +1,70 @@
-// PriceLab Challenge, Lesson 1 data - extracted from MCP curriculum database
 export const lesson01Data = {
-  id: "mds5wn3b7mh3f27cmp5",
-  title: "Launch & Competitor Data Import",
+  id: "u6-l1",
+  title: "Launch: The Pricing Problem",
   sequence: 1,
-  unitId: "mdrhlhv3y4h703ia2t",
+  unitId: "u6",
   learningObjectives: [
-    "Import and clean external data using Power Query"
+    "Identify Sarah's pricing problem and why profit margins dropped despite higher revenue",
+    "Explain why price is both a math decision and a market decision",
+    "Recognize the three pillars of strategic pricing: profitable, competitive, defensible"
   ],
   keyConcepts: [
-    "Power Query for data import and transformation"
+    "Profit paradox",
+    "Target-profit pricing",
+    "Market-competitive pricing",
+    "Pricing scoreboard"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Entry event demonstration and Power Query data import skills"
+    "Launch with founder problem narrative",
+    "Establish pricing scoreboard",
+    "Preview the full unit journey"
   ],
-  rationale: "To introduce students to the powerful data import and transformation capabilities of Power Query, a critical skill for any data analyst.",
-  status: "Draft"
+  rationale: "Launch the PriceLab Challenge by making Sarah's pricing problem feel real and urgent. Establish the pricing scoreboard (profitable, competitive, defensible) as the unit's north star.",
+  status: "Published"
 }
 
 export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
+  id: "u6",
   title: "PriceLab Challenge",
   sequence: 6
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson01Phases = [
   {
     id: "phase_hook_1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to the lesson topic",
-    // component: "Lesson01Phase1" (id: mdwl1ovg1rb2fimw7zj) - To introduce the unit's story with a video and comprehension questions.
+    description: "Meet Sarah and discover why her growing business is making less money",
   },
   {
     id: "phase_introduction_1",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce the unit challenge and establish learning goals and success criteria",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the introductory text.
+    description: "Establish the pricing scoreboard and unit question",
   },
   {
     id: "phase_guided_practice_1",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Power Query for data import and transformation with scaffolded support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice using Power Query in a template.
+    description: "Explore what happens when pricing decisions change",
   },
   {
     id: "phase_independent_practice_1",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Power Query for data import and transformation independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice using Power Query in a template.
+    description: "Make bounded pricing decisions and see consequences",
   },
   {
     id: "phase_assessment_1",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Exit ticket on founder problem and pricing scoreboard",
   },
   {
     id: "phase_closing_1",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Restate unit question and preview what's next",
   }
 ]
