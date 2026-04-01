@@ -1,28 +1,29 @@
 "use client"
 
-import { PhaseHeader } from "@/components/student/PhaseHeader"
-import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { lesson10Data } from "../lesson-data"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import { lesson10Data, lesson10Phases, unit04Data } from "../lesson-data"
+import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 
 export default function Page() {
-  const currentPhase = lesson10Phases[0]
   const slug = "cafe-weekend-ops"
   const groups = [1, 2, 3, 4, 5, 6]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
       <div className="container mx-auto px-4 py-8 space-y-8">
-        <PhaseHeader unit={unit04Data} lesson={lesson10Data} phase={currentPhase} phases={lesson10Phases} />
+        <div className="text-center space-y-2">
+          <Badge variant="outline" className="mb-2">Lesson 10</Badge>
+          <h1 className="text-3xl font-bold text-slate-900">{lesson10Data.title}</h1>
+          <p className="text-slate-600">{lesson10Data.rationale}</p>
+        </div>
 
-        <Card>
+        <Card className="border-blue-200 shadow-md">
           <CardHeader>
             <div className="flex items-center gap-3">
               <Badge variant="secondary">PBL Milestone 3</Badge>
-              <CardTitle>Presentations + Peer Review</CardTitle>
+              <CardTitle>Presentations + Submission</CardTitle>
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -110,16 +111,37 @@ export default function Page() {
           <CardHeader>
             <CardTitle>Group Datasets (g1–g6)</CardTitle>
           </CardHeader>
-          <CardContent className="text-sm space-y-2">
-            <p>Same datasets as Lessons 08–09 (no new data today):</p>
-            <ul className="list-disc list-inside">
+          <CardContent className="text-sm space-y-3">
+            <p className="text-amber-800">
+              Same datasets as Lessons 08–09. No new data today:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
               {groups.map((g) => (
-                <li key={g}>
-                  <a className="underline" href={`/resources/unit04-pbl-${slug}-g${g}.csv`} download>
-                    Download unit04-pbl-{slug}-g{g}.csv
-                  </a>
-                </li>
+                <a 
+                  key={g}
+                  className="block p-2 bg-white border border-amber-300 rounded text-center hover:bg-amber-100 transition-colors"
+                  href={`/resources/unit04-pbl-${slug}-g${g}.csv`}
+                  download
+                >
+                  Group {g} Data
+                </a>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Presentation Checklist</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm">
+              <li>✓ Final workbook with all sheets complete</li>
+              <li>✓ Dashboard tells a clear visual story</li>
+              <li>✓ Recommendation backed by at least 3 cited numbers</li>
+              <li>✓ Risk/limitation statement included</li>
+              <li>✓ Speaking notes prepared (4–5 minutes)</li>
+              <li>✓ Peer review completed for at least 2 other teams</li>
             </ul>
           </CardContent>
         </Card>
@@ -134,8 +156,6 @@ export default function Page() {
         </Card>
 
         <ReflectionJournal unitTitle="Milestone 3 Reflection (CAP)" />
-
-        <PhaseFooter unit={unit04Data} lesson={lesson10Data} phase={currentPhase} phases={lesson10Phases} />
       </div>
     </div>
   )

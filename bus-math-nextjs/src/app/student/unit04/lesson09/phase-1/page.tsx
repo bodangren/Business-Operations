@@ -1,24 +1,25 @@
 "use client"
 
-import { PhaseHeader } from "@/components/student/PhaseHeader"
-import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import { lesson09Data } from "../lesson-data"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import { lesson09Data, lesson09Phases, unit04Data } from "../lesson-data"
+import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 
 export default function Page() {
-  const currentPhase = lesson09Phases[0]
   const slug = "cafe-weekend-ops"
   const groups = [1, 2, 3, 4, 5, 6]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
       <div className="container mx-auto px-4 py-8 space-y-8">
-        <PhaseHeader unit={unit04Data} lesson={lesson09Data} phase={currentPhase} phases={lesson09Phases} />
+        <div className="text-center space-y-2">
+          <Badge variant="outline" className="mb-2">Lesson 09</Badge>
+          <h1 className="text-3xl font-bold text-slate-900">{lesson09Data.title}</h1>
+          <p className="text-slate-600">{lesson09Data.rationale}</p>
+        </div>
 
-        <Card>
+        <Card className="border-blue-200 shadow-md">
           <CardHeader>
             <div className="flex items-center gap-3">
               <Badge variant="secondary">PBL Milestone 2</Badge>
@@ -110,16 +111,49 @@ export default function Page() {
           <CardHeader>
             <CardTitle>Group Datasets (g1–g6)</CardTitle>
           </CardHeader>
-          <CardContent className="text-sm space-y-2">
-            <p>Use the same dataset from Lesson 08:</p>
-            <ul className="list-disc list-inside">
+          <CardContent className="text-sm space-y-3">
+            <p className="text-amber-800">
+              Use the same dataset from Lesson 08. Download <strong>your group's file only</strong>:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
               {groups.map((g) => (
-                <li key={g}>
-                  <a className="underline" href={`/resources/unit04-pbl-${slug}-g${g}.csv`} download>
-                    Download unit04-pbl-{slug}-g{g}.csv
-                  </a>
-                </li>
+                <a 
+                  key={g}
+                  className="block p-2 bg-white border border-amber-300 rounded text-center hover:bg-amber-100 transition-colors"
+                  href={`/resources/unit04-pbl-${slug}-g${g}.csv`}
+                  download
+                >
+                  Group {g} Data
+                </a>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Workflow Today (45–60 min)</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm">
+              <li><strong>Build (20 min)</strong>: Complete forecast and validation sheets</li>
+              <li><strong>Test (10 min)</strong>: Run test scenarios, document results</li>
+              <li><strong>Rehearsal (15 min)</strong>: Practice 4–5 minute story, get peer feedback</li>
+              <li><strong>Polish (5 min)</strong>: Incorporate feedback, finalize change notes</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Submission Checklist</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm">
+              <li>✓ Working prototype with forecast and validations</li>
+              <li>✓ Test scenarios documented with results</li>
+              <li>✓ Peer feedback received and incorporated</li>
+              <li>✓ Change notes reflect revisions</li>
             </ul>
           </CardContent>
         </Card>
@@ -134,8 +168,6 @@ export default function Page() {
         </Card>
 
         <ReflectionJournal unitTitle="Milestone 2 Reflection (CAP)" />
-
-        <PhaseFooter unit={unit04Data} lesson={lesson09Data} phase={currentPhase} phases={lesson09Phases} />
       </div>
     </div>
   )

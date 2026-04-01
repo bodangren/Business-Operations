@@ -1,27 +1,29 @@
 // Data-Driven Café, Lesson 9 data - extracted from MCP curriculum database
+import { LessonPhase } from "@/contexts/LessonProgressContext"
+
 export const lesson09Data = {
   id: "mds5vu0j0lk9gw4jkfkj",
   title: "Mock Panel & Revision: Presentation Rehearsal",
   sequence: 9,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Rehearse statistical analysis presentations with focus on clarity and persuasiveness",
-    "Incorporate peer feedback to improve data visualization and business recommendations",
-    "Practice delivering 90-second elevator pitches with confidence and precision",
-    "Refine infographic designs based on audience feedback and professional standards"
+    "Build a working prototype with forecast logic and error validations",
+    "Document test scenarios and results",
+    "Rehearse a 4-5 minute presentation and incorporate peer feedback",
+    "Refine the recommendation based on critique"
   ],
   keyConcepts: [
-    "Effective presentation techniques for statistical data and business insights",
-    "Peer review protocols for constructive feedback on analytical work",
-    "Time management strategies for concise business communication",
-    "Iterative improvement process for professional presentation development"
+    "Prototype testing and validation",
+    "Test scenario documentation",
+    "Peer feedback and iterative revision",
+    "Presentation rehearsal"
   ],
-  durationEstimateMinutes: 45,
+  durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Practice presentations with peer feedback and final refinements"
+    "Team-based prototype completion with peer critique and rehearsal"
   ],
-  rationale: "To prepare students for their final presentations and to give them an opportunity to receive feedback from their peers.",
-  status: "Draft"
+  rationale: "Build a working prototype that uses your dataset and forecast logic. Add validations to catch errors. Rehearse your 4-5 minute story and gather peer feedback to make your message clear and convincing.",
+  status: "Revised"
 }
 
 export const unit04Data = {
@@ -30,12 +32,11 @@ export const unit04Data = {
   sequence: 4
 }
 
-// Lesson phases from MCP curriculum database
-export const lesson09Phases = [
+export const lesson09Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
   {
-    id: "pbl_m2",
-    phaseName: "Assessment" as const,
+    id: "phase_project_milestone",
+    phaseName: "Project Milestone" as LessonPhase,
     sequence: 1,
-    description: "PBL Milestone 2 — Prototype + Rehearsal: working prototype, validations, test scenarios, and peer feedback."
+    description: "Prototype completion and presentation rehearsal"
   }
 ]

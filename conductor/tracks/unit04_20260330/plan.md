@@ -138,35 +138,35 @@
     - [x] Each team is working with the correct data
     - [x] Initial project setup is complete
 
-- [ ] 4.3 **Lesson 09** - Implement group-project skill
-  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
-  - [ ] 4.3.2 Implement completion and rehearsal
-    - Continue same workbook from Lesson 08
+- [x] 4.3 **Lesson 09** - Implement group-project skill
+  - [x] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+  - [x] 4.3.2 Implement completion and rehearsal
+    - Continue same workbook from lesson 08
     - Complete remaining sheets/evidence blocks
     - Require scenario testing, checks, dashboard completion
     - Require short recommendation structure (claim, evidence, risk)
     - Include peer critique and revision
     - Define milestone 2 acceptance criteria
-  - [ ] 4.3.3 Finish calculations, charts, and the final recommendation
-  - [ ] 4.3.4 Require peer critique and revision
-  - [ ] 4.3.5 Make teams cite exact data evidence in their explanation
+  - [x] 4.3.3 Finish calculations, charts, and the final recommendation
+  - [x] 4.3.4 Require peer critique and revision
+  - [x] 4.3.5 Make teams cite exact data evidence in their explanation
   - **Done when**:
-    - [ ] The project artifact is complete and readable
-    - [ ] The team can deliver a short evidence-based pitch
+    - [x] The project artifact is complete and readable
+    - [x] The team can deliver a short evidence-based pitch
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+  - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [x] 4.4.2 Implement final presentation and submission
     - Require final polish of workbook and presentation notes
     - Make audience, presentation standard, submission standard explicit
     - Include final checklist and timing guidance
     - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make final deliverables explicit
-  - [ ] 4.4.4 Require polished visuals and speaking notes
-  - [ ] 4.4.5 End with reflection on data quality, analysis, and communication
+  - [x] 4.4.3 Make final deliverables explicit
+  - [x] 4.4.4 Require polished visuals and speaking notes
+  - [x] 4.4.5 End with reflection on data quality, analysis, and communication
   - **Done when**:
-    - [ ] Final deliverables are submitted
-    - [ ] Reflection captures what made the recommendation believable
+    - [x] Final deliverables are submitted
+    - [x] Reflection captures what made the recommendation believable
 
 ## Phase 5: Verification & Polish
 - [ ] 5.1 Verify all lesson-data.ts files are updated
