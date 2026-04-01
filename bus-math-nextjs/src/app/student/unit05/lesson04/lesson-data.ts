@@ -1,80 +1,71 @@
-// PayDay Simulator, Lesson 4 data - Excel-focused skills introduction
 export const lesson04Data = {
-  id: "mds5w74rp4icpe60td",
-  title: "Multi-Employee Gross Pay Register",
+  id: "u5l4",
+  title: "Payroll Timing and Liabilities",
   sequence: 4,
-  unitId: "mdrhlhv3ixkn2gykua",
+  unitId: "unit05",
   learningObjectives: [
-    "Build an employee roster sheet and link it to the gross pay register with XLOOKUP",
-    "Apply IF logic so each pay type (hourly, salary, commission) pulls only the inputs it needs",
-    "Calculate consolidated gross payroll totals with SUMIF-based summaries and visualizations",
-    "Explain how charts and pivot tables help leaders spot payroll trends by department"
+    "Explain why payroll timing creates temporary differences between the payroll register and bank records",
+    "Calculate gross pay and identify which amounts become liabilities until paid",
+    "Distinguish between employee deductions and employer payroll taxes",
+    "Reconcile the payroll register total to the bank statement"
   ],
   keyConcepts: [
-    "Structured tables with XLOOKUP references",
-    "Nested IF statements for pay-type logic",
-    "SUMIF analysis and charting",
-    "Pivot tables for departmental payroll views"
+    "Payroll timing and cash-flow window",
+    "Employee vs. employer payroll liabilities",
+    "Payroll register as the book record",
+    "Bank reconciliation for payroll"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Hands-on Excel build focused on linked tables",
-    "Guided modeling of XLOOKUP + IF formulas",
-    "Independent practice finishing the multi-employee register",
-    "Visual storytelling with charts and pivot tables"
+    "Concrete story of cash-timing pressure",
+    "Explicit instruction on liability creation",
+    "Guided practice with timing scenarios",
+    "Mastery practice on reconciliation"
   ],
-  rationale: "Hiring more people means Sarah needs one source of truth for gross payroll. By linking an employee list to a consolidated register with XLOOKUP, IF logic, and summary visuals, students learn how to scale their spreadsheet beyond a single paycheck.",
-  status: "Complete"
+  rationale: "Before automating payroll in Excel, students must understand why payroll timing creates temporary cash differences and what liabilities exist until each pay period clears. This connects gross pay (Lesson 02) and deductions (Lesson 03) to the cash management challenge Sarah faces."
 }
 
 export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
+  id: "unit05",
   title: "PayDay Simulator",
   sequence: 5
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson04Phases = [
   {
     id: "phase_hook_4",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Show the cost of tracking payroll employee-by-employee and motivate the need for a linked gross pay register",
-    // No component needed for this phase.
+    description: "Show the timing problem - payroll clears the bank days after the register shows it as due"
   },
   {
     id: "phase_introduction_4",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Preview the Employee List + Gross Pay workbook architecture and how XLOOKUP stitches the sheets together",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Explicit instruction on payroll liabilities and the timing window"
   },
   {
     id: "phase_guided_practice_4",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Model each build step: XLOOKUP pulls, IF logic per pay type, and the additive gross pay formula",
-    // component: "ErrorCheckingSystem" (id: mdsjne6632yk82ynnc5) - repurposed for structured walkthroughs.
+    description: "Work through timing scenarios and liability calculations"
   },
   {
     id: "phase_independent_practice_4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Students finish their workbook: finalize SUMIF summaries, build a bar chart, and insert a department pivot table",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice completing the register.
+    description: "Mastery practice on timing and reconciliation scenarios"
   },
   {
     id: "phase_assessment_4",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Comprehension check on XLOOKUP logic, additive gross formulas, and analysis visuals",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Exit ticket on timing, liabilities, and reconciliation"
   },
   {
     id: "phase_closing_4",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on how the gross pay register sets up Lesson 5 withholding work and Lesson 6 scheduling",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on timing implications and preview Excel automation"
   }
 ]

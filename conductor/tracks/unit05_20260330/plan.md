@@ -73,21 +73,21 @@
     - [x] Students can move from gross pay to net pay accurately
     - [x] Students can explain the difference between employee deductions and employer payroll expense
 
-- [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
-  - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
-  - [ ] 2.4.2 Implement Phase 1-6 with payroll timing and liabilities
+- [x] 2.4 **Lesson 04** - Implement accounting-principles skill
+  - [x] 2.4.1 Update lesson-data.ts for Lesson 04
+  - [x] 2.4.2 Implement Phase 1-6 with payroll timing and liabilities
     - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
     - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and timing diagrams
     - Phase 3: Add meaningful complication (more complex timing), reduce prompts, shift toward authentic payroll notation
     - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
     - Phase 5: Short MCQ exit ticket on payroll timing, liabilities, bank reconciliation
     - Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
-  - [ ] 2.4.3 Keep this lesson non-Excel and textbook-first
-  - [ ] 2.4.4 Show how payroll timing creates cash-flow and reconciliation problems
-  - [ ] 2.4.5 Use Phase 4 as a repeated manual reasoning routine on payroll liabilities and mismatch detection
+  - [x] 2.4.3 Keep this lesson non-Excel and textbook-first
+  - [x] 2.4.4 Show how payroll timing creates cash-flow and reconciliation problems
+  - [x] 2.4.5 Use Phase 4 as a repeated manual reasoning routine on payroll liabilities and mismatch detection
   - **Done when**:
-    - [ ] Students can explain why a payroll register and the bank can disagree temporarily
-    - [ ] The closing phase sets up the workbook automation cleanly
+    - [x] Students can explain why a payroll register and the bank can disagree temporarily
+    - [x] The closing phase sets up the workbook automation cleanly
 
 ## Phase 3: Lessons 05-06 (Excel)
 - [ ] 3.1 **Lesson 05** - Implement excel-lessons skill

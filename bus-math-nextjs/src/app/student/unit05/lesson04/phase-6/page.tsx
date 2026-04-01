@@ -13,20 +13,20 @@ const reflectionPrompts = [
   {
     id: "u5l4-courage",
     category: "courage" as const,
-    prompt: "Which part of linking the EmployeeList to the GrossPayRegister stretched you the most (e.g., XLOOKUP syntax, structured references, IF logic)? How will you keep your cool if a lookup breaks during client prep?",
-    placeholder: "Example: I froze when my return array referenced the wrong column..."
+    prompt: "Which payroll timing concept was hardest for you to understand—timing gaps, liability types, or reconciliation? How will you stay calm when the register and bank disagree during real payroll?",
+    placeholder: "Example: I was confused about why employer taxes create a different liability..."
   },
   {
     id: "u5l4-adaptability",
     category: "adaptability" as const,
-    prompt: "Describe how you will adapt the workbook when Sarah hires in a brand-new department or needs to model seasonal workers.",
-    placeholder: "Example: I’ll add a Department dropdown to EmployeeList and refresh the pivot..."
+    prompt: "How will you adapt your thinking when direct deposits fail or a new hire starts mid-cycle? What questions would you ask Sarah to understand the timing?",
+    placeholder: "Example: I would ask when the employee started and whether they earned wages..."
   },
   {
     id: "u5l4-persistence",
     category: "persistence" as const,
-    prompt: "List the checkpoints you will follow before Lesson 05 (e.g., verify gross totals, refresh the pivot, capture screenshots).",
-    placeholder: "Example: Before tomorrow I will rerun the SUMIF totals..."
+    prompt: "List the three calculations you need to verify every payroll cycle: net pay, total liability, and cash float. How will you remember to check all three?",
+    placeholder: "Example: I'll write them on a sticky note and check each one..."
   }
 ]
 
@@ -38,13 +38,13 @@ export default function Phase6Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🎯 Phase 6: Wrap & Reflect</Badge>
+            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">Phase 6: Wrap & Reflect</Badge>
 
             <div className="max-w-4xl mx-auto space-y-6">
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-2xl font-bold text-indigo-900 mb-4">Your Payroll Control Center Is Live</h2>
+                <h2 className="text-2xl font-bold text-indigo-900 mb-4">You Now See the Full Payroll Picture</h2>
                 <p className="text-lg leading-relaxed">
-                  Today you promoted the roster to a table, linked the GrossPayRegister with XLOOKUP, reused a single IF-based formula for every employee, and turned the results into visuals that leaders can read in seconds. That is a giant leap from the single-employee calculator you built in Lesson 03.
+                  In Lessons 02-03, you learned to calculate gross pay and deductions to arrive at net pay. Today you learned that net pay is only half the story—the timing of when cash actually moves creates a liability window that Sarah must manage.
                 </p>
               </div>
 
@@ -52,15 +52,16 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-indigo-800 flex items-center gap-2">
                     <Trophy className="h-5 w-5" />
-                    What’s Inside Your Workbook Now
+                    What You Now Understand
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-indigo-900 text-sm space-y-1">
                   <ul className="list-disc list-inside space-y-1">
-                    <li>Linked EmployeeList + GrossPayRegister tables</li>
-                    <li>Reusable Gross Pay formula covering hourly, salary, and commission</li>
-                    <li>SUMIF summary block plus a clustered bar chart</li>
-                    <li>Pivot table showing gross payroll by department</li>
+                    <li><strong>Timing gap:</strong> Payroll is recorded as a liability on payday, but cash leaves days later when direct deposits clear</li>
+                    <li><strong>Employee deductions:</strong> Money held temporarily and passed through to agencies—liabilities</li>
+                    <li><strong>Employer taxes:</strong> Real company costs (7.65% of wages) in addition to employee taxes</li>
+                    <li><strong>Cash float:</strong> The usable cash between recording the liability and the actual bank outflow</li>
+                    <li><strong>Reconciliation:</strong> Comparing register totals to bank records to find timing differences</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -69,14 +70,17 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-indigo-800 flex items-center gap-2">
                     <ArrowRight className="h-5 w-5" />
-                    Preview of Lesson 05 & 06
+                    Preview: Lessons 05-06
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-indigo-900 text-sm space-y-1">
                   <ul className="list-disc list-inside space-y-1">
-                    <li><strong>Lesson 05:</strong> Pull taxable wages from the GrossPayRegister and layer on federal/state withholdings plus employer taxes.</li>
-                    <li><strong>Lesson 06:</strong> Feed the register from a scheduling sheet so hours update automatically.</li>
+                    <li><strong>Lesson 05:</strong> Build a payroll calculator in Excel that pulls data from an employee list and calculates gross pay, deductions, net pay, and employer taxes automatically</li>
+                    <li><strong>Lesson 06:</strong> Add validation, error checks, and bilingual stub output so the workbook catches mistakes and produces professional pay records</li>
                   </ul>
+                  <p className="mt-3 text-indigo-800">
+                    The timing and liability concepts you learned today will become the foundation for the Excel automation. Understanding WHY the calculations matter makes BUILDING the workbook much easier.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -89,18 +93,18 @@ export default function Phase6Page() {
                 </CardHeader>
                 <CardContent className="text-indigo-900 text-sm space-y-1">
                   <ul className="list-disc list-inside space-y-1">
-                    <li>Save the workbook and label it `Unit05-Lesson04-GrossPay-Lastname.xlsx`.</li>
-                    <li>Export a PDF or screenshot showing the register + summary block.</li>
-                    <li>Write one insight from your pivot table to share tomorrow.</li>
+                    <li>Review your Phase 4 mastery problems—keep the formula reference somewhere accessible</li>
+                    <li>Be ready to explain to a partner why the payroll register and bank statement can disagree temporarily</li>
+                    <li>Write down one real-world scenario where timing gaps could cause a cash crisis (e.g., rent due before payroll clears)</li>
                   </ul>
                 </CardContent>
               </Card>
 
-              <ReflectionJournal unitTitle="Unit 5 Lesson 4 – Gross Pay Register" prompts={reflectionPrompts} />
+              <ReflectionJournal unitTitle="Unit 5 Lesson 4 – Payroll Timing & Liabilities" prompts={reflectionPrompts} />
 
               <Alert className="border-indigo-200 bg-indigo-50">
                 <AlertDescription className="text-indigo-800">
-                  The more disciplined you are with source tables now, the easier it will be to trust your deduction math in Lesson 05. Keep the file handy and be ready to demonstrate your bar chart and pivot table at the start of next class.
+                  <strong>Connection to cash-crunch:</strong> Remember Sarah's rent problem from Lesson 01? Now you understand why she cannot just wait for payroll to clear—she needs to plan for the timing gap or risk an overdraft. This is the real-world pressure that makes payroll timing knowledge valuable.
                 </AlertDescription>
               </Alert>
             </div>
