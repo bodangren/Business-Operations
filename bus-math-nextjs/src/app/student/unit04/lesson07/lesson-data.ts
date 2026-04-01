@@ -1,27 +1,29 @@
-// Data-Driven Café, Lesson 7 data - extracted from MCP curriculum database
+import { LessonPhase } from "@/contexts/LessonProgressContext"
+
+// Data-Driven Café, Lesson 7 data - Project Rehearsal
 export const lesson07Data = {
   id: "mds5vu0cmuyzd6czgp",
-  title: "Production Studio: Model Completion, QA, and Presentation",
+  title: "Project Rehearsal: Café Analysis Walkthrough",
   sequence: 7,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Complete the forecasting model and remove hard‑coded outputs",
-    "Enforce exact‑match lookups with IFNA/IFERROR and clear messages",
-    "Bind charts to structured references and verify reconciliation checks",
-    "Publish an investor‑ready one‑screen dashboard and executive summary"
+    "Trace the final recommendation back to supporting data evidence",
+    "Identify which workbook structures must carry forward to the real project",
+    "Apply the Definition of Done checklist to a complete analysis",
+    "Evaluate a peer's work against the project quality standard"
   ],
   keyConcepts: [
-    "Named ranges and structured references",
-    "XLOOKUP / INDEX‑MATCH (exact match) with IFNA/IFERROR",
-    "Validation and reconciliation for auditability",
-    "KPI thresholds driving decision‑ready summaries"
+    "Evidence chain from data to recommendation",
+    "Definition of Done checklist",
+    "Peer audit with concrete criteria",
+    "Transfer from rehearsal to independent project"
   ],
   durationEstimateMinutes: 50,
   pedagogicalApproach: [
-    "Production‑style sprint with standards, QA, peer audit, and presentation readiness"
+    "Guided rehearsal with shared teacher data, audit walkthrough, peer critique, and project handoff"
   ],
   rationale:
-    "Students harden the Unit 04 café forecasting model for real stakeholders by enforcing exact references, documenting assumptions, and packaging insights for fast investor review.",
+    "Students rehearse the exact café-analysis project structure with shared data. This guided practice reveals the quality standard before students tackle their own scenarios in Lessons 8-10.",
   status: "Draft"
 }
 
@@ -31,48 +33,42 @@ export const unit04Data = {
   sequence: 4
 }
 
-// Lesson phases from MCP curriculum database
-export const lesson07Phases = [
+// Lesson phases for project-rehearsal
+export const lesson07Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
   {
-    id: "phase_hook_7",
-    phaseName: "Hook" as const,
+    id: "phase_rehearsal_purpose",
+    phaseName: "Hook" as LessonPhase,
     sequence: 1,
-    description: "Production kickoff and stakes: investor expects an audit‑ready forecast today",
-    // component: "ComprehensionCheck" – Standards quick check
+    description: "Frame the lesson as guided rehearsal before independent project work"
   },
   {
-    id: "phase_introduction_7",
-    phaseName: "Introduction" as const,
+    id: "phase_shared_artifact",
+    phaseName: "Introduction" as LessonPhase,
     sequence: 2,
-    description: "Standards, Definition of Done checklist, and short build plan",
-    // component: "FillInTheBlank" – Vocabulary on lookups, validation, reconciliation
+    description: "Orient to the shared workbook, evidence blocks, and Definition of Done"
   },
   {
-    id: "phase_guided_practice_7",
-    phaseName: "Guided Practice" as const,
+    id: "phase_guided_audit",
+    phaseName: "Guided Practice" as LessonPhase,
     sequence: 3,
-    description: "Production Sprint I: Finish core links, enforce exact lookups, no hard‑codes",
-    // component: "ErrorCheckingSystem" – Initial rules and safeguards
+    description: "Trace the recommendation back to supporting data evidence"
   },
   {
-    id: "phase_independent_practice_7",
-    phaseName: "Independent Practice" as const,
+    id: "phase_polish_transfer",
+    phaseName: "Independent Practice" as LessonPhase,
     sequence: 4,
-    description: "Production Sprint II: QA + reconciliation, visuals bound to tables, executive summary",
-    // component: "FinancialDashboard" – Visual verification and KPI readout
+    description: "Complete weak spots and identify what must transfer to the project"
   },
   {
-    id: "phase_assessment_7",
-    phaseName: "Assessment" as const,
+    id: "phase_transfer_check",
+    phaseName: "Assessment" as LessonPhase,
     sequence: 5,
-    description: "QA review + peer audit with checklist; mini comprehension check on tradeoffs",
-    // component: "PeerCritiqueForm" – Peer audit capture
+    description: "Comprehension check and peer critique with Definition of Done criteria"
   },
   {
-    id: "phase_closing_7",
-    phaseName: "Closing" as const,
+    id: "phase_reflection_handoff",
+    phaseName: "Closing" as LessonPhase,
     sequence: 6,
-    description: "Synthesis, readiness check, CAP reflection, preview to Lesson08",
-    // component: "ReflectionJournal" – CAP prompts
+    description: "Lock in quality standard and preview independent project work"
   }
 ]

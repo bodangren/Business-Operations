@@ -5,44 +5,44 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit04Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, PlayCircle } from "lucide-react"
+import { Play, Users, Target } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 
 const currentPhase = lesson07Phases[0]
 
-const standardsQuiz = [
+const purposeQuiz = [
   {
-    id: "u4l7-std-1",
-    question: "A chart stops updating when new rows are added. What likely failed?",
+    id: "u4l7-purp-1",
+    question: "Why are we using the same data as the teacher today?",
     answers: [
-      "Chart points to a static A1:C10 range instead of a Table",
-      "The workbook name changed",
-      "Too many colors on the chart",
-      "The sheet tab was renamed"
+      "So every group sees the same quality bar and can compare reasoning directly",
+      "Because the computer lab only has one dataset",
+      "To save time copying files",
+      "Because the lesson wasn't finished last year"
     ],
-    explanation: "Charts must bind to structured references (Tables) so they auto‑expand."
+    explanation: "Shared data lets the class compare the quality of reasoning and evidence directly."
   },
   {
-    id: "u4l7-std-2",
-    question: "Which lookup pattern builds trust in investor demos?",
+    id: "u4l7-purp-2",
+    question: "What's the difference between today's rehearsal and the real project?",
     answers: [
-      "XLOOKUP with exact match and IFNA message",
-      "Approximate VLOOKUP with range 1",
-      "Manual copy‑paste of values",
-      "Hiding #N/A with white font"
+      "Today we practice with shared data; next lesson each team gets its own scenario",
+      "Today's work is graded; the real project is extra credit",
+      "Today uses Excel; the project uses Google Sheets",
+      "Today has fewer requirements than the project"
     ],
-    explanation: "Exact match + clear error text shows control and quality."
+    explanation: "Rehearsal uses shared data for guided practice; the project lets each team tackle its own scenario."
   },
   {
-    id: "u4l7-std-3",
-    question: "What should replace hard‑coded outputs?",
+    id: "u4l7-purp-3",
+    question: "What should you learn from this rehearsal?",
     answers: [
-      "Named ranges and structured references",
-      "More formatting",
-      "Merged cells",
-      "Hidden columns"
+      "What a complete project workbook must include and how to trace evidence to a recommendation",
+      "How to use a new Excel function",
+      "How to speed up data entry",
+      "How to format charts prettily"
     ],
-    explanation: "Named ranges and Tables keep formulas reliable as data grows."
+    explanation: "You should learn the project structure and evidence chain you must recreate in your own project."
   }
 ]
 
@@ -54,39 +54,49 @@ export default function Phase1Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎬 Phase 1: Hook</Badge>
+            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎬 Phase 1: Rehearsal Purpose</Badge>
             <div className="max-w-4xl mx-auto space-y-8 text-left">
               <Card className="border-red-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-red-900 flex items-center gap-2"><PlayCircle className="w-5 h-5" /> Production Kickoff</CardTitle>
+                  <CardTitle className="text-red-900 flex items-center gap-2"><Play className="w-5 h-5" /> Why This Rehearsal?</CardTitle>
                 </CardHeader>
-                <CardContent className="text-red-900 space-y-3">
-                  <p>
-                    Sarah is advising a local café that wants a clear, reliable forecast for the next quarter.
-                    Their investor meeting is today. The model must be audit‑ready and easy to trust.
+                <CardContent className="text-red-900 space-y-4">
+                  <p className="text-lg">
+                    Before you tackle your own café analysis project in Lessons 8-10, we're pausing for one 
+                    guided rehearsal with <span className="font-semibold">shared teacher data</span>.
                   </p>
-                  <div className="bg-red-50 border border-red-200 p-3 rounded-lg">
-                    <p className="font-semibold mb-1 flex items-center gap-2"><AlertTriangle className="w-4 h-4" /> Two failure cases we must avoid:</p>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Charts that don’t update because they reference static ranges</li>
-                      <li>Lookups that return #N/A with no guidance for the user</li>
-                    </ul>
+                  <div className="bg-red-50 border border-red-200 p-4 rounded-lg space-y-3">
+                    <div className="flex items-start gap-3">
+                      <Users className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold">Same data, today</p>
+                        <p>Every group works with the exact same café weekend dataset. This isn't accidental — it's so you can compare your reasoning and evidence quality directly with classmates.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Target className="w-5 h-5 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold">Guided practice for your project</p>
+                        <p>Today reveals exactly what a complete project workbook must contain — the evidence chain, the Definition of Done, and how to trace a recommendation back to data.</p>
+                      </div>
+                    </div>
                   </div>
                   <p>
-                    Our goal: a “ready” example — exact references, clean error messages, and visuals tied to Tables.
+                    <span className="font-semibold">Next lesson:</span> Each team gets its own café scenario and dataset. 
+                    The structure you learn today is what you'll carry forward into the real project.
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="border-blue-200 bg-white">
                 <CardHeader>
-                  <CardTitle className="text-blue-900">Quick Check: Production Standards</CardTitle>
+                  <CardTitle className="text-blue-900">Quick Check: Understanding the Rehearsal</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={standardsQuiz as any}
-                    title="Audit‑Ready Standards"
-                    description="Confirm the quality habits we’ll use all lesson"
+                    questions={purposeQuiz as any}
+                    title="Why This Matters"
+                    description="Confirm you understand the purpose of today's shared practice"
                     showExplanations={true}
                   />
                 </CardContent>
@@ -100,4 +110,3 @@ export default function Phase1Page() {
     </div>
   )
 }
-
