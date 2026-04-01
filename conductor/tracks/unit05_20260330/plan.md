@@ -123,21 +123,21 @@
     - [x] Students can defend the workbook as reliable for payroll use
 
 ## Phase 4: Lessons 07-10 (Project)
-- [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
-  - [ ] 4.1.1 Update lesson-data.ts for Lesson 07
-  - [ ] 4.1.2 Implement Phase 1-6 with shared teacher data
+- [x] 4.1 **Lesson 07** - Implement project-rehearsal skill
+  - [x] 4.1.1 Update lesson-data.ts for Lesson 07
+  - [x] 4.1.2 Implement Phase 1-6 with shared teacher data
     - Phase 1: Frame as final guided rehearsal, explain same-data purpose, contrast with independent project
     - Phase 2: Provide shared workbook download path, state same-data requirement, name each sheet/evidence block, define success
     - Phase 3: Keep data constant, use previews/guided routines to trace logic chain, ask where recommendation comes from, ask what makes artifact weak
     - Phase 4: Continue shared workbook, keep teacher-guided, complete weak spots, require recommendation and risk statement, ask what features to transfer
     - Phase 5: Short comprehension/transfer check, peer audit routine tied to Definition of Done, require strength and improvement
     - Phase 6: Reflect on rehearsal, name what must carry into project, explain what changes next lesson
-  - [ ] 4.1.3 Use one shared payroll dataset and one shared workbook for the whole class
-  - [ ] 4.1.4 Trace every final payroll recommendation or reconciliation note back to workbook evidence
-  - [ ] 4.1.5 Include a Definition of Done and peer-audit routine
+  - [x] 4.1.3 Use one shared payroll dataset and one shared workbook for the whole class
+  - [x] 4.1.4 Trace every final payroll recommendation or reconciliation note back to workbook evidence
+  - [x] 4.1.5 Include a Definition of Done and peer-audit routine
   - **Done when**:
-    - [ ] Students know the exact workbook structure they must reuse in the project
-    - [ ] Peer critique focuses on accuracy, evidence, and payroll clarity
+    - [x] Students know the exact workbook structure they must reuse in the project
+    - [x] Peer critique focuses on accuracy, evidence, and payroll clarity
 
 - [ ] 4.2 **Lesson 08** - Implement group-project skill
   - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
