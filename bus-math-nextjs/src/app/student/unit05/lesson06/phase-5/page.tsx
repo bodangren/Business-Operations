@@ -94,6 +94,26 @@ export default function Phase5Page() {
             showExplanations={true}
           />
         </section>
+
+        <section className="max-w-4xl mx-auto mt-8">
+          <Card className="border-indigo-200 bg-indigo-50">
+            <CardHeader>
+              <CardTitle className="text-indigo-900">Artifact Task: Payroll Defense Memo</CardTitle>
+            </CardHeader>
+            <CardContent className="text-indigo-900 space-y-4">
+              <p className="text-sm">
+                Write a 2-3 sentence explanation of how your workbook prevents payroll mistakes. This memo would be shown 
+                to Sarah's accountant during an audit. Focus on one specific validation or check your workbook includes.
+              </p>
+              <div className="bg-white/80 rounded p-4">
+                <textarea 
+                  placeholder="Example: The workbook prevents payroll mistakes by using XLOOKUP to pull employee data automatically, so there's no manual entry of names or tax rates that could introduce errors..."
+                  className="w-full min-h-[100px] border border-indigo-200 rounded p-2 text-sm"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </section>
       </main>
 
       <PhaseFooter lesson={lesson06Data} unit={unit05Data} phase={currentPhase} phases={lesson06Phases} />

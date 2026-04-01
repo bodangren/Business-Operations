@@ -22,7 +22,7 @@ export const lesson06Data = {
     "Textbook-first explanation with interactive walkthrough of tax math and pay stub design"
   ],
   rationale: "Students combine Lesson04–05 automation with tax logic to produce compliant, professional pay stubs that employees and auditors trust.",
-  status: "Draft"
+  status: "Complete"
 }
 
 export const unit05Data = {

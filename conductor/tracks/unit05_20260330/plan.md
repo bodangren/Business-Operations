@@ -106,21 +106,21 @@
     - [x] The workbook can produce accurate pay results for at least one employee scenario
     - [x] Students can explain what each major workbook section does
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with validation and stub output
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with validation and stub output
     - Phase 1: Open with business scenario where validation matters, make tool feel necessary
     - Phase 2: Name validation/stub pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task requiring explanation of how workbook prevents mistakes
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Add visible error checks, validation rules, and professional payroll outputs
-  - [ ] 3.2.4 Keep the workbook tied to real payroll trust and usability
-  - [ ] 3.2.5 Phase 5 must require a short explanation of how the workbook prevents payroll mistakes
+  - [x] 3.2.3 Add visible error checks, validation rules, and professional payroll outputs
+  - [x] 3.2.4 Keep the workbook tied to real payroll trust and usability
+  - [x] 3.2.5 Phase 5 must require a short explanation of how the workbook prevents payroll mistakes
   - **Done when**:
-    - [ ] The workbook catches common entry errors and produces a clean output
-    - [ ] Students can defend the workbook as reliable for payroll use
+    - [x] The workbook catches common entry errors and produces a clean output
+    - [x] Students can defend the workbook as reliable for payroll use
 
 ## Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill
