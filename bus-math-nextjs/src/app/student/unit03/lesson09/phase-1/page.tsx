@@ -11,8 +11,8 @@ import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 const currentPhase = lesson09Phases[0]
 
 const businessObjectives = [
-  "Show a working three‑statement prototype with real data",
-  "Explain what the KPIs say about TechStart's health",
+  "Show a working three‑statement prototype with real data from your group's dataset",
+  "Explain what the KPIs say about TechStart's health using numbers from all three statements",
   "Practice a clear, timed narrative for executives",
   "Document feedback and changes after rehearsal"
 ]
@@ -22,6 +22,13 @@ const excelObjectives = [
   "Scenario switch updates drivers, statements, and KPIs",
   "Validation checks pass (A=L+E, NI→RE, cash reconcile)",
   "Dashboard charts and sparklines update correctly"
+]
+
+const recommendationStructure = [
+  { label: "Claim", desc: "Clear recommendation (e.g., 'Invest in TechStart because...')" },
+  { label: "Evidence (3+ numbers)", desc: "Cite at least one number from each statement: Income Statement, Balance Sheet, Cash Flow" },
+  { label: "Risk/Limitation", desc: "One downside or uncertainty that qualifies your recommendation" },
+  { label: "Why it still makes sense", desc: "Explain why the recommendation is justified despite the risk" }
 ]
 
 const rubric = [
@@ -89,11 +96,29 @@ export default function Unit03Lesson09Phase1() {
                 </CardHeader>
                 <CardContent className="space-y-3 text-muted-foreground">
                   <ul className="space-y-2">
-                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Prototype implements link engine and scenario switch with realistic data.</span></li>
+                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Prototype implements link engine and scenario switch with your group's data.</span></li>
                     <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Validations pass (A=L+E, NI→RE, cash reconcile); test scenarios documented.</span></li>
                     <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Rehearsal complete; peer feedback incorporated; timing on target.</span></li>
                     <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Evidence: prototype workbook + test summary + change notes.</span></li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Recommendation Structure — Claim, Evidence, Risk</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-muted-foreground">
+                  <p>Your final presentation needs a clear recommendation backed by numbers from all three statements:</p>
+                  <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                    {recommendationStructure.map(r => (
+                      <div key={r.label} className="border rounded-md p-3">
+                        <div className="font-medium">{r.label}</div>
+                        <p className="text-sm mt-1">{r.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-sm mt-4">Example: "Invest in TechStart because revenue grew 15% to $2.1M (Income Statement), cash reserves reached $450K (Balance Sheet), and operating cash flow improved by $200K (Cash Flow Statement). The risk: customer concentration is 60%. Even with this limitation, the strong cash position supports growth."</p>
                 </CardContent>
               </Card>
 

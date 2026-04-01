@@ -141,49 +141,49 @@
     - [x] Students know what their own project workbook must include
     - [x] Audit criteria are explicit and reusable
 
-- [ ] 4.2 **Lesson 08** - Implement group-project skill
-  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
-  - [ ] 4.2.2 Implement kickoff with group-specific business data
+- [x] 4.2 **Lesson 08** - Implement group-project skill
+  - [x] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+  - [x] 4.2.2 Implement kickoff with group-specific business data
     - Assign each group its own dataset/starter workbook
     - Explain business scenario, constraints, target outcome
     - Require teams to rename, save, organize correct workbook
     - Start first required sheets/sections
     - Define milestone 1 acceptance criteria
-  - [ ] 4.2.3 Assign a dataset/workbook per group
-  - [ ] 4.2.4 Keep workbook tabs and evidence chain identical to the rehearsal version
+  - [x] 4.2.3 Assign a dataset/workbook per group
+  - [x] 4.2.4 Keep workbook tabs and evidence chain identical to the rehearsal version
   - **Done when**:
-    - [ ] Each group is working on the correct data
-    - [ ] Early statement structure is complete
+    - [x] Each group is working on the correct data
+    - [x] Early statement structure is complete
 
-- [ ] 4.3 **Lesson 09** - Implement group-project skill
-  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
-  - [ ] 4.3.2 Implement completion and rehearsal
+- [x] 4.3 **Lesson 09** - Implement group-project skill
+  - [x] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+  - [x] 4.3.2 Implement completion and rehearsal
     - Continue same workbook from Lesson 08
     - Complete remaining sheets/evidence blocks
     - Require scenario testing, checks, dashboard completion
     - Require short recommendation structure (claim, evidence, risk)
     - Include peer critique and revision
     - Define milestone 2 acceptance criteria
-  - [ ] 4.3.3 Finish the linked model and KPI summary
-  - [ ] 4.3.4 Require peer critique and revision
-  - [ ] 4.3.5 Make teams cite numbers from all three statements, not only one sheet
+  - [x] 4.3.3 Finish the linked model and KPI summary
+  - [x] 4.3.4 Require peer critique and revision
+  - [x] 4.3.5 Make teams cite numbers from all three statements, not only one sheet
   - **Done when**:
-    - [ ] The workbook is complete and coherent
-    - [ ] The team can explain the financial story clearly
+    - [x] The workbook is complete and coherent
+    - [x] The team can explain the financial story clearly
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+  - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+  - [x] 4.4.2 Implement final presentation and submission
     - Require final polish of workbook and presentation notes
     - Make audience, presentation standard, submission standard explicit
     - Include final checklist and timing guidance
     - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make final artifact requirements explicit
-  - [ ] 4.4.4 Require final workbook plus presentation or one-pager
-  - [ ] 4.4.5 End with reflection on what made the model trustworthy
+  - [x] 4.4.3 Make final artifact requirements explicit
+  - [x] 4.4.4 Require final workbook plus presentation or one-pager
+  - [x] 4.4.5 End with reflection on what made the model trustworthy
   - **Done when**:
-    - [ ] Final deliverables are submitted
-    - [ ] Reflection captures technical and communication growth
+    - [x] Final deliverables are submitted
+    - [x] Reflection captures technical and communication growth
 
 ## Phase 5: Verification & Polish
 - [ ] 5.1 Verify all lesson-data.ts files are updated

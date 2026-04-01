@@ -102,6 +102,7 @@ export default function Unit03Lesson08Phase1() {
                     <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Excel model plan lists tabs, validations, method switching, and a small dashboard.</span></li>
                     <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Risks/assumptions and simple mitigation steps are documented.</span></li>
                     <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>Evidence started: brief outline + workbook skeleton (tabs created, headers set).</span></li>
+                    <li className="flex items-start gap-2"><input type="checkbox" className="mt-1"/> <span>One draft claim or early direction statement written (e.g., "TechStart should pursue...")</span></li>
                   </ul>
                 </CardContent>
               </Card>
@@ -131,14 +132,43 @@ export default function Unit03Lesson08Phase1() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Resources — Group Datasets (reuse in Lessons 09–10)</CardTitle>
+                  <CardTitle>Your Group's Dataset</CardTitle>
                 </CardHeader>
-                <CardContent className="grid sm:grid-cols-2 gap-2 text-sm">
-                  {Array.from({length:6}).map((_,i)=>{
-                    const n=i+1
-                    const href=`/resources/unit03-pbl-three-statement-g${n}.csv`
-                    return (<a key={n} href={href} download className="underline text-blue-600">Download g{n} dataset</a>)
-                  })}
+                <CardContent className="space-y-3 text-muted-foreground">
+                  <p>Each team works with a unique dataset. Use only your assigned file for all lessons.</p>
+                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                    <div className="border rounded-md p-3 text-center">
+                      <Badge className="bg-blue-600">Group 1</Badge>
+                      <p className="mt-2 font-medium">Dataset g1</p>
+                      <a href="/resources/unit03-pbl-three-statement-g1.csv" download className="text-blue-600 underline text-sm">Download</a>
+                    </div>
+                    <div className="border rounded-md p-3 text-center">
+                      <Badge className="bg-blue-600">Group 2</Badge>
+                      <p className="mt-2 font-medium">Dataset g2</p>
+                      <a href="/resources/unit03-pbl-three-statement-g2.csv" download className="text-blue-600 underline text-sm">Download</a>
+                    </div>
+                    <div className="border rounded-md p-3 text-center">
+                      <Badge className="bg-blue-600">Group 3</Badge>
+                      <p className="mt-2 font-medium">Dataset g3</p>
+                      <a href="/resources/unit03-pbl-three-statement-g3.csv" download className="text-blue-600 underline text-sm">Download</a>
+                    </div>
+                    <div className="border rounded-md p-3 text-center">
+                      <Badge className="bg-green-600">Group 4</Badge>
+                      <p className="mt-2 font-medium">Dataset g4</p>
+                      <a href="/resources/unit03-pbl-three-statement-g4.csv" download className="text-blue-600 underline text-sm">Download</a>
+                    </div>
+                    <div className="border rounded-md p-3 text-center">
+                      <Badge className="bg-green-600">Group 5</Badge>
+                      <p className="mt-2 font-medium">Dataset g5</p>
+                      <a href="/resources/unit03-pbl-three-statement-g5.csv" download className="text-blue-600 underline text-sm">Download</a>
+                    </div>
+                    <div className="border rounded-md p-3 text-center">
+                      <Badge className="bg-green-600">Group 6</Badge>
+                      <p className="mt-2 font-medium">Dataset g6</p>
+                      <a href="/resources/unit03-pbl-three-statement-g6.csv" download className="text-blue-600 underline text-sm">Download</a>
+                    </div>
+                  </div>
+                  <p className="text-sm mt-4">Rename your file: <code>TechStart_Group[1-6]_ThreeStatement.xlsx</code></p>
                 </CardContent>
               </Card>
 

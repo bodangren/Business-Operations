@@ -76,13 +76,39 @@ export default function Unit03Lesson10Phase1() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Presentation Flow (40 minutes)</CardTitle>
+                  <CardTitle>Audience & Standards</CardTitle>
                 </CardHeader>
-                <CardContent className="text-muted-foreground text-sm space-y-2">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>5 min setup</li>
-                    <li>Six groups × ~5 min each (present + brief Q&amp;A)</li>
-                    <li>5 min wrap and next steps</li>
+                <CardContent className="space-y-3 text-muted-foreground">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="border rounded-md p-3">
+                      <div className="font-medium">Audience</div>
+                      <p className="text-sm mt-1">Mock investor panel (2-3 professionals)</p>
+                    </div>
+                    <div className="border rounded-md p-3">
+                      <div className="font-medium">Presentation Standard</div>
+                      <p className="text-sm mt-1">4-5 minutes, clear storyline, Excel live demo</p>
+                    </div>
+                    <div className="border rounded-md p-3">
+                      <div className="font-medium">Submission Standard</div>
+                      <p className="text-sm mt-1">Final workbook + one-pager + peer reviews</p>
+                    </div>
+                    <div className="border rounded-md p-3">
+                      <div className="font-medium">Q&A Expectation</div>
+                      <p className="text-sm mt-1">2-3 questions on assumptions, risks, or methodology</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Final Artifact Requirements</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-muted-foreground">
+                  <ul className="space-y-2">
+                    <li><strong>Final Workbook:</strong> Complete three-statement model with working links, scenario switch, validations, and dashboard</li>
+                    <li><strong>One-Pager:</strong> Executive summary (1 page max) with recommendation, 3+ evidence numbers, risk, and visuals</li>
+                    <li><strong>Peer Reviews:</strong> Completed PeerCritiqueForm from at least one other group</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -142,7 +168,15 @@ export default function Unit03Lesson10Phase1() {
                   <CardTitle>Reflection</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ReflectionJournal unitTitle="Milestone 3 Reflection" />
+                  <div className="space-y-4">
+                    <ReflectionJournal unitTitle="Milestone 3 Reflection" />
+                    <div className="border-t pt-4 mt-4">
+                      <p className="font-medium mb-2">What made your model trustworthy?</p>
+                      <p className="text-sm text-muted-foreground">
+                        Reflect on what technical choices (validations, linked formulas, scenario testing) and communication choices (clear visuals, evidence-backed claims, risk acknowledgment) made your three-statement model credible to investors.
+                      </p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
