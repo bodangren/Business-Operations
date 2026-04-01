@@ -1,49 +1,94 @@
 "use client";
 
+import { useState } from "react";
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileSpreadsheet, Target, Download, CheckCircle, Calculator, ClipboardList, Star } from "lucide-react";
-import { SpreadsheetWrapper } from "@/components/spreadsheet/SpreadsheetWrapper";
-import type { SpreadsheetData } from "@/components/spreadsheet/SpreadsheetWrapper";
+import { Target, CheckCircle, XCircle, RefreshCw, ArrowRight, BarChart3 } from "lucide-react";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
-const currentPhase = lesson04Phases[3]; // Independent Practice phase
+const currentPhase = lesson04Phases[3];
 
-// ── read-only header cell ──────────────────────────────────────────────────
-function h(value: string): { value: string; readOnly: true } {
-  return { value, readOnly: true };
+interface ScenarioProblem {
+  id: number;
+  fixedCosts: number;
+  variableCost: number;
+  currentPrice: number;
+  currentVolume: number;
+  targetProfit: number;
+  premiumPrice: number;
+  premiumVolume: number;
+  volumePrice: number;
+  volumeVolume: number;
+  answer: "premium" | "volume" | "neither";
+  explanation: string;
 }
-// ── read-only value cell ─────────────────────────────────────────────
-function r(value: string | number): { value: string | number; readOnly: true } {
-  return { value, readOnly: true };
-}
-// ── empty read-only cell ───────────────────────────────────────────────────
-const E: { value: string; readOnly: true } = { value: "", readOnly: true };
 
-const sheet1: SpreadsheetData = [
-  [h("TechStart Solutions — Goal Seek Decision Model"), E, E, E],
-  [E, E, E, E],
-  [h("Step 1: Base CVP Model"), E, E, E],
-  [h("Fixed Costs"), r("$8,100"), E, E],
-  [h("Variable Cost / Project"), r("$880"), E, E],
-  [h("Selling Price / Project"), r("$1,350"), h("← CHANGING CELL"), E],
-  [h("Volume (Projects)"), r("24"), h("← CHANGING CELL"), E],
-  [E, E, E, E],
-  [h("Revenue"), r("=B6*B7"), E, E],
-  [h("Total Variable Costs"), r("=B5*B7"), E, E],
-  [h("Total Fixed Costs"), r("=B4"), E, E],
-  [h("Total Profit"), r("=B9-B10-B11"), h("← SET CELL"), E],
-  [E, E, E, E],
-  [h("Step 2: Goal Seek Scenarios"), E, E, E],
-  [h("Scenario"), h("Target Profit"), h("Variable to Change"), h("Goal Seek Result")],
-  [r("Investor Milestone"), r("$12,000"), r("Price"), r("$1,718")],
-  [r("Growth Target"), r("$10,000"), r("Volume"), r("39 projects")],
-  [r("Cost Squeeze"), r("$5,000"), r("Fixed Costs"), r("$3,180 (FC reduction)")],
-];
+const generateProblem = (seed: number): ScenarioProblem => {
+  const variants = [
+    { fixedCosts: 5000, variableCost: 200, currentPrice: 500, currentVolume: 15 },
+    { fixedCosts: 8000, variableCost: 150, currentPrice: 400, currentVolume: 30 },
+    { fixedCosts: 10000, variableCost: 300, currentPrice: 800, currentVolume: 20 },
+    { fixedCosts: 6000, variableCost: 250, currentPrice: 600, currentVolume: 18 },
+  ];
+  const v = variants[seed % variants.length];
+  
+  const cm = v.currentPrice - v.variableCost;
+  const currentProfit = (cm * v.currentVolume) - v.fixedCosts;
+  const targetCM = v.fixedCosts + v.targetProfit;
+  
+  const premiumVolume = v.currentVolume;
+  const premiumPrice = Math.ceil(targetCM / premiumVolume + v.variableCost);
+  
+  const volumePrice = v.currentPrice;
+  const volumeVolume = Math.ceil(targetCM / cm);
+  
+  const answers: ("premium" | "volume" | "neither")[] = ["premium", "volume"];
+  const answer = answers[seed % 2];
+  
+  return {
+    id: seed,
+    ...v,
+    targetProfit: 3000,
+    premiumPrice,
+    premiumVolume,
+    volumePrice,
+    volumeVolume: volumeVolume + (seed % 3),
+    answer,
+    explanation: answer === "premium" 
+      ? `Premium path: $${premiumPrice} × ${premiumVolume} projects hits target with lower volume risk.`
+      : `Volume path: ${volumeVolume + (seed % 3)} projects at $${volumePrice} is more achievable.`
+  };
+};
 
 export default function Phase4Page() {
+  const [problemNum, setProblemNum] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [showResult, setShowResult] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [totalAttempts, setTotalAttempts] = useState(0);
+  
+  const problem = generateProblem(problemNum);
+  
+  const handleAnswer = (answer: string) => {
+    if (showResult) return;
+    setSelectedAnswer(answer);
+    setShowResult(true);
+    setTotalAttempts(prev => prev + 1);
+    if (answer === problem.answer) {
+      setCorrectCount(prev => prev + 1);
+    }
+  };
+  
+  const nextProblem = () => {
+    setProblemNum(prev => prev + 1);
+    setSelectedAnswer(null);
+    setShowResult(false);
+  };
+  
+  const masteryPercent = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50">
       <PhaseHeader 
@@ -59,183 +104,181 @@ export default function Phase4Page() {
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
               🚀 Phase 4: Independent Practice
             </Badge>
-            <div className="max-w-5xl mx-auto space-y-8 text-left">
+            <div className="max-w-4xl mx-auto space-y-8 text-left">
 
-              {/* Bring the Workbook Forward */}
+              {/* Instructions */}
               <Card className="border-cyan-200 bg-cyan-50">
                 <CardHeader>
                   <CardTitle className="text-cyan-900 flex items-center gap-2 text-xl">
-                    <Download className="w-5 h-5" />
-                    Continue Your PriceLab Workbook
+                    <BarChart3 className="w-5 h-5" />
+                    Scenario Comparison Practice
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-cyan-900">
                   <p>
-                    Open the CVP workbook you built in Lesson 03 (Contribution Margin Sprint) and keep it in the
-                    same folder. Every Goal Seek run today should reference that exact model so your numbers stay
-                    consistent across the unit.
+                    For each problem, determine which pricing path (Premium Pricing or Volume) is more 
+                    <strong>realistic</strong> given the business constraints.
                   </p>
-                  <ol className="list-decimal list-inside space-y-1">
-                    <li>Duplicate the workbook if you want a “Goal Seek” version, but keep the assumptions sheet identical.</li>
-                    <li>Confirm the <strong>Total Profit</strong> cell is still linked to your price and volume inputs before launching Goal Seek.</li>
-                    <li>After each scenario, jot the result in the notes column so you can cite it in the Phase 5 investor brief.</li>
-                  </ol>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li><strong>Premium path:</strong> Keep current volume, raise price to hit target</li>
+                    <li><strong>Volume path:</strong> Keep current price, increase volume to hit target</li>
+                    <li><strong>Neither:</strong> Both require unrealistic changes</li>
+                  </ul>
+                  <p className="font-semibold">
+                    Consider: Which path requires fewer fundamental changes to the business model?
+                  </p>
                 </CardContent>
               </Card>
               
-              {/* Introduction */}
+              {/* Practice Problem */}
               <Card className="border-orange-200 bg-white shadow-lg">
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                    <Target className="w-8 h-8 text-orange-600" />
-                  </div>
                   <CardTitle className="text-3xl font-bold text-orange-800 mb-2">
-                    Building the Goal Seek Engine
+                    Problem {problemNum + 1}
                   </CardTitle>
-                  <p className="text-slate-600 leading-relaxed">
-                    Now it&apos;s your turn to build Sarah&apos;s decision-making engine in Excel. 
-                    You&apos;ll create a dynamic CVP model and use the <strong>Goal Seek tool</strong> 
-                    to solve three critical investor scenarios.
+                  <p className="text-slate-600">
+                    Target Profit: ${problem.targetProfit.toLocaleString()}
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 flex items-start gap-3">
-                    <Calculator className="w-5 h-5 text-blue-600 mt-1" />
-                    <p className="text-sm text-blue-800">
-                      <strong>Your Goal:</strong> Create a model where the "Total Profit" cell 
-                      responds instantly to changes in Price and Volume, then use Goal Seek 
-                      to find the exact numbers Sarah needs to hit her milestones.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Reference Spreadsheet */}
-              <Card className="border-blue-200 bg-blue-50">
-                <CardHeader>
-                  <CardTitle className="text-blue-900 flex items-center gap-2 text-xl">
-                    <FileSpreadsheet className="w-6 h-6" />
-                    Reference Model — Goal Seek Workbook
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-blue-700 text-sm">
-                    This is your layout guide. Build your Excel sheet to match this structure. 
-                    The values in Step 2 are what Goal Seek will fill in automatically for you.
-                  </p>
-
-                  <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
-                    <SpreadsheetWrapper
-                      initialData={sheet1}
-                      columnLabels={["A", "B", "C", "D"]}
-                      readOnly={true}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Build Sequence */}
-              <Card className="border-slate-200 bg-white shadow-md">
-                <CardHeader>
-                  <CardTitle className="text-slate-800 text-xl flex items-center gap-2">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                    Build Sequence — Excel Instructions
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {[
-                    {
-                      title: "1. Build the Base Model",
-                      steps: [
-                        "Enter fixed costs ($8,100), variable costs ($880), price ($1,350), and volume (24).",
-                        "Write formulas for Revenue, Total Variable Costs, and Total Profit.",
-                        "Verify that your profit shows $3,180 at current inputs.",
-                      ],
-                    },
-                    {
-                      title: "2. Run Goal Seek: Scenario A (Investor Milestone)",
-                      steps: [
-                        "Go to Data > What-If Analysis > Goal Seek.",
-                        "Set Cell: B12 (Total Profit).",
-                        "To Value: 12000.",
-                        "By Changing Cell: B6 (Price).",
-                        "Note the result: TechStart needs a $1,718 price to hit this target at current capacity.",
-                      ],
-                    },
-                    {
-                      title: "3. Run Goal Seek: Scenario B (Growth Target)",
-                      steps: [
-                        "Reset price to $1,350.",
-                        "Run Goal Seek for $10,000 profit by changing Volume (B7).",
-                        "Note the result: 39 projects. (Is this realistic given her 24-project capacity?)",
-                      ],
-                    },
-                  ].map((task, i) => (
-                    <div key={i} className="bg-slate-50 p-4 rounded border border-slate-200">
-                      <h4 className="font-bold text-slate-900 mb-2">{task.title}</h4>
-                      <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
-                        {task.steps.map((step, si) => <li key={si}>{step}</li>)}
-                      </ul>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              {/* Deliverable Section */}
-              <Card className="border-amber-200 bg-amber-50">
-                <CardHeader>
-                  <CardTitle className="text-amber-800 flex items-center gap-2">
-                    <ClipboardList className="w-5 h-5" />
-                    Deliverable: Investor Analysis Memo
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-amber-900 text-sm leading-relaxed">
-                  <p>Based on your Goal Seek results, write a brief memo to Sarah&apos;s investor, Michael Chen:</p>
-                  <ul className="list-disc list-inside space-y-2">
-                    <li><strong>Finding:</strong> State the exact price required to hit the $12,000 profit milestone.</li>
-                    <li><strong>Feasibility:</strong> Explain why the "Volume" strategy (Level B) is currently impossible without more hiring.</li>
-                    <li><strong>Strategic Recommendation:</strong> Should Sarah raise prices or increase capacity? Defend your choice.</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Rubric */}
-              <Card className="border-violet-200 bg-violet-50">
-                <CardHeader>
-                  <CardTitle className="text-violet-800 flex items-center gap-2">
-                    <Star className="w-5 h-5" />
-                    Submission Rubric
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-xs border-collapse">
+                  {/* Scenario Table */}
+                  <div className="overflow-x-auto mb-6">
+                    <table className="w-full text-sm border-collapse">
                       <thead>
-                        <tr className="bg-violet-100 text-violet-900">
-                          <th className="text-left p-2 border border-violet-200">Criteria</th>
-                          <th className="p-2 border border-violet-200">Proficient</th>
-                          <th className="p-2 border border-violet-200">Advanced</th>
+                        <tr className="bg-slate-100 text-slate-900">
+                          <th className="p-2 border border-slate-200 text-left">Metric</th>
+                          <th className="p-2 border border-slate-200">Current</th>
+                          <th className="p-2 border border-slate-200 bg-green-50 text-green-900">Premium</th>
+                          <th className="p-2 border border-slate-200 bg-blue-50 text-blue-900">Volume</th>
                         </tr>
                       </thead>
-                      <tbody className="text-violet-800">
-                        <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Model Accuracy</td>
-                          <td className="p-2 border border-violet-200">Profit formula is correct ($3,180 base).</td>
-                          <td className="p-2 border border-violet-200">Includes professional labeling and cell formatting.</td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Goal Seek Usage</td>
-                          <td className="p-2 border border-violet-200">Correctly identifies required price for target.</td>
-                          <td className="p-2 border border-violet-200">Can explain the Set/To/By parameters clearly.</td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Strategic Analysis</td>
-                          <td className="p-2 border border-violet-200">Identifies that 39 projects exceeds capacity.</td>
-                          <td className="p-2 border border-violet-200">Recommends a realistic path forward based on market constraints.</td>
-                        </tr>
+                      <tbody className="text-slate-700">
+                        <tr><td className="p-2 border border-slate-200">Fixed Costs</td><td className="p-2 border border-slate-200 text-right">${problem.fixedCosts.toLocaleString()}</td><td className="p-2 border border-slate-200 text-right">${problem.fixedCosts.toLocaleString()}</td><td className="p-2 border border-slate-200 text-right">${problem.fixedCosts.toLocaleString()}</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Variable Cost</td><td className="p-2 border border-slate-200 text-right">${problem.variableCost}</td><td className="p-2 border border-slate-200 text-right">${problem.variableCost}</td><td className="p-2 border border-slate-200 text-right">${problem.variableCost}</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Price</td><td className="p-2 border border-slate-200 text-right">${problem.currentPrice}</td><td className="p-2 border border-slate-200 text-right font-semibold text-green-700">${problem.premiumPrice}</td><td className="p-2 border border-slate-200 text-right">${problem.volumePrice}</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Volume</td><td className="p-2 border border-slate-200 text-right">{problem.currentVolume} units</td><td className="p-2 border border-slate-200 text-right">{problem.premiumVolume} units</td><td className="p-2 border border-slate-200 text-right font-semibold text-blue-700">{problem.volumeVolume} units</td></tr>
+                        <tr className="font-bold bg-slate-50"><td className="p-2 border border-slate-200">Profit</td><td className="p-2 border border-slate-200 text-right">{(problem.currentPrice - problem.variableCost) * problem.currentVolume - problem.fixedCosts >= 0 ? "✓" : "✗"}</td><td className="p-2 border border-slate-200 text-right">✓ Target</td><td className="p-2 border border-slate-200 text-right">✓ Target</td></tr>
                       </tbody>
                     </table>
                   </div>
+                  
+                  {/* Answer Options */}
+                  <div className="flex flex-col gap-3">
+                    <button
+                      onClick={() => handleAnswer("premium")}
+                      disabled={showResult}
+                      className={`p-4 rounded-lg border-2 text-left transition-colors ${
+                        showResult
+                          ? problem.answer === "premium"
+                            ? "border-green-500 bg-green-50"
+                            : selectedAnswer === "premium"
+                              ? "border-red-500 bg-red-50"
+                              : "border-slate-200"
+                          : "border-slate-200 hover:border-orange-400"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        {showResult && (
+                          problem.answer === "premium" ? <CheckCircle className="w-5 h-5 text-green-600" /> : (selectedAnswer === "premium" ? <XCircle className="w-5 h-5 text-red-600" /> : null)
+                        )}
+                        <div>
+                          <p className="font-semibold">Premium Path</p>
+                          <p className="text-sm text-slate-600">Raise price to ${problem.premiumPrice}, keep {problem.premiumVolume} volume</p>
+                        </div>
+                      </div>
+                    </button>
+                    
+                    <button
+                      onClick={() => handleAnswer("volume")}
+                      disabled={showResult}
+                      className={`p-4 rounded-lg border-2 text-left transition-colors ${
+                        showResult
+                          ? problem.answer === "volume"
+                            ? "border-green-500 bg-green-50"
+                            : selectedAnswer === "volume"
+                              ? "border-red-500 bg-red-50"
+                              : "border-slate-200"
+                          : "border-slate-200 hover:border-orange-400"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        {showResult && (
+                          problem.answer === "volume" ? <CheckCircle className="w-5 h-5 text-green-600" /> : (selectedAnswer === "volume" ? <XCircle className="w-5 h-5 text-red-600" /> : null)
+                        )}
+                        <div>
+                          <p className="font-semibold">Volume Path</p>
+                          <p className="text-sm text-slate-600">Keep ${problem.volumePrice} price, increase to {problem.volumeVolume} volume</p>
+                        </div>
+                      </div>
+                    </button>
+                    
+                    <button
+                      onClick={() => handleAnswer("neither")}
+                      disabled={showResult}
+                      className={`p-4 rounded-lg border-2 text-left transition-colors ${
+                        showResult
+                          ? problem.answer === "neither"
+                            ? "border-green-500 bg-green-50"
+                            : selectedAnswer === "neither"
+                              ? "border-red-500 bg-red-50"
+                              : "border-slate-200"
+                          : "border-slate-200 hover:border-orange-400"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        {showResult && (
+                          problem.answer === "neither" ? <CheckCircle className="w-5 h-5 text-green-600" /> : (selectedAnswer === "neither" ? <XCircle className="w-5 h-5 text-red-600" /> : null)
+                        )}
+                        <div>
+                          <p className="font-semibold">Neither</p>
+                          <p className="text-sm text-slate-600">Both require unrealistic changes</p>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  
+                  {/* Explanation */}
+                  {showResult && (
+                    <div className={`mt-4 p-4 rounded-lg ${selectedAnswer === problem.answer ? "bg-green-50 border border-green-200" : "bg-amber-50 border border-amber-200"}`}>
+                      <p className="font-semibold mb-1">{selectedAnswer === problem.answer ? "✓ Correct!" : "✗ Not quite"}</p>
+                      <p className="text-sm">{problem.explanation}</p>
+                    </div>
+                  )}
+                  
+                  {/* Next Button */}
+                  {showResult && (
+                    <button
+                      onClick={nextProblem}
+                      className="mt-4 w-full py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 flex items-center justify-center gap-2"
+                    >
+                      <RefreshCw className="w-4 h-4" />
+                      Next Problem
+                    </button>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* Mastery Progress */}
+              <Card className="border-violet-200 bg-violet-50">
+                <CardHeader>
+                  <CardTitle className="text-violet-800 flex items-center gap-2">
+                    <Target className="w-5 h-5" />
+                    Mastery Progress
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-4">
+                    <div className="flex-1 bg-white rounded-full h-4 overflow-hidden border border-violet-200">
+                      <div 
+                        className="h-full bg-violet-600 transition-all duration-300"
+                        style={{ width: `${masteryPercent}%` }}
+                      />
+                    </div>
+                    <span className="font-semibold text-violet-800">{masteryPercent}% ({correctCount}/{totalAttempts})</span>
+                  </div>
+                  <p className="text-xs text-violet-700 mt-2">
+                    {masteryPercent >= 80 ? "✓ Mastery achieved! Ready for Excel automation." : "Keep practicing to build scenario intuition."}
+                  </p>
                 </CardContent>
               </Card>
 

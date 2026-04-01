@@ -64,21 +64,21 @@
     - [x] Students can calculate break-even and interpret the result
     - [x] Students can connect contribution margin to pricing choices
 
-- [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
-  - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
-  - [ ] 2.4.2 Implement Phase 1-6 with scenario comparison
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and structured tables
-    - Phase 3: Add meaningful complication (more complex scenarios), reduce prompts, shift toward authentic pricing notation
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
-    - Phase 5: Short MCQ exit ticket on scenario comparison and sensitivity reasoning
-    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
-  - [ ] 2.4.3 Keep this lesson non-Excel and textbook-first
-  - [ ] 2.4.4 Use structured tables and comparison views to analyze multiple pricing scenarios by hand
-  - [ ] 2.4.5 Use Phase 4 for repeated recommendation practice under reduced scaffolding
+- [x] 2.4 **Lesson 04** - Implement accounting-principles skill
+  - [x] 2.4.1 Update lesson-data.ts for Lesson 04
+  - [x] 2.4.2 Implement Phase 1-6 with scenario comparison
+    - [x] Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
+    - [x] Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and structured tables
+    - [x] Phase 3: Add meaningful complication (more complex scenarios), reduce prompts, shift toward authentic pricing notation
+    - [x] Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+    - [x] Phase 5: Short MCQ exit ticket on scenario comparison and sensitivity reasoning
+    - [x] Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
+  - [x] 2.4.3 Keep this lesson non-Excel and textbook-first
+  - [x] 2.4.4 Use structured tables and comparison views to analyze multiple pricing scenarios by hand
+  - [x] 2.4.5 Use Phase 4 for repeated recommendation practice under reduced scaffolding
   - **Done when**:
-    - [ ] Students can defend a pricing recommendation using CVP reasoning
-    - [ ] The closing phase clearly sets up Goal Seek and Data Tables as useful tools, not premature content
+    - [x] Students can defend a pricing recommendation using CVP reasoning
+    - [x] The closing phase clearly sets up Goal Seek and Data Tables as useful tools, not premature content
 
 ## Phase 3: Lessons 05-06 (Excel)
 - [ ] 3.1 **Lesson 05** - Implement excel-lessons skill

@@ -2,56 +2,56 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Target, TrendingUp } from "lucide-react";
+import { Users, Target, TrendingUp, AlertCircle } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
-const currentPhase = lesson04Phases[0]; // Hook phase
+const currentPhase = lesson04Phases[0];
 
 const hookQuestions = [
   {
     id: "hook-1",
-    question: "Sarah wants to make $50,000 profit next year. Instead of guessing different prices, what Excel tool can instantly tell her the exact price needed?",
+    question: "Sarah can hit $10,000 profit two ways: charge $1,635 per project, OR serve 39 projects at $1,350 each. Which is the better business decision?",
     answers: [
-      "Goal Seek - it works backward from profit target to find the required price",
-      "SUM function - it adds up all the costs",
-      "IF function - it checks if profit is high enough",
-      "VLOOKUP - it finds prices in a table"
+      "It depends on Sarah's capacity and market constraints",
+      "Always choose the higher price",
+      "Always choose the higher volume",
+      "They are equal—both reach the profit target"
     ],
-    explanation: "Goal Seek is designed for exactly this scenario. You set your profit target ($50,000) and Excel automatically calculates what price you need to charge to hit that target."
+    explanation: "The right answer depends on real-world constraints. Can Sarah actually serve 39 projects with her current team? Would customers pay $1,635 when competitors charge $1,350? The math says both work; the business says only one might."
   },
   {
     id: "hook-2",
-    question: "What makes Goal Seek more powerful than manually changing values in a spreadsheet?",
+    question: "If Sarah's competitor drops their price to $1,200, which pricing strategy becomes riskier?",
     answers: [
-      "It finds the exact answer instantly, even with complex formulas",
-      "It changes multiple cells at once",
-      "It makes graphs automatically",
-      "It saves the file for you"
+      "The volume strategy—40+ projects becomes harder to win",
+      "The premium pricing strategy—customers may defect",
+      "Neither strategy is affected by competitors",
+      "Fixed costs reduction strategy"
     ],
-    explanation: "Goal Seek uses mathematical algorithms to find precise solutions instantly, even when your formulas are complex with many interconnected variables."
+    explanation: "When competitors drop prices, the volume strategy becomes harder because Sarah must win more market share just to maintain the same profit. The premium strategy also risks losing price-sensitive customers."
   },
   {
     id: "hook-3", 
-    question: "If Sarah's current break-even point is 100 units, and she wants to break even at only 75 units, Goal Seek could help her find:",
+    question: "What happens to Sarah's break-even point if she raises prices but loses 10% of her customers?",
     answers: [
-      "The exact price increase or cost reduction needed to achieve 75-unit break-even",
-      "How many customers she needs to call",
-      "What color her logo should be",
-      "Which software to buy"
+      "The effect depends on the price increase magnitude—could go up or down",
+      "Break-even always increases",
+      "Break-even always decreases",
+      "Break-even stays the same"
     ],
-    explanation: "Goal Seek can determine precisely what operational changes (pricing or cost reductions) are needed to reach her new break-even target of 75 units."
+    explanation: "It's not automatic! If the price increase more than compensates for lost volume, break-even could actually go down. This is exactly why scenario comparison matters."
   },
   {
     id: "hook-4",
-    question: "Why is Goal Seek essential for professional investor presentations?",
+    question: "Before using Excel tools like Goal Seek, why should students first practice comparing scenarios by hand?",
     answers: [
-      "Investors ask 'what-if' questions and expect immediate, accurate answers",
-      "It makes the spreadsheet look more colorful",
-      "It automatically creates PowerPoint slides",
-      "It sends emails to investors"
+      "To build intuition for what the automation will do",
+      "Excel is too complicated for beginners",
+      "Hand calculations are more accurate",
+      "Because Excel doesn't work on phones"
     ],
-    explanation: "Investors constantly ask scenario questions like 'What if costs go up 10%?' or 'What price do you need for 20% profit?' Goal Seek lets you answer these instantly with precision."
+    explanation: "Scenario comparison by hand builds the business intuition that makes automated tools useful. When you understand why one scenario beats another, Goal Seek becomes a productivity tool, not a mystery."
   }
 ];
 
@@ -80,56 +80,71 @@ export default function Phase1Page() {
                     <Target className="w-8 h-8 text-red-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-red-800 mb-2">
-                    Sarah's Goal Seek Challenge
+                    Sarah's Crossroads
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    The "What-If" Revolution
+                    Two Paths to $10,000 Profit
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <div className="bg-red-50 p-6 rounded-lg border border-red-200 mb-6">
                     <p className="text-lg leading-relaxed text-red-900 mb-4">
-                      Sarah was in the middle of an important investor meeting when venture capitalist 
-                      Michael Chen asked the question that stopped her cold: "Sarah, your CVP model shows 
-                      you'll make $30,000 profit at current prices. But what if you want to make $75,000? 
-                      What price would you need to charge?"
+                      Sarah had done her homework. Her CVP model showed she could hit her $10,000 monthly 
+                      profit target <strong>two completely different ways</strong>:
                     </p>
-                    <p className="text-lg leading-relaxed text-red-900 mb-4">
-                      Sarah's mind raced. She knew she could manually try different prices in her spreadsheet, 
-                      but that would take forever and look unprofessional. "Um, let me calculate that and 
-                      get back to you," she said, knowing she was losing credibility.
-                    </p>
+                    <div className="grid md:grid-cols-2 gap-4 my-6">
+                      <div className="bg-white p-4 rounded border border-red-300">
+                        <h4 className="font-bold text-red-900 text-center mb-2">Path A: Premium Pricing</h4>
+                        <p className="text-red-800 text-sm text-center">
+                          Keep 24 projects<br/>
+                          Raise price to <strong>$1,635</strong><br/>
+                          Profit: $10,000
+                        </p>
+                      </div>
+                      <div className="bg-white p-4 rounded border border-red-300">
+                        <h4 className="font-bold text-red-900 text-center mb-2">Path B: Volume Play</h4>
+                        <p className="text-red-800 text-sm text-center">
+                          Keep $1,350 price<br/>
+                          Serve <strong>39 projects</strong><br/>
+                          Profit: $10,000
+                        </p>
+                      </div>
+                    </div>
                     <p className="text-lg leading-relaxed text-red-900">
-                      Later, her CPA Jennifer Kim smiled. "Sarah, there's an Excel tool called Goal Seek 
-                      that would have given you that answer in seconds. It's exactly what professional 
-                      analysts use for investor meetings."
+                      "Both paths work on paper," Sarah told her mentor Jennifer. "But which one actually 
+                      works in <em>my</em> business? How do I choose?"
                     </p>
                   </div>
 
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
+                  <div className="bg-amber-50 p-6 rounded-lg border border-amber-200 mb-6">
+                    <h3 className="font-semibold text-amber-900 mb-3 flex items-center gap-2">
+                      <AlertCircle className="w-5 h-5" />
+                      The Friction Point
+                    </h3>
+                    <p className="text-amber-800 mb-4">
+                      The math says both scenarios work. But real business has constraints that math doesn't see:
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 text-amber-800">
+                      <li>Can Sarah's current team actually handle 39 projects?</li>
+                      <li>Will customers pay $1,635 when the competitor charges $1,350?</li>
+                      <li>If she raises prices and loses customers, does she end up worse off?</li>
+                      <li>Which variable (price, volume, costs) is most sensitive to small changes?</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
                     <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
                       <TrendingUp className="w-5 h-5" />
-                      The Goal Seek Solution
+                      Why Scenario Comparison Matters
                     </h3>
                     <p className="text-blue-800 mb-4">
-                      Goal Seek works backward from your desired result. Instead of asking "If I charge 
-                      $X, what profit will I make?", it asks "If I want to make $Y profit, what price 
-                      should I charge?" It's like having a business consultant that can instantly solve 
-                      complex pricing puzzles.
+                      Before Sarah can use powerful Excel tools like Goal Seek and Data Tables, she needs 
+                      to understand the <strong>business logic</strong> of comparing scenarios. Today's lesson 
+                      builds that intuition by comparing pricing options by hand.
                     </p>
                     <p className="text-blue-800">
-                      With Goal Seek, Sarah could have immediately answered: "To make $75,000 profit, 
-                      I need to charge $127 per project" — and the math would be perfect every time.
-                    </p>
-                  </div>
-
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">Why This Matters</h3>
-                    <p className="text-green-800">
-                      Goal Seek isn't just about convenience—it's about professional credibility. When 
-                      Sarah can answer complex "what-if" questions instantly during investor presentations, 
-                      she demonstrates that she truly understands her business model and can make data-driven 
-                      decisions under pressure.
+                      When you understand <em>why</em> one scenario beats another, automated tools become 
+                      powerful accelerators. Without that intuition, you're just pressing buttons.
                     </p>
                   </div>
                 </CardContent>
@@ -137,8 +152,8 @@ export default function Phase1Page() {
 
               {/* Comprehension Check */}
               <ComprehensionCheck
-                title="Understanding Sarah's Goal Seek Challenge"
-                description="Test your understanding of how Goal Seek transforms business decision-making."
+                title="Understanding Sarah's Crossroads"
+                description="Test your understanding of why scenario comparison requires business judgment, not just math."
                 questions={hookQuestions}
                 showExplanations={true}
                 allowRetry={true}
@@ -157,13 +172,12 @@ export default function Phase1Page() {
                     Discussion Prompt (3 minutes):
                   </p>
                   <p className="text-blue-800 mb-2">
-                    Think about Sarah's investor meeting situation where she couldn't instantly 
-                    answer the pricing question. Share with a partner:
+                    Think about Sarah's two paths. Share with a partner:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-blue-800">
-                    <li>What business decisions might require "working backward" from a target result?</li>
-                    <li>How could Goal Seek help small business owners make faster, better decisions?</li>
-                    <li>Why is speed of analysis crucial during investor presentations or client meetings?</li>
+                    <li>What business information would help Sarah choose between Path A and Path B?</li>
+                    <li>What could go wrong with each path that the math doesn't show?</li>
+                    <li>Why might it be dangerous to just "let Excel figure it out"?</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -173,9 +187,9 @@ export default function Phase1Page() {
                 <CardContent className="p-6 text-center">
                   <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
                   <p className="text-gray-700">
-                    In the Introduction phase, we'll master Goal Seek mechanics: Set Cell, To Value, 
-                    and By Changing Cell. You'll learn to set up professional Goal Seek scenarios 
-                    and build automated "what-if" analysis systems for business decision-making.
+                    In the Introduction phase, we'll build structured comparison tables to analyze 
+                    multiple pricing scenarios systematically. You'll learn to see exactly which 
+                    variables matter most in pricing decisions.
                   </p>
                 </CardContent>
               </Card>

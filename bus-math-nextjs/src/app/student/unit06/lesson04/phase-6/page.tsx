@@ -6,44 +6,44 @@ import { Users, Target, Award, ArrowRight, TrendingUp } from "lucide-react";
 import ReflectionJournal from "@/components/exercises/ReflectionJournal";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
-const currentPhase = lesson04Phases[5]; // Closing phase
+const currentPhase = lesson04Phases[5];
 
 const reflectionPrompts = [
   {
     id: "courage-1",
     category: "courage" as const,
-    prompt: "Describe a moment during Goal Seek practice when you had to push through confusion or frustration. How did you persist when the Excel tool didn't work as expected?",
-    placeholder: "Think about times when Goal Seek returned unexpected results or when you had to troubleshoot parameter setup..."
+    prompt: "Describe a moment during scenario practice when you had to push through confusion or frustration. How did you persist when the options seemed equal?",
+    placeholder: "Think about times when both scenarios looked mathematically equal but you had to dig deeper..."
   },
   {
     id: "courage-2", 
     category: "courage" as const,
-    prompt: "How has mastering Goal Seek given you confidence to tackle complex business problems that seem overwhelming at first?",
-    placeholder: "Consider how you now approach 'what-if' scenarios that previously felt impossible to solve..."
+    prompt: "How has mastering scenario comparison given you confidence to tackle complex business problems that seem overwhelming at first?",
+    placeholder: "Consider how you now approach pricing decisions that previously felt impossible to analyze..."
   },
   {
     id: "adaptability-1",
     category: "adaptability" as const,
-    prompt: "How did you adapt your Goal Seek approach when working with different business scenarios (pricing vs. volume vs. cost optimization)?",
-    placeholder: "Reflect on how you learned to adjust your Set Cell, To Value, and By Changing Cell parameters for different situations..."
+    prompt: "How did you adapt your scenario approach when the competitor changed their price? How does this apply to real business?",
+    placeholder: "Reflect on how quickly you had to reconsider your analysis when new information arrived..."
   },
   {
     id: "adaptability-2",
     category: "adaptability" as const, 
-    prompt: "Describe how you'll adapt Goal Seek techniques for your own future business or career goals beyond this unit.",
-    placeholder: "Think about personal financial planning, career decision-making, or entrepreneurial ventures..."
+    prompt: "Describe how you'll apply scenario comparison techniques to decisions beyond pricing.",
+    placeholder: "Think about career decisions, personal finance, or future business ventures..."
   },
   {
     id: "persistence-1",
     category: "persistence" as const,
-    prompt: "What was the most challenging Goal Seek scenario you completed? What kept you motivated to find the solution?",
-    placeholder: "Consider the advanced multi-variable scenarios or complex business contexts..."
+    prompt: "What was the most challenging scenario comparison you completed? What kept you motivated to find the answer?",
+    placeholder: "Consider the complex multi-variable scenarios or edge cases..."
   },
   {
     id: "persistence-2",
     category: "persistence" as const,
-    prompt: "How will Goal Seek help you persist through complex business decisions in your future career?",
-    placeholder: "Think about having precise analytical tools when facing difficult strategic choices..."
+    prompt: "How will scenario comparison help you persist through complex business decisions in your future career?",
+    placeholder: "Think about having analytical frameworks when facing difficult strategic choices..."
   }
 ];
 
@@ -72,10 +72,10 @@ export default function Phase6Page() {
                     <Award className="w-8 h-8 text-indigo-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-indigo-800 mb-2">
-                    Goal Seek Mastery Complete: Building Your Future
+                    Scenario Mastery Complete: Your Business Intuition
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Professional Excel Automation Achievement
+                    Foundation for Excel Automation
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
@@ -85,14 +85,14 @@ export default function Phase6Page() {
                       Congratulations on Your Achievement!
                     </h3>
                     <p className="text-lg leading-relaxed text-indigo-900 mb-4">
-                      You've mastered one of the most powerful Excel tools for business decision-making. 
-                      Goal Seek transforms you from someone who guesses at business scenarios to someone 
-                      who can provide instant, mathematically precise answers to complex "what-if" questions.
+                      You've built the <strong>business intuition</strong> that separates professionals who 
+                      understand their tools from those who just press buttons. When you use Goal Seek and 
+                      Data Tables in Lesson 05, you'll know <em>why</em> the answers matter.
                     </p>
                     <p className="text-indigo-800">
-                      Sarah's embarrassing investor meeting moment? That could never happen to you now. 
-                      You're equipped with the professional analytical capabilities that impress stakeholders 
-                      and build business credibility.
+                      Sarah's dilemma—Premium vs. Volume pricing—is exactly the kind of decision that 
+                      trips up business owners who skip the scenario comparison work. You've done the work. 
+                      You're ready for the automation.
                     </p>
                   </div>
 
@@ -100,21 +100,21 @@ export default function Phase6Page() {
                     <h3 className="font-semibold text-green-900 mb-3">What You've Accomplished</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-green-900">Technical Mastery:</h4>
+                        <h4 className="font-semibold text-green-900">Scenario Logic:</h4>
                         <ul className="list-disc list-inside space-y-1 text-green-800 text-sm">
-                          <li>Goal Seek parameter setup (Set Cell, To Value, By Changing Cell)</li>
-                          <li>Complex business scenario analysis</li>
-                          <li>Integration with CVP models</li>
-                          <li>Professional Excel modeling standards</li>
+                          <li>Comparing premium vs. volume pricing paths</li>
+                          <li>Evaluating business constraints vs. math</li>
+                          <li>Understanding margin of safety</li>
+                          <li>Identifying unrealistic scenarios</li>
                         </ul>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-green-900">Professional Skills:</h4>
+                        <h4 className="font-semibold text-green-900">Business Judgment:</h4>
                         <ul className="list-disc list-inside space-y-1 text-green-800 text-sm">
-                          <li>Instant investor question responses</li>
-                          <li>Strategic scenario planning</li>
-                          <li>Data-driven decision making</li>
-                          <li>Business credibility under pressure</li>
+                          <li>Sensitivity reasoning</li>
+                          <li>Competitor response analysis</li>
+                          <li>Capacity constraint evaluation</li>
+                          <li>Strategic recommendation defense</li>
                         </ul>
                       </div>
                     </div>
@@ -133,22 +133,18 @@ export default function Phase6Page() {
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-purple-700">
-                      Your Goal Seek mastery directly serves Unit 6's driving question: <em>"What pricing 
+                      Your scenario comparison mastery directly serves Unit 6's driving question: <em>"What pricing 
                       strategy hits our profit target while staying competitive in the local market?"</em>
                     </p>
                     <div className="bg-white p-4 rounded border border-purple-200">
-                      <h4 className="font-semibold text-purple-900 mb-2">Goal Seek enables you to:</h4>
+                      <h4 className="font-semibold text-purple-900 mb-2">Scenario comparison enables you to:</h4>
                       <ul className="list-disc list-inside space-y-1 text-purple-800 text-sm">
-                        <li><strong>Set Profit Targets:</strong> Work backward from desired profit levels to required pricing</li>
-                        <li><strong>Competitive Response:</strong> Quickly adjust to competitor price changes while maintaining profitability</li>
-                        <li><strong>Market Positioning:</strong> Find exact pricing for budget, mid-market, or premium positioning</li>
-                        <li><strong>Investor Presentations:</strong> Answer complex scenario questions with mathematical precision</li>
+                        <li><strong>Evaluate trade-offs:</strong> See exactly what each pricing path requires</li>
+                        <li><strong>Identify constraints:</strong> Know which scenarios are realistic vs. mathematical fantasies</li>
+                        <li><strong>Defend recommendations:</strong> Cite specific numbers when recommending a path</li>
+                        <li><strong>Prepare for automation:</strong> Understand what Goal Seek will automate</li>
                       </ul>
                     </div>
-                    <p className="text-purple-700">
-                      This foundation prepares you for lesson05, where you'll combine Goal Seek with data 
-                      tables for comprehensive sensitivity analysis—the complete toolkit for professional pricing decisions.
-                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -158,7 +154,7 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-blue-800">🎯 CAP Framework Reflection</CardTitle>
                   <p className="text-blue-600">
-                    Reflect on how Goal Seek has developed your Courage, Adaptability, and Persistence
+                    Reflect on how scenario comparison has developed your Courage, Adaptability, and Persistence
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -171,32 +167,35 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-orange-800 flex items-center gap-2">
                     <ArrowRight className="w-5 h-5" />
-                    Preview: Lesson05 Advanced Techniques
+                    Preview: Lesson 05 Excel Automation
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-orange-700">
-                      In lesson05, you'll build on Goal Seek mastery to create comprehensive sensitivity analysis 
-                      systems using data tables:
+                      Now that you understand the <strong>business logic</strong> of scenario comparison, 
+                      you're ready to automate the process with Excel tools:
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="bg-white p-4 rounded border border-orange-200">
-                        <h4 className="font-semibold text-orange-900 mb-2">One-Variable Data Tables:</h4>
+                        <h4 className="font-semibold text-orange-900 mb-2">Goal Seek:</h4>
                         <p className="text-orange-800 text-sm">
-                          See how profit changes across a full range of prices, volumes, or costs—all at once.
+                          Instantly find the price or volume needed to hit any profit target. 
+                          Same math you just did by hand—now automated.
                         </p>
                       </div>
                       <div className="bg-white p-4 rounded border border-orange-200">
-                        <h4 className="font-semibold text-orange-900 mb-2">Two-Variable Data Tables:</h4>
+                        <h4 className="font-semibold text-orange-900 mb-2">Data Tables:</h4>
                         <p className="text-orange-800 text-sm">
-                          Analyze how profit responds to price AND volume changes simultaneously.
+                          See 50 scenarios at once. Compare how profit changes across 
+                          full ranges of prices or volumes simultaneously.
                         </p>
                       </div>
                     </div>
                     <p className="text-orange-700">
-                      Together, Goal Seek + Data Tables create the professional-grade analytical toolkit 
-                      that distinguishes you in competitive business environments.
+                      These tools make you faster. But with your scenario comparison foundation, 
+                      you'll also make <em>better</em> decisions—because you'll know when the 
+                      automation is giving you a realistic answer.
                     </p>
                   </div>
                 </CardContent>
@@ -215,12 +214,12 @@ export default function Phase6Page() {
                     Discussion Prompt (3 minutes):
                   </p>
                   <p className="text-blue-800 mb-2">
-                    As you complete Goal Seek mastery, share with a partner:
+                    As you complete scenario mastery, share with a partner:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-blue-800">
-                    <li>How will Goal Seek change your approach to personal financial decisions?</li>
+                    <li>How has scenario comparison changed your approach to business decisions?</li>
                     <li>What business career opportunities interest you more now that you have these analytical skills?</li>
-                    <li>How do you feel about tackling the advanced data table techniques in lesson05?</li>
+                    <li>How do you feel about tackling Goal Seek and Data Tables after this foundation?</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -233,11 +232,11 @@ export default function Phase6Page() {
                   </div>
                   <h3 className="font-bold text-yellow-800 text-xl mb-2">Achievement Unlocked!</h3>
                   <p className="text-yellow-700 mb-4">
-                    <strong>Goal Seek Master:</strong> You can instantly solve complex business "what-if" scenarios 
-                    with mathematical precision, giving you professional credibility in any business setting.
+                    <strong>Scenario Comparison Master:</strong> You can compare pricing options, 
+                    identify business constraints, and defend recommendations with solid CVP reasoning.
                   </p>
                   <Badge className="bg-yellow-200 text-yellow-800 px-4 py-2">
-                    Ready for Advanced Sensitivity Analysis
+                    Ready for Excel Automation
                   </Badge>
                 </CardContent>
               </Card>

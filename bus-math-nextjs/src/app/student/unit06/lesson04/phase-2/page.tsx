@@ -2,42 +2,42 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, BookOpen, Calculator, Target, ArrowRight, Zap } from "lucide-react";
+import { Users, BookOpen, Calculator, Target, ArrowRight, BarChart3 } from "lucide-react";
 import FillInTheBlank from "@/components/exercises/FillInTheBlank";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
-const currentPhase = lesson04Phases[1]; // Introduction phase
+const currentPhase = lesson04Phases[1];
 
 const vocabularyExercise = [
   {
     id: "vocab-1",
-    text: "Goal Seek helps you work {blank} from your desired result instead of guessing different values.",
-    answer: "backward",
-    hint: "Goal Seek reverses the typical calculation process"
+    text: "A {blank} compares two or more pricing options side-by-side to see which reaches the profit target.",
+    answer: "scenario",
+    hint: "Each option represents a different business decision path"
   },
   {
     id: "vocab-2", 
-    text: "The {blank} Cell parameter contains the formula you want to change, like your 'Total Profit' cell.",
-    answer: "Set",
-    hint: "This parameter identifies which cell contains your target formula"
+    text: "The {blank} is the revenue minus variable costs—the amount each unit contributes to covering fixed costs.",
+    answer: "contribution margin",
+    hint: "This is the key metric for CVP analysis"
   },
   {
     id: "vocab-3",
-    text: "The {blank} Value parameter is the specific target number you want your formula to reach.",
-    answer: "To", 
-    hint: "This parameter specifies your exact target number"
+    text: "{blank} sensitivity means understanding which input (price, volume, or costs) creates the biggest change in profit.",
+    answer: "Sensitivity",
+    hint: "Small changes in sensitive variables have large effects"
   },
   {
     id: "vocab-4",
-    text: "The By Changing {blank} parameter is the single input cell that Excel will automatically adjust.",
-    answer: "Cell",
-    hint: "This parameter identifies which input Excel will modify"
+    text: "A structured {blank} shows price, volume, revenue, costs, and profit for each scenario in columns.",
+    answer: "table",
+    hint: "This helps you compare options visually"
   },
   {
     id: "vocab-5",
-    text: "Instead of asking 'If I charge $X, what profit will I make?', Goal Seek asks 'If I want $Y profit, what {blank} should I charge?'",
-    answer: "price",
-    hint: "Goal Seek helps determine what to charge customers"
+    text: "When the volume needed to hit profit exceeds capacity, the scenario is not {blank} even if the math works.",
+    answer: "realistic",
+    hint: "Business constraints matter as much as math"
   }
 ];
 
@@ -66,73 +66,73 @@ export default function Phase2Page() {
                     <BookOpen className="w-8 h-8 text-green-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-green-800 mb-2">
-                    Working Backward to Win
+                    Building the Scenario Comparison Table
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Goal Seek Mechanics & Strategy
+                    Structured Analysis for Pricing Decisions
                   </Badge>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-lg leading-relaxed text-slate-800">
-                    Sarah realized that knowing her break-even point ($8,100 fixed costs ÷ contribution margin) was just 
-                    the beginning. To attract real investment, she needed to show how TechStart would reach its 
-                    <strong> profit milestones</strong>.
+                    Sarah needed a way to see both scenarios at once—not just the math, but the <strong>business 
+                    trade-offs</strong>. Jennifer showed her how to build a structured comparison table.
                   </p>
                   
-                  <p className="text-slate-700">
-                    "Jennifer," Sarah asked, "If I want to earn $10,000 profit next month to hire another developer, 
-                    should I raise my price or try to find more clients? How do I find the exact numbers without 
-                    spending all day guessing?"
-                  </p>
-
                   <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-                      <Zap className="w-5 h-5" />
-                      The Goal Seek Solution
+                    <h3 className="font-semibold text-blue-900 mb-4 flex items-center gap-2">
+                      <BarChart3 className="w-5 h-5" />
+                      Sarah's Base Numbers (from Lesson 03)
                     </h3>
-                    <p className="text-blue-800 mb-4">
-                      Excel's <strong>Goal Seek</strong> tool is built for this exact problem. While most formulas 
-                      work "forward" (Input → Calculation → Result), Goal Seek works "backward" 
-                      (Target Result → Calculation → Required Input).
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-4 items-center justify-center text-sm font-medium">
-                      <div className="bg-white p-3 rounded border border-blue-200 shadow-sm w-full md:w-auto text-center">
-                        Standard: Input → Result
-                      </div>
-                      <ArrowRight className="hidden md:block text-blue-400" />
-                      <div className="bg-blue-600 text-white p-3 rounded shadow-md w-full md:w-auto text-center">
-                        Goal Seek: Target → Input
-                      </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm border-collapse">
+                        <thead>
+                          <tr className="bg-blue-100 text-blue-900">
+                            <th className="p-2 border border-blue-200 text-left">Metric</th>
+                            <th className="p-2 border border-blue-200">Current</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-blue-800">
+                          <tr><td className="p-2 border border-blue-200">Fixed Costs</td><td className="p-2 border border-blue-200 text-right">$8,100</td></tr>
+                          <tr><td className="p-2 border border-blue-200">Variable Cost / Project</td><td className="p-2 border border-blue-200 text-right">$880</td></tr>
+                          <tr><td className="p-2 border border-blue-200">Current Price</td><td className="p-2 border border-blue-200 text-right">$1,350</td></tr>
+                          <tr><td className="p-2 border border-blue-200">Current Volume</td><td className="p-2 border border-blue-200 text-right">24 projects</td></tr>
+                          <tr><td className="p-2 border border-blue-200">Contribution Margin</td><td className="p-2 border border-blue-200 text-right">$470 ($1,350 - $880)</td></tr>
+                          <tr><td className="p-2 border border-blue-200">Current Profit</td><td className="p-2 border border-blue-200 text-right">$3,180</td></tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">The Three Parameters</h3>
-                  <p className="text-slate-700 mb-6">
-                    To use Goal Seek (found under <em>Data &gt; What-If Analysis</em>), you must define three things:
-                  </p>
+                  <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">The Two-Path Comparison</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border-collapse">
+                      <thead>
+                        <tr className="bg-slate-100 text-slate-900">
+                          <th className="p-2 border border-slate-200 text-left">Metric</th>
+                          <th className="p-2 border border-slate-200 bg-green-50 text-green-900">Path A: Premium</th>
+                          <th className="p-2 border border-slate-200 bg-blue-50 text-blue-900">Path B: Volume</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-slate-700">
+                        <tr><td className="p-2 border border-slate-200">Price</td><td className="p-2 border border-slate-200 text-right">$1,635</td><td className="p-2 border border-slate-200 text-right">$1,350</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Volume</td><td className="p-2 border border-slate-200 text-right">24 projects</td><td className="p-2 border border-slate-200 text-right">39 projects</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Revenue</td><td className="p-2 border border-slate-200 text-right">$39,240</td><td className="p-2 border border-slate-200 text-right">$52,650</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Variable Costs</td><td className="p-2 border border-slate-200 text-right">$21,120</td><td className="p-2 border border-slate-200 text-right">$34,320</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Contribution Margin</td><td className="p-2 border border-slate-200 text-right">$18,120</td><td className="p-2 border border-slate-200 text-right">$18,320</td></tr>
+                        <tr><td className="p-2 border border-slate-200">Fixed Costs</td><td className="p-2 border border-slate-200 text-right">$8,100</td><td className="p-2 border border-slate-200 text-right">$8,100</td></tr>
+                        <tr className="font-bold"><td className="p-2 border border-slate-200">Profit</td><td className="p-2 border border-slate-200 text-right">$10,020</td><td className="p-2 border border-slate-200 text-right">$10,220</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
 
-                  <div className="grid gap-4">
-                    <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">1</div>
-                      <div>
-                        <h4 className="font-bold text-slate-900">Set Cell</h4>
-                        <p className="text-slate-600 text-sm">The cell containing the formula you want to change (e.g., your <strong>Total Profit</strong> cell).</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">2</div>
-                      <div>
-                        <h4 className="font-bold text-slate-900">To Value</h4>
-                        <p className="text-slate-600 text-sm">The specific number you want that cell to reach (e.g., <strong>$10,000</strong>).</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0">3</div>
-                      <div>
-                        <h4 className="font-bold text-slate-900">By Changing Cell</h4>
-                        <p className="text-slate-600 text-sm">The single input cell Excel should adjust to make the math work (e.g., <strong>Selling Price</strong>).</p>
-                      </div>
-                    </div>
+                  <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 mt-6">
+                    <h4 className="font-semibold text-amber-900 mb-2">🔍 What the Table Reveals</h4>
+                    <ul className="list-disc list-inside space-y-1 text-amber-800 text-sm">
+                      <li><strong>Both paths work mathematically</strong>—they both hit ~$10,000 profit</li>
+                      <li><strong>Path B (Volume) actually earns $200 more</strong>—but needs 15 more projects</li>
+                      <li><strong>Contribution margin is nearly identical</strong>—$470 vs. $472 per project</li>
+                      <li><strong>The real question is capacity and market</strong>—not just the spreadsheet</li>
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
@@ -140,8 +140,8 @@ export default function Phase2Page() {
               {/* Vocabulary Exercise */}
               <FillInTheBlank
                 sentences={vocabularyExercise}
-                title="Goal Seek Vocabulary Mastery"
-                description="Sarah needs to speak the language of professional analysts. Complete the sentences below."
+                title="Scenario Comparison Vocabulary"
+                description="Master the key terms for comparing pricing scenarios."
                 showWordList={true}
                 randomizeWordOrder={true}
                 showHints={true}
@@ -152,18 +152,17 @@ export default function Phase2Page() {
                 <CardHeader>
                   <CardTitle className="text-amber-800 flex items-center gap-2">
                     <Calculator className="h-5 w-5" />
-                    Strategy Note: Choosing the Right "Lever"
+                    Strategy Note: Sensitivity Analysis
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-amber-900 text-sm leading-relaxed">
-                    Goal Seek is powerful, but it doesn't know if your answer is <em>realistic</em>. 
-                    If Goal Seek tells Sarah she needs to charge $5,000 per website to hit her goal, 
-                    but competitors charge $1,500, the tool has found a mathematical solution that isn't a 
-                    business solution. 
+                    The comparison table reveals something important: <strong>volume changes affect revenue more than price changes</strong> in this case. But this isn't always true!
                   </p>
-                  <p className="text-amber-900 text-sm font-semibold">
-                    Always ask: Is the change Goal Seek suggests actually possible in the real market?
+                  <p className="text-amber-900 text-sm leading-relaxed">
+                    In Guided Practice, we'll add a complication—a competitor price change—that shifts 
+                    which variable matters most. Understanding sensitivity helps Sarah prioritize 
+                    which "lever" to pull.
                   </p>
                 </CardContent>
               </Card>
@@ -171,10 +170,10 @@ export default function Phase2Page() {
               {/* Preview */}
               <Card className="border-gray-200 bg-gray-50">
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-gray-800 mb-2">Ready to Solve for Sarah?</h3>
+                  <h3 className="font-semibold text-gray-800 mb-2">Ready for Complications?</h3>
                   <p className="text-gray-700">
-                    In Guided Practice, you'll help Sarah pull different "levers" (Price vs. Volume) 
-                    to see how she can hit her $10,000 profit milestone.
+                    In Guided Practice, we'll add a meaningful complication: what happens when a 
+                    competitor drops their price? This will shift the scenario comparison dramatically.
                   </p>
                 </CardContent>
               </Card>

@@ -1,28 +1,28 @@
-// PriceLab Challenge, Lesson 4 data - Excel Automation Skills Focus
+// PriceLab Challenge, Lesson 4 data - Scenario Comparison & Sensitivity Analysis
 export const lesson04Data = {
   id: "mds5wn3okuxm9d9w5ip", 
-  title: "Goal Seek for Target Profit Scenarios",
+  title: "Scenario Comparison & Sensitivity Reasoning",
   sequence: 4,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Master Goal Seek functionality to reverse-engineer pricing decisions for target profit scenarios",
-    "Build automated 'what-if' analysis systems using Goal Seek with CVP models",
-    "Apply Goal Seek to solve complex business problems: target pricing, volume planning, cost optimization",
-    "Create professional Excel models that can quickly answer investor questions about profitability scenarios"
+    "Compare multiple pricing scenarios using CVP reasoning",
+    "Analyze how changes in price, volume, and costs affect profitability",
+    "Defend a pricing recommendation using contribution margin analysis",
+    "Identify which variables matter most in pricing decisions"
   ],
   keyConcepts: [
-    "Goal Seek mechanics: Set Cell, To Value, By Changing Cell parameters",
-    "Reverse engineering business scenarios from profit targets to operational requirements",
-    "Excel automation for rapid scenario analysis and investor presentations", 
-    "Professional Goal Seek applications: pricing optimization, break-even analysis, resource planning"
+    "Scenario comparison using contribution margin",
+    "Sensitivity reasoning: which inputs shift break-even most",
+    "Trade-offs between pricing strategies",
+    "Structured tables for comparing multiple pricing options"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Hands-on Excel demonstration and guided practice with Goal Seek tool",
-    "Real-world business scenario application with Sarah's TechStart Solutions",
-    "Interactive practice with escalating complexity scenarios"
+    "Concrete scenario analysis with TechStart data",
+    "Structured comparison tables showing price/volume/cost trade-offs",
+    "Manual calculation practice before Excel automation"
   ],
-  rationale: "Goal Seek is a crucial Excel automation skill for business leaders to quickly analyze 'what-if' scenarios and make data-driven decisions. This lesson bridges conceptual CVP understanding with practical Excel tools for professional financial modeling.",
+  rationale: "Before building automated Excel tools, students must understand how to compare scenarios manually. This builds intuition for what Goal Seek and Data Tables will automate in Lesson 05.",
   status: "Draft"
 }
 
@@ -32,42 +32,42 @@ export const unit06Data = {
   sequence: 6
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases - Scenario Comparison Focus
 export const lesson04Phases = [
   {
     id: "phase_hook_4",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Challenge students to solve Sarah's pricing puzzle instantly using Goal Seek logic.",
+    description: "Compare two pricing paths and see which one actually works.",
   },
   {
     id: "phase_introduction_4",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Master the three parts of Goal Seek: Set Cell, To Value, and By Changing Cell.",
+    description: "Build structured comparison tables to analyze multiple scenarios.",
   },
   {
     id: "phase_guided_practice_4",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Work with Sarah to reverse-engineer profit targets and test different business 'levers'.",
+    description: "Add a meaningful complication: competitor response and market constraints.",
   },
   {
     id: "phase_independent_practice_4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Build a professional Goal Seek decision model in Excel to handle complex investor scenarios.",
+    description: "Compare scenarios algorithmically with varied numbers and automatic checking.",
   },
   {
     id: "phase_assessment_4",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate mastery of Goal Seek through a series of technical and strategic challenges.",
+    description: "Exit ticket on scenario comparison and sensitivity reasoning.",
   },
   {
     id: "phase_closing_4",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on how automated 'what-if' analysis builds professional credibility with investors.",
+    description: "Reflect on the best path forward and preview Goal Seek automation.",
   }
 ]

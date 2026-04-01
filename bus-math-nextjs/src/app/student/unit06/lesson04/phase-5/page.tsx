@@ -4,14 +4,69 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, ClipboardCheck, TrendingUp, Briefcase } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
-import { getUnit06Phase5ComprehensionCheckItems } from "@/data/question-banks/unit06-phase5";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
-const currentPhase = lesson04Phases[4]; // Assessment phase
+const currentPhase = lesson04Phases[4];
+
+const assessmentQuestions = [
+  {
+    id: "assess-1",
+    question: "What is the primary purpose of comparing pricing scenarios before using automation tools?",
+    answers: [
+      "To build intuition for what the automation will do",
+      "Because Excel is always wrong",
+      "To impress the instructor",
+      "Because manual calculations are faster"
+    ],
+    explanation: "Scenario comparison by hand builds the business intuition that makes automated tools useful. When you understand why one scenario beats another, Goal Seek and Data Tables become productivity tools, not mysteries."
+  },
+  {
+    id: "assess-2",
+    question: "When the volume required to hit a profit target exceeds business capacity, the scenario is:",
+    answers: [
+      "Not realistic, even if the math works",
+      "The best option",
+      "Impossible to calculate",
+      "Always wrong"
+    ],
+    explanation: "Business constraints matter as much as math. A scenario that requires 50 projects when you can only handle 25 is not realistic, no matter what the spreadsheet says."
+  },
+  {
+    id: "assess-3",
+    question: "What does 'sensitivity' mean in scenario analysis?",
+    answers: [
+      "Understanding which variable (price, volume, costs) creates the biggest change in profit",
+      "How careful you are with calculations",
+      "The accuracy of your Excel formulas",
+      "How fast the spreadsheet calculates"
+    ],
+    explanation: "Sensitivity analysis asks: which input matters most? Small changes in sensitive variables have large effects on profit. Understanding this helps prioritize which 'lever' to pull."
+  },
+  {
+    id: "assess-4",
+    question: "If Sarah raises prices but the competitor drops prices, what happens to the margin of safety?",
+    answers: [
+      "It shrinks—both volume and premium strategy become riskier",
+      "It stays the same",
+      "It automatically increases",
+      "It becomes irrelevant"
+    ],
+    explanation: "Margin of safety = current volume - break-even volume. When prices go up and competitors go down, the break-even point typically rises (fewer customers are needed to cover costs), shrinking the safety buffer."
+  },
+  {
+    id: "assess-5",
+    question: "Why is it important to preview Excel automation after learning scenario comparison manually?",
+    answers: [
+      "Because understanding the business logic first makes you a better automation user",
+      "Because Excel is too hard for beginners",
+      "Because manual calculation is required by law",
+      "Because automation always gives wrong answers"
+    ],
+    explanation: "When you understand the why behind scenario comparisons, automated tools amplify your capabilities rather than replacing understanding. Without that foundation, you're just pressing buttons without knowing if the answer makes business sense."
+  }
+];
 
 export default function Phase5Page() {
-  const assessmentQuestions = getUnit06Phase5ComprehensionCheckItems({ lessonIds: ["lesson04"] })
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50">
       <PhaseHeader 
@@ -36,10 +91,10 @@ export default function Phase5Page() {
                     <ClipboardCheck className="w-8 h-8 text-yellow-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-yellow-800 mb-2">
-                    Goal Seek: Professional Mastery Assessment
+                    Scenario Comparison: Exit Ticket
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Business Application & Technical Proficiency
+                    Testing Your Business Judgment
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
@@ -49,14 +104,12 @@ export default function Phase5Page() {
                       Assessment Overview
                     </h3>
                     <p className="text-lg leading-relaxed text-yellow-900 mb-4">
-                      This assessment evaluates your mastery of Goal Seek as both an Excel tool and a professional 
-                      business capability. You'll demonstrate understanding of Goal Seek mechanics, business 
-                      applications, and the strategic thinking that impresses investors and business stakeholders.
+                      This exit ticket tests your understanding of scenario comparison and sensitivity reasoning.
+                      These skills are the foundation for the Excel automation you'll learn in Lesson 05.
                     </p>
                     <p className="text-yellow-800">
-                      Each question blends technical Excel knowledge with real business scenarios that Sarah 
-                      and other entrepreneurs face. Your success here shows you're ready to handle complex 
-                      financial modeling in professional settings.
+                      Success here shows you're ready to use Goal Seek and Data Tables as tools that 
+                      <em>amplify</em> your business judgment—not replace it.
                     </p>
                   </div>
 
@@ -64,21 +117,20 @@ export default function Phase5Page() {
                     <h3 className="font-semibold text-blue-900 mb-3">Assessment Focus Areas</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-blue-900">Technical Proficiency (50%)</h4>
+                        <h4 className="font-semibold text-blue-900">Scenario Logic (60%)</h4>
                         <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                          <li>Goal Seek parameter setup (Set Cell, To Value, By Changing Cell)</li>
-                          <li>Formula requirements and constraints</li>
-                          <li>Multiple scenario handling</li>
-                          <li>Integration with CVP models</li>
+                          <li>Comparing premium vs. volume pricing paths</li>
+                          <li>Evaluating business constraints vs. mathematical solutions</li>
+                          <li>Understanding margin of safety</li>
+                          <li>Identifying when scenarios are unrealistic</li>
                         </ul>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-blue-900">Business Application (50%)</h4>
+                        <h4 className="font-semibold text-blue-900">Sensitivity Reasoning (40%)</h4>
                         <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                          <li>Strategic scenario analysis</li>
-                          <li>Investor presentation readiness</li>
-                          <li>Professional decision-making under pressure</li>
-                          <li>Cost structure optimization</li>
+                          <li>Identifying which variables matter most</li>
+                          <li>Predicting how changes affect profitability</li>
+                          <li>Connecting scenario analysis to business decisions</li>
                         </ul>
                       </div>
                     </div>
@@ -86,76 +138,14 @@ export default function Phase5Page() {
                 </CardContent>
               </Card>
 
-              {/* Professional Performance Standards */}
-              <Card className="border-green-200 bg-green-50">
-                <CardHeader>
-                  <CardTitle className="text-green-800 flex items-center gap-2">
-                    <Briefcase className="w-5 h-5" />
-                    Professional Performance Standards
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-green-900">🟢 Exemplary (90-100%)</h4>
-                      <p className="text-green-800 text-sm">
-                        Masters all Goal Seek parameters, handles complex multi-variable scenarios, 
-                        demonstrates investor-ready analytical thinking, explains business rationale 
-                        for all decisions.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-yellow-900">🟡 Proficient (80-89%)</h4>
-                      <p className="text-yellow-800 text-sm">
-                        Solid Goal Seek mechanics, completes standard business scenarios, shows 
-                        good business understanding, minor gaps in advanced applications.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-red-900">🔴 Developing (Below 80%)</h4>
-                      <p className="text-red-800 text-sm">
-                        Basic Goal Seek understanding, struggles with parameter setup or business 
-                        context, needs additional practice before professional application.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Comprehensive Assessment */}
+              {/* Exit Ticket */}
               <ComprehensionCheck
-                title="Goal Seek Professional Mastery Assessment"
-                description="Demonstrate your comprehensive understanding of Goal Seek for business applications"
+                title="Scenario Comparison Exit Ticket"
+                description="Demonstrate your understanding of scenario comparison and sensitivity reasoning."
                 questions={assessmentQuestions}
                 showExplanations={true}
                 allowRetry={false}
               />
-
-              {/* Investor Scenario Brief */}
-              <Card className="border-amber-200 bg-amber-50">
-                <CardHeader>
-                  <CardTitle className="text-amber-900 flex items-center gap-2">
-                    <Briefcase className="w-5 h-5" />
-                    Cite Your Model in Plain English
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3 text-sm text-amber-900">
-                  <p>
-                    Open the Goal Seek workbook you built in Phase 4 and draft a short voice memo for Michael Chen.
-                    Use real numbers from your scenarios so the assessment reflects business judgment, not just button
-                    clicks.
-                  </p>
-                  <ol className="list-decimal list-inside space-y-1">
-                    <li>State which lever you recommend (price, volume, or fixed-cost reduction) and quote the exact Goal Seek result.</li>
-                    <li>Explain why the alternative lever is unrealistic right now (capacity limit, market ceiling, etc.).</li>
-                    <li>Identify one next experiment you want to run in Lesson 05 to confirm your decision.</li>
-                  </ol>
-                  <p className="text-xs text-amber-800">
-                    Record your answers in your portfolio doc or directly inside the workbook on a new “Investor Notes”
-                    sheet—this reflection will be revisited next lesson.
-                  </p>
-                </CardContent>
-              </Card>
 
               {/* Career Connection */}
               <Card className="border-purple-200 bg-purple-50">
@@ -164,51 +154,28 @@ export default function Phase5Page() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-purple-700 mb-4">
-                    Goal Seek mastery opens doors in many business careers:
+                    Scenario comparison and sensitivity reasoning skills transfer directly to business careers:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-purple-900">Financial Analyst Roles:</h4>
+                      <h4 className="font-semibold text-purple-900">Strategic Roles:</h4>
                       <ul className="list-disc list-inside space-y-1 text-purple-800 text-sm">
-                        <li>Investment banking scenario modeling</li>
-                        <li>Corporate finance planning</li>
-                        <li>Risk assessment and stress testing</li>
-                        <li>Merger & acquisition analysis</li>
+                        <li>Financial analyst scenario modeling</li>
+                        <li>Product pricing strategy</li>
+                        <li>Market entry analysis</li>
+                        <li>Investment decision-making</li>
                       </ul>
                     </div>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-purple-900">Business Management:</h4>
+                      <h4 className="font-semibold text-purple-900">Operations Roles:</h4>
                       <ul className="list-disc list-inside space-y-1 text-purple-800 text-sm">
-                        <li>Strategic planning and budgeting</li>
-                        <li>Pricing optimization</li>
-                        <li>Operations management</li>
-                        <li>Startup financial modeling</li>
+                        <li>Capacity planning decisions</li>
+                        <li>Cost reduction prioritization</li>
+                        <li>Supply chain sensitivity analysis</li>
+                        <li>Business continuity planning</li>
                       </ul>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* Turn and Talk */}
-              <Card className="border-blue-200 bg-blue-50">
-                <CardHeader>
-                  <CardTitle className="text-blue-800 flex items-center gap-2">
-                    <Users className="h-5 w-5" />
-                    Turn and Talk
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-medium text-blue-900 mb-2">
-                    Discussion Prompt (3 minutes):
-                  </p>
-                  <p className="text-blue-800 mb-2">
-                    After completing the Goal Seek mastery assessment, reflect with a partner:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-blue-800">
-                    <li>Which assessment question challenged your thinking the most?</li>
-                    <li>How has Goal Seek changed your understanding of business decision-making?</li>
-                    <li>What professional situations would you now feel confident handling?</li>
-                  </ul>
                 </CardContent>
               </Card>
 
@@ -217,9 +184,9 @@ export default function Phase5Page() {
                 <CardContent className="p-6 text-center">
                   <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
                   <p className="text-gray-700">
-                    In the Closing phase, we'll celebrate your Goal Seek mastery and connect this powerful 
-                    skill to Unit 6's overall PriceLab Challenge. You'll preview how Goal Seek integrates 
-                    with data tables for comprehensive sensitivity analysis in lesson05.
+                    In the Closing phase, we'll celebrate your scenario mastery and preview how 
+                    Excel tools (Goal Seek and Data Tables) will automate the comparison process 
+                    you just learned manually.
                   </p>
                 </CardContent>
               </Card>
