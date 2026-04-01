@@ -139,19 +139,19 @@
     - [x] Students know the exact workbook structure they must reuse in the project
     - [x] Peer critique focuses on accuracy, evidence, and payroll clarity
 
-- [ ] 4.2 **Lesson 08** - Implement group-project skill
-  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
-  - [ ] 4.2.2 Implement kickoff with group-specific payroll scenarios
+- [x] 4.2 **Lesson 08** - Implement group-project skill
+  - [x] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+  - [x] 4.2.2 Implement kickoff with group-specific payroll scenarios
     - Assign each group its own payroll dataset/starter workbook
     - Explain business scenario, constraints, target outcome
     - Require teams to rename, save, organize correct workbook
     - Start first required sheets/sections
     - Define milestone 1 acceptance criteria
-  - [ ] 4.2.3 Assign each group its own payroll dataset or starter workbook
-  - [ ] 4.2.4 Keep workbook tabs and logic identical to Lesson 07
+  - [x] 4.2.3 Assign each group its own payroll dataset or starter workbook
+  - [x] 4.2.4 Keep workbook tabs and logic identical to Lesson 07
   - **Done when**:
-    - [ ] Each team is working in the correct workbook
-    - [ ] Initial calculation and setup work is complete
+    - [x] Each team is working in the correct workbook
+    - [x] Initial calculation and setup work is complete
 
 - [ ] 4.3 **Lesson 09** - Implement group-project skill
   - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09

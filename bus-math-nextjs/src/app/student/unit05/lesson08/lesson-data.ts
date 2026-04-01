@@ -1,29 +1,27 @@
 export const lesson08Data = {
   id: "unit05_lesson08_pbl_m1",
-  title: "PBL Milestone 1: Project Definition (PayDay Simulator)",
+  title: "Project Kickoff — Your Payroll Workbook",
   sequence: 8,
   unitId: "unit05",
   learningObjectives: [
-    "Define the payroll cash‑flow problem with clear success metrics",
-    "Create a data inventory and source plan with file naming conventions",
-    "Outline an Excel model skeleton (tabs, validations, method switching, dashboards)",
-    "Identify risks and assumptions with mitigation steps",
-    "Begin the workbook skeleton and prepare a 1–2 page brief"
+    "Launch your team's payroll project with an assigned dataset and business scenario",
+    "Set up the workbook skeleton matching the Lesson 07 rehearsal structure",
+    "Define the business problem, success metrics, and early direction",
+    "Complete initial sheets and begin the evidence chain"
   ],
   keyConcepts: [
-    "Problem statements and stakeholder analysis",
-    "Cash‑flow timing and payroll risk",
-    "Excel model planning (tabs, validations, dashboards)",
-    "Data sourcing and naming conventions",
-    "Assumptions, risks, and mitigation"
+    "Group-specific payroll dataset and business scenario",
+    "Workbook skeleton matching rehearsal structure",
+    "Problem definition and early direction statement",
+    "Milestone 1 acceptance criteria"
   ],
   durationEstimateMinutes: 55,
   pedagogicalApproach: [
-    "Project definition with real data planning",
-    "Excel model planning and skeleton creation",
-    "Team check-ins and milestone criteria review",
+    "Group project kickoff with team-owned data",
+    "Workbook setup and initial analysis",
+    "Team check-ins and milestone criteria review"
   ],
-  rationale: "Clear scope, data plan, and an Excel model skeleton reduce risk and keep the team focused on business outcomes from the start.",
+  rationale: "Each team now takes ownership of their payroll project with a unique scenario, building on the rehearsal structure from Lesson 07."
 }
 
 export const unit05Data = {
@@ -35,8 +33,8 @@ export const unit05Data = {
 export const lesson08Phases = [
   {
     id: "pbl_m1",
-    phaseName: "Introduction" as const,
+    phaseName: "Project Kickoff" as const,
     sequence: 1,
-    description: "Define the payroll cash‑flow problem, select scope, plan data sources, and outline the Excel model skeleton (tabs, validations, dashboards).",
+    description: "Launch your team's payroll project with an assigned dataset and business scenario.",
   },
 ]
