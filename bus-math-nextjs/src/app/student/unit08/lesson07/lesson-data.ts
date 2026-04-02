@@ -1,77 +1,69 @@
-// Year‑1 Startup Model, Lesson 7 data - extracted from MCP curriculum database
 export const lesson07Data = {
-  id: "mds5xnqgno2padjpi9",
-  title: "Production Studio: Completion, QA, and Investor Readiness",
+  id: "u08l07",
+  title: "Project Rehearsal: Depreciation Workbook with Shared Data",
   sequence: 7,
-  unitId: "mdrhlhv53tduw0ib5oa",
+  unitId: "unit08",
   learningObjectives: [
-    "Complete the Year‑1 startup model with exact references and no hard‑coded outputs",
-    "Implement validation, reconciliation, and error handling for reliability",
-    "Bind visuals to structured references and write an executive summary tied to KPI thresholds",
-    "Conduct and document a peer audit using a professional checklist"
+    "Rehearse the exact workbook structure required for the depreciation project",
+    "Trace a depreciation recommendation back to asset register and schedule evidence",
+    "Apply the Definition of Done to evaluate workbook quality",
+    "Practice peer audit focused on logic chain, method fit, and clarity"
   ],
   keyConcepts: [
-    "Named ranges and structured references in Excel Tables",
-    "Exact‑match lookups (XLOOKUP or INDEX/MATCH) with IFNA/IFERROR",
-    "Reconciliation tie‑outs and auditability (assumptions, version date)",
-    "Scenario behavior and performance (non‑volatile functions, responsive updates)"
+    "Shared teacher dataset: every group uses the same data today",
+    "Workbook map: Asset Register, Depreciation Schedule, Method Comparison, Recommendation",
+    "Evidence chain: book value and expense timing must trace to register entries",
+    "Definition of Done: complete sheets, linked formulas, defensible recommendation"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Production studio flow: build → validate → visualize → audit → present"
+    "Guided rehearsal: shared data → audit → polish → transfer check → peer critique → handoff"
   ],
-  rationale: "Students finish and harden their financial model so an investor can trust it. They verify links, add error checks, reconcile totals, and present a concise, decision‑ready dashboard.",
+  rationale: "Students practice with one shared dataset so every group sees the same quality bar before the real project. Today is rehearsal — not the real project. Students learn what a complete workbook looks like, how to trace recommendations to evidence, and what they must recreate independently next lesson.",
   status: "Ready"
 }
 
 export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
-  title: "Year‑1 Startup Model",
+  id: "unit08",
+  title: "Fixed Assets and Depreciation",
   sequence: 8
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson07Phases = [
   {
-    id: "phase_hook_7",
+    id: "u08l07-phase1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Production kickoff: why investor‑ready quality matters today; failures vs. ready model",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To show an example of a professional financial model.
+    description: "Frame the lesson as a final guided rehearsal before independent project work begins",
   },
   {
-    id: "phase_introduction_7",
+    id: "u08l07-phase2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Standards and Definition of Done: exact lookups, structured refs, validation, reconciliation, auditability",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Orient to the shared workbook, name each sheet and evidence block, define success",
   },
   {
-    id: "phase_guided_practice_7",
+    id: "u08l07-phase3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Production Sprint I: finish core formulas, enforce exact‑match lookups, convert ranges to Tables",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer audit process.
+    description: "Trace the logic chain from asset register to recommendation with shared data",
   },
   {
-    id: "phase_independent_practice_7",
+    id: "u08l07-phase4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Production Sprint II: QA + visuals; finalize validation, reconciliation, and executive summary",
-    // component: "PeerCritiqueForm" (id: mdsjc6yna3g4dehzbnd) - To guide the peer audit process.
+    description: "Complete weak spots, write recommendation and risk statements, identify transfer features",
   },
   {
-    id: "phase_assessment_7",
+    id: "u08l07-phase5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "QA review and peer audit: apply the checklist and justify audit decisions",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Comprehension check and peer critique tied to the Definition of Done",
   },
   {
-    id: "phase_closing_7",
+    id: "u08l07-phase6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Readiness, reflection, handoff: investor‑ready standards and preview of Lesson08",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on rehearsal, name what carries into the project, preview next lesson changes",
   }
 ]
