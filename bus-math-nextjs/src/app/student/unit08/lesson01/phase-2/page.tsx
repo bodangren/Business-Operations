@@ -3,232 +3,231 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { DragAndDrop } from "@/components/exercises/DragAndDrop"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, MessageCircle, AlertTriangle, TrendingUp, Target } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Users, MessageCircle, DollarSign, Clock, TrendingDown } from "lucide-react"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase2Page() {
-  const currentPhase = lesson01Phases[1] // Introduction phase
+  const currentPhase = lesson01Phases[1]
 
-  // Red Flags Matching Exercise
-  const redFlagsItems = [
-    { id: '1', content: 'Hard-coded numbers instead of formulas', matchId: '2', hint: 'Shows lack of sophistication and inflexibility' },
-    { id: '2', content: 'Makes model inflexible and unsophisticated', matchId: '1' },
-    { id: '3', content: 'Circular references', matchId: '4', hint: 'Formula errors where calculations depend on their own results' },
-    { id: '4', content: 'Causes model to break due to self-referencing formulas', matchId: '3' },
-    { id: '5', content: 'Unrealistic "hockey-stick" growth assumptions', matchId: '6', hint: 'Overly optimistic projections without realistic basis' },
-    { id: '6', content: 'Overly optimistic guesses rather than realistic plans', matchId: '5' },
-    { id: '7', content: 'Missing scenario analysis', matchId: '8', hint: 'Not considering different business possibilities' },
-    { id: '8', content: 'Shows you haven\'t thought about business risks', matchId: '7' },
-  ]
-
-  // Comprehension questions about VC red flags
   const comprehensionQuestions = [
     {
       id: "q1",
-      question: "Why do venture capitalists focus more on future projections than past performance when evaluating startups?",
+      question: "What does 'accumulated depreciation' represent?",
       answers: [
-        "Past performance is too difficult to verify",
-        "They are investing in the business's future potential, not its history",
-        "Future projections are easier to understand than financial statements",
-        "Past performance doesn't include all the important financial data"
+        "The current market value of the asset",
+        "The total amount of the asset's cost that has been allocated to expense so far",
+        "The amount of money set aside to replace the asset",
+        "The total cost of all assets the company owns"
       ],
-      explanation: "VCs invest in future potential. They want to see a clear vision for where the business is headed and how their investment will generate returns, which requires credible future projections rather than just historical data."
+      explanation: "Accumulated depreciation is the running total of how much of an asset's cost has been 'used up' or allocated to expense over time. It grows each year as depreciation is recorded."
     },
     {
       id: "q2",
-      question: "What makes a financial model 'credible' to professional investors?",
+      question: "If Sarah's printer cost $15,000 and has accumulated depreciation of $6,000, what is its book value?",
       answers: [
-        "Using the most advanced Excel features and complex formulas",
-        "Having realistic assumptions, proper formulas, and scenario analysis",
-        "Showing only optimistic projections with high growth rates",
-        "Including as much historical data as possible"
+        "$21,000",
+        "$15,000",
+        "$9,000",
+        "$6,000"
       ],
-      explanation: "Credible models have realistic assumptions backed by research, use proper formulas (not hard-coded numbers), include scenario analysis to show risk awareness, and demonstrate professional construction and presentation quality."
+      explanation: "Book Value = Cost - Accumulated Depreciation = $15,000 - $6,000 = $9,000. The book value is what the asset is still worth on the company's records."
     },
     {
       id: "q3",
-      question: "According to the textbook, what is Sarah's biggest challenge in Unit 8?",
+      question: "Why does book value decrease over time?",
       answers: [
-        "Learning completely new Excel functions for the first time",
-        "Hiring employees to help build the financial model",
-        "Integrating all previous skills into one comprehensive, dynamic model",
-        "Finding investors who are willing to fund her business"
+        "Because the asset physically disappears",
+        "Because accumulated depreciation increases each year, reducing the difference between cost and depreciation",
+        "Because the company sells part of the asset each year",
+        "Because the original cost was wrong"
       ],
-      explanation: "Sarah's challenge isn't learning new concepts—it's integrating every skill from all previous units (ledgers, automation, statements, analysis, etc.) into one comprehensive model that works as a complete system."
+      explanation: "Book value decreases because accumulated depreciation grows each year. As more of the asset's cost is allocated to expense, the remaining book value shrinks. Eventually, book value reaches the asset's estimated salvage value."
     }
   ]
 
-  // Integration concepts matching
-  const integrationItems = [
-    { id: '1', content: 'Three-statement integration', matchId: '2', hint: 'Linking all financial statements together' },
-    { id: '2', content: 'Income Statement, Balance Sheet, and Cash Flow linked together', matchId: '1' },
-    { id: '3', content: 'Cross-sheet linking', matchId: '4', hint: 'Technical method for connecting spreadsheet data' },
-    { id: '4', content: 'Connecting data between different Excel sheets with formulas', matchId: '3' },
-    { id: '5', content: 'Dynamic model', matchId: '6', hint: 'Model that updates automatically when assumptions change' },
-    { id: '6', content: 'Changes one assumption and entire model updates automatically', matchId: '5' },
+  const expenseVsAssetItems = [
+    { id: "1", content: "Office supplies ($50)", matchId: "2", hint: "Used up within days or weeks" },
+    { id: "2", content: "Everyday Expense", matchId: "1" },
+    { id: "3", content: "Delivery truck ($35,000)", matchId: "4", hint: "Lasts many years, provides ongoing value" },
+    { id: "4", content: "Long-Term Asset", matchId: "3" },
+    { id: "5", content: "Monthly rent payment ($2,000)", matchId: "6", hint: "Benefit is consumed in the current period" },
+    { id: "6", content: "Everyday Expense", matchId: "5" },
+    { id: "7", content: "Commercial 3D printer ($15,000)", matchId: "8", hint: "Will be used for 5+ years" },
+    { id: "8", content: "Long-Term Asset", matchId: "7" },
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PhaseHeader 
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <PhaseHeader
         lesson={lesson01Data}
         unit={unit08Data}
         phase={currentPhase}
         phases={lesson01Phases}
       />
-      
-      <div className="max-w-4xl mx-auto space-y-8 pb-8">
-        {/* Introduction: The Investor's Perspective */}
-        <div className="prose prose-lg max-w-none">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">Day 1: The Investor's Eye – Spotting Red Flags</h1>
-          
-          <p className="text-lg leading-relaxed">
-            Think back to Sarah Chen's journey with TechStart Solutions. She faced challenge after challenge, each one pushing her to learn a new mathematical or business skill. Now, after mastering all those individual "building blocks," Sarah stands at the precipice of her biggest challenge yet: securing a $500,000 investment.
-          </p>
 
-          <p className="text-base leading-relaxed text-gray-700">
-            Sarah knows this is her "final exam". Investors aren't just looking at what happened in the past; they want to see a clear vision for the future. And that future needs to be backed by a rock-solid financial model. Venture capitalists (VCs)—the professional investors who fund promising startups—are incredibly skilled at spotting "red flags". These aren't just minor mistakes; they are critical errors that can immediately disqualify a business from getting funded.
-          </p>
-
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <AlertTriangle className="h-6 w-6 text-red-600" />
-            Common Red Flags That Kill Funding
-          </h2>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Some common red flags include:
-          </p>
-
-          <div className="bg-red-50 border-l-4 border-red-400 p-4 my-6">
-            <ul className="list-disc list-inside space-y-3 text-gray-800">
-              <li><strong>Hard-coded numbers instead of formulas:</strong> This shows a lack of sophistication and makes your model inflexible.</li>
-              <li><strong>Circular references:</strong> These are formula errors where a calculation depends on its own result, causing the model to break.</li>
-              <li><strong>Unrealistic "hockey-stick" growth assumptions:</strong> Investors want to see realistic plans, not just overly optimistic guesses.</li>
-              <li><strong>Missing scenario analysis:</strong> Not showing different possibilities (like best-case, worst-case) tells investors you haven't thought about risks.</li>
-              <li><strong>Poor presentation quality:</strong> A messy model suggests a messy business.</li>
-            </ul>
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-blue-600 text-white">
+              Phase 2: The Scoreboard — Cost, Accumulated Depreciation, Book Value
+            </Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Three Numbers That Tell the Story of Every Asset</h1>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              In Phase 1, you saw why Sarah cannot expense her $15,000 printer all at once.
+              Now you will learn the three numbers that track an asset&apos;s value over time — and
+              how they connect to the formula: Book Value = Cost - Accumulated Depreciation.
+            </p>
           </div>
 
-          <p className="text-base leading-relaxed text-gray-700">
-            Today, you'll step into the shoes of a VC. You'll analyze examples of failed startup models and learn to identify these red flags. This isn't just about finding errors; it's about understanding what makes a financial model <em>credible</em> and <em>convincing</em> to someone who might invest real money in your idea. Can you build a financial model that avoids these pitfalls and convinces an investor to say "yes"? That's the challenge for this unit.
-          </p>
-
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <TrendingUp className="h-6 w-6 text-blue-600" />
-            The Power of Integration
-          </h2>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Remember Sarah's initial chaos with tracking everything in notebooks? You helped her build a "Smart Ledger" in Unit 1. Then, you helped her automate her month-end processes in Unit 2 with the "Month-End Wizard". In Unit 3, you learned to "speak the language of investors" by creating professional Income Statements, Balance Sheets, and Cash Flow Statements. Later, you explored pricing strategies (Unit 6) and managing assets (Unit 7).
-          </p>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Sarah realized that for her final pitch to investors, all these individual systems had to come together into one comprehensive, dynamic model. This is the essence of <strong>three-statement integration</strong>. It means linking your Income Statement, Balance Sheet, and Cash Flow Statement so they "talk" to each other. When you change one number—like how fast your sales grow—every other part of the model updates automatically, like magic!
-          </p>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            This seamless connection is created through <strong>cross-sheet linking</strong>. Think of it like building a house: you have the foundation (your ledger), the walls (your individual statements), and now you're adding the plumbing and electrical wiring that connect everything so it works as one system.
-          </p>
-
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Cross-Sheet Linking Best Practices</h3>
-          
-          <p className="text-base leading-relaxed text-gray-700">
-            To make sure your model is professional and accurate, here are some cross-sheet linking best practices:
-          </p>
-
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
-            <ul className="list-disc list-inside space-y-2 text-gray-800">
-              <li><strong>Use named ranges for key variables:</strong> Instead of referring to "B5," give it a clear name like "Revenue_Growth_Rate". This makes formulas easier to read and understand.</li>
-              <li><strong>Consistent sheet naming and organization:</strong> Keep your Excel sheets organized (e.g., "Assumptions," "P&L," "Balance_Sheet").</li>
-              <li><strong>Absolute vs. relative references:</strong> Know when to use '$' to lock a cell reference ($B$5) so it doesn't change when you copy formulas.</li>
-            </ul>
-          </div>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Today, you'll start practicing this by linking your Income Statement accounts to your underlying data, just like Sarah had to link her revenue from client projects to her main financial statements.
-          </p>
-        </div>
-
-        {/* Red Flags Matching Exercise */}
-        <DragAndDrop
-          items={redFlagsItems}
-          title="Identifying VC Red Flags"
-          description="Match each common financial model error with its impact on investor confidence. Understanding these red flags will help you build a more credible model."
-          leftColumnTitle="Red Flag Issues"
-          rightColumnTitle="Impact on Investors"
-          showHints={true}
-          shuffleItems={true}
-        />
-
-        {/* Comprehension Check */}
-        <ComprehensionCheck
-          questions={comprehensionQuestions}
-          title="Understanding Investor Evaluation"
-          description="Test your understanding of what venture capitalists look for in financial models and why integration is crucial for investment readiness."
-          showExplanations={true}
-        />
-
-        {/* Turn and Talk */}
-        <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
-          <CardHeader>
-            <CardTitle className="text-purple-900 dark:text-purple-200 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-start gap-3">
-              <MessageCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
-              <div>
-                <p className="font-medium text-purple-900 dark:text-purple-200 mb-2">
-                  Discussion Prompt (3 minutes):
-                </p>
-                <p className="text-purple-800 dark:text-purple-300">
-                  If you were a venture capitalist with $500,000 to invest, what would you want to see in a startup's financial model before writing a check?
-                </p>
-                <ul className="list-disc list-inside mt-2 space-y-1 text-purple-800 dark:text-purple-300">
-                  <li>What would make you confident that the entrepreneur really understands their business?</li>
-                  <li>How would you tell the difference between realistic growth projections and wishful thinking?</li>
-                  <li>Why might an investor care more about how well the statements are connected than the individual numbers?</li>
-                </ul>
+          <Card className="border-l-4 border-l-blue-600">
+            <CardHeader>
+              <CardTitle className="text-xl">The Scoreboard Explained</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-gray-700">
+                Every long-term asset has three numbers that investors and accountants track.
+                Think of these as the &quot;scoreboard&quot; for the asset&apos;s life:
+              </p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <DollarSign className="h-5 w-5 text-blue-600" />
+                    <p className="font-bold text-blue-900 text-lg">Cost</p>
+                  </div>
+                  <p className="text-sm text-gray-700">
+                    What you paid to acquire the asset and get it ready to use.
+                    This includes the purchase price, delivery, installation, and any setup costs.
+                    <strong> This number never changes</strong> once the asset is placed in service.
+                  </p>
+                  <p className="text-xs text-blue-700 mt-2 font-semibold">
+                    Sarah&apos;s printer: $15,000
+                  </p>
+                </div>
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingDown className="h-5 w-5 text-blue-600" />
+                    <p className="font-bold text-blue-900 text-lg">Accumulated Depreciation</p>
+                  </div>
+                  <p className="text-sm text-gray-700">
+                    The running total of how much of the asset&apos;s cost has been allocated to expense
+                    so far. <strong>This number grows each year</strong> as the asset is &quot;used up.&quot;
+                    It starts at $0 and increases until the asset is fully depreciated.
+                  </p>
+                  <p className="text-xs text-blue-700 mt-2 font-semibold">
+                    Year 1: $3,000 | Year 2: $6,000 | Year 3: $9,000...
+                  </p>
+                </div>
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Clock className="h-5 w-5 text-blue-600" />
+                    <p className="font-bold text-blue-900 text-lg">Book Value</p>
+                  </div>
+                  <p className="text-sm text-gray-700">
+                    What the asset is still worth on the company&apos;s records.
+                    <strong> This number shrinks each year</strong> as accumulated depreciation grows.
+                    When the asset is fully depreciated, book value equals its estimated salvage value.
+                  </p>
+                  <p className="text-xs text-blue-700 mt-2 font-semibold">
+                    Year 0: $15,000 | Year 1: $12,000 | Year 2: $9,000...
+                  </p>
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <p className="text-sm text-blue-800 font-mono font-bold text-center">
+                  Book Value = Cost - Accumulated Depreciation
+                </p>
+                <p className="text-sm text-blue-700 text-center mt-1">
+                  $15,000 - $3,000 = $12,000 (after Year 1)
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
-        {/* Integration Concepts Matching */}
-        <DragAndDrop
-          items={integrationItems}
-          title="Understanding Financial Model Integration"
-          description="Match the integration concepts with their definitions to understand how sophisticated financial models work."
-          leftColumnTitle="Integration Concepts"
-          rightColumnTitle="Definitions"
-          showHints={true}
-          shuffleItems={true}
-        />
+          <DragAndDrop
+            items={expenseVsAssetItems}
+            title="Expense or Asset?"
+            description="Match each purchase to the correct category. Decide whether it is an everyday expense (used up quickly) or a long-term asset (provides value for years)."
+            leftColumnTitle="Business Purchase"
+            rightColumnTitle="Category"
+            showHints={true}
+            shuffleItems={true}
+          />
 
-        {/* The Investment Challenge */}
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <Target className="h-6 w-6 text-green-600" />
-            Your Investment Challenge
-          </h2>
-          
-          <p className="text-base leading-relaxed text-gray-700">
-            Throughout this unit, you'll be working toward the same goal as Sarah: building a comprehensive, integrated financial model that could convince real investors to fund your business. This isn't just an academic exercise—you'll be presenting your model to actual business professionals who understand what makes a financial plan credible.
-          </p>
+          <ComprehensionCheck
+            questions={comprehensionQuestions}
+            title="Understanding the Scoreboard"
+            description="Test your understanding of cost, accumulated depreciation, and book value."
+            showExplanations={true}
+          />
 
-          <p className="text-base leading-relaxed text-gray-700">
-            Your challenge is to create a financial model that avoids all the red flags we've discussed today while demonstrating the sophistication that comes from true three-statement integration. By the end of this unit, you'll have built something that Sarah would be proud to present to her Series A investors.
-          </p>
+          <Card className="border-l-4 border-l-purple-600">
+            <CardHeader>
+              <CardTitle className="text-purple-900 dark:text-purple-200 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Turn and Talk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MessageCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-purple-900 dark:text-purple-200 mb-2">
+                    Discussion Prompt (3 minutes):
+                  </p>
+                  <p className="text-purple-800 dark:text-purple-300">
+                    Sarah buys a $15,000 printer that will last 5 years. After 2 years, the accumulated
+                    depreciation is $6,000.
+                  </p>
+                  <ul className="list-disc list-inside mt-2 space-y-1 text-purple-800 dark:text-purple-300">
+                    <li>What is the printer&apos;s book value after 2 years?</li>
+                    <li>Will the cost ever change from $15,000? Why or why not?</li>
+                    <li>What will the book value be after 5 years if the printer has no salvage value?</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-          <p className="text-base leading-relaxed text-gray-700">
-            In the next phase, we'll begin the hands-on work of guided practice with VC evaluation criteria, where you'll start applying these concepts to analyze real startup scenarios and understand what separates amateur models from investment-grade financial projections.
-          </p>
-        </div>
-      </div>
+          <Card className="border-l-4 border-l-green-600">
+            <CardHeader>
+              <CardTitle>How the Three Numbers Work Together</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-4">
+                Here is how the scoreboard changes over the life of Sarah&apos;s $15,000 printer
+                (assuming straight-line depreciation with no salvage value):
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="p-2 text-left">Year</th>
+                      <th className="p-2 text-right">Cost</th>
+                      <th className="p-2 text-right">Accumulated Depreciation</th>
+                      <th className="p-2 text-right">Book Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b"><td className="p-2">Purchase (Year 0)</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right">$0</td><td className="p-2 text-right font-bold">$15,000</td></tr>
+                    <tr className="border-b"><td className="p-2">End of Year 1</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right">$3,000</td><td className="p-2 text-right font-bold">$12,000</td></tr>
+                    <tr className="border-b"><td className="p-2">End of Year 2</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right">$6,000</td><td className="p-2 text-right font-bold">$9,000</td></tr>
+                    <tr className="border-b"><td className="p-2">End of Year 3</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right">$9,000</td><td className="p-2 text-right font-bold">$6,000</td></tr>
+                    <tr className="border-b"><td className="p-2">End of Year 4</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right">$12,000</td><td className="p-2 text-right font-bold">$3,000</td></tr>
+                    <tr><td className="p-2">End of Year 5</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right">$15,000</td><td className="p-2 text-right font-bold">$0</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-gray-600 mt-3">
+                Notice: <strong>Cost stays the same</strong>. Accumulated depreciation grows by $3,000 each year.
+                Book value shrinks by $3,000 each year. This pattern is the heart of depreciation.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
 
-      <PhaseFooter 
+      <PhaseFooter
         lesson={lesson01Data}
         unit={unit08Data}
         phase={currentPhase}

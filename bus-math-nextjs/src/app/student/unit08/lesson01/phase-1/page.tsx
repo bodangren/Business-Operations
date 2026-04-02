@@ -3,177 +3,198 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Users, MessageCircle } from "lucide-react"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase1Page() {
-  const currentPhase = lesson01Phases[0] // Hook phase
-  
-  // Video data from intro-videos.json
+  const currentPhase = lesson01Phases[0]
+
   const videoData = {
-    title: "The Final Test: Building an Integrated Model for Investors",
-    description: "The moment Sarah has been working for has arrived: a Series A investor is interested, and they want a 3-year financial projection in six weeks. In this capstone video, Sarah integrates every skill she's learned—from ledgers to pricing to asset management—into a single, dynamic financial model. See how all the pieces come together to create a compelling, data-backed story for the future.",
-    youtubeId: "Je7SPYOw9Vk",
-    duration: "5:12",
-    transcript: "(Sarah is on camera in her office. She looks sharp, focused, and carries the air of a confident CEO. This is the culmination of her journey.)\n\nSo, this is it. This is the moment that everything has been building towards. My mentor, Marcus, made a connection, and a Series A investor has confirmed they're interested in TechStart Solutions. We're officially in the due diligence process for a $500,000 investment proposal. It's exciting, and honestly, it's terrifying.\n\nThe investors were impressed with our journey so far, but they're not investing in the past. They're investing in the future. They didn't just want to see our history; they wanted to see our vision. They gave me my assignment: deliver a comprehensive, integrated 3-year financial projection for the business. And I had six weeks to do it.\n\nMy 'aha' moment for this final step wasn't about learning a new concept. It was the realization that this was the final exam. Every single thing I had learned over the last 15 months was about to be tested in this one project. The smart ledger from Unit 1, the automation from Unit 2, the three-statement story from Unit 3, the data analysis, the payroll simulator, the pricing strategy, the asset tracker... all of it. They all had to come together and work perfectly in one dynamic model.\n\nThis is what the 'Year-1 Startup Model' unit is all about. The driving question is no longer about one piece of the business; it's, 'Can we convince a micro-VC that our financial model is robust enough to merit funding?'. It's about building a model where the Income Statement, the Balance Sheet, and the Statement of Cash Flows are all interconnected. You change one assumption—like how fast you think you can grow—and the entire model updates. It lets you run different scenarios and show investors a credible, data-backed story about where the business is headed.\n\nBuilding that model was the hardest thing I've ever done, but it was also the most rewarding. It forced me to integrate every lesson, every mistake, and every success into a single narrative about the future of my company. This entire journey, from tracking expenses in a notebook to pitching investors for half a million dollars, has been about building these skills piece by piece. Each unit was a building block, and this final model is the structure we built. It's the ultimate proof that with the right systems and the right skills, you can turn an idea into an investment-ready business."
+    title: "TechStart Is Expanding — Sarah's Equipment Purchase Problem",
+    description: "TechStart Solutions is growing. Sarah needs to buy a $15,000 commercial 3D printer for her product line. But how should she track this cost? Can she expense it all at once, or does it need to be tracked differently? An investor is watching how she handles this decision.",
+    youtubeId: "dQw4w9WgXcQ",
+    duration: "4:30",
+    transcript: "Sarah sits at her desk, looking at a quote for a commercial 3D printer. She is excited but also worried about the cost. Her mentor Marcus reminds her that investors watch how founders handle big purchases. If she expenses the whole $15,000 this month, her profit will look terrible. But if she treats it as a long-term asset and spreads the cost over its useful life, her financial statements will tell a more accurate story. The investor she is meeting with next month will want to see that she understands the difference between everyday expenses and long-term investments. Sarah needs to learn about capitalization and depreciation — and fast."
   }
 
-  // Comprehension questions
   const comprehensionQuestions = [
     {
       id: "q1",
-      question: "What assignment did the Series A investor give Sarah?",
+      question: "Why can't Sarah just expense the entire $15,000 printer purchase in the month she buys it?",
       answers: [
-        "Create a marketing plan for the next year",
-        "Deliver a comprehensive, integrated 3-year financial projection", 
-        "Hire more employees and expand the team",
-        "Move to a larger office space"
+        "Because the printer is too expensive to fit in one month's budget",
+        "Because the printer will provide value over multiple years, so the cost should be spread across its useful life",
+        "Because her bank account does not have enough money",
+        "Because investors do not like 3D printers"
       ],
-      explanation: "The investors wanted to see Sarah's vision for the future, so they asked for a comprehensive, integrated 3-year financial projection for the business, which she had six weeks to complete."
+      explanation: "Long-term assets like equipment provide value over many years. Accounting rules require businesses to spread the cost across the asset's useful life instead of expensing it all at once. This gives a more accurate picture of profitability."
     },
     {
-      id: "q2", 
-      question: "What was Sarah's 'aha' moment for this final challenge?",
+      id: "q2",
+      question: "What is the core formula for tracking an asset's value over time?",
       answers: [
-        "Learning a completely new financial concept",
-        "Realizing she needed to hire a financial advisor",
-        "Understanding this was the final exam that tested everything she'd learned",
-        "Discovering she could use artificial intelligence to build the model"
+        "Profit = Revenue - Expenses",
+        "Book Value = Cost - Accumulated Depreciation",
+        "Assets = Liabilities + Equity",
+        "Cash Flow = Income - Spending"
       ],
-      explanation: "Sarah realized this wasn't about learning something new—it was the final exam where every skill from all previous units had to come together and work perfectly in one dynamic model."
+      explanation: "Book Value = Cost - Accumulated Depreciation is the formula that tracks how much an asset is still worth on the company's books. As depreciation accumulates each year, book value decreases."
     },
     {
       id: "q3",
-      question: "What makes an integrated financial model different from individual financial statements?",
+      question: "Why would an investor care about how Sarah tracks her equipment purchase?",
       answers: [
-        "It uses more complex mathematical formulas",
-        "It only focuses on the Income Statement",
-        "All statements are interconnected—changing one assumption updates the entire model",
-        "It requires special software to build"
+        "Investors only care about marketing plans, not accounting",
+        "How Sarah tracks assets shows whether she understands professional financial management",
+        "Investors do not care about equipment costs at all",
+        "The printer brand matters more than the accounting method"
       ],
-      explanation: "In an integrated model, the Income Statement, Balance Sheet, and Cash Flow Statement are all interconnected. When you change one assumption, like growth rate, the entire model updates automatically."
+      explanation: "Investors expect founders to track long-term assets professionally. How a company capitalizes and depreciates assets affects reported profit, tax liability, and the credibility of financial statements. Poor asset tracking is a red flag."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <PhaseHeader 
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+      <PhaseHeader
         lesson={lesson01Data}
         unit={unit08Data}
         phase={currentPhase}
         phases={lesson01Phases}
       />
-      
-      <div className="max-w-4xl mx-auto space-y-8 pb-8">
-        {/* Welcome to Year-1 Startup Model */}
-        <div className="prose prose-lg max-w-none">
-          <p className="text-lg leading-relaxed">
-            Welcome to Unit 8, the grand finale of our "Math for Business Operations" course! Throughout this journey, we've tackled real-world business challenges, just like a growing entrepreneur named Sarah Chen. From her first messy notebook to launching a sophisticated digital marketing company, you've learned to master the math that makes businesses thrive. Now, it's time to put all those pieces together.
-          </p>
-          
-          <p className="text-base leading-relaxed text-gray-700">
-            Our essential question for this unit is: <strong>Can we convince a micro-VC that our first-year financial model is robust enough to merit funding?</strong>
-          </p>
 
-          <p className="text-base leading-relaxed text-gray-700">
-            Imagine this: All your hard work in building ledgers, automating tasks, understanding profit, managing assets, and creating financial statements has led to this moment. You're not just doing math anymore; you're building a complete, dynamic story of your business's future—a story powerful enough to attract serious investors.
-          </p>
-        </div>
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-amber-600 text-white">
+              Phase 1: The Fixed-Asset Problem
+            </Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Sarah Needs New Equipment — But How Should She Track It?</h1>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              TechStart Solutions is growing. Sarah wants to buy a $15,000 commercial 3D printer.
+              It seems simple — buy the printer, record the cost, done. But an investor is watching,
+              and how Sarah handles this purchase will signal whether she understands professional
+              financial management. The question is not just &quot;Can we afford it?&quot; — it is
+              &quot;How do we track this cost over time?&quot;
+            </p>
+          </div>
 
-        {/* Sarah's Story Video */}
-        <VideoPlayer video={videoData} />
-
-        {/* The Investor's Eye */}
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">The Investor's Eye – Spotting Red Flags</h2>
-          
-          <p className="text-base leading-relaxed text-gray-700">
-            Think back to Sarah Chen's journey with TechStart Solutions. She faced challenge after challenge, each one pushing her to learn a new mathematical or business skill. Now, after mastering all those individual "building blocks," Sarah stands at the precipice of her biggest challenge yet: securing a $500,000 investment.
-          </p>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Sarah knows this is her "final exam". Investors aren't just looking at what happened in the past; they want to see a clear vision for the future. And that future needs to be backed by a rock-solid financial model. Venture capitalists (VCs)—the professional investors who fund promising startups—are incredibly skilled at spotting "red flags". These aren't just minor mistakes; they are critical errors that can immediately disqualify a business from getting funded.
-          </p>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Some common red flags include:
-          </p>
-
-          <ul className="list-disc list-inside space-y-2 text-gray-700">
-            <li><strong>Hard-coded numbers instead of formulas:</strong> This shows a lack of sophistication and makes your model inflexible.</li>
-            <li><strong>Circular references:</strong> These are formula errors where a calculation depends on its own result, causing the model to break.</li>
-            <li><strong>Unrealistic "hockey-stick" growth assumptions:</strong> Investors want to see realistic plans, not just overly optimistic guesses.</li>
-            <li><strong>Missing scenario analysis:</strong> Not showing different possibilities (like best-case, worst-case) tells investors you haven't thought about risks.</li>
-            <li><strong>Poor presentation quality:</strong> A messy model suggests a messy business.</li>
-          </ul>
-
-          <p className="text-base leading-relaxed text-gray-700">
-            Today, you'll step into the shoes of a VC. You'll analyze examples of failed startup models and learn to identify these red flags. This isn't just about finding errors; it's about understanding what makes a financial model <em>credible</em> and <em>convincing</em> to someone who might invest real money in your idea. Can you build a financial model that avoids these pitfalls and convinces an investor to say "yes"? That's the challenge for this unit.
-          </p>
-        </div>
-
-        {/* Comprehension Check */}
-        <ComprehensionCheck
-          questions={comprehensionQuestions}
-          title="Understanding the Final Challenge"
-          description="Test your understanding of Sarah's ultimate business challenge and what makes a financial model investment-ready."
-          showExplanations={true}
-        />
-
-        {/* Turn and Talk */}
-        <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
-          <CardHeader>
-            <CardTitle className="text-purple-900 dark:text-purple-200 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-start gap-3">
-              <MessageCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
-              <div>
-                <p className="font-medium text-purple-900 dark:text-purple-200 mb-2">
-                  Discussion Prompt (3 minutes):
+          <Card className="border-l-4 border-l-amber-600">
+            <CardHeader>
+              <CardTitle className="text-xl">The Core Tension</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-gray-700">
+                When a business buys something small — like printer paper or coffee for the office — it
+                records the cost as an expense right away. The item is used up quickly. But when a business
+                buys something big that lasts for years — like equipment, vehicles, or buildings — the rules
+                change. The cost cannot be expensed all at once. It must be tracked as an <strong>asset</strong>
+                and its cost spread across the years it provides value. This process is called{" "}
+                <strong>depreciation</strong>.
+              </p>
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-sm text-amber-800">
+                  <strong>The enduring formula for this unit:</strong>{" "}
+                  <code className="bg-amber-100 px-2 py-1 rounded font-mono font-bold">
+                    Book Value = Cost - Accumulated Depreciation
+                  </code>
                 </p>
-                <p className="text-purple-800 dark:text-purple-300">
-                  Think about a time when you had to put together everything you learned in a class for a final project or presentation. How did it feel different from individual assignments?
+                <p className="text-sm text-amber-700 mt-2">
+                  Every lesson in this unit connects back to this formula. By the end, you will understand
+                  what each term means, how to calculate it, and why investors care.
                 </p>
-                <ul className="list-disc list-inside mt-2 space-y-1 text-purple-800 dark:text-purple-300">
-                  <li>What do you think makes a financial model "credible" to someone considering investing their money?</li>
-                  <li>Why might investors care more about the future than the past when evaluating a business?</li>
-                  <li>If you were investing your own money in a business, what would you want to see in their financial plan?</li>
-                </ul>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
 
-        {/* The Journey So Far */}
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">The Journey So Far</h2>
-          
-          <p className="text-base leading-relaxed text-gray-700">
-            Remember Sarah's initial chaos with tracking everything in notebooks? You helped her build a "Smart Ledger" in Unit 1. Then, you helped her automate her month-end processes in Unit 2 with the "Month-End Wizard". In Unit 3, you learned to "speak the language of investors" by creating professional Income Statements, Balance Sheets, and Cash Flow Statements. Later, you explored pricing strategies (Unit 6) and managing assets (Unit 7).
-          </p>
+          <VideoPlayer video={videoData} />
 
-          <p className="text-base leading-relaxed text-gray-700">
-            Sarah realized that for her final pitch to investors, all these individual systems had to come together into one comprehensive, dynamic model. This is the essence of <strong>three-statement integration</strong>. It means linking your Income Statement, Balance Sheet, and Cash Flow Statement so they "talk" to each other. When you change one number—like how fast your sales grow—every other part of the model updates automatically, like magic!
-          </p>
+          <Card className="border-l-4 border-l-blue-600">
+            <CardHeader>
+              <CardTitle>The Scoreboard: Three Numbers That Matter</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-4">
+                Throughout this unit, you will track three numbers for every long-term asset:
+              </p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="font-bold text-blue-900 text-lg">Cost</p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    What you paid for the asset, including delivery and installation.
+                    For Sarah&apos;s printer: $15,000.
+                  </p>
+                </div>
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="font-bold text-blue-900 text-lg">Accumulated Depreciation</p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    The total amount of the asset&apos;s cost that has been &quot;used up&quot; so far.
+                    This grows each year.
+                  </p>
+                </div>
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="font-bold text-blue-900 text-lg">Book Value</p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    What the asset is still worth on the company&apos;s books.
+                    Book Value = Cost - Accumulated Depreciation.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-          <p className="text-base leading-relaxed text-gray-700">
-            This entire journey, from tracking expenses in a notebook to pitching investors for half a million dollars, has been about building these skills piece by piece. Each unit was a building block, and this final model is the structure we built. It's the ultimate proof that with the right systems and the right skills, you can turn an idea into an investment-ready business.
-          </p>
-        </div>
+          <ComprehensionCheck
+            questions={comprehensionQuestions}
+            title="Understanding the Fixed-Asset Problem"
+            description="Test your understanding of why long-term asset costs are treated differently from everyday expenses."
+            showExplanations={true}
+          />
 
-        {/* Transition to Next Phase */}
-        <div className="prose prose-lg max-w-none">
-          <p className="text-base leading-relaxed text-gray-700">
-            Now that you understand the stakes of this final challenge, you're ready to begin connecting the dots. In the next phase, we'll explore the power of integration—how to link all your financial statements so they work together as one dynamic system. You'll learn the cross-sheet linking techniques that transform individual spreadsheets into a comprehensive business model worthy of investor attention.
-          </p>
-        </div>
-      </div>
+          <Card className="border-l-4 border-l-purple-600">
+            <CardHeader>
+              <CardTitle className="text-purple-900 dark:text-purple-200 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Turn and Talk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MessageCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-purple-900 dark:text-purple-200 mb-2">
+                    Discussion Prompt (3 minutes):
+                  </p>
+                  <p className="text-purple-800 dark:text-purple-300">
+                    Imagine you bought a $1,200 laptop for your business. It will last 4 years.
+                  </p>
+                  <ul className="list-disc list-inside mt-2 space-y-1 text-purple-800 dark:text-purple-300">
+                    <li>Would it be fair to record the entire $1,200 as an expense in month 1?</li>
+                    <li>What would your profit look like in month 1 vs. month 12 if you did?</li>
+                    <li>How much of the laptop&apos;s cost should &quot;count&quot; against each year&apos;s profit?</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-      <PhaseFooter 
+          <Card className="border-l-4 border-l-green-600">
+            <CardHeader>
+              <CardTitle>What Comes Next</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">
+                Now that you understand the problem — long-term assets cannot be expensed all at once —
+                the next lesson will teach you the rules for deciding <strong>when a cost becomes an asset</strong>{" "}
+                (capitalization) and how to estimate how long it will last (useful life) and what it will be
+                worth at the end (salvage value). You will also learn how accumulated depreciation builds up
+                over time and why it matters for both the income statement and the balance sheet.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+
+      <PhaseFooter
         lesson={lesson01Data}
         unit={unit08Data}
         phase={currentPhase}

@@ -30,23 +30,23 @@
   - Remove Unit 07 depreciation references and make Unit 08 own that content completely
 
 ### Phase 2: Lessons 01-04 (Textbook-First)
-- [ ] 2.1 **Lesson 01** - Implement launch-lesson skill
-  - [ ] 2.1.1 Update lesson-data.ts for Lesson 01
-  - [ ] 2.1.2 Implement Phase 1 with Sarah's interview video and new-equipment purchase problem
+- [x] 2.1 **Lesson 01** - Implement launch-lesson skill
+  - [x] 2.1.1 Update lesson-data.ts for Lesson 01
+  - [x] 2.1.2 Implement Phase 1 with Sarah's interview video and new-equipment purchase problem
     - Use the shared `VideoPlayer` component
     - Include title, description, YouTube ID, duration, and full transcript data
     - Create business tension and credibility
     - Follow with one short processing move (risk triage, prediction, quick comprehension, or turn-and-talk)
-  - [ ] 2.1.3 Implement Phase 2-6 with cost, accumulated depreciation, and book value scoreboard visible
+  - [x] 2.1.3 Implement Phase 2-6 with cost, accumulated depreciation, and book value scoreboard visible
     - Phase 2: Name the scoreboard explicitly (cost, accumulated depreciation, book value), show main moving parts, use one bounded interactive
     - Phase 3: Use shared dataset/simulation, predict before reveal, show before/after changes
     - Phase 4: Keep task constrained, allow 1-2 meaningful choices, show consequences visibly
     - Phase 5: Short MCQ exit ticket assessing founder problem, scoreboard, core distinctions
     - Phase 6: Restate enduring formula (Book Value = Cost - Accumulated Depreciation), summarize understanding, preview next lesson, include reflection
-  - [ ] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
+  - [x] 2.1.4 Keep Phase 4 bounded - no workbook build steps yet
   - **Done when**:
-    - [ ] Students can explain why long-term asset costs are not treated like everyday expenses
-    - [ ] The lesson points clearly to capitalization and depreciation logic next
+    - [x] Students can explain why long-term asset costs are not treated like everyday expenses
+    - [x] The lesson points clearly to capitalization and depreciation logic next
 
 - [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
   - [ ] 2.2.1 Update lesson-data.ts for Lesson 02

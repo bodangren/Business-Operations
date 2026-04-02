@@ -1,77 +1,71 @@
-// Year‑1 Startup Model, Lesson 1 data - extracted from MCP curriculum database
+// Fixed Assets and Depreciation, Lesson 1 data - Launch lesson
 export const lesson01Data = {
   id: "mds5xnq0hosguvwljqw",
-  title: "Introduction: VC Red Flags & Entry Event",
+  title: "Sarah's Equipment Purchase — Why Long-Term Assets Are Different",
   sequence: 1,
   unitId: "mdrhlhv53tduw0ib5oa",
   learningObjectives: [
-    "Analyze real venture capitalist feedback on common startup financial model failures and red flags",
-    "Identify critical success factors for creating VC-ready financial models and pitch presentations",
-    "Evaluate anonymized startup pitch decks to understand investor due diligence criteria",
-    "Establish team goals and project scope for comprehensive 3-statement startup financial modeling"
+    "Explain why long-term asset costs are not treated like everyday expenses",
+    "Identify the three parts of the depreciation scoreboard: cost, accumulated depreciation, and book value",
+    "Predict how a major equipment purchase affects a business over time",
+    "Connect professional asset tracking to investor credibility"
   ],
   keyConcepts: [
-    "Venture capital due diligence process and financial model evaluation criteria",
-    "Common startup financial modeling errors and risk assessment red flags",
-    "Professional investor presentation standards and pitch deck best practices",
-    "Integrated financial statement modeling requirements for startup funding scenarios"
+    "Long-term assets vs. everyday expenses",
+    "Book Value = Cost - Accumulated Depreciation",
+    "Why investors expect professional asset tracking",
+    "The difference between buying an asset and expensing a cost"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Launch with venture capitalist guest analyzing startup model failures"
+    "Launch with Sarah's new-equipment purchase problem and investor expectations",
+    "Use video, prediction, and one bounded interactive to build tension before formal rules"
   ],
-  rationale: "To provide a real-world context for the importance of financial modeling and to engage students with an authentic problem.",
-  status: "Draft"
+  rationale: "Lesson 01 launches the fixed-asset problem by showing Sarah facing a real equipment purchase decision. Students see why long-term assets cannot be treated like regular expenses, learn the core scoreboard (cost, accumulated depreciation, book value), and feel the tension between spending money now and tracking value over time. No formulas or workbook builds yet — just the problem that makes depreciation necessary."
 }
 
 export const unit08Data = {
   id: "mdrhlhv53tduw0ib5oa",
-  title: "Year‑1 Startup Model",
+  title: "Fixed Assets and Depreciation",
   sequence: 8
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases aligned to the launch-lesson skill contract
 export const lesson01Phases = [
   {
-    id: "phase_hook_1",
+    id: "phase_hook_fixed_asset_1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Engage students with compelling opening scenario related to VC Red Flags & Entry Event",
-    // component: "Lesson01Phase1" (id: mdwl1ovg1rb2fimw7zj) - To introduce the unit's story with a video and comprehension questions.
+    description: "Sarah's interview: TechStart is expanding and needs new equipment. Why can't she just expense it?",
   },
   {
-    id: "phase_introduction_1",
+    id: "phase_scoreboard_1",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce key concepts and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the introductory text.
+    description: "Name the scoreboard: cost, accumulated depreciation, and book value. Scan the system.",
   },
   {
-    id: "phase_guided_practice_1",
+    id: "phase_simulation_1",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying lesson concepts with scaffolded support",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To analyze a startup financial model for red flags.
+    description: "Predict what happens to book value over time before the formal reveal.",
   },
   {
-    id: "phase_independent_practice_1",
+    id: "phase_choice_1",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice lesson skills independently with minimal teacher support",
-    // component: "FinancialDashboard" (id: 1753927517567kkux0mq2b) - To analyze a startup financial model for red flags.
+    description: "Make 1-2 choices about how to track an asset purchase and see the consequences.",
   },
   {
-    id: "phase_assessment_1",
+    id: "phase_exit_1",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Short MCQ exit ticket on the founder problem, scoreboard, and core distinctions.",
   },
   {
-    id: "phase_closing_1",
+    id: "phase_reflection_1",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Preview upcoming learning sequence and build anticipation for next steps",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Restate Book Value = Cost - Accumulated Depreciation. Preview capitalization and depreciation logic.",
   }
 ]
