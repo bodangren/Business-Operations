@@ -1,6 +1,6 @@
 ---
 name: excel-lessons
-description: Write or revise a student-facing Excel lesson for Math for Business Operations. Use for lessons 4-6 when the lesson teaches a new Excel tool, workbook pattern, or automation move before project rehearsal. This skill is for business-pressure hooks, explicit tool anatomy, safe simulator practice, workbook build sprints, workbook audit/explanation, and reflection. Do not use for launch lessons, accounting-principles lessons, lesson 7 project rehearsal, or project lessons.
+description: Write or revise a student-facing Excel lesson for Math for Business Operations. Use for lessons 4 or 5 to 6 when the lesson teaches a new Excel tool, workbook pattern, or automation move before project rehearsal. This skill is for business-pressure hooks, explicit tool anatomy, safe simulator practice, workbook build sprints, workbook audit/explanation, and reflection. Do not use for lesson 1 launch lessons, lesson 2 to 3 or 4 accounting-principles lessons, lesson 7 project rehearsal, or lesson 8-10 project lessons.
 ---
 
 # Excel Lessons Skill
@@ -45,10 +45,17 @@ Use the separate `project-rehearsal` skill for lesson 7 style workbook audit and
 - Rehearse the logic in phase 3 before the real workbook sprint in phase 4.
 - Separate tool fluency from explanation and defense.
 - Keep page, workbook, tutorial, and file names aligned.
+- In phase 1, center investor or operator decision pressure, not a generic "fragile vs robust" contrast.
+- In phase 2, require show-and-tell instruction: formula pattern, plain-language meaning, and why it works.
+- If structured references are core to the move, include a decoder table that explains full-column vs row-level references.
+- In phase 3, default to guided rehearsal of workbook logic over quiz-style multiple choice.
+- In phase 4, prefer multiple sheet previews over one wide "all-in-one" reference grid.
 
 ## Non-Negotiable Excel Rule
 
 If the Excel procedure is fragile, multi-step, or easy to misconfigure, phase 3 must include a safe rehearsal component before phase 4 asks students to do the real build in Excel.
+
+If workbook resources and page instructions diverge, fix the resources. Lesson pages are not complete until workbook and tutorial match the same build sequence.
 
 ## Excel-Lesson Phase Contract
 
@@ -61,10 +68,12 @@ Requirements:
 - make the tool feel necessary, not decorative
 - connect the lesson to the existing workbook or model
 - include one short comprehension or discussion move
+- frame the hook around concrete decision questions stakeholders will ask
 
 Avoid:
 - feature lists without business context
 - generic "Excel is useful" exposition
+- overusing before/after "fragile vs robust" framing as the main storyline
 
 ### Phase 2: Tool Anatomy
 Purpose:
@@ -76,10 +85,13 @@ Requirements:
 - show where the tool lives in Excel when relevant
 - include one short check on vocabulary, anatomy, or setup logic
 - teach at least one common failure mode
+- explicitly decode the formulas students will build (show formula, explain meaning, explain why)
+- include structured-reference interpretation when table references are central
 
 Avoid:
 - discovery-first tool instruction
 - skipping prerequisites from the existing workbook
+- relying only on fill-in-the-blank or vocabulary checks when formula decoding is the real need
 
 ### Phase 3: Safe Rehearsal
 Purpose:
@@ -90,11 +102,13 @@ Requirements:
 - mirror the real workbook logic as closely as possible
 - give immediate feedback or reveal after an attempt
 - make the bridge to phase 4 explicit
+- include at least one explanation step where students translate formula logic into plain language
 
 Avoid:
 - using only prose when the tool setup is fragile
 - broad sandbox interactions
 - a rehearsal task that does not match the phase-4 workbook move
+- turning phase 3 into a primary multiple-choice assessment when build-readiness is the goal
 
 ### Phase 4: Workbook Sprint
 Purpose:
@@ -107,11 +121,14 @@ Requirements:
 - provide a short build sequence with no more than a few major blocks
 - include verification checkpoints after major build steps
 - include a Definition of Done or rubric
+- keep reference layout readable on page (split by workbook tab/sheet when needed)
+- ensure tab names in page instructions match workbook tab names exactly
 
 Avoid:
 - assuming prior workbook success without naming a fallback or checkpoint
 - giant instruction dumps with no verification gates
 - workbook tasks with no visible deliverable
+- single ultra-wide reference grids that force horizontal scanning across unrelated logic blocks
 
 ### Phase 5: Audit and Explain
 Purpose:
@@ -197,6 +214,7 @@ Phase-3 simulator components should:
 - include one or two common errors
 - give immediate feedback
 - end with a clear handoff to the actual workbook
+- prioritize guided walkthrough and explanation practice over point-scoring
 
 If students need feedback, gating, hints, retries, or deliberate practice, use a custom simulator component instead of trying to make `SpreadsheetWrapper` do everything.
 
@@ -209,6 +227,21 @@ Every Excel lesson should define:
 - the short evidence they will carry into phase 5
 
 If the lesson depends on earlier workbook work, provide a checkpoint workbook, a fallback download, or a clearly named minimum starting state.
+
+## Resource Parity Checklist
+
+Before finalizing an Excel lesson revision, verify:
+- phase pages, workbook tabs, and tutorial steps use the same sheet names and order
+- sample checkpoint numbers on pages match teacher workbook outputs
+- student workbook scaffolds exactly what phase 4 asks students to build
+- teacher workbook demonstrates the exact formula architecture described in phase 2 and phase 3
+- phase 4 reference previews are organized by sheet when the model is multi-sheet
+
+## Assessment Scope Note
+
+If the user or track specifies that quality controls (validation, naming, error handling) are cross-unit norms:
+- mention them as professional expectations
+- do not make them the primary scored target for the lesson
 
 ## What Not To Standardize From Unit 6
 

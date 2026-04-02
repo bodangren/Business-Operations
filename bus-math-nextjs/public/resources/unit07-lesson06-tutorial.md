@@ -1,41 +1,95 @@
-# Unit 07 Lesson 06 – LIFO Inventory Valuation
+# Unit 07 Lesson 06 - Scenario-Switch Dashboard Workbook
 
-This tutorial converts `unit07-lesson06-student.xlsx` into the completed teacher model (`unit07-lesson06-teacher.xlsx`). Students apply the Last-In, First-Out method to the same January inventory data used in Lesson 05.
+This tutorial aligns:
+- `unit07-lesson06-student.xlsx`
+- `unit07-lesson06-teacher.xlsx`
 
-## 1. Review the Data
+Workbook tabs:
+- `Inputs`
+- `Drivers`
+- `MethodSummary`
+- `Outputs`
+- `KPI`
+- `Checks`
+- `Dashboard`
 
-- The **InventoryLIFO** sheet reuses the identical purchases and sales logs from FIFO.
-- Only the summary cells are blank; everything else is ready for analysis.
-- Remind the class: LIFO assumes the most recent purchases leave the warehouse first.
+## 1. Build `Inputs`
 
-## 2. Apply LIFO Layers
+1. Add selector cells:
+   - `SelectedScenario` (Base, Stretch, Downside)
+   - `SelectedMethod` (FIFO, LIFO, Weighted Average)
+2. Add key cell:
+   - `SelectedKey = SelectedScenario & "|" & SelectedMethod`
+3. Confirm constants:
+   - `UnitSellingPrice`
+   - `BeginningInventory`
+   - `GAFS`
 
-1. Start with the most recent purchase:
-   - 90 units @ \$19.80 (Jan 28)
-2. Continue backward until you’ve covered all 260 units sold:
-   - 100 units @ \$19.60 (Jan 20)
-   - 70 units @ \$19.10 (from the Jan 12 lot)
-3. Remaining inventory consists of:
-   - 10 units @ \$19.10 (left from Jan 12)
-   - 120 units @ \$18.40 (entire Jan 05 lot)
+## 2. Build `Drivers`
 
-## 3. Populate the Summary Cells
+Create scenario assumptions table:
 
-- `COGS Units`: 260
-- `COGS Cost ($)`: `=90*19.8 + 100*19.6 + 70*19.1` → **\$5,079.00**
-- `Ending Inventory Units`: 130
-- `Ending Inventory Cost ($)`: `=10*19.1 + 120*18.4` → **\$2,399.00**
+`Scenario | UnitsSold | DefaultMethod | AsOfDate`
 
-Discuss how LIFO raises COGS (and lowers ending inventory) during rising cost periods—an insight TechStart can use when evaluating tax strategies.
+Use sample rows:
+- Base → 35 units
+- Stretch → 39 units
+- Downside → 32 units
 
-## 4. Optional Enhancements
+## 3. Build `MethodSummary`
 
-- Add a comparison table showing FIFO vs. LIFO ending inventory to reinforce the magnitude of change.
-- Use color or borders to distinguish consumed layers vs. remaining layers.
+Create one row per scenario+method pair with:
+- `Key`
+- `Scenario`
+- `Method`
+- `COGS`
+- `EndingInventory`
+- `BalanceCheck`
 
-## 5. Save the Teacher Version
+Include rows for all 9 combinations:
+- Base/FIFO, Base/LIFO, Base/Weighted Average
+- Stretch/FIFO, Stretch/LIFO, Stretch/Weighted Average
+- Downside/FIFO, Downside/LIFO, Downside/Weighted Average
 
-- Save the workbook as `unit07-lesson06-teacher.xlsx`.
-- Students should keep both FIFO and LIFO summaries handy for investor Q&A in the unit capstone.
+## 4. Build `Outputs`
 
-By seeing both methods back-to-back, learners can articulate why companies choose one valuation approach over another.
+1. Pull selected units sold:
+   - `XLOOKUP(SelectedScenario, Drivers[Scenario], Drivers[UnitsSold])`
+2. Pull selected COGS:
+   - `XLOOKUP(SelectedKey, MethodSummary[Key], MethodSummary[COGS])`
+3. Pull selected ending inventory:
+   - `XLOOKUP(SelectedKey, MethodSummary[Key], MethodSummary[EndingInventory])`
+
+## 5. Build `KPI`
+
+1. `Revenue = SelectedUnitsSold * UnitSellingPrice`
+2. `GrossMargin% = (Revenue - SelectedCOGS) / Revenue`
+3. `AverageInventory = (BeginningInventory + SelectedEndingInventory) / 2`
+4. `Turnover = SelectedCOGS / AverageInventory`
+5. `DaysOnHand = 365 / Turnover`
+
+## 6. Build `Checks`
+
+Add visible checks:
+- GAFS conservation:
+  - `IF(ABS((SelectedCOGS+SelectedEndingInventory)-GAFS)<0.01,"Balanced","Check")`
+- Key lookup health:
+  - `IFNA(XLOOKUP(SelectedKey, MethodSummary[Key], MethodSummary[COGS]),"Missing Key")`
+- Units sold validity:
+  - `IF(SelectedUnitsSold>0,"OK","Check Drivers")`
+
+## 7. Build `Dashboard`
+
+Link display tiles to:
+- Selected scenario and method from `Inputs`
+- COGS and ending inventory from `Outputs`
+- Turnover and days on hand from `KPI`
+- Check status from `Checks`
+
+Use one-page layout for fast investor reading.
+
+## 8. Professional Quality (Mentioned, Not Scored Here)
+
+- Keep control and output names clear.
+- Keep table references consistent.
+- Add validation and error handling as standard model quality.

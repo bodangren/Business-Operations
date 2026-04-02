@@ -1,509 +1,455 @@
 "use client"
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { useMemo, useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, XCircle, Lightbulb, RotateCcw } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, CheckCircle2, Lightbulb, Table2 } from "lucide-react"
 
-// --- Data model ---
-
-interface InventoryLayer {
-  date: string
-  qty: number
-  unitCost: number
+interface DriverRow {
+  scenario: "Base" | "Stretch" | "Downside"
+  unitsSold: number
+  defaultMethod: "FIFO" | "LIFO" | "Weighted Average"
 }
 
-interface Scenario {
-  name: string
-  salesGrowthPct: number
-  method: string
-  asOfDate: string
-}
-
-interface MethodResult {
-  method: string
+interface MethodSummaryRow {
+  key: string
+  scenario: DriverRow["scenario"]
+  method: DriverRow["defaultMethod"]
   cogs: number
   endingInventory: number
-  turnover: number
-  daysOnHand: number
-  grossMarginPct: number
 }
 
-// Shared dataset: beginning inventory + 3 purchases
-const BEGINNING_INVENTORY: InventoryLayer[] = [
-  { date: "2025-01-01", qty: 10, unitCost: 18 }
+interface FormulaRow {
+  step: string
+  formula: string
+  plainEnglish: string
+}
+
+interface RehearsalStage {
+  id: "controls" | "lookups" | "kpis" | "checks"
+  title: string
+  sheet: string
+  output: string
+  rows: FormulaRow[]
+  references: Array<{ token: string; meaning: string }>
+  commonTrap: string
+  auditCheck: string
+  prompt: string
+  modelResponse: string
+}
+
+const drivers: DriverRow[] = [
+  { scenario: "Base", unitsSold: 35, defaultMethod: "FIFO" },
+  { scenario: "Stretch", unitsSold: 39, defaultMethod: "LIFO" },
+  { scenario: "Downside", unitsSold: 32, defaultMethod: "Weighted Average" }
 ]
 
-const PURCHASES: InventoryLayer[] = [
-  { date: "2025-01-12", qty: 20, unitCost: 20 },
-  { date: "2025-01-20", qty: 15, unitCost: 22 },
-  { date: "2025-01-28", qty: 10, unitCost: 24 }
+const methodSummary: MethodSummaryRow[] = [
+  { key: "Base|FIFO", scenario: "Base", method: "FIFO", cogs: 690, endingInventory: 460 },
+  { key: "Base|LIFO", scenario: "Base", method: "LIFO", cogs: 770, endingInventory: 380 },
+  { key: "Base|Weighted Average", scenario: "Base", method: "Weighted Average", cogs: 731.82, endingInventory: 418.18 },
+  { key: "Stretch|FIFO", scenario: "Stretch", method: "FIFO", cogs: 778, endingInventory: 372 },
+  { key: "Stretch|LIFO", scenario: "Stretch", method: "LIFO", cogs: 850, endingInventory: 300 },
+  { key: "Stretch|Weighted Average", scenario: "Stretch", method: "Weighted Average", cogs: 815.45, endingInventory: 334.55 },
+  { key: "Downside|FIFO", scenario: "Downside", method: "FIFO", cogs: 624, endingInventory: 526 },
+  { key: "Downside|LIFO", scenario: "Downside", method: "LIFO", cogs: 710, endingInventory: 440 },
+  { key: "Downside|Weighted Average", scenario: "Downside", method: "Weighted Average", cogs: 669.09, endingInventory: 480.91 }
 ]
 
-const UNITS_SOLD = 35
-const UNIT_SELLING_PRICE = 40
+const sellingPrice = 40
+const beginningInventory = 180
+const gafs = 1150
 
-const SCENARIOS: Scenario[] = [
-  { name: "Base", salesGrowthPct: 0, method: "FIFO", asOfDate: "2025-01-31" },
-  { name: "Stretch", salesGrowthPct: 12, method: "LIFO", asOfDate: "2025-01-31" },
-  { name: "Downside", salesGrowthPct: -8, method: "WA", asOfDate: "2025-01-31" }
-]
-
-// --- Calculation helpers ---
-
-function calcFIFO(layers: InventoryLayer[], sold: number): { cogs: number; remaining: InventoryLayer[] } {
-  let remaining = sold
-  let cogs = 0
-  const rem: InventoryLayer[] = []
-  for (const layer of layers) {
-    if (remaining <= 0) {
-      rem.push({ ...layer })
-      continue
-    }
-    if (layer.qty <= remaining) {
-      cogs += layer.qty * layer.unitCost
-      remaining -= layer.qty
-    } else {
-      cogs += remaining * layer.unitCost
-      rem.push({ ...layer, qty: layer.qty - remaining })
-      remaining = 0
-    }
-  }
-  return { cogs, remaining: rem }
-}
-
-function calcLIFO(layers: InventoryLayer[], sold: number): { cogs: number; remaining: InventoryLayer[] } {
-  let remaining = sold
-  let cogs = 0
-  const reversed = [...layers].reverse()
-  const consumed: { layer: InventoryLayer; taken: number }[] = []
-  for (const layer of reversed) {
-    if (remaining <= 0) break
-    if (layer.qty <= remaining) {
-      cogs += layer.qty * layer.unitCost
-      consumed.push({ layer, taken: layer.qty })
-      remaining -= layer.qty
-    } else {
-      cogs += remaining * layer.unitCost
-      consumed.push({ layer, taken: remaining })
-      remaining = 0
-    }
-  }
-  const rem: InventoryLayer[] = []
-  for (const layer of layers) {
-    const c = consumed.find(x => x.layer === layer)
-    const taken = c ? c.taken : 0
-    if (layer.qty - taken > 0) {
-      rem.push({ ...layer, qty: layer.qty - taken })
-    }
-  }
-  return { cogs, remaining: rem }
-}
-
-function calcWA(layers: InventoryLayer[], sold: number): { cogs: number; remaining: InventoryLayer[] } {
-  const totalCost = layers.reduce((s, l) => s + l.qty * l.unitCost, 0)
-  const totalQty = layers.reduce((s, l) => s + l.qty, 0)
-  const avgCost = totalCost / totalQty
-  const cogs = sold * avgCost
-  const remainingQty = totalQty - sold
-  return {
-    cogs,
-    remaining: remainingQty > 0 ? [{ date: "2025-01-31", qty: remainingQty, unitCost: avgCost }] : []
-  }
-}
-
-function calcMethod(method: string, sold: number): MethodResult {
-  const allLayers = [...BEGINNING_INVENTORY, ...PURCHASES]
-  const gafs = allLayers.reduce((s, l) => s + l.qty * l.unitCost, 0)
-  const totalUnits = allLayers.reduce((s, l) => s + l.qty, 0)
-
-  let cogs: number
-  let endingInv: number
-  if (method === "FIFO") {
-    const r = calcFIFO(allLayers, sold)
-    cogs = r.cogs
-    endingInv = r.remaining.reduce((s, l) => s + l.qty * l.unitCost, 0)
-  } else if (method === "LIFO") {
-    const r = calcLIFO(allLayers, sold)
-    cogs = r.cogs
-    endingInv = r.remaining.reduce((s, l) => s + l.qty * l.unitCost, 0)
-  } else {
-    const r = calcWA(allLayers, sold)
-    cogs = r.cogs
-    endingInv = r.remaining.reduce((s, l) => s + l.qty * l.unitCost, 0)
-  }
-
-  const avgInv = (gafs + endingInv) / 2
-  const turnover = avgInv > 0 ? cogs / avgInv : 0
-  const daysOnHand = turnover > 0 ? 365 / turnover : 0
-  const revenue = sold * UNIT_SELLING_PRICE
-  const grossMarginPct = revenue > 0 ? (revenue - cogs) / revenue : 0
-
-  return {
-    method,
-    cogs: Math.round(cogs * 100) / 100,
-    endingInventory: Math.round(endingInv * 100) / 100,
-    turnover: Math.round(turnover * 100) / 100,
-    daysOnHand: Math.round(daysOnHand * 10) / 10,
-    grossMarginPct: Math.round(grossMarginPct * 1000) / 10
-  }
-}
-
-// --- Challenge questions ---
-
-interface Challenge {
-  id: string
-  scenario: string
-  question: string
-  correctAnswer: string
-  choices: string[]
-  explanation: string
-  hint: string
-}
-
-const CHALLENGES: Challenge[] = [
+const stages: RehearsalStage[] = [
   {
-    id: "ch1",
-    scenario: "Base",
-    question: "Under FIFO with 35 units sold, what is COGS?",
-    correctAnswer: "$670",
-    choices: ["$670", "$730", "$700", "$650"],
-    explanation:
-      "FIFO pulls oldest first: 10×$18 + 20×$20 + 5×$22 = $180 + $400 + $110 = $690. Wait — let's verify: 10@18=180, 20@20=400, 5@22=110 → $690. But the correct answer here is $670 based on the simulator's exact calculation.",
-    hint: "Start with the 10 units at $18, then work forward through purchases."
-  },
-  {
-    id: "ch2",
-    scenario: "Stretch",
-    question: "Which method produces the HIGHEST COGS when costs are rising?",
-    correctAnswer: "LIFO",
-    choices: ["FIFO", "LIFO", "Weighted Average", "All methods produce the same COGS"],
-    explanation:
-      "When costs rise, LIFO pulls the newest (most expensive) layers first, producing the highest COGS and lowest reported profit.",
-    hint: "Think about which layers get consumed first under each method."
-  },
-  {
-    id: "ch3",
-    scenario: "Downside",
-    question: "If a business wants to minimize taxable income in an inflationary period, which method should it choose?",
-    correctAnswer: "LIFO — higher COGS means lower taxable income",
-    choices: [
-      "FIFO — it shows the highest profit",
-      "LIFO — higher COGS means lower taxable income",
-      "Weighted Average — it smooths everything out",
-      "It doesn't matter — taxes are the same under all methods"
+    id: "controls",
+    title: "Controls Rehearsal",
+    sheet: "Inputs",
+    output: "SelectedScenario, SelectedMethod, and SelectedKey",
+    rows: [
+      {
+        step: "Scenario selector",
+        formula: "Data validation list: Base, Stretch, Downside",
+        plainEnglish: "User chooses which market situation to evaluate."
+      },
+      {
+        step: "Method selector",
+        formula: "Data validation list: FIFO, LIFO, Weighted Average",
+        plainEnglish: "User chooses which costing method to evaluate."
+      },
+      {
+        step: "Composite key",
+        formula: "=SelectedScenario&\"|\"&SelectedMethod",
+        plainEnglish: "Builds one exact key so downstream lookups return one row."
+      }
     ],
-    explanation:
-      "LIFO maximizes COGS when costs rise, which reduces taxable income and preserves cash. This is why cash-rich companies in inflationary markets often prefer LIFO.",
-    hint: "Higher expense = lower profit = lower tax bill."
+    references: [
+      { token: "SelectedScenario", meaning: "Current scenario dropdown value." },
+      { token: "SelectedMethod", meaning: "Current method dropdown value." },
+      { token: "SelectedKey", meaning: "Exact row key for MethodSummary lookups." }
+    ],
+    commonTrap: "Scenario or method labels must match table text exactly.",
+    auditCheck: "Changing either selector updates SelectedKey instantly.",
+    prompt: "Why is a composite key safer than long nested IF logic here?",
+    modelResponse:
+      "A key-based lookup scales cleanly as rows grow and is easier to audit than nested IF branches."
+  },
+  {
+    id: "lookups",
+    title: "Lookup Chain Rehearsal",
+    sheet: "Outputs",
+    output: "SelectedUnitsSold, SelectedCOGS, and SelectedEndingInventory",
+    rows: [
+      {
+        step: "Units sold by scenario",
+        formula: "=XLOOKUP(SelectedScenario,Drivers[Scenario],Drivers[UnitsSold])",
+        plainEnglish: "Pulls demand assumption for the selected scenario."
+      },
+      {
+        step: "COGS by key",
+        formula: "=XLOOKUP(SelectedKey,MethodSummary[Key],MethodSummary[COGS])",
+        plainEnglish: "Returns COGS for this exact scenario+method pair."
+      },
+      {
+        step: "Ending inventory by key",
+        formula: "=XLOOKUP(SelectedKey,MethodSummary[Key],MethodSummary[EndingInventory])",
+        plainEnglish: "Returns ending inventory from the same output row."
+      }
+    ],
+    references: [
+      { token: "Drivers[UnitsSold]", meaning: "Scenario-specific sales quantity column." },
+      { token: "MethodSummary[Key]", meaning: "Scenario|Method row keys." },
+      { token: "MethodSummary[EndingInventory]", meaning: "Ending inventory output column." }
+    ],
+    commonTrap: "If MethodSummary key values are inconsistent, both COGS and EI fail together.",
+    auditCheck: "Selected scenario/method pair always returns exactly one row.",
+    prompt: "What does MethodSummary[COGS] represent versus [@COGS]?",
+    modelResponse:
+      "MethodSummary[COGS] is the full column; [@COGS] means only this row's COGS value."
+  },
+  {
+    id: "kpis",
+    title: "KPI Rehearsal",
+    sheet: "KPI",
+    output: "Revenue, Gross Margin, Turnover, and Days on Hand",
+    rows: [
+      {
+        step: "Revenue",
+        formula: "=SelectedUnitsSold*UnitSellingPrice",
+        plainEnglish: "Converts selected sales volume into dollars."
+      },
+      {
+        step: "Average inventory",
+        formula: "=(BeginningInventory+SelectedEndingInventory)/2",
+        plainEnglish: "Averages starting and ending inventory balances."
+      },
+      {
+        step: "Turnover and days",
+        formula: "Turnover = SelectedCOGS/AvgInventory; Days = 365/Turnover",
+        plainEnglish: "Measures inventory velocity and holding time."
+      }
+    ],
+    references: [
+      { token: "SelectedCOGS", meaning: "Lookup output feeding all KPI math." },
+      { token: "SelectedEndingInventory", meaning: "Used in average inventory denominator." },
+      { token: "BeginningInventory", meaning: "Starting inventory value for the period." }
+    ],
+    commonTrap: "Using ending inventory only can overstate turnover.",
+    auditCheck: "Turnover and days-on-hand should move in opposite directions.",
+    prompt: "Why does turnover matter in addition to gross margin?",
+    modelResponse:
+      "Turnover shows capital efficiency in inventory, while margin shows profitability per sale."
+  },
+  {
+    id: "checks",
+    title: "Checks Rehearsal",
+    sheet: "Checks",
+    output: "Balance and quality flags",
+    rows: [
+      {
+        step: "GAFS conservation check",
+        formula: "=IF(ABS((SelectedCOGS+SelectedEndingInventory)-GAFS)<0.01,\"Balanced\",\"Check\")",
+        plainEnglish: "Confirms cost is conserved for the selected output row."
+      },
+      {
+        step: "Lookup fallback check",
+        formula: "=IFNA(XLOOKUP(SelectedKey,MethodSummary[Key],MethodSummary[COGS]),\"Missing Key\")",
+        plainEnglish: "Prevents raw errors and shows missing-key issue explicitly."
+      },
+      {
+        step: "Units sold presence",
+        formula: "=IF(SelectedUnitsSold>0,\"OK\",\"Check Drivers\")",
+        plainEnglish: "Flags scenario configuration issues early."
+      }
+    ],
+    references: [
+      { token: "GAFS", meaning: "Total cost available for sale from source inventory layers." },
+      { token: "IFNA(...)", meaning: "Friendly not-found fallback for lookups." },
+      { token: "SelectedUnitsSold", meaning: "Scenario assumption required by KPI chain." }
+    ],
+    commonTrap: "Checks hidden below visuals are often skipped during demo.",
+    auditCheck: "Checks should be visible near selectors and KPI header.",
+    prompt: "Why should checks be visible before discussing recommendations?",
+    modelResponse:
+      "Because recommendation quality depends on trusted outputs; checks prove outputs are reliable first."
   }
 ]
 
-// --- Component ---
+const stageBadgeStyles: Record<RehearsalStage["id"], string> = {
+  controls: "bg-blue-100 text-blue-800",
+  lookups: "bg-emerald-100 text-emerald-800",
+  kpis: "bg-purple-100 text-purple-800",
+  checks: "bg-amber-100 text-amber-900"
+}
+
+const formatCurrency = (value: number) => `$${value.toFixed(2)}`
 
 export default function DynamicMethodSelector() {
-  const [selectedScenario, setSelectedScenario] = useState("Base")
-  const [selectedMethod, setSelectedMethod] = useState("FIFO")
-  const [showResults, setShowResults] = useState(false)
-  const [challengeIndex, setChallengeIndex] = useState(0)
-  const [challengeAnswer, setChallengeAnswer] = useState<string | null>(null)
-  const [challengeFeedback, setChallengeFeedback] = useState<string | null>(null)
+  const [selectedScenario, setSelectedScenario] = useState<DriverRow["scenario"]>("Base")
+  const [selectedMethod, setSelectedMethod] = useState<DriverRow["defaultMethod"]>("FIFO")
+  const [stageIndex, setStageIndex] = useState(0)
+  const [showModel, setShowModel] = useState(false)
+  const [notesByStage, setNotesByStage] = useState<Record<string, string>>({})
 
-  const scenario = SCENARIOS.find(s => s.name === selectedScenario)!
-  const method = scenario.method === "WA" ? "WA" : selectedMethod
+  const selectedKey = `${selectedScenario}|${selectedMethod}`
+  const stage = stages[stageIndex]
+  const notes = notesByStage[stage.id] ?? ""
 
-  const result = calcMethod(method === "WA" ? "WA" : method, UNITS_SOLD)
+  const selectedDriver = useMemo(
+    () => drivers.find((row) => row.scenario === selectedScenario) ?? drivers[0],
+    [selectedScenario]
+  )
 
-  const allLayers = [...BEGINNING_INVENTORY, ...PURCHASES]
-  const gafs = allLayers.reduce((s, l) => s + l.qty * l.unitCost, 0)
-  const totalUnits = allLayers.reduce((s, l) => s + l.qty, 0)
+  const selectedOutput = useMemo(
+    () => methodSummary.find((row) => row.key === selectedKey) ?? methodSummary[0],
+    [selectedKey]
+  )
 
-  const handleChallengeSubmit = () => {
-    const ch = CHALLENGES[challengeIndex]
-    if (challengeAnswer === ch.correctAnswer) {
-      setChallengeFeedback("correct")
-    } else {
-      setChallengeFeedback("incorrect")
+  const kpi = useMemo(() => {
+    const revenue = selectedDriver.unitsSold * sellingPrice
+    const grossMarginPct = revenue > 0 ? ((revenue - selectedOutput.cogs) / revenue) * 100 : 0
+    const avgInventory = (beginningInventory + selectedOutput.endingInventory) / 2
+    const turnover = avgInventory > 0 ? selectedOutput.cogs / avgInventory : 0
+    const daysOnHand = turnover > 0 ? 365 / turnover : 0
+    const balanceOk = Math.abs(selectedOutput.cogs + selectedOutput.endingInventory - gafs) < 0.01
+    return {
+      revenue,
+      grossMarginPct,
+      avgInventory,
+      turnover,
+      daysOnHand,
+      balanceOk
     }
-  }
+  }, [selectedDriver.unitsSold, selectedOutput.cogs, selectedOutput.endingInventory])
 
-  const handleChallengeReset = () => {
-    setChallengeAnswer(null)
-    setChallengeFeedback(null)
-  }
-
-  const handleNextChallenge = () => {
-    setChallengeIndex(prev => (prev + 1) % CHALLENGES.length)
-    setChallengeAnswer(null)
-    setChallengeFeedback(null)
+  const goToStage = (index: number) => {
+    setStageIndex(index)
+    setShowModel(false)
   }
 
   return (
-    <div className="space-y-6">
-      {/* Scenario + Method Controls */}
+    <div className="space-y-4">
       <Card className="border-blue-200 bg-blue-50">
         <CardHeader>
-          <CardTitle className="text-blue-900">Scenario & Method Controls</CardTitle>
+          <CardTitle className="text-blue-900">Live Control Rehearsal</CardTitle>
+          <CardDescription className="text-blue-900/80">
+            Use these controls first. Everything below should update from these two inputs only.
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid gap-3 md:grid-cols-2">
             <div>
-              <label className="block text-sm font-medium text-blue-900 mb-1">Scenario</label>
-              <div className="flex gap-2">
-                {SCENARIOS.map(s => (
-                  <button
-                    key={s.name}
-                    onClick={() => {
-                      setSelectedScenario(s.name)
-                      setSelectedMethod(s.method === "WA" ? "WA" : "FIFO")
-                      setShowResults(false)
-                    }}
-                    className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                      selectedScenario === s.name
-                        ? "bg-blue-700 text-white"
-                        : "bg-white text-blue-900 border border-blue-300 hover:bg-blue-100"
-                    }`}
+              <p className="text-sm font-medium text-blue-900 mb-1">Scenario</p>
+              <div className="flex gap-2 flex-wrap">
+                {drivers.map((row) => (
+                  <Button
+                    key={row.scenario}
+                    type="button"
+                    variant={selectedScenario === row.scenario ? "default" : "outline"}
+                    className={selectedScenario === row.scenario ? "bg-blue-700 hover:bg-blue-800" : ""}
+                    onClick={() => setSelectedScenario(row.scenario)}
                   >
-                    {s.name}
-                  </button>
+                    {row.scenario}
+                  </Button>
                 ))}
               </div>
             </div>
+
             <div>
-              <label className="block text-sm font-medium text-blue-900 mb-1">Method</label>
-              <div className="flex gap-2">
-                {["FIFO", "LIFO", "WA"].map(m => (
-                  <button
-                    key={m}
-                    onClick={() => {
-                      setSelectedMethod(m)
-                      setShowResults(false)
-                    }}
-                    className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                      selectedMethod === m
-                        ? "bg-blue-700 text-white"
-                        : "bg-white text-blue-900 border border-blue-300 hover:bg-blue-100"
-                    }`}
+              <p className="text-sm font-medium text-blue-900 mb-1">Method</p>
+              <div className="flex gap-2 flex-wrap">
+                {(["FIFO", "LIFO", "Weighted Average"] as const).map((method) => (
+                  <Button
+                    key={method}
+                    type="button"
+                    variant={selectedMethod === method ? "default" : "outline"}
+                    className={selectedMethod === method ? "bg-blue-700 hover:bg-blue-800" : ""}
+                    onClick={() => setSelectedMethod(method)}
                   >
-                    {m === "WA" ? "Weighted Avg" : m}
-                  </button>
+                    {method}
+                  </Button>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="text-sm text-blue-800 bg-white p-3 rounded border">
-            <strong>Scenario:</strong> {scenario.name} &nbsp;|&nbsp;
-            <strong>Sales Growth:</strong> {scenario.salesGrowthPct}% &nbsp;|&nbsp;
-            <strong>As-Of:</strong> {scenario.asOfDate}
+          <div className="text-sm text-blue-900 bg-white border border-blue-200 rounded p-3">
+            <strong>SelectedKey:</strong> <code>{selectedKey}</code> | <strong>Units Sold:</strong>{" "}
+            {selectedDriver.unitsSold}
           </div>
 
-          <Button
-            onClick={() => setShowResults(true)}
-            className="bg-blue-700 hover:bg-blue-800"
-          >
-            Calculate Results
-          </Button>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded border bg-white p-3">
+              <p className="text-xs uppercase text-slate-500">COGS</p>
+              <p className="text-lg font-semibold text-red-700">{formatCurrency(selectedOutput.cogs)}</p>
+            </div>
+            <div className="rounded border bg-white p-3">
+              <p className="text-xs uppercase text-slate-500">Ending Inventory</p>
+              <p className="text-lg font-semibold text-green-700">{formatCurrency(selectedOutput.endingInventory)}</p>
+            </div>
+            <div className="rounded border bg-white p-3">
+              <p className="text-xs uppercase text-slate-500">Turnover</p>
+              <p className="text-lg font-semibold text-purple-700">{kpi.turnover.toFixed(2)}x</p>
+            </div>
+            <div className="rounded border bg-white p-3">
+              <p className="text-xs uppercase text-slate-500">Days on Hand</p>
+              <p className="text-lg font-semibold text-orange-700">{kpi.daysOnHand.toFixed(1)}</p>
+            </div>
+          </div>
+
+          <div className="text-sm text-blue-900 bg-white border border-blue-200 rounded p-3">
+            Revenue: <strong>{formatCurrency(kpi.revenue)}</strong> | Gross Margin:{" "}
+            <strong>{kpi.grossMarginPct.toFixed(1)}%</strong> | GAFS Check:{" "}
+            <strong>{kpi.balanceOk ? "Balanced" : "Check"}</strong>
+          </div>
         </CardContent>
       </Card>
 
-      {/* Inventory Layers Display */}
-      <Card className="border-gray-200 bg-white">
+      <Card className="border-indigo-200 bg-white">
         <CardHeader>
-          <CardTitle className="text-gray-900">Inventory Layers</CardTitle>
+          <CardTitle className="text-indigo-900">Guided Rehearsal Navigator</CardTitle>
+          <CardDescription className="text-indigo-900/80">
+            Rehearse the workbook in build order: Inputs → Outputs → KPI → Checks.
+          </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+        <CardContent className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          {stages.map((item, index) => (
+            <Button
+              key={item.id}
+              type="button"
+              variant={index === stageIndex ? "default" : "outline"}
+              className={index === stageIndex ? "bg-indigo-600 hover:bg-indigo-700" : ""}
+              onClick={() => goToStage(index)}
+            >
+              {index + 1}. {item.sheet}
+            </Button>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card className="border-purple-200 bg-purple-50">
+        <CardHeader className="space-y-3">
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <CardTitle className="text-purple-900">{stage.title}</CardTitle>
+            <Badge className={stageBadgeStyles[stage.id]}>Sheet: {stage.sheet}</Badge>
+          </div>
+          <CardDescription className="text-purple-800">
+            Target output: <strong>{stage.output}</strong>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="overflow-x-auto rounded border border-purple-200 bg-white">
+            <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="border-b">
-                  <th className="text-left py-2 px-3">Layer</th>
-                  <th className="text-right py-2 px-3">Qty</th>
-                  <th className="text-right py-2 px-3">Unit Cost</th>
-                  <th className="text-right py-2 px-3">Total</th>
+                <tr className="bg-purple-100 text-purple-950">
+                  <th className="p-2 border border-purple-200 text-left">Build Step</th>
+                  <th className="p-2 border border-purple-200 text-left">Formula / Pattern</th>
+                  <th className="p-2 border border-purple-200 text-left">What It Means</th>
                 </tr>
               </thead>
               <tbody>
-                {BEGINNING_INVENTORY.map((l, i) => (
-                  <tr key={`beg-${i}`} className="border-b bg-amber-50">
-                    <td className="py-2 px-3">Beginning Inv ({l.date})</td>
-                    <td className="text-right py-2 px-3">{l.qty}</td>
-                    <td className="text-right py-2 px-3">${l.unitCost.toFixed(2)}</td>
-                    <td className="text-right py-2 px-3">${(l.qty * l.unitCost).toFixed(2)}</td>
+                {stage.rows.map((row) => (
+                  <tr key={`${stage.id}-${row.step}`} className="text-slate-800">
+                    <td className="p-2 border border-purple-100 font-medium">{row.step}</td>
+                    <td className="p-2 border border-purple-100">
+                      <code className="text-xs sm:text-sm break-all">{row.formula}</code>
+                    </td>
+                    <td className="p-2 border border-purple-100">{row.plainEnglish}</td>
                   </tr>
                 ))}
-                {PURCHASES.map((l, i) => (
-                  <tr key={`pur-${i}`} className="border-b bg-green-50">
-                    <td className="py-2 px-3">Purchase ({l.date})</td>
-                    <td className="text-right py-2 px-3">{l.qty}</td>
-                    <td className="text-right py-2 px-3">${l.unitCost.toFixed(2)}</td>
-                    <td className="text-right py-2 px-3">${(l.qty * l.unitCost).toFixed(2)}</td>
-                  </tr>
-                ))}
-                <tr className="bg-gray-100 font-bold">
-                  <td className="py-2 px-3">GAFS</td>
-                  <td className="text-right py-2 px-3">{totalUnits}</td>
-                  <td className="text-right py-2 px-3"></td>
-                  <td className="text-right py-2 px-3">${gafs.toFixed(2)}</td>
-                </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-500 mt-2">Units sold: {UNITS_SOLD} &nbsp;|&nbsp; Selling price: ${UNIT_SELLING_PRICE}/unit</p>
-        </CardContent>
-      </Card>
 
-      {/* Results */}
-      {showResults && (
-        <Card className="border-green-200 bg-green-50">
-          <CardHeader>
-            <CardTitle className="text-green-900">Results: {method === "WA" ? "Weighted Average" : method}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded border text-center">
-                <div className="text-xs text-gray-500 uppercase">COGS</div>
-                <div className="text-2xl font-bold text-red-700">${result.cogs.toFixed(2)}</div>
-              </div>
-              <div className="bg-white p-4 rounded border text-center">
-                <div className="text-xs text-gray-500 uppercase">Ending Inventory</div>
-                <div className="text-2xl font-bold text-green-700">${result.endingInventory.toFixed(2)}</div>
-              </div>
-              <div className="bg-white p-4 rounded border text-center">
-                <div className="text-xs text-gray-500 uppercase">Gross Margin</div>
-                <div className="text-2xl font-bold text-blue-700">{result.grossMarginPct.toFixed(1)}%</div>
-              </div>
-              <div className="bg-white p-4 rounded border text-center">
-                <div className="text-xs text-gray-500 uppercase">Turnover</div>
-                <div className="text-2xl font-bold text-purple-700">{result.turnover.toFixed(2)}x</div>
-              </div>
-              <div className="bg-white p-4 rounded border text-center">
-                <div className="text-xs text-gray-500 uppercase">Days on Hand</div>
-                <div className="text-2xl font-bold text-orange-700">{result.daysOnHand.toFixed(1)}</div>
-              </div>
-              <div className="bg-white p-4 rounded border text-center">
-                <div className="text-xs text-gray-500 uppercase">GAFS Check</div>
-                <div className="text-2xl font-bold text-gray-700">${(result.cogs + result.endingInventory).toFixed(2)}</div>
-              </div>
-            </div>
-            <p className="text-xs text-green-800 mt-3">
-              Verify: COGS (${result.cogs.toFixed(2)}) + Ending Inventory (${result.endingInventory.toFixed(2)}) = ${(result.cogs + result.endingInventory).toFixed(2)}. GAFS = ${gafs.toFixed(2)}.
-              {Math.abs(result.cogs + result.endingInventory - gafs) < 0.01 ? " Match confirmed." : " Mismatch — check your method logic."}
+          <div className="rounded border border-cyan-200 bg-cyan-50 p-3">
+            <p className="font-semibold text-cyan-900 flex items-center gap-2 mb-2">
+              <Table2 className="h-4 w-4" />
+              Reference Decoder
             </p>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Challenge Questions */}
-      <Card className="border-orange-200 bg-orange-50">
-        <CardHeader>
-          <CardTitle className="text-orange-900 flex items-center gap-2">
-            <Lightbulb className="h-5 w-5" />
-            Method Judgment Challenges
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <Badge className="bg-orange-200 text-orange-900">
-            Challenge {challengeIndex + 1} of {CHALLENGES.length} — {CHALLENGES[challengeIndex].scenario} Scenario
-          </Badge>
-
-          <p className="text-orange-900 font-medium">{CHALLENGES[challengeIndex].question}</p>
-
-          <div className="space-y-2">
-            {CHALLENGES[challengeIndex].choices.map(choice => (
-              <button
-                key={choice}
-                onClick={() => {
-                  if (!challengeFeedback) setChallengeAnswer(choice)
-                }}
-                disabled={!!challengeFeedback}
-                className={`w-full text-left px-4 py-2.5 rounded border text-sm transition-colors ${
-                  challengeFeedback === "correct" && choice === CHALLENGES[challengeIndex].correctAnswer
-                    ? "bg-green-100 border-green-400 text-green-900"
-                    : challengeFeedback === "incorrect" && choice === challengeAnswer
-                    ? "bg-red-100 border-red-400 text-red-900"
-                    : challengeFeedback === "incorrect" && choice === CHALLENGES[challengeIndex].correctAnswer
-                    ? "bg-green-50 border-green-300 text-green-900"
-                    : challengeAnswer === choice
-                    ? "bg-orange-200 border-orange-500 text-orange-900"
-                    : "bg-white border-orange-200 text-orange-900 hover:bg-orange-100"
-                }`}
-              >
-                {choice}
-              </button>
-            ))}
+            <ul className="text-sm text-cyan-900 space-y-1">
+              {stage.references.map((reference) => (
+                <li key={`${stage.id}-${reference.token}`}>
+                  <code>{reference.token}</code>: {reference.meaning}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {!challengeFeedback && (
-            <div className="flex gap-2">
-              <Button
-                onClick={handleChallengeSubmit}
-                disabled={!challengeAnswer}
-                className="bg-orange-700 hover:bg-orange-800"
-              >
-                Submit Answer
-              </Button>
-              <Button variant="outline" onClick={handleChallengeReset} disabled={!challengeAnswer}>
-                Reset
-              </Button>
-            </div>
-          )}
-
-          {challengeFeedback === "correct" && (
-            <div className="flex items-start gap-2 text-green-900 bg-green-100 p-3 rounded">
-              <CheckCircle2 className="h-5 w-5 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="font-medium">Correct!</p>
-                <p className="text-sm mt-1">{CHALLENGES[challengeIndex].explanation}</p>
-              </div>
-            </div>
-          )}
-
-          {challengeFeedback === "incorrect" && (
-            <div className="space-y-2">
-              <div className="flex items-start gap-2 text-red-900 bg-red-100 p-3 rounded">
-                <XCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Not quite. The correct answer is: {CHALLENGES[challengeIndex].correctAnswer}</p>
-                  <p className="text-sm mt-1">{CHALLENGES[challengeIndex].explanation}</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2 text-amber-900 bg-amber-100 p-3 rounded">
-                <Lightbulb className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <p className="text-sm"><strong>Hint for next time:</strong> {CHALLENGES[challengeIndex].hint}</p>
-              </div>
-            </div>
-          )}
-
-          {challengeFeedback && (
-            <Button variant="outline" onClick={handleNextChallenge} className="mt-2">
-              Next Challenge <RotateCcw className="h-4 w-4 ml-1" />
-            </Button>
-          )}
+          <div className="rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900 space-y-1">
+            <p>
+              <strong>Common trap:</strong> {stage.commonTrap}
+            </p>
+            <p>
+              <strong>Audit check:</strong> {stage.auditCheck}
+            </p>
+          </div>
         </CardContent>
       </Card>
 
-      {/* Bridge to Phase 4 */}
-      <Card className="border-indigo-200 bg-indigo-50">
+      <Card className="border-green-200 bg-green-50">
         <CardHeader>
-          <CardTitle className="text-indigo-900">Bridge to Phase 4: Real Workbook Build</CardTitle>
+          <CardTitle className="text-green-900 flex items-center gap-2">
+            <Lightbulb className="h-5 w-5" />
+            Talk-Through Practice (Not Graded)
+          </CardTitle>
+          <CardDescription className="text-green-900/80">{stage.prompt}</CardDescription>
         </CardHeader>
-        <CardContent className="text-indigo-900 space-y-2">
-          <p>
-            You just practiced the logic that your Excel workbook must replicate. In Phase 4 you will:
-          </p>
-          <ol className="list-decimal list-inside space-y-1 text-sm">
-            <li>Open <strong>unit07-lesson06-student.xlsx</strong> from the resources folder</li>
-            <li>Build a scenario driver table with Base/Stretch/Downside rows</li>
-            <li>Wire method switching with XLOOKUP or INDEX-MATCH exact match</li>
-            <li>Calculate turnover and days-on-hand for each method</li>
-            <li>Link KPI tiles and charts to Table outputs using structured references</li>
-            <li>Add validation flags before totals roll up</li>
-          </ol>
-          <p className="text-sm font-medium mt-2">
-            The simulator above proves the numbers. Your workbook must produce the same results automatically.
-          </p>
+        <CardContent className="space-y-3">
+          <textarea
+            value={notes}
+            onChange={(event) => {
+              setNotesByStage((prev) => ({
+                ...prev,
+                [stage.id]: event.target.value
+              }))
+            }}
+            placeholder="Write your explanation in plain language."
+            className="w-full min-h-24 rounded border border-green-300 bg-white p-3 text-sm text-slate-900"
+          />
+          <div className="flex gap-2 flex-wrap">
+            <Button type="button" variant="outline" onClick={() => setShowModel((prev) => !prev)}>
+              {showModel ? "Hide Model Response" : "Reveal Model Response"}
+            </Button>
+            {stageIndex < stages.length - 1 ? (
+              <Button
+                type="button"
+                className="bg-green-700 hover:bg-green-800"
+                onClick={() => goToStage(stageIndex + 1)}
+              >
+                Next Sheet Rehearsal <ArrowRight className="ml-1 h-4 w-4" />
+              </Button>
+            ) : (
+              <Badge className="bg-green-100 text-green-800 flex items-center gap-1 py-1 px-2">
+                <CheckCircle2 className="h-4 w-4" /> Ready for Phase 4 workbook sprint
+              </Badge>
+            )}
+          </div>
+          {showModel && (
+            <div className="rounded border border-green-300 bg-white p-3 text-sm text-green-900">
+              <strong>Model response:</strong> {stage.modelResponse}
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

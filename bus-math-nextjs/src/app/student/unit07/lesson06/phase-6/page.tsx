@@ -18,7 +18,7 @@ export default function Unit07Lesson06Phase6() {
             <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🔔 Phase 6: Closing</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Dynamic Method Selection: What You Can Now Do</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              You built a workbook that switches inventory methods and scenarios with one click, calculates turnover and days-on-hand automatically, and validates data before totals roll up. These habits separate a good spreadsheet from an investor-ready system.
+              You built a workbook that switches scenario and method with two controls, updates outputs and KPI tiles automatically, and surfaces checks before recommendations. These habits separate a good spreadsheet from an investor-ready system.
             </p>
           </div>
         </section>
@@ -36,7 +36,7 @@ export default function Unit07Lesson06Phase6() {
                 <li>Switch between methods instantly with a dropdown instead of rebuilding formulas</li>
                 <li>Compare turnover and days-on-hand across methods to see operational impact</li>
                 <li>Defend a method recommendation with specific workbook evidence</li>
-                <li>Catch bad data before it corrupts your totals and charts</li>
+                <li>Audit selector lookups and checks before discussing decisions</li>
               </ul>
               <p className="mt-2">
                 Clear KPIs and stable charts help decision-makers see margin, cash, and risk instantly. Your validation and documentation show that the model will not fall apart as data grows. That is the difference between a good spreadsheet and an investor-ready system.
@@ -53,7 +53,7 @@ export default function Unit07Lesson06Phase6() {
                 In the next lesson, every student in the class will work with the <strong>same shared dataset</strong> to rehearse the exact project workflow you will use in Lessons 08-10. Here is what changes:
               </p>
               <ul className="list-disc list-inside space-y-1">
-                <li><strong>Same workbook structure:</strong> The sheet layout you built today (Inputs, Purchases, Sales, Valuation, Dashboard, Checks, Recommendation) carries forward</li>
+                <li><strong>Same workbook structure:</strong> The sheet layout you built today (Inputs, Drivers, MethodSummary, Outputs, KPI, Checks, Dashboard) carries forward</li>
                 <li><strong>Teacher-guided:</strong> You will follow the teacher model step by step instead of building independently</li>
                 <li><strong>Shared data:</strong> Everyone uses the same numbers so the class can compare reasoning quality directly</li>
                 <li><strong>Peer audit:</strong> You will review a classmate's workbook against a Definition of Done checklist</li>
@@ -73,9 +73,9 @@ export default function Unit07Lesson06Phase6() {
               <p className="font-medium">Before you leave, confirm you can answer these:</p>
               <ol className="list-decimal list-inside space-y-1 text-sm">
                 <li>How does a scenario driver table make a workbook more flexible?</li>
-                <li>Why use IFNA with XLOOKUP instead of just XLOOKUP alone?</li>
+                <li>Why use a composite key for scenario+method lookups?</li>
                 <li>What does inventory turnover tell you that COGS alone does not?</li>
-                <li>Why should validation flags sit above the KPI tiles, not below them?</li>
+                <li>Why should checks sit above the KPI tiles, not below them?</li>
                 <li>Which method would you recommend for a business with perishable goods? Why?</li>
               </ol>
             </CardContent>

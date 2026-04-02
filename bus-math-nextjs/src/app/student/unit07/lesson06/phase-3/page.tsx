@@ -2,6 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Wrench, ArrowRight } from "lucide-react"
 import DynamicMethodSelector from "@/components/business-simulations/DynamicMethodSelector"
 import { lesson06Data, unit07Data, lesson06Phases } from "../lesson-data"
 
@@ -15,51 +16,37 @@ export default function Unit07Lesson06Phase3() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">🛠️ Phase 3: Guided Practice — Safe Rehearsal</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Method-Switching Simulator</h1>
+            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">Phase 3: Safe Rehearsal</Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Rehearse the Selector Workflow Before Workbook Build</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Before you touch Excel, practice the logic here. Pick a scenario, switch the method, and watch COGS, ending inventory, turnover, and days-on-hand change. This simulator mirrors the exact workbook structure you will build in Phase 4.
+              This is a guided walkthrough, not a multiple-choice test. Practice the selector chain, decode references,
+              and explain each sheet&apos;s formulas in plain language before opening Excel.
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-purple-200 bg-white">
+          <Card className="border-green-200 bg-green-50">
             <CardHeader>
-              <CardTitle className="text-purple-900">What This Simulator Proves</CardTitle>
+              <CardTitle className="text-green-800 flex items-center gap-2">
+                <Wrench className="h-5 w-5" /> How to Use This Rehearsal
+              </CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-800 space-y-3">
-              <p>
-                The same 55 units of inventory (10 beginning + 45 purchased) produces <strong>different COGS and ending inventory</strong> depending on which method you choose. The simulator below lets you:
-              </p>
+            <CardContent className="text-green-900 space-y-2">
               <ol className="list-decimal list-inside space-y-1">
-                <li>Switch between Base, Stretch, and Downside scenarios</li>
-                <li>Toggle FIFO, LIFO, and Weighted Average manually</li>
-                <li>See COGS, ending inventory, gross margin, turnover, and days-on-hand update instantly</li>
-                <li>Verify that COGS + Ending Inventory always equals GAFS (the checksum)</li>
-                <li>Answer method-judgment challenges with instant feedback</li>
+                <li>Change scenario and method controls and observe output changes.</li>
+                <li>Move sheet-by-sheet: Inputs, Outputs, KPI, Checks.</li>
+                <li>Decode each table reference before writing your explanation.</li>
+                <li>Use the trap and audit notes as your Phase 4 debugging checklist.</li>
               </ol>
-              <p className="text-sm text-purple-800 bg-purple-50 p-3 rounded border border-purple-200">
-                <strong>Bridge to Phase 4:</strong> The numbers you see here are the same numbers your Excel workbook must produce. In Phase 4 you will wire these calculations to a driver table so one dropdown controls everything.
-              </p>
+              <div className="mt-3 flex items-center gap-2 text-sm">
+                <ArrowRight className="w-4 h-4" />
+                <span>When you can explain each sheet&apos;s formula chain, you are ready for the workbook sprint.</span>
+              </div>
             </CardContent>
           </Card>
 
           <DynamicMethodSelector />
-
-          <Card className="border-indigo-200 bg-indigo-50">
-            <CardHeader>
-              <CardTitle className="text-indigo-900">Common Errors to Watch For</CardTitle>
-            </CardHeader>
-            <CardContent className="text-indigo-900 space-y-2">
-              <ul className="list-disc list-inside space-y-1">
-                <li><strong>Wrong layer order:</strong> LIFO must pull from the newest purchase first, not the oldest.</li>
-                <li><strong>Simple average instead of weighted average:</strong> Do not average the three unit costs. Divide total cost by total units.</li>
-                <li><strong>Turnover formula mix-up:</strong> Turnover = COGS ÷ Average Inventory, not COGS ÷ Ending Inventory.</li>
-                <li><strong>Missing GAFS check:</strong> If COGS + Ending Inventory does not equal GAFS, your method logic has a bug.</li>
-              </ul>
-            </CardContent>
-          </Card>
         </section>
       </main>
 

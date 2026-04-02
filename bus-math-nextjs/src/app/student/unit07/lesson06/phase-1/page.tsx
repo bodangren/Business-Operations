@@ -12,28 +12,28 @@ const hookQuestions = [
   {
     id: "u07l06-hook-1",
     question:
-      "An investor asks to compare Base, Stretch, and Downside inventory in one view. What keeps scenario switching reliable?",
+      "An investor asks for Base, Stretch, and Downside results in one screen. What workbook pattern supports fast switching with traceable logic?",
     answers: [
-      "Driver table + XLOOKUP exact‑match with IFNA",
+      "Selector cells + table lookups from Drivers and MethodSummary",
       "Three separate sheets with copy‑pasted values",
       "A toggle that changes colors only",
       "Manual relinking of charts each time"
     ],
     explanation:
-      "A single driver table controls assumptions by scenario name. Exact‑match lookup with IFNA prevents silent errors."
+      "Selectors and table lookups keep scenario and method switching fast while preserving an audit trail."
   },
   {
     id: "u07l06-hook-2",
     question:
-      "Charts break when new SKUs and purchases are added. What prevents this?",
+      "Why do scenario + method dropdowns matter to an investor conversation?",
     answers: [
-      "Structured references (Table[Column]) feeding visuals",
-      "Fixed ranges like A2:A50 updated by hand",
-      "Copying values into a chart worksheet",
-      "Using volatile functions to force recalc"
+      "They let you compare outcomes live without rebuilding formulas",
+      "They remove the need for method-specific calculations",
+      "They guarantee all methods produce the same COGS",
+      "They replace the need for turnover and days-on-hand metrics"
     ],
     explanation:
-      "Tables auto‑expand. Structured references keep charts connected as inventory grows."
+      "Live switching allows real-time method discussion while keeping one shared source of truth."
   },
   {
     id: "u07l06-hook-3",
@@ -61,9 +61,9 @@ export default function Unit07Lesson06Phase1() {
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook — Live Demo</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Sarah’s Inventory Dashboard: One Screen, Three Scenarios</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              A client wants to see Base, Stretch, and Downside results and decide fast. Sarah’s early model had
-              hard‑coded ranges and fragile charts. Her integrated dashboard uses a driver table, exact‑match lookups,
-              and stable visuals that update when SKUs or purchases change.
+              A client wants to compare Base, Stretch, and Downside outcomes and decide in minutes. Sarah now needs one
+              workbook that switches scenario and method on command, then explains COGS, ending inventory, turnover, and
+              days-on-hand without manual rewiring.
             </p>
           </div>
         </section>
@@ -73,18 +73,14 @@ export default function Unit07Lesson06Phase1() {
             <CardHeader>
               <CardTitle className="text-red-900 flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5" />
-                Before: Fragile Switching
+                Investor Decision Agenda
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm space-y-3 text-red-900">
-              <div className="bg-red-100 p-3 rounded font-mono">
-{`=IF(B2="Base", Base!C10, IF(B2="Stretch", Stretch!C10, Downside!C10))
-=SUM(C2:C50) // breaks when rows grow`}
-              </div>
-              <ul className="list-disc list-inside">
-                <li>Multiple tabs drift out of sync</li>
-                <li>Fixed ranges miss new purchases and sales</li>
-                <li>Charts point to static ranges</li>
+              <ul className="list-disc list-inside space-y-1">
+                <li><strong>Question 1:</strong> Which method produces the strongest inventory turnover in each scenario?</li>
+                <li><strong>Question 2:</strong> How much does COGS shift when we switch FIFO, LIFO, and Weighted Average?</li>
+                <li><strong>Question 3:</strong> Which method gives the best story for margin, cash, and risk?</li>
               </ul>
             </CardContent>
           </Card>
@@ -93,19 +89,19 @@ export default function Unit07Lesson06Phase1() {
             <CardHeader>
               <CardTitle className="text-green-900 flex items-center gap-2">
                 <ShieldCheck className="h-5 w-5" />
-                After: Integrated Scenario Driver
+                Workbook Strategy for This Lesson
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm space-y-3 text-green-900">
               <div className="bg-green-100 p-3 rounded font-mono">
-{`=XLOOKUP(SelectedScenario, Drivers[Scenario], Drivers[SalesGrowthPct], "Missing")
-=IFNA(XLOOKUP(SelectedScenario, Drivers[Scenario], Drivers[Method]), "FIFO")
-=SUM(InventoryTable[COGS]) // structured reference`}
+{`=XLOOKUP(SelectedScenario, Drivers[Scenario], Drivers[UnitsSold], "Missing")
+=SelectedScenario & "|" & SelectedMethod
+=XLOOKUP(SelectedKey, MethodSummary[Key], MethodSummary[COGS], "Missing")`}
               </div>
               <ul className="list-disc list-inside">
-                <li>Switch by name with exact match</li>
-                <li>Validation shows missing or out‑of‑range inputs</li>
-                <li>Charts/tiles read from inventory outputs</li>
+                <li>Switch scenario and method from two control cells</li>
+                <li>Pull output row by key instead of nested IF chains</li>
+                <li>Feed KPI tiles and chart from one summary table</li>
               </ul>
             </CardContent>
           </Card>
@@ -128,8 +124,8 @@ export default function Unit07Lesson06Phase1() {
               <p className="font-medium mb-2">Discussion Prompt (3 minutes):</p>
               <ul className="list-disc list-inside space-y-1">
                 <li>What signals help an investor decide in 10 seconds?</li>
-                <li>Where should validation live so problems are impossible to miss?</li>
-                <li>How do you prove your dashboard won’t break during Q&amp;A?</li>
+                <li>Which KPI would you defend first: margin, turnover, or days-on-hand?</li>
+                <li>What evidence makes a method recommendation credible?</li>
               </ul>
             </CardContent>
           </Card>
@@ -140,4 +136,3 @@ export default function Unit07Lesson06Phase1() {
     </div>
   )
 }
-
