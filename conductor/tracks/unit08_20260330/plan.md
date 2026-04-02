@@ -161,21 +161,21 @@
     - [x] Each team is working in the correct workbook
     - [x] Initial asset-register and schedule work is complete
 
-- [ ] 4.3 **Lesson 09** - Implement group-project skill
-  - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
-  - [ ] 4.3.2 Implement completion and rehearsal
-    - Continue same workbook from Lesson 08
-    - Complete remaining sheets/evidence blocks
-    - Require scenario testing, checks, dashboard completion
-    - Require short recommendation structure (claim, evidence, risk)
-    - Include peer critique and revision
-    - Define milestone 2 acceptance criteria
-  - [ ] 4.3.3 Continue the same workbook from Lesson 08
-  - [ ] 4.3.4 Require peer critique and revision
-  - [ ] 4.3.5 Make teams cite exact workbook evidence for book value, expense timing, and method-choice claims
-  - **Done when**:
-    - [ ] The workbook is complete and readable
-    - [ ] The team can defend a depreciation recommendation with evidence
+- [x] 4.3 **Lesson 09** - Implement group-project skill
+   - [x] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09
+   - [x] 4.3.2 Implement completion and rehearsal
+     - Continue same workbook from Lesson 08
+     - Complete remaining sheets/evidence blocks
+     - Require scenario testing, checks, dashboard completion
+     - Require short recommendation structure (claim, evidence, risk)
+     - Include peer critique and revision
+     - Define milestone 2 acceptance criteria
+   - [x] 4.3.3 Continue the same workbook from Lesson 08
+   - [x] 4.3.4 Require peer critique and revision
+   - [x] 4.3.5 Make teams cite exact workbook evidence for book value, expense timing, and method-choice claims
+   - **Done when**:
+     - [x] The workbook is complete and readable
+     - [x] The team can defend a depreciation recommendation with evidence
 
 - [ ] 4.4 **Lesson 10** - Implement group-project skill
   - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
