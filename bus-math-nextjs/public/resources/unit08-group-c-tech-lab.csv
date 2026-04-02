@@ -1,0 +1,16 @@
+AssetID,Description,Cost,UsefulLife_Years,SalvageValue,AcquisitionDate,AssetClass,Notes
+A001,Ultimaker S5 Pro Bundle 3D Printer,8500,5,1000,2025-01-12,Equipment,Prototyping bay 1
+A002,Formlabs Form 3L 3D Printer,11000,5,1200,2025-01-15,Equipment,Prototyping bay 2
+A003,Server Rack - 42U Enclosed,3200,8,400,2025-01-20,Technology,Network closet
+A004,Cisco Catalyst 9200 Switch,4500,6,500,2025-01-20,Technology,Core network switch
+A005,Ubiquiti UniFi Access Points (6-pack),2400,5,200,2025-01-22,Technology,Lab wireless coverage
+A006,Tektronix MDO34 Oscilloscope,7800,10,1000,2025-02-01,Equipment,Testing station 1
+A007,Keysight Digital Multimeter - Precision,2200,10,300,2025-02-01,Equipment,Testing station 1
+A008,HP Z4 G5 Workstation,3800,4,400,2025-02-10,Technology,CAD/design station 1
+A009,HP Z4 G5 Workstation,3800,4,400,2025-02-10,Technology,CAD/design station 2
+A010,HP Z4 G5 Workstation,3800,4,400,2025-02-10,Technology,CAD/design station 3
+A011,Dell Precision 5570 Workstation,3200,4,350,2025-02-12,Technology,Engineering station 1
+A012,Dell Precision 5570 Workstation,3200,4,350,2025-02-12,Technology,Engineering station 2
+A013,Dell Precision 5570 Workstation,3200,4,350,2025-02-12,Technology,Engineering station 3
+A014,Soldering Station - Hakko FX-951,800,7,100,2025-02-15,Equipment,Assembly bench
+A015,Anti-Static Workbench Set,4500,10,500,2025-02-20,Furniture & Fixtures,3 benches with ESD mats

@@ -1,0 +1,13 @@
+AssetID,Description,Cost,UsefulLife_Years,SalvageValue,AcquisitionDate,AssetClass,Notes
+A001,Ford Transit Cargo Van - 2025,42000,5,8000,2025-01-10,Vehicles,Route North - primary delivery
+A002,Ford Transit Cargo Van - 2025,42000,5,8000,2025-01-15,Vehicles,Route South - primary delivery
+A003,Ford Transit Cargo Van - 2025,42000,5,8000,2025-02-01,Vehicles,Route East - primary delivery
+A004,Ford Transit Cargo Van - 2025,42000,5,8000,2025-02-10,Vehicles,Route West - primary delivery
+A005,Toyota 8FGU25 Forklift,28000,8,4000,2025-01-20,Equipment,Warehouse loading dock
+A006,GPS Fleet Tracking System,6500,4,500,2025-01-25,Technology,Hardware for all 4 vans
+A007,GPS Fleet Tracking - Annual Subscription,1200,3,0,2025-01-25,Technology,Software license (3-year term)
+A008,Loading Dock Leveler,9500,15,1000,2025-02-01,Building Improvements,Warehouse dock installation
+A009,Pallet Jack - Electric,4800,7,600,2025-02-05,Equipment,Warehouse interior
+A010,Industrial Shelving Unit Set,7200,12,800,2025-02-10,Furniture & Fixtures,Warehouse storage - 12 units
+A011,Warehouse Security Camera System,3500,5,300,2025-02-15,Technology,8-camera system with DVR
+A012,Dock Door - Insulated Roll-Up,4200,15,400,2025-02-20,Building Improvements,Warehouse bay 2

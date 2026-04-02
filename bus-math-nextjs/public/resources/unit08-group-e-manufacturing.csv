@@ -1,0 +1,15 @@
+AssetID,Description,Cost,UsefulLife_Years,SalvageValue,AcquisitionDate,AssetClass,Notes
+A001,Haas VF-2SS CNC Vertical Mill,89000,12,10000,2025-01-08,Equipment,Production bay 1
+A002,Belt Conveyor System - 40ft,32000,15,3000,2025-01-15,Equipment,Assembly line - main conveyor
+A003,Conveyor Motor and Drive Kit,4500,8,500,2025-01-15,Equipment,Conveyor system drive unit
+A004,CMM Inspection Station - Hexagon,45000,10,5000,2025-01-20,Equipment,Quality control lab
+A005,Industrial Air Compressor - 25HP,12000,12,1500,2025-01-25,Equipment,Compressor room
+A006,Pneumatic Tool Set - Complete,3500,7,400,2025-01-28,Equipment,Assembly stations
+A007,Hydraulic Press - 50 Ton,8500,15,1000,2025-02-01,Equipment,Forming station
+A008,Welding Station - Lincoln Electric,6200,10,700,2025-02-05,Equipment,Fabrication bay
+A009,Digital Caliper and Gauge Set,2800,8,300,2025-02-10,Equipment,Quality control lab
+A010,Safety Guarding and Fencing,4200,12,400,2025-02-12,Building Improvements,Production area safety
+A011,Industrial Shelving - Heavy Duty,5500,15,500,2025-02-15,Furniture & Fixtures,Raw material storage
+A012,Overhead Crane - 5 Ton,28000,20,3000,2025-02-20,Equipment,Production bay - material handling
+A013,Tool Crib Management System,3800,6,400,2025-02-25,Technology,Tool tracking and checkout
+A014,Dust Collection System,7500,12,800,2025-03-01,Equipment,Production bay ventilation

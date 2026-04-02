@@ -1,0 +1,15 @@
+AssetID,Description,Cost,UsefulLife_Years,SalvageValue,AcquisitionDate,AssetClass,Notes
+A001,Digital X-Ray System - DR Panel,125000,10,15000,2025-01-08,Medical Equipment,Radiology suite
+A002,Ultrasound System - GE Logiq F8,85000,8,10000,2025-01-15,Medical Equipment,Exam room 2
+A003,Patient Monitor - Philips IntelliVue,18000,7,2000,2025-01-20,Medical Equipment,Exam room 1
+A004,Patient Monitor - Philips IntelliVue,18000,7,2000,2025-01-20,Medical Equipment,Exam room 3
+A005,Patient Monitor - Philips IntelliVue,18000,7,2000,2025-01-22,Medical Equipment,Recovery area
+A006,Autoclave Sterilizer - Tuttnauer 3870EA,12000,10,1500,2025-02-01,Medical Equipment,Sterilization room
+A007,EHR Server - Dell PowerEdge R750,15000,5,2000,2025-02-05,Technology,Server room - primary
+A008,EHR Server - Dell PowerEdge R750 (Backup),15000,5,2000,2025-02-05,Technology,Server room - backup
+A009,Medical-Grade Workstations (3),9000,4,800,2025-02-10,Technology,Nursing stations
+A010,Digital Thermometer Set - Welch Allyn,2500,7,300,2025-02-12,Medical Equipment,All exam rooms
+A011,Exam Room Furniture Package,22000,12,2000,2025-02-15,Furniture & Fixtures,3 exam rooms complete
+A012,Reception Area Build-Out,8500,10,800,2025-02-20,Building Improvements,Waiting area furniture and fixtures
+A013,HIPAA-Compliant Network Firewall,4200,5,400,2025-02-25,Technology,Server room - network security
+A014,Backup Power UPS System,6000,7,500,2025-03-01,Technology,Server room and critical equipment

@@ -1,0 +1,16 @@
+AssetID,Description,Cost,UsefulLife_Years,SalvageValue,AcquisitionDate,AssetClass,Notes
+A001,Espresso Machine - La Marzocco KB90,12500,7,1500,2025-01-15,Equipment,Location 1 - primary bar
+A002,Espresso Machine - La Marzocco KB90,12500,7,1500,2025-02-01,Equipment,Location 2 - primary bar
+A003,Espresso Machine - La Marzocco Linea Mini,6500,7,800,2025-03-10,Equipment,Location 1 - backup
+A004,Refrigerated Display Case - 6ft,4200,10,500,2025-01-20,Furniture & Fixtures,Location 1
+A005,Refrigerated Display Case - 6ft,4200,10,500,2025-02-05,Furniture & Fixtures,Location 2
+A006,Commercial Convection Oven - Dual,8800,12,1000,2025-01-25,Equipment,Location 1 - baking station
+A007,Square POS System Bundle,3200,4,400,2025-02-10,Technology,Location 1 - registers and tablets
+A008,Square POS System Bundle,3200,4,400,2025-02-15,Technology,Location 2 - registers and tablets
+A009,Commercial Refrigerator - Reach-In,5500,10,600,2025-01-30,Equipment,Location 1 - back of house
+A010,Commercial Refrigerator - Reach-In,5500,10,600,2025-02-08,Equipment,Location 2 - back of house
+A011,Espresso Grinder - Mahlkönig EK43,3800,7,500,2025-01-15,Equipment,Location 1
+A012,Espresso Grinder - Mahlkönig EK43,3800,7,500,2025-02-01,Equipment,Location 2
+A013,Water Filtration System - Commercial,2200,8,200,2025-01-18,Equipment,Location 1
+A014,Water Filtration System - Commercial,2200,8,200,2025-02-03,Equipment,Location 2
+A015,Outdoor Seating - Weatherproof Set,3500,5,300,2025-03-01,Furniture & Fixtures,Location 1 patio
