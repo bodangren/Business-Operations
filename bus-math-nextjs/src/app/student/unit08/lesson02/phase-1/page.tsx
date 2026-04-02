@@ -1,173 +1,198 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader";
-import { PhaseFooter } from "@/components/student/PhaseFooter";
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users } from "lucide-react";
-import { lesson02Data, unit08Data, lesson02Phases } from "../lesson-data";
+import { PhaseHeader } from "@/components/student/PhaseHeader"
+import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { VideoPlayer } from "@/components/ui/video-player"
+import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Users, MessageCircle } from "lucide-react"
+import { lesson02Data, unit08Data, lesson02Phases } from "../lesson-data"
 
-const currentPhase = lesson02Phases[0]; // Hook phase
+export default function Phase1Page() {
+  const currentPhase = lesson02Phases[0]
 
-const engagementQuestions = [
-  {
-    id: "q1",
-    question: "When Sarah first built her individual financial statements (income statement, balance sheet, cash flow statement), what was the main problem with keeping them separate?",
-    answers: [
-      "Investors couldn't see how the statements connected to tell one coherent story",
-      "The statements took too long to create individually", 
-      "Sarah didn't have enough data to fill out each statement",
-      "The formatting wasn't professional enough"
-    ],
-    explanation: "Individual statements are useful, but investors need to see how they connect - how revenue flows from the income statement to retained earnings on the balance sheet, and how both connect to cash flows."
-  },
-  {
-    id: "q2", 
-    question: "What does 'three-statement integration' mean in the context of Sarah's business model?",
-    answers: [
-      "Linking the income statement, balance sheet, and cash flow statement so they automatically update together",
-      "Creating three different versions of each financial statement",
-      "Having three separate Excel files for different time periods", 
-      "Getting approval from three different investors"
-    ],
-    explanation: "Three-statement integration means the statements are connected with formulas so when you change one assumption (like sales growth), all three statements update automatically, showing investors a dynamic, connected financial model."
-  },
-  {
-    id: "q3",
-    question: "Why would a venture capitalist (VC) immediately lose confidence in Sarah's pitch if her financial model had 'hard-coded numbers' instead of formulas?",
-    answers: [
-      "Hard-coded numbers suggest the model can't adapt to different scenarios and lacks sophistication",
-      "VCs prefer to see very large numbers in financial projections",
-      "Hard-coded numbers are always inaccurate",
-      "It means Sarah doesn't understand basic Excel functions"
-    ],
-    explanation: "VCs want to see that entrepreneurs can think dynamically about their business. Hard-coded numbers suggest inflexibility and an inability to test different scenarios, which are critical for business planning and risk assessment."
+  const videoData = {
+    title: "Sarah's Next Problem — Three Purchases, Two Different Rules",
+    description: "TechStart Solutions is expanding. Sarah has three receipts on her desk: a $15,000 3D printer, $200 of printer paper, and a $3,500 delivery scooter. Her accountant asks: which of these become assets on the balance sheet, and which are expenses on the income statement? Sarah needs a clear rule.",
+    youtubeId: "dQw4w9WgXcQ",
+    duration: "3:45",
+    transcript: "Sarah sits at her desk with three receipts spread out. The 3D printer cost $15,000 and will last 7 years. The printer paper was $200 and will be gone in a month. The delivery scooter was $3,500 and should last about 5 years. Her accountant Marcus calls and asks: Sarah, which of these are assets and which are expenses? Sarah hesitates. She knows the printer is an asset — they just covered that. But what about the paper? And the scooter? Marcus explains that there is a rule for this, and once she learns it, every purchase becomes straightforward. The rule has three parts: does it last more than a year, is the cost significant, and what will it be worth at the end? Sarah realizes she needs to understand capitalization, useful life, and salvage value."
   }
-];
 
-export default function Unit08Lesson02Phase1() {
+  const comprehensionQuestions = [
+    {
+      id: "q1",
+      question: "In Lesson 01, Sarah learned that the $15,000 3D printer is a long-term asset. Why can't she expense it all at once?",
+      answers: [
+        "Because the printer provides value over many years, so its cost must be spread across its useful life",
+        "Because the printer is too expensive to fit in one month's budget",
+        "Because her bank account does not have enough money",
+        "Because investors do not like 3D printers"
+      ],
+      explanation: "Long-term assets provide value over multiple years. The matching principle says costs should be recorded in the same periods that benefit from them. Expensing the printer all at once would understate profit in the purchase year and overstate it in later years."
+    },
+    {
+      id: "q2",
+      question: "Sarah has three purchases: a $15,000 printer (lasts 7 years), $200 of paper (used in a month), and a $3,500 scooter (lasts 5 years). Which should be expensed immediately?",
+      answers: [
+        "The $200 of printer paper, because it is used up within the current period",
+        "The $15,000 printer, because it is the most expensive",
+        "The $3,500 scooter, because vehicles lose value quickly",
+        "All three should be expensed immediately"
+      ],
+      explanation: "The printer paper is consumed within the current accounting period, so it is an expense. The printer and scooter both last multiple years and have significant costs, so they are capitalized as assets."
+    },
+    {
+      id: "q3",
+      question: "What is the core formula that connects cost, salvage value, and the amount available for depreciation?",
+      answers: [
+        "Depreciable Base = Cost - Salvage Value",
+        "Profit = Revenue - Expenses",
+        "Book Value = Cost - Accumulated Depreciation",
+        "Assets = Liabilities + Equity"
+      ],
+      explanation: "The depreciable base is the portion of an asset's cost that will be allocated as depreciation expense over its useful life. It equals the original cost minus what you expect to sell it for at the end (salvage value)."
+    }
+  ]
+
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <PhaseHeader 
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+      <PhaseHeader
         lesson={lesson02Data}
-        unit={unit08Data} 
+        unit={unit08Data}
         phase={currentPhase}
         phases={lesson02Phases}
       />
 
-      {/* Main Content */}
-      <div className="space-y-8">
-        
-        {/* Hook Introduction */}
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            The Million-Dollar Question: Can Your Model Tell One Story?
-          </h2>
-          
-          <p className="text-lg leading-relaxed mb-6">
-            Picture this: Sarah Chen sits across from three venture capitalists in a gleaming conference room. 
-            On her laptop screen are three beautiful financial statements - an income statement showing healthy profits, 
-            a balance sheet with growing assets, and a cash flow statement tracking every dollar. She's spent months 
-            perfecting each one individually.
-          </p>
-
-          <p className="text-lg leading-relaxed mb-6">
-            Then one investor asks a simple question: "Sarah, if your customer acquisition costs go up by 25%, 
-            how does that affect your cash position in month 18?" Sarah's heart sinks. She realizes that while 
-            her individual statements look great, they don't talk to each other. To answer this question, 
-            she'd need to manually recalculate numbers across all three statements.
-          </p>
-
-          <p className="text-lg leading-relaxed mb-6">
-            In that moment, Sarah learned the difference between having financial statements and having a 
-            <strong> financial model</strong>. The investor wasn't just testing her math - they were testing 
-            whether she understood how all the pieces of her business fit together.
-          </p>
-        </div>
-
-        {/* Why This Matters Section */}
-        <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-          <h3 className="font-semibold text-blue-900 mb-3 text-xl">Why This Matters: The Integration Advantage</h3>
-          <p className="text-blue-800 text-lg leading-relaxed mb-4">
-            Professional financial models aren't just about accurate numbers - they're about showing investors 
-            that you understand the dynamic relationships in your business. When revenue changes, how does it 
-            affect cash? When you hire new employees, how does it impact your balance sheet? 
-          </p>
-          <p className="text-blue-800 text-lg leading-relaxed">
-            Three-statement integration demonstrates to investors that you can think strategically, adapt to changes, 
-            and build systems that grow with your business. It's the difference between looking like a bookkeeper 
-            and looking like a CEO.
-          </p>
-        </div>
-
-        {/* Business Context */}
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h3 className="font-semibold text-gray-900 mb-4 text-xl">The Stakes: $500,000 Investment Round</h3>
-          <p className="text-gray-800 leading-relaxed mb-4">
-            Sarah's TechStart Solutions has reached a crucial milestone. She has proven her concept with early 
-            clients, but to scale, she needs serious funding. The three VCs across the table represent her 
-            path to growth, but they've seen hundreds of pitches from entrepreneurs who don't understand the 
-            financial fundamentals.
-          </p>
-          <p className="text-gray-800 leading-relaxed">
-            Today's lesson focuses on the technical skills that separate sophisticated entrepreneurs from 
-            amateurs: cross-sheet linking, formula integrity, and dynamic modeling. These aren't just Excel 
-            tricks - they're the foundation of strategic business thinking.
-          </p>
-        </div>
-
-        {/* Comprehension Check */}
-        <ComprehensionCheck
-          title="Understanding the Challenge"
-          description="Test your grasp of why integrated financial models matter for serious entrepreneurs."
-          questions={engagementQuestions}
-          showExplanations={true}
-        />
-
-        {/* Turn and Talk Discussion */}
-        <Card className="border-blue-200 bg-blue-50">
-          <CardHeader>
-            <CardTitle className="text-blue-800 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Turn and Talk
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium text-blue-900 mb-2">
-              Discussion Prompt (3 minutes):
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        <section className="space-y-6">
+          <div className="text-center space-y-4">
+            <Badge className="bg-amber-600 text-white">
+              Phase 1: The Classification Problem
+            </Badge>
+            <h1 className="text-3xl font-bold text-gray-900">Three Receipts, Two Different Rules</h1>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Last lesson, Sarah learned that her $15,000 3D printer is a long-term asset — not an everyday expense.
+              Today, the problem gets harder. She has <strong>three</strong> new purchases to classify, and each one
+              follows a different rule. If she gets this wrong, her financial statements will mislead investors.
             </p>
-            <p className="text-blue-800 mb-4">
-              Think about Sarah's experience in the investor meeting. Share with a partner:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-blue-800">
-              <li>What specific advantages would Sarah gain from having an integrated financial model?</li>
-              <li>How might integrated statements help Sarah make better business decisions day-to-day?</li>
-              <li>What would you want to see in a financial model if you were investing $500,000 of your own money?</li>
-            </ul>
-          </CardContent>
-        </Card>
+          </div>
 
-        {/* Preview of Learning */}
-        <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-          <h3 className="font-semibold text-green-900 mb-3 text-xl">What You'll Master Today</h3>
-          <p className="text-green-800 leading-relaxed mb-4">
-            By the end of this lesson, you'll understand the technical principles behind three-statement 
-            integration and practice the cross-sheet linking techniques that create dynamic financial models. 
-            You'll learn how changes in one statement automatically update the others, creating the kind of 
-            sophisticated modeling that impresses investors and supports strategic decision-making.
-          </p>
-          <p className="text-green-800 leading-relaxed">
-            Most importantly, you'll see how these technical skills serve the bigger picture: building 
-            Sarah's credibility as an entrepreneur who thinks systematically about her business's financial future.
-          </p>
-        </div>
+          <Card className="border-l-4 border-l-amber-600">
+            <CardHeader>
+              <CardTitle className="text-xl">The Friction Point</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-gray-700">
+                Sarah knows the printer is an asset. But what about the $200 of printer paper?
+                What about the $3,500 delivery scooter? Without a clear rule, every purchase
+                becomes a guess. And guesses lead to wrong financial statements.
+              </p>
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-sm text-amber-800">
+                  <strong>The question for today:</strong> How do you decide whether a purchase
+                  becomes an <strong>asset</strong> (capitalized) or an <strong>expense</strong> (recorded immediately)?
+                </p>
+                <p className="text-sm text-amber-700 mt-2">
+                  The answer involves three concepts: <strong>capitalization</strong>, <strong>useful life</strong>, and <strong>salvage value</strong>.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
-      </div>
+          <VideoPlayer video={videoData} />
 
-      <PhaseFooter 
+          <Card className="border-l-4 border-l-blue-600">
+            <CardHeader>
+              <CardTitle>Sarah&apos;s Three Receipts</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-4">
+                Here are the three purchases Sarah needs to classify:
+              </p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                  <p className="font-bold text-green-900 text-lg">$15,000 — 3D Printer</p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    Will last 7 years. Expected to sell for $2,000 at the end.
+                  </p>
+                  <Badge className="mt-2 bg-green-600 text-white">Asset</Badge>
+                </div>
+                <div className="p-4 bg-red-50 rounded-lg border border-red-200">
+                  <p className="font-bold text-red-900 text-lg">$200 — Printer Paper</p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    Will be used up within the month. No resale value.
+                  </p>
+                  <Badge className="mt-2 bg-red-600 text-white">Expense</Badge>
+                </div>
+                <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                  <p className="font-bold text-green-900 text-lg">$3,500 — Delivery Scooter</p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    Will last about 5 years. Expected to sell for $500 at the end.
+                  </p>
+                  <Badge className="mt-2 bg-green-600 text-white">Asset</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <ComprehensionCheck
+            questions={comprehensionQuestions}
+            title="Understanding the Classification Problem"
+            description="Test your understanding of why some purchases are assets and others are expenses."
+            showExplanations={true}
+          />
+
+          <Card className="border-l-4 border-l-purple-600">
+            <CardHeader>
+              <CardTitle className="text-purple-900 dark:text-purple-200 flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Turn and Talk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MessageCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-purple-900 dark:text-purple-200 mb-2">
+                    Discussion Prompt (3 minutes):
+                  </p>
+                  <p className="text-purple-800 dark:text-purple-300">
+                    Imagine your school buys the following items. With a partner, decide which are assets and which are expenses:
+                  </p>
+                  <ul className="list-disc list-inside mt-2 space-y-1 text-purple-800 dark:text-purple-300">
+                    <li>A $2,000 projector for the auditorium (lasts 10 years)</li>
+                    <li>$50 of whiteboard markers (used up in a semester)</li>
+                    <li>A $800 lawn mower for the grounds crew (lasts 6 years)</li>
+                    <li>$300 for a one-year software license</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-l-green-600">
+            <CardHeader>
+              <CardTitle>What Comes Next</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">
+                Now that you can see the problem — some purchases are assets, some are expenses —
+                the next phase will teach you the <strong>exact rules</strong> for deciding. You will learn
+                how to estimate <strong>useful life</strong> (how long an asset lasts), <strong>salvage value</strong>
+                (what it is worth at the end), and how to calculate the <strong>depreciable base</strong> —
+                the amount of cost that will be spread across the asset&apos;s life.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+
+      <PhaseFooter
         lesson={lesson02Data}
         unit={unit08Data}
         phase={currentPhase}
         phases={lesson02Phases}
       />
     </div>
-  );
+  )
 }

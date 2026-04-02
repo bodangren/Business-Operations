@@ -48,21 +48,21 @@
     - [x] Students can explain why long-term asset costs are not treated like everyday expenses
     - [x] The lesson points clearly to capitalization and depreciation logic next
 
-- [ ] 2.2 **Lesson 02** - Implement accounting-principles skill
-  - [ ] 2.2.1 Update lesson-data.ts for Lesson 02
-  - [ ] 2.2.2 Implement Phase 1-6 with capitalization vs expense, useful life, salvage value, and accumulated depreciation
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name method clearly, model procedure step-by-step, explain why each step exists, use worked examples and concrete asset-purchase examples before abstract definitions
-    - Phase 3: Add meaningful complication (mixed asset classifications or partial-year reasoning), reduce prompts, shift toward cleaner depreciation-style layouts, ask students to explain choices
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+- [x] 2.2 **Lesson 02** - Implement accounting-principles skill
+  - [x] 2.2.1 Update lesson-data.ts for Lesson 02
+  - [x] 2.2.2 Implement Phase 1-6 with capitalization vs expense, useful life, salvage value, and accumulated depreciation
+    - Phase 1: Reconnect to Lesson 01's equipment purchase, show friction point with three receipts, use turn-and-talk
+    - Phase 2: Name capitalization rule clearly, model procedure step-by-step (classify → identify 3 numbers → calculate depreciable base), explain why each step exists, use worked examples with concrete asset-purchase examples before abstract definitions
+    - Phase 3: Add meaningful complication (mixed asset classifications, repairs vs improvements, bundled purchases), reduce prompts, shift toward cleaner depreciation-style layouts, ask students to explain choices
+    - Phase 4: Same procedure each round (capitalize or expense), vary numbers algorithmically via CapitalizationExpenseMastery component, automatic checking, feedback after submission, brief reteach guidance tied to error pattern, define mastery target (5 consecutive correct)
     - Phase 5: Short MCQ exit ticket on depreciation vocabulary and reasoning, not Excel tools
-    - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview next principle
-  - [ ] 2.2.3 Use concrete asset-purchase examples before abstract definitions
-  - [ ] 2.2.4 Keep strong representational supports in Phases 2-3
-  - [ ] 2.2.5 Use Phase 4 for repeated classification and book-value reasoning
+    - Phase 6: Reflect on confidence and understanding, connect to business problem, identify method signals, preview straight-line depreciation
+  - [x] 2.2.3 Use concrete asset-purchase examples before abstract definitions
+  - [x] 2.2.4 Keep strong representational supports in Phases 2-3 (worked examples, decision framework table, accumulated depreciation schedule preview)
+  - [x] 2.2.5 Use Phase 4 CapitalizationExpenseMastery for repeated classification and book-value reasoning
   - **Done when**:
-    - [ ] Students can explain when a cost becomes an asset
-    - [ ] Phase 5 checks depreciation vocabulary and reasoning, not Excel tools
+    - [x] Students can explain when a cost becomes an asset
+    - [x] Phase 5 checks depreciation vocabulary and reasoning, not Excel tools
 
 - [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
   - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
