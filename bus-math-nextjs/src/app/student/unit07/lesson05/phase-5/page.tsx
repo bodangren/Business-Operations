@@ -4,12 +4,67 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileText, AlertCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { getUnit07Phase5ComprehensionCheckItems } from "@/data/question-banks/unit07-phase5"
 import { lesson05Data, unit07Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[4]
 
-const assessmentQuestions = getUnit07Phase5ComprehensionCheckItems({ lessonIds: ["lesson05"] }).slice(0, 5)
+const assessmentQuestions = [
+  {
+    id: "u07l05-alg-1",
+    question: "Which formula pattern best models FIFO lot consumption in a running helper column?",
+    answers: [
+      "MAX(0,MIN(lotQty,UnitsSold-(cumQty-lotQty)))",
+      "SUM(all lot quantities) - UnitsSold",
+      "lotQty * unitCost",
+      "IF(method=\"FIFO\",lotQty,0)"
+    ],
+    explanation: "This pattern consumes only the units still needed after earlier lots."
+  },
+  {
+    id: "u07l05-alg-2",
+    question: "How do you convert the FIFO helper logic into LIFO logic most reliably?",
+    answers: [
+      "Apply the same consume logic on a helper block sorted newest lot to oldest lot.",
+      "Keep the same order and divide COGS by -1.",
+      "Average FIFO and Weighted Average outputs.",
+      "Use only the newest lot's unit cost for all sold units."
+    ],
+    explanation: "LIFO is primarily an order change. Reverse lot order, then apply the same consume pattern."
+  },
+  {
+    id: "u07l05-alg-3",
+    question: "What makes Specific ID different from FIFO/LIFO in Excel implementation?",
+    answers: [
+      "Specific ID matches each sale to an exact LotID and pulls that lot's unit cost.",
+      "Specific ID always uses the oldest lot first.",
+      "Specific ID always uses an average unit cost.",
+      "Specific ID ignores purchase-lot structure."
+    ],
+    explanation: "Specific ID requires exact lot linkage, not assumed layer order."
+  },
+  {
+    id: "u07l05-alg-4",
+    question: "For periodic weighted average, which WA rate formula is correct?",
+    answers: [
+      "WA Rate = GAFS / Total Units Available",
+      "WA Rate = UnitsSold / GAFS",
+      "WA Rate = MAX(UnitCost)",
+      "WA Rate = FIFO COGS / LIFO COGS"
+    ],
+    explanation: "Periodic weighted average uses pooled cost and pooled units before the sale allocation."
+  },
+  {
+    id: "u07l05-alg-5",
+    question: "What should always be true for each method row (FIFO, LIFO, Specific ID, WA)?",
+    answers: [
+      "COGS + Ending Inventory = GAFS",
+      "COGS is identical across all methods",
+      "Ending Inventory is always zero if sales exist",
+      "Specific ID must equal Weighted Average"
+    ],
+    explanation: "The inventory cost split must reconcile back to goods available for sale for each method."
+  }
+]
 
 export default function Unit07Lesson05Phase5() {
   return (
@@ -46,7 +101,7 @@ export default function Unit07Lesson05Phase5() {
             <CardContent className="text-amber-900 space-y-3">
               <p className="font-medium">Write a short memo (3-5 sentences) that answers:</p>
               <ol className="list-decimal list-inside space-y-1 text-sm">
-                <li>Which method (FIFO, LIFO, or Weighted Average) do you recommend for Sarah's business right now?</li>
+                <li>Which method (FIFO, LIFO, Specific ID, or Weighted Average) do you recommend for Sarah's business right now?</li>
                 <li>What evidence from your workbook supports this choice? Cite specific COGS and Ending Inventory numbers.</li>
                 <li>What is one risk or limitation of your recommendation?</li>
               </ol>

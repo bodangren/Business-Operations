@@ -1,306 +1,344 @@
-'use client'
+"use client"
 
-import { useState, useCallback } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { RefreshCw, CheckCircle, XCircle, Lightbulb } from 'lucide-react'
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, CheckCircle2, Lightbulb, Table2 } from "lucide-react"
 
-interface PurchaseLot {
-  date: string
-  sku: string
-  qty: number
-  unitCost: number
+interface FormulaRow {
+  step: string
+  formula: string
+  plainEnglish: string
 }
 
-interface Scenario {
+interface RehearsalStage {
   id: string
   title: string
-  description: string
-  purchases: PurchaseLot[]
-  unitsSold: number
-  correctFIFO: { cogs: number; endingInventory: number }
-  correctLIFO: { cogs: number; endingInventory: number }
-  correctWeightedAvg: { cogs: number; endingInventory: number }
-  hint: string
+  sheet: string
+  output: string
+  rows: FormulaRow[]
+  references: Array<{ token: string; meaning: string }>
+  commonTrap: string
+  auditCheck: string
+  prompt: string
+  modelResponse: string
 }
 
-const scenarios: Scenario[] = [
+const stages: RehearsalStage[] = [
   {
-    id: 'scenario-1',
-    title: 'Sarah\'s Launch Kits - March',
-    description: 'Sarah bought launch kits at three different prices. She sold 15 units. Calculate COGS and Ending Inventory for each method.',
-    purchases: [
-      { date: 'Mar 1', sku: 'LK-001', qty: 10, unitCost: 18 },
-      { date: 'Mar 8', sku: 'LK-001', qty: 20, unitCost: 20 },
-      { date: 'Mar 15', sku: 'LK-001', qty: 10, unitCost: 22 },
+    id: "fifo",
+    title: "FIFO Build Rehearsal",
+    sheet: "FIFO",
+    output: "FIFO COGS and FIFO Ending Inventory",
+    rows: [
+      {
+        step: "Cumulative quantity",
+        formula: "SUM($B$2:B2)",
+        plainEnglish: "Adds lot quantities from the first FIFO row through this row."
+      },
+      {
+        step: "Units consumed in this lot",
+        formula: "MAX(0, MIN([@Qty], UnitsSold - ([@[FIFO CumQty]] - [@Qty])))",
+        plainEnglish: "Consumes only the units still needed after older lots have already been used."
+      },
+      {
+        step: "Lot cost used",
+        formula: "=[@[FIFO Used]]*[@UnitCost]",
+        plainEnglish: "Converts consumed units from this lot into cost."
+      }
     ],
-    unitsSold: 15,
-    correctFIFO: { cogs: 280, endingInventory: 500 },
-    correctLIFO: { cogs: 320, endingInventory: 460 },
-    correctWeightedAvg: { cogs: 300, endingInventory: 480 },
-    hint: 'FIFO: oldest first (10@$18 + 5@$20). LIFO: newest first (10@$22 + 5@$20). Weighted Avg: total cost $800 / 40 units = $20/unit.'
+    references: [
+      { token: "[@Qty]", meaning: "Qty value in this FIFO row only." },
+      { token: "[@[FIFO CumQty]]", meaning: "Running total quantity in this FIFO row." },
+      { token: "UnitsSold", meaning: "Named cell holding total sold units." }
+    ],
+    commonTrap: "Using cumulative quantity from a different sort order gives wrong lot consumption.",
+    auditCheck: "FIFO COGS + FIFO EI must equal GAFS.",
+    prompt: "Explain why the consume formula uses MAX and MIN together.",
+    modelResponse:
+      "MIN caps usage at the lot quantity and remaining units needed. MAX prevents negative usage once UnitsSold is already satisfied."
   },
   {
-    id: 'scenario-2',
-    title: 'TechStart USB Drives - April',
-    description: 'TechStart received four shipments of USB drives. They sold 35 units. Calculate COGS and Ending Inventory.',
-    purchases: [
-      { date: 'Apr 2', sku: 'USB-16', qty: 15, unitCost: 8 },
-      { date: 'Apr 9', sku: 'USB-16', qty: 20, unitCost: 10 },
-      { date: 'Apr 16', sku: 'USB-16', qty: 10, unitCost: 12 },
-      { date: 'Apr 23', sku: 'USB-16', qty: 5, unitCost: 14 },
+    id: "lifo",
+    title: "LIFO Build Rehearsal",
+    sheet: "LIFO",
+    output: "LIFO COGS and LIFO Ending Inventory",
+    rows: [
+      {
+        step: "Reverse lot order",
+        formula: "Helper table sorted newest lot to oldest lot",
+        plainEnglish: "This is the method switch that makes LIFO different from FIFO."
+      },
+      {
+        step: "Units consumed in this lot",
+        formula: "MAX(0, MIN([@Qty], UnitsSold - ([@[LIFO CumQty]] - [@Qty])))",
+        plainEnglish: "Same consume pattern, but applied to reversed lot order."
+      },
+      {
+        step: "Lot cost used",
+        formula: "=[@[LIFO Used]]*[@UnitCost]",
+        plainEnglish: "Calculates the cost assigned from each newest-first lot."
+      }
     ],
-    unitsSold: 35,
-    correctFIFO: { cogs: 330, endingInventory: 170 },
-    correctLIFO: { cogs: 400, endingInventory: 100 },
-    correctWeightedAvg: { cogs: 370, endingInventory: 130 },
-    hint: 'Total units: 50. Total cost: $500. Weighted avg rate: $10/unit. FIFO: 15@$8 + 20@$10. LIFO: 5@$14 + 10@$12 + 20@$10.'
+    references: [
+      { token: "LIFO helper table", meaning: "Copy of lots in newest-to-oldest order." },
+      { token: "[@[LIFO CumQty]]", meaning: "Running total in reversed order." },
+      { token: "UnitsSold", meaning: "Same named total used in FIFO." }
+    ],
+    commonTrap: "If lots are not reversed first, LIFO will accidentally behave like FIFO.",
+    auditCheck: "LIFO COGS + LIFO EI must equal GAFS.",
+    prompt: "What changes between FIFO and LIFO: formula math, sort order, or both?",
+    modelResponse:
+      "The consume math stays the same. The critical change is the lot order in the helper table."
   },
   {
-    id: 'scenario-3',
-    title: 'Cafe Supply Co. - Coffee Beans',
-    description: 'A cafe bought coffee beans at rising prices. They used 60 kg this month. Calculate COGS and Ending Inventory.',
-    purchases: [
-      { date: 'May 1', sku: 'CB-1KG', qty: 30, unitCost: 12 },
-      { date: 'May 10', sku: 'CB-1KG', qty: 40, unitCost: 14 },
-      { date: 'May 20', sku: 'CB-1KG', qty: 20, unitCost: 16 },
+    id: "specific-id",
+    title: "Specific ID Build Rehearsal",
+    sheet: "SpecificID",
+    output: "Specific ID COGS and Specific ID Ending Inventory",
+    rows: [
+      {
+        step: "Pull lot cost on each sale row",
+        formula: "XLOOKUP([@LotID], Purchases[LotID], Purchases[UnitCost])",
+        plainEnglish: "Finds the exact purchase cost for the lot tagged on this sale row."
+      },
+      {
+        step: "Compute sale-line cost",
+        formula: "=[@Qty]*[@[SpecificID UnitCost]]",
+        plainEnglish: "Calculates cost for this specific sale line."
+      },
+      {
+        step: "Compute remaining lot qty",
+        formula: "=[@Qty]-SUMIFS(Sales[Qty], Sales[LotID], [@LotID])",
+        plainEnglish: "Subtracts sold quantity tagged to the same lot."
+      }
     ],
-    unitsSold: 60,
-    correctFIFO: { cogs: 760, endingInventory: 440 },
-    correctLIFO: { cogs: 880, endingInventory: 320 },
-    correctWeightedAvg: { cogs: 825, endingInventory: 375 },
-    hint: 'Total units: 90. Total cost: $1,240. Weighted avg rate: $1,240/90 = $13.78/unit. FIFO: 30@$12 + 30@$14. LIFO: 20@$16 + 40@$14.'
+    references: [
+      { token: "Sales[LotID]", meaning: "Lot assignment entered on sales rows." },
+      { token: "Purchases[LotID]", meaning: "Lot key list used for lookup." },
+      { token: "SUMIFS(..., [@LotID])", meaning: "Totals sold units for this lot only." }
+    ],
+    commonTrap: "Blank or mismatched LotID values break the traceability chain.",
+    auditCheck: "Specific ID COGS + Specific ID EI must equal GAFS.",
+    prompt: "Why is lot-level tagging required for Specific ID but not for FIFO/LIFO?",
+    modelResponse:
+      "Specific ID assigns exact historical cost per sold lot. FIFO/LIFO can infer cost from order; Specific ID cannot."
+  },
+  {
+    id: "weighted-average",
+    title: "Weighted Average Build Rehearsal",
+    sheet: "WeightedAverage",
+    output: "Weighted Average COGS and Ending Inventory",
+    rows: [
+      {
+        step: "Compute weighted-average rate",
+        formula: "=GAFS/TotalUnits",
+        plainEnglish: "Creates one blended period cost per unit."
+      },
+      {
+        step: "Compute COGS",
+        formula: "=UnitsSold*WA_Rate",
+        plainEnglish: "Assigns blended cost to sold units."
+      },
+      {
+        step: "Compute ending inventory",
+        formula: "=(TotalUnits-UnitsSold)*WA_Rate",
+        plainEnglish: "Assigns blended cost to remaining units."
+      }
+    ],
+    references: [
+      { token: "GAFS", meaning: "Total purchase cost available for sale." },
+      { token: "TotalUnits", meaning: "Total units available for sale." },
+      { token: "UnitsSold", meaning: "Units sold this period." }
+    ],
+    commonTrap: "Mixing periodic WA with moving-average logic causes inconsistent results.",
+    auditCheck: "WA COGS + WA EI must equal GAFS.",
+    prompt: "What does the WA rate represent in one sentence?",
+    modelResponse: "It is the blended cost per unit for all available units in the period."
+  },
+  {
+    id: "outputs",
+    title: "Selector Output Rehearsal",
+    sheet: "Outputs",
+    output: "Display COGS and EI for the selected method",
+    rows: [
+      {
+        step: "Build summary rows",
+        formula: "Method | COGS | Ending Inventory",
+        plainEnglish: "Stores one audited result row for each method."
+      },
+      {
+        step: "Display selected COGS",
+        formula: "XLOOKUP(SelectedMethod, Summary[Method], Summary[COGS])",
+        plainEnglish: "Returns COGS from the method row chosen in the selector cell."
+      },
+      {
+        step: "Display selected EI",
+        formula: "XLOOKUP(SelectedMethod, Summary[Method], Summary[EndingInventory])",
+        plainEnglish: "Returns ending inventory for the selected method."
+      }
+    ],
+    references: [
+      { token: "SelectedMethod", meaning: "Input dropdown value (FIFO/LIFO/Specific ID/WA)." },
+      { token: "Summary[Method]", meaning: "Method names column in output summary." },
+      { token: "Summary[COGS]", meaning: "COGS values mapped to each method row." }
+    ],
+    commonTrap: "Hardcoding method outputs bypasses selector logic and hides formula errors.",
+    auditCheck: "Changing selector should update display outputs without editing formulas.",
+    prompt: "Why use lookup-driven outputs instead of nested IF formulas?",
+    modelResponse:
+      "A summary table keeps outputs auditable, easier to extend, and less error-prone when method rows change."
   }
 ]
 
+const stageBadgeStyles: Record<string, string> = {
+  fifo: "bg-blue-100 text-blue-800",
+  lifo: "bg-red-100 text-red-800",
+  "specific-id": "bg-emerald-100 text-emerald-800",
+  "weighted-average": "bg-purple-100 text-purple-800",
+  outputs: "bg-amber-100 text-amber-900"
+}
+
 export default function MethodComparisonSimulator() {
-  const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0)
-  const [fifoCogs, setFifoCogs] = useState('')
-  const [fifoEI, setFifoEI] = useState('')
-  const [lifoCogs, setLifoCogs] = useState('')
-  const [lifoEI, setLifoEI] = useState('')
-  const [waCogs, setWaCogs] = useState('')
-  const [waEI, setWaEI] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-  const [showHint, setShowHint] = useState(false)
+  const [stageIndex, setStageIndex] = useState(0)
+  const [showModel, setShowModel] = useState(false)
+  const [notesByStage, setNotesByStage] = useState<Record<string, string>>({})
 
-  const scenario = scenarios[currentScenarioIndex]
+  const stage = stages[stageIndex]
+  const notes = notesByStage[stage.id] ?? ""
 
-  const checkAnswer = useCallback((userAnswer: string, correctAnswer: number): 'correct' | 'close' | 'wrong' => {
-    const num = parseFloat(userAnswer)
-    if (isNaN(num)) return 'wrong'
-    if (Math.abs(num - correctAnswer) < 1) return 'correct'
-    if (Math.abs(num - correctAnswer) < 10) return 'close'
-    return 'wrong'
-  }, [])
-
-  const handleSubmit = () => {
-    setSubmitted(true)
+  const goToStage = (index: number) => {
+    setStageIndex(index)
+    setShowModel(false)
   }
-
-  const handleNext = () => {
-    setCurrentScenarioIndex((prev) => (prev + 1) % scenarios.length)
-    setFifoCogs('')
-    setFifoEI('')
-    setLifoCogs('')
-    setLifoEI('')
-    setWaCogs('')
-    setWaEI('')
-    setSubmitted(false)
-    setShowHint(false)
-  }
-
-  const handleReset = () => {
-    setFifoCogs('')
-    setFifoEI('')
-    setLifoCogs('')
-    setLifoEI('')
-    setWaCogs('')
-    setWaEI('')
-    setSubmitted(false)
-    setShowHint(false)
-  }
-
-  const getResultBadge = (userAnswer: string, correctAnswer: number) => {
-    if (!submitted) return null
-    const result = checkAnswer(userAnswer, correctAnswer)
-    if (result === 'correct') {
-      return <Badge className="bg-green-100 text-green-800"><CheckCircle className="w-3 h-3 mr-1" /> Correct</Badge>
-    }
-    if (result === 'close') {
-      return <Badge className="bg-yellow-100 text-yellow-800">Close (answer: {correctAnswer})</Badge>
-    }
-    return <Badge variant="destructive"><XCircle className="w-3 h-3 mr-1" /> Answer: {correctAnswer}</Badge>
-  }
-
-  const totalUnits = scenario.purchases.reduce((sum, p) => sum + p.qty, 0)
-  const totalCost = scenario.purchases.reduce((sum, p) => sum + p.qty * p.unitCost, 0)
-  const unitsRemaining = totalUnits - scenario.unitsSold
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6">
-      <Card className="border-purple-200 bg-white">
+    <div className="space-y-4">
+      <Card className="border-indigo-200 bg-white">
         <CardHeader>
-          <CardTitle className="text-purple-800">{scenario.title}</CardTitle>
-          <p className="text-sm text-purple-700">{scenario.description}</p>
+          <CardTitle className="text-indigo-900">Guided Rehearsal Navigator</CardTitle>
+          <CardDescription className="text-indigo-900/80">
+            Move sheet-by-sheet in the same order you will build in Excel.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+          {stages.map((item, index) => (
+            <Button
+              key={item.id}
+              type="button"
+              variant={index === stageIndex ? "default" : "outline"}
+              className={index === stageIndex ? "bg-indigo-600 hover:bg-indigo-700" : ""}
+              onClick={() => goToStage(index)}
+            >
+              {index + 1}. {item.sheet}
+            </Button>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card className="border-purple-200 bg-purple-50">
+        <CardHeader className="space-y-3">
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <CardTitle className="text-purple-900">{stage.title}</CardTitle>
+            <Badge className={stageBadgeStyles[stage.id]}>Sheet: {stage.sheet}</Badge>
+          </div>
+          <CardDescription className="text-purple-800">
+            Target output: <strong>{stage.output}</strong>
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="bg-slate-50 p-4 rounded border border-slate-200">
-            <h4 className="font-semibold text-slate-900 mb-2">Purchase Data</h4>
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto rounded border border-purple-200 bg-white">
+            <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="border-b border-slate-300">
-                  <th className="text-left py-1 px-2">Date</th>
-                  <th className="text-left py-1 px-2">SKU</th>
-                  <th className="text-right py-1 px-2">Qty</th>
-                  <th className="text-right py-1 px-2">Unit Cost</th>
-                  <th className="text-right py-1 px-2">Total</th>
+                <tr className="bg-purple-100 text-purple-950">
+                  <th className="p-2 border border-purple-200 text-left">Build Step</th>
+                  <th className="p-2 border border-purple-200 text-left">Formula / Pattern</th>
+                  <th className="p-2 border border-purple-200 text-left">What It Means</th>
                 </tr>
               </thead>
               <tbody>
-                {scenario.purchases.map((p, i) => (
-                  <tr key={i} className="border-b border-slate-100">
-                    <td className="py-1 px-2">{p.date}</td>
-                    <td className="py-1 px-2">{p.sku}</td>
-                    <td className="text-right py-1 px-2">{p.qty}</td>
-                    <td className="text-right py-1 px-2">${p.unitCost}</td>
-                    <td className="text-right py-1 px-2">${p.qty * p.unitCost}</td>
+                {stage.rows.map((row) => (
+                  <tr key={`${stage.id}-${row.step}`} className="text-slate-800">
+                    <td className="p-2 border border-purple-100 font-medium">{row.step}</td>
+                    <td className="p-2 border border-purple-100">
+                      <code className="text-xs sm:text-sm break-all">{row.formula}</code>
+                    </td>
+                    <td className="p-2 border border-purple-100">{row.plainEnglish}</td>
                   </tr>
                 ))}
-                <tr className="font-semibold bg-slate-100">
-                  <td className="py-1 px-2" colSpan={2}>Totals</td>
-                  <td className="text-right py-1 px-2">{totalUnits}</td>
-                  <td className="text-right py-1 px-2"></td>
-                  <td className="text-right py-1 px-2">${totalCost}</td>
-                </tr>
               </tbody>
             </table>
-            <p className="text-sm text-slate-600 mt-2">
-              Units sold: <strong>{scenario.unitsSold}</strong> | Units remaining: <strong>{unitsRemaining}</strong>
+          </div>
+
+          <div className="rounded border border-cyan-200 bg-cyan-50 p-3">
+            <p className="font-semibold text-cyan-900 flex items-center gap-2 mb-2">
+              <Table2 className="h-4 w-4" />
+              Reference Decoder
+            </p>
+            <ul className="text-sm text-cyan-900 space-y-1">
+              {stage.references.map((reference) => (
+                <li key={`${stage.id}-${reference.token}`}>
+                  <code>{reference.token}</code>: {reference.meaning}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900 space-y-1">
+            <p>
+              <strong>Common trap:</strong> {stage.commonTrap}
+            </p>
+            <p>
+              <strong>Audit check:</strong> {stage.auditCheck}
             </p>
           </div>
+        </CardContent>
+      </Card>
 
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <h4 className="font-semibold text-blue-800">FIFO</h4>
-              <div>
-                <label className="text-sm text-slate-700">COGS ($)</label>
-                <input
-                  type="number"
-                  value={fifoCogs}
-                  onChange={(e) => setFifoCogs(e.target.value)}
-                  disabled={submitted}
-                  className="w-full px-3 py-2 border border-slate-300 rounded text-sm"
-                  placeholder="Enter COGS"
-                />
-                {submitted && <div className="mt-1">{getResultBadge(fifoCogs, scenario.correctFIFO.cogs)}</div>}
-              </div>
-              <div>
-                <label className="text-sm text-slate-700">Ending Inventory ($)</label>
-                <input
-                  type="number"
-                  value={fifoEI}
-                  onChange={(e) => setFifoEI(e.target.value)}
-                  disabled={submitted}
-                  className="w-full px-3 py-2 border border-slate-300 rounded text-sm"
-                  placeholder="Enter EI"
-                />
-                {submitted && <div className="mt-1">{getResultBadge(fifoEI, scenario.correctFIFO.endingInventory)}</div>}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <h4 className="font-semibold text-red-800">LIFO</h4>
-              <div>
-                <label className="text-sm text-slate-700">COGS ($)</label>
-                <input
-                  type="number"
-                  value={lifoCogs}
-                  onChange={(e) => setLifoCogs(e.target.value)}
-                  disabled={submitted}
-                  className="w-full px-3 py-2 border border-slate-300 rounded text-sm"
-                  placeholder="Enter COGS"
-                />
-                {submitted && <div className="mt-1">{getResultBadge(lifoCogs, scenario.correctLIFO.cogs)}</div>}
-              </div>
-              <div>
-                <label className="text-sm text-slate-700">Ending Inventory ($)</label>
-                <input
-                  type="number"
-                  value={lifoEI}
-                  onChange={(e) => setLifoEI(e.target.value)}
-                  disabled={submitted}
-                  className="w-full px-3 py-2 border border-slate-300 rounded text-sm"
-                  placeholder="Enter EI"
-                />
-                {submitted && <div className="mt-1">{getResultBadge(lifoEI, scenario.correctLIFO.endingInventory)}</div>}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <h4 className="font-semibold text-green-800">Weighted Average</h4>
-              <div>
-                <label className="text-sm text-slate-700">COGS ($)</label>
-                <input
-                  type="number"
-                  value={waCogs}
-                  onChange={(e) => setWaCogs(e.target.value)}
-                  disabled={submitted}
-                  className="w-full px-3 py-2 border border-slate-300 rounded text-sm"
-                  placeholder="Enter COGS"
-                />
-                {submitted && <div className="mt-1">{getResultBadge(waCogs, scenario.correctWeightedAvg.cogs)}</div>}
-              </div>
-              <div>
-                <label className="text-sm text-slate-700">Ending Inventory ($)</label>
-                <input
-                  type="number"
-                  value={waEI}
-                  onChange={(e) => setWaEI(e.target.value)}
-                  disabled={submitted}
-                  className="w-full px-3 py-2 border border-slate-300 rounded text-sm"
-                  placeholder="Enter EI"
-                />
-                {submitted && <div className="mt-1">{getResultBadge(waEI, scenario.correctWeightedAvg.endingInventory)}</div>}
-              </div>
-            </div>
-          </div>
-
-          {showHint && (
-            <div className="bg-amber-50 p-3 rounded border border-amber-200 text-sm text-amber-900 flex items-start gap-2">
-              <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <span>{scenario.hint}</span>
-            </div>
-          )}
-
+      <Card className="border-green-200 bg-green-50">
+        <CardHeader>
+          <CardTitle className="text-green-900 flex items-center gap-2">
+            <Lightbulb className="h-5 w-5" />
+            Talk-Through Practice (Not Graded)
+          </CardTitle>
+          <CardDescription className="text-green-900/80">{stage.prompt}</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <textarea
+            value={notes}
+            onChange={(event) => {
+              setNotesByStage((prev) => ({
+                ...prev,
+                [stage.id]: event.target.value
+              }))
+            }}
+            placeholder="Write your explanation in plain language."
+            className="w-full min-h-24 rounded border border-green-300 bg-white p-3 text-sm text-slate-900"
+          />
           <div className="flex gap-2 flex-wrap">
-            {!submitted ? (
-              <>
-                <Button onClick={handleSubmit} className="bg-purple-600 hover:bg-purple-700">
-                  Submit Answers
-                </Button>
-                <Button variant="outline" onClick={() => setShowHint(!showHint)}>
-                  {showHint ? 'Hide' : 'Show'} Hint
-                </Button>
-              </>
+            <Button type="button" variant="outline" onClick={() => setShowModel((prev) => !prev)}>
+              {showModel ? "Hide Model Response" : "Reveal Model Response"}
+            </Button>
+            {stageIndex < stages.length - 1 ? (
+              <Button
+                type="button"
+                className="bg-green-700 hover:bg-green-800"
+                onClick={() => goToStage(stageIndex + 1)}
+              >
+                Next Sheet Rehearsal <ArrowRight className="ml-1 h-4 w-4" />
+              </Button>
             ) : (
-              <>
-                <Button onClick={handleNext} variant="outline" className="flex items-center gap-2">
-                  Next Scenario <RefreshCw className="w-4 h-4" />
-                </Button>
-                <Button onClick={handleReset} variant="outline">
-                  Retry This Scenario
-                </Button>
-              </>
+              <Badge className="bg-green-100 text-green-800 flex items-center gap-1 py-1 px-2">
+                <CheckCircle2 className="h-4 w-4" /> Ready for Phase 4 workbook sprint
+              </Badge>
             )}
           </div>
-
-          <div className="bg-blue-50 p-3 rounded border border-blue-200 text-sm text-blue-900">
-            <strong>Bridge to Phase 4:</strong> In the real workbook, you will not type these numbers by hand.
-            Instead, you will build formulas that compute COGS and Ending Inventory automatically for each method.
-            The logic you just practiced is the same logic your formulas will execute.
-          </div>
+          {showModel && (
+            <div className="rounded border border-green-300 bg-white p-3 text-sm text-green-900">
+              <strong>Model response:</strong> {stage.modelResponse}
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

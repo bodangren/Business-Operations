@@ -17,11 +17,10 @@ export default function Unit07Lesson05Phase3() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">Phase 3: Safe Rehearsal</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Practice the Method Logic Before Building the Workbook</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Rehearse the Excel Algorithms Before Workbook Build</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Before you open Excel, practice the method-comparison logic in this simulator. Each scenario gives you
-              purchase data and units sold. Calculate COGS and Ending Inventory for FIFO, LIFO, and Weighted Average.
-              This is the same logic your formulas will execute in Phase 4.
+              This is a guided walkthrough, not a multiple-choice test. Decode the table references, practice explaining
+              each formula, and follow the same sheet order you will use in Phase 4.
             </p>
           </div>
         </section>
@@ -35,15 +34,14 @@ export default function Unit07Lesson05Phase3() {
             </CardHeader>
             <CardContent className="text-green-900 space-y-2">
               <ol className="list-decimal list-inside space-y-1">
-                <li>Read the purchase data and note the units sold.</li>
-                <li>Calculate COGS and Ending Inventory for each method by hand or with a calculator.</li>
-                <li>Enter your answers and submit to check.</li>
-                <li>Use the hint if you are stuck, then try again.</li>
-                <li>Move to the next scenario to build speed.</li>
+                <li>Work one sheet at a time (FIFO, LIFO, Specific ID, Weighted Average, Outputs).</li>
+                <li>For each sheet, read what each formula reference means in plain English.</li>
+                <li>Write a short explanation in your own words, then compare with the model response.</li>
+                <li>Use the trap + audit checks so you know what to verify during the real build.</li>
               </ol>
               <div className="mt-3 flex items-center gap-2 text-sm">
                 <ArrowRight className="w-4 h-4" />
-                <span>When you can get all three methods right consistently, you are ready for the real workbook build.</span>
+                <span>When you can explain each sheet&apos;s formulas clearly, you are ready for the workbook sprint.</span>
               </div>
             </CardContent>
           </Card>

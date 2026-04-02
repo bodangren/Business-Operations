@@ -40,10 +40,10 @@ export default function Unit07Lesson05Phase6() {
             <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">Phase 6: Reflection and Handoff</Badge>
             <h1 className="text-3xl font-bold text-gray-900">What You Can Now Do Faster and More Reliably</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              You built a method-comparison workbook that switches between FIFO, LIFO, and Weighted Average from one
-              control cell. You added validation so bad inputs cannot corrupt COGS. You defended a method recommendation
-              with workbook evidence. These skills prepare you for Lesson 06, where you will turn this logic into a
-              dashboard that tells the full business story.
+              You built a method-comparison workbook that switches among FIFO, LIFO, Specific ID, and Weighted Average
+              from one control cell. You practiced algorithm-level reasoning and defended a method recommendation with
+              workbook evidence. These skills prepare you for Lesson 06, where you will turn this logic into a
+              dashboard that tells the business story.
             </p>
           </div>
         </section>
@@ -58,9 +58,8 @@ export default function Unit07Lesson05Phase6() {
             <CardContent className="text-green-900 space-y-2">
               <ul className="list-disc list-inside space-y-1">
                 <li>Set up Excel Tables with structured references so the model scales</li>
-                <li>Built FIFO, LIFO, and Weighted Average calculations in one workbook</li>
-                <li>Added a method selector that drives all three methods from one cell</li>
-                <li>Added validation that blocks negative costs and missing SKUs</li>
+                <li>Built FIFO, LIFO, Specific ID, and Weighted Average algorithm blocks in one workbook</li>
+                <li>Added a method selector that drives all four methods from one cell</li>
                 <li>Wrote a recommendation memo with evidence from your workbook</li>
               </ul>
             </CardContent>
@@ -81,7 +80,8 @@ export default function Unit07Lesson05Phase6() {
                 <li>Build a recommendation section that ties KPIs to your method choice</li>
               </ul>
               <p className="text-sm text-blue-700 mt-2">
-                The workbook you built today is the foundation. Lesson 06 adds the presentation layer.
+                Keep applying standard quality controls (naming, validation, error handling). The workbook you built
+                today is the foundation, and Lesson 06 adds the presentation layer.
               </p>
             </CardContent>
           </Card>

@@ -12,9 +12,9 @@ const hookQuestions = [
   {
     id: "u07l05-hook-1",
     question:
-      "Sarah's investor asks her to show COGS under FIFO, LIFO, and Weighted Average during the same meeting. What workbook design lets her switch methods without rebuilding the file?",
+      "Sarah's investor asks for COGS under FIFO, LIFO, Specific ID, and Weighted Average in the same meeting. What workbook design supports that request fastest?",
     answers: [
-      "A single method-selector cell that drives all three method calculations",
+      "A single method-selector cell that drives all four method calculations",
       "Three separate workbooks, one per method",
       "Manually retyping formulas each time the method changes",
       "Hardcoding COGS totals and adjusting them later"
@@ -25,41 +25,41 @@ const hookQuestions = [
   {
     id: "u07l05-hook-2",
     question:
-      "Sarah's current workbook uses ranges like A2:A100. When she adds 50 new transactions, several formulas break. What design choice prevents this?",
+      "Prices are rising this month. Which method typically reports the highest COGS and lowest profit this period?",
     answers: [
-      "Convert the data range into an Excel Table and use structured references like Purchases[Qty]",
-      "Extend the range to A2:A1000 so there is room for growth",
-      "Hide extra rows until she needs them",
-      "Merge header cells so the sheet looks cleaner"
+      "LIFO, because newer higher-cost lots are assigned to COGS first",
+      "FIFO, because older lower-cost lots are assigned to COGS first",
+      "Specific ID, because it always averages all lots",
+      "Weighted Average, because it always equals FIFO"
     ],
     explanation:
-      "Tables expand automatically and structured references follow new rows. Fixed ranges always break when data grows beyond the original boundary."
+      "When costs are rising, LIFO usually pushes higher recent costs into COGS, reducing reported gross profit."
   },
   {
     id: "u07l05-hook-3",
     question:
-      "During a live demo, a formula shows #N/A on the dashboard. What damage does this cause?",
+      "Which statement best describes how Specific ID differs from FIFO/LIFO?",
     answers: [
-      "It signals weak controls and makes the whole model look unreliable",
-      "Nothing, because investors know lookups sometimes fail",
-      "It only affects the chart, not the numbers",
-      "It proves the method choice was wrong"
+      "Specific ID assigns cost from the exact lot tagged on each sale row",
+      "Specific ID always uses the newest lot first",
+      "Specific ID always uses one blended period rate",
+      "Specific ID ignores lot-level data and only tracks SKU totals"
     ],
     explanation:
-      "Unwrapped errors on a dashboard tell investors the model was not stress-tested. Professional workbooks wrap lookups in IFNA or IFERROR."
+      "Specific ID is a traceability method: each sale line carries a LotID that points to one exact purchase cost."
   },
   {
     id: "u07l05-hook-4",
     question:
-      "Prices are rising. Which method lowers reported profit and likely taxes this period?",
+      "What is the practical payoff of keeping all methods in one workbook model?",
     answers: [
-      "LIFO, because the newest, higher costs flow to COGS first",
-      "FIFO, because the oldest, lower costs flow to COGS first",
-      "Weighted Average, because it always matches FIFO",
-      "All methods show the same COGS"
+      "You can compare method outcomes with the same source data and explain differences quickly",
+      "You avoid ever using table references in formulas",
+      "You can skip building method-specific helper blocks",
+      "You no longer need COGS and ending inventory checks"
     ],
     explanation:
-      "LIFO pulls the newest, most expensive layers into COGS when prices rise. That raises expense, lowers profit, and reduces the tax bill."
+      "A shared model gives cleaner method-to-method comparisons and makes investor communication faster."
   }
 ]
 
@@ -75,9 +75,9 @@ export default function Unit07Lesson05Phase1() {
             <h1 className="text-3xl font-bold text-gray-900">Sarah Needs to Compare Methods Under Pressure</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Sarah is meeting with a potential investor. The investor wants to see how COGS and ending inventory change
-              under FIFO, LIFO, and Weighted Average. Sarah opens her workbook, toggles the method, and a formula breaks.
-              The investor frowns. Models that crumble under change scare investors away. Today you will build a workbook
-              that switches methods cleanly, scales as data grows, and earns trust.
+              under FIFO, LIFO, Specific ID, and Weighted Average. Sarah opens her workbook, toggles the method, and a formula breaks.
+              The investor frowns. Today, your goal is to build a single model that can answer method-comparison questions
+              quickly and defensibly with one source dataset.
             </p>
           </div>
         </section>
@@ -86,34 +86,34 @@ export default function Unit07Lesson05Phase1() {
           <Card className="border-red-200 bg-white">
             <CardHeader>
               <CardTitle className="text-red-800 flex items-center gap-2">
-                <AlertTriangle className="h-5 w-5" /> Before vs. After
+                <AlertTriangle className="h-5 w-5" /> Investor Meeting Agenda
               </CardTitle>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-4 text-slate-800">
+            <CardContent className="grid md:grid-cols-3 gap-4 text-slate-800">
               <div className="bg-red-50 p-4 rounded border border-red-200">
-                <p className="font-semibold mb-2">Fragile (Before)</p>
-                <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Fixed ranges like A2:A100 that miss new rows</li>
-                  <li>Separate sheets per method with copy-paste drift</li>
-                  <li>No checks for missing SKU or negative cost</li>
-                  <li>#N/A errors visible on the dashboard</li>
-                </ul>
+                <p className="font-semibold mb-2">Question 1: Method Impact</p>
+                <p className="text-sm">
+                  Show how COGS and ending inventory change when switching FIFO, LIFO, Specific ID, and Weighted Average.
+                </p>
+              </div>
+              <div className="bg-amber-50 p-4 rounded border border-amber-200">
+                <p className="font-semibold mb-2">Question 2: Why Different?</p>
+                <p className="text-sm">
+                  Explain why the same sales quantity can produce different COGS across methods.
+                </p>
               </div>
               <div className="bg-green-50 p-4 rounded border border-green-200">
-                <p className="font-semibold mb-2">Robust (After)</p>
-                <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Excel Tables with structured references</li>
-                  <li>One method selector drives all three calculations</li>
-                  <li>Validation blocks bad inputs before they reach COGS</li>
-                  <li>IFNA wraps lookups so dashboards stay clean</li>
-                </ul>
+                <p className="font-semibold mb-2">Question 3: Recommendation</p>
+                <p className="text-sm">
+                  Defend which method gives the clearest story for this business and this price environment.
+                </p>
               </div>
             </CardContent>
           </Card>
 
           <ComprehensionCheck
             title="Predict the Professional Approach"
-            description="Choose the designs that keep Sarah's model stable under investor scrutiny."
+            description="Choose the decisions that help Sarah explain method differences clearly under investor scrutiny."
             questions={hookQuestions}
             showExplanations={true}
             allowRetry={true}
@@ -128,13 +128,13 @@ export default function Unit07Lesson05Phase1() {
             <CardContent className="space-y-2 text-blue-900">
               <p className="font-medium">Discussion Prompt (3 minutes):</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Where do inventory workbooks usually break as data grows?</li>
+                <li>Which method differences would an investor ask you to justify first?</li>
                 <li>Why does an investor care whether Sarah can switch methods in one file?</li>
                 <li>What outputs matter most to someone deciding whether to fund this business?</li>
               </ul>
               <div className="mt-2 flex items-center gap-2 text-slate-700">
                 <Shield className="w-4 h-4" />
-                <span className="text-sm">Professional standard: stress-test with added rows before presenting.</span>
+                <span className="text-sm">Professional standard: explain method logic and recommendation from one consistent workbook.</span>
               </div>
             </CardContent>
           </Card>

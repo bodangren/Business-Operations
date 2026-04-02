@@ -26,6 +26,7 @@ interface ScenarioProblem {
 }
 
 const generateProblem = (seed: number): ScenarioProblem => {
+  const targetProfit = 3000;
   const variants = [
     { fixedCosts: 5000, variableCost: 200, currentPrice: 500, currentVolume: 15 },
     { fixedCosts: 8000, variableCost: 150, currentPrice: 400, currentVolume: 30 },
@@ -36,7 +37,7 @@ const generateProblem = (seed: number): ScenarioProblem => {
   
   const cm = v.currentPrice - v.variableCost;
   const currentProfit = (cm * v.currentVolume) - v.fixedCosts;
-  const targetCM = v.fixedCosts + v.targetProfit;
+  const targetCM = v.fixedCosts + targetProfit;
   
   const premiumVolume = v.currentVolume;
   const premiumPrice = Math.ceil(targetCM / premiumVolume + v.variableCost);
@@ -50,7 +51,7 @@ const generateProblem = (seed: number): ScenarioProblem => {
   return {
     id: seed,
     ...v,
-    targetProfit: 3000,
+    targetProfit,
     premiumPrice,
     premiumVolume,
     volumePrice,

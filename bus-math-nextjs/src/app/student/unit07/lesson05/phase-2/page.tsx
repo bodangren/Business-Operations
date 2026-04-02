@@ -3,47 +3,10 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, CheckCircle2, AlertCircle } from "lucide-react"
-import FillInTheBlank from "@/components/exercises/FillInTheBlank"
+import InventoryAlgorithmShowTell from "@/components/business-simulations/InventoryAlgorithmShowTell"
 import { lesson05Data, unit07Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[1]
-
-const vocabItems = [
-  {
-    id: "v1",
-    text: "Convert your data range into an Excel {blank} so formulas expand with new rows (e.g., Purchases[Qty]).",
-    answer: "Table",
-    hint: "Also called a structured reference"
-  },
-  {
-    id: "v2",
-    text: "A single {blank} cell with a dropdown lets the model switch between FIFO, LIFO, and Weighted Average.",
-    answer: "method selector",
-    alternativeAnswers: ["control", "dropdown"],
-    hint: "Often a Data Validation list"
-  },
-  {
-    id: "v3",
-    text: "Use {blank} to safely display 'Not found' when a lookup fails.",
-    answer: "IFNA",
-    alternativeAnswers: ["IFERROR"],
-    hint: "Protects dashboards from #N/A"
-  },
-  {
-    id: "v4",
-    text: "Weighted Average unit cost = Total {blank} divided by Total Units on hand.",
-    answer: "Cost",
-    alternativeAnswers: ["cost of purchases"],
-    hint: "Pool all costs, divide by all units"
-  },
-  {
-    id: "v5",
-    text: "Validation should block {blank} costs and missing SKUs before they reach COGS.",
-    answer: "negative",
-    alternativeAnswers: ["zero", "blank"],
-    hint: "Protect data integrity at the source"
-  }
-]
 
 export default function Unit07Lesson05Phase2() {
   return (
@@ -54,10 +17,10 @@ export default function Unit07Lesson05Phase2() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">Phase 2: Tool Anatomy</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Workbook Anatomy: The Method Comparison Pattern</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Excel Algorithm Anatomy: All Four Inventory Methods</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Your goal is a single workbook that computes COGS and ending inventory for all three methods, switches
-              between them with one control cell, and stays readable when data grows. Below is the exact pattern.
+              You are not memorizing formulas. You are learning what each method is doing to inventory layers so you can
+              build and defend the logic in Excel under pressure.
             </p>
           </div>
         </section>
@@ -66,60 +29,70 @@ export default function Unit07Lesson05Phase2() {
           <Card className="border-green-200 bg-white">
             <CardHeader>
               <CardTitle className="text-green-800 flex items-center gap-2">
-                <BookOpen className="h-5 w-5" /> The Workbook Pattern
+                <BookOpen className="h-5 w-5" /> Algorithm Contract for This Lesson
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-lg max-w-none text-slate-800 space-y-4">
-              <h3 className="text-lg font-semibold text-slate-900">Sheet 1: Inputs</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Shared Setup (used by all methods)</h3>
               <p>
-                Build two Tables: <strong>Purchases</strong> (Date, SKU, Qty, UnitCost) and <strong>Sales</strong> (Date, SKU, Qty).
-                Add a <strong>Method</strong> cell with a Data Validation dropdown: FIFO, LIFO, Weighted Avg.
-                Use structured references like <code>Purchases[Qty]</code> so ranges expand when data grows.
+                Build <strong>Purchases</strong> with LotID, Date, SKU, Qty, UnitCost, LotTotal and
+                <strong> Sales</strong> with Date, SKU, Qty, LotID. The entire workbook depends on these two tables.
+                Every method block reads the same source tables and only changes how cost is assigned.
+              </p>
+              <p className="text-sm bg-slate-50 p-3 rounded border border-slate-200">
+                Shared totals: <code>UnitsSold = SUM(Sales[Qty])</code>, <code>TotalUnits = SUM(Purchases[Qty])</code>,
+                <code> GAFS = SUM(Purchases[LotTotal])</code>.
               </p>
 
-              <h3 className="text-lg font-semibold text-slate-900">Sheet 2: Valuation</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Method 1: FIFO Algorithm (oldest lots first)</h3>
               <p>
-                For <strong>FIFO</strong>: consume the oldest layers first. Build helper columns that track how many units
-                come from each purchase lot, then multiply by that lot's unit cost.
-              </p>
-              <p>
-                For <strong>LIFO</strong>: consume the newest layers first. Same helper structure, but read the
-                purchase table from bottom to top.
-              </p>
-              <p>
-                For <strong>Weighted Average</strong>: compute one blended rate = Total Cost of all purchases divided by
-                Total Units. Multiply that rate by units sold for COGS, and by units remaining for ending inventory.
+                Add a running cumulative quantity in Purchases. Then compute consumed units by lot with:
+                <code>MAX(0, MIN([@Qty], UnitsSold - ([@[FIFO CumQty]] - [@Qty])))</code>. Then cost used is
+                consumed units × unit cost. This works because each row calculates only the amount still needed after older lots.
               </p>
 
-              <h3 className="text-lg font-semibold text-slate-900">Sheet 3: Outputs</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Method 2: LIFO Algorithm (newest lots first)</h3>
               <p>
-                Display COGS, Ending Inventory, and Gross Profit for the selected method. Wrap any lookups with
-                <code> IFNA</code> so the dashboard stays clean. Add a short note explaining the method choice.
+                Build a helper block ordered newest to oldest (reverse lot order), then apply the same consume
+                pattern as FIFO on that reversed block. The formula can stay the same because the order has changed.
               </p>
 
-              <div className="bg-amber-50 p-4 rounded border border-amber-200">
+              <h3 className="text-lg font-semibold text-slate-900">Method 3: Specific ID Algorithm (exact layers)</h3>
+              <p>
+                Use Sales[LotID] to identify the exact lot sold. Pull each unit cost with
+                <code> XLOOKUP(Sales[@LotID], Purchases[LotID], Purchases[UnitCost])</code>, then compute each
+                sale line cost = Qty × looked-up unit cost and sum for Specific ID COGS. Here, table references are the
+                traceability chain from sale line back to purchase lot.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-900">Method 4: Weighted Average Algorithm (periodic)</h3>
+              <p>
+                Compute one periodic blended rate:
+                <code>WA Rate = GAFS / TotalUnits</code>.
+                Then <code>WA COGS = UnitsSold × WA Rate</code> and
+                <code>WA EI = (TotalUnits - UnitsSold) × WA Rate</code>.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-900">Output Switch (display layer)</h3>
+              <p>
+                Create a method summary table with one row per method (COGS, Ending Inventory). The selector should
+                lookup values from that table instead of hardcoding nested IF chains so results are auditable and easy to explain.
+              </p>
+
+              <div className="bg-amber-50 p-4 rounded border border-amber-200 text-sm">
                 <h3 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
-                  <AlertCircle className="h-4 w-4" /> Common Failure Modes
+                  <AlertCircle className="h-4 w-4" /> Professional Expectations (Not Scored in This Lesson)
                 </h3>
                 <ul className="list-disc list-inside text-amber-900 space-y-1">
-                  <li><strong>Fixed ranges:</strong> A2:A100 misses new rows. Always use Tables.</li>
-                  <li><strong>Unwrapped lookups:</strong> #N/A on dashboard destroys trust. Wrap in IFNA.</li>
-                  <li><strong>Negative costs:</strong> A negative UnitCost corrupts every metric. Block it with validation.</li>
-                  <li><strong>Hardcoded method names:</strong> If you type "FIFO" in 10 formulas, changing methods means 10 edits. Use one control cell.</li>
-                  <li><strong>Currency-formatted strings in formulas:</strong> "$1,350" breaks arithmetic. Use raw numbers.</li>
+                  <li>Use Tables and structured references so logic expands safely.</li>
+                  <li>Keep clear names for blocks, selector cells, and method summary rows.</li>
+                  <li>Add input validation and friendly error handling to support audit quality.</li>
                 </ul>
               </div>
             </CardContent>
           </Card>
 
-          <FillInTheBlank
-            sentences={vocabItems}
-            title="Vocabulary: Workbook Anatomy"
-            description="Complete the key terms you will use to build the method-comparison workbook."
-            showWordList={true}
-            randomizeWordOrder={true}
-            showHints={true}
-          />
+          <InventoryAlgorithmShowTell />
 
           <Card className="border-green-200 bg-green-50">
             <CardHeader>
@@ -129,14 +102,13 @@ export default function Unit07Lesson05Phase2() {
             </CardHeader>
             <CardContent className="text-green-900 space-y-2">
               <p>
-                In Lessons 2-4 you calculated FIFO, LIFO, Specific ID, and Weighted Average by hand. You saw that the
-                same transactions produce different COGS under different methods. Now you will automate that comparison
-                in one workbook. The math does not change. The speed and reliability do.
+                In Lessons 2-4 you calculated these methods manually. In Lesson 05, your assessment is whether you can
+                translate each method into a correct Excel algorithm that remains consistent when data changes.
               </p>
               <p>
-                When prices rise, FIFO shows higher profit and larger ending inventory. LIFO shows lower profit and
-                stronger cash flow from lower taxes. Weighted Average smooths the swings. Your workbook must make these
-                trade-offs visible and trustworthy.
+                Quick check before Phase 3: explain in plain language what
+                <code> Purchases[Qty]</code> means and what <code>[@Qty]</code> means. If you can decode both, you are ready
+                to rehearse the workbook logic.
               </p>
             </CardContent>
           </Card>

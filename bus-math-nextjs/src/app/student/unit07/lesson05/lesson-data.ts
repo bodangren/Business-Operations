@@ -4,15 +4,15 @@ export const lesson05Data = {
   sequence: 5,
   unitId: "u07",
   learningObjectives: [
-    "Build a workbook that computes COGS and ending inventory for FIFO, LIFO, and Weighted Average",
+    "Build a workbook that computes COGS and ending inventory for FIFO, LIFO, Specific ID, and Weighted Average",
     "Use Excel Tables and structured references so the model scales as transactions grow",
-    "Add validation rules that block bad inputs before they reach COGS",
+    "Implement method-specific Excel algorithms (layer consumption, lot lookup, and pooled-rate logic) with clear helper blocks",
     "Document assumptions so an investor can audit the method comparison"
   ],
   keyConcepts: [
-    "Dynamic method selector drives all three methods from one control cell",
+    "Dynamic method selector drives all four methods from one control cell",
     "Tables + structured references replace fixed ranges",
-    "Validation catches missing SKUs, negative costs, and stale dates",
+    "Algorithm correctness is method-specific: FIFO/LIFO order, Specific ID lot matching, WA pooled rate",
     "Professional workbooks explain choices beside the outputs"
   ],
   durationEstimateMinutes: 50,
@@ -43,19 +43,19 @@ export const lesson05Phases = [
     id: "u07l05-p2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Name the workbook pattern: Tables, method selector, helper columns, and common failure modes",
+    description: "Teach the Excel algorithms for FIFO, LIFO, Specific ID, and Weighted Average",
   },
   {
     id: "u07l05-p3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Practice method-comparison logic in a bounded simulator before touching the real workbook",
+    description: "Rehearse each workbook sheet with guided formula decoding before touching the real workbook",
   },
   {
     id: "u07l05-p4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Build the real method-comparison workbook with verification checkpoints",
+    description: "Build the real method-comparison workbook and verify all four algorithms",
   },
   {
     id: "u07l05-p5",

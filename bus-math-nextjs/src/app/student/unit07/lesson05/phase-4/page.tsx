@@ -8,29 +8,103 @@ import { lesson05Data, unit07Data, lesson05Phases } from "../lesson-data"
 
 const currentPhase = lesson05Phases[3]
 
-const blankCell = { value: "" }
-const textCell = (v: string) => ({ value: v, readOnly: true })
-const numberCell = (v: number) => ({ value: v, readOnly: true })
-const headerCell = (v: string) => ({ value: v, readOnly: true, className: "font-bold bg-slate-100" })
-const formulaTextCell = (v: string) => ({ value: " " + v, readOnly: true, className: "text-slate-500 italic" })
+const blankCell = { value: "", readOnly: true }
+const textCell = (value: string) => ({ value, readOnly: true })
+const numberCell = (value: number) => ({ value, readOnly: true })
+const headerCell = (value: string) => ({ value, readOnly: true, className: "font-bold bg-slate-100" })
+const formulaTextCell = (value: string) => ({ value: ` ${value}`, readOnly: true, className: "text-slate-500 italic" })
 
-const referenceModel: SpreadsheetData = [
-  [headerCell(""), headerCell("A"), headerCell("B"), headerCell("C"), headerCell("D"), headerCell("E")],
-  [headerCell("1"), textCell("METHOD SELECTOR"), textCell("FIFO"), blankCell, blankCell, blankCell, blankCell],
-  [headerCell("2"), blankCell, blankCell, blankCell, blankCell, blankCell, blankCell],
-  [headerCell("3"), headerCell("PURCHASES TABLE"), headerCell("Date"), headerCell("SKU"), headerCell("Qty"), headerCell("UnitCost"), headerCell("Total")],
-  [headerCell("4"), numberCell(1), textCell("Mar 1"), textCell("LK-001"), numberCell(10), numberCell(18), formulaTextCell("=D4*E4")],
-  [headerCell("5"), numberCell(2), textCell("Mar 8"), textCell("LK-001"), numberCell(20), numberCell(20), formulaTextCell("=D5*E5")],
-  [headerCell("6"), numberCell(3), textCell("Mar 15"), textCell("LK-001"), numberCell(10), numberCell(22), formulaTextCell("=D6*E6")],
-  [headerCell("7"), blankCell, blankCell, blankCell, blankCell, blankCell, blankCell],
-  [headerCell("8"), headerCell("SALES TABLE"), headerCell("Date"), headerCell("SKU"), headerCell("Qty"), blankCell, blankCell],
-  [headerCell("9"), numberCell(1), textCell("Mar 20"), textCell("LK-001"), numberCell(15), blankCell, blankCell],
-  [headerCell("10"), blankCell, blankCell, blankCell, blankCell, blankCell, blankCell],
-  [headerCell("11"), headerCell("OUTPUTS"), blankCell, blankCell, blankCell, blankCell, blankCell],
-  [headerCell("12"), textCell("COGS"), formulaTextCell("=IF(B1=\"FIFO\",280,IF(B1=\"LIFO\",320,300))"), blankCell, blankCell, blankCell, blankCell],
-  [headerCell("13"), textCell("Ending Inventory"), formulaTextCell("=IF(B1=\"FIFO\",500,IF(B1=\"LIFO\",460,480))"), blankCell, blankCell, blankCell, blankCell],
-  [headerCell("14"), textCell("GAFS"), textCell("$800"), blankCell, blankCell, blankCell, blankCell],
-  [headerCell("15"), textCell("Check: COGS + EI = GAFS"), formulaTextCell("=B12+B13"), blankCell, blankCell, blankCell, blankCell],
+const inputsSheetPreview: SpreadsheetData = [
+  [headerCell("Field"), headerCell("Value"), headerCell("Formula / Source"), headerCell("Purpose"), headerCell("Check")],
+  [textCell("UnitsSold"), numberCell(15), formulaTextCell("=SUM(Sales[Qty])"), textCell("Shared sold units"), textCell("Matches Sales table")],
+  [textCell("TotalUnits"), numberCell(40), formulaTextCell("=SUM(Purchases[Qty])"), textCell("Shared available units"), textCell("Matches Purchases table")],
+  [textCell("GAFS"), numberCell(800), formulaTextCell("=SUM(Purchases[LotTotal])"), textCell("Total available cost"), textCell("Used by every method")],
+  [textCell("SelectedMethod"), textCell("FIFO"), textCell("Data Validation List"), textCell("Drives output display"), textCell("FIFO/LIFO/Specific ID/WA")],
+  [textCell("Lot L1"), textCell("10 @ 18"), formulaTextCell("=Qty*UnitCost"), textCell("Purchases row"), textCell("180")],
+  [textCell("Lot L2"), textCell("20 @ 20"), formulaTextCell("=Qty*UnitCost"), textCell("Purchases row"), textCell("400")],
+  [textCell("Lot L3"), textCell("10 @ 22"), formulaTextCell("=Qty*UnitCost"), textCell("Purchases row"), textCell("220")]
+]
+
+const fifoSheetPreview: SpreadsheetData = [
+  [headerCell("LotID"), headerCell("Qty"), headerCell("UnitCost"), headerCell("FIFO CumQty"), headerCell("FIFO Used"), headerCell("FIFO Cost")],
+  [textCell("L1"), numberCell(10), numberCell(18), formulaTextCell("=SUM($B$2:B2)"), formulaTextCell("=MAX(0,MIN(B2,UnitsSold-(D2-B2)))"), formulaTextCell("=E2*C2")],
+  [textCell("L2"), numberCell(20), numberCell(20), formulaTextCell("=SUM($B$2:B3)"), formulaTextCell("=MAX(0,MIN(B3,UnitsSold-(D3-B3)))"), formulaTextCell("=E3*C3")],
+  [textCell("L3"), numberCell(10), numberCell(22), formulaTextCell("=SUM($B$2:B4)"), formulaTextCell("=MAX(0,MIN(B4,UnitsSold-(D4-B4)))"), formulaTextCell("=E4*C4")],
+  [blankCell, blankCell, blankCell, blankCell, blankCell, blankCell],
+  [textCell("FIFO COGS"), numberCell(280), formulaTextCell("=SUM(FIFO_Cost_Column)"), textCell("FIFO EI"), numberCell(520), formulaTextCell("=GAFS-FIFO_COGS")]
+]
+
+const lifoSheetPreview: SpreadsheetData = [
+  [headerCell("LotID (Newest→Oldest)"), headerCell("Qty"), headerCell("UnitCost"), headerCell("LIFO CumQty"), headerCell("LIFO Used"), headerCell("LIFO Cost")],
+  [textCell("L3"), numberCell(10), numberCell(22), formulaTextCell("=SUM($B$2:B2)"), formulaTextCell("=MAX(0,MIN(B2,UnitsSold-(D2-B2)))"), formulaTextCell("=E2*C2")],
+  [textCell("L2"), numberCell(20), numberCell(20), formulaTextCell("=SUM($B$2:B3)"), formulaTextCell("=MAX(0,MIN(B3,UnitsSold-(D3-B3)))"), formulaTextCell("=E3*C3")],
+  [textCell("L1"), numberCell(10), numberCell(18), formulaTextCell("=SUM($B$2:B4)"), formulaTextCell("=MAX(0,MIN(B4,UnitsSold-(D4-B4)))"), formulaTextCell("=E4*C4")],
+  [blankCell, blankCell, blankCell, blankCell, blankCell, blankCell],
+  [textCell("LIFO COGS"), numberCell(320), formulaTextCell("=SUM(LIFO_Cost_Column)"), textCell("LIFO EI"), numberCell(480), formulaTextCell("=GAFS-LIFO_COGS")]
+]
+
+const specificIdSheetPreview: SpreadsheetData = [
+  [headerCell("Sale Row"), headerCell("LotID"), headerCell("Qty"), headerCell("Lookup Cost"), headerCell("Line Cost"), headerCell("Meaning")],
+  [numberCell(1), textCell("L1"), numberCell(5), formulaTextCell("=XLOOKUP(B2,Purchases[LotID],Purchases[UnitCost])"), formulaTextCell("=C2*D2"), textCell("5 units from lot L1")],
+  [numberCell(2), textCell("L3"), numberCell(10), formulaTextCell("=XLOOKUP(B3,Purchases[LotID],Purchases[UnitCost])"), formulaTextCell("=C3*D3"), textCell("10 units from lot L3")],
+  [blankCell, blankCell, blankCell, blankCell, blankCell, blankCell],
+  [textCell("Specific ID COGS"), numberCell(310), formulaTextCell("=SUM(Line_Cost_Column)"), textCell("Specific ID EI"), numberCell(490), formulaTextCell("=GAFS-SpecificID_COGS")]
+]
+
+const weightedAverageSheetPreview: SpreadsheetData = [
+  [headerCell("Metric"), headerCell("Value"), headerCell("Formula"), headerCell("Meaning"), headerCell("Check")],
+  [textCell("WA Rate"), numberCell(20), formulaTextCell("=GAFS/TotalUnits"), textCell("Blended period cost per unit"), textCell("800/40 = 20")],
+  [textCell("WA COGS"), numberCell(300), formulaTextCell("=UnitsSold*WA_Rate"), textCell("Cost assigned to sold units"), textCell("15*20 = 300")],
+  [textCell("WA EI"), numberCell(500), formulaTextCell("=(TotalUnits-UnitsSold)*WA_Rate"), textCell("Cost assigned to unsold units"), textCell("25*20 = 500")]
+]
+
+const outputsSheetPreview: SpreadsheetData = [
+  [headerCell("Method"), headerCell("COGS"), headerCell("Ending Inventory"), headerCell("Balance Check"), headerCell("Display Logic")],
+  [textCell("FIFO"), numberCell(280), numberCell(520), formulaTextCell("=B2+C2"), textCell("Summary row")],
+  [textCell("LIFO"), numberCell(320), numberCell(480), formulaTextCell("=B3+C3"), textCell("Summary row")],
+  [textCell("Specific ID"), numberCell(310), numberCell(490), formulaTextCell("=B4+C4"), textCell("Summary row")],
+  [textCell("Weighted Average"), numberCell(300), numberCell(500), formulaTextCell("=B5+C5"), textCell("Summary row")],
+  [blankCell, blankCell, blankCell, blankCell, blankCell],
+  [textCell("Display COGS"), formulaTextCell("=XLOOKUP(SelectedMethod,A2:A5,B2:B5)"), textCell("Display EI"), formulaTextCell("=XLOOKUP(SelectedMethod,A2:A5,C2:C5)"), textCell("Selector output panel")]
+]
+
+const sheetPreviews = [
+  {
+    title: "Inputs Sheet",
+    note: "Set shared totals once. Every method reads from these values.",
+    data: inputsSheetPreview,
+    labels: ["A", "B", "C", "D", "E"]
+  },
+  {
+    title: "FIFO Sheet",
+    note: "Oldest-to-newest consume logic with FIFO helper columns.",
+    data: fifoSheetPreview,
+    labels: ["A", "B", "C", "D", "E", "F"]
+  },
+  {
+    title: "LIFO Sheet",
+    note: "Same consume formula as FIFO, but lots are reversed first.",
+    data: lifoSheetPreview,
+    labels: ["A", "B", "C", "D", "E", "F"]
+  },
+  {
+    title: "SpecificID Sheet",
+    note: "Sales lot tags drive exact cost lookups.",
+    data: specificIdSheetPreview,
+    labels: ["A", "B", "C", "D", "E", "F"]
+  },
+  {
+    title: "WeightedAverage Sheet",
+    note: "One blended period rate drives both COGS and ending inventory.",
+    data: weightedAverageSheetPreview,
+    labels: ["A", "B", "C", "D", "E"]
+  },
+  {
+    title: "Outputs Sheet",
+    note: "Summary table plus selector lookups displays the chosen method.",
+    data: outputsSheetPreview,
+    labels: ["A", "B", "C", "D", "E"]
+  }
 ]
 
 export default function Unit07Lesson05Phase4() {
@@ -42,15 +116,15 @@ export default function Unit07Lesson05Phase4() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">Phase 4: Workbook Sprint</Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Build the Method-Comparison Workbook</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Build the Multi-Sheet Inventory Method Workbook</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Open the student workbook and build the method-comparison model step by step. Each block has a
-              verification checkpoint. Do not move to the next block until the current one passes.
+              Open the student workbook and build method logic sheet-by-sheet. This sprint is assessed on algorithm
+              correctness and method-switch outputs, not formatting polish.
             </p>
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto space-y-8">
+        <section className="max-w-5xl mx-auto space-y-8">
           <Card className="border-orange-200 bg-white">
             <CardHeader>
               <CardTitle className="text-orange-800 flex items-center gap-2">
@@ -64,8 +138,7 @@ export default function Unit07Lesson05Phase4() {
                 </a>
               </p>
               <p className="text-sm text-slate-600">
-                This workbook has blank sheets labeled Inputs, Valuation, and Outputs. You will fill in the data
-                structure, formulas, and method selector.
+                Workbook tabs: Inputs, FIFO, LIFO, SpecificID, WeightedAverage, Outputs. Build each tab in order.
               </p>
             </CardContent>
           </Card>
@@ -73,18 +146,34 @@ export default function Unit07Lesson05Phase4() {
           <Card className="border-green-200 bg-white">
             <CardHeader>
               <CardTitle className="text-green-800 flex items-center gap-2">
-                <Target className="h-5 w-5" /> Reference Layout
+                <Target className="h-5 w-5" /> Reference Layout by Sheet
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm text-slate-700">
-                This is the target structure your workbook should match. Formulas are shown as text for reference.
+                Formulas are shown as text so you can read the structure clearly before building in Excel.
               </p>
-              <SpreadsheetWrapper
-                initialData={referenceModel}
-                readOnly={true}
-                columnLabels={["", "A", "B", "C", "D", "E", "F"]}
-              />
+
+              <div className="space-y-4">
+                {sheetPreviews.map((sheet) => (
+                  <Card key={sheet.title} className="border-slate-200">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-base text-slate-900">{sheet.title}</CardTitle>
+                      <p className="text-sm text-slate-600">{sheet.note}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="overflow-x-auto">
+                        <SpreadsheetWrapper
+                          initialData={sheet.data}
+                          readOnly={true}
+                          columnLabels={sheet.labels}
+                          className="min-w-[520px]"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </CardContent>
           </Card>
 
@@ -97,72 +186,45 @@ export default function Unit07Lesson05Phase4() {
             <CardContent className="text-green-900 space-y-4">
               <div className="space-y-3">
                 <div className="p-3 bg-white rounded border border-green-200">
-                  <p className="font-semibold">Block 1: Set Up the Inputs Sheet</p>
+                  <p className="font-semibold">Block 1: Inputs Tab</p>
                   <ol className="list-decimal list-inside text-sm space-y-1 mt-1">
-                    <li>Create a Table named <strong>Purchases</strong> with columns: Date, SKU, Qty, UnitCost</li>
-                    <li>Create a Table named <strong>Sales</strong> with columns: Date, SKU, Qty</li>
-                    <li>Add a <strong>Method</strong> cell with Data Validation dropdown: FIFO, LIFO, Weighted Avg</li>
+                    <li>Confirm Purchases and Sales tables are complete.</li>
+                    <li>Calculate UnitsSold, TotalUnits, and GAFS.</li>
+                    <li>Create selector dropdown with FIFO, LIFO, Specific ID, Weighted Average.</li>
                   </ol>
-                  <div className="mt-2 flex items-center gap-2 text-sm text-green-700">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Checkpoint: Tables expand when you add a new row. The dropdown shows all three methods.</span>
-                  </div>
+                  <p className="mt-2 text-sm">Checkpoint: shared totals match your source rows.</p>
                 </div>
 
                 <div className="p-3 bg-white rounded border border-green-200">
-                  <p className="font-semibold">Block 2: Build FIFO and LIFO Helper Columns</p>
+                  <p className="font-semibold">Block 2: FIFO + LIFO Tabs</p>
                   <ol className="list-decimal list-inside text-sm space-y-1 mt-1">
-                    <li>In the Purchases Table, add a <strong>Lot Total</strong> column: Qty × UnitCost</li>
-                    <li>Below the table, create a FIFO section: list each lot and how many units were consumed from it</li>
-                    <li>Create a LIFO section: same structure but consume from newest lots first</li>
-                    <li>Sum the consumed lot costs to get COGS for each method</li>
+                    <li>Build FIFO cumulative, used units, and cost columns (oldest-to-newest).</li>
+                    <li>Build LIFO helper table in reversed lot order and apply same consume pattern.</li>
                   </ol>
-                  <div className="mt-2 flex items-center gap-2 text-sm text-green-700">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Checkpoint: FIFO COGS = $280, LIFO COGS = $320 with the sample data.</span>
-                  </div>
+                  <p className="mt-2 text-sm">
+                    Checkpoint: FIFO COGS 280 / EI 520 and LIFO COGS 320 / EI 480 (sample data).
+                  </p>
                 </div>
 
                 <div className="p-3 bg-white rounded border border-green-200">
-                  <p className="font-semibold">Block 3: Build Weighted Average</p>
+                  <p className="font-semibold">Block 3: SpecificID + WeightedAverage Tabs</p>
                   <ol className="list-decimal list-inside text-sm space-y-1 mt-1">
-                    <li>Compute Total Cost = SUM of all Lot Totals</li>
-                    <li>Compute Total Units = SUM of all Qty</li>
-                    <li>Avg Rate = Total Cost / Total Units</li>
-                    <li>WA COGS = Avg Rate × Units Sold</li>
-                    <li>WA Ending Inventory = Avg Rate × Units Remaining</li>
+                    <li>Specific ID: lookup lot cost by Sales[LotID], compute line costs, sum COGS.</li>
+                    <li>Weighted Average: compute WA rate, WA COGS, and WA ending inventory.</li>
                   </ol>
-                  <div className="mt-2 flex items-center gap-2 text-sm text-green-700">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Checkpoint: WA COGS = $300, WA Ending Inventory = $480.</span>
-                  </div>
+                  <p className="mt-2 text-sm">
+                    Checkpoint: Specific ID COGS 310 / EI 490 and WA COGS 300 / EI 500 (sample data).
+                  </p>
                 </div>
 
                 <div className="p-3 bg-white rounded border border-green-200">
-                  <p className="font-semibold">Block 4: Build the Outputs Sheet</p>
+                  <p className="font-semibold">Block 4: Outputs Tab + Method Switch</p>
                   <ol className="list-decimal list-inside text-sm space-y-1 mt-1">
-                    <li>Display COGS, Ending Inventory, and GAFS for the selected method</li>
-                    <li>Use the Method cell to drive which method's numbers appear</li>
-                    <li>Add a check row: COGS + Ending Inventory should equal GAFS</li>
-                    <li>Add a short note explaining the method and its business impact</li>
+                    <li>Create one summary row per method with COGS and ending inventory.</li>
+                    <li>Use selector-driven lookups to display current method outputs.</li>
+                    <li>Add method-level balance checks where COGS + EI = GAFS.</li>
                   </ol>
-                  <div className="mt-2 flex items-center gap-2 text-sm text-green-700">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Checkpoint: Toggle the method selector. COGS and EI update. The check row balances.</span>
-                  </div>
-                </div>
-
-                <div className="p-3 bg-white rounded border border-green-200">
-                  <p className="font-semibold">Block 5: Add Validation</p>
-                  <ol className="list-decimal list-inside text-sm space-y-1 mt-1">
-                    <li>Add a validation row that flags negative or zero UnitCost</li>
-                    <li>Add a check for missing SKU values</li>
-                    <li>Wrap any lookups in IFNA to prevent #N/A on the dashboard</li>
-                  </ol>
-                  <div className="mt-2 flex items-center gap-2 text-sm text-green-700">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Checkpoint: Enter a negative cost. A warning appears. The model does not break.</span>
-                  </div>
+                  <p className="mt-2 text-sm">Checkpoint: selector updates display values without editing formulas.</p>
                 </div>
               </div>
             </CardContent>
@@ -175,26 +237,35 @@ export default function Unit07Lesson05Phase4() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-amber-900">
-              <p className="font-medium mb-2">Your workbook is complete when:</p>
               <ul className="list-disc list-inside space-y-1 text-sm">
-                <li>All three methods compute COGS and Ending Inventory correctly from the same data</li>
-                <li>The method selector changes all outputs without breaking formulas</li>
-                <li>Tables and structured references are used (no fixed ranges like A2:A100)</li>
-                <li>Validation catches negative costs and missing SKUs</li>
-                <li>COGS + Ending Inventory = GAFS for every method</li>
-                <li>A short note explains the method choice and its business impact</li>
+                <li>Inputs, FIFO, LIFO, SpecificID, WeightedAverage, and Outputs tabs are complete.</li>
+                <li>All four methods return correct COGS and ending inventory from the same data.</li>
+                <li>Output selector displays method-specific COGS and ending inventory correctly.</li>
+                <li>Each method passes COGS + Ending Inventory = GAFS.</li>
+                <li>You can explain each tab&apos;s algorithm in plain language.</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="border-blue-200 bg-blue-50">
             <CardHeader>
+              <CardTitle className="text-blue-800">Professional Expectations (Non-Scored)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-blue-900 text-sm">
+              <ul className="list-disc list-inside space-y-1">
+                <li>Use clear names and structured references.</li>
+                <li>Add validation and error handling as part of normal workbook quality.</li>
+                <li>Keep each tab readable for fast audit and handoff.</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-blue-200 bg-white">
+            <CardHeader>
               <CardTitle className="text-blue-800">Fallback</CardTitle>
             </CardHeader>
             <CardContent className="text-blue-900 text-sm">
-              <p>
-                If your workbook breaks and you cannot find the error, download the teacher version to compare:
-              </p>
+              <p>If your workbook breaks, compare tab structure with the teacher reference:</p>
               <p className="mt-2">
                 <a className="underline text-blue-700" href="/resources/unit07-lesson05-teacher.xlsx" download>
                   Download unit07-lesson05-teacher.xlsx
