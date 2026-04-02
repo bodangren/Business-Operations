@@ -97,21 +97,21 @@
     - [x] Students can explain when accelerated depreciation makes more sense than straight-line
 
 ### Phase 3: Lessons 05-06 (Excel)
-- [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
-  - [ ] 3.1.1 Update lesson-data.ts for Lesson 05
-  - [ ] 3.1.2 Implement Phase 1-6 with asset register and depreciation schedule workbook
-    - Phase 1: Open with business/investor scenario where professional asset tracking matters, make tool feel necessary, connect to existing workbook
-    - Phase 2: Name tool/workbook pattern clearly, explain feature parts, show where tool lives in Excel, teach common failure mode
-    - Phase 3: Use custom simulator/manual logic trainer mirroring real workbook logic, give immediate feedback, make bridge to phase 4 explicit
-    - Phase 4: State exact starting workbook/download path, state output, include reference model, provide short build sequence with verification checkpoints, include Definition of Done
-    - Phase 5: Short technical/conceptual check, brief artifact task focusing on trustworthiness and business communication
-    - Phase 6: Reflect on tool use and professional judgment, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.1.3 Teach workbook anatomy and the register/schedule relationship directly
-  - [ ] 3.1.4 Include a safe rehearsal that mirrors the live workbook logic
-  - [ ] 3.1.5 Require a real workbook artifact by the end of Phase 4
+- [x] 3.1 **Lesson 05** - Implement excel-lessons skill
+  - [x] 3.1.1 Update lesson-data.ts for Lesson 05
+  - [x] 3.1.2 Implement Phase 1-6 with asset register and depreciation schedule workbook
+    - Phase 1: Open with Sarah's board meeting stress test — fragile lists vs. linked asset register. Comprehension check on professional asset tracking.
+    - Phase 2: Name asset register and depreciation schedule clearly. Explain sheet anatomy, column fields, formula architecture (depreciable base, accumulated depreciation, book value, check column). Teach hard-coding failure mode. Show SpreadsheetWrapper reference previews for both sheets.
+    - Phase 3: AssetRegisterSimulator component — pick an asset, predict depreciation by hand, see full schedule reveal, audit common errors. Bridges directly to Phase 4 build.
+    - Phase 4: Download unit08-asset-register-starter.xlsx. Build sequence: register sheet, depreciation schedule with linked formulas, verification checks, Definition of Done checklist.
+    - Phase 5: 5-question MCQ on workbook logic and depreciation calculations. Artifact task: write an audit response memo defending the workbook's trustworthiness.
+    - Phase 6: Reflect on confidence and understanding. Key takeaways on linked formulas and book value logic. Preview Lesson 06 method comparison.
+  - [x] 3.1.3 Teach workbook anatomy and the register/schedule relationship directly
+  - [x] 3.1.4 Include a safe rehearsal that mirrors the live workbook logic (AssetRegisterSimulator)
+  - [x] 3.1.5 Require a real workbook artifact by the end of Phase 4
   - **Done when**:
-    - [ ] Students have a working asset register and depreciation schedule in Excel
-    - [ ] The workbook reflects the same logic already learned manually
+    - [x] Students have a working asset register and depreciation schedule in Excel
+    - [x] The workbook reflects the same logic already learned manually
 
 - [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
   - [ ] 3.2.1 Update lesson-data.ts for Lesson 06

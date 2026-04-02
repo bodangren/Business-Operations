@@ -2,122 +2,114 @@ import { UnitData } from "@/types/unit"
 
 export const unit08Data: UnitData = {
   id: "Unit 8",
-  title: "Year‑1 Startup Model",
+  title: "Fixed Assets and Depreciation",
   duration: "2-3 weeks",
-  difficulty: "Advanced",
-  description: "Can we convince a micro‑VC that our first‑year financial model is robust enough to merit funding?",
+  difficulty: "Intermediate",
+  description: "TechStart Solutions is growing and buying long-term assets. How do we track them professionally and choose the right depreciation method?",
   
   drivingQuestion: {
-    question: "Can we convince a micro‑VC that our first‑year financial model is robust enough to merit funding?",
-    context: "A venture capitalist guest outlines common red flags in rookie startup models and challenges students to avoid them. Students review anonymized pitch decks and model failures.",
-    scenario: "Teams will create a comprehensive 3-statement financial model with scenario testing and present to a real VC mentor panel."
+    question: "How do we track long-term assets professionally and choose the right depreciation method?",
+    context: "Sarah Chen's company is expanding and purchasing equipment, vehicles, and technology. Investors expect clean asset tracking and defensible depreciation policies.",
+    scenario: "Students build a complete asset register and depreciation schedule, compare methods, and recommend a depreciation policy backed by workbook evidence."
   },
   
   objectives: {
     content: [
-      "Link three financial statements with formula integrity",
-      "Apply scenario and sensitivity analysis to model startup risk",
-      "Audit peer models to identify formula errors and risky assumptions"
+      "Distinguish capital expenditures from everyday expenses",
+      "Calculate depreciation using straight-line and double-declining balance methods",
+      "Build an asset register and depreciation schedule in Excel"
     ],
     skills: [
-      "Cross-sheet linking for income, balance sheet, and cash flow",
-      "Scenario Manager; sensitivity tables; data validation",
-      "Formula auditing tools (trace precedents, circular reference warnings)"
+      "Capitalization vs. expense classification",
+      "Manual depreciation calculations (SL and DDB)",
+      "Excel asset register with linked depreciation schedule"
     ],
     deliverables: [
-      "Fully linked 3-statement forecast model",
-      "Model with 3 scenario testing capabilities",
-      "8-slide VC-style pitch presentation",
-      "Live Q&A demonstration to VC panel",
-      "Peer audit documentation with improvements"
+      "Complete asset register workbook",
+      "Depreciation schedule showing method comparison",
+      "Written depreciation policy recommendation with evidence",
+      "Group presentation defending method choice"
     ]
   },
   
   assessment: {
     performanceTask: {
-      title: "VC Pitch + Live Demo",
-      description: "Present your startup's financial model to a real VC mentor panel, demonstrating scenario analysis and defending your assumptions in a live Q&A session.",
-      context: "This mirrors actual VC due diligence where financial models are rigorously tested for accuracy, realism, and risk assessment.",
+      title: "Depreciation Policy Recommendation",
+      description: "Present a depreciation policy recommendation to management, backed by a complete asset register and method comparison analysis.",
+      context: "This mirrors real-world accounting decisions where companies must choose and justify depreciation methods for financial reporting.",
       requirements: [
-        "8-slide pitch deck with clear narrative and professional visuals",
-        "Live Excel model demonstration showing scenario testing",
-        "Q&A defense of key assumptions and model integrity",
-        "Incorporation of feedback from peer audit process"
+        "Complete asset register with all required fields",
+        "Depreciation schedule comparing at least two methods",
+        "Written recommendation with claim, evidence, and risk analysis",
+        "Clear explanation of method choice and statement impact"
       ]
     },
     milestones: [
       {
         id: "milestone1",
         day: 3,
-        title: "Fully Linked 3-Statement Forecast",
-        description: "Complete integration of income statement, balance sheet, and cash flow",
+        title: "Asset Register Complete",
+        description: "All assets entered with cost, useful life, salvage value, and method",
         criteria: [
-          "All sheets linked with proper formulas",
-          "No hard-coded numbers in projections",
-          "Error-checks pass for all connections",
-          "Data flows correctly between statements"
+          "All assets listed with complete information",
+          "Depreciable base calculated correctly for each asset",
+          "Method assigned and justified for each asset class",
+          "Book value calculations verify against cost minus accumulated depreciation"
         ]
       },
       {
         id: "milestone2",
         day: 5,
-        title: "Milestone 1: Sensitivity Analysis Complete",
-        description: "Sensitivity tables and analysis implemented for key drivers",
+        title: "Depreciation Schedule and Method Comparison",
+        description: "Full depreciation schedule with method comparison and statement impact",
         criteria: [
-          "One-variable data table correctly evaluates a key input",
-          "Two-variable sensitivity table built for two key drivers",
-          "Tornado chart or equivalent visual compares driver impact",
-          "Top 3 sensitivity drivers identified with brief rationale"
+          "Annual depreciation calculated for each asset",
+          "Accumulated depreciation and book value tracked over time",
+          "At least two methods compared side by side",
+          "Income statement and balance sheet impact explained"
         ]
       },
       {
         id: "milestone3",
-        day: 6,
-        title: "Milestone 2: Model Runs 3 Scenarios",
-        description: "Scenario Manager implemented with sensitivity analysis",
+        day: 7,
+        title: "Final Recommendation and Presentation",
+        description: "Written recommendation and presentation defending depreciation policy",
         criteria: [
-          "Best case, worst case, and base case scenarios defined",
-          "Revenue shock and cost spike variables working",
-          "Sensitivity table analyzing top 3 drivers",
-          "Visual dashboard showing scenario impacts"
+          "Clear recommendation statement with method choice",
+          "Evidence cited from asset register and schedule",
+          "Risk and limitation analysis included",
+          "Professional presentation with workbook backup"
         ]
       }
     ],
     rubric: [
       {
-        name: "Model Integrity",
-        weight: "40%",
-        exemplary: "All sheets linked; no hard-coded numbers; error-checks pass; handles edge cases flawlessly",
-        proficient: "Sheets properly linked; minimal hard-coding; most error-checks pass; handles normal scenarios",
-        developing: "Some linking issues; hard-coded values present; limited error-checking; fragile model"
+        name: "Asset Register Accuracy",
+        weight: "30%",
+        exemplary: "All assets complete; formulas correct; book value verifies; no errors",
+        proficient: "Most assets complete; minor formula issues; book value mostly correct",
+        developing: "Missing asset data; formula errors; book value does not verify"
       },
       {
-        name: "Scenario Insight",
+        name: "Depreciation Method Application",
+        weight: "25%",
+        exemplary: "Methods calculated correctly; comparison clear; statement impact explained",
+        proficient: "Methods mostly correct; comparison present; basic statement impact",
+        developing: "Calculation errors; weak comparison; unclear statement impact"
+      },
+      {
+        name: "Recommendation Quality",
+        weight: "25%",
+        exemplary: "Clear claim; strong evidence from workbook; thorough risk analysis",
+        proficient: "Reasonable claim; adequate evidence; basic risk discussion",
+        developing: "Vague claim; weak evidence; minimal risk analysis"
+      },
+      {
+        name: "Professional Communication",
         weight: "20%",
-        exemplary: "Clear logic behind scenarios; comprehensive risk analysis; insightful visuals and interpretation",
-        proficient: "Reasonable scenario logic; basic risk explained; adequate visual representation",
-        developing: "Weak scenario rationale; limited risk analysis; poor visual communication"
-      },
-      {
-        name: "Pitch Effectiveness",
-        weight: "15%",
-        exemplary: "Compelling narrative; professional slides; confident delivery; expert Q&A handling",
-        proficient: "Clear structure; decent visuals; adequate delivery; handles most questions",
-        developing: "Basic presentation; weak visuals; hesitant delivery; struggles with questions"
-      },
-      {
-        name: "Audit Responsiveness",
-        weight: "15%",
-        exemplary: "All flagged issues addressed; comprehensive documentation; improvements enhance model significantly",
-        proficient: "Most issues addressed; adequate documentation; meaningful improvements made",
-        developing: "Limited issue resolution; poor documentation; minimal improvements"
-      },
-      {
-        name: "Reflection Quality",
-        weight: "10%",
-        exemplary: "Deep insights on CAP growth; specific examples; clear connections to learning objectives",
-        proficient: "Good reflection on growth; some examples; basic connections made",
-        developing: "Superficial reflection; limited examples; weak connections to learning"
+        exemplary: "Clear writing; professional formatting; confident presentation",
+        proficient: "Adequate writing; readable formatting; acceptable presentation",
+        developing: "Unclear writing; poor formatting; hesitant presentation"
       }
     ]
   },
@@ -126,151 +118,160 @@ export const unit08Data: UnitData = {
     weeks: [
       {
         weekNumber: 15,
-        title: "Model Assembly",
-        description: "Build the foundational 3-statement integrated financial model",
+        title: "Depreciation Foundations",
+        description: "Learn why long-term assets are tracked differently and master depreciation methods",
         days: [
           {
             day: 1,
-            focus: "Introduction: VC Red Flags & Entry Event",
+            focus: "Introduction: Sarah's Fixed-Asset Problem",
             activities: [
-              "Entry Event: VC guest speaker on common pitch deck failures",
-              "Review anonymized pitch failures and red flags",
-              "Team formation and startup selection"
+              "Watch Sarah's interview about equipment purchases",
+              "Discuss why investors expect professional asset tracking",
+              "Introduce the scoreboard: Cost, Accumulated Depreciation, Book Value"
             ],
             resources: [
-              "VC red flag presentation deck",
-              "Failure case studies",
-              "Team formation guidelines"
+              "Sarah interview video",
+              "Fixed-asset scenario cards",
+              "Scoreboard reference sheet"
             ]
           },
           {
             day: 2,
-            focus: "Core Concepts: Review & Link Integration",
+            focus: "Capitalization vs. Expense",
             activities: [
-              "Review linking from prior unit files",
-              "Income Statement refresher and best practices",
-              "Introduction to 3-statement modeling"
+              "Classify real purchase receipts as assets or expenses",
+              "Learn capitalization rules, useful life, and salvage value",
+              "Practice with mixed classification scenarios"
             ],
             resources: [
-              "Unit 3 outputs for reference",
-              "Cross-sheet linking demonstration",
-              "3-statement integration guide"
+              "Receipt classification worksheet",
+              "Capitalization rule reference",
+              "Asset purchase examples"
             ]
           },
           {
             day: 3,
-            focus: "Core Concepts: Balance Sheet & Cash Flow Integration",
+            focus: "Straight-Line Depreciation",
             activities: [
-              "Balance Sheet + Cash Flow integration workshop",
-              "Build connections between all three statements",
-              "Test formula integrity and error-checking"
+              "Calculate straight-line depreciation by hand",
+              "Build a full depreciation schedule",
+              "Connect to income statement and balance sheet impact"
             ],
             resources: [
-              "Linking template and examples",
-              "Formula integrity checklist"
+              "Straight-line formula card",
+              "Depreciation schedule template",
+              "Statement impact diagram"
             ],
-            milestone: "Fully linked 3-statement forecast"
+            milestone: "Straight-line schedule complete"
           },
           {
             day: 4,
-            focus: "Excel Model: Scenario Manager & Advanced Financial Modeling",
+            focus: "Double-Declining Balance and Method Comparison",
             activities: [
-              "Scenario Manager tutorial and setup",
-              "Define optimistic, pessimistic, and realistic scenarios",
-              "Implement variable switching and verify outputs"
+              "Calculate DDB depreciation by hand",
+              "Compare DDB with straight-line side by side",
+              "Discuss when accelerated depreciation makes sense"
             ],
             resources: [
-              "Scenario Manager guide",
-              "/resources/unit08-scenario-manager-practice.csv",
-              "/resources/unit08-financial-model-template.csv"
+              "DDB formula card",
+              "Method comparison table",
+              "Business case scenarios"
             ]
           },
           {
             day: 5,
-            focus: "Excel Model: Sensitivity Analysis & Milestone 1",
+            focus: "Build Asset Register and Depreciation Schedule in Excel",
             activities: [
-              "Build one- and two-variable data tables",
-              "Create tornado chart and interpret results",
-              "Submit Milestone 1: Sensitivity Analysis"
+              "Learn asset register workbook anatomy",
+              "Build asset register with linked depreciation schedule",
+              "Verify calculations and add workbook checks"
             ],
             resources: [
-              "Sensitivity analysis tutorial",
-              "/resources/unit08-sensitivity-analysis-data.csv"
-            ]
+              "Asset register starter workbook",
+              "Depreciation schedule template",
+              "Build verification checklist"
+            ],
+            milestone: "Asset register and schedule complete"
           }
         ]
       },
       {
         weekNumber: 16,
-        title: "Scenario Testing",
-        description: "Implement scenario analysis and prepare for VC presentation",
+        title: "Method Comparison and Project",
+        description: "Compare depreciation methods and complete the group project",
         days: [
           {
             day: 6,
-            focus: "Excel Model: Advanced Scenario Testing & Milestone 2",
+            focus: "Method Comparison and Investor-Ready Summary",
             activities: [
-              "Scenario Manager tutorial and setup",
-              "Add revenue shock and cost spike variables to model",
-              "Build scenario switching mechanisms"
+              "Compare methods side by side in the workbook",
+              "Add workbook checks for accumulated depreciation and book value",
+              "Write a short defense of recommended depreciation method"
             ],
             resources: [
-              "Scenario Manager guide",
-              "Variable setup templates"
-            ],
-            milestone: "Model runs 3 scenarios"
+              "Method comparison guide",
+              "Workbook verification checklist",
+              "Recommendation template"
+            ]
           },
           {
             day: 7,
-            focus: "Examples: Professional Model Standards",
+            focus: "Project Rehearsal with Shared Data",
             activities: [
-              "Build sensitivity table for key drivers",
-              "Create tornado chart analysis",
-              "Analyze top 3 drivers of financial change"
+              "Practice with shared teacher dataset",
+              "Trace the logic chain from asset register to recommendation",
+              "Peer audit against Definition of Done"
             ],
             resources: [
-              "Sensitivity analysis examples",
-              "Tornado chart sample templates"
+              "Shared rehearsal workbook",
+              "Peer audit checklist",
+              "Definition of Done"
             ]
           },
           {
             day: 8,
-            focus: "Examples: Presentation Prep & Mock Panel",
+            focus: "Project Kickoff with Group Datasets",
             activities: [
-              "Start 8-slide pitch deck development",
-              "Assign presentation topics per team member",
-              "Draft key messaging and storyline"
+              "Receive group-specific fixed-asset dataset",
+              "Set up workbook with correct naming and structure",
+              "Begin asset register and schedule"
             ],
             resources: [
-              "VC pitch deck starter template",
-              "Presentation planning worksheet"
-            ]
+              "Group dataset packets",
+              "Workbook setup guide",
+              "Milestone 1 acceptance criteria"
+            ],
+            milestone: "Project workbook opened and named"
           },
           {
             day: 9,
-            focus: "Mock Panel & Revisions",
+            focus: "Complete Workbook and Recommendation",
             activities: [
-              "Trial pitch with peer VC panel simulation",
-              "Collect feedback on model and presentation",
-              "Revise model and slides based on input"
+              "Finish remaining sheets and evidence blocks",
+              "Write recommendation with claim, evidence, and risk",
+              "Peer critique and revision"
             ],
             resources: [
-              "Mock panel feedback forms",
-              "Q&A preparation guide"
-            ]
+              "Recommendation structure guide",
+              "Peer critique form",
+              "Milestone 2 acceptance criteria"
+            ],
+            milestone: "Complete workbook and recommendation draft"
           },
           {
             day: 10,
-            focus: "Public Presentation",
+            focus: "Final Presentation and Reflection",
             activities: [
-              "Demo Day: Present to real VC mentor panel",
-              "Live Q&A defense of model assumptions",
-              "Collect professional feedback for portfolio"
+              "Final polish of workbook and presentation notes",
+              "Present depreciation policy recommendation",
+              "Reflect on asset tracking and method choice"
             ],
             resources: [
-              "Demo Day setup guide",
-              "Professional Q&A rubrics"
+              "Presentation checklist",
+              "Submission confirmation form",
+              "Reflection prompts"
             ],
-            milestone: "Final deliverable - VC presentation"
+            milestone: "Final deliverables submitted"
           }
         ]
       }
@@ -279,77 +280,66 @@ export const unit08Data: UnitData = {
   
   studentChoices: {
     ventures: [
-      "Continue with previous unit startup",
-      "Pivot to new business model",
-      "Tech startup concept",
-      "Service-based business",
-      "Product-focused venture"
+      "TechStart Solutions (default scenario)",
+      "Manufacturing expansion case",
+      "Transportation fleet case",
+      "Restaurant equipment case",
+      "Healthcare equipment case"
     ],
     roles: [
-      "CFO (model integrity focus)",
-      "COO (assumptions and realism)",
-      "CMO (pitch visuals and presentation)"
+      "Asset Accountant (register accuracy focus)",
+      "Financial Analyst (method comparison focus)",
+      "Controller (recommendation and communication focus)"
     ],
     presentationFormats: [
-      "Traditional slide deck presentation",
-      "Interactive Excel demonstration",
-      "Hybrid presentation with live modeling",
-      "Video pitch with live Q&A follow-up"
+      "Written recommendation memo",
+      "Workbook walkthrough presentation",
+      "Method comparison briefing",
+      "Investor Q&A simulation"
     ]
   },
   
   prerequisites: {
     knowledge: [
-      "Completion of Units 1-7 financial modeling sequence",
-      "Understanding of financial statement relationships",
-      "Experience with Excel linking and formulas",
-      "Basic knowledge of startup business models"
+      "Completion of Units 1-7 accounting sequence",
+      "Understanding of income statement and balance sheet",
+      "Experience with basic Excel formulas and cell references",
+      "Familiarity with capitalization vs. expense concepts"
     ],
     technology: [
-      "Microsoft Excel with Scenario Manager capability",
-      "Presentation software (PowerPoint, Google Slides)",
-      "Screen sharing capability for demonstrations",
-      "Calculator and financial calculator functions"
+      "Microsoft Excel or compatible spreadsheet software",
+      "Calculator for manual depreciation calculations",
+      "Access to lesson workbooks and datasets"
     ],
     resources: [
       {
-        title: "Capstone Model Shell Workbook",
-        url: "/resources/unit08-model-shell.xlsx",
+        title: "Asset Register Starter Workbook",
+        url: "/resources/unit08-asset-register-starter.xlsx",
         type: "download"
       },
       {
-        title: "Scenario Builder Reference Sheet",
-        url: "/resources/scenario-builder-guide.pdf",
+        title: "Depreciation Schedule Template",
+        url: "/resources/unit08-depreciation-schedule-template.xlsx",
+        type: "download"
+      },
+      {
+        title: "Method Comparison Reference Guide",
+        url: "/resources/unit08-method-comparison-guide.pdf",
         type: "download"
       },
       {
         title: "Peer Audit Checklist",
-        url: "/resources/peer-audit-checklist.pdf",
+        url: "/resources/unit08-peer-audit-checklist.pdf",
         type: "download"
       },
       {
-        title: "8-Slide Pitch Deck Template",
-        url: "/resources/vc-pitch-template.pptx",
+        title: "Recommendation Structure Template",
+        url: "/resources/unit08-recommendation-template.pdf",
         type: "download"
       },
       {
-        title: "VC Q&A Preparation Guide",
-        url: "/resources/qa-preparation.pdf",
-        type: "download"
-      },
-      {
-        title: "Scenario Manager Practice CSV",
-        url: "/resources/unit08-scenario-manager-practice.csv",
-        type: "download"
-      },
-      {
-        title: "Financial Model Template CSV",
-        url: "/resources/unit08-financial-model-template.csv",
-        type: "download"
-      },
-      {
-        title: "Sensitivity Analysis Dataset CSV",
-        url: "/resources/unit08-sensitivity-analysis-data.csv",
+        title: "Definition of Done",
+        url: "/resources/unit08-definition-of-done.pdf",
         type: "download"
       }
     ]
@@ -357,22 +347,22 @@ export const unit08Data: UnitData = {
   
   differentiation: {
     struggling: [
-      "Scaffolded linking: Pre-built formula templates for complex connections",
-      "Troubleshooting guide: Visual flowchart for diagnosing \"link breaks\"",
-      "Scenario variables pre-built for students who need additional support",
+      "Scaffolded asset register with pre-filled asset descriptions",
+      "Formula templates for depreciation calculations",
+      "Step-by-step build guide with screenshots",
       "Peer mentoring partnerships with advanced students"
     ],
     advanced: [
-      "Extension challenge: Add KPI dashboard with dynamic visualizations",
-      "Advanced Excel features: Auto-refresh macros and dynamic scenario toggles",
-      "Leadership roles: Mentor struggling teammates and facilitate team discussions",
-      "Deep dive: Monte Carlo simulation for advanced risk modeling"
+      "Extension challenge: Add partial-year depreciation logic",
+      "Compare three or more depreciation methods",
+      "Leadership roles: Mentor teammates and facilitate peer critique",
+      "Deep dive: Tax vs. book depreciation differences"
     ],
     ell: [
-      "Financial modeling terminology glossary with visual aids",
-      "Key Excel functions explained in home language where possible",
-      "Presentation templates with language scaffolding",
-      "Cultural context for VC presentation norms and expectations"
+      "Depreciation terminology glossary with visual aids",
+      "Key formulas explained in plain language with examples",
+      "Recommendation templates with language scaffolding",
+      "Visual depreciation schedule examples"
     ]
   }
 }
