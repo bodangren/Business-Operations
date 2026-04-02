@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, Target, Users, ArrowRight, Compass } from "lucide-react";
+import { Award, Target, Users, ArrowRight, Table2 } from "lucide-react";
 import ReflectionJournal from "@/components/exercises/ReflectionJournal";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
@@ -12,20 +12,20 @@ const reflectionPrompts = [
   {
     id: "courage-1",
     category: "courage" as const,
-    prompt: "Presenting to investors requires courage. How does having a dashboard with a 'Downside Scenario' already planned out help you feel more courageous during a presentation?",
+    prompt: "Presenting a sensitivity matrix to investors requires confidence—you're showing them every possible outcome. How does having this full 'What-If' analysis help you feel more courageous during a presentation?",
     placeholder: "Think about how preparation reduces fear of difficult questions..."
   },
   {
     id: "adaptability-1",
     category: "adaptability" as const,
-    prompt: "Your dashboard must adapt to whatever the investor asks. Reflect on a moment today when you had to adjust your XLOOKUP logic to make it more flexible. What did you learn?",
-    placeholder: "Reflect on technical flexibility and problem solving..."
+    prompt: "Your sensitivity matrix must adapt to different investor questions. Reflect on a moment when you had to explain what the matrix showed about pricing risk. What did you learn?",
+    placeholder: "Reflect on translating data table results into business language..."
   },
   {
     id: "persistence-1",
     category: "persistence" as const,
-    prompt: "We've spent 6 lessons building this workbook. Describe one specific feature you are most proud of persisting through. Why is this feature critical for the final project?",
-    placeholder: "Reflect on your long-term effort and the importance of professional standards..."
+    prompt: "We built two types of Data Tables today. Describe one specific challenge you faced and how you resolved it. Why is this skill important for the final project?",
+    placeholder: "Reflect on your problem-solving process and professional standards..."
   }
 ];
 
@@ -54,18 +54,18 @@ export default function Phase6Page() {
                     <Award className="w-8 h-8 text-indigo-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-indigo-800 mb-2">
-                    Steering Wheel Complete: You Are Investor-Ready
+                    Sensitivity Analysis Mastery: You Can Answer "What-If"
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Professional Integration Milestone Reached
+                    Professional What-If Analysis Milestone Reached
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-200 mb-6 text-center">
                     <p className="text-lg leading-relaxed text-indigo-900 mb-4 font-medium">
-                      Congratulations! You've officially built the <strong>PriceLab Steering Wheel</strong>. 
-                      You have moved from being a data entry clerk to a strategic leader who can 
-                      steer a business through any market volatility.
+                      Congratulations! You've officially mastered <strong>Data Tables</strong>. You can now 
+                      show investors the full range of outcomes—not just one scenario, but every possibility 
+                      at once. That's the difference between a guess and a strategy.
                     </p>
                   </div>
 
@@ -73,21 +73,21 @@ export default function Phase6Page() {
                     <h3 className="font-semibold text-green-900 mb-3">Professional Skills Gained</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-green-900 text-sm">Integration Mastery:</h4>
+                        <h4 className="font-semibold text-green-900 text-sm">Technical Skills:</h4>
                         <ul className="list-disc list-inside space-y-1 text-green-800 text-[11px]">
-                          <li>XLOOKUP scenario logic</li>
-                          <li>Data Validation toggles</li>
-                          <li>Dynamic chart linking</li>
-                          <li>Absolute reference anchoring ($)</li>
+                          <li>One-variable Data Table setup</li>
+                          <li>Two-variable Data Table (matrix) setup</li>
+                          <li>Column vs. Row input cell logic</li>
+                          <li>Array formula behavior</li>
                         </ul>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-green-900 text-sm">Strategic Authority:</h4>
+                        <h4 className="font-semibold text-green-900 text-sm">Strategic Skills:</h4>
                         <ul className="list-disc list-inside space-y-1 text-green-800 text-[11px]">
-                          <li>Z-Pattern professional design</li>
-                          <li>Real-time scenario defense</li>
-                          <li>Risk planning (Downside Case)</li>
-                          <li>Executive communication</li>
+                          <li>Full-range scenario analysis</li>
+                          <li>Pricing risk identification</li>
+                          <li>Break-even zone communication</li>
+                          <li>Investor-ready matrix presentation</li>
                         </ul>
                       </div>
                     </div>
@@ -113,22 +113,22 @@ export default function Phase6Page() {
                 <CardHeader>
                   <CardTitle className="text-orange-800 flex items-center gap-2">
                     <ArrowRight className="w-5 h-5" />
-                    Next: Production Studio
+                    Next: Integration Dashboard
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-orange-700 text-sm">
-                      You have the engine and the steering wheel. In Lesson 7, you will move into
-                      <strong> Production Studio</strong>: checking formulas, cleaning labels, tightening visuals,
-                      and making sure your workbook is ready to present without confusion.
+                      You've built the <strong>engine</strong> (CVP model), the <strong>sniper</strong> (Goal Seek), 
+                      and the <strong>sensitivity matrix</strong> (Data Tables). In Lesson 7 (Project Rehearsal), 
+                      you'll integrate everything into a polished, investor-ready workbook.
                     </p>
                     <div className="bg-white p-4 rounded border border-orange-200 flex items-start gap-3">
-                      <Compass className="w-5 h-5 text-orange-600 mt-1" />
+                      <Table2 className="w-5 h-5 text-orange-600 mt-1" />
                       <div>
                         <p className="text-xs font-bold text-orange-900">Unit Final Milestone:</p>
                         <p className="text-[11px] text-orange-800">
-                          Carry your CVP model, sensitivity work, and dashboard forward into a polished
+                          Carry your CVP model, Goal Seek analysis, and sensitivity tables into a polished 
                           pricing workbook that is ready for QA, rehearsal, and presentation.
                         </p>
                       </div>
@@ -147,9 +147,9 @@ export default function Phase6Page() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-blue-800 text-sm">
-                    "Sarah," Michael Chen said at the end of the rehearsal, "I've seen founders 
-                    who have been in business for 10 years who don't have this level of 
-                    control over their numbers. You're not just a developer; you're a CEO."
+                    "Sarah," Michael Chen said at the end of the rehearsal, "most founders can tell me 
+                    one price point. You can tell me every price point and show me exactly where the 
+                    risk lives. That's what strategic pricing looks like."
                   </p>
                 </CardContent>
               </Card>

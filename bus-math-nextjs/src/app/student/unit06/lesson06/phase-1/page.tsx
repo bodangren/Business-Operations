@@ -1,8 +1,10 @@
+"use client";
+
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Presentation, Zap, Compass } from "lucide-react";
+import { Target, Zap, AlertTriangle, Calculator } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
@@ -11,25 +13,25 @@ const currentPhase = lesson06Phases[0]; // Hook phase
 const hookQuestions = [
   {
     id: "hook-1",
-    question: "Sarah has multiple spreadsheets with data, but her investor is getting confused. What is the main purpose of an Integration Dashboard?",
+    question: "Sarah wants to know: 'What if we charge $1,200? What about $1,300? $1,400?' Instead of running Goal Seek three separate times, what Excel tool shows ALL these outcomes at once?",
     answers: [
-      "To combine all key insights into one single 'control center' that can answer any scenario instantly.",
-      "To store backup copies of all her Excel files.",
-      "To replace her fixed costs with automated formulas.",
-      "To keep her competitors from seeing her pricing data."
+      "Data Table",
+      "Scenario Manager",
+      "Solver",
+      "Conditional Formatting"
     ],
-    explanation: "An integration dashboard acts as a 'steering wheel.' It pulls data from various complex tables and presents it in a simple, interactive summary that stakeholders can actually understand."
+    explanation: "Data Table instantly calculates all outcomes in a range. Sarah types the prices once, and Excel fills in the profits for every scenario at once."
   },
   {
     id: "hook-2",
-    question: "If an investor asks 'What if we have a bad month?', which dashboard feature is most useful?",
+    question: "Sarah's investor asks: 'Show me a matrix of prices from $1,000 to $2,000 AND volumes from 10 to 50 units. What's the profit at each combination?' Which Data Table type solves this?",
     answers: [
-      "A Scenario Toggle (e.g., switching to a 'Downside' scenario)",
-      "A more colorful font for the title",
-      "A longer description of fixed costs",
-      "Deleting the old data tables"
+      "Two-variable Data Table",
+      "One-variable Data Table",
+      "Pivot Table",
+      "Solver"
     ],
-    explanation: "Scenario toggles allow you to instantly switch the entire dashboard view to show different outcomes, proving you've planned for both success and failure."
+    explanation: "A two-variable Data Table uses one input for rows and another for columns, creating a full matrix of results in seconds."
   }
 ];
 
@@ -47,7 +49,7 @@ export default function Phase1Page() {
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">
-              🎯 Phase 1: Hook
+              🚩 Phase 1: Hook
             </Badge>
             <div className="max-w-4xl mx-auto space-y-8 text-left">
               
@@ -55,51 +57,43 @@ export default function Phase1Page() {
               <Card className="border-red-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                    <Compass className="w-8 h-8 text-red-600" />
+                    <Calculator className="w-8 h-8 text-red-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-red-800 mb-2">
-                    The Steering Wheel Moment
+                    The "What-If" Machine
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    From "I Think" to "Here is the Data"
+                    See Every Outcome at Once
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <div className="bg-red-50 p-6 rounded-lg border border-red-200 mb-6">
-                    <p className="text-lg leading-relaxed text-red-900 mb-4">
-                      Sarah was rehearsing her Town Hall presentation. "I have the 1-Variable table on 
-                      Sheet 2," she muttered, "and the 2-Variable Matrix on Sheet 3. And my Goal Seek 
-                      notes are on a post-it..."
+                    <p className="text-lg leading-relaxed text-red-900 mb-4 font-medium">
+                      "Sarah, the investors want to see the full picture," Alex said. "Not just one scenario. 
+                      They want to see: <strong> what happens at every price from $1,000 to $2,000?</strong>"
                     </p>
-                    <p className="text-red-800 mb-4 font-medium">
-                      Jennifer Kim stopped her. "Sarah, if you're flipping between sheets during a 
-                      presentation, you've already lost the audience. You have a powerful engine, 
-                      but you don't have a <strong>steering wheel</strong>."
+                    <p className="text-red-800 mb-4">
+                      Sarah had just learned Goal Seek in Lesson 5. It was powerful—she could find the 
+                      exact price for a target profit. But Goal Seek only gave her <em>one answer</em> at a time.
                     </p>
-                    <p className="text-red-900">
-                      "A steering wheel?" Sarah asked. "Yes," Jennifer replied. "A single, professional 
-                      dashboard where one click changes every chart, every KPI, and every recommendation. 
-                      You need to show them you're in total control of the business."
+                    <p className="text-red-800 font-medium">
+                      "I need something faster," Sarah said. "I need to see a whole matrix of outcomes 
+                      at once, not one number at a time."
                     </p>
                   </div>
 
                   <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
                     <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2 text-xl">
                       <Zap className="w-6 h-6 text-blue-600" />
-                      The Power of Integration
+                      The Power of Data Tables
                     </h3>
                     <p className="text-blue-800 mb-4 text-sm">
-                      In the last few lessons, we built the <strong>Engine Room</strong>:
+                      In Lesson 5, Sarah built a CVP model that could calculate profit. Now, she needs 
+                      to see profit at <strong>every possible price</strong> without running Goal Seek 100 times.
                     </p>
-                    <ul className="list-disc list-inside space-y-1 text-blue-800 text-xs mb-4">
-                      <li><strong>Lesson 1-2:</strong> The Data Cleanup & Basic CVP</li>
-                      <li><strong>Lesson 3-4:</strong> The Scenarios & Goal Seek Sniping</li>
-                      <li><strong>Lesson 5:</strong> The Automated Sensitivity Matrix</li>
-                    </ul>
                     <p className="text-blue-800 text-sm">
-                      Today, we build the <strong>Integration Dashboard</strong>. This is the one-page 
-                      summary that links all that math together so Sarah can answer any question 
-                      instantly using dynamic scenario toggles.
+                      <strong>Data Table</strong> is the answer. It takes her existing CVP model and instantly 
+                      calculates the result for as many input values as she wants. One setup, infinite answers.
                     </p>
                   </div>
                 </CardContent>
@@ -107,8 +101,8 @@ export default function Phase1Page() {
 
               {/* Comprehension Check */}
               <ComprehensionCheck
-                title="The Role of the Dashboard"
-                description="Why do professional models need a steering wheel?"
+                title="Why Data Tables?"
+                description="How does Data Table solve the 'many answers at once' problem?"
                 questions={hookQuestions}
                 showExplanations={true}
               />
@@ -117,7 +111,7 @@ export default function Phase1Page() {
               <Card className="border-blue-200 bg-blue-50">
                 <CardHeader>
                   <CardTitle className="text-blue-800 flex items-center gap-2">
-                    <Presentation className="h-5 w-5" />
+                    <Target className="h-5 w-5" />
                     Turn and Talk
                   </CardTitle>
                 </CardHeader>
@@ -126,13 +120,12 @@ export default function Phase1Page() {
                     Discussion Prompt (3 minutes):
                   </p>
                   <p className="text-blue-800 mb-2 text-sm">
-                    Think about a dashboard you use in real life (like on a phone, a car, or a video game). 
-                    Share with a partner:
+                    Think about decisions that require testing many options. Share with a partner:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                    <li>What information does it summarize for you?</li>
-                    <li>What would happen if that information was hidden across 10 different menus?</li>
-                    <li>How does a good dashboard help you make decisions faster?</li>
+                    <li>When has testing "all at once" been better than testing one thing at a time?</li>
+                    <li>If Sarah's investors ask for a "range of outcomes," what does that tell you about the business decision?</li>
+                    <li>Why would an investor care about seeing 20 price points instead of just one?</li>
                   </ul>
                 </CardContent>
               </Card>

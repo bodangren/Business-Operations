@@ -2,34 +2,34 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, BarChart3, AlertTriangle } from "lucide-react";
+import { Table2, AlertTriangle, CheckCircle, Info } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
 const currentPhase = lesson06Phases[1]; // Introduction phase
 
-const xlookupQuestions = [
+const anatomyQuestions = [
   {
-    id: "xl-1",
-    question: "Sarah wants her dashboard to pull the 'Total Profit' from her Scenario Summary table. She has the name of the scenario (e.g., 'Base Case') in cell B4. What is her 'Lookup_Value' in XLOOKUP?",
+    id: "dt-1",
+    question: "In a one-variable Data Table, the formula cell must be located:",
     answers: [
-      "Cell B4",
-      "The Total Profit column",
-      "The entire Scenario Table",
-      "The word 'Profit'"
+      "Above the column of input values, at the top of the table",
+      "Below the column of input values",
+      "Anywhere in the workbook",
+      "In a separate sheet"
     ],
-    explanation: "The Lookup_Value is the 'key' Excel uses to search. Since B4 contains the scenario Sarah selected, that's what Excel will look for in the table."
+    explanation: "Data Table needs the formula positioned above the input column (for column input) or to the left of the input row (for row input). This tells Excel where to find the calculation base."
   },
   {
-    id: "xl-2",
-    question: "What is the primary benefit of linking a chart to an 'XLOOKUP Summary Table' rather than the raw data?",
+    id: "dt-2",
+    question: "When setting up a two-variable Data Table, which cell is the 'Row Input Cell'?",
     answers: [
-      "The chart updates automatically whenever you change the scenario toggle.",
-      "The chart becomes more colorful.",
-      "The chart calculates faster.",
-      "It prevents other people from seeing the formulas."
+      "The cell that changes along the horizontal axis of the matrix",
+      "The cell that contains the original profit formula",
+      "The cell that displays the results",
+      "Any empty cell in the worksheet"
     ],
-    explanation: "When a chart is linked to a dynamic summary table, it becomes interactive. Switching the scenario toggle updates the summary, which instantly updates the visual story."
+    explanation: "The Row Input Cell is the input in your CVP model that corresponds to the values across the top row. The Column Input Cell corresponds to the values down the first column."
   }
 ];
 
@@ -55,101 +55,130 @@ export default function Phase2Page() {
               <Card className="border-blue-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <Search className="w-8 h-8 text-blue-600" />
+                    <Table2 className="w-8 h-8 text-blue-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-blue-800 mb-2">
-                    Dynamic Lookups: The Dashboard Glue
+                    Data Table Mechanics
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Connecting Your Engine to Your Steering Wheel
+                    The "What-If" Engine
                   </Badge>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-lg leading-relaxed text-slate-800">
-                    To make Sarah's dashboard work, we need a way for Excel to "look up" the results 
-                    from her analysis sheets and bring them to the front page. Before the lookup works,
-                    Sarah needs a small <strong>Scenario Summary</strong> table with one row for each case
-                    she wants to present. The tool that pulls those numbers into the dashboard is
-                    <strong> XLOOKUP</strong>.
+                    A <strong>Data Table</strong> is Excel's way of automating sensitivity analysis. 
+                    It takes your existing formula (like the CVP profit calculation from Lesson 5) and 
+                    recalculates it for as many input values as you want—all at once.
                   </p>
 
-                  <div className="bg-slate-900 p-6 rounded-lg text-green-400 font-mono text-sm shadow-xl">
-                    <p className="text-blue-400 mb-2">{"// The XLOOKUP Anatomy"}</p>
-                    <p>=XLOOKUP(<span className="text-white">Lookup_Value</span>, <span className="text-yellow-400">Lookup_Array</span>, <span className="text-purple-400">Return_Array</span>)</p>
-                    <div className="mt-4 space-y-2 text-xs">
-                      <p><span className="text-white">1. Lookup_Value:</span> The scenario name in Sarah&apos;s dashboard toggle cell, B4.</p>
-                      <p><span className="text-yellow-400">2. Lookup_Array:</span> The Scenario Name column in the summary table.</p>
-                      <p><span className="text-purple-400">3. Return_Array:</span> The result column Sarah wants, such as Profit, Price, Volume, or Break-Even.</p>
+                  <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                    <h3 className="font-semibold text-blue-900 mb-3">One-Variable Data Table</h3>
+                    <p className="text-blue-800 text-sm mb-3">
+                      Use when you want to test ONE input (like price) against many values:
+                    </p>
+                    <div className="bg-white p-4 rounded border border-blue-200 text-xs font-mono">
+                      <div className="grid grid-cols-3 gap-1 mb-2 font-bold text-blue-600">
+                        <div>A</div><div>B</div><div>C</div>
+                      </div>
+                      <div className="grid grid-cols-3 gap-1">
+                        <div className="border p-1">Formula (Profit)</div>
+                        <div className="border p-1 bg-blue-50">$1,200</div>
+                        <div className="border p-1 bg-blue-50">$1,300</div>
+                      </div>
+                      <div className="grid grid-cols-3 gap-1">
+                        <div className="border p-1 bg-blue-50">$1,400</div>
+                        <div className="border p-1 bg-blue-50">$1,500</div>
+                        <div className="border p-1 bg-blue-50">$1,600</div>
+                      </div>
                     </div>
+                    <p className="text-blue-800 text-xs mt-2 italic">
+                      Location: Data → What-If Analysis → Data Table → Column Input Cell = Price cell
+                    </p>
                   </div>
 
-                  <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
-                    <h3 className="font-semibold text-blue-900 mb-2">Build the bridge first</h3>
-                    <p className="text-blue-800 text-sm">
-                      Lesson 5 gave Sarah a sensitivity table and a profit matrix. Those sheets are great for
-                      analysis, but they are not presentation-friendly. In Lesson 6, she converts those results
-                      into a short four-row summary table: <strong>Base Case</strong>, <strong>Price Hike</strong>,
-                      <strong>High Volume</strong>, and <strong>Downside</strong>. The dashboard reads from that
-                      summary table, not from the entire workbook.
+                  <div className="bg-purple-50 p-5 rounded-lg border border-purple-200">
+                    <h3 className="font-semibold text-purple-900 mb-3">Two-Variable Data Table</h3>
+                    <p className="text-purple-800 text-sm mb-3">
+                      Use when you want to test TWO inputs (like price AND volume) at once:
+                    </p>
+                    <div className="bg-white p-4 rounded border border-purple-200 text-xs font-mono">
+                      <div className="grid grid-cols-5 gap-1 mb-2 font-bold text-purple-600">
+                        <div></div><div>$1,200</div><div>$1,350</div><div>$1,500</div><div>$1,600</div>
+                      </div>
+                      <div className="grid grid-cols-5 gap-1">
+                        <div className="border p-1 bg-purple-50">20 units</div>
+                        <div className="border p-1">$2,400</div>
+                        <div className="border p-1">$5,400</div>
+                        <div className="border p-1">$8,400</div>
+                        <div className="border p-1">$11,400</div>
+                      </div>
+                      <div className="grid grid-cols-5 gap-1">
+                        <div className="border p-1 bg-purple-50">30 units</div>
+                        <div className="border p-1">$4,800</div>
+                        <div className="border p-1">$9,800</div>
+                        <div className="border p-1">$14,800</div>
+                        <div className="border p-1">$19,800</div>
+                      </div>
+                      <div className="grid grid-cols-5 gap-1">
+                        <div className="border p-1 bg-purple-50">40 units</div>
+                        <div className="border p-1">$7,200</div>
+                        <div className="border p-1">$14,200</div>
+                        <div className="border p-1">$21,200</div>
+                        <div className="border p-1">$28,200</div>
+                      </div>
+                    </div>
+                    <p className="text-purple-800 text-xs mt-2 italic">
+                      Row Input Cell = Volume | Column Input Cell = Price
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Visual Storytelling Section */}
-              <Card className="border-blue-200 bg-white shadow-lg">
+              {/* Common Failure Modes */}
+              <Card className="border-amber-200 bg-amber-50">
                 <CardHeader>
-                  <CardTitle className="text-blue-800 flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5" />
-                    Visual Storytelling with Dynamic Charts
+                  <CardTitle className="text-amber-800 flex items-center gap-2">
+                    <AlertTriangle className="w-5 h-5" />
+                    Common Data Table Errors
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-slate-700">
-                    A dashboard isn't just numbers—it's visuals. By linking Sarah's charts to 
-                    these XLOOKUP formulas, the charts become <strong>interactive</strong>.
-                  </p>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-slate-50 rounded border border-slate-200">
-                      <h4 className="font-bold text-slate-900 text-sm mb-2">Static Charts (Weak)</h4>
-                      <p className="text-xs text-slate-600">Locked to one set of data. You have to build a new chart for every scenario. Messy and slow.</p>
-                    </div>
-                    <div className="p-4 bg-blue-50 rounded border border-blue-200">
-                      <h4 className="font-bold text-blue-900 text-sm mb-2">Dynamic Charts (Professional)</h4>
-                      <p className="text-xs text-blue-800">Linked to the XLOOKUP results. When you switch scenarios, the bars and lines move instantly. Impressive and clear.</p>
-                    </div>
+                <CardContent className="space-y-4">
+                  <div className="bg-white p-4 rounded border border-amber-200">
+                    <h4 className="font-bold text-amber-900 text-sm mb-2">Error #1: Formula Not in the Right Spot</h4>
+                    <p className="text-amber-800 text-xs">
+                      The formula must be positioned above the column values (for column input) or to the left of the row values (for row input). If it's not adjacent, Excel can't find the calculation base.
+                    </p>
                   </div>
-
-                  <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-amber-600 mt-1 shrink-0" />
-                    <div>
-                      <p className="text-sm font-bold text-amber-900">The "Stale Data" Trap:</p>
-                      <p className="text-xs text-amber-800">
-                        Always use <strong>Data Validation</strong> (Dropdown Menus) for your toggle cell. 
-                        If someone types "BaseCase" instead of "Base Case" into B4, your XLOOKUP will fail. 
-                        Dropdowns keep your steering wheel locked onto your data engine.
-                      </p>
-                    </div>
+                  <div className="bg-white p-4 rounded border border-amber-200">
+                    <h4 className="font-bold text-amber-900 text-sm mb-2">Error #2: Wrong Input Cell Reference</h4>
+                    <p className="text-amber-800 text-xs">
+                      When you select the Data Table dialog, you must point to the <strong>original input cell</strong> in your CVP model (not a new cell). If you reference the wrong cell, the table calculates nothing or wrong values.
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded border border-amber-200">
+                    <h4 className="font-bold text-amber-900 text-sm mb-2">Error #3: Array Formula Confusion</h4>
+                    <p className="text-amber-800 text-xs">
+                      Data Tables create array results. You cannot edit or delete individual cells in a Data Table result range. To clear, select the entire table and delete.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Mastery Check */}
               <ComprehensionCheck
-                title="Lookup Logic Mastery"
-                description="Can you connect the dashboard to the engine?"
-                questions={xlookupQuestions}
+                title="Data Table Anatomy"
+                description="Can you identify the setup components?"
+                questions={anatomyQuestions}
                 showExplanations={true}
               />
 
               {/* Preview */}
               <Card className="border-gray-200 bg-gray-50">
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-gray-800 mb-2">Ready to Connect the Wires?</h3>
+                  <h3 className="font-semibold text-gray-800 mb-2">Ready to Practice?</h3>
                   <p className="text-gray-700">
-                    In Guided Practice, you'll use our interactive simulator to write the 
-                    XLOOKUP formulas that will drive Sarah's dashboard.
+                    In Guided Practice, you'll use our simulator to build a Data Table step-by-step 
+                    before touching the real Excel workbook.
                   </p>
                 </CardContent>
               </Card>

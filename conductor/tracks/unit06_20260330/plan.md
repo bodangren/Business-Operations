@@ -97,21 +97,21 @@
     - [x] Students can run Goal Seek on a valid CVP model
     - [x] The workbook produces a defensible target-profit scenario
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with Data Tables and sensitivity
-    - Phase 1: Open with business scenario where sensitivity analysis matters, make tool feel necessary
-    - Phase 2: Name Data Table pattern, explain parts, teach common failure mode
-    - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
-    - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
-    - Phase 5: Short technical check, brief artifact task requiring explanation of what sensitivity results mean for pricing risk
-    - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Teach Data Table setup directly and include common failure checks
-  - [ ] 3.2.4 Keep SpreadsheetWrapper reference sheets static and reliable
-  - [ ] 3.2.5 Phase 5 must require a short explanation of what the sensitivity results mean for pricing risk
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with Data Tables and sensitivity
+    - [x] Phase 1: Open with business scenario where sensitivity analysis matters, make tool feel necessary
+    - [x] Phase 2: Name Data Table pattern, explain parts, teach common failure mode
+    - [x] Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
+    - [x] Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
+    - [x] Phase 5: Short technical check, brief artifact task requiring explanation of what sensitivity results mean for pricing risk
+    - [x] Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
+  - [x] 3.2.3 Teach Data Table setup directly and include common failure checks
+  - [x] 3.2.4 Keep SpreadsheetWrapper reference sheets static and reliable
+  - [x] 3.2.5 Phase 5 must require a short explanation of what the sensitivity results mean for pricing risk
   - **Done when**:
-    - [ ] The workbook includes functioning sensitivity tables
-    - [ ] Students can explain which inputs matter most and why
+    - [x] The workbook includes functioning sensitivity tables
+    - [x] Students can explain which inputs matter most and why
 
 ## Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill

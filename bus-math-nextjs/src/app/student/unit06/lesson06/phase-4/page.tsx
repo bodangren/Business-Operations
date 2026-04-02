@@ -4,40 +4,51 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileSpreadsheet, Compass, CheckCircle, ClipboardList, Star, Download } from "lucide-react";
+import { Table2, CheckCircle, ClipboardList, Star, Download, AlertTriangle } from "lucide-react";
 import { SpreadsheetWrapper } from "@/components/spreadsheet/SpreadsheetWrapper";
 import type { SpreadsheetData } from "@/components/spreadsheet/SpreadsheetWrapper";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
 const currentPhase = lesson06Phases[3]; // Independent Practice phase
 
-// ── read-only cells ──────────────────────────────────────────────────
+// Read-only cells
 function h(value: string): { value: string; readOnly: true } { return { value, readOnly: true }; }
 function r(value: string | number): { value: string | number; readOnly: true } { return { value, readOnly: true }; }
 const E: { value: string; readOnly: true } = { value: "", readOnly: true };
 
-const sheet1: SpreadsheetData = [
-  [h("PriceLab Integration Dashboard"), E, E, E, E],
-  [E, E, E, E, E],
-  [h("1. Scenario Control"), E, E, h("2. Live KPI Summary"), E],
-  [h("Select Scenario:"), r("Base Case"), h("← DROPDOWN"), h("Monthly Profit:"), r("$3,180")],
-  [E, E, E, h("Selling Price:"), r("$1,350")],
-  [E, E, E, h("Monthly Volume:"), r("24 units")],
-  [E, E, E, h("Break-Even Units:"), r("18 units")],
-  [E, E, E, E, E],
-  [h("3. Scenario Summary Table (Hidden or Below)"), E, E, E, E],
-  [h("Name"), h("Price"), h("Volume"), h("Profit"), h("Break-Even")],
-  [h("Base Case"), r("$1,350"), r("24"), r("$3,180"), r("18")],
-  [h("Price Hike"), r("$1,600"), r("24"), r("$9,180"), r("15")],
-  [h("High Volume"), r("$1,350"), r("35"), r("$8,350"), r("18")],
-  [h("Downside"), r("$1,200"), r("20"), r("-$1,700"), r("23")],
-  [E, E, E, E, E],
-  [h("4. XLOOKUP Engine"), E, E, E, E],
-  [h("Field"), h("Formula"), E, E, E],
-  [h("Profit"), r("=XLOOKUP($B$4,$A$11:$A$14,$D$11:$D$14)"), E, E, E],
-  [h("Price"), r("=XLOOKUP($B$4,$A$11:$A$14,$B$11:$B$14)"), E, E, E],
-  [h("Volume"), r("=XLOOKUP($B$4,$A$11:$A$14,$C$11:$C$14)"), E, E, E],
-  [h("Break-Even"), r("=XLOOKUP($B$4,$A$11:$A$14,$E$11:$E$14)"), E, E, E],
+// Sample CVP model
+const cvpSheet: SpreadsheetData = [
+  [h("PriceLab CVP Model"), E, E, E],
+  [E, E, E, E],
+  [h("Input Variables"), E, h("Values"), E],
+  [h("Selling Price"), r(1350), h("$/project"), E],
+  [h("Variable Cost"), r(880), h("$/project"), E],
+  [h("Fixed Costs"), r(12000), h("$/month"), E],
+  [E, E, E, E],
+  [h("Calculated Results"), E, h("Formulas"), E],
+  [h("Contribution Margin"), r(470), h("Price - VC"), E],
+  [h("Break-Even Units"), r("=ROUND(B5/B4,0)"), h("units"), E],
+  [h("Target Profit"), r(15000), h("$"), E],
+  [h("Target Units"), r("=(B8+B9)/B4"), h("units"), E],
+];
+
+// Sample Data Table output
+const dataTableSheet: SpreadsheetData = [
+  [h("One-Variable Data Table: Price Sensitivity"), E, E, E, E, E, E],
+  [E, E, E, E, E, E, E],
+  [h("Formula Cell:"), r("Profit Formula"), E, E, h("= (B4-880)*B5 - 12000"), E, E],
+  [E, E, E, E, E, E, E],
+  [h("Price →"), r(1000), r(1100), r(1200), r(1300), r(1400), r(1500)],
+  [h("Profit ↓"), r(-7200), r(-1200), r(4800), r(10800), r(16800), r(22800)],
+];
+
+const twoVarSheet: SpreadsheetData = [
+  [h("Two-Variable Data Table: Price × Volume Matrix"), E, E, E, E, E],
+  [E, E, E, h("Price →"), E, E],
+  [E, E, r(1000), r(1200), r(1400), r(1600)],
+  [h("Volume"), r(15), r(-4200), r(4800), r(13800), r(22800)],
+  [h("↓"), r(25), r(3800), r(14800), r(25800), r(36800)],
+  [h(""), r(35), r(11800), r(24800), r(37800), r(50800)],
 ];
 
 export default function Phase4Page() {
@@ -63,20 +74,18 @@ export default function Phase4Page() {
                 <CardHeader>
                   <CardTitle className="text-cyan-900 flex items-center gap-2 text-xl">
                     <Download className="w-5 h-5" />
-                    Open Your Scenario Runner Workbook
+                    Open Your CVP Workbook
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-cyan-900">
                   <p>
-                    The dashboard only works if it reads a short scenario summary table built from the work you already
-                    completed in Lessons 04 and 05. Keep that workbook open and pull the final numbers into one clean
-                    four-row table before you write any XLOOKUP formulas.
+                    The Data Table builds on your Lesson 5 CVP model. That model calculates profit based on price, volume, 
+                    fixed costs, and variable cost. We'll now use Data Tables to test many price/volume combinations at once.
                   </p>
                   <ol className="list-decimal list-inside space-y-1">
-                    <li>Use <strong>Save As</strong> to create <em>PriceLab_Dashboard.xlsx</em> so your Lesson 05 tabs stay intact.</li>
-                    <li>Create a <strong>Scenario Summary</strong> block with four rows: Base Case, Price Hike, High Volume, and Downside.</li>
-                    <li>Use the price, volume, profit, and break-even results from your earlier sheets to fill that block.</li>
-                    <li>Lock the dropdown cell reference ($B$4) before wiring XLOOKUP so the link persists when you build charts.</li>
+                    <li>Open your <strong>PriceLab_GOALSEEK.xlsx</strong> workbook from Lesson 5.</li>
+                    <li>Verify your CVP model is working (Profit should calculate correctly when you change Price or Volume).</li>
+                    <li><strong>Save As</strong> to create <em>PriceLab_DataTables.xlsx</em> so your Lesson 5 work stays intact.</li>
                   </ol>
                 </CardContent>
               </Card>
@@ -85,112 +94,138 @@ export default function Phase4Page() {
               <Card className="border-orange-200 bg-white shadow-lg">
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                    <Compass className="w-8 h-8 text-orange-600" />
+                    <Table2 className="w-8 h-8 text-orange-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-orange-800 mb-2">
-                    Build Sprint: The Strategic Dashboard
+                    Build Sprint: Sensitivity Analysis
                   </CardTitle>
                   <p className="text-slate-600 leading-relaxed">
-                    You have the engine (Data Tables) and you have the logic (XLOOKUP). Now, you 
-                    will build the final <strong>PriceLab Dashboard</strong>. This single page 
-                    will allow Sarah to present her pricing strategy to any investor with total confidence.
+                    You have the CVP engine. Now you'll build the <strong>Sensitivity Matrix</strong>—a tool that shows 
+                    Sarah (and her investors) every possible profit outcome across a range of prices and volumes.
                   </p>
                 </CardHeader>
               </Card>
 
-              {/* Reference Spreadsheet */}
+              {/* Reference: CVP Model */}
               <Card className="border-blue-200 bg-blue-50">
                 <CardHeader>
                   <CardTitle className="text-blue-900 flex items-center gap-2 text-xl">
-                    <FileSpreadsheet className="w-6 h-6" />
-                    Reference Model — Integration Dashboard
+                    Reference Model — Your CVP Engine
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-blue-700 text-sm">
-                    This is your layout guide. Focus on the <strong>cleanliness</strong> of the dashboard. 
-                    The investor should only see the control and the KPIs. The Scenario Summary and the XLOOKUP
-                    engine can sit lower on the sheet or on a helper tab.
+                    Your existing CVP model should look something like this. Verify these cells exist and calculate correctly:
                   </p>
-
                   <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
                     <SpreadsheetWrapper
-                      initialData={sheet1}
-                      columnLabels={["A", "B", "C", "D", "E"]}
+                      initialData={cvpSheet}
+                      columnLabels={["A", "B", "C", "D"]}
                       readOnly={true}
                     />
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Build Sequence */}
-              <Card className="border-slate-200 bg-white shadow-md">
+              {/* One-Variable Data Table */}
+              <Card className="border-blue-200 bg-white shadow-md">
                 <CardHeader>
-                  <CardTitle className="text-slate-800 text-xl flex items-center gap-2">
+                  <CardTitle className="text-blue-800 text-xl flex items-center gap-2">
                     <CheckCircle className="w-6 h-6 text-green-600" />
-                    Build Sequence — Excel Instructions
+                    Build Step 1: One-Variable Data Table (Price Sensitivity)
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {[
-                    {
-                      title: "1. Build the Scenario Summary Table",
-                      steps: [
-                        "Create four scenario labels: Base Case, Price Hike, High Volume, and Downside.",
-                        "Use your Lesson 4 and Lesson 5 sheets to fill in Price, Volume, Profit, and Break-Even for each row.",
-                        "Check that every scenario row tells one complete story before you move on.",
-                      ],
-                    },
-                    {
-                      title: "2. Create the Scenario Toggle",
-                      steps: [
-                        "Select cell B4. Go to Data > Data Validation.",
-                        "Allow: List. Source: Highlight your four scenario names from the summary table.",
-                        "Verify that a dropdown menu appears in B4.",
-                      ],
-                    },
-                    {
-                      title: "3. Wire the XLOOKUPs",
-                      steps: [
-                        "In your KPI Summary area, write XLOOKUP formulas for Profit, Price, Volume, and Break-Even.",
-                        "Lookup Value: $B$4 (Absolute reference so you can copy the formula).",
-                        "Lookup Array: The Name column in your Scenario Summary table.",
-                        "Return Array: The matching column for the result you want.",
-                      ],
-                    },
-                    {
-                      title: "4. Link the Interactive Chart",
-                      steps: [
-                        "Insert a Clustered Column chart.",
-                        "Data Source: Your new KPI Summary area (NOT the raw data tables).",
-                        "Test it: Change the dropdown in B4. Does the chart move?",
-                      ],
-                    },
-                  ].map((task, i) => (
-                    <div key={i} className="bg-slate-50 p-4 rounded border border-slate-200">
-                      <h4 className="font-bold text-slate-900 mb-2">{task.title}</h4>
-                      <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
-                        {task.steps.map((step, si) => <li key={si}>{step}</li>)}
-                      </ul>
-                    </div>
-                  ))}
+                  <p className="text-slate-700 text-sm">
+                    This table shows profit at different prices while holding volume constant.
+                  </p>
+                  <div className="bg-white p-4 rounded border border-blue-200 text-xs font-mono overflow-x-auto">
+                    <SpreadsheetWrapper
+                      initialData={dataTableSheet}
+                      columnLabels={["A", "B", "C", "D", "E", "F", "G"]}
+                      readOnly={true}
+                    />
+                  </div>
+                  <div className="bg-blue-50 p-4 rounded border border-blue-200">
+                    <h4 className="font-bold text-blue-900 text-sm mb-2">Excel Instructions:</h4>
+                    <ol className="list-decimal list-inside space-y-1 text-blue-800 text-xs">
+                      <li>In a row above, enter your price range (e.g., $1,000 to $1,600 in increments of $100)</li>
+                      <li>In the cell immediately to the left of the first price, enter the profit formula <strong>= (B4-880)*B5 - 12000</strong> (or reference your Profit cell)</li>
+                      <li>Select the range including the formula and all prices</li>
+                      <li>Go to <strong>Data → What-If Analysis → Data Table</strong></li>
+                      <li>For <strong>Column Input Cell</strong>, select your Price input cell (e.g., B4)</li>
+                      <li>Click OK—Excel fills in all profit values</li>
+                    </ol>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Deliverable Section */}
+              {/* Two-Variable Data Table */}
+              <Card className="border-purple-200 bg-white shadow-md">
+                <CardHeader>
+                  <CardTitle className="text-purple-800 text-xl flex items-center gap-2">
+                    <CheckCircle className="w-6 h-6 text-green-600" />
+                    Build Step 2: Two-Variable Data Table (Price × Volume Matrix)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-slate-700 text-sm">
+                    This matrix shows profit for every combination of price AND volume.
+                  </p>
+                  <div className="bg-white p-4 rounded border border-purple-200 text-xs font-mono overflow-x-auto">
+                    <SpreadsheetWrapper
+                      initialData={twoVarSheet}
+                      columnLabels={["A", "B", "C", "D", "E", "F"]}
+                      readOnly={true}
+                    />
+                  </div>
+                  <div className="bg-purple-50 p-4 rounded border border-purple-200">
+                    <h4 className="font-bold text-purple-900 text-sm mb-2">Excel Instructions:</h4>
+                    <ol className="list-decimal list-inside space-y-1 text-purple-800 text-xs">
+                      <li>In the first row, enter your price range (across columns)</li>
+                      <li>In the first column, enter your volume range (down rows)</li>
+                      <li>In the corner cell (where row and column headers meet), enter the profit formula</li>
+                      <li>Select the entire range including the corner formula</li>
+                      <li>Go to <strong>Data → What-If Analysis → Data Table</strong></li>
+                      <li>For <strong>Row Input Cell</strong>, select your Volume input cell (e.g., B5)</li>
+                      <li>For <strong>Column Input Cell</strong>, select your Price input cell (e.g., B4)</li>
+                      <li>Click OK—Excel fills the entire matrix</li>
+                    </ol>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Warning */}
+              <Card className="border-amber-200 bg-amber-50">
+                <CardHeader>
+                  <CardTitle className="text-amber-800 flex items-center gap-2">
+                    <AlertTriangle className="w-5 h-5" />
+                    Important: Data Table Behavior
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc list-inside space-y-1 text-amber-800 text-sm">
+                    <li><strong>Do not try to edit individual cells</strong> in the results table—it's an array formula!</li>
+                    <li>To delete a Data Table, select the entire range and press Delete.</li>
+                    <li>If results show <strong>#VALUE!</strong>, check that your input cell references are correct.</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Deliverable */}
               <Card className="border-amber-200 bg-amber-50">
                 <CardHeader>
                   <CardTitle className="text-amber-800 flex items-center gap-2">
                     <ClipboardList className="w-5 h-5" />
-                    Deliverable: Investor Presentation Brief
+                    Deliverable: Pricing Risk Analysis
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-amber-900 text-sm leading-relaxed">
-                  <p>In a text box on your dashboard, write a 3-sentence summary for an investor:</p>
+                  <p>In a text box next to your Data Table, write a brief analysis:</p>
                   <ul className="list-disc list-inside space-y-2">
-                    <li><strong>The Strategy:</strong> Which scenario (Base, Price Hike, etc.) do you recommend and why?</li>
-                    <li><strong>The Risk:</strong> What happens to profit in your 'Downside' scenario?</li>
-                    <li><strong>The Defense:</strong> How does this dashboard prove you can explain the numbers quickly and accurately?</li>
+                    <li><strong>Best Case:</strong> At what price and volume do you maximize profit? What is that profit?</li>
+                    <li><strong>Break-Even Zone:</strong> What price range keeps profit above $0?</li>
+                    <li><strong>Risk Signal:</strong> If volume drops to 15 units, what is the minimum price needed to avoid a loss?</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -200,7 +235,7 @@ export default function Phase4Page() {
                 <CardHeader>
                   <CardTitle className="text-violet-800 flex items-center gap-2">
                     <Star className="w-5 h-5" />
-                    Dashboard Build Rubric
+                    Data Table Build Rubric
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -215,19 +250,19 @@ export default function Phase4Page() {
                       </thead>
                       <tbody className="text-violet-800">
                         <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Integration</td>
-                          <td className="p-2 border border-violet-200">Dropdown works and updates 3+ KPIs.</td>
-                          <td className="p-2 border border-violet-200">Includes error handling (IFNA) for the lookup.</td>
+                          <td className="p-2 border border-violet-200 font-medium">One-Variable Table</td>
+                          <td className="p-2 border border-violet-200">Price range produces correct profit values</td>
+                          <td className="p-2 border border-violet-200">Table is clearly labeled with units and formatted professionally</td>
                         </tr>
                         <tr>
-                          <td className="p-2 border border-violet-200 font-medium">Visualization</td>
-                          <td className="p-2 border border-violet-200">Chart is linked to the XLOOKUP summary.</td>
-                          <td className="p-2 border border-violet-200">Chart has professional titles, labels, and clean axes.</td>
+                          <td className="p-2 border border-violet-200 font-medium">Two-Variable Matrix</td>
+                          <td className="p-2 border border-violet-200">Price × Volume matrix calculates all combinations correctly</td>
+                          <td className="p-2 border border-violet-200">Matrix uses conditional formatting to highlight profit/loss zones</td>
                         </tr>
                         <tr>
-                          <td className="p-2 border border-violet-200 font-medium">UX Design</td>
-                          <td className="p-2 border border-violet-200">Dashboard is on its own clearly labeled sheet.</td>
-                          <td className="p-2 border border-violet-200">Layout follows the 'Z-pattern' (most important info top-left).</td>
+                          <td className="p-2 border border-violet-200 font-medium">Analysis</td>
+                          <td className="p-2 border border-violet-200">Identifies best case and break-even zone</td>
+                          <td className="p-2 border border-violet-200">Provides specific pricing recommendations with risk caveats</td>
                         </tr>
                       </tbody>
                     </table>

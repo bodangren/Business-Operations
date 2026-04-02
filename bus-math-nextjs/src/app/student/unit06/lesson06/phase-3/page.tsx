@@ -2,8 +2,8 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link2, Users } from "lucide-react";
-import DashboardLookupSimulator from "../DashboardLookupSimulator";
+import { Table2, Users } from "lucide-react";
+import DataTableSimulator from "../DataTableSimulator";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
 const currentPhase = lesson06Phases[2]; // Guided Practice phase
@@ -30,33 +30,31 @@ export default function Phase3Page() {
               <Card className="border-purple-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                    <Link2 className="w-8 h-8 text-purple-600" />
+                    <Table2 className="w-8 h-8 text-purple-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-purple-800 mb-2">
-                    Wiring the Control Center
+                    Safe Rehearsal: Data Table Logic
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Interactive XLOOKUP Training
+                    Practice Before You Build
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 mb-6">
                     <p className="text-lg leading-relaxed text-purple-900 mb-4">
-                      "It's like magic," Sarah said as she watched the chart move. "But I need to know 
-                      how to build the magic myself. If Michael Chen asks for a new scenario, I 
-                      need to be able to add it to the dashboard in seconds."
+                      "The first time I used Data Tables," Sarah said, "I got confused about which cell 
+                      to reference. The results came back blank and I didn't know why."
                     </p>
                     <p className="text-purple-800">
-                      In this activity, you'll practice the exact <strong>XLOOKUP</strong> logic needed 
-                      to link a dashboard toggle to a data engine. Master this, and you've mastered 
-                      the most powerful "steering wheel" tool in Excel.
+                      In this activity, you'll practice the exact setup logic needed to build Data Tables 
+                      successfully. Master this, and you'll avoid the most common Data Table mistakes.
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Dashboard Lookup Simulator */}
-              <DashboardLookupSimulator />
+              {/* Data Table Simulator */}
+              <DataTableSimulator />
 
               {/* Turn and Talk */}
               <Card className="border-blue-200 bg-blue-50">
@@ -74,9 +72,9 @@ export default function Phase3Page() {
                     Look at the simulator you just finished. Share with a partner:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                    <li>What happens to the dashboard if you delete one of the scenario names in the 'Data Engine'?</li>
-                    <li>How does XLOOKUP help Sarah avoid 'Hard-Coding' (typing numbers by hand) into her summary?</li>
-                    <li>If you wanted to pull the 'Volume' instead of 'Profit', which part of the formula would you change?</li>
+                    <li>Why does the formula need to be positioned above the input column?</li>
+                    <li>What would happen if you referenced the wrong input cell?</li>
+                    <li>How does a two-variable table help Sarah communicate pricing risk to investors?</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -86,8 +84,8 @@ export default function Phase3Page() {
                 <CardContent className="p-6 text-center">
                   <h3 className="font-semibold text-gray-800 mb-2">Ready for the Final Build?</h3>
                   <p className="text-gray-700">
-                    In Independent Practice, you'll apply this logic to build the official 
-                    <strong> Integration Dashboard</strong> tab in your Excel workbook.
+                    In Independent Practice, you'll apply this logic to build real 
+                    <strong> Data Tables</strong> in your Excel workbook.
                   </p>
                 </CardContent>
               </Card>
