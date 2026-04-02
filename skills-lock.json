@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "spreadsheet": {
+      "source": "openai/skills",
+      "sourceType": "github",
+      "computedHash": "532287cf8e831de5b45f3e2196dc123e16374c61e459664649f0261c5aadd5c6"
+    }
+  }
+}
