@@ -3,21 +3,40 @@
 ## Track ID: xlsx_audit_20260402
 
 ### Phase 0: Audit Harness Setup
-- [ ] 0.1 Load required spreadsheet skill and record usage scope
+- [x] 0.1 Load required spreadsheet skill and record usage scope
   - Skill path: `~/Desktop/Business-Operations/.agents/skills/spreadsheet/SKILL.md`
-  - Confirm workbook validation approach follows skill guidance
-- [ ] 0.2 Define audit output format (per-unit report + consolidated summary)
-- [ ] 0.3 Write failing tests for link extraction and workbook existence checks
-- [ ] 0.4 Implement initial scanner for student page `.xlsx` links
-- [ ] 0.5 Implement existence validator for linked workbook files
-- [ ] 0.6 Verify tests pass and coverage for scanner core
+  - Confirmed workbook validation approach uses openpyxl for read-only inspection
+- [x] 0.2 Define audit output format (per-unit report + consolidated summary)
+  - Per-unit: link-report.md, workbook-report.md, alignment-report.md, summary.md
+  - Consolidated: merged markdown report with critical findings and per-unit summary table
+- [x] 0.3 Write failing tests for link extraction and workbook existence checks
+  - 16 tests covering static/basePath/variable link extraction, existence validation, report generation, markdown formatting
+  - Coverage: 82.17% (above 80% threshold)
+- [x] 0.4 Implement initial scanner for student page `.xlsx` links
+  - `scripts/audit/xlsx-scanner.ts`: extractLinksFromFile, scanUnitPages, findPageFiles
+  - Supports static href, withBasePath, variable-backed, and dynamic link patterns
+- [x] 0.5 Implement existence validator for linked workbook files
+  - `scripts/audit/xlsx-scanner.ts`: validateExistence resolves links against public/resources/
+  - `scripts/audit/workbook-validator.py`: openpyxl-based workbook structure inspection (read-only)
+  - `scripts/audit/run-audit.ts`: combined audit runner orchestrating all checks
+- [x] 0.6 Verify tests pass and coverage for scanner core
+  - `npx vitest run --coverage`: 16/16 tests passing, 82.17% coverage
 
 ### Phase 1: Unit 01 Audit
-- [ ] 1.1 Run link discovery for Unit 01 pages
-- [ ] 1.2 Validate `.xlsx` link existence for Unit 01
-- [ ] 1.3 Validate workbook structure/content expectations for Unit 01 links
-- [ ] 1.4 Compare workbook layout to page examples when present
-- [ ] 1.5 Publish Unit 01 findings report
+- [x] 1.1 Run link discovery for Unit 01 pages
+  - Found 4 .xlsx links across Unit 01 student pages
+- [x] 1.2 Validate `.xlsx` link existence for Unit 01
+  - 3 valid, 1 missing: `unit01-lesson05-checkpoint.xlsx` referenced from `unit01/lesson06/phase-4/page.tsx`
+- [x] 1.3 Validate workbook structure/content expectations for Unit 01 links
+  - All 21 Unit 01 workbooks open successfully
+  - 12 workbooks contain formulas, 9 are data-only (exit tickets, practice sheets)
+  - Standard sheet structure: Journal + TrialBalance for lesson workbooks, Exit Ticket for assessments
+- [x] 1.4 Compare workbook layout to page examples when present
+  - 0 explicit sheet name references found in Unit 01 page content matching expected patterns
+  - No misalignment issues detected
+- [x] 1.5 Publish Unit 01 findings report
+  - Reports written to `output/audit/unit01/`: link-report.md, workbook-report.md, alignment-report.md, summary.md
+  - Critical finding: `unit01-lesson05-checkpoint.xlsx` is missing from public/resources/
 
 ### Phase 2: Unit 02 Audit
 - [ ] 2.1 Run link discovery for Unit 02 pages
