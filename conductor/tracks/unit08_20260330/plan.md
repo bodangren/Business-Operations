@@ -113,21 +113,21 @@
     - [x] Students have a working asset register and depreciation schedule in Excel
     - [x] The workbook reflects the same logic already learned manually
 
-- [ ] 3.2 **Lesson 06** - Implement excel-lessons skill
-  - [ ] 3.2.1 Update lesson-data.ts for Lesson 06
-  - [ ] 3.2.2 Implement Phase 1-6 with method comparison, statement impact, and investor-ready summary
+- [x] 3.2 **Lesson 06** - Implement excel-lessons skill
+  - [x] 3.2.1 Update lesson-data.ts for Lesson 06
+  - [x] 3.2.2 Implement Phase 1-6 with method comparison, statement impact, and investor-ready summary
     - Phase 1: Open with investor scenario where method comparison matters, make tool feel necessary
     - Phase 2: Name comparison/summary pattern, explain parts, teach common failure mode
     - Phase 3: Use simulator mirroring real workbook logic, give immediate feedback
     - Phase 4: State exact starting workbook, include reference model, provide build sequence with verification checkpoints, include Definition of Done
     - Phase 5: Short technical check, brief artifact task requiring short defense of recommended depreciation method
     - Phase 6: Reflect on tool use, name what student can now do faster/reliably, preview next workbook layer
-  - [ ] 3.2.3 Teach the exact logic for comparing methods and summarizing impact
-  - [ ] 3.2.4 Add workbook checks so accumulated depreciation and book value stay believable
-  - [ ] 3.2.5 Phase 5 must require a short defense of the recommended depreciation method
+  - [x] 3.2.3 Teach the exact logic for comparing methods and summarizing impact
+  - [x] 3.2.4 Add workbook checks so accumulated depreciation and book value stay believable
+  - [x] 3.2.5 Phase 5 must require a short defense of the recommended depreciation method
   - **Done when**:
-    - [ ] The workbook compares methods clearly and shows statement impact
-    - [ ] Students can defend a depreciation policy using workbook evidence
+    - [x] The workbook compares methods clearly and shows statement impact
+    - [x] Students can defend a depreciation policy using workbook evidence
 
 ### Phase 4: Lessons 07-10 (Project)
 - [ ] 4.1 **Lesson 07** - Implement project-rehearsal skill

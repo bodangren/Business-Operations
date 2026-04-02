@@ -27,38 +27,55 @@ export default function Phase6Page() {
               <Card className="border-indigo-200 bg-white shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-indigo-800">
-                    Integrated Automation: Present with Confidence
+                    Method Comparison: What You Can Now Do
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none text-left">
                   <p className="text-slate-800">
-                    Today you integrated scenario controls, stable charts, and validation into a single dashboard. 
-                    You built trust by removing fragile links and by making KPIs easy to read. These skills prepare you for Lesson 07, 
-                    where you’ll test your dashboard with stakeholder feedback and refine your executive summary.
+                    Today you extended your asset register workbook with a <strong>Method Comparison</strong> sheet that shows 
+                    straight-line and double-declining balance side by side. You built verification checks so accumulated 
+                    depreciation and book value stay believable. And you practiced defending a depreciation recommendation 
+                    with workbook evidence — not opinion.
                   </p>
+                  <h3 className="text-lg font-semibold text-indigo-900 mt-6">Key Takeaways</h3>
+                  <ul className="list-disc list-inside text-slate-800 space-y-1">
+                    <li><strong>Both methods depreciate the same total amount</strong> — only the timing differs</li>
+                    <li><strong>DDB front-loads expense</strong> — higher Year 1 expense, lower reported profit, lower book value early on</li>
+                    <li><strong>The salvage value floor is non-negotiable</strong> — DDB must never drive book value below salvage</li>
+                    <li><strong>Linked formulas beat hard-coded numbers</strong> — if cost changes, your comparison updates automatically</li>
+                    <li><strong>A professional recommendation uses evidence</strong> — cite workbook numbers, not feelings</li>
+                  </ul>
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 mt-4">
+                    <h3 className="font-semibold text-indigo-900 mb-2">What&apos;s Next</h3>
+                    <p className="text-indigo-800">
+                      In Lesson 07, you will rehearse the complete depreciation project with a shared dataset. 
+                      You will practice the full workflow: asset register → depreciation schedule → method comparison → 
+                      recommendation. This lesson&apos;s comparison workbook is one piece of that larger project structure.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
 
               <ReflectionJournal
-                unitTitle="CAP Reflection: Integration & Dashboards"
+                unitTitle="CAP Reflection: Method Comparison & Depreciation Policy"
                 prompts={[
                   {
-                    id: 'courage-2',
+                    id: 'courage-u08l06',
                     category: 'courage',
-                    prompt: 'Where did you show courage while presenting live scenario switches? What made it feel risky?',
-                    placeholder: 'Describe a moment in the demo where you stayed calm and clear...'
+                    prompt: 'Where did you show confidence in defending a depreciation method with workbook evidence? What made it feel risky?',
+                    placeholder: 'Describe a moment where you used data from your comparison sheet to support your recommendation...'
                   },
                   {
-                    id: 'adaptability-2',
+                    id: 'adaptability-u08l06',
                     category: 'adaptability',
-                    prompt: 'A chart or link didn’t work at first. How did you adapt and fix it?',
-                    placeholder: 'Explain your troubleshooting steps and what you’ll do next time...'
+                    prompt: 'A formula or check did not work at first. How did you adapt and fix it?',
+                    placeholder: 'Explain your troubleshooting steps — was it the salvage floor, the check column, or a link to the register?'
                   },
                   {
-                    id: 'persistence-2',
+                    id: 'persistence-u08l06',
                     category: 'persistence',
-                    prompt: 'What took the most time to get right (validation, links, or KPIs)? How did you keep going?',
-                    placeholder: 'Write about the process and what kept you motivated...'
+                    prompt: 'What took the most effort to get right in the comparison workbook? How did you keep going?',
+                    placeholder: 'Write about the process — was it the DDB schedule, the statement impact summary, or the recommendation memo?'
                   }
                 ]}
               />
@@ -76,4 +93,3 @@ export default function Phase6Page() {
     </div>
   );
 }
-

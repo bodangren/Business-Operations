@@ -1,8 +1,12 @@
+'use client';
+
+'use client';
+
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, MonitorPlay, AlertTriangle, Shield } from "lucide-react";
+import { Users, TrendingUp, DollarSign, Shield } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { lesson06Data, unit08Data, lesson06Phases } from "../lesson-data";
 
@@ -11,47 +15,47 @@ const currentPhase = lesson06Phases[0];
 const hookQuestions = [
   {
     id: "u08l06-hook-1",
-    question: "Investors ask to compare Base, Stretch, and Downside live. What makes switching reliable?",
+    question: "An investor asks why TechStart uses straight-line instead of double-declining balance. What is the best answer?",
     answers: [
-      "XLOOKUP with exact match + IFNA",
-      "Typing values into each output sheet",
-      "Copy/paste driver blocks per scenario",
-      "VLOOKUP approximate match"
+      "Straight-line gives steady, predictable expense that matches the asset's steady use over time",
+      "Straight-line is the easiest method to calculate in Excel",
+      "Double-declining balance is never allowed under GAAP",
+      "The IRS requires straight-line for all equipment"
     ],
-    explanation: "XLOOKUP with exact match switches by scenario name and IFNA prevents #N/A from breaking the dashboard."
+    explanation: "Straight-line spreads cost evenly, which makes sense when an asset provides steady benefit each year. DDB is also GAAP-allowed but front-loads expense."
   },
   {
     id: "u08l06-hook-2",
-    question: "Sarah’s chart breaks when she adds new months. What fixes that for good?",
+    question: "TechStart buys a $20,000 server with a 4-year life and $2,000 salvage value. Which method shows higher Year 1 expense?",
     answers: [
-      "Structured references to an Excel Table",
-      "Manually resetting the chart range every demo",
-      "Absolute ranges like $B$2:$G$2",
-      "Hiding the chart while presenting"
+      "Double-declining balance",
+      "Straight-line",
+      "Both methods show the same expense",
+      "Neither method expenses anything in Year 1"
     ],
-    explanation: "Tables expand automatically. Structured references keep charts linked as rows grow."
+    explanation: "DDB front-loads expense. Year 1 DDB = $20,000 × (2/4) = $10,000. Year 1 SL = ($20,000 − $2,000) / 4 = $4,500."
   },
   {
     id: "u08l06-hook-3",
-    question: "Which is the biggest risk during a live dashboard demo?",
+    question: "What is the biggest risk when comparing depreciation methods in a workbook?",
     answers: [
-      "Hard‑coded numbers buried in outputs",
-      "Clear labels for inputs",
-      "Documented assumptions sheet",
-      "Named ranges for drivers"
+      "Forgetting the salvage value floor in DDB, which can drive book value below salvage",
+      "Using too many decimal places in the calculation",
+      "Naming the comparison sheet incorrectly",
+      "Including too many assets in the register"
     ],
-    explanation: "Hard‑coded values hide logic and fail under change. Use links, not pasted numbers."
+    explanation: "DDB without a salvage value floor can push book value below the salvage amount, which violates accounting rules and breaks the model."
   },
   {
     id: "u08l06-hook-4",
-    question: "An investor asks: ‘What’s your runway in Downside?’ The model should show…",
+    question: "Book value at the end of an asset's life should equal what value regardless of method?",
     answers: [
-      "A KPI card that updates with scenario",
-      "A separate hidden sheet with a note",
-      "A paragraph with no calculation",
-      "A screenshot from last week"
+      "The salvage value",
+      "Zero",
+      "The original cost",
+      "The annual depreciation expense"
     ],
-    explanation: "Dashboards surface KPIs like runway, margin, and cash coverage instantly per scenario."
+    explanation: "Both SL and DDB must end at salvage value. Total depreciation over the asset's life always equals Cost − Salvage Value."
   }
 ];
 
@@ -76,30 +80,34 @@ export default function Phase1Page() {
               <Card className="border-red-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                    <MonitorPlay className="w-8 h-8 text-red-600" />
+                    <TrendingUp className="w-8 h-8 text-red-600" />
                   </div>
                   <CardTitle className="text-3xl font-bold text-red-800 mb-2">
-                    Sarah’s Live Dashboard Demo: One Click, Three Stories
+                    The Investor Question: &quot;Which Depreciation Method Do You Use?&quot;
                   </CardTitle>
                   <Badge variant="secondary" className="text-sm">
-                    Base • Stretch • Downside
+                    Straight-Line vs. Double-Declining Balance
                   </Badge>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <p className="text-lg leading-relaxed text-slate-800 mb-4">
-                    A partner asks Sarah to show the <strong>whole year‑1 model</strong> in one view. 
-                    “Can you switch between Base, Stretch, and Downside?”
-                    In the past, Sarah had separate sheets and charts. The demo felt clunky and risky.
+                    Sarah is in a meeting with a potential investor. The investor reviews TechStart&apos;s financials and asks: 
+                    <strong> &quot;I see you use straight-line depreciation. Have you considered double-declining balance? 
+                    How does your method choice affect your reported profit?&quot;</strong>
                   </p>
                   <p className="text-lg leading-relaxed text-slate-800 mb-4">
-                    Today, she clicks a scenario name. <strong>Named‑range drivers</strong> feed XLOOKUP links, 
-                    and her charts update instantly. A KPI card reads: <em>Runway: 8.4 months</em>. The room relaxes.
+                    Sarah has the asset register from Lesson 05, but it only shows one method per asset. 
+                    She needs a <strong>side-by-side comparison</strong> that shows how each method changes 
+                    expense timing, net income, and book value — and she needs to <strong>defend the choice</strong> with evidence.
                   </p>
                   <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">Why This Matters</h3>
+                    <h3 className="font-semibold text-green-900 mb-2 flex items-center gap-2">
+                      <DollarSign className="w-4 h-4" />
+                      Why This Matters
+                    </h3>
                     <p className="text-green-800">
-                      Integrated dashboards help investors make decisions fast. They show reliability, 
-                      control, and clear thinking under pressure. That builds trust—and wins funding.
+                      Depreciation method choice affects reported profit, tax timing, and how investors read your financial health. 
+                      A professional comparison workbook lets you show the impact clearly and defend your policy with data — not guesses.
                     </p>
                   </div>
                 </CardContent>
@@ -107,8 +115,8 @@ export default function Phase1Page() {
 
               {/* Comprehension Check */}
               <ComprehensionCheck
-                title="Dashboard Integration: Will It Hold Up?"
-                description="Spot fragile patterns and choose stable, professional solutions."
+                title="Method Comparison: Can You Read the Impact?"
+                description="Test your understanding of how depreciation method choice affects financial statements."
                 questions={hookQuestions}
                 showExplanations={true}
                 allowRetry={true}
@@ -125,16 +133,16 @@ export default function Phase1Page() {
                 <CardContent>
                   <p className="font-medium text-blue-900 mb-2">Discussion Prompt (3 minutes):</p>
                   <p className="text-blue-800 mb-2">
-                    What convinces you that a dashboard is investor‑ready? Discuss:
+                    If you were Sarah, what would you want to show the investor? Discuss:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-blue-800">
-                    <li>How do scenario toggles support clear decisions?</li>
-                    <li>What errors break trust the fastest?</li>
-                    <li>Which KPIs belong at the top? Why?</li>
+                    <li>Why might a company prefer straight-line for financial reporting?</li>
+                    <li>When does double-declining balance give a more honest picture?</li>
+                    <li>What workbook evidence would make your recommendation credible?</li>
                   </ul>
                   <div className="mt-3 flex items-center gap-2 text-slate-700">
                     <Shield className="w-4 h-4" />
-                    <span className="text-sm">Standard: stable links, clear KPIs, zero hard‑coding.</span>
+                    <span className="text-sm">Standard: side-by-side comparison, salvage value floor, clear statement impact.</span>
                   </div>
                 </CardContent>
               </Card>
@@ -152,4 +160,3 @@ export default function Phase1Page() {
     </div>
   );
 }
-

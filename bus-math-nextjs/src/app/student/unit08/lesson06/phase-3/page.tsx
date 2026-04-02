@@ -3,8 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Wrench } from "lucide-react";
-import FinancialDashboard from "@/components/charts/FinancialDashboard";
-import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem";
+import DepreciationMethodComparisonSimulator from "@/components/business-simulations/DepreciationMethodComparisonSimulator";
 import { lesson06Data, unit08Data, lesson06Phases } from "../lesson-data";
 
 const currentPhase = lesson06Phases[2];
@@ -29,42 +28,46 @@ export default function Phase3Page() {
               <Card className="border-purple-200 bg-white shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-purple-800 flex items-center gap-2">
-                    <Wrench className="h-6 w-6" /> Build Sarah’s Integrated Dashboard
+                    <Wrench className="h-6 w-6" /> Rehearse Method Comparison Before You Build
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none text-left">
-                  <ol className="list-decimal list-inside text-slate-800 space-y-2">
-                    <li>Create a <strong>Scenario</strong> driver table: columns for Name, Growth, Margin, Churn, Price, OpEx Growth.</li>
-                    <li>Name each scenario row (Base, Stretch, Downside). Create <strong>named ranges</strong> for each column.</li>
-                    <li>Build a selector cell (scenario name) and use <strong>XLOOKUP with IFNA</strong> to pull driver values.</li>
-                    <li>Link outputs (Revenue, COGS, Profit, Cash Flow) to the driver cells—no hard‑coding.</li>
-                    <li>Point charts at an Excel <strong>Table</strong> so they expand as months are added.</li>
-                    <li>Add validation: stale AsOfDate, margin &lt 0, rates &gt; 100%, missing scenario name.</li>
-                  </ol>
+                  <p className="text-slate-800">
+                    Before you open Excel, practice the comparison logic here. Pick an asset, predict Year 1 expense for both methods, 
+                    then see the full side-by-side schedule. This mirrors exactly what your Excel comparison sheet will produce.
+                  </p>
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 mt-4">
                     <p className="text-yellow-900 text-sm">
-                      Tip: Use comments to explain key formulas. Good documentation increases auditability and trust.
+                      <strong>Key insight:</strong> Both methods depreciate the same total amount (Cost − Salvage). The only difference is timing. 
+                      DDB expenses more early, SL expenses evenly. Your Excel workbook should show this clearly.
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Visual dashboard scaffold */}
-              <FinancialDashboard title="Demo: Integrated KPI View" />
+              {/* Interactive Simulator */}
+              <DepreciationMethodComparisonSimulator />
 
-              {/* Validation practice */}
               <Card className="border-emerald-200 bg-emerald-50">
                 <CardHeader>
                   <CardTitle className="text-emerald-800 text-base flex items-center gap-2">
-                    <Shield className="h-5 w-5" /> Validation Builder: Business Rule Checks
+                    <Shield className="h-5 w-5" /> Bridge to Phase 4: What You Will Build in Excel
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-slate-800 mb-3">
-                    Practice designing the validation rules your dashboard needs. Then translate each rule into Excel checks
-                    (data validation, helper flags, or conditional formatting) in your model.
+                <CardContent className="space-y-3 text-slate-800">
+                  <p>
+                    In Phase 4, you will extend your Lesson 05 asset register workbook by adding a <strong>Method Comparison</strong> sheet. 
+                    Here is what you will build:
                   </p>
-                  <ErrorCheckingSystem />
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li><strong>Comparison sheet:</strong> One row per asset showing SL and DDB Year 1 expense, final book value, and total depreciation</li>
+                    <li><strong>DDB full schedule:</strong> A separate block showing the full DDB schedule with the salvage value floor built in</li>
+                    <li><strong>Check column:</strong> Verifies Book Value = Cost − Accumulated Depreciation for both methods</li>
+                    <li><strong>Statement impact summary:</strong> Shows how method choice changes Year 1 net income and book value</li>
+                  </ol>
+                  <p className="font-medium text-emerald-800 mt-3">
+                    The simulator above produces the same numbers your Excel formulas should. If they do not match, check your formulas.
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -81,4 +84,3 @@ export default function Phase3Page() {
     </div>
   );
 }
-
