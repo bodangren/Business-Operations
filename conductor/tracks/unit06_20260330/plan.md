@@ -178,8 +178,8 @@
     - [x] Reflection captures how the team balanced competitiveness with profitability
 
 ## Phase 5: Verification & Polish
-- [ ] 5.1 Verify all lesson-data.ts files are updated
-- [ ] 5.2 Verify pricing recommendation problem visible throughout
-- [ ] 5.3 Verify alignment between page content, workbook downloads, assessment language
-- [ ] 5.4 Run `npm run lint` to check for errors
-- [ ] 5.5 Document any component changes in MCP knowledge base
+- [x] 5.1 Verify all lesson-data.ts files are updated
+- [x] 5.2 Verify pricing recommendation problem visible throughout
+- [x] 5.3 Verify alignment between page content, workbook downloads, assessment language
+- [x] 5.4 Run `npm run lint` to check for errors
+- [x] 5.5 Document any component changes in MCP knowledge base

@@ -16,7 +16,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
    *Link: [./tracks/unit04_20260330/](./tracks/unit04_20260330/)*
 - [x] **Track: Unit 05 - Payroll systems with automation**
    *Link: [./tracks/unit05_20260330/](./tracks/unit05_20260330/)*
-- [ ] **Track: Unit 06 - Pricing with CVP analysis**
+- [x] **Track: Unit 06 - Pricing with CVP analysis**
   *Link: [./tracks/unit06_20260330/](./tracks/unit06_20260330/)*
 - [x] **Track: Unit 07 - Inventory accounting**
   *Link: [./tracks/unit07_20260330/](./tracks/unit07_20260330/)*
