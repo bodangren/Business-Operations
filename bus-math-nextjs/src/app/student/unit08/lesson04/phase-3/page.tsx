@@ -1,276 +1,183 @@
+'use client';
+
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
+import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Users, Wrench, Settings, Download, FileSpreadsheet, Calculator, Zap } from "lucide-react";
-import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem";
-import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
+import { AlertTriangle, Lightbulb, Calculator } from "lucide-react";
 
-const currentPhase = lesson04Phases[2]; // Guided Practice phase
+const phase3 = lesson04Phases.find(p => p.sequence === 3)!;
 
 export default function Phase3Page() {
+  const cost = 30000;
+  const salvage = 5000;
+  const life = 5;
+  const ddbRate = 2 / life;
+
+  const ddbSchedule: { year: number; beginBV: number; rawExpense: number; adjustedExpense: number; endBV: number; note: string }[] = [];
+  let bv = cost;
+  for (let year = 1; year <= life; year++) {
+    const rawExpense = Math.round(bv * ddbRate);
+    let adjustedExpense = rawExpense;
+    let note = '';
+    if (bv - rawExpense < salvage) {
+      adjustedExpense = Math.max(0, Math.round(bv - salvage));
+      note = 'Adjusted to salvage floor';
+    }
+    bv -= adjustedExpense;
+    ddbSchedule.push({ year, beginBV: cost - ddbSchedule.reduce((s, r) => s + r.adjustedExpense, 0), rawExpense, adjustedExpense, endBV: bv, note });
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
-      <PhaseHeader 
-        unit={unit08Data} 
-        lesson={lesson04Data} 
-        phase={currentPhase} 
-        phases={lesson04Phases} 
-      />
-      
-      <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">
-              🔧 Phase 3: Guided Practice
-            </Badge>
-            <div className="max-w-4xl mx-auto space-y-8">
-              
-              {/* Guided Practice Introduction */}
-              <Card className="border-purple-200 bg-white shadow-lg">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                    <Wrench className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <CardTitle className="text-3xl font-bold text-purple-800 mb-2">
-                    Building Sarah's Scenario Analysis System
-                  </CardTitle>
-                  <Badge variant="secondary" className="text-sm">
-                    Hands-On Professional Modeling
-                  </Badge>
-                </CardHeader>
-                <CardContent className="prose prose-lg max-w-none">
-                  <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 mb-6">
-                    <p className="text-lg leading-relaxed text-purple-900 mb-4">
-                      Sarah is ready to rebuild her financial model with professional scenario analysis. 
-                      She's learned the theory—now she needs to implement Excel's Scenario Manager step-by-step.
-                    </p>
-                    <p className="text-lg leading-relaxed text-purple-900">
-                      Follow along as we guide her (and you) through building a dynamic, investor-ready model 
-                      that can instantly switch between optimistic, realistic, and pessimistic business conditions.
-                    </p>
-                  </div>
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-amber-100">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <PhaseHeader lesson={lesson04Data} unit={unit08Data} phase={phase3} phases={lesson04Phases} />
 
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
-                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-                      <Settings className="w-5 h-5" />
-                      Step-by-Step: Setting Up Scenario Manager
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="bg-blue-100 p-4 rounded-lg">
-                        <h4 className="font-semibold text-blue-900 mb-2">🎯 Your Mission</h4>
-                        <p className="text-blue-800 text-sm">
-                          Build a financial model for TechStart Solutions that can instantly switch between 
-                          three scenarios using Excel's Scenario Manager. Each scenario will show different 
-                          assumptions about growth, costs, and market conditions.
-                        </p>
-                      </div>
-                      
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="p-3 bg-white rounded border border-blue-200">
-                          <h5 className="font-medium text-blue-900 mb-2">1. Set Up Input Section</h5>
-                          <ul className="text-sm text-blue-800 space-y-1">
-                            <li>• Create "Assumptions" area</li>
-                            <li>• Use absolute references ($B$5)</li>
-                            <li>• Name your ranges professionally</li>
-                            <li>• Label clearly for investors</li>
-                          </ul>
-                        </div>
-                        <div className="p-3 bg-white rounded border border-blue-200">
-                          <h5 className="font-medium text-blue-900 mb-2">2. Create Scenarios</h5>
-                          <ul className="text-sm text-blue-800 space-y-1">
-                            <li>• Access Data &gt; What-If Analysis &gt; Scenario Manager</li>
-                            <li>• Define changing cells</li>
-                            <li>• Set up three scenarios</li>
-                            <li>• Add meaningful descriptions</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <div className="space-y-8">
+          <div className="prose prose-lg max-w-none">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Complication: The Salvage Value Floor</h2>
 
-                  <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Practice Files & Templates</h3>
-                
-                  <p className="text-lg leading-relaxed">
-                    Sarah needs practice data to build her scenarios realistically. Download these resources 
-                    to follow along with the guided practice session.
-                  </p>
+            <p className="text-lg leading-relaxed">
+              There is one critical rule in DDB that students often miss: <strong>book value can never 
+              fall below salvage value</strong>. This means that in the later years of an asset's life, 
+              the DDB calculation may produce an expense that is too large. When that happens, you must 
+              adjust the expense downward.
+            </p>
 
-                  <div className="grid md:grid-cols-3 gap-4 my-8">
-                    <Card className="border-green-200 bg-green-50">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-green-900 flex items-center gap-2 text-lg">
-                          <FileSpreadsheet className="h-5 w-5" />
-                          Scenario Variables
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-green-800 mb-4">
-                          Complete dataset with optimistic, realistic, and pessimistic assumptions for 
-                          TechStart's key business drivers.
-                        </p>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="w-full border-green-300 text-green-700 hover:bg-green-100"
-                          asChild
-                        >
-                          <a href="/resources/unit08-scenario-manager-practice.csv" download>
-                            <Download className="h-4 w-4 mr-2" />
-                            Download CSV
-                          </a>
-                        </Button>
-                      </CardContent>
-                    </Card>
+            <Card className="border-amber-200 bg-amber-50 my-6">
+              <CardHeader>
+                <CardTitle className="text-amber-900 flex items-center gap-2">
+                  <AlertTriangle className="h-5 w-5" />
+                  The Salvage Floor Rule
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-amber-800">
+                  If the calculated DDB expense would push book value below the salvage value, 
+                  replace the calculated expense with the amount that brings book value exactly 
+                  to the salvage value. In the final year, the expense is often a "plug" figure.
+                </p>
+              </CardContent>
+            </Card>
 
-                    <Card className="border-amber-200 bg-amber-50">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-amber-900 flex items-center gap-2 text-lg">
-                          <Calculator className="h-5 w-5" />
-                          Financial Model Template
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-amber-800 mb-4">
-                          12-month financial model template with proper formula structure 
-                          for linking to scenario assumptions.
-                        </p>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="w-full border-amber-300 text-amber-700 hover:bg-amber-100"
-                          asChild
-                        >
-                          <a href="/resources/unit08-financial-model-template.csv" download>
-                            <Download className="h-4 w-4 mr-2" />
-                            Download CSV
-                          </a>
-                        </Button>
-                      </CardContent>
-                    </Card>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Worked Example: When the Floor Kicks In</h3>
 
-                    <Card className="border-purple-200 bg-purple-50">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-purple-900 flex items-center gap-2 text-lg">
-                          <Zap className="h-5 w-5" />
-                          Sensitivity Data
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-purple-800 mb-4">
-                          Variable ranges and impact analysis data for creating data tables 
-                          and understanding key business drivers.
-                        </p>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="w-full border-purple-300 text-purple-700 hover:bg-purple-100"
-                          asChild
-                        >
-                          <a href="/resources/unit08-sensitivity-analysis-data.csv" download>
-                            <Download className="h-4 w-4 mr-2" />
-                            Download CSV
-                          </a>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border border-gray-300 p-2">Year</th>
+                    <th className="border border-gray-300 p-2 text-right">Begin BV</th>
+                    <th className="border border-gray-300 p-2 text-right">Raw DDB (40%)</th>
+                    <th className="border border-gray-300 p-2 text-right">Adjusted Expense</th>
+                    <th className="border border-gray-300 p-2 text-right">End BV</th>
+                    <th className="border border-gray-300 p-2">Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 p-2 font-medium">Year 1</td>
+                    <td className="border border-gray-300 p-2 text-right">$30,000</td>
+                    <td className="border border-gray-300 p-2 text-right">$12,000</td>
+                    <td className="border border-gray-300 p-2 text-right font-bold">$12,000</td>
+                    <td className="border border-gray-300 p-2 text-right">$18,000</td>
+                    <td className="border border-gray-300 p-2">Normal</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2 font-medium">Year 2</td>
+                    <td className="border border-gray-300 p-2 text-right">$18,000</td>
+                    <td className="border border-gray-300 p-2 text-right">$7,200</td>
+                    <td className="border border-gray-300 p-2 text-right font-bold">$7,200</td>
+                    <td className="border border-gray-300 p-2 text-right">$10,800</td>
+                    <td className="border border-gray-300 p-2">Normal</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2 font-medium">Year 3</td>
+                    <td className="border border-gray-300 p-2 text-right">$10,800</td>
+                    <td className="border border-gray-300 p-2 text-right">$4,320</td>
+                    <td className="border border-gray-300 p-2 text-right font-bold">$4,320</td>
+                    <td className="border border-gray-300 p-2 text-right">$6,480</td>
+                    <td className="border border-gray-300 p-2">Normal</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2 font-medium">Year 4</td>
+                    <td className="border border-gray-300 p-2 text-right">$6,480</td>
+                    <td className="border border-gray-300 p-2 text-right">$2,592</td>
+                    <td className="border border-gray-300 p-2 text-right font-bold text-red-700">$1,480</td>
+                    <td className="border border-gray-300 p-2 text-right">$5,000</td>
+                    <td className="border border-gray-300 p-2 text-red-700 font-medium">Floor hit!</td>
+                  </tr>
+                  <tr className="bg-green-50">
+                    <td className="border border-gray-300 p-2 font-medium">Year 5</td>
+                    <td className="border border-gray-300 p-2 text-right">$5,000</td>
+                    <td className="border border-gray-300 p-2 text-right">$2,000</td>
+                    <td className="border border-gray-300 p-2 text-right font-bold">$0</td>
+                    <td className="border border-gray-300 p-2 text-right">$5,000</td>
+                    <td className="border border-gray-300 p-2">Already at salvage</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <h3 className="font-semibold text-gray-900 mb-2">Professional Formula Structure</h3>
-                    <p className="text-gray-800">
-                      Sarah learned that professional financial models follow specific formula conventions 
-                      that make them reliable and easy to audit. Practice implementing these patterns 
-                      with absolute references, named ranges, and dynamic formulas that update automatically 
-                      when scenarios change.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+            <p className="text-sm text-gray-600 mt-2">
+              In Year 4, raw DDB would be $2,592, which would push book value to $3,888 — below the 
+              $5,000 salvage value. So the expense is capped at $1,480 ($6,480 − $5,000). Year 5 has 
+              zero expense because the asset is already at salvage value.
+            </p>
 
-              {/* Collaborative Building Session */}
-              <Card className="border-amber-200 bg-amber-50">
-                <CardHeader>
-                  <CardTitle className="text-amber-900 flex items-center gap-2">
-                    <Users className="h-5 w-5" />
-                    Collaborative Building Session
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-medium text-amber-900 mb-2">
-                    Work with Your Team (20 minutes):
-                  </p>
-                  <p className="text-amber-800 mb-4">
-                    Using the downloaded practice files, work with a partner to build Sarah's 
-                    scenario-enabled financial model. Take turns being the "Excel builder" and 
-                    the "investor reviewer" who asks questions about the assumptions.
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-amber-100 p-3 rounded">
-                      <h4 className="font-semibold text-amber-900 mb-2">Excel Builder Role:</h4>
-                      <ul className="text-sm text-amber-800 space-y-1">
-                        <li>• Set up the assumptions section</li>
-                        <li>• Create named ranges for key variables</li>
-                        <li>• Link formulas to assumption cells</li>
-                        <li>• Configure Scenario Manager with 3 scenarios</li>
-                      </ul>
-                    </div>
-                    <div className="bg-amber-100 p-3 rounded">
-                      <h4 className="font-semibold text-amber-900 mb-2">Investor Reviewer Role:</h4>
-                      <ul className="text-sm text-amber-800 space-y-1">
-                        <li>• Ask "what if" questions about assumptions</li>
-                        <li>• Request scenario switches to test flexibility</li>
-                        <li>• Check formula logic and references</li>
-                        <li>• Suggest improvements for clarity</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <Card className="border-orange-200 bg-orange-50 my-6">
+              <CardHeader>
+                <CardTitle className="text-orange-800 flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5" />
+                  Think About It
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-orange-800">
+                  Why does the salvage value floor exist? What would happen to the financial 
+                  statements if book value fell below salvage value?
+                </p>
+                <p className="text-orange-700 text-sm">
+                  The salvage value represents what the company expects to recover when it sells 
+                  the asset. If book value fell below that amount, the company would be recording 
+                  more expense than the asset actually lost in value — which would understate profit 
+                  and mislead investors.
+                </p>
+              </CardContent>
+            </Card>
 
-              {/* Interactive Practice */}
-              <Card className="border-gray-200 bg-white shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-gray-900 text-center text-2xl">
-                    Interactive Practice: Building Error-Checking Systems
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-                    Sarah knows that professional financial models include automated error checking. 
-                    Practice building conditional formatting rules that help catch mistakes before 
-                    investors see them. This system will complement your Scenario Manager by ensuring 
-                    your model maintains integrity across all scenarios.
-                  </p>
-                  <ErrorCheckingSystem />
-                </CardContent>
-              </Card>
-
-              {/* Preview */}
-              <Card className="border-gray-200 bg-gray-50">
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
-                  <p className="text-gray-700">
-                    In the Independent Practice phase, you'll tackle advanced scenario challenges 
-                    including market penetration analysis, economic stress testing, and competitive 
-                    response modeling. These sophisticated scenarios separate amateur models from 
-                    investment-grade analysis.
-                  </p>
-                </CardContent>
-              </Card>
-              
+            <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+              <p className="text-blue-800 m-0">
+                <strong>Key insight:</strong> The salvage value floor is the most common DDB mistake 
+                on exams and in practice. Always check: would this year's expense push book value 
+                below salvage? If yes, adjust.
+              </p>
             </div>
           </div>
-        </section>
-      </main>
-      
-      <PhaseFooter 
-        unit={unit08Data} 
-        lesson={lesson04Data} 
-        phase={currentPhase} 
-        phases={lesson04Phases} 
-      />
+
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-800">Practice: Explain the Floor Adjustment</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-white p-4 rounded border border-purple-200">
+                <p className="font-medium text-purple-900 mb-2">
+                  Scenario: A $20,000 machine with 4-year life and $2,000 salvage value. DDB rate = 50%.
+                </p>
+                <div className="space-y-2 text-sm text-purple-700">
+                  <p><strong>Year 1:</strong> $20,000 × 50% = $10,000. BV = $10,000. Normal.</p>
+                  <p><strong>Year 2:</strong> $10,000 × 50% = $5,000. BV = $5,000. Normal.</p>
+                  <p><strong>Year 3:</strong> $5,000 × 50% = $2,500. But $5,000 − $2,500 = $2,500, which is above $2,000 salvage. So $2,500 is fine. BV = $2,500.</p>
+                  <p><strong>Year 4:</strong> $2,500 × 50% = $1,250. But $2,500 − $1,250 = $1,250, which is BELOW $2,000 salvage. Expense is capped at $500. BV = $2,000.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <PhaseFooter lesson={lesson04Data} unit={unit08Data} phase={phase3} phases={lesson04Phases} />
+      </div>
     </div>
   );
 }

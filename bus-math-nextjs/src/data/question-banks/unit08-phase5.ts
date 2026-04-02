@@ -448,83 +448,109 @@ const lesson04Questions: Unit08Phase5Question[] = [
   {
     id: "lesson04-q1",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Model: Scenario Manager & Advanced Financial Modeling",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
     prompt:
-      "Sarah stores optimistic, base, and downside cases in Scenario Manager. Which Excel feature delivers a side-by-side comparison instantly?",
-    correctAnswer: "Scenario Summary Report generated directly from the Scenario Manager dialog.",
+      "A $40,000 machine has a 4-year life and $4,000 salvage value. What is the DDB depreciation rate?",
+    correctAnswer: "50%, because 2 × (1 ÷ 4) = 50%.",
     distractors: [
-      "PivotTable summaries that must be rebuilt for each new scenario.",
-      "Chart wizard overlays using multiple data series for every assumption.",
-      "Data validation lists that swap values without producing a report."
+      "25%, because that is the straight-line rate.",
+      "40%, because DDB always uses 40%.",
+      "100%, because DDB doubles the rate to 100%."
     ],
     explanation:
-      "Scenario Summary creates a formatted table comparing changing cells and result cells across every scenario with one click.",
-    objectiveTags: ["scenario-manager", "reporting"]
+      "DDB rate = 2 × (1 ÷ useful life). For a 4-year asset: 2 × 25% = 50%.",
+    objectiveTags: ["ddb-calculation", "depreciation-methods"]
   },
   {
     id: "lesson04-q2",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Model: Scenario Manager & Advanced Financial Modeling",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
     prompt:
-      "Sarah wants =Monthly_Revenue * Growth_Rate to keep working when Scenario Manager switches cases. How should Growth_Rate be referenced?",
-    correctAnswer: "Use an absolute reference like $B$5 so the formula always points to the assumption cell.",
+      "Using the same machine ($40,000 cost, $4,000 salvage, 4-year life), what is the Year 1 DDB depreciation expense?",
+    correctAnswer: "$20,000, because $40,000 × 50% = $20,000.",
     distractors: [
-      "Leave the reference relative so Excel can adjust it when scenarios change.",
-      "Wrap the reference in INDIRECT so Scenario Manager can rewrite the text value.",
-      "Hard-code the growth rate number in the formula to avoid broken links."
+      "$9,000, because ($40,000 − $4,000) ÷ 4 = $9,000.",
+      "$10,000, because $40,000 ÷ 4 = $10,000.",
+      "$18,000, because ($40,000 − $4,000) × 50% = $18,000."
     ],
     explanation:
-      "Absolute references lock the formula to the driver cell, ensuring scenario switches feed the correct values.",
-    objectiveTags: ["scenario-manager", "formula-integrity"]
+      "DDB applies the rate to beginning book value, not depreciable base. $40,000 × 50% = $20,000. Do NOT subtract salvage value first.",
+    objectiveTags: ["ddb-calculation", "depreciation-methods"]
   },
   {
     id: "lesson04-q3",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Model: Scenario Manager & Advanced Financial Modeling",
-    prompt:
-      "During a VC meeting, Sarah flips to the pessimistic scenario and shows revenue of $847,000 in month 12. What does that demonstrate?",
-    correctAnswer: "She can answer investor what-if questions in real time with a dynamic model.",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
+    prompt: "Why does DDB record higher depreciation than straight-line in early years?",
+    correctAnswer: "Because DDB applies a doubled rate to the full book value instead of dividing the depreciable base evenly.",
     distractors: [
-      "She memorized every number in her workbook and can recite them without using Excel.",
-      "Pessimistic scenarios must always show lower revenue than base cases by definition.",
-      "Excel automatically recalculates compound growth even without any scenario planning."
+      "Because DDB uses a longer useful life than straight-line.",
+      "Because DDB ignores salvage value entirely in all calculations.",
+      "Because straight-line is an accelerated method and DDB is not."
     ],
     explanation:
-      "Instant switching proves the model is live and investor-ready, giving decision makers confidence in her analysis.",
-    objectiveTags: ["scenario-manager", "investor-readiness"]
+      "DDB uses double the SL rate and applies it to book value each year. This front-loads expense compared to straight-line's even distribution.",
+    objectiveTags: ["method-comparison", "ddb-concept"]
   },
   {
     id: "lesson04-q4",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Model: Scenario Manager & Advanced Financial Modeling",
-    prompt:
-      "Sarah builds a two-variable data table to show how NPV changes when churn and CAC move together. What analysis is she running?",
-    correctAnswer: "Sensitivity analysis that maps how key inputs shift vital outputs.",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
+    prompt: "What happens if the DDB calculation would push book value below salvage value?",
+    correctAnswer: "The expense is reduced so that book value equals salvage value exactly.",
     distractors: [
-      "Scenario analysis that compares optimistic and pessimistic narratives.",
-      "Budget variance analysis that tracks actual results versus plan.",
-      "Financial forecasting that extends revenue trends into future years."
+      "The full DDB expense is recorded and book value goes below salvage.",
+      "Depreciation stops entirely for the remaining years.",
+      "The company must switch to straight-line for all prior years."
     ],
     explanation:
-      "Data tables quantify how sensitive outcomes are to input swings, helping founders prioritize the drivers that matter most.",
-    objectiveTags: ["sensitivity-analysis", "scenario-planning"]
+      "Book value can never fall below salvage value. When the calculated DDB expense would violate this rule, the expense is capped at the amount that brings book value to salvage value.",
+    objectiveTags: ["salvage-floor", "ddb-rules"]
   },
   {
     id: "lesson04-q5",
     lessonId: "lesson04",
-    lessonTitle: "Lesson 04 - Excel Model: Scenario Manager & Advanced Financial Modeling",
-    prompt:
-      "A VC asks, 'What if a recession doubles your churn from 5% to 10%?' How should Sarah prepare to answer fast?",
-    correctAnswer:
-      "Store a recession scenario with higher churn so she can switch and display the new results immediately.",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
+    prompt: "Which type of asset is most appropriate for DDB depreciation?",
+    correctAnswer: "Vehicles and technology that lose value quickly in their early years.",
     distractors: [
-      "Open a second workbook dedicated to recession math and copy numbers by hand.",
-      "Explain that a calculator will be used after the meeting to recompute the figures.",
-      "Show a general slide about recessions without tying it to the financial model."
+      "Land, because it never loses value.",
+      "Buildings, because they maintain steady value for decades.",
+      "Art and collectibles, because they appreciate over time."
     ],
     explanation:
-      "Professional founders anticipate tough questions and build scenarios that surface the impact on revenue, cash, and funding needs.",
-    objectiveTags: ["scenario-manager", "risk-analysis"]
+      "DDB is best for assets that lose most of their value early — vehicles, computers, and equipment. It matches the expense pattern to the actual economic loss.",
+    objectiveTags: ["method-choice", "business-application"]
+  },
+  {
+    id: "lesson04-q6",
+    lessonId: "lesson04",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
+    prompt: "If a company switches from straight-line to DDB, what happens to Year 1 net income?",
+    correctAnswer: "Net income decreases because DDB records higher depreciation expense in Year 1.",
+    distractors: [
+      "Net income increases because DDB is more accurate.",
+      "Net income stays the same because total depreciation is identical over the asset's life.",
+      "Net income cannot be determined without knowing the tax rate."
+    ],
+    explanation:
+      "DDB records higher expense in early years, which reduces net income compared to straight-line. Total depreciation over the asset's life is the same, but the timing differs.",
+    objectiveTags: ["statement-impact", "method-comparison"]
+  },
+  {
+    id: "lesson04-q7",
+    lessonId: "lesson04",
+    lessonTitle: "Lesson 04 - Double-Declining Balance and Method Comparison",
+    prompt: "What is the total depreciation over the full life of an asset under DDB compared to straight-line?",
+    correctAnswer: "The same total amount, because both methods depreciate the depreciable base (Cost − Salvage Value) fully.",
+    distractors: [
+      "DDB produces more total depreciation because the rate is higher.",
+      "Straight-line produces more total depreciation because it is more conservative.",
+      "It depends on the salvage value which method produces more total depreciation."
+    ],
+    explanation:
+      "Both methods depreciate the same total amount: Cost − Salvage Value. The difference is only in timing — DDB front-loads expense while SL spreads it evenly.",
+    objectiveTags: ["ddb-concept", "method-comparison"]
   }
 ];
 const lesson05Questions: Unit08Phase5Question[] = [

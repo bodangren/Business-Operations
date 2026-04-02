@@ -1,326 +1,276 @@
+'use client';
+
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
+import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, BookOpen, Settings, Database, CheckCircle, Zap, ArrowRight } from "lucide-react";
-import FillInTheBlank from "@/components/exercises/FillInTheBlank";
-import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
+import { Calculator, ArrowRight, TrendingDown, FileText, BarChart3, Scale } from "lucide-react";
+import { FillInTheBlank } from "@/components/exercises/FillInTheBlank";
 
-const currentPhase = lesson04Phases[1]; // Introduction phase
+const phase2 = lesson04Phases.find(p => p.sequence === 2)!;
 
-const vocabularyExercise = [
+const fillInBlankSentences = [
   {
-    id: "1",
-    text: "Excel {blank} Manager allows you to store and switch between different sets of input variables in your financial model.",
-    answer: "Scenario",
-    hint: "This tool is specifically designed for modeling different business conditions"
+    id: "ddb-1",
+    text: "The DDB rate is {blank} times the straight-line rate",
+    answer: "two",
+    hint: "This is why it is called 'double'-declining balance",
+    category: "DDB Rate"
   },
   {
-    id: "2",
-    text: "The {blank} cells are the input variables that change between scenarios, such as growth rates or cost assumptions.",
-    answer: "changing",
-    hint: "These cells contain the assumptions that vary between optimistic, realistic, and pessimistic cases"
+    id: "ddb-2",
+    text: "Under DDB, you apply the rate to the beginning {blank} value, not the depreciable base",
+    answer: "book",
+    hint: "This is the asset's current value on the balance sheet",
+    category: "DDB Calculation"
   },
   {
-    id: "3",
-    text: "{blank} cells display the calculated outcomes that depend on your changing cells, like total revenue or net profit.",
-    answer: "Result",
-    hint: "These cells show the impact of your scenario assumptions"
+    id: "ddb-3",
+    text: "DDB depreciation expense is {blank} in early years compared to straight-line",
+    answer: "higher",
+    hint: "This is why it is called 'accelerated' depreciation",
+    category: "Method Comparison"
   },
   {
-    id: "4",
-    text: "A {blank} summary report shows all your scenarios side-by-side for easy comparison of outcomes.",
-    answer: "scenario",
-    hint: "This automated report helps investors compare different business conditions"
+    id: "ddb-4",
+    text: "Book value can never fall below {blank} value under any depreciation method",
+    answer: "salvage",
+    hint: "This is the estimated resale value at the end of the asset's life",
+    category: "Salvage Floor"
   },
   {
-    id: "5",
-    text: "Professional financial models use {blank} references like '$B$5' to ensure formulas don't break when scenarios change.",
-    answer: "absolute",
-    hint: "These lock cell references so they don't shift when Excel updates scenarios"
+    id: "ddb-5",
+    text: "DDB does not subtract salvage value when calculating the annual {blank}",
+    answer: "expense",
+    hint: "Unlike straight-line, the floor is only checked at the end",
+    category: "DDB Rule"
+  },
+  {
+    id: "ddb-6",
+    text: "A business that wants lower reported profit in early years might choose {blank} depreciation",
+    answer: "accelerated",
+    hint: "This method records more expense upfront",
+    category: "Business Choice"
   }
 ];
 
 export default function Phase2Page() {
+  const cost = 30000;
+  const salvage = 5000;
+  const life = 5;
+  const slRate = 1 / life;
+  const ddbRate = 2 * slRate;
+
+  const ddbSchedule: { year: number; beginBV: number; expense: number; accumulated: number; endBV: number }[] = [];
+  let bv = cost;
+  let accum = 0;
+  for (let year = 1; year <= life; year++) {
+    let expense = Math.round(bv * ddbRate);
+    if (bv - expense < salvage) {
+      expense = Math.max(0, Math.round(bv - salvage));
+    }
+    accum += expense;
+    bv -= expense;
+    ddbSchedule.push({ year, beginBV: cost - (accum - expense), expense, accumulated: accum, endBV: bv });
+  }
+
+  const slExpense = Math.round((cost - salvage) / life);
+  const slSchedule = Array.from({ length: life }, (_, i) => ({
+    year: i + 1,
+    expense: slExpense,
+    accumulated: slExpense * (i + 1),
+    endBV: cost - slExpense * (i + 1),
+  }));
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
-      <PhaseHeader 
-        unit={unit08Data} 
-        lesson={lesson04Data} 
-        phase={currentPhase} 
-        phases={lesson04Phases} 
-      />
-      
-      <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
-              📚 Phase 2: Introduction
-            </Badge>
-            <div className="max-w-4xl mx-auto space-y-8">
-              
-              {/* Introduction */}
-              <Card className="border-green-200 bg-white shadow-lg">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                    <Settings className="w-8 h-8 text-green-600" />
-                  </div>
-                  <CardTitle className="text-3xl font-bold text-green-800 mb-2">
-                    Scenario Manager & Financial Modeling Foundation
-                  </CardTitle>
-                  <Badge variant="secondary" className="text-sm">
-                    The Professional Foundation
-                  </Badge>
-                </CardHeader>
-                <CardContent className="prose prose-lg max-w-none">
-                  <div className="bg-green-50 p-6 rounded-lg border border-green-200 mb-6">
-                    <p className="text-lg leading-relaxed text-green-900 mb-4">
-                      After her challenging meeting with the VCs, Sarah spent the weekend researching how 
-                      professional financial analysts handle uncertainty. She discovered that Excel's Scenario 
-                      Manager is the industry standard for modeling different business conditions. Here's what 
-                      she learned—and what you need to master to build investor-ready financial models.
+    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-orange-100">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <PhaseHeader
+          lesson={lesson04Data}
+          unit={unit08Data}
+          phase={phase2}
+          phases={lesson04Phases}
+        />
+
+        <div className="space-y-8">
+          <div className="prose prose-lg max-w-none">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">The Double-Declining Balance Method</h2>
+
+            <p className="text-lg leading-relaxed">
+              Sarah's accountant shows her how DDB works. The key difference from straight-line: 
+              instead of dividing the depreciable base by years, you apply a <strong>double rate</strong> 
+              to the asset's <strong>current book value</strong> each year.
+            </p>
+
+            <Card className="border-purple-200 bg-purple-50 my-6">
+              <CardHeader>
+                <CardTitle className="text-purple-900 flex items-center gap-2">
+                  <Calculator className="h-5 w-5" />
+                  The DDB Formula
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center space-y-3">
+                  <p className="text-xl font-bold text-purple-800">
+                    DDB Rate = 2 × (1 ÷ Useful Life)
+                  </p>
+                  <div className="bg-white p-4 rounded border border-purple-200">
+                    <p className="text-lg text-gray-800">
+                      For a 5-year asset: DDB Rate = 2 × (1 ÷ 5) = 2 × 0.20 = <strong>40%</strong>
+                    </p>
+                    <p className="text-lg text-gray-800 mt-2">
+                      Year 1 Expense = $30,000 × 40% = <strong>$12,000</strong>
                     </p>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
 
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
-                    <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-                      <Settings className="w-5 h-5" />
-                      What is Scenario Manager?
-                    </h3>
-                    <p className="text-blue-800 mb-4">
-                      Scenario Manager is Excel's built-in tool for storing and switching between different 
-                      sets of input variables. Instead of manually changing numbers and copying results, 
-                      you can instantly switch between "Optimistic," "Realistic," and "Pessimistic" 
-                      assumptions with a single click.
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Step-by-Step Breakdown</h3>
+
+            <div className="space-y-4">
+              <div className="bg-gray-50 border border-gray-200 p-5 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-purple-600 text-white shrink-0 mt-1">Step 1</Badge>
+                  <div>
+                    <p className="font-semibold text-gray-900">Find the DDB rate</p>
+                    <p className="text-gray-700">
+                      Double the straight-line rate. For a 5-year asset: 2 × (1/5) = 40%.
                     </p>
-                    <div className="bg-blue-100 p-4 rounded-lg">
-                      <p className="text-blue-900 font-medium text-sm">
-                        🎯 <strong>Professional Standard:</strong> All investment-grade financial models use 
-                        scenario analysis. It shows investors you understand risks and have prepared for 
-                        different market conditions.
-                      </p>
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">The Three Core Components</h3>
-
-                  <div className="grid md:grid-cols-3 gap-6 my-8">
-                    <Card className="border-purple-200 bg-purple-50">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-purple-900 flex items-center gap-2 text-lg">
-                          <Database className="h-5 w-5" />
-                          1. Changing Cells
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-purple-800 mb-3">
-                          These are your <strong>input variables</strong>—the assumptions that change 
-                          between scenarios.
-                        </p>
-                        <div className="bg-purple-100 p-3 rounded text-xs text-purple-900">
-                          <strong>TechStart Examples:</strong><br/>
-                          • Monthly growth rate: 20%, 35%, 8%<br/>
-                          • Customer acquisition cost: $250<br/>
-                          • Monthly churn rate: 5%<br/>
-                          • Average revenue per user: $85
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="border-amber-200 bg-amber-50">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-amber-900 flex items-center gap-2 text-lg">
-                          <Zap className="h-5 w-5" />
-                          2. Result Cells
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-amber-800 mb-3">
-                          These are your <strong>calculated outcomes</strong>—the numbers that depend 
-                          on your changing cells.
-                        </p>
-                        <div className="bg-amber-100 p-3 rounded text-xs text-amber-900">
-                          <strong>Key Results to Track:</strong><br/>
-                          • Year 1 Total Revenue<br/>
-                          • Monthly Cash Burn Rate<br/>
-                          • Time to Break Even<br/>
-                          • Total Funding Needed
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="border-green-200 bg-green-50">
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-green-900 flex items-center gap-2 text-lg">
-                          <CheckCircle className="h-5 w-5" />
-                          3. Scenario Sets
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-green-800 mb-3">
-                          Each scenario is a <strong>named collection</strong> of values for your 
-                          changing cells.
-                        </p>
-                        <div className="bg-green-100 p-3 rounded text-xs text-green-900">
-                          <strong>Standard Scenarios:</strong><br/>
-                          • <strong>Optimistic:</strong> Strong market conditions<br/>
-                          • <strong>Realistic:</strong> Expected performance<br/>
-                          • <strong>Pessimistic:</strong> Challenging conditions
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Building Professional Models: Best Practices</h3>
-
-                  <p className="text-lg leading-relaxed">
-                    Sarah learned that professional financial analysts follow strict conventions when 
-                    building scenario-based models. These aren't just suggestions—they're industry 
-                    standards that determine whether investors take your model seriously.
-                  </p>
-
-                  <div className="space-y-4">
-                    <Card className="border-indigo-200 bg-indigo-50">
-                      <CardHeader>
-                        <CardTitle className="text-indigo-900 text-lg">📍 Use Absolute Cell References</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-indigo-800 mb-3">
-                          Always use <code className="bg-indigo-100 px-2 py-1 rounded">$B$5</code> instead of 
-                          <code className="bg-red-100 px-2 py-1 rounded">B5</code> for scenario changing cells. 
-                          This prevents formulas from breaking when Excel updates scenarios.
-                        </p>
-                        <div className="bg-indigo-100 p-3 rounded text-sm text-indigo-900">
-                          <strong>Example:</strong> <code>=Revenue_Growth_Rate*$B$10</code> (✓ Professional)<br/>
-                          <strong>Avoid:</strong> <code>=0.20*B10</code> (✗ Hard-coded and fragile)
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="border-teal-200 bg-teal-50">
-                      <CardHeader>
-                        <CardTitle className="text-teal-900 text-lg">🏷️ Named Ranges for Key Variables</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-teal-800 mb-3">
-                          Give meaningful names to your changing cells. Instead of referring to "B5," 
-                          create a named range like "Revenue_Growth_Rate." This makes formulas readable 
-                          and professional.
-                        </p>
-                        <div className="bg-teal-100 p-3 rounded text-sm text-teal-900">
-                          <strong>Professional:</strong> <code>=Monthly_Revenue * (1 + Revenue_Growth_Rate)</code><br/>
-                          <strong>Unprofessional:</strong> <code>=B15 * (1 + B5)</code>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="border-cyan-200 bg-cyan-50">
-                      <CardHeader>
-                        <CardTitle className="text-cyan-900 text-lg">📊 Scenario Summary Reports</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-cyan-800 mb-3">
-                          Excel can automatically generate a summary table showing all your scenarios 
-                          side-by-side. This is perfect for investor presentations—you can show how 
-                          your business performs under different conditions at a glance.
-                        </p>
-                        <div className="bg-cyan-100 p-3 rounded text-sm text-cyan-900">
-                          <strong>Summary includes:</strong> All scenario names, input assumptions, 
-                          and calculated results in a clean, comparative format.
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Why Investors Demand This</h3>
-
-                  <p className="text-lg leading-relaxed">
-                    Marcus, the VC who challenged Sarah, later explained why scenario analysis is 
-                    non-negotiable: "We're not investing in your best-case dream—we're investing in 
-                    your business's ability to succeed across different market conditions. If you 
-                    can't model uncertainty, you can't manage it."
-                  </p>
-
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2 text-blue-900">
-                      <ArrowRight className="h-5 w-5" />
-                      Real-World Impact
-                    </h4>
-                    <p className="text-base mb-3 text-blue-800">
-                      Professional investors use scenario analysis to:
+                    <p className="font-mono text-purple-700 mt-1">
+                      DDB Rate = 2 × 20% = 40%
                     </p>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-blue-800">
-                      <li>Assess how much funding a startup needs in different market conditions</li>
-                      <li>Understand when the business becomes profitable under various assumptions</li>
-                      <li>Evaluate management's understanding of risks and opportunities</li>
-                      <li>Plan follow-up investment rounds based on different growth trajectories</li>
-                    </ul>
                   </div>
+                </div>
+              </div>
 
-                  <p className="text-lg leading-relaxed">
-                    Sarah realized that learning Scenario Manager wasn't just about Excel skills—it was 
-                    about developing the analytical mindset that investors expect from fundable entrepreneurs. 
-                    With this foundation, she was ready to rebuild her financial model the right way.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="bg-gray-50 border border-gray-200 p-5 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-purple-600 text-white shrink-0 mt-1">Step 2</Badge>
+                  <div>
+                    <p className="font-semibold text-gray-900">Multiply rate by beginning book value</p>
+                    <p className="text-gray-700">
+                      Unlike straight-line, you do NOT subtract salvage value first. Apply the rate 
+                      directly to the book value at the start of each year.
+                    </p>
+                    <p className="font-mono text-purple-700 mt-1">
+                      Year 1: $30,000 × 40% = $12,000
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-              {/* Vocabulary Exercise */}
-              <FillInTheBlank
-                title="Master Scenario Manager Vocabulary"
-                description="Complete these sentences about Excel Scenario Manager functionality"
-                sentences={vocabularyExercise}
-                showWordList={true}
-                showHints={true}
-                randomizeWordOrder={true}
-              />
+              <div className="bg-gray-50 border border-gray-200 p-5 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <Badge className="bg-purple-600 text-white shrink-0 mt-1">Step 3</Badge>
+                  <div>
+                    <p className="font-semibold text-gray-900">Check the salvage value floor</p>
+                    <p className="text-gray-700">
+                      If the calculated expense would push book value below salvage value, reduce the 
+                      expense so book value equals salvage value exactly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-              {/* Turn and Talk */}
-              <Card className="border-blue-200 bg-blue-50">
-                <CardHeader>
-                  <CardTitle className="text-blue-800 flex items-center gap-2">
-                    <Users className="h-5 w-5" />
-                    Turn and Talk
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">DDB vs Straight-Line: Side by Side</h3>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border border-gray-300 p-2">Year</th>
+                    <th className="border border-gray-300 p-2">DDB Expense</th>
+                    <th className="border border-gray-300 p-2">DDB Book Value</th>
+                    <th className="border border-gray-300 p-2">SL Expense</th>
+                    <th className="border border-gray-300 p-2">SL Book Value</th>
+                    <th className="border border-gray-300 p-2">Difference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ddbSchedule.map((row, i) => (
+                    <tr key={row.year}>
+                      <td className="border border-gray-300 p-2 font-medium">Year {row.year}</td>
+                      <td className="border border-gray-300 p-2 text-right font-bold text-purple-700">${row.expense.toLocaleString()}</td>
+                      <td className="border border-gray-300 p-2 text-right">${row.endBV.toLocaleString()}</td>
+                      <td className="border border-gray-300 p-2 text-right text-blue-700">${slSchedule[i].expense.toLocaleString()}</td>
+                      <td className="border border-gray-300 p-2 text-right text-blue-700">${slSchedule[i].endBV.toLocaleString()}</td>
+                      <td className="border border-gray-300 p-2 text-right text-orange-700">
+                        {row.expense > slSchedule[i].expense ? '+' : ''}${(row.expense - slSchedule[i].expense).toLocaleString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="text-sm text-gray-600 mt-2">
+              Notice: DDB records $12,000 in Year 1 vs straight-line's $5,000. That is $7,000 more 
+              expense — and $7,000 less reported profit — in the first year alone.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Why Choose DDB?</h3>
+
+            <div className="grid md:grid-cols-2 gap-4 my-6">
+              <Card className="border-green-200 bg-green-50">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-green-900 flex items-center gap-2 text-base">
+                    <FileText className="h-4 w-4" />
+                    Tax Advantage
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-medium text-blue-900 mb-2">
-                    Discussion Prompt (3 minutes):
+                  <p className="text-sm text-green-800">
+                    Higher early-year expenses mean lower reported profit, which means lower taxes 
+                    in the early years. This keeps more cash in the business when it is growing.
                   </p>
-                  <p className="text-blue-800 mb-2">
-                    Think about professional financial modeling and discuss with a partner:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-blue-800">
-                    <li>Why do you think investors prefer dynamic models over static spreadsheets?</li>
-                    <li>How might scenario analysis help entrepreneurs make better business decisions?</li>
-                    <li>What advantages does Excel's Scenario Manager have over manually changing numbers?</li>
-                  </ul>
                 </CardContent>
               </Card>
 
-              {/* Preview */}
-              <Card className="border-gray-200 bg-gray-50">
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-gray-800 mb-2">Coming Up Next</h3>
-                  <p className="text-gray-700">
-                    In the Guided Practice phase, we'll build Sarah's scenario-enabled financial model 
-                    step-by-step. You'll learn professional formula techniques, set up changing cells 
-                    and result tracking, and create the dynamic models that impress investors.
+              <Card className="border-purple-200 bg-purple-50">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-purple-900 flex items-center gap-2 text-base">
+                    <BarChart3 className="h-4 w-4" />
+                    Realistic Matching
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-purple-800">
+                    Vehicles, computers, and equipment lose more value early. DDB matches the 
+                    expense pattern to the actual economic loss.
                   </p>
                 </CardContent>
               </Card>
-              
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
+              <p className="text-amber-800 m-0">
+                <strong>Critical rule:</strong> Under DDB, you do NOT subtract salvage value before 
+                calculating the expense. The salvage value only acts as a floor — book value can 
+                never go below it.
+              </p>
             </div>
           </div>
-        </section>
-      </main>
-      
-      <PhaseFooter 
-        unit={unit08Data} 
-        lesson={lesson04Data} 
-        phase={currentPhase} 
-        phases={lesson04Phases} 
-      />
+
+          <FillInTheBlank
+            sentences={fillInBlankSentences}
+            title="DDB Vocabulary Check"
+            description="Complete these key terms about double-declining balance depreciation"
+            showWordList={true}
+            randomizeWordOrder={true}
+            showHints={true}
+          />
+        </div>
+
+        <PhaseFooter
+          lesson={lesson04Data}
+          unit={unit08Data}
+          phase={phase2}
+          phases={lesson04Phases}
+        />
+      </div>
     </div>
   );
 }

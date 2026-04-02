@@ -80,21 +80,21 @@
     - [x] Students can calculate straight-line depreciation manually
     - [x] Students can explain how the method changes statements over time
 
-- [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
-  - [ ] 2.4.1 Update lesson-data.ts for Lesson 04
-  - [ ] 2.4.2 Implement Phase 1-6 with Double-Declining Balance and method comparison
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name DDB method clearly, model procedure step-by-step, explain why each step exists, use worked examples and compare with straight-line in business terms
-    - Phase 3: Add meaningful complication (switching to straight-line mid-schedule or salvage value floors), reduce prompts, shift toward authentic depreciation notation
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
-    - Phase 5: Short MCQ exit ticket on DDB calculation and method comparison reasoning, misconceptions
+- [x] 2.4 **Lesson 04** - Implement accounting-principles skill
+  - [x] 2.4.1 Update lesson-data.ts for Lesson 04
+  - [x] 2.4.2 Implement Phase 1-6 with Double-Declining Balance and method comparison
+    - Phase 1: Reconnect to Lesson 03's straight-line method, show friction point (assets lose value faster early), use prediction/comprehension hook
+    - Phase 2: Name DDB method clearly, model procedure step-by-step (rate = 2 × 1/life, apply to book value), explain why each step exists, compare DDB with SL in business terms with full schedule table
+    - Phase 3: Add meaningful complication (salvage value floor), reduce prompts, shift toward authentic depreciation notation, ask students to explain choices
+    - Phase 4: Same procedure each round, vary numbers algorithmically via DDBComparisonMastery component, automatic checking, feedback after submission, brief reteach guidance, define mastery target (5 consecutive correct)
+    - Phase 5: Short MCQ exit ticket on DDB calculation and method comparison reasoning
     - Phase 6: Reflect on confidence and understanding, connect to business problem, preview first Excel build lesson
-  - [ ] 2.4.3 Keep this lesson non-Excel and textbook-first
-  - [ ] 2.4.4 Teach DDB explicitly and compare with straight-line in business terms
-  - [ ] 2.4.5 Use Phase 4 for repeated mixed-method comparison with reduced scaffolding
+  - [x] 2.4.3 Keep this lesson non-Excel and textbook-first
+  - [x] 2.4.4 Teach DDB explicitly and compare with straight-line in business terms
+  - [x] 2.4.5 Use Phase 4 for repeated mixed-method comparison with reduced scaffolding
   - **Done when**:
-    - [ ] Students can calculate DDB by hand
-    - [ ] Students can explain when accelerated depreciation makes more sense than straight-line
+    - [x] Students can calculate DDB by hand
+    - [x] Students can explain when accelerated depreciation makes more sense than straight-line
 
 ### Phase 3: Lessons 05-06 (Excel)
 - [ ] 3.1 **Lesson 05** - Implement excel-lessons skill
