@@ -39,58 +39,111 @@
   - Critical finding: `unit01-lesson05-checkpoint.xlsx` is missing from public/resources/
 
 ### Phase 2: Unit 02 Audit
-- [ ] 2.1 Run link discovery for Unit 02 pages
-- [ ] 2.2 Validate `.xlsx` link existence for Unit 02
-- [ ] 2.3 Validate workbook structure/content expectations for Unit 02 links
-- [ ] 2.4 Compare workbook layout to page examples when present
-- [ ] 2.5 Publish Unit 02 findings report
+- [x] 2.1 Run link discovery for Unit 02 pages
+  - Found 6 .xlsx links across Unit 02 student pages
+- [x] 2.2 Validate `.xlsx` link existence for Unit 02
+  - All 6 links valid, no missing files
+- [x] 2.3 Validate workbook structure/content expectations for Unit 02 links
+  - All 14 Unit 02 workbooks open successfully
+- [x] 2.4 Compare workbook layout to page examples when present
+  - 2 workbook-page pairs checked, 2 misaligned
+  - unit02-lesson05-student.xlsx and unit02-lesson05-teacher.xlsx missing expected 'Inputs' sheet (found: Summary, Adjustments)
+- [x] 2.5 Publish Unit 02 findings report
+  - Reports written to `output/audit/unit02/`
 
 ### Phase 3: Unit 03 Audit
-- [ ] 3.1 Run link discovery for Unit 03 pages
-- [ ] 3.2 Validate `.xlsx` link existence for Unit 03
-- [ ] 3.3 Validate workbook structure/content expectations for Unit 03 links
-- [ ] 3.4 Compare workbook layout to page examples when present
-- [ ] 3.5 Publish Unit 03 findings report
+- [x] 3.1 Run link discovery for Unit 03 pages
+  - Found 1 .xlsx link
+- [x] 3.2 Validate `.xlsx` link existence for Unit 03
+  - Link valid
+- [x] 3.3 Validate workbook structure/content expectations for Unit 03 links
+  - All 15 Unit 03 workbooks open successfully
+- [x] 3.4 Compare workbook layout to page examples when present
+  - No explicit sheet name references found
+- [x] 3.5 Publish Unit 03 findings report
+  - Reports written to `output/audit/unit03/`
 
 ### Phase 4: Unit 04 Audit
-- [ ] 4.1 Run link discovery for Unit 04 pages
-- [ ] 4.2 Validate `.xlsx` link existence for Unit 04
-- [ ] 4.3 Validate workbook structure/content expectations for Unit 04 links
-- [ ] 4.4 Compare workbook layout to page examples when present
-- [ ] 4.5 Publish Unit 04 findings report
+- [x] 4.1 Run link discovery for Unit 04 pages
+  - Found 1 .xlsx link
+- [x] 4.2 Validate `.xlsx` link existence for Unit 04
+  - 1 missing: `unit04-cafe-rehearsal.xlsx` referenced from `unit04/lesson07/phase-2/page.tsx`
+- [x] 4.3 Validate workbook structure/content expectations for Unit 04 links
+  - All 15 Unit 04 workbooks open successfully
+- [x] 4.4 Compare workbook layout to page examples when present
+  - No explicit sheet name references found
+- [x] 4.5 Publish Unit 04 findings report
+  - Reports written to `output/audit/unit04/`
+  - Critical finding: `unit04-cafe-rehearsal.xlsx` is missing
 
 ### Phase 5: Unit 05 Audit
-- [ ] 5.1 Run link discovery for Unit 05 pages
-- [ ] 5.2 Validate `.xlsx` link existence for Unit 05
-- [ ] 5.3 Validate workbook structure/content expectations for Unit 05 links
-- [ ] 5.4 Compare workbook layout to page examples when present
-- [ ] 5.5 Publish Unit 05 findings report
+- [x] 5.1 Run link discovery for Unit 05 pages
+  - Found 1 .xlsx link
+- [x] 5.2 Validate `.xlsx` link existence for Unit 05
+  - Link valid
+- [x] 5.3 Validate workbook structure/content expectations for Unit 05 links
+  - All 16 Unit 05 workbooks open successfully
+- [x] 5.4 Compare workbook layout to page examples when present
+  - No explicit sheet name references found
+- [x] 5.5 Publish Unit 05 findings report
+  - Reports written to `output/audit/unit05/`
 
 ### Phase 6: Unit 06 Audit
-- [ ] 6.1 Run link discovery for Unit 06 pages
-- [ ] 6.2 Validate `.xlsx` link existence for Unit 06
-- [ ] 6.3 Validate workbook structure/content expectations for Unit 06 links
-- [ ] 6.4 Compare workbook layout to page examples when present
-- [ ] 6.5 Publish Unit 06 findings report
+- [x] 6.1 Run link discovery for Unit 06 pages
+  - Found 2 .xlsx links
+- [x] 6.2 Validate `.xlsx` link existence for Unit 06
+  - Both links valid
+- [x] 6.3 Validate workbook structure/content expectations for Unit 06 links
+  - All 23 Unit 06 workbooks open successfully
+- [x] 6.4 Compare workbook layout to page examples when present
+  - No explicit sheet name references found
+- [x] 6.5 Publish Unit 06 findings report
+  - Reports written to `output/audit/unit06/`
 
 ### Phase 7: Unit 07 Audit
-- [ ] 7.1 Run link discovery for Unit 07 pages
-- [ ] 7.2 Validate `.xlsx` link existence for Unit 07
-- [ ] 7.3 Validate workbook structure/content expectations for Unit 07 links
-- [ ] 7.4 Compare workbook layout to page examples when present
-- [ ] 7.5 Publish Unit 07 findings report
+- [x] 7.1 Run link discovery for Unit 07 pages
+  - Found 6 .xlsx links
+- [x] 7.2 Validate `.xlsx` link existence for Unit 07
+  - All 6 links valid
+- [x] 7.3 Validate workbook structure/content expectations for Unit 07 links
+  - All 15 Unit 07 workbooks open successfully
+- [x] 7.4 Compare workbook layout to page examples when present
+  - No explicit sheet name references found
+- [x] 7.5 Publish Unit 07 findings report
+  - Reports written to `output/audit/unit07/`
 
 ### Phase 8: Unit 08 Audit
-- [ ] 8.1 Run link discovery for Unit 08 pages
-- [ ] 8.2 Validate `.xlsx` link existence for Unit 08
-- [ ] 8.3 Validate workbook structure/content expectations for Unit 08 links
-- [ ] 8.4 Compare workbook layout to page examples when present
-- [ ] 8.5 Publish Unit 08 findings report
+- [x] 8.1 Run link discovery for Unit 08 pages
+  - Found 4 .xlsx links
+- [x] 8.2 Validate `.xlsx` link existence for Unit 08
+  - 1 valid, 3 missing:
+    - `unit08-asset-register-starter.xlsx` (from `unit08/lesson05/phase-4/page.tsx`)
+    - `unit08-rehearsal-workbook.xlsx` (from `unit08/lesson07/phase-2/page.tsx`)
+    - `unit08-group${i + 1}-fixed-assets.xlsx` (dynamic interpolated link from `unit08/lesson09/phase-1/page.tsx`)
+- [x] 8.3 Validate workbook structure/content expectations for Unit 08 links
+  - All 15 Unit 08 workbooks open successfully
+- [x] 8.4 Compare workbook layout to page examples when present
+  - No explicit sheet name references found
+- [x] 8.5 Publish Unit 08 findings report
+  - Reports written to `output/audit/unit08/`
+  - Critical finding: 3 missing files, including dynamic group workbook link
 
 ### Phase 9: Consolidation and Remediation Backlog
-- [ ] 9.1 Merge per-unit findings into one consolidated report
-- [ ] 9.2 Prioritize findings by severity (critical/high/medium)
-- [ ] 9.3 Generate fix-ready backlog items with source references
-- [ ] 9.4 Run final verification pass on audit tooling and outputs
-- [ ] 9.5 Confirm final workbook checks were executed under spreadsheet skill guidance
-- [ ] 9.6 Present completion summary and recommended implementation order
+- [x] 9.1 Merge per-unit findings into one consolidated report
+  - `output/audit/consolidated/consolidated-report.md`
+- [x] 9.2 Prioritize findings by severity (critical/high/medium)
+  - 5 critical (missing files), 2 high (alignment mismatches), 0 medium
+- [x] 9.3 Generate fix-ready backlog items with source references
+  - All findings include page paths and filenames for direct remediation
+- [x] 9.4 Run final verification pass on audit tooling and outputs
+  - All 8 units audited, reports generated, consolidated summary complete
+- [x] 9.5 Confirm final workbook checks were executed under spreadsheet skill guidance
+  - Used openpyxl for read-only workbook inspection per spreadsheet skill
+- [x] 9.6 Present completion summary and recommended implementation order
+  - See consolidated report for prioritized remediation list
+
+---
+
+## Track Status: COMPLETE
+
+All phases complete. 8 units audited, 134 workbooks validated, 5 critical and 2 high findings documented.
