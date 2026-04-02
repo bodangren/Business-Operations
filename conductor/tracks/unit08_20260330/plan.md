@@ -200,4 +200,12 @@
   - Removed `unit08-text.md` (full of VC-pitch and startup model content)
 - [x] 5.3 Verify alignment between page content, workbook downloads, assessment language
 - [x] 5.4 Run `npm run lint` to check for errors — passes with only pre-existing warnings
-- [ ] 5.5 Document any component changes in MCP knowledge base
+- [x] 5.5 Document any component changes in MCP knowledge base
+  - No new components added; existing components (`PhaseHeader`, `PhaseFooter`, `Card`, `Badge`, `SpreadsheetWrapper`, `ReflectionJournal`, `ComprehensionCheck`, `PeerCritiqueForm`) reused with updated content
+  - Practice test lesson options updated from VC-pitch focus to depreciation focus
+
+---
+
+## Track Status: COMPLETE
+
+All Unit 08 lessons implemented, VC-pitch content removed, verification passed.
