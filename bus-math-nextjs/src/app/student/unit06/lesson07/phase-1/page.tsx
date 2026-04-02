@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit06Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Briefcase, CheckCircle2, Flag, Users } from "lucide-react"
+import { Briefcase, CheckCircle2, Flag, Users, Target, AlertTriangle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 
 const currentPhase = lesson07Phases[0]
@@ -33,6 +33,17 @@ const hookQuestions = [
     ],
     explanation: 'The point is transfer. Students practice the structure, workflow, and evidence standard they will later apply to a new scenario.'
   },
+  {
+    id: 'u6l7-hook-3',
+    question: 'What changes when your group starts the real project in Lesson 08?',
+    answers: [
+      'Your team gets a different business scenario, but the workbook structure and evidence chain stay the same.',
+      'Your team gets a completely new workbook format that you have never seen before.',
+      'Nothing changes — the project uses the exact same PedalFast data.',
+      'The project has no workbook — only a slide presentation.',
+    ],
+    explanation: 'The business case changes, but the seven-sheet structure, the Definition of Done, and the evidence-tracing routine all carry forward.'
+  },
 ]
 
 export default function Phase1Page() {
@@ -43,7 +54,7 @@ export default function Phase1Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Hook</Badge>
+            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Rehearsal Purpose</Badge>
             <div className="max-w-4xl mx-auto space-y-8 text-left">
               <Card className="border-red-200 bg-white shadow-lg">
                 <CardHeader className="text-center pb-4">
@@ -56,14 +67,25 @@ export default function Phase1Page() {
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none">
                   <p className="text-lg leading-relaxed text-red-900">
-                    Lessons 1-6 taught you the pricing logic. Lesson 07 shows what a complete, project-ready workbook
-                    should look like before your team starts building its own scenario in Lessons 8-10.
+                    Lessons 1-6 taught you the pricing logic — markup, margin, break-even, Goal Seek, and sensitivity tables.
+                    Lesson 07 shows what a complete, project-ready workbook should look like before your team starts building
+                    its own scenario in Lessons 8-10.
                   </p>
                   <p className="text-lg leading-relaxed text-red-900">
                     Today, the whole class uses the same business case: <strong>PedalFast Bike Repair</strong>.
-                    That means everyone can focus on the real goal: understanding the structure, evidence, and
-                    quality standard for the project workbook.
+                    That is intentional. When everyone works from the same data, you can compare reasoning quality,
+                    evidence chains, and workbook clarity directly — instead of wondering whether a different scenario
+                    explains a weak recommendation.
                   </p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
+                    <p className="text-amber-900 font-medium flex items-center gap-2 mb-1">
+                      <AlertTriangle className="w-4 h-4" /> This is rehearsal, not the real project
+                    </p>
+                    <p className="text-amber-900 text-sm">
+                      Today&apos;s workbook is a guided-practice version. In Lessons 8-10, your group will receive a different
+                      business scenario and its own starter workbook. The structure stays the same — only the data changes.
+                    </p>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                     <div className="p-4 rounded-lg border bg-red-50 border-red-200">
                       <h4 className="font-semibold text-red-800 flex items-center gap-2"><Briefcase className="w-5 h-5" /> What today is</h4>
@@ -71,6 +93,7 @@ export default function Phase1Page() {
                         <li>A guided rehearsal with one shared workbook</li>
                         <li>A model of what the project should include</li>
                         <li>A chance to practice auditing and explaining your results</li>
+                        <li>High teacher guidance — you are practicing the standard, not inventing it</li>
                       </ul>
                     </div>
                     <div className="p-4 rounded-lg border bg-green-50 border-green-200">
@@ -79,6 +102,7 @@ export default function Phase1Page() {
                         <li>Lessons 8-10 give each group a different scenario</li>
                         <li>Teams reuse this workbook structure independently</li>
                         <li>The final project adds presentation and defense</li>
+                        <li>Teacher guidance drops — your team owns the quality</li>
                       </ul>
                     </div>
                   </div>
@@ -105,6 +129,24 @@ export default function Phase1Page() {
                     <li>What numbers would prove your recommendation?</li>
                     <li>What would make the workbook feel confusing or weak?</li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-indigo-200 bg-indigo-50">
+                <CardHeader>
+                  <CardTitle className="text-indigo-900 flex items-center gap-2">
+                    <Target className="w-5 h-5" /> What You Must Carry Into the Project
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-indigo-900 text-sm space-y-2">
+                  <p className="font-medium">By the end of today, you should be able to answer:</p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>What must every project workbook include?</li>
+                    <li>Where does the recommendation come from?</li>
+                    <li>What evidence proves the recommendation is reasonable?</li>
+                    <li>What would make this artifact feel weak or untrustworthy?</li>
+                    <li>What parts of today&apos;s structure must my team recreate independently?</li>
+                  </ol>
                 </CardContent>
               </Card>
             </div>

@@ -1,27 +1,29 @@
-// PriceLab Challenge, Lesson 7 data - extracted from MCP curriculum database
+// PriceLab Challenge, Lesson 7 data - Project Rehearsal
 export const lesson07Data = {
   id: "mds5wn3xm9hisij8jqf",
-  title: "Production Studio: Completion, QA, and Presentation Readiness",
+  title: "Project Rehearsal: Shared Workbook, Evidence Chain, and Quality Standard",
   sequence: 7,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Audit the Lesson 06 dashboard workbook for accuracy, clarity, and investor readiness",
-    "Use a Definition of Done checklist to verify scenario switching, summary tables, charts, and notes",
-    "Prepare a polished workbook that models the standard students will apply in the Unit 06 project"
+    "Rehearse the exact seven-sheet workbook structure that every group will reuse in the Unit 06 project",
+    "Trace a pricing recommendation back through the evidence chain from Dashboard to CostSetup",
+    "Use a Definition of Done checklist to audit workbook accuracy, clarity, and investor readiness",
+    "Identify which structures, checks, and communication moves must transfer into Lessons 8-10"
   ],
   keyConcepts: [
-    "Exact-match lookups with IFNA or IFERROR",
-    "Scenario summary tables and dashboard tie-outs",
-    "Validation checks, reconciliation, and visible assumptions",
-    "Peer audit and presentation readiness"
+    "Shared rehearsal data vs. independent project data",
+    "Evidence chain: CostSetup → PriceOptions → Feasibility → TargetProfit → PriceSensitivity → ProfitMatrix → Dashboard",
+    "Definition of Done for investor-ready workbooks",
+    "Peer audit focused on logic chain, evidence, and clarity",
+    "Transfer: what stays the same and what changes in the real project"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Production sprint flow: audit -> fix -> polish -> rehearse",
-    "Peer audit using a Definition of Done checklist and concrete workbook evidence"
+    "Guided rehearsal with one shared teacher-provided dataset for the whole class",
+    "Audit-first workflow: inspect → trace → evaluate → polish",
+    "Peer critique using explicit criteria tied to the Definition of Done"
   ],
-  rationale: "Students use this final guided lesson to harden their TechStart workbook before they begin the more independent group project in Lessons 8-10.",
-  status: "Draft"
+  rationale: "Lesson 07 is a guided-practice version of the upcoming group project. Every student sees the same workbook structure, quality standard, and evidence chain before teams receive different scenarios in Lessons 8-10."
 }
 
 export const unit06Data = {
@@ -30,42 +32,43 @@ export const unit06Data = {
   sequence: 6
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases aligned to the project-rehearsal skill contract
+// Phase names follow the standard six-phase contract; descriptions reflect rehearsal focus
 export const lesson07Phases = [
   {
-    id: "phase_hook_7",
+    id: "phase_rehearsal_purpose_7",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "See what investors notice first when a workbook is polished versus fragile.",
+    description: "Understand why the whole class rehearses with the same data before the independent project begins.",
   },
   {
-    id: "phase_introduction_7",
+    id: "phase_artifact_orientation_7",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Learn the Definition of Done for the final TechStart workbook before the capstone project begins.",
+    description: "Download the shared workbook, map every sheet to its job in the evidence chain, and define success.",
   },
   {
-    id: "phase_guided_practice_7",
+    id: "phase_guided_audit_7",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Run a guided audit on scenario toggles, summary tie-outs, and visible error checks.",
+    description: "Trace the recommendation from Dashboard back to CostSetup using guided audit routines.",
   },
   {
-    id: "phase_independent_practice_7",
+    id: "phase_polish_transfer_7",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Complete the final QA sprint and polish the workbook for presentation and project handoff.",
+    description: "Complete weak spots, write recommendation and risk statements, and name what to carry into the project.",
   },
   {
-    id: "phase_assessment_7",
+    id: "phase_transfer_check_7",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate readiness through a short audit check and peer review.",
+    description: "Demonstrate project-readiness through a comprehension check and peer critique.",
   },
   {
-    id: "phase_closing_7",
+    id: "phase_reflection_handoff_7",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Reflect on workbook quality and preview the independent group project in Lessons 8-10.",
+    description: "Lock in the quality standard and preview what changes when groups get their own scenarios.",
   }
 ]
