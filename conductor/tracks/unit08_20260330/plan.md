@@ -177,19 +177,19 @@
      - [x] The workbook is complete and readable
      - [x] The team can defend a depreciation recommendation with evidence
 
-- [ ] 4.4 **Lesson 10** - Implement group-project skill
-  - [ ] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
-  - [ ] 4.4.2 Implement final presentation and submission
-    - Require final polish of workbook and presentation notes
-    - Make audience, presentation standard, submission standard explicit
-    - Include final checklist and timing guidance
-    - Require reflection after presentation or submission
-  - [ ] 4.4.3 Make final deliverables explicit
-  - [ ] 4.4.4 Require final workbook polish and submission
-  - [ ] 4.4.5 End with reflection on asset tracking, method choice, and reporting credibility
-  - **Done when**:
-    - [ ] Final deliverables are submitted
-    - [ ] Reflection captures what made the recommendation trustworthy
+- [x] 4.4 **Lesson 10** - Implement group-project skill
+   - [x] 4.4.1 Update milestone page, lesson-data.ts for Lesson 10
+   - [x] 4.4.2 Implement final presentation and submission
+     - Require final polish of workbook and presentation notes
+     - Make audience, presentation standard, submission standard explicit
+     - Include final checklist and timing guidance
+     - Require reflection after presentation or submission
+   - [x] 4.4.3 Make final deliverables explicit
+   - [x] 4.4.4 Require final workbook polish and submission
+   - [x] 4.4.5 End with reflection on asset tracking, method choice, and reporting credibility
+   - **Done when**:
+     - [x] Final deliverables are submitted
+     - [x] Reflection captures what made the recommendation trustworthy
 
 ### Phase 5: Verification & Polish
 - [ ] 5.1 Verify all lesson-data.ts files are updated

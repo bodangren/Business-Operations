@@ -295,7 +295,7 @@ export default function Lesson09Page() {
                   },
                   {
                     id: 'u08-l09-reflect-3',
-                    category: 'preparation',
+                    category: 'application',
                     prompt: 'What does your team need to polish or prepare for Lesson 10 presentations? Who is responsible for what?',
                     placeholder: 'For Lesson 10 we need to... Team member roles are...'
                   }
