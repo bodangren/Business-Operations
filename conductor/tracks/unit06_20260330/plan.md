@@ -130,19 +130,22 @@
     - [x] Students know the exact workbook structure they must reuse in the project
     - [x] Peer critique focuses on evidence chain, risk, and clarity
 
-- [ ] 4.2 **Lesson 08** - Implement group-project skill
-  - [ ] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
-  - [ ] 4.2.2 Implement kickoff with group-specific business data
-    - Assign each group its own pricing dataset/starter workbook
-    - Explain business scenario, constraints, target outcome
-    - Require teams to rename, save, organize correct workbook
-    - Start first required sheets/sections
-    - Define milestone 1 acceptance criteria
-  - [ ] 4.2.3 Assign each group its own pricing dataset or starter workbook
-  - [ ] 4.2.4 Keep the workbook architecture identical to Lesson 07
-  - **Done when**:
-    - [ ] Each team is working in the correct workbook
-    - [ ] Initial pricing-analysis sheets are complete
+- [x] 4.2 **Lesson 08** - Implement group-project skill
+  - [x] 4.2.1 Update milestone page, lesson-data.ts for Lesson 08
+  - [x] 4.2.2 Implement kickoff with group-specific business data
+    - [x] Assign each group its own pricing dataset/starter workbook
+    - [x] Explain business scenario, constraints, target outcome
+    - [x] Require teams to rename, save, organize correct workbook
+    - [x] Start first required sheets/sections
+    - [x] Define milestone 1 acceptance criteria
+  - [x] 4.2.3 Assign each group its own pricing dataset or starter workbook
+  - [x] 4.2.4 Keep the workbook architecture identical to Lesson 07
+  - [x] 4.2.5 Add comprehensive milestone content: group scenario cards, workbook map with 7 sheets, timeboxed workflow, acceptance criteria, rubric, submission checklist, reflection
+  - [x] 4.2.6 Fix import path in phase-1/page.tsx (../lesson-data)
+  - [x] 4.2.7 Run npm run build — passes
+  **Done when**:
+    - [x] Each team is working in the correct workbook
+    - [x] Initial pricing-analysis sheets are complete
 
 - [ ] 4.3 **Lesson 09** - Implement group-project skill
   - [ ] 4.3.1 Update milestone page, lesson-data.ts for Lesson 09

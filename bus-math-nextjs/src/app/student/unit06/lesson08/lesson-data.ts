@@ -1,25 +1,29 @@
-// PriceLab Challenge, Lesson 8 data - extracted from MCP curriculum database
+// PriceLab Challenge, Lesson 8 data - Group Project Kickoff
 export const lesson08Data = {
   id: "mds5wn3z0n0trxywpene",
-  title: "Project Planning and Workbook Setup",
+  title: "Project Kickoff: Group Workbook Setup and First Analysis",
   sequence: 8,
   unitId: "mdrhlhv3y4h703ia2t",
   learningObjectives: [
-    "Plan a group pricing project using a new business scenario",
-    "Sort raw costs into fixed and variable categories",
-    "Set up the workbook structure needed for independent CVP analysis"
+    "Open and organize your group's assigned pricing workbook with correct naming conventions",
+    "Classify each cost item as fixed or variable in the CostSetup sheet",
+    "Complete PriceOptions and Feasibility sheets using your group's specific dataset",
+    "Write one draft recommendation statement supported by early workbook evidence"
   ],
   keyConcepts: [
-    "Project planning for financial modeling",
-    "Fixed costs, variable costs, and starting assumptions",
-    "Workbook structure for pricing analysis"
+    "Group-specific business scenarios vs. shared rehearsal data",
+    "Fixed costs, variable costs, and contribution margin in a new context",
+    "Workbook architecture continuity from Lesson 07",
+    "Evidence chain: CostSetup → PriceOptions → Feasibility → Dashboard",
+    "Milestone 1 acceptance criteria and submission standards"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Shift from guided practice to independent setup and planning"
+    "Independent team work on group-specific datasets",
+    "Milestone-driven workflow with explicit acceptance criteria",
+    "Workbook architecture identical to Lesson 07 rehearsal model"
   ],
-  rationale: "To move students from guided lessons into an independent project by having each team plan its workflow and build the workbook skeleton for a new scenario.",
-  status: "Draft"
+  rationale: "Lesson 08 moves teams from guided rehearsal into their own assigned scenario. Each group receives a unique business dataset but uses the exact same workbook structure from Lesson 07. Today's goal is planning the work, classifying costs, completing the first analysis sheets, and writing an early recommendation statement."
 }
 
 export const unit06Data = {
@@ -28,12 +32,43 @@ export const unit06Data = {
   sequence: 6
 }
 
-// Lesson phases from MCP curriculum database
+// Lesson phases aligned to the group-project skill contract
+// Phase names follow the milestone-style structure for project lessons
 export const lesson08Phases = [
   {
-    id: "pbl_m1",
-    phaseName: "Introduction" as const,
+    id: "phase_kickoff_context_8",
+    phaseName: "Hook" as const,
     sequence: 1,
-    description: "PBL Milestone 1 — Planning and workbook setup: scenario assignment, cost sorting, workbook map, and first analysis tabs."
+    description: "Understand your group's business scenario, constraints, and target outcome.",
+  },
+  {
+    id: "phase_workbook_assignment_8",
+    phaseName: "Introduction" as const,
+    sequence: 2,
+    description: "Download the correct group workbook, rename it, and map each sheet to its job.",
+  },
+  {
+    id: "phase_cost_classification_8",
+    phaseName: "Guided Practice" as const,
+    sequence: 3,
+    description: "Sort every cost item into fixed or variable and verify totals update correctly.",
+  },
+  {
+    id: "phase_first_analysis_8",
+    phaseName: "Independent Practice" as const,
+    sequence: 4,
+    description: "Complete PriceOptions and Feasibility sheets using your group's data.",
+  },
+  {
+    id: "phase_milestone_check_8",
+    phaseName: "Assessment" as const,
+    sequence: 5,
+    description: "Check work against Milestone 1 acceptance criteria and write a draft recommendation.",
+  },
+  {
+    id: "phase_reflection_handoff_8",
+    phaseName: "Closing" as const,
+    sequence: 6,
+    description: "Reflect on progress, name what must carry into Lesson 9, and preview the next milestone.",
   }
 ]
