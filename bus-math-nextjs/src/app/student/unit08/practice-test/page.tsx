@@ -30,44 +30,44 @@ const lessonOptions: Array<{
 }> = [
   {
     id: "lesson01",
-    title: "Lesson 01 – VC Red Flags & Entry Event",
-    focus: "Venture capital evaluation criteria and common startup model failures",
+    title: "Lesson 01 — Fixed-Asset Launch",
+    focus: "Why long-term assets are different from everyday expenses",
     color: "border-rose-300 bg-rose-50"
   },
   {
     id: "lesson02",
-    title: "Lesson 02 – Review & Link Integration",
-    focus: "Cross-sheet linking and integrated financial statement fundamentals",
+    title: "Lesson 02 — Capitalization vs. Expense",
+    focus: "Classifying purchases, useful life, salvage value, and depreciable base",
     color: "border-sky-300 bg-sky-50"
   },
   {
     id: "lesson03",
-    title: "Lesson 03 – Balance Sheet & Cash Flow Integration",
-    focus: "Working capital dynamics and cash flow reconciliation",
+    title: "Lesson 03 — Straight-Line Depreciation",
+    focus: "Manual SL calculation and statement impact",
     color: "border-emerald-300 bg-emerald-50"
   },
   {
     id: "lesson04",
-    title: "Lesson 04 – Scenario Manager & Advanced Modeling",
-    focus: "Scenario analysis and professional financial model architecture",
+    title: "Lesson 04 — Double-Declining Balance",
+    focus: "DDB calculation, salvage value floor, and method comparison",
     color: "border-amber-300 bg-amber-50"
   },
   {
     id: "lesson05",
-    title: "Lesson 05 – Sensitivity & Scenario Automation",
-    focus: "Data tables, sensitivity analysis, and automated scenario testing",
+    title: "Lesson 05 — Build Asset Register",
+    focus: "Excel asset register and depreciation schedule anatomy",
     color: "border-purple-300 bg-purple-50"
   },
   {
     id: "lesson06",
-    title: "Lesson 06 – Integration & Dashboard",
-    focus: "KPI dashboards, dynamic charts, and investor-ready presentation",
+    title: "Lesson 06 — Method Comparison Workbook",
+    focus: "Side-by-side method comparison and investor-ready summary",
     color: "border-cyan-300 bg-cyan-50"
   },
   {
     id: "lesson07",
-    title: "Lesson 07 – Production Studio & QA",
-    focus: "Final quality assurance, audit trails, and investor readiness",
+    title: "Lesson 07 — Project Rehearsal",
+    focus: "Shared-data rehearsal, evidence chain, and peer audit",
     color: "border-indigo-300 bg-indigo-50"
   }
 ]
@@ -273,29 +273,23 @@ export default function PracticeTestPage() {
           <section id="phase-1" className="space-y-6">
             <div className="text-center space-y-4">
               <Badge className="bg-rose-100 text-rose-800 text-lg px-4 py-2">
-                ✨ Phase 1: Hook – Investor Spotlight
+                ✨ Phase 1: Hook — Board Meeting Spotlight
               </Badge>
               <Card className="max-w-4xl mx-auto border-rose-200 bg-white">
                 <CardHeader>
                   <CardTitle className="flex items-center justify-center gap-2 text-rose-900">
                     <Sparkles className="h-5 w-5" />
-                    Sarah's VC pitch rehearsal starts now
+                    Sarah needs to defend TechStart&apos;s depreciation policy
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-left">
                   <p className="text-lg leading-relaxed text-slate-800">
-                    Sarah Chen is three days away from pitching TechStart Solutions to a venture capital panel. She
-                    already built the Year-1 Startup Model with integrated statements and scenario analysis, but VCs
-                    expect her to answer rapid-fire questions about every assumption, formula, and cash balance. This
-                    practice test is your chance to rehearse alongside Sarah so both of you are ready for the real Q&amp;A.
+                    Sarah Chen is preparing for a board meeting where she must explain TechStart&apos;s depreciation choices. The board wants to know why the company chose its depreciation method, how book value changes over time, and whether the asset register is trustworthy. This practice test helps you rehearse alongside Sarah so both of you are ready for the real Q&amp;A.
                   </p>
                   <div className="bg-rose-50 border border-rose-200 rounded-lg p-4 text-rose-900">
                     <h3 className="font-semibold mb-2">Why this matters</h3>
                     <p className="text-sm leading-relaxed">
-                      Venture capitalists judge startups on clarity, speed, and confidence. When you can defend the
-                      model's assumptions without hesitation, you prove the business is disciplined and investor-ready.
-                      Your mastery keeps Sarah's credibility high and the conversation focused on the value she delivers,
-                      not on errors that could have been caught with stronger preparation.
+                      Professional asset tracking means being able to explain every number in your depreciation schedule. When you can defend your calculations without hesitation, you prove the business is disciplined and credible. Your mastery keeps Sarah&apos;s confidence high and the conversation focused on the value she delivers, not on errors that could have been caught with stronger preparation.
                     </p>
                   </div>
                 </CardContent>
@@ -306,7 +300,7 @@ export default function PracticeTestPage() {
           <section id="phase-2" className="space-y-6">
             <div className="text-center space-y-4">
               <Badge className="bg-sky-100 text-sky-800 text-lg px-4 py-2">
-                ⚙️ Phase 2: Introduction – Build Your Test Plan
+                ⚙️ Phase 2: Introduction — Build Your Test Plan
               </Badge>
               <div className="max-w-4xl mx-auto space-y-6">
                 <Card className="border-sky-200 bg-white">
@@ -319,8 +313,8 @@ export default function PracticeTestPage() {
                   <CardContent className="space-y-4 text-left text-slate-800">
                     <p className="text-lg leading-relaxed">
                       Decide which lessons you want to focus on today. Each set pulls from the shared question bank that
-                      powers every lesson's assessment. Use the toggles below to highlight the skills you want to
-                      reinforce before the VC pitch.
+                      powers every lesson&apos;s assessment. Use the toggles below to highlight the depreciation skills you want to
+                      reinforce before the board meeting.
                     </p>
                     <div className="flex flex-wrap gap-3">
                       <Button
@@ -375,7 +369,7 @@ export default function PracticeTestPage() {
           <section id="phase-3" className="space-y-6">
             <div className="text-center space-y-4">
               <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">
-                🧭 Phase 3: Guided Practice – Strategy Huddle
+                🧭 Phase 3: Guided Practice — Strategy Huddle
               </Badge>
               <div className="max-w-4xl mx-auto grid gap-6">
                 <Card className="border-emerald-200 bg-white">
@@ -388,16 +382,15 @@ export default function PracticeTestPage() {
                   <CardContent className="grid gap-4 text-left text-slate-800">
                     <ul className="list-disc list-inside space-y-2 text-sm">
                       <li>
-                        Commit to a steady pace. VCs expect confident answers in under a minute, so practice
+                        Commit to a steady pace. Professional accountants answer depreciation questions quickly, so practice
                         finishing each item within 60 seconds.
                       </li>
                       <li>
-                        Read the prompt, anchor it to Sarah's startup model, then scan for the answer that protects
-                        accuracy and investor confidence.
+                        Read the prompt, anchor it to the depreciation formula (Book Value = Cost − Accumulated Depreciation), then scan for the answer that protects accuracy and credibility.
                       </li>
                       <li>
                         Use the explanations after you submit. They show the exact reasoning Sarah will share in the
-                        VC meeting.
+                        board meeting.
                       </li>
                       <li>
                         Flag any question that slows you down. Revisit the matching lesson before your next attempt.
@@ -406,8 +399,8 @@ export default function PracticeTestPage() {
                     <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-emerald-900">
                       <h3 className="font-semibold mb-2">Warm-up prompt</h3>
                       <p className="text-sm leading-relaxed">
-                        Imagine a VC asks, "How do you ensure this model stays accurate when assumptions change?" Spend
-                        30 seconds describing the integration check you would spotlight first. That mindset will guide
+                        Imagine a board member asks, &quot;How do you know your depreciation schedule is accurate?&quot; Spend
+                        30 seconds describing the workbook check you would spotlight first. That mindset will guide
                         you through the toughest questions ahead.
                       </p>
                     </div>
@@ -420,7 +413,7 @@ export default function PracticeTestPage() {
           <section id="phase-4" className="space-y-6">
             <div className="text-center space-y-4">
               <Badge className="bg-amber-100 text-amber-800 text-lg px-4 py-2">
-                ⏱️ Phase 4: Independent Practice – Take the Test
+                ⏱️ Phase 4: Independent Practice — Take the Test
               </Badge>
               <div className="max-w-4xl mx-auto space-y-6">
                 <Card className="border-amber-200 bg-white">
@@ -476,7 +469,7 @@ export default function PracticeTestPage() {
                   <ComprehensionCheck
                     questions={comprehensionItems}
                     title="Unit 8 Practice Test"
-                    description="Answer the questions, then review the explanations to strengthen your investor-ready pitch."
+                    description="Answer the questions, then review the explanations to strengthen your depreciation reasoning."
                     showExplanations={true}
                     allowRetry={true}
                     onComplete={(score, total) => {
@@ -494,7 +487,7 @@ export default function PracticeTestPage() {
                   <Card className="border-dashed border-amber-300 bg-amber-50">
                     <CardHeader>
                       <CardTitle className="text-center text-amber-900">
-                        Configure your set and press "Start practice test" to begin.
+                        Configure your set and press &quot;Start practice test&quot; to begin.
                       </CardTitle>
                     </CardHeader>
                   </Card>
@@ -506,7 +499,7 @@ export default function PracticeTestPage() {
           <section id="phase-5" className="space-y-6">
             <div className="text-center space-y-4">
               <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
-                🧮 Phase 5: Assessment – Score &amp; Insights
+                🧮 Phase 5: Assessment — Score &amp; Insights
               </Badge>
               <div className="max-w-4xl mx-auto grid gap-6">
                 <Card className="border-orange-200 bg-white">
@@ -530,9 +523,9 @@ export default function PracticeTestPage() {
                         <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-orange-900 space-y-2">
                           <p className="font-semibold">Reading the results</p>
                           <p className="text-sm leading-relaxed">
-                            A score of 80% or higher means you can defend Sarah's startup model with confidence. If you
+                            A score of 80% or higher means you can defend TechStart&apos;s depreciation policy with confidence. If you
                             scored lower, focus on the lessons with the largest slice in the breakdown below before the
-                            next VC rehearsal.
+                            next practice round.
                           </p>
                         </div>
                         <div className="grid gap-3">
@@ -568,7 +561,7 @@ export default function PracticeTestPage() {
           <section id="phase-6" className="space-y-6">
             <div className="text-center space-y-4">
               <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
-                🪞 Phase 6: Closing – Reflect &amp; Plan Ahead
+                🪞 Phase 6: Closing — Reflect &amp; Plan Ahead
               </Badge>
               <div className="max-w-4xl mx-auto space-y-6">
                 <Card className="border-indigo-200 bg-white">
@@ -581,7 +574,7 @@ export default function PracticeTestPage() {
                   <CardContent className="space-y-4 text-left text-slate-800">
                     <p className="text-lg leading-relaxed">
                       Sarah ends every rehearsal by writing one improvement move and one strength she wants to showcase.
-                      Do the same here. The next VC meeting depends on consistent reflection and rapid iteration.
+                      Do the same here. The next board meeting depends on consistent reflection and rapid iteration.
                     </p>
                     <ReflectionJournal
                       unitTitle="Unit 8 Practice Test Reflection"
@@ -589,13 +582,13 @@ export default function PracticeTestPage() {
                         {
                           id: "unit08-practice-test-reflection-strength",
                           category: "courage",
-                          prompt: "What financial modeling move did you handle with confidence during this practice test, and how will you showcase it in the VC pitch?",
-                          placeholder: "Describe the question or concept you handled well and the evidence you will share with investors..."
+                          prompt: "What depreciation concept did you handle with confidence during this practice test, and how will you showcase it in the board meeting?",
+                          placeholder: "Describe the question or concept you handled well and the evidence you will share..."
                         },
                         {
                           id: "unit08-practice-test-reflection-focus",
                           category: "persistence",
-                          prompt: "Which modeling skill still needs polish before the next sprint check-in, and what action will you take to strengthen it?",
+                          prompt: "Which depreciation skill still needs polish before the next milestone, and what action will you take to strengthen it?",
                           placeholder: "Explain the tricky area you want to improve and the specific practice plan you will use..."
                         }
                       ]}
@@ -603,8 +596,8 @@ export default function PracticeTestPage() {
                     <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-indigo-900 space-y-2">
                       <h3 className="font-semibold">Ready for the next rep?</h3>
                       <p className="text-sm leading-relaxed">
-                        Repeat this practice test with a new question mix tomorrow. Consistent rehearsal keeps Sarah's
-                        VC pitch tight and your financial modeling instincts sharp when the questions get tough.
+                        Repeat this practice test with a new question mix tomorrow. Consistent rehearsal keeps Sarah&apos;s
+                        depreciation reasoning sharp and your asset tracking instincts reliable when the questions get tough.
                       </p>
                     </div>
                   </CardContent>

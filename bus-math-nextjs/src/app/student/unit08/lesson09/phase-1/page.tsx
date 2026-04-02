@@ -4,8 +4,8 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
-import ReflectionJournal from "@/components/exercises/ReflectionJournal"
+import { Button } from "@/components/ui/button"
+import { CheckCircle2, FileSpreadsheet, Target, Users } from "lucide-react"
 
 import { lesson09Data, unit08Data, lesson09Phases } from "../lesson-data"
 
@@ -13,120 +13,132 @@ const phase = lesson09Phases[0]
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-indigo-50">
       <PhaseHeader unit={unit08Data as any} lesson={lesson09Data as any} phase={phase as any} phases={lesson09Phases as any} />
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="text-base px-3 py-1">Phase 1 of 1 — Assessment</Badge>
-            <h1 className="text-2xl font-semibold">PBL Milestone 2: Prototype + Rehearsal</h1>
-            <p className="max-w-4xl mx-auto text-muted-foreground">
-              Today you will build a working prototype that switches scenarios and runs sensitivity tests. Then you’ll rehearse your demo and collect peer feedback.
+            <Badge className="bg-violet-100 text-violet-800 text-base px-3 py-1">Phase 1 — Hook: Milestone 2 Launch</Badge>
+            <h1 className="text-2xl font-semibold text-slate-900">Complete the Workbook and Defend Your Recommendation</h1>
+            <p className="max-w-3xl mx-auto text-slate-700">
+              Last lesson your team opened the correct workbook and started the asset register. Today you finish every sheet, test your formulas, and write a depreciation recommendation backed by workbook evidence.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <Card>
+            <Card className="border-violet-200 bg-white">
               <CardHeader>
-                <CardTitle>Business Objectives</CardTitle>
+                <CardTitle className="flex items-center gap-2 text-violet-900">
+                  <FileSpreadsheet className="h-5 w-5" />
+                  Workbook Objectives
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Show that your model responds to real changes</li>
-                  <li>Use evidence to justify assumptions and choices</li>
-                  <li>Practice a clear, short technical story for a VC</li>
+                <ul className="list-disc list-inside space-y-2 text-slate-800">
+                  <li>Finish the Depreciation Schedule with linked formulas for all assets</li>
+                  <li>Complete the Method Comparison sheet with side-by-side SL and DDB calculations</li>
+                  <li>Verify Book Value = Cost − Accumulated Depreciation on every sheet</li>
+                  <li>Add at least one workbook check that flags impossible values</li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-indigo-200 bg-white">
               <CardHeader>
-                <CardTitle>Excel Objectives</CardTitle>
+                <CardTitle className="flex items-center gap-2 text-indigo-900">
+                  <Target className="h-5 w-5" />
+                  Recommendation Objectives
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Scenario Manager with 3 cases (best, worst, realistic)</li>
-                  <li>One- and two-variable data tables for key drivers</li>
-                  <li>Validation rules and error checks pass with test data</li>
+                <ul className="list-disc list-inside space-y-2 text-slate-800">
+                  <li>Write a clear claim about which depreciation method best fits your scenario</li>
+                  <li>Cite at least three numbers from your workbook as evidence</li>
+                  <li>Identify one risk or limitation of your recommended method</li>
+                  <li>Prepare to explain your reasoning to another team</li>
                 </ul>
               </CardContent>
             </Card>
           </div>
 
-          <Card>
+          <Card className="border-emerald-200 bg-white">
             <CardHeader>
-              <CardTitle>Milestone Acceptance Criteria</CardTitle>
+              <CardTitle className="flex items-center gap-2 text-emerald-900">
+                <CheckCircle2 className="h-5 w-5" />
+                Milestone 2 Acceptance Criteria
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Working prototype implements scenario switching and sensitivity</li>
-                <li>Validations prevent common input errors; checks pass</li>
-                <li>Test scenarios documented with expected outcomes</li>
-                <li>Rehearsal complete; peer feedback incorporated</li>
-                <li>Evidence: prototype workbook + test summary + change notes</li>
+              <ul className="list-disc list-inside space-y-2 text-slate-800">
+                <li>Depreciation Schedule complete for all assets with correct annual expense, accumulated depreciation, and book value</li>
+                <li>Method Comparison sheet shows SL and DDB side by side with statement impact explained</li>
+                <li>Recommendation has claim, evidence (3+ cited workbook numbers), and risk/limitation</li>
+                <li>Peer critique completed with at least one strength and one improvement noted</li>
+                <li>Evidence: complete workbook file + recommendation draft + peer feedback notes</li>
               </ul>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-sky-200 bg-white">
             <CardHeader>
-              <CardTitle>Resources — Group Datasets (Download)</CardTitle>
+              <CardTitle className="flex items-center gap-2 text-sky-900">
+                <Users className="h-5 w-5" />
+                Group Datasets — Use Your Assigned File Only
+              </CardTitle>
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 gap-2">
               {Array.from({ length: 6 }).map((_, i) => (
                 <a
                   key={i}
                   className="text-blue-700 hover:underline"
-                  href={`/resources/unit08-pbl-year1-startup-model-g${i + 1}.csv`}
+                  href={`/resources/unit08-group${i + 1}-fixed-assets.xlsx`}
                   download
                 >
-                  Download: unit08-pbl-year1-startup-model-g{i + 1}.csv
+                  Download: unit08-group{i + 1}-fixed-assets.xlsx
                 </a>
               ))}
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-amber-200 bg-white">
             <CardHeader>
-              <CardTitle>Peer Review (Structured)</CardTitle>
+              <CardTitle className="text-amber-900">Today&apos;s Pacing Guide</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">Timebox: ~60 min build + ~20 min rehearsal/peer review</p>
-              <PeerCritiqueForm projectTitle="Year‑1 Startup Model — Prototype Rehearsal" unitNumber={8} />
+            <CardContent className="space-y-3 text-slate-800">
+              <div className="flex items-start gap-3">
+                <Badge className="bg-amber-100 text-amber-800 shrink-0">~15 min</Badge>
+                <p>Recap Lesson 08 progress and confirm Milestone 2 requirements with your team</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge className="bg-amber-100 text-amber-800 shrink-0">~20 min</Badge>
+                <p>Finish the Depreciation Schedule and Method Comparison sheets</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge className="bg-amber-100 text-amber-800 shrink-0">~10 min</Badge>
+                <p>Write the recommendation with claim, evidence, and risk</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge className="bg-amber-100 text-amber-800 shrink-0">~10 min</Badge>
+                <p>Peer critique and revision with another team</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge className="bg-amber-100 text-amber-800 shrink-0">~5 min</Badge>
+                <p>Save, submit, and preview Lesson 10 presentation requirements</p>
+              </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-rose-200 bg-white">
             <CardHeader>
-              <CardTitle>Standard Rubric (Capstone‑Aligned)</CardTitle>
+              <CardTitle className="text-rose-900">Common Pitfall to Avoid</CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Technical Accuracy: 50% — formulas, links, validations</li>
-                <li>Strategic Rationale: 20% — business logic and trade‑offs</li>
-                <li>Communication & Clarity: 15% — story and visuals</li>
-                <li>Time Management: 10% — pacing and transitions</li>
-                <li>Q&A Readiness: 5% — concise, confident responses</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Reflection</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ReflectionJournal
-                unitTitle="Reflection"
-                prompts={[
-                  {
-                    id: 'u08-l09-reflect-1',
-                    category: 'adaptability',
-                    prompt: 'What feedback will you act on before Demo Day? What will you change in the model or story?',
-                    placeholder: 'Summarize the feedback and the change you will make...'
-                  }
-                ]}
-              />
+            <CardContent className="text-slate-800">
+              <p className="mb-2">
+                <strong>Do not change the sheet structure from Lesson 07.</strong> Your workbook must keep the same four-sheet architecture: Asset Register, Depreciation Schedule, Method Comparison, and Recommendation. If you added or removed sheets, fix it now before the teacher check-in.
+              </p>
+              <p>
+                Also remember: <strong>Book Value = Cost − Accumulated Depreciation</strong> must hold for every asset in every year. If your check column shows a mismatch, trace the formula back to its source before moving on.
+              </p>
             </CardContent>
           </Card>
         </section>

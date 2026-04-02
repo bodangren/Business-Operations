@@ -192,8 +192,12 @@
      - [x] Reflection captures what made the recommendation trustworthy
 
 ### Phase 5: Verification & Polish
-- [ ] 5.1 Verify all lesson-data.ts files are updated
-- [ ] 5.2 Verify depreciation-focused content (no startup model or VC-pitch references remain)
-- [ ] 5.3 Verify alignment between page content, workbook downloads, assessment language
-- [ ] 5.4 Run `npm run lint` to check for errors
+- [x] 5.1 Verify all lesson-data.ts files are updated
+- [x] 5.2 Verify depreciation-focused content (no startup model or VC-pitch references remain)
+  - Rewrote `unit08/page.tsx` title and description to match depreciation focus
+  - Rewrote `practice-test/page.tsx` and `practice-test-data.ts` to remove VC-pitch language
+  - Rewrote `lesson09/phase-1/page.tsx` to remove VC references and align with depreciation project
+  - Removed `unit08-text.md` (full of VC-pitch and startup model content)
+- [x] 5.3 Verify alignment between page content, workbook downloads, assessment language
+- [x] 5.4 Run `npm run lint` to check for errors — passes with only pre-existing warnings
 - [ ] 5.5 Document any component changes in MCP knowledge base

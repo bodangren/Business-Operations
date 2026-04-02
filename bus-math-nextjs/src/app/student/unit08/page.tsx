@@ -13,9 +13,9 @@ import { lesson10Data } from "./lesson10/lesson-data"
 
 const unit08Data = {
   id: "mdrhlhv53tduw0ib5oa",
-  title: "Unit 8: Year‑1 Startup Model",
-  description: "Can we convince a micro‑VC that our first‑year financial model is robust enough to merit funding?",
-  rationale: "A venture capitalist guest outlines common red flags in rookie startup models and challenges students to avoid them. Students review anonymized pitch decks and model failures.",
+  title: "Unit 8: Fixed Assets and Depreciation",
+  description: "TechStart Solutions is growing and buying long-term assets. How do we track them professionally and choose the right depreciation method?",
+  rationale: "Students learn why long-term assets are tracked differently from everyday expenses, master depreciation methods by hand, and build a professional asset register workbook. The unit culminates in a group project where teams recommend a depreciation policy backed by workbook evidence.",
   sequence: 8
 }
 
