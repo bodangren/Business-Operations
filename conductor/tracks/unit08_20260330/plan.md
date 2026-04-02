@@ -64,21 +64,21 @@
     - [x] Students can explain when a cost becomes an asset
     - [x] Phase 5 checks depreciation vocabulary and reasoning, not Excel tools
 
-- [ ] 2.3 **Lesson 03** - Implement accounting-principles skill
-  - [ ] 2.3.1 Update lesson-data.ts for Lesson 03
-  - [ ] 2.3.2 Implement Phase 1-6 with straight-line depreciation and statement impact
-    - Phase 1: Reconnect to prior lesson, show friction point, use one short launch move
-    - Phase 2: Name straight-line method clearly, model procedure step-by-step with visible intermediate values, explain why each step exists, use worked examples
-    - Phase 3: Add meaningful complication (partial-year depreciation or multiple assets), reduce prompts, shift toward authentic depreciation notation
-    - Phase 4: Same procedure each round, vary numbers algorithmically, automatic checking, feedback after submission, brief reteach guidance, define mastery target
+- [x] 2.3 **Lesson 03** - Implement accounting-principles skill
+  - [x] 2.3.1 Update lesson-data.ts for Lesson 03
+  - [x] 2.3.2 Implement Phase 1-6 with straight-line depreciation and statement impact
+    - Phase 1: Reconnect to Lesson 02's capitalization rule, show friction point with van purchase problem, use prediction/comprehension hook
+    - Phase 2: Name straight-line method clearly, model procedure step-by-step with visible intermediate values, explain why each step exists, use worked examples with full depreciation schedule
+    - Phase 3: Add meaningful complication (partial-year depreciation and multiple assets), reduce prompts, shift toward authentic depreciation notation
+    - Phase 4: Same procedure each round, vary numbers algorithmically via StraightLineMastery component, automatic checking, feedback after submission, brief reteach guidance tied to error pattern, define mastery target (5 consecutive correct)
     - Phase 5: Short MCQ exit ticket on straight-line calculation and statement impact, misconceptions
-    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview next lesson
-  - [ ] 2.3.3 Teach the straight-line method explicitly with visible intermediate values
-  - [ ] 2.3.4 Connect depreciation expense to the income statement and book value to the balance sheet
-  - [ ] 2.3.5 Make Phase 4 a deliberate-practice loop on straight-line schedules
+    - Phase 6: Reflect on confidence and understanding, connect to business problem, preview double-declining balance
+  - [x] 2.3.3 Teach the straight-line method explicitly with visible intermediate values
+  - [x] 2.3.4 Connect depreciation expense to the income statement and book value to the balance sheet
+  - [x] 2.3.5 Make Phase 4 a deliberate-practice loop on straight-line schedules
   - **Done when**:
-    - [ ] Students can calculate straight-line depreciation manually
-    - [ ] Students can explain how the method changes statements over time
+    - [x] Students can calculate straight-line depreciation manually
+    - [x] Students can explain how the method changes statements over time
 
 - [ ] 2.4 **Lesson 04** - Implement accounting-principles skill
   - [ ] 2.4.1 Update lesson-data.ts for Lesson 04

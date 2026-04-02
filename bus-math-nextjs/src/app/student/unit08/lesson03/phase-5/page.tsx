@@ -4,18 +4,83 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson03Data, unit08Data, lesson03Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Building2, DollarSign, Calculator, TrendingUp, AlertTriangle } from "lucide-react";
+import { CheckCircle2, Calculator, FileText, BarChart3 } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
-import { getUnit08Phase5ComprehensionCheckItems } from "@/data/question-banks/unit08-phase5";
 
 const phase5 = lesson03Phases.find(p => p.sequence === 5)!;
 
-const assessmentQuestions = getUnit08Phase5ComprehensionCheckItems({ lessonIds: ["lesson03"] });
+const assessmentQuestions = [
+  {
+    id: "sl-q1",
+    question: "A machine costs $50,000, has a salvage value of $5,000, and a useful life of 9 years. What is the annual straight-line depreciation expense?",
+    answers: [
+      "$5,000 per year",
+      "$5,556 per year",
+      "$4,500 per year",
+      "$6,111 per year"
+    ],
+    explanation: "($50,000 − $5,000) ÷ 9 = $45,000 ÷ 9 = $5,000 per year. Always subtract salvage value before dividing."
+  },
+  {
+    id: "sl-q2",
+    question: "Using the same machine ($50,000 cost, $5,000 salvage, 9-year life), what is the book value at the end of Year 3?",
+    answers: [
+      "$35,000",
+      "$30,000",
+      "$40,000",
+      "$25,000"
+    ],
+    explanation: "Annual expense = $5,000. Accumulated after 3 years = $15,000. Book value = $50,000 − $15,000 = $35,000."
+  },
+  {
+    id: "sl-q3",
+    question: "Why does straight-line depreciation produce the same expense every year?",
+    answers: [
+      "Because the depreciable base is divided evenly across the useful life",
+      "Because the asset loses more value in early years",
+      "Because tax law requires equal expenses",
+      "Because the salvage value changes each year"
+    ],
+    explanation: "Straight-line divides the total depreciable base by the number of years, creating an equal expense each period."
+  },
+  {
+    id: "sl-q4",
+    question: "A company buys equipment for $20,000 on July 1. It has a 4-year life and $4,000 salvage value. What is the Year 1 depreciation expense?",
+    answers: [
+      "$2,000",
+      "$4,000",
+      "$3,000",
+      "$1,000"
+    ],
+    explanation: "Full annual expense = ($20,000 − $4,000) ÷ 4 = $4,000. Year 1 covers July–December = 6 months. $4,000 × 6/12 = $2,000."
+  },
+  {
+    id: "sl-q5",
+    question: "Where does depreciation expense appear in the financial statements?",
+    answers: [
+      "On the income statement as an operating expense",
+      "On the balance sheet as a current asset",
+      "On the cash flow statement as an investing activity",
+      "On the income statement as revenue"
+    ],
+    explanation: "Depreciation expense reduces net income on the income statement. Accumulated depreciation appears on the balance sheet as a contra-asset."
+  },
+  {
+    id: "sl-q6",
+    question: "What happens to book value as accumulated depreciation increases?",
+    answers: [
+      "Book value decreases",
+      "Book value increases",
+      "Book value stays the same",
+      "Book value equals the original cost"
+    ],
+    explanation: "Book Value = Cost − Accumulated Depreciation. As accumulated depreciation grows, book value shrinks."
+  }
+];
 
 export default function Phase5Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-blue-100">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <PhaseHeader
           lesson={lesson03Data}
@@ -25,169 +90,75 @@ export default function Phase5Page() {
         />
 
         <div className="space-y-8">
-          {/* Assessment Introduction */}
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Assessment: Mastering Three-Statement Integration</h2>
-            
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Exit Ticket: Straight-Line Mastery</h2>
+
             <p className="text-lg leading-relaxed">
-              Sarah reviews her notes from the lesson with Jennifer. "I think I'm finally understanding 
-              how the three statements work together," she says. "The Income Statement shows whether 
-              I'm profitable, the Balance Sheet shows what I own and owe, and the Cash Flow Statement 
-              shows where my cash actually goes. But the magic happens when they're all connected."
+              Sarah is reviewing her first depreciation schedule before sharing it with her 
+              accountant. She wants to make sure every number is correct. Test your own 
+              understanding with these questions.
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg my-6">
-              <h3 className="text-blue-900 font-semibold mb-3 flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5" />
-                Assessment Objectives
-              </h3>
-              <p className="text-blue-800 mb-4">
-                This assessment tests your understanding of how Balance Sheet and Cash Flow Statement 
-                integration creates a complete financial picture. You'll demonstrate mastery of:
-              </p>
-              <ul className="text-blue-800 space-y-2">
-                <li>• <strong>Statement Integration:</strong> How Net Income flows to Retained Earnings</li>
-                <li>• <strong>Cash Flow Categorization:</strong> Operating, Investing, and Financing activities</li>
-                <li>• <strong>Cross-Sheet Validation:</strong> Why integrated models are more reliable</li>
-                <li>• <strong>Professional Standards:</strong> Building investor-ready financial models</li>
-                <li>• <strong>Business Applications:</strong> Real-world transaction analysis</li>
-              </ul>
-            </div>
+            <Card className="border-blue-200 bg-blue-50">
+              <CardHeader>
+                <CardTitle className="text-blue-900 flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5" />
+                  What This Checks
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-blue-800 space-y-2 m-0">
+                  <li>• Calculating annual straight-line depreciation expense</li>
+                  <li>• Finding book value at a given year</li>
+                  <li>• Handling partial-year depreciation</li>
+                  <li>• Understanding statement impact (income statement vs. balance sheet)</li>
+                </ul>
+              </CardContent>
+            </Card>
 
-            <div className="grid md:grid-cols-3 gap-4 my-6">
-              <Card className="border-purple-200 bg-purple-50">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-purple-900 flex items-center gap-2 text-sm">
-                    <Calculator className="h-4 w-4" />
-                    Income Statement Links
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-xs text-purple-800">
-                    Net Income → Retained Earnings connection and impact on equity structure
-                  </p>
-                </CardContent>
-              </Card>
-
+            <div className="grid md:grid-cols-2 gap-4 my-6">
               <Card className="border-green-200 bg-green-50">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-green-900 flex items-center gap-2 text-sm">
-                    <Building2 className="h-4 w-4" />
-                    Balance Sheet Integration
+                  <CardTitle className="text-green-900 flex items-center gap-2 text-base">
+                    <Calculator className="h-4 w-4" />
+                    Formula Reminder
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xs text-green-800">
-                    Asset, liability, and equity changes that create cash flow statement activities
+                  <p className="text-sm text-green-800 font-mono">
+                    Annual Expense = (Cost − Salvage Value) ÷ Useful Life
+                  </p>
+                  <p className="text-sm text-green-800 font-mono mt-1">
+                    Book Value = Cost − Accumulated Depreciation
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-blue-200 bg-blue-50">
+              <Card className="border-purple-200 bg-purple-50">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-blue-900 flex items-center gap-2 text-sm">
-                    <DollarSign className="h-4 w-4" />
-                    Cash Flow Validation
+                  <CardTitle className="text-purple-900 flex items-center gap-2 text-base">
+                    <FileText className="h-4 w-4" />
+                    Statement Impact
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xs text-blue-800">
-                    How cash changes reconcile between Balance Sheet and Cash Flow Statement
+                  <p className="text-sm text-purple-800">
+                    Depreciation Expense → Income Statement (reduces net income)
+                  </p>
+                  <p className="text-sm text-purple-800 mt-1">
+                    Accumulated Depreciation → Balance Sheet (reduces book value)
                   </p>
                 </CardContent>
               </Card>
-            </div>
-
-            <div className="bg-amber-50 border border-amber-200 p-6 rounded-lg my-6">
-              <h4 className="text-amber-900 font-semibold mb-3 flex items-center gap-2">
-                <AlertTriangle className="h-5 w-5" />
-                Success Metrics for Investor Readiness
-              </h4>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h5 className="font-medium text-amber-900 mb-2">Mastery Level (90-100%)</h5>
-                  <ul className="text-amber-800 text-sm space-y-1">
-                    <li>• Complete understanding of statement integration</li>
-                    <li>• Confident cash flow categorization</li>
-                    <li>• Ready to build professional models</li>
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="font-medium text-amber-900 mb-2">Proficient Level (80-89%)</h5>
-                  <ul className="text-amber-800 text-sm space-y-1">
-                    <li>• Good grasp of core concepts</li>
-                    <li>• Minor gaps in complex scenarios</li>
-                    <li>• Needs practice with edge cases</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">The Integration Challenge</h3>
-            
-            <p className="text-lg leading-relaxed">
-              Jennifer reminds Sarah: "When you present to investors, they'll ask detailed questions 
-              about how your numbers connect. They might say, 'If your profit is $30,000, why did 
-              your cash only increase by $15,000?' You need to understand these relationships deeply 
-              enough to explain them confidently."
-            </p>
-
-            <div className="bg-green-50 border border-green-200 p-4 rounded-lg my-6">
-              <h5 className="text-green-900 font-medium mb-2 flex items-center gap-2">
-                <TrendingUp className="h-4 w-4" />
-                Career Application
-              </h5>
-              <p className="text-green-800 text-sm">
-                Mastering three-statement integration prepares you for careers in finance, consulting, 
-                investment banking, and entrepreneurship. This foundational skill is essential for 
-                anyone who will analyze businesses, make investment decisions, or raise capital.
-              </p>
             </div>
           </div>
 
-          {/* Comprehensive Assessment */}
           <ComprehensionCheck
-            title="Three-Statement Integration Mastery Assessment"
-            description="Demonstrate your understanding of Balance Sheet and Cash Flow integration concepts"
+            title="Straight-Line Depreciation Assessment"
+            description="Demonstrate your understanding of straight-line depreciation calculation and statement impact"
             questions={assessmentQuestions}
             showExplanations={true}
           />
-
-          {/* Assessment Summary */}
-          <Card className="border-indigo-200 bg-indigo-50">
-            <CardHeader>
-              <CardTitle className="text-indigo-900 flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5" />
-                Next Steps: Building Sarah's Integrated Model
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-indigo-800 mb-4">
-                With this foundational understanding, you're ready to help Sarah build her complete 
-                three-statement model that will impress the venture capitalists and secure her $500,000 funding.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded border border-indigo-200">
-                  <h5 className="font-medium text-indigo-900 mb-2">Immediate Next Phase:</h5>
-                  <ul className="text-indigo-800 text-sm space-y-1">
-                    <li>• Reflection on integration concepts</li>
-                    <li>• Connection to Unit 8's overall objectives</li>
-                    <li>• Preview of scenario analysis and sensitivity testing</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-4 rounded border border-indigo-200">
-                  <h5 className="font-medium text-indigo-900 mb-2">Unit 8 Journey Ahead:</h5>
-                  <ul className="text-indigo-800 text-sm space-y-1">
-                    <li>• Advanced Excel linking techniques</li>
-                    <li>• Scenario Manager and sensitivity analysis</li>
-                    <li>• Professional model auditing</li>
-                    <li>• VC presentation and Q&A preparation</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         <PhaseFooter

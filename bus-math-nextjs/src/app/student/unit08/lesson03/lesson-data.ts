@@ -1,71 +1,68 @@
-// Year‑1 Startup Model, Lesson 3 data - extracted from MCP curriculum database
 export const lesson03Data = {
-  id: "mds5xnq6dilvy5xj4yh",
-  title: "Core Concepts: Balance Sheet & Cash Flow Integration",
+  id: "u08l03",
+  title: "Straight-Line Depreciation",
   sequence: 3,
-  unitId: "mdrhlhv53tduw0ib5oa",
+  unitId: "u08",
   learningObjectives: [
-    "Link income statement, balance sheet, and cash flow with formula integrity"
+    "Calculate straight-line depreciation by hand for a single asset",
+    "Explain how straight-line depreciation affects the income statement and balance sheet over time"
   ],
   keyConcepts: [
-    "Three-statement integration principles and interdependencies"
+    "Straight-line depreciation formula",
+    "Depreciable base (Cost − Salvage Value)",
+    "Accumulated depreciation and book value"
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
-    "Complete three-statement integration with balance sheet and cash flow linking"
+    "Worked examples with visible intermediate values",
+    "Algorithmic deliberate practice with mastery target",
+    "Partial-year complication in Phase 3"
   ],
-  rationale: "To provide students with hands-on practice in building a fully integrated three-statement financial model.",
+  rationale: "Students must master the simplest depreciation method by hand before comparing it to accelerated methods or building Excel schedules.",
   status: "Draft"
 }
 
 export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
-  title: "Year‑1 Startup Model",
+  id: "u08",
+  title: "Fixed Assets and Depreciation",
   sequence: 8
 }
 
-// Lesson phases from MCP curriculum database
 export const lesson03Phases = [
   {
-    id: "phase_hook_3",
+    id: "u08l03-p1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Capture attention and establish relevance for core concepts: balance sheet & cash flow integration",
-    // component: "FinancialStatementMatching" (id: 17539276020632evn3pfl4) - To review the three financial statements.
+    description: "Reconnect to Lesson 02's capitalization rule and surface the friction point that makes straight-line depreciation necessary"
   },
   {
-    id: "phase_introduction_3",
+    id: "u08l03-p2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Introduce Three-statement integration principles and interdependencies and connect to business applications",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - To assess understanding of the concepts.
+    description: "Teach the straight-line method step by step with worked examples and visible intermediate values"
   },
   {
-    id: "phase_guided_practice_3",
+    id: "u08l03-p3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Collaborative practice applying Three-statement integration principles and interdependencies with scaffolded support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice linking the three statements in a template.
+    description: "Add partial-year depreciation as a complication with reduced scaffolding"
   },
   {
-    id: "phase_independent_practice_3",
+    id: "u08l03-p4",
     phaseName: "Independent Practice" as const,
     sequence: 4,
-    description: "Practice Three-statement integration principles and interdependencies independently with minimal teacher support",
-    // component: "SpreadsheetTemplates" (id: 17539277832972t3mivyfi) - To practice linking the three statements in a template.
+    description: "Algorithmic practice on straight-line schedules with mastery target of 5 consecutive correct"
   },
   {
-    id: "phase_assessment_3",
+    id: "u08l03-p5",
     phaseName: "Assessment" as const,
     sequence: 5,
-    description: "Demonstrate understanding through formative assessment and peer evaluation",
-    // component: "ComprehensionCheck" (id: 1753927633396e4osrw16s) - A quiz to assess learning objectives.
+    description: "Short MCQ exit ticket on straight-line calculation and statement impact"
   },
   {
-    id: "phase_closing_3",
+    id: "u08l03-p6",
     phaseName: "Closing" as const,
     sequence: 6,
-    description: "Summarize key takeaways and preview connections to upcoming lessons",
-    // component: "ReflectionJournal" (id: 17539344847679d0wbeyuw) - To guide student reflection on the lesson.
+    description: "Reflect on confidence, connect to the business problem, and preview double-declining balance"
   }
 ]

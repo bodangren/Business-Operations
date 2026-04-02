@@ -5,14 +5,26 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson03Data, unit08Data, lesson03Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, MessageSquare, Lightbulb, Building2, Calculator, DollarSign, ArrowRight } from "lucide-react";
-import { FinancialStatementMatching } from "@/components/drag-drop-exercises/FinancialStatementMatching";
+import { Calendar, Calculator, ArrowRight, Lightbulb } from "lucide-react";
 
 const phase3 = lesson03Phases.find(p => p.sequence === 3)!;
 
 export default function Phase3Page() {
+  const cost1 = 30000;
+  const salvage1 = 5000;
+  const life1 = 5;
+  const annual1 = (cost1 - salvage1) / life1;
+
+  const cost2 = 12000;
+  const salvage2 = 2000;
+  const life2 = 4;
+  const annual2 = (cost2 - salvage2) / life2;
+
+  const monthsOwned = 9;
+  const partialYearExpense = Math.round(annual1 * (monthsOwned / 12));
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-purple-100">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <PhaseHeader
           lesson={lesson03Data}
@@ -22,226 +34,168 @@ export default function Phase3Page() {
         />
 
         <div className="space-y-8">
-          {/* Guided Practice Introduction */}
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Building Sarah's Integrated Model</h2>
-            
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Complication: Partial-Year Depreciation</h2>
+
             <p className="text-lg leading-relaxed">
-              Jennifer spreads out Sarah's financial statements on the conference table. "Before we link 
-              everything together in Excel," she says, "let's make sure you can identify which items 
-              belong to each statement. This is the foundation—if you don't understand where each 
-              piece of financial information belongs, your integrated model will be built on shaky ground."
+              So far, you have assumed TechStart bought the van on January 1 — the first day of the 
+              fiscal year. But what if the van arrives on <strong>April 1</strong>? The company only 
+              owned it for 9 months of Year 1. Should the full year's depreciation still apply?
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg my-6">
-              <h3 className="text-blue-900 font-semibold mb-3">Practice Scenario: TechStart Solutions</h3>
-              <p className="text-blue-800">
-                Sarah has identified key financial line items from her business operations. Your job is to 
-                help her categorize these items correctly so she can build her three-statement model with 
-                confidence. Remember: each item has a specific "home" in one of the three financial statements.
-              </p>
+            <Card className="border-amber-200 bg-amber-50 my-6">
+              <CardHeader>
+                <CardTitle className="text-amber-900 flex items-center gap-2">
+                  <Calendar className="h-5 w-5" />
+                  The Partial-Year Rule
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-amber-800">
+                  Depreciation is recorded only for the months the asset is <strong>actually in service</strong>. 
+                  If the van was used for 9 out of 12 months in Year 1, then Year 1 depreciation 
+                  should be 9/12 of the full annual amount.
+                </p>
+              </CardContent>
+            </Card>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Worked Example: Van Purchased April 1</h3>
+
+            <div className="bg-gray-50 border border-gray-200 p-5 rounded-lg space-y-3">
+              <div className="flex items-start gap-3">
+                <Badge className="bg-indigo-600 text-white shrink-0 mt-1">Step 1</Badge>
+                <div>
+                  <p className="font-semibold text-gray-900">Calculate the full annual expense</p>
+                  <p className="font-mono text-indigo-700">
+                    ($30,000 − $5,000) ÷ 5 = $5,000 per year
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Badge className="bg-indigo-600 text-white shrink-0 mt-1">Step 2</Badge>
+                <div>
+                  <p className="font-semibold text-gray-900">Count months in service</p>
+                  <p className="text-gray-700">
+                    April through December = 9 months
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Badge className="bg-indigo-600 text-white shrink-0 mt-1">Step 3</Badge>
+                <div>
+                  <p className="font-semibold text-gray-900">Prorate for the partial year</p>
+                  <p className="font-mono text-indigo-700">
+                    $5,000 × (9 ÷ 12) = $3,750
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 my-6">
-              <Card className="border-purple-200 bg-purple-50">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-purple-900 flex items-center gap-2 text-base">
-                    <Calculator className="h-4 w-4" />
-                    Income Statement
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-purple-800 mb-2">Performance over time</p>
-                  <ul className="text-xs text-purple-700 space-y-1">
-                    <li>• Revenue items (what comes IN)</li>
-                    <li>• Expense items (what goes OUT)</li>
-                    <li>• Profit calculations</li>
-                  </ul>
-                </CardContent>
-              </Card>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Multiple Assets Scenario</h3>
 
-              <Card className="border-green-200 bg-green-50">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-green-900 flex items-center gap-2 text-base">
-                    <Building2 className="h-4 w-4" />
-                    Balance Sheet
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-green-800 mb-2">What you own &amp; owe right now</p>
-                  <ul className="text-xs text-green-700 space-y-1">
-                    <li>• Assets (what you OWN)</li>
-                    <li>• Liabilities (what you OWE)</li>
-                    <li>• Equity (your STAKE)</li>
-                  </ul>
-                </CardContent>
-              </Card>
+            <p className="text-lg leading-relaxed">
+              TechStart does not just own one van. By the end of Year 1, the company has purchased 
+              two assets at different times. Let us trace both.
+            </p>
 
-              <Card className="border-blue-200 bg-blue-50">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-blue-900 flex items-center gap-2 text-base">
-                    <DollarSign className="h-4 w-4" />
-                    Cash Flow Statement
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-blue-800 mb-2">Where cash actually moves</p>
-                  <ul className="text-xs text-blue-700 space-y-1">
-                    <li>• Operating cash flows</li>
-                    <li>• Investing cash flows</li>
-                    <li>• Financing cash flows</li>
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border border-gray-300 p-3 text-left">Asset</th>
+                    <th className="border border-gray-300 p-3 text-right">Cost</th>
+                    <th className="border border-gray-300 p-3 text-right">Salvage</th>
+                    <th className="border border-gray-300 p-3 text-right">Life</th>
+                    <th className="border border-gray-300 p-3 text-right">Purchase Date</th>
+                    <th className="border border-gray-300 p-3 text-right">Year 1 Expense</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 p-3 font-medium">Delivery Van</td>
+                    <td className="border border-gray-300 p-3 text-right">${cost1.toLocaleString()}</td>
+                    <td className="border border-gray-300 p-3 text-right">${salvage1.toLocaleString()}</td>
+                    <td className="border border-gray-300 p-3 text-right">{life1} yrs</td>
+                    <td className="border border-gray-300 p-3 text-center">April 1</td>
+                    <td className="border border-gray-300 p-3 text-right font-bold text-indigo-700">${partialYearExpense.toLocaleString()}</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-3 font-medium">Laptops</td>
+                    <td className="border border-gray-300 p-3 text-right">${cost2.toLocaleString()}</td>
+                    <td className="border border-gray-300 p-3 text-right">${salvage2.toLocaleString()}</td>
+                    <td className="border border-gray-300 p-3 text-right">{life2} yrs</td>
+                    <td className="border border-gray-300 p-3 text-center">July 1</td>
+                    <td className="border border-gray-300 p-3 text-right font-bold text-indigo-700">${Math.round(annual2 * (6 / 12)).toLocaleString()}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
 
-          {/* Interactive Exercise */}
-          <FinancialStatementMatching />
+            <p className="text-sm text-gray-600 mt-2">
+              Van: $5,000 × 9/12 = $3,750. Laptops: $2,500 × 6/12 = $1,500. Total Year 1 depreciation = $5,250.
+            </p>
 
-          {/* Think-Pair-Share Discussion */}
-          <div className="space-y-6">
-            <Card className="border-orange-200 bg-orange-50">
+            <Card className="border-orange-200 bg-orange-50 my-6">
               <CardHeader>
                 <CardTitle className="text-orange-800 flex items-center gap-2">
-                  <Users className="h-5 w-5" />
-                  Think-Pair-Share Discussion
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-medium text-orange-900 mb-2">
-                  Discussion Prompt (4 minutes):
-                </p>
-                <p className="text-orange-800 mb-4">
-                  Now that you've categorized financial line items, think about Sarah's investor meeting. 
-                  The VCs want to see how her three statements connect. Discuss with a partner:
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <Card className="bg-white border border-orange-200">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-orange-900 text-sm flex items-center gap-1">
-                        <MessageSquare className="h-4 w-4" />
-                        Part A: Connection Analysis
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="text-orange-800 text-sm space-y-1">
-                        <li>• How does Net Income from the Income Statement connect to the Balance Sheet?</li>
-                        <li>• Why would cash on the Balance Sheet be different from Net Income?</li>
-                        <li>• What questions might the VCs ask about these connections?</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="bg-white border border-orange-200">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-orange-900 text-sm flex items-center gap-1">
-                        <Lightbulb className="h-4 w-4" />
-                        Part B: Real-World Application
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="text-orange-800 text-sm space-y-1">
-                        <li>• If Sarah buys a new computer for $2,000, which statements are affected?</li>
-                        <li>• How would taking out a $50,000 loan impact all three statements?</li>
-                        <li>• Why do investors care about these relationships?</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="text-green-800 flex items-center gap-2">
-                  <ArrowRight className="h-5 w-5" />
-                  Key Integration Insights
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-green-900 mb-2">Statement Connections</h4>
-                    <div className="space-y-3">
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-sm font-medium text-green-800">Income Statement → Balance Sheet</p>
-                        <p className="text-xs text-green-700">Net Income flows into Retained Earnings (Equity section)</p>
-                      </div>
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-sm font-medium text-green-800">Balance Sheet → Cash Flow</p>
-                        <p className="text-xs text-green-700">Changes in Balance Sheet accounts create cash flows</p>
-                      </div>
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-sm font-medium text-green-800">Cash Flow → Balance Sheet</p>
-                        <p className="text-xs text-green-700">Net cash change updates the Cash account</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-green-900 mb-2">Why Investors Care</h4>
-                    <div className="space-y-2">
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-xs text-green-700">
-                          <strong>Consistency Check:</strong> Connected statements prove the numbers are reliable
-                        </p>
-                      </div>
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-xs text-green-700">
-                          <strong>Cash Reality:</strong> Shows if the business can actually pay its bills
-                        </p>
-                      </div>
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-xs text-green-700">
-                          <strong>Future Planning:</strong> Integrated models can test different scenarios
-                        </p>
-                      </div>
-                      <div className="p-3 bg-white rounded border border-green-200">
-                        <p className="text-xs text-green-700">
-                          <strong>Professional Standard:</strong> Shows the entrepreneur understands finance
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-purple-200 bg-purple-50">
-              <CardHeader>
-                <CardTitle className="text-purple-800 flex items-center gap-2">
                   <Lightbulb className="h-5 w-5" />
-                  Example: Sarah's Computer Purchase
+                  Think About It
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-purple-800 mb-4">
-                  Let's trace how buying a $2,000 computer affects all three statements:
+              <CardContent className="space-y-3">
+                <p className="text-orange-800">
+                  Why does the purchase date matter for depreciation but not for the asset's cost?
                 </p>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-3 bg-white rounded border border-purple-200">
-                    <h5 className="font-medium text-purple-900 mb-2">Balance Sheet Impact</h5>
-                    <p className="text-xs text-purple-700 mb-1">Equipment (Asset) +$2,000</p>
-                    <p className="text-xs text-purple-700">Cash (Asset) -$2,000</p>
-                    <p className="text-xs text-purple-600 mt-2">✓ Assets stay balanced</p>
-                  </div>
-                  <div className="p-3 bg-white rounded border border-purple-200">
-                    <h5 className="font-medium text-purple-900 mb-2">Cash Flow Impact</h5>
-                    <p className="text-xs text-purple-700 mb-1">Investing Activities: -$2,000</p>
-                    <p className="text-xs text-purple-700">(Cash used to buy equipment)</p>
-                    <p className="text-xs text-purple-600 mt-2">✓ Cash decreases by $2,000</p>
-                  </div>
-                  <div className="p-3 bg-white rounded border border-purple-200">
-                    <h5 className="font-medium text-purple-900 mb-2">Income Statement Impact</h5>
-                    <p className="text-xs text-purple-700 mb-1">No immediate impact</p>
-                    <p className="text-xs text-purple-700">(Future depreciation expense)</p>
-                    <p className="text-xs text-purple-600 mt-2">✓ Connected through time</p>
-                  </div>
-                </div>
+                <p className="text-orange-700 text-sm">
+                  The <strong>cost</strong> is recorded in full on the day of purchase — the company 
+                  spent $30,000 regardless of the month. But <strong>depreciation</strong> measures 
+                  how much of the asset's value was consumed during the accounting period. If the 
+                  asset was only in service for part of the year, it only contributed part of a year's 
+                  worth of value.
+                </p>
               </CardContent>
             </Card>
+
+            <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+              <p className="text-blue-800 m-0">
+                <strong>Key insight:</strong> In real business, assets are purchased throughout the 
+                year. Partial-year depreciation is the norm, not the exception. Always check the 
+                purchase date before recording depreciation.
+              </p>
+            </div>
           </div>
+
+          <Card className="border-purple-200 bg-purple-50">
+            <CardHeader>
+              <CardTitle className="text-purple-800">Practice: Explain Your Reasoning</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-white p-4 rounded border border-purple-200">
+                <p className="font-medium text-purple-900 mb-2">
+                  Scenario: TechStart buys a $15,000 packaging machine on October 1. It has a 5-year 
+                  life and $3,000 salvage value. What is the Year 1 depreciation expense?
+                </p>
+                <div className="space-y-2 text-sm text-purple-700">
+                  <p><strong>Step 1:</strong> Depreciable base = $15,000 − $3,000 = $12,000</p>
+                  <p><strong>Step 2:</strong> Full annual expense = $12,000 ÷ 5 = $2,400</p>
+                  <p><strong>Step 3:</strong> Months in service = October, November, December = 3 months</p>
+                  <p><strong>Step 4:</strong> Year 1 expense = $2,400 × (3/12) = $600</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded border border-purple-200">
+                <p className="font-medium text-purple-900 mb-2">
+                  Why does the book value at the end of Year 1 equal $14,400?
+                </p>
+                <p className="text-sm text-purple-700">
+                  Book Value = Cost − Accumulated Depreciation = $15,000 − $600 = $14,400. 
+                  Only one partial year of depreciation has been recorded so far.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         <PhaseFooter

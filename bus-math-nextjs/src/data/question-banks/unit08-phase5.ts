@@ -324,164 +324,124 @@ const lesson03Questions: Unit08Phase5Question[] = [
   {
     id: "lesson03-q1",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
     prompt:
-      "In a three-statement model, which balance sheet account receives net income from the income statement?",
-    correctAnswer: "Retained earnings increases because profit belongs to the owners' equity section.",
+      "A machine costs $50,000, has a $5,000 salvage value, and a 9-year useful life. What is the annual straight-line depreciation expense?",
+    correctAnswer: "$5,000 per year, because ($50,000 − $5,000) ÷ 9 = $5,000.",
     distractors: [
-      "Cash increases automatically by the same amount in the assets section.",
-      "Total assets receives net income before any other calculations occur.",
-      "Owner capital accounts always absorb net income regardless of structure."
+      "$5,556 per year, because $50,000 ÷ 9 = $5,556.",
+      "$4,500 per year, because $50,000 ÷ 9 = $4,500.",
+      "$6,111 per year, because ($50,000 + $5,000) ÷ 9 = $6,111."
     ],
     explanation:
-      "Net income flows through retained earnings, strengthening equity and keeping the accounting equation balanced.",
-    objectiveTags: ["balance-sheet", "integration-principles"]
+      "Depreciable base = Cost − Salvage Value = $45,000. Annual expense = $45,000 ÷ 9 = $5,000. Always subtract salvage value before dividing.",
+    objectiveTags: ["straight-line-calculation", "depreciation-basics"]
   },
   {
     id: "lesson03-q2",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
     prompt:
-      "If the cash flow statement shows a $15,000 decrease in cash, what has to appear on the balance sheet?",
-    correctAnswer: "The cash account must drop by $15,000 so the statements reconcile.",
+      "Using the same machine ($50,000 cost, $5,000 salvage, 9-year life), what is the book value at the end of Year 3?",
+    correctAnswer: "$35,000, because accumulated depreciation after 3 years is $15,000 and $50,000 − $15,000 = $35,000.",
     distractors: [
-      "Total assets must rise $15,000 to offset the cash flow change.",
-      "Liabilities must increase $15,000 even if no debt was raised.",
-      "Retained earnings must fall $15,000 regardless of profitability."
+      "$30,000, because accumulated depreciation is $20,000 after 3 years.",
+      "$40,000, because only $10,000 has been depreciated.",
+      "$25,000, because book value drops by $8,333 each year."
     ],
     explanation:
-      "Reconciliation checks tie statements together. The change in cash on the cash flow statement equals the change on the balance sheet.",
-    objectiveTags: ["cash-flow-analysis", "integration-principles"]
+      "Annual expense = $5,000. Accumulated after 3 years = $15,000. Book Value = Cost − Accumulated = $50,000 − $15,000 = $35,000.",
+    objectiveTags: ["book-value", "straight-line-calculation"]
   },
   {
     id: "lesson03-q3",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt: "Sarah buys a $10,000 delivery van with cash. Which statements does the purchase touch immediately?",
-    correctAnswer:
-      "Balance sheet (equipment up, cash down) and cash flow statement (investing outflow).",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
+    prompt: "Why does straight-line depreciation produce the same expense every year?",
+    correctAnswer: "Because the depreciable base is divided evenly across the useful life.",
     distractors: [
-      "Only the income statement records a $10,000 expense this month.",
-      "Only the balance sheet changes; cash flow ignores capital purchases.",
-      "All three statements post a $10,000 expense at the time of purchase."
+      "Because the asset loses more value in early years.",
+      "Because tax law requires equal expenses for all assets.",
+      "Because the salvage value changes each year to keep expense constant."
     ],
     explanation:
-      "Capital spending shifts assets and uses cash now; the income statement captures depreciation over time instead of the full purchase.",
-    objectiveTags: ["capital-planning", "integration-principles"]
+      "Straight-line divides the total depreciable base by the number of years, creating an equal expense each period. This is the defining feature of the method.",
+    objectiveTags: ["straight-line-concept", "depreciation-methods"]
   },
   {
     id: "lesson03-q4",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt: "Where should an interest payment on a business loan appear on the cash flow statement?",
-    correctAnswer: "Operating activities because it is part of day-to-day business costs.",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
+    prompt: "A company buys equipment for $20,000 on July 1. It has a 4-year life and $4,000 salvage value. What is the Year 1 depreciation expense?",
+    correctAnswer: "$2,000, because the full annual expense is $4,000 and the asset was in service for 6 months.",
     distractors: [
-      "Investing activities because the loan helped pay for long-term assets.",
-      "Financing activities because the payment relates to a financing transaction.",
-      "Outside the cash flow statement since interest is handled by the bank."
+      "$4,000, because depreciation is always the full annual amount.",
+      "$3,000, because the asset was in service for 9 months.",
+      "$1,000, because only half the depreciable base applies."
     ],
     explanation:
-      "Interest expenses show up in operating cash flow even though the principal of the loan is a financing item.",
-    objectiveTags: ["cash-flow-categorization", "integration-principles"]
+      "Full annual expense = ($20,000 − $4,000) ÷ 4 = $4,000. July through December = 6 months. Year 1 expense = $4,000 × 6/12 = $2,000.",
+    objectiveTags: ["partial-year", "straight-line-calculation"]
   },
   {
     id: "lesson03-q5",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt:
-      "Why do venture capitalists demand integrated financial statements instead of separate tabs that never connect?",
-    correctAnswer:
-      "Integrated models prove the numbers stay consistent and reveal how decisions affect profit, cash, and financial position.",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
+    prompt: "Where does depreciation expense appear in the financial statements?",
+    correctAnswer: "On the income statement as an operating expense.",
     distractors: [
-      "Integrated models look better on screen even if the numbers stay the same.",
-      "Investors prefer fewer spreadsheets, so combining them makes the file shorter.",
-      "Separate statements make tax planning harder, which investors always avoid."
+      "On the balance sheet as a current asset.",
+      "On the cash flow statement as an investing activity.",
+      "On the income statement as a revenue item."
     ],
     explanation:
-      "Investors need to test strategy quickly. Only integrated models show cause and effect across the business.",
-    objectiveTags: ["investor-readiness", "systems-thinking"]
+      "Depreciation expense reduces net income on the income statement. Accumulated depreciation appears on the balance sheet as a contra-asset that reduces book value.",
+    objectiveTags: ["statement-impact", "depreciation-basics"]
   },
   {
     id: "lesson03-q6",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt:
-      "What is the main advantage of using named ranges like Revenue_Growth instead of coordinates like B5?",
-    correctAnswer:
-      "Named ranges make formulas readable and easier to audit when reviewers trace logic.",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
+    prompt: "What happens to book value as accumulated depreciation increases?",
+    correctAnswer: "Book value decreases because Book Value = Cost − Accumulated Depreciation.",
     distractors: [
-      "Named ranges force Excel to calculate faster than normal references.",
-      "They let the model ignore data validation rules that would otherwise break.",
-      "They remove the need for documentation because the workbook explains itself."
+      "Book value increases because the asset gains value over time.",
+      "Book value stays the same because cost does not change.",
+      "Book value equals the original cost at the end of useful life."
     ],
     explanation:
-      "Readable formulas build trust. Named ranges show meaning without hunting for coordinates.",
-    objectiveTags: ["documentation", "formula-integrity"]
+      "Book Value = Cost − Accumulated Depreciation. As accumulated depreciation grows each year, book value shrinks until it reaches salvage value.",
+    objectiveTags: ["book-value", "depreciation-basics"]
   },
   {
     id: "lesson03-q7",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt:
-      "Sarah reports $25,000 profit while cash keeps falling. Which explanation fits an integrated analysis?",
-    correctAnswer:
-      "Cash is tied up in receivables or inventory even though income shows a profit.",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
+    prompt: "TechStart buys a $30,000 van with a 5-year life and $5,000 salvage value. What is the total depreciation over the full life of the van?",
+    correctAnswer: "$25,000, which equals the depreciable base (Cost − Salvage Value).",
     distractors: [
-      "The model must contain a math error because profit and cash always match.",
-      "The business is failing and should shut down before losses get worse.",
-      "She should raise prices immediately to force cash and profit to match."
+      "$30,000, because the full cost is eventually depreciated.",
+      "$5,000, because that is what remains at the end.",
+      "$35,000, because cost and salvage value are added together."
     ],
     explanation:
-      "Profit follows accrual timing; cash reflects collection and investment. Working capital swings often explain the gap.",
-    objectiveTags: ["working-capital", "cash-flow-analysis"]
+      "Total depreciation over an asset's life equals the depreciable base: $30,000 − $5,000 = $25,000. The salvage value is never depreciated.",
+    objectiveTags: ["depreciable-base", "straight-line-concept"]
   },
   {
     id: "lesson03-q8",
     lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt: "What accounting equation must stay true on every balance sheet Sarah prepares?",
-    correctAnswer: "Assets = Liabilities + Equity keeps the business in balance.",
+    lessonTitle: "Lesson 03 - Straight-Line Depreciation",
+    prompt: "Which depreciation method would TechStart use if it wants the same expense amount reported every year?",
+    correctAnswer: "Straight-line, because it divides the depreciable base evenly across all years.",
     distractors: [
-      "Revenue - Expenses = Net Income describes the balance sheet layout.",
-      "Cash Inflows - Cash Outflows = Net Cash Flow replaces the balance sheet equation.",
-      "Assets = Revenue + Equity summarizes growth planning needs."
+      "Double-declining balance, because it produces consistent expenses.",
+      "Units of production, because it is the simplest method.",
+      "Sum-of-years-digits, because it spreads cost evenly."
     ],
     explanation:
-      "The accounting equation grounds every model. Assets are financed by liabilities and equity, so the totals must match.",
-    objectiveTags: ["accounting-equation", "integration-principles"]
-  },
-  {
-    id: "lesson03-q9",
-    lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt:
-      "Which item belongs in the financing section of the cash flow statement?",
-    correctAnswer: "Borrowing $50,000 from a bank to support operations.",
-    distractors: [
-      "Buying $5,000 of equipment for the new office.",
-      "Paying $2,000 in monthly rent for the workspace.",
-      "Collecting $8,000 from customers who paid invoices."
-    ],
-    explanation:
-      "Financing activities involve raising or repaying capital. Loans change the capital structure, so they sit in financing cash flows.",
-    objectiveTags: ["cash-flow-categorization", "financing"]
-  },
-  {
-    id: "lesson03-q10",
-    lessonId: "lesson03",
-    lessonTitle: "Lesson 03 - Core Concepts: Balance Sheet & Cash Flow Integration",
-    prompt:
-      "In a professional model, what should happen when Sarah changes the sales growth assumption?",
-    correctAnswer:
-      "Every linked formula updates automatically across income, balance sheet, and cash flow tabs.",
-    distractors: [
-      "She edits each sheet manually to keep the math in sync with the new assumption.",
-      "Only the worksheet that stores the assumption should update to maintain control.",
-      "The model should block changes so the scenario stays frozen for reporting."
-    ],
-    explanation:
-      "Integrated models respond immediately to new inputs, letting Sarah test scenarios and show investors reliable results.",
-    objectiveTags: ["automation", "integration-principles"]
+      "Straight-line is the only method that produces equal annual expense. Accelerated methods like DDB and sum-of-years-digits produce higher expenses in early years.",
+    objectiveTags: ["depreciation-methods", "straight-line-concept"]
   }
 ];
 const lesson04Questions: Unit08Phase5Question[] = [
