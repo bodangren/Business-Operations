@@ -18,9 +18,10 @@ const inputsSheetPreview: SpreadsheetData = [
   [headerCell("Control"), headerCell("Value"), headerCell("Formula / Source"), headerCell("Purpose"), headerCell("Check")],
   [textCell("SelectedScenario"), textCell("Base"), textCell("Data Validation"), textCell("Scenario selector"), textCell("Base/Stretch/Downside")],
   [textCell("SelectedMethod"), textCell("FIFO"), textCell("Data Validation"), textCell("Method selector"), textCell("FIFO/LIFO/Weighted Average")],
-  [textCell("SelectedKey"), textCell("Base|FIFO"), formulaTextCell("=B2&\"|\"&B3"), textCell("Lookup key"), textCell("Matches MethodSummary[Key]")],
+  [textCell("SelectedKey"), textCell("Base|FIFO"), formulaTextCell("=SelectedScenario&\"|\"&SelectedMethod"), textCell("Lookup key"), textCell("Matches MethodSummary[Key]")],
   [textCell("UnitSellingPrice"), numberCell(40), textCell("Input"), textCell("Revenue calculation"), textCell("Positive value")],
-  [textCell("BeginningInventory"), numberCell(180), textCell("Input"), textCell("Average inventory KPI"), textCell("From source inventory")]
+  [textCell("BeginningInventory"), numberCell(180), textCell("Input"), textCell("Average inventory KPI"), textCell("From source inventory")],
+  [textCell("GAFS"), numberCell(1150), textCell("Input"), textCell("Cost conservation target"), textCell("Used in checks")]
 ]
 
 const driversSheetPreview: SpreadsheetData = [
@@ -62,15 +63,15 @@ const kpiSheetPreview: SpreadsheetData = [
 
 const checksSheetPreview: SpreadsheetData = [
   [headerCell("Check"), headerCell("Status"), headerCell("Formula Pattern"), headerCell("Purpose"), headerCell("Action")],
-  [textCell("GAFS Balance"), textCell("Balanced"), formulaTextCell("=IF(ABS((SelectedCOGS+SelectedEI)-GAFS)<0.01,\"Balanced\",\"Check\")"), textCell("Cost conservation"), textCell("Debug lookup source row if failed")],
+  [textCell("GAFS Balance"), textCell("Balanced"), formulaTextCell("=IF(ABS((SelectedCOGS+SelectedEndingInventory)-GAFS)<0.01,\"Balanced\",\"Check\")"), textCell("Cost conservation"), textCell("Debug lookup source row if failed")],
   [textCell("SelectedKey Found"), textCell("OK"), formulaTextCell("=IFNA(XLOOKUP(SelectedKey,MethodSummary[Key],MethodSummary[COGS]),\"Missing Key\")"), textCell("Lookup health"), textCell("Fix key text mismatch")],
   [textCell("Units Sold Valid"), textCell("OK"), formulaTextCell("=IF(SelectedUnitsSold>0,\"OK\",\"Check Drivers\")"), textCell("Scenario setup"), textCell("Review Drivers row")]
 ]
 
 const dashboardSheetPreview: SpreadsheetData = [
   [headerCell("Tile"), headerCell("Displayed Value"), headerCell("Source Cell"), headerCell("Purpose"), headerCell("Check")],
-  [textCell("Scenario"), textCell("Base"), textCell("=Inputs!B2"), textCell("Context"), textCell("Matches selector")],
-  [textCell("Method"), textCell("FIFO"), textCell("=Inputs!B3"), textCell("Context"), textCell("Matches selector")],
+  [textCell("Scenario"), textCell("Base"), textCell("=SelectedScenario"), textCell("Context"), textCell("Matches selector")],
+  [textCell("Method"), textCell("FIFO"), textCell("=SelectedMethod"), textCell("Context"), textCell("Matches selector")],
   [textCell("COGS"), numberCell(690), textCell("=Outputs!B3"), textCell("Primary cost metric"), textCell("Matches Outputs")],
   [textCell("Turnover"), numberCell(2.16), textCell("=KPI!B5"), textCell("Velocity metric"), textCell("Matches KPI")],
   [textCell("Days on Hand"), numberCell(169.3), textCell("=KPI!B6"), textCell("Holding metric"), textCell("Matches KPI")]

@@ -67,7 +67,7 @@ export default function Unit07Lesson06Phase2() {
               <h3 className="text-lg font-semibold text-slate-900">Step 4: Validate Trust</h3>
               <p>
                 Add visible checks so the model proves itself before interpretation:
-                <code> IF(ABS((COGS+EI)-GAFS)&lt;0.01,"Balanced","Check")</code>.
+                <code> IF(ABS((SelectedCOGS+SelectedEndingInventory)-GAFS)&lt;0.01,"Balanced","Check")</code>.
               </p>
 
               <div className="bg-amber-50 p-4 rounded border border-amber-200 text-sm">

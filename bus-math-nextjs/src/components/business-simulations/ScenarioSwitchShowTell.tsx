@@ -73,10 +73,10 @@ const anatomyBlocks: AnatomyBlock[] = [
       "Runs balance and quality checks so issues are visible before KPI interpretation.",
     whyItMatters:
       "Checks prevent silent errors during live demo and protect model credibility.",
-    formulaPattern: "BalanceCheck = IF(ABS((SelectedCOGS+SelectedEI)-GAFS)<0.01,\"Balanced\",\"Check\")",
+    formulaPattern: "BalanceCheck = IF(ABS((SelectedCOGS+SelectedEndingInventory)-GAFS)<0.01,\"Balanced\",\"Check\")",
     references: [
       { token: "GAFS", meaning: "Total cost available for sale from the source inventory layers." },
-      { token: "SelectedEI", meaning: "Ending inventory for selected scenario+method row." },
+      { token: "SelectedEndingInventory", meaning: "Ending inventory for selected scenario+method row." },
       { token: "BalanceCheck", meaning: "Visible pass/fail flag for COGS + EI conservation." }
     ],
     firstTrap: "If checks are hidden below the dashboard, errors can be missed during decisions."
