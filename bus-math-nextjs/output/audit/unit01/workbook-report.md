@@ -1,13 +1,13 @@
 # Workbook Content Report: unit01
 
-Generated: 2026-04-02T23:46:37.150Z
+Generated: 2026-04-03T01:41:34.608Z
 
 ## Summary
 
-- **Total workbooks scanned**: 21
-- **Workbooks that open**: 21
+- **Total workbooks scanned**: 22
+- **Workbooks that open**: 22
 - **Workbooks with errors**: 0
-- **Workbooks with formulas**: 12
+- **Workbooks with formulas**: 13
 
 ## Workbook Details
 
@@ -23,6 +23,7 @@ Generated: 2026-04-02T23:46:37.150Z
 | unit01-lesson01-exit-ticket.xlsx | 1 (Exit Ticket) | None | OK |
 | unit01-group2-starter.xlsx | 2 (Journal, TrialBalance) | 32 | OK |
 | unit01-lesson04-exit-ticket.xlsx | 1 (Exit Ticket) | None | OK |
+| unit01-lesson05-checkpoint.xlsx | 3 (Summary, Journal, Trial Balance) | 28 | OK |
 | unit01-ledger-basic-practice.xlsx | 1 (Sheet1) | None | OK |
 | unit01-lesson07-exit-ticket.xlsx | 1 (Exit Ticket) | None | OK |
 | unit01-rehearsal-workbook.xlsx | 2 (Journal, TrialBalance) | 32 | OK |

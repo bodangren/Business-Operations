@@ -1,0 +1,8 @@
+{
+  "track_id": "local_study_export_20260403",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-04-03T00:00:00Z",
+  "updated_at": "2026-04-03T00:00:00Z",
+  "description": "Implement local study tools, practice tracking, spaced repetition, and export/import on the static site"
+}

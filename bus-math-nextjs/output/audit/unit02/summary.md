@@ -7,4 +7,4 @@
 - Workbooks OK: 14
 - Workbooks with errors: 0
 - Alignment pairs checked: 2
-- Alignment issues: 2
+- Alignment issues: 0

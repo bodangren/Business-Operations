@@ -8,8 +8,23 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 
 ## Active Tracks
 
-- [x] **Track: Unit 08 - Fixed assets and depreciation**
-  *Link: [./tracks/unit08_20260330/](./tracks/unit08_20260330/)*
+- [ ] **Track: Reference system - bilingual glossary, index, and unit vocabulary lists**
+  *Link: [./tracks/reference_system_20260403/](./tracks/reference_system_20260403/)*
+- [ ] **Track: Navigation and shell cleanup**
+  *Link: [./tracks/navigation_shell_cleanup_20260403/](./tracks/navigation_shell_cleanup_20260403/)*
+- [ ] **Track: Teacher and student alignment**
+  *Link: [./tracks/teacher_student_alignment_20260403/](./tracks/teacher_student_alignment_20260403/)*
+- [ ] **Track: Practice hub wireframes**
+  *Link: [./tracks/practice_hub_wireframes_20260403/](./tracks/practice_hub_wireframes_20260403/)*
+- [ ] **Track: Local study, tracking, and export**
+  *Link: [./tracks/local_study_export_20260403/](./tracks/local_study_export_20260403/)*
+
+Active tracks are ordered intentionally:
+1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
+2. `navigation_shell_cleanup_20260403` removes dead search UI and routes users into the new index.
+3. `teacher_student_alignment_20260403` reconciles teacher-facing materials with the current student curriculum.
+4. `practice_hub_wireframes_20260403` must be reviewed before implementation work begins on local study tools.
+5. `local_study_export_20260403` depends on the approved wireframes and the glossary/export data contracts.
 
 ## Completed Tracks
 
@@ -32,3 +47,5 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./archive/tracks/unit06_20260330/](./archive/tracks/unit06_20260330/)*
 - [x] **Track: Unit 07 - Inventory accounting**
   *Link: [./archive/tracks/unit07_20260330/](./archive/tracks/unit07_20260330/)*
+- [x] **Track: Unit 08 - Fixed assets and depreciation**
+  *Link: [./archive/tracks/unit08_20260330/](./archive/tracks/unit08_20260330/)*
