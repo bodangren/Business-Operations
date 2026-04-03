@@ -1,4 +1,4 @@
-// Inventory Tracker & Valuation, Lesson 4 data - Specific Identification and Weighted Average
+// Inventory Accounting, Lesson 4 data - Specific Identification and Weighted Average
 export const lesson04Data = {
   id: "lesson04-specific-weighted",
   title: "Specific Identification and Weighted Average",
@@ -32,7 +32,7 @@ export const lesson04Data = {
 
 export const unit07Data = {
   id: "mdrhlhv4ov691yonkpi",
-  title: "Inventory Tracker & Valuation",
+  title: "Inventory Accounting",
   sequence: 7
 }
 

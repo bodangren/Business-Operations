@@ -169,7 +169,7 @@ export default function PrefacePage() {
                 <ul className="list-disc list-inside text-sm space-y-1">
                   <li><strong>Unit 5: PayDay Simulator</strong> — Payroll logic and reconciliation.</li>
                   <li><strong>Unit 6: PriceLab Challenge</strong> — CVP, Goal Seek, and sensitivity tables.</li>
-                  <li><strong>Unit 7: Inventory Tracker & Valuation</strong> — FIFO/LIFO, weighted average, and inventory KPIs.</li>
+                  <li><strong>Unit 7: Inventory Accounting</strong> — FIFO/LIFO, weighted average, and inventory KPIs.</li>
                   <li><strong>Unit 8: Fixed Assets and Depreciation</strong> — SLN/DDB depreciation and asset register management.</li>
                 </ul>
               </CardContent>

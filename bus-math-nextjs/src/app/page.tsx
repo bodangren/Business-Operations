@@ -48,8 +48,8 @@ const units = [
     href: "/student/unit06"
   },
   {
-    title: "Unit 7: Inventory Tracker & Valuation",
-    description: "Inventory valuation methods and management systems",
+    title: "Unit 7: Inventory Accounting",
+    description: "Inventory valuation methods and strategic decision-making",
     duration: "2-3 weeks", 
     difficulty: "Advanced",
     href: "/student/unit07"

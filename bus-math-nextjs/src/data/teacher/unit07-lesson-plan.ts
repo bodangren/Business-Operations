@@ -13,9 +13,9 @@ import { UnitLessonPlan } from "@/types/lesson-plan"
 
 export const unit07LessonPlan: UnitLessonPlan = {
   unitNumber: 7,
-  unitTitle: "Inventory Valuation & Management",
-  description: "Complete 10-day lesson plan focusing on inventory valuation methods and management",
-  essentialQuestion: "How do we build, test, and defend a trustworthy ending inventory number?",
+  unitTitle: "Inventory Accounting",
+  description: "Complete 10-day lesson plan focusing on inventory valuation methods (FIFO, LIFO, Weighted Average, Specific Identification) and strategic method selection for business decision-making.",
+  essentialQuestion: "Which inventory valuation method best reflects our business reality and supports sound decision-making?",
   
   meta: {
     duration: "10 class periods (2 weeks)",
@@ -27,31 +27,29 @@ export const unit07LessonPlan: UnitLessonPlan = {
   objectives: {
     enduring: [
       "Inventory valuation methods directly impact reported profits, tax obligations, and business decision-making",
-      "FIFO and LIFO produce different COGS and ending inventory values, especially when prices change",
-      "Accurate inventory management and tracking are essential for business sustainability and investor confidence",
-      "The inventory equation (Beginning + Purchases - COGS = Ending) must always reconcile"
+      "FIFO, LIFO, Weighted Average, and Specific Identification produce different COGS and ending inventory values",
+      "Accurate inventory tracking is essential for business sustainability and investor confidence",
+      "The inventory equation (Beginning Inventory + Purchases − COGS = Ending Inventory) must always reconcile"
     ],
     knowledge: [
       {
         category: "content",
         items: [
-          "FIFO and LIFO inventory valuation principles and calculations",
-          "Weighted average cost method for homogeneous inventory",
-          "Specific identification for unique or high-value items",
-          "Inventory Turnover Ratio calculation and business implications",
-          "Impact of inventory methods on cash flow and tax planning",
+          "FIFO, LIFO, Weighted Average, and Specific Identification inventory valuation principles",
+          "Cost of Goods Sold (COGS) calculation and its impact on financial statements",
+          "Inventory Turnover Ratio calculation and business implications for cash management",
+          "Impact of inventory methods on cash flow, tax planning, and financial reporting",
           "Physical inventory counts and shrinkage adjustments"
         ]
       },
       {
         category: "technical",
         items: [
-          "FIFO and LIFO inventory valuation principles and calculations",
-          "Weighted average cost method for homogeneous inventory",
-          "Specific identification for unique or high-value items",
-          "Inventory Turnover Ratio calculation and business implications",
-          "Impact of inventory methods on cash flow and tax planning",
-          "Physical inventory counts and shrinkage adjustments"
+          "Build inventory valuation schedules in Excel with method comparison",
+          "Implement FIFO and LIFO layer calculations with structured references",
+          "Create dynamic ratio calculations and visualizations (e.g., turnover ratio chart)",
+          "Use INDEX/MATCH for dynamic method selection dropdowns",
+          "Design professional COGS impact analysis charts"
         ]
       }
     ],
@@ -59,20 +57,20 @@ export const unit07LessonPlan: UnitLessonPlan = {
       {
         category: "content",
         items: [
-          "Calculate depreciation schedules using multiple methods",
-          "Compute Cost of Goods Sold using FIFO and LIFO methods",
+          "Compute Cost of Goods Sold using all four inventory valuation methods",
+          "Calculate ending inventory values under FIFO, LIFO, Weighted Average, and Specific ID",
           "Analyze inventory turnover ratios for operational insights",
-          "Evaluate method selection based on business strategy",
+          "Evaluate method selection based on business strategy and industry context",
           "Present financial recommendations to business decision-makers"
         ]
       },
       {
         category: "technical",
         items: [
-          "Build automated depreciation schedules with Excel functions",
-          "Implement complex inventory layer calculations using array formulas",
+          "Build automated inventory valuation schedules in Excel",
+          "Implement complex inventory layer calculations using structured formulas",
           "Create dynamic dashboards with method selection capabilities",
-          "Design professional charts for financial data visualization",
+          "Design professional charts for COGS and inventory turnover visualization",
           "Develop user-friendly interfaces for non-technical stakeholders"
         ]
       }
@@ -82,39 +80,39 @@ export const unit07LessonPlan: UnitLessonPlan = {
   // Stage 2: Assessment Evidence
   assessment: {
     performanceTask: {
-      title: "Inventory Recommendation Brief + Pitch Presentation (Day 10)",
-      description: "5-minute pitch to Board of Directors panel recommending optimal inventory valuation method",
-      scenario: "Teams present their analysis and recommendations to a panel of local business leaders, accountants, and auditors acting as a company's Board of Directors. The presentation must justify inventory method selection based on business strategy and financial impact.",
+      title: "Advisory Brief + Executive Presentation",
+      description: "Deliver strategic recommendations on inventory valuation methods to an executive audience.",
+      scenario: "Teams present their analysis and recommendations to a panel of local business leaders, accountants, and auditors acting as an executive panel. The presentation must justify inventory method selection based on business strategy, COGS impact, and financial reporting implications.",
       requirements: [
-        "Written advisory brief (2-3 pages) with clear inventory method recommendations",
-        "5-minute live pitch presentation with supporting visuals",
-        "Live Excel demonstration of dynamic method selection features",
-        "Q&A response addressing Board questions about strategic rationale",
-        "Professional business communication appropriate for executive audience"
+        "2-3 page written advisory brief with strategic rationale for method recommendation",
+        "5-minute live pitch presentation to executive panel",
+        "Dynamic Excel model demonstrating all four inventory valuation methods",
+        "Professional visualization showing COGS impact under different methods",
+        "Q&A response addressing questions about cash flow and reporting implications"
       ],
-      context: "This mirrors real corporate governance where Boards must approve significant accounting policy changes that affect financial reporting and tax obligations."
+      context: "This mirrors real corporate decision-making where finance teams present inventory method choices to leadership for approval."
     },
     milestones: [
       {
         day: 2,
         title: "Basic Inventory Schedule",
-        description: "Functional FIFO and LIFO calculations with layer tracking",
+        description: "Complete functional inventory schedules showing beginning inventory, purchases, and goods available for sale",
         criteria: [
-          "Accurate FIFO inventory schedule with proper cost layer assignment",
-          "Correct LIFO calculations with last-in costs applied first",
-          "Excel formulas using structured references and named ranges",
-          "Professional formatting with clear purchase and sale tracking"
+          "Accurate beginning inventory and purchases data entry",
+          "Correct goods available for sale calculations",
+          "Professional formatting and clear documentation",
+          "Peer accuracy verification completed"
         ]
       },
       {
         day: 6,
-        title: "Dynamic Selection Feature",
-        description: "Advanced Excel modeling with dropdown-driven method selection",
+        title: "Dynamic Method Selection Feature",
+        description: "Automated method selection system with dropdowns and INDEX/MATCH logic",
         criteria: [
-          "Dropdown menus for inventory method selection (FIFO/LIFO/Weighted Average)",
-          "INDEX/MATCH formulas enabling dynamic method switching",
-          "Automated COGS and ending inventory calculations",
-          "Automated updates when method selection changes"
+          "Working dropdown menus for method selection (FIFO/LIFO/Weighted Average/Specific ID)",
+          "INDEX/MATCH formulas functioning correctly for dynamic switching",
+          "Dynamic updates when methods are changed",
+          "Error-free calculations across all scenarios"
         ]
       },
       {
@@ -122,47 +120,10 @@ export const unit07LessonPlan: UnitLessonPlan = {
         title: "Advisory Brief Draft",
         description: "Strategic analysis document with inventory method recommendations",
         criteria: [
-          "Clear rationale for inventory method selection",
-          "FIFO vs. LIFO analysis with cash flow and tax implications",
+          "Clear rationale for inventory method selection tied to business objectives",
+          "COGS and ending inventory analysis across all four methods",
           "Inventory turnover ratio calculations and interpretation",
-          "Professional business writing appropriate for Board audience"
-        ]
-      }
-    ],
-      context: "This mirrors real corporate governance where Boards must approve significant accounting policy changes that affect financial reporting and tax obligations."
-    },
-    milestones: [
-      {
-        day: 2,
-        title: "Basic Inventory Schedule",
-        description: "Functional FIFO and LIFO calculations with layer tracking",
-        criteria: [
-          "Accurate FIFO inventory schedule with proper cost layer assignment",
-          "Correct LIFO calculations with last-in costs applied first",
-          "Excel formulas using structured references and named ranges",
-          "Professional formatting with clear purchase and sale tracking"
-        ]
-      },
-      {
-        day: 6,
-        title: "Dynamic Selection Feature",
-        description: "Advanced Excel modeling with dropdown-driven method selection",
-        criteria: [
-          "Dropdown menus for inventory method selection (FIFO/LIFO/Weighted Average)",
-          "INDEX/MATCH formulas enabling dynamic method switching",
-          "Automated COGS and ending inventory calculations",
-          "Automated updates when method selection changes"
-        ]
-      },
-      {
-        day: 8,
-        title: "Advisory Brief Draft",
-        description: "Strategic analysis document with inventory method recommendations",
-        criteria: [
-          "Clear rationale for inventory method selection",
-          "FIFO vs. LIFO analysis with cash flow and tax implications",
-          "Inventory turnover ratio calculations and interpretation",
-          "Professional business writing appropriate for Board audience"
+          "Professional business writing appropriate for executive audience"
         ]
       }
     ],
@@ -170,30 +131,30 @@ export const unit07LessonPlan: UnitLessonPlan = {
       {
         name: "Technical Accuracy",
         weight: "50%",
-        exemplary: "All depreciation schedules and inventory valuations calculated correctly; formulas handle edge cases; no computational errors",
-        proficient: "Minor calculation errors (1-2); most formulas work correctly; handles standard scenarios",
-        developing: "Multiple calculation errors; some formulas broken; limited functionality"
+        exemplary: "All inventory valuations are mathematically correct; formulas handle edge cases flawlessly; COGS and ending inventory reconcile perfectly",
+        proficient: "Most calculations correct with minor errors; formulas work for standard cases",
+        developing: "Multiple calculation errors; formulas have significant issues"
       },
       {
         name: "Strategic Rationale",
         weight: "20%",
-        exemplary: "Method selection clearly aligned with stated cash-flow and tax objectives; sophisticated understanding of business implications",
-        proficient: "Basic rationale connects methods to business goals; demonstrates understanding of key concepts",
-        developing: "Limited connection between method selection and business strategy; superficial analysis"
+        exemplary: "Justification clearly aligns with business objectives; demonstrates deep understanding of method implications for cash flow and taxes",
+        proficient: "Basic justification provided; shows understanding of key concepts",
+        developing: "Limited or unclear rationale; missing connection to business strategy"
       },
       {
         name: "Pitch Delivery",
         weight: "15%",
-        exemplary: "Professional presentation engaging Board audience; confident delivery; clear visual aids; excellent time management",
-        proficient: "Clear presentation with adequate visual support; good delivery; minor timing issues",
-        developing: "Basic presentation skills; unclear visuals; poor time management or delivery"
+        exemplary: "Clear, professional presentation with confident delivery and strong audience engagement",
+        proficient: "Adequate presentation skills with clear communication",
+        developing: "Unclear delivery or unprofessional presentation style"
       },
       {
         name: "Responsiveness to Critique",
         weight: "15%",
-        exemplary: "Incorporates all peer and Board feedback effectively; demonstrates growth mindset; enhances final product significantly",
-        proficient: "Addresses most feedback; shows willingness to revise; some improvement evident",
-        developing: "Limited response to feedback; minimal revision; defensive attitude"
+        exemplary: "Thoughtful integration of all peer and executive feedback into final deliverables",
+        proficient: "Good incorporation of most feedback",
+        developing: "Limited responsiveness to feedback or superficial changes"
       }
     ]
   },
@@ -203,27 +164,27 @@ export const unit07LessonPlan: UnitLessonPlan = {
     overview: {
       phases: [
         {
-          title: "Launch: Inventory Misvaluation Case Study",
-          description: "Real-world context through auditor's inventory misvaluation case",
+          title: "Launch: Sarah's Inventory Problem",
+          description: "Entry event with Sarah Chen sharing her inventory tracking challenge",
           days: "Day 1"
         },
         {
-          title: "Model Construction: FIFO, LIFO, Weighted Average",
-          description: "Build Excel models for inventory valuation methods",
+          title: "Model Construction: FIFO, LIFO, Weighted Average, Specific ID",
+          description: "Build Excel models for all four inventory valuation methods",
           days: "Days 2-5"
         },
         {
-          title: "Advanced Features: Dynamic Selection",
-          description: "Create user-friendly interfaces with dropdown method selection",
+          title: "Advanced Features: Dynamic Method Selection",
+          description: "Create user-friendly interfaces with dropdown method selection and INDEX/MATCH",
           days: "Days 6-7"
         },
         {
           title: "Strategic Analysis: Advisory Brief",
-          description: "Develop business recommendations based on quantitative analysis",
+          description: "Develop business recommendations based on quantitative COGS and turnover analysis",
           days: "Days 8-9"
         },
         {
-          title: "Public Presentation: Board Pitch",
+          title: "Public Presentation: Executive Pitch",
           description: "Present findings and recommendations to external business panel",
           days: "Day 10"
         }
@@ -233,40 +194,40 @@ export const unit07LessonPlan: UnitLessonPlan = {
       {
         day: 1,
         title: "Launch & Data Exploration",
-        focus: "Entry event with auditor case study and team formation",
+        focus: "Entry event with Sarah's inventory challenge and team formation",
         duration: "45 minutes",
         activities: [
           {
-            name: "Auditor Case Study Entry Event",
+            name: "Sarah's Inventory Challenge Entry Event",
             duration: "15 minutes",
-            description: "Local auditor presents real case of inventory misvaluation consequences",
+            description: "Sarah Chen shares her growing business's inventory tracking problem",
             details: [
-              "Guest auditor shares anonymized case of company fined for inventory errors",
-              "Discussion of financial impact: penalties, investor confidence loss, audit costs",
-              "Introduction of provided asset and inventory dataset for analysis",
-              "Connection to essential question: How do method choices affect business outcomes?"
+              "Video or case brief: Sarah explains her TechStart Solutions inventory challenge",
+              "Discussion: Why does inventory valuation matter for business decisions?",
+              "Introduction of provided inventory dataset for analysis",
+              "Connection to essential question: Which method best reflects our business reality?"
             ],
             callout: {
               type: "important",
               title: "Real-World Context",
-              content: "Inventory misvaluation can result in significant financial and legal consequences",
+              content: "Inventory valuation affects reported profits, taxes, and investor confidence",
               items: [
-                "SEC fines can range from $100,000 to millions for public companies",
-                "Investor confidence loss affects stock price and future funding",
-                "Audit costs increase when controls are deemed ineffective",
-                "Tax implications can compound errors across multiple years"
+                "Different methods produce different COGS and ending inventory values",
+                "Method choice impacts tax obligations and cash flow",
+                "Investors scrutinize inventory policies during due diligence",
+                "Consistency in method application is required for reliable financial reporting"
               ]
             }
           },
           {
             name: "Team Formation & Data Review",
             duration: "15 minutes",
-            description: "Form strategic teams and explore provided dataset",
+            description: "Form strategic teams and explore provided inventory dataset",
             details: [
               "Teams of 2-3 students formed based on complementary skills",
-              "Initial exploration of provided asset and inventory CSV data",
-              "Identification of different asset types and inventory categories",
-              "Discussion of which depreciation and inventory methods might apply"
+              "Initial exploration of provided inventory CSV data",
+              "Identification of purchase layers, sales transactions, and inventory categories",
+              "Discussion of which valuation methods might apply to different inventory types"
             ]
           },
           {
@@ -274,8 +235,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
             duration: "10 minutes",
             description: "Teams choose business context focus",
             details: [
-              "Student voice and choice: Select retail, manufacturing, or technology focus",
-              "Each context emphasizes different asset types and inventory challenges",
+              "Student voice and choice: Select retail, manufacturing, technology, or propose own",
+              "Each context emphasizes different inventory characteristics and valuation challenges",
               "Teams commit to their chosen industry for consistency throughout unit",
               "Preview of how context will affect method selection rationale"
             ]
@@ -286,107 +247,94 @@ export const unit07LessonPlan: UnitLessonPlan = {
             description: "Set expectations and preview learning journey",
             details: [
               "Review unit timeline and major milestones",
-              "Preview final presentation to Board of Directors panel",
+              "Preview final advisory brief and executive pitch",
               "Establish learning objectives and success criteria",
               "Address student questions about expectations and assessments"
             ]
           }
         ],
         materials: [
-          "Guest auditor presentation materials and case study handout",
-          "Anonymized asset and inventory dataset (CSV format)",
-          "Industry context description sheets (retail, manufacturing, technology)",
+          "Sarah's case brief and inventory dataset",
+          "Inventory CSV files for team exploration",
+          "Industry context description sheets",
           "Team formation materials and role assignment sheets",
           "Unit overview and milestone timeline"
         ]
       },
       {
         day: 2,
-        title: "Inventory Methods Foundation",
-        focus: "Direct instruction on FIFO, LIFO, and Weighted Average with Excel implementation",
+        title: "Inventory Cost Flow Foundations",
+        focus: "Inventory flow concepts, beginning inventory, purchases, and COGS",
         duration: "45 minutes",
         activities: [
           {
-            name: "Inventory Valuation Concepts",
+            name: "Inventory Flow Concepts",
             duration: "15 minutes",
-            description: "Why businesses track inventory costs and method selection rationale",
+            description: "Why businesses track inventory costs and the inventory equation",
             details: [
-              "Connect to auditor case: How do inventory errors compound over time?",
+              "Connect to Sarah's case: How does inventory flow through a business?",
               "Business rationale: matching principle and cost of goods sold recognition",
-              "Strategic considerations: cash flow vs. tax implications",
-              "Introduction to FIFO, LIFO, and Weighted Average approaches"
+              "The inventory equation: Beginning Inventory + Purchases − COGS = Ending Inventory",
+              "Introduction to the four inventory valuation methods"
             ],
             callout: {
               type: "definition",
-              title: "Inventory Method Strategic Implications",
-              content: "Method selection affects both financial reporting and tax obligations",
+              title: "The Inventory Equation",
+              content: "Beginning Inventory + Purchases − COGS = Ending Inventory",
               items: [
-                "FIFO: Oldest costs to COGS, higher profits in inflation, higher taxes",
-                "LIFO: Newest costs to COGS, lower profits in inflation, lower taxes",
-                "Weighted Average: Smooths cost fluctuations, middle-ground approach",
-                "Tax Strategy: Timing of COGS recognition affects cash flow optimization"
+                "Beginning Inventory: Value of inventory at start of period",
+                "Purchases: Additional inventory acquired during period",
+                "COGS: Cost of inventory items sold during period",
+                "Ending Inventory: Value of inventory remaining at period end"
               ]
             }
           },
           {
-            name: "FIFO Calculation Workshop",
-            duration: "12 minutes",
-            description: "Hands-on practice with FIFO cost layer tracking",
+            name: "Inventory Schedule Setup Demo",
+            duration: "15 minutes",
+            description: "Demonstrate inventory schedule setup in Excel",
             details: [
-              "Demonstration: Track purchase layers and assign oldest costs to sales first",
-              "Guided practice: Calculate COGS and ending inventory for sample retail data",
-              "Build complete inventory schedule with cumulative layer tracking",
-              "Verify calculations manually to ensure understanding"
+              "Build a basic inventory schedule with date, quantity, unit cost, and total cost columns",
+              "Enter beginning inventory and purchase transactions",
+              "Calculate goods available for sale",
+              "Guided practice with sample inventory data"
             ]
           },
           {
-            name: "LIFO Calculation Workshop",
-            duration: "12 minutes",
-            description: "Implementation of LIFO using most recent cost layers",
+            name: "Guided Practice",
+            duration: "10 minutes",
+            description: "Students practice building inventory schedules",
             details: [
-              "Demonstration: Same data as FIFO, but assign newest costs to COGS first",
-              "Show LIFO logic: each sale uses most recent purchase costs",
-              "Practice: Build LIFO schedule for same data to compare with FIFO",
-              "Analyze differences: FIFO vs. LIFO COGS and ending inventory values"
+              "Students create their own inventory schedule from provided data",
+              "Verify goods available for sale calculations",
+              "Peer review for accuracy",
+              "Preview Day 3: FIFO vs. LIFO logic"
             ]
           },
           {
-            name: "Method Comparison & Checkpoint",
-            duration: "6 minutes",
-            description: "Compare FIFO vs. LIFO results and check understanding",
+            name: "Checkpoint & Preview",
+            duration: "5 minutes",
+            description: "Check understanding and preview next lesson",
             details: [
-              "Side-by-side comparison: FIFO vs. LIFO schedules for same inventory",
-              "Discuss business implications: cash flow, taxes, financial reporting",
-              "Checkpoint quiz: Students calculate basic inventory values independently",
-              "Preview Day 3: How do we implement these calculations in Excel?"
+              "Quick check: Can students calculate goods available for sale?",
+              "Preview: How do we decide which costs go to COGS vs. ending inventory?",
+              "Preview Day 3: FIFO vs. LIFO — two ways to value the same inventory"
             ]
           }
         ],
         materials: [
-          "Excel template with FIFO and LIFO calculation examples",
-          "Sample inventory data for practice calculations",
-          "Inventory schedule templates",
-          "Method comparison worksheet",
-          "FIFO/LIFO function reference guide"
+          "Inventory flow guide",
+          "Sample workbook template",
+          "Practice inventory dataset",
+          "Inventory schedule template"
         ]
       },
       {
         day: 3,
-        title: "Inventory Methods Introduction",
+        title: "FIFO and LIFO: Two Ways to Value the Same Inventory",
         focus: "FIFO vs. LIFO logic and business implications",
         duration: "45 minutes",
         activities: [
-          {
-            name: "Inventory Valuation Challenge",
-            duration: "10 minutes",
-            description: "Why inventory method selection matters for business strategy",
-            details: [
-              "Connect to auditor case: How inventory errors affect financial statements",
-              "Scenario: Rising vs. falling prices and impact on Cost of Goods Sold",
-              "Strategic question: How do FIFO and LIFO serve different business objectives?",
-              "Preview: Excel techniques for tracking inventory layers"
-            ]
-          },
           {
             name: "FIFO Logic & Calculations",
             duration: "15 minutes",
@@ -421,94 +369,100 @@ export const unit07LessonPlan: UnitLessonPlan = {
             ]
           },
           {
-            name: "Method Selection Strategy Discussion",
-            duration: "5 minutes",
-            description: "Connect inventory methods to business strategy",
+            name: "Method Comparison & Peer Verification",
+            duration: "10 minutes",
+            description: "Compare FIFO vs. LIFO results and verify accuracy",
             details: [
-              "Discussion: When would a business prefer FIFO vs. LIFO?",
-              "Tax considerations: LIFO reduces taxable income during inflation",
-              "Investor relations: FIFO shows higher profits for better financial appearance",
-              "Preview Day 4: How do we implement these calculations in Excel?"
+              "Side-by-side comparison: FIFO vs. LIFO schedules for same inventory",
+              "Discuss business implications: cash flow, taxes, financial reporting",
+              "Peer accuracy verification using provided rubric",
+              "Preview Day 4: Specific Identification and Weighted Average"
+            ]
+          },
+          {
+            name: "Checkpoint",
+            duration: "5 minutes",
+            description: "Quick understanding check",
+            details: [
+              "Students calculate basic FIFO and LIFO values independently",
+              "Review answers and address common errors",
+              "Milestone 1 checkpoint: Basic inventory schedule completed"
             ]
           }
         ],
         materials: [
-          "FIFO/LIFO calculation examples and templates",
+          "FIFO/LIFO examples and templates",
           "Visual aids showing inventory flow assumptions",
           "Practice datasets with varying price scenarios",
-          "Business strategy decision matrix",
-          "Inventory method comparison charts"
+          "Peer accuracy verification rubric"
         ]
       },
       {
         day: 4,
-        title: "FIFO/LIFO Inventory Valuation with Excel Tables",
-        focus: "Build Excel Tables and array formulas for FIFO/LIFO layer calculations",
+        title: "Specific Identification and Weighted Average in Simple Excel",
+        focus: "Build Excel Tables and formulas for Specific ID and Weighted Average",
         duration: "45 minutes",
         activities: [
           {
-            name: "Excel Array Formula Introduction",
-            duration: "10 minutes",
-            description: "Why inventory tracking requires advanced Excel techniques",
+            name: "Specific Identification Method",
+            duration: "12 minutes",
+            description: "Track actual cost of each individual item sold",
             details: [
-              "Challenge: Inventory purchases and sales happen at different times and prices",
-              "Excel limitation: Standard formulas can't easily track multiple cost layers",
-              "Solution: Array formulas to handle complex layer calculations",
-              "Preview: Building formulas that automatically calculate FIFO and LIFO"
+              "When to use: High-value or unique products (jewelry, cars, custom orders)",
+              "Demonstration: Track individual item costs from purchase to sale",
+              "Practice: Calculate COGS and ending inventory using Specific ID",
+              "Compare with FIFO/LIFO results"
             ]
           },
           {
-            name: "FIFO Array Formula Workshop",
-            duration: "15 minutes",
-            description: "Build formulas to calculate FIFO Cost of Goods Sold automatically",
+            name: "Weighted Average Cost Method",
+            duration: "12 minutes",
+            description: "Assign same average cost to every unit",
             details: [
-              "Demonstrate array formula structure for FIFO calculations",
-              "Show how to rank purchases by date and apply oldest costs first",
-              "Guided practice: Students build FIFO formula for sample inventory data",
-              "Test formula with different sales quantities to verify accuracy"
+              "Formula: Total Cost of Goods Available ÷ Total Units Available",
+              "Demonstration: Calculate weighted average cost per unit",
+              "Practice: Apply average cost to COGS and ending inventory",
+              "Compare all four methods side by side"
             ],
             callout: {
               type: "tip",
-              title: "Array Formula Best Practices",
-              content: "Complex inventory calculations require careful formula design",
+              title: "Weighted Average Best Practices",
+              content: "Weighted average smooths cost fluctuations across all purchases",
               items: [
-                "Start simple: Test with small datasets before scaling up",
-                "Use named ranges: Makes formulas more readable and maintainable",
-                "Add error checking: Handle cases where sales exceed available inventory",
-                "Document logic: Comments help others understand your approach"
+                "Recalculate average cost after each new purchase (perpetual system)",
+                "Or calculate once at period end (periodic system)",
+                "Best for homogeneous inventory items (fuel, grain, chemicals)",
+                "Produces results between FIFO and LIFO in inflationary periods"
               ]
             }
           },
           {
-            name: "LIFO Array Formula Workshop",
+            name: "Excel Table Implementation",
             duration: "15 minutes",
-            description: "Build parallel formulas for LIFO calculations",
+            description: "Build Excel Tables with structured references for all four methods",
             details: [
-              "Modify FIFO logic: Use most recent purchases instead of oldest",
-              "Demonstrate array formula adjustments for LIFO methodology",
-              "Practice: Students build LIFO formula using same inventory dataset",
-              "Compare results: FIFO vs. LIFO COGS for identical transactions"
+              "Convert inventory schedules to Excel Tables",
+              "Implement structured references for automated COGS and Ending Inventory",
+              "Add error checks and edge case handling",
+              "Validate calculations across all four methods"
             ]
           },
           {
             name: "Peer Accuracy Check",
-            duration: "5 minutes",
-            description: "Structured peer review of formula accuracy",
+            duration: "6 minutes",
+            description: "Teams exchange files and verify calculations",
             details: [
-              "Teams exchange Excel files and verify each other's calculations",
-              "Use provided answer key to check FIFO and LIFO results",
+              "Use provided answer key to check all four method results",
               "Identify and correct common formula errors",
-              "Preview Day 5: Organizing these calculations into professional models"
+              "Preview Day 5: Method comparison workbook sprint"
             ]
           }
         ],
         materials: [
-          "Array formula templates and examples",
-          "Sample inventory dataset with purchases and sales",
-          "Formula troubleshooting guide",
-          "Peer review checklist and answer keys",
-          "Excel named ranges tutorial",
-          "/resources/unit07-inventory-valuation-practice.csv"
+          "Advanced template with all four methods",
+          "Peer rubric for validation",
+          "/resources/unit07-inventory-valuation-practice.csv",
+          "Excel Table setup guide"
         ]
       },
       {
@@ -522,7 +476,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
             duration: "15 minutes",
             description: "Team reflection on learning progress and challenges",
             details: [
-              "What went well: Celebrate mastery of depreciation and inventory concepts",
+              "What went well: Celebrate mastery of inventory valuation concepts",
               "What was challenging: Identify areas needing additional support",
               "What we learned: Connect technical skills to business strategy understanding",
               "Next steps: Prepare for advanced Excel modeling in Week 2"
@@ -531,34 +485,33 @@ export const unit07LessonPlan: UnitLessonPlan = {
           {
             name: "Concept Mastery Quiz",
             duration: "20 minutes",
-            description: "Individual assessment of depreciation and inventory method differences",
+            description: "Individual assessment of inventory method differences",
             details: [
               "Multiple choice: Identify appropriate method selection scenarios",
-              "Calculation problems: Compute basic SLN, DDB, FIFO, and LIFO",
+              "Calculation problems: Compute COGS and ending inventory using all four methods",
               "Strategic analysis: Explain when businesses would choose each method",
-              "Excel application: Identify correct function syntax and parameters"
+              "Excel application: Identify correct formula structure for inventory tracking"
             ],
             callout: {
               type: "important",
               title: "Mastery Check Focus Areas",
               content: "Assessment covers both technical skills and strategic understanding",
-        items: [
-          "Excel formulas for FIFO and LIFO layer calculations",
-          "Dynamic ratio calculations and automated updates",
-          "INDEX/MATCH logic for method selection dropdowns",
-          "Chart creation for inventory turnover and COGS visualization",
-          "Inventory count reconciliation and shrinkage tracking"
-        ]
+              items: [
+                "FIFO, LIFO, Weighted Average, and Specific ID calculations",
+                "Impact of method choice on COGS and ending inventory",
+                "Business rationale for method selection",
+                "Excel formulas for inventory layer tracking"
+              ]
             }
           },
           {
             name: "Team Planning for Week 2",
             duration: "8 minutes",
-            description: "Prepare for advanced modeling and presentation development",
+            description: "Prepare for advanced modeling and advisory brief development",
             details: [
-              "Review Week 2 goals: Dynamic selection features and advisory brief",
+              "Review Week 2 goals: Dynamic method selection and advisory brief",
               "Identify team strengths for collaborative work ahead",
-              "Plan approach for integrating depreciation and inventory models",
+              "Plan approach for method comparison workbook",
               "Set team expectations for quality and professional presentation standards"
             ]
           },
@@ -584,7 +537,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
       },
       {
         day: 6,
-        title: "Advanced Modeling",
+        title: "Advanced Modeling: Dynamic Method Selection",
         focus: "Create dynamic method selection with INDEX/MATCH dropdowns",
         duration: "45 minutes",
         activities: [
@@ -602,9 +555,9 @@ export const unit07LessonPlan: UnitLessonPlan = {
           {
             name: "Dropdown Method Selection Setup",
             duration: "15 minutes",
-            description: "Create user-friendly dropdowns for depreciation and inventory method selection",
+            description: "Create user-friendly dropdowns for inventory method selection",
             details: [
-              "Data validation setup: Create dropdown lists for SLN/DDB and FIFO/LIFO",
+              "Data validation setup: Create dropdown lists for FIFO/LIFO/Weighted Average/Specific ID",
               "Named ranges: Organize method options for easy maintenance",
               "Cell formatting: Professional appearance with clear labels",
               "User instructions: Brief guidance for non-technical users"
@@ -616,8 +569,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
             description: "Build formulas that respond dynamically to dropdown selections",
             details: [
               "INDEX/MATCH introduction: More flexible alternative to VLOOKUP",
-              "Depreciation logic: Formula selects SLN or DDB based on dropdown choice",
-              "Inventory logic: Formula applies FIFO or LIFO based on user selection",
+              "Inventory logic: Formula applies selected method based on user choice",
+              "Build dynamic COGS and ending inventory calculations",
               "Testing: Verify calculations update correctly when methods change"
             ],
             callout: {
@@ -640,7 +593,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
               "Integration test: Change dropdown selections and verify all calculations update",
               "Error checking: Test with edge cases and invalid inputs",
               "Performance check: Ensure model calculates quickly with realistic data sizes",
-              "Milestone 2 checkpoint: Review criteria and assess completion"
+              "Milestone 2 checkpoint: Dynamic selection feature implemented"
             ]
           }
         ],
@@ -654,7 +607,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
       },
       {
         day: 7,
-        title: "Ratio & Visualization",
+        title: "Ratio & Visualization: Inventory Turnover and COGS Impact",
         focus: "Calculate inventory turnover ratio and create impact visualizations",
         duration: "45 minutes",
         activities: [
@@ -685,10 +638,10 @@ export const unit07LessonPlan: UnitLessonPlan = {
             duration: "15 minutes",
             description: "Build Excel formulas for automated turnover ratio calculations",
             details: [
-              "Calculate turnover ratio for both FIFO and LIFO methods",
+              "Calculate turnover ratio for all four inventory methods",
               "Show how method selection affects ratio results",
               "Build dynamic formulas that update with dropdown method changes",
-              "Compare ratios: Analyze difference between FIFO and LIFO turnover rates"
+              "Compare ratios: Analyze difference between method turnover rates"
             ]
           },
           {
@@ -696,7 +649,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
             duration: "15 minutes",
             description: "Create charts showing method impact on Cost of Goods Sold",
             details: [
-              "Chart creation: Column chart comparing FIFO vs. LIFO COGS by period",
+              "Chart creation: Column chart comparing COGS by method",
               "Visualization options: Student choice of chart style (column, line, waterfall)",
               "Professional formatting: Clean titles, axis labels, legend placement",
               "Business storytelling: Charts that communicate impact clearly to executives"
@@ -724,135 +677,156 @@ export const unit07LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "PBL Milestone 1: Project Definition",
-        focus: "Definition, data inventory, workbook skeleton",
-        duration: "55 minutes",
+        title: "Dress Rehearsal: One Shared Inventory Dataset, One Shared Workbook",
+        focus: "Calculate inventory turnover ratio, chart COGS impact, create visualizations",
+        duration: "45 minutes",
         activities: [
           {
-            name: "Project Brief Setup",
-            duration: "12 minutes",
-            description: "Define problem, scope, stakeholders, and success metrics",
+            name: "Shared Dataset Practice",
+            duration: "15 minutes",
+            description: "Work with a common inventory dataset to ensure all teams can produce consistent results",
             details: [
-              "Problem statement aligned to asset and inventory challenges",
-              "Scope and constraints clearly stated (time, data, tools)",
-              "Stakeholders and decision makers identified",
-              "Success metrics measurable and relevant to business goals"
+              "All teams use the same teacher-provided inventory dataset",
+              "Calculate COGS and ending inventory using all four methods",
+              "Verify results match expected answers",
+              "Build inventory turnover ratio calculation"
+            ]
+          },
+          {
+            name: "COGS Impact Charting",
+            duration: "15 minutes",
+            description: "Create professional visualizations comparing method impacts",
+            details: [
+              "Chart COGS under each method side by side",
+              "Chart ending inventory under each method side by side",
+              "Add professional formatting and clear labels",
+              "Interpret what the charts reveal about method selection"
             ],
             callout: {
               type: "important",
-              title: "Why Definition Matters",
-              content: "Clarity up front reduces rework and increases trust",
+              title: "Visualization Best Practices",
+              content: "Executive audiences need clear, actionable visuals",
               items: [
-                "Executives expect precise scope and decision criteria",
-                "Good definitions speed up model building and review",
-                "Success metrics anchor the dashboard and final story",
-                "Stakeholders guide what to show and what to hide"
+                "Use consistent color coding across all charts",
+                "Include clear titles and axis labels",
+                "Add data labels for key values",
+                "Highlight the method recommendation visually"
               ]
             }
           },
           {
-            name: "Data Inventory & Sources",
-            duration: "15 minutes",
-            description: "Select dataset (g1–g6) and define file naming conventions",
+            name: "Workbook Polish",
+            duration: "10 minutes",
+            description: "Finalize the shared workbook for professional presentation",
             details: [
-              "Choose one group dataset and log data dictionary",
-              "Establish file naming: unit07-teamX-asset-inventory-v1.xlsx",
-              "Note refresh cadence and data validity checks",
-              "Plan for data validation and audit columns in Excel"
+              "Check all formulas for accuracy",
+              "Ensure consistent formatting across all sheets",
+              "Add navigation notes for non-technical users",
+              "Test dynamic method selection one final time"
             ]
           },
           {
-            name: "Workbook Skeleton",
-            duration: "20 minutes",
-            description: "Create tabs: Inputs, SLN, DDB, FIFO/LIFO, Dashboard, Checks",
+            name: "Preview Day 9",
+            duration: "5 minutes",
+            description: "Set expectations for group project kickoff",
             details: [
-              "Add placeholders and brief tab notes for each sheet",
-              "List key formulas to be implemented for each method",
-              "Reserve space for method switching controls and outputs",
-              "Add a Checks sheet for validations and error flags"
-            ]
-          },
-          {
-            name: "Risks & Assumptions",
-            duration: "8 minutes",
-            description: "Document assumptions and 2–3 mitigation steps",
-            details: [
-              "Common risks: missing fields, negative costs, stale dates",
-              "Mitigation: validation rules, IFERROR guards, review checklist",
-              "Owner: assign who updates data and who reviews",
-              "Evidence: brief + workbook skeleton saved"
+              "Tomorrow: New business, new inventory data, same workbook logic",
+              "Teams will apply everything learned to a fresh dataset",
+              "Begin thinking about strategic rationale for method selection"
             ]
           }
         ],
         materials: [
-          "Project brief template",
-          "Dataset links (g1–g6) in Resources",
-          "Workbook skeleton example",
-          "Validation checklist (required fields, ranges, dates)"
+          "Shared rehearsal inventory dataset",
+          "Chart creation guide",
+          "Sample visualization templates",
+          "Workbook verification checklist"
         ]
       },
       {
         day: 9,
-        title: "PBL Milestone 2: Prototype + Rehearsal",
-        focus: "Prototype with method switching, validations, peer feedback",
-        duration: "80 minutes",
+        title: "Group Project Kickoff: New Business, New Inventory Data, Same Workbook Logic",
+        focus: "Outline strategic rationale, draft written brief, peer critique",
+        duration: "45 minutes",
         activities: [
           {
-            name: "Prototype Build",
-            duration: "40 minutes",
-            description: "Implement SLN/DDB and FIFO/LIFO with dynamic switching",
-            details: [
-              "Add method dropdowns and INDEX/MATCH logic",
-              "Complete core formulas and verify against small test cases",
-              "Add validation rules and conditional formatting checks",
-              "Log test scenarios and results in a Test Summary sheet"
-            ]
-          },
-          {
-            name: "Rehearsal + Peer Critique",
-            duration: "30 minutes",
-            description: "5–6 minute rehearsal with structured peer feedback",
-            details: [
-              "Run through the story: problem → analysis → recommendation",
-              "Demonstrate switching and explain business impact",
-              "Collect feedback by rubric category (technical, rationale, clarity)",
-              "Identify top 2 changes to apply before Day 10"
-            ]
-          },
-          {
-            name: "Revise & Lock",
+            name: "New Dataset Introduction",
             duration: "10 minutes",
-            description: "Apply changes and finalize prototype for presentation",
+            description: "Each group receives a unique inventory dataset for a new business",
             details: [
-              "Fix any formula or validation issues",
-              "Polish dashboard labels and numbers",
-              "Export/share final prototype paths with team and teacher",
-              "Confirm presentation roles and timing"
+              "Distribute group-specific inventory datasets",
+              "Teams review new data and identify inventory characteristics",
+              "Confirm workbook structure matches rehearsal format",
+              "Set expectations for final deliverables"
+            ]
+          },
+          {
+            name: "Strategic Rationale Development",
+            duration: "15 minutes",
+            description: "Develop the business case for inventory method selection",
+            details: [
+              "Analyze new dataset: What type of inventory? What industry?",
+              "Evaluate which method best fits this business context",
+              "Consider tax implications, cash flow, and reporting objectives",
+              "Draft written brief with supporting analysis"
+            ],
+            callout: {
+              type: "tip",
+              title: "Building a Strong Recommendation",
+              content: "Executive recommendations need evidence, not just opinion",
+              items: [
+                "Start with a clear claim: 'We recommend [method] because...'",
+                "Support with COGS and ending inventory calculations",
+                "Include inventory turnover ratio analysis",
+                "Address potential risks or limitations of the chosen method"
+              ]
+            }
+          },
+          {
+            name: "Peer Critique Session",
+            duration: "15 minutes",
+            description: "Exchange draft briefs and provide structured feedback",
+            details: [
+              "Teams swap advisory brief drafts",
+              "Use peer critique form to evaluate clarity, evidence, and professionalism",
+              "Provide specific, actionable feedback",
+              "Identify top 2 improvements to apply before Day 10"
+            ]
+          },
+          {
+            name: "Revision Planning",
+            duration: "5 minutes",
+            description: "Plan final revisions based on peer feedback",
+            details: [
+              "Review peer feedback and prioritize changes",
+              "Assign revision tasks to team members",
+              "Set timeline for completing final deliverables",
+              "Preview Day 10: Final presentation to executive panel"
             ]
           }
         ],
         materials: [
-          "Peer critique forms (rubric-aligned)",
-          "Validation checklist and Test Summary template",
-          "Presentation outline (Problem/Analysis/Recommendation/Q&A)",
-          "Dataset links (same g1–g6 as Day 8)"
+          "Group-specific inventory datasets",
+          "Brief outline template",
+          "Peer critique form",
+          "Recommendation structure guide"
         ]
       },
       {
         day: 10,
-        title: "PBL Milestone 3: Presentations + Peer Review",
-        focus: "Team presentations, rubric‑aligned peer review, reflection",
+        title: "Final Presentation: Defend Ending Inventory, Method Choice, and Business Recommendation",
+        focus: "Deliver advisory brief + pitch to executive panel",
         duration: "45 minutes",
         activities: [
           {
             name: "Presentation Flow",
-            duration: "40 minutes",
-            description: "5 min setup; Six groups × ~5 min; 5 min wrap",
+            duration: "35 minutes",
+            description: "Teams deliver 5-minute pitches to executive panel",
             details: [
               "Presenter order and timeboxing posted",
-              "Each team: 4–5 minute presentation + brief Q&A",
-              "Audience completes rubric‑aligned peer critique",
-              "Wrap: collect files and feedback; outline next steps"
+              "Each team: 4-5 minute presentation + brief Q&A",
+              "Audience completes rubric-aligned peer critique",
+              "Panel asks questions about strategic rationale and method choice"
             ],
             callout: {
               type: "important",
@@ -861,18 +835,17 @@ export const unit07LessonPlan: UnitLessonPlan = {
               items: [
                 "Technical Accuracy — 50%",
                 "Strategic Rationale — 20%",
-                "Communication & Clarity — 15%",
-                "Time Management — 10%",
-                "Q&A Readiness — 5%"
+                "Pitch Delivery — 15%",
+                "Responsiveness to Critique — 15%"
               ]
             }
           },
           {
-            name: "Post‑Presentation Reflection",
-            duration: "5 minutes",
+            name: "Post-Presentation Reflection",
+            duration: "10 minutes",
             description: "Individual reflection and file submission",
             details: [
-              "Submit final model, slides, and peer reviews",
+              "Submit final advisory brief, Excel model, and peer reviews",
               "Reflect on strengths, improvements, and next steps",
               "Record two actions to improve professional readiness",
               "Confirm portfolio artifacts are complete"
@@ -883,7 +856,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
           "Peer critique forms (rubric categories)",
           "Presentation timing sheet and order list",
           "Submission checklist",
-          "Portfolio reflection prompts"
+          "Portfolio reflection prompts",
+          "Executive feedback sheet"
         ]
       }
     ]
@@ -895,8 +869,8 @@ export const unit07LessonPlan: UnitLessonPlan = {
       category: "formative",
       title: "Formative Assessment Strategies",
       strategies: [
-        "Daily Excel checkpoint: Quick verification of formula accuracy and functionality",
-        "Peer formula review: Teams validate each other's depreciation and inventory calculations",
+        "Daily Excel checkpoint: Quick verification of inventory calculation accuracy",
+        "Peer formula review: Teams validate each other's COGS and ending inventory calculations",
         "Method selection justification: Brief written rationale for strategic choices",
         "Progress conferences: 5-minute teacher check-ins with each team on Days 3, 6, and 8",
         "Strategic thinking exit tickets: Quick assessment of business rationale understanding"
@@ -910,7 +884,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
         "Strategic feedback: Questions to deepen business rationale and method selection logic",
         "Presentation feedback: Actionable suggestions for professional communication improvement",
         "Peer feedback: Structured protocols for constructive critique of analysis and presentation",
-        "Board feedback: Authentic business perspective on strategic recommendations and professional readiness"
+        "Executive panel feedback: Authentic business perspective on strategic recommendations"
       ]
     }
   ],
@@ -922,7 +896,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
       title: "For Struggling Students",
       strategies: [
         "Formula templates: Pre-built Excel structures with guided parameter entry",
-        "Step-by-step calculation guides: Visual walkthroughs for depreciation and inventory methods",
+        "Step-by-step calculation guides: Visual walkthroughs for all four inventory methods",
         "Simplified datasets: Reduced complexity while maintaining authentic business context",
         "Peer tutoring: Pairing with students strong in Excel or business concepts",
         "Alternative assessment: Oral presentation option with reduced Excel complexity requirements"
@@ -932,10 +906,10 @@ export const unit07LessonPlan: UnitLessonPlan = {
       audience: "advanced",
       title: "For Advanced Students",
       strategies: [
-        "Advanced Excel features: Explore MACRS depreciation and sensitivity analysis capabilities",
-        "Complex scenarios: Multiple asset classes and inventory categories in single model",
+        "Advanced Excel features: Explore LIFO reserve and tax implications as extension activity",
+        "Complex scenarios: Multiple inventory categories and sensitivity analysis on purchase timing",
         "Leadership roles: Facilitate team strategic discussions and mentor struggling peers",
-        "Extension analysis: Research industry-specific practices and regulatory requirements",
+        "Extension analysis: Research industry-specific inventory practices and regulatory requirements",
         "Presentation enhancement: Develop sophisticated visual aids and executive summary documents"
       ]
     },
@@ -943,7 +917,7 @@ export const unit07LessonPlan: UnitLessonPlan = {
       audience: "ell",
       title: "For English Language Learners",
       strategies: [
-        "Business vocabulary support: Glossary of depreciation and inventory terms with visual aids",
+        "Business vocabulary support: Glossary of inventory terms with visual aids and translations",
         "Calculation emphasis: Focus on quantitative skills while building language gradually",
         "Collaborative support: Mixed-language team structures with peer translation assistance",
         "Visual learning aids: Charts, diagrams, and flowcharts to support conceptual understanding",
@@ -958,10 +932,10 @@ export const unit07LessonPlan: UnitLessonPlan = {
       category: "technology",
       title: "Technology Requirements",
       items: [
-        { name: "Hardware: 1:1 laptops with Excel 365 or 2019+ including Analysis ToolPak" },
-        { name: "Software: Microsoft Excel with array formula capabilities and advanced charting" },
-        { name: "Internet: For guest auditor presentation and resource access" },
-        { name: "Presentation: Projector/smart board for Board presentation setup" },
+        { name: "Hardware: 1:1 laptops with Excel 365 or 2019+" },
+        { name: "Software: Microsoft Excel with advanced function capabilities and charting" },
+        { name: "Internet: For resource access and research" },
+        { name: "Presentation: Projector/smart board for executive presentation setup" },
         { name: "Audio/Video: Recording capability for presentation portfolio documentation" }
       ]
     },
@@ -969,21 +943,20 @@ export const unit07LessonPlan: UnitLessonPlan = {
       category: "instructional",
       title: "Instructional Materials",
       items: [
-        { name: "Asset and Inventory Dataset", link: "../datasets/unit07-asset-inventory-data.xlsx" },
-        { name: "SLN/DDB Function Guide", link: "../excel-instruction/depreciation-functions-guide.pdf" },
-        { name: "Array Formula Tutorial", link: "../excel-instruction/inventory-array-formulas.pdf" },
-        { name: "Advisory Brief Template", link: "../templates/board-advisory-brief-template.docx" },
-        { name: "Board Presentation Rubric", link: "../assessment-rubrics/board-presentation-rubric.html" }
+        { name: "Inventory Dataset", link: "/resources/unit07-inventory-valuation-practice.csv" },
+        { name: "Unit 7 Excel Template with Inventory Functions", link: "/resources/unit07-template.xlsx" },
+        { name: "FIFO/LIFO Calculation Worksheets", link: "/resources/inventory-worksheets.pdf" },
+        { name: "Advisory Brief Outline Template", link: "/resources/advisory-brief-template.docx" },
+        { name: "Peer Critique Rubric", link: "/resources/peer-critique-rubric.pdf" }
       ]
     },
     {
       category: "external",
       title: "External Resources",
       items: [
-        { name: "Guest Auditor: Local CPA firm partner to present entry event case study" },
-        { name: "Board Panel: Business leaders, accountants, and executives for final presentations" },
-        { name: "Industry Examples: Real asset and inventory data from local manufacturing or retail businesses" },
-        { name: "Professional Networks: Chamber of Commerce members and SCORE mentors for authentic feedback" }
+        { name: "Executive Panel: Business leaders, accountants, and executives for final presentations" },
+        { name: "Industry Examples: Real inventory data from local retail or manufacturing businesses" },
+        { name: "Professional Networks: Chamber of Commerce members for authentic feedback" }
       ]
     }
   ],
@@ -991,25 +964,26 @@ export const unit07LessonPlan: UnitLessonPlan = {
   // Reflection
   reflection: {
     questions: [
-      "Did students demonstrate mastery of both depreciation and inventory calculation methods?",
-      "How effectively did the Board presentation format assess strategic business thinking?",
-      "Were students able to connect quantitative analysis to strategic business recommendations?",
+      "Did students demonstrate mastery of all four inventory valuation methods?",
+      "How effectively did the executive presentation format assess strategic business thinking?",
+      "Were students able to connect quantitative COGS analysis to strategic business recommendations?",
       "What differentiation strategies were most effective for diverse learners?",
-      "How well did the auditor entry event establish authentic context and engagement?",
+      "How well did Sarah's entry event establish authentic context and engagement?",
       "Did the dynamic Excel models demonstrate appropriate technical complexity for Grade 12 students?"
     ],
     dataCollection: [
       "Technical Accuracy: Analysis of Excel model functionality and calculation correctness",
       "Strategic Thinking: Evaluation of advisory brief quality and business rationale strength",
-      "Presentation Skills: Board panel feedback on professional communication and confidence",
+      "Presentation Skills: Executive panel feedback on professional communication and confidence",
       "Student Feedback: Exit survey on engagement, learning, and unit effectiveness",
       "Peer Assessment: Analysis of peer feedback quality and collaborative learning effectiveness"
     ],
     nextUnitPrep: [
       "Archive exemplary Excel models and advisory briefs for future reference",
       "Document common technical errors for targeted instruction improvement",
-      "Collect Board panel suggestions for industry context and presentation format refinement",
-      "Prepare integration materials connecting asset/inventory models to Unit 8 startup financial model",
+      "Collect executive panel suggestions for industry context and presentation format refinement",
+      "Prepare materials connecting inventory accounting to Unit 8 fixed assets and depreciation",
       "Identify students ready for advanced financial modeling challenges in capstone project"
     ]
   }
+}

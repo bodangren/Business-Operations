@@ -9,7 +9,7 @@ const unitPages: Array<{ title: string; href: string; id: UnitId }> = [
   { title: "Unit 4: Data-Driven Café", href: "/student/unit04", id: "unit04" },
   { title: "Unit 5: PayDay Simulator", href: "/student/unit05", id: "unit05" },
   { title: "Unit 6: PriceLab Challenge", href: "/student/unit06", id: "unit06" },
-  { title: "Unit 7: Inventory Tracker & Valuation", href: "/student/unit07", id: "unit07" },
+  { title: "Unit 7: Inventory Accounting", href: "/student/unit07", id: "unit07" },
   { title: "Unit 8: Fixed Assets and Depreciation", href: "/student/unit08", id: "unit08" },
 ]
 

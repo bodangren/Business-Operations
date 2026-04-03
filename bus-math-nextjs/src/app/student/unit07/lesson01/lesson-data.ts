@@ -1,4 +1,4 @@
-// Inventory Tracker & Valuation, Lesson 1 data - extracted from MCP curriculum database
+// Inventory Accounting, Lesson 1 data - extracted from MCP curriculum database
 export const lesson01Data = {
   id: "mds5x99htbxib3tjkf",
   title: "Unit Launch: Sarah's Inventory Problem",
@@ -26,7 +26,7 @@ export const lesson01Data = {
 
 export const unit07Data = {
   id: "mdrhlhv4ov691yonkpi",
-  title: "Inventory Tracker & Valuation",
+  title: "Inventory Accounting",
   sequence: 7
 }
 

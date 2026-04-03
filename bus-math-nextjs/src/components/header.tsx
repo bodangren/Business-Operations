@@ -20,7 +20,7 @@ const studentUnits = [
   { href: "/student/unit04", title: "Unit 4: Data-Driven Café", description: "Statistical analysis and forecasting for operations" },
   { href: "/student/unit05", title: "Unit 5: PayDay Simulator", description: "Payroll systems with tax calculations and cash flow" },
   { href: "/student/unit06", title: "Unit 6: PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing" },
-  { href: "/student/unit07", title: "Unit 7: Inventory Tracker & Valuation", description: "Inventory valuation methods and management" },
+  { href: "/student/unit07", title: "Unit 7: Inventory Accounting", description: "Inventory valuation methods and strategic decision-making" },
   { href: "/student/unit08", title: "Unit 8: Fixed Assets and Depreciation", description: "Depreciation methods and fixed asset tracking" },
 ]
 
@@ -31,7 +31,7 @@ const teacherUnits = [
   { href: "/teacher/unit04", title: "Unit 4: Data-Driven Café", description: "Teacher lesson plans and resources" },
   { href: "/teacher/unit05", title: "Unit 5: PayDay Simulator", description: "Teacher lesson plans and resources" },
   { href: "/teacher/unit06", title: "Unit 6: PriceLab Challenge", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit07", title: "Unit 7: Inventory Tracker & Valuation", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit07", title: "Unit 7: Inventory Accounting", description: "Teacher lesson plans and resources" },
   { href: "/teacher/unit08", title: "Unit 8: Fixed Assets and Depreciation", description: "Teacher lesson plans and resources" },
 ]
 

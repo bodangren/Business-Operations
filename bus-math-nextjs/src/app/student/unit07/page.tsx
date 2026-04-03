@@ -13,7 +13,7 @@ import { lesson10Data } from "./lesson10/lesson-data"
 
 const unit07Data = {
   id: "mdrhlhv4ov691yonkpi",
-  title: "Unit 7: Inventory Tracker & Valuation",
+  title: "Unit 7: Inventory Accounting",
   description: "How do we build, test, and defend a trustworthy ending inventory number?",
   rationale: "Sarah can count what is on the shelf, but she cannot clearly defend how ending inventory was built. This unit turns that founder problem into a professional inventory workflow.",
   sequence: 7,

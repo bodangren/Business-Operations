@@ -98,8 +98,8 @@ export default function TeacherDashboard() {
               <div className="p-2 bg-muted rounded">Unit 4: Data-Driven Café</div>
               <div className="p-2 bg-muted rounded">Unit 5: PayDay Simulator</div>
               <div className="p-2 bg-muted rounded">Unit 6: PriceLab Challenge</div>
-              <div className="p-2 bg-muted rounded">Unit 7: Asset Tracker</div>
-              <div className="p-2 bg-muted rounded">Unit 8: Integrated Model</div>
+              <div className="p-2 bg-muted rounded">Unit 7: Inventory Accounting</div>
+              <div className="p-2 bg-muted rounded">Unit 8: Fixed Assets & Depreciation</div>
             </div>
           </div>
           

@@ -100,7 +100,7 @@ export default function TeacherLayout({
               <Link href="/teacher/unit07">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
-                  Unit 7: Inventory Tracker & Valuation
+                  Unit 7: Inventory Accounting
                 </Button>
               </Link>
               <Link href="/teacher/unit08">

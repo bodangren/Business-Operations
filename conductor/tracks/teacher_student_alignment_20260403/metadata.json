@@ -1,7 +1,7 @@
 {
   "track_id": "teacher_student_alignment_20260403",
   "type": "feature",
-  "status": "new",
+  "status": "done",
   "created_at": "2026-04-03T00:00:00Z",
   "updated_at": "2026-04-03T00:00:00Z",
   "description": "Align teacher-facing content, labels, and planning assets with the shipped student curriculum"
