@@ -8,7 +8,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 
 ## Active Tracks
 
-- [ ] **Track: Unit 08 - Fixed assets and depreciation**
+- [x] **Track: Unit 08 - Fixed assets and depreciation**
   *Link: [./tracks/unit08_20260330/](./tracks/unit08_20260330/)*
 
 ## Completed Tracks
