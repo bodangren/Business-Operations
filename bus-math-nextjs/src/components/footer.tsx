@@ -40,16 +40,10 @@ export function Footer() {
                 Glossary
               </Link>
               <Link 
-                href="/debug" 
+                href="/backmatter/index" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Component Debugging
-              </Link>
-              <Link 
-                href="/search" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Search
+                Subject Index
               </Link>
             </nav>
           </div>
@@ -71,10 +65,10 @@ export function Footer() {
                 Backward Design
               </Link>
               <Link 
-                href="/teacher" 
+                href="/backmatter/index" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Teacher Dashboard
+                Subject Index
               </Link>
             </nav>
           </div>

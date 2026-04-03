@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Calculator, CheckSquare, Dice6, TrendingUp, Search, BarChart3 } from "lucide-react"
+import { BookOpen, Calculator, CheckSquare, Dice6, TrendingUp, BarChart3 } from "lucide-react"
 
 const units = [
   {
@@ -10,56 +10,56 @@ const units = [
     description: "Build a comprehensive accounting ledger system in Excel",
     duration: "2-3 weeks",
     difficulty: "Beginner",
-    href: "/units/unit01-smart-ledger"
+    href: "/student/unit01"
   },
   {
     title: "Unit 2: Month-End Wizard",
     description: "Automate month-end closing procedures and reports",
     duration: "2-3 weeks", 
     difficulty: "Intermediate",
-    href: "/units/unit02-month-end-wizard"
+    href: "/student/unit02"
   },
   {
-    title: "Unit 3: Three Statement Storyboard",
+    title: "Unit 3: Three-Statement Storyboard",
     description: "Create integrated financial statements that tell a story",
     duration: "3-4 weeks",
     difficulty: "Intermediate", 
-    href: "/units/unit03-three-statement-storyboard"
+    href: "/student/unit03"
   },
   {
-    title: "Unit 4: Data-Driven Cafe",
-    description: "Analyze cafe operations using data visualization",
+    title: "Unit 4: Data-Driven Café",
+    description: "Analyze café operations using data visualization",
     duration: "2-3 weeks",
     difficulty: "Intermediate",
-    href: "/units/unit04-data-driven-cafe"
+    href: "/student/unit04"
   },
   {
-    title: "Unit 5: Payday Simulator", 
+    title: "Unit 5: PayDay Simulator", 
     description: "Model payroll systems and employee compensation",
     duration: "2-3 weeks",
     difficulty: "Advanced",
-    href: "/units/unit05-payday-simulator"
+    href: "/student/unit05"
   },
   {
     title: "Unit 6: PriceLab Challenge",
     description: "Experiment with pricing strategies and market analysis", 
     duration: "3-4 weeks",
     difficulty: "Advanced",
-    href: "/units/unit06-pricelab-challenge"
+    href: "/student/unit06"
   },
   {
-    title: "Unit 7: Asset Inventory Tracker",
+    title: "Unit 7: Asset & Inventory Tracker",
     description: "Build comprehensive asset management systems",
     duration: "2-3 weeks", 
     difficulty: "Advanced",
-    href: "/units/unit07-asset-inventory-tracker"
+    href: "/student/unit07"
   },
   {
-    title: "Unit 8: Integrated Model Sprint",
+    title: "Unit 8: Year-1 Startup Model",
     description: "Combine all skills in a comprehensive business model",
     duration: "3-4 weeks",
     difficulty: "Expert", 
-    href: "/units/unit08-integrated-model-sprint"
+    href: "/student/unit08"
   }
 ]
 
@@ -90,9 +90,9 @@ const features = [
     description: "Monitor your learning journey and identify areas to review"
   },
   {
-    icon: Search,
-    title: "Smart Search",
-    description: "Find concepts, formulas, and examples instantly"
+    icon: BarChart3,
+    title: "Bilingual Glossary & Index",
+    description: "Study key terms in English and Chinese, find any page by keyword"
   }
 ]
 
@@ -225,9 +225,6 @@ export default function Home() {
                   </Link>
                   <Link href="/backmatter/index" className="block text-sm hover:text-foreground transition-colors p-2 rounded hover:bg-muted/50">
                     Subject Index
-                  </Link>
-                  <Link href="/backmatter/bibliography" className="block text-sm hover:text-foreground transition-colors p-2 rounded hover:bg-muted/50">
-                    Bibliography
                   </Link>
                 </CardContent>
               </Card>
