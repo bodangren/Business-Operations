@@ -8,7 +8,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 
 ## Active Tracks
 
-- [ ] **Track: Reference system — bilingual glossary, index, and unit vocabulary lists** (in progress — Phase 1 complete) (in progress - Phase 1 complete)
+- [ ] **Track: Reference system — bilingual glossary, index, and unit vocabulary lists** (in progress — Phase 3 complete)
   *Link: [./tracks/reference_system_20260403/](./tracks/reference_system_20260403/)*
 - [ ] **Track: Navigation and shell cleanup**
   *Link: [./tracks/navigation_shell_cleanup_20260403/](./tracks/navigation_shell_cleanup_20260403/)*

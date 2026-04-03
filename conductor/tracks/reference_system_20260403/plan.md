@@ -41,21 +41,24 @@
   - Verify English definitions match student-facing lesson language
 
 ### Phase 3: Glossary and Index Routes
-- [ ] 3.1 Create `/backmatter/glossary`
-  - Add alphabetical navigation
-  - Add keyword filter
-  - Add unit filter
-  - Add topic filter
-- [ ] 3.2 Add glossary display controls for the four study fields
-  - Let the user choose visible primary and secondary fields from `term_en`, `term_zh`, `def_en`, `def_zh`
-  - Choose a sensible default view
-- [ ] 3.3 Create `/backmatter/index`
-  - Build a static record list from glossary terms and page metadata
-  - Add a client-side keyword filter
-  - Add category or source-type labels where useful
-- [ ] 3.4 Add reusable glossary and index UI helpers
-  - Keep the components small and static-friendly
-  - Avoid coupling them to future practice-hub logic
+- [x] 3.1 Create `/backmatter/glossary`
+  - Alphabetical letter navigation with active letter filtering
+  - Keyword search across term_en, term_zh, def_en, def_zh, and synonyms
+  - Unit filter dropdown (All units + unit01-unit08)
+  - Topic filter dropdown (All topics + 18 topic tags)
+- [x] 3.2 Add glossary display controls for the four study fields
+  - Primary and secondary field selectors from term_en, term_zh, def_en, def_zh
+  - Default view: term_en (primary) + def_en (secondary)
+  - Swapping logic prevents duplicate field selection
+- [x] 3.3 Create `/backmatter/index`
+  - Static record list generated from glossary terms, unit pages, lesson pages, and extra pages
+  - Client-side keyword filter across label and description
+  - Category filter with color-coded badges (glossary, unit, lesson, practice-test, capstone, frontmatter, backmatter)
+- [x] 3.4 Add reusable glossary and index UI helpers
+  - GlossaryCard: displays entry with configurable primary/secondary fields, unit badges, topic badges
+  - GlossaryFilters: combines search, unit/topic filters, alphabetical nav, display controls, and entry grid
+  - IndexFilter: combines search, category filter, and clickable result list
+  - index-records.ts: generates IndexRecord[] from glossaryData and page metadata
 
 ### Phase 4: Unit Overview Integration
 - [ ] 4.1 Add vocabulary sections to student unit overview pages

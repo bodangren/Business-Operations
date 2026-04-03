@@ -1,9 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Search, Menu, Calculator, TrendingUp } from "lucide-react"
+import { Menu, Calculator, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
   NavigationMenu,
@@ -119,16 +118,6 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/capstone">
-                  {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
-                  }
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    Capstone
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
                 <Link href="/backmatter/glossary">
                   {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
                   }
@@ -139,28 +128,16 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/search">
+                <Link href="/backmatter/index">
                   {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
                   }
                   <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    Search
+                    Index
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center space-x-2">
-            <Input
-              type="search"
-              placeholder="Search textbook..."
-              className="w-64 border-border/50 bg-background/50 focus:bg-background transition-colors"
-            />
-            <Button size="sm" variant="outline" className="border-border/50 hover:bg-accent/50">
-              <Search className="h-4 w-4" />
-            </Button>
-          </div>
 
           {/* Mobile Menu */}
           <Sheet>
@@ -199,19 +176,7 @@ export function Header() {
                 
                 <Link href="/capstone" className="text-lg font-medium">Capstone</Link>
                 <Link href="/backmatter/glossary" className="text-lg font-medium">Glossary</Link>
-                <Link href="/search" className="text-lg font-medium">Search</Link>
-                
-                <div className="pt-4 border-t">
-                  <Input
-                    type="search"
-                    placeholder="Search textbook..."
-                    className="mb-2"
-                  />
-                  <Button size="sm" className="w-full">
-                    <Search className="h-4 w-4 mr-2" />
-                    Search
-                  </Button>
-                </div>
+                <Link href="/backmatter/index" className="text-lg font-medium">Index</Link>
               </div>
             </SheetContent>
           </Sheet>
