@@ -24,19 +24,19 @@
   - All passing
 
 ### Phase 2: Canonical Glossary Dataset
-- [ ] 2.1 Build the glossary records for Units 01-04
+- [x] 2.1 Build the glossary records for Units 01-04
   - Draft English definitions
   - Draft Chinese definitions
   - Add unit/topic tags
   - Deduplicate repeated accounting/statistics vocabulary
-- [ ] 2.2 Build the glossary records for Units 05-08
+- [x] 2.2 Build the glossary records for Units 05-08
   - Draft English definitions
   - Draft Chinese definitions
   - Add unit/topic tags
   - Deduplicate repeated Excel/business operations vocabulary
-- [ ] 2.3 Add cross-unit and capstone-relevant terms
+- [x] 2.3 Add cross-unit and capstone-relevant terms
   - Include common workbook, audit, recommendation, and business communication terms where needed
-- [ ] 2.4 Review bilingual quality and terminology consistency
+- [x] 2.4 Review bilingual quality and terminology consistency
   - Verify Chinese definitions are definitions, not just translated labels
   - Verify English definitions match student-facing lesson language
 
