@@ -100,13 +100,13 @@ export default function TeacherLayout({
               <Link href="/teacher/unit07">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
-                  Unit 7: Asset & Inventory Tracker
+                  Unit 7: Inventory Tracker & Valuation
                 </Button>
               </Link>
               <Link href="/teacher/unit08">
                 <Button variant="ghost" className="w-full justify-start text-sm">
                   <FileText className="mr-2 h-4 w-4" />
-                  Unit 8: Year-1 Startup Model
+                  Unit 8: Fixed Assets and Depreciation
                 </Button>
               </Link>
               

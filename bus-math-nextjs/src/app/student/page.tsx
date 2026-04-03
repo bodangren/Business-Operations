@@ -11,8 +11,8 @@ const units = [
   { number: "04", title: "Data-Driven Café", description: "Statistical analysis and forecasting for operations", href: "/student/unit04" },
   { number: "05", title: "PayDay Simulator", description: "Payroll systems with tax calculations and cash flow", href: "/student/unit05" },
   { number: "06", title: "PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing", href: "/student/unit06" },
-  { number: "07", title: "Asset & Inventory Tracker", description: "Depreciation methods and inventory valuation", href: "/student/unit07" },
-  { number: "08", title: "Year-1 Startup Model", description: "Integrated financial model with scenario analysis", href: "/student/unit08" },
+  { number: "07", title: "Inventory Tracker & Valuation", description: "Inventory valuation methods and management", href: "/student/unit07" },
+  { number: "08", title: "Fixed Assets and Depreciation", description: "Depreciation methods and fixed asset tracking", href: "/student/unit08" },
 ]
 
 export default function StudentHubPage() {

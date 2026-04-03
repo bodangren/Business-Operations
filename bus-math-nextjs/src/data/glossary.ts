@@ -776,7 +776,7 @@ export const glossaryData: GlossaryEntry[] = [
     term_en: "Gross Pay",
     term_zh: "应发工资",
     def_en: "Total earnings before any deductions are taken out, including regular wages, overtime, and tips.",
-    def_zh: "扣除任何费用前的总收入，包括正常工资、加班费和 tips。",
+    def_zh: "扣除任何费用前的总收入，包括正常工资、加班费和小费。",
     units: ["unit05"],
     topics: ["payroll", "accounting"],
     related: ["net-pay", "withholdings"],

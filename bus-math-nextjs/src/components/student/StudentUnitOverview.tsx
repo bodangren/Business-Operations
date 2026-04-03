@@ -112,7 +112,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
     8: {
       title: "Practice Test & Investor Readiness",
       description:
-        "Ready to prove your startup modeling mastery? Launch the Unit 8 practice test to rehearse VC evaluation criteria, integrated financial statements, scenario analysis, and investor-ready presentation standards with randomized questions from every Year-1 Startup Model lesson.",
+        "Ready to prove your depreciation mastery? Launch the Unit 8 practice test to rehearse fixed asset tracking, depreciation methods, asset register management, and professional presentation standards with randomized questions from every Fixed Assets and Depreciation lesson.",
       tip:
         "Tip: Complete Lesson 07 first so you can apply final QA checks, audit-readiness validation, and professional pitch polish while reviewing your answers."
     }

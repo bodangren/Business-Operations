@@ -19,14 +19,14 @@ export function Footer() {
               An interactive textbook for Grade 12 business mathematics with Excel integration
             </p>
             <p className="text-sm text-muted-foreground">
-              © 2025 Daniel Bodanske. All rights reserved.
+              © 2025–2026 Daniel Bodanske. All rights reserved.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="text-base font-medium">Quick Links</h4>
-            <nav className="flex flex-col space-y-2">
+            <nav aria-label="Quick links" className="flex flex-col space-y-2">
               <Link 
                 href="/frontmatter/preface" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -51,7 +51,7 @@ export function Footer() {
           {/* Teacher Resources */}
           <div className="space-y-3">
             <h4 className="text-base font-medium">Teacher Resources</h4>
-            <nav className="flex flex-col space-y-2">
+            <nav aria-label="Teacher resources" className="flex flex-col space-y-2">
               <Link 
                 href="/teacher/course-overview/pbl-methodology" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"

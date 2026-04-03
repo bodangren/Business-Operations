@@ -1,4 +1,4 @@
-// Asset & Inventory Tracker, Lesson 2 data - Inventory Cost Flow Foundations
+// Inventory Tracker & Valuation, Lesson 2 data - Inventory Cost Flow Foundations
 export const lesson02Data = {
   id: "mds5x99kx7ah9f1wjde",
   title: "Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS",
@@ -29,7 +29,7 @@ export const lesson02Data = {
 
 export const unit07Data = {
   id: "mdrhlhv4ov691yonkpi",
-  title: "Asset & Inventory Tracker",
+  title: "Inventory Tracker & Valuation",
   sequence: 7
 }
 

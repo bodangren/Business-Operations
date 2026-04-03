@@ -370,48 +370,6 @@ export const unit07LessonPlan: UnitLessonPlan = {
           "FIFO/LIFO function reference guide"
         ]
       },
-          {
-            name: "FIFO Calculation Workshop",
-            duration: "12 minutes",
-            description: "Hands-on practice with FIFO cost layer tracking",
-            details: [
-              "Demonstration: Track purchase layers and assign oldest costs to sales first",
-              "Guided practice: Calculate COGS and ending inventory for sample retail data",
-              "Build complete inventory schedule with cumulative layer tracking",
-              "Verify calculations manually to ensure understanding"
-            ]
-          },
-          {
-            name: "LIFO Calculation Workshop",
-            duration: "12 minutes",
-            description: "Implementation of LIFO using most recent cost layers",
-            details: [
-              "Demonstration: Same data as FIFO, but assign newest costs to COGS first",
-              "Show LIFO logic: each sale uses most recent purchase costs",
-              "Practice: Build LIFO schedule for same data to compare with FIFO",
-              "Analyze differences: FIFO vs. LIFO COGS and ending inventory values"
-            ]
-          },
-          {
-            name: "Method Comparison & Checkpoint",
-            duration: "6 minutes",
-            description: "Compare FIFO vs. LIFO results and check understanding",
-            details: [
-              "Side-by-side comparison: FIFO vs. LIFO schedules for same inventory",
-              "Discuss business implications: cash flow, taxes, financial reporting",
-              "Checkpoint quiz: Students calculate basic inventory values independently",
-              "Preview Day 3: How do we implement these calculations in Excel?"
-            ]
-          }
-        ],
-        materials: [
-          "Excel template with FIFO and LIFO calculation examples",
-          "Sample inventory data for practice calculations",
-          "Inventory schedule templates",
-          "Method comparison worksheet",
-          "FIFO/LIFO function reference guide"
-        ]
-      },
       {
         day: 3,
         title: "Inventory Methods Introduction",
@@ -1055,4 +1013,3 @@ export const unit07LessonPlan: UnitLessonPlan = {
       "Identify students ready for advanced financial modeling challenges in capstone project"
     ]
   }
-}

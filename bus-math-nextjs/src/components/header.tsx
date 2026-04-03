@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Menu, Calculator, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,8 +20,8 @@ const studentUnits = [
   { href: "/student/unit04", title: "Unit 4: Data-Driven Café", description: "Statistical analysis and forecasting for operations" },
   { href: "/student/unit05", title: "Unit 5: PayDay Simulator", description: "Payroll systems with tax calculations and cash flow" },
   { href: "/student/unit06", title: "Unit 6: PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing" },
-  { href: "/student/unit07", title: "Unit 7: Asset & Inventory Tracker", description: "Depreciation methods and inventory valuation" },
-  { href: "/student/unit08", title: "Unit 8: Year-1 Startup Model", description: "Integrated financial model with scenario analysis" },
+  { href: "/student/unit07", title: "Unit 7: Inventory Tracker & Valuation", description: "Inventory valuation methods and management" },
+  { href: "/student/unit08", title: "Unit 8: Fixed Assets and Depreciation", description: "Depreciation methods and fixed asset tracking" },
 ]
 
 const teacherUnits = [
@@ -31,8 +31,8 @@ const teacherUnits = [
   { href: "/teacher/unit04", title: "Unit 4: Data-Driven Café", description: "Teacher lesson plans and resources" },
   { href: "/teacher/unit05", title: "Unit 5: PayDay Simulator", description: "Teacher lesson plans and resources" },
   { href: "/teacher/unit06", title: "Unit 6: PriceLab Challenge", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit07", title: "Unit 7: Asset & Inventory Tracker", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit08", title: "Unit 8: Year-1 Startup Model", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit07", title: "Unit 7: Inventory Tracker & Valuation", description: "Teacher lesson plans and resources" },
+  { href: "/teacher/unit08", title: "Unit 8: Fixed Assets and Depreciation", description: "Teacher lesson plans and resources" },
 ]
 
 export function Header() {
@@ -118,23 +118,19 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/backmatter/glossary">
-                  {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
-                  }
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                <NavigationMenuLink asChild>
+                  <Link href="/backmatter/glossary" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                     Glossary
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/backmatter/index">
-                  {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
-                  }
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                <NavigationMenuLink asChild>
+                  <Link href="/backmatter/index" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                     Index
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -148,7 +144,9 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
-              <div className="flex flex-col space-y-4 mt-6">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <SheetDescription className="sr-only">Site navigation links</SheetDescription>
+              <nav aria-label="Mobile navigation" className="flex flex-col space-y-4 mt-6">
                 <Link href="/" className="text-lg font-medium">Home</Link>
                 <Link href="/frontmatter/preface" className="text-lg font-medium">Preface</Link>
                 
@@ -174,10 +172,9 @@ export function Header() {
                   </div>
                 </div>
                 
-                <Link href="/capstone" className="text-lg font-medium">Capstone</Link>
                 <Link href="/backmatter/glossary" className="text-lg font-medium">Glossary</Link>
                 <Link href="/backmatter/index" className="text-lg font-medium">Index</Link>
-              </div>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>

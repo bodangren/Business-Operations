@@ -1315,11 +1315,11 @@ export const unit06ProjectFramework: UnitProjectFramework = {
 }
 
 // ========================================
-// UNIT 7: ASSET & INVENTORY TRACKER
+// UNIT 7: INVENTORY TRACKER & VALUATION
 // ========================================
 export const unit07ProjectFramework: UnitProjectFramework = {
   unitId: "unit07",
-  unitTitle: "Asset & Inventory Tracker",
+  unitTitle: "Inventory Tracker & Valuation",
   
   performanceTask: {
     title: "Advisory Brief + Board Presentation",
@@ -1456,7 +1456,7 @@ export const unit07ProjectFramework: UnitProjectFramework = {
   resources: {
     templates: [
       {
-        title: "Asset & Inventory Tracker Excel Template",
+        title: "Inventory Tracker & Valuation Excel Template",
         description: "Comprehensive framework with depreciation and inventory calculations",
         type: "excel-template",
         required: true,
@@ -1527,11 +1527,11 @@ export const unit07ProjectFramework: UnitProjectFramework = {
 }
 
 // ========================================
-// UNIT 8: YEAR-1 STARTUP MODEL
+// UNIT 8: FIXED ASSETS AND DEPRECIATION
 // ========================================
 export const unit08ProjectFramework: UnitProjectFramework = {
   unitId: "unit08",
-  unitTitle: "Year-1 Startup Model",
+  unitTitle: "Fixed Assets and Depreciation",
   
   performanceTask: {
     title: "VC Pitch + Live Demo",

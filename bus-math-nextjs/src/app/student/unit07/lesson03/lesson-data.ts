@@ -1,4 +1,4 @@
-// Asset & Inventory Tracker, Lesson 3 data - FIFO and LIFO Methods
+// Inventory Tracker & Valuation, Lesson 3 data - FIFO and LIFO Methods
 export const lesson03Data = {
   id: "mds5x99ma27hcfuzr0p",
   title: "FIFO and LIFO: Two Ways to Value the Same Inventory",
@@ -33,7 +33,7 @@ export const lesson03Data = {
 
 export const unit07Data = {
   id: "mdrhlhv4ov691yonkpi",
-  title: "Asset & Inventory Tracker",
+  title: "Inventory Tracker & Valuation",
   sequence: 7
 }
 

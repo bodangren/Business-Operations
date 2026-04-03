@@ -9,14 +9,11 @@ const unitPages: Array<{ title: string; href: string; id: UnitId }> = [
   { title: "Unit 4: Data-Driven Café", href: "/student/unit04", id: "unit04" },
   { title: "Unit 5: PayDay Simulator", href: "/student/unit05", id: "unit05" },
   { title: "Unit 6: PriceLab Challenge", href: "/student/unit06", id: "unit06" },
-  { title: "Unit 7: Asset & Inventory Tracker", href: "/student/unit07", id: "unit07" },
-  { title: "Unit 8: Year-1 Startup Model", href: "/student/unit08", id: "unit08" },
+  { title: "Unit 7: Inventory Tracker & Valuation", href: "/student/unit07", id: "unit07" },
+  { title: "Unit 8: Fixed Assets and Depreciation", href: "/student/unit08", id: "unit08" },
 ]
 
 const lessonPages: Array<{ title: string; href: string; unitId?: UnitId }> = [
-  { title: "Preface", href: "/frontmatter/preface" },
-  { title: "Acknowledgments", href: "/frontmatter/acknowledgments" },
-  { title: "Capstone Project", href: "/capstone" },
 ]
 
 const extraPages: Array<{
@@ -25,6 +22,24 @@ const extraPages: Array<{
   category: IndexRecord["category"]
   description?: string
 }> = [
+  {
+    label: "Preface",
+    href: "/frontmatter/preface",
+    category: "frontmatter",
+    description: "Course introduction and reading guide",
+  },
+  {
+    label: "Acknowledgments",
+    href: "/frontmatter/acknowledgments",
+    category: "frontmatter",
+    description: "Credits and acknowledgments",
+  },
+  {
+    label: "Capstone Project",
+    href: "/capstone",
+    category: "capstone",
+    description: "Year-end capstone project",
+  },
   {
     label: "Bilingual Glossary",
     href: "/backmatter/glossary",

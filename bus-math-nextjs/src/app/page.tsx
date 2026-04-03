@@ -48,15 +48,15 @@ const units = [
     href: "/student/unit06"
   },
   {
-    title: "Unit 7: Asset & Inventory Tracker",
-    description: "Build comprehensive asset management systems",
+    title: "Unit 7: Inventory Tracker & Valuation",
+    description: "Inventory valuation methods and management systems",
     duration: "2-3 weeks", 
     difficulty: "Advanced",
     href: "/student/unit07"
   },
   {
-    title: "Unit 8: Year-1 Startup Model",
-    description: "Combine all skills in a comprehensive business model",
+    title: "Unit 8: Fixed Assets and Depreciation",
+    description: "Depreciation methods and fixed asset tracking",
     duration: "3-4 weeks",
     difficulty: "Expert", 
     href: "/student/unit08"
