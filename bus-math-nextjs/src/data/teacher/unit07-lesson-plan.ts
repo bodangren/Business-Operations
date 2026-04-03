@@ -1,22 +1,21 @@
 import { UnitLessonPlan } from "@/types/lesson-plan"
 
 /*
- Component Usage Schedule (unit07, lessons 01–04 implemented)
- - VideoPlayer
- - ComprehensionCheck
- - FillInTheBlank
- - DragAndDrop
- - DepreciationMethodBuilder
- - InventoryFlowDiagram
- - InventoryManager
- - ReflectionJournal
+  Component Usage Schedule (unit07, lessons 01–04 implemented)
+  - VideoPlayer
+  - ComprehensionCheck
+  - FillInTheBlank
+  - DragAndDrop
+  - InventoryFlowDiagram
+  - InventoryManager
+  - ReflectionJournal
 */
 
 export const unit07LessonPlan: UnitLessonPlan = {
   unitNumber: 7,
-  unitTitle: "Asset & Inventory Tracker",
-  description: "Complete 10-day lesson plan focusing on depreciation and inventory valuation methods",
-  essentialQuestion: "Which depreciation and inventory methods best align with our cash‑flow and tax strategy?",
+  unitTitle: "Inventory Valuation & Management",
+  description: "Complete 10-day lesson plan focusing on inventory valuation methods and management",
+  essentialQuestion: "How do we build, test, and defend a trustworthy ending inventory number?",
   
   meta: {
     duration: "10 class periods (2 weeks)",
@@ -27,30 +26,32 @@ export const unit07LessonPlan: UnitLessonPlan = {
   // Stage 1: Desired Results
   objectives: {
     enduring: [
-      "Asset and inventory valuation methods directly impact cash flow, tax obligations, and business decision-making",
-      "Different depreciation methods (SLN vs. DDB) serve different strategic purposes for businesses",
-      "Inventory valuation methods (FIFO vs. LIFO) affect both reported profits and tax liabilities",
-      "Accurate asset tracking and inventory management are essential for business sustainability and investor confidence"
+      "Inventory valuation methods directly impact reported profits, tax obligations, and business decision-making",
+      "FIFO and LIFO produce different COGS and ending inventory values, especially when prices change",
+      "Accurate inventory management and tracking are essential for business sustainability and investor confidence",
+      "The inventory equation (Beginning + Purchases - COGS = Ending) must always reconcile"
     ],
     knowledge: [
       {
         category: "content",
         items: [
-          "Straight-Line (SLN) and Double-Declining Balance (DDB) depreciation methods and applications",
           "FIFO and LIFO inventory valuation principles and calculations",
+          "Weighted average cost method for homogeneous inventory",
+          "Specific identification for unique or high-value items",
           "Inventory Turnover Ratio calculation and business implications",
-          "Impact of depreciation and inventory methods on cash flow and tax planning",
-          "Asset lifecycle management and salvage value considerations"
+          "Impact of inventory methods on cash flow and tax planning",
+          "Physical inventory counts and shrinkage adjustments"
         ]
       },
       {
         category: "technical",
         items: [
-          "Excel SLN and DDB functions syntax and implementation",
-          "Array formulas for FIFO and LIFO layer calculations",
-          "Dynamic ratio calculations and automated updates",
-          "INDEX/MATCH logic for method selection dropdowns",
-          "Chart creation for inventory turnover and COGS visualization"
+          "FIFO and LIFO inventory valuation principles and calculations",
+          "Weighted average cost method for homogeneous inventory",
+          "Specific identification for unique or high-value items",
+          "Inventory Turnover Ratio calculation and business implications",
+          "Impact of inventory methods on cash flow and tax planning",
+          "Physical inventory counts and shrinkage adjustments"
         ]
       }
     ],
@@ -81,11 +82,11 @@ export const unit07LessonPlan: UnitLessonPlan = {
   // Stage 2: Assessment Evidence
   assessment: {
     performanceTask: {
-      title: "Board Advisory Brief + Pitch Presentation (Day 10)",
-      description: "5-minute pitch to Board of Directors panel recommending optimal depreciation and inventory methods",
-      scenario: "Teams present their analysis and recommendations to a panel of local business leaders, accountants, and auditors acting as a company's Board of Directors. The presentation must justify method selection based on cash flow and tax strategy.",
+      title: "Inventory Recommendation Brief + Pitch Presentation (Day 10)",
+      description: "5-minute pitch to Board of Directors panel recommending optimal inventory valuation method",
+      scenario: "Teams present their analysis and recommendations to a panel of local business leaders, accountants, and auditors acting as a company's Board of Directors. The presentation must justify inventory method selection based on business strategy and financial impact.",
       requirements: [
-        "Written advisory brief (2-3 pages) with clear method recommendations",
+        "Written advisory brief (2-3 pages) with clear inventory method recommendations",
         "5-minute live pitch presentation with supporting visuals",
         "Live Excel demonstration of dynamic method selection features",
         "Q&A response addressing Board questions about strategic rationale",
@@ -96,13 +97,13 @@ export const unit07LessonPlan: UnitLessonPlan = {
     milestones: [
       {
         day: 2,
-        title: "Basic Depreciation Schedule",
-        description: "Functional depreciation calculations using Excel SLN and DDB functions",
+        title: "Basic Inventory Schedule",
+        description: "Functional FIFO and LIFO calculations with layer tracking",
         criteria: [
-          "Accurate SLN depreciation schedule for 5-year asset lifecycle",
-          "Correct DDB depreciation with proper declining balance calculations",
-          "Excel formulas using built-in SLN and DDB functions",
-          "Professional formatting with clear year-by-year breakdown"
+          "Accurate FIFO inventory schedule with proper cost layer assignment",
+          "Correct LIFO calculations with last-in costs applied first",
+          "Excel formulas using structured references and named ranges",
+          "Professional formatting with clear purchase and sale tracking"
         ]
       },
       {
@@ -110,19 +111,56 @@ export const unit07LessonPlan: UnitLessonPlan = {
         title: "Dynamic Selection Feature",
         description: "Advanced Excel modeling with dropdown-driven method selection",
         criteria: [
-          "Dropdown menus for depreciation method selection (SLN/DDB)",
+          "Dropdown menus for inventory method selection (FIFO/LIFO/Weighted Average)",
           "INDEX/MATCH formulas enabling dynamic method switching",
-          "FIFO/LIFO inventory calculations with array formulas",
+          "Automated COGS and ending inventory calculations",
           "Automated updates when method selection changes"
         ]
       },
       {
         day: 8,
         title: "Advisory Brief Draft",
-        description: "Strategic analysis document with method recommendations",
+        description: "Strategic analysis document with inventory method recommendations",
         criteria: [
-          "Clear rationale for depreciation method selection",
-          "FIFO vs. LIFO analysis with cash flow implications",
+          "Clear rationale for inventory method selection",
+          "FIFO vs. LIFO analysis with cash flow and tax implications",
+          "Inventory turnover ratio calculations and interpretation",
+          "Professional business writing appropriate for Board audience"
+        ]
+      }
+    ],
+      context: "This mirrors real corporate governance where Boards must approve significant accounting policy changes that affect financial reporting and tax obligations."
+    },
+    milestones: [
+      {
+        day: 2,
+        title: "Basic Inventory Schedule",
+        description: "Functional FIFO and LIFO calculations with layer tracking",
+        criteria: [
+          "Accurate FIFO inventory schedule with proper cost layer assignment",
+          "Correct LIFO calculations with last-in costs applied first",
+          "Excel formulas using structured references and named ranges",
+          "Professional formatting with clear purchase and sale tracking"
+        ]
+      },
+      {
+        day: 6,
+        title: "Dynamic Selection Feature",
+        description: "Advanced Excel modeling with dropdown-driven method selection",
+        criteria: [
+          "Dropdown menus for inventory method selection (FIFO/LIFO/Weighted Average)",
+          "INDEX/MATCH formulas enabling dynamic method switching",
+          "Automated COGS and ending inventory calculations",
+          "Automated updates when method selection changes"
+        ]
+      },
+      {
+        day: 8,
+        title: "Advisory Brief Draft",
+        description: "Strategic analysis document with inventory method recommendations",
+        criteria: [
+          "Clear rationale for inventory method selection",
+          "FIFO vs. LIFO analysis with cash flow and tax implications",
           "Inventory turnover ratio calculations and interpretation",
           "Professional business writing appropriate for Board audience"
         ]
@@ -165,13 +203,13 @@ export const unit07LessonPlan: UnitLessonPlan = {
     overview: {
       phases: [
         {
-          title: "Launch: Auditor Case Study",
+          title: "Launch: Inventory Misvaluation Case Study",
           description: "Real-world context through auditor's inventory misvaluation case",
           days: "Day 1"
         },
         {
-          title: "Model Construction: Depreciation & FIFO/LIFO",
-          description: "Build Excel models for SLN, DDB, and FIFO/LIFO calculations",
+          title: "Model Construction: FIFO, LIFO, Weighted Average",
+          description: "Build Excel models for inventory valuation methods",
           days: "Days 2-5"
         },
         {
@@ -264,72 +302,114 @@ export const unit07LessonPlan: UnitLessonPlan = {
       },
       {
         day: 2,
-        title: "Depreciation Techniques",
-        focus: "Direct instruction on SLN and DDB methods with Excel implementation",
+        title: "Inventory Methods Foundation",
+        focus: "Direct instruction on FIFO, LIFO, and Weighted Average with Excel implementation",
         duration: "45 minutes",
         activities: [
           {
-            name: "Depreciation Concepts Foundation",
+            name: "Inventory Valuation Concepts",
             duration: "15 minutes",
-            description: "Why businesses depreciate assets and method selection rationale",
+            description: "Why businesses track inventory costs and method selection rationale",
             details: [
-              "Connect to auditor case: How do depreciation errors compound over time?",
-              "Business rationale: matching principle and expense recognition",
+              "Connect to auditor case: How do inventory errors compound over time?",
+              "Business rationale: matching principle and cost of goods sold recognition",
               "Strategic considerations: cash flow vs. tax implications",
-              "Introduction to Straight-Line vs. Double-Declining Balance approaches"
+              "Introduction to FIFO, LIFO, and Weighted Average approaches"
             ],
             callout: {
               type: "definition",
-              title: "Depreciation Method Strategic Implications",
+              title: "Inventory Method Strategic Implications",
               content: "Method selection affects both financial reporting and tax obligations",
               items: [
-                "Straight-Line (SLN): Even expense recognition, predictable cash flow impact",
-                "Double-Declining Balance (DDB): Accelerated depreciation, higher early tax deductions",
-                "Conservative vs. Aggressive: Impact on investor perception and loan covenants",
-                "Tax Strategy: Timing of deductions affects cash flow optimization"
+                "FIFO: Oldest costs to COGS, higher profits in inflation, higher taxes",
+                "LIFO: Newest costs to COGS, lower profits in inflation, lower taxes",
+                "Weighted Average: Smooths cost fluctuations, middle-ground approach",
+                "Tax Strategy: Timing of COGS recognition affects cash flow optimization"
               ]
             }
           },
           {
-            name: "Excel SLN Function Workshop",
+            name: "FIFO Calculation Workshop",
             duration: "12 minutes",
-            description: "Hands-on practice with Excel's built-in SLN function",
+            description: "Hands-on practice with FIFO cost layer tracking",
             details: [
-              "Demonstration: =SLN(cost, salvage, life) syntax and parameters",
-              "Guided practice: Calculate depreciation for sample manufacturing equipment",
-              "Build complete 5-year depreciation schedule with cumulative calculations",
+              "Demonstration: Track purchase layers and assign oldest costs to sales first",
+              "Guided practice: Calculate COGS and ending inventory for sample retail data",
+              "Build complete inventory schedule with cumulative layer tracking",
               "Verify calculations manually to ensure understanding"
             ]
           },
           {
-            name: "Excel DDB Function Workshop",
+            name: "LIFO Calculation Workshop",
             duration: "12 minutes",
-            description: "Implementation of Double-Declining Balance using Excel DDB function",
+            description: "Implementation of LIFO using most recent cost layers",
             details: [
-              "Demonstration: =DDB(cost, salvage, life, period) function syntax",
-              "Show declining balance logic: each year uses book value, not original cost",
-              "Practice: Build DDB schedule for same equipment to compare with SLN",
-              "Analyze differences: early vs. late depreciation patterns"
+              "Demonstration: Same data as FIFO, but assign newest costs to COGS first",
+              "Show LIFO logic: each sale uses most recent purchase costs",
+              "Practice: Build LIFO schedule for same data to compare with FIFO",
+              "Analyze differences: FIFO vs. LIFO COGS and ending inventory values"
             ]
           },
           {
             name: "Method Comparison & Checkpoint",
             duration: "6 minutes",
-            description: "Compare SLN vs. DDB results and check understanding",
+            description: "Compare FIFO vs. LIFO results and check understanding",
             details: [
-              "Side-by-side comparison: SLN vs. DDB schedules for same asset",
+              "Side-by-side comparison: FIFO vs. LIFO schedules for same inventory",
               "Discuss business implications: cash flow, taxes, financial reporting",
-              "Checkpoint quiz: Students calculate basic depreciation independently",
-              "Preview Day 3: How do inventory methods create similar strategic choices?"
+              "Checkpoint quiz: Students calculate basic inventory values independently",
+              "Preview Day 3: How do we implement these calculations in Excel?"
             ]
           }
         ],
         materials: [
-          "Excel template with SLN and DDB function examples",
-          "Sample asset data for practice calculations",
-          "Depreciation schedule templates",
+          "Excel template with FIFO and LIFO calculation examples",
+          "Sample inventory data for practice calculations",
+          "Inventory schedule templates",
           "Method comparison worksheet",
-          "SLN/DDB function reference guide"
+          "FIFO/LIFO function reference guide"
+        ]
+      },
+          {
+            name: "FIFO Calculation Workshop",
+            duration: "12 minutes",
+            description: "Hands-on practice with FIFO cost layer tracking",
+            details: [
+              "Demonstration: Track purchase layers and assign oldest costs to sales first",
+              "Guided practice: Calculate COGS and ending inventory for sample retail data",
+              "Build complete inventory schedule with cumulative layer tracking",
+              "Verify calculations manually to ensure understanding"
+            ]
+          },
+          {
+            name: "LIFO Calculation Workshop",
+            duration: "12 minutes",
+            description: "Implementation of LIFO using most recent cost layers",
+            details: [
+              "Demonstration: Same data as FIFO, but assign newest costs to COGS first",
+              "Show LIFO logic: each sale uses most recent purchase costs",
+              "Practice: Build LIFO schedule for same data to compare with FIFO",
+              "Analyze differences: FIFO vs. LIFO COGS and ending inventory values"
+            ]
+          },
+          {
+            name: "Method Comparison & Checkpoint",
+            duration: "6 minutes",
+            description: "Compare FIFO vs. LIFO results and check understanding",
+            details: [
+              "Side-by-side comparison: FIFO vs. LIFO schedules for same inventory",
+              "Discuss business implications: cash flow, taxes, financial reporting",
+              "Checkpoint quiz: Students calculate basic inventory values independently",
+              "Preview Day 3: How do we implement these calculations in Excel?"
+            ]
+          }
+        ],
+        materials: [
+          "Excel template with FIFO and LIFO calculation examples",
+          "Sample inventory data for practice calculations",
+          "Inventory schedule templates",
+          "Method comparison worksheet",
+          "FIFO/LIFO function reference guide"
         ]
       },
       {
@@ -504,12 +584,13 @@ export const unit07LessonPlan: UnitLessonPlan = {
               type: "important",
               title: "Mastery Check Focus Areas",
               content: "Assessment covers both technical skills and strategic understanding",
-              items: [
-                "Depreciation: SLN vs. DDB calculation accuracy and business rationale",
-                "Inventory: FIFO vs. LIFO logic and strategic implications",
-                "Excel: Function syntax and array formula concepts",
-                "Strategy: Method selection based on cash flow and tax objectives"
-              ]
+        items: [
+          "Excel formulas for FIFO and LIFO layer calculations",
+          "Dynamic ratio calculations and automated updates",
+          "INDEX/MATCH logic for method selection dropdowns",
+          "Chart creation for inventory turnover and COGS visualization",
+          "Inventory count reconciliation and shrinkage tracking"
+        ]
             }
           },
           {

@@ -2,9 +2,9 @@ import { UnitLessonPlan } from "@/types/lesson-plan"
 
 export const unit08LessonPlan: UnitLessonPlan = {
   unitNumber: 8,
-  unitTitle: "Year-1 Startup Model",
-  description: "Complete 10-day lesson plan using backward design principles",
-  essentialQuestion: "Can we convince a micro-VC that our first-year financial model is robust enough to merit funding?",
+  unitTitle: "Fixed Assets and Depreciation",
+  description: "Complete 10-day lesson plan using backward design principles, focusing on fixed asset tracking and depreciation methods",
+  essentialQuestion: "How do we track long-term assets professionally and choose the right depreciation method for our business?",
   
   meta: {
     duration: "10 class periods (2 weeks)",
