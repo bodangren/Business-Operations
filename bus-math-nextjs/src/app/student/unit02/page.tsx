@@ -16,7 +16,8 @@ const unit02Data = {
   title: "Unit 2: Month-End Wizard",
   description: "What automation can cut our month-end closing time from two days to two hours without sacrificing GAAP accuracy?",
   rationale: "Students will experience the real cost of slow month-end closes and learn to build automated solutions that maintain accounting accuracy while dramatically improving efficiency.",
-  sequence: 2
+  sequence: 2,
+  unitId: "unit02" as const,
 }
 
 // Assemble the lessons list from canonical lesson data exports

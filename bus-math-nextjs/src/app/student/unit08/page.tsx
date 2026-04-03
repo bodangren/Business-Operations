@@ -16,7 +16,8 @@ const unit08Data = {
   title: "Unit 8: Fixed Assets and Depreciation",
   description: "TechStart Solutions is growing and buying long-term assets. How do we track them professionally and choose the right depreciation method?",
   rationale: "Students learn why long-term assets are tracked differently from everyday expenses, master depreciation methods by hand, and build a professional asset register workbook. The unit culminates in a group project where teams recommend a depreciation policy backed by workbook evidence.",
-  sequence: 8
+  sequence: 8,
+  unitId: "unit08" as const,
 }
 
 const unit08Lessons = [

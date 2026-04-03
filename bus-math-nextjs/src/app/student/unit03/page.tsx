@@ -16,7 +16,8 @@ const unit03Data = {
   title: "Unit 3: Three-Statement Storyboard",
   description: "How do today's journal entries flow into a narrative of profit, solvency, and cash health that investors can trust?",
   rationale: "Students will dissect real company financial statements and map narrative threads to specific line items, creating a comprehensive financial story for investors.",
-  sequence: 3
+  sequence: 3,
+  unitId: "unit03" as const,
 }
 
 const unit03Lessons = [

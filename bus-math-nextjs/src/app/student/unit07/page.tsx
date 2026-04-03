@@ -16,7 +16,8 @@ const unit07Data = {
   title: "Unit 7: Inventory Tracker & Valuation",
   description: "How do we build, test, and defend a trustworthy ending inventory number?",
   rationale: "Sarah can count what is on the shelf, but she cannot clearly defend how ending inventory was built. This unit turns that founder problem into a professional inventory workflow.",
-  sequence: 7
+  sequence: 7,
+  unitId: "unit07" as const,
 }
 
 const lessonSources = [

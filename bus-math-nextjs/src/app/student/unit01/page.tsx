@@ -17,7 +17,8 @@ const unit01Data = {
   title: "Unit 1: Smart Ledger Launch",
   description: "Your team represents a startup seeking angel investment. Investors will scrutinize your financial controls before writing a check. You must build a self-auditing ledger system that demonstrates you can maintain \"clean books\" from day one. The primary deliverable is a 4-minute investor pitch and a live Excel workbook demo showing self-auditing features.",
   rationale: "Early-stage startup bookkeeping is often chaotic and unsustainable, creating significant business risk. This unit is designed to teach founders the importance of building a trustworthy, organized financial system ('clean books') from day one. This isn't just for investors or accountants; it's a critical tool for founders to gain clarity on their financial health, make decisions based on facts, and build confidence in their venture.",
-  sequence: 1
+  sequence: 1,
+  unitId: "unit01" as const,
 }
 
 const unit01Lessons = [

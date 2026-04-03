@@ -16,7 +16,8 @@ const unit05Data = {
   title: "Unit 5: PayDay Simulator",
   description: "How can a small business owner predict payroll cash-outs and still make rent on time?",
   rationale: "Small business owners often struggle with cash flow timing, especially when payroll obligations coincide with other major expenses like rent. Through this unit, you'll build a comprehensive payroll system that helps predict and manage these cash flow challenges.",
-  sequence: 5
+  sequence: 5,
+  unitId: "unit05" as const,
 }
 
 const unit05Lessons = [

@@ -12,6 +12,8 @@ import {
   ArrowRight
 } from "lucide-react"
 import Link from "next/link"
+import { UnitVocabulary } from "@/components/unit/UnitVocabulary"
+import type { UnitId } from "@/types/glossary"
 
 interface StudentUnitOverviewProps {
   unit: {
@@ -20,6 +22,7 @@ interface StudentUnitOverviewProps {
     description: string
     rationale: string
     sequence: number
+    unitId?: UnitId
   }
   lessons: Array<{
     title: string
@@ -194,6 +197,52 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
           </CardContent>
         </Card>
       </div>
+
+      {/* Key Vocabulary */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <BookOpen className="h-5 w-5" />
+            Key Vocabulary
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {unit.unitId ? (
+            <UnitVocabulary unitId={unit.unitId} unitSequence={unit.sequence} />
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              View all terms in the{" "}
+              <Link href="/backmatter/glossary" className="text-primary hover:underline">
+                bilingual glossary
+              </Link>
+              .
+            </p>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Key Vocabulary */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <BookOpen className="h-5 w-5" />
+            Key Vocabulary
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {unit.unitId ? (
+            <UnitVocabulary unitId={unit.unitId} unitSequence={unit.sequence} />
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              View all terms in the{" "}
+              <Link href="/backmatter/glossary" className="text-primary hover:underline">
+                bilingual glossary
+              </Link>
+              .
+            </p>
+          )}
+        </CardContent>
+      </Card>
 
       {/* Project Culmination */}
       <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">

@@ -16,7 +16,8 @@ const unit06Data = {
   title: "Unit 6: PriceLab Challenge",
   description: "What pricing strategy hits our profit target while staying competitive in the local market?",
   rationale: "Using live competitor price data and advanced Excel tools, teams will develop data-driven pricing recommendations through CVP analysis and sensitivity modeling.",
-  sequence: 6
+  sequence: 6,
+  unitId: "unit06" as const,
 }
 
 const unit06Lessons = [

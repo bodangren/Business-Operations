@@ -16,7 +16,8 @@ const unit04Data = {
   title: "Unit 4: Data-Driven Café",
   description: "Given two years of POS data, what inventory and staffing plan will maximize weekend profits without raising waste above 3%?",
   rationale: "Work with real café POS data to create data-driven recommendations for weekend operations optimization.",
-  sequence: 4
+  sequence: 4,
+  unitId: "unit04" as const,
 }
 
 const unit04Lessons = [
