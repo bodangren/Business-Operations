@@ -3,22 +3,25 @@
 ## Track ID: reference_system_20260403
 
 ### Phase 1: Audit and Data Model
-- [ ] 1.1 Audit existing vocabulary sources across student pages, lesson data, question banks, and teacher references
-  - Identify repeated terms that should collapse into one glossary record
-  - Identify stale unit labels that would pollute glossary tagging
-  - Produce a raw source list before writing the canonical glossary file
-- [ ] 1.2 Choose the canonical glossary file location and export shape
-  - Prefer one clearly named file or a small unit-split dataset with one export barrel
-  - Document exact TypeScript interfaces used by the glossary system
-- [ ] 1.3 Define unit-tagging and topic-tagging rules
-  - Decide how a term maps to units and lessons
-  - Decide how cross-unit core terms are tagged
-- [ ] 1.4 Write tests first for glossary filtering and grouping utilities
-  - Filter by keyword
-  - Filter by unit
-  - Filter by topic
-  - Group alphabetically
-  - Resolve related-term lookups safely
+- [x] 1.1 Audit existing vocabulary sources across student pages, lesson data, question banks, and teacher references
+  - No structured vocabulary data exists in the codebase
+  - `vocabularyTerms` field in `LessonContent` type is unused across all 79 lesson-data files
+  - Header already links to `/backmatter/glossary` and `/search` but no pages exist
+  - Unit overview pages have no vocabulary sections
+  - No Chinese definitions exist anywhere
+- [x] 1.2 Choose the canonical glossary file location and export shape
+  - Types: `src/types/glossary.ts` (GlossaryEntry, IndexRecord, UnitId, TopicTag, GlossaryField)
+  - Utilities: `src/lib/glossary/index.ts` (filter, group, resolve, generate helpers)
+  - Dataset: will be `src/data/glossary.ts` in Phase 2
+  - Tests: `src/lib/glossary/__tests__/glossary.test.ts`
+- [x] 1.3 Define unit-tagging and topic-tagging rules
+  - UnitId union type: unit01-unit08
+  - TopicTag union type: 18 topic tags covering accounting, bookkeeping, depreciation, financial-statements, inventory, payroll, pricing, statistics, excel, automation, cash-flow, tax, audit, ratio-analysis, regression, data-cleaning, cvp-analysis, presentation
+  - Cross-unit terms tagged to multiple UnitIds
+  - Optional lessons array for per-lesson granularity
+- [x] 1.4 Write tests first for glossary filtering and grouping utilities
+  - 31 tests covering filterByKeyword, filterByUnit, filterByTopic, groupAlphabetical, groupByUnit, resolveRelated, generateIndexRecords
+  - All passing
 
 ### Phase 2: Canonical Glossary Dataset
 - [ ] 2.1 Build the glossary records for Units 01-04
