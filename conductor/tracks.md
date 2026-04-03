@@ -10,7 +10,10 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 
 - [ ] **Track: Unit 08 - Fixed assets and depreciation**
   *Link: [./tracks/unit08_20260330/](./tracks/unit08_20260330/)*
-- [ ] **Track: Unit-by-unit XLSX link and workbook integrity audit**
+
+## Completed Tracks
+
+- [x] **Track: Unit-by-unit XLSX link and workbook integrity audit**
   *Link: [./tracks/xlsx_audit_20260402/](./tracks/xlsx_audit_20260402/)*
 
 ## Archived Tracks
