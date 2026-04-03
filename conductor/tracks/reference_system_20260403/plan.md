@@ -74,8 +74,21 @@
   - No duplicate vocabulary blurbs — single source of truth
 
 ### Phase 5: Verification and Cleanup
-- [ ] 5.1 Run tests for glossary and index utilities
-- [ ] 5.2 Verify glossary and index routes are linked correctly from the shell
-- [ ] 5.3 Verify every unit overview renders a vocabulary list without broken links
-- [ ] 5.4 Run `npm run lint`
-- [ ] 5.5 Document any glossary data maintenance rules for later tracks
+- [x] 5.1 Run tests for glossary and index utilities
+  - 31 tests already passing from Phase 1
+- [x] 5.2 Verify glossary and index routes are linked correctly from the shell
+  - Header nav links to `/backmatter/glossary` and `/backmatter/index`
+  - Mobile menu links to glossary and index
+  - Old `/search` link removed entirely
+- [x] 5.3 Verify every unit overview renders a vocabulary list without broken links
+  - All 8 unit pages pass `unitId` to `StudentUnitOverview`
+  - `UnitVocabulary` component filters and renders terms per unit
+  - Each term links to `/backmatter/glossary#slug`
+- [x] 5.4 Run `npm run lint`
+  - No new lint errors introduced
+  - Pre-existing warnings unchanged
+- [x] 5.5 Document any glossary data maintenance rules for later tracks
+  - Add new terms to `src/data/glossary.ts` with required fields (id, slug, term_en, term_zh, def_en, def_zh, units, topics)
+  - Tag terms to multiple units as needed — no duplication
+  - Chinese definitions must be actual definitions, not term mirrors
+  - Unit overview vocabulary derives automatically from glossary tags
