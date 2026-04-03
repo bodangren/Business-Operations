@@ -61,14 +61,17 @@
   - index-records.ts: generates IndexRecord[] from glossaryData and page metadata
 
 ### Phase 4: Unit Overview Integration
-- [ ] 4.1 Add vocabulary sections to student unit overview pages
-  - Show unit-curated glossary subsets
-  - Link each term to the glossary entry
-- [ ] 4.2 Add a future-facing study entry point
-  - Example: "Study these terms" link or button stub
-  - Do not implement local practice logic yet
-- [ ] 4.3 Ensure unit overview copy remains aligned with the new glossary terms
-  - Avoid duplicate hardcoded vocabulary blurbs when glossary-derived lists are available
+- [x] 4.1 Add vocabulary sections to student unit overview pages
+  - UnitVocabulary component filters glossaryData by unitId
+  - Each term card shows English term, English definition (truncated), Chinese term, and topic badges
+  - Each term links to the glossary entry anchor
+  - All 8 unit overview pages updated with unitId field
+- [x] 4.2 Add a future-facing study entry point
+  - "Study these terms" callout with links to bilingual glossary and subject index
+  - Term count displayed per unit
+- [x] 4.3 Ensure unit overview copy remains aligned with the new glossary terms
+  - Vocabulary section derives from canonical glossary dataset, not hardcoded prose
+  - No duplicate vocabulary blurbs — single source of truth
 
 ### Phase 5: Verification and Cleanup
 - [ ] 5.1 Run tests for glossary and index utilities

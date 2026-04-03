@@ -25,12 +25,7 @@ const TOPIC_LABELS: Record<string, string> = {
   presentation: "Presentation",
 }
 
-interface UnitVocabularyProps {
-  unitId: UnitId
-  unitSequence: number
-}
-
-export function UnitVocabulary({ unitId, unitSequence }: UnitVocabularyProps) {
+export function UnitVocabulary({ unitId }: { unitId: UnitId; unitSequence: number }) {
   const unitTerms = glossaryData.filter((entry) => entry.units.includes(unitId))
 
   if (unitTerms.length === 0) return null
