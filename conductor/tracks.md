@@ -10,7 +10,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 
 - [x] **Track: Reference system — bilingual glossary, index, and unit vocabulary lists**
   *Link: [./tracks/reference_system_20260403/](./tracks/reference_system_20260403/)*
-- [ ] **Track: Navigation and shell cleanup**
+- [x] **Track: Navigation and shell cleanup**
   *Link: [./tracks/navigation_shell_cleanup_20260403/](./tracks/navigation_shell_cleanup_20260403/)*
 - [ ] **Track: Teacher and student alignment**
   *Link: [./tracks/teacher_student_alignment_20260403/](./tracks/teacher_student_alignment_20260403/)*
