@@ -10,6 +10,7 @@
 - [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)
 - [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
 - [ ] `index-records.ts` has empty `lessonPages` array — no lesson-level index entries exist yet (M4 from audit)
+- [ ] `StudyDueBadge` loads study data per-instance — 8 hub cards = 8 redundant localStorage reads (L1 from CTAs review)
 
 ## Resolved
 

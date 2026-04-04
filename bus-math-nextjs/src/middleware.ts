@@ -23,5 +23,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/debug/:path*",
+  matcher: ["/debug", "/debug/:path*"],
 }

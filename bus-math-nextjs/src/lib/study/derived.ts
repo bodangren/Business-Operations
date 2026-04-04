@@ -132,7 +132,13 @@ export function getDueCountForUnit(
   slugUnits: Record<string, UnitId[]>,
   now: Date = new Date(),
 ): number {
-  return getDueCountByUnit(dueEntries, slugUnits, now)[unitId] ?? 0
+  const dueNow = getDueTerms(dueEntries, now)
+  let count = 0
+  for (const entry of dueNow) {
+    const units = slugUnits[entry.term_slug]
+    if (units && units.includes(unitId)) count++
+  }
+  return count
 }
 
 export function formatRelativeDate(iso: string): string {
