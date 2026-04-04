@@ -12,7 +12,10 @@
 - Tests: 216 passed (14 suites)
 - Build: compiled successfully (603+ pages)
 
-### Task 1.3: Commit and attach git note [~]
+### Task 1.3: Commit and attach git note [x]
+- Committed: `chore(lint): Auto-fix unused imports via eslint-plugin-unused-imports` (05021da)
+- Git note attached with Phase 1 summary
+- Pushed to remote
 
 ## Phase 2: Manual Cleanup of Remaining Unused Vars (~30 warnings)
 
