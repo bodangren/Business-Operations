@@ -28,6 +28,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/lesson_index_entries_20260405/](./tracks/lesson_index_entries_20260405/)*
 - [x] **Track: ESLint warning cleanup pass**
   *Link: [./tracks/eslint_warning_cleanup_20260405/](./tracks/eslint_warning_cleanup_20260405/)*
+- [~] **Track: Dead code removal pass**
+  *Link: [./tracks/dead_code_removal_20260405/](./tracks/dead_code_removal_20260405/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
