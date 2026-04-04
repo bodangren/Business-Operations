@@ -33,11 +33,11 @@
 - [x] 3.4 Call out any still-open product decisions explicitly
 
 ### Phase 4: Review and Revision
-- [ ] 4.1 Present the wireframe package for review
-- [ ] 4.2 Capture revisions and update the wireframes
-- [ ] 4.3 Freeze the approved implementation direction
+- [x] 4.1 Present the wireframe package for review
+- [x] 4.2 Capture revisions and update the wireframes
+- [x] 4.3 Freeze the approved implementation direction
 
 ### Phase 5: Handoff
-- [ ] 5.1 Write an implementation handoff note for `local_study_export_20260403`
-- [ ] 5.2 Identify the routes, shared components, and storage surfaces implied by the approved wireframes
-- [ ] 5.3 Mark which pieces are MVP and which are stretch goals
+- [x] 5.1 Write an implementation handoff note for `local_study_export_20260403`
+- [x] 5.2 Identify the routes, shared components, and storage surfaces implied by the approved wireframes
+- [x] 5.3 Mark which pieces are MVP and which are stretch goals

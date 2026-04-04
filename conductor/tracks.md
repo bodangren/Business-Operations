@@ -14,7 +14,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/navigation_shell_cleanup_20260403/](./tracks/navigation_shell_cleanup_20260403/)*
 - [x] **Track: Teacher and student alignment**
   *Link: [./tracks/teacher_student_alignment_20260403/](./tracks/teacher_student_alignment_20260403/)*
-- [~] **Track: Practice hub wireframes**
+- [x] **Track: Practice hub wireframes**
 *Link: [./tracks/practice_hub_wireframes_20260403/](./tracks/practice_hub_wireframes_20260403/)*
 - [ ] **Track: Local study, tracking, and export**
   *Link: [./tracks/local_study_export_20260403/](./tracks/local_study_export_20260403/)*
