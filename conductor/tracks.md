@@ -18,6 +18,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/practice_hub_wireframes_20260403/](./tracks/practice_hub_wireframes_20260403/)*
 - [x] **Track: Local study, tracking, and export**
   *Link: [./tracks/local_study_export_20260403/](./tracks/local_study_export_20260403/)*
+- [~] **Track: Wire up unit-level study CTAs**
+  *Link: [./tracks/unit_study_ctas_20260404/](./tracks/unit_study_ctas_20260404/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.

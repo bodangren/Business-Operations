@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { UnitVocabulary } from "@/components/unit/UnitVocabulary"
+import StudyDueBadge from "@/components/student/StudyDueBadge"
 import type { UnitId } from "@/types/glossary"
 
 interface StudentUnitOverviewProps {
@@ -229,6 +230,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
             <CardTitle className="flex items-center gap-2 text-blue-800 dark:text-blue-200">
               <Layers className="h-5 w-5" />
               Study This Unit&apos;s Terms
+              <StudyDueBadge unitId={unit.unitId} />
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

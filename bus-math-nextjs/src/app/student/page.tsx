@@ -3,16 +3,18 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, GraduationCap, FileText, Layers } from "lucide-react"
+import HubUnitCard from "@/components/student/HubUnitCard"
+import type { UnitId } from "@/types/glossary"
 
-const units = [
-  { number: "01", title: "Smart Ledger Launch", description: "Self-auditing bookkeeping for angel investors", href: "/student/unit01" },
-  { number: "02", title: "Month-End Wizard", description: "Excel automation to reduce closing time", href: "/student/unit02" },
-  { number: "03", title: "Three-Statement Storyboard", description: "Integrated financial statements with KPI dashboards", href: "/student/unit03" },
-  { number: "04", title: "Data-Driven Café", description: "Statistical analysis and forecasting for operations", href: "/student/unit04" },
-  { number: "05", title: "PayDay Simulator", description: "Payroll systems with tax calculations and cash flow", href: "/student/unit05" },
-  { number: "06", title: "PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing", href: "/student/unit06" },
-  { number: "07", title: "Inventory Accounting", description: "Inventory valuation methods and strategic decision-making", href: "/student/unit07" },
-  { number: "08", title: "Fixed Assets and Depreciation", description: "Depreciation methods and fixed asset tracking", href: "/student/unit08" },
+const units: { number: string; title: string; description: string; href: string; unitId: UnitId }[] = [
+  { number: "01", title: "Smart Ledger Launch", description: "Self-auditing bookkeeping for angel investors", href: "/student/unit01", unitId: "unit01" },
+  { number: "02", title: "Month-End Wizard", description: "Excel automation to reduce closing time", href: "/student/unit02", unitId: "unit02" },
+  { number: "03", title: "Three-Statement Storyboard", description: "Integrated financial statements with KPI dashboards", href: "/student/unit03", unitId: "unit03" },
+  { number: "04", title: "Data-Driven Café", description: "Statistical analysis and forecasting for operations", href: "/student/unit04", unitId: "unit04" },
+  { number: "05", title: "PayDay Simulator", description: "Payroll systems with tax calculations and cash flow", href: "/student/unit05", unitId: "unit05" },
+  { number: "06", title: "PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing", href: "/student/unit06", unitId: "unit06" },
+  { number: "07", title: "Inventory Accounting", description: "Inventory valuation methods and strategic decision-making", href: "/student/unit07", unitId: "unit07" },
+  { number: "08", title: "Fixed Assets and Depreciation", description: "Depreciation methods and fixed asset tracking", href: "/student/unit08", unitId: "unit08" },
 ]
 
 export default function StudentHubPage() {
@@ -35,21 +37,7 @@ export default function StudentHubPage() {
         </h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {units.slice(0, 4).map((unit) => (
-            <Link key={unit.number} href={unit.href} className="block">
-              <Card className="hover:shadow-md transition-shadow h-full">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-base">
-                    Unit {unit.number}: {unit.title}
-                  </CardTitle>
-                  <CardDescription>{unit.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <span className="text-sm text-primary flex items-center gap-1">
-                    Open unit <ArrowRight className="h-3 w-3" />
-                  </span>
-                </CardContent>
-              </Card>
-            </Link>
+            <HubUnitCard key={unit.number} {...unit} />
           ))}
         </div>
       </section>
@@ -62,21 +50,7 @@ export default function StudentHubPage() {
         </h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {units.slice(4).map((unit) => (
-            <Link key={unit.number} href={unit.href} className="block">
-              <Card className="hover:shadow-md transition-shadow h-full">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-base">
-                    Unit {unit.number}: {unit.title}
-                  </CardTitle>
-                  <CardDescription>{unit.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <span className="text-sm text-primary flex items-center gap-1">
-                    Open unit <ArrowRight className="h-3 w-3" />
-                  </span>
-                </CardContent>
-              </Card>
-            </Link>
+            <HubUnitCard key={unit.number} {...unit} />
           ))}
         </div>
       </section>

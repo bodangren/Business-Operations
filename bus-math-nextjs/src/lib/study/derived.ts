@@ -99,6 +99,42 @@ export function deriveStats(
   }
 }
 
+/**
+ * Compute per-unit due term counts from a due review snapshot.
+ * Maps each DueReviewEntry to units via a slug→units lookup map.
+ */
+export function getDueCountByUnit(
+  dueEntries: DueReviewEntry[],
+  slugUnits: Record<string, UnitId[]>,
+  now: Date = new Date(),
+): Record<UnitId, number> {
+  const counts = {} as Record<UnitId, number>
+  for (const id of UNIT_IDS) counts[id] = 0
+
+  const dueNow = getDueTerms(dueEntries, now)
+  for (const entry of dueNow) {
+    const units = slugUnits[entry.term_slug]
+    if (!units) continue
+    for (const unit of units) {
+      counts[unit] = (counts[unit] ?? 0) + 1
+    }
+  }
+
+  return counts
+}
+
+/**
+ * Get the due count for a single unit.
+ */
+export function getDueCountForUnit(
+  unitId: UnitId,
+  dueEntries: DueReviewEntry[],
+  slugUnits: Record<string, UnitId[]>,
+  now: Date = new Date(),
+): number {
+  return getDueCountByUnit(dueEntries, slugUnits, now)[unitId] ?? 0
+}
+
 export function formatRelativeDate(iso: string): string {
   const date = new Date(iso)
   const now = new Date()
