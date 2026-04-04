@@ -394,7 +394,6 @@ export function BreakEvenAnalysisCalculator() {
 
   const [showInstructions, setShowInstructions] = useState(false)
 
-  const [_goalSeekMode, _setGoalSeekMode] = useState<'units' | 'price' | 'fixedCosts' | 'variableCosts'>('units')
   const [dataTableVariable, setDataTableVariable] = useState<'price' | 'fixedCosts' | 'variableCosts'>('price')
   const [dataTableRange, setDataTableRange] = useState({ min: 900, max: 1800, steps: 10 })
   const [twoVarTable, setTwoVarTable] = useState({

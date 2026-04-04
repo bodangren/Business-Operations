@@ -201,7 +201,6 @@ export default function Phase1Page() {
               <div className="space-y-6">
                 {businessScenarios.map((business) => {
                   const IconComponent = business.icon
-                  const _isSelected = selections[business.id]
                   const isCorrect = showResults && selections[business.id] === business.correctMethod
                   const isIncorrect = showResults && selections[business.id] && selections[business.id] !== business.correctMethod
 

@@ -139,13 +139,6 @@ export default function CostAssignmentPractice() {
     }
   }
 
-  const _prevScenario = () => {
-    if (currentScenarioIndex > 0) {
-      setCurrentScenarioIndex(prev => prev - 1)
-      resetScenario()
-    }
-  }
-
   return (
     <div className="space-y-6">
       {/* Scenario Selector */}

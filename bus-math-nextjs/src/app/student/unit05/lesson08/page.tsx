@@ -1,8 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { lesson08Phases } from "./lesson-data"
-
-const _currentPhase = lesson08Phases[0]
 
 export default function Lesson08Page() {
   return (

@@ -9,25 +9,6 @@ import { lesson03Data, unit01Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[2]
 
-const _practiceTransactions = [
-  {
-    id: "trans1",
-    description: "Sarah receives $1,100 cash payment from the dental office for completed SEO work",
-    accounts: ["Cash", "Service Revenue"],
-    amounts: [1100, 1100],
-    debits: ["Cash"],
-    credits: ["Service Revenue"]
-  },
-  {
-    id: "trans2", 
-    description: "Sarah pays $800 rent for her home office using business funds",
-    accounts: ["Rent Expense", "Cash"],
-    amounts: [800, 800],
-    debits: ["Rent Expense"],
-    credits: ["Cash"]
-  }
-]
-
 const cashTAccountUpdated = {
   accountName: "Cash",
   accountType: "asset" as const,

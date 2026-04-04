@@ -2,9 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import { lesson09Phases } from "./lesson-data"
-
-const _currentPhase = lesson09Phases[0]
 
 export default function Lesson09Page() {
   return (
