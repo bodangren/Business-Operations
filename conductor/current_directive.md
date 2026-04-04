@@ -1,11 +1,11 @@
 # Current Directive
 
 **Updated:** 2026-04-05
-**Status:** Implementing dead-code removal pass
+**Status:** Dead-code removal pass complete — 30 instances removed across 26 files
 
 ## Active Track
 
-**dead_code_removal_20260405** — Removing all `_`-prefixed dead code (29 instances across 26 files). Phase 1: business simulations.
+None — all tracks complete. Ready for next track.
 
 ## What Was Just Completed
 

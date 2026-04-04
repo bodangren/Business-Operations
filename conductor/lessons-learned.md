@@ -47,3 +47,7 @@
 - **`useCallback` named `use*` triggers false positive**: A `useCallback` named `useCredit` caused ESLint to flag it as a hook call inside onClick handlers. Rename event-handler callbacks with `handle*` prefix to avoid the `use*` pattern that ESLint associates with React Hooks.
 - **Move `useMemo` objects inside the callback**: When an object (`new Set(...)`) is created outside `useMemo` and passed as a dep, it's a new reference every render. Moving construction inside the memo and using primitive deps (`activeEvent.metricMoves`) fixes both the warning and the re-render waste.
 - **Function definition order matters for exhaustive-deps**: When `simulateSales` calls `completeSales` and both are `useCallback`, moving `completeSales` before `simulateSales` avoids a "used before declaration" build error while allowing it to be safely listed as a dependency.
+
+## 2026-04-05 — Dead Code Removal Pass
+
+- **Dead code cascading**: Removing a dead variable (`_correctVolume`) exposed a newly-dead constant (`CURRENT_PRICE`). Always re-lint after dead-code removal to catch cascading unused declarations.
