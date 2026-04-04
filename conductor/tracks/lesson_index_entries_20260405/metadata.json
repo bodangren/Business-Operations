@@ -1,0 +1,8 @@
+{
+  "track_id": "lesson_index_entries_20260405",
+  "type": "feature",
+  "status": "complete",
+  "created_at": "2026-04-05T00:00:00Z",
+  "updated_at": "2026-04-05T01:46:00Z",
+  "description": "Populate the lessonPages array in index-records.ts with all 80 lesson entries to complete the subject index"
+}

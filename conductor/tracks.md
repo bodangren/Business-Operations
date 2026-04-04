@@ -24,6 +24,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/gate_debug_routes_20260405/](./tracks/gate_debug_routes_20260405/)*
 - [x] **Track: Study data context provider**
   *Link: [./tracks/study_data_context_20260405/](./tracks/study_data_context_20260405/)*
+- [x] **Track: Lesson-level index entries**
+  *Link: [./tracks/lesson_index_entries_20260405/](./tracks/lesson_index_entries_20260405/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.

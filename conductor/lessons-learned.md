@@ -37,3 +37,9 @@
 - **Vitest node env limits React testing**: The project's vitest config uses `node` environment with only `*.test.ts` include patterns. Context/hooks can't be tested with `renderHook` without `@testing-library/react` and `jsdom`. Extract logic into pure functions and test those separately.
 - **Context wrapping is low-risk**: Adding `StudyDataProvider` to the root layout was safe because `loadStudyData()` already guards for SSR (`isBrowser()` check). The provider degrades gracefully to empty data during server rendering.
 - **Consumer refactor pattern**: Replace `useState` + `useEffect` + `loadStudyData()` with `useStudyData()` hook. For export/import handlers that modify localStorage, use `refresh()` from context to re-sync state.
+
+## 2026-04-05 — Lesson-Level Index Entries
+
+- **Shell extraction for data tasks**: Bash `grep` + `sed` pipelines efficiently extracted 80 lesson titles from `lesson-data.ts` files without needing to read each file individually. The `for unit in ... for lesson in ...` loop pattern scales well for filesystem-based data extraction.
+- **Test-first for data integrity**: Writing tests before populating the `lessonPages` array ensured the data met exact specifications (80 entries, correct href pattern, unitId coverage). The RED-GREEN cycle was clean: 3 failures → all pass after data entry.
+- **Manual data entry vs. auto-generation**: The lesson titles were manually transcribed into `index-records.ts`. For future additions (e.g., Unit 9+), consider a build-time script that reads `lesson-data.ts` titles and generates the array automatically.
