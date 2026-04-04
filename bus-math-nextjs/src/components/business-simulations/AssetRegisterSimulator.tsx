@@ -98,7 +98,7 @@ export default function AssetRegisterSimulator() {
     setShowReveal(false)
   }
 
-  const handleNextAsset = () => {
+  const _handleNextAsset = () => {
     setSelectedAssetIndex((prev) => (prev + 1) % sampleAssets.length)
     handleReset()
   }

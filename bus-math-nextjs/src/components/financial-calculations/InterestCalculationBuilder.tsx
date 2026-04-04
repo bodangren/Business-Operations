@@ -207,7 +207,7 @@ export default function InterestCalculationBuilder() {
       
       // Use Function constructor safely with validated input
       return new Function('return ' + expression)()
-    } catch (error) {
+    } catch (_error) {
       throw new Error('Calculation error: Invalid formula or values')
     }
   }, [])
@@ -287,7 +287,7 @@ export default function InterestCalculationBuilder() {
       setResult(newResult)
       setCalculationHistory(prev => [newResult, ...prev.slice(0, 4)]) // Keep last 5 calculations
 
-    } catch (error) {
+    } catch (_error) {
       setResult({
         result: 0,
         formula: 'Error',

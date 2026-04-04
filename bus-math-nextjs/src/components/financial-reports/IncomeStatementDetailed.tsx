@@ -71,7 +71,7 @@ export function IncomeStatementDetailed({
   data,
   title = "Detailed Income Statement",
   showCalculations = false,
-  showComparatives = false,
+  showComparatives: _showComparatives = false,
   className = ""
 }: IncomeStatementDetailedProps) {
   

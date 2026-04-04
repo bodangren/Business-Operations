@@ -291,7 +291,7 @@ export function FinancialDashboard({
     alert(`Exporting dashboard as ${filename}`)
   }
 
-  const chartConfig = {
+  const _chartConfig = {
     revenue: {
       label: 'Revenue',
       color: 'hsl(var(--chart-1))',

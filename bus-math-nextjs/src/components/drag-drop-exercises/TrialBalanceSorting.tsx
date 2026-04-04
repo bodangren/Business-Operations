@@ -232,7 +232,7 @@ export function TrialBalanceSorting({
       
       if (!accountToRemove) return prev
 
-      const { placedSide, isCorrect, ...originalAccount } = accountToRemove
+      const { placedSide: _placedSide, isCorrect: _isCorrect, ...originalAccount } = accountToRemove
 
       return {
         ...prev,

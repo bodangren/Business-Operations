@@ -184,7 +184,7 @@ interface FeedbackCollectorProps {
   stakeholderType?: StakeholderType
   unitNumber?: number
   studentName?: string
-  onSubmit?: (feedback: StakeholderFeedback) => void
+  onSubmit?: (_feedback: StakeholderFeedback) => void
   className?: string
 }
 
@@ -430,7 +430,7 @@ export default function FeedbackCollector({
   // Rating component
   const RatingSelector = ({ rating, onRatingChange, disabled = false }: { 
     rating: FeedbackRating
-    onRatingChange: (rating: FeedbackRating) => void 
+    onRatingChange: (_rating: FeedbackRating) => void 
     disabled?: boolean
   }) => (
     <div className="space-y-2">
@@ -714,7 +714,7 @@ export default function FeedbackCollector({
 
       {/* Feedback Categories */}
       <div className="space-y-6">
-        {FEEDBACK_CATEGORIES.map((category, index) => (
+        {FEEDBACK_CATEGORIES.map((category, _index) => (
           <Card key={category.id} className={`border-2 ${category.color}`}>
             <CardHeader>
               <div className="flex items-center justify-between">

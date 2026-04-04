@@ -4,7 +4,7 @@
 
 - [ ] `next lint` deprecated — migrate to ESLint CLI before Next.js 16
 - [ ] Multiple lockfile warning — set `outputFileTracingRoot` or clean up root lockfile
-- [ ] ~290 eslint warnings (227 `any` types, ~50 unused vars, ~10 hooks rules) — was 571, unused imports auto-fixed (Phase 1 done 2026-04-05)
+- [ ] ~235 eslint warnings (227 `any` types, ~8 hooks rules) — was 571, unused imports auto-fixed (Phase 1, 2026-04-05), unused vars cleaned (Phase 2, 2026-04-05)
 - [ ] Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)
 - [ ] Unit 7 `unit07Data` object duplicated in every `lesson-data.ts` file — should be a shared import (L4 from audit)
 - [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)

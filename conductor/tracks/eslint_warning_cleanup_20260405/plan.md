@@ -19,13 +19,16 @@
 
 ## Phase 2: Manual Cleanup of Remaining Unused Vars (~30 warnings)
 
-### Task 2.1: Remove unused destructured variables and assignments
-- Review each remaining unused-var warning
-- Remove or prefix with `_` where intentional (e.g., `_index` in map callbacks)
+### Task 2.1: Remove unused destructured variables and assignments [x]
+- Reviewed ~55 remaining unused-var warnings across 40 files
+- Prefixed with `_`: callback args (`_index`, `_item`, `_configItem`), destructured vars (`_currentPhase`, `_calculateProfit`, etc.), catch block errors (`_error`)
+- Fixed `IncomeStatementSimple.tsx` prop rename syntax (`editable: _editable`)
+- Added `caughtErrorsIgnorePattern: "^_"` to `eslint.config.mjs`
 
-### Task 2.2: Verify and commit
-- Run `npm run lint`, `npm run test`, `npm run build`
-- Commit: `chore(lint): Remove remaining unused variable warnings`
+### Task 2.2: Verify and commit [x]
+- `npm run lint`: 0 unused-var warnings (down from ~55), 235 remaining (all `any` types + hooks rules)
+- `npx vitest run`: 216 tests passed (14 suites)
+- `npm run build`: compiled successfully (603+ pages)
 
 ## Phase 3: Fix no-explicit-any Warnings (227 warnings)
 

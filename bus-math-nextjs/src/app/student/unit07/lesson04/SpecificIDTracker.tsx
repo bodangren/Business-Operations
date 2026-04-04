@@ -24,7 +24,7 @@ const salesRecords = [
 
 export default function SpecificIDTracker() {
   const [step, setStep] = useState(0)
-  const [showCalculation, setShowCalculation] = useState(false)
+  const [_showCalculation, setShowCalculation] = useState(false)
 
   // Calculate values based on pre-defined sales records (for I Do demonstration)
   const totalInventoryValue = initialInventory.reduce((sum, item) => sum + item.cost, 0)

@@ -109,7 +109,7 @@ export function LineChart({
             }
           />
           
-          {Object.entries(config).map(([key, configItem]) => (
+          {Object.entries(config).map(([key, _configItem]) => (
             <Line
               key={key}
               type="monotone"

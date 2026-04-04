@@ -134,7 +134,7 @@ interface DragAndDropProps {
   rightColumnTitle?: string;
   showHints?: boolean;
   shuffleItems?: boolean;
-  onComplete?: (score: number) => void;
+  onComplete?: (_score: number) => void;
 }
 
 export function DragAndDrop({
@@ -148,7 +148,7 @@ export function DragAndDrop({
   onComplete
 }: DragAndDropProps) {
   // Separate items into left column (draggable) and right column (drop zones)
-  const [leftItems, setLeftItems] = useState<MatchingItem[]>([]);
+  const [_leftItems, setLeftItems] = useState<MatchingItem[]>([]);
   const [dropZones, setDropZones] = useState<DropZone[]>([]);
   const [unplacedItems, setUnplacedItems] = useState<MatchingItem[]>([]);
   

@@ -8,7 +8,7 @@ import { lesson06Data, unit07Data, lesson06Phases } from "../lesson-data"
 
 const currentPhase = lesson06Phases[3]
 
-const blankCell = { value: "", readOnly: true }
+const _blankCell = { value: "", readOnly: true }
 const textCell = (value: string) => ({ value, readOnly: true })
 const numberCell = (value: number) => ({ value, readOnly: true })
 const headerCell = (value: string) => ({ value, readOnly: true, className: "font-bold bg-slate-100" })

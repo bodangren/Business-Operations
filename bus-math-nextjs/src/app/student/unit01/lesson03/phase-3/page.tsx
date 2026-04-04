@@ -9,7 +9,7 @@ import { lesson03Data, unit01Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[2]
 
-const practiceTransactions = [
+const _practiceTransactions = [
   {
     id: "trans1",
     description: "Sarah receives $1,100 cash payment from the dental office for completed SEO work",

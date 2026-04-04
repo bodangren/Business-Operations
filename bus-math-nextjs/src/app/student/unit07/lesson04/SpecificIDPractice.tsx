@@ -451,7 +451,7 @@ export default function SpecificIDPractice() {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {initialInventory
-                            .filter(item => {
+                            .filter(_item => {
                               // Show all serials, but highlight correct one
                               return true
                             })

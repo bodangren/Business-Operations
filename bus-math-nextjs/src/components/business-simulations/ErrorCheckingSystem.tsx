@@ -306,7 +306,7 @@ export default function ErrorCheckingSystem() {
   const [isTestingRule, setIsTestingRule] = useState(false)
 
   // Safe formula evaluator - prevents code injection
-  const safeEvaluateCondition = useCallback((condition: string, data: any, index: number): boolean => {
+  const safeEvaluateCondition = useCallback((condition: string, data: any, _index: number): boolean => {
     try {
       // This is a simplified evaluator for demonstration
       // In production, use a proper expression parser
@@ -343,7 +343,7 @@ export default function ErrorCheckingSystem() {
         default:
           return false
       }
-    } catch (error) {
+    } catch (_error) {
       return false
     }
   }, [])

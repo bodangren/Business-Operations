@@ -246,7 +246,7 @@ export function PitchPresentationBuilder() {
   })
 
   const [showInstructions, setShowInstructions] = useState(false)
-  const [isRecording, setIsRecording] = useState(false)
+  const [_isRecording, _setIsRecording] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   const calculateCompleteness = useCallback((content: string, speakingNotes: string, title: string) => {

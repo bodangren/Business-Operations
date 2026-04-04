@@ -132,7 +132,7 @@ export default function StraightLineMastery() {
   const shuffledOptions = options.sort(() => Math.random() - 0.5)
 
   const handleSubmit = useCallback(() => {
-    const selectedOption = shuffledOptions.find(o => o.label === userAnswer)
+  const _selectedOption = shuffledOptions.find(o => o.label === userAnswer)
     const isCorrect = selectedOption?.isCorrect ?? false
     if (!selectedOption) return
 

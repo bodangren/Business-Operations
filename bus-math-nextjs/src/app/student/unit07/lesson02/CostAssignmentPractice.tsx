@@ -139,7 +139,7 @@ export default function CostAssignmentPractice() {
     }
   }
 
-  const prevScenario = () => {
+  const _prevScenario = () => {
     if (currentScenarioIndex > 0) {
       setCurrentScenarioIndex(prev => prev - 1)
       resetScenario()

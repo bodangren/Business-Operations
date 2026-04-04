@@ -21,7 +21,7 @@ interface TimingProblem {
 }
 
 const generateProblem = (seed: number): TimingProblem => {
-  const multiplier = seed % 5 + 1
+  const _multiplier = seed % 5 + 1
   return {
     id: seed,
     grossPay: 5000 + (seed * 1000) % 8000,
@@ -70,7 +70,7 @@ export default function Phase4Page() {
   const handleNewProblem = () => {
     const newNum = problemNumber + 1
     setProblemNumber(newNum)
-    const newProblem = generateProblem(newNum)
+    const _newProblem = generateProblem(newNum)
     setNetPayInput("")
     setLiabilityInput("")
     setFloatInput("")

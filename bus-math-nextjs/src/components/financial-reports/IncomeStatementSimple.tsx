@@ -31,7 +31,7 @@ export function IncomeStatementSimple({
   data,
   title = "Income Statement",
   showCalculations = false,
-  editable = false,
+  editable: _editable = false,
   className = ""
 }: IncomeStatementSimpleProps) {
   

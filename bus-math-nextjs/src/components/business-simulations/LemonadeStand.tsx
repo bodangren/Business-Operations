@@ -281,10 +281,10 @@ export function LemonadeStand() {
 
     // Animate sales progress
     let progress = 0
-    let customerCount = 0
+    let _customerCount = 0
     const interval = setInterval(() => {
       progress += Math.random() * 15 + 5
-      customerCount = Math.floor((progress / 100) * actualCustomers)
+      _customerCount = Math.floor((progress / 100) * actualCustomers)
       
       setSalesProgress(Math.min(100, progress))
       
@@ -296,7 +296,7 @@ export function LemonadeStand() {
 
   }, [gameState, getMaxCupsFromInventory, generateRandomWeather, addNotification])
 
-  const completeSales = useCallback((cupsSold: number, maxCups: number) => {
+  const completeSales = useCallback((cupsSold: number, _maxCups: number) => {
     const dailyRevenue = cupsSold * gameState.recipe.price
     const ingredientCost = cupsSold * (gameState.recipe.lemons * 0.3 + gameState.recipe.sugar * 0.2 + 0.075)
 

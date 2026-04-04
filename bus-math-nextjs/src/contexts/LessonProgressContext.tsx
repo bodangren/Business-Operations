@@ -364,7 +364,7 @@ export const LessonProgressProvider: React.FC<LessonProgressProviderProps> = ({ 
     try {
       const parsed = JSON.parse(data)
       dispatch({ type: 'LOAD_PROGRESS', payload: parsed })
-    } catch (error) {
+    } catch (_error) {
       dispatch({ type: 'SET_ERROR', payload: 'Invalid progress data format' })
     }
   }

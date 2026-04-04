@@ -28,7 +28,7 @@ export default function InventoryFlowExplorer() {
   const [salesMade, setSalesMade] = useState(0)
   const [totalCOGS, setTotalCOGS] = useState(0)
   const [saleHistory, setSaleHistory] = useState<SaleRecord[]>([])
-  const [showDiscovery, setShowDiscovery] = useState(false)
+  const [_showDiscovery, setShowDiscovery] = useState(false)
 
   const goodsAvailableUnits = INITIAL_LAYER_1.units + INITIAL_LAYER_2.units
   const goodsAvailableValue = INITIAL_LAYER_1.totalValue + INITIAL_LAYER_2.totalValue

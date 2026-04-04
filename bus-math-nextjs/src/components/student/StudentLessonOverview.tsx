@@ -164,7 +164,7 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
           </CardHeader>
           <CardContent>
             <div className="grid gap-4">
-              {sortedPhases.map((phase, index) => {
+              {sortedPhases.map((phase, _index) => {
                 const Icon = phaseIcons[phase.phaseName]
                 const description = phase.description || phaseDescriptions[phase.phaseName]
                 

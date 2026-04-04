@@ -170,7 +170,7 @@ export function CashFlowChallenge() {
     return { status: 'Bankrupt', color: 'text-red-600', bgColor: 'bg-red-50' }
   }
 
-  const processFlows = useCallback((flows: CashFlow[], amount: number) => {
+  const _processFlows = useCallback((flows: CashFlow[], _amount: number) => {
     return flows.map(flow => ({
       ...flow,
       daysLeft: Math.max(0, flow.daysLeft - 1)
@@ -434,7 +434,7 @@ export function CashFlowChallenge() {
   const healthStatus = getCashHealthStatus(gameState.cashPosition)
   const totalIncoming = gameState.incomingFlows.reduce((sum, flow) => sum + flow.amount, 0)
   const totalOutgoing = gameState.outgoingFlows.reduce((sum, flow) => sum + flow.amount, 0)
-  const netFlow = totalIncoming - totalOutgoing
+  const _netFlow = totalIncoming - totalOutgoing
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">

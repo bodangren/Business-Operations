@@ -4,7 +4,7 @@ import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson09Phases } from "./lesson-data"
 
-const currentPhase = lesson09Phases[0]
+const _currentPhase = lesson09Phases[0]
 
 export default function Lesson09Page() {
   return (

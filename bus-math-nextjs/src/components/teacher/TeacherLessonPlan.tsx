@@ -337,7 +337,7 @@ export function TeacherLessonPlan({ unit, lessonNumber }: TeacherLessonPlanProps
           Lesson Phases
         </h2>
         
-        {phases.map((phase, index) => (
+        {phases.map((phase, _index) => (
           <Card key={phase.id} className={`${getPhaseColor(phase.phaseName)} border-l-4`}>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">

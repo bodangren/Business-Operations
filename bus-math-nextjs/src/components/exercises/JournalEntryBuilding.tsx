@@ -220,7 +220,7 @@ export function JournalEntryBuilding({
     completed: false
   })
 
-  const [draggedElement, setDraggedElement] = useState<string | null>(null)
+  const [_draggedElement, setDraggedElement] = useState<string | null>(null)
   const [showInstructions, setShowInstructions] = useState(showInstructionsDefaultOpen)
 
   // Calculate totals whenever journal entries change

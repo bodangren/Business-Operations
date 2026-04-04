@@ -147,7 +147,7 @@ interface PeerCritiqueFormProps {
   projectTitle?: string
   peerName?: string
   unitNumber?: number
-  onSubmit?: (feedback: PeerFeedback) => void
+  onSubmit?: (_feedback: PeerFeedback) => void
   className?: string
 }
 
@@ -272,7 +272,7 @@ export default function PeerCritiqueForm({
   // Star rating component
   const StarRating = ({ rating, onRatingChange, disabled = false }: { 
     rating: number
-    onRatingChange: (rating: number) => void 
+    onRatingChange: (_rating: number) => void 
     disabled?: boolean
   }) => (
     <div className="flex gap-1">
@@ -492,7 +492,7 @@ export default function PeerCritiqueForm({
 
       {/* Feedback Categories */}
       <div className="space-y-6">
-        {FEEDBACK_CATEGORIES.map((category, index) => (
+        {FEEDBACK_CATEGORIES.map((category, _index) => (
           <Card key={category.id} className={`border-2 ${category.color}`}>
             <CardHeader>
               <div className="flex items-center justify-between">

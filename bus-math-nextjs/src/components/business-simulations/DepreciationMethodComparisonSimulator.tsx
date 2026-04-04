@@ -84,7 +84,7 @@ export default function DepreciationMethodComparisonSimulator() {
     setShowReveal(false)
   }
 
-  const handleNextAsset = () => {
+  const _handleNextAsset = () => {
     setScenarioIndex((prev) => (prev + 1) % scenarios.length)
     handleReset()
   }

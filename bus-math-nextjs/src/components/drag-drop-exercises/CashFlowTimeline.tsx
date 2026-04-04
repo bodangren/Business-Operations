@@ -137,7 +137,7 @@ export function CashFlowTimeline() {
   const [showInstructions, setShowInstructions] = useState(false)
   const [attempts, setAttempts] = useState(0)
   const [showFeedback, setShowFeedback] = useState(false)
-  const [draggedItem, setDraggedItem] = useState<string | null>(null)
+  const [_draggedItem, setDraggedItem] = useState<string | null>(null)
 
   // Calculate timeline positions and running balances
   const calculateTimelinePositions = useCallback((): WeekPosition[] => {

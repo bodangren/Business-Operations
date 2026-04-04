@@ -4,7 +4,7 @@ import { lesson08Data, lesson08Phases } from "./lesson-data"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 
 export default function Lesson08Page() {
-  const currentPhase = lesson08Phases[0]
+  const _currentPhase = lesson08Phases[0]
   const slug = "cafe-weekend-ops"
   const groups = [1, 2, 3, 4, 5, 6]
 

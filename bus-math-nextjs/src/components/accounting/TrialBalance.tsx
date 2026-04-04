@@ -173,7 +173,7 @@ export function TrialBalance({
 
           {/* Account Rows */}
           <div className="divide-y divide-gray-200">
-            {accountGroups.map((group, groupIndex) => (
+            {accountGroups.map((group, _groupIndex) => (
               <div key={group.type}>
                 {/* Group Header (if grouped view) */}
                 {groupedView && group.type !== 'all' && (
@@ -192,7 +192,7 @@ export function TrialBalance({
                 )}
 
                 {/* Account Rows */}
-                {group.accounts.map((account, index) => (
+                {group.accounts.map((account, _index) => (
                   <div key={account.id} className={cn(
                     "grid gap-4 p-3 hover:bg-gray-50",
                     showAccountNumbers ? "grid-cols-8" : "grid-cols-6"

@@ -36,7 +36,7 @@ const generateProblem = (seed: number): ScenarioProblem => {
   const v = variants[seed % variants.length];
   
   const cm = v.currentPrice - v.variableCost;
-  const currentProfit = (cm * v.currentVolume) - v.fixedCosts;
+  const _currentProfit = (cm * v.currentVolume) - v.fixedCosts;
   const targetCM = v.fixedCosts + targetProfit;
   
   const premiumVolume = v.currentVolume;

@@ -219,7 +219,7 @@ export function BarChart({
           <ChartLegend content={<ChartLegendContent />} />
         )}
         
-        {data.datasets.map((dataset, index) => {
+        {data.datasets.map((dataset, _index) => {
           const key = dataset.label.toLowerCase().replace(/\s+/g, '_')
           const colors = Array.isArray(dataset.backgroundColor) 
             ? dataset.backgroundColor 

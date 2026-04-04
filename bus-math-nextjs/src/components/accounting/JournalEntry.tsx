@@ -144,7 +144,7 @@ export function JournalEntry({
 
           {/* Journal Entry Lines */}
           <div className="divide-y divide-gray-200">
-            {lines.map((line, index) => (
+            {lines.map((line, _index) => (
               <div key={line.id} className="grid grid-cols-12 gap-4 p-3 hover:bg-gray-50">
                 <div className="col-span-1 flex justify-center">
                   {showAccountTypes && (

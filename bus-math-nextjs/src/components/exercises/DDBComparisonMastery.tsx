@@ -85,13 +85,13 @@ function generateProblem(): DDBProblem {
 
   const methodRoll = Math.random()
   let method: 'ddb' | 'sl' | 'compare'
-  let questionText: string
+  let _questionText: string
   let correctAnswer: string
   let distractors: { label: string; isCorrect: boolean }[]
 
   if (methodRoll < 0.4) {
     method = 'ddb'
-    questionText = `What is the Year ${yearToCalculate} DDB depreciation expense?`
+    _questionText = `What is the Year ${yearToCalculate} DDB depreciation expense?`
     correctAnswer = `$${ddbRow.expense.toLocaleString()}`
     distractors = [
       { label: `$${slRow.expense.toLocaleString()} (straight-line amount)`, isCorrect: false },
@@ -100,7 +100,7 @@ function generateProblem(): DDBProblem {
     ]
   } else if (methodRoll < 0.7) {
     method = 'compare'
-    questionText = `Compare Year ${yearToCalculate}: which method records higher depreciation?`
+    _questionText = `Compare Year ${yearToCalculate}: which method records higher depreciation?`
     if (ddbRow.expense > slRow.expense) {
       correctAnswer = `DDB ($${ddbRow.expense.toLocaleString()}) is higher than SL ($${slRow.expense.toLocaleString()})`
     } else if (ddbRow.expense < slRow.expense) {
@@ -115,7 +115,7 @@ function generateProblem(): DDBProblem {
     ]
   } else {
     method = 'ddb'
-    questionText = `What is the book value at the end of Year ${yearToCalculate} using DDB?`
+    _questionText = `What is the book value at the end of Year ${yearToCalculate} using DDB?`
     correctAnswer = `$${ddbRow.bookValue.toLocaleString()}`
     distractors = [
       { label: `$${slRow.bookValue.toLocaleString()} (straight-line book value)`, isCorrect: false },

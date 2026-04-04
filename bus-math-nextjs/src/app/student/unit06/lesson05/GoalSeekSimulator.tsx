@@ -20,11 +20,11 @@ export default function GoalSeekSimulator() {
   const [feedback, setFeedback] = useState<{type: "success" | "error", message: string} | null>(null);
   const [showSolution, setShowSolution] = useState(false);
 
-  const calculateProfit = (price: number, volume: number = 25) => {
+  const _calculateProfit = (price: number, volume: number = 25) => {
     return (price - VARIABLE_COST) * volume - FIXED_COSTS;
   };
 
-  const correctVolume = Math.ceil((FIXED_COSTS + TARGET_PROFIT) / (CURRENT_PRICE - VARIABLE_COST));
+  const _correctVolume = Math.ceil((FIXED_COSTS + TARGET_PROFIT) / (CURRENT_PRICE - VARIABLE_COST));
   const correctPrice = (FIXED_COSTS + TARGET_PROFIT) / 25 + VARIABLE_COST;
 
   const handleCheck = () => {
