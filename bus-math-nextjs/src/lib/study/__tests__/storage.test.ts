@@ -150,7 +150,7 @@ describe("saveStudyData", () => {
 describe("resetStudyData", () => {
   it("overwrites existing data with defaults", () => {
     const existing = createEmptyLocalData()
-    existing.sessions = [{ session_id: "old" } as any]
+    existing.sessions = [{ session_id: "old" } as unknown as typeof existing.sessions]
     localStorage.setItem(STORAGE_ROOT_KEY, JSON.stringify(existing))
 
     const fresh = resetStudyData()

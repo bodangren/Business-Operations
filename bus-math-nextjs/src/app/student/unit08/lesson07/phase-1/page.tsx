@@ -113,7 +113,7 @@ export default function Phase1Page() {
                   <ComprehensionCheck 
                     title="Rehearsal vs. Project"
                     description="Confirm you understand today's purpose and what changes next lesson"
-                    questions={quiz as any}
+                    questions={quiz}
                     showExplanations
                   />
                 </CardContent>

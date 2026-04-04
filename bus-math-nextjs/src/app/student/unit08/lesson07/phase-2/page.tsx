@@ -144,7 +144,7 @@ export default function Phase2Page() {
                   <ComprehensionCheck 
                     title="Workbook Structure Check"
                     description="Quick check on sheet names and their roles in the evidence chain"
-                    questions={vocabQuiz as any}
+                    questions={vocabQuiz}
                     showExplanations
                   />
                 </CardContent>

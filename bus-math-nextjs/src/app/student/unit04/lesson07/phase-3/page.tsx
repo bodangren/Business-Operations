@@ -146,7 +146,7 @@ export default function Phase3Page() {
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={evidenceTraceQuestions as any}
+                    questions={evidenceTraceQuestions}
                     title="Can You Trace the Evidence?"
                     description="Verify you can follow the logic chain from data to recommendation"
                     showExplanations={true}

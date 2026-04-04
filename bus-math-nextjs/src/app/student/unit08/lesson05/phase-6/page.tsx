@@ -13,23 +13,23 @@ const phase6 = lesson05Phases.find(p => p.sequence === 6)!;
 const capPrompts = [
   {
     id: 'confidence-workbook',
-    category: 'confidence',
+    category: 'confidence' as const,
     prompt: 'What part of building the asset register and depreciation schedule do you feel most confident about now? Why?',
     placeholder: 'Describe the skill or concept you feel strongest about...'
   },
   {
     id: 'understanding-linking',
-    category: 'understanding',
+    category: 'understanding' as const,
     prompt: 'Explain in your own words why formula linking between the asset register and depreciation schedule matters. What breaks when the link is missing?',
     placeholder: 'Connect the technical reason to the business consequence...'
   },
   {
     id: 'business-signal',
-    category: 'business signal',
+    category: 'method-signal' as const,
     prompt: 'What signal tells you that a depreciation schedule is trustworthy enough to show an investor?',
     placeholder: 'Think about checks, consistency, and transparency...'
   }
-] as const;
+];
 
 export default function Phase6Page() {
   return (
@@ -92,7 +92,7 @@ export default function Phase6Page() {
             {/* Reflection Journal */}
             <ReflectionJournal
               unitTitle="Reflection: Asset Register and Depreciation Schedule"
-              prompts={capPrompts as any}
+              prompts={capPrompts}
             />
           </div>
         </div>

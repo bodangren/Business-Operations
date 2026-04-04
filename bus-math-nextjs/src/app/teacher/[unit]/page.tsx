@@ -51,7 +51,7 @@ function getUnitModules(unit: string): { unitData: UnitData; plan: UnitLessonPla
 
 export default async function TeacherUnitPage({ params }: TeacherUnitPageProps) {
   const { unit } = await params
-  if (!VALID_UNITS.includes(unit as any)) notFound()
+  if (!VALID_UNITS.includes(unit as (typeof VALID_UNITS)[number])) notFound()
 
   const mods = getUnitModules(unit)
   if (!mods) notFound()

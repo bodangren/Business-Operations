@@ -205,7 +205,7 @@ describe("session export with data", () => {
 
   it("restore_payload contains session IDs", () => {
     const exp = buildMinimalExport()
-    exp.sessions = [{ session_id: "s1" } as any]
+    exp.sessions = [{ session_id: "s1" } as unknown as typeof exp.sessions]
     exp.restore_payload.session_ids_included = ["s1"]
     expect(exp.restore_payload.session_ids_included).toContain("s1")
   })

@@ -11,9 +11,9 @@ import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 const currentPhase = lesson07Phases[5]
 
 const capPrompts = [
-  { id: 'u6l7-cap-courage', category: 'courage', prompt: 'Where did you show courage by naming a weakness or risk in the workbook instead of hiding it?', placeholder: 'Explain why that honesty matters in the project.' },
-  { id: 'u6l7-cap-adapt', category: 'adaptability', prompt: 'What part of the rehearsal workbook would you adapt first when your group gets a new scenario in Lesson 08?', placeholder: 'Name the sheet or structure and explain why.' },
-  { id: 'u6l7-cap-persist', category: 'persistence', prompt: 'What part of the workbook logic still took careful effort even in a guided rehearsal?', placeholder: 'Describe what made it challenging and what helped you finish it.' },
+  { id: 'u6l7-cap-courage', category: 'courage' as const, prompt: 'Where did you show courage by naming a weakness or risk in the workbook instead of hiding it?', placeholder: 'Explain why that honesty matters in the project.' },
+  { id: 'u6l7-cap-adapt', category: 'adaptability' as const, prompt: 'What part of the rehearsal workbook would you adapt first when your group gets a new scenario in Lesson 08?', placeholder: 'Name the sheet or structure and explain why.' },
+  { id: 'u6l7-cap-persist', category: 'persistence' as const, prompt: 'What part of the workbook logic still took careful effort even in a guided rehearsal?', placeholder: 'Describe what made it challenging and what helped you finish it.' },
 ]
 
 export default function Phase6Page() {
@@ -46,7 +46,7 @@ export default function Phase6Page() {
                   <CardTitle className="text-green-900">CAP Reflection</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ReflectionJournal unitTitle="CAP Reflection: Lesson 07 Project Rehearsal" prompts={capPrompts as any} />
+                  <ReflectionJournal unitTitle="CAP Reflection: Lesson 07 Project Rehearsal" prompts={capPrompts} />
                 </CardContent>
               </Card>
 

@@ -63,7 +63,7 @@ export default function Phase5Page() {
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={transferCheckQuestions as any}
+                    questions={transferCheckQuestions}
                     title="Transfer Check"
                     description="Confirm you understand the evidence chain and audit criteria"
                     showExplanations={true}

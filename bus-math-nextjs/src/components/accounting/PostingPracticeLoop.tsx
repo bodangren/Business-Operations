@@ -201,7 +201,7 @@ export default function PostingPracticeLoop({
     }
   }
 
-  const handleAccountChange = (lineId: string, field: 'account' | 'debit' | 'credit', value: any) => {
+  const handleAccountChange = (lineId: string, field: 'account' | 'debit' | 'credit', value: string | number) => {
     setUserEntry(prev => {
       const updated = [...prev]
       const idx = updated.findIndex(l => l.id === lineId)
@@ -209,7 +209,7 @@ export default function PostingPracticeLoop({
         if (field === 'debit' || field === 'credit') {
           updated[idx][field] = Number(value) || 0
         } else {
-          updated[idx][field] = value
+          updated[idx][field] = value as string
         }
       }
       return updated

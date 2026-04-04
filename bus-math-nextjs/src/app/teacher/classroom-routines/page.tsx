@@ -7,7 +7,7 @@ import { classroomRoutines, RoutineType } from "@/data/teacher/classroom-routine
 import Link from "next/link";
 import { BookOpen, Users, Presentation, MessageSquare, CheckCircle, Lightbulb, UserCheck, ClipboardList, Target } from "lucide-react";
 
-const routineIcons: Record<RoutineType, React.ComponentType<any>> = {
+const routineIcons: Record<RoutineType, React.ComponentType<{ className?: string }>> = {
   [RoutineType.DirectInstruction]: BookOpen,
   [RoutineType.GuidedPractice]: UserCheck,
   [RoutineType.IndependentPractice]: Target,

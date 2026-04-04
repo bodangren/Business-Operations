@@ -73,7 +73,7 @@ export default function Phase5Page() {
                 <CardContent className="text-yellow-900">
                   <p className="mb-3">Answer these questions to confirm you understand the project standard:</p>
                   <ComprehensionCheck
-                    questions={transferQuiz as any}
+                    questions={transferQuiz}
                     title="Project Standards Transfer Check"
                     description="Confirm you can name the structure and explain what makes it trustworthy"
                     showExplanations={true}

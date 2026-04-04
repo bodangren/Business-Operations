@@ -73,7 +73,7 @@ interface LessonProgressContextType {
   
   // Utility methods
   resetUnitProgress: (unitId: string) => void
-  initializeUnit: (unitId: string, unitTitle: string, lessons: any[]) => void
+  initializeUnit: (unitId: string, unitTitle: string, lessons: Array<{ id: string; sequence: number; title: string; phases?: LessonPhaseProgress[] }>) => void
   exportProgress: () => string
   importProgress: (data: string) => void
 }
@@ -242,11 +242,11 @@ export const LessonProgressProvider: React.FC<LessonProgressProviderProps> = ({ 
               ...unit,
               startDate: unit.startDate ? new Date(unit.startDate) : undefined,
               completionDate: unit.completionDate ? new Date(unit.completionDate) : undefined,
-              lessons: unit.lessons.map((lesson: any) => ({
+              lessons: unit.lessons.map((lesson: Record<string, unknown>) => ({
                 ...lesson,
-                phases: lesson.phases.map((phase: any) => ({
+                phases: (lesson.phases as Record<string, unknown>[]).map((phase: Record<string, unknown>) => ({
                   ...phase,
-                  lastAccessed: phase.lastAccessed ? new Date(phase.lastAccessed) : undefined
+                  lastAccessed: phase.lastAccessed ? new Date(phase.lastAccessed as string | number | Date) : undefined
                 }))
               }))
             }
@@ -328,7 +328,7 @@ export const LessonProgressProvider: React.FC<LessonProgressProviderProps> = ({ 
     })
   }
 
-  const initializeUnit = (unitId: string, unitTitle: string, lessons: any[]) => {
+  const initializeUnit = (unitId: string, unitTitle: string, lessons: Array<{ id: string; sequence: number; title: string; phases?: LessonPhaseProgress[] }>) => {
     // Don't reinitialize if unit already exists
     if (state.units[unitId]) return
 

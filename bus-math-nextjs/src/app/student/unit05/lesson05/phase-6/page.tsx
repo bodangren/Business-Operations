@@ -65,7 +65,7 @@ export default function Phase6Page() {
                 prompt: 'What kept you going while balancing employee preferences with business coverage?',
                 placeholder: 'Reflect on the strategy that helped you keep iterating…'
               }
-            ] as any}
+            ]}
           />
 
           <Card className="border-blue-200 bg-blue-50">

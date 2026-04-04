@@ -12,7 +12,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white">
-      <PhaseHeader unit={unit05Data as any} lesson={lesson10Data as any} phase={currentPhase as any} phases={phases as any} />
+      <PhaseHeader unit={unit05Data} lesson={lesson10Data} phase={currentPhase} phases={phases} />
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
@@ -120,7 +120,7 @@ export default function Page() {
           <ReflectionJournal unitTitle="Post‑Presentation Reflection (CAP)" />
         </section>
       </main>
-      <PhaseFooter unit={unit05Data as any} lesson={lesson10Data as any} phase={currentPhase as any} phases={phases as any} />
+      <PhaseFooter unit={unit05Data} lesson={lesson10Data} phase={currentPhase} phases={phases} />
     </div>
   )
 }

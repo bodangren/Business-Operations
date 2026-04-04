@@ -27,11 +27,13 @@ interface PhaseHeaderProps {
     title: string
     sequence: number
     unitId: string
+    [key: string]: unknown
   }
   unit: {
     id: string
     title: string
     sequence: number
+    [key: string]: unknown
   }
   phase: LessonPhase
   phases: LessonPhase[]

@@ -94,7 +94,7 @@ export default function Phase1Page() {
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={purposeQuiz as any}
+                    questions={purposeQuiz}
                     title="Why This Matters"
                     description="Confirm you understand the purpose of today's shared practice"
                     showExplanations={true}

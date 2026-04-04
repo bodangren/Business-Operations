@@ -30,23 +30,35 @@
 - `npx vitest run`: 216 tests passed (14 suites)
 - `npm run build`: compiled successfully (603+ pages)
 
-## Phase 3: Fix no-explicit-any Warnings (227 warnings)
+## Phase 3: Fix no-explicit-any Warnings (227 warnings) [x]
 
-### Task 3.1: Tackle `any` types in lib/ utilities
-- Focus on `src/lib/` files first (core logic)
-- Replace `any` with proper types where clear from context
-- Leave `any` where type is genuinely unknown (add `eslint-disable-next-line` with justification)
+### Task 3.1: Tackle `any` types in lib/ utilities [x]
+- Added index signatures to PhaseHeader/PhaseFooter props to accept lesson-data objects without `as any` casts
+- Removed 70 `as any` casts from student page files
+- Fixed `ReflectionJournal` category type to accept `string`
 
-### Task 3.2: Tackle `any` types in components
-- Fix `any` in React component props and state
-- Use `unknown` or specific types
+### Task 3.2: Tackle `any` types in components [x]
+- BarChart: `Record<string, string | number>` for data points
+- LineChart: `Array<Record<string, string | number>>` for chart data
+- ScatterChart: Removed explicit formatter param type (inferred)
+- ErrorCheckingSystem: Proper types for `sampleData`, `sampleDataset`, `testData`, `safeEvaluateCondition`
+- InventoryManager: Typed `MarketEvent.effect` with specific optional properties
+- PostingPracticeLoop: `string | number` for `handleAccountChange` value
+- TransactionJournal: Specific union type for `accountType` cast
+- DepreciationMethodBuilder: `React.ComponentType<{ className?: string }>` for icon
+- UnitLessonPlan: Imported `DailyLesson`/`LessonActivity` from `@/types/lesson-plan`
+- Lesson01Phase1: Proper prop types matching PhaseHeader expectations
+- LessonProgressContext: `Record<string, unknown>` for JSON deserialization, proper `initializeUnit` params
+- classroom-routines: `React.ComponentType<{ className?: string }>` for icon map
 
-### Task 3.3: Tackle `any` types in test files
-- Lower priority — fix obvious ones, disable for complex mocks
+### Task 3.3: Tackle `any` types in test files [x]
+- export.test.ts: `as unknown as typeof` for partial session mock
+- storage.test.ts: Same pattern for partial session mock
 
 ### Task 3.4: Verify and commit
-- Run `npm run lint`, `npm run test`, `npm run build`
-- Commit: `chore(lint): Replace no-explicit-any with proper types`
+- `npm run lint`: 0 errors, 7 warnings (all react-hooks, Phase 4)
+- `npm run test`: 216 tests passed (14 suites)
+- `npm run build`: compiled successfully (603+ pages)
 
 ## Phase 4: Fix React Hooks Rules (~10 warnings)
 

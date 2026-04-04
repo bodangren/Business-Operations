@@ -128,7 +128,7 @@ export default function Phase2Page() {
                 </CardHeader>
                 <CardContent>
                   <FillInTheBlank
-                    sentences={vocabSentences as any}
+                    sentences={vocabSentences}
                     title="Workbook Structure Practice"
                     description="Learn the sheet names and what each one does before you build."
                     showWordList={true}

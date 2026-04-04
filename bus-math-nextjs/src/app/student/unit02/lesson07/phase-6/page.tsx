@@ -130,7 +130,7 @@ export default function Phase6Page() {
                   </p>
                   <ReflectionJournal
                     unitTitle="Project Rehearsal Reflection"
-                    prompts={reflectionPrompts as any}
+                    prompts={reflectionPrompts}
                   />
                 </CardContent>
               </Card>

@@ -103,7 +103,7 @@ export function ScatterChart({
             cursor={{ strokeDasharray: '3 3' }}
             content={
               <ChartTooltipContent
-                formatter={(value: any) => [
+                formatter={(value) => [
                   typeof value === 'number' && value > 1000 
                     ? `${yAxisLabel}: $${value.toLocaleString()}` 
                     : `${xAxisLabel}: ${value}`,

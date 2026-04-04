@@ -91,7 +91,7 @@ import {
 interface AssetScenario {
   id: string
   name: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   description: string
   assetType: string
   cost: number

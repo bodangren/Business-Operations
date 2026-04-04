@@ -101,7 +101,7 @@ export default function Phase1Page() {
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={comprehensionQuestions as any}
+                    questions={comprehensionQuestions}
                     title="Rehearsal Purpose Check"
                     description="Confirm you understand why we're doing this guided rehearsal first."
                     showExplanations={true}

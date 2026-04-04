@@ -108,7 +108,7 @@ export default function Phase5Page() {
                   <ComprehensionCheck 
                     title="Audit and Transfer Readiness"
                     description="Confirm you understand the quality standard and peer audit process"
-                    questions={transferQuiz as any}
+                    questions={transferQuiz}
                     showExplanations
                   />
                 </CardContent>

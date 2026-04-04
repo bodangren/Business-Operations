@@ -462,7 +462,7 @@ export function TransactionJournal({
                   <div className="col-span-2">
                     <select
                       value={line.accountType}
-                      onChange={(e) => updateJournalLine(line.id, { accountType: e.target.value as any })}
+                      onChange={(e) => updateJournalLine(line.id, { accountType: e.target.value as 'asset' | 'liability' | 'equity' | 'revenue' | 'expense' })}
                       className="w-full p-1 text-sm border border-gray-300 rounded"
                     >
                       <option value="asset">Asset</option>

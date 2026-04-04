@@ -20,7 +20,7 @@ import {
 interface LineChartProps {
   title?: string
   description?: string
-  data: Array<Record<string, any>>
+  data: Array<Record<string, string | number>>
   config: ChartConfig
   height?: number
   showGrid?: boolean

@@ -132,7 +132,7 @@ function transformDataForRecharts(chartData: ChartData) {
 
   // Transform data to Recharts format
   const rechartsData = labels.map((label, labelIndex) => {
-    const dataPoint: any = { name: label }
+    const dataPoint: Record<string, string | number> = { name: label }
     
     datasets.forEach((dataset) => {
       const key = dataset.label.toLowerCase().replace(/\s+/g, '_')

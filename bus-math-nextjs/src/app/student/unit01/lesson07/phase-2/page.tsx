@@ -116,7 +116,7 @@ export default function Phase2Page() {
                 </CardHeader>
                 <CardContent>
                   <FillInTheBlank 
-                    sentences={vocabSentences as any}
+                    sentences={vocabSentences}
                     title="Rehearsal Vocabulary"
                     description="Fill in the blanks to reinforce key terms for the project."
                     showWordList={true}

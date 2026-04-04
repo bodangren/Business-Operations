@@ -109,7 +109,7 @@ interface MarketEvent {
   type: 'demand_spike' | 'demand_drop' | 'price_change' | 'storage_discount'
   message: string
   productId?: string
-  effect: Record<string, any>
+  effect: { demandBoost?: number; demandReduction?: number; priceChange?: number; storageDiscount?: number }
   duration: number
 }
 
@@ -307,7 +307,7 @@ export function InventoryManager() {
       // Apply storage cost discount if active
       const storageEvent = prev.marketEvents.find(e => e.type === 'storage_discount')
       if (storageEvent) {
-        dayStorageCost *= (1 - storageEvent.effect.storageDiscount)
+        dayStorageCost *= (1 - (storageEvent.effect.storageDiscount ?? 0))
       }
 
       // Process sales for each product
@@ -320,9 +320,9 @@ export function InventoryManager() {
         )
         if (demandEvent) {
           if (demandEvent.type === 'demand_spike') {
-            demand = Math.floor(demand * (1 + demandEvent.effect.demandBoost))
+            demand = Math.floor(demand * (1 + (demandEvent.effect.demandBoost ?? 0)))
           } else if (demandEvent.type === 'demand_drop') {
-            demand = Math.floor(demand * (1 - demandEvent.effect.demandReduction))
+            demand = Math.floor(demand * (1 - (demandEvent.effect.demandReduction ?? 0)))
           }
         }
 
@@ -334,7 +334,7 @@ export function InventoryManager() {
           e.productId === product.id && e.type === 'price_change'
         )
         if (priceEvent) {
-          salePrice += priceEvent.effect.priceChange
+          salePrice += priceEvent.effect.priceChange ?? 0
         }
 
         const revenue = unitsSold * salePrice

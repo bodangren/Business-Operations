@@ -110,7 +110,7 @@ export default function Phase1Page() {
               </Card>
 
               <ComprehensionCheck
-                questions={hookQuestions as any}
+                questions={hookQuestions}
                 title="Why Rehearse the Project?"
                 description="Check that you understand the purpose of Lesson 07 before building."
                 showExplanations={true}

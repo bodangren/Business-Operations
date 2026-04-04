@@ -125,7 +125,7 @@ export default function Phase1Page() {
                 </CardHeader>
                 <CardContent>
                   <ComprehensionCheck
-                    questions={standardsQuiz as any}
+                    questions={standardsQuiz}
                     title="Project Standards Check"
                     description="Confirm your understanding of what makes a workbook trustworthy."
                     showExplanations={true}

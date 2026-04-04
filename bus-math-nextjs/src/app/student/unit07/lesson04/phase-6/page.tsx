@@ -12,13 +12,13 @@ export default function Phase6Page() {
   const prompts = [
     {
       id: 'intuitive-method',
-      category: 'method-understanding' as const,
+      category: 'understanding' as const,
       prompt: 'Which inventory method felt most intuitive to you — Specific Identification or Weighted Average? Why?',
       placeholder: 'Describe which method clicked for you and what made it easier to understand...'
     },
     {
       id: 'challenging-concept',
-      category: 'method-understanding' as const,
+      category: 'understanding' as const,
       prompt: 'What concept in this lesson was most challenging? How did you work through it?',
       placeholder: 'Share what was difficult and how you approached it...'
     },
@@ -123,7 +123,7 @@ export default function Phase6Page() {
           </Card>
 
           {/* Reflection */}
-          <ReflectionJournal unitTitle="Lesson 4 Reflection: Inventory Methods" prompts={prompts as any} />
+          <ReflectionJournal unitTitle="Lesson 4 Reflection: Inventory Methods" prompts={prompts} />
 
           {/* Preview */}
           <Card className="border-blue-200 bg-blue-50">

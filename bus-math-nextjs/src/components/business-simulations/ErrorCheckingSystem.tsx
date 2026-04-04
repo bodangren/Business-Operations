@@ -83,7 +83,7 @@ interface ValidationRule {
   businessContext: string
   colorCode: string
   priority: 'High' | 'Medium' | 'Low'
-  sampleData: any[]
+  sampleData: (string | number | boolean | number[])[]
   expectedResults: boolean[]
 }
 
@@ -95,7 +95,7 @@ interface ValidationScenario {
   difficulty: 'Easy' | 'Medium' | 'Hard'
   rules: ValidationRule[]
   dataColumns: string[]
-  sampleDataset: Record<string, any>[]
+  sampleDataset: Record<string, string | number>[]
 }
 
 // Sample business validation scenarios
@@ -301,45 +301,45 @@ export default function ErrorCheckingSystem() {
   const [selectedRule, setSelectedRule] = useState<ValidationRule | null>(null)
   const [showInstructions, setShowInstructions] = useState(false)
   const [showFormulas, setShowFormulas] = useState(false)
-  const [testData, setTestData] = useState<any[]>([])
+  const [testData, setTestData] = useState<Record<string, string | number>[]>([])
   const [validationResults, setValidationResults] = useState<boolean[]>([])
   const [isTestingRule, setIsTestingRule] = useState(false)
 
   // Safe formula evaluator - prevents code injection
-  const safeEvaluateCondition = useCallback((condition: string, data: any, _index: number): boolean => {
+  const safeEvaluateCondition = useCallback((condition: string, data: Record<string, string | number>, _index: number): boolean => {
     try {
       // This is a simplified evaluator for demonstration
       // In production, use a proper expression parser
       switch (condition) {
         case 'Hours_Worked > 40':
-          return data.Hours_Worked > 40
+          return Number(data.Hours_Worked) > 40
         case 'Employee_ID is blank':
-          return !data.Employee_ID || data.Employee_ID.trim() === ''
+          return !data.Employee_ID || String(data.Employee_ID).trim() === ''
         case 'Gross_Pay ≠ Hours_Worked × Hourly_Rate':
-          return Math.abs(data.Gross_Pay - (data.Hours_Worked * data.Hourly_Rate)) > 0.01
+          return Math.abs(Number(data.Gross_Pay) - (Number(data.Hours_Worked) * Number(data.Hourly_Rate))) > 0.01
         case 'Department is blank':
-          return !data.Department || data.Department.trim() === ''
+          return !data.Department || String(data.Department).trim() === ''
         case 'Current_Stock < Minimum_Stock':
-          return data.Current_Stock < data.Minimum_Stock
+          return Number(data.Current_Stock) < Number(data.Minimum_Stock)
         case 'Current_Stock = 0':
           return data.Current_Stock === 0
         case 'Unit_Cost ≤ 0':
-          return data.Unit_Cost <= 0
+          return Number(data.Unit_Cost) <= 0
         case 'Last_Updated > 30 days ago':
-          const lastUpdate = new Date(data.Last_Updated)
+          const lastUpdate = new Date(String(data.Last_Updated))
           const today = new Date()
           const daysDiff = (today.getTime() - lastUpdate.getTime()) / (1000 * 3600 * 24)
           return daysDiff > 30
         case 'Normal balance side violation':
           if (data.Account_Type === 'Asset' || data.Account_Type === 'Expense') {
-            return data.Credit_Balance > data.Debit_Balance
+            return Number(data.Credit_Balance) > Number(data.Debit_Balance)
           } else {
-            return data.Debit_Balance > data.Credit_Balance
+            return Number(data.Debit_Balance) > Number(data.Credit_Balance)
           }
         case 'Debit_Balance > 0 AND Credit_Balance > 0':
-          return data.Debit_Balance > 0 && data.Credit_Balance > 0
+          return Number(data.Debit_Balance) > 0 && Number(data.Credit_Balance) > 0
         case 'Account_Code is blank':
-          return !data.Account_Code || data.Account_Code.trim() === ''
+          return !data.Account_Code || String(data.Account_Code).trim() === ''
         default:
           return false
       }

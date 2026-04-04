@@ -10,7 +10,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      <PhaseHeader unit={unit06Data as any} lesson={lesson09Data as any} phase={currentPhase as any} phases={phases as any} />
+      <PhaseHeader unit={unit06Data} lesson={lesson09Data} phase={currentPhase} phases={phases} />
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
@@ -157,7 +157,7 @@ export default function Page() {
           </Card>
         </section>
       </main>
-      <PhaseFooter unit={unit06Data as any} lesson={lesson09Data as any} phase={currentPhase as any} phases={phases as any} />
+      <PhaseFooter unit={unit06Data} lesson={lesson09Data} phase={currentPhase} phases={phases} />
     </div>
   )
 }

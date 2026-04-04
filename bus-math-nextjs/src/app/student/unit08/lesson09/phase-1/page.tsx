@@ -13,7 +13,7 @@ const phase = lesson09Phases[0]
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-indigo-50">
-      <PhaseHeader unit={unit08Data as any} lesson={lesson09Data as any} phase={phase as any} phases={lesson09Phases as any} />
+      <PhaseHeader unit={unit08Data} lesson={lesson09Data} phase={phase} phases={lesson09Phases} />
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
@@ -142,7 +142,7 @@ export default function Page() {
           </Card>
         </section>
       </main>
-      <PhaseFooter unit={unit08Data as any} lesson={lesson09Data as any} phase={phase as any} phases={lesson09Phases as any} />
+      <PhaseFooter unit={unit08Data} lesson={lesson09Data} phase={phase} phases={lesson09Phases} />
     </div>
   )
 }

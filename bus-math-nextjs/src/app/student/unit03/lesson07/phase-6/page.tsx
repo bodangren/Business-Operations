@@ -49,7 +49,7 @@ const transferChecklist = [
   "Can I check if the balance sheet balances?"
 ]
 
-const capPrompts = [
+const capPrompts: Array<{ id: string; category: 'courage' | 'adaptability' | 'persistence'; prompt: string; placeholder: string }> = [
   {
     id: 'courage-u3l7',
     category: 'courage',
@@ -154,7 +154,7 @@ export default function Phase6Page() {
                   <CardTitle className="text-purple-900 flex items-center gap-2"><BookOpen className="w-5 h-5" /> CAP Reflection</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ReflectionJournal unitTitle="CAP Reflection: Project Rehearsal" prompts={capPrompts as any} />
+                  <ReflectionJournal unitTitle="CAP Reflection: Project Rehearsal" prompts={capPrompts} />
                 </CardContent>
               </Card>
             </div>

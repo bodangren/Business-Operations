@@ -125,7 +125,7 @@ export default function Phase4Page() {
                   <ComprehensionCheck 
                     title="Transfer Readiness Check"
                     description="Confirm you know what carries into the real project"
-                    questions={transferQuiz as any}
+                    questions={transferQuiz}
                     showExplanations
                   />
                 </CardContent>

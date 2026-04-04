@@ -162,7 +162,7 @@ export default function Phase2Page() {
                 </CardHeader>
                 <CardContent>
                   <FillInTheBlank
-                    sentences={vocabItems as any}
+                    sentences={vocabItems}
                     title="Three-Statement Vocabulary"
                     description="Key terms for understanding the evidence chain"
                   />

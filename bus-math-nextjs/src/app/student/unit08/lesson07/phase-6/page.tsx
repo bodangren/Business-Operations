@@ -111,7 +111,7 @@ export default function Phase6Page() {
 
               <ReflectionJournal 
                 unitTitle="Project Rehearsal Reflection" 
-                prompts={prompts as any} 
+                prompts={prompts} 
               />
             </div>
           </div>

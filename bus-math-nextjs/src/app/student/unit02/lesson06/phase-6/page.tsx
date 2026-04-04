@@ -117,7 +117,7 @@ export default function Phase6Page() {
 
           <ReflectionJournal 
             unitTitle="Reflection: What the Polish Added"
-            prompts={reflectionPrompts as any}
+            prompts={reflectionPrompts}
           />
         </section>
       </main>

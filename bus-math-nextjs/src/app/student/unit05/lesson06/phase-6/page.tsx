@@ -59,7 +59,7 @@ export default function Phase6Page() {
                 prompt: 'What kept you going when the numbers didn’t reconcile on the first try?',
                 placeholder: 'Share the strategy or mindset that helped you finish…'
               }
-            ] as any}
+            ]}
           />
 
           <Card className="border-blue-200 bg-blue-50">

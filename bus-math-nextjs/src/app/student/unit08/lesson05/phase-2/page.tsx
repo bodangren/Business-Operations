@@ -296,7 +296,7 @@ export default function Phase2Page() {
 
             {/* Vocabulary Check */}
             <FillInTheBlank
-              sentences={vocabSentences as any}
+              sentences={vocabSentences}
               title="Key Vocabulary: Asset Register and Depreciation Schedule"
               description="Fill in the key concepts that make a professional asset tracking workbook."
               showWordList={true}

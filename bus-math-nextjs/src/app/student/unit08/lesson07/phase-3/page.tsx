@@ -143,7 +143,7 @@ export default function Phase3Page() {
                   <ComprehensionCheck 
                     title="Evidence Chain Check"
                     description="Confirm you can trace recommendations back to workbook evidence"
-                    questions={auditQuiz as any}
+                    questions={auditQuiz}
                     showExplanations
                   />
                 </CardContent>

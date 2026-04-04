@@ -35,7 +35,7 @@ const rubricData: SpreadsheetData = [
 export default function Lesson08Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <PhaseHeader unit={unit08Data as any} lesson={lesson08Data as any} phase={phase as any} phases={lesson08Phases as any} />
+      <PhaseHeader unit={unit08Data} lesson={lesson08Data} phase={phase} phases={lesson08Phases} />
       <main className="container mx-auto px-4 py-8 space-y-8 max-w-5xl">
         {/* Project Context */}
         <section className="space-y-6">
@@ -325,7 +325,7 @@ export default function Lesson08Page() {
           </Card>
         </section>
       </main>
-      <PhaseFooter unit={unit08Data as any} lesson={lesson08Data as any} phase={phase as any} phases={lesson08Phases as any} />
+      <PhaseFooter unit={unit08Data} lesson={lesson08Data} phase={phase} phases={lesson08Phases} />
     </div>
   )
 }

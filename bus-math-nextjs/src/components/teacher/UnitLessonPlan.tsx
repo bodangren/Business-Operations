@@ -18,7 +18,7 @@ import {
   Briefcase,
   GraduationCap
 } from "lucide-react"
-import { UnitLessonPlan } from "@/types/lesson-plan"
+import { UnitLessonPlan, DailyLesson, LessonActivity } from "@/types/lesson-plan"
 
 interface UnitLessonPlanProps {
   lessonPlan: UnitLessonPlan
@@ -441,7 +441,7 @@ export function UnitLessonPlanComponent({ lessonPlan }: UnitLessonPlanProps) {
 }
 
 // Separate component for daily lesson cards
-function DailyLessonCard({ lesson }: { lesson: any }) {
+function DailyLessonCard({ lesson }: { lesson: DailyLesson }) {
   const getCalloutIcon = (type: string) => {
     switch (type) {
       case 'tip': return <Lightbulb className="h-5 w-5" />
@@ -487,7 +487,7 @@ function DailyLessonCard({ lesson }: { lesson: any }) {
         </div>
       </CardHeader>
       <CardContent className="space-y-6">
-        {lesson.activities.map((activity: any, index: number) => (
+        {lesson.activities.map((activity: LessonActivity, index: number) => (
           <div key={index}>
             <h4 className="text-lg font-medium text-primary border-b border-gray-200 pb-2 mb-3">
               {activity.name} ({activity.duration})
@@ -517,7 +517,7 @@ function DailyLessonCard({ lesson }: { lesson: any }) {
             {activity.interactiveActivities && (
               <div className="mb-4 space-y-2">
                 <h5 className="font-medium text-primary">Interactive Activities:</h5>
-                {activity.interactiveActivities.map((interactiveActivity: any, intIndex: number) => (
+                {activity.interactiveActivities.map((interactiveActivity, intIndex) => (
                   <Card key={intIndex} className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
                     <CardContent className="pt-4">
                       <div className="flex items-center justify-between mb-2">
