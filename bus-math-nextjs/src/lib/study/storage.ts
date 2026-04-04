@@ -26,6 +26,16 @@ export function loadStudyData(): LocalStudyData {
       return migrate(parsed) ?? createEmptyLocalData()
     }
 
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      !Array.isArray(parsed.sessions) ||
+      !Array.isArray(parsed.reflections) ||
+      typeof parsed.study_state !== "object"
+    ) {
+      return createEmptyLocalData()
+    }
+
     return parsed as unknown as LocalStudyData
   } catch {
     return createEmptyLocalData()

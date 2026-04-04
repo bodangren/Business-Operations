@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Layers, BarChart3, Clock } from "lucide-react"
 import { glossaryData } from "@/data/glossary"
 import { filterByUnit } from "@/lib/glossary/index"
+import { ALL_UNIT_IDS } from "@/lib/glossary/index"
 import {
   createMatchingSession,
   selectTerm,
@@ -20,13 +21,15 @@ import { recordMatchingSession } from "@/lib/study/modes/record-session"
 import type { MatchingSession } from "@/lib/study/modes"
 import type { UnitId, GlossaryEntry } from "@/types/glossary"
 
+const VALID_UNIT_IDS: readonly string[] = ALL_UNIT_IDS
+
 export default function MatchingGame() {
   const searchParams = useSearchParams()
-  const unitParam = searchParams.get("unit") as UnitId | null
+  const rawUnit = searchParams.get("unit")
+  const unitParam = rawUnit && VALID_UNIT_IDS.includes(rawUnit) ? (rawUnit as UnitId) : null
   const [session, setSession] = useState<MatchingSession | null>(null)
   const [isComplete, setIsComplete] = useState(false)
   const [elapsed, setElapsed] = useState(0)
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const terms: GlossaryEntry[] = unitParam
     ? filterByUnit(glossaryData, unitParam)
@@ -43,16 +46,12 @@ export default function MatchingGame() {
   }, [terms.length]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Timer
+  const sessionActive = !!session && !isComplete
   useEffect(() => {
-    if (session && !isComplete) {
-      timerRef.current = setInterval(() => {
-        setElapsed((prev) => prev + 1)
-      }, 1000)
-    }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current)
-    }
-  }, [session, isComplete])
+    if (!sessionActive) return
+    const id = setInterval(() => setElapsed((p) => p + 1), 1000)
+    return () => clearInterval(id)
+  }, [sessionActive])
 
   // Check match when both selected
   useEffect(() => {
@@ -62,7 +61,6 @@ export default function MatchingGame() {
         setSession(next)
         if (isMatchingComplete(next)) {
           setIsComplete(true)
-          if (timerRef.current) clearInterval(timerRef.current)
           try {
             recordMatchingSession(next, {
               unit_id: unitParam ?? "unit01",

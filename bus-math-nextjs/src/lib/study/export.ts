@@ -290,7 +290,7 @@ export function downloadFile(content: string, filename: string, mimeType: string
   document.body.appendChild(a)
   a.click()
   document.body.removeChild(a)
-  URL.revokeObjectURL(url)
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 
 /**
@@ -336,6 +336,38 @@ function recordExportInHistory(
 // ---------------------------------------------------------------------------
 // Import / Restore
 // ---------------------------------------------------------------------------
+
+function isObject(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v)
+}
+
+function isValidSessionRecord(s: unknown): boolean {
+  if (!isObject(s)) return false
+  return (
+    typeof s.session_id === "string" &&
+    typeof s.started_at === "string" &&
+    isObject(s.activity) &&
+    isObject(s.results)
+  )
+}
+
+function isValidReflection(r: unknown): boolean {
+  if (!isObject(r)) return false
+  return (
+    typeof r.reflection_id === "string" &&
+    typeof r.created_at === "string"
+  )
+}
+
+function isValidTermMastery(m: unknown): boolean {
+  if (!isObject(m)) return false
+  return typeof m.term_slug === "string" && typeof m.mastery_score === "number"
+}
+
+function isValidDueReviewEntry(d: unknown): boolean {
+  if (!isObject(d)) return false
+  return typeof d.term_slug === "string" && typeof d.scheduled_for === "string"
+}
 
 export interface ImportSuccess {
   ok: true
@@ -385,7 +417,7 @@ export function importSessionJson(
   const existingSessionIds = new Set(target.sessions.map((s) => s.session_id))
   const newSessions: SessionRecord[] = []
   for (const s of parsed.sessions) {
-    if (!existingSessionIds.has(s.session_id)) {
+    if (!existingSessionIds.has(s.session_id) && isValidSessionRecord(s)) {
       newSessions.push(s as SessionRecord)
       existingSessionIds.add(s.session_id)
     }
@@ -395,7 +427,7 @@ export function importSessionJson(
   const existingReflectionIds = new Set(target.reflections.map((r) => r.reflection_id))
   const newReflections: Reflection[] = []
   for (const r of parsed.reflections) {
-    if (!existingReflectionIds.has(r.reflection_id)) {
+    if (!existingReflectionIds.has(r.reflection_id) && isValidReflection(r)) {
       newReflections.push(r as Reflection)
       existingReflectionIds.add(r.reflection_id)
     }
@@ -404,13 +436,17 @@ export function importSessionJson(
   // Merge mastery — overwrite with imported values (latest wins)
   const masteryMap = new Map(target.study_state.mastery_by_term.map((m) => [m.term_slug, m]))
   for (const m of parsed.study_state.mastery_by_term) {
-    masteryMap.set(m.term_slug, m as TermMastery)
+    if (isValidTermMastery(m)) {
+      masteryMap.set(m.term_slug, m as TermMastery)
+    }
   }
 
   // Merge due review — overwrite with imported values
   const dueMap = new Map(target.study_state.due_review_snapshot.map((d) => [d.term_slug, d]))
   for (const d of parsed.study_state.due_review_snapshot) {
-    dueMap.set(d.term_slug, d as DueReviewEntry)
+    if (isValidDueReviewEntry(d)) {
+      dueMap.set(d.term_slug, d as DueReviewEntry)
+    }
   }
 
   const merged: LocalStudyData = {

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, RotateCcw, Layers } from "lucide-react"
 import { glossaryData } from "@/data/glossary"
 import { filterByUnit } from "@/lib/glossary/index"
+import { ALL_UNIT_IDS } from "@/lib/glossary/index"
 import {
   createSpeedRoundSession,
   answerQuestion,
@@ -21,14 +22,18 @@ import type { UnitId, GlossaryEntry } from "@/types/glossary"
 
 type FeedbackState = { type: "correct" | "wrong"; message: string } | null
 
+const VALID_UNIT_IDS: readonly string[] = ALL_UNIT_IDS
+
 export default function SpeedRoundGame() {
   const searchParams = useSearchParams()
-  const unitParam = searchParams.get("unit") as UnitId | null
+  const rawUnit = searchParams.get("unit")
+  const unitParam = rawUnit && VALID_UNIT_IDS.includes(rawUnit) ? (rawUnit as UnitId) : null
   const [session, setSession] = useState<SpeedRoundSession | null>(null)
   const [countdown, setCountdown] = useState<number | null>(3)
   const [feedback, setFeedback] = useState<FeedbackState>(null)
   const [isComplete, setIsComplete] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const recordedRef = useRef(false)
 
   const terms: GlossaryEntry[] = unitParam
     ? filterByUnit(glossaryData, unitParam)
@@ -41,6 +46,7 @@ export default function SpeedRoundGame() {
         setCountdown(3)
         setIsComplete(false)
         setFeedback(null)
+        recordedRef.current = false
       } catch {
         // Not enough terms
       }
@@ -60,34 +66,37 @@ export default function SpeedRoundGame() {
     return () => clearTimeout(timeout)
   }, [countdown])
 
-  // Game timer
+  // Game timer — pure state tick only
   useEffect(() => {
     if (countdown !== 0 || !session || isComplete) return
     timerRef.current = setInterval(() => {
       setSession((prev) => {
         if (!prev || isGameOver(prev)) return prev
-        const next = tickTimer(prev)
-        if (isGameOver(next)) {
-          if (timerRef.current) clearInterval(timerRef.current)
-          setIsComplete(true)
-          try {
-            recordSpeedRoundSession(next, {
-              unit_id: unitParam ?? "unit01",
-              lesson_id: "practice-hub",
-              topic_tags: [],
-          mode: "solo",
-            })
-          } catch {
-            // Storage may be unavailable
-          }
-        }
-        return next
+        return tickTimer(prev)
       })
     }, 1000)
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
   }, [countdown, isComplete]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Detect game-over from timer tick — side effects outside setState
+  useEffect(() => {
+    if (!session || !isGameOver(session) || isComplete || recordedRef.current) return
+    recordedRef.current = true
+    setIsComplete(true)
+    if (timerRef.current) clearInterval(timerRef.current)
+    try {
+      recordSpeedRoundSession(session, {
+        unit_id: unitParam ?? "unit01",
+        lesson_id: "practice-hub",
+        topic_tags: [],
+        mode: "solo",
+      })
+    } catch {
+      // Storage may be unavailable
+    }
+  }, [session, isComplete, unitParam])
 
   // Clear feedback after delay
   useEffect(() => {
@@ -98,7 +107,7 @@ export default function SpeedRoundGame() {
 
   const handleAnswer = useCallback(
     (answer: string) => {
-      if (!session || isComplete || countdown !== 0) return
+      if (!session || isComplete || countdown !== 0 || recordedRef.current) return
       const { correct, session: next } = answerQuestion(session, answer)
       setSession(next)
       setFeedback({
@@ -106,6 +115,7 @@ export default function SpeedRoundGame() {
         message: correct ? "Correct! +2s bonus" : "Wrong! -1 life",
       })
       if (isGameOver(next)) {
+        recordedRef.current = true
         setIsComplete(true)
         if (timerRef.current) clearInterval(timerRef.current)
         try {

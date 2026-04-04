@@ -53,7 +53,23 @@ export default function ExportPage() {
     )
   }
 
-  const exportPreview = buildSessionExport(data)
+  let exportPreview
+  try {
+    exportPreview = buildSessionExport(data)
+  } catch {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-amber-400" />
+          <p className="text-lg mb-2">Unable to load study data</p>
+          <p className="text-slate-400 text-sm mb-4">Your saved data may be corrupted. Try resetting your progress.</p>
+          <Button asChild variant="outline" className="border-slate-600 text-slate-300">
+            <Link href="/student/practice-hub">Back to Practice Hub</Link>
+          </Button>
+        </div>
+      </div>
+    )
+  }
   const { sessions, study_state, reflections } = exportPreview
 
   const handleExportCsv = () => {

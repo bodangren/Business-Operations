@@ -19,7 +19,10 @@ import {
 } from "@/lib/study/modes"
 import { recordFlashcardSession } from "@/lib/study/modes/record-session"
 import type { FlashcardSession } from "@/lib/study/modes"
+import { ALL_UNIT_IDS } from "@/lib/glossary/index"
 import type { UnitId, GlossaryField, GlossaryEntry } from "@/types/glossary"
+
+const VALID_UNIT_IDS: readonly string[] = ALL_UNIT_IDS
 
 const FIELD_LABELS: Record<GlossaryField, string> = {
   term_en: "English Term",
@@ -30,7 +33,8 @@ const FIELD_LABELS: Record<GlossaryField, string> = {
 
 export default function FlashcardPlayer() {
   const searchParams = useSearchParams()
-  const unitParam = searchParams.get("unit") as UnitId | null
+  const rawUnit = searchParams.get("unit")
+  const unitParam = rawUnit && VALID_UNIT_IDS.includes(rawUnit) ? (rawUnit as UnitId) : null
   const [session, setSession] = useState<FlashcardSession | null>(null)
   const [isComplete, setIsComplete] = useState(false)
 
@@ -55,7 +59,8 @@ export default function FlashcardPlayer() {
 
   const handleCorrect = useCallback(() => {
     if (!session || isComplete || !session.isFlipped) return
-    const next = markCorrect(advanceCard(session))
+    const marked = markCorrect(session)
+    const next = advanceCard(marked)
     setSession(next)
     if (isSessionComplete(next)) {
       setIsComplete(true)
@@ -74,7 +79,8 @@ export default function FlashcardPlayer() {
 
   const handleIncorrect = useCallback(() => {
     if (!session || isComplete || !session.isFlipped) return
-    const next = markIncorrect(advanceCard(session))
+    const marked = markIncorrect(session)
+    const next = advanceCard(marked)
     setSession(next)
     if (isSessionComplete(next)) {
       setIsComplete(true)
