@@ -24,7 +24,7 @@
  * ==========================================
  * 
  * OBJECTIVE: Students learn to visualize and arrange inventory costs using FIFO (First-In, First-Out) 
- * and LIFO (Last-In, First-Out) methods, supporting Unit 7's Asset & Inventory Tracker theme.
+ * and LIFO (Last-In, First-Out) methods, supporting Unit 7's Inventory Accounting theme.
  * 
  * HOW STUDENTS INTERACT:
  * 1. **Visual Inventory Layers**: Students see a warehouse diagram with inventory purchases shown as

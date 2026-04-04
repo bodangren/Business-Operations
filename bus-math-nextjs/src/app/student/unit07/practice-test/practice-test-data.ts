@@ -2,7 +2,7 @@ import { unit07Data } from "../lesson01/lesson-data"
 
 export const practiceTestLessonData = {
   id: "unit07-practice-test",
-  title: "Unit 7 Practice Test: Asset & Inventory Mastery",
+  title: "Unit 7 Practice Test: Inventory Accounting Mastery",
   sequence: 11,
   unitId: unit07Data.id
 }

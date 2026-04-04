@@ -28,10 +28,10 @@ export function Footer() {
             <h4 className="text-base font-medium">Quick Links</h4>
             <nav aria-label="Quick links" className="flex flex-col space-y-2">
               <Link 
-                href="/frontmatter/preface" 
+                href="/teacher" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Getting Started
+                Teacher Dashboard
               </Link>
               <Link 
                 href="/backmatter/glossary" 

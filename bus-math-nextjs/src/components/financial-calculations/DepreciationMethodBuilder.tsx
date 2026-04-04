@@ -24,7 +24,7 @@
  * ==========================================
  * 
  * OBJECTIVE: Master 4 depreciation methods and understand tax strategy implications
- * for Unit 7 Asset & Inventory Tracker curriculum.
+ * for Unit 8 Fixed Assets and Depreciation curriculum.
  * 
  * HOW STUDENTS INTERACT:
  * 1. **Asset Scenario Selection**: Choose from 4 realistic business scenarios with
@@ -370,7 +370,7 @@ export function DepreciationMethodBuilder() {
             <TrendingDown className="w-8 h-8 text-blue-600" />
           </CardTitle>
           <CardDescription className="text-lg">
-            Master depreciation calculations and tax strategy for Unit 7 Asset & Inventory Tracker
+            Master depreciation calculations and tax strategy for Unit 8 Fixed Assets and Depreciation
           </CardDescription>
           <div className="flex justify-center gap-2 mt-4 flex-wrap">
             <Badge variant="secondary" className="bg-green-100 text-green-800">
@@ -421,7 +421,7 @@ export function DepreciationMethodBuilder() {
           <CardHeader>
             <CardTitle className="text-xl text-green-800 flex items-center gap-2">
               <HelpCircle className="w-5 h-5" />
-              Unit 7 Asset & Inventory Tracker - Depreciation Learning Guide
+              Unit 8 Fixed Assets and Depreciation - Depreciation Learning Guide
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">

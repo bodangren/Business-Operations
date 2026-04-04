@@ -61,7 +61,7 @@ export default function FinancialCalculationsDebugPage() {
           <CardHeader>
             <CardTitle className="text-xl text-gray-800">Depreciation Method Builder Component</CardTitle>
             <CardDescription>
-              Interactive depreciation calculator for different asset depreciation methods focused on Unit 7 Asset & Inventory Tracker
+              Interactive depreciation calculator for different asset depreciation methods focused on Unit 8 Fixed Assets and Depreciation
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -138,7 +138,7 @@ export default function FinancialCalculationsDebugPage() {
 // - Year-by-year depreciation schedule display
 // - Excel depreciation function integration (SLN, DB, SYD functions)
 // - Business strategy advice for tax optimization
-// - Connects to Unit 7 Asset & Inventory Tracker theme
+// - Connects to Unit 8 Fixed Assets and Depreciation theme
 // - Professional asset management interface`}
                 </pre>
               </div>

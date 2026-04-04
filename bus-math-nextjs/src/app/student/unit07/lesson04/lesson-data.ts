@@ -39,8 +39,8 @@ export const unit07Data = {
 // Lesson phases - following I Do, We Do, You Do structure
 export const lesson04Phases = [
   {
-    id: "phase_introduction_4",
-    phaseName: "Introduction" as const,
+    id: "phase_hook_4",
+    phaseName: "Hook" as const,
     sequence: 1,
     description: "Discover why not every inventory method fits every business. Sort methods to business contexts and establish the key distinction between traceable items and pooled costs.",
   },

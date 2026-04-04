@@ -174,7 +174,7 @@ const VALIDATION_SCENARIOS: ValidationScenario[] = [
     id: 'inventory-validation',
     title: 'Inventory Management Validation',
     description: 'Monitor stock levels, identify reorder points, and catch data entry errors in inventory tracking.',
-    businessContext: 'Unit 7 Asset & Inventory Tracker: Automated validation prevents stockouts and overstock situations.',
+    businessContext: 'Unit 7 Inventory Accounting: Automated validation prevents stockouts and overstock situations.',
     difficulty: 'Medium',
     dataColumns: ['Product_ID', 'Current_Stock', 'Minimum_Stock', 'Unit_Cost', 'Last_Updated'],
     sampleDataset: [

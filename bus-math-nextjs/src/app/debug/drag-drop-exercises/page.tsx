@@ -176,7 +176,7 @@ export default function DragDropExercisesDebugPage() {
           <CardHeader>
             <CardTitle className="text-xl text-gray-800">Inventory Flow Diagram Component</CardTitle>
             <CardDescription>
-              Interactive drag-and-drop exercise teaching FIFO/LIFO inventory cost flow visualization for Unit 7 Asset & Inventory Tracker
+              Interactive drag-and-drop exercise teaching FIFO/LIFO inventory cost flow visualization for Unit 7 Inventory Accounting
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -361,7 +361,7 @@ export default function DragDropExercisesDebugPage() {
 // - Real-time Cost of Goods Sold and ending inventory calculations
 // - Visual cost flow demonstration with business context
 // - Method comparison (FIFO vs LIFO) with financial impact analysis
-// - Connects to Unit 7 Asset & Inventory Tracker theme
+// - Connects to Unit 7 Inventory Accounting theme
 // - Professional inventory management theme with audit trail visualization`}
                 </pre>
               </div>
@@ -513,7 +513,7 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'`}
               <div className="p-4 border border-green-200 rounded-lg bg-green-50">
                 <h3 className="font-semibold mb-2">Inventory Flow Diagram</h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  Arrange inventory costs in FIFO/LIFO flow patterns to visualize inventory valuation methods for Unit 7 Asset & Inventory Tracker
+                  Arrange inventory costs in FIFO/LIFO flow patterns to visualize inventory valuation methods for Unit 7 Inventory Accounting
                 </p>
                 <span className="inline-block px-2 py-1 text-xs rounded bg-green-100 text-green-800">
                   ✅ Complete

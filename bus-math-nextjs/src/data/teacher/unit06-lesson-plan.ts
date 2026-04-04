@@ -768,7 +768,7 @@ export const unit06LessonPlan: UnitLessonPlan = {
             details: [
               "Add final pricing recommendation and CVP model to digital portfolio with reflection notes",
               "Celebrate team achievements in analytical thinking and professional presentation",
-              "Connect learning to upcoming Asset & Inventory Tracker unit",
+              "Connect learning to upcoming Inventory Accounting unit",
               "Preview how pricing analysis integrates with inventory and asset management decisions"
             ]
           }

@@ -37,7 +37,13 @@ const overviewBuildGoals = [
   "Build a month-by-month inventory story that explains beginning inventory, purchases, sales, and ending inventory.",
   "Build FIFO, LIFO, specific identification, and weighted average comparisons from the same business data.",
   "Build Excel workbooks that calculate COGS, ending inventory, and method comparisons with visible checks.",
-  "Build and present a group inventory recommendation workbook for a new business case."
+  "Build and present a group inventory recommendation workbook for a new business case.",
+  "Build an Excel FIFO workbook with formula-driven COGS and ending inventory calculations.",
+  "Build an Excel LIFO workbook and compare results against FIFO using the same source data.",
+  "Build a weighted average workbook that pools costs and validates against manual checks.",
+  "Build a four-method comparison dashboard that lets a user switch methods and see financial statement impact.",
+  "Build a group recommendation workbook that connects method choice to business reality and presents findings.",
+  "Build and present a final inventory recommendation with professional formatting, validation, and defense."
 ]
 
 const overviewSkills = [

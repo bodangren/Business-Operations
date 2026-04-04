@@ -65,56 +65,56 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
       description:
         "Ready for a confidence check? Run the Unit 1 practice test to rehearse investor questions, pull randomized items from every lesson, and track progress with built-in explanations.",
       tip:
-        "Tip: Finish Lesson 07 first so you can apply Sarah's audit trail strategies while you review answers."
+        "Tip: Finish Lesson 10 first so you can apply Sarah's audit trail strategies while you review answers."
     },
     2: {
       title: "Practice Test & Month-End Drill",
       description:
         "Need a fast rehearsal before close? Launch the Unit 2 practice test to drill adjusting entries, automation controls, and dashboards with fresh question draws every time.",
       tip:
-        "Tip: Complete Lesson 07 before the drill so you can check reconciliations and QA steps while grading your responses."
+        "Tip: Complete Lesson 10 before the drill so you can check reconciliations and QA steps while grading your responses."
     },
     3: {
       title: "Practice Test & Storyboard Mastery",
       description:
         "Ready to prove integration? Run the Unit 3 practice test to rehearse three-statement connections, dynamic formulas, and dashboard logic with randomized questions from every lesson.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply integration validation and audit-readiness checks while reviewing your answers."
+        "Tip: Complete Lesson 10 first so you can apply integration validation and audit-readiness checks while reviewing your answers."
     },
     4: {
       title: "Practice Test & Café Analysis Confidence",
       description:
         "Ready to prove your statistical mastery? Launch the Unit 4 practice test to rehearse data cleaning, forecasting, and what-if analysis with randomized questions from every café lesson.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply dashboard validation and investor-readiness checks while reviewing your answers."
+        "Tip: Complete Lesson 10 first so you can apply dashboard validation and investor-readiness checks while reviewing your answers."
     },
     5: {
       title: "Practice Test & Payroll Mastery",
       description:
         "Ready to prove your payroll expertise? Launch the Unit 5 practice test to rehearse gross-to-net calculations, tax withholdings, overtime logic, and validation with randomized questions from every payroll lesson.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply QA checks, reconciliation strategies, and professional presentation standards while reviewing your answers."
+        "Tip: Complete Lesson 10 first so you can apply QA checks, reconciliation strategies, and professional presentation standards while reviewing your answers."
     },
     6: {
       title: "Practice Test & Pricing Strategy Confidence",
       description:
         "Ready to prove your pricing mastery? Launch the Unit 6 practice test to rehearse CVP analysis, Goal Seek scenarios, markup vs. margin calculations, and scenario automation with randomized questions from every PriceLab lesson.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply production QA, presentation readiness checks, and investor-ready polish while reviewing your answers."
+        "Tip: Complete Lesson 10 first so you can apply production QA, presentation readiness checks, and investor-ready polish while reviewing your answers."
     },
     7: {
       title: "Practice Test & Inventory Valuation Mastery",
       description:
         "Ready to prove your inventory expertise? Launch the Unit 7 practice test to rehearse cost flow, FIFO vs. LIFO trade-offs, weighted average logic, workbook checks, and ending-inventory reasoning with randomized questions from the whole unit.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply workbook QA checks, recommendation logic, and presentation polish while reviewing your answers."
+        "Tip: Complete Lesson 10 first so you can apply workbook QA checks, recommendation logic, and presentation polish while reviewing your answers."
     },
     8: {
       title: "Practice Test & Investor Readiness",
       description:
         "Ready to prove your depreciation mastery? Launch the Unit 8 practice test to rehearse fixed asset tracking, depreciation methods, asset register management, and professional presentation standards with randomized questions from every Fixed Assets and Depreciation lesson.",
       tip:
-        "Tip: Complete Lesson 07 first so you can apply final QA checks, audit-readiness validation, and professional pitch polish while reviewing your answers."
+        "Tip: Complete Lesson 10 first so you can apply final QA checks, audit-readiness validation, and professional pitch polish while reviewing your answers."
     }
   }
 
@@ -197,29 +197,6 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
           </CardContent>
         </Card>
       </div>
-
-      {/* Key Vocabulary */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5" />
-            Key Vocabulary
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          {unit.unitId ? (
-            <UnitVocabulary unitId={unit.unitId} unitSequence={unit.sequence} />
-          ) : (
-            <p className="text-sm text-muted-foreground">
-              View all terms in the{" "}
-              <Link href="/backmatter/glossary" className="text-primary hover:underline">
-                bilingual glossary
-              </Link>
-              .
-            </p>
-          )}
-        </CardContent>
-      </Card>
 
       {/* Key Vocabulary */}
       <Card>

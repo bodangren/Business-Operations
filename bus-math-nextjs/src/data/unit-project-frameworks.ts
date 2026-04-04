@@ -1315,27 +1315,25 @@ export const unit06ProjectFramework: UnitProjectFramework = {
 }
 
 // ========================================
-// UNIT 7: INVENTORY TRACKER & VALUATION
+// UNIT 7: INVENTORY ACCOUNTING
 // ========================================
 export const unit07ProjectFramework: UnitProjectFramework = {
   unitId: "unit07",
-  unitTitle: "Inventory Tracker & Valuation",
+  unitTitle: "Inventory Accounting",
   
   performanceTask: {
-    title: "Advisory Brief + Board Presentation",
-    scenario: "Present comprehensive asset and inventory management recommendations to company board of directors, demonstrating advanced Excel modeling for depreciation methods and inventory valuation systems.",
+    title: "Inventory Advisory Brief + Board Presentation",
+    scenario: "Present comprehensive inventory management recommendations to company board of directors, demonstrating advanced Excel modeling for FIFO, LIFO, specific identification, and weighted average valuation methods.",
     audience: AUTHENTIC_AUDIENCES.EXECUTIVES,
-    context: "This mirrors real-world board presentations where financial advisors present complex asset management strategies requiring sophisticated modeling and clear business impact communication.",
+    context: "This mirrors real-world board presentations where financial advisors present inventory valuation strategies requiring sophisticated modeling and clear business impact communication.",
     deliverables: [
-      "Dynamic asset tracker with multiple depreciation method options",
-      "Inventory valuation system comparing FIFO, LIFO, and weighted average methods",
-      "Advisory brief analyzing financial statement impact of different methods",
+      "Inventory valuation system comparing FIFO, LIFO, specific identification, and weighted average methods",
+      "Advisory brief analyzing financial statement impact of different inventory methods",
       "Board presentation with clear recommendations and business rationale",
       "Excel model demonstrating advanced features (dynamic selections, scenario analysis)"
     ],
     requirements: [
-      "Accurate implementation of SLN, DDB, and other depreciation methods",
-      "Inventory system correctly calculates FIFO, LIFO, and weighted average costs",
+      "Inventory system correctly calculates FIFO, LIFO, specific identification, and weighted average costs",
       "Dynamic selection features allow users to compare methods easily",
       "Financial statement impact clearly analyzed and presented",
       "Professional board-level presentation with strategic recommendations"
@@ -1347,16 +1345,16 @@ export const unit07ProjectFramework: UnitProjectFramework = {
     {
       id: "foundation",
       day: STANDARD_MILESTONE_TIMING.FOUNDATION.day,
-      title: "Basic Depreciation Schedule",
-      description: "Core depreciation calculations for multiple methods",
-      focus: "Technical accuracy in depreciation calculations",
+      title: "Basic Inventory Valuation Schedule",
+      description: "Core inventory calculations for multiple methods",
+      focus: "Technical accuracy in inventory calculations",
       criteria: [
-        "Straight-line depreciation calculated correctly for multiple assets",
-        "Double-declining balance method implemented accurately",
-        "Asset tracking system maintains proper records and schedules",
-        "Depreciation formulas handle various asset types and useful lives"
+        "FIFO inventory calculated correctly for multiple purchase batches",
+        "LIFO inventory calculated correctly using the same source data",
+        "Weighted average cost method implemented accurately",
+        "Specific identification applied where items are uniquely traceable"
       ],
-      deliverables: ["Depreciation calculation system", "Asset tracking framework", "Method accuracy verification"]
+      deliverables: ["Inventory calculation system", "Method accuracy verification"]
     },
     {
       id: "integration",
@@ -1392,11 +1390,11 @@ export const unit07ProjectFramework: UnitProjectFramework = {
     {
       name: STANDARD_RUBRIC_CATEGORIES.TECHNICAL_ACCURACY.name,
       weight: "40%",
-      focus: "Depreciation and inventory calculation accuracy",
-      exemplary: "All depreciation and inventory calculations perfectly accurate; sophisticated method implementation",
+      focus: "Inventory calculation accuracy across all methods",
+      exemplary: "All inventory calculations perfectly accurate across all four methods; sophisticated method implementation",
       proficient: "Calculations mostly accurate; functional method implementation; minor technical issues",
       developing: "Multiple calculation errors; limited method implementation; significant technical problems",
-      businessStandard: "Asset and inventory calculations must be precise for accurate financial reporting"
+      businessStandard: "Inventory calculations must be precise for accurate financial reporting"
     },
     {
       name: STANDARD_RUBRIC_CATEGORIES.FUNCTIONALITY.name,
@@ -1429,13 +1427,13 @@ export const unit07ProjectFramework: UnitProjectFramework = {
   
   studentChoices: {
     scenarios: [
-      "Manufacturing company asset optimization",
       "Retail chain inventory management strategy",
-      "Technology company equipment depreciation planning",
-      "Construction business asset and inventory tracking"
+      "Manufacturing company raw materials tracking",
+      "Electronics retailer high-value inventory management",
+      "Restaurant chain food and beverage inventory tracking"
     ],
     roles: [
-      "Financial Analyst (depreciation and inventory calculations)",
+      "Financial Analyst (inventory calculations and method comparison)",
       "Systems Designer (Excel model development and interface)",
       "Strategic Advisor (business impact analysis and recommendations)",
       "Board Presenter (executive communication and presentation)"
@@ -1446,9 +1444,9 @@ export const unit07ProjectFramework: UnitProjectFramework = {
       "Strategic planning session format"
     ],
     extensions: [
-      "Advanced depreciation methods (MACRS, units of production)",
       "Inventory optimization and demand forecasting",
-      "Asset lifecycle management and replacement analysis",
+      "Just-in-time inventory management concepts",
+      "Perishable goods and spoilage tracking",
       "Integration with enterprise resource planning concepts"
     ]
   },
@@ -1456,8 +1454,8 @@ export const unit07ProjectFramework: UnitProjectFramework = {
   resources: {
     templates: [
       {
-        title: "Inventory Tracker & Valuation Excel Template",
-        description: "Comprehensive framework with depreciation and inventory calculations",
+        title: "Inventory Accounting Excel Template",
+        description: "Comprehensive framework with FIFO, LIFO, specific ID, and weighted average calculations",
         type: "excel-template",
         required: true,
         classroomOnly: true
@@ -1472,14 +1470,14 @@ export const unit07ProjectFramework: UnitProjectFramework = {
     ],
     datasets: [
       {
-        title: "Multi-Company Asset and Inventory Data",
+        title: "Multi-Company Inventory Data",
         description: "Comprehensive datasets for testing various business scenarios",
         type: "dataset",
         required: true,
         classroomOnly: true
       },
       {
-        title: "Industry Depreciation and Inventory Benchmarks",
+        title: "Industry Inventory Benchmarks",
         description: "Comparative data for strategic analysis and recommendations",
         type: "dataset",
         required: false,
@@ -1488,8 +1486,8 @@ export const unit07ProjectFramework: UnitProjectFramework = {
     ],
     guides: [
       {
-        title: "Advanced Depreciation Methods Guide",
-        description: "Comprehensive coverage of depreciation calculations and business applications",
+        title: "Inventory Method Comparison Guide",
+        description: "Comprehensive coverage of FIFO, LIFO, specific ID, and weighted average calculations and business applications",
         type: "guide",
         required: true,
         classroomOnly: true
@@ -1506,19 +1504,19 @@ export const unit07ProjectFramework: UnitProjectFramework = {
   
   validation: {
     peerReviewCriteria: [
-      "Verify accuracy of all depreciation method calculations",
+      "Verify accuracy of all inventory method calculations",
       "Test inventory valuation calculations against manual computations",
       "Evaluate dynamic selection functionality and user experience",
       "Assess advisory brief strategic reasoning and board presentation quality"
     ],
     selfAssessmentQuestions: [
-      "Do my depreciation and inventory calculations comply with accounting standards?",
+      "Do my inventory calculations comply with accounting standards?",
       "Would a board of directors find my analysis and recommendations compelling?",
       "Does my Excel model demonstrate appropriate sophistication for executive use?",
       "Can I clearly explain the business impact of different method choices?"
     ],
     teacherCheckpoints: [
-      "Review calculation accuracy for all depreciation and inventory methods",
+      "Review calculation accuracy for all inventory methods",
       "Assess Excel model sophistication and dynamic functionality",
       "Evaluate strategic analysis quality and business reasoning",
       "Confirm board presentation standards and executive communication effectiveness"

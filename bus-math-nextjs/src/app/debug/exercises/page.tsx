@@ -651,9 +651,9 @@ export default function ExercisesDebugPage() {
 
           {/* Test 3: Unit 8 Capstone Review */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-purple-800">Test 3: Unit 8 Year-1 Startup Model</h3>
+            <h3 className="text-xl font-semibold mb-4 text-purple-800">Test 3: Unit 8 Fixed Assets and Depreciation</h3>
             <PeerCritiqueForm 
-              projectTitle="Year-1 Integrated Financial Model - VC Presentation"
+              projectTitle="Fixed Asset Register and Depreciation Analysis"
               peerName="Emma Rodriguez"
               unitNumber={8}
               onSubmit={(feedback) => console.log('Unit 8 feedback submitted:', feedback)}

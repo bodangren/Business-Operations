@@ -1,6 +1,6 @@
-Welcome to Unit 7: Asset & Inventory Tracker! In this unit, we're going to dive into how businesses manage their valuable possessions and the goods they sell. Think of it like taking care of everything from the shiny new computers in an office to all the delicious ingredients in a bakery. We'll explore how these items are accounted for over time, and why choosing the right methods can make a big difference for a company's money and taxes.
+Welcome to Unit 7: Inventory Accounting! In this unit, we're going to dive into how businesses manage and value the goods they sell. Think of it like tracking all the ingredients in a bakery — knowing what you bought, what you used, and what's left on the shelf. We'll explore how inventory is accounted for using different methods, and why choosing the right method can make a big difference for a company's financial statements and taxes.
 
-Our main question for this unit is: "Which depreciation and inventory methods best align with our cash-flow and tax strategy?" This might sound like a mouthful, but don't worry! We'll break down each part, connecting it to real business situations and showing you how to use math and Excel to make smart choices.
+Our main question for this unit is: "How do we build, test, and defend a trustworthy ending inventory number?" This might sound like a mouthful, but don't worry! We'll break down each part, connecting it to real business situations and showing you how to use math and Excel to make smart choices.
 
 ### Sarah's Next Big Step
 
@@ -159,7 +159,7 @@ You'll calculate the Inventory Turnover Ratio for your business scenario, and im
 
 Then, you'll create professional charts that visualize the impact of different methods, especially on **Cost of Goods Sold (COGS)**. For example, a column chart could easily show how COGS is higher under LIFO compared to FIFO in a rising price environment. You'll focus on making your charts clear, easy to read, and professional, just like Sarah would present to potential investors.
 
-Finally, you'll integrate all your calculations, dropdowns, and charts into a single, well-organized dashboard. This dashboard will be the heart of your "Asset & Inventory Tracker," allowing anyone to quickly see the financial impact of different depreciation and inventory strategies.
+Finally, you'll integrate all your calculations, dropdowns, and charts into a single, well-organized dashboard. This dashboard will be the heart of your inventory workbook, allowing anyone to quickly see the financial impact of different inventory valuation strategies.
 
 ### Day 8: Advisory Brief Draft – Writing Your Recommendations
 
