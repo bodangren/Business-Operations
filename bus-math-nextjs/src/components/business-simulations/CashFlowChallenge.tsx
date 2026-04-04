@@ -347,7 +347,7 @@ export function CashFlowChallenge() {
     )
   }, [gameState, addNotification])
 
-  const useCredit = useCallback((amount: number) => {
+  const handleUseCredit = useCallback((amount: number) => {
     const available = gameState.lineOfCredit - gameState.creditUsed
     const amountToUse = Math.min(amount, available)
 
@@ -860,14 +860,14 @@ export function CashFlowChallenge() {
                   Available: ${(gameState.lineOfCredit - gameState.creditUsed).toLocaleString()}
                 </p>
                 <Button
-                  onClick={() => useCredit(5000)}
+                  onClick={() => handleUseCredit(5000)}
                   size="sm"
                   disabled={gameState.gameStatus !== 'playing'}
                 >
                   Use $5,000
                 </Button>
                 <Button
-                  onClick={() => useCredit(gameState.lineOfCredit - gameState.creditUsed)}
+                  onClick={() => handleUseCredit(gameState.lineOfCredit - gameState.creditUsed)}
                   size="sm"
                   variant="outline"
                   disabled={gameState.gameStatus !== 'playing'}

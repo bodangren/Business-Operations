@@ -248,6 +248,38 @@ export function LemonadeStand() {
     return weathers[Math.floor(Math.random() * weathers.length)]
   }, [])
 
+  const completeSales = useCallback((cupsSold: number, _maxCups: number) => {
+    const dailyRevenue = cupsSold * gameState.recipe.price
+    const ingredientCost = cupsSold * (gameState.recipe.lemons * 0.3 + gameState.recipe.sugar * 0.2 + 0.075)
+
+    setGameState(prev => ({
+      ...prev,
+      revenue: prev.revenue + dailyRevenue,
+      inventory: {
+        lemons: prev.inventory.lemons - (cupsSold * prev.recipe.lemons),
+        sugar: prev.inventory.sugar - (cupsSold * prev.recipe.sugar),
+        cups: prev.inventory.cups - cupsSold
+      },
+      dailySales: {
+        cupsSold,
+        dailyRevenue,
+        dailyExpenses: ingredientCost
+      },
+      isSellingActive: false
+    }))
+
+    // Customer feedback
+    if (cupsSold > 30) {
+      addNotification('🎉 Amazing sales day! Customers loved your lemonade!', 'success')
+    } else if (cupsSold > 15) {
+      addNotification('👍 Good sales! Customers were satisfied.', 'success')
+    } else {
+      addNotification('😕 Slow sales day. Try adjusting your recipe or pricing.', 'warning')
+    }
+
+    addNotification(`Sold ${cupsSold} cups for $${dailyRevenue.toFixed(2)}!`, 'success')
+  }, [gameState.recipe, addNotification])
+
   const simulateSales = useCallback(() => {
     const maxCups = getMaxCupsFromInventory()
     if (maxCups <= 0) {
@@ -294,39 +326,7 @@ export function LemonadeStand() {
       }
     }, 300)
 
-  }, [gameState, getMaxCupsFromInventory, generateRandomWeather, addNotification])
-
-  const completeSales = useCallback((cupsSold: number, _maxCups: number) => {
-    const dailyRevenue = cupsSold * gameState.recipe.price
-    const ingredientCost = cupsSold * (gameState.recipe.lemons * 0.3 + gameState.recipe.sugar * 0.2 + 0.075)
-
-    setGameState(prev => ({
-      ...prev,
-      revenue: prev.revenue + dailyRevenue,
-      inventory: {
-        lemons: prev.inventory.lemons - (cupsSold * prev.recipe.lemons),
-        sugar: prev.inventory.sugar - (cupsSold * prev.recipe.sugar),
-        cups: prev.inventory.cups - cupsSold
-      },
-      dailySales: {
-        cupsSold,
-        dailyRevenue,
-        dailyExpenses: ingredientCost
-      },
-      isSellingActive: false
-    }))
-
-    // Customer feedback
-    if (cupsSold > 30) {
-      addNotification('🎉 Amazing sales day! Customers loved your lemonade!', 'success')
-    } else if (cupsSold > 15) {
-      addNotification('👍 Good sales! Customers were satisfied.', 'success')
-    } else {
-      addNotification('😕 Slow sales day. Try adjusting your recipe or pricing.', 'warning')
-    }
-
-    addNotification(`Sold ${cupsSold} cups for $${dailyRevenue.toFixed(2)}!`, 'success')
-  }, [gameState.recipe, addNotification])
+  }, [gameState, getMaxCupsFromInventory, generateRandomWeather, addNotification, completeSales])
 
   const endDay = useCallback(() => {
     setGameState(prev => ({

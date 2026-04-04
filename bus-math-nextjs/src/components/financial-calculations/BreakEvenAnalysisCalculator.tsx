@@ -445,7 +445,7 @@ export function BreakEvenAnalysisCalculator() {
       requiredFixedCostReduction,
       requiredVariableCostReduction
     }
-  }, [inputs, results])
+  }, [inputs])
 
   // One-variable data table
   const dataTable: DataTableEntry[] = useMemo(() => {

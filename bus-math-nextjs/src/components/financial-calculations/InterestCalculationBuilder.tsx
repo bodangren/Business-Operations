@@ -191,7 +191,7 @@ export default function InterestCalculationBuilder() {
   const [calculationHistory, setCalculationHistory] = useState<CalculationResult[]>([])
 
   // Safe formula evaluator - prevents code injection
-  const safeCalculate = useCallback((formula: string, inputs: Record<string, number>): number => {
+  const _safeCalculate = useCallback((formula: string, inputs: Record<string, number>): number => {
     try {
       // Replace variables with actual values
       let expression = formula
@@ -296,7 +296,7 @@ export default function InterestCalculationBuilder() {
         excelFormula: 'Error'
       })
     }
-  }, [selectedScenario, values, safeCalculate])
+  }, [selectedScenario, values])
 
   // Handle scenario change
   const handleScenarioChange = useCallback((scenario: BusinessScenario) => {

@@ -30,9 +30,9 @@ export default function InventoryPredictionLab() {
   const afterSnapshot = buildGuidedSnapshot(stepIndex + 1)
 
   const actualProfitDirection: DirectionPick = activeEvent.metricMoves.includes("grossProfit") ? "up" : "same"
-  const actualMetricSet = new Set(activeEvent.metricMoves)
 
   const metricScore = useMemo(() => {
+    const actualMetricSet = new Set(activeEvent.metricMoves)
     let score = 0
     ;(["cash", "units", "inventoryValue", "revenue", "grossProfit"] as MetricPick[]).forEach((metric) => {
       const picked = pickedMetrics.includes(metric)
@@ -42,7 +42,7 @@ export default function InventoryPredictionLab() {
       }
     })
     return score
-  }, [actualMetricSet, pickedMetrics])
+  }, [activeEvent.metricMoves, pickedMetrics])
 
   const directionScore =
     (shelfDirection === activeEvent.shelfDirection ? 1 : 0) + (profitDirection === actualProfitDirection ? 1 : 0)
