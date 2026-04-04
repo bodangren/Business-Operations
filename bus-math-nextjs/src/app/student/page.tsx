@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, BookOpen, GraduationCap, FileText } from "lucide-react"
+import { ArrowRight, BookOpen, GraduationCap, FileText, Layers } from "lucide-react"
 
 const units = [
   { number: "01", title: "Smart Ledger Launch", description: "Self-auditing bookkeeping for angel investors", href: "/student/unit01" },
@@ -87,7 +87,23 @@ export default function StudentHubPage() {
           <FileText className="h-5 w-5 text-muted-foreground" />
           Capstone & Reference
         </h2>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Link href="/student/practice-hub" className="block">
+            <Card className="hover:shadow-md transition-shadow h-full border-blue-200">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Layers className="h-4 w-4 text-blue-600" />
+                  Practice Hub
+                </CardTitle>
+                <CardDescription>Study vocabulary, track progress, and export results</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <span className="text-sm text-primary flex items-center gap-1">
+                  Start practicing <ArrowRight className="h-3 w-3" />
+                </span>
+              </CardContent>
+            </Card>
+          </Link>
           <Link href="/capstone" className="block">
             <Card className="hover:shadow-md transition-shadow h-full border-purple-200">
               <CardHeader className="pb-2">

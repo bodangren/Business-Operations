@@ -84,14 +84,14 @@ export function UnitVocabulary({ unitId }: { unitId: UnitId; unitSequence: numbe
           >
             bilingual glossary
           </Link>{" "}
-          to study them with English or Chinese definitions, or open the{" "}
+          to review them, or start a{" "}
           <Link
-            href="/backmatter/index"
+            href={`/student/practice-hub?unit=${unitId}`}
             className="text-primary hover:underline"
           >
-            subject index
+            vocabulary study session
           </Link>{" "}
-          to find related pages.
+          to practice with flashcards, matching, and speed round.
         </p>
       </div>
     </div>

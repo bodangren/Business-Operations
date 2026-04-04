@@ -36,15 +36,19 @@
   - `recordFlashcardSession`, `recordMatchingSession`, `recordSpeedRoundSession`
   - Persists SessionRecord, updates mastery/SRS/due-review, aggregates stats
 
-### Phase 4: Practice Hub and Progress Surfaces
-- [ ] 4.1 Build the practice hub home
-  - Due review
-  - Vocabulary entry points
-  - Recent practice
-  - Weak terms/topics
+### Phase 4: Practice Hub and Progress Surfaces ✓
+- [x] 4.1 Build the practice hub home
+  - Due review (3 stat cards: today/week/total)
+  - Vocabulary entry points (flashcards, matching, speed round)
+  - Recent practice (last 5 sessions with accuracy)
+  - Weak terms/topics (sorted by mastery score with progress bars)
   - Export access
-- [ ] 4.2 Add unit-linked study/progress entry points
-- [ ] 4.3 Add progress summaries and recent history views
+- [x] 4.2 Add unit-linked study/progress entry points
+  - "Study These Terms" link in UnitVocabulary component
+  - "Study This Unit's Terms" CTA on StudentUnitOverview
+  - Practice Hub card on Student Hub page
+- [x] 4.3 Add progress summaries and recent history views
+  - Progress dashboard page with summary stats, per-unit mastery bars, session history, weak topics
 
 ### Phase 5: Export and Import
 - [ ] 5.1 Implement `summary.csv` export

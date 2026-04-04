@@ -9,7 +9,8 @@ import {
   Trophy,
   Clock,
   BookOpen,
-  ArrowRight
+  ArrowRight,
+  Layers,
 } from "lucide-react"
 import Link from "next/link"
 import { UnitVocabulary } from "@/components/unit/UnitVocabulary"
@@ -220,6 +221,31 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
           )}
         </CardContent>
       </Card>
+
+      {/* Study This Unit's Terms */}
+      {unit.unitId && (
+        <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-blue-800 dark:text-blue-200">
+              <Layers className="h-5 w-5" />
+              Study This Unit&apos;s Terms
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="space-y-2 text-blue-900 dark:text-blue-100">
+              <p className="text-sm leading-relaxed">
+                Practice this unit&apos;s vocabulary with flashcards, a matching game, or a timed speed round.
+                Your progress is tracked locally and can be exported.
+              </p>
+            </div>
+            <Button size="lg" variant="outline" asChild className="border-blue-300 text-blue-700 hover:bg-blue-100">
+              <Link href={`/student/practice-hub?unit=${unit.unitId}`}>
+                Study Terms <ArrowRight className="h-4 w-4 ml-2" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Project Culmination */}
       <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
