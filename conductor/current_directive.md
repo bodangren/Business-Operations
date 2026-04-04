@@ -1,7 +1,7 @@
 # Current Directive
 
 **Updated:** 2026-04-04
-**Status:** Phase 4 complete, review audit done, Phase 5 next
+**Status:** Phase 5 complete, Phase 6 next
 
 ## Active Track
 
@@ -13,6 +13,7 @@
 - Phase 2: Local store, spaced review engine, typed utilities
 - Phase 3: Vocabulary study modes (flashcards, matching, speed round) — engine logic only
 - Phase 4: Practice hub home + progress dashboard pages
+- Phase 5: Export and import — `summary.csv` + `session.json` download, import/restore with dedup, export page with preview (26 new tests)
 
 ## Review Audit Results (2026-04-04)
 
@@ -31,11 +32,10 @@ See [full review](./reviews/review_20260404_phase3-4.md).
 
 ## Next Priorities
 
-1. **Build interactive study-mode pages** (flashcards, matching, speed-round) — create client components + route `page.tsx` files
-2. **Build export flow page** — implement CSV/JSON download at `/student/practice-hub/export`
+1. **Phase 6: Verification** — verify hub + study modes on desktop/mobile, data persistence, export/import round-trip, `npm run lint`
+2. **Build interactive study-mode pages** (flashcards, matching, speed-round) — create client components + route `page.tsx` files
 3. **Wire up unit-level study CTAs** — add due counts to StudentUnitOverview and StudentHub
 4. **Add per-term tracking to speed-round** — add `termResults` to session state
-5. **Phase 5–6: Export/import implementation and verification**
 
 ## Blocked / Deferred
 

@@ -50,13 +50,13 @@
 - [x] 4.3 Add progress summaries and recent history views
   - Progress dashboard page with summary stats, per-unit mastery bars, session history, weak topics
 
-### Phase 5: Export and Import
-- [ ] 5.1 Implement `summary.csv` export
-- [ ] 5.2 Implement `session.json` export
-- [ ] 5.3 Implement import/restore flow
-- [ ] 5.4 Add a student-readable export preview or summary before download
-- [ ] 5.5 Document the export schema for the future analysis skill
-  - Keep `export-schema.md` updated if implementation requires additive changes
+### Phase 5: Export and Import ✓
+- [x] 5.1 Implement `summary.csv` export
+- [x] 5.2 Implement `session.json` export
+- [x] 5.3 Implement import/restore flow
+- [x] 5.4 Add a student-readable export preview or summary before download
+- [x] 5.5 Document the export schema for the future analysis skill
+  - `export-schema.md` unchanged — implementation matched the existing contract exactly
 
 ### Phase 6: Verification
 - [ ] 6.1 Verify the hub and study modes on desktop and mobile
