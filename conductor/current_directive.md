@@ -1,7 +1,7 @@
 # Current Directive
 
 **Updated:** 2026-04-05
-**Status:** Lesson-level index entries track complete — all phases done
+**Status:** Audit complete — study data context + lesson index entries reviewed, no issues found
 
 ## Active Track
 
@@ -9,15 +9,10 @@ None — all tracks complete.
 
 ## What Was Just Completed
 
-- Lesson-level index entries track: populated `lessonPages` array with all 80 lesson entries (8 units × 10 lessons)
-- Added 6 integration tests verifying lesson record count, href pattern, unitId coverage, and slug uniqueness
-- 216 tests pass (14 suites), build clean, lint clean
-
-## What Was Just Completed
-
-- Study data context provider track: extracted shared `loadStudyData()` into `StudyDataProvider` context
-- Refactored 4 consumers (`StudyDueBadge`, `PracticeHubHome`, `ProgressDashboard`, `ExportPage`) to use context
-- Provider wired into root layout; 210 tests pass, build clean, lint clean
+- Audit of tracks `study_data_context_20260405` and `lesson_index_entries_20260405`
+- Both tracks clean: spec-compliant, well-tested, no stale imports, titles verified against source
+- 216 tests pass (14 suites), build clean (603+ pages), lint clean (0 errors)
+- Review report filed: `conductor/reviews/review_20260405_context-and-index.md`
 
 ## Verification
 
@@ -27,13 +22,13 @@ None — all tracks complete.
 
 ## Next Priorities
 
-1. **ESLint warning cleanup pass** — ~150+ unused-import and `any` type warnings across lesson files; batch cleanup would reduce noise
-2. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16
+1. **ESLint warning cleanup pass** — ~150+ unused-import and `any` type warnings across lesson files; batch cleanup would reduce build noise and improve DX
+2. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16 (`npx @next/codemod@canary next-lint-to-eslint-cli .`)
 3. **Mastery progress bars on unit cards** — separate track to show per-unit mastery % alongside due counts
+4. **CashFlowChallenge rules-of-hooks fix** — `useCredit` called inside callback at lines 867/874; pre-existing but should be fixed
 
 ## Blocked / Deferred
 
 - Team activity mode (stretch goal)
 - Session state persistence across refresh (stretch)
 - Storage migration v1.x passthrough
-- Lint warnings in lesson files (pre-existing, low priority)
