@@ -1,0 +1,1 @@
+conductor: study_data_context_20260405 Phase 1-4 complete. 210 tests, build clean. Created StudyDataProvider context, refactored 4 consumers, wired into root layout.
