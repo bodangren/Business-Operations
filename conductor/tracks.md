@@ -20,6 +20,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/local_study_export_20260403/](./tracks/local_study_export_20260403/)*
 - [x] **Track: Wire up unit-level study CTAs**
   *Link: [./tracks/unit_study_ctas_20260404/](./tracks/unit_study_ctas_20260404/)*
+- [~] **Track: Gate debug routes behind dev-only flag**
+  *Link: [./tracks/gate_debug_routes_20260405/](./tracks/gate_debug_routes_20260405/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
