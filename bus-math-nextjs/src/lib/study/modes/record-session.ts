@@ -187,13 +187,15 @@ export function recordSpeedRoundSession(
 ): SessionRecord {
   const data = loadStudyData()
 
-  // Create a summary response per unique term seen
+  // Create a summary response per unique term seen.
+  // Speed round does not track per-term outcomes, so we approximate from aggregate accuracy.
   const uniqueSlugs = new Set(session.questions.map((q) => q.slug))
   const responses: SessionResponse[] = []
+  const approxAccuracy = session.totalAnswered > 0 ? session.correctCount / session.totalAnswered : 0
 
   for (const slug of uniqueSlugs) {
-    const wasCorrect = session.correctCount > 0 // approximate
-    const rating: ReviewRating = wasCorrect ? "good" : "again"
+    const rating: ReviewRating = approxAccuracy >= 0.7 ? "good" : "again"
+    const wasCorrect = approxAccuracy >= 0.7
 
     let mastery = data.study_state.mastery_by_term.find((m) => m.term_slug === slug)
     if (!mastery) {
@@ -232,12 +234,13 @@ export function recordSpeedRoundSession(
     })
   }
 
+  const accuracy = session.totalAnswered > 0 ? session.correctCount / session.totalAnswered : 0
   const results: SessionResults = {
     items_seen: session.totalAnswered,
     items_answered: session.totalAnswered,
     items_correct: session.correctCount,
     items_incorrect: session.totalAnswered - session.correctCount,
-    accuracy: session.totalAnswered > 0 ? session.correctCount / session.totalAnswered : 0,
+    accuracy,
     retry_count: 0,
     score: session.correctCount,
     mastery_delta: 0,

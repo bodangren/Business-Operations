@@ -207,14 +207,14 @@ export default function ProgressDashboard() {
                       </div>
                       <div
                         className={`text-sm font-semibold ${
-                          session.results.accuracy >= 80
+                          session.results.accuracy >= 0.8
                             ? "text-green-600"
-                            : session.results.accuracy >= 60
+                            : session.results.accuracy >= 0.6
                               ? "text-amber-600"
                               : "text-red-600"
                         }`}
                       >
-                        {session.results.accuracy}%
+                        {Math.round(session.results.accuracy * 100)}%
                       </div>
                     </div>
                   ))
