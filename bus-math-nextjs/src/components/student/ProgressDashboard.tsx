@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -12,7 +11,6 @@ import {
 } from "lucide-react"
 import type { UnitId } from "@/types/glossary"
 import { glossaryData } from "@/data/glossary"
-import { loadStudyData } from "@/lib/study/storage"
 import { filterByUnit } from "@/lib/glossary/index"
 import {
   deriveStats,
@@ -20,6 +18,7 @@ import {
   masteryColor,
 } from "@/lib/study/derived"
 import type { DerivedStats } from "@/lib/study/derived"
+import { useStudyData } from "@/contexts/StudyDataContext"
 
 const UNITS: { id: UnitId; title: string }[] = [
   { id: "unit01", title: "Smart Ledger Launch" },
@@ -49,21 +48,17 @@ function activityLabel(type: string): string {
 }
 
 export default function ProgressDashboard() {
-  const [stats, setStats] = useState<DerivedStats | null>(null)
+  const { data, isLoading } = useStudyData()
 
-  useEffect(() => {
-    const data = loadStudyData()
-    const derived = deriveStats(data, TOTAL_TERMS, UNIT_TERM_COUNTS)
-    setStats(derived)
-  }, [])
-
-  if (!stats) {
+  if (isLoading || !data) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <p className="text-muted-foreground">Loading...</p>
       </div>
     )
   }
+
+  const stats = deriveStats(data, TOTAL_TERMS, UNIT_TERM_COUNTS)
 
   const avgMastery =
     stats.unitMastery.length > 0

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -18,7 +18,6 @@ import {
 } from "lucide-react"
 import type { UnitId } from "@/types/glossary"
 import { glossaryData } from "@/data/glossary"
-import { loadStudyData } from "@/lib/study/storage"
 import { filterByUnit } from "@/lib/glossary/index"
 import {
   deriveStats,
@@ -27,6 +26,7 @@ import {
   masteryColor,
 } from "@/lib/study/derived"
 import type { DerivedStats } from "@/lib/study/derived"
+import { useStudyData } from "@/contexts/StudyDataContext"
 
 const UNITS: { id: UnitId; label: string }[] = [
   { id: "unit01", label: "Unit 01" },
@@ -64,21 +64,17 @@ export default function PracticeHubHome() {
   const searchParams = useSearchParams()
   const initialUnit = searchParams.get("unit") as UnitId | null
   const [activeUnit, setActiveUnit] = useState<UnitId | null>(initialUnit)
-  const [stats, setStats] = useState<DerivedStats | null>(null)
+  const { data, isLoading } = useStudyData()
 
-  useEffect(() => {
-    const data = loadStudyData()
-    const derived = deriveStats(data, TOTAL_TERMS, UNIT_TERM_COUNTS)
-    setStats(derived)
-  }, [])
-
-  if (!stats) {
+  if (isLoading || !data) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <p className="text-muted-foreground">Loading...</p>
       </div>
     )
   }
+
+  const stats = deriveStats(data, TOTAL_TERMS, UNIT_TERM_COUNTS)
 
   const unitQuery = activeUnit ? `?unit=${activeUnit}` : ""
   const weakTermsFiltered = activeUnit

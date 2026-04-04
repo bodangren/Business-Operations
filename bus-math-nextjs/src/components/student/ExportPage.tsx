@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -16,7 +16,6 @@ import {
   Clock,
   BarChart3,
 } from "lucide-react"
-import { loadStudyData } from "@/lib/study/storage"
 import {
   exportSummaryCsv,
   exportSessionJsonFile,
@@ -24,7 +23,7 @@ import {
   buildSessionExport,
 } from "@/lib/study/export"
 import { formatRelativeDate } from "@/lib/study/derived"
-import type { LocalStudyData } from "@/lib/study/storage-schema"
+import { useStudyData } from "@/contexts/StudyDataContext"
 
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`
@@ -32,7 +31,7 @@ function formatBytes(bytes: number): string {
 }
 
 export default function ExportPage() {
-  const [data, setData] = useState<LocalStudyData | null>(null)
+  const { data, refresh, isLoading } = useStudyData()
   const [csvExported, setCsvExported] = useState(false)
   const [jsonExported, setJsonExported] = useState(false)
   const [importStatus, setImportStatus] = useState<{
@@ -41,11 +40,7 @@ export default function ExportPage() {
   } | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => {
-    setData(loadStudyData())
-  }, [])
-
-  if (!data) {
+  if (isLoading || !data) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <p className="text-muted-foreground">Loading...</p>
@@ -75,14 +70,14 @@ export default function ExportPage() {
   const handleExportCsv = () => {
     exportSummaryCsv(data)
     setCsvExported(true)
-    // Refresh data to get updated export history
-    setData(loadStudyData())
+    // Refresh context to get updated export history
+    refresh()
   }
 
   const handleExportJson = () => {
     exportSessionJsonFile(data)
     setJsonExported(true)
-    setData(loadStudyData())
+    refresh()
   }
 
   const handleImportFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -98,7 +93,7 @@ export default function ExportPage() {
           type: "success",
           message: `Imported ${result.mergedSessionCount} new session(s), ${result.mergedReflectionCount} new reflection(s).`,
         })
-        setData(loadStudyData())
+        refresh()
       } else {
         setImportStatus({ type: "error", message: result.error })
       }

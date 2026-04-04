@@ -30,3 +30,10 @@
 - **SessionMode type mismatch**: Engine code used `mode: "study"` but `SessionMode` only accepts `"solo" | "pass-and-play" | "team-single-device"`. Always check the schema type before passing literal strings.
 - **Export re-exports from index.ts caused alias collision**: `isSessionComplete` from flashcards and `isSessionComplete as isMatchingComplete` from matching both exist in `modes/index.ts`. Import the aliased name directly to avoid calling the wrong variant.
 - **Wireframes as implementation spec worked well**: Each wireframe's annotation block (Phase 3 — Actions, Data & Behavior) had all the UI behaviors, keyboard shortcuts, and data requirements pre-defined. The component implementation followed the annotations almost 1:1.
+
+## 2026-04-05 — Study Data Context Provider
+
+- **Extract pure logic for testability**: When creating React contexts, extract pure helper functions (like `getDueInfoForUnit`) and accept optional dependency parameters (like `slugUnits` map) so tests can inject mocks without needing a real glossary or DOM environment.
+- **Vitest node env limits React testing**: The project's vitest config uses `node` environment with only `*.test.ts` include patterns. Context/hooks can't be tested with `renderHook` without `@testing-library/react` and `jsdom`. Extract logic into pure functions and test those separately.
+- **Context wrapping is low-risk**: Adding `StudyDataProvider` to the root layout was safe because `loadStudyData()` already guards for SSR (`isBrowser()` check). The provider degrades gracefully to empty data during server rendering.
+- **Consumer refactor pattern**: Replace `useState` + `useEffect` + `loadStudyData()` with `useStudyData()` hook. For export/import handlers that modify localStorage, use `refresh()` from context to re-sync state.

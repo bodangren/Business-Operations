@@ -1,37 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
 import type { UnitId } from "@/types/glossary"
-import { glossaryData } from "@/data/glossary"
-import { loadStudyData } from "@/lib/study/storage"
-import { getDueCountForUnit } from "@/lib/study/derived"
-
-function buildSlugUnitMap(): Record<string, UnitId[]> {
-  const map: Record<string, UnitId[]> = {}
-  for (const entry of glossaryData) {
-    map[entry.slug] = entry.units
-  }
-  return map
-}
-
-const SLUG_UNITS = buildSlugUnitMap()
+import { useStudyDueCount } from "@/contexts/StudyDataContext"
 
 interface StudyDueBadgeProps {
   unitId: UnitId
 }
 
 export default function StudyDueBadge({ unitId }: StudyDueBadgeProps) {
-  const [dueCount, setDueCount] = useState<number | null>(null)
-  const [hasStudied, setHasStudied] = useState(false)
-
-  useEffect(() => {
-    const data = loadStudyData()
-    const studied = data.study_state.mastery_by_term.some((m) => m.times_seen > 0)
-    setHasStudied(studied)
-    const count = getDueCountForUnit(unitId, data.study_state.due_review_snapshot, SLUG_UNITS)
-    setDueCount(count)
-  }, [unitId])
+  const { dueCount, hasStudied } = useStudyDueCount(unitId)
 
   if (dueCount === null) return null
 

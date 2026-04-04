@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { LessonProgressProvider } from "@/contexts/LessonProgressContext";
+import { StudyDataProvider } from "@/contexts/StudyDataContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +33,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <LessonProgressProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <StudyDataProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </StudyDataProvider>
         </LessonProgressProvider>
       </body>
     </html>
