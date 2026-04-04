@@ -132,7 +132,7 @@ export default function StraightLineMastery() {
   const shuffledOptions = options.sort(() => Math.random() - 0.5)
 
   const handleSubmit = useCallback(() => {
-  const _selectedOption = shuffledOptions.find(o => o.label === userAnswer)
+    const selectedOption = shuffledOptions.find(o => o.label === userAnswer)
     const isCorrect = selectedOption?.isCorrect ?? false
     if (!selectedOption) return
 
@@ -165,7 +165,7 @@ export default function StraightLineMastery() {
   }, [])
 
   const progressToMastery = (consecutiveCorrect / masteryTarget) * 100
-  const selectedOption = shuffledOptions.find(o => o.label === userAnswer)
+  const _selectedOption = shuffledOptions.find(o => o.label === userAnswer)
   const selectedDistractorData = problem.distractors[selectedDistractor ?? -1]
 
   return (

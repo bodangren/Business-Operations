@@ -184,7 +184,7 @@ interface FeedbackCollectorProps {
   stakeholderType?: StakeholderType
   unitNumber?: number
   studentName?: string
-  onSubmit?: (_feedback: StakeholderFeedback) => void
+  onSubmit?: (feedback: StakeholderFeedback) => void
   className?: string
 }
 
@@ -430,7 +430,7 @@ export default function FeedbackCollector({
   // Rating component
   const RatingSelector = ({ rating, onRatingChange, disabled = false }: { 
     rating: FeedbackRating
-    onRatingChange: (_rating: FeedbackRating) => void 
+    onRatingChange: (rating: FeedbackRating) => void 
     disabled?: boolean
   }) => (
     <div className="space-y-2">

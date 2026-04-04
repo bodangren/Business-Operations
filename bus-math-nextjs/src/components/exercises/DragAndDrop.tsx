@@ -134,7 +134,7 @@ interface DragAndDropProps {
   rightColumnTitle?: string;
   showHints?: boolean;
   shuffleItems?: boolean;
-  onComplete?: (_score: number) => void;
+  onComplete?: (score: number) => void;
 }
 
 export function DragAndDrop({

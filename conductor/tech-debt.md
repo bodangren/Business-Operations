@@ -4,12 +4,13 @@
 
 - [ ] `next lint` deprecated — migrate to ESLint CLI before Next.js 16
 - [ ] Multiple lockfile warning — set `outputFileTracingRoot` or clean up root lockfile
-- [ ] ~235 eslint warnings (227 `any` types, ~8 hooks rules) — was 571, unused imports auto-fixed (Phase 1, 2026-04-05), unused vars cleaned (Phase 2, 2026-04-05)
+- [ ] ~234 eslint warnings (mostly `any` types, ~5 hooks rules) — was 571, Phase 1 auto-fix removed unused imports (2026-04-05), Phase 2 prefixed unused vars (2026-04-05), review audit fixed 1 critical runtime bug + 5 interface regressions (2026-04-05)
+- [ ] Dead code with `_` prefix in ~15 components — `_processFlows`, `_calculateProfit`, `_correctVolume`, `_handleNextAsset`, `_getHealthProgress`, `_showDiscovery`, `_showCalculation`, `_goalSeekMode`, `_isRecording`, etc. Should be deleted in a cleanup pass
 - [ ] Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)
 - [ ] Unit 7 `unit07Data` object duplicated in every `lesson-data.ts` file — should be a shared import (L4 from audit)
 - [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)
 - [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
-- [ ] `index-records.ts` has empty `lessonPages` array — no lesson-level index entries exist yet (M4 from audit)
+- [x] `index-records.ts` has empty `lessonPages` array — populated with all 80 lesson entries (M4 from audit, fixed 2026-04-05)
 - [x] `StudyDueBadge` loads study data per-instance — 8 hub cards = 8 redundant localStorage reads (L1 from CTAs review, fixed 2026-04-05)
 
 ## Resolved

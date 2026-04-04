@@ -147,7 +147,7 @@ interface PeerCritiqueFormProps {
   projectTitle?: string
   peerName?: string
   unitNumber?: number
-  onSubmit?: (_feedback: PeerFeedback) => void
+  onSubmit?: (feedback: PeerFeedback) => void
   className?: string
 }
 
@@ -272,7 +272,7 @@ export default function PeerCritiqueForm({
   // Star rating component
   const StarRating = ({ rating, onRatingChange, disabled = false }: { 
     rating: number
-    onRatingChange: (_rating: number) => void 
+    onRatingChange: (rating: number) => void 
     disabled?: boolean
   }) => (
     <div className="flex gap-1">

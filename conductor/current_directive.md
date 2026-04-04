@@ -1,31 +1,33 @@
 # Current Directive
 
 **Updated:** 2026-04-05
-**Status:** Phase 2 complete — all unused-var warnings eliminated (290 → 235)
+**Status:** Review audit complete — critical runtime bug in StraightLineMastery fixed, interface regressions reverted
 
 ## Active Track
 
-`eslint_warning_cleanup_20260405` — Phase 3: Fix no-explicit-any warnings (227 remaining)
+`eslint_warning_cleanup_20260405` — Phase 3: Fix no-explicit-any warnings (234 remaining)
 
 ## What Was Just Completed
 
-- Audit of tracks `study_data_context_20260405` and `lesson_index_entries_20260405`
-- Both tracks clean: spec-compliant, well-tested, no stale imports, titles verified against source
-- 216 tests pass (14 suites), build clean (603+ pages), lint clean (0 errors)
-- Review report filed: `conductor/reviews/review_20260405_context-and-index.md`
+- Code review audit of ESLint cleanup Phases 1-2 (commits `05021da`..`cd2798d`)
+- **Critical fix:** `StraightLineMastery.tsx` — `selectedOption` was incorrectly prefixed with `_`, causing `ReferenceError` at runtime when submitting answers. Fixed.
+- **Interface fix:** Reverted `_` prefix on callback parameter names in 5 public interface declarations (`DragAndDrop`, `FeedbackCollector`, `PeerCritiqueForm`)
+- Review report filed: `conductor/reviews/review_20260405_eslint-phases1-2.md`
 
 ## Verification
 
 - Tests: 216 passed (14 suites)
 - Build: compiled successfully (603+ pages)
-- Lint: 0 errors (warnings are pre-existing)
+- Lint: 0 errors, 234 warnings (down from 571 original)
 
 ## Next Priorities
 
-1. **ESLint warning cleanup pass** — ~150+ unused-import and `any` type warnings across lesson files; batch cleanup would reduce build noise and improve DX
-2. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16 (`npx @next/codemod@canary next-lint-to-eslint-cli .`)
-3. **Mastery progress bars on unit cards** — separate track to show per-unit mastery % alongside due counts
-4. **CashFlowChallenge rules-of-hooks fix** — `useCredit` called inside callback at lines 867/874; pre-existing but should be fixed
+1. **ESLint Phase 3: `no-explicit-any` warnings** — 234 warnings remain, most are `any` types; tackle `src/lib/` first, then components, then tests
+2. **ESLint Phase 4: React hooks rules** — ~5 hooks-related warnings (exhaustive-deps, LemonadeStand missing dep)
+3. **Dead-code removal pass** — Multiple `_`-prefixed dead functions across business-simulations and lesson pages (`_processFlows`, `_calculateProfit`, `_handleNextAsset`, `_getHealthProgress`, etc.) should be deleted rather than accumulated
+4. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16
+5. **Mastery progress bars on unit cards** — separate track to show per-unit mastery % alongside due counts
+6. **CashFlowChallenge rules-of-hooks fix** — `useCredit` called inside callback; pre-existing but should be fixed
 
 ## Blocked / Deferred
 
