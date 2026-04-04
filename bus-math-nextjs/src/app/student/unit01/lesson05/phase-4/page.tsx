@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Download, CheckCircle2, AlertCircle, BookOpen, Target } from "lucide-react"
+import { Download, CheckCircle2, BookOpen, Target } from "lucide-react"
 import { lesson05Data, unit01Data, lesson05Phases } from "../lesson-data"
 import { withBasePath } from "@/lib/paths"
 

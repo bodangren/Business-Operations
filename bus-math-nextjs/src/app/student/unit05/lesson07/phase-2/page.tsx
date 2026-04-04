@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Download, FileSpreadsheet, CheckCircle, ArrowRight } from "lucide-react"
+import { Download, FileSpreadsheet, CheckCircle } from "lucide-react"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 import { lesson07Data, unit05Data, lesson07Phases } from "../lesson-data"
 

@@ -88,7 +88,6 @@
 import { useState, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { Input } from '@/components/ui/input'
@@ -100,24 +99,15 @@ import {
   ShoppingCart,
   Package,
   Coffee,
-  Zap,
-  Cloud,
-  CloudRain,
-  Sun,
   RefreshCw,
   HelpCircle,
   ChevronDown,
   ChevronUp,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
   Play,
-  Pause,
   BarChart3,
   Users,
   Smile,
-  Frown,
-  Meh
+  Frown
 } from 'lucide-react'
 
 interface GameState {

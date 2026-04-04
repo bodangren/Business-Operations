@@ -77,13 +77,10 @@ import { DragDropContext, Draggable, Droppable, DropResult } from '@hello-pangea
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { 
   Package,
-  TrendingUp,
-  TrendingDown,
   Calculator,
   CheckCircle,
   XCircle,
@@ -92,14 +89,9 @@ import {
   ChevronDown,
   ChevronUp,
   Warehouse,
-  DollarSign,
   Calendar,
-  BarChart3,
-  AlertTriangle,
   Target,
-  ShoppingCart,
-  Edit3,
-  Hash
+  ShoppingCart
 } from 'lucide-react'
 
 // Types
@@ -383,7 +375,7 @@ export default function InventoryFlowDiagram() {
     
     let remainingToSell = totalSalesQuantity
     let totalCogs = 0
-    let usedLots: { lot: InventoryLot; quantityUsed: number }[] = []
+    const usedLots: { lot: InventoryLot; quantityUsed: number }[] = []
 
     // Process arranged lots in order
     for (const lot of arrangementZone) {

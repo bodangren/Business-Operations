@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { Clock, AlertTriangle, DollarSign, Landmark, MessageCircle } from "lucide-react"
+import { Clock, AlertTriangle, MessageCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, lesson04Phases, unit05Data } from "../lesson-data"
 

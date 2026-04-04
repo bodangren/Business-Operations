@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, TrendingDown, ArrowRight, Scale } from "lucide-react";
+import { AlertTriangle, TrendingDown, Scale } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 
 const phase1 = lesson04Phases.find(p => p.sequence === 1)!;

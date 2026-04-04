@@ -4,7 +4,6 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { CheckCircle2, FileSpreadsheet, Target, Users } from "lucide-react"
 
 import { lesson09Data, unit08Data, lesson09Phases } from "../lesson-data"

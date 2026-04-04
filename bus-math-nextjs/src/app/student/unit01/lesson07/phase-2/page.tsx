@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit01Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ClipboardList, FileSpreadsheet, Download, Target } from "lucide-react"
+import { FileSpreadsheet, Download, Target } from "lucide-react"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 
 const currentPhase = lesson07Phases[1]

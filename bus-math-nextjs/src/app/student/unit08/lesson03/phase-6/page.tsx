@@ -4,7 +4,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson03Data, unit08Data, lesson03Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Lightbulb, TrendingDown, ChevronRight } from "lucide-react";
+import { Lightbulb, TrendingDown, ChevronRight } from "lucide-react";
 import ReflectionJournal from "@/components/exercises/ReflectionJournal";
 
 const phase6 = lesson03Phases.find(p => p.sequence === 6)!;

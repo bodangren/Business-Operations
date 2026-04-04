@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { ScatterChart } from "@/components/charts/ScatterChart"
 import { Target, CheckSquare, TrendingUp, AlertTriangle } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
 

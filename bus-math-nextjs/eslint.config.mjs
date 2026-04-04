@@ -1,6 +1,7 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import unusedImportsPlugin from "eslint-plugin-unused-imports";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -12,16 +13,24 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    plugins: {
+      "unused-imports": unusedImportsPlugin,
+    },
     rules: {
       // Disable problematic rules for deployment
       "react/no-unescaped-entities": "off",
       "react-hooks/rules-of-hooks": "warn",
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" },
+      ],
       "@typescript-eslint/no-explicit-any": "warn",
       "prefer-const": "warn",
-      "react-hooks/exhaustive-deps": "warn"
-    }
-  }
+      "react-hooks/exhaustive-deps": "warn",
+    },
+  },
 ];
 
 export default eslintConfig;

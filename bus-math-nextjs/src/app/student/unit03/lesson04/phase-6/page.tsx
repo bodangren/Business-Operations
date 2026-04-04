@@ -2,7 +2,6 @@ import ReflectionJournal from "@/components/exercises/ReflectionJournal";
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Trophy, ArrowRight, Lightbulb, Target } from "lucide-react";
 import { lesson04Data, unit03Data, lesson04Phases } from "../lesson-data";
 

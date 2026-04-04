@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { TaxBracketTable } from "@/components/payroll/TaxBracketTable"
 import { federalTaxTables2025, SOCIAL_SECURITY_RATE, MEDICARE_RATE } from "@/data/payroll/federalTaxTables"
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank"
-import { Calculator, Info } from "lucide-react"
+import { Calculator } from "lucide-react"
 
 const currentPhase = lesson02Phases[1]
 

@@ -4,7 +4,6 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson03Data, unit08Data, lesson03Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, Calculator, TrendingDown, ArrowRight } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 

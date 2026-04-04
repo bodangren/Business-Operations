@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit04Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Wrench, CheckSquare, ArrowLeftRight, Lightbulb } from "lucide-react"
+import { Wrench, CheckSquare, ArrowLeftRight } from "lucide-react"
 
 const currentPhase = lesson07Phases[3]
 

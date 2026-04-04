@@ -104,7 +104,6 @@ import {
   Legend,
   ReferenceLine,
   ResponsiveContainer,
-  ReferenceDot,
 } from 'recharts'
 
 interface BreakEvenInputs {

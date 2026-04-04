@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { Clock, Zap, Calculator, Users, Lightbulb } from "lucide-react"
+import { Zap, Calculator, Users, Lightbulb } from "lucide-react"
 import { lesson04Data, unit01Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[0]

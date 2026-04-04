@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { lesson08Data, unit05Data, lesson08Phases } from "./lesson-data"
+import { lesson08Phases } from "./lesson-data"
 
 const currentPhase = lesson08Phases[0]
 

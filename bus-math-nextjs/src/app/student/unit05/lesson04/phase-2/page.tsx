@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { BookOpen, Calculator, Landmark, Clock, AlertTriangle } from "lucide-react"
+import { Calculator, Landmark, Clock, AlertTriangle } from "lucide-react"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
 import { lesson04Data, lesson04Phases, unit05Data } from "../lesson-data"
 

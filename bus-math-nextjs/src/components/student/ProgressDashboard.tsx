@@ -17,7 +17,6 @@ import {
   formatRelativeDate,
   masteryColor,
 } from "@/lib/study/derived"
-import type { DerivedStats } from "@/lib/study/derived"
 import { useStudyData } from "@/contexts/StudyDataContext"
 
 const UNITS: { id: UnitId; title: string }[] = [

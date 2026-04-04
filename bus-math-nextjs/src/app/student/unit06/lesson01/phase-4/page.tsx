@@ -3,7 +3,7 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { AlertTriangle, TrendingUp, TrendingDown, DollarSign, Users, CheckCircle, XCircle } from "lucide-react"
+import { TrendingUp, DollarSign, CheckCircle, XCircle } from "lucide-react"
 import { useState } from "react"
 import { lesson01Data, unit06Data, lesson01Phases } from "../lesson-data"
 

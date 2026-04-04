@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { 
   Target, 
@@ -12,25 +11,18 @@ import {
   BookOpen, 
   Clock,
   Users,
-  AlertTriangle,
   Lightbulb,
   Info,
   FileText,
   Settings,
-  MessageSquare,
   Flag,
-  TrendingUp,
-  Briefcase,
-  GraduationCap,
   ChevronLeft,
   ChevronRight,
   PlayCircle,
   PenTool,
   UserCheck,
-  BarChart3,
   ChevronDown
 } from "lucide-react"
-import Link from 'next/link'
 
 interface LessonPhase {
   id: string

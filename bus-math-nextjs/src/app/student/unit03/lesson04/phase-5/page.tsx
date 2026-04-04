@@ -2,7 +2,6 @@ import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ClipboardCheck, TrendingUp, Award, Briefcase } from "lucide-react";
 import { lesson04Data, unit03Data, lesson04Phases } from "../lesson-data";
 import { getUnit03Phase5ComprehensionCheckItems } from "@/data/question-banks/unit03-phase5";

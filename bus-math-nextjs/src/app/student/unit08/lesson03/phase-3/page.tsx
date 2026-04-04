@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson03Data, unit08Data, lesson03Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Calculator, ArrowRight, Lightbulb } from "lucide-react";
+import { Calendar, Lightbulb } from "lucide-react";
 
 const phase3 = lesson03Phases.find(p => p.sequence === 3)!;
 

@@ -5,7 +5,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Target, CheckCircle, XCircle, RefreshCw, ArrowRight, BarChart3 } from "lucide-react";
+import { Target, CheckCircle, XCircle, RefreshCw, BarChart3 } from "lucide-react";
 import { lesson04Data, unit06Data, lesson04Phases } from "../lesson-data";
 
 const currentPhase = lesson04Phases[3];

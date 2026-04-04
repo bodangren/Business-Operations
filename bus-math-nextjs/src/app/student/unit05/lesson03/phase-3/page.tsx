@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, DollarSign, Calculator, ClipboardList, TrendingUp } from "lucide-react"
+import { Users, ClipboardList, TrendingUp } from "lucide-react"
 import { lesson03Data, lesson03Phases, unit05Data } from "../lesson-data"
 
 const currentPhase = lesson03Phases[2]

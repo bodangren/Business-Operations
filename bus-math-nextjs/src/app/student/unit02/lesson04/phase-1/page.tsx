@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, ArrowRight } from "lucide-react"
+import { AlertTriangle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson04Data, unit02Data, lesson04Phases } from "../lesson-data"
 

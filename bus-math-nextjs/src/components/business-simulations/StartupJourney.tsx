@@ -70,12 +70,11 @@
 
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
-import { Separator } from '@/components/ui/separator'
 import { 
   DollarSign, 
   Calendar, 
@@ -85,16 +84,13 @@ import {
   Lightbulb,
   Target,
   ChartLine,
-  AlertTriangle,
   CheckCircle,
   XCircle,
   RefreshCw,
   HelpCircle,
   ChevronDown,
   ChevronUp,
-  Building,
   Code,
-  Megaphone,
   Crown,
   Zap
 } from 'lucide-react'

@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, RotateCcw, ArrowRight, TrendingUp, TrendingDown, Minus } from "lucide-react"
+import { CheckCircle, RotateCcw, ArrowRight, TrendingUp } from "lucide-react"
 import { lesson02Data, unit01Data, lesson02Phases } from "../lesson-data"
 import { useState, useCallback } from "react"
 

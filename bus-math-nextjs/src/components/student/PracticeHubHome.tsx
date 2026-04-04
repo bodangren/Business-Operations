@@ -3,11 +3,10 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
-  ArrowRight,
   Layers,
   Shuffle,
   Zap,
@@ -22,10 +21,8 @@ import { filterByUnit } from "@/lib/glossary/index"
 import {
   deriveStats,
   formatRelativeDate,
-  formatDuration,
   masteryColor,
 } from "@/lib/study/derived"
-import type { DerivedStats } from "@/lib/study/derived"
 import { useStudyData } from "@/contexts/StudyDataContext"
 
 const UNITS: { id: UnitId; label: string }[] = [

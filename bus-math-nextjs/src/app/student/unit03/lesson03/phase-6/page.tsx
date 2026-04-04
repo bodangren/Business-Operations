@@ -2,7 +2,7 @@ import ReflectionJournal from "@/components/exercises/ReflectionJournal";
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, ArrowRight, TrendingUp, Users } from "lucide-react";
+import { Lightbulb, ArrowRight, TrendingUp } from "lucide-react";
 import { lesson03Data, unit03Data, lesson03Phases } from "../lesson-data";
 
 const currentPhase = lesson03Phases[5];

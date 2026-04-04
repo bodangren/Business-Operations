@@ -4,7 +4,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson03Data, unit08Data, lesson03Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Calculator, FileText, BarChart3 } from "lucide-react";
+import { CheckCircle2, Calculator, FileText } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 
 const phase5 = lesson03Phases.find(p => p.sequence === 5)!;

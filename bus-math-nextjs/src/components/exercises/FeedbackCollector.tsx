@@ -114,11 +114,9 @@ import { Input } from '@/components/ui/input'
 import { 
   UserCheck, 
   FileText, 
-  Star, 
   MessageSquare, 
   CheckCircle, 
   Send,
-  TrendingUp,
   Calculator,
   Target,
   Briefcase,
@@ -127,18 +125,13 @@ import {
   Lightbulb,
   Presentation,
   DollarSign,
-  PieChart,
-  BarChart3,
   AlertCircle,
   HelpCircle,
   ChevronDown,
   ChevronUp,
   Award,
-  Globe,
   Zap,
-  BookOpen,
-  Clock,
-  ChevronRight
+  BookOpen
 } from 'lucide-react'
 
 // Types

@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import { Award, ArrowRight, TrendingUp, Target } from "lucide-react"
+import { Award, ArrowRight } from "lucide-react"
 import { lesson04Data, unit04Data, lesson04Phases } from "../lesson-data"
 
 const currentPhase = lesson04Phases[5]

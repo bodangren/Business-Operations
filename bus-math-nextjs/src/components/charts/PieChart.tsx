@@ -50,7 +50,7 @@
 
 'use client'
 
-import { PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
+import { PieChart as RechartsPieChart, Pie, Cell } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   ChartConfig,

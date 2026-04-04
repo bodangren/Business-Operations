@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, MessageCircle, TrendingDown, Target, Shield } from "lucide-react"
+import { Users, MessageCircle } from "lucide-react"
 import { lesson01Data, unit06Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase1Page() {

@@ -3,7 +3,7 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Target, Lightbulb, Calculator } from "lucide-react";
+import { Target, Lightbulb, Calculator } from "lucide-react";
 import BreakEvenMastery from "@/components/exercises/BreakEvenMastery";
 import { lesson03Data, unit06Data, lesson03Phases } from "../lesson-data";
 

@@ -3,16 +3,12 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { 
   Globe, 
   Type, 
   Eye, 
-  BookOpen, 
-  Volume2, 
-  Settings,
-  Palette,
-  ZoomIn
+  BookOpen,
+  Palette
 } from 'lucide-react'
 
 interface AccessibilityToolbarProps {

@@ -5,7 +5,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { lesson07Data, unit04Data, lesson07Phases } from "../lesson-data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Scale, Users, CheckCircle, XCircle } from "lucide-react"
+import { Scale, Users, CheckCircle } from "lucide-react"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 

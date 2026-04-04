@@ -2,7 +2,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, CheckCircle, Lightbulb } from "lucide-react"
+import { AlertTriangle, Lightbulb } from "lucide-react"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase4Page() {

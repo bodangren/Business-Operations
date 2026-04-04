@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle, FileSpreadsheet, CheckSquare, ArrowRight, Users, Target, ClipboardCheck, TestTube, MessageSquare, BookOpen } from "lucide-react"
-import { lesson09Data, unit02Data, lesson09Phases } from "./lesson-data"
+import { lesson09Data } from "./lesson-data"
 
 const workbookSheets = [
   {

@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Legend, BarChart as RechartsBarChart, Bar, PieChart as RechartsPieChart, Pie, Cell, Tooltip } from 'recharts'
 import { RefreshCw, Download, TrendingUp, TrendingDown, DollarSign, Target } from 'lucide-react'
 

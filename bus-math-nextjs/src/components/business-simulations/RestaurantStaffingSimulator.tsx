@@ -266,7 +266,7 @@ export function RestaurantStaffingSimulator() {
     let payroll = 0
     let revenueBoost = 0
     let satisfactionShift = scenario.satisfactionShift
-    let narrativeNotes: string[] = []
+    const narrativeNotes: string[] = []
 
     let lineCookOvertime = false
 
@@ -294,7 +294,7 @@ export function RestaurantStaffingSimulator() {
 
         payroll += rolePayroll
 
-        let staffingStrength = coverageMultiplier * headcount
+        const staffingStrength = coverageMultiplier * headcount
         let roleRevenueImpact = role.revenueImpact * staffingStrength
         if (role.id === 'assistant' && month < (role.unlockMonth ?? 0)) {
           roleRevenueImpact = -0.02 * staffingStrength

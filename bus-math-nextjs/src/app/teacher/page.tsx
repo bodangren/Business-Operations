@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { BookOpen, Users, TrendingUp, Calendar, FileText, Settings } from "lucide-react"
+import { BookOpen, Users, Calendar, FileText, Settings } from "lucide-react"
 
 export default function TeacherDashboard() {
   return (

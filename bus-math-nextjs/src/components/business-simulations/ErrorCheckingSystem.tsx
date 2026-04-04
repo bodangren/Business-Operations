@@ -69,9 +69,8 @@ import { useState, useCallback } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { AlertTriangle, CheckCircle, Eye, Code, Lightbulb, RefreshCw, HelpCircle, ChevronDown, ChevronUp, Shield, Target, BookOpen } from 'lucide-react'
+import { AlertTriangle, CheckCircle, Eye, Code, RefreshCw, HelpCircle, ChevronDown, ChevronUp, Shield, Target, BookOpen } from 'lucide-react'
 
 // Types
 interface ValidationRule {

@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { Button } from '@/components/ui/button'
-import { BookOpen, Heart, Handshake, User, Sparkles, Cpu, CalendarDays } from 'lucide-react'
+import { BookOpen, Heart, User, Sparkles, Cpu, CalendarDays } from 'lucide-react'
 
 export default function AcknowledgmentsPage() {
   return (

@@ -1,7 +1,7 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Zap, Award, TrendingUp, Calculator, Lightbulb, BarChart3 } from "lucide-react";
+import { Target, Zap, Award, TrendingUp, BarChart3 } from "lucide-react";
 import MarkupMarginMastery from "@/components/exercises/MarkupMarginMastery";
 import { lesson02Data, lesson02Phases, unit06Data } from "../lesson-data";
 

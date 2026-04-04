@@ -1,7 +1,6 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Lightbulb, BookOpen, Target, Award } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { lesson01Data, unit03Data, lesson01Phases } from "../lesson-data"

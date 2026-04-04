@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { lesson08Data, unit04Data, lesson08Phases } from "./lesson-data"
+import { lesson08Data, lesson08Phases } from "./lesson-data"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 
 export default function Lesson08Page() {

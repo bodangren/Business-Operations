@@ -66,11 +66,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
-import { Separator } from '@/components/ui/separator'
 import { 
-  BookOpen, 
-  Move,
-  DollarSign,
+  BookOpen,
   CheckCircle,
   XCircle,
   AlertTriangle,
@@ -310,8 +307,8 @@ export function JournalEntryBuilding({
       }
       // Check if amounts and sides are correct
       else {
-        let amountErrors = []
-        let sideErrors = []
+        const amountErrors = []
+        const sideErrors = []
         
         for (const correctEntry of currentScenario.correctEntry) {
           const studentEntry = journalEntries.find(entry => entry.account === correctEntry.account)

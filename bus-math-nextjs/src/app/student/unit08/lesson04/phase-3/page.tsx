@@ -4,8 +4,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, Lightbulb, Calculator } from "lucide-react";
+import { AlertTriangle, Lightbulb } from "lucide-react";
 
 const phase3 = lesson04Phases.find(p => p.sequence === 3)!;
 

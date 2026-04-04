@@ -77,13 +77,10 @@ import {
   DollarSign, 
   Calendar, 
   TrendingUp,
-  TrendingDown,
   Package,
-  ShoppingCart,
   Smartphone,
   Laptop,
   Tablet,
-  AlertTriangle,
   CheckCircle,
   XCircle,
   RefreshCw,
@@ -91,7 +88,6 @@ import {
   ChevronDown,
   ChevronUp,
   Warehouse,
-  Users,
   BarChart3
 } from 'lucide-react'
 
@@ -383,7 +379,7 @@ export function InventoryManager() {
       const storageExpense = totalInventory > 0 ? dayStorageCost : 0
 
       // Generate random market event (20% chance)
-      let newMarketEvents = prev.marketEvents.map(event => ({
+      const newMarketEvents = prev.marketEvents.map(event => ({
         ...event,
         duration: event.duration - 1
       })).filter(event => event.duration > 0)

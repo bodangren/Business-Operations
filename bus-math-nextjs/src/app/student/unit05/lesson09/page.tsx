@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
-import { lesson09Data, unit05Data, lesson09Phases } from "./lesson-data"
+import { lesson09Phases } from "./lesson-data"
 
 const currentPhase = lesson09Phases[0]
 

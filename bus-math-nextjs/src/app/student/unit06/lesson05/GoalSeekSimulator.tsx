@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CheckCircle2, XCircle, Target, Zap, AlertTriangle, ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { CheckCircle2, Target, Zap, AlertTriangle, ArrowRight } from "lucide-react";
 
 const FIXED_COSTS = 12000;
 const VARIABLE_COST = 880;

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import { Users, CheckCircle, AlertCircle, ArrowRight } from "lucide-react"
+import { Users, CheckCircle } from "lucide-react"
 import { lesson07Data, unit05Data, lesson07Phases } from "../lesson-data"
 
 const currentPhase = lesson07Phases[4]

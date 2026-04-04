@@ -1,19 +1,18 @@
 # Implementation Plan: ESLint Warning Cleanup Pass
 
-## Phase 1: Auto-Fix Unused Imports and let→const (~354 warnings)
+## Phase 1: Auto-Fix Unused Imports and let→const (~281 warnings fixed)
 
-### Task 1.1: Run ESLint --fix for auto-fixable warnings
-- Run `npx eslint . --ext .ts,.tsx --fix` to auto-remove unused imports and fix `let`→`const`
-- Review the diff to confirm no behavioral changes
+### Task 1.1: Run ESLint --fix for auto-fixable warnings [x]
+- Installed `eslint-plugin-unused-imports` and configured in `eslint.config.mjs`
+- Ran `npx eslint --fix` to auto-remove unused imports and fix `let`→`const`
+- Review: 150 files changed, no behavioral changes
 
-### Task 1.2: Verify auto-fix results
-- Run `npm run lint` — warning count should drop from ~571 to ~220
-- Run `npm run test` — all tests must pass
-- Run `npm run build` — must succeed
+### Task 1.2: Verify auto-fix results [x]
+- Warning count dropped from 571 → 290 (281 warnings fixed)
+- Tests: 216 passed (14 suites)
+- Build: compiled successfully (603+ pages)
 
-### Task 1.3: Commit and attach git note
-- Commit: `chore(lint): Auto-fix unused imports and let→const warnings`
-- Attach git note with summary of changes
+### Task 1.3: Commit and attach git note [~]
 
 ## Phase 2: Manual Cleanup of Remaining Unused Vars (~30 warnings)
 

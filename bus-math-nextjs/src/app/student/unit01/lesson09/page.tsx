@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { FileSpreadsheet, CheckCircle2, MessageSquare, Users, Target, ClipboardList } from "lucide-react"
+import { FileSpreadsheet, CheckCircle2, MessageSquare, Target, ClipboardList } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 
 export default function Lesson09Page() {

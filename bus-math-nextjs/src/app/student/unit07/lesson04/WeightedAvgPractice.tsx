@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { CheckCircle2, XCircle, RotateCcw, ChevronRight, Lightbulb, AlertTriangle, Package, Calculator, TrendingUp, BookOpen } from "lucide-react"
+import { CheckCircle2, XCircle, RotateCcw, ChevronRight, AlertTriangle, Package, Calculator, TrendingUp, BookOpen } from "lucide-react"
 
 // Pre-defined scenarios that produce clean averages
 const SCENARIOS = [

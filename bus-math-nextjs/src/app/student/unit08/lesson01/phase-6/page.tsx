@@ -3,7 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { BookOpen, ArrowRight, Lightbulb, TrendingUp } from "lucide-react"
+import { ArrowRight, Lightbulb, TrendingUp } from "lucide-react"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase6Page() {

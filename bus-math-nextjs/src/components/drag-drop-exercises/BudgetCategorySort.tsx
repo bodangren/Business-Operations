@@ -69,7 +69,7 @@ import { DragDropContext, Draggable, Droppable, DropResult } from '@hello-pangea
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Lightbulb, RotateCcw, CheckCircle, XCircle, TrendingDown, TrendingUp } from 'lucide-react'
+import { Lightbulb, RotateCcw, CheckCircle, XCircle, TrendingDown } from 'lucide-react'
 
 // Types
 interface BudgetExpense {

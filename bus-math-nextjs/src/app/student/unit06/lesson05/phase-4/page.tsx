@@ -4,7 +4,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileSpreadsheet, Rocket, Download, CheckCircle, Calculator, ClipboardList, Star, Target } from "lucide-react";
+import { FileSpreadsheet, Rocket, CheckCircle, Star } from "lucide-react";
 import { SpreadsheetWrapper } from "@/components/spreadsheet/SpreadsheetWrapper";
 import type { SpreadsheetData, SpreadsheetCell } from "@/components/spreadsheet/SpreadsheetWrapper";
 import { lesson05Data, unit06Data, lesson05Phases } from "../lesson-data";

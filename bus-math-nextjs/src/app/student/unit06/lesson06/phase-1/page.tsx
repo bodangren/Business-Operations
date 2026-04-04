@@ -4,7 +4,7 @@ import { PhaseHeader } from "@/components/student/PhaseHeader";
 import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Target, Zap, AlertTriangle, Calculator } from "lucide-react";
+import { Target, Zap, Calculator } from "lucide-react";
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck";
 import { lesson06Data, unit06Data, lesson06Phases } from "../lesson-data";
 
