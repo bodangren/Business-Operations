@@ -7,7 +7,7 @@
 - [ ] ~150+ eslint warnings (unused vars, `any` types) in existing lesson files — low priority, pre-existing
 - [ ] Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)
 - [ ] Unit 7 `unit07Data` object duplicated in every `lesson-data.ts` file — should be a shared import (L4 from audit)
-- [ ] `/debug/` route pages still accessible in production — should be gated behind dev-only flag or removed before deployment (L1 from audit)
+- [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)
 - [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
 - [ ] `index-records.ts` has empty `lessonPages` array — no lesson-level index entries exist yet (M4 from audit)
 
