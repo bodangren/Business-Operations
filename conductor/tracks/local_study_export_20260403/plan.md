@@ -25,15 +25,16 @@
   - Success/failure paths, due-term selection, queue updates after sessions
 - [ ] 2.4 Surface due-review counts to the practice hub and unit entry points
 
-### Phase 3: Vocabulary Study Modes
-- [ ] 3.1 Implement glossary-driven flashcards
+### Phase 3: Vocabulary Study Modes ✓
+- [x] 3.1 Implement glossary-driven flashcards
   - Prompt/answer side selector using the four glossary fields
   - Mark correct/incorrect or easy/hard review outcomes
-- [ ] 3.2 Implement one structured matching or sorting mode
-- [ ] 3.3 Implement one fast-paced review mode
-  - Solo or team-on-one-device acceptable
-  - Explicitly avoid realtime sync assumptions
-- [ ] 3.4 Record results from each study mode into local tracking state
+  - Re-queue missed cards once per session
+- [x] 3.2 Implement matching mode (click-to-select, 6 pairs, bilingual)
+- [x] 3.3 Implement speed round (90s timer, 3 lives, +2s correct, 4-option MCQ)
+- [x] 3.4 Record results from each study mode into local tracking state
+  - `recordFlashcardSession`, `recordMatchingSession`, `recordSpeedRoundSession`
+  - Persists SessionRecord, updates mastery/SRS/due-review, aggregates stats
 
 ### Phase 4: Practice Hub and Progress Surfaces
 - [ ] 4.1 Build the practice hub home
