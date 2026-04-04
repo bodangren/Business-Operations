@@ -1,11 +1,11 @@
 # Current Directive
 
 **Updated:** 2026-04-05
-**Status:** Audit complete — study data context + lesson index entries reviewed, no issues found
+**Status:** Implementing ESLint warning cleanup pass
 
 ## Active Track
 
-None — all tracks complete.
+`eslint_warning_cleanup_20260405` — Phase 1: Auto-fix unused imports and let→const
 
 ## What Was Just Completed
 
