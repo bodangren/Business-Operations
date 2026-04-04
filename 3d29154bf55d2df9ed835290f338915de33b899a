@@ -1,0 +1,1 @@
+Track: eslint_cli_migration_20260405 | Phase: 1 (Complete) | Lint: 0 errors 0 warnings | Tests: 216/216 passed | Build: 603+ pages compiled | Changes: eslint.config.mjs (global ignores), package.json (eslint .)
