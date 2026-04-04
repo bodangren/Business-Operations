@@ -3,18 +3,18 @@
 ## Track ID: practice_hub_wireframes_20260403
 
 ### Phase 1: Requirements and Information Architecture
-- [ ] 1.1 Collect the final required study and export surfaces from existing product notes
+- [x] 1.1 Collect the final required study and export surfaces from existing product notes
   - Glossary
   - Index
   - Unit overview vocabulary
   - Practice hub
   - Export
-- [ ] 1.2 Define the information architecture
+- [x] 1.2 Define the information architecture
   - Entry points
   - Main practice hub sections
   - Export locations
   - Return paths back into lessons and units
-- [ ] 1.3 Draft a flow diagram or equivalent map showing how the surfaces connect
+- [x] 1.3 Draft a flow diagram or equivalent map showing how the surfaces connect
 
 ### Phase 2: Low-Fidelity Wireframes
 - [ ] 2.1 Create low-fi wireframes for the unit overview with vocabulary list
