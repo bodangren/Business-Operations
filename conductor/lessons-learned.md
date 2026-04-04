@@ -9,14 +9,6 @@
 - **Footer link duplication**: Multiple nav sections pointing to the same route is a UX anti-pattern — each section should have unique links.
 - **Phase naming consistency**: Phase IDs and phase names can drift apart. Use canonical phase name mapping to avoid duplicates like two phases both named "Introduction".
 
-## 2026-04-04 — Phase 2: Low-Fi Wireframes
-
-- Wireframes as self-contained HTML files work well: no build tooling, openable directly in browser, easy to diff in git.
-- Inline styles keep each file independent but make them verbose — acceptable for static mocks.
-- The `wireframes/` directory in the track folder is the right home — co-located with spec/plan.
-- Annotations embedded in each wireframe (yellow boxes) serve as the Phase 3 handoff reference.
-- No test script exists (`npm run test` fails) — project relies on vitest config but no `test` alias in package.json scripts.
-
 ## 2026-04-04 — Phase 3: Vocabulary Study Modes
 
 - Wireframe annotations (blue boxes with "Actions, Data & Behavior") served as an excellent Phase 3 handoff spec — each mode's data requirements, localStorage keys, and export payload were pre-defined.
@@ -28,7 +20,6 @@
 
 - **Missing route pages were the #1 blocker**: PracticeHubHome linked to `/flashcards`, `/matching`, `/speed-round` but no route pages existed. Building them was essential to complete the track.
 - **SessionMode type mismatch**: Engine code used `mode: "study"` but `SessionMode` only accepts `"solo" | "pass-and-play" | "team-single-device"`. Always check the schema type before passing literal strings.
-- **Export re-exports from index.ts caused alias collision**: `isSessionComplete` from flashcards and `isSessionComplete as isMatchingComplete` from matching both exist in `modes/index.ts`. Import the aliased name directly to avoid calling the wrong variant.
 - **Wireframes as implementation spec worked well**: Each wireframe's annotation block (Phase 3 — Actions, Data & Behavior) had all the UI behaviors, keyboard shortcuts, and data requirements pre-defined. The component implementation followed the annotations almost 1:1.
 
 ## 2026-04-05 — Study Data Context Provider
@@ -50,3 +41,9 @@
 - **Interface callback parameter names are API documentation**: Prefixing callback parameter names in TypeScript interfaces with `_` (e.g., `onComplete?: (_score: number) => void`) harms readability for API consumers. The linter fires because the parameter value isn't used in the component implementation, but that's expected for callback props. Keep meaningful names in public interfaces.
 - **Auto-fix tools are safer than manual edits**: Phase 1 (`eslint-plugin-unused-imports` auto-fix) had zero issues. Phase 2 (manual `_` prefix) introduced the runtime bug. Prefer automated tools where possible; for manual fixes, validate each change against the full file context, not just the flagged line.
 - **Dead code patterns are pervasive**: Multiple components contain functions and state variables that are defined but never called (`_processFlows`, `_calculateProfit`, `_handleNextAsset`, `_getHealthProgress`, etc.). These should be removed in a dedicated dead-code cleanup pass rather than accumulated with `_` prefixes.
+
+## 2026-04-05 — ESLint Phase 4: React Hooks Rules
+
+- **`useCallback` named `use*` triggers false positive**: A `useCallback` named `useCredit` caused ESLint to flag it as a hook call inside onClick handlers. Rename event-handler callbacks with `handle*` prefix to avoid the `use*` pattern that ESLint associates with React Hooks.
+- **Move `useMemo` objects inside the callback**: When an object (`new Set(...)`) is created outside `useMemo` and passed as a dep, it's a new reference every render. Moving construction inside the memo and using primitive deps (`activeEvent.metricMoves`) fixes both the warning and the re-render waste.
+- **Function definition order matters for exhaustive-deps**: When `simulateSales` calls `completeSales` and both are `useCallback`, moving `completeSales` before `simulateSales` avoids a "used before declaration" build error while allowing it to be safely listed as a dependency.
