@@ -17,14 +17,14 @@
 - [x] 1.3 Draft a flow diagram or equivalent map showing how the surfaces connect
 
 ### Phase 2: Low-Fidelity Wireframes
-- [ ] 2.1 Create low-fi wireframes for the unit overview with vocabulary list
-- [ ] 2.2 Create low-fi wireframes for the practice hub home
-- [ ] 2.3 Create low-fi wireframes for vocabulary study modes
+- [x] 2.1 Create low-fi wireframes for the unit overview with vocabulary list
+- [x] 2.2 Create low-fi wireframes for the practice hub home
+- [x] 2.3 Create low-fi wireframes for vocabulary study modes
   - Flashcards
   - Matching/sort
   - Speed round or race mode
-- [ ] 2.4 Create low-fi wireframes for export and history views
-- [ ] 2.5 Create low-fi mobile variants or mobile notes
+- [x] 2.4 Create low-fi wireframes for export and history views
+- [x] 2.5 Create low-fi mobile variants or mobile notes
 
 ### Phase 3: Annotated Review Set
 - [ ] 3.1 Add annotations for actions, required data, and local-only behavior

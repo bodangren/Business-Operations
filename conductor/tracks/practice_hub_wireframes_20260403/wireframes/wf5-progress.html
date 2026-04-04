@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WF5 — Progress Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f1f5f9; color: #1e293b; }
+    .wireframe { max-width: 960px; margin: 2rem auto; background: #fff; border: 2px dashed #cbd5e1; border-radius: 12px; overflow: hidden; }
+    .wf-label { background: #334155; color: #f1f5f9; padding: 0.5rem 1rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between; align-items: center; }
+    .wf-label .route { font-family: monospace; color: #94a3b8; }
+    .nav { display: flex; gap: 1rem; padding: 0.75rem 1.5rem; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 0.8rem; }
+    .nav span { color: #64748b; }
+    .nav .active { color: #1e293b; font-weight: 600; }
+    .breadcrumb { padding: 0.75rem 1.5rem; font-size: 0.75rem; color: #94a3b8; }
+    .content { padding: 1.5rem; }
+    h1 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+    .subtitle { font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem; }
+
+    /* Summary stats */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; text-align: center; }
+    .stat-num { font-size: 1.75rem; font-weight: 700; }
+    .stat-label { font-size: 0.7rem; color: #64748b; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-card.highlight { background: #eff6ff; border-color: #bfdbfe; }
+    .stat-card.highlight .stat-num { color: #2563eb; }
+    .stat-card.urgent { background: #fef2f2; border-color: #fecaca; }
+    .stat-card.urgent .stat-num { color: #dc2626; }
+
+    /* Unit mastery */
+    .section { margin-bottom: 2rem; }
+    .section h2 { font-size: 1rem; margin-bottom: 0.75rem; color: #334155; }
+    .unit-mastery { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+    .unit-row { display: flex; align-items: center; padding: 0.75rem 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.8rem; gap: 1rem; }
+    .unit-row:last-child { border-bottom: none; }
+    .unit-num { font-weight: 700; width: 60px; flex-shrink: 0; }
+    .unit-title { flex: 1; color: #475569; }
+    .unit-bar-wrap { width: 120px; flex-shrink: 0; }
+    .unit-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+    .unit-bar-fill { height: 100%; border-radius: 4px; }
+    .unit-pct { width: 40px; text-align: right; font-weight: 600; font-size: 0.8rem; }
+    .unit-terms { width: 80px; text-align: right; font-size: 0.75rem; color: #64748b; }
+    .bar-high { background: #22c55e; }
+    .bar-mid { background: #f59e0b; }
+    .bar-low { background: #ef4444; }
+
+    /* Two-column layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    /* Practice history */
+    .session-list { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+    .session-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.8rem; }
+    .session-row:last-child { border-bottom: none; }
+    .session-info .mode { font-weight: 600; }
+    .session-info .meta { font-size: 0.7rem; color: #64748b; }
+    .session-score { font-weight: 600; }
+
+    /* Weak topics */
+    .weak-list { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+    .weak-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.8rem; }
+    .weak-row:last-child { border-bottom: none; }
+    .weak-topic { font-weight: 500; }
+    .weak-unit { font-size: 0.7rem; color: #64748b; }
+    .mastery-bar { width: 80px; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+    .mastery-fill { height: 100%; border-radius: 3px; }
+
+    /* Recent exports */
+    .export-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.8rem; }
+    .export-row:last-child { border-bottom: none; }
+
+    .cta { display: inline-block; background: #3b82f6; color: #fff; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem; font-weight: 500; text-decoration: none; border: none; cursor: pointer; }
+    .cta-outline { background: transparent; border: 1px solid #3b82f6; color: #3b82f6; }
+    .annotation { background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 0.75rem; font-size: 0.75rem; color: #92400e; margin-top: 2rem; }
+    .annotation strong { display: block; margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body>
+  <div class="wireframe">
+    <div class="wf-label">
+      <span>WF5 — Progress Dashboard</span>
+      <span class="route">/student/practice-hub/progress</span>
+    </div>
+
+    <div class="nav">
+      <span>Home</span>
+      <span>Student Hub</span>
+      <span>Glossary</span>
+      <span>Index</span>
+      <span class="active">Practice Hub</span>
+    </div>
+
+    <div class="breadcrumb">
+      Practice Hub › <strong>Progress Dashboard</strong>
+    </div>
+
+    <div class="content">
+      <h1>Progress Dashboard</h1>
+      <p class="subtitle">Track your vocabulary mastery and practice across all units.</p>
+
+      <!-- Summary stats -->
+      <div class="stats-row">
+        <div class="stat-card highlight">
+          <div class="stat-num">142</div>
+          <div class="stat-label">Terms Studied</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">78%</div>
+          <div class="stat-label">Avg Mastery</div>
+        </div>
+        <div class="stat-card urgent">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Due Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">47</div>
+          <div class="stat-label">Sessions</div>
+        </div>
+      </div>
+
+      <!-- Unit mastery bars -->
+      <div class="section">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2>Mastery by Unit</h2>
+          <button class="cta" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">Export Progress</button>
+        </div>
+        <div class="unit-mastery">
+          <div class="unit-row">
+            <div class="unit-num">Unit 01</div>
+            <div class="unit-title">Smart Ledger Launch</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-high" style="width: 87%;"></div></div></div>
+            <div class="unit-pct">87%</div>
+            <div class="unit-terms">18/18 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 02</div>
+            <div class="unit-title">Month-End Wizard</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-mid" style="width: 72%;"></div></div></div>
+            <div class="unit-pct">72%</div>
+            <div class="unit-terms">16/18 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 03</div>
+            <div class="unit-title">Three-Statement Storyboard</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-high" style="width: 91%;"></div></div></div>
+            <div class="unit-pct">91%</div>
+            <div class="unit-terms">12/12 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 04</div>
+            <div class="unit-title">Data-Driven Cafe</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-mid" style="width: 68%;"></div></div></div>
+            <div class="unit-pct">68%</div>
+            <div class="unit-terms">14/16 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 05</div>
+            <div class="unit-title">PayDay Simulator</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-high" style="width: 83%;"></div></div></div>
+            <div class="unit-pct">83%</div>
+            <div class="unit-terms">15/16 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 06</div>
+            <div class="unit-title">PriceLab Challenge</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-low" style="width: 55%;"></div></div></div>
+            <div class="unit-pct">55%</div>
+            <div class="unit-terms">10/18 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 07</div>
+            <div class="unit-title">Inventory Accounting</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-low" style="width: 42%;"></div></div></div>
+            <div class="unit-pct">42%</div>
+            <div class="unit-terms">8/14 terms</div>
+          </div>
+          <div class="unit-row">
+            <div class="unit-num">Unit 08</div>
+            <div class="unit-title">Fixed Assets &amp; Depreciation</div>
+            <div class="unit-bar-wrap"><div class="unit-bar"><div class="unit-bar-fill bar-mid" style="width: 60%;"></div></div></div>
+            <div class="unit-pct">60%</div>
+            <div class="unit-terms">9/12 terms</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two column: Recent Practice + Weak Topics -->
+      <div class="two-col">
+        <div class="section">
+          <h2>Recent Practice Sessions</h2>
+          <div class="session-list">
+            <div class="session-row">
+              <div class="session-info">
+                <div class="mode">Flashcards</div>
+                <div class="meta">Unit 03 · 12 terms · Today</div>
+              </div>
+              <div class="session-score" style="color: #16a34a;">92%</div>
+            </div>
+            <div class="session-row">
+              <div class="session-info">
+                <div class="mode">Matching Game</div>
+                <div class="meta">Unit 02 · 8 terms · Yesterday</div>
+              </div>
+              <div class="session-score" style="color: #16a34a;">88%</div>
+            </div>
+            <div class="session-row">
+              <div class="session-info">
+                <div class="mode">Speed Round</div>
+                <div class="meta">All Units · 15 terms · 2 days ago</div>
+              </div>
+              <div class="session-score" style="color: #f59e0b;">75%</div>
+            </div>
+            <div class="session-row">
+              <div class="session-info">
+                <div class="mode">Flashcards</div>
+                <div class="meta">Unit 05 · 10 terms · 3 days ago</div>
+              </div>
+              <div class="session-score" style="color: #16a34a;">90%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Weak Topics</h2>
+          <div class="weak-list">
+            <div class="weak-row">
+              <div>
+                <div class="weak-topic">Depreciation Methods</div>
+                <div class="weak-unit">Unit 08 · 3 attempts</div>
+              </div>
+              <div class="mastery-bar"><div class="mastery-fill" style="width: 35%; background: #ef4444;"></div></div>
+            </div>
+            <div class="weak-row">
+              <div>
+                <div class="weak-topic">Cash Flow Categories</div>
+                <div class="weak-unit">Unit 03 · 5 attempts</div>
+              </div>
+              <div class="mastery-bar"><div class="mastery-fill" style="width: 42%; background: #f59e0b;"></div></div>
+            </div>
+            <div class="weak-row">
+              <div>
+                <div class="weak-topic">Accrual vs. Cash Basis</div>
+                <div class="weak-unit">Unit 02 · 4 attempts</div>
+              </div>
+              <div class="mastery-bar"><div class="mastery-fill" style="width: 50%; background: #f59e0b;"></div></div>
+            </div>
+            <div class="weak-row">
+              <div>
+                <div class="weak-topic">COGS Calculation</div>
+                <div class="weak-unit">Unit 07 · 2 attempts</div>
+              </div>
+              <div class="mastery-bar"><div class="mastery-fill" style="width: 55%; background: #f59e0b;"></div></div>
+            </div>
+          </div>
+          <div style="margin-top: 0.75rem;">
+            <button class="cta" style="background: #f59e0b;">Practice Weak Topics</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="annotation">
+        <strong>Annotation — WF5 Key Decisions:</strong>
+        Mastery bars use three color tiers: green (>75%), amber (50-75%), red (<50%).
+        Unit rows link to unit-filtered practice hub view.
+        "Export Progress" button links to /student/practice-hub/export.
+        "Practice Weak Topics" starts a flashcard session pre-filtered to lowest-mastery terms.
+        Session history shows last 10 sessions by default. All data from localStorage.
+        Terms studied count vs total terms available (156 across all units).
+      </div>
+    </div>
+  </div>
+</body>
+</html>

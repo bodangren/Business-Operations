@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Hub Wireframes — Index</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; padding: 2rem; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .subtitle { color: #64748b; margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: box-shadow 0.15s; }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .card h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.875rem; color: #64748b; margin-bottom: 1rem; line-height: 1.5; }
+    .card a { display: inline-block; background: #3b82f6; color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.875rem; }
+    .card a:hover { background: #2563eb; }
+    .badge { display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: #dbeafe; color: #1d4ed8; margin-bottom: 0.75rem; }
+    .status { font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Practice Hub — Wireframe Package</h1>
+  <p class="subtitle">Low-fidelity wireframes for the practice hub, vocabulary study flows, and export experience.</p>
+
+  <div class="grid">
+    <div class="card">
+      <span class="badge">WF1</span>
+      <h2>Unit Overview + Vocabulary Entry</h2>
+      <p>Where the unit vocabulary list lives and how students enter study mode from the unit overview page.</p>
+      <a href="wf1-unit-overview.html">View Wireframe →</a>
+      <p class="status">Route: /student/unit03</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF2</span>
+      <h2>Practice Hub Home</h2>
+      <p>Main hub page with due review, vocabulary study modes, recent practice, weak topics, and export entry.</p>
+      <a href="wf2-practice-hub.html">View Wireframe →</a>
+      <p class="status">Route: /student/practice-hub</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF3a</span>
+      <h2>Flashcards</h2>
+      <p>Card-flip vocabulary study mode with got-it/review-again marking.</p>
+      <a href="wf3a-flashcards.html">View Wireframe →</a>
+      <p class="status">Route: /student/practice-hub/flashcards</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF3b</span>
+      <h2>Matching Game</h2>
+      <p>Drag-and-drop matching or sort game for vocabulary practice.</p>
+      <a href="wf3b-matching.html">View Wireframe →</a>
+      <p class="status">Route: /student/practice-hub/matching</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF3c</span>
+      <h2>Speed Round</h2>
+      <p>Timed challenge mode — race against the clock to match terms.</p>
+      <a href="wf3c-speed-round.html">View Wireframe →</a>
+      <p class="status">Route: /student/practice-hub/speed-round</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF4</span>
+      <h2>Export Flow</h2>
+      <p>Export preview, format selection, and download with history tracking.</p>
+      <a href="wf4-export.html">View Wireframe →</a>
+      <p class="status">Route: /student/practice-hub/export</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF5</span>
+      <h2>Progress Dashboard</h2>
+      <p>Per-unit mastery bars, due-review counts, recent exports, and weak topics.</p>
+      <a href="wf5-progress.html">View Wireframe →</a>
+      <p class="status">Route: /student/practice-hub/progress</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">WF6</span>
+      <h2>Mobile Variants</h2>
+      <p>Mobile behavior notes for hub, flashcards, and export flow.</p>
+      <a href="wf6-mobile.html">View Wireframe →</a>
+      <p class="status">Responsive notes</p>
+    </div>
+  </div>
+</body>
+</html>
