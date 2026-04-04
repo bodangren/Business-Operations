@@ -131,14 +131,14 @@ The `react-spreadsheet` library provides:
 - Cost-Volume-Profit modeling
 - Goal Seek simulation
 
-### Unit 7 (Asset & Inventory Tracker)
-- Depreciation calculations (SLN, DDB)
+### Unit 7 (Inventory Accounting)
 - FIFO/LIFO inventory costing
+- Weighted average and specific identification
 - Array formulas for layer costing
 
-### Unit 8 (Year-1 Startup Model)
-- Complex financial modeling
-- Scenario analysis with data tables
+### Unit 8 (Fixed Assets and Depreciation)
+- Depreciation calculations (SLN, DDB)
+- Asset register management
 - Cross-sheet formula linking
 
 ## Basic Usage Examples

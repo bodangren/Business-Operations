@@ -12,19 +12,19 @@ export const practiceTestPhases = [
     id: "unit07-practice-test-phase-1",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Set the scene for the board presentation and preview how this practice test sharpens your depreciation and inventory strategy instincts."
+    description: "Set the scene for the board presentation and preview how this practice test sharpens your inventory strategy instincts."
   },
   {
     id: "unit07-practice-test-phase-2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Review the practice-test format, adjust lesson filters, and lock in a question mix that targets the asset and inventory skills you need most."
+    description: "Review the practice-test format, adjust lesson filters, and lock in a question mix that targets the inventory skills you need most."
   },
   {
     id: "unit07-practice-test-phase-3",
     phaseName: "Guided Practice" as const,
     sequence: 3,
-    description: "Warm up with strategy tips and checkpoints that mirror the prep Sarah uses before the Board Q&A on FIFO, LIFO, and depreciation method trade-offs."
+    description: "Warm up with strategy tips and checkpoints that mirror the prep Sarah uses before the Board Q&A on FIFO, LIFO, weighted average, and specific identification trade-offs."
   },
   {
     id: "unit07-practice-test-phase-4",

@@ -1,9 +1,9 @@
-### Unit 8: Year‑1 Startup Model (Weeks 15–18)
+### Unit 8: Fixed Assets and Depreciation (Weeks 15–18)
 
 ### Unit Overview
 
 **Driving Question:**  
-*Can we convince a micro‑VC that our first‑year financial model is robust enough to merit funding?*
+*How do we track long-term assets professionally and choose the right depreciation method?*
 
 **Entry Event (Day 1):**  
 A venture capitalist guest outlines common red flags in rookie startup models and challenges students to avoid them. Students review anonymized pitch decks and model failures.

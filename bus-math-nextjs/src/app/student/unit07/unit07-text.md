@@ -203,4 +203,4 @@ This final presentation is an "authentic assessment" – it's designed to be as 
 
 After all the presentations, the "Board" will provide overall feedback, and you'll have a chance to reflect on your learning journey throughout this unit. What was your biggest "aha!" moment? Which technical skill do you feel most confident with now? How has this unit changed your understanding of how businesses manage their money and make strategic decisions?
 
-By successfully completing this unit, you're not just mastering math concepts; you're gaining practical business skills that are highly valued in the real world. You're learning to use data to make smart decisions, just like real CEOs and CFOs do every day. Congratulations on becoming an expert in Asset & Inventory Tracking!
+By successfully completing this unit, you're not just mastering math concepts; you're gaining practical business skills that are highly valued in the real world. You're learning to use data to make smart decisions, just like real CEOs and CFOs do every day. Congratulations on becoming an expert in Inventory Accounting!

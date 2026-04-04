@@ -182,9 +182,8 @@
 ### Unit 6 Components (PriceLab Challenge)
 - [ ] **BreakEvenAnalysisCalculator.tsx** - comprehensive break-even analysis
 
-### Unit 7 Components (Asset & Inventory Tracker)
+### Unit 7 Components (Inventory Accounting)
 - [ ] **InventoryFlowDiagram.tsx** - arrange inventory costs in FIFO/LIFO patterns
-- [ ] **DepreciationMethodBuilder.tsx** - build depreciation schedules
 
 ## 🔄 STILL NEEDED: Foundation Components
 

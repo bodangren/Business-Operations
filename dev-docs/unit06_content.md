@@ -88,4 +88,4 @@
 #### Next Steps After This Unit
 
 * Portfolio upload: include final memo/deck as an artifact.
-* Discuss insights to inform upcoming Asset & Inventory Tracker unit.
+* Discuss insights to inform upcoming Inventory Accounting unit.

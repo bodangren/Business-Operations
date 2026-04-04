@@ -369,8 +369,8 @@ This is a Grade 12 "Math for Business Operations" course using Project-Based Lea
 4. **Data-Driven Café**: Statistical analysis and forecasting for operations optimization
 5. **PayDay Simulator**: Payroll systems with tax calculations and cash flow management
 6. **PriceLab Challenge**: Cost-Volume-Profit analysis and competitive pricing strategies
-7. **Asset & Inventory Tracker**: Depreciation methods and inventory valuation (FIFO/LIFO)
-8. **Year-1 Startup Model**: Integrated financial model with scenario analysis for VC presentations
+7. **Inventory Accounting**: Inventory valuation methods (FIFO/LIFO, weighted average, specific identification)
+8. **Fixed Assets and Depreciation**: SLN/DDB depreciation methods and asset register management
 
 ### Assessment Philosophy
 - **60% Formative**: Weekly milestones, peer reviews, reflection journals

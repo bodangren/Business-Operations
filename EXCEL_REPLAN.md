@@ -218,9 +218,9 @@ This document outlines a revised, simplified curriculum for the Excel-focused le
 
 ---
 
-## Unit 7: Asset & Inventory Tracker
+## Unit 7: Inventory Accounting
 
-**Core Accounting Goal:** Model depreciation and inventory valuation methods (FIFO/LIFO).
+**Core Accounting Goal:** Model inventory valuation methods (FIFO/LIFO, weighted average, specific identification).
 
 ### Lesson 4: SLN and DDB Depreciation
 *   **Skills:**
@@ -252,9 +252,9 @@ This document outlines a revised, simplified curriculum for the Excel-focused le
 
 ---
 
-## Unit 8: Year-1 Startup Model
+## Unit 8: Fixed Assets and Depreciation
 
-**Core Accounting Goal:** Build an integrated 3-statement financial model for a startup.
+**Core Accounting Goal:** Track long-term assets and apply SLN/DDB depreciation methods.
 
 ### Lesson 4: Model Assumptions & Drivers
 *   **Skills:**

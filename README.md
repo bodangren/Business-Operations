@@ -160,15 +160,15 @@ Every concept connects to student goals and real-world impact:
 - Cost-Volume-Profit analysis, Goal Seek, sensitivity analysis
 - Public deliverable: Town-hall pricing debate presentation
 
-**Unit 7: Asset & Inventory Tracker** (Weeks 13-14)
-- *Driving Question*: Which depreciation and inventory methods best align with our cash-flow and tax strategy?
-- SLN/DDB depreciation, FIFO/LIFO inventory, turnover ratios
+**Unit 7: Inventory Accounting** (Weeks 13-14)
+- *Driving Question*: How do we build, test, and defend a trustworthy ending inventory number?
+- FIFO/LIFO inventory, weighted average, specific identification, turnover ratios
 - Public deliverable: Advisory brief to mock Board of Directors
 
-**Unit 8: Year-1 Startup Model** (Weeks 15-18)
-- *Driving Question*: Can we convince a micro-VC that our first-year financial model is robust enough to merit funding?
-- Integrated three-statement model, scenario analysis, formula auditing
-- Public deliverable: VC-style pitch with live Q&A
+**Unit 8: Fixed Assets and Depreciation** (Weeks 15-18)
+- *Driving Question*: How do we track long-term assets professionally and choose the right depreciation method?
+- SLN/DDB depreciation, asset register management, formula auditing
+- Public deliverable: Depreciation recommendation with live Q&A
 
 ### Capstone Project (Semester 2)
 
@@ -377,9 +377,9 @@ mcp__chrome-mcp-studio__chrome_console  # Monitor for React errors
 - Students research competitor pricing and create recommendation models
 - **Business owner panel** evaluates proposals in town-hall format presentation
 
-**Unit 8: Year-1 Startup Model**
-- **Regional venture capital mentors** conduct authentic due diligence sessions
-- Students pitch integrated financial models using **real market research**
+**Unit 8: Fixed Assets and Depreciation**
+- **Business advisory panel** evaluates depreciation recommendations
+- Students present asset register and method comparison backed by workbook evidence
 - **SCORE business mentors** provide ongoing guidance throughout capstone development
 
 ### Community Impact Outcomes

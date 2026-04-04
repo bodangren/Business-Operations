@@ -36,8 +36,8 @@ const lessonOptions: Array<{
   },
   {
     id: "lesson02",
-    title: "Lesson 02 – Depreciation Techniques",
-    focus: "SLN, DDB, Units of Production, and cash-flow impacts",
+    title: "Lesson 02 – Inventory Cost Flow Foundations",
+    focus: "GAFS, cost layers, physical vs. cost flow",
     color: "border-sky-300 bg-sky-50"
   },
   {
@@ -285,7 +285,7 @@ export default function PracticeTestPage() {
                 <CardContent className="space-y-4 text-left">
                   <p className="text-lg leading-relaxed text-slate-800">
                     Sarah Chen is preparing for a critical Board of Directors meeting where she must defend
-                    TechStart's depreciation and inventory method choices. Board members will press her on
+                    TechStart's inventory method choices. Board members will press her on
                     cash-flow impacts, tax strategy, and investor optics. This practice test is your chance to
                     rehearse alongside Sarah so both of you are ready for tough strategic questions.
                   </p>
@@ -293,7 +293,7 @@ export default function PracticeTestPage() {
                     <h3 className="font-semibold mb-2">Why this matters</h3>
                     <p className="text-sm leading-relaxed">
                       Boards judge management on clarity, strategic thinking, and confidence. When you can explain
-                      FIFO vs. LIFO trade-offs or defend double-declining balance without hesitation, you prove
+                      FIFO vs. LIFO trade-offs or defend weighted average without hesitation, you prove
                       TechStart's accounting choices support the business strategy. Your mastery keeps Sarah's
                       credibility high and the board conversation focused on growth, not on method confusion.
                     </p>
@@ -319,7 +319,7 @@ export default function PracticeTestPage() {
                   <CardContent className="space-y-4 text-left text-slate-800">
                     <p className="text-lg leading-relaxed">
                       Decide which lessons you want to focus on today. Each set pulls from the shared question bank
-                      that powers every lesson's assessment. Use the toggles below to highlight the asset and inventory
+                      that powers every lesson's assessment. Use the toggles below to highlight the inventory
                       skills you want to reinforce before the board presentation.
                     </p>
                     <div className="flex flex-wrap gap-3">
@@ -407,9 +407,9 @@ export default function PracticeTestPage() {
                     <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-emerald-900">
                       <h3 className="font-semibold mb-2">Warm-up prompt</h3>
                       <p className="text-sm leading-relaxed">
-                        Imagine a board member asks, "Why did you choose double-declining balance over straight-line
-                        for our new equipment?" Spend 30 seconds describing the strategic rationale you would spotlight
-                        first. That mindset will guide you through the toughest depreciation and inventory questions ahead.
+                        Imagine a board member asks, "Why did you choose FIFO over LIFO
+                        for our inventory?" Spend 30 seconds describing the strategic rationale you would spotlight
+                        first. That mindset will guide you through the toughest inventory questions ahead.
                       </p>
                     </div>
                   </CardContent>
@@ -477,7 +477,7 @@ export default function PracticeTestPage() {
                   <ComprehensionCheck
                     questions={comprehensionItems}
                     title="Unit 7 Practice Test"
-                    description="Answer the questions, then review the explanations to strengthen your board-ready asset and inventory strategy."
+                    description="Answer the questions, then review the explanations to strengthen your board-ready inventory strategy."
                     showExplanations={true}
                     allowRetry={true}
                     onComplete={(score, total) => {
@@ -531,7 +531,7 @@ export default function PracticeTestPage() {
                         <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-orange-900 space-y-2">
                           <p className="font-semibold">Reading the results</p>
                           <p className="text-sm leading-relaxed">
-                            A score of 80% or higher means you can defend Sarah's asset and inventory strategy with
+                            A score of 80% or higher means you can defend Sarah's inventory strategy with
                             confidence. If you scored lower, focus on the lessons with the largest slice in the breakdown
                             below before the next board rehearsal.
                           </p>
@@ -590,13 +590,13 @@ export default function PracticeTestPage() {
                         {
                           id: "unit07-practice-test-reflection-strength",
                           category: "courage",
-                          prompt: "What depreciation or inventory concept did you handle with confidence during this practice test, and how will you showcase it in the board presentation?",
+                          prompt: "What inventory concept did you handle with confidence during this practice test, and how will you showcase it in the board presentation?",
                           placeholder: "Describe the question or concept you handled well and the evidence you will share with the board..."
                         },
                         {
                           id: "unit07-practice-test-reflection-focus",
                           category: "persistence",
-                          prompt: "Which asset or inventory skill still needs polish before the advisory brief, and what action will you take to strengthen it?",
+                          prompt: "Which inventory skill still needs polish before the advisory brief, and what action will you take to strengthen it?",
                           placeholder: "Explain the tricky area you want to improve and the specific practice plan you will use..."
                         }
                       ]}

@@ -1,8 +1,8 @@
-### Unit 7: Asset & Inventory Tracker (Weeks 13–14)
+### Unit 7: Inventory Accounting (Weeks 13–14)
 
 #### Unit Overview
 
-**Driving Question:**  *Which depreciation and inventory methods best align with our cash‑flow and tax strategy?*
+**Driving Question:**  *How do we build, test, and defend a trustworthy ending inventory number?*
 
 **Entry Event (Day 1):**
 
