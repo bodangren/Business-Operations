@@ -108,6 +108,37 @@
         Session end shows score + next actions (Try Matching, Take Practice Test, View in Glossary, Back to Unit).
         Unit filter persisted via query param from hub.
       </div>
+
+      <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+        <strong>Phase 3 — Actions, Data &amp; Behavior:</strong>
+        <b>Actions:</b>
+        • Tap card or Space → flip card (CSS transform toggle)
+        • "Review Again" or ← key → mark term as needs-review, re-queue to end, increment attempt count
+        • "Got It!" or → key → mark term as mastered for this session, advance counter, update mastery score
+        • Session complete → show score card with: correct count, total, accuracy %, time spent
+        • "Try Matching" → /student/practice-hub/matching?unit={id}
+        • "Take Practice Test" → existing practice test route
+        • "View in Glossary" → /student/glossary#{termId}
+        • "Back to Unit" → /student/unit{unitId}
+        <b>Required Data:</b>
+        • termList[] — from glossary-data.ts filtered by unitId, shuffled at session start
+        • Each term: { termId, termEn, termZh, definitionEn, definitionZh, topic }
+        • sessionState — in-memory: { currentIndex, reviewQueue[], completed[], startTime }
+        • mastery update — localStorage key: practice_terms_{termId} = { masteryScore, lastReviewed, attempts, bestStreak }
+        <b>Local-Only:</b>
+        • Session state is ephemeral (in-memory only, lost on page refresh)
+        • Mastery scores are persisted to localStorage on each "Got It" / "Review Again" click
+        • No server involvement — entire session is client-side
+        <b>Static Constraint:</b>
+        Cards render from a static term list. The flip animation is pure CSS. No dynamic data fetching during session.
+        <b>Export Payload Relevance:</b>
+        Session results contribute to export data: { mode: "flashcards", unitId, termCount, score, date, duration }
+        Stored in practice_sessions[] localStorage for export aggregation.
+        <b>Open Decisions:</b>
+        • Should session state persist across page refresh? (Recommendation: no for MVP — keeps implementation simple. Add in local_study_export track if needed.)
+        • Should "Review Again" terms appear multiple times in one session or just once? (Recommendation: re-queue once, then skip after second miss.)
+        • Session timeout — should a session auto-expire after N minutes of inactivity? (Recommendation: yes, 10 minutes.)
+      </div>
     </div>
   </div>
 </body>

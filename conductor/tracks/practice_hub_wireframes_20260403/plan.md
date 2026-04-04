@@ -27,10 +27,10 @@
 - [x] 2.5 Create low-fi mobile variants or mobile notes
 
 ### Phase 3: Annotated Review Set
-- [ ] 3.1 Add annotations for actions, required data, and local-only behavior
-- [ ] 3.2 Add export payload preview notes
-- [ ] 3.3 Add notes where the implementation must remain static-only
-- [ ] 3.4 Call out any still-open product decisions explicitly
+- [x] 3.1 Add annotations for actions, required data, and local-only behavior
+- [x] 3.2 Add export payload preview notes
+- [x] 3.3 Add notes where the implementation must remain static-only
+- [x] 3.4 Call out any still-open product decisions explicitly
 
 ### Phase 4: Review and Revision
 - [ ] 4.1 Present the wireframe package for review

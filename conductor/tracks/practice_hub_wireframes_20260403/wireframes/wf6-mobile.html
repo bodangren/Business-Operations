@@ -218,5 +218,33 @@
     Swipe gestures are progressive enhancement — always have button fallbacks.
     No separate mobile routes — responsive adaptation of the same routes.
   </div>
+
+  <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+    <strong>Phase 3 — Actions, Data &amp; Mobile-Specific Behavior:</strong>
+    <b>Actions:</b>
+    • Bottom tab bar: each tab navigates to its respective route (same as desktop nav)
+    • Stats horizontal scroll: scroll-snap enabled, one card visible at a time at 375px
+    • Study mode cards horizontal scroll: scroll-snap, tap navigates to mode route
+    • Mastery unit rows: compact format, tap navigates to unit-filtered hub
+    <b>Required Data:</b>
+    • Same data as desktop equivalents — no mobile-specific data model
+    • Screen width detection: window.innerWidth < 768 triggers mobile layout
+    <b>Local-Only:</b>
+    • All localStorage reads identical to desktop — no mobile-specific keys
+    <b>Static Constraint:</b>
+    Mobile is purely a CSS/layout adaptation. Same HTML structure, different responsive styles.
+    Bottom tab bar is a CSS media query replacement for the desktop header nav.
+    <b>Mobile-Specific Annotations Per Surface:</b>
+    • Practice Hub: stats → horizontal scroll, modes → horizontal scroll, two-col → stacked
+    • Flashcards: card full-width, buttons stacked vertically, keyboard hints hidden
+    • Matching: terms/defs stack vertically, matched pairs collapse out of view
+    • Speed Round: answers 1×4 stack, HUD sticky top, number keys hidden
+    • Export: type cards stack vertically, step indicator → "Step 2 of 3" text
+    • Progress: stats → 2×2 grid, two-col → stacked, unit bars compact
+    <b>Open Decisions:</b>
+    • Swipe gestures on flashcards: implement as touch events or CSS scroll-snap carousel? (Recommendation: touch events for precise swipe-left/right detection.)
+    • Bottom tab bar: should "Practice" tab show a badge with due-review count? (Recommendation: yes — red badge with number, updates on tab render.)
+    • Safe area insets for notched devices: apply padding-bottom env(safe-area-inset-bottom) to tab bar? (Recommendation: yes.)
+  </div>
 </body>
 </html>

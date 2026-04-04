@@ -136,6 +136,38 @@
         End screen: score (correct), accuracy %, best streak, time survived. Links to next actions.
         Best score saved in localStorage per unit.
       </div>
+
+      <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+        <strong>Phase 3 — Actions, Data &amp; Behavior:</strong>
+        <b>Actions:</b>
+        • Game starts with 3-2-1 countdown overlay (fixed position, blocks interaction)
+        • Timer counts down from 90s. Displayed as M:SS in HUD.
+        • Each question: show term (EN + ZH), 4 definition options (EN only)
+        • Click answer or press 1-4 key → evaluate:
+          - Correct: button turns green, +2s to timer, increment score, increment streak
+          - Wrong: button turns red, -1 life, reset streak to 0
+        • 3-in-a-row streak → show "🔥 3 streak" in HUD
+        • Timer hits 0 or lives = 0 → game over: show results screen
+        • Results: total correct, accuracy %, best streak, time survived
+        • "Play Again" → restart with fresh timer + reshuffled questions
+        <b>Required Data:</b>
+        • questionPool[] — from glossary-data.ts filtered by unitId, all terms
+        • Each question: { termId, termEn, termZh, correctDefEn, wrongDefEn[3] }
+        • Wrong answers drawn from other terms in same unit (same topic preferred)
+        • sessionState — in-memory: { timer, lives, score, streak, bestStreak, currentIndex, questions[] }
+        <b>Local-Only:</b>
+        • Game state is entirely in-memory. Timer uses setInterval.
+        • On game over: save to practice_sessions[] and update best score per unit
+        • localStorage key: practice_speedround_best_{unitId} = { score, accuracy, streak, date }
+        <b>Static Constraint:</b>
+        Questions pre-computed at game start from static glossary data. No mid-game data loading.
+        <b>Export Payload Relevance:</b>
+        Session result: { mode: "speed_round", unitId, correctCount, totalQuestions, accuracy, bestStreak, timeSurvived, date }
+        <b>Open Decisions:</b>
+        • Should wrong answers be same-topic distractors or random? (Recommendation: same-topic when possible, random fallback.)
+        • Should timer bonus scale with difficulty? (Recommendation: flat +2s for MVP.)
+        • Keyboard number keys 1-4 — should they be shown on mobile? (Recommendation: hidden on mobile, tap-only.)
+      </div>
     </div>
   </div>
 </body>

@@ -108,6 +108,34 @@
         Timer is optional display — shown by default but can be hidden.
         Session end: score = correct/total + time. Links to next actions.
       </div>
+
+      <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+        <strong>Phase 3 — Actions, Data &amp; Behavior:</strong>
+        <b>Actions:</b>
+        • Click term tile → select it (highlight blue). Click again → deselect.
+        • Click definition tile when term selected → check match:
+          - Correct: both tiles turn green (.matched class), score increments
+          - Wrong: both tiles shake (.wrong class, 300ms), selection resets, no score change
+        • All 6 matched → session complete: show score (correct/total) + time + next actions
+        • Timer ticks every second, displayed as M:SS. Optional: user can hide timer via toggle.
+        <b>Required Data:</b>
+        • pairList[] — from glossary-data.ts filtered by unitId, sample 6 random pairs
+        • Each pair: { termId, termEn, definitionEn, definitionZh }
+        • Terms column: shuffled order. Definitions column: shuffled order (not parallel to terms)
+        • sessionState — in-memory: { selectedTerm, selectedDef, matched[], startTime, elapsed }
+        <b>Local-Only:</b>
+        • Entire session is in-memory. Score and time computed client-side.
+        • On session complete: save to practice_sessions[] in localStorage
+        • Mastery updated per-term on correct match (same keys as flashcards)
+        <b>Static Constraint:</b>
+        Tiles render from static term data. Shuffling happens once at session init. No dynamic fetching.
+        <b>Export Payload Relevance:</b>
+        Session result: { mode: "matching", unitId, pairCount: 6, correctCount, timeSeconds, date }
+        <b>Open Decisions:</b>
+        • Should pair count be fixed at 6 or configurable (4/6/8)? (Recommendation: fixed 6 for MVP.)
+        • Should matched tiles be replaced with new unmatched pairs for longer sessions? (Recommendation: no for MVP — 6 pairs is a quick session.)
+        • Timer visibility default: shown or hidden? (Recommendation: shown by default, toggle to hide.)
+      </div>
     </div>
   </div>
 </body>

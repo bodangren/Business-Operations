@@ -267,6 +267,36 @@
         Session history shows last 10 sessions by default. All data from localStorage.
         Terms studied count vs total terms available (156 across all units).
       </div>
+
+      <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+        <strong>Phase 3 — Actions, Data &amp; Behavior:</strong>
+        <b>Actions:</b>
+        • Click unit row → /student/practice-hub?unit={id} (filtered hub view)
+        • "Export Progress" button → /student/practice-hub/export
+        • "Practice Weak Topics" → /student/practice-hub/flashcards?mode=weak (pre-filtered to lowest-mastery terms across all units)
+        • Click session row → navigates to session's mode page with same unit filter (or shows read-only detail)
+        <b>Required Data:</b>
+        • termsStudied — count of unique termIds across all practice_terms_* keys
+        • totalTermsAvailable — from glossary-data.ts total count (currently 156)
+        • avgMastery — mean of all practice_terms_* masteryScore values
+        • dueToday — count of terms where nextReviewDate ≤ today
+        • totalSessions — length of practice_sessions[]
+        • unitMastery[] — per-unit: { unitId, unitTitle, termsStudied, termsTotal, avgMastery }
+        • sessions[] — last 10 from practice_sessions[], sorted by date desc
+        • weakTopics[] — all terms with masteryScore < 60%, sorted ascending, limited to top 8
+        <b>Local-Only:</b>
+        • All data computed from localStorage at page load
+        • Mastery color tiers computed client-side: bar-high (>75%), bar-mid (50-75%), bar-low (<50%)
+        <b>Static Constraint:</b>
+        Dashboard is a static shell. All numbers hydrated client-side. Zero states for first-time visitors.
+        <b>Export Payload Relevance:</b>
+        This page is a consumer of the same data that WF4 exports. The "Export Progress" button triggers WF4 flow.
+        The dashboard itself does not generate exports — it links to the export page.
+        <b>Open Decisions:</b>
+        • Should the dashboard show a chart/graph (e.g., mastery over time)? (Recommendation: not for MVP — bar charts are sufficient.)
+        • Should "See all" link to a full session history page or paginate inline? (Recommendation: paginate inline with "Load more" for MVP.)
+        • Average mastery: weighted by term count per unit or simple mean? (Recommendation: simple mean for MVP.)
+      </div>
     </div>
   </div>
 </body>

@@ -234,6 +234,42 @@
       Export section shows recent exports with download links — links to dedicated export flow page.
       All data is localStorage-only for MVP.
     </div>
+
+    <div class="annotation" style="margin: 0 1.5rem 1.5rem; border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+      <strong>Phase 3 — Actions, Data &amp; Behavior:</strong>
+      <b>Actions:</b>
+      • Unit filter buttons → set ?unit={id} query param, re-render all sections filtered
+      • "Start Review Session" → navigates to /student/practice-hub/flashcards?unit={id}&mode=review
+      • Flashcards mode card → /student/practice-hub/flashcards?unit={id}
+      • Matching Game card → /student/practice-hub/matching?unit={id}
+      • Speed Round card → /student/practice-hub/speed-round?unit={id}
+      • Team Activity card → opens printable PDF or /student/practice-hub/team-print?unit={id}
+      • "Practice Weak Topics" → starts flashcard session pre-filtered to lowest-mastery terms
+      • "Export Progress" link → /student/practice-hub/export
+      • Each recent session row → links to session detail or re-starts same mode
+      <b>Required Data:</b>
+      • dueTerms[] — localStorage key: practice_due_terms, filtered by unit
+      • totalStudied — count of unique terms with any practice record
+      • sessions[] — localStorage key: practice_sessions[], sorted by date desc
+      • weakTopics[] — computed from practice_terms mastery scores, ascending sort
+      • exportHistory[] — localStorage key: practice_exports[]
+      • unitList[] — from canonical unit data (for filter buttons)
+      <b>Local-Only:</b>
+      • ALL data on this page is localStorage. No API calls.
+      • practice_due_terms: { termId, unitId, nextReviewDate, masteryScore }
+      • practice_sessions: { id, mode, unitId, termCount, score, date }
+      • practice_exports: { id, type, filename, date, sizeBytes }
+      <b>Static Constraint:</b>
+      This page is a static shell. All dynamic content is hydrated client-side from localStorage.
+      If localStorage is empty (first visit), show zero states: "No sessions yet", "0 terms due", empty weak topics list.
+      <b>Export Payload Relevance:</b>
+      The "Export & History" section references export artifacts. The export payload contract is defined in WF4 annotations.
+      This section only reads practice_exports[] from localStorage — it does not generate exports.
+      <b>Open Decisions:</b>
+      • Spaced repetition algorithm: simple fixed-interval (1d, 3d, 7d, 14d) vs. SM-2 variant? (Recommendation: fixed interval for MVP, revisit in local_study_export track.)
+      • Should "Team Activity" mode be in MVP or stretch? (Recommendation: stretch — it requires print stylesheet work.)
+      • How many sessions to show in "Recent Practice"? (Recommendation: last 5 with "See all" link to progress page.)
+    </div>
   </div>
 </body>
 </html>

@@ -216,6 +216,91 @@
         File naming: TechStart_Progress_[student]_[date].xlsx
         Data is local-only — nothing is sent to a server.
       </div>
+
+      <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+        <strong>Phase 3 — Actions, Data &amp; Export Payload Contract:</strong>
+        <b>Actions:</b>
+        • Step 1: Select export type card (Full Progress / Unit Progress / Vocabulary Summary)
+        • Step 2: Preview panel populates with real data from localStorage. User reviews before download.
+        • Step 3: "Generate & Download" → client-side xlsx generation (SheetJS/xlsx library) → browser download
+        • "Back" button → returns to step 1 (resets preview)
+        • Export type "Unit Progress" → shows unit selector dropdown in step 1
+        • Format buttons: .xlsx active, .csv disabled (greyed out, "coming soon" tooltip)
+        • Export history rows → re-download previous export if blob is cached, otherwise show metadata only
+        <b>Required Data:</b>
+        • Student name — from localStorage key: student_profile.name (or "Student" as fallback)
+        • All practice data — from localStorage keys: practice_terms_*, practice_sessions_*, practice_speedround_best_*
+        • Unit metadata — from canonical unit data (titles, term counts)
+        • Export history — localStorage key: practice_exports[]
+        <b>Local-Only:</b>
+        • ALL export generation happens client-side. Zero server calls.
+        • xlsx file is generated in-browser using SheetJS (or equivalent)
+        • Export blob is NOT cached (regenerated each time to ensure fresh data)
+        • Export history stores metadata only (filename, date, size, type) — not the file itself
+        <b>Export Payload Structure (MVP — Full Progress Report):</b>
+        <pre style="font-size: 0.7rem; background: #f8fafc; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0; white-space: pre-wrap;">
+{
+  "filename": "TechStart_Progress_{name}_{date}.xlsx",
+  "sheets": [
+    {
+      "name": "Summary",
+      "data": {
+        "studentName": "string",
+        "exportDate": "ISO-8601",
+        "dateRange": { "from": "ISO-8601", "to": "ISO-8601" },
+        "totalTermsStudied": "number",
+        "totalTermsAvailable": "number",
+        "overallMasteryAvg": "number (0-100)",
+        "totalSessions": "number",
+        "unitsSummary": [
+          {
+            "unitId": "string",
+            "unitTitle": "string",
+            "termsStudied": "number",
+            "termsTotal": "number",
+            "avgMastery": "number (0-100)",
+            "sessionCount": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Unit {id} — {title}",
+      "data": {
+        "terms": [
+          {
+            "termEn": "string",
+            "termZh": "string",
+            "topic": "string",
+            "masteryScore": "number (0-100)",
+            "attempts": "number",
+            "bestStreak": "number",
+            "lastReviewed": "ISO-8601 or null"
+          }
+        ],
+        "sessions": [
+          {
+            "mode": "flashcards | matching | speed_round",
+            "date": "ISO-8601",
+            "termCount": "number",
+            "score": "number (0-100)",
+            "duration": "number (seconds) or null"
+          }
+        ]
+      }
+    }
+  ]
+}
+        </pre>
+        <b>Static Constraint:</b>
+        The 3-step flow UI is a static shell. Preview data is populated client-side from localStorage reads.
+        If localStorage is empty, preview shows zeros and "Generate & Download" produces an xlsx with headers only.
+        <b>Open Decisions:</b>
+        • SheetJS (xlsx) is a large library (~300KB gzipped). Should we use a lighter alternative or lazy-load it? (Recommendation: lazy-load on export page only, not in main bundle.)
+        • Should the export include raw session history (every session) or aggregated data only? (Recommendation: aggregated for MVP — raw sessions can be huge.)
+        • Student name: prompt user at export time or pull from a profile setting? (Recommendation: prompt once, store in localStorage.)
+        • .csv format: separate export or same data, different format? (Recommendation: same data, different SheetJS write option.)
+      </div>
     </div>
   </div>
 </body>

@@ -177,6 +177,30 @@
         The existing vocabulary list stays in place (UnitVocabulary component).
         "View Full Glossary" link remains for browsing the complete bilingual glossary.
       </div>
+
+      <div class="annotation" style="border-color: #c7d2fe; background: #eef2ff; color: #3730a3;">
+        <strong>Phase 3 — Actions, Data &amp; Behavior:</strong>
+        <b>Actions:</b>
+        • "Start Studying" → navigates to /student/practice-hub/flashcards?unit={unitId}
+        • "View Full Glossary" → navigates to /student/glossary (existing route)
+        • Each vocab term row → navigates to glossary entry detail or expands inline definition
+        • Lesson cards → navigates to existing lesson pages (no change)
+        • "Take Practice Test" → navigates to existing practice test route (no change)
+        <b>Required Data:</b>
+        • unitId, unitTitle, unitDescription — from existing unit data model
+        • vocabList[] — from canonical glossary data (glossary-data.ts), filtered by unit
+        • dueReviewCount — from localStorage practice state, keys: practice_{unitId}_due[]
+        • lessonProgress — from localStorage, keys: practice_{unitId}_completed_lessons[]
+        <b>Local-Only:</b>
+        • dueReviewCount and lessonProgress are computed from localStorage only
+        • No server round-trip required to render this page
+        <b>Static Constraint:</b>
+        This page must remain fully static — no client-side data fetching at render time.
+        The "due review" count is a nice-to-have progressive enhancement; if localStorage is empty, show "0 terms due" gracefully.
+        <b>Open Decisions:</b>
+        • Should "Study This Unit's Terms" appear if the unit has 0 vocabulary terms? (Recommendation: hide the CTA.)
+        • Should the vocab list show mastery status (e.g., color-coded dots) or keep it clean? (Recommendation: show mastery in Phase 2 of local_study_export track, not in wireframe.)
+      </div>
     </div>
   </div>
 </body>
