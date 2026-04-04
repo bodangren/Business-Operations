@@ -291,25 +291,6 @@ export function FinancialDashboard({
     alert(`Exporting dashboard as ${filename}`)
   }
 
-  const _chartConfig = {
-    revenue: {
-      label: 'Revenue',
-      color: 'hsl(var(--chart-1))',
-    },
-    expenses: {
-      label: 'Expenses',
-      color: 'hsl(var(--chart-2))',
-    },
-    profit: {
-      label: 'Profit',
-      color: 'hsl(var(--chart-3))',
-    },
-    cashFlow: {
-      label: 'Cash Flow',
-      color: 'hsl(var(--chart-4))',
-    },
-  }
-
   return (
     <div className={`w-full space-y-6 ${className}`}>
       {/* Dashboard Header */}

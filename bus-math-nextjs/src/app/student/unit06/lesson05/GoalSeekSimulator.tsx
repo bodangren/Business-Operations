@@ -8,7 +8,6 @@ import { CheckCircle2, Target, Zap, AlertTriangle, ArrowRight } from "lucide-rea
 
 const FIXED_COSTS = 12000;
 const VARIABLE_COST = 880;
-const CURRENT_PRICE = 1350;
 const TARGET_PROFIT = 15000;
 
 export default function GoalSeekSimulator() {

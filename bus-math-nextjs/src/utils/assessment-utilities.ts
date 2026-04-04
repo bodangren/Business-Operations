@@ -76,7 +76,6 @@ export function validateUnitProjectFramework(framework: UnitProjectFramework): V
   // Resource validation
   const requiredTemplates = framework.resources.templates.filter(t => t.required)
   const requiredDatasets = framework.resources.datasets.filter(d => d.required)
-  const _requiredGuides = framework.resources.guides.filter(g => g.required)
 
   if (requiredTemplates.length === 0) {
     warnings.push("Framework should include at least one required template")
