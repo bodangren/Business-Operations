@@ -16,3 +16,10 @@
 - The `wireframes/` directory in the track folder is the right home — co-located with spec/plan.
 - Annotations embedded in each wireframe (yellow boxes) serve as the Phase 3 handoff reference.
 - No test script exists (`npm run test` fails) — project relies on vitest config but no `test` alias in package.json scripts.
+
+## 2026-04-04 — Phase 3: Vocabulary Study Modes
+
+- Wireframe annotations (blue boxes with "Actions, Data & Behavior") served as an excellent Phase 3 handoff spec — each mode's data requirements, localStorage keys, and export payload were pre-defined.
+- TDD worked well for engine logic: 50 mode tests + 8 recording tests, all independent of React/rendering.
+- Flashcard re-queue logic needed care: shuffling means card indices are unpredictable; tests should reference actual slugs not hardcoded positions.
+- `isSessionComplete` for flashcards can't rely on `currentIndex` staying in-bounds; must check that all original cards have been reviewed.
