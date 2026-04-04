@@ -364,7 +364,6 @@ export default function BudgetCategorySort() {
   // Check answers
   const checkAnswers = () => {
     let correctCount = 0;
-    const _totalExpenses = categories.reduce((sum, cat) => sum + cat.expenses.length, 0);
 
     categories.forEach(category => {
       category.expenses.forEach(expense => {
@@ -540,14 +539,6 @@ export default function BudgetCategorySort() {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {categories.map((category) => {
               const categoryTotal = category.expenses.reduce((sum, exp) => sum + exp.amount, 0);
-              const _correctExpenses = showResults ? category.expenses.filter(exp => {
-                const correctCategory = exp.category === 'COGS' ? 'cogs' : 
-                                      exp.category === 'Labor' ? 'labor' :
-                                      exp.category === 'Overhead' ? 'overhead' :
-                                      exp.category === 'Marketing' ? 'marketing' :
-                                      'administrative';
-                return category.id === correctCategory;
-              }).length : 0;
 
               return (
                 <Card key={category.id} className={`${category.color} transition-colors`}>

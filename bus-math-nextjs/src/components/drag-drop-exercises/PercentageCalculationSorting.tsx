@@ -406,7 +406,6 @@ export default function PercentageCalculationSorting() {
   // Check answers
   const checkAnswers = () => {
     let correctCount = 0;
-    const _totalScenarios = categories.reduce((sum, cat) => sum + cat.scenarios.length, 0);
 
     categories.forEach(category => {
       category.scenarios.forEach(scenario => {
@@ -716,13 +715,6 @@ export default function PercentageCalculationSorting() {
           {/* Calculation Categories */}
           <div className="lg:col-span-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
             {categories.map((category) => {
-              const _correctScenarios = showResults ? category.scenarios.filter(scenario => {
-                const correctCategory = scenario.calculationType === 'PercentageChange' ? 'percentage-change' : 
-                                      scenario.calculationType === 'PercentageOfTotal' ? 'percentage-of-total' :
-                                      scenario.calculationType === 'PercentagePointChange' ? 'percentage-point-change' :
-                                      'weighted-average';
-                return category.id === correctCategory;
-              }).length : 0;
 
               return (
                 <Card key={category.id} className={`${category.color} transition-colors`}>

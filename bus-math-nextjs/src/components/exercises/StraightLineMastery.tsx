@@ -165,7 +165,6 @@ export default function StraightLineMastery() {
   }, [])
 
   const progressToMastery = (consecutiveCorrect / masteryTarget) * 100
-  const _selectedOption = shuffledOptions.find(o => o.label === userAnswer)
   const selectedDistractorData = problem.distractors[selectedDistractor ?? -1]
 
   return (
