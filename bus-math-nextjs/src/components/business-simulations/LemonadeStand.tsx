@@ -313,10 +313,8 @@ export function LemonadeStand() {
 
     // Animate sales progress
     let progress = 0
-    let _customerCount = 0
     const interval = setInterval(() => {
       progress += Math.random() * 15 + 5
-      _customerCount = Math.floor((progress / 100) * actualCustomers)
       
       setSalesProgress(Math.min(100, progress))
       

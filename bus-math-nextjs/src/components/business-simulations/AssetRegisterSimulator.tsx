@@ -98,11 +98,6 @@ export default function AssetRegisterSimulator() {
     setShowReveal(false)
   }
 
-  const _handleNextAsset = () => {
-    setSelectedAssetIndex((prev) => (prev + 1) % sampleAssets.length)
-    handleReset()
-  }
-
   return (
     <div className="space-y-6">
       {/* Asset Selector */}

@@ -246,13 +246,6 @@ export function BudgetBalancer() {
     return 'text-red-600'
   }
 
-  const _getHealthProgress = (health: number) => {
-    if (health >= 80) return 'bg-green-500'
-    if (health >= 60) return 'bg-yellow-500'
-    if (health >= 40) return 'bg-orange-500'
-    return 'bg-red-500'
-  }
-
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       {/* Header */}

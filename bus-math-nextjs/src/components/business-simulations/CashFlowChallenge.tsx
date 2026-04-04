@@ -421,8 +421,6 @@ export function CashFlowChallenge() {
   const healthStatus = getCashHealthStatus(gameState.cashPosition)
   const totalIncoming = gameState.incomingFlows.reduce((sum, flow) => sum + flow.amount, 0)
   const totalOutgoing = gameState.outgoingFlows.reduce((sum, flow) => sum + flow.amount, 0)
-  const _netFlow = totalIncoming - totalOutgoing
-
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       {/* Header */}
