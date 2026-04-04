@@ -2,40 +2,27 @@
 
 ## Track ID: local_study_export_20260403
 
-### Phase 1: Storage and Schema Foundations
-- [ ] 1.1 Confirm the approved wireframes and glossary contracts before coding
-- [ ] 1.1.1 Evaluate FSRS library options before implementation
+### Phase 1: Storage and Schema Foundations ✓ (checkpoint: e0481dd)
+- [x] 1.1 Confirm the approved wireframes and glossary contracts before coding
+- [x] 1.1.1 Evaluate FSRS library options before implementation
   - Review the user-suggested FSRS package and at least one established alternative
-  - Confirm browser/client compatibility, TypeScript support, and static-site suitability
-  - Decide whether to adopt a library or keep a simpler local scheduler for MVP
-- [ ] 1.2 Define the local storage schema
-  - Version key
-  - Student preferences
-  - Mastery state
-  - Review queue
-  - Attempt history
-  - Export history
-- [ ] 1.3 Define the export schema
-  - `summary.csv`
-  - `session.json`
-  - Import restore expectations
-  - Follow `export-schema.md` exactly unless the user approves a schema revision
-- [ ] 1.4 Write failing tests first
-  - Storage read/write
-  - Schema migration
-  - Export generation
-  - Import restore
-  - Spaced repetition scheduling rules
+  - Adopted `ts-fsrs` v5.3.2 — browser-compatible, TypeScript-friendly, static-site safe
+  - Wrapped behind `src/lib/study/srs.ts` so scheduler can be swapped without rewriting UI
+- [x] 1.2 Define the local storage schema
+  - `storage-schema.ts` — versioned root key, student preferences, mastery state, review queue, session records, export history
+  - `storage.ts` — typed load/save/reset/clear/migrate utilities with safe fallbacks
+- [x] 1.3 Define the export schema
+  - `export-schema.ts` — full TypeScript types matching `export-schema.md`
+  - `summary.csv` column order constants, `session.json` structural types
+- [x] 1.4 Write failing tests first
+  - 24 SRS engine tests, 13 storage tests, 18 export schema tests — all 55 passing
 
-### Phase 2: Local Store and Spaced Review Engine
-- [ ] 2.1 Implement typed local storage utilities
-- [ ] 2.2 Implement safe load/reset/fallback behavior
-- [ ] 2.3 Implement the spaced-review scheduling engine
-  - Wrap the chosen FSRS-compatible library behind project utilities if adopted
-  - Success path
-  - Failure path
-  - Due-term selection
-  - Queue updates after study sessions
+### Phase 2: Local Store and Spaced Review Engine ✓ (checkpoint: e0481dd)
+- [x] 2.1 Implement typed local storage utilities
+- [x] 2.2 Implement safe load/reset/fallback behavior
+- [x] 2.3 Implement the spaced-review scheduling engine
+  - Wrapped `ts-fsrs` behind `src/lib/study/srs.ts`
+  - Success/failure paths, due-term selection, queue updates after sessions
 - [ ] 2.4 Surface due-review counts to the practice hub and unit entry points
 
 ### Phase 3: Vocabulary Study Modes
