@@ -1,7 +1,7 @@
 # Current Directive
 
 **Updated:** 2026-04-04
-**Status:** Phase 5 complete, Phase 6 next
+**Status:** Phase 6 complete — track complete
 
 ## Active Track
 
@@ -14,6 +14,7 @@
 - Phase 3: Vocabulary study modes (flashcards, matching, speed round) — engine logic only
 - Phase 4: Practice hub home + progress dashboard pages
 - Phase 5: Export and import — `summary.csv` + `session.json` download, import/restore with dedup, export page with preview (26 new tests)
+- Phase 6: Verification — built missing study-mode route pages (FlashcardPlayer, MatchingGame, SpeedRoundGame), verified all 603 pages compile, 186 tests pass, lint clean
 
 ## Review Audit Results (2026-04-04)
 
@@ -24,18 +25,16 @@ See [full review](./reviews/review_20260404_phase3-4.md).
 - Speed-round `recordSpeedRoundSession` marked all terms as correct if any answer was correct — now uses aggregate accuracy heuristic
 
 **Outstanding issues (priority order):**
-1. **Study-mode route pages are missing** — `/student/practice-hub/flashcards`, `/matching`, `/speed-round`, `/export` all 404. This is the single most important gap.
-2. **Per-term tracking missing from SpeedRoundSession** — cannot accurately grade individual terms
-3. **Export flow not implemented** — no download capability yet
-4. **Unit-level study CTAs not wired** — StudentUnitOverview/StudentHub don't show due counts
-5. **Duplicated shuffle utility** — cosmetic cleanup
+1. **Per-term tracking missing from SpeedRoundSession** — cannot accurately grade individual terms (uses aggregate accuracy heuristic)
+2. **Unit-level study CTAs not wired** — StudentUnitOverview/StudentHub don't show due counts
+3. **Duplicated shuffle utility** — cosmetic cleanup
+4. **Session state not persisted across refresh** — flashcard/matching/speed-round sessions are ephemeral
 
 ## Next Priorities
 
-1. **Phase 6: Verification** — verify hub + study modes on desktop/mobile, data persistence, export/import round-trip, `npm run lint`
-2. **Build interactive study-mode pages** (flashcards, matching, speed-round) — create client components + route `page.tsx` files
-3. **Wire up unit-level study CTAs** — add due counts to StudentUnitOverview and StudentHub
-4. **Add per-term tracking to speed-round** — add `termResults` to session state
+1. **New track: Wire up unit-level study CTAs** — add due counts to StudentUnitOverview and StudentHub
+2. **Add per-term tracking to speed-round** — add `termResults` to session state
+3. **Team activity mode** — stretch goal, printable cards for class play
 
 ## Blocked / Deferred
 

@@ -23,3 +23,10 @@
 - TDD worked well for engine logic: 50 mode tests + 8 recording tests, all independent of React/rendering.
 - Flashcard re-queue logic needed care: shuffling means card indices are unpredictable; tests should reference actual slugs not hardcoded positions.
 - `isSessionComplete` for flashcards can't rely on `currentIndex` staying in-bounds; must check that all original cards have been reviewed.
+
+## 2026-04-04 — Phase 6: Verification & Study Mode Pages
+
+- **Missing route pages were the #1 blocker**: PracticeHubHome linked to `/flashcards`, `/matching`, `/speed-round` but no route pages existed. Building them was essential to complete the track.
+- **SessionMode type mismatch**: Engine code used `mode: "study"` but `SessionMode` only accepts `"solo" | "pass-and-play" | "team-single-device"`. Always check the schema type before passing literal strings.
+- **Export re-exports from index.ts caused alias collision**: `isSessionComplete` from flashcards and `isSessionComplete as isMatchingComplete` from matching both exist in `modes/index.ts`. Import the aliased name directly to avoid calling the wrong variant.
+- **Wireframes as implementation spec worked well**: Each wireframe's annotation block (Phase 3 — Actions, Data & Behavior) had all the UI behaviors, keyboard shortcuts, and data requirements pre-defined. The component implementation followed the annotations almost 1:1.
