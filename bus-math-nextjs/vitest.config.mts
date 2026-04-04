@@ -12,7 +12,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
-      include: ['scripts/audit/**/*.ts', 'src/lib/glossary/**/*.ts'],
+      include: ['scripts/audit/**/*.ts', 'src/lib/glossary/**/*.ts', 'src/lib/study/**/*.ts'],
     },
   },
   resolve: {
