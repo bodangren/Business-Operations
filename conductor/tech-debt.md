@@ -4,7 +4,7 @@
 
 - [ ] `next lint` deprecated — migrate to ESLint CLI before Next.js 16
 - [ ] Multiple lockfile warning — set `outputFileTracingRoot` or clean up root lockfile
-- [ ] ~234 eslint warnings (mostly `any` types, ~5 hooks rules) — was 571, Phase 1 auto-fix removed unused imports (2026-04-05), Phase 2 prefixed unused vars (2026-04-05), review audit fixed 1 critical runtime bug + 5 interface regressions (2026-04-05)
+- [ ] ~7 eslint warnings (react-hooks: 2 rules-of-hooks, 4 exhaustive-deps, 1 useMemo dep) — was 571, Phase 1 auto-fix removed unused imports (2026-04-05), Phase 2 prefixed unused vars (2026-04-05), review audit fixed 1 critical runtime bug + 5 interface regressions (2026-04-05), Phase 3 replaced all 227 no-explicit-any with proper types (2026-04-05)
 - [ ] Dead code with `_` prefix in ~15 components — `_processFlows`, `_calculateProfit`, `_correctVolume`, `_handleNextAsset`, `_getHealthProgress`, `_showDiscovery`, `_showCalculation`, `_goalSeekMode`, `_isRecording`, etc. Should be deleted in a cleanup pass
 - [ ] Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)
 - [ ] Unit 7 `unit07Data` object duplicated in every `lesson-data.ts` file — should be a shared import (L4 from audit)

@@ -1,33 +1,34 @@
 # Current Directive
 
 **Updated:** 2026-04-05
-**Status:** Review audit complete — critical runtime bug in StraightLineMastery fixed, interface regressions reverted
+**Status:** Phase 3 complete — all 227 no-explicit-any warnings eliminated
 
 ## Active Track
 
-`eslint_warning_cleanup_20260405` — Phase 3: Fix no-explicit-any warnings (234 remaining)
+`eslint_warning_cleanup_20260405` — Phase 4: Fix React hooks rules (~7 warnings)
 
 ## What Was Just Completed
 
-- Code review audit of ESLint cleanup Phases 1-2 (commits `05021da`..`cd2798d`)
-- **Critical fix:** `StraightLineMastery.tsx` — `selectedOption` was incorrectly prefixed with `_`, causing `ReferenceError` at runtime when submitting answers. Fixed.
-- **Interface fix:** Reverted `_` prefix on callback parameter names in 5 public interface declarations (`DragAndDrop`, `FeedbackCollector`, `PeerCritiqueForm`)
-- Review report filed: `conductor/reviews/review_20260405_eslint-phases1-2.md`
+- **Phase 3: no-explicit-any cleanup** (227 warnings → 0)
+- Added index signatures to PhaseHeader/PhaseFooter props to accept lesson-data objects without `as any` casts (removed 70+ casts)
+- Typed all component props properly: charts, business simulations, accounting, teacher components
+- Imported shared types (`DailyLesson`, `LessonActivity`) from `@/types/lesson-plan`
+- Widened `ReflectionJournal` category type to `string` for flexibility
+- Used `Record<string, unknown>` for JSON deserialization in `LessonProgressContext`
+- Commit: `f2496c6` — 67 files changed, 155 insertions, 139 deletions
 
 ## Verification
 
 - Tests: 216 passed (14 suites)
 - Build: compiled successfully (603+ pages)
-- Lint: 0 errors, 234 warnings (down from 571 original)
+- Lint: 0 errors, 7 warnings (all react-hooks rules, deferred to Phase 4)
 
 ## Next Priorities
 
-1. **ESLint Phase 3: `no-explicit-any` warnings** — 234 warnings remain, most are `any` types; tackle `src/lib/` first, then components, then tests
-2. **ESLint Phase 4: React hooks rules** — ~5 hooks-related warnings (exhaustive-deps, LemonadeStand missing dep)
-3. **Dead-code removal pass** — Multiple `_`-prefixed dead functions across business-simulations and lesson pages (`_processFlows`, `_calculateProfit`, `_handleNextAsset`, `_getHealthProgress`, etc.) should be deleted rather than accumulated
-4. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16
-5. **Mastery progress bars on unit cards** — separate track to show per-unit mastery % alongside due counts
-6. **CashFlowChallenge rules-of-hooks fix** — `useCredit` called inside callback; pre-existing but should be fixed
+1. **ESLint Phase 4: React hooks rules** — ~7 hooks-related warnings (exhaustive-deps, rules-of-hooks)
+2. **Dead-code removal pass** — Multiple `_`-prefixed dead functions across business-simulations and lesson pages
+3. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16
+4. **Mastery progress bars on unit cards** — separate track to show per-unit mastery % alongside due counts
 
 ## Blocked / Deferred
 
