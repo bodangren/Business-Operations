@@ -190,28 +190,6 @@ export default function InterestCalculationBuilder() {
   const [showFormulas, setShowFormulas] = useState(false)
   const [calculationHistory, setCalculationHistory] = useState<CalculationResult[]>([])
 
-  // Safe formula evaluator - prevents code injection
-  const _safeCalculate = useCallback((formula: string, inputs: Record<string, number>): number => {
-    try {
-      // Replace variables with actual values
-      let expression = formula
-      Object.entries(inputs).forEach(([key, value]) => {
-        const regex = new RegExp(key, 'g')
-        expression = expression.replace(regex, value.toString())
-      })
-      
-      // Only allow mathematical operations
-      if (!/^[\d\s+\-*/().]+$/.test(expression)) {
-        throw new Error('Invalid characters in formula')
-      }
-      
-      // Use Function constructor safely with validated input
-      return new Function('return ' + expression)()
-    } catch (_error) {
-      throw new Error('Calculation error: Invalid formula or values')
-    }
-  }, [])
-
   // Calculate interest based on selected scenario
   const calculateInterest = useCallback(() => {
     try {

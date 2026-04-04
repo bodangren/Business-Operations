@@ -170,19 +170,6 @@ export function CashFlowChallenge() {
     return { status: 'Bankrupt', color: 'text-red-600', bgColor: 'bg-red-50' }
   }
 
-  const _processFlows = useCallback((flows: CashFlow[], _amount: number) => {
-    return flows.map(flow => ({
-      ...flow,
-      daysLeft: Math.max(0, flow.daysLeft - 1)
-    })).map(flow => {
-      if (flow.daysLeft === 0) {
-        const flowAmount = flow.type === 'incoming' ? flow.amount : -flow.amount
-        return { flow: { ...flow, daysLeft: -1 }, cashChange: flowAmount }
-      }
-      return { flow, cashChange: 0 }
-    })
-  }, [])
-
   const advanceDay = useCallback(() => {
     if (gameState.gameStatus !== 'playing') return
 

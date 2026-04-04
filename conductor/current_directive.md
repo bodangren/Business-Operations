@@ -1,21 +1,20 @@
 # Current Directive
 
 **Updated:** 2026-04-05
-**Status:** Phase 5 complete — all ESLint warnings eliminated (571 → 0)
+**Status:** Post-review audit — Phases 3-5 clean, 2 dead-code blocks removed
 
 ## Active Track
 
-`eslint_warning_cleanup_20260405` — COMPLETE
+None — all tracks complete. Ready for next track.
 
 ## What Was Just Completed
 
-- **Phase 4: React hooks rules** (7 warnings → 0)
-  - Renamed `useCredit` → `handleUseCredit` in CashFlowChallenge (false positive: `useCallback` named `use*` triggered rules-of-hooks in onClick handlers)
-  - Moved `completeSales` before `simulateSales` in LemonadeStand, added to exhaustive-deps
-  - InventoryPredictionLab: moved `actualMetricSet` inside `useMemo`, fixed deps
-  - BreakEvenAnalysisCalculator: removed unnecessary `results` from deps
-  - InterestCalculationBuilder: removed unused `safeCalculate` from deps, prefixed with `_`
-- **Phase 5: Final verification** — 0 warnings, 216 tests pass, clean build
+- **Code review audit of ESLint Phases 3-5** (no-explicit-any + react-hooks + verification)
+  - All 227 type replacements audited — correct, no runtime regressions
+  - All 7 hooks fixes audited — correct dependency arrays, no stale closures
+  - Removed `_safeCalculate` dead code from InterestCalculationBuilder (21 lines)
+  - Removed `_processFlows` dead code from CashFlowChallenge (12 lines)
+  - Review report: `conductor/reviews/review_20260405_eslint-phases3-5.md`
 
 ## Verification
 
@@ -25,9 +24,10 @@
 
 ## Next Priorities
 
-1. **Dead-code removal pass** — Multiple `_`-prefixed dead functions across business-simulations and lesson pages
+1. **Dead-code removal pass** — ~13 `_`-prefixed dead functions remaining across business-simulations and lesson pages (`_calculateProfit`, `_correctVolume`, `_handleNextAsset`, `_getHealthProgress`, `_showDiscovery`, `_showCalculation`, `_goalSeekMode`, `_isRecording`). Should be a dedicated track.
 2. **Next.js lint migration** — `next lint` is deprecated; migrate to ESLint CLI before Next.js 16
 3. **Mastery progress bars on unit cards** — separate track to show per-unit mastery % alongside due counts
+4. **Type consolidation** — PhaseHeader/PhaseFooter index signatures (`[key: string]: unknown`) should be replaced with proper `LessonData` interfaces
 
 ## Blocked / Deferred
 
