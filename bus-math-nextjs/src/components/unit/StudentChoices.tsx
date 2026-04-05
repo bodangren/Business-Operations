@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, UserCheck, Presentation } from "lucide-react"
+import { Users, UserCheck, Presentation, TrendingUp } from "lucide-react"
 
 interface StudentChoicesProps {
   studentChoices: {
@@ -27,9 +27,7 @@ export function StudentChoices({ studentChoices }: StudentChoicesProps) {
           <Card className="border-indigo-200">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Badge variant="outline" className="bg-indigo-100 text-indigo-800">
-                  📈
-                </Badge>
+                <TrendingUp className="h-5 w-5 text-indigo-600" />
                 Venture Selection
               </CardTitle>
             </CardHeader>

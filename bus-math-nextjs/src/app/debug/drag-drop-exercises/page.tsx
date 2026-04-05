@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import AccountCategorization from '@/components/drag-drop-exercises/AccountCategorization';
 import { JournalEntryBuilding } from '@/components/exercises/JournalEntryBuilding';
 import { TrialBalanceSorting } from '@/components/drag-drop-exercises/TrialBalanceSorting';
@@ -14,23 +15,20 @@ import InventoryFlowDiagram from '@/components/drag-drop-exercises/InventoryFlow
 export default function DragDropExercisesDebugPage() {
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header */}
-        <Card className="bg-gradient-to-r from-purple-50 to-indigo-50 border-purple-200">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl text-purple-800">Drag & Drop Exercises Debug Page</CardTitle>
-            <CardDescription className="text-lg">
-              Interactive drag-and-drop components for accounting education
-            </CardDescription>
-          </CardHeader>
-        </Card>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container max-w-6xl mx-auto py-8 px-4 space-y-6">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2">Drag & Drop Exercises</h1>
+          <p className="text-muted-foreground mt-1">
+            Interactive drag-and-drop components for accounting education
+          </p>
+        </div>
 
 
-        {/* Account Categorization Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Account Categorization Component</CardTitle>
+            <CardTitle>Account Categorization Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching the fundamental accounting equation and account classification
             </CardDescription>
@@ -45,10 +43,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Journal Entry Building Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Journal Entry Building Component</CardTitle>
+            <CardTitle>Journal Entry Building Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching double-entry bookkeeping and journal entry creation
             </CardDescription>
@@ -63,10 +60,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Trial Balance Sorting Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Trial Balance Sorting Component</CardTitle>
+            <CardTitle>Trial Balance Sorting Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching trial balance organization and account classification
             </CardDescription>
@@ -81,10 +77,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Financial Statement Matching Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Financial Statement Matching Component</CardTitle>
+            <CardTitle>Financial Statement Matching Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching financial statement identification and line item categorization
             </CardDescription>
@@ -99,10 +94,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Business Transaction Categorization Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Business Transaction Categorization Component</CardTitle>
+            <CardTitle>Business Transaction Categorization Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching cash flow statement organization and business activity classification
             </CardDescription>
@@ -117,10 +111,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Cash Flow Timeline Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Cash Flow Timeline Component</CardTitle>
+            <CardTitle>Cash Flow Timeline Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching cash flow visualization and timeline management over a 12-week period
             </CardDescription>
@@ -135,10 +128,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Break Even Components Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Break-Even Components Component</CardTitle>
+            <CardTitle>Break-Even Components Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching break-even analysis by categorizing fixed and variable costs
             </CardDescription>
@@ -153,10 +145,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Percentage Calculation Sorting Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Percentage Calculation Sorting Component</CardTitle>
+            <CardTitle>Percentage Calculation Sorting Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching percentage calculation categorization for café business scenarios
             </CardDescription>
@@ -171,10 +162,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Inventory Flow Diagram Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Inventory Flow Diagram Component</CardTitle>
+            <CardTitle>Inventory Flow Diagram Component</CardTitle>
             <CardDescription>
               Interactive drag-and-drop exercise teaching FIFO/LIFO inventory cost flow visualization for Unit 7 Inventory Accounting
             </CardDescription>
@@ -189,10 +179,9 @@ export default function DragDropExercisesDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Component Usage Examples */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Component Usage Examples</CardTitle>
+            <CardTitle>Component Usage Examples</CardTitle>
             <CardDescription>
               Code examples for implementing drag-and-drop exercise components
             </CardDescription>
@@ -380,10 +369,9 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'`}
           </CardContent>
         </Card>
 
-        {/* Planned Components */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Component Status</CardTitle>
+            <CardTitle>Component Status</CardTitle>
             <CardDescription>
               Current status of drag-and-drop exercise components
             </CardDescription>

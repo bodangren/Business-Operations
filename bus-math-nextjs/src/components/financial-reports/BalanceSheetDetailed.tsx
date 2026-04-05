@@ -622,62 +622,66 @@ export function BalanceSheetDetailed({
         )}
 
         {showRatios && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-6 p-4 bg-gray-100 rounded-lg">
-            <div className="text-center">
-              <div className="text-xl font-bold text-blue-600">
-                {currentRatio.toFixed(2)}
+          <>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="text-center">
+                <div className="text-xl font-bold text-blue-600">
+                  {currentRatio.toFixed(2)}
+                </div>
+                <div className="text-sm text-gray-600">Current Ratio</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  {currentRatio >= 2 ? 'Strong' : currentRatio >= 1 ? 'Adequate' : 'Weak'}
+                </div>
               </div>
-              <div className="text-sm text-gray-600">Current Ratio</div>
-              <div className="text-xs text-gray-500 mt-1">
-                {currentRatio >= 2 ? 'Strong' : currentRatio >= 1 ? 'Adequate' : 'Weak'}
+              <div className="text-center">
+                <div className="text-xl font-bold text-cyan-600">
+                  {quickRatio.toFixed(2)}
+                </div>
+                <div className="text-sm text-gray-600">Quick Ratio</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  Acid test
+                </div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-cyan-600">
-                {quickRatio.toFixed(2)}
+              <div className="text-center">
+                <div className="text-xl font-bold text-green-600">
+                  {formatCurrency(workingCapital)}
+                </div>
+                <div className="text-sm text-gray-600">Working Capital</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  Liquidity cushion
+                </div>
               </div>
-              <div className="text-sm text-gray-600">Quick Ratio</div>
-              <div className="text-xs text-gray-500 mt-1">
-                Acid test
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-green-600">
-                {formatCurrency(workingCapital)}
-              </div>
-              <div className="text-sm text-gray-600">Working Capital</div>
-              <div className="text-xs text-gray-500 mt-1">
-                Liquidity cushion
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-purple-600">
-                {debtToEquityRatio.toFixed(2)}
-              </div>
-              <div className="text-sm text-gray-600">Debt-to-Equity</div>
-              <div className="text-xs text-gray-500 mt-1">
-                {debtToEquityRatio <= 1 ? 'Conservative' : 'Leveraged'}
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-orange-600">
-                {(debtToAssetsRatio * 100).toFixed(1)}%
-              </div>
-              <div className="text-sm text-gray-600">Debt-to-Assets</div>
-              <div className="text-xs text-gray-500 mt-1">
-                Leverage ratio
+              <div className="text-center">
+                <div className="text-xl font-bold text-purple-600">
+                  {debtToEquityRatio.toFixed(2)}
+                </div>
+                <div className="text-sm text-gray-600">Debt-to-Equity</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  {debtToEquityRatio <= 1 ? 'Conservative' : 'Leveraged'}
+                </div>
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-indigo-600">
-                {(equityRatio * 100).toFixed(1)}%
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="text-center">
+                <div className="text-xl font-bold text-orange-600">
+                  {(debtToAssetsRatio * 100).toFixed(1)}%
+                </div>
+                <div className="text-sm text-gray-600">Debt-to-Assets</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  Leverage ratio
+                </div>
               </div>
-              <div className="text-sm text-gray-600">Equity Ratio</div>
-              <div className="text-xs text-gray-500 mt-1">
-                Owner's stake
+              <div className="text-center">
+                <div className="text-xl font-bold text-indigo-600">
+                  {(equityRatio * 100).toFixed(1)}%
+                </div>
+                <div className="text-sm text-gray-600">Equity Ratio</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  Owner's stake
+                </div>
               </div>
             </div>
-          </div>
+          </>
         )}
 
         {/* Financial Health Indicators */}

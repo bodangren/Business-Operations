@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CheckCircle2, XCircle, Info } from "lucide-react"
@@ -94,12 +94,15 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
 
       {currentStep === "structure" && (
         <Card className="border-blue-200">
-          <CardContent className="pt-6">
+          <CardHeader>
+            <CardTitle className="text-blue-800">Step 1: Column Structure</CardTitle>
+          </CardHeader>
+          <CardContent>
             <div className="space-y-4">
               <div className="flex items-start gap-2">
                 <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-blue-900">
-                  Step 1: Define the professional column structure for Sarah's ledger. A well-structured table has consistent, clear headers that make data easy to verify.
+                  Define the professional column structure for Sarah's ledger. A well-structured table has consistent, clear headers that make data easy to verify.
                 </p>
               </div>
 
@@ -159,12 +162,15 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
 
       {currentStep === "formatting" && (
         <Card className="border-purple-200">
-          <CardContent className="pt-6">
+          <CardHeader>
+            <CardTitle className="text-purple-800">Step 2: Formatting</CardTitle>
+          </CardHeader>
+          <CardContent>
             <div className="space-y-4">
               <div className="flex items-start gap-2">
                 <Info className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-purple-900">
-                  Step 2: Apply professional formatting to the Debit and Credit columns. Consistent formatting makes values immediately readable and comparable.
+                  Apply professional formatting to the Debit and Credit columns. Consistent formatting makes values immediately readable and comparable.
                 </p>
               </div>
 
@@ -213,12 +219,15 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
 
       {currentStep === "naming" && (
         <Card className="border-green-200">
-          <CardContent className="pt-6">
+          <CardHeader>
+            <CardTitle className="text-green-800">Step 3: Naming</CardTitle>
+          </CardHeader>
+          <CardContent>
             <div className="space-y-4">
               <div className="flex items-start gap-2">
                 <Info className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-green-900">
-                  Step 3: Give your Excel Table a clear, descriptive name. This name will be used in structured references like TableName[Column].
+                  Give your Excel Table a clear, descriptive name. This name will be used in structured references like TableName[Column].
                 </p>
               </div>
 
@@ -287,7 +296,10 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
 
       {namingComplete && (
         <Card className="border-green-200 bg-green-50">
-          <CardContent className="pt-6">
+          <CardHeader>
+            <CardTitle className="text-green-800 text-center">Practice Complete!</CardTitle>
+          </CardHeader>
+          <CardContent>
             <div className="text-center space-y-4">
               <CheckCircle2 className="h-12 w-12 text-green-600 mx-auto" />
               <div>

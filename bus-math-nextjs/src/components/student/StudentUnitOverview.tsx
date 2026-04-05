@@ -11,6 +11,7 @@ import {
   BookOpen,
   ArrowRight,
   Layers,
+  Home
 } from "lucide-react"
 import Link from "next/link"
 import { UnitVocabulary } from "@/components/unit/UnitVocabulary"
@@ -129,19 +130,30 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
   const practiceTestContent = practiceTestMessaging[unit.sequence] ?? defaultPracticeTestCopy
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      {/* Hero Section */}
-      <div className="text-center space-y-4">
-        <Badge variant="outline" className="text-sm">
-          Unit {unit.sequence} • {totalHours} Hours • Grade 12 Business Operations
-        </Badge>
-        <h1 className="text-4xl font-bold tracking-tight">
-          {unit.title}
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          {unit.description}
-        </p>
-      </div>
+    <div className="bg-gradient-to-br from-background via-background to-muted/20 -mx-4 px-4 py-8">
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* Breadcrumb Navigation */}
+        <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
+          <Link href="/student" className="hover:text-foreground flex items-center gap-1">
+            <Home className="h-3 w-3" />
+            Student
+          </Link>
+          <ArrowRight className="h-3 w-3" />
+          <span className="text-foreground">{unit.title}</span>
+        </nav>
+
+        {/* Hero Section */}
+        <div className="text-center space-y-4">
+          <Badge variant="outline" className="text-sm">
+            Unit {unit.sequence} • {totalHours} Hours • Grade 12 Business Operations
+          </Badge>
+          <h1 className="text-4xl font-bold tracking-tight">
+            {unit.title}
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            {unit.description}
+          </p>
+        </div>
 
       {/* The Challenge Card */}
       <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
@@ -327,6 +339,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
           </Button>
         </CardContent>
       </Card>
+      </div>
     </div>
   )
 }

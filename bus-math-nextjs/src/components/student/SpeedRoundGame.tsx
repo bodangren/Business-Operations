@@ -151,11 +151,11 @@ export default function SpeedRoundGame() {
 
   if (!session) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 flex items-center justify-center">
-        <div className="text-center text-white">
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
           <p className="text-lg mb-2">Not enough terms</p>
-          <p className="text-slate-400 text-sm">A unit needs at least 4 terms for speed round.</p>
-          <Button asChild variant="outline" className="mt-4 border-slate-600 text-slate-300">
+          <p className="text-muted-foreground text-sm">A unit needs at least 4 terms for speed round.</p>
+          <Button asChild variant="outline" className="mt-4">
             <Link href="/student/practice-hub">Back to Practice Hub</Link>
           </Button>
         </div>
@@ -174,7 +174,7 @@ export default function SpeedRoundGame() {
     : "All Units"
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
+    <div className="min-h-screen">
       {/* Countdown overlay */}
       {countdown !== null && countdown > 0 && (
         <div className="fixed inset-0 bg-black/85 flex items-center justify-center z-50">
@@ -187,34 +187,34 @@ export default function SpeedRoundGame() {
         <div className="mb-6">
           <Link
             href="/student/practice-hub"
-            className="text-sm text-slate-400 hover:text-slate-300 inline-flex items-center gap-1"
+            className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Practice Hub
           </Link>
-          <span className="text-slate-500 text-sm"> › Speed Round › </span>
-          <span className="text-slate-300 text-sm font-medium">{unitLabel}</span>
+          <span className="text-muted-foreground text-sm"> › Speed Round › </span>
+          <span className="text-sm font-medium">{unitLabel}</span>
         </div>
 
         {isComplete ? (
           /* Game Over */
           <div className="text-center py-12">
-            <Badge variant="outline" className="mb-4 border-amber-400 text-amber-300">
+            <Badge variant="outline" className="mb-4 border-amber-500 text-amber-600">
               Game Over
             </Badge>
-            <h2 className="text-3xl font-bold text-white mb-2">Speed Round Results</h2>
-            <div className="text-6xl font-bold text-amber-400 my-6">
+            <h2 className="text-3xl font-bold mb-2">Speed Round Results</h2>
+            <div className="text-6xl font-bold text-amber-600 my-6">
               {summary.correctCount}
             </div>
-            <div className="text-slate-300 mb-8 space-y-1">
+            <div className="mb-8 space-y-1">
               <p>
                 {summary.correctCount}/{summary.totalAnswered} correct ·{" "}
                 {Math.round(summary.accuracy * 100)}% accuracy
               </p>
-              <p className="text-slate-400 text-sm">
+              <p className="text-muted-foreground text-sm">
                 Best streak: {summary.bestStreak} · Time remaining: {summary.timeRemaining}s
               </p>
-              <p className="text-slate-400 text-sm">
+              <p className="text-muted-foreground text-sm">
                 Lives remaining: {summary.livesRemaining}
               </p>
             </div>
@@ -223,13 +223,13 @@ export default function SpeedRoundGame() {
                 <RotateCcw className="h-4 w-4 mr-2" />
                 Play Again
               </Button>
-              <Button asChild className="bg-blue-600 hover:bg-blue-700">
+              <Button asChild>
                 <Link href={`/student/practice-hub/flashcards${unitParam ? `?unit=${unitParam}` : ""}`}>
                   <Layers className="h-4 w-4 mr-2" />
                   Try Flashcards
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+              <Button asChild variant="outline">
                 <Link href="/student/practice-hub">
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back to Hub
@@ -240,17 +240,17 @@ export default function SpeedRoundGame() {
         ) : (
           <>
             {/* HUD */}
-            <div className="flex items-center justify-between mb-4 p-3 bg-slate-900 rounded-lg">
-              <div className={`text-2xl font-bold font-mono ${isUrgent ? "text-red-400" : "text-white"}`}>
+            <div className="flex items-center justify-between mb-4 p-3 bg-muted rounded-lg">
+              <div className={`text-2xl font-bold font-mono ${isUrgent ? "text-red-600" : ""}`}>
                 {timerMinutes}:{timerSeconds.toString().padStart(2, "0")}
               </div>
-              <div className="text-white">
-                <span className="text-green-400 font-bold">{session.correctCount}</span>
+              <div>
+                <span className="text-green-600 font-bold">{session.correctCount}</span>
                 {" / "}
                 {session.totalAnswered}
               </div>
               {session.streak >= 3 && (
-                <div className="text-amber-400 text-sm font-semibold">
+                <div className="text-amber-600 text-sm font-semibold">
                   🔥 {session.streak} streak
                 </div>
               )}
@@ -266,7 +266,7 @@ export default function SpeedRoundGame() {
             </div>
 
             {/* Question Card */}
-            <div className="bg-gradient-to-br from-blue-800 to-blue-600 rounded-xl p-8 text-center text-white mb-4">
+            <div className="bg-gradient-to-br from-primary to-accent rounded-xl p-8 text-center text-primary-foreground mb-4">
               <div className="text-xs uppercase tracking-widest opacity-60 mb-3">
                 Define this term
               </div>
@@ -294,9 +294,9 @@ export default function SpeedRoundGame() {
                   key={i}
                   onClick={() => handleAnswer(option)}
                   disabled={countdown !== 0}
-                  className="text-left p-4 rounded-lg border-2 border-slate-200 bg-white text-sm hover:border-blue-500 transition-colors disabled:opacity-50"
+                  className="text-left p-4 rounded-lg border-2 border-border bg-card text-sm hover:border-primary/50 transition-colors disabled:opacity-50"
                 >
-                  <span className="inline-block w-6 h-6 bg-slate-100 rounded text-center text-xs font-semibold leading-6 mr-2 text-slate-500">
+                  <span className="inline-block w-6 h-6 bg-muted rounded text-center text-xs font-semibold leading-6 mr-2 text-muted-foreground">
                     {i + 1}
                   </span>
                   {option}
@@ -304,11 +304,11 @@ export default function SpeedRoundGame() {
               ))}
             </div>
 
-            <div className="text-center text-xs text-slate-500">
-              Press <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">1</kbd>{" "}
-              <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">2</kbd>{" "}
-              <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">3</kbd>{" "}
-              <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">4</kbd> to answer
+            <div className="text-center text-xs text-muted-foreground">
+              Press <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">1</kbd>{" "}
+              <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">2</kbd>{" "}
+              <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">3</kbd>{" "}
+              <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">4</kbd> to answer
             </div>
           </>
         )}

@@ -1,6 +1,7 @@
 'use client'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { IncomeStatementSimple } from '@/components/financial-reports/IncomeStatementSimple'
 import { IncomeStatementDetailed } from '@/components/financial-reports/IncomeStatementDetailed'
 import { CashFlowStatementSimple } from '@/components/financial-reports/CashFlowStatementSimple'
@@ -10,22 +11,19 @@ import { BalanceSheetDetailed } from '@/components/financial-reports/BalanceShee
 
 export default function FinancialReportsDebugPage() {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header */}
-        <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl text-green-800">Financial Reports Debug Page</CardTitle>
-            <CardDescription className="text-lg">
-              Testing and debugging financial reporting components for educational use
-            </CardDescription>
-          </CardHeader>
-        </Card>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container max-w-6xl mx-auto py-8 px-4 space-y-6">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2">Financial Reports</h1>
+          <p className="text-muted-foreground mt-1">
+            Testing and debugging financial reporting components for educational use
+          </p>
+        </div>
 
-        {/* Income Statement Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Income Statement Components</CardTitle>
+            <CardTitle>Income Statement Components</CardTitle>
             <CardDescription>
               Simple and detailed income statement components for teaching profit & loss analysis
             </CardDescription>
@@ -74,10 +72,9 @@ export default function FinancialReportsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Cash Flow Statement Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Cash Flow Statement Components</CardTitle>
+            <CardTitle>Cash Flow Statement Components</CardTitle>
             <CardDescription>
               Simple and detailed cash flow statement components for teaching cash management
             </CardDescription>
@@ -141,10 +138,9 @@ export default function FinancialReportsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Balance Sheet Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Balance Sheet Components</CardTitle>
+            <CardTitle>Balance Sheet Components</CardTitle>
             <CardDescription>
               Simple and detailed balance sheet components for teaching financial position analysis
             </CardDescription>
@@ -224,10 +220,9 @@ export default function FinancialReportsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Component Usage Examples */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Financial Reporting Component Usage</CardTitle>
+            <CardTitle>Financial Reporting Component Usage</CardTitle>
             <CardDescription>
               Code examples for implementing financial reporting components
             </CardDescription>

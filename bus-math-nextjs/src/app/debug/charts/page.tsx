@@ -1,6 +1,7 @@
 'use client'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { BarChart } from '@/components/charts/BarChart'
 import { BreakEvenChart } from '@/components/charts/BreakEvenChart'
 import { DoughnutChart } from '@/components/charts/DoughnutChart'
@@ -10,22 +11,19 @@ import { PieChart } from '@/components/charts/PieChart'
 
 export default function ChartsDebugPage() {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header */}
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl text-blue-800">Charts Debug Page</CardTitle>
-            <CardDescription className="text-lg">
-              Testing and debugging chart components
-            </CardDescription>
-          </CardHeader>
-        </Card>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container max-w-6xl mx-auto py-8 px-4 space-y-6">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2">Charts Debug Page</h1>
+          <p className="text-muted-foreground mt-1">
+            Testing and debugging chart components
+          </p>
+        </div>
 
-        {/* Financial Dashboard Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Financial Dashboard Component</CardTitle>
+            <CardTitle>Financial Dashboard Component</CardTitle>
             <CardDescription>
               Comprehensive financial dashboard with KPIs, multiple chart types, and interactive features
             </CardDescription>
@@ -55,10 +53,9 @@ export default function ChartsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Bar Chart Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Bar Chart Component</CardTitle>
+            <CardTitle>Bar Chart Component</CardTitle>
             <CardDescription>
               Interactive bar chart with customizable data and styling
             </CardDescription>
@@ -185,10 +182,9 @@ export default function ChartsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Break-Even Chart Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Break-Even Chart Component</CardTitle>
+            <CardTitle>Break-Even Chart Component</CardTitle>
             <CardDescription>
               Interactive break-even analysis with cost-volume-profit visualization
             </CardDescription>
@@ -252,10 +248,9 @@ export default function ChartsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Doughnut Chart Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Doughnut Chart Component</CardTitle>
+            <CardTitle>Doughnut Chart Component</CardTitle>
             <CardDescription>
               Interactive doughnut charts for proportional data visualization
             </CardDescription>
@@ -410,10 +405,9 @@ export default function ChartsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Line Chart Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Line Chart Component</CardTitle>
+            <CardTitle>Line Chart Component</CardTitle>
             <CardDescription>
               Interactive line charts for time series and trend visualization using shadcn/ui charts
             </CardDescription>
@@ -613,10 +607,9 @@ export default function ChartsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Pie Chart Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Pie Chart Component</CardTitle>
+            <CardTitle>Pie Chart Component</CardTitle>
             <CardDescription>
               Interactive pie charts for proportional data visualization using shadcn/ui charts
             </CardDescription>
@@ -772,10 +765,9 @@ export default function ChartsDebugPage() {
         </Card>
 
 
-        {/* Component Usage Examples */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Chart Component Usage Examples</CardTitle>
+            <CardTitle>Chart Component Usage Examples</CardTitle>
             <CardDescription>
               Code examples for implementing chart components
             </CardDescription>

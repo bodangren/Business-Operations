@@ -43,7 +43,7 @@ export default function Phase5Page() {
   const comprehensiveAssessment = getUnit03Phase5ComprehensionCheckItems({ lessonIds: ["lesson01"] }).slice(5, 8)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
       <div className="container mx-auto px-4 py-6">
         <PhaseHeader
           lesson={lesson01Data}

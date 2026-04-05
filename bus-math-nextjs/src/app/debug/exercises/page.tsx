@@ -3,6 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { ArrowLeft, FileText, Target, BookOpen, Calculator } from 'lucide-react'
 
@@ -383,35 +384,33 @@ const techStartSentences = [
 
 export default function ExercisesDebugPage() {
   return (
-    <div className="container mx-auto py-8 space-y-8">
-      {/* Header */}
-      <div className="flex items-center gap-4 mb-6">
-        <Button variant="outline" size="sm" asChild>
-          <Link href="/debug" className="flex items-center gap-2">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Debug Home
-          </Link>
-        </Button>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container max-w-6xl mx-auto py-8 px-4 space-y-8">
+        <div className="flex items-center gap-4 mb-6">
+          <Button variant="outline" size="sm" asChild>
+            <Link href="/debug" className="flex items-center gap-2">
+              <ArrowLeft className="w-4 h-4" />
+              Back to Debug Home
+            </Link>
+          </Button>
+        </div>
 
-      <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50">
-        <CardHeader>
-          <CardTitle className="text-3xl flex items-center gap-2">
-            <FileText className="w-8 h-8 text-purple-600" />
-            Exercise Components Debug Page
-          </CardTitle>
-          <CardDescription className="text-lg">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2 flex items-center gap-2">
+            <FileText className="w-8 h-8" />
+            Exercise Components
+          </h1>
+          <p className="text-muted-foreground mt-1">
             Test and debug generic exercise components including DragAndDrop matching, 
             ComprehensionCheck quizzes, and ReflectionJournal activities.
-          </CardDescription>
-        </CardHeader>
-      </Card>
+          </p>
+        </div>
 
-      {/* DragAndDrop Component Tests */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Target className="w-6 h-6 text-purple-600" />
+            <Target className="w-6 h-6" />
             Generic DragAndDrop Component
           </CardTitle>
           <CardDescription>
@@ -472,11 +471,10 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* ComprehensionCheck Component Tests */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-green-600" />
+            <BookOpen className="w-6 h-6" />
             ComprehensionCheck Component
           </CardTitle>
           <CardDescription>
@@ -531,11 +529,10 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* FillInTheBlank Component Tests */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileText className="w-6 h-6 text-orange-600" />
+            <FileText className="w-6 h-6" />
             FillInTheBlank Component
           </CardTitle>
           <CardDescription>
@@ -593,11 +590,10 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* RatioMatching Component Test */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Target className="w-6 h-6 text-blue-600" />
+            <Target className="w-6 h-6" />
             RatioMatching Component (Unit 3)
           </CardTitle>
           <CardDescription>
@@ -609,11 +605,10 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* PeerCritiqueForm Component Test */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileText className="w-6 h-6 text-green-600" />
+            <FileText className="w-6 h-6" />
             PeerCritiqueForm Component (Multiple Units)
           </CardTitle>
           <CardDescription>
@@ -663,11 +658,10 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* FeedbackCollector Component Test */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileText className="w-6 h-6 text-indigo-600" />
+            <FileText className="w-6 h-6" />
             FeedbackCollector Component (Multiple Units)
           </CardTitle>
           <CardDescription>
@@ -748,19 +742,18 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* TODO: Add ReflectionJournal when created */}
-      <Card className="bg-yellow-50 border-yellow-200">
+      <Card className="border-yellow-200 bg-yellow-50/50">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-yellow-800">
+          <CardTitle className="flex items-center gap-2">
             <Calculator className="w-6 h-6" />
             Coming Soon: Additional Exercise Components
           </CardTitle>
-          <CardDescription className="text-yellow-700">
+          <CardDescription>
             More exercise components will be added here as they're developed.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-2 text-yellow-700">
+          <div className="space-y-2 text-sm">
             <div>• <strong>ReflectionJournal:</strong> Self-reflection and learning journal component for CAP development</div>
             <div>• <strong>ErrorCheckingSystem:</strong> Excel error validation and correction exercises</div>
             <div>• <strong>SpreadsheetSimulator:</strong> Interactive Excel simulation for advanced formula practice</div>
@@ -769,147 +762,70 @@ export default function ExercisesDebugPage() {
         </CardContent>
       </Card>
 
-      {/* Component Usage Guide */}
-      <Card className="bg-blue-50 border-blue-200">
+      <Card className="border-gray-200">
         <CardHeader>
-          <CardTitle className="text-blue-800">💡 Component Usage Guide</CardTitle>
+          <CardTitle>Component Usage Guide</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-6 text-blue-700">
+          <div className="space-y-6 text-sm">
             <div>
               <h4 className="font-semibold">DragAndDrop Component:</h4>
-              <p className="text-sm">
+              <p className="text-muted-foreground">
                 Pass an array of MatchingItem objects with id, content, matchId, and optional category/hint/description. 
                 The component automatically creates matching pairs and handles all drag-drop interactions.
               </p>
-              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+              <code className="text-xs bg-muted p-2 rounded block mt-2">
                 {`<DragAndDrop items={matchingData} title="Exercise Title" description="..." />`}
               </code>
-              <div className="bg-blue-100 p-3 rounded mt-2">
-                <h5 className="font-semibold text-sm">DragAndDrop Props:</h5>
-                <ul className="text-xs mt-2 space-y-1">
-                  <li>• <code>items</code>: MatchingItem[] (required)</li>
-                  <li>• <code>title</code>: string (required)</li>
-                  <li>• <code>description</code>: string (required)</li>
-                  <li>• <code>leftColumnTitle</code>: string (optional, default: "Items")</li>
-                  <li>• <code>rightColumnTitle</code>: string (optional, default: "Matches")</li>
-                  <li>• <code>showHints</code>: boolean (optional, default: false)</li>
-                  <li>• <code>shuffleItems</code>: boolean (optional, default: true)</li>
-                  <li>• <code>onComplete</code>: (score: number) =&gt; void (optional)</li>
-                </ul>
-              </div>
             </div>
             
             <div>
               <h4 className="font-semibold">ComprehensionCheck Component:</h4>
-              <p className="text-sm">
+              <p className="text-muted-foreground">
                 Pass an array of multiple choice questions where the first answer is always correct. 
                 The component automatically randomizes answer order and provides scoring with explanations.
               </p>
-              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+              <code className="text-xs bg-muted p-2 rounded block mt-2">
                 {`<ComprehensionCheck questions={mcqData} title="Quiz Title" description="..." />`}
               </code>
-              <div className="bg-blue-100 p-3 rounded mt-2">
-                <h5 className="font-semibold text-sm">ComprehensionCheck Props:</h5>
-                <ul className="text-xs mt-2 space-y-1">
-                  <li>• <code>questions</code>: MultipleChoiceQuestion[] (required)</li>
-                  <li>• <code>title</code>: string (optional, default: "Comprehension Check")</li>
-                  <li>• <code>description</code>: string (optional)</li>
-                  <li>• <code>showExplanations</code>: boolean (optional, default: true)</li>
-                  <li>• <code>allowRetry</code>: boolean (optional, default: true)</li>
-                  <li>• <code>onComplete</code>: (score: number, total: number) =&gt; void (optional)</li>
-                </ul>
-                <div className="mt-2 text-xs">
-                  <strong>Question Format:</strong> {`{ id: string, question: string, answers: string[], explanation?: string }`}
-                  <br />
-                  <strong>Key Feature:</strong> First answer in array is always the correct one - component randomizes display order.
-                </div>
-              </div>
             </div>
 
             <div>
               <h4 className="font-semibold">FillInTheBlank Component:</h4>
-              <p className="text-sm">
+              <p className="text-muted-foreground">
                 Pass an array of sentences with {'{blank}'} placeholders. Students type answers directly into input fields
                 with real-time green/red visual feedback. Includes toggle-able word bank and hint system.
               </p>
-              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+              <code className="text-xs bg-muted p-2 rounded block mt-2">
                 {`<FillInTheBlank sentences={blankData} title="Exercise Title" description="..." />`}
               </code>
-              <div className="bg-blue-100 p-3 rounded mt-2">
-                <h5 className="font-semibold text-sm">FillInTheBlank Props:</h5>
-                <ul className="text-xs mt-2 space-y-1">
-                  <li>• <code>sentences</code>: BlankSentence[] (required)</li>
-                  <li>• <code>title</code>: string (required)</li>
-                  <li>• <code>description</code>: string (required)</li>
-                  <li>• <code>showWordList</code>: boolean (optional, default: true)</li>
-                  <li>• <code>randomizeWordOrder</code>: boolean (optional, default: true)</li>
-                  <li>• <code>showHints</code>: boolean (optional, default: false)</li>
-                  <li>• <code>onComplete</code>: (score: number) =&gt; void (optional)</li>
-                </ul>
-                <div className="mt-2 text-xs">
-                  <strong>Sentence Format:</strong> {`{ id: string, text: string, answer: string, hint?: string, alternativeAnswers?: string[], category?: string }`}
-                  <br />
-                  <strong>Key Features:</strong> Use {'{blank}'} in text for input placement. Supports alternative correct answers and case-insensitive matching.
-                </div>
-              </div>
             </div>
 
             <div>
               <h4 className="font-semibold">PeerCritiqueForm Component:</h4>
-              <p className="text-sm">
+              <p className="text-muted-foreground">
                 Structured peer feedback form with five evaluation categories, star ratings, and professional feedback collection.
                 Supports collaborative learning and critical evaluation skill development.
               </p>
-              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+              <code className="text-xs bg-muted p-2 rounded block mt-2">
                 {`<PeerCritiqueForm projectTitle="..." peerName="..." unitNumber={1} onSubmit={handleFeedback} />`}
               </code>
-              <div className="bg-blue-100 p-3 rounded mt-2">
-                <h5 className="font-semibold text-sm">PeerCritiqueForm Props:</h5>
-                <ul className="text-xs mt-2 space-y-1">
-                  <li>• <code>projectTitle</code>: string (optional, default: "Peer Project Review")</li>
-                  <li>• <code>peerName</code>: string (optional, default: "Classmate")</li>
-                  <li>• <code>unitNumber</code>: number (optional)</li>
-                  <li>• <code>onSubmit</code>: (feedback: PeerFeedback) =&gt; void (optional)</li>
-                  <li>• <code>className</code>: string (optional)</li>
-                </ul>
-                <div className="mt-2 text-xs">
-                  <strong>Key Features:</strong> 5-star rating system, comprehensive feedback categories (Strengths, Improvements, Excel Skills, Business Insight, Presentation), progress tracking, professional communication guidelines.
-                  <br />
-                  <strong>Educational Value:</strong> Develops critical evaluation skills, business communication, peer learning, and authentic assessment practices.
-                </div>
-              </div>
             </div>
 
             <div>
               <h4 className="font-semibold">FeedbackCollector Component:</h4>
-              <p className="text-sm">
+              <p className="text-muted-foreground">
                 Expert stakeholder feedback form with professional rating system and industry-specific focus areas.
                 Supports multiple stakeholder types (investor, accountant, entrepreneur, consultant, banker) with specialized expertise.
               </p>
-              <code className="text-xs bg-blue-100 p-2 rounded block mt-2">
+              <code className="text-xs bg-muted p-2 rounded block mt-2">
                 {`<FeedbackCollector stakeholderType="investor" projectTitle="..." studentName="..." unitNumber={1} onSubmit={handleFeedback} />`}
               </code>
-              <div className="bg-blue-100 p-3 rounded mt-2">
-                <h5 className="font-semibold text-sm">FeedbackCollector Props:</h5>
-                <ul className="text-xs mt-2 space-y-1">
-                  <li>• <code>stakeholderType</code>: 'investor' | 'entrepreneur' | 'accountant' | 'consultant' | 'banker' (optional, default: "investor")</li>
-                  <li>• <code>projectTitle</code>: string (optional, default: "Student Business Project")</li>
-                  <li>• <code>studentName</code>: string (optional, default: "Student")</li>
-                  <li>• <code>unitNumber</code>: number (optional)</li>
-                  <li>• <code>onSubmit</code>: (feedback: StakeholderFeedback) =&gt; void (optional)</li>
-                  <li>• <code>className</code>: string (optional)</li>
-                </ul>
-                <div className="mt-2 text-xs">
-                  <strong>Key Features:</strong> Professional 5-level rating system (Needs Work → Expert Level), 6 evaluation categories (Financial Accuracy, Business Viability, Presentation Quality, Industry Knowledge, Innovation Potential, Implementation Readiness), stakeholder-specific focus areas, mentorship opportunities, career guidance collection.
-                  <br />
-                  <strong>Educational Value:</strong> Authentic audience feedback, industry professional perspectives, mentorship development, real-world business validation, career pathway guidance.
-                </div>
-              </div>
             </div>
           </div>
         </CardContent>
       </Card>
+    </div>
     </div>
   )
 }

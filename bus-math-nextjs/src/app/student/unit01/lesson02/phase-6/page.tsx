@@ -1,5 +1,6 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Badge } from "@/components/ui/badge"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, BookOpen, Target, CheckCircle } from "lucide-react"
@@ -41,9 +42,9 @@ export default function Unit01Lesson02Phase6() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <div className="inline-block bg-emerald-100 text-emerald-800 text-lg px-4 py-2 rounded-lg font-semibold">
+            <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">
               Phase 6: Reflection and Preview
-            </div>
+            </Badge>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">

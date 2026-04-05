@@ -1,11 +1,10 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
-import { AlertTriangle, Calendar, DollarSign, Users } from 'lucide-react'
+import { AlertTriangle, Calendar, DollarSign, Users, HelpCircle, ChevronDown, ChevronUp, TrendingUp, RefreshCw, Play } from 'lucide-react'
 
 const SHIFT_OPTIONS = [
   { value: 'none', label: 'No Shift', multiplier: 0, description: 'Hold off on hiring for now.' },
@@ -246,8 +245,22 @@ export function RestaurantStaffingSimulator() {
   const [choices, setChoices] = useState<Record<string, RoleChoice>>(INITIAL_CHOICES)
   const [history, setHistory] = useState<HistoryEntry[]>([])
   const [seasonComplete, setSeasonComplete] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(false)
+  const [notifications, setNotifications] = useState<Array<{
+    id: string
+    message: string
+    type: 'success' | 'warning' | 'error' | 'info'
+  }>>([])
 
   const currentScenario = useMemo(() => MONTH_SCENARIOS[month - 1], [month])
+
+  const addNotification = useCallback((message: string, type: 'success' | 'warning' | 'error' | 'info') => {
+    const id = Date.now().toString()
+    setNotifications(prev => [...prev, { id, message, type }])
+    setTimeout(() => {
+      setNotifications(prev => prev.filter(n => n.id !== id))
+    }, 4000)
+  }, [])
 
   const updateChoice = (roleId: string, updates: Partial<RoleChoice>) => {
     setChoices(prev => ({
@@ -351,8 +364,15 @@ export function RestaurantStaffingSimulator() {
     setCash(newCash)
     setSatisfaction(newSatisfaction)
 
+    if (netChange >= 0) {
+      addNotification(`Month ${month} complete: ${currency(netChange)} profit`, 'success')
+    } else {
+      addNotification(`Month ${month} complete: ${currency(netChange)} loss`, 'warning')
+    }
+
     if (month === 12) {
       setSeasonComplete(true)
+      addNotification('Season complete! Check your final results.', 'info')
     } else {
       setMonth(month + 1)
     }
@@ -365,56 +385,161 @@ export function RestaurantStaffingSimulator() {
     setChoices(INITIAL_CHOICES)
     setHistory([])
     setSeasonComplete(false)
+    addNotification('Simulation reset', 'info')
   }
 
+  const totalStaff = Object.values(choices).reduce((sum, c) => sum + c.headcount, 0)
+  const totalPayroll = useMemo(() => {
+    let total = 0
+    STAFF_ROLES.forEach(role => {
+      const choice = choices[role.id]
+      const option = SHIFT_OPTIONS.find(opt => opt.value === choice.shift)!
+      const headcount = clamp(choice.headcount, 0, role.maxHeadcount)
+      const hours = clamp(choice.hours, 20, 60)
+      if (headcount > 0 && option.multiplier > 0) {
+        if (role.type === 'hourly' && role.hourlyRate) {
+          const regularHours = Math.min(hours, 40)
+          const overtimeHours = Math.max(0, hours - 40)
+          const weeklyPay = (regularHours * role.hourlyRate) + (overtimeHours * role.hourlyRate * 1.5)
+          total += weeklyPay * 4 * headcount
+        } else if (role.type === 'salaried' && role.salary) {
+          total += role.salary * headcount * option.multiplier
+        }
+      }
+    })
+    return total
+  }, [choices])
+
   return (
-    <Card className="shadow-lg">
-      <CardHeader>
-        <CardTitle className="text-2xl flex items-center gap-2">
-          <Users className="h-6 w-6 text-emerald-600" />
-          Restaurant Staffing Simulator
-        </CardTitle>
-        <CardDescription>
-          Plan 12 months of staffing decisions. Cover shifts without overspending so cash and morale stay strong.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 rounded-lg bg-emerald-50 border border-emerald-100">
-            <div className="flex items-center gap-2 text-emerald-900 font-semibold">
-              <Calendar className="h-5 w-5" />
-              Month {month} / 12
+    <div className="max-w-6xl mx-auto space-y-6">
+      <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-white">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <Users className="h-6 w-6 text-purple-600" />
+                Restaurant Staffing Simulator
+              </CardTitle>
+              <CardDescription>
+                Plan 12 months of staffing decisions. Cover shifts without overspending so cash and morale stay strong.
+              </CardDescription>
             </div>
-            <p className="text-sm text-emerald-900 mt-1">{currentScenario.title}</p>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowInstructions(!showInstructions)}
+              className="flex items-center gap-1"
+            >
+              <HelpCircle className="h-4 w-4" />
+              {showInstructions ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </Button>
           </div>
-          <div className="p-4 rounded-lg bg-slate-50 border border-slate-200">
-            <div className="flex items-center gap-2 text-slate-900 font-semibold">
-              <DollarSign className="h-5 w-5" />
-              Cash on Hand
+        </CardHeader>
+        {showInstructions && (
+          <CardContent className="space-y-4 border-t pt-4">
+            <p className="text-sm text-muted-foreground">
+              Balance your staff levels with customer demand throughout the year. Each month brings new challenges and opportunities.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-medium">Green:</span>
+                <span>Efficient staffing - right-sized team for demand</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-600 font-medium">Yellow:</span>
+                <span>Warning - slightly over or under staffed</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-red-600 font-medium">Red:</span>
+                <span>Critical - significantly over or under staffed</span>
+              </li>
+            </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                <h5 className="font-medium text-blue-800 mb-1">Staff Types</h5>
+                <ul className="text-xs text-blue-700 space-y-1">
+                  <li>Hourly: Pay based on hours worked (overtime 1.5x over 40hrs)</li>
+                  <li>Salaried: Fixed monthly pay regardless of hours</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-200">
+                <h5 className="font-medium text-amber-800 mb-1">Key Metrics</h5>
+                <ul className="text-xs text-amber-700 space-y-1">
+                  <li>Cash: Your available funds</li>
+                  <li>Morale: Team satisfaction (affects revenue)</li>
+                </ul>
+              </div>
             </div>
-            <p className="text-2xl font-bold text-slate-900">{currency(cash)}</p>
-          </div>
-          <div className="p-4 rounded-lg bg-blue-50 border border-blue-200">
-            <div className="flex items-center gap-2 text-blue-900 font-semibold">
-              <AlertTriangle className="h-5 w-5" />
-              Team Morale
-            </div>
-            <Progress value={satisfaction} className="h-3 mt-2" />
-            <p className="text-sm text-blue-900 mt-1">{satisfaction}%</p>
-          </div>
-        </div>
+          </CardContent>
+        )}
+      </Card>
 
-        <div className="bg-slate-100 border border-slate-200 rounded-lg p-4">
-          <h3 className="text-lg font-semibold text-slate-800">Scenario Brief</h3>
-          <p className="text-slate-700 mt-2">{currentScenario.description}</p>
-          <p className="text-sm text-slate-600 mt-1"><strong>Focus:</strong> {currentScenario.notes}</p>
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Card className="border-blue-200">
+          <CardContent className="pt-6 text-center">
+            <Calendar className="h-5 w-5 text-blue-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Month</p>
+            <p className="text-2xl font-bold text-blue-800">{month} / 12</p>
+          </CardContent>
+        </Card>
 
-        <div className="space-y-4">
+        <Card className="border-green-200">
+          <CardContent className="pt-6 text-center">
+            <DollarSign className="h-5 w-5 text-green-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Cash on Hand</p>
+            <p className={`text-2xl font-bold ${cash >= 0 ? 'text-green-800' : 'text-red-800'}`}>
+              {currency(cash)}
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-purple-200">
+          <CardContent className="pt-6 text-center">
+            <Users className="h-5 w-5 text-purple-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Total Staff</p>
+            <p className="text-2xl font-bold text-purple-800">{totalStaff}</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-amber-200">
+          <CardContent className="pt-6 text-center">
+            <AlertTriangle className="h-5 w-5 text-amber-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Team Morale</p>
+            <p className="text-2xl font-bold text-amber-800">{satisfaction}%</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="border-gray-200">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <TrendingUp className="h-5 w-5" />
+            Scenario Brief
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <h3 className="text-lg font-semibold text-slate-800">{currentScenario.title}</h3>
+            <p className="text-slate-700 mt-2">{currentScenario.description}</p>
+            <p className="text-sm text-slate-600 mt-1"><strong>Focus:</strong> {currentScenario.notes}</p>
+            <p className="text-sm text-slate-600 mt-1"><strong>Demand Level:</strong> {Math.round(currentScenario.demandMultiplier * 100)}%</p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="border-gray-200">
+        <CardHeader>
+          <CardTitle>Staffing Controls</CardTitle>
+          <CardDescription>
+            Adjust shift coverage, team size, and hours for each role. Estimated monthly payroll: {currency(totalPayroll)}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
           {STAFF_ROLES.map(role => {
             const choice = choices[role.id]
+            const isUnlocked = !role.unlockMonth || month >= role.unlockMonth
             return (
-              <div key={role.id} className="border rounded-lg p-4 bg-white shadow-sm space-y-4">
+              <div key={role.id} className={`border rounded-lg p-4 bg-white shadow-sm space-y-4 ${!isUnlocked ? 'opacity-60' : ''}`}>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                   <div>
                     <h4 className="text-lg font-semibold text-slate-900">{role.label}</h4>
@@ -430,7 +555,8 @@ export function RestaurantStaffingSimulator() {
                     <select
                       value={choice.shift}
                       onChange={e => updateChoice(role.id, { shift: e.target.value as ShiftChoice })}
-                      className="mt-1 w-full md:w-48 border rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring focus-visible:ring-emerald-200"
+                      disabled={!isUnlocked}
+                      className="mt-1 w-full md:w-48 border rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring focus-visible:ring-purple-200 disabled:opacity-50"
                     >
                       {SHIFT_OPTIONS.map(option => (
                         <option key={option.value} value={option.value}>
@@ -447,7 +573,8 @@ export function RestaurantStaffingSimulator() {
                     <select
                       value={choice.headcount}
                       onChange={e => updateChoice(role.id, { headcount: Number(e.target.value) })}
-                      className="mt-1 w-full border rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring focus-visible:ring-emerald-200"
+                      disabled={!isUnlocked}
+                      className="mt-1 w-full border rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring focus-visible:ring-purple-200 disabled:opacity-50"
                     >
                       {Array.from({ length: role.maxHeadcount + 1 }).map((_, idx) => (
                         <option key={idx} value={idx}>
@@ -466,7 +593,8 @@ export function RestaurantStaffingSimulator() {
                       <select
                         value={choice.hours}
                         onChange={e => updateChoice(role.id, { hours: Number(e.target.value) })}
-                        className="mt-1 w-full border rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring focus-visible:ring-emerald-200"
+                        disabled={!isUnlocked}
+                        className="mt-1 w-full border rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring focus-visible:ring-purple-200 disabled:opacity-50"
                       >
                         {[20, 30, 40, 50, 60].map(hr => (
                           <option key={hr} value={hr}>{hr} hrs</option>
@@ -479,19 +607,25 @@ export function RestaurantStaffingSimulator() {
               </div>
             )
           })}
-        </div>
+        </CardContent>
+      </Card>
 
-        <div className="flex flex-wrap gap-3">
-          <Button onClick={runMonth} disabled={seasonComplete}>
-            {seasonComplete ? 'Season Complete' : 'Run This Month'}
-          </Button>
-          <Button variant="outline" onClick={resetGame}>
-            Reset Simulation
-          </Button>
-        </div>
+      <div className="flex flex-wrap gap-3">
+        <Button onClick={runMonth} disabled={seasonComplete} className="bg-purple-600 hover:bg-purple-700">
+          <Play className="h-4 w-4 mr-2" />
+          {seasonComplete ? 'Season Complete' : 'Run This Month'}
+        </Button>
+        <Button variant="outline" onClick={resetGame}>
+          <RefreshCw className="h-4 w-4 mr-2" />
+          Reset Simulation
+        </Button>
+      </div>
 
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold text-slate-900">Monthly Ledger</h3>
+      <Card className="border-gray-200">
+        <CardHeader>
+          <CardTitle>Monthly Ledger</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
           {history.length === 0 && (
             <p className="text-sm text-slate-600">Complete a month to start seeing results.</p>
           )}
@@ -529,9 +663,35 @@ export function RestaurantStaffingSimulator() {
               <p className="text-sm text-slate-700">{entry.summary}</p>
             </div>
           ))}
+        </CardContent>
+      </Card>
+
+      {notifications.length > 0 && (
+        <div className="fixed bottom-4 right-4 space-y-2 z-50">
+          {notifications.map((notification) => (
+            <Card key={notification.id} className={`
+              max-w-sm border-l-4 ${
+                notification.type === 'success' ? 'border-l-green-500 bg-green-50' :
+                notification.type === 'warning' ? 'border-l-yellow-500 bg-yellow-50' :
+                notification.type === 'error' ? 'border-l-red-500 bg-red-50' :
+                'border-l-blue-500 bg-blue-50'
+              }
+            `}>
+              <CardContent className="p-3">
+                <p className={`text-sm font-medium ${
+                  notification.type === 'success' ? 'text-green-800' :
+                  notification.type === 'warning' ? 'text-yellow-800' :
+                  notification.type === 'error' ? 'text-red-800' :
+                  'text-blue-800'
+                }`}>
+                  {notification.message}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-      </CardContent>
-    </Card>
+      )}
+    </div>
   )
 }
 
@@ -547,3 +707,5 @@ function roleLabel(roleId: string) {
   const match = STAFF_ROLES.find(role => role.id === roleId)
   return match ? match.label : roleId
 }
+
+export default RestaurantStaffingSimulator

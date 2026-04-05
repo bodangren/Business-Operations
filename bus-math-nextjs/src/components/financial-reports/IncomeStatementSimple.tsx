@@ -152,7 +152,7 @@ export function IncomeStatementSimple({
           </div>
         )}
 
-        <div className="grid grid-cols-3 gap-4 mt-6 p-4 bg-gray-100 rounded-lg">
+        <div className="grid grid-cols-4 gap-4 mt-6 p-4 bg-gray-100 rounded-lg">
           <div className="text-center">
             <div className="text-2xl font-bold text-green-600">
               {((statementData.grossProfit / statementData.revenue) * 100).toFixed(1)}%
@@ -170,6 +170,12 @@ export function IncomeStatementSimple({
               {((statementData.netIncome / statementData.revenue) * 100).toFixed(1)}%
             </div>
             <div className="text-sm text-gray-600">Net Margin</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-cyan-600">
+              {((statementData.revenue - statementData.costOfGoodsSold) / statementData.revenue * 100).toFixed(1)}%
+            </div>
+            <div className="text-sm text-gray-600">Cost Efficiency</div>
           </div>
         </div>
       </CardContent>

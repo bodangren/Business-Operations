@@ -143,22 +143,22 @@ export default function TAccountsVisualization({
           </div>
         </CardHeader>
         <CardContent className="pt-0">
-          {/* T-Account Structure */}
-          <div className="border-2 border-gray-700 rounded-md overflow-hidden">
-            {/* Header */}
-            <div className="grid grid-cols-2 border-b-2 border-gray-700">
-              <div className="bg-blue-50 p-2 text-center text-sm font-medium text-blue-800 border-r-2 border-gray-700">
-                Debits
-              </div>
-              <div className="bg-red-50 p-2 text-center text-sm font-medium text-red-800">
-                Credits
-              </div>
-            </div>
+           {/* T-Account Structure */}
+           <div className="border border-gray-800 rounded-md overflow-hidden">
+             {/* Header */}
+             <div className="grid grid-cols-2 border-b border-gray-800">
+               <div className="bg-blue-50 p-2 text-center text-sm font-medium text-blue-800 border-r border-gray-800">
+                 Debits
+               </div>
+               <div className="bg-red-50 p-2 text-center text-sm font-medium text-red-800">
+                 Credits
+               </div>
+             </div>
 
-            {/* Transactions */}
-            <div className="grid grid-cols-2 min-h-[120px]">
-              {/* Debit Side */}
-              <div className="border-r-2 border-gray-700 p-2">
+             {/* Transactions */}
+             <div className="grid grid-cols-2 min-h-[120px]">
+               {/* Debit Side */}
+               <div className="border-r border-gray-800 p-2">
                 <div className="space-y-1">
                   {account.debits.map((transaction) => (
                     <div key={transaction.id} className="flex justify-between text-xs">
@@ -193,9 +193,9 @@ export default function TAccountsVisualization({
             </div>
 
             {/* Totals */}
-            {(account.debits.length > 0 || account.credits.length > 0) && (
-              <div className="grid grid-cols-2 border-t border-gray-400 bg-gray-50">
-                <div className="border-r border-gray-400 p-2">
+             {(account.debits.length > 0 || account.credits.length > 0) && (
+               <div className="grid grid-cols-2 border-t border-gray-800 bg-gray-50">
+                 <div className="border-r border-gray-800 p-2">
                   <div className="flex justify-between text-xs font-medium">
                     <span>Total:</span>
                     <span className="font-mono">${totalDebits.toLocaleString()}</span>

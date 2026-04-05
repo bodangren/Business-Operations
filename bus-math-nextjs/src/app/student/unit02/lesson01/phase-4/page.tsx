@@ -65,7 +65,7 @@ export default function Phase4Page() {
   const selectedScenario = choice ? scenarios[choice] : null
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
       <div className="container mx-auto px-4 py-6">
         <PhaseHeader 
           lesson={lesson01Data}

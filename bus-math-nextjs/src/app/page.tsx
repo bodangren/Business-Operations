@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { BookOpen, Calculator, CheckSquare, Dice6, TrendingUp, BarChart3 } from "lucide-react"
 
 const units = [
@@ -96,20 +97,19 @@ const features = [
   }
 ]
 
-const getDifficultyColor = (difficulty: string) => {
+const getDifficultyVariant = (difficulty: string): "default" | "secondary" | "outline" | "destructive" => {
   switch (difficulty) {
-    case "Beginner": return "text-green-700 dark:text-green-300 bg-green-50/50 dark:bg-green-950/20 border-green-200/50 dark:border-green-800/30"
-    case "Intermediate": return "text-primary bg-primary/5 border-primary/20 dark:bg-primary/10 dark:border-primary/30" 
-    case "Advanced": return "text-orange-700 dark:text-orange-300 bg-orange-50/50 dark:bg-orange-950/20 border-orange-200/50 dark:border-orange-800/30"
-    case "Expert": return "text-red-700 dark:text-red-300 bg-red-50/50 dark:bg-red-950/20 border-red-200/50 dark:border-red-800/30"
-    default: return "text-muted-foreground bg-muted/30 border-border/30"
+    case "Beginner": return "default"
+    case "Intermediate": return "secondary" 
+    case "Advanced": return "outline"
+    case "Expert": return "destructive"
+    default: return "outline"
   }
 }
 
 export default function Home() {
   return (
     <main className="flex-1">
-        {/* Hero section */}
         <section className="py-16 md:py-24 bg-gradient-to-br from-background via-primary/5 to-accent/5">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -152,7 +152,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Table of Contents */}
         <section className="py-16 bg-muted/10">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -162,7 +161,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {units.map((unit, index) => (
-                <Card key={index} className="card-ledger hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50">
+                <Card key={index} className="border-border/50 hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <CardHeader>
                     <CardTitle className="text-lg">
                       <Link href={unit.href} className="hover:text-primary transition-colors">
@@ -174,9 +173,9 @@ export default function Home() {
                   <CardContent>
                     <div className="flex justify-between items-center text-sm">
                       <span className="text-muted-foreground font-medium">{unit.duration}</span>
-                      <span className={`px-2 py-1 rounded-md border text-xs font-medium ${getDifficultyColor(unit.difficulty)}`}>
+                      <Badge variant={getDifficultyVariant(unit.difficulty)}>
                         {unit.difficulty}
-                      </span>
+                      </Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -184,8 +183,8 @@ export default function Home() {
             </div>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="card-statement border-primary/20">
-                <CardHeader className="excel-header">
+              <Card className="border-primary/20">
+                <CardHeader className="bg-gradient-to-r from-primary/5 to-primary/10 border-b border-primary/20">
                   <CardTitle className="text-primary">Getting Started</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
@@ -198,7 +197,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="card-statement border-accent/20">
+              <Card className="border-accent/20">
                 <CardHeader className="bg-gradient-to-r from-accent/5 to-accent/10 border-b border-accent/20">
                   <CardTitle className="text-accent">Capstone Project</CardTitle>
                 </CardHeader>
@@ -215,7 +214,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="card-ledger border-border/50">
+              <Card className="border-border/50">
                 <CardHeader>
                   <CardTitle>Reference Materials</CardTitle>
                 </CardHeader>
@@ -232,7 +231,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Features highlight */}
         <section className="py-16 bg-gradient-to-br from-muted/10 via-background to-muted/5">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -242,7 +240,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <Card key={index} className="card-ledger text-center hover:shadow-lg transition-all duration-300 hover:scale-105 border-border/50 group">
+                <Card key={index} className="border-border/50 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 group">
                   <CardContent className="pt-6">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/20 transition-colors">
                       <feature.icon className="w-8 h-8 text-primary" />

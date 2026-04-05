@@ -68,10 +68,10 @@ export function TAccountSimple({
         </div>
 
         {/* T-Account Structure */}
-        <div className="border-2 border-gray-800 rounded-lg overflow-hidden">
+        <div className="border border-gray-800 rounded-lg overflow-hidden">
           {/* Header Row */}
-          <div className="grid grid-cols-2 border-b-2 border-gray-800">
-            <div className="bg-blue-50 p-3 text-center font-semibold text-blue-800 border-r-2 border-gray-800">
+          <div className="grid grid-cols-2 border-b border-gray-800">
+            <div className="bg-blue-50 p-3 text-center font-semibold text-blue-800 border-r border-gray-800">
               Debits
             </div>
             <div className="bg-red-50 p-3 text-center font-semibold text-red-800">
@@ -82,7 +82,7 @@ export function TAccountSimple({
           {/* Transaction Rows */}
           <div className="grid grid-cols-2 min-h-[200px]">
             {/* Debit Side */}
-            <div className="border-r-2 border-gray-800 p-4">
+            <div className="border-r border-gray-800 p-4">
               <div className="space-y-3">
                 {debits.map((transaction) => (
                   <div key={transaction.id} className="flex justify-between items-start">
@@ -138,8 +138,8 @@ export function TAccountSimple({
 
           {/* Totals Row */}
           {(debits.length > 0 || credits.length > 0) && (
-            <div className="grid grid-cols-2 border-t-2 border-gray-800 bg-gray-50">
-              <div className="border-r-2 border-gray-800 p-3">
+            <div className="grid grid-cols-2 border-t border-gray-800 bg-gray-50">
+              <div className="border-r border-gray-800 p-3">
                 <div className="flex justify-between font-semibold">
                   <span>Total Debits:</span>
                   <span className="font-mono">${totalDebits.toLocaleString()}</span>

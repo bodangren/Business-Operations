@@ -9,7 +9,8 @@ import {
   ArrowRight,
   CheckCircle2,
   Users,
-  Lightbulb
+  Lightbulb,
+  Home
 } from "lucide-react"
 import Link from "next/link"
 
@@ -70,12 +71,16 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
   const mainSkills = lesson.keyConcepts.slice(0, 3)
   
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="bg-gradient-to-br from-background via-background to-muted/20 -mx-4 px-4 py-8">
+      <div className="max-w-4xl mx-auto space-y-8">
       {/* Breadcrumb Navigation */}
       <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-        <Link href="/student" className="hover:text-foreground">Student</Link>
+        <Link href="/student" className="hover:text-foreground flex items-center gap-1">
+          <Home className="h-3 w-3" />
+          Student
+        </Link>
         <ArrowRight className="h-3 w-3" />
-        <Link href={`/student/unit0${unit.sequence}`} className="hover:text-foreground">
+        <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}`} className="hover:text-foreground">
           {unit.title}
         </Link>
         <ArrowRight className="h-3 w-3" />
@@ -213,14 +218,14 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
       {/* Navigation Actions */}
       <div className="flex items-center justify-between pt-6 border-t">
         <Button variant="outline" asChild>
-          <Link href={`/student/unit0${unit.sequence}`}>
+          <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}`}>
             ← Back to Unit Overview
           </Link>
         </Button>
         
         {sortedPhases.length > 0 ? (
           <Button asChild>
-            <Link href={`/student/unit0${unit.sequence}/lesson${lesson.sequence.toString().padStart(2, '0')}/phase-1`}>
+            <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}/lesson${lesson.sequence.toString().padStart(2, '0')}/phase-1`}>
               Start Lesson <ArrowRight className="h-4 w-4 ml-2" />
             </Link>
           </Button>
@@ -229,6 +234,7 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
             Lesson Content Coming Soon
           </Button>
         )}
+      </div>
       </div>
     </div>
   )

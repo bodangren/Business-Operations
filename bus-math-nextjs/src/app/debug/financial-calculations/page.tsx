@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import InterestCalculationBuilder from '@/components/financial-calculations/InterestCalculationBuilder';
 import { BreakEvenAnalysisCalculator } from '@/components/financial-calculations/BreakEvenAnalysisCalculator';
 import DepreciationMethodBuilder from '@/components/financial-calculations/DepreciationMethodBuilder';
@@ -8,22 +9,19 @@ import DepreciationMethodBuilder from '@/components/financial-calculations/Depre
 export default function FinancialCalculationsDebugPage() {
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header */}
-        <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl text-green-800">Financial Calculations Debug Page</CardTitle>
-            <CardDescription className="text-lg">
-              Interactive financial calculation components for business math education
-            </CardDescription>
-          </CardHeader>
-        </Card>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container max-w-6xl mx-auto py-8 px-4 space-y-6">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2">Financial Calculations</h1>
+          <p className="text-muted-foreground mt-1">
+            Interactive financial calculation components for business math education
+          </p>
+        </div>
 
-        {/* Interest Calculation Builder Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Interest Calculation Builder Component</CardTitle>
+            <CardTitle>Interest Calculation Builder Component</CardTitle>
             <CardDescription>
               Interactive calculator for different types of interest calculations focused on PayDay Simulator cash flow scenarios
             </CardDescription>
@@ -38,10 +36,9 @@ export default function FinancialCalculationsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Break-Even Analysis Calculator Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Break-Even Analysis Calculator Component</CardTitle>
+            <CardTitle>Break-Even Analysis Calculator Component</CardTitle>
             <CardDescription>
               Advanced break-even analysis with Goal Seek, Data Tables, and Sensitivity Analysis for Unit 6 PriceLab Challenge
             </CardDescription>
@@ -56,10 +53,9 @@ export default function FinancialCalculationsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Depreciation Method Builder Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Depreciation Method Builder Component</CardTitle>
+            <CardTitle>Depreciation Method Builder Component</CardTitle>
             <CardDescription>
               Interactive depreciation calculator for different asset depreciation methods focused on Unit 8 Fixed Assets and Depreciation
             </CardDescription>
@@ -74,10 +70,9 @@ export default function FinancialCalculationsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Component Usage Examples */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Component Usage Examples</CardTitle>
+            <CardTitle>Component Usage Examples</CardTitle>
             <CardDescription>
               Code examples for implementing financial calculation components
             </CardDescription>
@@ -203,10 +198,9 @@ export default function FinancialCalculationsDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Component Status */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Financial Calculations Component Status</CardTitle>
+            <CardTitle>Financial Calculations Component Status</CardTitle>
             <CardDescription>
               Current status of financial calculation components
             </CardDescription>

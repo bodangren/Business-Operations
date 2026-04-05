@@ -52,12 +52,12 @@ export default function ExportPage() {
     exportPreview = buildSessionExport(data)
   } catch {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 flex items-center justify-center">
-        <div className="text-center text-white">
-          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-amber-400" />
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <AlertCircle className="h-12 w-12 mx-auto mb-4 text-amber-600" />
           <p className="text-lg mb-2">Unable to load study data</p>
-          <p className="text-slate-400 text-sm mb-4">Your saved data may be corrupted. Try resetting your progress.</p>
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300">
+          <p className="text-muted-foreground text-sm mb-4">Your saved data may be corrupted. Try resetting your progress.</p>
+          <Button asChild variant="outline">
             <Link href="/student/practice-hub">Back to Practice Hub</Link>
           </Button>
         </div>
@@ -103,29 +103,29 @@ export default function ExportPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="mb-8">
           <Link
             href="/student/practice-hub"
-            className="text-sm text-blue-400 hover:text-blue-300 inline-flex items-center gap-1 mb-4"
+            className="text-sm text-primary hover:text-primary/80 inline-flex items-center gap-1 mb-4"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Practice Hub
           </Link>
-          <Badge variant="outline" className="mb-3 border-blue-400 text-blue-200">
+          <Badge variant="outline" className="mb-3">
             Export & Import
           </Badge>
-          <h1 className="text-3xl font-bold text-white mb-2">Export Your Progress</h1>
-          <p className="text-slate-300">
+          <h1 className="text-3xl font-bold mb-2">Export Your Progress</h1>
+          <p className="text-muted-foreground">
             Download your study data or restore from a previous export.
           </p>
         </div>
 
         {/* Export Preview */}
         <section className="mb-8">
-          <h2 className="text-lg font-semibold text-white mb-3">Data Preview</h2>
+          <h2 className="text-lg font-semibold mb-3">Data Preview</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <Card>
               <CardContent className="pt-4 pb-3 text-center">
@@ -189,7 +189,7 @@ export default function ExportPage() {
         <section className="mb-8">
           <h2 className="text-lg font-semibold text-white mb-3">Download</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <Card className="hover:border-blue-400 transition-colors">
+            <Card className="hover:border-primary/50 transition-colors">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-2">
                   <FileText className="h-5 w-5 text-green-600" />
@@ -212,10 +212,10 @@ export default function ExportPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:border-blue-400 transition-colors">
+            <Card className="hover:border-primary/50 transition-colors">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-2">
-                  <FileJson className="h-5 w-5 text-blue-600" />
+                  <FileJson className="h-5 w-5 text-primary" />
                   <CardTitle className="text-base">Full Session JSON</CardTitle>
                 </div>
                 <CardDescription>
@@ -239,7 +239,7 @@ export default function ExportPage() {
 
         {/* Import */}
         <section className="mb-8">
-          <h2 className="text-lg font-semibold text-white mb-3">Import / Restore</h2>
+          <h2 className="text-lg font-semibold mb-3">Import / Restore</h2>
           <Card>
             <CardHeader className="pb-2">
               <div className="flex items-center gap-2">
@@ -256,7 +256,7 @@ export default function ExportPage() {
                 type="file"
                 accept=".json"
                 onChange={handleImportFile}
-                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:cursor-pointer cursor-pointer"
+                className="block w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-primary-foreground hover:file:bg-primary/90 file:cursor-pointer cursor-pointer"
               />
               {importStatus && (
                 <div
@@ -279,7 +279,7 @@ export default function ExportPage() {
         {/* Export History */}
         <section className="mb-8">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-semibold text-white">Export History</h2>
+            <h2 className="text-lg font-semibold">Export History</h2>
           </div>
           <Card>
             <CardContent className="pt-2">
@@ -314,13 +314,13 @@ export default function ExportPage() {
 
         {/* Footer nav */}
         <div className="flex gap-3 justify-center pt-4">
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+          <Button asChild variant="outline">
             <Link href="/student/practice-hub">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Practice Hub
             </Link>
           </Button>
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+          <Button asChild variant="outline">
             <Link href="/student/practice-hub/progress">
               <BarChart3 className="h-4 w-4 mr-2" />
               Progress Dashboard

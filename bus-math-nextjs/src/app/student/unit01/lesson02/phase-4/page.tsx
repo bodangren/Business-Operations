@@ -195,9 +195,9 @@ export default function Unit01Lesson02Phase4() {
         <main className="container mx-auto px-4 py-8 space-y-8">
           <section className="space-y-6">
             <div className="text-center space-y-4">
-              <div className="inline-block bg-indigo-100 text-indigo-800 text-lg px-4 py-2 rounded-lg font-semibold">
+              <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
                 Phase 4: Algorithmic Deliberate Practice
-              </div>
+              </Badge>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-8">

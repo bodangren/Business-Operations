@@ -40,7 +40,7 @@ export function AssessmentOverview({ assessment }: AssessmentOverviewProps) {
           </p>
           
           {assessment.performanceTask.context && (
-            <div className="p-3 bg-blue-50 rounded-lg">
+            <div className="p-3 bg-blue-50/50 border border-blue-200 rounded-lg">
               <p className="text-sm">
                 <strong>Context:</strong> {assessment.performanceTask.context}
               </p>
@@ -92,7 +92,7 @@ export function AssessmentOverview({ assessment }: AssessmentOverviewProps) {
       </div>
       
       {/* Rubric Preview */}
-      <Card>
+      <Card className="border-amber-200">
         <CardHeader>
           <CardTitle className="text-lg">Assessment Rubric</CardTitle>
         </CardHeader>
@@ -110,7 +110,7 @@ export function AssessmentOverview({ assessment }: AssessmentOverviewProps) {
                     <p className="text-muted-foreground">{criteria.exemplary}</p>
                   </div>
                   <div className="space-y-1">
-                    <div className="font-medium text-yellow-700">Proficient</div>
+                    <div className="font-medium text-amber-700">Proficient</div>
                     <p className="text-muted-foreground">{criteria.proficient}</p>
                   </div>
                   <div className="space-y-1">

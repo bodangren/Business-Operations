@@ -63,17 +63,18 @@ export default function SpreadsheetDebugPage() {
   };
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Spreadsheet Debug & Testing</h1>
-        <p className="text-muted-foreground">
-          Test the Excel-like spreadsheet functionality with curriculum templates
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container mx-auto py-8 px-4 space-y-6">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2">Spreadsheet Debug & Testing</h1>
+          <p className="text-muted-foreground mt-1">
+            Test the Excel-like spreadsheet functionality with curriculum templates
+          </p>
+        </div>
 
-      {/* Current Template Info */}
       {selectedTemplate && (
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               Current Template: {selectedTemplate.name}
@@ -84,8 +85,7 @@ export default function SpreadsheetDebugPage() {
         </Card>
       )}
 
-      {/* Controls */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle>Controls</CardTitle>
           <CardDescription>Manage spreadsheet data and templates</CardDescription>
@@ -116,8 +116,7 @@ export default function SpreadsheetDebugPage() {
         </CardContent>
       </Card>
 
-      {/* Template Selection */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle>Curriculum Templates</CardTitle>
           <CardDescription>
@@ -150,8 +149,7 @@ export default function SpreadsheetDebugPage() {
         </CardContent>
       </Card>
 
-      {/* Unit-Based Templates */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle>Unit-Specific Templates</CardTitle>
           <CardDescription>
@@ -187,8 +185,7 @@ export default function SpreadsheetDebugPage() {
         </CardContent>
       </Card>
 
-      {/* Main Spreadsheet */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle>Interactive Spreadsheet</CardTitle>
           <CardDescription>
@@ -206,8 +203,7 @@ export default function SpreadsheetDebugPage() {
         </CardContent>
       </Card>
 
-      {/* Data Preview */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle>Data Preview (JSON)</CardTitle>
           <CardDescription>
@@ -221,8 +217,7 @@ export default function SpreadsheetDebugPage() {
         </CardContent>
       </Card>
 
-      {/* Feature Tests */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle>Feature Tests</CardTitle>
           <CardDescription>Test specific spreadsheet features</CardDescription>
@@ -248,6 +243,7 @@ export default function SpreadsheetDebugPage() {
           </div>
         </CardContent>
       </Card>
+    </div>
     </div>
   );
 }

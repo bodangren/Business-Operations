@@ -24,7 +24,7 @@ export function UnitIntroduction({
         <Badge variant="outline" className="text-sm">
           {unitNumber} Introduction
         </Badge>
-        <h1 className="text-4xl font-bold">{unitTitle}</h1>
+        <h2 className="text-2xl font-semibold">{unitTitle}</h2>
         <blockquote className="text-xl text-muted-foreground italic border-l-4 border-primary pl-4 max-w-4xl mx-auto">
           "{drivingQuestion}"
         </blockquote>
@@ -34,7 +34,7 @@ export function UnitIntroduction({
       {introVideo && <VideoPlayer video={introVideo} />}
 
       {/* Entry Event Section */}
-      <Card className="border-l-4 border-l-blue-500">
+      <Card className="border-blue-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-blue-700">
             <PlayCircle className="h-6 w-6" />
@@ -44,7 +44,7 @@ export function UnitIntroduction({
         <CardContent className="space-y-4">
           <p className="text-lg leading-relaxed">{entryEvent.description}</p>
           
-          <div className="bg-blue-50 p-4 rounded-lg">
+          <div className="bg-blue-50/50 border border-blue-200 rounded-lg p-4">
             <h4 className="font-semibold mb-2 text-blue-900">Day 1 Activities:</h4>
             <ul className="space-y-2">
               {entryEvent.activities.map((activity, index) => (
@@ -72,7 +72,7 @@ export function UnitIntroduction({
       </Card>
 
       {/* Project Overview */}
-      <Card className="border-l-4 border-l-green-500">
+      <Card className="border-green-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-green-700">
             <Target className="h-6 w-6" />
@@ -112,7 +112,7 @@ export function UnitIntroduction({
       </Card>
 
       {/* Learning Objectives */}
-      <Card className="border-l-4 border-l-purple-500">
+      <Card className="border-purple-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-purple-700">
             <Lightbulb className="h-6 w-6" />

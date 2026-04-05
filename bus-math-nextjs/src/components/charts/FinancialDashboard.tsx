@@ -294,11 +294,11 @@ export function FinancialDashboard({
   return (
     <div className={`w-full space-y-6 ${className}`}>
       {/* Dashboard Header */}
-      <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+      <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-2xl text-blue-800">{title}</CardTitle>
+              <CardTitle className="text-2xl">{title}</CardTitle>
               <CardDescription className="text-blue-600">
                 Comprehensive financial overview and key metrics
               </CardDescription>
@@ -310,7 +310,6 @@ export function FinancialDashboard({
                   size="sm"
                   onClick={handleRefresh}
                   disabled={isRefreshing}
-                  className="border-blue-300 text-blue-700 hover:bg-blue-100"
                 >
                   <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
                   Refresh
@@ -321,7 +320,6 @@ export function FinancialDashboard({
                   variant="outline"
                   size="sm"
                   onClick={handleExport}
-                  className="border-blue-300 text-blue-700 hover:bg-blue-100"
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Export
@@ -366,7 +364,7 @@ export function FinancialDashboard({
         {/* Revenue vs Expenses Trend */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Revenue vs Expenses</CardTitle>
+            <CardTitle className="text-xl">Revenue vs Expenses</CardTitle>
             <CardDescription>Monthly financial performance comparison</CardDescription>
           </CardHeader>
           <CardContent className="p-6">
@@ -376,13 +374,13 @@ export function FinancialDashboard({
                   <XAxis 
                     dataKey="month" 
                     tick={{ fontSize: 12 }}
-                    axisLine={true}
-                    tickLine={true}
+                    axisLine={false}
+                    tickLine={false}
                   />
                   <YAxis 
                     tick={{ fontSize: 12 }}
-                    axisLine={true}
-                    tickLine={true}
+                    axisLine={false}
+                    tickLine={false}
                     tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                   />
                   <Tooltip 
@@ -394,7 +392,7 @@ export function FinancialDashboard({
                     type="monotone" 
                     dataKey="revenue" 
                     stroke="#3b82f6" 
-                    strokeWidth={3}
+                    strokeWidth={2}
                     dot={{ r: 4, fill: '#3b82f6' }}
                     activeDot={{ r: 6, fill: '#3b82f6' }}
                     connectNulls={false}
@@ -403,7 +401,7 @@ export function FinancialDashboard({
                     type="monotone" 
                     dataKey="expenses" 
                     stroke="#ef4444" 
-                    strokeWidth={3}
+                    strokeWidth={2}
                     dot={{ r: 4, fill: '#ef4444' }}
                     activeDot={{ r: 6, fill: '#ef4444' }}
                     connectNulls={false}
@@ -417,7 +415,7 @@ export function FinancialDashboard({
         {/* Account Balances Pie Chart */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Account Balances</CardTitle>
+            <CardTitle className="text-xl">Account Balances</CardTitle>
             <CardDescription>Current account balances distribution</CardDescription>
           </CardHeader>
           <CardContent className="p-6">
@@ -450,7 +448,7 @@ export function FinancialDashboard({
         {/* Cash Flow Trend */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Cash Flow Analysis</CardTitle>
+            <CardTitle className="text-xl">Cash Flow Analysis</CardTitle>
             <CardDescription>Monthly cash flow and profit tracking</CardDescription>
           </CardHeader>
           <CardContent className="p-6">
@@ -460,13 +458,13 @@ export function FinancialDashboard({
                   <XAxis 
                     dataKey="month" 
                     tick={{ fontSize: 12 }}
-                    axisLine={true}
-                    tickLine={true}
+                    axisLine={false}
+                    tickLine={false}
                   />
                   <YAxis 
                     tick={{ fontSize: 12 }}
-                    axisLine={true}
-                    tickLine={true}
+                    axisLine={false}
+                    tickLine={false}
                     tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                   />
                   <Tooltip 
@@ -493,7 +491,7 @@ export function FinancialDashboard({
         {/* Profit Margin Trend */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Profit Margin Analysis</CardTitle>
+            <CardTitle className="text-xl">Profit Margin Analysis</CardTitle>
             <CardDescription>Monthly profit margin percentage</CardDescription>
           </CardHeader>
           <CardContent className="p-6">
@@ -509,13 +507,13 @@ export function FinancialDashboard({
                   <XAxis 
                     dataKey="month" 
                     tick={{ fontSize: 12 }}
-                    axisLine={true}
-                    tickLine={true}
+                    axisLine={false}
+                    tickLine={false}
                   />
                   <YAxis 
                     tick={{ fontSize: 12 }}
-                    axisLine={true}
-                    tickLine={true}
+                    axisLine={false}
+                    tickLine={false}
                     tickFormatter={(value) => `${value.toFixed(1)}%`}
                   />
                   <Tooltip 
@@ -526,9 +524,9 @@ export function FinancialDashboard({
                     type="monotone" 
                     dataKey="margin" 
                     stroke="#10b981" 
-                    strokeWidth={3}
-                    dot={{ r: 5, fill: '#10b981' }}
-                    activeDot={{ r: 7, fill: '#10b981' }}
+                    strokeWidth={2}
+                    dot={{ r: 4, fill: '#10b981' }}
+                    activeDot={{ r: 6, fill: '#10b981' }}
                     connectNulls={false}
                   />
                 </LineChart>

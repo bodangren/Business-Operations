@@ -1,5 +1,6 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import AccountCategorization from "@/components/drag-drop-exercises/AccountCategorization"
 import { lesson02Data, unit01Data, lesson02Phases } from "../lesson-data"
@@ -54,9 +55,9 @@ export default function Unit01Lesson02Phase2() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <div className="inline-block bg-green-100 text-green-800 text-lg px-4 py-2 rounded-lg font-semibold">
+            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
               Phase 2: Explicit Instruction and Guided Practice
-            </div>
+            </Badge>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">

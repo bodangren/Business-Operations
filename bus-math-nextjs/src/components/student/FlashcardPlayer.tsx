@@ -114,11 +114,11 @@ export default function FlashcardPlayer() {
 
   if (!session) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 flex items-center justify-center">
-        <div className="text-center text-white">
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
           <p className="text-lg mb-2">Not enough terms</p>
-          <p className="text-slate-400 text-sm">A unit needs at least 1 term to start flashcards.</p>
-          <Button asChild variant="outline" className="mt-4 border-slate-600 text-slate-300">
+          <p className="text-muted-foreground text-sm">A unit needs at least 1 term to start flashcards.</p>
+          <Button asChild variant="outline" className="mt-4">
             <Link href="/student/practice-hub">Back to Practice Hub</Link>
           </Button>
         </div>
@@ -139,34 +139,34 @@ export default function FlashcardPlayer() {
     : "All Units"
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-2xl">
         {/* Breadcrumb */}
         <div className="mb-6">
           <Link
             href="/student/practice-hub"
-            className="text-sm text-slate-400 hover:text-slate-300 inline-flex items-center gap-1"
+            className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Practice Hub
           </Link>
-          <span className="text-slate-500 text-sm"> › Flashcards › </span>
-          <span className="text-slate-300 text-sm font-medium">{unitLabel}</span>
+          <span className="text-muted-foreground text-sm"> › Flashcards › </span>
+          <span className="text-sm font-medium">{unitLabel}</span>
         </div>
 
         {isComplete ? (
           /* Session Complete */
           <div className="text-center py-12">
-            <Badge variant="outline" className="mb-4 border-green-400 text-green-300">
+            <Badge variant="outline" className="mb-4 border-green-500 text-green-600">
               Session Complete
             </Badge>
-            <h2 className="text-3xl font-bold text-white mb-2">Great work!</h2>
-            <div className="text-6xl font-bold text-green-400 my-6">
+            <h2 className="text-3xl font-bold mb-2">Great work!</h2>
+            <div className="text-6xl font-bold text-green-600 my-6">
               {Math.round(summary.accuracy * 100)}%
             </div>
-            <div className="text-slate-300 mb-8 space-y-1">
+            <div className="mb-8 space-y-1">
               <p>{summary.correct} correct · {summary.incorrect} to review</p>
-              <p className="text-slate-400 text-sm">{summary.total} cards reviewed</p>
+              <p className="text-muted-foreground text-sm">{summary.total} cards reviewed</p>
             </div>
             <div className="flex flex-wrap gap-3 justify-center">
               <Button asChild className="bg-green-600 hover:bg-green-700">
@@ -175,13 +175,13 @@ export default function FlashcardPlayer() {
                   Try Matching
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+              <Button asChild variant="outline">
                 <Link href="/student/practice-hub/progress">
                   <BarChart3 className="h-4 w-4 mr-2" />
                   Progress
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+              <Button asChild variant="outline">
                 <Link href="/student/practice-hub">
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back to Hub
@@ -193,14 +193,14 @@ export default function FlashcardPlayer() {
           <>
             {/* Progress */}
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-slate-400">
+              <span className="text-sm text-muted-foreground">
                 Card {summary.total + 1} of {session.cards.length}
               </span>
-              <span className="text-sm text-slate-400">{progress}%</span>
+              <span className="text-sm text-muted-foreground">{progress}%</span>
             </div>
-            <div className="h-1 bg-slate-700 rounded-full mb-8 overflow-hidden">
+            <div className="h-1 bg-muted rounded-full mb-8 overflow-hidden">
               <div
-                className="h-full bg-blue-500 rounded-full transition-all duration-300"
+                className="h-full bg-primary rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -217,7 +217,7 @@ export default function FlashcardPlayer() {
               >
                 {/* Front */}
                 <div
-                  className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-blue-800 to-blue-600 text-white"
+                  className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary to-accent text-primary-foreground"
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="text-xs uppercase tracking-widest opacity-60 mb-3">
@@ -230,21 +230,21 @@ export default function FlashcardPlayer() {
                 </div>
                 {/* Back */}
                 <div
-                  className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-8 bg-white border border-slate-200"
+                  className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-8 bg-card border"
                   style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
                 >
-                  <div className="text-xs uppercase tracking-widest text-slate-400 mb-3">
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
                     {FIELD_LABELS[session.answerField]}
                   </div>
-                  <div className="text-lg text-center text-slate-700 leading-relaxed">{answerValue}</div>
+                  <div className="text-lg text-center leading-relaxed">{answerValue}</div>
                   {card.def_zh && session.answerField === "def_en" && (
-                    <div className="text-sm text-slate-400 mt-3 text-center">{card.def_zh}</div>
+                    <div className="text-sm text-muted-foreground mt-3 text-center">{card.def_zh}</div>
                   )}
                 </div>
               </div>
             </div>
 
-            <p className="text-center text-sm text-slate-500 mb-6">
+            <p className="text-center text-sm text-muted-foreground mb-6">
               Tap card or press Space to flip
             </p>
 
@@ -269,12 +269,12 @@ export default function FlashcardPlayer() {
               </Button>
             </div>
 
-            <div className="text-center mt-4 text-xs text-slate-500">
-              <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">←</kbd> Review Again
+            <div className="text-center mt-4 text-xs text-muted-foreground">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">←</kbd> Review Again
               {" · "}
-              <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">→</kbd> Got It
+              <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">→</kbd> Got It
               {" · "}
-              <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 font-mono">Space</kbd> Flip
+              <kbd className="px-1.5 py-0.5 bg-muted rounded border font-mono">Space</kbd> Flip
             </div>
           </>
         )}

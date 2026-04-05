@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { CheckCircle, XCircle, ArrowRight, AlertTriangle, RefreshCw } from 'lucide-react'
+import { CheckCircle, XCircle, ArrowRight, AlertTriangle, RefreshCw, HelpCircle, ChevronDown, ChevronUp, FileSpreadsheet, Link2, RotateCcw } from 'lucide-react'
 
 interface LinkChallenge {
   id: string
@@ -119,16 +119,33 @@ export default function CrossSheetLinkSimulator() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [score, setScore] = useState(0)
   const [completed, setCompleted] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(false)
+  const [notifications, setNotifications] = useState<Array<{
+    id: string
+    message: string
+    type: 'success' | 'warning' | 'error' | 'info'
+  }>>([])
 
   const challenge = challenges[currentIndex]
+
+  const addNotification = useCallback((message: string, type: 'success' | 'warning' | 'error' | 'info') => {
+    const id = Date.now().toString()
+    setNotifications(prev => [...prev, { id, message, type }])
+    setTimeout(() => {
+      setNotifications(prev => prev.filter(n => n.id !== id))
+    }, 4000)
+  }, [])
 
   const handleSubmit = useCallback(() => {
     if (selectedIndex === null) return
     setIsSubmitted(true)
     if (selectedIndex === challenge.correctIndex) {
       setScore(prev => prev + 1)
+      addNotification('Correct! Well done.', 'success')
+    } else {
+      addNotification('Not quite right. Review the explanation.', 'warning')
     }
-  }, [selectedIndex, challenge.correctIndex])
+  }, [selectedIndex, challenge.correctIndex, addNotification])
 
   const handleNext = useCallback(() => {
     if (currentIndex < challenges.length - 1) {
@@ -137,8 +154,13 @@ export default function CrossSheetLinkSimulator() {
       setIsSubmitted(false)
     } else {
       setCompleted(true)
+      if (score + (selectedIndex === challenge.correctIndex ? 1 : 0) === challenges.length) {
+        addNotification('Perfect score! Ready for the workbook.', 'success')
+      } else if (score + (selectedIndex === challenge.correctIndex ? 1 : 0) >= 3) {
+        addNotification('Good work! Review any missed items.', 'info')
+      }
     }
-  }, [currentIndex])
+  }, [currentIndex, score, selectedIndex, challenge.correctIndex, addNotification])
 
   const handleReset = useCallback(() => {
     setCurrentIndex(0)
@@ -146,45 +168,237 @@ export default function CrossSheetLinkSimulator() {
     setIsSubmitted(false)
     setScore(0)
     setCompleted(false)
-  }, [])
+    addNotification('Simulation reset', 'info')
+  }, [addNotification])
+
+  const activeLinks = completed ? score : currentIndex + (isSubmitted ? 1 : 0)
+  const updateCount = currentIndex + (isSubmitted ? 1 : 0)
 
   if (completed) {
     return (
-      <Card className="border-green-200 bg-green-50">
-        <CardHeader>
-          <CardTitle className="text-green-800 flex items-center gap-2">
-            <CheckCircle className="h-5 w-5" />
-            Rehearsal Complete
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-lg text-green-900">
-            You scored <strong>{score}</strong> out of <strong>{challenges.length}</strong> correct.
-          </p>
-          {score === challenges.length ? (
-            <p className="text-green-800">
-              Perfect score. You are ready to build cross-sheet links in the real workbook.
-            </p>
-          ) : score >= 3 ? (
-            <p className="text-green-800">
-              Strong performance. Review any missed items below, then proceed to the workbook sprint.
-            </p>
-          ) : (
-            <p className="text-amber-800">
-              Review the explanations below and try again before building in the live workbook.
-            </p>
+      <div className="max-w-4xl mx-auto space-y-6">
+        <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-white">
+          <CardHeader>
+            <div className="flex justify-between items-start">
+              <div>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <Link2 className="h-6 w-6 text-purple-600" />
+                  Cross-Sheet Linking
+                </CardTitle>
+                <CardDescription>
+                  Connect data between sheets with live formulas
+                </CardDescription>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowInstructions(!showInstructions)}
+                className="flex items-center gap-1"
+              >
+                <HelpCircle className="h-4 w-4" />
+                {showInstructions ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              </Button>
+            </div>
+          </CardHeader>
+          {showInstructions && (
+            <CardContent className="space-y-4 border-t pt-4">
+              <p className="text-sm text-muted-foreground">
+                Learn how to create dynamic links between different sheets in your workbook.
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 font-medium">Step 1:</span>
+                  <span>Select a source cell to link from</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-medium">Step 2:</span>
+                  <span>Choose a target cell to link to</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 font-medium">Step 3:</span>
+                  <span>See how changes propagate automatically</span>
+                </li>
+              </ul>
+            </CardContent>
           )}
-          <Button onClick={handleReset} variant="outline" className="flex items-center gap-2">
-            <RefreshCw className="h-4 w-4" />
-            Try Again
-          </Button>
-        </CardContent>
-      </Card>
+        </Card>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Card className="border-blue-200">
+            <CardContent className="pt-6 text-center">
+              <FileSpreadsheet className="h-5 w-5 text-blue-600 mb-2 mx-auto" />
+              <p className="text-sm text-muted-foreground">Source Sheet</p>
+              <p className="text-lg font-bold text-blue-800">Multiple</p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-green-200">
+            <CardContent className="pt-6 text-center">
+              <FileSpreadsheet className="h-5 w-5 text-green-600 mb-2 mx-auto" />
+              <p className="text-sm text-muted-foreground">Target Sheet</p>
+              <p className="text-lg font-bold text-green-800">Multiple</p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200">
+            <CardContent className="pt-6 text-center">
+              <Link2 className="h-5 w-5 text-purple-600 mb-2 mx-auto" />
+              <p className="text-sm text-muted-foreground">Correct Links</p>
+              <p className="text-2xl font-bold text-purple-800">{score} / {challenges.length}</p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-amber-200">
+            <CardContent className="pt-6 text-center">
+              <RotateCcw className="h-5 w-5 text-amber-600 mb-2 mx-auto" />
+              <p className="text-sm text-muted-foreground">Completion</p>
+              <p className="text-2xl font-bold text-amber-800">100%</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card className="border-green-200 bg-green-50">
+          <CardHeader>
+            <CardTitle className="text-green-800 flex items-center gap-2">
+              <CheckCircle className="h-5 w-5" />
+              Rehearsal Complete
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-lg text-green-900">
+              You scored <strong>{score}</strong> out of <strong>{challenges.length}</strong> correct.
+            </p>
+            {score === challenges.length ? (
+              <p className="text-green-800">
+                Perfect score. You are ready to build cross-sheet links in the real workbook.
+              </p>
+            ) : score >= 3 ? (
+              <p className="text-green-800">
+                Strong performance. Review any missed items below, then proceed to the workbook sprint.
+              </p>
+            ) : (
+              <p className="text-amber-800">
+                Review the explanations below and try again before building in the live workbook.
+              </p>
+            )}
+            <Button onClick={handleReset} variant="outline" className="flex items-center gap-2">
+              <RefreshCw className="h-4 w-4" />
+              Try Again
+            </Button>
+          </CardContent>
+        </Card>
+
+        {notifications.length > 0 && (
+          <div className="fixed bottom-4 right-4 space-y-2 z-50">
+            {notifications.map((notification) => (
+              <Card key={notification.id} className={`
+                max-w-sm border-l-4 ${
+                  notification.type === 'success' ? 'border-l-green-500 bg-green-50' :
+                  notification.type === 'warning' ? 'border-l-yellow-500 bg-yellow-50' :
+                  notification.type === 'error' ? 'border-l-red-500 bg-red-50' :
+                  'border-l-blue-500 bg-blue-50'
+                }
+              `}>
+                <CardContent className="p-3">
+                  <p className={`text-sm font-medium ${
+                    notification.type === 'success' ? 'text-green-800' :
+                    notification.type === 'warning' ? 'text-yellow-800' :
+                    notification.type === 'error' ? 'text-red-800' :
+                    'text-blue-800'
+                  }`}>
+                    {notification.message}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+      </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
+      <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-white">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <Link2 className="h-6 w-6 text-purple-600" />
+                Cross-Sheet Linking
+              </CardTitle>
+              <CardDescription>
+                Connect data between sheets with live formulas
+              </CardDescription>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowInstructions(!showInstructions)}
+              className="flex items-center gap-1"
+            >
+              <HelpCircle className="h-4 w-4" />
+              {showInstructions ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </Button>
+          </div>
+        </CardHeader>
+        {showInstructions && (
+          <CardContent className="space-y-4 border-t pt-4">
+            <p className="text-sm text-muted-foreground">
+              Learn how to create dynamic links between different sheets in your workbook.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 font-medium">Step 1:</span>
+                <span>Select a source cell to link from</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-medium">Step 2:</span>
+                <span>Choose a target cell to link to</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600 font-medium">Step 3:</span>
+                <span>See how changes propagate automatically</span>
+              </li>
+            </ul>
+          </CardContent>
+        )}
+      </Card>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Card className="border-blue-200">
+          <CardContent className="pt-6 text-center">
+            <FileSpreadsheet className="h-5 w-5 text-blue-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Source Sheet</p>
+            <p className="text-lg font-bold text-blue-800 truncate">{challenge.sourceSheet}</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-green-200">
+          <CardContent className="pt-6 text-center">
+            <FileSpreadsheet className="h-5 w-5 text-green-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Target Sheet</p>
+            <p className="text-lg font-bold text-green-800 truncate">{challenge.targetSheet}</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-purple-200">
+          <CardContent className="pt-6 text-center">
+            <Link2 className="h-5 w-5 text-purple-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Score</p>
+            <p className="text-2xl font-bold text-purple-800">{score}/{activeLinks}</p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-amber-200">
+          <CardContent className="pt-6 text-center">
+            <RotateCcw className="h-5 w-5 text-amber-600 mb-2 mx-auto" />
+            <p className="text-sm text-muted-foreground">Progress</p>
+            <p className="text-2xl font-bold text-amber-800">{updateCount}/{challenges.length}</p>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="flex items-center justify-between">
         <Badge variant="outline" className="text-sm">
           Challenge {currentIndex + 1} of {challenges.length}
@@ -282,6 +496,32 @@ export default function CrossSheetLinkSimulator() {
           )}
         </CardContent>
       </Card>
+
+      {notifications.length > 0 && (
+        <div className="fixed bottom-4 right-4 space-y-2 z-50">
+          {notifications.map((notification) => (
+            <Card key={notification.id} className={`
+              max-w-sm border-l-4 ${
+                notification.type === 'success' ? 'border-l-green-500 bg-green-50' :
+                notification.type === 'warning' ? 'border-l-yellow-500 bg-yellow-50' :
+                notification.type === 'error' ? 'border-l-red-500 bg-red-50' :
+                'border-l-blue-500 bg-blue-50'
+              }
+            `}>
+              <CardContent className="p-3">
+                <p className={`text-sm font-medium ${
+                  notification.type === 'success' ? 'text-green-800' :
+                  notification.type === 'warning' ? 'text-yellow-800' :
+                  notification.type === 'error' ? 'text-red-800' :
+                  'text-blue-800'
+                }`}>
+                  {notification.message}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

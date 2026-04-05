@@ -1,6 +1,7 @@
 'use client'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { TAccountSimple } from '@/components/accounting/TAccountSimple'
 import { TAccountDetailed } from '@/components/accounting/TAccountDetailed'
 import { JournalEntry } from '@/components/accounting/JournalEntry'
@@ -10,22 +11,19 @@ import { TransactionJournal } from '@/components/accounting/TransactionJournal'
 
 export default function AccountingDebugPage() {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header */}
-        <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl text-green-800">Double-Entry Accounting Components Debug Page</CardTitle>
-            <CardDescription className="text-lg">
-              Testing and debugging accounting components for teaching double-entry bookkeeping
-            </CardDescription>
-          </CardHeader>
-        </Card>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container max-w-6xl mx-auto py-8 px-4 space-y-6">
+        <div className="mb-6">
+          <Badge variant="outline">Debug</Badge>
+          <h1 className="text-3xl font-bold mt-2">Double-Entry Accounting Components</h1>
+          <p className="text-muted-foreground mt-1">
+            Testing and debugging accounting components for teaching double-entry bookkeeping
+          </p>
+        </div>
 
-        {/* T-Accounts Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">T-Account Components</CardTitle>
+            <CardTitle>T-Account Components</CardTitle>
             <CardDescription>
               Simple and detailed T-account components for visualizing debits and credits
             </CardDescription>
@@ -186,10 +184,9 @@ export default function AccountingDebugPage() {
           </CardContent>
         </Card>
 
-        {/* T-Accounts Visualization Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">T-Accounts Visualization Component</CardTitle>
+            <CardTitle>T-Accounts Visualization Component</CardTitle>
             <CardDescription>
               Visual representation of multiple T-accounts showing the accounting equation: Assets = Liabilities + Equity
             </CardDescription>
@@ -276,10 +273,9 @@ export default function AccountingDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Journal Entry Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Journal Entry Components</CardTitle>
+            <CardTitle>Journal Entry Components</CardTitle>
             <CardDescription>
               Interactive journal entry components showing double-entry nature
             </CardDescription>
@@ -419,10 +415,9 @@ export default function AccountingDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Trial Balance Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Trial Balance Components</CardTitle>
+            <CardTitle>Trial Balance Components</CardTitle>
             <CardDescription>
               Trial balance components for verifying accounting equation balance
             </CardDescription>
@@ -697,10 +692,9 @@ export default function AccountingDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Transaction Journal Section */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Transaction Journal Component</CardTitle>
+            <CardTitle>Transaction Journal Component</CardTitle>
             <CardDescription>
               Interactive transaction journal for managing startup transactions and building a self-auditing ledger system
             </CardDescription>
@@ -791,10 +785,9 @@ export default function AccountingDebugPage() {
           </CardContent>
         </Card>
 
-        {/* Component Usage Examples */}
-        <Card>
+        <Card className="border-gray-200">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Component Usage Examples</CardTitle>
+            <CardTitle>Component Usage Examples</CardTitle>
             <CardDescription>
               Code examples for implementing double-entry accounting components
             </CardDescription>

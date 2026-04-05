@@ -45,7 +45,7 @@ export function ScatterChart({
     <div className={`w-full ${className}`}>
       {(title || description) && (
         <div className="mb-4">
-          {title && <h3 className="text-lg font-semibold text-gray-900">{title}</h3>}
+          {title && <h3 className="text-xl font-semibold text-gray-900">{title}</h3>}
           {description && <p className="text-sm text-gray-600 mt-1">{description}</p>}
         </div>
       )}
@@ -95,7 +95,7 @@ export function ScatterChart({
             axisLine={false}
             className="text-xs"
             tickMargin={8}
-            tickFormatter={(value) => `$${value.toLocaleString()}`}
+            tickFormatter={(value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(value)}
             label={{ value: yAxisLabel, angle: -90, position: 'insideLeft' }}
           />
           

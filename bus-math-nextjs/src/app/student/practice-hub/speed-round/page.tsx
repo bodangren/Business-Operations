@@ -3,7 +3,7 @@ import SpeedRoundGame from "@/components/student/SpeedRoundGame"
 
 export default function SpeedRoundRoute() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-slate-900 flex items-center justify-center text-white">Loading...</div>}>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-muted-foreground">Loading...</div>}>
       <SpeedRoundGame />
     </Suspense>
   )

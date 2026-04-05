@@ -71,7 +71,6 @@ export default function ComponentsReportPage() {
         throw new Error(result.message || 'Failed to run analysis')
       }
       
-      // Reload the report data after successful script execution
       await loadReportData()
       
     } catch (err) {
@@ -95,11 +94,13 @@ export default function ComponentsReportPage() {
 
   if (isLoading) {
     return (
-      <div className="container mx-auto py-8">
-        <div className="flex items-center justify-center min-h-[400px]">
-          <div className="flex items-center gap-2">
-            <RefreshCw className="w-4 h-4 animate-spin" />
-            {isRunningScript ? 'Running analysis script...' : 'Loading component report...'}
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+        <div className="container mx-auto py-8 px-4">
+          <div className="flex items-center justify-center min-h-[400px]">
+            <div className="flex items-center gap-2">
+              <RefreshCw className="w-4 h-4 animate-spin" />
+              {isRunningScript ? 'Running analysis script...' : 'Loading component report...'}
+            </div>
           </div>
         </div>
       </div>
@@ -108,144 +109,149 @@ export default function ComponentsReportPage() {
 
   if (error) {
     return (
-      <div className="container mx-auto py-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-red-600">Error Loading Report</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-4">{error}</p>
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <p className="font-semibold mb-2">To generate the report, run:</p>
-              <code className="block bg-black text-green-400 p-2 rounded text-sm">
-                cd bus-math-nextjs && npm run analyze-components
-              </code>
-            </div>
-            <Button onClick={loadReportData} className="mt-4">
-              <RefreshCw className="w-4 h-4 mr-2" />
-              Retry
-            </Button>
-          </CardContent>
-        </Card>
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+        <div className="container mx-auto py-8 px-4">
+          <Card className="border-gray-200">
+            <CardHeader>
+              <CardTitle className="text-destructive">Error Loading Report</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4">{error}</p>
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="font-semibold mb-2">To generate the report, run:</p>
+                <code className="block bg-black text-green-400 p-2 rounded text-sm">
+                  cd bus-math-nextjs && npm run analyze-components
+                </code>
+              </div>
+              <Button onClick={loadReportData} className="mt-4">
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Retry
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-3xl font-bold">Custom Components Report</h1>
-          <div className="flex gap-2">
-            <Button 
-              onClick={runAnalysisScript} 
-              disabled={isRunningScript}
-              variant="default"
-            >
-              {isRunningScript ? (
-                <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-              ) : (
-                <Play className="w-4 h-4 mr-2" />
-              )}
-              {isRunningScript ? 'Running...' : 'Run Analysis'}
-            </Button>
-            <Button onClick={loadReportData} variant="outline" disabled={isRunningScript}>
-              <RefreshCw className="w-4 h-4 mr-2" />
-              Refresh
-            </Button>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="container mx-auto py-8 px-4">
+        <div className="mb-8">
+          <Badge variant="outline">Debug</Badge>
+          <div className="flex items-center justify-between mt-2">
+            <h1 className="text-3xl font-bold">Custom Components Report</h1>
+            <div className="flex gap-2">
+              <Button 
+                onClick={runAnalysisScript} 
+                disabled={isRunningScript}
+                variant="default"
+              >
+                {isRunningScript ? (
+                  <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
+                ) : (
+                  <Play className="w-4 h-4 mr-2" />
+                )}
+                {isRunningScript ? 'Running...' : 'Run Analysis'}
+              </Button>
+              <Button onClick={loadReportData} variant="outline" disabled={isRunningScript}>
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Refresh
+              </Button>
+            </div>
           </div>
         </div>
         
         {reportData && (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            <Card>
+            <Card className="border-gray-200">
               <CardContent className="p-4">
                 <div className="text-2xl font-bold">{reportData.stats.totalComponents}</div>
-                <div className="text-sm text-gray-600">Total Components</div>
+                <div className="text-sm text-muted-foreground">Total Components</div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="border-gray-200">
               <CardContent className="p-4">
                 <div className="text-2xl font-bold">{reportData.stats.totalUsages}</div>
-                <div className="text-sm text-gray-600">Total Usages</div>
+                <div className="text-sm text-muted-foreground">Total Usages</div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="border-gray-200">
               <CardContent className="p-4">
                 <div className="text-2xl font-bold">{Object.keys(groupedComponents).length}</div>
-                <div className="text-sm text-gray-600">Categories</div>
+                <div className="text-sm text-muted-foreground">Categories</div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="border-gray-200">
               <CardContent className="p-4">
                 <div className="text-2xl font-bold">
                   {reportData.components.filter(c => c.usages.length === 0).length}
                 </div>
-                <div className="text-sm text-gray-600">Unused Components</div>
+                <div className="text-sm text-muted-foreground">Unused Components</div>
               </CardContent>
             </Card>
           </div>
         )}
         
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-muted-foreground mb-8">
           Last generated: {reportData?.lastGenerated}
         </p>
-      </div>
 
-      <div className="space-y-8">
-        {Object.entries(groupedComponents)
-          .sort(([a], [b]) => a.localeCompare(b))
-          .map(([category, components]) => (
-            <Card key={category}>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  {category}
-                  <Badge variant="secondary">
-                    {components.length} component{components.length !== 1 ? 's' : ''}
-                  </Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {components
-                    .sort((a, b) => b.totalUsages - a.totalUsages)
-                    .map((component) => (
-                      <div key={component.path} className="border rounded-lg p-4">
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2">
-                            <h3 className="font-semibold">{component.name}</h3>
-                            <Badge variant={component.totalUsages > 0 ? "default" : "destructive"}>
-                              {component.totalUsages} usage{component.totalUsages !== 1 ? 's' : ''}
-                            </Badge>
-                          </div>
-                          <code className="text-xs text-gray-600">{component.path}</code>
-                        </div>
-                        
-                        {component.usages.length > 0 ? (
-                          <div className="space-y-2">
-                            <h4 className="text-sm font-medium text-gray-700">Used in:</h4>
-                            <div className="space-y-1">
-                              {component.usages.map((usage, idx) => (
-                                <div key={idx} className="flex items-center gap-2 text-sm">
-                                  <ExternalLink className="w-3 h-3 text-gray-400" />
-                                  <code className="bg-gray-100 px-2 py-1 rounded text-xs">
-                                    {usage.file}
-                                  </code>
-                                </div>
-                              ))}
+        <div className="space-y-8">
+          {Object.entries(groupedComponents)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([category, components]) => (
+              <Card key={category} className="border-gray-200">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    {category}
+                    <Badge variant="secondary">
+                      {components.length} component{components.length !== 1 ? 's' : ''}
+                    </Badge>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {components
+                      .sort((a, b) => b.totalUsages - a.totalUsages)
+                      .map((component) => (
+                        <div key={component.path} className="border rounded-lg p-4">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <h3 className="font-semibold">{component.name}</h3>
+                              <Badge variant={component.totalUsages > 0 ? "default" : "destructive"}>
+                                {component.totalUsages} usage{component.totalUsages !== 1 ? 's' : ''}
+                              </Badge>
                             </div>
+                            <code className="text-xs text-muted-foreground">{component.path}</code>
                           </div>
-                        ) : (
-                          <div className="text-sm text-red-600">
-                            ⚠️ This component appears to be unused
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                          
+                          {component.usages.length > 0 ? (
+                            <div className="space-y-2">
+                              <h4 className="text-sm font-medium">Used in:</h4>
+                              <div className="space-y-1">
+                                {component.usages.map((usage, idx) => (
+                                  <div key={idx} className="flex items-center gap-2 text-sm">
+                                    <ExternalLink className="w-3 h-4 text-muted-foreground" />
+                                    <code className="bg-muted px-2 py-1 rounded text-xs">
+                                      {usage.file}
+                                    </code>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="text-sm text-destructive">
+                              This component appears to be unused
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+        </div>
       </div>
     </div>
   )

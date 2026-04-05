@@ -14,7 +14,7 @@ import {
 
 export default function PBLMethodologyPage() {
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <div className="container max-w-6xl mx-auto py-8 px-4">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">Project-Based Learning Methodology Guide</h1>
@@ -28,15 +28,15 @@ export default function PBLMethodologyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Why Project-Based Learning for Business Mathematics?</h2>
         
-        <Card className="mb-4 border-red-200 bg-red-50 dark:bg-red-950/10">
+        <Card className="mb-4 border-border bg-muted/50">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg flex items-center gap-2 text-red-800 dark:text-red-200">
+            <CardTitle className="text-lg flex items-center gap-2 text-muted-foreground">
               <AlertTriangle className="h-5 w-5" />
               The Traditional Problem
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-red-700 dark:text-red-300">
+            <p className="text-muted-foreground">
               Traditional business mathematics courses often teach skills in isolation, leaving students 
               unable to apply their knowledge to real business situations. Students learn formulas but 
               struggle to identify when and how to use them in authentic contexts.
@@ -44,15 +44,15 @@ export default function PBLMethodologyPage() {
           </CardContent>
         </Card>
 
-        <Card className="mb-6 border-green-200 bg-green-50 dark:bg-green-950/10">
+        <Card className="mb-6 border-primary/20 bg-primary/5">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg flex items-center gap-2 text-green-800 dark:text-green-200">
+            <CardTitle className="text-lg flex items-center gap-2 text-primary">
               <CheckCircle className="h-5 w-5" />
               The PBL Solution
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-green-700 dark:text-green-300">
+            <p className="text-primary/80">
               Project-Based Learning anchors all skill development in authentic business challenges. 
               Students learn Excel formulas <em>because</em> they need them to solve Sarah's cash flow problem. 
               They master financial statements <em>because</em> they're preparing for an investor presentation.
@@ -100,14 +100,14 @@ export default function PBLMethodologyPage() {
         <h2 className="text-2xl font-semibold mb-4">Two-Semester PBL Structure</h2>
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+          <Card className="border-primary/20 bg-primary/5">
             <CardHeader>
-              <CardTitle className="text-lg text-blue-800 dark:text-blue-200">
+              <CardTitle className="text-lg text-primary">
                 Semester 1: Foundation Building Through Authentic Context
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-blue-700 dark:text-blue-300">
+              <p className="text-primary/80">
                 Students follow Sarah's entrepreneurial journey through 8 units, each representing 2 weeks 
                 of her business development. Students learn business mathematics and Excel skills as Sarah 
                 encounters real challenges that require these competencies.
@@ -115,14 +115,14 @@ export default function PBLMethodologyPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-purple-200 bg-purple-50 dark:bg-purple-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-lg text-purple-800 dark:text-purple-200">
+              <CardTitle className="text-lg text-muted-foreground">
                 Semester 2: Authentic Capstone Project
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-purple-700 dark:text-purple-300">
+              <p className="text-muted-foreground">
                 Students develop their own business plan and financial model over 13 weeks, applying all 
                 skills learned in Semester 1 to create investor-ready presentations and comprehensive Excel workbooks.
               </p>
@@ -306,14 +306,14 @@ export default function PBLMethodologyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Your Role as a PBL Facilitator</h2>
 
-        <Card className="mb-6 border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+        <Card className="mb-6 border-primary/20 bg-primary/5">
           <CardHeader>
-            <CardTitle className="text-lg text-blue-800 dark:text-blue-200">
+            <CardTitle className="text-lg text-primary">
               From Sage on the Stage to Guide on the Side
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-blue-700 dark:text-blue-300">
+            <p className="text-primary/80">
               In project-based learning, your role shifts from delivering information to facilitating discovery. 
               You become a coach, mentor, and learning partner rather than the primary source of all knowledge.
             </p>
@@ -369,14 +369,14 @@ export default function PBLMethodologyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Assessment in Project-Based Learning</h2>
 
-        <Card className="mb-6 border-amber-200 bg-amber-50 dark:bg-amber-950/10">
+        <Card className="mb-6 border-border bg-muted/50">
           <CardHeader>
-            <CardTitle className="text-lg text-amber-800 dark:text-amber-200">
+            <CardTitle className="text-lg text-muted-foreground">
               Assessment FOR Learning, Not Just OF Learning
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-amber-700 dark:text-amber-300">
+            <p className="text-muted-foreground">
               PBL assessment focuses on helping students improve their work and deepen their understanding, 
               not just measuring what they've memorized.
             </p>
@@ -428,14 +428,14 @@ export default function PBLMethodologyPage() {
         <h2 className="text-2xl font-semibold mb-4">Common PBL Implementation Challenges</h2>
 
         <div className="space-y-4">
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-lg text-orange-800 dark:text-orange-200">
+              <CardTitle className="text-lg text-muted-foreground">
                 Challenge: "Students Want Me to Just Tell Them the Answer"
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-orange-700 dark:text-orange-300">
+              <p className="text-muted-foreground">
                 <strong>Solution:</strong> Gradually build student comfort with productive struggle. 
                 Start with more scaffolded activities and progressively reduce support. Celebrate 
                 discoveries and problem-solving processes, not just correct answers.
@@ -443,56 +443,56 @@ export default function PBLMethodologyPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-lg text-orange-800 dark:text-orange-200">
+              <CardTitle className="text-lg text-muted-foreground">
                 Challenge: "Some Students Aren't Participating in Group Work"
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-orange-700 dark:text-orange-300">
+              <p className="text-muted-foreground">
                 <strong>Solution:</strong> Use structured roles, individual accountability within team projects, 
                 and peer evaluation systems. Make sure every student has meaningful contributions to make based on their strengths.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-lg text-orange-800 dark:text-orange-200">
+              <CardTitle className="text-lg text-muted-foreground">
                 Challenge: "I Feel Like I'm Not Teaching Enough Content"
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-orange-700 dark:text-orange-300">
+              <p className="text-muted-foreground">
                 <strong>Solution:</strong> Remember that deep learning through application is more valuable 
                 than surface coverage. Use formative assessment to ensure students are mastering essential skills through their project work.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-lg text-orange-800 dark:text-orange-200">
+              <CardTitle className="text-lg text-muted-foreground">
                 Challenge: "Projects Take Longer Than Expected"
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-orange-700 dark:text-orange-300">
+              <p className="text-muted-foreground">
                 <strong>Solution:</strong> Start with clear parameters and deadlines. Use project management 
                 tools and regular check-ins. Build in flexibility while maintaining standards for quality work.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-lg text-orange-800 dark:text-orange-200">
+              <CardTitle className="text-lg text-muted-foreground">
                 Challenge: "Grading Takes Forever"
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-orange-700 dark:text-orange-300">
+              <p className="text-muted-foreground">
                 <strong>Solution:</strong> Use peer review, self-assessment, and focused feedback on key learning objectives. 
                 Not every assignment needs comprehensive grading—focus your energy on the most important learning evidence.
               </p>
@@ -506,9 +506,9 @@ export default function PBLMethodologyPage() {
         <h2 className="text-2xl font-semibold mb-4">Signs Your PBL Implementation is Working</h2>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
+          <Card className="border-primary/20 bg-primary/5">
             <CardHeader>
-              <CardTitle className="text-lg text-green-800 dark:text-green-200">
+              <CardTitle className="text-lg text-primary">
                 Student Engagement Indicators
               </CardTitle>
             </CardHeader>
@@ -521,9 +521,9 @@ export default function PBLMethodologyPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
+          <Card className="border-primary/20 bg-primary/5">
             <CardHeader>
-              <CardTitle className="text-lg text-green-800 dark:text-green-200">
+              <CardTitle className="text-lg text-primary">
                 Learning Outcome Indicators
               </CardTitle>
             </CardHeader>
@@ -542,42 +542,42 @@ export default function PBLMethodologyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Ready to Get Started?</h2>
 
-        <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+        <Card className="border-primary/20 bg-primary/5">
           <CardHeader>
-            <CardTitle className="text-lg text-blue-800 dark:text-blue-200">
+            <CardTitle className="text-lg text-primary">
               Your PBL Journey
             </CardTitle>
           </CardHeader>
           <CardContent>
             <ol className="space-y-2">
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-blue-800 dark:text-blue-200">1.</span>
+                <span className="font-semibold text-primary">1.</span>
                 <div>
-                  <Link href="/teacher/course-overview/backward-design" className="text-blue-700 dark:text-blue-300 hover:underline">
+                  <Link href="/teacher/course-overview/backward-design" className="text-primary/80 hover:underline">
                     <strong>Review the Backward Design Framework</strong>
                   </Link> to understand unit structure
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-blue-800 dark:text-blue-200">2.</span>
+                <span className="font-semibold text-primary">2.</span>
                 <div>
                   <strong>Explore Unit 1 Materials</strong> to see PBL in action
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-blue-800 dark:text-blue-200">3.</span>
+                <span className="font-semibold text-primary">3.</span>
                 <div>
                   <strong>Set Up Your Classroom Technology</strong> for successful implementation
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-blue-800 dark:text-blue-200">4.</span>
+                <span className="font-semibold text-primary">4.</span>
                 <div>
                   <strong>Study the Excel Skill Progression</strong> to understand the technical curriculum
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-semibold text-blue-800 dark:text-blue-200">5.</span>
+                <span className="font-semibold text-primary">5.</span>
                 <div>
                   <strong>Access PBL Coaching Resources</strong> for ongoing support
                 </div>

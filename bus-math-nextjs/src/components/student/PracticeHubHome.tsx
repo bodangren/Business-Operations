@@ -79,15 +79,15 @@ export default function PracticeHubHome() {
     : stats.weakTerms
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Hero */}
-        <div className="mb-8 text-white">
-          <Badge variant="outline" className="mb-3 border-blue-400 text-blue-200">
+        <div className="mb-8">
+          <Badge variant="outline" className="mb-3">
             Practice Hub
           </Badge>
           <h1 className="text-3xl font-bold mb-2">Practice Hub</h1>
-          <p className="text-slate-300">
+          <p className="text-muted-foreground">
             Study vocabulary, track your progress, and export your results.
           </p>
         </div>
@@ -98,8 +98,8 @@ export default function PracticeHubHome() {
             onClick={() => setActiveUnit(null)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               !activeUnit
-                ? "bg-blue-600 text-white"
-                : "bg-white/10 text-slate-300 hover:bg-white/20"
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
             }`}
           >
             All Units
@@ -110,8 +110,8 @@ export default function PracticeHubHome() {
               onClick={() => setActiveUnit(u.id)}
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 activeUnit === u.id
-                  ? "bg-blue-600 text-white"
-                  : "bg-white/10 text-slate-300 hover:bg-white/20"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
             >
               {u.label}
@@ -122,10 +122,10 @@ export default function PracticeHubHome() {
         {/* Due Review */}
         <section className="mb-8">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-semibold text-white">Due Review</h2>
+            <h2 className="text-lg font-semibold">Due Review</h2>
             <Link
               href={`/student/practice-hub/progress${unitQuery}`}
-              className="text-sm text-blue-400 hover:text-blue-300"
+              className="text-sm text-primary hover:text-primary/80"
             >
               View all →
             </Link>
@@ -161,12 +161,12 @@ export default function PracticeHubHome() {
 
         {/* Vocabulary Study Modes */}
         <section className="mb-8">
-          <h2 className="text-lg font-semibold text-white mb-3">Vocabulary Study</h2>
+          <h2 className="text-lg font-semibold mb-3">Vocabulary Study</h2>
           <div className="grid grid-cols-2 gap-3">
             <Link href={`/student/practice-hub/flashcards${unitQuery}`}>
-              <Card className="hover:border-blue-400 transition-colors cursor-pointer h-full">
+              <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                 <CardContent className="pt-6 pb-4 text-center">
-                  <Layers className="h-8 w-8 mx-auto mb-2 text-blue-600" />
+                  <Layers className="h-8 w-8 mx-auto mb-2 text-primary" />
                   <div className="font-semibold text-sm">Flashcards</div>
                   <div className="text-xs text-muted-foreground mt-1">
                     Flip through terms one at a time
@@ -175,7 +175,7 @@ export default function PracticeHubHome() {
               </Card>
             </Link>
             <Link href={`/student/practice-hub/matching${unitQuery}`}>
-              <Card className="hover:border-blue-400 transition-colors cursor-pointer h-full">
+              <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                 <CardContent className="pt-6 pb-4 text-center">
                   <Shuffle className="h-8 w-8 mx-auto mb-2 text-green-600" />
                   <div className="font-semibold text-sm">Matching Game</div>
@@ -186,7 +186,7 @@ export default function PracticeHubHome() {
               </Card>
             </Link>
             <Link href={`/student/practice-hub/speed-round${unitQuery}`}>
-              <Card className="hover:border-blue-400 transition-colors cursor-pointer h-full">
+              <Card className="hover:border-primary/50 transition-colors cursor-pointer h-full">
                 <CardContent className="pt-6 pb-4 text-center">
                   <Zap className="h-8 w-8 mx-auto mb-2 text-amber-600" />
                   <div className="font-semibold text-sm">Speed Round</div>
@@ -213,10 +213,10 @@ export default function PracticeHubHome() {
           {/* Recent Practice */}
           <section>
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-lg font-semibold text-white">Recent Practice</h2>
+              <h2 className="text-lg font-semibold">Recent Practice</h2>
               <Link
                 href={`/student/practice-hub/progress${unitQuery}`}
-                className="text-sm text-blue-400 hover:text-blue-300"
+                className="text-sm text-primary hover:text-primary/80"
               >
                 See all →
               </Link>
@@ -263,7 +263,7 @@ export default function PracticeHubHome() {
 
           {/* Weak Topics */}
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">Weak Topics</h2>
+            <h2 className="text-lg font-semibold mb-3">Weak Topics</h2>
             <Card>
               <CardContent className="pt-2">
                 {weakTermsFiltered.length === 0 ? (
@@ -316,10 +316,10 @@ export default function PracticeHubHome() {
         {/* Export & History */}
         <section className="mb-8">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-semibold text-white">Export & History</h2>
+            <h2 className="text-lg font-semibold">Export & History</h2>
             <Link
               href="/student/practice-hub/export"
-              className="text-sm text-blue-400 hover:text-blue-300"
+              className="text-sm text-primary hover:text-primary/80"
             >
               Export Progress →
             </Link>
@@ -354,13 +354,13 @@ export default function PracticeHubHome() {
 
         {/* Footer nav */}
         <div className="flex gap-3 justify-center pt-4">
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+          <Button asChild variant="outline">
             <Link href="/student/practice-hub/progress">
               <BarChart3 className="h-4 w-4 mr-2" />
               Progress Dashboard
             </Link>
           </Button>
-          <Button asChild variant="outline" className="border-slate-600 text-slate-300 hover:text-white">
+          <Button asChild variant="outline">
             <Link href="/student/practice-hub/export">
               <Download className="h-4 w-4 mr-2" />
               Export Data

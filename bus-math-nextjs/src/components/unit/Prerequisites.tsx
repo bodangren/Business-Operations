@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckSquare, Monitor, Download, ExternalLink } from "lucide-react"
+import { CheckSquare, Monitor, Download, ExternalLink, ListChecks, FileDown } from "lucide-react"
 import { Resource } from "@/types/unit"
 
 interface PrerequisitesProps {
@@ -32,10 +32,13 @@ export function Prerequisites({ prerequisites, differentiation }: PrerequisitesP
   
   return (
     <section className="space-y-6">
-      <h2 className="text-2xl font-semibold">Prerequisites & Preparation</h2>
+      <h2 className="text-2xl font-semibold flex items-center gap-2">
+        <ListChecks className="h-6 w-6 text-blue-600" />
+        Prerequisites & Preparation
+      </h2>
       
       <div className="grid md:grid-cols-2 gap-6">
-        <Card>
+        <Card className="border-blue-200">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2">
               <CheckSquare className="h-5 w-5 text-blue-600" />
@@ -69,10 +72,10 @@ export function Prerequisites({ prerequisites, differentiation }: PrerequisitesP
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="border-green-200">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2">
-              <Download className="h-5 w-5 text-green-600" />
+              <FileDown className="h-5 w-5 text-green-600" />
               Downloads & Resources
             </CardTitle>
           </CardHeader>
@@ -98,7 +101,7 @@ export function Prerequisites({ prerequisites, differentiation }: PrerequisitesP
       </div>
       
       {differentiation && (
-        <Card className="mt-6">
+        <Card className="border-amber-200">
           <CardHeader>
             <CardTitle>Differentiation & Support</CardTitle>
           </CardHeader>
@@ -106,11 +109,11 @@ export function Prerequisites({ prerequisites, differentiation }: PrerequisitesP
             <div className="grid md:grid-cols-3 gap-6">
               {differentiation.struggling.length > 0 && (
                 <div>
-                  <h4 className="font-medium text-yellow-700 mb-2">For Struggling Students:</h4>
+                  <h4 className="font-medium text-amber-700 mb-2">For Struggling Students:</h4>
                   <ul className="space-y-1">
                     {differentiation.struggling.map((support, index) => (
                       <li key={index} className="text-sm flex items-start gap-2">
-                        <span className="text-yellow-600 mt-1">•</span>
+                        <span className="text-amber-600 mt-1">•</span>
                         <span>{support}</span>
                       </li>
                     ))}

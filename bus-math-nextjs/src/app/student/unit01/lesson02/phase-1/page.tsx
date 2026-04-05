@@ -1,5 +1,6 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
+import { Badge } from "@/components/ui/badge"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { lesson02Data, unit01Data, lesson02Phases } from "../lesson-data"
 
@@ -53,9 +54,9 @@ export default function Unit01Lesson02Phase1() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <div className="inline-block bg-blue-100 text-blue-800 text-lg px-4 py-2 rounded-lg font-semibold">
+            <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2">
               Phase 1: Recycle and Introduce
-            </div>
+            </Badge>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">

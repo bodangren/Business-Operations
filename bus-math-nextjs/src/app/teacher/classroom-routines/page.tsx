@@ -37,15 +37,15 @@ function createSlug(name: string): string {
 
 export default function ClassroomRoutinesPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container max-w-6xl mx-auto py-8 px-4">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">Classroom Routines Guide</h1>
         <p className="text-lg text-muted-foreground mb-6">
           Essential instructional routines for the Math for Business Operations course. Each routine includes detailed teaching instructions, examples from the curriculum, and implementation guidance.
         </p>
-        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-          <h2 className="font-semibold text-blue-900 mb-2">About These Routines</h2>
-          <p className="text-blue-800 text-sm">
+        <div className="bg-muted/50 p-4 rounded-lg border border-border">
+          <h2 className="font-semibold mb-2">About These Routines</h2>
+          <p className="text-sm text-muted-foreground">
             These routines are specifically designed for project-based learning in a business mathematics context. 
             They support the development of both technical Excel skills and professional business competencies 
             through authentic, real-world scenarios.
@@ -98,7 +98,7 @@ export default function ClassroomRoutinesPage() {
         })}
       </div>
 
-      <div className="mt-12 bg-gray-50 p-6 rounded-lg">
+      <div className="mt-12 bg-muted/50 p-4 rounded-lg border border-border">
         <h2 className="text-xl font-semibold mb-4">Implementation Tips</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, BookOpen, Target } from "lucide-react"
+import { Calendar, BookOpen, Target, Flag } from "lucide-react"
 import { Week } from "@/types/unit"
 
 interface LearningSequenceProps {
@@ -22,7 +22,7 @@ export function LearningSequence({ learningSequence }: LearningSequenceProps) {
           <Card key={week.weekNumber} className="border-purple-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Badge variant="outline" className="bg-purple-100 text-purple-800">
+                <Badge variant="secondary">
                   Week {week.weekNumber}
                 </Badge>
                 <span>{week.title}</span>
@@ -34,13 +34,13 @@ export function LearningSequence({ learningSequence }: LearningSequenceProps) {
                 {week.days.map((day) => (
                   <div key={day.day} className="border-l-2 border-purple-200 pl-4 py-2">
                     <div className="flex items-center gap-3 mb-2">
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant="outline" className="text-xs">
                         Day {day.day}
                       </Badge>
                       <h4 className="font-medium">{day.focus}</h4>
                       {day.milestone && (
-                        <Badge variant="outline" className="text-xs bg-yellow-50 text-yellow-800">
-                          <Target className="h-3 w-3 mr-1" />
+                        <Badge variant="secondary" className="text-xs">
+                          <Flag className="h-3 w-3 mr-1" />
                           Milestone
                         </Badge>
                       )}
@@ -76,9 +76,10 @@ export function LearningSequence({ learningSequence }: LearningSequenceProps) {
                       )}
                       
                       {day.milestone && (
-                        <div className="mt-2 p-2 bg-yellow-50 rounded border-l-2 border-yellow-400">
-                          <p className="text-xs font-medium text-yellow-800">
-                            📍 {day.milestone}
+                        <div className="mt-2 p-2 bg-amber-50/50 rounded border-l-2 border-amber-400">
+                          <p className="text-xs font-medium text-amber-800">
+                            <Target className="h-3 w-3 inline mr-1" />
+                            {day.milestone}
                           </p>
                         </div>
                       )}

@@ -9,7 +9,7 @@ import {
 
 export default function BackwardDesignPage() {
   return (
-    <div className="max-w-6xl mx-auto p-8">
+    <div className="container max-w-6xl mx-auto py-8 px-4">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">Backward Design Framework</h1>
@@ -23,17 +23,17 @@ export default function BackwardDesignPage() {
         <h2 className="text-2xl font-semibold mb-6">The Three Stages of Backward Design</h2>
         
         <div className="grid gap-6 mb-8">
-          <Card className="border-red-200 bg-red-50 dark:bg-red-950/10">
+          <Card className="border-border bg-muted/50">
             <CardHeader>
-              <CardTitle className="text-xl flex items-center gap-2 text-red-800 dark:text-red-200">
+              <CardTitle className="text-xl flex items-center gap-2 text-muted-foreground">
                 <Target className="h-6 w-6" />
                 Stage 1: Identify Desired Results
               </CardTitle>
-              <CardDescription className="text-red-700 dark:text-red-300 font-medium">
+              <CardDescription className="font-medium">
                 What should students know, understand, and be able to do?
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-red-700 dark:text-red-300">
+            <CardContent className="text-muted-foreground">
               <ul className="space-y-2">
                 <li>• Essential Questions that drive authentic inquiry</li>
                 <li>• Enduring Understandings that transfer beyond the unit</li>
@@ -42,17 +42,17 @@ export default function BackwardDesignPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+          <Card className="border-primary/20 bg-primary/5">
             <CardHeader>
-              <CardTitle className="text-xl flex items-center gap-2 text-blue-800 dark:text-blue-200">
+              <CardTitle className="text-xl flex items-center gap-2 text-primary">
                 <CheckCircle className="h-6 w-6" />
                 Stage 2: Determine Acceptable Evidence
               </CardTitle>
-              <CardDescription className="text-blue-700 dark:text-blue-300 font-medium">
+              <CardDescription className="font-medium">
                 How will we know if students have achieved the desired results?
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-blue-700 dark:text-blue-300">
+            <CardContent className="text-primary/80">
               <ul className="space-y-2">
                 <li>• Performance Tasks that mirror real-world applications</li>
                 <li>• Authentic Assessments that allow students to demonstrate understanding</li>
@@ -61,17 +61,17 @@ export default function BackwardDesignPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-green-200 bg-green-50 dark:bg-green-950/10">
+          <Card className="border-primary/20 bg-primary/5">
             <CardHeader>
-              <CardTitle className="text-xl flex items-center gap-2 text-green-800 dark:text-green-200">
+              <CardTitle className="text-xl flex items-center gap-2 text-primary">
                 <BookOpen className="h-6 w-6" />
                 Stage 3: Plan Learning Experiences
               </CardTitle>
-              <CardDescription className="text-green-700 dark:text-green-300 font-medium">
+              <CardDescription className="font-medium">
                 What learning experiences will lead to proficiency?
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-green-700 dark:text-green-300">
+            <CardContent className="text-primary/80">
               <ul className="space-y-2">
                 <li>• Knowledge Building activities that provide foundation</li>
                 <li>• Skill Development through guided and independent practice</li>
@@ -96,18 +96,18 @@ export default function BackwardDesignPage() {
             {/* Stage 1 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <Target className="h-5 w-5 text-red-600" />
+                <Target className="h-5 w-5 text-muted-foreground" />
                 Stage 1: Desired Results
               </h4>
               
-              <Card className="mb-4 border-purple-200 bg-purple-50 dark:bg-purple-950/10">
+              <Card className="mb-4 border-border bg-muted/50">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-purple-800 dark:text-purple-200">
+                  <CardTitle className="text-base text-muted-foreground">
                     Essential Question
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-purple-700 dark:text-purple-300 italic">
+                  <p className="text-muted-foreground italic">
                     How can we design a self-auditing ledger that would convince a potential angel investor we keep "clean books" from day 1?
                   </p>
                 </CardContent>
@@ -156,7 +156,7 @@ export default function BackwardDesignPage() {
             {/* Stage 2 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-blue-600" />
+                <CheckCircle className="h-5 w-5 text-primary" />
                 Stage 2: Assessment Evidence
               </h4>
 
@@ -231,7 +231,7 @@ export default function BackwardDesignPage() {
             {/* Stage 3 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-green-600" />
+                <BookOpen className="h-5 w-5 text-primary" />
                 Stage 3: Learning Plan
               </h4>
 
@@ -294,18 +294,18 @@ export default function BackwardDesignPage() {
             {/* Stage 1 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <Target className="h-5 w-5 text-red-600" />
+                <Target className="h-5 w-5 text-muted-foreground" />
                 Stage 1: Desired Results
               </h4>
               
-              <Card className="mb-4 border-purple-200 bg-purple-50 dark:bg-purple-950/10">
+              <Card className="mb-4 border-border bg-muted/50">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-purple-800 dark:text-purple-200">
+                  <CardTitle className="text-base text-muted-foreground">
                     Essential Question
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-purple-700 dark:text-purple-300 italic">
+                  <p className="text-muted-foreground italic">
                     What automation can cut our month-end closing time from two days to two hours without sacrificing GAAP accuracy?
                   </p>
                 </CardContent>
@@ -354,7 +354,7 @@ export default function BackwardDesignPage() {
             {/* Stage 2 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-blue-600" />
+                <CheckCircle className="h-5 w-5 text-primary" />
                 Stage 2: Assessment Evidence
               </h4>
 
@@ -438,18 +438,18 @@ export default function BackwardDesignPage() {
             {/* Stage 1 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <Target className="h-5 w-5 text-red-600" />
+                <Target className="h-5 w-5 text-muted-foreground" />
                 Stage 1: Desired Results
               </h4>
               
-              <Card className="mb-4 border-purple-200 bg-purple-50 dark:bg-purple-950/10">
+              <Card className="mb-4 border-border bg-muted/50">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-purple-800 dark:text-purple-200">
+                  <CardTitle className="text-base text-muted-foreground">
                     Essential Question
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-purple-700 dark:text-purple-300 italic">
+                  <p className="text-muted-foreground italic">
                     How do today's journal entries flow into a narrative of profit, solvency, and cash health that investors can trust?
                   </p>
                 </CardContent>
@@ -499,7 +499,7 @@ export default function BackwardDesignPage() {
             {/* Stage 2 */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-blue-600" />
+                <CheckCircle className="h-5 w-5 text-primary" />
                 Stage 2: Assessment Evidence
               </h4>
 
@@ -533,17 +533,17 @@ export default function BackwardDesignPage() {
         </Card>
 
         {/* Additional Units */}
-        <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
+        <Card className="border-primary/20 bg-primary/5">
           <CardHeader>
-            <CardTitle className="text-lg text-blue-800 dark:text-blue-200">
+            <CardTitle className="text-lg text-primary">
               Additional Units
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-blue-700 dark:text-blue-300 mb-3">
+            <p className="text-primary/80 mb-3">
               Each remaining unit (4-8) follows the same backward design structure:
             </p>
-            <ul className="space-y-1 text-blue-700 dark:text-blue-300">
+            <ul className="space-y-1 text-primary/80">
               <li><strong>Unit 4:</strong> Data analysis and forecasting with statistical tools</li>
               <li><strong>Unit 5:</strong> Payroll systems and cash flow management</li>
               <li><strong>Unit 6:</strong> Pricing optimization and break-even analysis</li>
@@ -558,17 +558,17 @@ export default function BackwardDesignPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-6">Curriculum Alignment Check</h2>
 
-        <Card className="mb-6 border-amber-200 bg-amber-50 dark:bg-amber-950/10">
+        <Card className="mb-6 border-border bg-muted/50">
           <CardHeader>
-            <CardTitle className="text-lg text-amber-800 dark:text-amber-200">
+            <CardTitle className="text-lg text-muted-foreground">
               Ensuring Coherent Learning Progression
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-amber-700 dark:text-amber-300 mb-3">
+            <p className="text-muted-foreground mb-3">
               Each unit builds systematically toward the Semester 2 capstone project:
             </p>
-            <ul className="space-y-2 text-amber-700 dark:text-amber-300">
+            <ul className="space-y-2 text-muted-foreground">
               <li><strong>Units 1-2:</strong> Foundation systems (ledger, automation)</li>
               <li><strong>Units 3-4:</strong> Analysis and communication (statements, data analysis)</li>
               <li><strong>Units 5-6:</strong> Operations management (payroll, pricing)</li>
@@ -639,14 +639,14 @@ export default function BackwardDesignPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-6">Implementation Guide for Teachers</h2>
 
-        <Card className="mb-6 border-green-200 bg-green-50 dark:bg-green-950/10">
+        <Card className="mb-6 border-primary/20 bg-primary/5">
           <CardHeader>
-            <CardTitle className="text-lg text-green-800 dark:text-green-200">
+            <CardTitle className="text-lg text-primary">
               Planning Each Unit
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ol className="space-y-2 text-green-700 dark:text-green-300">
+            <ol className="space-y-2 text-primary/80">
               <li><strong>1. Start with Stage 1:</strong> Clarify what students must know and be able to do</li>
               <li><strong>2. Design Stage 2:</strong> Create authentic assessments that mirror real-world applications</li>
               <li><strong>3. Plan Stage 3:</strong> Sequence learning experiences to build toward proficiency</li>
@@ -665,15 +665,15 @@ export default function BackwardDesignPage() {
           <li><strong>Instruction:</strong> What experiences will prepare students for success?</li>
         </ul>
 
-        <Card className="border-orange-200 bg-orange-50 dark:bg-orange-950/10">
+        <Card className="border-border bg-muted/50">
           <CardHeader>
-            <CardTitle className="text-lg text-orange-800 dark:text-orange-200 flex items-center gap-2">
+            <CardTitle className="text-lg text-muted-foreground flex items-center gap-2">
               <AlertTriangle className="h-5 w-5" />
               Avoid These Common Pitfalls
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2 text-orange-700 dark:text-orange-300">
+            <ul className="space-y-2 text-muted-foreground">
               <li>• Teaching activities without clear connection to assessments</li>
               <li>• Assessing knowledge without requiring application</li>
               <li>• Focusing on coverage rather than understanding</li>

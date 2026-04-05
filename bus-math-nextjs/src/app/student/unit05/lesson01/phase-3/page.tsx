@@ -115,7 +115,7 @@ export default function Phase3Page() {
   const currentPhase = lesson01Phases.find(p => p.sequence === 3)!
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50">
       <div className="container mx-auto px-4 py-6">
         <PhaseHeader
           lesson={lesson01Data}

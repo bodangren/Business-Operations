@@ -206,21 +206,21 @@ export function TransactionJournal({
         <CardContent>
           <div className="space-y-4">
             <div>
-              <Label htmlFor="clientFocus">Client Focus</Label>
-              <select
-                id="clientFocus"
-                value={selectedClientFocus}
-                onChange={(e) => setSelectedClientFocus(e.target.value)}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              >
-                {clientTypes.map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
-              <p className="text-sm text-gray-600 mt-1">
-                Choose your startup's business focus to tailor transaction examples and account suggestions.
-              </p>
-            </div>
+               <Label htmlFor="clientFocus">Client Focus</Label>
+               <select
+                 id="clientFocus"
+                 value={selectedClientFocus}
+                 onChange={(e) => setSelectedClientFocus(e.target.value)}
+                 className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1"
+               >
+                 {clientTypes.map(type => (
+                   <option key={type} value={type}>{type}</option>
+                 ))}
+               </select>
+               <p className="text-sm text-gray-600 mt-1">
+                 Choose your startup's business focus to tailor transaction examples and account suggestions.
+               </p>
+             </div>
 
             {showAnalytics && (
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
@@ -445,33 +445,33 @@ export function TransactionJournal({
 
               {newTransaction.lines?.map((line) => (
                 <div key={line.id} className="grid grid-cols-12 gap-2 p-3 border border-gray-200 rounded-lg">
-                  <div className="col-span-3">
-                    <select
-                      value={line.account}
-                      onChange={(e) => updateJournalLine(line.id, { account: e.target.value })}
-                      className="w-full p-1 text-sm border border-gray-300 rounded"
-                    >
-                      <option value="">Select Account</option>
-                      {COMMON_ACCOUNTS.map(account => (
-                        <option key={account.name} value={account.name}>
-                          {account.name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="col-span-2">
-                    <select
-                      value={line.accountType}
-                      onChange={(e) => updateJournalLine(line.id, { accountType: e.target.value as 'asset' | 'liability' | 'equity' | 'revenue' | 'expense' })}
-                      className="w-full p-1 text-sm border border-gray-300 rounded"
-                    >
-                      <option value="asset">Asset</option>
-                      <option value="liability">Liability</option>
-                      <option value="equity">Equity</option>
-                      <option value="revenue">Revenue</option>
-                      <option value="expense">Expense</option>
-                    </select>
-                  </div>
+                   <div className="col-span-3">
+                     <select
+                       value={line.account}
+                       onChange={(e) => updateJournalLine(line.id, { account: e.target.value })}
+                       className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
+                     >
+                       <option value="">Select Account</option>
+                       {COMMON_ACCOUNTS.map(account => (
+                         <option key={account.name} value={account.name}>
+                           {account.name}
+                         </option>
+                       ))}
+                     </select>
+                   </div>
+                   <div className="col-span-2">
+                     <select
+                       value={line.accountType}
+                       onChange={(e) => updateJournalLine(line.id, { accountType: e.target.value as 'asset' | 'liability' | 'equity' | 'revenue' | 'expense' })}
+                       className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
+                     >
+                       <option value="asset">Asset</option>
+                       <option value="liability">Liability</option>
+                       <option value="equity">Equity</option>
+                       <option value="revenue">Revenue</option>
+                       <option value="expense">Expense</option>
+                     </select>
+                   </div>
                   <div className="col-span-2">
                     <Input
                       type="number"

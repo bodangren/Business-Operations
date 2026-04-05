@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
 import { CheckCircle, XCircle, Target } from 'lucide-react'
 
 interface JournalLine {
@@ -307,7 +308,7 @@ export default function PostingPracticeLoop({
                   <div key={lineNum} className="grid grid-cols-12 gap-3 items-center">
                     <div className="col-span-1 text-gray-600 font-mono">{lineNum}</div>
                     <div className="col-span-6">
-                      <input
+                      <Input
                         type="text"
                         placeholder="Account Name"
                         value={existingLine?.account || ''}
@@ -324,27 +325,24 @@ export default function PostingPracticeLoop({
                           }
                         }}
                         disabled={isSubmitted}
-                        className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
                       />
                     </div>
                     <div className="col-span-2">
-                      <input
+                      <Input
                         type="number"
                         placeholder="Debit"
                         value={existingLine?.debit || ''}
                         onChange={(e) => handleAccountChange(lineNum.toString(), 'debit', e.target.value)}
                         disabled={isSubmitted}
-                        className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
                       />
                     </div>
                     <div className="col-span-2">
-                      <input
+                      <Input
                         type="number"
                         placeholder="Credit"
                         value={existingLine?.credit || ''}
                         onChange={(e) => handleAccountChange(lineNum.toString(), 'credit', e.target.value)}
                         disabled={isSubmitted}
-                        className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
                       />
                     </div>
                     <div className="col-span-1">
