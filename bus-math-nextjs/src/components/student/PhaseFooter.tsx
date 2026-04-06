@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { 
-  ArrowLeft, 
+import {
+  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   PlayCircle,
   BookOpen,
   Users,
   Target,
-  Lightbulb
+  Lightbulb,
+  Rocket,
+  Flag,
+  Monitor
 } from "lucide-react"
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
@@ -33,13 +36,16 @@ interface PhaseFooterNavigationOverrides {
   phaseHrefBuilder?: (phase: LessonPhase) => string
 }
 
-const phaseIcons = {
+const phaseIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "Hook": PlayCircle,
   "Introduction": BookOpen,
   "Guided Practice": Users,
   "Independent Practice": Target,
   "Assessment": CheckCircle2,
-  "Closing": Lightbulb
+  "Closing": Lightbulb,
+  "Project Launch": Rocket,
+  "Project Milestone": Flag,
+  "Project Presentation": Monitor
 }
 
 export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }: PhaseFooterProps) {

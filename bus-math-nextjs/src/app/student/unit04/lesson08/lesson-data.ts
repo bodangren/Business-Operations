@@ -1,5 +1,5 @@
 // Data-Driven Café, Lesson 8 - Group Project Kickoff
-import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
+import { LessonProgressPhaseName } from "@/contexts/LessonProgressContext"
 
 import { UNIT_REF_MAP } from "@/data/unit-registry"
 export const unit04Data = UNIT_REF_MAP[4]
@@ -27,10 +27,10 @@ export const lesson08Data = {
 }
 
 
-export const lesson08Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
+export const lesson08Phases: { id: string; phaseName: LessonProgressPhaseName; sequence: number; description: string }[] = [
   {
     id: "phase_project_kickoff",
-    phaseName: "Project Launch" as LessonPhase,
+    phaseName: "Project Launch",
     sequence: 1,
     description: "Kickoff the team project with business scenario and data assignment"
   }

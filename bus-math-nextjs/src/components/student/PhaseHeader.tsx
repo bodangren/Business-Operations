@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { 
+import {
   ArrowRight,
   PlayCircle,
   BookOpen,
@@ -9,7 +9,10 @@ import {
   Target,
   CheckCircle2,
   Lightbulb,
-  Home
+  Home,
+  Rocket,
+  Flag,
+  Monitor
 } from "lucide-react"
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
@@ -33,22 +36,28 @@ interface PhaseHeaderNavigationOverrides {
   phaseLabel?: string
 }
 
-const phaseIcons = {
+const phaseIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "Hook": PlayCircle,
   "Introduction": BookOpen,
   "Guided Practice": Users,
   "Independent Practice": Target,
   "Assessment": CheckCircle2,
-  "Closing": Lightbulb
+  "Closing": Lightbulb,
+  "Project Launch": Rocket,
+  "Project Milestone": Flag,
+  "Project Presentation": Monitor
 }
 
-const phaseColors = {
+const phaseColors: Record<string, string> = {
   "Hook": "text-red-600 bg-red-50/50 border-red-200/50 dark:bg-red-950/20 dark:border-red-800/30",
   "Introduction": "text-primary bg-primary/5 border-primary/20 dark:bg-primary/10 dark:border-primary/30",
   "Guided Practice": "text-green-600 bg-green-50/50 border-green-200/50 dark:bg-green-950/20 dark:border-green-800/30",
   "Independent Practice": "text-purple-600 bg-purple-50/50 border-purple-200/50 dark:bg-purple-950/20 dark:border-purple-800/30",
   "Assessment": "text-orange-600 bg-orange-50/50 border-orange-200/50 dark:bg-orange-950/20 dark:border-orange-800/30",
-  "Closing": "text-indigo-600 bg-indigo-50/50 border-indigo-200/50 dark:bg-indigo-950/20 dark:border-indigo-800/30"
+  "Closing": "text-indigo-600 bg-indigo-50/50 border-indigo-200/50 dark:bg-indigo-950/20 dark:border-indigo-800/30",
+  "Project Launch": "text-red-600 bg-red-50/50 border-red-200/50 dark:bg-red-950/20 dark:border-red-800/30",
+  "Project Milestone": "text-green-600 bg-green-50/50 border-green-200/50 dark:bg-green-950/20 dark:border-green-800/30",
+  "Project Presentation": "text-blue-600 bg-blue-50/50 border-blue-200/50 dark:bg-blue-950/20 dark:border-blue-800/30"
 }
 
 export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }: PhaseHeaderProps) {

@@ -24,6 +24,9 @@ export type LessonPhaseName =
   | "Independent Practice"
   | "Assessment"
   | "Closing"
+  | "Project Launch"
+  | "Project Milestone"
+  | "Project Presentation"
 
 export interface LessonPhase {
   id: string

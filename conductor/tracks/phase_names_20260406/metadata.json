@@ -1,0 +1,8 @@
+{
+  "track_id": "phase_names_20260406",
+  "type": "fix",
+  "status": "complete",
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T00:00:00Z",
+  "description": "Extend LessonPhaseName union with project phase names and remove unsafe as-casts from 5 lesson-data files"
+}

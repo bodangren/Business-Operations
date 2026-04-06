@@ -1,4 +1,4 @@
-import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
+import { LessonProgressPhaseName } from "@/contexts/LessonProgressContext"
 
 // Data-Driven Café, Lesson 7 data - Project Rehearsal
 import { UNIT_REF_MAP } from "@/data/unit-registry"
@@ -31,40 +31,40 @@ export const lesson07Data = {
 
 
 // Lesson phases for project-rehearsal
-export const lesson07Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
+export const lesson07Phases: { id: string; phaseName: LessonProgressPhaseName; sequence: number; description: string }[] = [
   {
     id: "phase_rehearsal_purpose",
-    phaseName: "Hook" as LessonPhase,
+    phaseName: "Hook",
     sequence: 1,
     description: "Frame the lesson as guided rehearsal before independent project work"
   },
   {
     id: "phase_shared_artifact",
-    phaseName: "Introduction" as LessonPhase,
+    phaseName: "Introduction",
     sequence: 2,
     description: "Orient to the shared workbook, evidence blocks, and Definition of Done"
   },
   {
     id: "phase_guided_audit",
-    phaseName: "Guided Practice" as LessonPhase,
+    phaseName: "Guided Practice",
     sequence: 3,
     description: "Trace the recommendation back to supporting data evidence"
   },
   {
     id: "phase_polish_transfer",
-    phaseName: "Independent Practice" as LessonPhase,
+    phaseName: "Independent Practice",
     sequence: 4,
     description: "Complete weak spots and identify what must transfer to the project"
   },
   {
     id: "phase_transfer_check",
-    phaseName: "Assessment" as LessonPhase,
+    phaseName: "Assessment",
     sequence: 5,
     description: "Comprehension check and peer critique with Definition of Done criteria"
   },
   {
     id: "phase_reflection_handoff",
-    phaseName: "Closing" as LessonPhase,
+    phaseName: "Closing",
     sequence: 6,
     description: "Lock in quality standard and preview independent project work"
   }

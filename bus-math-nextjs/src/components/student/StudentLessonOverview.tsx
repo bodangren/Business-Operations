@@ -1,16 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  Clock, 
-  Target, 
+import {
+  Clock,
+  Target,
   BookOpen,
   PlayCircle,
   ArrowRight,
   CheckCircle2,
   Users,
   Lightbulb,
-  Home
+  Home,
+  Rocket,
+  Flag,
+  Monitor
 } from "lucide-react"
 import Link from "next/link"
 import type { LessonPhase } from "@/types/lesson"
@@ -35,22 +38,28 @@ interface StudentLessonOverviewProps {
   phases?: LessonPhase[]
 }
 
-const phaseIcons = {
+const phaseIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "Hook": PlayCircle,
   "Introduction": BookOpen,
   "Guided Practice": Users,
   "Independent Practice": Target,
   "Assessment": CheckCircle2,
-  "Closing": Lightbulb
+  "Closing": Lightbulb,
+  "Project Launch": Rocket,
+  "Project Milestone": Flag,
+  "Project Presentation": Monitor
 }
 
-const phaseDescriptions = {
+const phaseDescriptions: Record<string, string> = {
   "Hook": "Engage with the lesson's driving question and real-world challenge",
   "Introduction": "Learn new concepts and skills through direct instruction",
   "Guided Practice": "Practice new skills with teacher support and collaboration",
   "Independent Practice": "Apply learning independently to build mastery",
   "Assessment": "Demonstrate understanding through formative evaluation",
-  "Closing": "Reflect on learning and connect to bigger picture"
+  "Closing": "Reflect on learning and connect to bigger picture",
+  "Project Launch": "Kick off the team project with business scenario and data assignment",
+  "Project Milestone": "Prototype completion and presentation rehearsal",
+  "Project Presentation": "Final presentations and peer review"
 }
 
 export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLessonOverviewProps) {

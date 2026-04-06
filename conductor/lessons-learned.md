@@ -47,3 +47,7 @@
 - **UnitRef vs UnitData mismatch**: The canonical `UnitData` type (300+ lines) doesn't include `sequence`. Lesson-data consumers need `UnitRef` shape `{ id, title, sequence }`. Exporting `UNIT_REF_MAP` from the registry lets each lesson-data file derive its `UnitRef` with a single lookup rather than re-exporting the heavy `UnitData` object.
 - **Bulk regex replacement with Node**: For 80 files, a Node.js `glob` + regex script was faster and more reliable than shell `sed`. The script found all matches, replaced inline blocks, and reported failures in one pass.
 - **Import ordering matters for build**: Placing `import` statements after `export const` (mid-file) compiled fine but violated style conventions. A second pass moved all imports to the top of each file.
+
+## 2026-04-06 — Extending Phase Name Type Unions
+
+- **Exhaustive icon/color maps break when types widen**: Adding values to a union type propagates to every `Record<PhaseName, ...>` map. The build caught missing `phaseIcons`/`phaseColors` entries in PhaseFooter, PhaseHeader, and StudentLessonOverview — use `Record<string, ...>` for icon maps when new phase categories may be added.
