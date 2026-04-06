@@ -63,6 +63,6 @@ describe("LessonProgressPhaseName", () => {
 
   it("is bidirectionally assignable to LessonPhaseName", () => {
     const sample: LessonPhaseName = "Hook"
-    assertAliasEquivalence(sample, sample as unknown as LessonProgressPhaseName)
+    assertAliasEquivalence(sample, sample)
   })
 })
