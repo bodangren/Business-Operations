@@ -1,11 +1,19 @@
 # Current Directive
 
 **Updated:** 2026-04-06
-**Status:** Extract phaseIcons complete — shared module created, 3 consumers refactored
+**Status:** lessonPages derivation complete — shared registry created, index-records.ts simplified
 
 ## Active Track
 
 None — ready for next track.
+
+## What Was Just Completed
+
+- **Derive lessonPages from lesson-data files** (`lesson_pages_derive_20260406`)
+  - Created `src/data/lesson-registry.ts` with 80 aliased static imports
+  - Replaced 90-line hardcoded array in `index-records.ts` with single `LESSON_PAGES` import
+  - Added 8 new tests (spot-checks title accuracy, ordering, coverage)
+  - All 255 tests pass, ESLint clean, build succeeds
 
 ## What Was Just Completed
 

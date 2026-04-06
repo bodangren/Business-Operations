@@ -1,0 +1,8 @@
+{
+  "track_id": "lesson_pages_derive_20260406",
+  "type": "chore",
+  "status": "complete",
+  "created_at": "2026-04-06T12:00:00Z",
+  "updated_at": "2026-04-06T12:00:00Z",
+  "description": "Derive lessonPages array from lesson-data files instead of 80 hardcoded entries"
+}

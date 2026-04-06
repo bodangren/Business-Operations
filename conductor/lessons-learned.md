@@ -1,5 +1,10 @@
 # Lessons Learned
 
+## 2026-04-06 — Derive lessonPages from Lesson-Data Files
+
+- **Aliased imports for same-named exports**: All 80 lesson-data files export `lessonYYData` — importing from different paths with the same variable name causes collisions. Using `import { lesson01Data as u01l01 }` aliases with a unit+lesson prefix keeps names unique and readable.
+- **Registry module as single-source-of-truth**: Creating `lesson-registry.ts` that statically imports all lesson-data files and derives `{ title, href, unitId }` means adding a lesson only requires the lesson-data file + one import line in the registry. The hardcoded 90-line array in `index-records.ts` shrank to a single import.
+
 ## 2026-04-06 — Mastery Progress Bars on Unit Cards
 
 - **Existing derived data goes unused**: `deriveStats()` computed `unitMastery` with `termsStudied`, `termsTotal`, `avgMastery` but nothing consumed it. When adding features, audit existing utilities before writing new logic — the helper functions (`masteryColor`, `UnitMastery` interface) were already there.
@@ -11,25 +16,10 @@
 - **Registry pattern for duplicated metadata**: When the same data (unit titles, descriptions, hrefs) is repeated in 3+ files, create a single registry module that imports from canonical sources and exports a derived array. Consumers map over the registry instead of maintaining parallel hardcoded lists.
 - **TDD catches title mismatches early**: The RED phase caught a `Data-Driven Café` vs `Data-Driven Cafe` accent mismatch between the test expectation and the canonical unit04.ts data. Without the test, this would have silently regressed the nav display.
 
-## 2026-04-04 — Code Review Audit
-
-- **Scope drift in unit-project-frameworks.ts**: The Unit 7 framework still contained depreciation deliverables, milestones, and rubric language from before the U7/U8 scope split. When units are re-scoped, all downstream files (frameworks, project plans, rubrics, choices, resources, validation) must be audited, not just titles and descriptions.
-- **Duplicate rendering bug**: The duplicate Key Vocabulary card in StudentUnitOverview was invisible in plan.md checklists because it's a visual/layout issue. Manual visual QA or screenshot comparison would catch this.
-- **Hardcoded lesson references in tips**: Practice test tips referenced "Lesson 07" generically for all 8 units. When content is copy-pasted across units, always parameterize or derive from data.
-- **Stale references in components**: When renaming units, component-level comments and business-context strings are easy to miss. Grep for old names across the entire src/ directory.
-- **Footer link duplication**: Multiple nav sections pointing to the same route is a UX anti-pattern — each section should have unique links.
-- **Phase naming consistency**: Phase IDs and phase names can drift apart. Use canonical phase name mapping to avoid duplicates like two phases both named "Introduction".
-
 ## 2026-04-05 — Study Data Context Provider
 
-- **Extract pure logic for testability**: When creating React contexts, extract pure helper functions (like `getDueInfoForUnit`) and accept optional dependency parameters (like `slugUnits` map) so tests can inject mocks without needing a real glossary or DOM environment.
-- **Vitest node env limits React testing**: The project's vitest config uses `node` environment with only `*.test.ts` include patterns. Context/hooks can't be tested with `renderHook` without `@testing-library/react` and `jsdom`. Extract logic into pure functions and test those separately.
-- **Context wrapping is low-risk**: Adding `StudyDataProvider` to the root layout was safe because `loadStudyData()` already guards for SSR (`isBrowser()` check). The provider degrades gracefully to empty data during server rendering.
-- **Consumer refactor pattern**: Replace `useState` + `useEffect` + `loadStudyData()` with `useStudyData()` hook. For export/import handlers that modify localStorage, use `refresh()` from context to re-sync state.
-
-## 2026-04-05 — Lesson-Level Index Entries
-
-- **Test-first for data integrity**: Writing tests before populating the `lessonPages` array ensured the data met exact specifications (80 entries, correct href pattern, unitId coverage). The RED-GREEN cycle was clean: 3 failures → all pass after data entry.
+- **Extract pure logic for testability**: When creating React contexts, extract pure helper functions and accept optional dependency parameters so tests can inject mocks without needing a real DOM environment.
+- **Context wrapping is low-risk**: Adding providers to the root layout is safe when existing code already guards for SSR. The provider degrades gracefully to empty data during server rendering.
 
 ## 2026-04-05 — ESLint Warning Cleanup Phases 1-2 (Review Audit)
 

@@ -9,7 +9,7 @@
 - [x] ~Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)~ (fixed 2026-04-06)
 - [x] ~Unit data objects duplicated in every lesson-data file — all 8 units repeat `unitXXData` across 10 lesson-data files each (80 total copies); should derive from `unit-registry.ts` or canonical `src/data/unitXX.ts` (was L4 from audit, broadened 2026-04-06)~ (fixed 2026-04-06)
 - [x] ~Unit 01 lesson-data title `"Unit 1: Smart Ledger Launch"` differs from canonical `unit01.ts` title `"Smart Ledger Launch"` — resolve as part of unit-data dedup track (found in review, 2026-04-06)~ (fixed 2026-04-06)
-- [ ] `index-records.ts` `lessonPages` array is 80 manually maintained entries — should derive from lesson-data files for single-source-of-truth (found in review, 2026-04-06)
+- [x] ~`index-records.ts` `lessonPages` array is 80 manually maintained entries — should derive from lesson-data files for single-source-of-truth (found in review, 2026-04-06)~ (fixed 2026-04-06)
 - [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)
 - [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
 - [x] `index-records.ts` has empty `lessonPages` array — populated with all 80 lesson entries (M4 from audit, fixed 2026-04-05)
