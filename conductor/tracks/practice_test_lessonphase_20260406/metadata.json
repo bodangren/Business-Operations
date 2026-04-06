@@ -1,0 +1,8 @@
+{
+  "track_id": "practice_test_lessonphase_20260406",
+  "type": "refactor",
+  "status": "completed",
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T00:00:00Z",
+  "description": "Migrate 8 practice-test pages from PhaseHeader re-export to direct @/types/lesson import for LessonPhase type"
+}
