@@ -5,7 +5,7 @@
 
 ## Active Track
 
-None — ready for next track.
+Track: `header_unit_data_20260406` — Derive header and index-records unit metadata from canonical unitXX.ts data
 
 ## What Was Just Completed
 

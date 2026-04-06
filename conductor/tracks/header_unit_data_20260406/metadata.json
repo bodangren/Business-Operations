@@ -1,0 +1,8 @@
+{
+  "track_id": "header_unit_data_20260406",
+  "type": "chore",
+  "status": "in-progress",
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T00:00:00Z",
+  "description": "Derive header and index-records unit metadata from canonical unitXX.ts data instead of hardcoding"
+}

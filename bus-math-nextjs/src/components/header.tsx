@@ -12,28 +12,19 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import { UNITS } from "@/data/unit-registry"
 
-const studentUnits = [
-  { href: "/student/unit01", title: "Unit 1: Smart Ledger Launch", description: "Self-auditing bookkeeping for angel investors" },
-  { href: "/student/unit02", title: "Unit 2: Month-End Wizard", description: "Excel automation to reduce closing time" },
-  { href: "/student/unit03", title: "Unit 3: Three-Statement Storyboard", description: "Integrated financial statements with KPI dashboards" },
-  { href: "/student/unit04", title: "Unit 4: Data-Driven Café", description: "Statistical analysis and forecasting for operations" },
-  { href: "/student/unit05", title: "Unit 5: PayDay Simulator", description: "Payroll systems with tax calculations and cash flow" },
-  { href: "/student/unit06", title: "Unit 6: PriceLab Challenge", description: "Cost-Volume-Profit analysis and competitive pricing" },
-  { href: "/student/unit07", title: "Unit 7: Inventory Accounting", description: "Inventory valuation methods and strategic decision-making" },
-  { href: "/student/unit08", title: "Unit 8: Fixed Assets and Depreciation", description: "Depreciation methods and fixed asset tracking" },
-]
+const studentUnits = UNITS.map((u) => ({
+  href: u.studentHref,
+  title: u.label,
+  description: u.description,
+}))
 
-const teacherUnits = [
-  { href: "/teacher/unit01", title: "Unit 1: Smart Ledger Launch", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit02", title: "Unit 2: Month-End Wizard", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit03", title: "Unit 3: Three-Statement Storyboard", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit04", title: "Unit 4: Data-Driven Café", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit05", title: "Unit 5: PayDay Simulator", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit06", title: "Unit 6: PriceLab Challenge", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit07", title: "Unit 7: Inventory Accounting", description: "Teacher lesson plans and resources" },
-  { href: "/teacher/unit08", title: "Unit 8: Fixed Assets and Depreciation", description: "Teacher lesson plans and resources" },
-]
+const teacherUnits = UNITS.map((u) => ({
+  href: u.teacherHref,
+  title: u.label,
+  description: "Teacher lesson plans and resources",
+}))
 
 export function Header() {
   return (

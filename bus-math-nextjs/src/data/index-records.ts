@@ -1,17 +1,13 @@
 import type { IndexRecord, UnitId } from "@/types/glossary"
 import { glossaryData } from "@/data/glossary"
 import { generateIndexRecords } from "@/lib/glossary"
+import { UNITS } from "@/data/unit-registry"
 
-const unitPages: Array<{ title: string; href: string; id: UnitId }> = [
-  { title: "Unit 1: Smart Ledger Launch", href: "/student/unit01", id: "unit01" },
-  { title: "Unit 2: Month-End Wizard", href: "/student/unit02", id: "unit02" },
-  { title: "Unit 3: Three-Statement Storyboard", href: "/student/unit03", id: "unit03" },
-  { title: "Unit 4: Data-Driven Café", href: "/student/unit04", id: "unit04" },
-  { title: "Unit 5: PayDay Simulator", href: "/student/unit05", id: "unit05" },
-  { title: "Unit 6: PriceLab Challenge", href: "/student/unit06", id: "unit06" },
-  { title: "Unit 7: Inventory Accounting", href: "/student/unit07", id: "unit07" },
-  { title: "Unit 8: Fixed Assets and Depreciation", href: "/student/unit08", id: "unit08" },
-]
+const unitPages: Array<{ title: string; href: string; id: UnitId }> = UNITS.map((u) => ({
+  title: u.label,
+  href: u.studentHref,
+  id: u.unitId,
+}))
 
 const lessonPages: Array<{ title: string; href: string; unitId?: UnitId }> = [
   // Unit 1: Smart Ledger Launch
