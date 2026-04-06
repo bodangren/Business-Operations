@@ -8,7 +8,7 @@ import {
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
-import { PHASE_ICONS } from "@/components/student/phase-config"
+import { getPhaseIcon } from "@/components/student/phase-config"
 
 // Re-export for backward compatibility with existing imports
 export type { LessonPhase } from "@/types/lesson"
@@ -105,7 +105,7 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
         <CardContent className="space-y-3">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {sortedPhases.map((p, index) => {
-              const PhaseIcon = PHASE_ICONS[p.phaseName]
+              const PhaseIcon = getPhaseIcon(p.phaseName)
               const isCompleted = index < currentIndex
               const isCurrent = p.id === phase.id
               

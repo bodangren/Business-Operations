@@ -45,3 +45,8 @@
 - **Consolidate related maps together**: `phaseColors` and `phaseDescriptions` were also duplicated but only in 1-2 files. Bundling them into the same `phase-config.ts` alongside `PHASE_ICONS` ensures future phase additions only touch one file for all three concerns.
 
 - **Exhaustive icon/color maps break when types widen**: Adding values to a union type propagates to every `Record<PhaseName, ...>` map. The build caught missing `phaseIcons`/`phaseColors` entries in PhaseFooter, PhaseHeader, and StudentLessonOverview — use `Record<string, ...>` for icon maps when new phase categories may be added.
+
+## 2026-04-07 — PHASE_ICONS Fallback Helpers
+
+- **Widen-at-boundary pattern**: Type shared maps as `Record<LessonPhaseName, ...>` for compile-time completeness checks, but provide helper functions that accept `string` and cast internally. Consumers call the helpers (wide input, narrow internals) instead of indexing the typed map directly.
+- **Sensible defaults prevent runtime crashes**: `HelpCircle` icon, neutral color string, and `"Phase"` fallback text mean unknown keys degrade gracefully instead of throwing `undefined` at render.

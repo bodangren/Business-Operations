@@ -1,0 +1,8 @@
+{
+  "track_id": "phase_icons_fallback_20260407",
+  "type": "feature",
+  "status": "complete",
+  "created_at": "2026-04-07T00:00:00Z",
+  "updated_at": "2026-04-07T00:00:00Z",
+  "description": "Tighten PHASE_ICONS/COLORS/DESCRIPTIONS to Record<LessonPhaseName> and add defensive fallback helpers"
+}

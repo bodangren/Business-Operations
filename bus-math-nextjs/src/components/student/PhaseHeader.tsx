@@ -5,7 +5,7 @@ import { ArrowRight, Home } from "lucide-react"
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
-import { PHASE_ICONS, PHASE_COLORS } from "@/components/student/phase-config"
+import { getPhaseIcon, getPhaseColor } from "@/components/student/phase-config"
 
 // Re-export for backward compatibility with existing imports
 export type { LessonPhase } from "@/types/lesson"
@@ -26,8 +26,8 @@ interface PhaseHeaderNavigationOverrides {
 }
 
 export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }: PhaseHeaderProps) {
-  const Icon = PHASE_ICONS[phase.phaseName]
-  const colorClass = PHASE_COLORS[phase.phaseName]
+  const Icon = getPhaseIcon(phase.phaseName)
+  const colorClass = getPhaseColor(phase.phaseName)
   
   // Sort phases for navigation
   const sortedPhases = [...phases].sort((a, b) => a.sequence - b.sequence)

@@ -9,9 +9,11 @@ import {
   Rocket,
   Flag,
   Monitor,
+  HelpCircle,
 } from "lucide-react"
+import type { LessonPhaseName } from "@/types/lesson"
 
-export const PHASE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+export const PHASE_ICONS: Record<LessonPhaseName, React.ComponentType<{ className?: string }>> = {
   "Hook": PlayCircle,
   "Introduction": BookOpen,
   "Guided Practice": Users,
@@ -23,7 +25,7 @@ export const PHASE_ICONS: Record<string, React.ComponentType<{ className?: strin
   "Project Presentation": Monitor,
 }
 
-export const PHASE_COLORS: Record<string, string> = {
+export const PHASE_COLORS: Record<LessonPhaseName, string> = {
   "Hook": "text-red-600 bg-red-50/50 border-red-200/50 dark:bg-red-950/20 dark:border-red-800/30",
   "Introduction": "text-primary bg-primary/5 border-primary/20 dark:bg-primary/10 dark:border-primary/30",
   "Guided Practice": "text-green-600 bg-green-50/50 border-green-200/50 dark:bg-green-950/20 dark:border-green-800/30",
@@ -35,7 +37,7 @@ export const PHASE_COLORS: Record<string, string> = {
   "Project Presentation": "text-blue-600 bg-blue-50/50 border-blue-200/50 dark:bg-blue-950/20 dark:border-blue-800/30",
 }
 
-export const PHASE_DESCRIPTIONS: Record<string, string> = {
+export const PHASE_DESCRIPTIONS: Record<LessonPhaseName, string> = {
   "Hook": "Engage with the lesson's driving question and real-world challenge",
   "Introduction": "Learn new concepts and skills through direct instruction",
   "Guided Practice": "Practice new skills with teacher support and collaboration",
@@ -45,4 +47,19 @@ export const PHASE_DESCRIPTIONS: Record<string, string> = {
   "Project Launch": "Kick off the team project with business scenario and data assignment",
   "Project Milestone": "Prototype completion and presentation rehearsal",
   "Project Presentation": "Final presentations and peer review",
+}
+
+const DEFAULT_COLOR = "text-muted-foreground bg-muted/50 border-border/30"
+const DEFAULT_DESCRIPTION = "Phase"
+
+export function getPhaseIcon(name: string): React.ComponentType<{ className?: string }> {
+  return (PHASE_ICONS as Record<string, React.ComponentType<{ className?: string }>>)[name] ?? HelpCircle
+}
+
+export function getPhaseColor(name: string): string {
+  return (PHASE_COLORS as Record<string, string>)[name] ?? DEFAULT_COLOR
+}
+
+export function getPhaseDescription(name: string): string {
+  return (PHASE_DESCRIPTIONS as Record<string, string>)[name] ?? DEFAULT_DESCRIPTION
 }

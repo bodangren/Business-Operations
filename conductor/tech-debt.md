@@ -27,6 +27,7 @@
 
 ## Resolved
 
+- [x] ~PHASE_ICONS/COLORS/DESCRIPTIONS typed as `Record<string, ...>` — no compile error when phase is missing; no fallback causes React crash on unknown key (from lessons-learned 2026-04-06, fixed 2026-04-07)~
 - [x] Duplicate Key Vocabulary card in StudentUnitOverview — rendering every unit overview with two identical cards (C1, fixed 2026-04-04)
 - [x] Stale "Asset & Inventory Tracker" references in 14 locations across components, debug pages, and text — aligned to "Inventory Accounting" (H1, fixed 2026-04-04)
 - [x] DepreciationMethodBuilder.tsx incorrectly tagged as Unit 7 content — moved to Unit 8 (H1, fixed 2026-04-04)

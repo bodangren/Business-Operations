@@ -12,7 +12,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import type { LessonPhase } from "@/types/lesson"
-import { PHASE_ICONS, PHASE_DESCRIPTIONS } from "@/components/student/phase-config"
+import { getPhaseIcon, getPhaseDescription } from "@/components/student/phase-config"
 
 interface StudentLessonOverviewProps {
   lesson: {
@@ -145,8 +145,8 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
           <CardContent>
             <div className="grid gap-4">
               {sortedPhases.map((phase, _index) => {
-                const Icon = PHASE_ICONS[phase.phaseName]
-                const description = phase.description || PHASE_DESCRIPTIONS[phase.phaseName]
+                const Icon = getPhaseIcon(phase.phaseName)
+                const description = phase.description || getPhaseDescription(phase.phaseName)
                 
                 return (
                   <div key={phase.id} className="flex items-center gap-4 p-4 border rounded-lg hover:bg-muted/50 transition-colors">
