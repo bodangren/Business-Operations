@@ -9,6 +9,17 @@ None — ready for next track.
 
 ## What Was Just Completed
 
+- **Type consolidation — PhaseHeader/PhaseFooter index signatures** (track: `type_consolidation_20260406`)
+  - Created `src/types/lesson.ts` with `LessonRef`, `UnitRef`, `LessonPhase`, `LessonPhaseName`
+  - Updated PhaseHeader, PhaseFooter, Lesson01Phase1 to use shared types (removed all `[key: string]: unknown`)
+  - Consolidated duplicate `LessonPhase` interface into single canonical definition
+  - Backward-compatible re-exports preserve existing import paths
+  - Tests: 221 passed (15 suites)
+  - Lint: 0 errors, 0 warnings
+  - Build: compiled successfully
+
+## What Was Just Completed
+
 - **Mastery progress bars on unit cards** (track: `mastery_progress_bars_20260406`)
   - Added `useUnitMastery` hook + `getUnitMasteryInfo` pure helper to `StudyDataContext.tsx`
   - Created `UnitMasteryProgressBar` component (color-coded bar: green/amber/red)

@@ -34,6 +34,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/eslint_cli_migration_20260405/](./tracks/eslint_cli_migration_20260405/)*
 - [x] **Track: Mastery progress bars on unit cards**
   *Link: [./tracks/mastery_progress_bars_20260406/](./tracks/mastery_progress_bars_20260406/)*
+- [x] **Track: Type consolidation — PhaseHeader/PhaseFooter index signatures**
+  *Link: [./tracks/type_consolidation_20260406/](./tracks/type_consolidation_20260406/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.

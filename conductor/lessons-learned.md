@@ -44,3 +44,8 @@
 ## 2026-04-05 — Dead Code Removal Pass
 
 - **Dead code cascading**: Removing a dead variable (`_correctVolume`) exposed a newly-dead constant (`CURRENT_PRICE`). Always re-lint after dead-code removal to catch cascading unused declarations.
+
+## 2026-04-06 — Type Consolidation (PhaseHeader/PhaseFooter)
+
+- **Re-exports preserve backward compat**: When moving a shared type to a canonical location, `export type { X } from './new-source'` from the old file avoids touching hundreds of import sites while still achieving single-source-of-truth. The 8 practice-test pages needed zero changes.
+- **Index signatures hide shape gaps**: `[key: string]: unknown` makes TypeScript accept any property silently. Replacing with explicit `LessonRef`/`UnitRef` interfaces catches accidental misspellings or wrong field names at compile time instead of runtime.

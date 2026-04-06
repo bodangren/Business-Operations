@@ -4,6 +4,7 @@ import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users } from "lucide-react"
+import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
 
 interface VideoData {
   title: string
@@ -41,9 +42,9 @@ interface UnitConfig {
 }
 
 interface Lesson01Phase1Props {
-  lesson01Data: { id: string; title: string; sequence: number; unitId: string; [key: string]: unknown }
-  unitData: { id: string; title: string; sequence: number; [key: string]: unknown }
-  lesson01Phases: Array<{ id: string; phaseName: "Hook" | "Introduction" | "Guided Practice" | "Independent Practice" | "Assessment" | "Closing"; sequence: number; description?: string }>
+  lesson01Data: LessonRef
+  unitData: UnitRef
+  lesson01Phases: LessonPhase[]
   videoData: VideoData
   comprehensionQuestions: ComprehensionQuestion[]
   unitConfig: UnitConfig

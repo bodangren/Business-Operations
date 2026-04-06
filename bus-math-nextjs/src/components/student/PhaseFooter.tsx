@@ -12,28 +12,14 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
+import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
 
-export interface LessonPhase {
-  id: string
-  phaseName: "Hook" | "Introduction" | "Guided Practice" | "Independent Practice" | "Assessment" | "Closing"
-  sequence: number
-  description?: string
-}
+// Re-export for backward compatibility with existing imports
+export type { LessonPhase } from "@/types/lesson"
 
 interface PhaseFooterProps {
-  lesson: {
-    id: string
-    title: string
-    sequence: number
-    unitId: string
-    [key: string]: unknown
-  }
-  unit: {
-    id: string
-    title: string
-    sequence: number
-    [key: string]: unknown
-  }
+  lesson: LessonRef
+  unit: UnitRef
   phase: LessonPhase
   phases: LessonPhase[]
   navigationOverrides?: PhaseFooterNavigationOverrides

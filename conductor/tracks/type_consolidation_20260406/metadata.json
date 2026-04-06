@@ -1,0 +1,8 @@
+{
+  "track_id": "type_consolidation_20260406",
+  "type": "refactor",
+  "status": "in-progress",
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T00:00:00Z",
+  "description": "Replace index signatures in PhaseHeader/PhaseFooter with shared LessonRef/UnitRef interfaces"
+}
