@@ -54,7 +54,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/consolidate_phase_names_20260407/](./tracks/consolidate_phase_names_20260407/)*
 - [x] **Track: Tighten PHASE_ICONS types and add defensive fallback helpers**
   *Link: [./tracks/phase_icons_fallback_20260407/](./tracks/phase_icons_fallback_20260407/)*
-- [~] **Track: useUnitMastery hook test coverage**
+- [x] **Track: useUnitMastery hook test coverage**
   *Link: [./tracks/use_unit_mastery_tests_20260407/](./tracks/use_unit_mastery_tests_20260407/)*
 
 Active tracks are ordered intentionally:

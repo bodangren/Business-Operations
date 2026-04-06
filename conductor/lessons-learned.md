@@ -1,52 +1,42 @@
 # Lessons Learned
 
-## 2026-04-06 — Derive lessonPages from Lesson-Data Files
+## 2026-04-07 — Testing React Hooks Without @testing-library/react
 
-- **Aliased imports for same-named exports**: All 80 lesson-data files export `lessonYYData` — importing from different paths with the same variable name causes collisions. Using `import { lesson01Data as u01l01 }` aliases with a unit+lesson prefix keeps names unique and readable.
-- **Registry module as single-source-of-truth**: Creating `lesson-registry.ts` that statically imports all lesson-data files and derives `{ title, href, unitId }` means adding a lesson only requires the lesson-data file + one import line in the registry. The hardcoded 90-line array in `index-records.ts` shrank to a single import.
+- **Install testing-library/react once, reuse everywhere**: The project had vitest and jsdom but no `@testing-library/react`. Installing it as a dev dependency unlocks `renderHook` for any future hook tests.
+- **Mock at module boundary**: For hooks that depend on React context providers (like `useStudyData`), mock the leaf modules the provider imports (e.g., `loadStudyData`) rather than the provider itself. This keeps context wiring real while controlling the data source.
+- **Per-file environment override**: When the global test environment is `node`, add `@vitest-environment jsdom` as a docblock comment at the top of individual test files that need DOM APIs. This avoids changing the global config for the 90% of tests that don't need it.
+
+## 2026-04-07 — PHASE_ICONS Fallback Helpers
+
+- **Widen-at-boundary pattern**: Type shared maps as `Record<LessonPhaseName, ...>` for compile-time completeness checks, but provide helper functions that accept `string` and cast internally. Consumers call the helpers (wide input, narrow internals) instead of indexing the typed map directly.
+- **Sensible defaults prevent runtime crashes**: `HelpCircle` icon, neutral color string, and `"Phase"` fallback text mean unknown keys degrade gracefully instead of throwing `undefined` at render.
+
+## 2026-04-06 — Extract Shared phaseIcons Constant
+
+- **Separate direct-use icons from map icons**: When extracting icon maps to a shared module, each consumer file may still use some of those icons directly for section headers or UI elements. Keep direct-use icons in the consumer's import and only remove imports for icons exclusively used in the shared map.
+- **Consolidate related maps together**: `phaseColors` and `phaseDescriptions` were also duplicated but only in 1-2 files. Bundling them into the same `phase-config.ts` alongside `PHASE_ICONS` ensures future phase additions only touch one file.
+
+## 2026-04-06 — Unit Data Deduplication (80 Lesson-Data Files)
+
+- **Bulk regex replacement with Node**: For 80 files, a Node.js `glob` + regex script was faster and more reliable than shell `sed`. The script found all matches, replaced inline blocks, and reported failures in one pass.
+- **Registry pattern for duplicated metadata**: When the same data is repeated in 3+ files, create a single registry module that imports from canonical sources and exports a derived array.
+
+## 2026-04-06 — Type Consolidation (PhaseHeader/PhaseFooter)
+
+- **Re-exports preserve backward compat**: When moving a shared type to a canonical location, `export type { X } from './new-source'` from the old file avoids touching hundreds of import sites while still achieving single-source-of-truth.
+- **Index signatures hide shape gaps**: `[key: string]: unknown` makes TypeScript accept any property silently. Replacing with explicit interfaces catches misspellings at compile time.
 
 ## 2026-04-06 — Mastery Progress Bars on Unit Cards
 
-- **Existing derived data goes unused**: `deriveStats()` computed `unitMastery` with `termsStudied`, `termsTotal`, `avgMastery` but nothing consumed it. When adding features, audit existing utilities before writing new logic — the helper functions (`masteryColor`, `UnitMastery` interface) were already there.
-- **Module-level maps for unit term counts**: Building `UNIT_TERM_COUNTS` from `glossaryData` at module load (like `SLUG_UNITS`) avoids recomputing per-render and keeps hooks pure.
-- **Custom bar vs. Progress component**: The existing `<Progress>` primitive hardcodes `bg-primary` on the indicator with no override prop. For color-coded bars (green/amber/red), a thin custom `<div>` bar is cleaner than extending the radix wrapper.
-
-## 2026-04-06 — Header Unit Data From Canonical Sources
-
-- **Registry pattern for duplicated metadata**: When the same data (unit titles, descriptions, hrefs) is repeated in 3+ files, create a single registry module that imports from canonical sources and exports a derived array. Consumers map over the registry instead of maintaining parallel hardcoded lists.
-- **TDD catches title mismatches early**: The RED phase caught a `Data-Driven Café` vs `Data-Driven Cafe` accent mismatch between the test expectation and the canonical unit04.ts data. Without the test, this would have silently regressed the nav display.
+- **Existing derived data goes unused**: When adding features, audit existing utilities before writing new logic — the helper functions (`masteryColor`, `UnitMastery` interface) were already there.
+- **Module-level maps for unit term counts**: Building `UNIT_TERM_COUNTS` from `glossaryData` at module load avoids recomputing per-render and keeps hooks pure.
 
 ## 2026-04-05 — Study Data Context Provider
 
 - **Extract pure logic for testability**: When creating React contexts, extract pure helper functions and accept optional dependency parameters so tests can inject mocks without needing a real DOM environment.
 - **Context wrapping is low-risk**: Adding providers to the root layout is safe when existing code already guards for SSR. The provider degrades gracefully to empty data during server rendering.
 
-## 2026-04-05 — ESLint Warning Cleanup Phases 1-2 (Review Audit)
+## 2026-04-05 — ESLint Warning Cleanup
 
-- **`_` prefix can break runtime**: When ESLint flags an unused variable, prefixing with `_` is safe for truly dead code but **dangerous** when the variable is referenced on subsequent lines. In `StraightLineMastery.tsx`, renaming `selectedOption` → `_selectedOption` inside `handleSubmit` caused all downstream references to hit a `ReferenceError`. Always verify the variable isn't referenced elsewhere in the same scope before prefixing.
-- **Interface callback parameter names are API documentation**: Prefixing callback parameter names in TypeScript interfaces with `_` (e.g., `onComplete?: (_score: number) => void`) harms readability for API consumers. The linter fires because the parameter value isn't used in the component implementation, but that's expected for callback props. Keep meaningful names in public interfaces.
-- **Auto-fix tools are safer than manual edits**: Phase 1 (`eslint-plugin-unused-imports` auto-fix) had zero issues. Phase 2 (manual `_` prefix) introduced the runtime bug. Prefer automated tools where possible; for manual fixes, validate each change against the full file context, not just the flagged line.
-
-## 2026-04-06 — Type Consolidation (PhaseHeader/PhaseFooter)
-
-- **Re-exports preserve backward compat**: When moving a shared type to a canonical location, `export type { X } from './new-source'` from the old file avoids touching hundreds of import sites while still achieving single-source-of-truth. The 8 practice-test pages needed zero changes.
-- **Index signatures hide shape gaps**: `[key: string]: unknown` makes TypeScript accept any property silently. Replacing with explicit `LessonRef`/`UnitRef` interfaces catches accidental misspellings or wrong field names at compile time instead of runtime.
-
-## 2026-04-06 — Unit Data Deduplication (80 Lesson-Data Files)
-
-- **UnitRef vs UnitData mismatch**: The canonical `UnitData` type (300+ lines) doesn't include `sequence`. Lesson-data consumers need `UnitRef` shape `{ id, title, sequence }`. Exporting `UNIT_REF_MAP` from the registry lets each lesson-data file derive its `UnitRef` with a single lookup rather than re-exporting the heavy `UnitData` object.
-- **Bulk regex replacement with Node**: For 80 files, a Node.js `glob` + regex script was faster and more reliable than shell `sed`. The script found all matches, replaced inline blocks, and reported failures in one pass.
-- **Import ordering matters for build**: Placing `import` statements after `export const` (mid-file) compiled fine but violated style conventions. A second pass moved all imports to the top of each file.
-
-## 2026-04-06 — Extract Shared phaseIcons Constant
-
-- **Separate direct-use icons from map icons**: When extracting icon maps to a shared module, each consumer file may still use some of those icons directly for section headers or UI elements (e.g., `Target`, `BookOpen` in `StudentLessonOverview`). Keep direct-use icons in the consumer's import and only remove imports for icons that are exclusively used in the shared map.
-- **TDD catches type mismatches early**: Lucide-react icons are `forwardRef` objects, not plain functions. The RED phase caught a `typeof` assertion error — the test was checking for `"function"` but lucide icons return `"object"`. Adjusting the test to verify truthiness and non-string type was cleaner than fighting the framework's export shape.
-- **Consolidate related maps together**: `phaseColors` and `phaseDescriptions` were also duplicated but only in 1-2 files. Bundling them into the same `phase-config.ts` alongside `PHASE_ICONS` ensures future phase additions only touch one file for all three concerns.
-
-- **Exhaustive icon/color maps break when types widen**: Adding values to a union type propagates to every `Record<PhaseName, ...>` map. The build caught missing `phaseIcons`/`phaseColors` entries in PhaseFooter, PhaseHeader, and StudentLessonOverview — use `Record<string, ...>` for icon maps when new phase categories may be added.
-
-## 2026-04-07 — PHASE_ICONS Fallback Helpers
-
-- **Widen-at-boundary pattern**: Type shared maps as `Record<LessonPhaseName, ...>` for compile-time completeness checks, but provide helper functions that accept `string` and cast internally. Consumers call the helpers (wide input, narrow internals) instead of indexing the typed map directly.
-- **Sensible defaults prevent runtime crashes**: `HelpCircle` icon, neutral color string, and `"Phase"` fallback text mean unknown keys degrade gracefully instead of throwing `undefined` at render.
+- **`_` prefix can break runtime**: When ESLint flags an unused variable, prefixing with `_` is safe for truly dead code but dangerous when the variable is referenced on subsequent lines. Always verify the variable isn't referenced elsewhere before prefixing.
+- **Auto-fix tools are safer than manual edits**: Prefer automated tools where possible; for manual fixes, validate each change against the full file context, not just the flagged line.
