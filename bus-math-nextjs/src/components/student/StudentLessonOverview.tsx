@@ -186,7 +186,7 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
                       <p className="text-sm text-muted-foreground">{description}</p>
                     </div>
                     <Button variant="outline" size="sm" asChild>
-                      <Link href={`/student/unit0${unit.sequence}/lesson${lesson.sequence.toString().padStart(2, '0')}/phase-${phase.sequence}`}>
+                      <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}/lesson${lesson.sequence.toString().padStart(2, '0')}/phase-${phase.sequence}`}>
                         Start Phase
                       </Link>
                     </Button>
