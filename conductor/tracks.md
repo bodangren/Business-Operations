@@ -60,7 +60,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/mastery_color_thresholds_20260407/](./tracks/mastery_color_thresholds_20260407/)*
 - [x] **Track: Lesson-data import migration — context to types**
   *Link: [./tracks/lesson_data_import_migration_20260407/](./tracks/lesson_data_import_migration_20260407/)*
-- [ ] **Track: Resolve orphan "finance" TopicTag**
+- [x] **Track: Resolve orphan "finance" TopicTag**
   *Link: [./tracks/resolve_finance_topic_tag_20260407/](./tracks/resolve_finance_topic_tag_20260407/)*
 
 Active tracks are ordered intentionally:

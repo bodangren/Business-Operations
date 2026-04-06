@@ -1,24 +1,22 @@
 # Current Directive
 
 **Updated:** 2026-04-07
-**Status:** `masteryColor` thresholds aligned to `proficiencyBand` — 4-tier color now matches 4 proficiency bands
+**Status:** Orphan "finance" TopicTag resolved
 
 ## What Was Just Completed
 
-- **`masteryColor` thresholds alignment** — changed from 75/50 (3 tiers) to 85/60/30 (4 tiers) matching `proficiencyBand` bands (strong/proficient/developing/new)
-- Added `bg-orange-500` for the developing band, 4 new unit tests in `derived.test.ts`
+- **Orphan "finance" TopicTag resolved** — removed "finance" from TopicTag type, updated test to use "financial-statements", removed from TOPIC_LABELS in GlossaryFilters.tsx, marked tech-debt item as fixed
 
 ## Verification
 
 - Tests: 274 passed (21 suites)
 - tsc: 0 errors
 - ESLint: 0 warnings, 0 errors
-- Build: compiled successfully (603 pages)
 
 ## Next Priorities
 
-1. **Migrate 5 lesson-data imports** — move from `LessonProgressContext` to `@/types/lesson` (tech-debt.md L19, low priority)
-2. **Resolve orphan `"finance"` TopicTag** — either add glossary entries or fix test mock (tech-debt.md L18, low priority)
+1. **Multiple lockfile warning** — set `outputFileTracingRoot` or clean up root lockfile (tech-debt.md L6, low priority)
+2. **Glossary IDs manually assigned** — collision risk as terms grow (tech-debt.md L14, low priority)
 
 ## Blocked / Deferred
 
