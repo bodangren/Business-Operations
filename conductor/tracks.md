@@ -56,6 +56,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/phase_icons_fallback_20260407/](./tracks/phase_icons_fallback_20260407/)*
 - [x] **Track: useUnitMastery hook test coverage**
   *Link: [./tracks/use_unit_mastery_tests_20260407/](./tracks/use_unit_mastery_tests_20260407/)*
+- [x] **Track: masteryColor thresholds alignment with proficiencyBand**
+  *Link: [./tracks/mastery_color_thresholds_20260407/](./tracks/mastery_color_thresholds_20260407/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.

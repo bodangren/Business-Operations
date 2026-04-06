@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { getDueCountByUnit, getDueCountForUnit } from "../derived"
+import { getDueCountByUnit, getDueCountForUnit, masteryColor } from "../derived"
 import { scheduleNewTerm } from "../srs"
 import type { UnitId } from "@/types/glossary"
 import type { DueReviewEntry } from "../storage-schema"
@@ -118,5 +118,35 @@ describe("getDueCountForUnit", () => {
   it("returns 0 when no study data exists", () => {
     const count = getDueCountForUnit("unit01", [], EMPTY_MAP, NOW)
     expect(count).toBe(0)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// masteryColor Tests — aligned with proficiencyBand thresholds (85/60/30)
+// ---------------------------------------------------------------------------
+
+describe("masteryColor", () => {
+  it("returns green for score >= 85 (strong)", () => {
+    expect(masteryColor(85)).toBe("bg-green-500")
+    expect(masteryColor(100)).toBe("bg-green-500")
+    expect(masteryColor(90)).toBe("bg-green-500")
+  })
+
+  it("returns amber for score >= 60 and < 85 (proficient)", () => {
+    expect(masteryColor(60)).toBe("bg-amber-500")
+    expect(masteryColor(75)).toBe("bg-amber-500")
+    expect(masteryColor(84)).toBe("bg-amber-500")
+  })
+
+  it("returns orange for score >= 30 and < 60 (developing)", () => {
+    expect(masteryColor(30)).toBe("bg-orange-500")
+    expect(masteryColor(45)).toBe("bg-orange-500")
+    expect(masteryColor(59)).toBe("bg-orange-500")
+  })
+
+  it("returns red for score < 30 (new)", () => {
+    expect(masteryColor(0)).toBe("bg-red-500")
+    expect(masteryColor(15)).toBe("bg-red-500")
+    expect(masteryColor(29)).toBe("bg-red-500")
   })
 })

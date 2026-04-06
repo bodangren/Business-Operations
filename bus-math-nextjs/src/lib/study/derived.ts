@@ -160,7 +160,8 @@ export function formatDuration(seconds: number): string {
 }
 
 export function masteryColor(score: number): string {
-  if (score >= 75) return "bg-green-500"
-  if (score >= 50) return "bg-amber-500"
+  if (score >= 85) return "bg-green-500"
+  if (score >= 60) return "bg-amber-500"
+  if (score >= 30) return "bg-orange-500"
   return "bg-red-500"
 }

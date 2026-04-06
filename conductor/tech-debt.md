@@ -18,7 +18,7 @@
 - [ ] `"finance"` TopicTag has no production glossary entries — added for test mock in `export-builders.test.ts:276`; "Finance" appears in glossary filter dropdown with zero results (L2 from review, 2026-04-07)
 - [ ] 5 lesson-data files (`unit03/lesson07`, `unit04/lesson{07-10}`) import `LessonProgressPhaseName` from React context — should migrate to `@/types/lesson` directly to remove data→context coupling (L3 from review, 2026-04-07)
 - [x] ~8 practice-test pages still import `LessonPhase` from `@/components/student/PhaseHeader` via backward-compat re-export — should migrate to `@/types/lesson` (L5 from review, 2026-04-06)~ (fixed 2026-04-06)
-- [ ] `masteryColor` thresholds (75/50) don't align with `proficiency_band` thresholds (85/60/30) — document or unify (L3 from review, 2026-04-06)
+- [x] ~`masteryColor` thresholds (75/50) don't align with `proficiency_band` thresholds (85/60/30) — document or unify (L3 from review, 2026-04-06)~ (fixed 2026-04-07)
 - [x] ~`useUnitMastery` hook has no test coverage — only pure helper `getUnitMasteryInfo` is tested (L2 from review, 2026-04-06)~ (fixed 2026-04-07)
 - [x] ~5 lesson-data files use `as LessonPhase` to cast non-standard phase names ("Project Presentation", "Project Milestone", "Project Launch") — type system can't catch invalid phases (from review, 2026-04-06)~ (fixed 2026-04-06)
 - [x] ~`phaseIcons` map duplicated across 3 component files (PhaseHeader, PhaseFooter, StudentLessonOverview) — adding a phase requires updating all 3; extract to shared constant (L1 from review, 2026-04-06)~ (fixed 2026-04-06)
