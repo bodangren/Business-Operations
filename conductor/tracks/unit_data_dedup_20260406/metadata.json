@@ -1,0 +1,8 @@
+{
+  "track_id": "unit_data_dedup_20260406",
+  "type": "refactor",
+  "status": "complete",
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T17:00:00Z",
+  "description": "Deduplicate unit data objects from 80 lesson-data files into unit-registry.ts single source of truth"
+}

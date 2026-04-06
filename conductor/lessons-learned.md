@@ -29,7 +29,6 @@
 
 ## 2026-04-05 — Lesson-Level Index Entries
 
-- **Shell extraction for data tasks**: Bash `grep` + `sed` pipelines efficiently extracted 80 lesson titles from `lesson-data.ts` files without needing to read each file individually. The `for unit in ... for lesson in ...` loop pattern scales well for filesystem-based data extraction.
 - **Test-first for data integrity**: Writing tests before populating the `lessonPages` array ensured the data met exact specifications (80 entries, correct href pattern, unitId coverage). The RED-GREEN cycle was clean: 3 failures → all pass after data entry.
 
 ## 2026-04-05 — ESLint Warning Cleanup Phases 1-2 (Review Audit)
@@ -37,14 +36,14 @@
 - **`_` prefix can break runtime**: When ESLint flags an unused variable, prefixing with `_` is safe for truly dead code but **dangerous** when the variable is referenced on subsequent lines. In `StraightLineMastery.tsx`, renaming `selectedOption` → `_selectedOption` inside `handleSubmit` caused all downstream references to hit a `ReferenceError`. Always verify the variable isn't referenced elsewhere in the same scope before prefixing.
 - **Interface callback parameter names are API documentation**: Prefixing callback parameter names in TypeScript interfaces with `_` (e.g., `onComplete?: (_score: number) => void`) harms readability for API consumers. The linter fires because the parameter value isn't used in the component implementation, but that's expected for callback props. Keep meaningful names in public interfaces.
 - **Auto-fix tools are safer than manual edits**: Phase 1 (`eslint-plugin-unused-imports` auto-fix) had zero issues. Phase 2 (manual `_` prefix) introduced the runtime bug. Prefer automated tools where possible; for manual fixes, validate each change against the full file context, not just the flagged line.
-- **Dead code patterns are pervasive**: Multiple components contain functions and state variables that are defined but never called (`_processFlows`, `_calculateProfit`, `_handleNextAsset`, `_getHealthProgress`, etc.). These should be removed in a dedicated dead-code cleanup pass rather than accumulated with `_` prefixes.
-
-## 2026-04-05 — ESLint Phase 4: React Hooks Rules
-
-- **`useCallback` named `use*` triggers false positive**: A `useCallback` named `useCredit` caused ESLint to flag it as a hook call inside onClick handlers. Rename event-handler callbacks with `handle*` prefix to avoid the `use*` pattern that ESLint associates with React Hooks.
-- **Function definition order matters for exhaustive-deps**: When `simulateSales` calls `completeSales` and both are `useCallback`, moving `completeSales` before `simulateSales` avoids a "used before declaration" build error while allowing it to be safely listed as a dependency.
 
 ## 2026-04-06 — Type Consolidation (PhaseHeader/PhaseFooter)
 
 - **Re-exports preserve backward compat**: When moving a shared type to a canonical location, `export type { X } from './new-source'` from the old file avoids touching hundreds of import sites while still achieving single-source-of-truth. The 8 practice-test pages needed zero changes.
 - **Index signatures hide shape gaps**: `[key: string]: unknown` makes TypeScript accept any property silently. Replacing with explicit `LessonRef`/`UnitRef` interfaces catches accidental misspellings or wrong field names at compile time instead of runtime.
+
+## 2026-04-06 — Unit Data Deduplication (80 Lesson-Data Files)
+
+- **UnitRef vs UnitData mismatch**: The canonical `UnitData` type (300+ lines) doesn't include `sequence`. Lesson-data consumers need `UnitRef` shape `{ id, title, sequence }`. Exporting `UNIT_REF_MAP` from the registry lets each lesson-data file derive its `UnitRef` with a single lookup rather than re-exporting the heavy `UnitData` object.
+- **Bulk regex replacement with Node**: For 80 files, a Node.js `glob` + regex script was faster and more reliable than shell `sed`. The script found all matches, replaced inline blocks, and reported failures in one pass.
+- **Import ordering matters for build**: Placing `import` statements after `export const` (mid-file) compiled fine but violated style conventions. A second pass moved all imports to the top of each file.

@@ -40,6 +40,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/practice_test_lessonphase_20260406/](./tracks/practice_test_lessonphase_20260406/)*
 - [x] **Track: Header unit data from canonical sources**
   *Link: [./tracks/header_unit_data_20260406/](./tracks/header_unit_data_20260406/)*
+- [x] **Track: Unit data deduplication in lesson-data files**
+  *Link: [./tracks/unit_data_dedup_20260406/](./tracks/unit_data_dedup_20260406/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
