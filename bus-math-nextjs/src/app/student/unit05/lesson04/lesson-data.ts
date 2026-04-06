@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson04Data = {
   id: "u5l4",
   title: "Payroll Timing and Liabilities",
@@ -25,11 +27,6 @@ export const lesson04Data = {
   rationale: "Before automating payroll in Excel, students must understand why payroll timing creates temporary cash differences and what liabilities exist until each pay period clears. This connects gross pay (Lesson 02) and deductions (Lesson 03) to the cash management challenge Sarah faces."
 }
 
-export const unit05Data = {
-  id: "unit05",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 export const lesson04Phases = [
   {

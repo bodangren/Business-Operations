@@ -1,4 +1,6 @@
 // Unit 1, Lesson 7 data - Project Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson07Data = {
   id: "lesson07-unit01",
   title: "Project Rehearsal: Shared Data, Shared Standard",
@@ -28,11 +30,6 @@ export const lesson07Data = {
   status: "Ready"
 }
 
-export const unit01Data = {
-  id: "unit01",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 // Lesson phases for Project Rehearsal
 export const lesson07Phases = [

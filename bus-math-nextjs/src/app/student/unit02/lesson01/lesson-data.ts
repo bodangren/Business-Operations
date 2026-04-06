@@ -1,4 +1,6 @@
 // Unit 2, Lesson 1 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson01Data = {
   id: "mds5v4twc0o3z3l8ecg",
   title: "Launch: The Month-End Closing Crisis",
@@ -27,11 +29,6 @@ export const lesson01Data = {
   status: "Complete"
 }
 
-export const unit02Data = {
-  id: "mdrhkhm79v8qau43696",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 // Lesson phases (standard 6-phase structure)
 export const lesson01Phases = [

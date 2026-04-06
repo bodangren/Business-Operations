@@ -1,4 +1,6 @@
 // Unit 2, Lesson 3 data - Closing Entries
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson03Data = {
   id: "mds5v4u1inmd8zoj1fi",
   title: "Closing Entries: Resetting Temporary Accounts",
@@ -26,11 +28,6 @@ export const lesson03Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "mdrhkhm79v8qau43696",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 // Lesson phases (standard 6-phase structure)
 export const lesson03Phases = [

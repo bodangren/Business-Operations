@@ -1,4 +1,6 @@
 // Unit 1, Lesson 4 data
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson04Data = {
   id: "mds5t7qs1o7y0k5y45z",
   title: "Excel Model: Move Manual Ledger to Excel Table",
@@ -29,11 +31,6 @@ export const lesson04Data = {
   status: "Draft"
 }
 
-export const unit01Data = {
-  id: "mdrha5ziiupuou6dqt",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 // Lesson phases - aligned with excel-lessons skill
 export const lesson04Phases = [

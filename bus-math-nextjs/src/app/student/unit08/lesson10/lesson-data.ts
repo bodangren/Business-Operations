@@ -1,4 +1,6 @@
 // Unit 08 — PBL Lesson 10 (Single Phase)
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson10Data = {
   id: "u08_l10_pbl_m3",
   title: "PBL Milestone 3: Fixed‑Asset Recommendation Presentations",
@@ -25,11 +27,6 @@ export const lesson10Data = {
   rationale: "Your presentation shows stakeholders they can trust your asset tracking and depreciation choices. Clear delivery, accurate workbook evidence, and thoughtful Q&A make your recommendation credible.",
 }
 
-export const unit08Data = {
-  id: "unit08",
-  title: "Fixed Assets & Depreciation",
-  sequence: 8,
-}
 
 export const lesson10Phases = [
   {

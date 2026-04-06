@@ -1,4 +1,6 @@
 // Three-Statement Storyboard, Lesson 4 data - Indirect Cash Flow and Ratios
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson04Data = {
   id: "mds5via5psu7rqxs1h",
   title: "Indirect Cash Flow Statement and Ratio Interpretation",
@@ -27,11 +29,6 @@ export const lesson04Data = {
   status: "Draft"
 }
 
-export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 // Lesson phases following the accounting-principles skill contract
 export const lesson04Phases = [

@@ -1,4 +1,6 @@
 // Build Asset Register and Depreciation Schedule, Lesson 5 — Unit 08 (Fixed Assets and Depreciation)
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson05Data = {
   id: "u08l05",
   title: "Build Asset Register and Depreciation Schedule",
@@ -29,11 +31,6 @@ export const lesson05Data = {
   status: "Draft"
 }
 
-export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
-  title: "Fixed Assets and Depreciation",
-  sequence: 8
-}
 
 export const lesson05Phases = [
   {

@@ -1,4 +1,6 @@
 // Three-Statement Storyboard, Lesson 3 data - Balance Sheet & Retained Earnings
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson03Data = {
   id: "mds5via1qgutbwmfa3s",
   title: "Build the Balance Sheet and Retained Earnings",
@@ -25,11 +27,6 @@ export const lesson03Data = {
   status: "Draft"
 }
 
-export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 // Lesson phases following the accounting-principles skill contract
 export const lesson03Phases = [

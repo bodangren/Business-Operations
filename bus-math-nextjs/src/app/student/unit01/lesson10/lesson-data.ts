@@ -1,4 +1,6 @@
 // Unit 1, Lesson 10 — Final Presentation and Submission
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson10Data = {
   id: "u01l10-pbl-final",
   title: "Project Milestone 3: Final Presentation & Submission",
@@ -21,11 +23,6 @@ export const lesson10Data = {
   status: "Ready"
 }
 
-export const unit01Data = {
-  id: "unit01",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 export const lesson10Phases = [
   {

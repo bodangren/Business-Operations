@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 9 data - Group Project: Workbook Completion and Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson09Data = {
   id: "mds5wn42nspfb8vlsea",
   title: "Complete the Workbook and Rehearse the Recommendation",
@@ -27,11 +29,6 @@ export const lesson09Data = {
   rationale: "Lesson 09 moves teams from early analysis into a complete workbook and rehearsed recommendation. Each group continues the same workbook from Lesson 08, finishes the remaining evidence sheets, tests their recommendation under different conditions, and practices explaining their reasoning with peer feedback. This rehearsal ensures teams enter Lesson 10 with a defensible model and a clear presentation."
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases aligned to the group-project skill contract
 // Phase names follow the milestone-style structure for project lessons

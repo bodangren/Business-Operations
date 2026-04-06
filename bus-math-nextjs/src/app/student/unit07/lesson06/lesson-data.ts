@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit07Data = UNIT_REF_MAP[7]
 export const lesson06Data = {
   id: "u07l06",
   title: "Build the Scenario-Switch Dashboard",
@@ -27,11 +29,6 @@ export const lesson06Data = {
   status: "Complete"
 }
 
-export const unit07Data = {
-  id: "u07",
-  title: "Inventory Accounting",
-  sequence: 7
-}
 
 export const lesson06Phases = [
   {

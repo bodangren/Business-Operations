@@ -1,4 +1,6 @@
 // Unit 2, Lesson 6 — Polish Wizard Interface: Validation, Controls, and Auditability
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson06Data = {
   id: "unit02_lesson06",
   title: "Polish Wizard Interface: Validation, Controls, and Auditability",
@@ -26,11 +28,6 @@ export const lesson06Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "unit02",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 export const lesson06Phases = [
   {

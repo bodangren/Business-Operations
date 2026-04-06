@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 5 — Goal Seek for Target-Profit Pricing
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson05Data = {
   id: "u06_l05_goal_seek_target_profit",
   title: "Goal Seek: Hit Your Profit Target",
@@ -29,11 +31,6 @@ export const lesson05Data = {
   status: "In Progress"
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases
 export const lesson05Phases = [

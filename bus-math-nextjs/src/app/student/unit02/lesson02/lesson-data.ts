@@ -1,4 +1,6 @@
 // Unit 2, Lesson 2 data - Accruals and Deferrals
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson02Data = {
   id: "mds5v4txafu1bzizb5q",
   title: "Accruals and Deferrals: Timing Is Everything",
@@ -28,11 +30,6 @@ export const lesson02Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "mdrhkhm79v8qau43696",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 // Lesson phases (standard 6-phase structure)
 export const lesson02Phases = [

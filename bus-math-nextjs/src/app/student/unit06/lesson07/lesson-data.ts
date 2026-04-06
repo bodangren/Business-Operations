@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 7 data - Project Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson07Data = {
   id: "mds5wn3xm9hisij8jqf",
   title: "Project Rehearsal: Shared Workbook, Evidence Chain, and Quality Standard",
@@ -26,11 +28,6 @@ export const lesson07Data = {
   rationale: "Lesson 07 is a guided-practice version of the upcoming group project. Every student sees the same workbook structure, quality standard, and evidence chain before teams receive different scenarios in Lessons 8-10."
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases aligned to the project-rehearsal skill contract
 // Phase names follow the standard six-phase contract; descriptions reflect rehearsal focus

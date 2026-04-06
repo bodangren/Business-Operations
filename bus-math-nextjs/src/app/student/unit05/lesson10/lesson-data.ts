@@ -1,4 +1,6 @@
 // PayDay Simulator, Lesson 10 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson10Data = {
   id: "mds5w75es7txw334pa",
   title: "Public Presentation: YouTube Publication & Business Q&A",
@@ -24,11 +26,6 @@ export const lesson10Data = {
   status: "Draft"
 }
 
-export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson10Phases = [

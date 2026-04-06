@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson07Data = {
   id: "u08l07",
   title: "Project Rehearsal: Depreciation Workbook with Shared Data",
@@ -23,11 +25,6 @@ export const lesson07Data = {
   status: "Ready"
 }
 
-export const unit08Data = {
-  id: "unit08",
-  title: "Fixed Assets and Depreciation",
-  sequence: 8
-}
 
 export const lesson07Phases = [
   {

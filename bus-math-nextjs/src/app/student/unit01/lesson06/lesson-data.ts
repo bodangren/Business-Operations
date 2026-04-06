@@ -1,4 +1,6 @@
 // Unit 1, Lesson 6 — Investor-Facing Summary
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson06Data = {
   id: "mds5t7qxp0v3d9i52ti",
   title: "Investor-Facing Summary & Workbook Polish",
@@ -30,11 +32,6 @@ export const lesson06Data = {
   status: "Draft"
 }
 
-export const unit01Data = {
-  id: "mdrha5ziiupuou6dqt",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 export const lesson06Phases = [
   {

@@ -1,4 +1,6 @@
 // Data-Driven Café, Lesson 1 data - Launch lesson for weekend-profit vs waste problem
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson01Data = {
   id: "u4-l1-launch",
   title: "Launch: Weekend Profit vs. Waste",
@@ -26,11 +28,6 @@ export const lesson01Data = {
   status: "Draft"
 }
 
-export const unit04Data = {
-  id: "u4-data-cafe",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 export const lesson01Phases = [
   {

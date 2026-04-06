@@ -1,4 +1,6 @@
 // Three-Statement Storyboard, Lesson 8 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson08Data = {
   id: "mds5viadegxnqpm9kb8",
   title: "Presentation Prep: KPI Dashboard Design",
@@ -22,11 +24,6 @@ export const lesson08Data = {
   status: "Draft"
 }
 
-export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson08Phases = [

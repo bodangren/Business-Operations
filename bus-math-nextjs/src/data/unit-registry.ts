@@ -1,4 +1,5 @@
 import type { UnitId } from "@/types/glossary"
+import type { UnitRef } from "@/types/lesson"
 import { unit01Data } from "@/data/unit01"
 import { unit02Data } from "@/data/unit02"
 import { unit03Data } from "@/data/unit03"
@@ -38,3 +39,22 @@ export const UNITS: readonly UnitMetadata[] = rawData.map(({ data, unitId, numbe
   teacherHref: `/teacher/${unitId}`,
   label: `Unit ${number}: ${data.title}`,
 }))
+
+/**
+ * Canonical UnitRef objects for use by PhaseHeader, PhaseFooter, and
+ * lesson-data files.  Replaces the 80 inline copies that previously lived
+ * in each lesson-data.ts file.
+ */
+export const UNIT_REFS: readonly UnitRef[] = rawData.map(({ data, unitId, number }) => ({
+  id: unitId,
+  title: data.title,
+  sequence: number,
+}))
+
+/**
+ * Lookup map: unit number → UnitRef.  Useful when a lesson-data file needs
+ * only its own unit's ref.
+ */
+export const UNIT_REF_MAP: Record<number, UnitRef> = Object.fromEntries(
+  UNIT_REFS.map((ref) => [ref.sequence, ref]),
+) as Record<number, UnitRef>

@@ -1,4 +1,6 @@
 // Month-End Wizard, Lesson 7 data - Project Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson07Data = {
   id: "mds5v4udik3kb3x51po",
   title: "Project Rehearsal: Guided Practice with Shared Data",
@@ -27,11 +29,6 @@ export const lesson07Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "mdrhkhm79v8qau43696",
-  title: "Month-End Wizard",
-  sequence: 2
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson07Phases = [

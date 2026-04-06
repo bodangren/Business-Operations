@@ -1,4 +1,6 @@
 // Unit 2, Lesson 4 data - Complete Manual Month-End Flow
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson04Data = {
   id: "unit02_lesson04",
   title: "Complete Manual Month-End Flow",
@@ -26,11 +28,6 @@ export const lesson04Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "unit02",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 // Lesson phases (standard 6-phase structure for accounting-principles lessons)
 export const lesson04Phases = [

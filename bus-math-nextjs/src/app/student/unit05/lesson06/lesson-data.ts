@@ -1,4 +1,6 @@
 // PayDay Simulator, Lesson 6 — Integration & Presentation: Decision‑Ready Payroll Dashboard
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson06Data = {
   id: "u05_l06_paystub",
   title: "Pay Stub Studio: Taxes, Net Pay, and Proof",
@@ -25,11 +27,6 @@ export const lesson06Data = {
   status: "Complete"
 }
 
-export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson06Phases = [

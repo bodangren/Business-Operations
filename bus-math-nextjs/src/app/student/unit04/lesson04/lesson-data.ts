@@ -1,4 +1,6 @@
 // Data-Driven Café, Lesson 4 data - Forecasting Logic and Regression
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson04Data = {
   id: "mds5vu00qkk4xiaq3ha",
   title: "Forecasting Logic: Predicting the Future from Past Data",
@@ -26,11 +28,6 @@ export const lesson04Data = {
   status: "Ready for Dev"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 export const lesson04Phases = [
   {

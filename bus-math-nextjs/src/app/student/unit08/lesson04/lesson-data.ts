@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson04Data = {
   id: "u08l04",
   title: "Double-Declining Balance and Method Comparison",
@@ -23,11 +25,6 @@ export const lesson04Data = {
   status: "Draft"
 }
 
-export const unit08Data = {
-  id: "u08",
-  title: "Fixed Assets and Depreciation",
-  sequence: 8
-}
 
 export const lesson04Phases = [
   {

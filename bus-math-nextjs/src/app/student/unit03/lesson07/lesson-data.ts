@@ -1,6 +1,8 @@
 // Unit 03 - Lesson 07: Project Rehearsal data
 import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson07Data = {
   id: "u3l7",
   title: "Project Rehearsal: Three-Statement Workbook Audit",
@@ -26,11 +28,6 @@ export const lesson07Data = {
   status: "Active"
 }
 
-export const unit03Data = {
-  id: "u3",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 export const lesson07Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
   {

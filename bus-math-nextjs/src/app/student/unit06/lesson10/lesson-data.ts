@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 10 data - Group Project: Final Presentation and Submission
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson10Data = {
   id: "mds5wn45ehaor48xp9",
   title: "Final Presentation, Submission, and Reflection",
@@ -27,11 +29,6 @@ export const lesson10Data = {
   rationale: "Lesson 10 is the culmination of the PriceLab Challenge. Teams present their final pricing recommendation to a panel, defend their analysis during Q&A, submit their polished workbook, and reflect on what they learned about pricing, risk, and evidence-based decision-making. This lesson mirrors real business pricing decisions where multiple stakeholders evaluate strategies."
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases aligned to the group-project skill contract
 // Phase names follow the milestone-style structure for project lessons

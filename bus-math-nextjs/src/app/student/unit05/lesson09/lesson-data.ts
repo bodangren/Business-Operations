@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson09Data = {
   id: "unit05_lesson09_pbl_m2",
   title: "PBL Milestone 2: Prototype + Rehearsal (PayDay Simulator)",
@@ -24,11 +26,6 @@ export const lesson09Data = {
   rationale: "Working prototypes and rehearsals prove business readiness. Validations, test notes, and peer feedback raise the quality before the final presentation.",
 }
 
-export const unit05Data = {
-  id: "unit05",
-  title: "PayDay Simulator",
-  sequence: 5,
-}
 
 export const lesson09Phases = [
   {

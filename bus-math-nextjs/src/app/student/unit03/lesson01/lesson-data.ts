@@ -1,4 +1,6 @@
 // Three-Statement Storyboard, Lesson 1 data - Launch Lesson
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson01Data = {
   id: "mds5vi9yev6tq5zzl1a",
   title: "Launch: The Investor Question",
@@ -25,11 +27,6 @@ export const lesson01Data = {
   status: "Draft"
 }
 
-export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson01Phases = [

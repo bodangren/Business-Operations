@@ -1,4 +1,6 @@
 // Inventory Accounting, Lesson 4 data - Specific Identification and Weighted Average
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit07Data = UNIT_REF_MAP[7]
 export const lesson04Data = {
   id: "lesson04-specific-weighted",
   title: "Specific Identification and Weighted Average",
@@ -30,11 +32,6 @@ export const lesson04Data = {
   status: "Draft"
 }
 
-export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
-  title: "Inventory Accounting",
-  sequence: 7
-}
 
 // Lesson phases - following I Do, We Do, You Do structure
 export const lesson04Phases = [

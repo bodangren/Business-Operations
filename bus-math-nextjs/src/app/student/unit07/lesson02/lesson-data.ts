@@ -1,4 +1,6 @@
 // Inventory Accounting, Lesson 2 data - Inventory Cost Flow Foundations
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit07Data = UNIT_REF_MAP[7]
 export const lesson02Data = {
   id: "mds5x99kx7ah9f1wjde",
   title: "Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS",
@@ -27,11 +29,6 @@ export const lesson02Data = {
   status: "Draft"
 }
 
-export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
-  title: "Inventory Accounting",
-  sequence: 7
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson02Phases = [

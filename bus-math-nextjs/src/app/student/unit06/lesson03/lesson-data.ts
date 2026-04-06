@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 3 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson03Data = {
   id: "mds5wn3l9qqkyg5py7l",
   title: "CVP Model Construction",
@@ -22,11 +24,6 @@ export const lesson03Data = {
   status: "Draft"
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson03Phases = [

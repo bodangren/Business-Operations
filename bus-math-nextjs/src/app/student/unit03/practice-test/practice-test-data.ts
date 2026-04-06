@@ -1,4 +1,5 @@
-import { unit03Data } from "../lesson01/lesson-data"
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+const unit03Data = UNIT_REF_MAP[3]
 
 export const practiceTestLessonData = {
   id: "unit03-practice-test",

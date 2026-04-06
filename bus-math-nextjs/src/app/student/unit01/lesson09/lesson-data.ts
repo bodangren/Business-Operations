@@ -1,4 +1,6 @@
 // Unit 1, Lesson 9 — Group Project Completion and Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson09Data = {
   id: "u01l09-pbl-completion",
   title: "Project Milestone 2: Complete Workbook & Rehearse",
@@ -24,11 +26,6 @@ export const lesson09Data = {
   status: "Ready"
 }
 
-export const unit01Data = {
-  id: "unit01",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 export const lesson09Phases = [
   {

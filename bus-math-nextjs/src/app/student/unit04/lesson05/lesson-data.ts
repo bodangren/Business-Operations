@@ -1,4 +1,6 @@
 // Data-Driven Café, Lesson 5: Data Cleaning and Analysis
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson05Data = {
   id: "u04_l05_data_cleaning",
   title: "Data Cleaning and Analysis",
@@ -25,11 +27,6 @@ export const lesson05Data = {
   status: "Revised"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 // Excel-lessons skill uses standard six-phase names
 export const lesson05Phases = [

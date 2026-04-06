@@ -1,4 +1,6 @@
 // Data-Driven Café, Lesson 6 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson06Data = {
   id: "u04_l06_integration",
   title: "Integration & Presentation: Decision‑Ready Dashboard",
@@ -26,11 +28,6 @@ export const lesson06Data = {
   status: "Draft"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson06Phases = [

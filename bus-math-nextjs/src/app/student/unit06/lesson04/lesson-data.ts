@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 4 data - Scenario Comparison & Sensitivity Analysis
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson04Data = {
   id: "mds5wn3okuxm9d9w5ip", 
   title: "Scenario Comparison & Sensitivity Reasoning",
@@ -26,11 +28,6 @@ export const lesson04Data = {
   status: "Draft"
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases - Scenario Comparison Focus
 export const lesson04Phases = [

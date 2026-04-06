@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson01Data = {
   id: "u6-l1",
   title: "Launch: The Pricing Problem",
@@ -24,11 +26,6 @@ export const lesson01Data = {
   status: "Published"
 }
 
-export const unit06Data = {
-  id: "u6",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 export const lesson01Phases = [
   {

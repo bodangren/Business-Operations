@@ -1,4 +1,6 @@
 // Unit 2, Lesson 5 data - Build First Automation Layer
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson05Data = {
   id: "unit02_lesson05",
   title: "Build First Automation Layer",
@@ -26,11 +28,6 @@ export const lesson05Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "unit02",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 export const lesson05Phases = [
   {

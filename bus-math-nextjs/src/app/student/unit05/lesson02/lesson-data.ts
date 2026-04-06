@@ -1,4 +1,6 @@
 // PayDay Simulator, Lesson 2 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson02Data = {
   id: "mds5w74cwao6n27wmz",
   title: "Skill Introduction: Gross to Net Calculations",
@@ -20,11 +22,6 @@ export const lesson02Data = {
   status: "Draft"
 }
 
-export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson02Phases = [

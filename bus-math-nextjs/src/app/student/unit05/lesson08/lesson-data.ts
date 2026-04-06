@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson08Data = {
   id: "unit05_lesson08_pbl_m1",
   title: "Project Kickoff — Your Payroll Workbook",
@@ -24,11 +26,6 @@ export const lesson08Data = {
   rationale: "Each team now takes ownership of their payroll project with a unique scenario, building on the rehearsal structure from Lesson 07."
 }
 
-export const unit05Data = {
-  id: "unit05",
-  title: "PayDay Simulator",
-  sequence: 5,
-}
 
 export const lesson08Phases = [
   {

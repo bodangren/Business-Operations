@@ -1,4 +1,6 @@
 // Three-Statement Storyboard, Lesson 2 data - Income Statement Construction
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson02Data = {
   id: "mds5via0a28uttjod1",
   title: "Build the Income Statement",
@@ -24,11 +26,6 @@ export const lesson02Data = {
   status: "Draft"
 }
 
-export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 // Lesson phases following the accounting-principles skill contract
 export const lesson02Phases = [

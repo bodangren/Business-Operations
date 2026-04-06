@@ -1,4 +1,6 @@
 // Data-Driven Café, Lesson 2 - Descriptive Statistics
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson02Data = {
   id: "mds5vtztsax7pn96bi",
   title: "Descriptive Statistics: What Does Normal Look Like?",
@@ -26,11 +28,6 @@ export const lesson02Data = {
   status: "Draft"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 export const lesson02Phases = [
   {

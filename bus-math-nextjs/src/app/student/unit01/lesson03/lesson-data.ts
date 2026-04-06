@@ -1,4 +1,6 @@
 // Unit 1, Lesson 3 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson03Data = {
   id: "mds5t7qrc36pdfr61an",
   title: "Debit, Credit, and Trial Balance",
@@ -30,11 +32,6 @@ export const lesson03Data = {
   status: "Active"
 }
 
-export const unit01Data = {
-  id: "mdrha5ziiupuou6dqt",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson03Phases = [

@@ -1,4 +1,6 @@
 // Month-End Wizard, Lesson 08 data - Project Kickoff
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson08Data = {
   id: "unit02_lesson08",
   title: "Project Kickoff: Your Group's Month-End Scenario",
@@ -26,11 +28,6 @@ export const lesson08Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "unit02",
-  title: "Month-End Wizard",
-  sequence: 2
-}
 
 // Milestone-style lesson (no six-phase structure)
 export const lesson08Phases = [

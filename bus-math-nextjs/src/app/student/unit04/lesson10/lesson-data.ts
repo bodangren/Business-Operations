@@ -1,6 +1,8 @@
 // Data-Driven Café, Lesson 10 data - extracted from MCP curriculum database
 import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson10Data = {
   id: "mds5vu0m46dubjfe22",
   title: "Public Presentation: Café Management Showcase",
@@ -26,11 +28,6 @@ export const lesson10Data = {
   status: "Revised"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 export const lesson10Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [
   {

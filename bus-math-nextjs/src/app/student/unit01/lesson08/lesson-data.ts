@@ -1,4 +1,6 @@
 // Unit 1, Lesson 8 — Group Project Kickoff and Workbook Setup
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson08Data = {
   id: "u01l08-pbl-kickoff",
   title: "Project Milestone 1: Kickoff & Workbook Setup",
@@ -22,11 +24,6 @@ export const lesson08Data = {
   status: "Ready"
 }
 
-export const unit01Data = {
-  id: "unit01",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 export const lesson08Phases = [
   {

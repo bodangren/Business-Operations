@@ -1,4 +1,6 @@
 // PayDay Simulator, Lesson 3 data - Deductions and Net Pay
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson03Data = {
   id: "mds5w74hmc97u06iej",
   title: "Deductions and Net Pay",
@@ -26,11 +28,6 @@ export const lesson03Data = {
   status: "Draft"
 }
 
-export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 // Lesson phases for Deductions and Net Pay lesson
 export const lesson03Phases = [

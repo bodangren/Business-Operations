@@ -1,4 +1,6 @@
 // Inventory Accounting, Lesson 3 data - FIFO and LIFO Methods
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit07Data = UNIT_REF_MAP[7]
 export const lesson03Data = {
   id: "mds5x99ma27hcfuzr0p",
   title: "FIFO and LIFO: Two Ways to Value the Same Inventory",
@@ -31,11 +33,6 @@ export const lesson03Data = {
   status: "Draft"
 }
 
-export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
-  title: "Inventory Accounting",
-  sequence: 7
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson03Phases = [

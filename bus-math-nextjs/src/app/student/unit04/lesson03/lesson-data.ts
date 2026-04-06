@@ -1,4 +1,6 @@
 // Data-Driven Café, Lesson 3 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson03Data = {
   id: "mds5vtzvyf1dspv83qk",
   title: "Outliers and Data Quality",
@@ -22,11 +24,6 @@ export const lesson03Data = {
   status: "Draft"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson03Phases = [

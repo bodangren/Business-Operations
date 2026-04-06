@@ -1,4 +1,6 @@
 // Fixed Assets and Depreciation, Lesson 2 data - accounting-principles skill
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson02Data = {
   id: "mds5xnq5bdjcov1vd1s",
   title: "When Does a Cost Become an Asset? — Capitalization, Useful Life, and Salvage Value",
@@ -26,11 +28,6 @@ export const lesson02Data = {
   rationale: "Lesson 02 teaches the rules for deciding when a cost becomes a long-term asset (capitalization) versus an immediate expense. Students learn to estimate useful life and salvage value, calculate the depreciable base, and understand how accumulated depreciation builds. This is the foundation for all depreciation methods covered in Lessons 03 and 04.",
 }
 
-export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
-  title: "Fixed Assets and Depreciation",
-  sequence: 8
-}
 
 export const lesson02Phases = [
   {

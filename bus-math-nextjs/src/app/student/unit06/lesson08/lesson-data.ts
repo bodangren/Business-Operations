@@ -1,4 +1,6 @@
 // PriceLab Challenge, Lesson 8 data - Group Project Kickoff
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit06Data = UNIT_REF_MAP[6]
 export const lesson08Data = {
   id: "mds5wn3z0n0trxywpene",
   title: "Project Kickoff: Group Workbook Setup and First Analysis",
@@ -26,11 +28,6 @@ export const lesson08Data = {
   rationale: "Lesson 08 moves teams from guided rehearsal into their own assigned scenario. Each group receives a unique business dataset but uses the exact same workbook structure from Lesson 07. Today's goal is planning the work, classifying costs, completing the first analysis sheets, and writing an early recommendation statement."
 }
 
-export const unit06Data = {
-  id: "mdrhlhv3y4h703ia2t",
-  title: "PriceLab Challenge",
-  sequence: 6
-}
 
 // Lesson phases aligned to the group-project skill contract
 // Phase names follow the milestone-style structure for project lessons

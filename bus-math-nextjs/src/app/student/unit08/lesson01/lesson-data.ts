@@ -1,4 +1,6 @@
 // Fixed Assets and Depreciation, Lesson 1 data - Launch lesson
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson01Data = {
   id: "mds5xnq0hosguvwljqw",
   title: "Sarah's Equipment Purchase — Why Long-Term Assets Are Different",
@@ -24,11 +26,6 @@ export const lesson01Data = {
   rationale: "Lesson 01 launches the fixed-asset problem by showing Sarah facing a real equipment purchase decision. Students see why long-term assets cannot be treated like regular expenses, learn the core scoreboard (cost, accumulated depreciation, book value), and feel the tension between spending money now and tracking value over time. No formulas or workbook builds yet — just the problem that makes depreciation necessary."
 }
 
-export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
-  title: "Fixed Assets and Depreciation",
-  sequence: 8
-}
 
 // Lesson phases aligned to the launch-lesson skill contract
 export const lesson01Phases = [

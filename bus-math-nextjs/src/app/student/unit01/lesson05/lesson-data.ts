@@ -1,4 +1,6 @@
 // Unit 1, Lesson 5 data
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit01Data = UNIT_REF_MAP[1]
 export const lesson05Data = {
   id: "mds5t7qth7rdjsqegg",
   title: "Build Self-Auditing Formulas and Error Flags",
@@ -30,11 +32,6 @@ export const lesson05Data = {
   status: "Draft"
 }
 
-export const unit01Data = {
-  id: "mdrha5ziiupuou6dqt",
-  title: "Unit 1: Smart Ledger Launch",
-  sequence: 1
-}
 
 // Lesson phases - aligned with excel-lessons skill
 export const lesson05Phases = [

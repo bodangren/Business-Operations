@@ -1,4 +1,6 @@
 // Unit05 Lesson05 — Advanced Excel Automation for Payroll (PayDay Simulator)
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson05Data = {
   id: "unit05_lesson05_schedule",
   title: "Schedule-to-Pay: Building the Weekly Labor Engine",
@@ -24,11 +26,6 @@ export const lesson05Data = {
   status: "Draft"
 }
 
-export const unit05Data = {
-  id: "unit05",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson05Phases = [

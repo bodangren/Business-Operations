@@ -1,3 +1,5 @@
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson10Data = {
   id: "unit02_lesson10",
   title: "PBL Milestone 3: Final Innovation Fair Demo",
@@ -21,11 +23,6 @@ export const lesson10Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "unit02",
-  title: "Unit 2: Month-End Wizard",
-  sequence: 2
-}
 
 export const lesson10Phases = [
   {

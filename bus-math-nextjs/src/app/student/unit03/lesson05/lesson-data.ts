@@ -1,4 +1,6 @@
 // Unit03 Lesson05 — Build Cross-Sheet Links and Statement Checks
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit03Data = UNIT_REF_MAP[3]
 export const lesson05Data = {
   id: "unit03_lesson05_cross_sheet",
   title: "Link the Three Statements: Cross‑Sheet References and Integrity Checks",
@@ -24,11 +26,6 @@ export const lesson05Data = {
   status: "Draft"
 }
 
-export const unit03Data = {
-  id: "mdrhlhuxj2zkbimaqfd",
-  title: "Three-Statement Storyboard",
-  sequence: 3
-}
 
 // Lesson phases following the excel-lessons skill contract
 export const lesson05Phases = [

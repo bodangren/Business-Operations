@@ -1,6 +1,8 @@
 import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
 // Data-Driven Café, Lesson 7 data - Project Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit04Data = UNIT_REF_MAP[4]
 export const lesson07Data = {
   id: "mds5vu0cmuyzd6czgp",
   title: "Project Rehearsal: Café Analysis Walkthrough",
@@ -27,11 +29,6 @@ export const lesson07Data = {
   status: "Draft"
 }
 
-export const unit04Data = {
-  id: "mdrhlhv2yok8auw4s3s",
-  title: "Data-Driven Café",
-  sequence: 4
-}
 
 // Lesson phases for project-rehearsal
 export const lesson07Phases: { id: string; phaseName: LessonPhase; sequence: number; description: string }[] = [

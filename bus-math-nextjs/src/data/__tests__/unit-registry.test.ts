@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { UNITS } from "../unit-registry"
+import { UNITS, UNIT_REFS, UNIT_REF_MAP } from "../unit-registry"
 
 describe("unit-registry — UNITS array", () => {
   it("contains exactly 8 entries", () => {
@@ -52,5 +52,59 @@ describe("unit-registry — UNITS array", () => {
     for (let i = 0; i < UNITS.length; i++) {
       expect(UNITS[i].title).toBe(expectedTitles[i])
     }
+  })
+})
+
+describe("unit-registry — UNIT_REFS array", () => {
+  it("contains exactly 8 entries", () => {
+    expect(UNIT_REFS).toHaveLength(8)
+  })
+
+  it("each entry has UnitRef shape { id, title, sequence }", () => {
+    for (const ref of UNIT_REFS) {
+      expect(typeof ref.id).toBe("string")
+      expect(ref.id.length).toBeGreaterThan(0)
+      expect(typeof ref.title).toBe("string")
+      expect(ref.title.length).toBeGreaterThan(0)
+      expect(typeof ref.sequence).toBe("number")
+      expect(ref.sequence).toBeGreaterThanOrEqual(1)
+      expect(ref.sequence).toBeLessThanOrEqual(8)
+    }
+  })
+
+  it("id values use unitId format (unit01–unit08)", () => {
+    for (let i = 0; i < UNIT_REFS.length; i++) {
+      expect(UNIT_REFS[i].id).toBe(`unit${String(i + 1).padStart(2, "0")}`)
+    }
+  })
+
+  it("sequence values match unit number (1–8)", () => {
+    for (let i = 0; i < UNIT_REFS.length; i++) {
+      expect(UNIT_REFS[i].sequence).toBe(i + 1)
+    }
+  })
+
+  it("titles match UNITS array titles", () => {
+    for (let i = 0; i < UNIT_REFS.length; i++) {
+      expect(UNIT_REFS[i].title).toBe(UNITS[i].title)
+    }
+  })
+})
+
+describe("unit-registry — UNIT_REF_MAP lookup", () => {
+  it("has keys 1 through 8", () => {
+    for (let n = 1; n <= 8; n++) {
+      expect(UNIT_REF_MAP[n]).toBeDefined()
+    }
+  })
+
+  it("maps each number to the matching UNIT_REFS entry", () => {
+    for (let n = 1; n <= 8; n++) {
+      expect(UNIT_REF_MAP[n]).toBe(UNIT_REFS[n - 1])
+    }
+  })
+
+  it("does not have extra keys", () => {
+    expect(Object.keys(UNIT_REF_MAP)).toHaveLength(8)
   })
 })

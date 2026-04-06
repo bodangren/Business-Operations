@@ -1,4 +1,6 @@
 // Method Comparison and Investor-Ready Summary, Lesson 6 — Unit 08 (Fixed Assets and Depreciation)
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit08Data = UNIT_REF_MAP[8]
 export const lesson06Data = {
   id: "u08l06",
   title: "Method Comparison and Investor-Ready Summary",
@@ -29,11 +31,6 @@ export const lesson06Data = {
   status: "Draft"
 }
 
-export const unit08Data = {
-  id: "mdrhlhv53tduw0ib5oa",
-  title: "Fixed Assets and Depreciation",
-  sequence: 8
-}
 
 export const lesson06Phases = [
   {

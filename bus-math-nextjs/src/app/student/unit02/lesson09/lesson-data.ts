@@ -1,4 +1,6 @@
 // Month-End Wizard, Lesson 09 data - Completion and Rehearsal
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit02Data = UNIT_REF_MAP[2]
 export const lesson09Data = {
   id: "unit02_lesson09",
   title: "Complete Workbook and Rehearse Demo",
@@ -26,11 +28,6 @@ export const lesson09Data = {
   status: "Draft"
 }
 
-export const unit02Data = {
-  id: "unit02",
-  title: "Month-End Wizard",
-  sequence: 2
-}
 
 // Milestone-style lesson (no six-phase structure)
 export const lesson09Phases = [

@@ -1,4 +1,6 @@
 // Unit 07, Lesson 7 — Project Rehearsal: Shared Inventory Dataset
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit07Data = UNIT_REF_MAP[7]
 export const lesson07Data = {
   id: "u07_l07_project_rehearsal",
   title: "Project Rehearsal: One Shared Dataset, One Shared Workbook",
@@ -25,11 +27,6 @@ export const lesson07Data = {
   status: "Draft"
 }
 
-export const unit07Data = {
-  id: "mdrhlhv4ov691yonkpi",
-  title: "Inventory Accounting",
-  sequence: 7
-}
 
 // Lesson phases
 export const lesson07Phases = [

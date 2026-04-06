@@ -1,4 +1,6 @@
 // PayDay Simulator, Lesson 7 data - extracted from MCP curriculum database
+import { UNIT_REF_MAP } from "@/data/unit-registry"
+export const unit05Data = UNIT_REF_MAP[5]
 export const lesson07Data = {
   id: "mds5w754qfq7uvh9icq",
   title: "Project Rehearsal: Shared Payroll Workbook Audit",
@@ -35,11 +37,6 @@ export const lesson07Data = {
   ]
 }
 
-export const unit05Data = {
-  id: "mdrhlhv3ixkn2gykua",
-  title: "PayDay Simulator",
-  sequence: 5
-}
 
 // Lesson phases from MCP curriculum database
 export const lesson07Phases = [
