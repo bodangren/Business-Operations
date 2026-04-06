@@ -1,0 +1,3 @@
+Track: header_unit_data_20260406 — checkpoint commit
+- Track complete: header unit data now derived from canonical unit-registry.ts
+- Tech-debt item 'Header unit data hardcoded' marked resolved
