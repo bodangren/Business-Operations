@@ -52,25 +52,15 @@ describe("useUnitMastery", () => {
     vi.clearAllMocks()
   })
 
-  it("returns null while loading", () => {
-    // loadStudyData never resolves → provider stays in loading state
-    mockedLoad.mockImplementation(() => {
-      throw new Error("should not be called during loading check")
-    })
-
-    // Actually we need loadStudyData to be called but provider shows isLoading=true initially
-    // The provider calls loadStudyData synchronously in useEffect
-    // Let's return data and check initial render before effect runs
+  it("returns result after synchronous load completes", () => {
     const data = createEmptyLocalData()
     mockedLoad.mockReturnValue(data)
 
     const { result } = renderHook(() => useUnitMastery("unit01"), { wrapper })
 
-    // After effect: should have data (not null)
-    // But the initial render before effect should show null
-    // In testing-library, renderHook waits for effects by default
-    // So let's test the loaded state instead
     expect(result.current).not.toBeNull()
+    expect(result.current!.termsStudied).toBe(0)
+    expect(result.current!.avgMastery).toBe(0)
   })
 
   it("returns mastery info when data is loaded", () => {

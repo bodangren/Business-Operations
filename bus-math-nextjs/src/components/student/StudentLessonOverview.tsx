@@ -40,7 +40,7 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
   const isMultiDay = lesson.durationEstimateMinutes > 60
   
   // Sort phases by sequence
-  const sortedPhases = phases.sort((a, b) => a.sequence - b.sequence)
+  const sortedPhases = [...phases].sort((a, b) => a.sequence - b.sequence)
   
   // Extract main skill focus from key concepts
   const mainSkills = lesson.keyConcepts.slice(0, 3)

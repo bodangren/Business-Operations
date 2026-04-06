@@ -1,11 +1,13 @@
 # Current Directive
 
 **Updated:** 2026-04-07
-**Status:** useUnitMastery hook test coverage complete — 5 new tests, 270 total passing
+**Status:** Code-review audit of 3 tracks complete — fixed 2 M-level issues (props mutation, misleading test)
 
 ## What Was Just Completed
 
-- **Track `use_unit_mastery_tests_20260407`** — added `@testing-library/react`, wrote 5 hook tests for `useUnitMastery` covering loaded state, empty data, unit scoping, outside-provider error, and reactive unitId changes
+- **Audit of `consolidate_phase_names`, `phase_icons_fallback`, `use_unit_mastery_tests`** — 3 tracks reviewed
+- **M1 fix:** `StudentLessonOverview.tsx` was mutating `phases` prop via `.sort()` — changed to `[...phases].sort()` to match PhaseHeader/PhaseFooter
+- **M2 fix:** `useUnitMastery.hook.test.ts` had misleading test name + dead comments — renamed to match actual assertion
 
 ## Verification
 
