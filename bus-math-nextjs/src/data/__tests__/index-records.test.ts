@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { indexRecords } from "../index-records"
+import type { UnitId } from "@/types/glossary"
 
 describe("indexRecords — lesson entries", () => {
   const lessonRecords = indexRecords.filter((r) => r.category === "lesson")
@@ -25,7 +26,7 @@ describe("indexRecords — lesson entries", () => {
     const units = new Set(lessonRecords.map((r) => r.unitId))
     expect(units.size).toBe(8)
     for (let i = 1; i <= 8; i++) {
-      expect(units.has(`unit${String(i).padStart(2, "0")}`)).toBe(true)
+      expect(units.has(`unit${String(i).padStart(2, "0")}` as UnitId)).toBe(true)
     }
   })
 

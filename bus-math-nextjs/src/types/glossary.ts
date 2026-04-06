@@ -27,6 +27,7 @@ export type TopicTag =
   | "data-cleaning"
   | "cvp-analysis"
   | "presentation"
+  | "finance"
 
 export type GlossaryField = "term_en" | "term_zh" | "def_en" | "def_zh"
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import type { SessionExport } from "../export-schema"
+import type { SessionExport, ExportSession } from "../export-schema"
 import {
   EXPORT_SCHEMA_NAME,
   EXPORT_SCHEMA_VERSION,
@@ -205,7 +205,7 @@ describe("session export with data", () => {
 
   it("restore_payload contains session IDs", () => {
     const exp = buildMinimalExport()
-    exp.sessions = [{ session_id: "s1" } as unknown as typeof exp.sessions]
+    exp.sessions = [{ session_id: "s1" }] as unknown as ExportSession[]
     exp.restore_payload.session_ids_included = ["s1"]
     expect(exp.restore_payload.session_ids_included).toContain("s1")
   })
@@ -229,7 +229,7 @@ describe("summary.csv column definitions", () => {
   })
 
   it("no overlap between required and optional columns", () => {
-    const requiredSet = new Set(SUMMARY_CSV_REQUIRED_COLUMNS)
+    const requiredSet = new Set<string>(SUMMARY_CSV_REQUIRED_COLUMNS)
     for (const col of SUMMARY_CSV_OPTIONAL_COLUMNS) {
       expect(requiredSet.has(col)).toBe(false)
     }

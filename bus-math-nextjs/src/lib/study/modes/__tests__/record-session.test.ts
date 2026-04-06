@@ -103,10 +103,12 @@ const mockTerms: GlossaryEntry[] = [
   },
 ]
 
+import type { TopicTag } from "@/types/glossary"
+
 const baseOptions = {
   unit_id: "unit01" as const,
   lesson_id: "unit01-lesson01",
-  topic_tags: ["accounting"] as const,
+  topic_tags: ["accounting"] as TopicTag[],
   mode: "solo" as const,
 }
 

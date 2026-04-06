@@ -24,6 +24,7 @@ const TOPIC_LABELS: Record<TopicTag, string> = {
   "data-cleaning": "Data Cleaning",
   "cvp-analysis": "CVP Analysis",
   presentation: "Presentation",
+  finance: "Finance",
 }
 
 const UNIT_LABELS: Record<UnitId, string> = {

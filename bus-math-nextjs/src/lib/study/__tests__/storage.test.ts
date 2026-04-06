@@ -11,6 +11,7 @@ import {
   STORAGE_ROOT_KEY,
   STORAGE_SCHEMA_VERSION,
   createEmptyLocalData,
+  type SessionRecord,
 } from "../storage-schema"
 
 // ---------------------------------------------------------------------------
@@ -150,7 +151,7 @@ describe("saveStudyData", () => {
 describe("resetStudyData", () => {
   it("overwrites existing data with defaults", () => {
     const existing = createEmptyLocalData()
-    existing.sessions = [{ session_id: "old" } as unknown as typeof existing.sessions]
+    existing.sessions = [{ session_id: "old" }] as unknown as SessionRecord[]
     localStorage.setItem(STORAGE_ROOT_KEY, JSON.stringify(existing))
 
     const fresh = resetStudyData()

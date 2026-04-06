@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { LESSON_PAGES } from "../lesson-registry"
+import type { UnitId } from "@/types/glossary"
 
 describe("LESSON_PAGES — derived from lesson-data files", () => {
   it("exports exactly 80 lesson page records (8 units × 10 lessons)", () => {
@@ -30,7 +31,7 @@ describe("LESSON_PAGES — derived from lesson-data files", () => {
     const units = new Set(LESSON_PAGES.map((p) => p.unitId))
     expect(units.size).toBe(8)
     for (let i = 1; i <= 8; i++) {
-      expect(units.has(`unit${String(i).padStart(2, "0")}`)).toBe(true)
+      expect(units.has(`unit${String(i).padStart(2, "0")}` as UnitId)).toBe(true)
     }
   })
 

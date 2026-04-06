@@ -1,0 +1,8 @@
+{
+  "track_id": "fix_ts_test_errors_20260406",
+  "type": "chore",
+  "status": "in-progress",
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T00:00:00Z",
+  "description": "Fix 13 pre-existing TypeScript errors in 4 test files — readonly/mutable mismatches, invalid TopicTag literals, UnitId template literals, export schema drift"
+}
