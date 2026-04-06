@@ -1,0 +1,5 @@
+conductor: type_consolidation_20260406 - Phase 1 complete
+- Created src/types/lesson.ts: LessonRef, UnitRef, LessonPhase, LessonPhaseName
+- Removed all [key: string]: unknown from PhaseHeader, PhaseFooter, Lesson01Phase1
+- Re-export pattern provides zero-change backward compat
+- 221 tests pass, lint clean, build OK
