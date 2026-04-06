@@ -1,11 +1,12 @@
 # Current Directive
 
-**Updated:** 2026-04-05
-**Status:** ESLint CLI migration complete — `next lint` replaced with `eslint .`
+**Updated:** 2026-04-06
+**Status:** Starting mastery progress bars track
 
 ## Active Track
 
-None — all tracks complete. Ready for next track.
+- **Track:** `mastery_progress_bars_20260406` — Mastery progress bars on unit cards
+- **Phase:** Phase 1 — Hook + Component (TDD)
 
 ## What Was Just Completed
 
