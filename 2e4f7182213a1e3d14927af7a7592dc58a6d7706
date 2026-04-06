@@ -1,0 +1,6 @@
+Track: unit_data_dedup_20260406 — Unit data deduplication in lesson-data files
+- 80 lesson-data files: inline unitXXData → UNIT_REF_MAP[n] lookup
+- 8 practice-test-data files: import from registry instead of ../lesson01/lesson-data
+- Added UNIT_REFS + UNIT_REF_MAP exports to unit-registry.ts
+- 8 new tests, 235 total passed, 0 lint errors, build compiled
+- Normalized unit ids (unit01-unit08) and canonical titles
