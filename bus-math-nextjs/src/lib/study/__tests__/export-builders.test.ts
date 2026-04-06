@@ -273,13 +273,13 @@ describe("generateSummaryCsv", () => {
 
   it("pipes join topic_tags", () => {
     const data = populatedLocalData()
-    data.sessions[0].curriculum.topic_tags = ["accounting", "finance"]
+    data.sessions[0].curriculum.topic_tags = ["accounting", "financial-statements"]
     const csv = generateSummaryCsv(data)
     const lines = csv.trim().split("\n")
     const row = lines[1]
 
     // topic_tags should be pipe-delimited
-    expect(row).toContain("accounting|finance")
+    expect(row).toContain("accounting|financial-statements")
   })
 
   it("uses empty string for missing optional fields", () => {

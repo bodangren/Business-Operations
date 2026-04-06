@@ -15,7 +15,7 @@
 - [x] `index-records.ts` has empty `lessonPages` array — populated with all 80 lesson entries (M4 from audit, fixed 2026-04-05)
 - [x] `StudyDueBadge` loads study data per-instance — 8 hub cards = 8 redundant localStorage reads (L1 from CTAs review, fixed 2026-04-05)
 - [ ] `eslint-config-next` version should stay in sync with `next` — now aligned to `^15.5.2` (2026-04-06)
-- [ ] `"finance"` TopicTag has no production glossary entries — added for test mock in `export-builders.test.ts:276`; "Finance" appears in glossary filter dropdown with zero results (L2 from review, 2026-04-07)
+- [x] ~`"finance"` TopicTag has no production glossary entries — added for test mock in `export-builders.test.ts:276`; "Finance" appears in glossary filter dropdown with zero results (L2 from review, 2026-04-07)~ (fixed 2026-04-07)
 - [x] ~5 lesson-data files (`unit03/lesson07`, `unit04/lesson{07-10}`) import `LessonProgressPhaseName` from React context — should migrate to `@/types/lesson` directly to remove data→context coupling (L3 from review, 2026-04-07)~ (fixed 2026-04-07)
 - [x] ~8 practice-test pages still import `LessonPhase` from `@/components/student/PhaseHeader` via backward-compat re-export — should migrate to `@/types/lesson` (L5 from review, 2026-04-06)~ (fixed 2026-04-06)
 - [x] ~`masteryColor` thresholds (75/50) don't align with `proficiency_band` thresholds (85/60/30) — document or unify (L3 from review, 2026-04-06)~ (fixed 2026-04-07)
