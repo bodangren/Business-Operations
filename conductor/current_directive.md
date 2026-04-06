@@ -5,7 +5,17 @@
 
 ## Active Track
 
-Track: `header_unit_data_20260406` — Derive header and index-records unit metadata from canonical unitXX.ts data
+None — ready for next track.
+
+## What Was Just Completed
+
+- **Header unit data from canonical sources** (track: `header_unit_data_20260406`)
+  - Created `src/data/unit-registry.ts` — single source of truth for unit metadata
+  - Refactored `header.tsx` to derive nav items from registry (removed 21-line hardcoded arrays)
+  - Refactored `index-records.ts` `unitPages` to derive from registry
+  - Tests: 227 passed (16 suites), 6 new unit-registry tests
+  - Lint: 0 errors, 0 warnings
+  - Build: compiled successfully (603+ pages)
 
 ## What Was Just Completed
 

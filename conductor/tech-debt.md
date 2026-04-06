@@ -6,7 +6,7 @@
 - [ ] Multiple lockfile warning — set `outputFileTracingRoot` or clean up root lockfile
 - [x] ~7 eslint warnings (react-hooks: 2 rules-of-hooks, 4 exhaustive-deps, 1 useMemo dep) — was 571, Phase 1 auto-fix removed unused imports (2026-04-05), Phase 2 prefixed unused vars (2026-04-05), review audit fixed 1 critical runtime bug + 5 interface regressions (2026-04-05), Phase 3 replaced all 227 no-explicit-any with proper types (2026-04-05), Phase 4 resolved all react-hooks warnings: 0 remaining (2026-04-05)
 - [x] ~Dead code with `_` prefix in ~13 components — all 30 instances removed across 26 files (2026-04-05)~
-- [ ] Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)
+- [x] ~Header unit data hardcoded in `header.tsx` instead of derived from canonical sources — any unit rename requires 4+ file edits (L3 from audit)~ (fixed 2026-04-06)
 - [ ] Unit 7 `unit07Data` object duplicated in every `lesson-data.ts` file — should be a shared import (L4 from audit)
 - [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)
 - [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
