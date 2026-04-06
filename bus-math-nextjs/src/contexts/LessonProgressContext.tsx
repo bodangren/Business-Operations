@@ -1,9 +1,10 @@
 "use client"
 
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react'
+import type { LessonPhaseName } from "@/types/lesson"
 
-// Phase types based on MCP curriculum structure
-export type LessonProgressPhaseName = 'Hook' | 'Introduction' | 'Guided Practice' | 'Independent Practice' | 'Assessment' | 'Closing' | 'Project Launch' | 'Project Milestone' | 'Project Presentation'
+// Phase types — re-export canonical LessonPhaseName as LessonProgressPhaseName for backward compat
+export type LessonProgressPhaseName = LessonPhaseName
 
 export interface LessonPhaseProgress {
   lessonId: string

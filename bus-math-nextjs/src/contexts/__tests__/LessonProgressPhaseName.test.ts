@@ -1,8 +1,21 @@
 import { describe, it, expect } from "vitest"
 import type { LessonProgressPhaseName } from "../LessonProgressContext"
+import type { LessonPhaseName } from "@/types/lesson"
 
 function assertPhaseName(_v: LessonProgressPhaseName) {
   // no-op — TypeScript enforces at compile time
+}
+
+/**
+ * Compile-time bidirectional assignability check.
+ * If LessonProgressPhaseName is a true alias of LessonPhaseName,
+ * both directions should type-check.
+ */
+function assertAliasEquivalence(a: LessonPhaseName, b: LessonProgressPhaseName) {
+  const _forward: LessonPhaseName = b
+  const _backward: LessonProgressPhaseName = a
+  void _forward
+  void _backward
 }
 
 describe("LessonProgressPhaseName", () => {
@@ -46,5 +59,10 @@ describe("LessonProgressPhaseName", () => {
       "Project Presentation",
     ]
     expect(all).toHaveLength(9)
+  })
+
+  it("is bidirectionally assignable to LessonPhaseName", () => {
+    const sample: LessonPhaseName = "Hook"
+    assertAliasEquivalence(sample, sample as unknown as LessonProgressPhaseName)
   })
 })

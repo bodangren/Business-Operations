@@ -50,6 +50,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/lesson_pages_derive_20260406/](./tracks/lesson_pages_derive_20260406/)*
 - [x] **Track: Fix 13 pre-existing TS errors in test files**
   *Link: [./tracks/fix_ts_test_errors_20260406/](./tracks/fix_ts_test_errors_20260406/)*
+- [x] **Track: Consolidate phase name unions — single canonical LessonPhaseName**
+  *Link: [./tracks/consolidate_phase_names_20260407/](./tracks/consolidate_phase_names_20260407/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.

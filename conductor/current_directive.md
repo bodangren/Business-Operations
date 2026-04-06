@@ -1,7 +1,7 @@
 # Current Directive
 
-**Updated:** 2026-04-06
-**Status:** Fix TS test errors complete — 13 errors resolved, 0 remaining
+**Updated:** 2026-04-07
+**Status:** Phase name consolidation complete — `LessonProgressPhaseName` is now an alias of `LessonPhaseName`
 
 ## Active Track
 
@@ -9,26 +9,23 @@ None — ready for next track.
 
 ## What Was Just Completed
 
-- **Fix 13 pre-existing TS errors** in test files (`fix_ts_test_errors_20260406`)
-  - Added `"finance"` to `TopicTag` union + `TOPIC_LABELS` map
-  - Cast `UnitId` template literals in index-records and lesson-registry tests
-  - Fixed `readonly` → mutable `TopicTag[]` in record-session test
-  - Used explicit `as unknown as ExportSession[]/SessionRecord[]` casts
-  - Widened `Set<string>` for optional CSV column overlap check
+- **Consolidate phase name unions** (`consolidate_phase_names_20260407`)
+  - `LessonProgressContext.tsx` now imports `LessonPhaseName` from `@/types/lesson` and re-exports as `LessonProgressPhaseName`
+  - Added bidirectional assignability test to verify alias equivalence
+  - 5 lesson-data files continue to work unchanged (backward-compat re-export)
 
 ## Verification
 
-- Tests: 255 passed (20 suites)
+- Tests: 256 passed (20 suites) — added 1 new test
 - tsc: 0 errors
 - ESLint: 0 warnings, 0 errors
 - Build: compiled successfully (603 pages)
 
 ## Next Priorities
 
-1. **Consolidate phase name unions** — `LessonPhaseName` and `LessonProgressPhaseName` should share a single canonical definition (tech-debt.md L2)
-2. **Add PHASE_ICONS fallback** — type the config as `Record<LessionPhaseName, ...>` or add defensive fallback in consumers (from review L)
-3. **`useUnitMastery` hook test coverage** — only pure helper is tested, hook itself has no coverage (tech-debt.md L2)
-4. **`masteryColor` thresholds alignment** — 75/50 don't align with `proficiency_band` thresholds (85/60/30) (tech-debt.md L2)
+1. **Add PHASE_ICONS fallback** — type the config as `Record<LessonPhaseName, ...>` or add defensive fallback in consumers (tech-debt.md L22 follow-up)
+2. **`useUnitMastery` hook test coverage** — only pure helper is tested, hook itself has no coverage (tech-debt.md L20)
+3. **`masteryColor` thresholds alignment** — 75/50 don't align with `proficiency_band` thresholds (85/60/30) (tech-debt.md L19)
 
 ## Blocked / Deferred
 
