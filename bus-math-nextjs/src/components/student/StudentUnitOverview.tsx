@@ -16,6 +16,7 @@ import {
 import Link from "next/link"
 import { UnitVocabulary } from "@/components/unit/UnitVocabulary"
 import StudyDueBadge from "@/components/student/StudyDueBadge"
+import UnitMasteryProgressBar from "@/components/student/UnitMasteryProgressBar"
 import type { UnitId } from "@/types/glossary"
 
 interface StudentUnitOverviewProps {
@@ -246,11 +247,12 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="space-y-2 text-blue-900 dark:text-blue-100">
+            <div className="space-y-3 text-blue-900 dark:text-blue-100 flex-1">
               <p className="text-sm leading-relaxed">
                 Practice this unit&apos;s vocabulary with flashcards, a matching game, or a timed speed round.
                 Your progress is tracked locally and can be exported.
               </p>
+              {unit.unitId && <UnitMasteryProgressBar unitId={unit.unitId} />}
             </div>
             <Button size="lg" variant="outline" asChild className="border-blue-300 text-blue-700 hover:bg-blue-100">
               <Link href={`/student/practice-hub?unit=${unit.unitId}`}>

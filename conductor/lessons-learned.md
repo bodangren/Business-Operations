@@ -1,6 +1,12 @@
 # Lessons Learned
 
-## 2026-04-04 — Code Review Audit: Navigation Shell, Teacher-Student Alignment, Practice Hub Wireframes
+## 2026-04-06 — Mastery Progress Bars on Unit Cards
+
+- **Existing derived data goes unused**: `deriveStats()` computed `unitMastery` with `termsStudied`, `termsTotal`, `avgMastery` but nothing consumed it. When adding features, audit existing utilities before writing new logic — the helper functions (`masteryColor`, `UnitMastery` interface) were already there.
+- **Module-level maps for unit term counts**: Building `UNIT_TERM_COUNTS` from `glossaryData` at module load (like `SLUG_UNITS`) avoids recomputing per-render and keeps hooks pure.
+- **Custom bar vs. Progress component**: The existing `<Progress>` primitive hardcodes `bg-primary` on the indicator with no override prop. For color-coded bars (green/amber/red), a thin custom `<div>` bar is cleaner than extending the radix wrapper.
+
+## 2026-04-04 — Code Review Audit
 
 - **Scope drift in unit-project-frameworks.ts**: The Unit 7 framework still contained depreciation deliverables, milestones, and rubric language from before the U7/U8 scope split. When units are re-scoped, all downstream files (frameworks, project plans, rubrics, choices, resources, validation) must be audited, not just titles and descriptions.
 - **Duplicate rendering bug**: The duplicate Key Vocabulary card in StudentUnitOverview was invisible in plan.md checklists because it's a visual/layout issue. Manual visual QA or screenshot comparison would catch this.
@@ -8,19 +14,6 @@
 - **Stale references in components**: When renaming units, component-level comments and business-context strings are easy to miss. Grep for old names across the entire src/ directory.
 - **Footer link duplication**: Multiple nav sections pointing to the same route is a UX anti-pattern — each section should have unique links.
 - **Phase naming consistency**: Phase IDs and phase names can drift apart. Use canonical phase name mapping to avoid duplicates like two phases both named "Introduction".
-
-## 2026-04-04 — Phase 3: Vocabulary Study Modes
-
-- Wireframe annotations (blue boxes with "Actions, Data & Behavior") served as an excellent Phase 3 handoff spec — each mode's data requirements, localStorage keys, and export payload were pre-defined.
-- TDD worked well for engine logic: 50 mode tests + 8 recording tests, all independent of React/rendering.
-- Flashcard re-queue logic needed care: shuffling means card indices are unpredictable; tests should reference actual slugs not hardcoded positions.
-- `isSessionComplete` for flashcards can't rely on `currentIndex` staying in-bounds; must check that all original cards have been reviewed.
-
-## 2026-04-04 — Phase 6: Verification & Study Mode Pages
-
-- **Missing route pages were the #1 blocker**: PracticeHubHome linked to `/flashcards`, `/matching`, `/speed-round` but no route pages existed. Building them was essential to complete the track.
-- **SessionMode type mismatch**: Engine code used `mode: "study"` but `SessionMode` only accepts `"solo" | "pass-and-play" | "team-single-device"`. Always check the schema type before passing literal strings.
-- **Wireframes as implementation spec worked well**: Each wireframe's annotation block (Phase 3 — Actions, Data & Behavior) had all the UI behaviors, keyboard shortcuts, and data requirements pre-defined. The component implementation followed the annotations almost 1:1.
 
 ## 2026-04-05 — Study Data Context Provider
 

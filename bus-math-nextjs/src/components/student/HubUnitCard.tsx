@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import StudyDueBadge from "@/components/student/StudyDueBadge"
+import UnitMasteryProgressBar from "@/components/student/UnitMasteryProgressBar"
 import type { UnitId } from "@/types/glossary"
 
 interface HubUnitCardProps {
@@ -26,6 +27,7 @@ export default function HubUnitCard({ number, title, description, href, unitId }
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent>
+          <UnitMasteryProgressBar unitId={unitId} />
           <span className="text-sm text-primary flex items-center gap-1">
             Open unit <ArrowRight className="h-3 w-3" />
           </span>

@@ -32,7 +32,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/dead_code_removal_20260405/](./tracks/dead_code_removal_20260405/)*
 - [x] **Track: ESLint CLI migration**
   *Link: [./tracks/eslint_cli_migration_20260405/](./tracks/eslint_cli_migration_20260405/)*
-- [~] **Track: Mastery progress bars on unit cards**
+- [x] **Track: Mastery progress bars on unit cards**
   *Link: [./tracks/mastery_progress_bars_20260406/](./tracks/mastery_progress_bars_20260406/)*
 
 Active tracks are ordered intentionally:

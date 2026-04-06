@@ -1,12 +1,21 @@
 # Current Directive
 
 **Updated:** 2026-04-06
-**Status:** Starting mastery progress bars track
+**Status:** Mastery progress bars track complete
 
 ## Active Track
 
-- **Track:** `mastery_progress_bars_20260406` — Mastery progress bars on unit cards
-- **Phase:** Phase 1 — Hook + Component (TDD)
+None — ready for next track.
+
+## What Was Just Completed
+
+- **Mastery progress bars on unit cards** (track: `mastery_progress_bars_20260406`)
+  - Added `useUnitMastery` hook + `getUnitMasteryInfo` pure helper to `StudyDataContext.tsx`
+  - Created `UnitMasteryProgressBar` component (color-coded bar: green/amber/red)
+  - Integrated into `HubUnitCard` and `StudentUnitOverview`
+  - Tests: 221 passed (15 suites)
+  - Lint: 0 errors, 0 warnings
+  - Build: compiled successfully
 
 ## What Was Just Completed
 

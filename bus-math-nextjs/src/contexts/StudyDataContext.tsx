@@ -22,6 +22,22 @@ function buildSlugUnitMap(): Record<string, UnitId[]> {
 const SLUG_UNITS = buildSlugUnitMap()
 
 // ---------------------------------------------------------------------------
+// Unit term counts (computed once at module level)
+// ---------------------------------------------------------------------------
+
+function buildUnitTermCounts(): Record<UnitId, number> {
+  const counts: Record<string, number> = {}
+  for (const entry of glossaryData) {
+    for (const unit of entry.units) {
+      counts[unit] = (counts[unit] ?? 0) + 1
+    }
+  }
+  return counts as Record<UnitId, number>
+}
+
+const UNIT_TERM_COUNTS = buildUnitTermCounts()
+
+// ---------------------------------------------------------------------------
 // Pure helpers (exported for testing)
 // ---------------------------------------------------------------------------
 
@@ -47,6 +63,28 @@ export function getDueInfoForUnit(
     slugUnits,
   )
   return { dueCount, hasStudied: hasAnyStudyHistory(data) }
+}
+
+/**
+ * Get per-unit mastery info: terms studied, total terms, and average mastery %.
+ * Accepts an optional unit-term-counts map for testing.
+ */
+export function getUnitMasteryInfo(
+  unitId: UnitId,
+  data: LocalStudyData,
+  unitTermCounts: Record<UnitId, number> = UNIT_TERM_COUNTS,
+): { termsStudied: number; termsTotal: number; avgMastery: number } {
+  const studied = data.study_state.mastery_by_term.filter(
+    (m) => m.units.includes(unitId) && m.times_seen > 0,
+  )
+  const termsTotal = unitTermCounts[unitId] ?? 0
+  const avgMastery =
+    studied.length > 0
+      ? Math.round(
+          (studied.reduce((sum, m) => sum + m.mastery_score, 0) / studied.length) * 100,
+        )
+      : 0
+  return { termsStudied: studied.length, termsTotal, avgMastery }
 }
 
 // ---------------------------------------------------------------------------
@@ -131,4 +169,22 @@ export function useStudyDueCount(unitId: UnitId): {
   }
 
   return getDueInfoForUnit(unitId, data)
+}
+
+/**
+ * Derived hook: unit mastery info (terms studied, total, avg %) for a specific unit.
+ * Returns null while loading.
+ */
+export function useUnitMastery(unitId: UnitId): {
+  termsStudied: number
+  termsTotal: number
+  avgMastery: number
+} | null {
+  const { data, isLoading } = useStudyData()
+
+  if (isLoading || !data) {
+    return null
+  }
+
+  return getUnitMasteryInfo(unitId, data)
 }
