@@ -3,20 +3,16 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Clock,
+  ArrowRight,
+  Home,
   Target,
   BookOpen,
   PlayCircle,
-  ArrowRight,
-  CheckCircle2,
   Users,
-  Lightbulb,
-  Home,
-  Rocket,
-  Flag,
-  Monitor
 } from "lucide-react"
 import Link from "next/link"
 import type { LessonPhase } from "@/types/lesson"
+import { PHASE_ICONS, PHASE_DESCRIPTIONS } from "@/components/student/phase-config"
 
 interface StudentLessonOverviewProps {
   lesson: {
@@ -36,30 +32,6 @@ interface StudentLessonOverviewProps {
     sequence: number
   }
   phases?: LessonPhase[]
-}
-
-const phaseIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  "Hook": PlayCircle,
-  "Introduction": BookOpen,
-  "Guided Practice": Users,
-  "Independent Practice": Target,
-  "Assessment": CheckCircle2,
-  "Closing": Lightbulb,
-  "Project Launch": Rocket,
-  "Project Milestone": Flag,
-  "Project Presentation": Monitor
-}
-
-const phaseDescriptions: Record<string, string> = {
-  "Hook": "Engage with the lesson's driving question and real-world challenge",
-  "Introduction": "Learn new concepts and skills through direct instruction",
-  "Guided Practice": "Practice new skills with teacher support and collaboration",
-  "Independent Practice": "Apply learning independently to build mastery",
-  "Assessment": "Demonstrate understanding through formative evaluation",
-  "Closing": "Reflect on learning and connect to bigger picture",
-  "Project Launch": "Kick off the team project with business scenario and data assignment",
-  "Project Milestone": "Prototype completion and presentation rehearsal",
-  "Project Presentation": "Final presentations and peer review"
 }
 
 export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLessonOverviewProps) {
@@ -173,8 +145,8 @@ export function StudentLessonOverview({ lesson, unit, phases = [] }: StudentLess
           <CardContent>
             <div className="grid gap-4">
               {sortedPhases.map((phase, _index) => {
-                const Icon = phaseIcons[phase.phaseName]
-                const description = phase.description || phaseDescriptions[phase.phaseName]
+                const Icon = PHASE_ICONS[phase.phaseName]
+                const description = phase.description || PHASE_DESCRIPTIONS[phase.phaseName]
                 
                 return (
                   <div key={phase.id} className="flex items-center gap-4 p-4 border rounded-lg hover:bg-muted/50 transition-colors">

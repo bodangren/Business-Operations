@@ -4,18 +4,11 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  PlayCircle,
-  BookOpen,
-  Users,
-  Target,
-  Lightbulb,
-  Rocket,
-  Flag,
-  Monitor
 } from "lucide-react"
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
+import { PHASE_ICONS } from "@/components/student/phase-config"
 
 // Re-export for backward compatibility with existing imports
 export type { LessonPhase } from "@/types/lesson"
@@ -34,18 +27,6 @@ interface PhaseFooterNavigationOverrides {
   backToLessonLabel?: string
   completeLessonLabel?: string
   phaseHrefBuilder?: (phase: LessonPhase) => string
-}
-
-const phaseIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  "Hook": PlayCircle,
-  "Introduction": BookOpen,
-  "Guided Practice": Users,
-  "Independent Practice": Target,
-  "Assessment": CheckCircle2,
-  "Closing": Lightbulb,
-  "Project Launch": Rocket,
-  "Project Milestone": Flag,
-  "Project Presentation": Monitor
 }
 
 export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }: PhaseFooterProps) {
@@ -124,7 +105,7 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
         <CardContent className="space-y-3">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {sortedPhases.map((p, index) => {
-              const PhaseIcon = phaseIcons[p.phaseName]
+              const PhaseIcon = PHASE_ICONS[p.phaseName]
               const isCompleted = index < currentIndex
               const isCurrent = p.id === phase.id
               

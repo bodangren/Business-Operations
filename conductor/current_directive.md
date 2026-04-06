@@ -1,7 +1,7 @@
 # Current Directive
 
 **Updated:** 2026-04-06
-**Status:** Code review complete — dedup + phase-names tracks audited, 1 M-level fix applied
+**Status:** Extract phaseIcons complete — shared module created, 3 consumers refactored
 
 ## Active Track
 

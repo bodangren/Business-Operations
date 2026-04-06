@@ -48,6 +48,10 @@
 - **Bulk regex replacement with Node**: For 80 files, a Node.js `glob` + regex script was faster and more reliable than shell `sed`. The script found all matches, replaced inline blocks, and reported failures in one pass.
 - **Import ordering matters for build**: Placing `import` statements after `export const` (mid-file) compiled fine but violated style conventions. A second pass moved all imports to the top of each file.
 
-## 2026-04-06 — Extending Phase Name Type Unions
+## 2026-04-06 — Extract Shared phaseIcons Constant
+
+- **Separate direct-use icons from map icons**: When extracting icon maps to a shared module, each consumer file may still use some of those icons directly for section headers or UI elements (e.g., `Target`, `BookOpen` in `StudentLessonOverview`). Keep direct-use icons in the consumer's import and only remove imports for icons that are exclusively used in the shared map.
+- **TDD catches type mismatches early**: Lucide-react icons are `forwardRef` objects, not plain functions. The RED phase caught a `typeof` assertion error — the test was checking for `"function"` but lucide icons return `"object"`. Adjusting the test to verify truthiness and non-string type was cleaner than fighting the framework's export shape.
+- **Consolidate related maps together**: `phaseColors` and `phaseDescriptions` were also duplicated but only in 1-2 files. Bundling them into the same `phase-config.ts` alongside `PHASE_ICONS` ensures future phase additions only touch one file for all three concerns.
 
 - **Exhaustive icon/color maps break when types widen**: Adding values to a union type propagates to every `Record<PhaseName, ...>` map. The build caught missing `phaseIcons`/`phaseColors` entries in PhaseFooter, PhaseHeader, and StudentLessonOverview — use `Record<string, ...>` for icon maps when new phase categories may be added.

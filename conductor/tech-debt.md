@@ -19,7 +19,7 @@
 - [ ] `masteryColor` thresholds (75/50) don't align with `proficiency_band` thresholds (85/60/30) — document or unify (L3 from review, 2026-04-06)
 - [ ] `useUnitMastery` hook has no test coverage — only pure helper `getUnitMasteryInfo` is tested (L2 from review, 2026-04-06)
 - [x] ~5 lesson-data files use `as LessonPhase` to cast non-standard phase names ("Project Presentation", "Project Milestone", "Project Launch") — type system can't catch invalid phases (from review, 2026-04-06)~ (fixed 2026-04-06)
-- [ ] `phaseIcons` map duplicated across 3 component files (PhaseHeader, PhaseFooter, StudentLessonOverview) — adding a phase requires updating all 3; extract to shared constant (L1 from review, 2026-04-06)
+- [x] ~`phaseIcons` map duplicated across 3 component files (PhaseHeader, PhaseFooter, StudentLessonOverview) — adding a phase requires updating all 3; extract to shared constant (L1 from review, 2026-04-06)~ (fixed 2026-04-06)
 - [ ] `LessonPhaseName` (lesson.ts) and `LessonProgressPhaseName` (LessonProgressContext.tsx) are independent unions — no compile-time guarantee they stay in sync (L2 from review, 2026-04-06)
 - [ ] 13 pre-existing TS errors in 4 test files — `readonly` array → mutable, `UnitId` template literal, `TopicTag` literal, export schema mismatches (L3 from review, 2026-04-06)
 
