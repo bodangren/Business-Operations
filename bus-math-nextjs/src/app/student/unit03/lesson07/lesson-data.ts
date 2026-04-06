@@ -1,5 +1,5 @@
 // Unit 03 - Lesson 07: Project Rehearsal data
-import { LessonProgressPhaseName } from "@/contexts/LessonProgressContext"
+import type { LessonPhaseName } from "@/types/lesson"
 
 import { UNIT_REF_MAP } from "@/data/unit-registry"
 export const unit03Data = UNIT_REF_MAP[3]
@@ -29,7 +29,7 @@ export const lesson07Data = {
 }
 
 
-export const lesson07Phases: { id: string; phaseName: LessonProgressPhaseName; sequence: number; description: string }[] = [
+export const lesson07Phases: { id: string; phaseName: LessonPhaseName; sequence: number; description: string }[] = [
   {
     id: "phase_hook_7",
     phaseName: "Hook",

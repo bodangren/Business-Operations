@@ -1,0 +1,8 @@
+{
+  "track_id": "lesson_data_import_migration_20260407",
+  "type": "chore",
+  "status": "completed",
+  "created_at": "2026-04-07T00:00:00Z",
+  "updated_at": "2026-04-07T00:00:00Z",
+  "description": "Migrate 5 lesson-data files from LessonProgressContext to @/types/lesson imports"
+}

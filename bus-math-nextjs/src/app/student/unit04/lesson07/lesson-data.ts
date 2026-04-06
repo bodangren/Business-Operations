@@ -1,4 +1,4 @@
-import { LessonProgressPhaseName } from "@/contexts/LessonProgressContext"
+import type { LessonPhaseName } from "@/types/lesson"
 
 // Data-Driven Café, Lesson 7 data - Project Rehearsal
 import { UNIT_REF_MAP } from "@/data/unit-registry"
@@ -31,7 +31,7 @@ export const lesson07Data = {
 
 
 // Lesson phases for project-rehearsal
-export const lesson07Phases: { id: string; phaseName: LessonProgressPhaseName; sequence: number; description: string }[] = [
+export const lesson07Phases: { id: string; phaseName: LessonPhaseName; sequence: number; description: string }[] = [
   {
     id: "phase_rehearsal_purpose",
     phaseName: "Hook",
