@@ -21,7 +21,13 @@ export default function UnitMasteryProgressBar({ unitId }: UnitMasteryProgressBa
         <span>{mastery.termsStudied}/{mastery.termsTotal} terms</span>
         <span>{mastery.avgMastery}%</span>
       </div>
-      <div className="relative h-2 w-full overflow-hidden rounded-full bg-primary/20">
+      <div
+        className="relative h-2 w-full overflow-hidden rounded-full bg-primary/20"
+        role="progressbar"
+        aria-valuenow={mastery.avgMastery}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
         <div
           className={`h-full rounded-full transition-all ${color}`}
           style={{ width: `${mastery.avgMastery}%` }}

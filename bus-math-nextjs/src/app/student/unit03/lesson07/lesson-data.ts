@@ -1,5 +1,5 @@
 // Unit 03 - Lesson 07: Project Rehearsal data
-import { LessonPhase } from "@/contexts/LessonProgressContext"
+import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
 export const lesson07Data = {
   id: "u3l7",

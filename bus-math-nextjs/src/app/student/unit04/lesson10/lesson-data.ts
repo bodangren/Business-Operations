@@ -1,5 +1,5 @@
 // Data-Driven Café, Lesson 10 data - extracted from MCP curriculum database
-import { LessonPhase } from "@/contexts/LessonProgressContext"
+import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
 export const lesson10Data = {
   id: "mds5vu0m46dubjfe22",

@@ -2,7 +2,7 @@
 
 ## Active
 
-- [ ] `next lint` deprecated — migrate to ESLint CLI before Next.js 16
+- [x] ~`next lint` deprecated — migrated to ESLint CLI (`eslint .`) (fixed 2026-04-05)~
 - [ ] Multiple lockfile warning — set `outputFileTracingRoot` or clean up root lockfile
 - [x] ~7 eslint warnings (react-hooks: 2 rules-of-hooks, 4 exhaustive-deps, 1 useMemo dep) — was 571, Phase 1 auto-fix removed unused imports (2026-04-05), Phase 2 prefixed unused vars (2026-04-05), review audit fixed 1 critical runtime bug + 5 interface regressions (2026-04-05), Phase 3 replaced all 227 no-explicit-any with proper types (2026-04-05), Phase 4 resolved all react-hooks warnings: 0 remaining (2026-04-05)
 - [x] ~Dead code with `_` prefix in ~13 components — all 30 instances removed across 26 files (2026-04-05)~
@@ -12,6 +12,11 @@
 - [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
 - [x] `index-records.ts` has empty `lessonPages` array — populated with all 80 lesson entries (M4 from audit, fixed 2026-04-05)
 - [x] `StudyDueBadge` loads study data per-instance — 8 hub cards = 8 redundant localStorage reads (L1 from CTAs review, fixed 2026-04-05)
+- [ ] `eslint-config-next` version should stay in sync with `next` — now aligned to `^15.5.2` (2026-04-06)
+- [ ] 8 practice-test pages still import `LessonPhase` from `@/components/student/PhaseHeader` via backward-compat re-export — should migrate to `@/types/lesson` (L5 from review, 2026-04-06)
+- [ ] `masteryColor` thresholds (75/50) don't align with `proficiency_band` thresholds (85/60/30) — document or unify (L3 from review, 2026-04-06)
+- [ ] `useUnitMastery` hook has no test coverage — only pure helper `getUnitMasteryInfo` is tested (L2 from review, 2026-04-06)
+- [ ] 5 lesson-data files use `as LessonPhase` to cast non-standard phase names ("Project Presentation", "Project Milestone", "Project Launch") — type system can't catch invalid phases (from review, 2026-04-06)
 
 ## Resolved
 
@@ -25,3 +30,8 @@
 - [x] Footer "Teacher Resources" section had duplicate Subject Index link — replaced with Teacher Dashboard link (M2, fixed 2026-04-04)
 - [x] Unit 07 unit07-text.md still had old framing mentioning depreciation — rewritten to inventory-only scope (H1, fixed 2026-04-04)
 - [x] Unit 8 debug exercises page referenced "Year-1 Startup Model" — updated to "Fixed Assets and Depreciation" (H2, fixed 2026-04-04)
+- [x] `UnitMasteryProgressBar` missing `role="progressbar"` + ARIA value attributes — added (M2 from review, fixed 2026-04-06)
+- [x] `LessonPhase` naming collision between `LessonProgressContext` (string union) and `@/types/lesson` (interface) — renamed to `LessonProgressPhaseName` (M5 from review, fixed 2026-04-06)
+- [x] `UNIT_TERM_COUNTS` computed independently in 3 files — consolidated into shared export from `StudyDataContext.tsx` (M3 from review, fixed 2026-04-06)
+- [x] Duplicate `interface LessonPhase` in `StudentLessonOverview.tsx` and `TeacherLessonPlan.tsx` — replaced with canonical imports/extensions (M4 from review, fixed 2026-04-06)
+- [x] `eslint-config-next@15.4.4` vs `next@^15.5.2` version mismatch — aligned to `^15.5.2` (M1 from review, fixed 2026-04-06)

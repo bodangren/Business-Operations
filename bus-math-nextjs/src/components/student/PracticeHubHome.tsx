@@ -17,13 +17,12 @@ import {
 } from "lucide-react"
 import type { UnitId } from "@/types/glossary"
 import { glossaryData } from "@/data/glossary"
-import { filterByUnit } from "@/lib/glossary/index"
 import {
   deriveStats,
   formatRelativeDate,
   masteryColor,
 } from "@/lib/study/derived"
-import { useStudyData } from "@/contexts/StudyDataContext"
+import { useStudyData, UNIT_TERM_COUNTS } from "@/contexts/StudyDataContext"
 
 const UNITS: { id: UnitId; label: string }[] = [
   { id: "unit01", label: "Unit 01" },
@@ -36,10 +35,6 @@ const UNITS: { id: UnitId; label: string }[] = [
   { id: "unit08", label: "Unit 08" },
 ]
 
-const UNIT_TERM_COUNTS: Record<UnitId, number> = {} as Record<UnitId, number>
-for (const u of UNITS) {
-  UNIT_TERM_COUNTS[u.id] = filterByUnit(glossaryData, u.id).length
-}
 const TOTAL_TERMS = glossaryData.length
 
 function activityLabel(type: string): string {

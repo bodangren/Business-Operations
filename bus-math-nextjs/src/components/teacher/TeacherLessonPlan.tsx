@@ -24,10 +24,9 @@ import {
   ChevronDown
 } from "lucide-react"
 
-interface LessonPhase {
-  id: string
-  phaseName: 'Hook' | 'Introduction' | 'Guided Practice' | 'Independent Practice' | 'Assessment' | 'Closing'
-  sequence: number
+import type { LessonPhase as BaseLessonPhase } from "@/types/lesson"
+
+interface TeacherLessonPhase extends BaseLessonPhase {
   description: string
   developerNotes?: string
 }
@@ -52,7 +51,7 @@ interface TeacherLessonPlanProps {
 export function TeacherLessonPlan({ unit, lessonNumber }: TeacherLessonPlanProps) {
   const router = useRouter()
   const [lesson, setLesson] = useState<Lesson | null>(null)
-  const [phases, setPhases] = useState<LessonPhase[]>([])
+  const [phases, setPhases] = useState<TeacherLessonPhase[]>([])
   const [loading, setLoading] = useState(true)
 
   // Lesson titles for dropdown (would come from MCP in real implementation)

@@ -35,7 +35,7 @@ function buildUnitTermCounts(): Record<UnitId, number> {
   return counts as Record<UnitId, number>
 }
 
-const UNIT_TERM_COUNTS = buildUnitTermCounts()
+export const UNIT_TERM_COUNTS = buildUnitTermCounts()
 
 // ---------------------------------------------------------------------------
 // Pure helpers (exported for testing)

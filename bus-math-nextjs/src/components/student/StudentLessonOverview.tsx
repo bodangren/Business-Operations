@@ -13,13 +13,7 @@ import {
   Home
 } from "lucide-react"
 import Link from "next/link"
-
-interface LessonPhase {
-  id: string
-  phaseName: "Hook" | "Introduction" | "Guided Practice" | "Independent Practice" | "Assessment" | "Closing"
-  sequence: number
-  description?: string
-}
+import type { LessonPhase } from "@/types/lesson"
 
 interface StudentLessonOverviewProps {
   lesson: {

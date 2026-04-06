@@ -1,5 +1,5 @@
 // Data-Driven Café, Lesson 8 - Group Project Kickoff
-import { LessonPhase } from "@/contexts/LessonProgressContext"
+import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
 export const lesson08Data = {
   id: "mds5vu0feh581clfpa",

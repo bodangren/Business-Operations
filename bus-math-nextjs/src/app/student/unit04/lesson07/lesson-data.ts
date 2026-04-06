@@ -1,4 +1,4 @@
-import { LessonPhase } from "@/contexts/LessonProgressContext"
+import { LessonProgressPhaseName as LessonPhase } from "@/contexts/LessonProgressContext"
 
 // Data-Driven Café, Lesson 7 data - Project Rehearsal
 export const lesson07Data = {

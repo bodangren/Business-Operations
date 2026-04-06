@@ -3,12 +3,12 @@
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react'
 
 // Phase types based on MCP curriculum structure
-export type LessonPhase = 'Hook' | 'Introduction' | 'Guided Practice' | 'Independent Practice' | 'Assessment' | 'Closing'
+export type LessonProgressPhaseName = 'Hook' | 'Introduction' | 'Guided Practice' | 'Independent Practice' | 'Assessment' | 'Closing'
 
 export interface LessonPhaseProgress {
   lessonId: string
   phaseId: string
-  phaseName: LessonPhase
+  phaseName: LessonProgressPhaseName
   isCompleted: boolean
   timeSpent?: number
   lastAccessed?: Date
