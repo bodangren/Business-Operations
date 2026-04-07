@@ -121,7 +121,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
   /* Custom scrollbar for spreadsheet-like feel */
   ::-webkit-scrollbar {
@@ -129,14 +129,14 @@
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: oklch(var(--muted));
+    background: var(--muted);
   }
   ::-webkit-scrollbar-thumb {
-    background: oklch(var(--border));
+    background: var(--border);
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(var(--muted-foreground));
+    background: var(--muted-foreground);
   }
 }
 
@@ -144,8 +144,8 @@
   /* Accounting-specific utilities */
   .accounting-grid {
     background-image: 
-      linear-gradient(oklch(var(--border)) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(var(--border)) 1px, transparent 1px);
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 20px 20px;
   }
   
@@ -189,7 +189,7 @@
   
   /* Professional gradients */
   .gradient-financial {
-    background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--accent)) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   }
   
   .gradient-success {

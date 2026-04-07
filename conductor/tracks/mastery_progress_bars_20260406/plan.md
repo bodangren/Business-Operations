@@ -50,5 +50,5 @@
 - [x] Verify no visual regressions on hub page and unit overview pages — build passes, component is conditional
 - [x] Update `conductor/tech-debt.md` if needed — no changes needed
 - [x] Update `conductor/lessons-learned.md` (keep ≤50 lines) — 46 lines
-- [ ] Commit with conventional commit message
-- [ ] Push to remote
+- [x] Commit with conventional commit message
+- [x] Push to remote

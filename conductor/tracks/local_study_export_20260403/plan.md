@@ -23,7 +23,7 @@
 - [x] 2.3 Implement the spaced-review scheduling engine
   - Wrapped `ts-fsrs` behind `src/lib/study/srs.ts`
   - Success/failure paths, due-term selection, queue updates after sessions
-- [ ] 2.4 Surface due-review counts to the practice hub and unit entry points
+- [x] 2.4 Surface due-review counts to the practice hub and unit entry points
 
 ### Phase 3: Vocabulary Study Modes ✓
 - [x] 3.1 Implement glossary-driven flashcards

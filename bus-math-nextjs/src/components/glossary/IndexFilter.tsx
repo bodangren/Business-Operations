@@ -52,78 +52,80 @@ export function IndexFilter({ records }: { records: IndexRecord[] }) {
 
   return (
     <div className="space-y-6">
-      {/* Search */}
-      <div>
-        <label
-          htmlFor="index-keyword"
-          className="block text-sm font-medium text-muted-foreground mb-1"
-        >
-          Search index
-        </label>
-        <input
-          id="index-keyword"
-          type="text"
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
-          placeholder="Type to search the index…"
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        />
-      </div>
+      <section className="rounded-2xl border border-border/60 bg-card/80 p-4 shadow-sm sm:p-5">
+        <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_16rem]">
+          <div>
+            <label
+              htmlFor="index-keyword"
+              className="mb-1 block text-sm font-medium text-muted-foreground"
+            >
+              Search index
+            </label>
+            <input
+              id="index-keyword"
+              type="text"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              placeholder="Type to search the index…"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+          </div>
 
-      {/* Category filter */}
-      {categories.length > 0 && (
-        <div>
-          <label
-            htmlFor="index-category"
-            className="block text-sm font-medium text-muted-foreground mb-1"
-          >
-            Filter by category
-          </label>
-          <select
-            id="index-category"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value as IndexRecord["category"] | "")}
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <option value="">All categories</option>
-            {categories.map((c) => (
-              <option key={c} value={c}>
-                {CATEGORY_LABELS[c]}
-              </option>
-            ))}
-          </select>
+          {categories.length > 0 ? (
+            <div>
+              <label
+                htmlFor="index-category"
+                className="mb-1 block text-sm font-medium text-muted-foreground"
+              >
+                Filter by category
+              </label>
+              <select
+                id="index-category"
+                value={selectedCategory}
+                onChange={(e) =>
+                  setSelectedCategory(e.target.value as IndexRecord["category"] | "")
+                }
+                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <option value="">All categories</option>
+                {categories.map((c) => (
+                  <option key={c} value={c}>
+                    {CATEGORY_LABELS[c]}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : null}
         </div>
-      )}
+      </section>
 
-      {/* Results count */}
       <p className="text-sm text-muted-foreground">
         {filtered.length} of {records.length} entries
       </p>
 
-      {/* Results */}
       {filtered.length === 0 ? (
         <p className="text-center py-8 text-muted-foreground">
           No entries match your search.
         </p>
       ) : (
-        <div className="space-y-2">
+        <div className="space-y-3">
           {filtered.map((record, i) => (
             <Link
               key={`${record.href}-${i}`}
               href={record.href}
-              className="block rounded-lg border bg-card p-3 shadow-sm hover:bg-accent transition-colors"
+              className="block rounded-xl border border-border/60 bg-card/90 p-3 shadow-sm transition-colors hover:bg-accent"
             >
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div className="space-y-0.5 min-w-0">
-                  <p className="text-sm font-medium truncate">{record.label}</p>
+                  <p className="text-sm font-medium break-words sm:truncate">{record.label}</p>
                   {record.description && (
-                    <p className="text-xs text-muted-foreground line-clamp-1">
+                    <p className="text-xs text-muted-foreground sm:line-clamp-1">
                       {record.description}
                     </p>
                   )}
                 </div>
                 <span
-                  className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
+                  className={`inline-flex w-fit shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
                     CATEGORY_COLORS[record.category]
                   }`}
                 >

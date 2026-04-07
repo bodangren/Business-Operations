@@ -1,8 +1,8 @@
 {
   "track_id": "mastery_progress_bars_20260406",
   "type": "feature",
-  "status": "in-progress",
+  "status": "completed",
   "created_at": "2026-04-06T00:00:00Z",
-  "updated_at": "2026-04-06T10:38:00Z",
+  "updated_at": "2026-04-07T05:11:13Z",
   "description": "Add per-unit vocabulary mastery progress bars to hub unit cards and unit overview pages"
 }

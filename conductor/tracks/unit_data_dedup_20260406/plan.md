@@ -28,4 +28,4 @@
 - [x] Update `tech-debt.md` — mark unit data duplication as resolved
 - [x] Update `current_directive.md` — record completion
 - [x] Update `lessons-learned.md` — add new entry (kept ≤50 lines)
-- [ ] Commit with git note, push
+- [x] Commit with git note, push

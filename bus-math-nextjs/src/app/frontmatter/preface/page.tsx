@@ -50,13 +50,15 @@ export default function PrefacePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <header className="border-b bg-white/70 backdrop-blur">
-        <div className="container mx-auto px-4 py-6 max-w-6xl">
+        <div className="container mx-auto max-w-6xl px-4 py-6 sm:px-6">
           <div className="text-center space-y-4">
             <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2">
               <BookOpen className="inline-block mr-2 h-4 w-4" /> Preface: Welcome & Syllabus
             </Badge>
-            <h1 className="text-3xl md:text-4xl font-bold">Math for Business Operations: Applied Accounting with Excel</h1>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <h1 className="text-balance text-3xl font-bold md:text-4xl">
+              Math for Business Operations: Applied Accounting with Excel
+            </h1>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">
               This course turns spreadsheets into decision tools. You will build working Excel models,
               present to real audiences, and finish with a capstone that shows investor‑level thinking.
             </p>
@@ -64,7 +66,7 @@ export default function PrefacePage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-10 space-y-10 max-w-6xl">
+      <main className="container mx-auto max-w-6xl space-y-10 px-4 py-10 sm:px-6">
         {/* Course Snapshot */}
         <section className="space-y-6">
           <Card>
@@ -104,10 +106,10 @@ export default function PrefacePage() {
 
         {/* Six‑Phase Lesson Structure */}
         <section className="space-y-6">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-blue-100 text-blue-800">Lesson Flow</Badge>
-            <h2 className="text-2xl font-semibold">Our Six‑Phase Structure</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-balance text-2xl font-semibold">Our Six‑Phase Structure</h2>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">
               Each lesson follows a clear rhythm so you always know what's next. You'll read short explanations,
               try a focused task, check your understanding, and reflect on what you learned.
             </p>
@@ -138,10 +140,10 @@ export default function PrefacePage() {
 
         {/* Units Overview */}
         <section className="space-y-6">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-blue-100 text-blue-800">Course Map</Badge>
-            <h2 className="text-2xl font-semibold">Eight Hands‑On Units</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-balance text-2xl font-semibold">Eight Hands‑On Units</h2>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">
               Semester 1 builds solid accounting and Excel skills. Semester 2 assembles a full startup model and prepares you for the capstone.
             </p>
           </div>
@@ -179,10 +181,10 @@ export default function PrefacePage() {
 
         {/* Capstone Emphasis */}
         <section className="space-y-6">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-blue-100 text-blue-800">Capstone</Badge>
-            <h2 className="text-2xl font-semibold">Second‑Semester Capstone: Investor‑Ready</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-balance text-2xl font-semibold">Second‑Semester Capstone: Investor‑Ready</h2>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">
               Over 13 weeks you will extend your best mini‑projects into one investor‑ready business plan with a linked Excel workbook.
               You'll deliver a 10‑slide pitch, a 3‑minute model‑tour video, and a self‑auditing dashboard.
             </p>
@@ -236,10 +238,10 @@ export default function PrefacePage() {
 
         {/* Try It: Interactive Demos */}
         <section className="space-y-6">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-blue-100 text-blue-800">Try It</Badge>
-            <h2 className="text-2xl font-semibold">How learning feels in this course</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">A quick taste of our interactive checks and business simulations.</p>
+            <h2 className="text-balance text-2xl font-semibold">How learning feels in this course</h2>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">A quick taste of our interactive checks and business simulations.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6 items-start">
@@ -275,9 +277,9 @@ export default function PrefacePage() {
 
         {/* Expectations & Support */}
         <section className="space-y-6">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-blue-100 text-blue-800">Expectations</Badge>
-            <h2 className="text-2xl font-semibold">How to succeed here</h2>
+            <h2 className="text-balance text-2xl font-semibold">How to succeed here</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             <Card>

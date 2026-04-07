@@ -20,4 +20,4 @@
 - [x] Run `npm run test` — 216 passed (14 suites)
 
 ### Task 5: Commit
-- [ ] Commit with note and push
+- [x] Commit with note and push

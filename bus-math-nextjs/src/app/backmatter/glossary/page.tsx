@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function GlossaryPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="container mx-auto px-4 py-8 max-w-5xl">
-        <div className="mb-8 space-y-2">
+      <div className="container mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <div className="mb-8 rounded-2xl border border-border/60 bg-card/80 p-6 shadow-sm">
           <Badge variant="outline">Reference</Badge>
-          <h1 className="text-3xl font-bold mt-2">Bilingual Glossary</h1>
-          <p className="text-muted-foreground text-base">
+          <h1 className="mt-3 text-balance text-3xl font-bold">Bilingual Glossary</h1>
+          <p className="mt-2 max-w-3xl text-base text-muted-foreground">
             Look up key business and accounting terms. Choose which fields to
             display for self-study — English or Chinese terms and definitions.
           </p>

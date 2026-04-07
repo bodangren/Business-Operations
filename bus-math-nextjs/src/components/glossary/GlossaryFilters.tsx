@@ -85,82 +85,82 @@ export function GlossaryFilters({ entries }: { entries: GlossaryEntry[] }) {
 
   return (
     <div className="space-y-6">
-      {/* Keyword search */}
-      <div>
-        <label
-          htmlFor="glossary-keyword"
-          className="block text-sm font-medium text-muted-foreground mb-1"
-        >
-          Search terms
-        </label>
-        <input
-          id="glossary-keyword"
-          type="text"
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
-          placeholder="Type to filter glossary…"
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        />
-      </div>
+      <section className="rounded-2xl border border-border/60 bg-card/80 p-4 shadow-sm sm:p-5">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="md:col-span-2">
+            <label
+              htmlFor="glossary-keyword"
+              className="mb-1 block text-sm font-medium text-muted-foreground"
+            >
+              Search terms
+            </label>
+            <input
+              id="glossary-keyword"
+              type="text"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              placeholder="Type to filter glossary…"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+          </div>
 
-      {/* Unit filter */}
-      <div>
-        <label
-          htmlFor="glossary-unit"
-          className="block text-sm font-medium text-muted-foreground mb-1"
-        >
-          Filter by unit
-        </label>
-        <select
-          id="glossary-unit"
-          value={selectedUnit}
-          onChange={(e) => {
-            setSelectedUnit(e.target.value as UnitId | "")
-            setActiveLetter("")
-          }}
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <option value="">All units</option>
-          {ALL_UNIT_IDS.map((u) => (
-            <option key={u} value={u}>
-              {UNIT_LABELS[u]}
-            </option>
-          ))}
-        </select>
-      </div>
+          <div>
+            <label
+              htmlFor="glossary-unit"
+              className="mb-1 block text-sm font-medium text-muted-foreground"
+            >
+              Filter by unit
+            </label>
+            <select
+              id="glossary-unit"
+              value={selectedUnit}
+              onChange={(e) => {
+                setSelectedUnit(e.target.value as UnitId | "")
+                setActiveLetter("")
+              }}
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <option value="">All units</option>
+              {ALL_UNIT_IDS.map((u) => (
+                <option key={u} value={u}>
+                  {UNIT_LABELS[u]}
+                </option>
+              ))}
+            </select>
+          </div>
 
-      {/* Topic filter */}
-      {allTopics.length > 0 && (
-        <div>
-          <label
-            htmlFor="glossary-topic"
-            className="block text-sm font-medium text-muted-foreground mb-1"
-          >
-            Filter by topic
-          </label>
-          <select
-            id="glossary-topic"
-            value={selectedTopic}
-            onChange={(e) => {
-              setSelectedTopic(e.target.value as TopicTag | "")
-              setActiveLetter("")
-            }}
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <option value="">All topics</option>
-            {allTopics.map((t) => (
-              <option key={t} value={t}>
-                {TOPIC_LABELS[t]}
-              </option>
-            ))}
-          </select>
+          {allTopics.length > 0 ? (
+            <div>
+              <label
+                htmlFor="glossary-topic"
+                className="mb-1 block text-sm font-medium text-muted-foreground"
+              >
+                Filter by topic
+              </label>
+              <select
+                id="glossary-topic"
+                value={selectedTopic}
+                onChange={(e) => {
+                  setSelectedTopic(e.target.value as TopicTag | "")
+                  setActiveLetter("")
+                }}
+                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <option value="">All topics</option>
+                {allTopics.map((t) => (
+                  <option key={t} value={t}>
+                    {TOPIC_LABELS[t]}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : null}
         </div>
-      )}
+      </section>
 
-      {/* Display controls */}
-      <div className="rounded-lg border bg-card p-4 space-y-3">
+      <div className="rounded-2xl border border-border/60 bg-card/80 p-4 shadow-sm sm:p-5">
         <h3 className="text-sm font-semibold">Study display</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div>
             <label
               htmlFor="primary-field"
@@ -216,16 +216,15 @@ export function GlossaryFilters({ entries }: { entries: GlossaryEntry[] }) {
         </div>
       </div>
 
-      {/* Alphabetical navigation */}
       <div>
         <h3 className="text-sm font-medium text-muted-foreground mb-2">
           Browse by letter
         </h3>
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1.5 rounded-2xl border border-border/60 bg-card/70 p-3">
           <button
             type="button"
             onClick={() => setActiveLetter("")}
-            className={`h-8 w-8 rounded-md text-xs font-medium transition-colors ${
+            className={`min-w-10 rounded-md px-3 py-2 text-xs font-medium transition-colors ${
               activeLetter === ""
                 ? "bg-primary text-primary-foreground"
                 : "bg-secondary text-secondary-foreground hover:bg-accent"
@@ -240,7 +239,7 @@ export function GlossaryFilters({ entries }: { entries: GlossaryEntry[] }) {
               onClick={() =>
                 setActiveLetter(activeLetter === letter ? "" : letter)
               }
-              className={`h-8 w-8 rounded-md text-xs font-medium transition-colors ${
+              className={`h-8 min-w-8 rounded-md px-2 text-xs font-medium transition-colors ${
                 activeLetter === letter
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-secondary-foreground hover:bg-accent"

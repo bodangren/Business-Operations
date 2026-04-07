@@ -1,0 +1,8 @@
+{
+  "track_id": "shared_surface_ui_audit_20260407",
+  "type": "fix",
+  "status": "completed",
+  "created_at": "2026-04-07T00:05:00Z",
+  "updated_at": "2026-04-07T05:11:13Z",
+  "description": "Audit and fix shared shell, homepage, frontmatter, and backmatter UI issues page by page"
+}

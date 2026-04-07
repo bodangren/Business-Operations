@@ -10,20 +10,22 @@ export default function AcknowledgmentsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50">
       <header className="border-b bg-white/70 backdrop-blur">
-        <div className="container mx-auto px-4 py-6 max-w-6xl">
+        <div className="container mx-auto max-w-6xl px-4 py-6 sm:px-6">
           <div className="text-center space-y-4">
             <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">
               <Heart className="inline-block mr-2 h-4 w-4" /> Acknowledgments & Author
             </Badge>
-            <h1 className="text-3xl md:text-4xl font-bold">Gratitude, Transparency, and the Story Behind This Course</h1>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <h1 className="text-balance text-3xl font-bold md:text-4xl">
+              Gratitude, Transparency, and the Story Behind This Course
+            </h1>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">
               This course reflects years of classroom practice, a full redesign for project‑based learning, and the support of open‑source communities and modern AI tools.
             </p>
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-10 space-y-10 max-w-6xl">
+      <main className="container mx-auto max-w-6xl space-y-10 px-4 py-10 sm:px-6">
         {/* Author */}
         <section>
           <Card className="shadow-sm">
@@ -48,10 +50,10 @@ export default function AcknowledgmentsPage() {
 
         {/* Development Journey */}
         <section className="space-y-4">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-emerald-100 text-emerald-800">Journey</Badge>
-            <h2 className="text-2xl font-semibold">How This Course Was Built</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">From paper notes to a modern, interactive textbook</p>
+            <h2 className="text-balance text-2xl font-semibold">How This Course Was Built</h2>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">From paper notes to a modern, interactive textbook</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -110,10 +112,10 @@ export default function AcknowledgmentsPage() {
 
         {/* AI Use Transparency */}
         <section className="space-y-4">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-emerald-100 text-emerald-800">Transparency</Badge>
-            <h2 className="text-2xl font-semibold">How AI Helped Build This App</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">Honest credit where it’s due</p>
+            <h2 className="text-balance text-2xl font-semibold">How AI Helped Build This App</h2>
+            <p className="mx-auto max-w-3xl text-balance text-muted-foreground">Honest credit where it’s due</p>
           </div>
 
           <Card className="border-emerald-200 bg-emerald-50">
@@ -134,9 +136,9 @@ export default function AcknowledgmentsPage() {
 
         {/* Thanks */}
         <section className="space-y-4">
-          <div className="text-center space-y-2">
+          <div className="space-y-2 text-center">
             <Badge className="bg-emerald-100 text-emerald-800">Thanks</Badge>
-            <h2 className="text-2xl font-semibold">Acknowledgments</h2>
+            <h2 className="text-balance text-2xl font-semibold">Acknowledgments</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">

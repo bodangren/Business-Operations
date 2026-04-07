@@ -4,65 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, Calculator, CheckSquare, Dice6, TrendingUp, BarChart3 } from "lucide-react"
-
-const units = [
-  {
-    title: "Unit 1: Smart Ledger Launch",
-    description: "Build a comprehensive accounting ledger system in Excel",
-    duration: "2-3 weeks",
-    difficulty: "Beginner",
-    href: "/student/unit01"
-  },
-  {
-    title: "Unit 2: Month-End Wizard",
-    description: "Automate month-end closing procedures and reports",
-    duration: "2-3 weeks", 
-    difficulty: "Intermediate",
-    href: "/student/unit02"
-  },
-  {
-    title: "Unit 3: Three-Statement Storyboard",
-    description: "Create integrated financial statements that tell a story",
-    duration: "3-4 weeks",
-    difficulty: "Intermediate", 
-    href: "/student/unit03"
-  },
-  {
-    title: "Unit 4: Data-Driven Café",
-    description: "Analyze café operations using data visualization",
-    duration: "2-3 weeks",
-    difficulty: "Intermediate",
-    href: "/student/unit04"
-  },
-  {
-    title: "Unit 5: PayDay Simulator", 
-    description: "Model payroll systems and employee compensation",
-    duration: "2-3 weeks",
-    difficulty: "Advanced",
-    href: "/student/unit05"
-  },
-  {
-    title: "Unit 6: PriceLab Challenge",
-    description: "Experiment with pricing strategies and market analysis", 
-    duration: "3-4 weeks",
-    difficulty: "Advanced",
-    href: "/student/unit06"
-  },
-  {
-    title: "Unit 7: Inventory Accounting",
-    description: "Inventory valuation methods and strategic decision-making",
-    duration: "2-3 weeks", 
-    difficulty: "Advanced",
-    href: "/student/unit07"
-  },
-  {
-    title: "Unit 8: Fixed Assets and Depreciation",
-    description: "Depreciation methods and fixed asset tracking",
-    duration: "3-4 weeks",
-    difficulty: "Expert", 
-    href: "/student/unit08"
-  }
-]
+import { UNITS } from "@/data/unit-registry"
+import {
+  FRONTMATTER_LINKS,
+  REFERENCE_LINKS,
+  TEACHER_RESOURCE_LINKS,
+} from "@/lib/site-navigation"
 
 const features = [
   {
@@ -97,162 +44,271 @@ const features = [
   }
 ]
 
-const getDifficultyVariant = (difficulty: string): "default" | "secondary" | "outline" | "destructive" => {
+const UNIT_META = [
+  { duration: "2-3 weeks", difficulty: "Beginner" },
+  { duration: "2-3 weeks", difficulty: "Intermediate" },
+  { duration: "3-4 weeks", difficulty: "Intermediate" },
+  { duration: "2-3 weeks", difficulty: "Intermediate" },
+  { duration: "2-3 weeks", difficulty: "Advanced" },
+  { duration: "3-4 weeks", difficulty: "Advanced" },
+  { duration: "2-3 weeks", difficulty: "Advanced" },
+  { duration: "3-4 weeks", difficulty: "Expert" },
+] as const
+
+const getDifficultyVariant = (
+  difficulty: string,
+): "default" | "secondary" | "outline" | "destructive" => {
   switch (difficulty) {
-    case "Beginner": return "default"
-    case "Intermediate": return "secondary" 
-    case "Advanced": return "outline"
-    case "Expert": return "destructive"
-    default: return "outline"
+    case "Beginner":
+      return "default"
+    case "Intermediate":
+      return "secondary"
+    case "Advanced":
+      return "outline"
+    case "Expert":
+      return "destructive"
+    default:
+      return "outline"
   }
 }
 
 export default function Home() {
   return (
-    <main className="flex-1">
-        <section className="py-16 md:py-24 bg-gradient-to-br from-background via-primary/5 to-accent/5">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calculator className="h-8 w-8 text-primary" />
-                  <BarChart3 className="h-7 w-7 text-accent" />
-                  <TrendingUp className="h-6 w-6 text-green-600" />
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+    <div className="flex-1">
+      <section className="bg-gradient-to-br from-background via-primary/5 to-accent/5 py-12 sm:py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12">
+            <div className="mx-auto max-w-2xl space-y-6 lg:mx-0">
+              <div className="flex items-center gap-3">
+                <Calculator className="h-8 w-8 text-primary" />
+                <BarChart3 className="h-7 w-7 text-accent" />
+                <TrendingUp className="h-6 w-6 text-green-600" />
+              </div>
+              <div className="space-y-4">
+                <Badge className="bg-primary/10 px-3 py-1 text-primary hover:bg-primary/10">
+                  Applied Accounting with Excel
+                </Badge>
+                <h1 className="max-w-xl text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                   Math for Business Operations
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Master accounting principles, spreadsheet modeling, and entrepreneurship through 
-                  hands-on Excel projects and real-world business applications.
+                <p className="max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+                  Master accounting principles, spreadsheet modeling, and entrepreneurship
+                  through hands-on Excel projects and real-world business applications.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="gradient-financial text-primary-foreground shadow-lg hover:shadow-xl transition-shadow">
-                    <Link href="/frontmatter/preface">Start Reading</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10">
-                    <Link href="/student/unit01">Jump to Unit 1</Link>
-                  </Button>
-                </div>
               </div>
-              <div className="flex justify-center lg:justify-end">
-                <div className="w-full max-w-md relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-lg blur-xl opacity-30"></div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Button
+                  asChild
+                  className="gradient-financial text-primary-foreground shadow-lg transition-shadow hover:shadow-xl"
+                  size="lg"
+                >
+                  <Link href="/frontmatter/preface">Start Reading</Link>
+                </Button>
+                <Button
+                  asChild
+                  className="border-primary/30 bg-background/80 hover:bg-primary/10"
+                  size="lg"
+                  variant="outline"
+                >
+                  <Link href="/student/unit01">Jump to Unit 1</Link>
+                </Button>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <Card className="border-primary/15 bg-card/80 shadow-sm">
+                  <CardContent className="px-4 py-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      Course Format
+                    </p>
+                    <p className="mt-2 text-sm font-medium">
+                      Eight project-driven units plus a capstone build.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-primary/15 bg-card/80 shadow-sm">
+                  <CardContent className="px-4 py-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      Reference Tools
+                    </p>
+                    <p className="mt-2 text-sm font-medium">
+                      Bilingual glossary, searchable index, and teacher guides.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-primary/15 bg-card/80 shadow-sm">
+                  <CardContent className="px-4 py-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      Core Skills
+                    </p>
+                    <p className="mt-2 text-sm font-medium">
+                      Accounting, Excel automation, forecasting, and decision-making.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[20rem] sm:max-w-sm">
+                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-primary/20 to-accent/20 blur-2xl opacity-40" />
+                <div className="relative rounded-[2rem] border border-border/60 bg-white/80 p-4 shadow-2xl shadow-primary/10">
                   <Image
-                    src="./cover.png"
+                    src="/cover.png"
                     alt="Math for Business Operations textbook cover showing business charts and Excel spreadsheets"
                     width={400}
                     height={533}
-                    className="relative w-full h-auto rounded-lg shadow-2xl border border-border/50"
+                    className="h-auto w-full rounded-[1.25rem] border border-border/50 shadow-lg"
                     priority
                   />
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-16 bg-muted/10">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Course Structure</h2>
-              <p className="text-xl text-muted-foreground">Eight hands-on units plus a comprehensive capstone project</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {units.map((unit, index) => (
-                <Card key={index} className="border-border/50 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <CardHeader>
-                    <CardTitle className="text-lg">
-                      <Link href={unit.href} className="hover:text-primary transition-colors">
-                        {unit.title}
-                      </Link>
-                    </CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground">{unit.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground font-medium">{unit.duration}</span>
-                      <Badge variant={getDifficultyVariant(unit.difficulty)}>
-                        {unit.difficulty}
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="border-primary/20">
-                <CardHeader className="bg-gradient-to-r from-primary/5 to-primary/10 border-b border-primary/20">
-                  <CardTitle className="text-primary">Getting Started</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <Link href="/frontmatter/preface" className="block text-sm hover:text-primary transition-colors p-2 rounded hover:bg-primary/5">
-                    Preface
-                  </Link>
-                  <Link href="/frontmatter/acknowledgments" className="block text-sm hover:text-primary transition-colors p-2 rounded hover:bg-primary/5">
-                    Acknowledgments
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="border-accent/20">
-                <CardHeader className="bg-gradient-to-r from-accent/5 to-accent/10 border-b border-accent/20">
-                  <CardTitle className="text-accent">Capstone Project</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <Link href="/capstone" className="block text-sm hover:text-accent transition-colors p-2 rounded hover:bg-accent/5">
-                    Project Overview
-                  </Link>
-                  <Link href="/capstone/guidelines" className="block text-sm hover:text-accent transition-colors p-2 rounded hover:bg-accent/5">
-                    Guidelines & Timeline
-                  </Link>
-                  <Link href="/capstone/rubrics" className="block text-sm hover:text-accent transition-colors p-2 rounded hover:bg-accent/5">
-                    Assessment Rubrics
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border/50">
-                <CardHeader>
-                  <CardTitle>Reference Materials</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <Link href="/backmatter/glossary" className="block text-sm hover:text-foreground transition-colors p-2 rounded hover:bg-muted/50">
-                    Glossary
-                  </Link>
-                  <Link href="/backmatter/index" className="block text-sm hover:text-foreground transition-colors p-2 rounded hover:bg-muted/50">
-                    Subject Index
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
+      <section className="bg-muted/10 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+              Course Structure
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Eight hands-on units plus a comprehensive capstone project
+            </p>
           </div>
-        </section>
 
-        <section className="py-16 bg-gradient-to-br from-muted/10 via-background to-muted/5">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Interactive Learning Features</h2>
-              <p className="text-xl text-muted-foreground">Everything you need for hands-on business math education with Excel integration</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <Card key={index} className="border-border/50 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 group">
-                  <CardContent className="pt-6">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/20 transition-colors">
-                      <feature.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 text-foreground">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {UNITS.map((unit, index) => (
+              <Card
+                key={unit.unitId}
+                className="border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <CardHeader className="space-y-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <Badge variant="outline">{`Unit ${unit.number}`}</Badge>
+                    <Badge variant={getDifficultyVariant(UNIT_META[index].difficulty)}>
+                      {UNIT_META[index].difficulty}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg leading-tight">
+                    <Link
+                      href={unit.studentHref}
+                      className="transition-colors hover:text-primary"
+                    >
+                      {unit.label}
+                    </Link>
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    {unit.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between gap-3 text-sm">
+                    <span className="font-medium text-muted-foreground">
+                      {UNIT_META[index].duration}
+                    </span>
+                    <Link
+                      className="font-semibold text-primary hover:underline"
+                      href={unit.studentHref}
+                    >
+                      Open Unit
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </section>
-    </main>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <LinkListCard
+              accentClassName="border-primary/20"
+              description="Course launch pages, welcome materials, and orientation."
+              headerClassName="border-b border-primary/20 bg-gradient-to-r from-primary/5 to-primary/10"
+              links={FRONTMATTER_LINKS}
+              title="Getting Started"
+            />
+            <LinkListCard
+              accentClassName="border-accent/20"
+              description="Launch the teacher-facing guidance and planning materials."
+              headerClassName="border-b border-accent/20 bg-gradient-to-r from-accent/5 to-accent/10"
+              links={TEACHER_RESOURCE_LINKS.slice(0, 3)}
+              title="Teacher Resources"
+            />
+            <LinkListCard
+              accentClassName="border-border/50"
+              description="Reference tools for key terms and cross-course navigation."
+              headerClassName="border-b border-border/50 bg-gradient-to-r from-muted/40 to-background"
+              links={REFERENCE_LINKS}
+              title="Reference Materials"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-muted/10 via-background to-muted/5 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+              Interactive Learning Features
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Everything you need for hands-on business math education with Excel integration
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <Card
+                key={feature.title}
+                className="group border-border/50 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <CardContent className="pt-6">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 transition-colors group-hover:from-primary/20 group-hover:to-accent/20">
+                    <feature.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="mb-2 text-xl font-semibold text-foreground">{feature.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function LinkListCard({
+  title,
+  description,
+  links,
+  accentClassName,
+  headerClassName,
+}: {
+  title: string
+  description: string
+  links: readonly { href: string; label: string }[]
+  accentClassName: string
+  headerClassName: string
+}) {
+  return (
+    <Card className={accentClassName}>
+      <CardHeader className={headerClassName}>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        {links.map((link) => (
+          <Link
+            className="block rounded-md p-2 text-sm transition-colors hover:bg-primary/5 hover:text-primary"
+            href={link.href}
+            key={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </CardContent>
+    </Card>
   )
 }

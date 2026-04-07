@@ -50,16 +50,16 @@ export function GlossaryCard({
   return (
     <div
       id={entry.slug}
-      className="rounded-lg border bg-card p-4 shadow-sm space-y-2 scroll-mt-20"
+      className="h-full scroll-mt-24 space-y-3 rounded-xl border border-border/60 bg-card/90 p-4 shadow-sm"
     >
-      <div className="space-y-1">
-        <h3 className="text-base font-semibold leading-tight">{primary}</h3>
+      <div className="min-w-0 space-y-1">
+        <h3 className="text-base font-semibold leading-tight break-words">{primary}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
           {secondary}
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-1 pt-1">
+      <div className="flex flex-wrap gap-1.5 pt-1">
         {entry.units.map((unit) => (
           <Badge key={unit} variant="secondary" className="text-xs">
             {unit.replace("unit", "U")}

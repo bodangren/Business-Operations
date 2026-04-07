@@ -1,8 +1,8 @@
 {
   "track_id": "navigation_shell_cleanup_20260403",
   "type": "feature",
-  "status": "new",
+  "status": "completed",
   "created_at": "2026-04-03T00:00:00Z",
-  "updated_at": "2026-04-03T00:00:00Z",
+  "updated_at": "2026-04-07T05:11:13Z",
   "description": "Simplify the site shell, remove fake search, fix broken links, and align global navigation with the actual static routes"
 }

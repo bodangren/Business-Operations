@@ -64,8 +64,22 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/resolve_finance_topic_tag_20260407/](./tracks/resolve_finance_topic_tag_20260407/)*
 - [x] **Track: Clean up root lockfile warning**
   *Link: [./tracks/cleanup_root_lockfile_20260407/](./tracks/cleanup_root_lockfile_20260407/)*
+- [x] **Track: Unused file cleanup in `bus-math-nextjs/`**
+  *Link: [./tracks/unused_file_cleanup_20260407/](./tracks/unused_file_cleanup_20260407/)*
+- [x] **Track: Shared shell, home, frontmatter, and backmatter UI audit**
+  *Link: [./tracks/shared_surface_ui_audit_20260407/](./tracks/shared_surface_ui_audit_20260407/)*
+- [ ] **Track: Student hub, unit overview, practice hub, and practice-test UI audit**
+  *Link: [./tracks/student_hub_practice_ui_audit_20260407/](./tracks/student_hub_practice_ui_audit_20260407/)*
+- [ ] **Track: Student lesson UI audit for Units 01-04**
+  *Link: [./tracks/student_lessons_u01_u04_ui_audit_20260407/](./tracks/student_lessons_u01_u04_ui_audit_20260407/)*
+- [ ] **Track: Student lesson UI audit for Units 05-08**
+  *Link: [./tracks/student_lessons_u05_u08_ui_audit_20260407/](./tracks/student_lessons_u05_u08_ui_audit_20260407/)*
+- [ ] **Track: Teacher and capstone UI audit**
+  *Link: [./tracks/teacher_capstone_ui_audit_20260407/](./tracks/teacher_capstone_ui_audit_20260407/)*
+- [ ] **Track: Teacher lesson pages operational rebuild**
+  *Link: [./tracks/teacher_lesson_pages_operational_20260407/](./tracks/teacher_lesson_pages_operational_20260407/)*
 
-Active tracks are ordered intentionally:
+Foundational active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
 2. `navigation_shell_cleanup_20260403` removes dead search UI and routes users into the new index.
 3. `teacher_student_alignment_20260403` reconciles teacher-facing materials with the current student curriculum.
