@@ -1,3 +1,4 @@
+import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -8,6 +9,7 @@ const nextConfig: NextConfig = {
   },
   basePath: process.env.NODE_ENV === 'production' ? '/Business-Operations' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/Business-Operations' : '',
+  outputFileTracingRoot: path.resolve(__dirname),
 };
 
 export default nextConfig;

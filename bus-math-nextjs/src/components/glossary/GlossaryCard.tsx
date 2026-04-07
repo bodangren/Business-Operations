@@ -1,7 +1,7 @@
-import type { GlossaryEntry, GlossaryField } from "@/types/glossary"
+import type { GlossaryEntry, GlossaryField, TopicTag } from "@/types/glossary"
 import { Badge } from "@/components/ui/badge"
 
-const TOPIC_LABELS: Record<string, string> = {
+const TOPIC_LABELS: Record<TopicTag, string> = {
   accounting: "Accounting",
   bookkeeping: "Bookkeeping",
   depreciation: "Depreciation",

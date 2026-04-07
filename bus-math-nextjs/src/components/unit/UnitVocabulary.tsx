@@ -1,11 +1,11 @@
 import Link from "next/link"
 import { BookOpen, ArrowRight } from "lucide-react"
 import { glossaryData } from "@/data/glossary"
-import type { UnitId } from "@/types/glossary"
+import type { TopicTag, UnitId } from "@/types/glossary"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-const TOPIC_LABELS: Record<string, string> = {
+const TOPIC_LABELS: Record<TopicTag, string> = {
   accounting: "Accounting",
   bookkeeping: "Bookkeeping",
   depreciation: "Depreciation",
