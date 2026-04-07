@@ -2,9 +2,9 @@
 
 ## Phase 1: Establish the guardrail surface
 
-- [ ] Confirm the current baseline with `./node_modules/.bin/tsc --noEmit`
-- [ ] Add a dedicated `typecheck` script to `package.json`
-- [ ] Update developer-facing docs/workflow references to use the explicit typecheck command
+- [x] Confirm the current baseline with `./node_modules/.bin/tsc --noEmit`
+- [x] Add a dedicated `typecheck` script to `package.json`
+- [x] Update developer-facing docs/workflow references to use the explicit typecheck command
 
 ## Phase 2: Wire TypeScript verification into track completion
 

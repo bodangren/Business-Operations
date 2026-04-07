@@ -44,7 +44,7 @@ Load skills with `/skill <skill-name>` or the skill tool before editing lesson f
 2. Review `TODO.md` and the current Conductor track
 3. Branch as `<type>/<issue>-<slug>`
 4. Write tests first, then implement
-5. Run `npm run lint` before commit
+5. Run `npm run typecheck` and `npm run lint` before commit
 6. Commit with Conventional Commits
 7. Open a PR, review, and squash merge
 
