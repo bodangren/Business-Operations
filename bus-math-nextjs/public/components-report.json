@@ -1,18 +1,54 @@
 {
   "components": [
     {
+      "name": "ArtifactBuilder",
+      "path": "components/accounting/ArtifactBuilder.tsx",
+      "category": "accounting",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/ArtifactBuilder.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson04/phase-5/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "DashboardArtifact",
+      "path": "components/accounting/DashboardArtifact.tsx",
+      "category": "accounting",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/DashboardArtifact.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit03/lesson06/phase-5/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
       "name": "JournalEntry",
       "path": "components/accounting/JournalEntry.tsx",
       "category": "accounting",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/JournalEntry.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/JournalEntry.tsx",
       "usages": [],
       "totalUsages": 0
+    },
+    {
+      "name": "PostingPracticeLoop",
+      "path": "components/accounting/PostingPracticeLoop.tsx",
+      "category": "accounting",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/PostingPracticeLoop.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson03/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "TAccountDetailed",
       "path": "components/accounting/TAccountDetailed.tsx",
       "category": "accounting",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountDetailed.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountDetailed.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -20,7 +56,7 @@
       "name": "TAccountSimple",
       "path": "components/accounting/TAccountSimple.tsx",
       "category": "accounting",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountSimple.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountSimple.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson03/phase-1/page.tsx"
@@ -35,10 +71,18 @@
       "name": "TAccountsVisualization",
       "path": "components/accounting/TAccountsVisualization.tsx",
       "category": "accounting",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountsVisualization.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TAccountsVisualization.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "TableStructureSimulator",
+      "path": "components/accounting/TableStructureSimulator.tsx",
+      "category": "accounting",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TableStructureSimulator.tsx",
       "usages": [
         {
-          "file": "app/student/unit01/lesson04/phase-4/page.tsx"
+          "file": "app/student/unit01/lesson04/phase-3/page.tsx"
         }
       ],
       "totalUsages": 1
@@ -47,33 +91,35 @@
       "name": "TransactionJournal",
       "path": "components/accounting/TransactionJournal.tsx",
       "category": "accounting",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TransactionJournal.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit01/lesson03/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson04/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson03/phase-4/page.tsx"
-        }
-      ],
-      "totalUsages": 3
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TransactionJournal.tsx",
+      "usages": [],
+      "totalUsages": 0
     },
     {
       "name": "TrialBalance",
       "path": "components/accounting/TrialBalance.tsx",
       "category": "accounting",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TrialBalance.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/accounting/TrialBalance.tsx",
       "usages": [],
       "totalUsages": 0
+    },
+    {
+      "name": "AssetRegisterSimulator",
+      "path": "components/business-simulations/AssetRegisterSimulator.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/AssetRegisterSimulator.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit08/lesson05/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "BudgetBalancer",
       "path": "components/business-simulations/BudgetBalancer.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/BudgetBalancer.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/BudgetBalancer.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -81,10 +127,54 @@
       "name": "CashFlowChallenge",
       "path": "components/business-simulations/CashFlowChallenge.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/CashFlowChallenge.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/CashFlowChallenge.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "ChartLinkingSimulator",
+      "path": "components/business-simulations/ChartLinkingSimulator.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/ChartLinkingSimulator.tsx",
       "usages": [
         {
-          "file": "app/student/unit05/lesson02/phase-4/page.tsx"
+          "file": "app/student/unit04/lesson06/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "CrossSheetLinkSimulator",
+      "path": "components/business-simulations/CrossSheetLinkSimulator.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/CrossSheetLinkSimulator.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit03/lesson05/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "DepreciationMethodComparisonSimulator",
+      "path": "components/business-simulations/DepreciationMethodComparisonSimulator.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/DepreciationMethodComparisonSimulator.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit08/lesson06/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "DynamicMethodSelector",
+      "path": "components/business-simulations/DynamicMethodSelector.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/DynamicMethodSelector.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit07/lesson06/phase-3/page.tsx"
         }
       ],
       "totalUsages": 1
@@ -93,101 +183,105 @@
       "name": "ErrorCheckingSystem",
       "path": "components/business-simulations/ErrorCheckingSystem.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/ErrorCheckingSystem.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/ErrorCheckingSystem.tsx",
       "usages": [
         {
-          "file": "app/student/unit01/lesson05/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson05/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson05/phase-3/page.tsx"
-        },
-        {
           "file": "app/student/unit03/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson05/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson06/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit05/lesson04/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit05/lesson05/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit05/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson05/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson04/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson05/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson04/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson05/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson06/phase-3/page.tsx"
         }
       ],
-      "totalUsages": 19
+      "totalUsages": 3
     },
     {
-      "name": "InventoryManager",
-      "path": "components/business-simulations/InventoryManager.tsx",
+      "name": "InventoryAlgorithmShowTell",
+      "path": "components/business-simulations/InventoryAlgorithmShowTell.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/InventoryManager.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/InventoryAlgorithmShowTell.tsx",
       "usages": [
         {
-          "file": "app/student/unit07/lesson03/phase-4/page.tsx"
+          "file": "app/student/unit07/lesson05/phase-2/page.tsx"
         }
       ],
       "totalUsages": 1
     },
     {
+      "name": "InventoryManager",
+      "path": "components/business-simulations/InventoryManager.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/InventoryManager.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
       "name": "LemonadeStand",
       "path": "components/business-simulations/LemonadeStand.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/LemonadeStand.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/LemonadeStand.tsx",
       "usages": [],
       "totalUsages": 0
+    },
+    {
+      "name": "MethodComparisonSimulator",
+      "path": "components/business-simulations/MethodComparisonSimulator.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/MethodComparisonSimulator.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit07/lesson05/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "PitchPresentationBuilder",
       "path": "components/business-simulations/PitchPresentationBuilder.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/PitchPresentationBuilder.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/PitchPresentationBuilder.tsx",
       "usages": [],
       "totalUsages": 0
+    },
+    {
+      "name": "PriceLabCommandCenter",
+      "path": "components/business-simulations/PriceLabCommandCenter.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/PriceLabCommandCenter.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "RestaurantStaffingSimulator",
+      "path": "components/business-simulations/RestaurantStaffingSimulator.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/RestaurantStaffingSimulator.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit05/lesson01/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "ScenarioSwitchShowTell",
+      "path": "components/business-simulations/ScenarioSwitchShowTell.tsx",
+      "category": "business-simulations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/ScenarioSwitchShowTell.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit07/lesson06/phase-2/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "StartupJourney",
       "path": "components/business-simulations/StartupJourney.tsx",
       "category": "business-simulations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/StartupJourney.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/business-simulations/StartupJourney.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -195,28 +289,25 @@
       "name": "BarChart",
       "path": "components/charts/BarChart.tsx",
       "category": "charts",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BarChart.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BarChart.tsx",
       "usages": [
         {
           "file": "app/student/unit04/lesson01/phase-3/page.tsx"
         },
         {
-          "file": "app/student/unit04/lesson04/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-3/page.tsx"
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx"
         }
       ],
-      "totalUsages": 3
+      "totalUsages": 2
     },
     {
       "name": "BreakEvenChart",
       "path": "components/charts/BreakEvenChart.tsx",
       "category": "charts",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BreakEvenChart.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/BreakEvenChart.tsx",
       "usages": [
         {
-          "file": "app/student/unit06/lesson03/phase-2/page.tsx"
+          "file": "app/student/unit06/lesson03/BreakEvenGraphExplorer.tsx"
         }
       ],
       "totalUsages": 1
@@ -225,7 +316,7 @@
       "name": "DoughnutChart",
       "path": "components/charts/DoughnutChart.tsx",
       "category": "charts",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/DoughnutChart.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/DoughnutChart.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -233,14 +324,8 @@
       "name": "FinancialDashboard",
       "path": "components/charts/FinancialDashboard.tsx",
       "category": "charts",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/FinancialDashboard.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/FinancialDashboard.tsx",
       "usages": [
-        {
-          "file": "app/student/unit01/lesson06/phase-1/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson06/phase-3/page.tsx"
-        },
         {
           "file": "app/student/unit03/lesson06/phase-3/page.tsx"
         },
@@ -248,163 +333,103 @@
           "file": "app/student/unit03/lesson06/phase-4/page.tsx"
         },
         {
-          "file": "app/student/unit04/lesson04/phase-1/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-6/page.tsx"
-        },
-        {
           "file": "app/student/unit04/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson06/phase-1/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson06/phase-3/page.tsx"
-        }
-      ],
-      "totalUsages": 12
-    },
-    {
-      "name": "LineChart",
-      "path": "components/charts/LineChart.tsx",
-      "category": "charts",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/LineChart.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit03/lesson06/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-5/page.tsx"
-        }
-      ],
-      "totalUsages": 4
-    },
-    {
-      "name": "PieChart",
-      "path": "components/charts/PieChart.tsx",
-      "category": "charts",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/PieChart.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit04/lesson04/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-3/page.tsx"
-        }
-      ],
-      "totalUsages": 2
-    },
-    {
-      "name": "DataCleaningExercise",
-      "path": "components/data-cleaning/DataCleaningExercise.tsx",
-      "category": "data-cleaning",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/data-cleaning/DataCleaningExercise.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit04/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson02/phase-4/page.tsx"
-        }
-      ],
-      "totalUsages": 2
-    },
-    {
-      "name": "BusinessTransactionCategorization",
-      "path": "components/drag-drop/BusinessTransactionCategorization.tsx",
-      "category": "drag-drop",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop/BusinessTransactionCategorization.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit01/lesson01/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson01/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson01/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson03/phase-4/page.tsx"
-        }
-      ],
-      "totalUsages": 7
-    },
-    {
-      "name": "AccountCategorization",
-      "path": "components/drag-drop-exercises/AccountCategorization.tsx",
-      "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/AccountCategorization.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit01/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson02/phase-3/page.tsx"
-        }
-      ],
-      "totalUsages": 2
-    },
-    {
-      "name": "BreakEvenComponents",
-      "path": "components/drag-drop-exercises/BreakEvenComponents.tsx",
-      "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BreakEvenComponents.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit02/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson03/phase-3/page.tsx"
         }
       ],
       "totalUsages": 3
     },
     {
-      "name": "BudgetCategorySort",
-      "path": "components/drag-drop-exercises/BudgetCategorySort.tsx",
-      "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BudgetCategorySort.tsx",
+      "name": "LineChart",
+      "path": "components/charts/LineChart.tsx",
+      "category": "charts",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/LineChart.tsx",
       "usages": [
         {
-          "file": "app/student/unit04/lesson01/phase-4/page.tsx"
+          "file": "app/student/unit03/lesson06/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson01/InventoryPredictionLab.tsx"
+        }
+      ],
+      "totalUsages": 2
+    },
+    {
+      "name": "PieChart",
+      "path": "components/charts/PieChart.tsx",
+      "category": "charts",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/PieChart.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson02/phase-2/page.tsx"
         }
       ],
       "totalUsages": 1
     },
     {
+      "name": "ScatterChart",
+      "path": "components/charts/ScatterChart.tsx",
+      "category": "charts",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/charts/ScatterChart.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit04/lesson04/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "DataCleaningExercise",
+      "path": "components/data-cleaning/DataCleaningExercise.tsx",
+      "category": "data-cleaning",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/data-cleaning/DataCleaningExercise.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "BusinessTransactionCategorization",
+      "path": "components/drag-drop/BusinessTransactionCategorization.tsx",
+      "category": "drag-drop",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop/BusinessTransactionCategorization.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "AccountCategorization",
+      "path": "components/drag-drop-exercises/AccountCategorization.tsx",
+      "category": "drag-drop-exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/AccountCategorization.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit01/lesson02/phase-2/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "BreakEvenComponents",
+      "path": "components/drag-drop-exercises/BreakEvenComponents.tsx",
+      "category": "drag-drop-exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BreakEvenComponents.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson02/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "BudgetCategorySort",
+      "path": "components/drag-drop-exercises/BudgetCategorySort.tsx",
+      "category": "drag-drop-exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/BudgetCategorySort.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
       "name": "CashFlowTimeline",
       "path": "components/drag-drop-exercises/CashFlowTimeline.tsx",
       "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/CashFlowTimeline.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/CashFlowTimeline.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -412,40 +437,23 @@
       "name": "FinancialStatementMatching",
       "path": "components/drag-drop-exercises/FinancialStatementMatching.tsx",
       "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/FinancialStatementMatching.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit02/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson01/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson03/phase-3/page.tsx"
-        }
-      ],
-      "totalUsages": 4
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/FinancialStatementMatching.tsx",
+      "usages": [],
+      "totalUsages": 0
     },
     {
       "name": "InventoryFlowDiagram",
       "path": "components/drag-drop-exercises/InventoryFlowDiagram.tsx",
       "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/InventoryFlowDiagram.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit07/lesson03/phase-3/page.tsx"
-        }
-      ],
-      "totalUsages": 1
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/InventoryFlowDiagram.tsx",
+      "usages": [],
+      "totalUsages": 0
     },
     {
       "name": "PercentageCalculationSorting",
       "path": "components/drag-drop-exercises/PercentageCalculationSorting.tsx",
       "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/PercentageCalculationSorting.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/PercentageCalculationSorting.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -453,7 +461,7 @@
       "name": "RatioMatching",
       "path": "components/drag-drop-exercises/RatioMatching.tsx",
       "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/RatioMatching.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/RatioMatching.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -461,28 +469,91 @@
       "name": "TrialBalanceSorting",
       "path": "components/drag-drop-exercises/TrialBalanceSorting.tsx",
       "category": "drag-drop-exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/TrialBalanceSorting.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/drag-drop-exercises/TrialBalanceSorting.tsx",
       "usages": [
         {
-          "file": "app/student/unit01/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson03/phase-4/page.tsx"
-        },
-        {
           "file": "app/student/unit01/lesson03/phase-5/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson02/phase-3/page.tsx"
         }
       ],
-      "totalUsages": 4
+      "totalUsages": 1
+    },
+    {
+      "name": "AdjustmentPractice",
+      "path": "components/exercises/AdjustmentPractice.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/AdjustmentPractice.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit02/lesson02/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "BalanceSheetPractice",
+      "path": "components/exercises/BalanceSheetPractice.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/BalanceSheetPractice.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit03/lesson03/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "BreakEvenMastery",
+      "path": "components/exercises/BreakEvenMastery.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/BreakEvenMastery.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson03/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "CapitalizationExpenseMastery",
+      "path": "components/exercises/CapitalizationExpenseMastery.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/CapitalizationExpenseMastery.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit08/lesson02/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "CashFlowPractice",
+      "path": "components/exercises/CashFlowPractice.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/CashFlowPractice.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit03/lesson04/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "ClosingEntryPractice",
+      "path": "components/exercises/ClosingEntryPractice.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/ClosingEntryPractice.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit02/lesson03/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "ComprehensionCheck",
       "path": "components/exercises/ComprehensionCheck.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/ComprehensionCheck.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/ComprehensionCheck.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/phase-2/page.tsx"
@@ -504,9 +575,6 @@
         },
         {
           "file": "app/student/unit01/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson02/phase-4/page.tsx"
         },
         {
           "file": "app/student/unit01/lesson02/phase-5/page.tsx"
@@ -536,13 +604,25 @@
           "file": "app/student/unit01/lesson06/phase-1/page.tsx"
         },
         {
+          "file": "app/student/unit01/lesson06/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson06/phase-4/page.tsx"
+        },
+        {
           "file": "app/student/unit01/lesson06/phase-5/page.tsx"
         },
         {
-          "file": "app/student/unit02/lesson01/phase-2/page.tsx"
+          "file": "app/student/unit01/lesson07/phase-1/page.tsx"
         },
         {
-          "file": "app/student/unit02/lesson01/phase-4/page.tsx"
+          "file": "app/student/unit01/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/practice-test/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson01/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit02/lesson01/phase-5/page.tsx"
@@ -557,9 +637,6 @@
           "file": "app/student/unit02/lesson02/phase-3/page.tsx"
         },
         {
-          "file": "app/student/unit02/lesson02/phase-4/page.tsx"
-        },
-        {
           "file": "app/student/unit02/lesson02/phase-5/page.tsx"
         },
         {
@@ -567,6 +644,9 @@
         },
         {
           "file": "app/student/unit02/lesson03/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson03/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit02/lesson03/phase-5/page.tsx"
@@ -578,10 +658,16 @@
           "file": "app/student/unit02/lesson04/phase-2/page.tsx"
         },
         {
+          "file": "app/student/unit02/lesson04/phase-3/page.tsx"
+        },
+        {
           "file": "app/student/unit02/lesson04/phase-5/page.tsx"
         },
         {
           "file": "app/student/unit02/lesson05/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson05/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit02/lesson05/phase-5/page.tsx"
@@ -590,7 +676,22 @@
           "file": "app/student/unit02/lesson06/phase-1/page.tsx"
         },
         {
+          "file": "app/student/unit02/lesson06/phase-2/page.tsx"
+        },
+        {
           "file": "app/student/unit02/lesson06/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit03/lesson01/phase-2/page.tsx"
@@ -608,7 +709,7 @@
           "file": "app/student/unit03/lesson02/phase-1/page.tsx"
         },
         {
-          "file": "app/student/unit03/lesson02/phase-4/page.tsx"
+          "file": "app/student/unit03/lesson02/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit03/lesson02/phase-5/page.tsx"
@@ -644,7 +745,13 @@
           "file": "app/student/unit03/lesson06/phase-5/page.tsx"
         },
         {
-          "file": "app/student/unit04/lesson01/phase-2/page.tsx"
+          "file": "app/student/unit03/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson01/phase-5/page.tsx"
@@ -653,7 +760,7 @@
           "file": "app/student/unit04/lesson02/phase-1/page.tsx"
         },
         {
-          "file": "app/student/unit04/lesson02/phase-4/page.tsx"
+          "file": "app/student/unit04/lesson02/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson02/phase-5/page.tsx"
@@ -666,6 +773,9 @@
         },
         {
           "file": "app/student/unit04/lesson04/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson04/phase-4/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson04/phase-5/page.tsx"
@@ -681,6 +791,18 @@
         },
         {
           "file": "app/student/unit04/lesson06/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit05/lesson01/phase-1/page.tsx"
@@ -704,6 +826,9 @@
           "file": "app/student/unit05/lesson03/phase-1/page.tsx"
         },
         {
+          "file": "app/student/unit05/lesson03/phase-2/page.tsx"
+        },
+        {
           "file": "app/student/unit05/lesson03/phase-5/page.tsx"
         },
         {
@@ -723,6 +848,15 @@
         },
         {
           "file": "app/student/unit05/lesson06/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit06/lesson01/phase-1/page.tsx"
@@ -752,10 +886,16 @@
           "file": "app/student/unit06/lesson04/phase-1/page.tsx"
         },
         {
+          "file": "app/student/unit06/lesson04/phase-3/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson04/phase-5/page.tsx"
         },
         {
           "file": "app/student/unit06/lesson05/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson05/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit06/lesson05/phase-5/page.tsx"
@@ -764,19 +904,19 @@
           "file": "app/student/unit06/lesson06/phase-1/page.tsx"
         },
         {
+          "file": "app/student/unit06/lesson06/phase-2/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson06/phase-5/page.tsx"
         },
         {
-          "file": "app/student/unit07/lesson01/phase-1/page.tsx"
+          "file": "app/student/unit06/lesson07/phase-1/page.tsx"
         },
         {
-          "file": "app/student/unit07/lesson01/phase-2/page.tsx"
+          "file": "app/student/unit06/lesson07/phase-5/page.tsx"
         },
         {
-          "file": "app/student/unit07/lesson01/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson01/phase-4/page.tsx"
+          "file": "app/student/unit06/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit07/lesson01/phase-5/page.tsx"
@@ -812,13 +952,19 @@
           "file": "app/student/unit07/lesson06/phase-5/page.tsx"
         },
         {
+          "file": "app/student/unit07/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-1/page.tsx"
         },
         {
           "file": "app/student/unit08/lesson01/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson01/phase-4/page.tsx"
         },
         {
           "file": "app/student/unit08/lesson01/phase-5/page.tsx"
@@ -827,7 +973,7 @@
           "file": "app/student/unit08/lesson02/phase-1/page.tsx"
         },
         {
-          "file": "app/student/unit08/lesson02/phase-4/page.tsx"
+          "file": "app/student/unit08/lesson02/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit08/lesson02/phase-5/page.tsx"
@@ -855,63 +1001,60 @@
         },
         {
           "file": "app/student/unit08/lesson06/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/practice-test/page.tsx"
         }
       ],
-      "totalUsages": 124
+      "totalUsages": 155
+    },
+    {
+      "name": "DDBComparisonMastery",
+      "path": "components/exercises/DDBComparisonMastery.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/DDBComparisonMastery.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit08/lesson04/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "DragAndDrop",
       "path": "components/exercises/DragAndDrop.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/DragAndDrop.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/DragAndDrop.tsx",
       "usages": [
-        {
-          "file": "app/student/unit02/lesson01/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson01/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson01/phase-5/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson01/phase-3/page.tsx"
-        },
         {
           "file": "app/student/unit03/lesson04/phase-3/page.tsx"
         },
         {
-          "file": "app/student/unit03/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson01/phase-3/page.tsx"
-        },
-        {
           "file": "app/student/unit08/lesson01/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson01/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson01/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson01/phase-5/page.tsx"
         }
       ],
-      "totalUsages": 13
+      "totalUsages": 2
     },
     {
       "name": "FeedbackCollector",
       "path": "components/exercises/FeedbackCollector.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/FeedbackCollector.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/FeedbackCollector.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -919,19 +1062,13 @@
       "name": "FillInTheBlank",
       "path": "components/exercises/FillInTheBlank.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/FillInTheBlank.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/FillInTheBlank.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit01/lesson01/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson02/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson02/phase-4/page.tsx"
         },
         {
           "file": "app/student/unit01/lesson03/phase-2/page.tsx"
@@ -946,16 +1083,10 @@
           "file": "app/student/unit01/lesson06/phase-2/page.tsx"
         },
         {
+          "file": "app/student/unit01/lesson07/phase-2/page.tsx"
+        },
+        {
           "file": "app/student/unit02/lesson01/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson02/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson02/phase-5/page.tsx"
         },
         {
           "file": "app/student/unit02/lesson03/phase-2/page.tsx"
@@ -973,16 +1104,7 @@
           "file": "app/student/unit03/lesson01/phase-2/page.tsx"
         },
         {
-          "file": "app/student/unit03/lesson01/phase-4/page.tsx"
-        },
-        {
           "file": "app/student/unit03/lesson01/phase-5/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson02/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson04/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit03/lesson05/phase-2/page.tsx"
@@ -991,10 +1113,7 @@
           "file": "app/student/unit03/lesson06/phase-2/page.tsx"
         },
         {
-          "file": "app/student/unit04/lesson02/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson03/phase-2/page.tsx"
+          "file": "app/student/unit03/lesson07/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson04/phase-2/page.tsx"
@@ -1004,6 +1123,9 @@
         },
         {
           "file": "app/student/unit04/lesson06/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit05/lesson02/phase-2/page.tsx"
@@ -1018,40 +1140,22 @@
           "file": "app/student/unit05/lesson06/phase-2/page.tsx"
         },
         {
+          "file": "app/student/unit05/lesson07/phase-2/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson02/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit06/lesson04/phase-2/page.tsx"
         },
         {
-          "file": "app/student/unit06/lesson05/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson06/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson01/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson01/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson01/phase-5/page.tsx"
+          "file": "app/student/unit06/lesson07/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit07/lesson02/phase-2/page.tsx"
         },
         {
-          "file": "app/student/unit07/lesson03/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson04/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson05/phase-2/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson06/phase-2/page.tsx"
+          "file": "app/student/unit07/lesson07/phase-2/page.tsx"
         },
         {
           "file": "app/student/unit08/lesson02/phase-2/page.tsx"
@@ -1069,46 +1173,157 @@
           "file": "app/student/unit08/lesson06/phase-2/page.tsx"
         }
       ],
-      "totalUsages": 49
+      "totalUsages": 36
+    },
+    {
+      "name": "IncomeStatementPractice",
+      "path": "components/exercises/IncomeStatementPractice.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/IncomeStatementPractice.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit03/lesson02/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "JournalEntryBuilding",
       "path": "components/exercises/JournalEntryBuilding.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/JournalEntryBuilding.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/JournalEntryBuilding.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson03/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson03/phase-3/page.tsx"
         }
       ],
-      "totalUsages": 3
+      "totalUsages": 1
+    },
+    {
+      "name": "MarkupMarginMastery",
+      "path": "components/exercises/MarkupMarginMastery.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/MarkupMarginMastery.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit06/lesson02/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "MonthEndChallenge",
+      "path": "components/exercises/MonthEndChallenge.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/MonthEndChallenge.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit02/lesson04/phase-3/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "MonthEndClosePractice",
+      "path": "components/exercises/MonthEndClosePractice.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/MonthEndClosePractice.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit02/lesson04/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "PeerCritiqueForm",
       "path": "components/exercises/PeerCritiqueForm.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/PeerCritiqueForm.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/PeerCritiqueForm.tsx",
       "usages": [
         {
-          "file": "app/student/unit01/lesson01/phase-5/page.tsx"
+          "file": "app/student/unit01/lesson07/phase-5/page.tsx"
         },
         {
-          "file": "app/student/unit03/lesson03/phase-5/page.tsx"
+          "file": "app/student/unit01/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson09/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson10/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson10/phase-1/page.tsx"
         }
       ],
-      "totalUsages": 2
+      "totalUsages": 25
     },
     {
       "name": "ReflectionJournal",
       "path": "components/exercises/ReflectionJournal.tsx",
       "category": "exercises",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/ReflectionJournal.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/ReflectionJournal.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/phase-6/page.tsx"
@@ -1126,7 +1341,34 @@
           "file": "app/student/unit01/lesson05/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit01/lesson06/phase-4/page.tsx"
+        },
+        {
           "file": "app/student/unit01/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson08/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson09/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson10/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit02/lesson01/phase-6/page.tsx"
@@ -1147,6 +1389,15 @@
           "file": "app/student/unit02/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit02/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit03/lesson01/phase-6/page.tsx"
         },
         {
@@ -1163,6 +1414,21 @@
         },
         {
           "file": "app/student/unit03/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson01/phase-6/page.tsx"
@@ -1183,6 +1449,21 @@
           "file": "app/student/unit04/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit04/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson08/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit05/lesson01/phase-6/page.tsx"
         },
         {
@@ -1201,6 +1482,24 @@
           "file": "app/student/unit05/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit05/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson09/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson10/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson01/phase-6/page.tsx"
         },
         {
@@ -1213,7 +1512,31 @@
           "file": "app/student/unit06/lesson04/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit06/lesson05/phase-6/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit07/lesson01/phase-6/page.tsx"
@@ -1234,6 +1557,21 @@
           "file": "app/student/unit07/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit07/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-6/page.tsx"
         },
         {
@@ -1250,63 +1588,66 @@
         },
         {
           "file": "app/student/unit08/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson08/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson09/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/practice-test/page.tsx"
         }
       ],
-      "totalUsages": 47
+      "totalUsages": 93
     },
     {
-      "name": "BreakEvenAnalysisCalculator",
-      "path": "components/financial-calculations/BreakEvenAnalysisCalculator.tsx",
-      "category": "financial-calculations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/BreakEvenAnalysisCalculator.tsx",
+      "name": "StraightLineMastery",
+      "path": "components/exercises/StraightLineMastery.tsx",
+      "category": "exercises",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/exercises/StraightLineMastery.tsx",
       "usages": [
         {
-          "file": "app/student/unit06/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson04/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson04/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit06/lesson05/phase-3/page.tsx"
-        }
-      ],
-      "totalUsages": 4
-    },
-    {
-      "name": "DepreciationMethodBuilder",
-      "path": "components/financial-calculations/DepreciationMethodBuilder.tsx",
-      "category": "financial-calculations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/DepreciationMethodBuilder.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit07/lesson02/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit07/lesson02/phase-4/page.tsx"
-        }
-      ],
-      "totalUsages": 2
-    },
-    {
-      "name": "InterestCalculationBuilder",
-      "path": "components/financial-calculations/InterestCalculationBuilder.tsx",
-      "category": "financial-calculations",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/InterestCalculationBuilder.tsx",
-      "usages": [
-        {
-          "file": "app/student/unit05/lesson02/phase-3/page.tsx"
+          "file": "app/student/unit08/lesson03/phase-4/page.tsx"
         }
       ],
       "totalUsages": 1
     },
     {
+      "name": "BreakEvenAnalysisCalculator",
+      "path": "components/financial-calculations/BreakEvenAnalysisCalculator.tsx",
+      "category": "financial-calculations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/BreakEvenAnalysisCalculator.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "DepreciationMethodBuilder",
+      "path": "components/financial-calculations/DepreciationMethodBuilder.tsx",
+      "category": "financial-calculations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/DepreciationMethodBuilder.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "InterestCalculationBuilder",
+      "path": "components/financial-calculations/InterestCalculationBuilder.tsx",
+      "category": "financial-calculations",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-calculations/InterestCalculationBuilder.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
       "name": "BalanceSheetDetailed",
       "path": "components/financial-reports/BalanceSheetDetailed.tsx",
       "category": "financial-reports",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/BalanceSheetDetailed.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/BalanceSheetDetailed.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1314,7 +1655,7 @@
       "name": "BalanceSheetSimple",
       "path": "components/financial-reports/BalanceSheetSimple.tsx",
       "category": "financial-reports",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/BalanceSheetSimple.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/BalanceSheetSimple.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1322,7 +1663,7 @@
       "name": "CashFlowStatementDetailed",
       "path": "components/financial-reports/CashFlowStatementDetailed.tsx",
       "category": "financial-reports",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/CashFlowStatementDetailed.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/CashFlowStatementDetailed.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1330,7 +1671,7 @@
       "name": "CashFlowStatementSimple",
       "path": "components/financial-reports/CashFlowStatementSimple.tsx",
       "category": "financial-reports",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/CashFlowStatementSimple.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/CashFlowStatementSimple.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1338,7 +1679,7 @@
       "name": "IncomeStatementDetailed",
       "path": "components/financial-reports/IncomeStatementDetailed.tsx",
       "category": "financial-reports",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/IncomeStatementDetailed.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/IncomeStatementDetailed.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1346,15 +1687,43 @@
       "name": "IncomeStatementSimple",
       "path": "components/financial-reports/IncomeStatementSimple.tsx",
       "category": "financial-reports",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/IncomeStatementSimple.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/financial-reports/IncomeStatementSimple.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit03/lesson02/phase-2/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "footer",
       "path": "components/footer.tsx",
       "category": "root",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/footer.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/footer.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "GlossaryCard",
+      "path": "components/glossary/GlossaryCard.tsx",
+      "category": "glossary",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/glossary/GlossaryCard.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "GlossaryFilters",
+      "path": "components/glossary/GlossaryFilters.tsx",
+      "category": "glossary",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/glossary/GlossaryFilters.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "IndexFilter",
+      "path": "components/glossary/IndexFilter.tsx",
+      "category": "glossary",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/glossary/IndexFilter.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1362,23 +1731,63 @@
       "name": "header",
       "path": "components/header.tsx",
       "category": "root",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/header.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/header.tsx",
       "usages": [],
       "totalUsages": 0
     },
     {
-      "name": "navigation-sidebar",
-      "path": "components/navigation-sidebar.tsx",
-      "category": "root",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/navigation-sidebar.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "name": "CalculateDeductions",
+      "path": "components/payroll/CalculateDeductions.tsx",
+      "category": "payroll",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/payroll/CalculateDeductions.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 2
+    },
+    {
+      "name": "PaystubPreview",
+      "path": "components/payroll/PaystubPreview.tsx",
+      "category": "payroll",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/payroll/PaystubPreview.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit05/lesson02/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson06/phase-1/page.tsx"
+        }
+      ],
+      "totalUsages": 2
+    },
+    {
+      "name": "TaxBracketTable",
+      "path": "components/payroll/TaxBracketTable.tsx",
+      "category": "payroll",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/payroll/TaxBracketTable.tsx",
+      "usages": [
+        {
+          "file": "app/student/unit05/lesson02/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson02/phase-4/page.tsx"
+        }
+      ],
+      "totalUsages": 3
     },
     {
       "name": "SpreadsheetHelpers",
       "path": "components/spreadsheet/SpreadsheetHelpers.ts",
       "category": "spreadsheet",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetHelpers.ts",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetHelpers.ts",
       "usages": [],
       "totalUsages": 0
     },
@@ -1386,7 +1795,7 @@
       "name": "SpreadsheetTemplates",
       "path": "components/spreadsheet/SpreadsheetTemplates.tsx",
       "category": "spreadsheet",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetTemplates.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetTemplates.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -1394,22 +1803,10 @@
       "name": "SpreadsheetWrapper",
       "path": "components/spreadsheet/SpreadsheetWrapper.tsx",
       "category": "spreadsheet",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetWrapper.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/spreadsheet/SpreadsheetWrapper.tsx",
       "usages": [
         {
-          "file": "app/student/unit03/lesson03/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit03/lesson03/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson02/phase-4/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson03/phase-3/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson03/phase-4/page.tsx"
+          "file": "app/student/unit01/lesson07/phase-3/page.tsx"
         },
         {
           "file": "app/student/unit04/lesson05/phase-3/page.tsx"
@@ -1418,36 +1815,91 @@
           "file": "app/student/unit05/lesson01/phase-3/page.tsx"
         },
         {
-          "file": "app/student/unit05/lesson01/phase-4/page.tsx"
+          "file": "app/student/unit05/lesson05/phase-3/page.tsx"
         },
         {
-          "file": "app/student/unit05/lesson03/phase-3/page.tsx"
+          "file": "app/student/unit06/lesson05/phase-4/page.tsx"
         },
         {
-          "file": "app/student/unit06/lesson01/phase-3/page.tsx"
+          "file": "app/student/unit06/lesson06/phase-4/page.tsx"
         },
         {
-          "file": "app/student/unit06/lesson01/phase-4/page.tsx"
+          "file": "app/student/unit06/lesson07/phase-3/page.tsx"
         },
         {
-          "file": "app/student/unit06/lesson03/phase-3/page.tsx"
+          "file": "app/student/unit06/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson05/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson06/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson05/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson05/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson06/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson06/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson08/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson09/page.tsx"
         }
       ],
-      "totalUsages": 12
+      "totalUsages": 17
     },
     {
-      "name": "AccessibilityToolbar",
-      "path": "components/student/AccessibilityToolbar.tsx",
+      "name": "ExportPage",
+      "path": "components/student/ExportPage.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/AccessibilityToolbar.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/ExportPage.tsx",
+      "usages": [
+        {
+          "file": "app/student/practice-hub/export/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "FlashcardPlayer",
+      "path": "components/student/FlashcardPlayer.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/FlashcardPlayer.tsx",
+      "usages": [
+        {
+          "file": "app/student/practice-hub/flashcards/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "HubUnitCard",
+      "path": "components/student/HubUnitCard.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/HubUnitCard.tsx",
+      "usages": [
+        {
+          "file": "app/student/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "Lesson01Phase1",
       "path": "components/student/Lesson01Phase1.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/Lesson01Phase1.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/Lesson01Phase1.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/phase-1/page.tsx"
@@ -1465,18 +1917,22 @@
       "totalUsages": 4
     },
     {
-      "name": "MultilingualSupport",
-      "path": "components/student/MultilingualSupport.tsx",
+      "name": "MatchingGame",
+      "path": "components/student/MatchingGame.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/MultilingualSupport.tsx",
-      "usages": [],
-      "totalUsages": 0
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/MatchingGame.tsx",
+      "usages": [
+        {
+          "file": "app/student/practice-hub/matching/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "PhaseFooter",
       "path": "components/student/PhaseFooter.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/PhaseFooter.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/PhaseFooter.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/phase-2/page.tsx"
@@ -1584,6 +2040,33 @@
           "file": "app/student/unit01/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit01/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit02/lesson01/phase-2/page.tsx"
         },
         {
@@ -1687,6 +2170,30 @@
         },
         {
           "file": "app/student/unit02/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit03/lesson01/phase-2/page.tsx"
@@ -1794,6 +2301,36 @@
           "file": "app/student/unit03/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit03/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx"
         },
         {
@@ -1897,6 +2434,27 @@
         },
         {
           "file": "app/student/unit04/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit05/lesson01/phase-1/page.tsx"
@@ -2007,6 +2565,33 @@
           "file": "app/student/unit05/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit05/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson01/phase-1/page.tsx"
         },
         {
@@ -2094,6 +2679,9 @@
           "file": "app/student/unit06/lesson05/phase-5/page.tsx"
         },
         {
+          "file": "app/student/unit06/lesson05/phase-6/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson06/phase-1/page.tsx"
         },
         {
@@ -2110,6 +2698,66 @@
         },
         {
           "file": "app/student/unit06/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit07/lesson01/phase-1/page.tsx"
@@ -2220,6 +2868,36 @@
           "file": "app/student/unit07/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit07/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-1/page.tsx"
         },
         {
@@ -2326,15 +3004,48 @@
         },
         {
           "file": "app/student/unit08/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson08/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson09/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/practice-test/page.tsx"
         }
       ],
-      "totalUsages": 283
+      "totalUsages": 368
     },
     {
       "name": "PhaseHeader",
       "path": "components/student/PhaseHeader.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/PhaseHeader.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/PhaseHeader.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/phase-2/page.tsx"
@@ -2442,6 +3153,33 @@
           "file": "app/student/unit01/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit01/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit01/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit02/lesson01/phase-2/page.tsx"
         },
         {
@@ -2545,6 +3283,30 @@
         },
         {
           "file": "app/student/unit02/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit02/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit03/lesson01/phase-2/page.tsx"
@@ -2652,6 +3414,36 @@
           "file": "app/student/unit03/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit03/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit03/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit04/lesson01/phase-2/page.tsx"
         },
         {
@@ -2755,6 +3547,27 @@
         },
         {
           "file": "app/student/unit04/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit04/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit05/lesson01/phase-1/page.tsx"
@@ -2865,6 +3678,33 @@
           "file": "app/student/unit05/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit05/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit05/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson01/phase-1/page.tsx"
         },
         {
@@ -2952,6 +3792,9 @@
           "file": "app/student/unit06/lesson05/phase-5/page.tsx"
         },
         {
+          "file": "app/student/unit06/lesson05/phase-6/page.tsx"
+        },
+        {
           "file": "app/student/unit06/lesson06/phase-1/page.tsx"
         },
         {
@@ -2968,6 +3811,66 @@
         },
         {
           "file": "app/student/unit06/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson09/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/lesson10/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit06/practice-test/page.tsx"
         },
         {
           "file": "app/student/unit07/lesson01/phase-1/page.tsx"
@@ -3078,6 +3981,36 @@
           "file": "app/student/unit07/lesson06/phase-6/page.tsx"
         },
         {
+          "file": "app/student/unit07/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson08/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit07/practice-test/page.tsx"
+        },
+        {
           "file": "app/student/unit08/lesson01/phase-1/page.tsx"
         },
         {
@@ -3184,23 +4117,92 @@
         },
         {
           "file": "app/student/unit08/lesson06/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-2/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-3/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-4/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-5/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson07/phase-6/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson08/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson09/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson09/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/lesson10/phase-1/page.tsx"
+        },
+        {
+          "file": "app/student/unit08/practice-test/page.tsx"
         }
       ],
-      "totalUsages": 283
+      "totalUsages": 368
     },
     {
-      "name": "ReadingLevelAdjuster",
-      "path": "components/student/ReadingLevelAdjuster.tsx",
+      "name": "PracticeHubHome",
+      "path": "components/student/PracticeHubHome.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/ReadingLevelAdjuster.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/PracticeHubHome.tsx",
+      "usages": [
+        {
+          "file": "app/student/practice-hub/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "ProgressDashboard",
+      "path": "components/student/ProgressDashboard.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/ProgressDashboard.tsx",
+      "usages": [
+        {
+          "file": "app/student/practice-hub/progress/page.tsx"
+        }
+      ],
+      "totalUsages": 1
+    },
+    {
+      "name": "ResourceBasePathFixer",
+      "path": "components/student/ResourceBasePathFixer.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/ResourceBasePathFixer.tsx",
       "usages": [],
       "totalUsages": 0
+    },
+    {
+      "name": "SpeedRoundGame",
+      "path": "components/student/SpeedRoundGame.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/SpeedRoundGame.tsx",
+      "usages": [
+        {
+          "file": "app/student/practice-hub/speed-round/page.tsx"
+        }
+      ],
+      "totalUsages": 1
     },
     {
       "name": "StudentLessonOverview",
       "path": "components/student/StudentLessonOverview.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudentLessonOverview.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudentLessonOverview.tsx",
       "usages": [
         {
           "file": "app/student/unit01/lesson01/page.tsx"
@@ -3224,15 +4226,6 @@
           "file": "app/student/unit01/lesson07/page.tsx"
         },
         {
-          "file": "app/student/unit01/lesson08/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson09/page.tsx"
-        },
-        {
-          "file": "app/student/unit01/lesson10/page.tsx"
-        },
-        {
           "file": "app/student/unit02/lesson01/page.tsx"
         },
         {
@@ -3252,15 +4245,6 @@
         },
         {
           "file": "app/student/unit02/lesson07/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson08/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson09/page.tsx"
-        },
-        {
-          "file": "app/student/unit02/lesson10/page.tsx"
         },
         {
           "file": "app/student/unit03/lesson01/page.tsx"
@@ -3314,15 +4298,6 @@
           "file": "app/student/unit04/lesson07/page.tsx"
         },
         {
-          "file": "app/student/unit04/lesson08/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson09/page.tsx"
-        },
-        {
-          "file": "app/student/unit04/lesson10/page.tsx"
-        },
-        {
           "file": "app/student/unit05/lesson01/page.tsx"
         },
         {
@@ -3332,9 +4307,6 @@
           "file": "app/student/unit05/lesson03/page.tsx"
         },
         {
-          "file": "app/student/unit05/lesson04/page.tsx"
-        },
-        {
           "file": "app/student/unit05/lesson05/page.tsx"
         },
         {
@@ -3342,15 +4314,6 @@
         },
         {
           "file": "app/student/unit05/lesson07/page.tsx"
-        },
-        {
-          "file": "app/student/unit05/lesson08/page.tsx"
-        },
-        {
-          "file": "app/student/unit05/lesson09/page.tsx"
-        },
-        {
-          "file": "app/student/unit05/lesson10/page.tsx"
         },
         {
           "file": "app/student/unit06/lesson01/page.tsx"
@@ -3434,22 +4397,16 @@
           "file": "app/student/unit08/lesson07/page.tsx"
         },
         {
-          "file": "app/student/unit08/lesson08/page.tsx"
-        },
-        {
-          "file": "app/student/unit08/lesson09/page.tsx"
-        },
-        {
           "file": "app/student/unit08/lesson10/page.tsx"
         }
       ],
-      "totalUsages": 80
+      "totalUsages": 65
     },
     {
       "name": "StudentUnitOverview",
       "path": "components/student/StudentUnitOverview.tsx",
       "category": "student",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudentUnitOverview.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudentUnitOverview.tsx",
       "usages": [
         {
           "file": "app/student/unit01/page.tsx"
@@ -3479,10 +4436,42 @@
       "totalUsages": 8
     },
     {
+      "name": "StudyDueBadge",
+      "path": "components/student/StudyDueBadge.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/StudyDueBadge.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "UnitMasteryProgressBar",
+      "path": "components/student/UnitMasteryProgressBar.tsx",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/UnitMasteryProgressBar.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "phase-config.test",
+      "path": "components/student/__tests__/phase-config.test.ts",
+      "category": "student/__tests__",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/__tests__/phase-config.test.ts",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "phase-config",
+      "path": "components/student/phase-config.ts",
+      "category": "student",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/student/phase-config.ts",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
       "name": "TeacherLessonPlan",
       "path": "components/teacher/TeacherLessonPlan.tsx",
       "category": "teacher",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/TeacherLessonPlan.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/TeacherLessonPlan.tsx",
       "usages": [
         {
           "file": "app/teacher/[unit]/[lessonNumber]/page.tsx"
@@ -3494,7 +4483,7 @@
       "name": "UnitLessonPlan",
       "path": "components/teacher/UnitLessonPlan.tsx",
       "category": "teacher",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/UnitLessonPlan.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/UnitLessonPlan.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3502,7 +4491,7 @@
       "name": "UnitOverview",
       "path": "components/teacher/UnitOverview.tsx",
       "category": "teacher",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/UnitOverview.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/teacher/UnitOverview.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3510,7 +4499,7 @@
       "name": "AssessmentOverview",
       "path": "components/unit/AssessmentOverview.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/AssessmentOverview.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/AssessmentOverview.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3518,7 +4507,7 @@
       "name": "DrivingQuestion",
       "path": "components/unit/DrivingQuestion.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/DrivingQuestion.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/DrivingQuestion.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3526,7 +4515,7 @@
       "name": "LearningSequence",
       "path": "components/unit/LearningSequence.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/LearningSequence.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/LearningSequence.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3534,7 +4523,7 @@
       "name": "Prerequisites",
       "path": "components/unit/Prerequisites.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/Prerequisites.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/Prerequisites.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3542,7 +4531,7 @@
       "name": "StudentChoices",
       "path": "components/unit/StudentChoices.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/StudentChoices.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/StudentChoices.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3550,7 +4539,7 @@
       "name": "UnitHeader",
       "path": "components/unit/UnitHeader.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitHeader.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitHeader.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3558,7 +4547,7 @@
       "name": "UnitIntroduction",
       "path": "components/unit/UnitIntroduction.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitIntroduction.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitIntroduction.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3566,7 +4555,7 @@
       "name": "UnitOverview",
       "path": "components/unit/UnitOverview.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitOverview.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitOverview.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3574,7 +4563,15 @@
       "name": "UnitTemplate",
       "path": "components/unit/UnitTemplate.tsx",
       "category": "unit",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitTemplate.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitTemplate.tsx",
+      "usages": [],
+      "totalUsages": 0
+    },
+    {
+      "name": "UnitVocabulary",
+      "path": "components/unit/UnitVocabulary.tsx",
+      "category": "unit",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit/UnitVocabulary.tsx",
       "usages": [],
       "totalUsages": 0
     },
@@ -3582,30 +4579,33 @@
       "name": "unit-sidebar",
       "path": "components/unit-sidebar.tsx",
       "category": "root",
-      "fullPath": "/home/daniel-bo/Desktop/Business-Operations/bus-math-nextjs/src/components/unit-sidebar.tsx",
+      "fullPath": "/Users/daniel.bodanske/Desktop/Business-Operations/bus-math-nextjs/src/components/unit-sidebar.tsx",
       "usages": [],
       "totalUsages": 0
     }
   ],
-  "lastGenerated": "2025-08-31T02:34:16.939Z",
+  "lastGenerated": "2026-04-07T03:37:11.986Z",
   "stats": {
-    "totalComponents": 73,
-    "totalUsages": 989,
+    "totalComponents": 115,
+    "totalUsages": 1201,
     "categoryCounts": {
-      "accounting": 6,
-      "business-simulations": 7,
-      "charts": 6,
+      "accounting": 10,
+      "business-simulations": 17,
+      "charts": 7,
       "data-cleaning": 1,
       "drag-drop": 1,
       "drag-drop-exercises": 9,
-      "exercises": 7,
+      "exercises": 19,
       "financial-calculations": 3,
       "financial-reports": 6,
-      "root": 4,
+      "root": 3,
+      "glossary": 3,
+      "payroll": 3,
       "spreadsheet": 3,
-      "student": 8,
+      "student": 16,
+      "student/__tests__": 1,
       "teacher": 3,
-      "unit": 9
+      "unit": 10
     }
   }
 }

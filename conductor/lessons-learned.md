@@ -1,5 +1,11 @@
 # Lessons Learned
 
+## 2026-04-07 — Unused File Cleanup in `bus-math-nextjs/`
+
+- **Route-local notes linger after content migrations**: `README.md` and `README.txt` files nested beside App Router `page.tsx` files are easy to forget because they never affect runtime. A targeted `find src/app -name 'README*'` sweep is a cheap cleanup check after major lesson migrations.
+- **Legacy markdown payloads should move or die**: Unit-level `unitXX-text.md` content survived after the app switched to canonical `lesson-data.ts` sources. When a migration changes the rendering source of truth, immediately search for the retired file pattern and either relocate it to docs or delete it.
+- **Regenerate derived debug artifacts after deleting components**: If a checked-in debug asset like `public/components-report.json` mirrors the source tree, any safe component deletion should be followed by regenerating that artifact so the debug surface stays honest.
+
 ## 2026-04-07 — Testing React Hooks Without @testing-library/react
 
 - **Install testing-library/react once, reuse everywhere**: The project had vitest and jsdom but no `@testing-library/react`. Installing it as a dev dependency unlocks `renderHook` for any future hook tests.
