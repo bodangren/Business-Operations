@@ -1,0 +1,1 @@
+Removed 29 provably unused files inside bus-math-nextjs, regenerated public/components-report.json after deleting 3 unreferenced student prototype components, and verified the cleanup with eslint, tsc --noEmit, vitest, and repo-wide reference scans. Left conductor/tracks.md out of the commit because it currently contains six unrelated uncommitted track additions.
