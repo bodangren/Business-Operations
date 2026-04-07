@@ -14,7 +14,7 @@
 
 ## Phase 3: Final verification
 
-- [ ] Verify `./node_modules/.bin/tsc --noEmit` exits 0
-- [ ] Verify `npm run lint` exits 0
-- [ ] Verify `npm run build` succeeds when approval to run it is available, or record the approved fallback verification path
-- [ ] Update any relevant tech-debt or workflow notes if the verification standard changed
+- [x] Verify `./node_modules/.bin/tsc --noEmit` exits 0
+- [x] Verify `npm run lint` exits 0
+- [x] Verify `npm run build` succeeds when approval to run it is available, or record the approved fallback verification path
+- [x] Update any relevant tech-debt or workflow notes if the verification standard changed
