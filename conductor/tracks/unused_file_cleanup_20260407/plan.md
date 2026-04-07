@@ -27,7 +27,7 @@
 - [x] Run the relevant automated tests via `./node_modules/.bin/vitest run`
 - [x] Spot-check high-risk routes after cleanup by confirming the homepage still references `cover.png`, the debug components report still references `/components-report.json`, and no deleted file basenames remain in repo search
 - [x] Update `conductor/tech-debt.md` or `conductor/lessons-learned.md` if cleanup exposes repeat patterns
-- [ ] Commit with a conventional commit message and attach a git note
+- [x] Commit with a conventional commit message and attach a git note (`1b38fbb`)
 - [x] Update track metadata and registry status
 
 ## Inventory Notes
