@@ -71,7 +71,7 @@ export default function Phase5Page() {
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="text-center space-y-4">
-          <Badge className="bg-rose-100 text-rose-900 text-lg px-4 py-2">
+          <Badge className="max-w-full whitespace-normal text-center leading-tight bg-rose-100 text-rose-900 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">
             ✅ Phase 5: Assessment
           </Badge>
           <h1 className="text-3xl font-bold text-slate-900">Prove Your Schedule-to-Pay Workflow Works</h1>

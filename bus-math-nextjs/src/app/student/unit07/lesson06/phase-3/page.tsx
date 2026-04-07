@@ -16,7 +16,7 @@ export default function Unit07Lesson06Phase3() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">Phase 3: Safe Rehearsal</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-purple-100 text-purple-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 3: Safe Rehearsal</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Rehearse the Selector Workflow Before Workbook Build</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               This is a guided walkthrough, not a multiple-choice test. Practice the selector chain, decode references,

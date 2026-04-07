@@ -15,7 +15,7 @@ export default function Unit07Lesson06Phase6() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">🔔 Phase 6: Closing</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-indigo-100 text-indigo-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">🔔 Phase 6: Closing</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Dynamic Method Selection: What You Can Now Do</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               You built a workbook that switches scenario and method with two controls, updates outputs and KPI tiles automatically, and surfaces checks before recommendations. These habits separate a good spreadsheet from an investor-ready system.

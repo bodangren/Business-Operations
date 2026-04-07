@@ -1,5 +1,19 @@
 # Lessons Learned
 
+## 2026-04-07 — Subagent Queue Management
+
+- **Keep a live active-ID ledger**: Spawned agents do not stay visible unless we track their IDs explicitly in-thread. Treat the active set as state, not memory.
+- **Poll before you replace**: Only call `wait_agent` on IDs that are known to be active, then close or recycle the slot immediately after a confirmed completion.
+- **Close finished lanes right away**: Completed agents still occupy capacity until they are explicitly closed. If the queue is full, stale finished lanes will block new work.
+- **Do not guess at agent state across turns**: If a turn is interrupted or the thread history gets noisy, rebuild the ledger from the latest notifications before spawning or closing anything else.
+
+## 2026-04-07 — Static Export Screenshot Audits
+
+- **Capture from the exported site, but mount the real base path**: This repo exports with base path `/Business-Operations`, so screenshot audits against `bus-math-nextjs/out/` must be served under `/Business-Operations/...`, not at `/...`. Otherwise pages may 404 or render without CSS/JS.
+- **Validate one real screenshot before batching hundreds**: Confirm one route end-to-end first: correct URL shape (`/Business-Operations/student/...`), styled page, and expected content in the image. Do not trust a batch run until one screenshot has been visually checked.
+- **Use screenshots as audit evidence, not automation summaries**: The JSON/log output is useful for indexing, but the actual UI audit must be driven by reviewing the captured images themselves. Store screenshots in `screenshots/<track-name-date>/<desktop|mobile>/<unitXX>/...` so the next session can continue route by route.
+- **Keep the human audit report in the track folder**: Store the actual findings in `conductor/tracks/<track_id>/audit-report.md`. Any `screenshots/.../audit-report.json` file is only a capture artifact and must not become the source of truth.
+
 ## 2026-04-07 — Unused File Cleanup in `bus-math-nextjs/`
 
 - **Route-local notes linger after content migrations**: `README.md` and `README.txt` files nested beside App Router `page.tsx` files are easy to forget because they never affect runtime. A targeted `find src/app -name 'README*'` sweep is a cheap cleanup check after major lesson migrations.

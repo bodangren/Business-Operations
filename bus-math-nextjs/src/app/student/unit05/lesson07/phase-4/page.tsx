@@ -25,7 +25,7 @@ export default function Phase4Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">Phase 4: Polish and Transfer Practice</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-orange-100 text-orange-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 4: Polish and Transfer Practice</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Complete Weak Spots & Identify Transfer Items</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               With the shared workbook still open, complete any weak spots you found in the audit. Then write one

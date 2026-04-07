@@ -16,7 +16,7 @@ export default function Unit07Lesson06Phase2() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">Phase 2: Tool Anatomy</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-green-100 text-green-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 2: Tool Anatomy</Badge>
             <h1 className="text-3xl font-bold text-gray-900">How the Scenario Switch Drives Every KPI</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               This lesson&apos;s Excel move is a selector-driven output chain. You choose scenario and method once, and

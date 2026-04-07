@@ -15,7 +15,7 @@ export default function Unit07Lesson07Phase4() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">🔧 Phase 4: Polish and Transfer Practice</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-orange-100 text-orange-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">🔧 Phase 4: Polish and Transfer Practice</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Complete Weak Spots and Write Your Recommendation</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Use the audit results from Phase 3 to finish your workbook. Focus on the gaps you identified, write a complete recommendation with evidence, and name the structures you must carry into the real project.

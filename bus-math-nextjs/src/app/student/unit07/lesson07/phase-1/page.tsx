@@ -55,7 +55,7 @@ export default function Unit07Lesson07Phase1() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">🎯 Phase 1: Rehearsal Purpose</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-red-100 text-red-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">🎯 Phase 1: Rehearsal Purpose</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Dress Rehearsal Before the Real Project</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Today is not the real project. It is a guided practice run. Every student in the class is working with the <strong>same shared dataset</strong> on purpose — so we can compare reasoning quality, evidence chains, and workbook standards directly. In Lessons 08-10, your group will get its own business scenario and must recreate everything you practice today without a teacher model to follow step by step.

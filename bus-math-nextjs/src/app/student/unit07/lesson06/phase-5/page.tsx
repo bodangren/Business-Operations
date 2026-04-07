@@ -83,7 +83,7 @@ export default function Unit07Lesson06Phase5() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">Phase 5: Audit and Explain</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-yellow-100 text-yellow-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 5: Audit and Explain</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Technical Check and Method Recommendation</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Prove you can audit the selector chain and defend a recommendation using KPI evidence from your workbook.

@@ -65,7 +65,7 @@ export default function GoalSeekSimulator() {
           
           <div className="bg-white p-4 rounded-lg border border-blue-200">
             <h4 className="font-bold text-slate-900 mb-3">The Setup</h4>
-            <div className="grid grid-cols-2 gap-4 text-xs font-mono">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
               <div className="bg-slate-100 p-2 rounded">
                 <span className="text-slate-500">Fixed Costs:</span> $12,000
               </div>
@@ -165,7 +165,7 @@ export default function GoalSeekSimulator() {
                 <Zap className="w-5 h-5" />
                 Correct Setup!
               </div>
-              <div className="grid grid-cols-3 gap-2 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
                 <div className="bg-white p-2 rounded border border-green-200">
                   <div className="text-xs text-green-600">Set Cell</div>
                   <div className="font-mono font-bold">Profit</div>

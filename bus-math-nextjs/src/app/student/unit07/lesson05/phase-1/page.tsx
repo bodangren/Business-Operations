@@ -71,7 +71,7 @@ export default function Unit07Lesson05Phase1() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">Phase 1: Tool Pressure</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-red-100 text-red-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 1: Tool Pressure</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Sarah Needs to Compare Methods Under Pressure</h1>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Sarah is meeting with a potential investor. The investor wants to see how COGS and ending inventory change

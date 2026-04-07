@@ -23,7 +23,7 @@ export default function Phase4Page() {
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="text-center space-y-4">
-          <Badge className="bg-emerald-100 text-emerald-900 text-lg px-4 py-2">
+          <Badge className="max-w-full whitespace-normal text-center leading-tight bg-emerald-100 text-emerald-900 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">
             🛠️ Phase 4: Independent Practice
           </Badge>
           <h1 className="text-3xl font-bold text-slate-900">Finish the Pay Stub Studio</h1>

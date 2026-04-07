@@ -19,7 +19,7 @@ export default function Phase6Page() {
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="text-center space-y-4">
-          <Badge className="bg-indigo-100 text-indigo-900 text-lg px-4 py-2">
+          <Badge className="max-w-full whitespace-normal text-center leading-tight bg-indigo-100 text-indigo-900 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">
             🌅 Phase 6: Closing
           </Badge>
           <h1 className="text-3xl font-bold text-slate-900">From Schedule Clarity to Cash Confidence</h1>

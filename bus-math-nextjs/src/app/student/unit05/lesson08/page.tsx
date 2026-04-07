@@ -6,7 +6,7 @@ export default function Lesson08Page() {
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-purple-100">
       <div className="container mx-auto px-4 py-8 space-y-8">
         <section className="text-center space-y-4">
-          <Badge className="bg-purple-100 text-purple-900 text-lg px-4 py-2">
+          <Badge className="max-w-full whitespace-normal text-center leading-tight bg-purple-100 text-purple-900 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">
             🚀 Phase 1: Project Kickoff
           </Badge>
           <h1 className="text-3xl font-bold text-slate-900">
@@ -85,7 +85,7 @@ export default function Lesson08Page() {
               <p className="mb-3">
                 Download <strong>only your assigned file</strong>. Each dataset matches your team's scenario.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                 <a
                   href="/resources/unit05-pbl-payroll-cashflow-g1.csv"
                   download
@@ -161,7 +161,7 @@ export default function Lesson08Page() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-blue-900 text-sm">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
                 <div className="bg-white/60 p-2 rounded text-center">Employees</div>
                 <div className="bg-white/60 p-2 rounded text-center">PayrollRegister</div>
                 <div className="bg-white/60 p-2 rounded text-center">TaxTables</div>

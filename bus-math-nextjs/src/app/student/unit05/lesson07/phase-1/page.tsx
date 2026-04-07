@@ -58,7 +58,7 @@ export default function Phase1Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-red-100 text-red-800 text-lg px-4 py-2">Phase 1: Rehearsal Purpose</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-red-100 text-red-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 1: Rehearsal Purpose</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Why We're Rehearsing Before the Project</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Today's lesson is the final guided rehearsal before your group project. Every team uses the same

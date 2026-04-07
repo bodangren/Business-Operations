@@ -59,7 +59,7 @@ export default function Phase5Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">Phase 5: Transfer Check & Peer Audit</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-yellow-100 text-yellow-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">Phase 5: Transfer Check & Peer Audit</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Verify Your Readiness for the Project</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               First, confirm you understand what must transfer to your team's independent work. Then conduct

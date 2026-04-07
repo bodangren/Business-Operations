@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Play, FileText, ChevronDown, ChevronUp } from "lucide-react"
@@ -12,7 +12,6 @@ interface VideoPlayerProps {
 
 export function VideoPlayer({ video }: VideoPlayerProps) {
   const [transcriptOpen, setTranscriptOpen] = useState(false)
-  const [videoLoaded, setVideoLoaded] = useState(false)
 
   const embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?rel=0&modestbranding=1`
 
@@ -31,33 +30,18 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
         )}
       </CardHeader>
       <CardContent className="space-y-4">
-        {/* Video Embed */}
         <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
-          {!videoLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-              <Button
-                onClick={() => setVideoLoaded(true)}
-                size="lg"
-                className="flex items-center gap-2"
-              >
-                <Play className="h-5 w-5" />
-                Load Video
-              </Button>
-            </div>
-          )}
-          {videoLoaded && (
-            <iframe
-              src={embedUrl}
-              title={video.title}
-              className="w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          )}
+          <iframe
+            src={embedUrl}
+            title={video.title}
+            className="w-full h-full"
+            frameBorder="0"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
 
-        {/* Transcript Section */}
         <div>
           <Button
             variant="outline"

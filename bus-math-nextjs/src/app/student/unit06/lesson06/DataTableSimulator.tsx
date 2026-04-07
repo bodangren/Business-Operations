@@ -38,23 +38,23 @@ export default function DataTableSimulator() {
               <h4 className="font-bold text-purple-900">Locate Your CVP Formula</h4>
             </div>
             
-            <div className="bg-slate-50 p-3 rounded border border-slate-200 text-xs font-mono">
-              <div className="grid grid-cols-4 gap-1">
+            <div className="bg-slate-50 p-3 rounded border border-slate-200 text-xs font-mono overflow-x-auto">
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
                 <div className="text-slate-400"></div><div className="font-bold text-slate-600">A</div><div className="font-bold text-slate-600">B</div><div className="font-bold text-slate-600">C</div>
               </div>
-              <div className="grid grid-cols-4 gap-1">
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
                 <div className="text-slate-400">4</div><div className="text-slate-600">Price</div><div className="bg-blue-50 p-1 border border-blue-300">$1,350</div><div></div>
               </div>
-              <div className="grid grid-cols-4 gap-1">
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
                 <div className="text-slate-400">5</div><div className="text-slate-600">Volume</div><div className="bg-blue-50 p-1 border border-blue-300">24</div><div></div>
               </div>
-              <div className="grid grid-cols-4 gap-1">
-                <div className="text-slate-400">6</div><div className="text-slate-600">Profit</div><div className="bg-green-50 p-1 border border-green-300 font-bold">= (B4-880)*B5 - 12000</div><div></div>
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
+                <div className="text-slate-400">6</div><div className="text-slate-600">Profit</div><div className="bg-green-50 p-1 border border-green-300 font-bold break-all">= (B4-880)*B5 - 12000</div><div></div>
               </div>
-              <div className="grid grid-cols-4 gap-1 mt-2 pt-2 border-t border-slate-200">
+              <div className="grid grid-cols-4 gap-1 min-w-[360px] mt-2 pt-2 border-t border-slate-200">
                 <div className="text-slate-400">8</div><div className="text-slate-600">Data Table Area</div><div></div><div></div>
               </div>
-              <div className="grid grid-cols-4 gap-1">
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
                 <div className="text-slate-400">9</div><div className="bg-purple-50 p-1 border border-purple-300">$1,200</div><div></div><div></div>
               </div>
             </div>

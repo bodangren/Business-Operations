@@ -77,7 +77,7 @@ export default function Phase1Page() {
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6 text-center">
-          <Badge className="bg-orange-100 text-orange-900 text-lg px-4 py-2">
+          <Badge className="max-w-full whitespace-normal text-center leading-tight bg-orange-100 text-orange-900 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">
             🧾 Phase 1: Hook — Pay Stub Truth Test
           </Badge>
           <h1 className="text-3xl font-bold text-slate-900">From Schedule to Pay Stub: No More Guessing</h1>

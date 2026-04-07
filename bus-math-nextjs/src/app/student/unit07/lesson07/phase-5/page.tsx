@@ -20,7 +20,7 @@ export default function Unit07Lesson07Phase5() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-2">✅ Phase 5: Transfer Check and Peer Audit</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight bg-yellow-100 text-yellow-800 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">✅ Phase 5: Transfer Check and Peer Audit</Badge>
             <h1 className="text-3xl font-bold text-gray-900">Prove You Understand the Project Standard</h1>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Before the real project begins, confirm you can evaluate workbook quality against the Definition of Done. Answer the transfer check, then audit a classmate's work using the same criteria your teacher will use.

@@ -15,7 +15,7 @@ export default function Page() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <Badge>Phase 1: Kickoff</Badge>
+            <Badge className="max-w-full whitespace-normal text-center leading-tight sm:w-fit sm:whitespace-nowrap">Phase 1: Kickoff</Badge>
             <h1 className="text-2xl font-semibold">Milestone 1 — Project Kickoff & Workbook Setup</h1>
           </div>
 

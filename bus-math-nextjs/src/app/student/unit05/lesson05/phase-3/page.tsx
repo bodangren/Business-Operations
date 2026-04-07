@@ -83,7 +83,7 @@ export default function Phase3Page() {
 
       <main className="container mx-auto px-4 py-8 space-y-8">
         <section className="space-y-4 text-center">
-          <Badge className="bg-blue-100 text-blue-900 text-lg px-4 py-2">
+          <Badge className="max-w-full whitespace-normal text-center leading-tight bg-blue-100 text-blue-900 text-lg px-4 py-2 sm:w-fit sm:whitespace-nowrap">
             🧪 Phase 3: Guided Practice
           </Badge>
           <h1 className="text-3xl font-bold text-slate-900">Build the Schedule-to-Pay Engine Step by Step</h1>
