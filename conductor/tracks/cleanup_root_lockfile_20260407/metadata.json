@@ -1,0 +1,8 @@
+{
+  "track_id": "cleanup_root_lockfile_20260407",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-04-07T00:00:00Z",
+  "updated_at": "2026-04-07T00:00:00Z",
+  "description": "Clean up root package.json/package-lock.json to resolve Next.js multiple lockfile warning"
+}

@@ -62,6 +62,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/lesson_data_import_migration_20260407/](./tracks/lesson_data_import_migration_20260407/)*
 - [x] **Track: Resolve orphan "finance" TopicTag**
   *Link: [./tracks/resolve_finance_topic_tag_20260407/](./tracks/resolve_finance_topic_tag_20260407/)*
+- [~] **Track: Clean up root lockfile warning**
+  *Link: [./tracks/cleanup_root_lockfile_20260407/](./tracks/cleanup_root_lockfile_20260407/)*
 
 Active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
