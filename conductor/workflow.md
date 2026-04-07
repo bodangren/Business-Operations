@@ -76,12 +76,14 @@ npm install
 ### Daily Development
 ```bash
 npm run dev          # Start development server
+npm run typecheck    # Run TypeScript check (no emit)
 npm run lint         # Run ESLint
 npm run build        # Production build
 ```
 
 ### Before Committing
 ```bash
+npm run typecheck    # Check for TypeScript errors
 npm run lint         # Check for linting errors
 ```
 
@@ -89,6 +91,7 @@ npm run lint         # Check for linting errors
 
 Before marking any task complete, verify:
 - [ ] All code follows project conventions
+- [ ] TypeScript passes (`npm run typecheck`)
 - [ ] ESLint passes (`npm run lint`)
 - [ ] Build succeeds (`npm run build`)
 - [ ] Components properly documented in MCP
@@ -120,8 +123,9 @@ git commit -m "docs(readme): Update component documentation"
 
 A task is complete when:
 1. All code implemented to specification
-2. ESLint passes with no errors
-3. Build succeeds without errors
-4. Components documented in MCP knowledge base
-5. Changes committed with proper message
-6. Git note with task summary attached
+2. TypeScript passes with no errors
+3. ESLint passes with no errors
+4. Build succeeds without errors
+5. Components documented in MCP knowledge base
+6. Changes committed with proper message
+7. Git note with task summary attached

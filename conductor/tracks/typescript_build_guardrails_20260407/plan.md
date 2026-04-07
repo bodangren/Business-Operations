@@ -8,9 +8,9 @@
 
 ## Phase 2: Wire TypeScript verification into track completion
 
-- [ ] Update Conductor workflow or adjacent project docs so future tracks explicitly verify TypeScript cleanliness
-- [ ] Ensure the preferred verification path distinguishes between non-mutating typecheck and full build verification
-- [ ] If implementation reveals any current TypeScript regressions, fix them before closing the track
+- [x] Update Conductor workflow or adjacent project docs so future tracks explicitly verify TypeScript cleanliness
+- [x] Ensure the preferred verification path distinguishes between non-mutating typecheck and full build verification
+- [x] If implementation reveals any current TypeScript regressions, fix them before closing the track
 
 ## Phase 3: Final verification
 
