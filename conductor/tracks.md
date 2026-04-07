@@ -72,7 +72,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/student_hub_practice_ui_audit_20260407/](./tracks/student_hub_practice_ui_audit_20260407/)*
 - [x] **Track: Student lesson UI audit for Units 01-04**
   *Link: [./tracks/student_lessons_u01_u04_ui_audit_20260407/](./tracks/student_lessons_u01_u04_ui_audit_20260407/)*
-- [~] **Track: Student lesson UI audit for Units 05-08**
+- [x] **Track: Student lesson UI audit for Units 05-08**
   *Link: [./tracks/student_lessons_u05_u08_ui_audit_20260407/](./tracks/student_lessons_u05_u08_ui_audit_20260407/)*
 - [ ] **Track: Teacher and capstone UI audit**
   *Link: [./tracks/teacher_capstone_ui_audit_20260407/](./tracks/teacher_capstone_ui_audit_20260407/)*
