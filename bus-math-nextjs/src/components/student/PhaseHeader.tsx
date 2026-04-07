@@ -46,7 +46,7 @@ export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }
       {/* Ensure public resource links include basePath in production */}
       <ResourceBasePathFixer />
       {/* Breadcrumb Navigation */}
-      <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
+      <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
         <Link href="/student" className="hover:text-foreground flex items-center gap-1">
           <Home className="h-3 w-3" />
           Student
@@ -79,7 +79,7 @@ export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }
       <Card className={`card-statement ${colorClass} shadow-lg`}>
         <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-background shadow-md border border-border/50">
                 <Icon className="h-7 w-7" />
               </div>

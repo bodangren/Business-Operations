@@ -1,8 +1,8 @@
 {
   "track_id": "student_hub_practice_ui_audit_20260407",
   "type": "fix",
-  "status": "new",
+  "status": "completed",
   "created_at": "2026-04-07T00:10:00Z",
-  "updated_at": "2026-04-07T00:10:00Z",
+  "updated_at": "2026-04-07T05:37:17Z",
   "description": "Audit and fix the student hub, unit overview, practice hub, and practice-test surfaces page by page"
 }

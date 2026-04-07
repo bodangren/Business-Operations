@@ -51,17 +51,25 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
       {/* Ensure public resource links include basePath in production */}
       <ResourceBasePathFixer />
       {/* Navigation Controls */}
-      <div className="flex items-center justify-between pt-6 border-t border-border/50 bg-muted/10 -mx-4 px-4 py-4 rounded-lg">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-3 rounded-lg border-t border-border/50 bg-muted/10 pt-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex w-full items-center gap-2 sm:w-auto">
           {prevPhase ? (
-            <Button variant="outline" asChild className="border-border/50 hover:bg-accent/50">
+            <Button
+              variant="outline"
+              asChild
+              className="w-full justify-between border-border/50 hover:bg-accent/50 sm:w-auto"
+            >
               <Link href={phaseHrefBuilder(prevPhase)}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Previous: {prevPhase.phaseName}
               </Link>
             </Button>
           ) : (
-            <Button variant="outline" asChild className="border-border/50 hover:bg-accent/50">
+            <Button
+              variant="outline"
+              asChild
+              className="w-full justify-between border-border/50 hover:bg-accent/50 sm:w-auto"
+            >
               <Link href={lessonHref}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 {backToLessonLabel}
@@ -70,22 +78,32 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
           )}
         </div>
 
-        <div className="flex items-center gap-2">
-          <Button variant="outline" asChild className="border-border/50 hover:bg-accent/50">
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+          <Button
+            variant="outline"
+            asChild
+            className="w-full justify-between border-border/50 hover:bg-accent/50 sm:w-auto"
+          >
             <Link href={lessonHref}>
               {lessonOverviewLabel}
             </Link>
           </Button>
           
           {nextPhase ? (
-            <Button asChild className="gradient-financial text-primary-foreground shadow-md hover:shadow-lg transition-shadow">
+            <Button
+              asChild
+              className="w-full justify-between gradient-financial text-primary-foreground shadow-md transition-shadow hover:shadow-lg sm:w-auto"
+            >
               <Link href={phaseHrefBuilder(nextPhase)}>
                 Next: {nextPhase.phaseName}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           ) : (
-            <Button asChild className="gradient-success text-white shadow-md hover:shadow-lg transition-shadow">
+            <Button
+              asChild
+              className="w-full justify-between gradient-success text-white shadow-md transition-shadow hover:shadow-lg sm:w-auto"
+            >
               <Link href={lessonHref}>
                 {completeLessonLabel}
                 <CheckCircle2 className="h-4 w-4 ml-2" />
@@ -103,7 +121,7 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
             {sortedPhases.map((p, index) => {
               const PhaseIcon = getPhaseIcon(p.phaseName)
               const isCompleted = index < currentIndex
@@ -113,16 +131,16 @@ export function PhaseFooter({ lesson, unit, phase, phases, navigationOverrides }
                 <Link 
                   key={p.id}
                   href={phaseHrefBuilder(p)}
-                  className={`flex items-center gap-2 p-3 rounded-lg text-xs font-medium transition-all duration-200 border ${
+                  className={`flex min-w-0 items-center gap-2 rounded-lg border p-3 text-xs font-medium transition-all duration-200 ${
                     isCurrent 
-                      ? 'bg-primary text-primary-foreground border-primary shadow-md scale-105' 
+                      ? 'bg-primary text-primary-foreground border-primary shadow-md' 
                       : isCompleted 
                         ? 'bg-gradient-success/10 text-green-700 dark:text-green-300 border-green-200/50 dark:border-green-800/30 hover:bg-gradient-success/20' 
                         : 'bg-muted/30 text-muted-foreground border-border/30 hover:bg-muted/50 hover:text-foreground'
                   }`}
                 >
                   <PhaseIcon className="h-3 w-3 flex-shrink-0" />
-                  <span className="truncate">{p.phaseName}</span>
+                  <span className="min-w-0 flex-1 truncate">{p.phaseName}</span>
                   {isCompleted && <CheckCircle2 className="h-3 w-3 text-green-600 dark:text-green-400" />}
                 </Link>
               )

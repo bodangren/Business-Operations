@@ -273,7 +273,7 @@ export default function PracticeTestPage() {
         <main className="space-y-12">
           <section id="phase-1" className="space-y-6">
             <div className="text-center space-y-4">
-              <Badge className="bg-rose-100 text-rose-800 text-lg px-4 py-2">
+              <Badge className="max-w-full whitespace-normal text-center leading-tight bg-rose-100 px-4 py-2 text-lg text-rose-800 sm:w-fit sm:whitespace-nowrap">
                 ✨ Phase 1: Hook – Pricing Strategy Spotlight
               </Badge>
               <Card className="max-w-4xl mx-auto border-rose-200 bg-white">
@@ -307,7 +307,7 @@ export default function PracticeTestPage() {
 
           <section id="phase-2" className="space-y-6">
             <div className="text-center space-y-4">
-              <Badge className="bg-sky-100 text-sky-800 text-lg px-4 py-2">
+              <Badge className="max-w-full whitespace-normal text-center leading-tight bg-sky-100 px-4 py-2 text-lg text-sky-800 sm:w-fit sm:whitespace-nowrap">
                 ⚙️ Phase 2: Introduction – Build Your Test Plan
               </Badge>
               <div className="max-w-4xl mx-auto space-y-6">
@@ -376,7 +376,7 @@ export default function PracticeTestPage() {
 
           <section id="phase-3" className="space-y-6">
             <div className="text-center space-y-4">
-              <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">
+              <Badge className="max-w-full whitespace-normal text-center leading-tight bg-emerald-100 px-4 py-2 text-lg text-emerald-800 sm:w-fit sm:whitespace-nowrap">
                 🧭 Phase 3: Guided Practice – Strategy Huddle
               </Badge>
               <div className="max-w-4xl mx-auto grid gap-6">
@@ -421,7 +421,7 @@ export default function PracticeTestPage() {
 
           <section id="phase-4" className="space-y-6">
             <div className="text-center space-y-4">
-              <Badge className="bg-amber-100 text-amber-800 text-lg px-4 py-2">
+              <Badge className="max-w-full whitespace-normal text-center leading-tight bg-amber-100 px-4 py-2 text-lg text-amber-800 sm:w-fit sm:whitespace-nowrap">
                 ⏱️ Phase 4: Independent Practice – Take the Test
               </Badge>
               <div className="max-w-4xl mx-auto space-y-6">
@@ -507,7 +507,7 @@ export default function PracticeTestPage() {
 
           <section id="phase-5" className="space-y-6">
             <div className="text-center space-y-4">
-              <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
+              <Badge className="max-w-full whitespace-normal text-center leading-tight bg-orange-100 px-4 py-2 text-lg text-orange-800 sm:w-fit sm:whitespace-nowrap">
                 🧮 Phase 5: Assessment – Score &amp; Insights
               </Badge>
               <div className="max-w-4xl mx-auto grid gap-6">
@@ -569,7 +569,7 @@ export default function PracticeTestPage() {
 
           <section id="phase-6" className="space-y-6">
             <div className="text-center space-y-4">
-              <Badge className="bg-indigo-100 text-indigo-800 text-lg px-4 py-2">
+              <Badge className="max-w-full whitespace-normal text-center leading-tight bg-indigo-100 px-4 py-2 text-lg text-indigo-800 sm:w-fit sm:whitespace-nowrap">
                 🪞 Phase 6: Closing – Reflect &amp; Plan Ahead
               </Badge>
               <div className="max-w-4xl mx-auto space-y-6">

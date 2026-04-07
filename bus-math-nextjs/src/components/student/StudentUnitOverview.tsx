@@ -131,10 +131,10 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
   const practiceTestContent = practiceTestMessaging[unit.sequence] ?? defaultPracticeTestCopy
 
   return (
-    <div className="bg-gradient-to-br from-background via-background to-muted/20 -mx-4 px-4 py-8">
-      <div className="max-w-4xl mx-auto space-y-8">
+    <div className="bg-gradient-to-br from-background via-background to-muted/20 py-8">
+      <div className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
+        <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
           <Link href="/student" className="hover:text-foreground flex items-center gap-1">
             <Home className="h-3 w-3" />
             Student
@@ -182,11 +182,11 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-3">
+            <ul className="min-w-0 space-y-3">
               {buildingGoals.map((goal, index) => (
-                <li key={index} className="flex items-start gap-2">
+                <li key={index} className="grid min-w-0 grid-cols-[auto,minmax(0,1fr)] items-start gap-2">
                   <span className="text-green-600 mt-1 text-sm">▶</span>
-                  <span className="text-sm leading-relaxed">{goal}</span>
+                  <span className="block min-w-0 break-words text-sm leading-relaxed">{goal}</span>
                 </li>
               ))}
             </ul>
@@ -204,7 +204,11 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
           <CardContent>
             <div className="flex flex-wrap gap-2">
               {keySkills.map((skill, index) => (
-                <Badge key={index} variant="secondary" className="text-xs">
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="h-auto max-w-full whitespace-normal break-words px-2 py-1 text-center text-xs leading-tight sm:w-fit sm:whitespace-nowrap"
+                >
                   {skill}
                 </Badge>
               ))}
@@ -246,7 +250,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
               <StudyDueBadge unitId={unit.unitId} />
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <CardContent className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3 text-blue-900 dark:text-blue-100 flex-1">
               <p className="text-sm leading-relaxed">
                 Practice this unit&apos;s vocabulary with flashcards, a matching game, or a timed speed round.
@@ -254,7 +258,12 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
               </p>
               {unit.unitId && <UnitMasteryProgressBar unitId={unit.unitId} />}
             </div>
-            <Button size="lg" variant="outline" asChild className="border-blue-300 text-blue-700 hover:bg-blue-100">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="w-full border-blue-300 text-blue-700 hover:bg-blue-100 md:w-auto"
+            >
               <Link href={`/student/practice-hub?unit=${unit.unitId}`}>
                 Study Terms <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
@@ -295,18 +304,21 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
         <CardContent>
           <div className="grid gap-4">
             {lessons.map((lesson, index) => (
-              <div key={index} className="flex items-center gap-4 p-3 border rounded-lg hover:bg-muted/50 transition-colors">
+              <div
+                key={index}
+                className="flex flex-col gap-3 rounded-lg border p-3 transition-colors hover:bg-muted/50 sm:flex-row sm:items-center sm:gap-4"
+              >
                 <div className="flex items-center justify-center w-8 h-8 bg-primary text-primary-foreground rounded-full text-sm font-medium">
                   {index + 1}
                 </div>
-                <div className="flex-1">
+                <div className="min-w-0 flex-1">
                   <h4 className="font-medium">{lesson.title}</h4>
                   <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
                     <Clock className="h-3 w-3" />
                     <span>{lesson.durationEstimateMinutes} minutes</span>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" asChild>
+                <Button variant="outline" size="sm" asChild className="w-full sm:w-auto">
                   <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}/lesson${(index + 1).toString().padStart(2, '0')}`}>
                     Start Lesson <ArrowRight className="h-3 w-3 ml-1" />
                   </Link>
@@ -325,7 +337,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
             {practiceTestContent.title}
           </CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <CardContent className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2 text-teal-900 dark:text-teal-100">
             <p className="text-sm leading-relaxed">
               {practiceTestContent.description}
@@ -334,7 +346,7 @@ export function StudentUnitOverview({ unit, lessons }: StudentUnitOverviewProps)
               {practiceTestContent.tip}
             </p>
           </div>
-          <Button size="lg" asChild>
+          <Button size="lg" asChild className="w-full md:w-auto">
             <Link href={`/student/unit${unit.sequence.toString().padStart(2, '0')}/practice-test`}>
               Start Practice Test <ArrowRight className="h-4 w-4 ml-2" />
             </Link>

@@ -68,7 +68,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/unused_file_cleanup_20260407/](./tracks/unused_file_cleanup_20260407/)*
 - [x] **Track: Shared shell, home, frontmatter, and backmatter UI audit**
   *Link: [./tracks/shared_surface_ui_audit_20260407/](./tracks/shared_surface_ui_audit_20260407/)*
-- [ ] **Track: Student hub, unit overview, practice hub, and practice-test UI audit**
+- [x] **Track: Student hub, unit overview, practice hub, and practice-test UI audit**
   *Link: [./tracks/student_hub_practice_ui_audit_20260407/](./tracks/student_hub_practice_ui_audit_20260407/)*
 - [ ] **Track: Student lesson UI audit for Units 01-04**
   *Link: [./tracks/student_lessons_u01_u04_ui_audit_20260407/](./tracks/student_lessons_u01_u04_ui_audit_20260407/)*
