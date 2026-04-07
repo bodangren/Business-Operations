@@ -11,7 +11,8 @@ export default function DataTableSimulator() {
   const [step, setStep] = useState(1);
   const [columnInput, setColumnInput] = useState("");
   const [rowInput, setRowInput] = useState("");
-  const [checked, setChecked] = useState(false);
+  const [columnChecked, setColumnChecked] = useState(false);
+  const [rowChecked, setRowChecked] = useState(false);
 
   const isColumnCorrect = columnInput.toUpperCase().includes("B5") || columnInput.includes("Price");
   const isRowCorrect = rowInput.toUpperCase().includes("B6") || rowInput.includes("Volume");
@@ -87,15 +88,15 @@ export default function DataTableSimulator() {
                 value={columnInput}
                 onChange={(e) => setColumnInput(e.target.value)}
               />
-              <Button 
-                onClick={() => { setChecked(true); setStep(2); }}
+              <Button
+                onClick={() => { setColumnChecked(true); setStep(2); }}
                 className="bg-purple-600 hover:bg-purple-700 h-10"
               >
                 Check
               </Button>
             </div>
 
-            {checked && (
+            {columnChecked && (
               <div className={`p-3 rounded flex items-start gap-3 mt-3 ${isColumnCorrect ? "bg-green-900/30 text-green-300 border border-green-800" : "bg-red-900/30 text-red-300 border border-red-800"}`}>
                 {isColumnCorrect ? (
                   <>
@@ -137,15 +138,15 @@ export default function DataTableSimulator() {
                 value={rowInput}
                 onChange={(e) => setRowInput(e.target.value)}
               />
-              <Button 
-                onClick={() => setChecked(true)}
+              <Button
+                onClick={() => { setRowChecked(true); setStep(3); }}
                 className="bg-purple-600 hover:bg-purple-700 h-10"
               >
                 Check
               </Button>
             </div>
 
-            {checked && (
+            {rowChecked && (
               <div className={`p-3 rounded flex items-start gap-3 mt-3 ${isRowCorrect ? "bg-green-900/30 text-green-300 border border-green-800" : "bg-red-900/30 text-red-300 border border-red-800"}`}>
                 {isRowCorrect ? (
                   <>
