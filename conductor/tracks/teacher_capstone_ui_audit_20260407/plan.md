@@ -14,20 +14,20 @@
 - [x] Fix page-specific teacher-route defects
 - [x] Re-run a browser pass for teacher routes
 
-## Phase 3: Audit and Fix Capstone Routes
+## Phase 3: Audit and Fix Capstone Routes [x]
 
-- [ ] Enumerate capstone routes in scope
-- [ ] Review each capstone route on desktop and mobile and log concrete defects
-- [ ] Fix shared capstone layout/component issues
-- [ ] Fix page-specific capstone-route defects
-- [ ] Re-run a browser pass for capstone routes
+- [x] Enumerate capstone routes in scope
+- [x] Review each capstone route on desktop and mobile and log concrete defects
+- [x] Fix shared capstone layout/component issues
+- [x] Fix page-specific capstone-route defects
+- [x] Re-run a browser pass for capstone routes
 
-## Phase 4: Verification and Closeout
+## Phase 4: Verification and Closeout [x]
 
 - [x] Run `npm run lint`
 - [x] Run `npm run build`
 - [x] Run relevant automated tests
 - [x] Perform a final browser pass on representative teacher and capstone routes
-- [ ] Document any intentionally deferred defects
+- [x] Document any intentionally deferred defects
 - [x] Commit with a conventional commit message and attach a git note
 - [x] Update track metadata and registry status
