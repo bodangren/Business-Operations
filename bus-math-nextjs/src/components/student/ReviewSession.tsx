@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import React, { useState, useCallback } from "react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -13,6 +13,7 @@ import {
   createMastery,
   type ReviewRating,
 } from "@/lib/study/srs"
+import type { DueReviewEntry } from "@/lib/study/storage-schema"
 import { useStudyData } from "@/contexts/StudyDataContext"
 
 export default function ReviewSession() {
@@ -114,9 +115,14 @@ export default function ReviewSession() {
     )
   }
 
-  const currentEntry = dueEntries[currentIndex]
-  const glossaryTerm = glossaryData.find((g) => g.slug === currentEntry.term_slug)
-  const progress = Math.round((currentIndex / dueEntries.length) * 100)
+  let currentEntry: DueReviewEntry | undefined
+  let glossaryTerm: typeof glossaryData[number] | undefined
+  let progress: number | undefined
+  if (!isComplete) {
+    currentEntry = dueEntries[currentIndex]
+    glossaryTerm = glossaryData.find((g) => g.slug === currentEntry!.term_slug)
+    progress = Math.round((currentIndex / dueEntries.length) * 100)
+  }
 
   return (
     <div className="min-h-screen">
@@ -201,8 +207,8 @@ export default function ReviewSession() {
                     <div className="text-xs uppercase tracking-widest opacity-60 mb-3">
                       Term
                     </div>
-                    <div className="text-3xl font-bold text-center">{glossaryTerm.term_en}</div>
-                    {glossaryTerm.term_zh && (
+                    <div className="text-3xl font-bold text-center">{glossaryTerm?.term_en}</div>
+                    {glossaryTerm?.term_zh && (
                       <div className="text-lg opacity-75 mt-2">{glossaryTerm.term_zh}</div>
                     )}
                   </div>
@@ -214,8 +220,8 @@ export default function ReviewSession() {
                     <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
                       Definition
                     </div>
-                    <div className="text-lg text-center leading-relaxed">{glossaryTerm.def_en}</div>
-                    {glossaryTerm.def_zh && (
+                    <div className="text-lg text-center leading-relaxed">{glossaryTerm?.def_en}</div>
+                    {glossaryTerm?.def_zh && (
                       <div className="text-sm text-muted-foreground mt-3 text-center">{glossaryTerm.def_zh}</div>
                     )}
                   </div>
