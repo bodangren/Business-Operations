@@ -41,6 +41,11 @@ export interface DailyLesson {
   duration: string
   activities: LessonActivity[]
   materials: string[]
+  preparation?: string[]
+  facilitationGuidance?: string[]
+  checksForUnderstanding?: string[]
+  watchFors?: string[]
+  nextSteps?: string[]
 }
 
 export interface LessonActivity {

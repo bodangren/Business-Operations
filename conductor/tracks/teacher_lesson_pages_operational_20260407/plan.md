@@ -18,9 +18,9 @@
 
 ## Phase 3: Define the Operational Lesson Page Contract
 
-- [ ] Define the minimum required instructional sections for every teacher lesson page
-- [ ] Extend lesson-plan types only where necessary to support missing instructional guidance
-- [ ] Update the renderer so lesson pages surface preparation, facilitation guidance, checks for understanding, watch-fors, and next-step signals clearly
+- [x] Define the minimum required instructional sections for every teacher lesson page
+- [x] Extend lesson-plan types only where necessary to support missing instructional guidance
+- [x] Update the renderer so lesson pages surface preparation, facilitation guidance, checks for understanding, watch-fors, and next-step signals clearly
 - [ ] Verify the revised layout remains readable on desktop and mobile
 
 ## Phase 4: Complete Lesson-Specific Guidance for Units 01-02

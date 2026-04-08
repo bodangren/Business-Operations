@@ -17,7 +17,11 @@ import {
   PlayCircle,
   PenTool,
   UserCheck,
-  ChevronDown
+  ChevronDown,
+  Briefcase,
+  Lightbulb,
+  AlertCircle,
+  ArrowRightCircle
 } from "lucide-react"
 
 import type { UnitLessonPlan, DailyLesson } from "@/types/lesson-plan"
@@ -251,6 +255,101 @@ export function TeacherLessonPlan({ unitLessonPlan, dailyLesson, unit, lessonNum
             <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
               {dailyLesson.materials.map((material, index) => (
                 <li key={index}>{material}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Preparation */}
+      {dailyLesson.preparation && dailyLesson.preparation.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Briefcase className="h-6 w-6 text-primary" />
+              Before Class: Preparation
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {dailyLesson.preparation.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Facilitation Guidance */}
+      {dailyLesson.facilitationGuidance && dailyLesson.facilitationGuidance.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Lightbulb className="h-6 w-6 text-primary" />
+              Facilitation Guidance
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {dailyLesson.facilitationGuidance.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Checks for Understanding */}
+      {dailyLesson.checksForUnderstanding && dailyLesson.checksForUnderstanding.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <CheckCircle className="h-6 w-6 text-primary" />
+              Checks for Understanding
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {dailyLesson.checksForUnderstanding.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Watch Fors */}
+      {dailyLesson.watchFors && dailyLesson.watchFors.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <AlertCircle className="h-6 w-6 text-primary" />
+              Watch Fors
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {dailyLesson.watchFors.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Next Steps */}
+      {dailyLesson.nextSteps && dailyLesson.nextSteps.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <ArrowRightCircle className="h-6 w-6 text-primary" />
+              Next Steps
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {dailyLesson.nextSteps.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
             </ul>
           </CardContent>
