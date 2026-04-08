@@ -70,3 +70,6 @@ bus-math-v2
 # Audit artifacts
 .audit-static/
 screenshots/
+
+# opencode artifacts
+.opencode/
