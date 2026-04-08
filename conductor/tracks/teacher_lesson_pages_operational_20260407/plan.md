@@ -37,23 +37,23 @@
 
 ## Phase 6: Complete Lesson-Specific Guidance for Units 05-06
 
-- [ ] Audit all teacher lessons in Units 05-06 against the operational lesson page contract
-- [ ] Fill missing lesson-specific teaching instructions in the underlying unit05/unit06 teacher lesson-plan files
-- [ ] Verify the corresponding teacher lesson pages now meet the contract
+- [x] Audit all teacher lessons in Units 05-06 against the operational lesson page contract
+- [x] Fill missing lesson-specific teaching instructions in the underlying unit05/unit06 teacher lesson-plan files
+- [x] Verify the corresponding teacher lesson pages now meet the contract
 
 ## Phase 7: Complete Lesson-Specific Guidance for Units 07-08
 
-- [ ] Audit all teacher lessons in Units 07-08 against the operational lesson page contract
-- [ ] Fill missing lesson-specific teaching instructions in the underlying unit07/unit08 teacher lesson-plan files
-- [ ] Verify the corresponding teacher lesson pages now meet the contract
+- [x] Audit all teacher lessons in Units 07-08 against the operational lesson page contract
+- [x] Fill missing lesson-specific teaching instructions in the underlying unit07/unit08 teacher lesson-plan files
+- [x] Verify the corresponding teacher lesson pages now meet the contract
 
 ## Phase 8: Alignment and Verification
 
-- [ ] Cross-check teacher lesson pages against current student unit scope, sequence, and naming
-- [ ] Run `npm run lint`
-- [ ] Run `npm run build`
-- [ ] Run relevant automated tests
-- [ ] Browser-check representative lesson pages from every unit on desktop and mobile
-- [ ] Document any intentionally deferred lesson-plan quality gaps
-- [ ] Commit with a conventional commit message and attach a git note
-- [ ] Update track metadata and registry status
+- [x] Cross-check teacher lesson pages against current student unit scope, sequence, and naming
+- [x] Run `npm run lint`
+- [x] Run `npm run build`
+- [x] Run relevant automated tests
+- [x] Browser-check representative lesson pages from every unit on desktop and mobile
+- [x] Document any intentionally deferred lesson-plan quality gaps
+- [x] Commit with a conventional commit message and attach a git note
+- [x] Update track metadata and registry status

@@ -76,7 +76,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/student_lessons_u05_u08_ui_audit_20260407/](./tracks/student_lessons_u05_u08_ui_audit_20260407/)*
 - [x] **Track: Teacher and capstone UI audit**
   *Link: [./tracks/teacher_capstone_ui_audit_20260407/](./tracks/teacher_capstone_ui_audit_20260407/)*
-- [ ] **Track: Teacher lesson pages operational rebuild**
+- [x] **Track: Teacher lesson pages operational rebuild**
   *Link: [./tracks/teacher_lesson_pages_operational_20260407/](./tracks/teacher_lesson_pages_operational_20260407/)*
 - [x] **Track: TypeScript build guardrails**
   *Link: [./tracks/typescript_build_guardrails_20260407/](./tracks/typescript_build_guardrails_20260407/)*
