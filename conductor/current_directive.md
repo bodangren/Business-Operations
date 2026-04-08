@@ -25,6 +25,7 @@
 4. **`UNIT_META` keyed lookup** — replace positional array with `Record<UnitId, ...>` (tech-debt.md, medium priority)
 5. **Glossary IDs manually assigned** — collision risk as terms grow (tech-debt.md L14, low priority)
 6. **`eslint-config-next` version sync** — keep in lockstep with `next` (tech-debt.md L17, low priority)
+7. **Pre-existing typescript lint warnings** - correct a few every phase.
 
 ## Blocked / Deferred
 

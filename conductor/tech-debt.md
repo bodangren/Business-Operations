@@ -26,7 +26,7 @@
 - [x] ~13 pre-existing TS errors in 4 test files — `readonly` array → mutable, `UnitId` template literal, `TopicTag` literal, export schema mismatches (L3 from review, 2026-04-06)~ (fixed 2026-04-06)
 - [ ] `businessTerms.ts` is dead code — not imported anywhere in the codebase; contains a separate `BilingualBusinessTerm` interface unrelated to the glossary system (L2 from review, 2026-04-07)
 - [ ] `UNIT_META` array in `page.tsx` is positionally coupled to `UNITS` array from unit-registry — accessed by loop index; adding/removing/reordering units silently mismatches duration/difficulty metadata (M2 from review, 2026-04-07)
-
+- [ ] When deployed to git pages static rendering, the home page cover image is broken. Likely due to a base path problem.
 ## Resolved
 
 - [x] ~PHASE_ICONS/COLORS/DESCRIPTIONS typed as `Record<string, ...>` — no compile error when phase is missing; no fallback causes React crash on unknown key (from lessons-learned 2026-04-06, fixed 2026-04-07)~
