@@ -7,19 +7,19 @@
 - [x] Write tests for basic route and components
 
 ## Phase 2: Integrate study data and due terms
-- [ ] Load study data via `useStudyData`
-- [ ] Filter and display due terms using `getDueTerms`
-- [ ] Create flashcard component to display term and definition
-- [ ] Write tests for due terms filtering and flashcard component
+- [x] Load study data via `useStudyData`
+- [x] Filter and display due terms using `getDueTerms`
+- [x] Create flashcard component to display term and definition
+- [x] Write tests for due terms filtering and flashcard component
 
 ## Phase 3: Add review ratings and update state
-- [ ] Add rating buttons (Again, Hard, Good, Easy)
-- [ ] Implement `processReview` and `updateMastery` on rating
-- [ ] Persist updated study data to localStorage
-- [ ] Write tests for review processing and state updates
+- [x] Add rating buttons (Again, Hard, Good, Easy)
+- [x] Implement `processReview` and `updateMastery` on rating
+- [x] Persist updated study data to localStorage
+- [x] Write tests for review processing and state updates
 
 ## Phase 4: Session summary and polish
-- [ ] Add session summary UI
-- [ ] Add navigation between review items
-- [ ] Polish styling and accessibility
-- [ ] Run full test suite and build
+- [x] Add session summary UI
+- [x] Add navigation between review items
+- [x] Polish styling and accessibility
+- [x] Run full test suite and build
