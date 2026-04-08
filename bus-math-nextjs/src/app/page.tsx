@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, Calculator, CheckSquare, Dice6, TrendingUp, BarChart3 } from "lucide-react"
 import { UNITS } from "@/data/unit-registry"
+import type { UnitId } from "@/types/glossary"
 import {
   FRONTMATTER_LINKS,
   REFERENCE_LINKS,
@@ -44,16 +45,16 @@ const features = [
   }
 ]
 
-const UNIT_META = [
-  { duration: "2-3 weeks", difficulty: "Beginner" },
-  { duration: "2-3 weeks", difficulty: "Intermediate" },
-  { duration: "3-4 weeks", difficulty: "Intermediate" },
-  { duration: "2-3 weeks", difficulty: "Intermediate" },
-  { duration: "2-3 weeks", difficulty: "Advanced" },
-  { duration: "3-4 weeks", difficulty: "Advanced" },
-  { duration: "2-3 weeks", difficulty: "Advanced" },
-  { duration: "3-4 weeks", difficulty: "Expert" },
-] as const
+const UNIT_META: Record<UnitId, { duration: string; difficulty: string }> = {
+  unit01: { duration: "2-3 weeks", difficulty: "Beginner" },
+  unit02: { duration: "2-3 weeks", difficulty: "Intermediate" },
+  unit03: { duration: "3-4 weeks", difficulty: "Intermediate" },
+  unit04: { duration: "2-3 weeks", difficulty: "Intermediate" },
+  unit05: { duration: "2-3 weeks", difficulty: "Advanced" },
+  unit06: { duration: "3-4 weeks", difficulty: "Advanced" },
+  unit07: { duration: "2-3 weeks", difficulty: "Advanced" },
+  unit08: { duration: "3-4 weeks", difficulty: "Expert" },
+} as const
 
 const getDifficultyVariant = (
   difficulty: string,
@@ -177,7 +178,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {UNITS.map((unit, index) => (
+            {UNITS.map((unit) => (
               <Card
                 key={unit.unitId}
                 className="border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
@@ -185,8 +186,8 @@ export default function Home() {
                 <CardHeader className="space-y-3">
                   <div className="flex items-center justify-between gap-3">
                     <Badge variant="outline">{`Unit ${unit.number}`}</Badge>
-                    <Badge variant={getDifficultyVariant(UNIT_META[index].difficulty)}>
-                      {UNIT_META[index].difficulty}
+                    <Badge variant={getDifficultyVariant(UNIT_META[unit.unitId].difficulty)}>
+                      {UNIT_META[unit.unitId].difficulty}
                     </Badge>
                   </div>
                   <CardTitle className="text-lg leading-tight">
@@ -204,7 +205,7 @@ export default function Home() {
                 <CardContent>
                   <div className="flex items-center justify-between gap-3 text-sm">
                     <span className="font-medium text-muted-foreground">
-                      {UNIT_META[index].duration}
+                      {UNIT_META[unit.unitId].duration}
                     </span>
                     <Link
                       className="font-semibold text-primary hover:underline"
