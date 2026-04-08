@@ -92,7 +92,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/srs_review_prototype_20260409/](./tracks/srs_review_prototype_20260409/)*
 - [x] **Track: ReviewSession component tests and accessibility fixes**
 *Link: [./tracks/reviewsession_component_tests_20260409/](./tracks/reviewsession_component_tests_20260409/)*
-- [ ] **Track: Review session recording**
+- [x] **Track: Review session recording**
 *Link: [./tracks/review_session_recording_20260409/](./tracks/review_session_recording_20260409/)*
 
 Foundational active tracks are ordered intentionally:
