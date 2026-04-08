@@ -86,7 +86,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/defer_teacher_guidance_fields_20260408/](./tracks/defer_teacher_guidance_fields_20260408/)*
 - [x] **Track: Resolve debug routes middleware gating issue with static export**
 *Link: [./tracks/resolve_debug_routes_static_export_20260408/](./tracks/resolve_debug_routes_static_export_20260408/)*
-- [ ] **Track: Replace manually assigned glossary IDs with slugs**
+- [x] **Track: Replace manually assigned glossary IDs with slugs**
 *Link: [./tracks/glossary_id_from_slug_20260409/](./tracks/glossary_id_from_slug_20260409/)*
 
 Foundational active tracks are ordered intentionally:
