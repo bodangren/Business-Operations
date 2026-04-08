@@ -16,12 +16,12 @@
 - [x] Reuse or extract shared daily-lesson rendering logic instead of maintaining duplicate placeholder rendering
 - [x] Verify that multiple teacher lesson routes now show distinct lesson-specific data
 
-## Phase 3: Define the Operational Lesson Page Contract
+## Phase 3: Define the Operational Lesson Page Contract [x]
 
 - [x] Define the minimum required instructional sections for every teacher lesson page
 - [x] Extend lesson-plan types only where necessary to support missing instructional guidance
 - [x] Update the renderer so lesson pages surface preparation, facilitation guidance, checks for understanding, watch-fors, and next-step signals clearly
-- [ ] Verify the revised layout remains readable on desktop and mobile
+- [x] Verify the revised layout remains readable on desktop and mobile
 
 ## Phase 4: Complete Lesson-Specific Guidance for Units 01-02
 
