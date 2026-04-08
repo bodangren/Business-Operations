@@ -25,15 +25,15 @@
 
 ## Phase 4: Complete Lesson-Specific Guidance for Units 01-02
 
-- [ ] Audit all teacher lessons in Units 01-02 against the operational lesson page contract
-- [ ] Fill missing lesson-specific teaching instructions in the underlying unit01/unit02 teacher lesson-plan files
-- [ ] Verify the corresponding teacher lesson pages now meet the contract
+- [x] Audit all teacher lessons in Units 01-02 against the operational lesson page contract
+- [x] Fill missing lesson-specific teaching instructions in the underlying unit01/unit02 teacher lesson-plan files
+- [x] Verify the corresponding teacher lesson pages now meet the contract
 
 ## Phase 5: Complete Lesson-Specific Guidance for Units 03-04
 
-- [ ] Audit all teacher lessons in Units 03-04 against the operational lesson page contract
-- [ ] Fill missing lesson-specific teaching instructions in the underlying unit03/unit04 teacher lesson-plan files
-- [ ] Verify the corresponding teacher lesson pages now meet the contract
+- [x] Audit all teacher lessons in Units 03-04 against the operational lesson page contract
+- [x] Fill missing lesson-specific teaching instructions in the underlying unit03/unit04 teacher lesson-plan files
+- [x] Verify the corresponding teacher lesson pages now meet the contract
 
 ## Phase 6: Complete Lesson-Specific Guidance for Units 05-06
 
