@@ -26,8 +26,8 @@
 
 - [x] Run `npm run lint`
 - [x] Run `npm run build`
-- [ ] Run relevant automated tests
-- [ ] Perform a final browser pass on representative teacher and capstone routes
+- [x] Run relevant automated tests
+- [x] Perform a final browser pass on representative teacher and capstone routes
 - [ ] Document any intentionally deferred defects
-- [ ] Commit with a conventional commit message and attach a git note
-- [ ] Update track metadata and registry status
+- [x] Commit with a conventional commit message and attach a git note
+- [x] Update track metadata and registry status
