@@ -1,14 +1,14 @@
 # Current Directive
 
-**Updated:** 2026-04-07
-**Status:** Review complete — 5 tracks audited, 2 fixes applied
+**Updated:** 2026-04-08
+**Status:** Review complete — teacher lesson phases 1-3 audited, no fixes needed
 
 ## What Was Just Completed
 
-- **Code review of 5 tracks** — `typescript_build_guardrails`, `shared_surface_ui_audit`, `student_hub_practice_ui_audit`, `student_lessons_u01_u04_ui_audit`, `student_lessons_u05_u08_ui_audit` — all pass clean
-- **Fix: DataTableSimulator shared state bug** — split `checked` into `columnChecked`/`rowChecked`; Step 3 button now advances step badge
-- **Fix: unused React import** — `video-player.tsx` cleaned up
-- **Tech-debt tracked** — `UNIT_META` positional coupling in `page.tsx` added to tech-debt.md
+- **Teacher capstone UI audit** — all 4 phases complete, track closed
+- **Teacher lesson pages operational rebuild phases 1-3** — audit, real data integration, operational contract defined
+- **Code review of both tracks** — clean audit, no bugs found, architecture improvements verified
+- **Verification baseline confirmed** — 279 tests pass, tsc 0 errors, ESLint clean, 603 pages build
 
 ## Verification
 
@@ -19,13 +19,14 @@
 
 ## Next Priorities
 
-1. **Teacher and capstone UI audit** — `teacher_capstone_ui_audit_20260407` track (active, 4 phases pending)
-2. **Teacher lesson pages operational rebuild** — `teacher_lesson_pages_operational_20260407` track (active, 8 phases pending)
-3. **Dead code removal** — `businessTerms.ts` is unused (tech-debt.md, low priority)
+1. **Teacher lesson pages phases 4-5** — `teacher_lesson_pages_operational_20260407` (Units 01-04 lesson-specific guidance)
+2. **Teacher lesson pages phases 6-7** — Units 05-08 lesson-specific guidance
+3. **Teacher lesson pages phase 8** — alignment, verification, build, browser check
 4. **`UNIT_META` keyed lookup** — replace positional array with `Record<UnitId, ...>` (tech-debt.md, medium priority)
-5. **Glossary IDs manually assigned** — collision risk as terms grow (tech-debt.md L14, low priority)
-6. **`eslint-config-next` version sync** — keep in lockstep with `next` (tech-debt.md L17, low priority)
-7. **Pre-existing typescript lint warnings** - correct a few every phase.
+5. **Dead code removal** — `businessTerms.ts` unused (tech-debt.md, low priority)
+6. **Glossary IDs manually assigned** — collision risk as terms grow (tech-debt.md, low priority)
+7. **`eslint-config-next` version sync** — keep in lockstep with `next` (tech-debt.md, low priority)
+8. **Broken cover image on git pages** — base path issue (tech-debt.md, medium priority)
 
 ## Blocked / Deferred
 
