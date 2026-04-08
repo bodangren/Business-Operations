@@ -46,46 +46,6 @@ export default function ReviewSession() {
     }
   }, [data, sessionStartedAt])
 
-  // Record the session when review is complete
-  useEffect(() => {
-    if (!data || !sessionStartedAt || hasRecordedSessionRef.current) return
-
-    const dueEntries = getDueTerms(data.study_state.due_review_snapshot)
-    const isComplete = currentIndex >= dueEntries.length
-
-    if (isComplete && sessionResponses.length > 0) {
-      // Collect unit IDs and topic tags from the reviewed terms
-      const termSlugs = sessionResponses.map((r) => r.term_slug)
-      const reviewedTerms = glossaryData.filter((g) => termSlugs.includes(g.slug))
-      const unitIds = [...new Set(reviewedTerms.flatMap((t) => t.units))]
-      const topicTags = [...new Set(reviewedTerms.flatMap((t) => t.topics))]
-
-      const reviewSession: ReviewSessionType = {
-        started_at: sessionStartedAt,
-        responses: sessionResponses,
-      }
-
-      const record = recordReviewSession(reviewSession, {
-        unit_id: (unitIds[0] || "unit01") as UnitId,
-        lesson_id: "review-session",
-        topic_tags: topicTags as TopicTag[],
-        mode: "solo",
-      })
-
-      // Update the study data with the new session
-      mutate((prevData) => {
-        if (!prevData) return prevData
-        return {
-          ...prevData,
-          sessions: [...prevData.sessions, record],
-          last_updated_at: new Date().toISOString(),
-        }
-      }, false)
-
-      setHasRecordedSession(true)
-    }
-  }, [data, currentIndex, sessionStartedAt, sessionResponses, mutate])
-
   const handleRating = useCallback((rating: ReviewRating) => {
     if (!data) return
     const dueEntries = getDueTerms(data.study_state.due_review_snapshot)
@@ -115,7 +75,7 @@ export default function ReviewSession() {
     // Add this response to the session
     setSessionResponses((prev) => [...prev, { term_slug: entry.term_slug, rating }])
 
-    mutate({
+    let newData = {
       ...data,
       study_state: {
         ...data.study_state,
@@ -123,11 +83,42 @@ export default function ReviewSession() {
         mastery_by_term: newMasteryByTerm,
       },
       last_updated_at: new Date().toISOString(),
-    })
+    }
 
-    setCurrentIndex((prev) => prev + 1)
+    // Check if this was the last review
+    const nextIndex = index + 1
+    if (nextIndex >= dueEntries.length) {
+      // Session is complete — record it!
+      if (sessionStartedAt && !hasRecordedSessionRef.current) {
+        // Collect unit IDs and topic tags from the reviewed terms
+        const termSlugs = [...sessionResponses, { term_slug: entry.term_slug, rating }].map((r) => r.term_slug)
+        const reviewedTerms = glossaryData.filter((g) => termSlugs.includes(g.slug))
+        const unitIds = [...new Set(reviewedTerms.flatMap((t) => t.units))]
+        const topicTags = [...new Set(reviewedTerms.flatMap((t) => t.topics))]
+
+        const reviewSession: ReviewSessionType = {
+          started_at: sessionStartedAt,
+          responses: [...sessionResponses, { term_slug: entry.term_slug, rating }],
+        }
+
+        // Create a deep copy of newData to avoid mutating the original
+        const dataCopy = JSON.parse(JSON.stringify(newData))
+        recordReviewSession(reviewSession, {
+          unit_id: (unitIds[0] || "unit01") as UnitId,
+          lesson_id: "review-session",
+          topic_tags: topicTags as TopicTag[],
+          mode: "solo",
+        }, dataCopy)
+
+        newData = dataCopy
+        setHasRecordedSession(true)
+      }
+    }
+
+    mutate(newData)
+    setCurrentIndex(nextIndex)
     setIsFlipped(false)
-  }, [data, mutate])
+  }, [data, mutate, sessionStartedAt, sessionResponses])
 
   if (!data) {
     return (

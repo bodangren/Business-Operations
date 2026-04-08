@@ -205,6 +205,7 @@ describe("recordSpeedRoundSession", () => {
 // ---------------------------------------------------------------------------
 
 import type { ReviewRating } from "@/lib/study/srs"
+import { createEmptyLocalData } from "@/lib/study/storage-schema"
 
 interface ReviewResponse {
   term_slug: string
@@ -221,51 +222,53 @@ function createReviewSession(startedAt: string, responses: ReviewResponse[]): Re
 }
 
 describe("recordReviewSession", () => {
-  it("persists review session to localStorage", () => {
+  it("records review session and updates data", () => {
     const startedAt = new Date().toISOString()
     const session = createReviewSession(startedAt, [
       { term_slug: "accounting-equation", rating: "good" },
       { term_slug: "assets", rating: "again" },
     ])
+    const data = createEmptyLocalData()
 
-    const record = recordReviewSession(session, baseOptions)
+    const record = recordReviewSession(session, baseOptions, data)
     expect(record.session_id).toBeTruthy()
     expect(record.activity.activity_type).toBe("review")
     expect(record.results.items_answered).toBe(2)
     expect(record.results.items_correct).toBe(1)
     expect(record.results.items_incorrect).toBe(1)
+    expect(data.sessions).toHaveLength(1)
   })
 
-  it("updates mastery records in local storage", () => {
+  it("updates mastery records in data", () => {
     const startedAt = new Date().toISOString()
     const session = createReviewSession(startedAt, [
       { term_slug: "accounting-equation", rating: "good" },
     ])
+    const data = createEmptyLocalData()
 
-    recordReviewSession(session, baseOptions)
-    const data = loadStudyData()
+    recordReviewSession(session, baseOptions, data)
     expect(data.study_state.mastery_by_term.length).toBeGreaterThan(0)
   })
 
-  it("creates due review entries", () => {
+  it("creates due review entries in data", () => {
     const startedAt = new Date().toISOString()
     const session = createReviewSession(startedAt, [
       { term_slug: "accounting-equation", rating: "good" },
     ])
+    const data = createEmptyLocalData()
 
-    recordReviewSession(session, baseOptions)
-    const data = loadStudyData()
+    recordReviewSession(session, baseOptions, data)
     expect(data.study_state.due_review_snapshot.length).toBeGreaterThan(0)
   })
 
-  it("increments aggregate stats", () => {
+  it("increments aggregate stats in data", () => {
     const startedAt = new Date().toISOString()
     const session = createReviewSession(startedAt, [
       { term_slug: "accounting-equation", rating: "good" },
     ])
+    const data = createEmptyLocalData()
 
-    recordReviewSession(session, baseOptions)
-    const data = loadStudyData()
+    recordReviewSession(session, baseOptions, data)
     expect(data.study_state.aggregate_stats.total_sessions).toBe(1)
     expect(data.study_state.aggregate_stats.total_questions_answered).toBe(1)
   })

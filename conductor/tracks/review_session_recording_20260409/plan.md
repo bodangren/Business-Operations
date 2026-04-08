@@ -11,6 +11,6 @@
 - [x] Update `mutate` to include the new session
 
 ## Phase 3: Verification
-- [ ] Run full test suite
-- [ ] Run `npm run build`
-- [ ] Manual verification: complete a review session and check Recent Practice
+- [x] Run full test suite
+- [x] Run `npm run build`
+- [x] Manual verification: complete a review session and check Recent Practice

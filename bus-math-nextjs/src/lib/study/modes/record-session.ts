@@ -13,7 +13,6 @@ import { processReview, createMastery, updateMastery, scheduleNewTerm, type Revi
 import type { FlashcardSession } from "./flashcards"
 import type { MatchingSession } from "./matching"
 import type { SpeedRoundSession } from "./speed-round"
-import type { ReviewRating } from "../srs"
 import { glossaryData } from "@/data/glossary"
 
 // ---------------------------------------------------------------------------
@@ -307,7 +306,7 @@ function buildSessionRecord(
   }
 }
 
-function persistSession(data: ReturnType<typeof loadStudyData>, record: SessionRecord): void {
+function persistSession(data: ReturnType<typeof loadStudyData>, record: SessionRecord, options?: { skipSave?: boolean }): void {
   data.sessions.push(record)
 
   // Update aggregate stats
@@ -322,7 +321,9 @@ function persistSession(data: ReturnType<typeof loadStudyData>, record: SessionR
   const totalAnswered = data.sessions.reduce((sum, s) => sum + s.results.items_answered, 0)
   stats.overall_accuracy = totalAnswered > 0 ? totalCorrect / totalAnswered : 0
 
-  saveStudyData(data)
+  if (!options?.skipSave) {
+    saveStudyData(data)
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -340,13 +341,14 @@ export interface ReviewSession {
 }
 
 /**
- * Record a review session into local storage and update mastery/SRS state.
+ * Record a review session into the provided data object and update mastery/SRS state.
+ * Does NOT save to localStorage (caller should handle that via mutate/context).
  */
 export function recordReviewSession(
   session: ReviewSession,
-  options: RecordSessionOptions
+  options: RecordSessionOptions,
+  data: ReturnType<typeof loadStudyData>
 ): SessionRecord {
-  const data = loadStudyData()
   const now = new Date().toISOString()
 
   const responses: SessionResponse[] = session.responses.map((response, i) => {
@@ -410,7 +412,7 @@ export function recordReviewSession(
   }
 
   const record = buildSessionRecord("review", session.started_at, now, options, responses, results)
-  persistSession(data, record)
+  persistSession(data, record, { skipSave: true })
   return record
 }
 
