@@ -126,7 +126,7 @@ export default function ReviewSession() {
   if (!isComplete) {
     currentEntry = dueEntries[currentIndex]
     glossaryTerm = glossaryData.find((g) => g.slug === currentEntry!.term_slug)
-    progress = Math.round((currentIndex / dueEntries.length) * 100)
+    progress = Math.min(100, Math.round(((currentIndex + 1) / dueEntries.length) * 100))
   }
 
   return (

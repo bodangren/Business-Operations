@@ -1,29 +1,29 @@
 # Current Directive
 
-**Updated:** 2026-04-09 (post-review, SRS prototype)
-**Status:** Post-review — all 39 tracks complete, SRS prototype audited
+**Updated:** 2026-04-09 (post-review, test follow-up)
+**Status:** Post-review — all 40 tracks complete, codebase audit clean
 
 ## What Was Just Completed
 
-- **SRS Review Prototype track**: `srs_review_prototype_20260409` — flashcard-style review UI at `/student/practice-hub/review` with FSRS scheduling, rating buttons, and session summary
-- **Review**: `review_20260409_srs-prototype.md` — 1 medium issue (missing component tests), 2 low issues (stale closure on rapid clicks, keyboard accessibility gap)
-- **Glossary slug track** (prior session): `glossary_id_from_slug_20260409` — slug-based IDs, verified clean
+- **ReviewSession tests & fixes track**: `reviewsession_component_tests_20260409` — 10 component tests, stale closure fix (ref pattern), keyboard/ARIA accessibility
+- **Review**: `review_20260409_post-test-followup.md` — 2 fixes applied (track metadata, progress bar), 1 carried-over low issue (session recording gap)
+- **Prior session**: `srs_review_prototype_20260409` — prototype complete, all prior review findings addressed
+- **Prior session**: `glossary_id_from_slug_20260409` — slug refactoring, verified clean
 
 ## Verification
 
-- Tests: 279 passed (23 suites)
+- Tests: 289 passed (24 suites)
 - tsc: 0 errors
 - ESLint: 0 warnings, 0 errors
 - Build: succeeds with no errors
 
 ## Next Priorities
 
-1. **ReviewSession component tests**: Add test coverage for the SRS review UI — empty state, completion state, card flip, rating flow, state updates (medium priority from review)
-2. **ReviewSession accessibility**: Add keyboard navigation and ARIA attributes to the flashcard flip interaction (low priority from review)
-3. **Session recording for review mode**: Other practice modes (flashcards, matching, speed-round) create `SessionRecord` entries; review mode does not — add for consistency
-4. **New feature work**: All 39 tracks complete — time for next feature track
-5. **`eslint-config-next` version sync**: Keep in lockstep with `next` (tech-debt.md, low priority)
-6. **Populate teacher guidance fields**: 80 daily lessons have empty fields — deferred, see `conductor/tracks/defer_teacher_guidance_fields_20260408/future-work.md`
+1. **Session recording for review mode**: Other practice modes (flashcards, matching, speed-round) create `SessionRecord` entries; review mode does not — add `recordReviewSession` in `record-session.ts` for consistency and to surface review sessions in "Recent Practice"
+2. **New feature work**: All 40 tracks complete — codebase is in excellent health, ready for next feature track
+3. **`eslint-config-next` version sync**: Keep in lockstep with `next` (tech-debt.md, low priority)
+4. **Populate teacher guidance fields**: 80 daily lessons have empty fields — deferred, see `conductor/tracks/defer_teacher_guidance_fields_20260408/future-work.md`
+5. **Multi-card test coverage**: ReviewSession tests only cover single-card sessions; add a multi-card progression test (low priority)
 
 ## Blocked / Deferred
 
