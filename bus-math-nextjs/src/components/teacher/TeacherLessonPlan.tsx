@@ -225,7 +225,7 @@ export function TeacherLessonPlan({ unitLessonPlan, dailyLesson, unit, lessonNum
                   <div className="flex items-center gap-2 mb-2">
                     <PlayCircle className="h-4 w-4 text-purple-600" />
                     <span className="text-sm font-medium text-purple-800 dark:text-purple-200">
-                      Video: {activity.video.title} ({activity.video.duration}
+                      Video: {activity.video.title} ({activity.video.duration})
                     </span>
                   </div>
                   <p className="text-sm text-purple-700 dark:text-purple-300">
