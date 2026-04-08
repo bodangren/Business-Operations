@@ -90,6 +90,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/glossary_id_from_slug_20260409/](./tracks/glossary_id_from_slug_20260409/)*
 - [x] **Track: Spaced-Repetition Review Prototype**
 *Link: [./tracks/srs_review_prototype_20260409/](./tracks/srs_review_prototype_20260409/)*
+- [ ] **Track: ReviewSession component tests and accessibility fixes**
+*Link: [./tracks/reviewsession_component_tests_20260409/](./tracks/reviewsession_component_tests_20260409/)*
 
 Foundational active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
