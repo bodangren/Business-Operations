@@ -1,13 +1,13 @@
 # Current Directive
 
-**Updated:** 2026-04-09 (post-review)
-**Status:** Post-review clean slate — all 38 tracks complete, glossary slug refactor verified
+**Updated:** 2026-04-09 (post-review, SRS prototype)
+**Status:** Post-review — all 39 tracks complete, SRS prototype audited
 
 ## What Was Just Completed
 
-- **Glossary slug track**: `glossary_id_from_slug_20260409` — replaced all 109 manual `g-XXX` IDs with slug-based IDs across glossary data and 4 test mock files
-- **Tech debt resolved**: Closed stale "Glossary IDs manually assigned" item in `tech-debt.md`
-- **Review**: `review_20260409_glossary-slugs.md` — no bugs, clean mechanical refactor
+- **SRS Review Prototype track**: `srs_review_prototype_20260409` — flashcard-style review UI at `/student/practice-hub/review` with FSRS scheduling, rating buttons, and session summary
+- **Review**: `review_20260409_srs-prototype.md` — 1 medium issue (missing component tests), 2 low issues (stale closure on rapid clicks, keyboard accessibility gap)
+- **Glossary slug track** (prior session): `glossary_id_from_slug_20260409` — slug-based IDs, verified clean
 
 ## Verification
 
@@ -18,9 +18,12 @@
 
 ## Next Priorities
 
-1. **New feature work**: All 38 tracks complete — time for next feature track
-2. **`eslint-config-next` version sync**: Keep in lockstep with `next` (tech-debt.md, low priority)
-3. **Populate teacher guidance fields**: 80 daily lessons have empty `preparation`, `facilitationGuidance`, `checksForUnderstanding`, `watchFors`, `nextSteps` fields — deferred, see `conductor/tracks/defer_teacher_guidance_fields_20260408/future-work.md`
+1. **ReviewSession component tests**: Add test coverage for the SRS review UI — empty state, completion state, card flip, rating flow, state updates (medium priority from review)
+2. **ReviewSession accessibility**: Add keyboard navigation and ARIA attributes to the flashcard flip interaction (low priority from review)
+3. **Session recording for review mode**: Other practice modes (flashcards, matching, speed-round) create `SessionRecord` entries; review mode does not — add for consistency
+4. **New feature work**: All 39 tracks complete — time for next feature track
+5. **`eslint-config-next` version sync**: Keep in lockstep with `next` (tech-debt.md, low priority)
+6. **Populate teacher guidance fields**: 80 daily lessons have empty fields — deferred, see `conductor/tracks/defer_teacher_guidance_fields_20260408/future-work.md`
 
 ## Blocked / Deferred
 
