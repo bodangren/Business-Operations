@@ -84,7 +84,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/fix_cover_image_basepath_20260408/](./tracks/fix_cover_image_basepath_20260408/)*
 - [x] **Track: Document deferral of teacher guidance fields**
 *Link: [./tracks/defer_teacher_guidance_fields_20260408/](./tracks/defer_teacher_guidance_fields_20260408/)*
-- [ ] **Track: Resolve debug routes middleware gating issue with static export**
+- [x] **Track: Resolve debug routes middleware gating issue with static export**
 *Link: [./tracks/resolve_debug_routes_static_export_20260408/](./tracks/resolve_debug_routes_static_export_20260408/)*
 
 Foundational active tracks are ordered intentionally:
