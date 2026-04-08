@@ -11,7 +11,7 @@
 - [x] ~Unit 01 lesson-data title `"Unit 1: Smart Ledger Launch"` differs from canonical `unit01.ts` title `"Smart Ledger Launch"` — resolve as part of unit-data dedup track (found in review, 2026-04-06)~ (fixed 2026-04-06)
 - [x] ~`index-records.ts` `lessonPages` array is 80 manually maintained entries — should derive from lesson-data files for single-source-of-truth (found in review, 2026-04-06)~ (fixed 2026-04-06)
 - [x] `/debug/` route pages gated behind dev-only middleware — returns 404 in production (L1 from audit, fixed 2026-04-05)
-- [ ] Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)
+- [x] ~Glossary IDs manually assigned (`g-001` through `g-103+`) — collision risk as terms grow (L2 from audit)~ (fixed 2026-04-09, replaced with slug-based IDs)
 - [x] `index-records.ts` has empty `lessonPages` array — populated with all 80 lesson entries (M4 from audit, fixed 2026-04-05)
 - [x] `StudyDueBadge` loads study data per-instance — 8 hub cards = 8 redundant localStorage reads (L1 from CTAs review, fixed 2026-04-05)
 - [ ] `eslint-config-next` version should stay in sync with `next` — now aligned to `^15.5.2` (2026-04-06)
