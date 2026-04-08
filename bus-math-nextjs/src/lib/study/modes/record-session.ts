@@ -13,6 +13,8 @@ import { processReview, createMastery, updateMastery, scheduleNewTerm, type Revi
 import type { FlashcardSession } from "./flashcards"
 import type { MatchingSession } from "./matching"
 import type { SpeedRoundSession } from "./speed-round"
+import type { ReviewRating } from "../srs"
+import { glossaryData } from "@/data/glossary"
 
 // ---------------------------------------------------------------------------
 // Session Recording — persists study mode results into local tracking state
@@ -321,6 +323,95 @@ function persistSession(data: ReturnType<typeof loadStudyData>, record: SessionR
   stats.overall_accuracy = totalAnswered > 0 ? totalCorrect / totalAnswered : 0
 
   saveStudyData(data)
+}
+
+// ---------------------------------------------------------------------------
+// Review Session Recording
+// ---------------------------------------------------------------------------
+
+interface ReviewResponse {
+  term_slug: string
+  rating: ReviewRating
+}
+
+export interface ReviewSession {
+  started_at: string
+  responses: ReviewResponse[]
+}
+
+/**
+ * Record a review session into local storage and update mastery/SRS state.
+ */
+export function recordReviewSession(
+  session: ReviewSession,
+  options: RecordSessionOptions
+): SessionRecord {
+  const data = loadStudyData()
+  const now = new Date().toISOString()
+
+  const responses: SessionResponse[] = session.responses.map((response, i) => {
+    const glossaryTerm = glossaryData.find((g) => g.slug === response.term_slug)
+    if (!glossaryTerm) throw new Error(`Glossary term not found: ${response.term_slug}`)
+
+    const isCorrect = response.rating === "good" || response.rating === "easy"
+    const rating: ReviewRating = response.rating
+
+    // Update or create mastery
+    let mastery = data.study_state.mastery_by_term.find((m) => m.term_slug === response.term_slug)
+    if (!mastery) {
+      mastery = createMastery(response.term_slug, glossaryTerm.units)
+      data.study_state.mastery_by_term.push(mastery)
+    }
+
+    const reviewResult = getOrCreateReviewEntry(data.study_state.due_review_snapshot, response.term_slug)
+    const { entry: updatedEntry, masteryDelta } = processReview(reviewResult, rating, new Date(now))
+    const masteryIdx = data.study_state.mastery_by_term.findIndex((m) => m.term_slug === response.term_slug)
+    data.study_state.mastery_by_term[masteryIdx] = updateMastery(
+      data.study_state.mastery_by_term[masteryIdx],
+      isCorrect,
+      masteryDelta
+    )
+
+    // Update due review snapshot
+    const reviewIdx = data.study_state.due_review_snapshot.findIndex((e) => e.term_slug === response.term_slug)
+    if (reviewIdx >= 0) {
+      data.study_state.due_review_snapshot[reviewIdx] = updatedEntry
+    } else {
+      data.study_state.due_review_snapshot.push(updatedEntry)
+    }
+
+    return {
+      item_id: `review-${i}`,
+      item_type: "glossary-card" as const,
+      term_slug: response.term_slug,
+      prompt_field: "term_en" as const,
+      answer_field: "def_en" as const,
+      prompt_value: glossaryTerm.term_en,
+      expected_answer: glossaryTerm.def_en,
+      student_answer: glossaryTerm.def_en,
+      is_correct: isCorrect,
+      attempt_number: 1,
+      response_time_ms: 0,
+      review_outcome: toReviewOutcome(rating),
+    }
+  })
+
+  const correctCount = responses.filter((r) => r.is_correct).length
+  const incorrectCount = responses.length - correctCount
+  const results: SessionResults = {
+    items_seen: responses.length,
+    items_answered: responses.length,
+    items_correct: correctCount,
+    items_incorrect: incorrectCount,
+    accuracy: responses.length > 0 ? correctCount / responses.length : 0,
+    retry_count: 0,
+    score: correctCount,
+    mastery_delta: computeTotalMasteryDelta(responses),
+  }
+
+  const record = buildSessionRecord("review", session.started_at, now, options, responses, results)
+  persistSession(data, record)
+  return record
 }
 
 function computeTotalMasteryDelta(responses: SessionResponse[]): number {

@@ -1,9 +1,9 @@
 # Implementation Plan: Review Session Recording
 
 ## Phase 1: Define Review Session Type and Record Function
-- [ ] Define `ReviewSession` type (if not already exists)
-- [ ] Write `recordReviewSession` function in `record-session.ts`
-- [ ] Add tests for `recordReviewSession` in `record-session.test.ts`
+- [x] Define `ReviewSession` type (if not already exists)
+- [x] Write `recordReviewSession` function in `record-session.ts`
+- [x] Add tests for `recordReviewSession` in `record-session.test.ts`
 
 ## Phase 2: Integrate with ReviewSession Component
 - [ ] Update `ReviewSession.tsx` to track session start time, ratings, and responses

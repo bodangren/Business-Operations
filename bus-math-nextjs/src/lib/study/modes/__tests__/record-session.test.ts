@@ -3,6 +3,7 @@ import {
   recordFlashcardSession,
   recordMatchingSession,
   recordSpeedRoundSession,
+  recordReviewSession,
 } from "../record-session"
 import { createFlashcardSession, markCorrect, markIncorrect } from "../flashcards"
 import { createMatchingSession, selectTerm, selectDefinition, checkMatch } from "../matching"
@@ -196,5 +197,76 @@ describe("recordSpeedRoundSession", () => {
 
     const record = recordSpeedRoundSession(session, baseOptions)
     expect(record.duration_seconds).toBeGreaterThanOrEqual(0)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// Review Session Recording Tests
+// ---------------------------------------------------------------------------
+
+import type { ReviewRating } from "@/lib/study/srs"
+
+interface ReviewResponse {
+  term_slug: string
+  rating: ReviewRating
+}
+
+interface ReviewSession {
+  started_at: string
+  responses: ReviewResponse[]
+}
+
+function createReviewSession(startedAt: string, responses: ReviewResponse[]): ReviewSession {
+  return { started_at: startedAt, responses }
+}
+
+describe("recordReviewSession", () => {
+  it("persists review session to localStorage", () => {
+    const startedAt = new Date().toISOString()
+    const session = createReviewSession(startedAt, [
+      { term_slug: "accounting-equation", rating: "good" },
+      { term_slug: "assets", rating: "again" },
+    ])
+
+    const record = recordReviewSession(session, baseOptions)
+    expect(record.session_id).toBeTruthy()
+    expect(record.activity.activity_type).toBe("review")
+    expect(record.results.items_answered).toBe(2)
+    expect(record.results.items_correct).toBe(1)
+    expect(record.results.items_incorrect).toBe(1)
+  })
+
+  it("updates mastery records in local storage", () => {
+    const startedAt = new Date().toISOString()
+    const session = createReviewSession(startedAt, [
+      { term_slug: "accounting-equation", rating: "good" },
+    ])
+
+    recordReviewSession(session, baseOptions)
+    const data = loadStudyData()
+    expect(data.study_state.mastery_by_term.length).toBeGreaterThan(0)
+  })
+
+  it("creates due review entries", () => {
+    const startedAt = new Date().toISOString()
+    const session = createReviewSession(startedAt, [
+      { term_slug: "accounting-equation", rating: "good" },
+    ])
+
+    recordReviewSession(session, baseOptions)
+    const data = loadStudyData()
+    expect(data.study_state.due_review_snapshot.length).toBeGreaterThan(0)
+  })
+
+  it("increments aggregate stats", () => {
+    const startedAt = new Date().toISOString()
+    const session = createReviewSession(startedAt, [
+      { term_slug: "accounting-equation", rating: "good" },
+    ])
+
+    recordReviewSession(session, baseOptions)
+    const data = loadStudyData()
+    expect(data.study_state.aggregate_stats.total_sessions).toBe(1)
+    expect(data.study_state.aggregate_stats.total_questions_answered).toBe(1)
   })
 })
