@@ -94,12 +94,12 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={unit.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
+                            className="group/menu-link block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none group-hover:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none group-hover/menu-link:text-accent-foreground">
                               {unit.label}
                             </div>
-                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover:text-accent-foreground">
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover/menu-link:text-accent-foreground">
                               {unit.description}
                             </p>
                           </Link>
@@ -119,12 +119,12 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={link.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
+                            className="group/menu-link block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none group-hover:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none group-hover/menu-link:text-accent-foreground">
                               {link.label}
                             </div>
-                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover:text-accent-foreground">
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover/menu-link:text-accent-foreground">
                               {link.description}
                             </p>
                           </Link>
@@ -136,12 +136,12 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={unit.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
+                            className="group/menu-link block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none group-hover:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none group-hover/menu-link:text-accent-foreground">
                               {unit.label}
                             </div>
-                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover:text-accent-foreground">
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover/menu-link:text-accent-foreground">
                               {unit.description}
                             </p>
                           </Link>
