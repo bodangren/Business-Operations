@@ -12,7 +12,7 @@ import type { GlossaryEntry } from "@/types/glossary"
 
 const mockTerms: GlossaryEntry[] = [
   {
-    id: "g-001",
+    id: "accounting-equation",
     slug: "accounting-equation",
     term_en: "Accounting Equation",
     term_zh: "会计方程式",
@@ -22,7 +22,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-002",
+    id: "assets",
     slug: "assets",
     term_en: "Assets",
     term_zh: "资产",
@@ -32,7 +32,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-003",
+    id: "liabilities",
     slug: "liabilities",
     term_en: "Liabilities",
     term_zh: "负债",

@@ -42,7 +42,7 @@ beforeEach(() => {
 
 const mockTerms: GlossaryEntry[] = [
   {
-    id: "g-001",
+    id: "accounting-equation",
     slug: "accounting-equation",
     term_en: "Accounting Equation",
     term_zh: "会计方程式",
@@ -52,7 +52,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-002",
+    id: "assets",
     slug: "assets",
     term_en: "Assets",
     term_zh: "资产",
@@ -62,7 +62,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-003",
+    id: "liabilities",
     slug: "liabilities",
     term_en: "Liabilities",
     term_zh: "负债",
@@ -72,7 +72,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-004",
+    id: "equity",
     slug: "equity",
     term_en: "Owner's Equity",
     term_zh: "所有者权益",
@@ -82,7 +82,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-005",
+    id: "debits-and-credits",
     slug: "debits-and-credits",
     term_en: "Debits and Credits",
     term_zh: "借方和贷方",
@@ -92,7 +92,7 @@ const mockTerms: GlossaryEntry[] = [
     topics: ["accounting"],
   },
   {
-    id: "g-006",
+    id: "journal-entry",
     slug: "journal-entry",
     term_en: "Journal Entry",
     term_zh: "日记账分录",

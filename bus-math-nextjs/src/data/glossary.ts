@@ -5,7 +5,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 01: Smart Ledger Launch
   // =====================
   {
-    id: "g-001",
+    id: "accounting-equation",
     slug: "accounting-equation",
     term_en: "Accounting Equation",
     term_zh: "会计方程式",
@@ -17,7 +17,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["assets", "liabilities", "equity"],
   },
   {
-    id: "g-002",
+    id: "assets",
     slug: "assets",
     term_en: "Assets",
     term_zh: "资产",
@@ -28,7 +28,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["liabilities", "equity", "accounting-equation"],
   },
   {
-    id: "g-003",
+    id: "liabilities",
     slug: "liabilities",
     term_en: "Liabilities",
     term_zh: "负债",
@@ -39,7 +39,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["assets", "equity", "accounting-equation"],
   },
   {
-    id: "g-004",
+    id: "equity",
     slug: "equity",
     term_en: "Owner's Equity",
     term_zh: "所有者权益",
@@ -50,7 +50,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["assets", "liabilities", "accounting-equation"],
   },
   {
-    id: "g-005",
+    id: "debits-and-credits",
     slug: "debits-and-credits",
     term_en: "Debits and Credits",
     term_zh: "借方和贷方",
@@ -62,7 +62,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["journal-entry", "t-account", "double-entry-bookkeeping"],
   },
   {
-    id: "g-006",
+    id: "double-entry-bookkeeping",
     slug: "double-entry-bookkeeping",
     term_en: "Double-Entry Bookkeeping",
     term_zh: "复式记账法",
@@ -74,7 +74,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["debits-and-credits", "journal-entry", "trial-balance"],
   },
   {
-    id: "g-007",
+    id: "journal-entry",
     slug: "journal-entry",
     term_en: "Journal Entry",
     term_zh: "日记账分录",
@@ -86,7 +86,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["debits-and-credits", "ledger", "double-entry-bookkeeping"],
   },
   {
-    id: "g-008",
+    id: "ledger",
     slug: "ledger",
     term_en: "Ledger",
     term_zh: "分类账",
@@ -98,7 +98,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["journal-entry", "trial-balance", "chart-of-accounts"],
   },
   {
-    id: "g-009",
+    id: "trial-balance",
     slug: "trial-balance",
     term_en: "Trial Balance",
     term_zh: "试算平衡表",
@@ -109,7 +109,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["ledger", "debits-and-credits", "double-entry-bookkeeping"],
   },
   {
-    id: "g-010",
+    id: "chart-of-accounts",
     slug: "chart-of-accounts",
     term_en: "Chart of Accounts",
     term_zh: "会计科目表",
@@ -120,7 +120,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["ledger", "journal-entry"],
   },
   {
-    id: "g-011",
+    id: "t-account",
     slug: "t-account",
     term_en: "T-Account",
     term_zh: "T形账户",
@@ -131,7 +131,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["debits-and-credits", "ledger", "journal-entry"],
   },
   {
-    id: "g-012",
+    id: "revenue",
     slug: "revenue",
     term_en: "Revenue",
     term_zh: "收入",
@@ -143,7 +143,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["expenses", "net-income"],
   },
   {
-    id: "g-013",
+    id: "expenses",
     slug: "expenses",
     term_en: "Expenses",
     term_zh: "费用",
@@ -154,7 +154,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["revenue", "net-income"],
   },
   {
-    id: "g-014",
+    id: "conditional-formatting",
     slug: "conditional-formatting",
     term_en: "Conditional Formatting",
     term_zh: "条件格式",
@@ -165,7 +165,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["sumif", "xlookup"],
   },
   {
-    id: "g-015",
+    id: "sumif",
     slug: "sumif",
     term_en: "SUMIF",
     term_zh: "条件求和函数",
@@ -177,7 +177,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["conditional-formatting", "xlookup"],
   },
   {
-    id: "g-016",
+    id: "xlookup",
     slug: "xlookup",
     term_en: "XLOOKUP",
     term_zh: "XLOOKUP查找函数",
@@ -189,7 +189,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["sumif", "iferror"],
   },
   {
-    id: "g-017",
+    id: "iferror",
     slug: "iferror",
     term_en: "IFERROR",
     term_zh: "IFERROR错误处理函数",
@@ -200,7 +200,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["xlookup", "data-validation"],
   },
   {
-    id: "g-018",
+    id: "data-validation",
     slug: "data-validation",
     term_en: "Data Validation",
     term_zh: "数据验证",
@@ -215,7 +215,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 02: Month-End Wizard
   // =====================
   {
-    id: "g-019",
+    id: "accruals",
     slug: "accruals",
     term_en: "Accruals",
     term_zh: "应计项目",
@@ -227,7 +227,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["deferrals", "adjusting-entries", "matching-principle"],
   },
   {
-    id: "g-020",
+    id: "deferrals",
     slug: "deferrals",
     term_en: "Deferrals",
     term_zh: "递延项目",
@@ -239,7 +239,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["accruals", "adjusting-entries", "prepaid-expenses"],
   },
   {
-    id: "g-021",
+    id: "adjusting-entries",
     slug: "adjusting-entries",
     term_en: "Adjusting Entries",
     term_zh: "调整分录",
@@ -250,7 +250,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["accruals", "deferrals", "closing-entries"],
   },
   {
-    id: "g-022",
+    id: "closing-entries",
     slug: "closing-entries",
     term_en: "Closing Entries",
     term_zh: "结账分录",
@@ -261,7 +261,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["temporary-accounts", "permanent-accounts", "retained-earnings"],
   },
   {
-    id: "g-023",
+    id: "temporary-accounts",
     slug: "temporary-accounts",
     term_en: "Temporary Accounts",
     term_zh: "临时账户",
@@ -273,7 +273,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["permanent-accounts", "closing-entries"],
   },
   {
-    id: "g-024",
+    id: "permanent-accounts",
     slug: "permanent-accounts",
     term_en: "Permanent Accounts",
     term_zh: "永久账户",
@@ -285,7 +285,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["temporary-accounts"],
   },
   {
-    id: "g-025",
+    id: "gaap",
     slug: "gaap",
     term_en: "GAAP",
     term_zh: "公认会计原则",
@@ -296,7 +296,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["accruals", "matching-principle", "revenue-recognition"],
   },
   {
-    id: "g-026",
+    id: "depreciation",
     slug: "depreciation",
     term_en: "Depreciation",
     term_zh: "折旧",
@@ -308,7 +308,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["straight-line-depreciation", "accumulated-depreciation"],
   },
   {
-    id: "g-027",
+    id: "straight-line-depreciation",
     slug: "straight-line-depreciation",
     term_en: "Straight-Line Depreciation",
     term_zh: "直线折旧法",
@@ -320,7 +320,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["depreciation", "accumulated-depreciation"],
   },
   {
-    id: "g-028",
+    id: "prepaid-expenses",
     slug: "prepaid-expenses",
     term_en: "Prepaid Expenses",
     term_zh: "预付费用",
@@ -331,7 +331,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["deferrals", "adjusting-entries"],
   },
   {
-    id: "g-029",
+    id: "unearned-revenue",
     slug: "unearned-revenue",
     term_en: "Unearned Revenue",
     term_zh: "未实现收入",
@@ -343,7 +343,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["deferrals", "adjusting-entries", "revenue-recognition"],
   },
   {
-    id: "g-030",
+    id: "accumulated-depreciation",
     slug: "accumulated-depreciation",
     term_en: "Accumulated Depreciation",
     term_zh: "累计折旧",
@@ -354,7 +354,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["depreciation", "straight-line-depreciation"],
   },
   {
-    id: "g-031",
+    id: "named-ranges",
     slug: "named-ranges",
     term_en: "Named Ranges",
     term_zh: "命名区域",
@@ -365,7 +365,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["sumif", "xlookup"],
   },
   {
-    id: "g-032",
+    id: "macros",
     slug: "macros",
     term_en: "Macros",
     term_zh: "宏",
@@ -376,7 +376,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["vba"],
   },
   {
-    id: "g-033",
+    id: "vba",
     slug: "vba",
     term_en: "VBA",
     term_zh: "VBA编程语言",
@@ -387,7 +387,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["macros"],
   },
   {
-    id: "g-034",
+    id: "switch-function",
     slug: "switch-function",
     term_en: "SWITCH Function",
     term_zh: "SWITCH函数",
@@ -398,7 +398,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["ifs-function", "xlookup"],
   },
   {
-    id: "g-035",
+    id: "ifs-function",
     slug: "ifs-function",
     term_en: "IFS Function",
     term_zh: "IFS函数",
@@ -409,7 +409,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["switch-function", "iferror"],
   },
   {
-    id: "g-036",
+    id: "net-income",
     slug: "net-income",
     term_en: "Net Income",
     term_zh: "净利润",
@@ -421,7 +421,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["revenue", "expenses", "retained-earnings"],
   },
   {
-    id: "g-037",
+    id: "retained-earnings",
     slug: "retained-earnings",
     term_en: "Retained Earnings",
     term_zh: "留存收益",
@@ -436,7 +436,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 03: Three-Statement Storyboard
   // =====================
   {
-    id: "g-038",
+    id: "income-statement",
     slug: "income-statement",
     term_en: "Income Statement",
     term_zh: "利润表",
@@ -448,7 +448,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["balance-sheet", "cash-flow-statement", "revenue", "expenses"],
   },
   {
-    id: "g-039",
+    id: "balance-sheet",
     slug: "balance-sheet",
     term_en: "Balance Sheet",
     term_zh: "资产负债表",
@@ -460,7 +460,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["income-statement", "cash-flow-statement", "accounting-equation"],
   },
   {
-    id: "g-040",
+    id: "cash-flow-statement",
     slug: "cash-flow-statement",
     term_en: "Cash Flow Statement",
     term_zh: "现金流量表",
@@ -472,7 +472,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["income-statement", "balance-sheet", "operating-activities"],
   },
   {
-    id: "g-041",
+    id: "operating-activities",
     slug: "operating-activities",
     term_en: "Operating Activities",
     term_zh: "经营活动",
@@ -483,7 +483,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["cash-flow-statement", "investing-activities", "financing-activities"],
   },
   {
-    id: "g-042",
+    id: "investing-activities",
     slug: "investing-activities",
     term_en: "Investing Activities",
     term_zh: "投资活动",
@@ -494,7 +494,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["cash-flow-statement", "operating-activities", "financing-activities"],
   },
   {
-    id: "g-043",
+    id: "financing-activities",
     slug: "financing-activities",
     term_en: "Financing Activities",
     term_zh: "筹资活动",
@@ -505,7 +505,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["cash-flow-statement", "operating-activities", "investing-activities"],
   },
   {
-    id: "g-044",
+    id: "current-ratio",
     slug: "current-ratio",
     term_en: "Current Ratio",
     term_zh: "流动比率",
@@ -516,7 +516,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["balance-sheet"],
   },
   {
-    id: "g-045",
+    id: "return-on-assets",
     slug: "return-on-assets",
     term_en: "Return on Assets (ROA)",
     term_zh: "资产回报率",
@@ -527,7 +527,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["net-income", "balance-sheet"],
   },
   {
-    id: "g-046",
+    id: "index-match",
     slug: "index-match",
     term_en: "INDEX/MATCH",
     term_zh: "INDEX/MATCH函数组合",
@@ -538,7 +538,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["xlookup", "named-ranges"],
   },
   {
-    id: "g-047",
+    id: "kpi-dashboard",
     slug: "kpi-dashboard",
     term_en: "KPI Dashboard",
     term_zh: "关键绩效指标仪表板",
@@ -549,7 +549,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["current-ratio", "return-on-assets"],
   },
   {
-    id: "g-048",
+    id: "revenue-recognition",
     slug: "revenue-recognition",
     term_en: "Revenue Recognition",
     term_zh: "收入确认",
@@ -560,7 +560,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["gaap", "matching-principle", "accruals"],
   },
   {
-    id: "g-049",
+    id: "matching-principle",
     slug: "matching-principle",
     term_en: "Matching Principle",
     term_zh: "配比原则",
@@ -575,7 +575,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 04: Data-Driven Café
   // =====================
   {
-    id: "g-050",
+    id: "mean",
     slug: "mean",
     term_en: "Mean",
     term_zh: "平均数",
@@ -587,7 +587,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["median", "standard-deviation"],
   },
   {
-    id: "g-051",
+    id: "median",
     slug: "median",
     term_en: "Median",
     term_zh: "中位数",
@@ -598,7 +598,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["mean", "standard-deviation"],
   },
   {
-    id: "g-052",
+    id: "standard-deviation",
     slug: "standard-deviation",
     term_en: "Standard Deviation",
     term_zh: "标准差",
@@ -610,7 +610,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["mean", "z-score", "outliers"],
   },
   {
-    id: "g-053",
+    id: "z-score",
     slug: "z-score",
     term_en: "Z-Score",
     term_zh: "Z分数",
@@ -621,7 +621,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["standard-deviation", "outliers"],
   },
   {
-    id: "g-054",
+    id: "outliers",
     slug: "outliers",
     term_en: "Outliers",
     term_zh: "异常值",
@@ -632,7 +632,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["z-score", "standard-deviation", "data-cleaning"],
   },
   {
-    id: "g-055",
+    id: "linear-regression",
     slug: "linear-regression",
     term_en: "Linear Regression",
     term_zh: "线性回归",
@@ -644,7 +644,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["forecast-linear", "descriptive-statistics"],
   },
   {
-    id: "g-056",
+    id: "forecast-linear",
     slug: "forecast-linear",
     term_en: "FORECAST.LINEAR",
     term_zh: "FORECAST.LINEAR预测函数",
@@ -655,7 +655,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["linear-regression", "descriptive-statistics"],
   },
   {
-    id: "g-057",
+    id: "data-cleaning",
     slug: "data-cleaning",
     term_en: "Data Cleaning",
     term_zh: "数据清洗",
@@ -667,7 +667,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["trim-function", "text-to-columns", "outliers"],
   },
   {
-    id: "g-058",
+    id: "text-to-columns",
     slug: "text-to-columns",
     term_en: "Text to Columns",
     term_zh: "分列功能",
@@ -678,7 +678,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["data-cleaning", "trim-function"],
   },
   {
-    id: "g-059",
+    id: "trim-function",
     slug: "trim-function",
     term_en: "TRIM Function",
     term_zh: "TRIM函数",
@@ -689,7 +689,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["data-cleaning", "text-to-columns"],
   },
   {
-    id: "g-060",
+    id: "descriptive-statistics",
     slug: "descriptive-statistics",
     term_en: "Descriptive Statistics",
     term_zh: "描述性统计",
@@ -700,7 +700,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["mean", "median", "standard-deviation"],
   },
   {
-    id: "g-061",
+    id: "histogram",
     slug: "histogram",
     term_en: "Histogram",
     term_zh: "直方图",
@@ -711,7 +711,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["descriptive-statistics", "box-plot"],
   },
   {
-    id: "g-062",
+    id: "box-plot",
     slug: "box-plot",
     term_en: "Box Plot",
     term_zh: "箱线图",
@@ -722,7 +722,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["histogram", "outliers", "median"],
   },
   {
-    id: "g-063",
+    id: "scatterplot",
     slug: "scatterplot",
     term_en: "Scatterplot",
     term_zh: "散点图",
@@ -733,7 +733,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["linear-regression", "forecast-linear"],
   },
   {
-    id: "g-064",
+    id: "pos-data",
     slug: "pos-data",
     term_en: "POS Data",
     term_zh: "销售点数据",
@@ -745,7 +745,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["data-cleaning", "descriptive-statistics"],
   },
   {
-    id: "g-065",
+    id: "analysis-toolpak",
     slug: "analysis-toolpak",
     term_en: "Analysis ToolPak",
     term_zh: "分析工具库",
@@ -756,7 +756,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["descriptive-statistics", "linear-regression", "histogram"],
   },
   {
-    id: "g-066",
+    id: "waste-percentage",
     slug: "waste-percentage",
     term_en: "Waste Percentage",
     term_zh: "浪费率",
@@ -771,7 +771,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 05: PayDay Simulator
   // =====================
   {
-    id: "g-067",
+    id: "gross-pay",
     slug: "gross-pay",
     term_en: "Gross Pay",
     term_zh: "应发工资",
@@ -782,7 +782,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["net-pay", "withholdings"],
   },
   {
-    id: "g-068",
+    id: "net-pay",
     slug: "net-pay",
     term_en: "Net Pay",
     term_zh: "实发工资",
@@ -794,7 +794,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["gross-pay", "withholdings"],
   },
   {
-    id: "g-069",
+    id: "withholdings",
     slug: "withholdings",
     term_en: "Withholdings",
     term_zh: "预扣款",
@@ -806,7 +806,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["gross-pay", "net-pay", "tax-tables"],
   },
   {
-    id: "g-070",
+    id: "tax-tables",
     slug: "tax-tables",
     term_en: "Tax Tables",
     term_zh: "税率表",
@@ -817,7 +817,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["withholdings", "gross-pay"],
   },
   {
-    id: "g-071",
+    id: "payroll-register",
     slug: "payroll-register",
     term_en: "Payroll Register",
     term_zh: "工资登记表",
@@ -828,7 +828,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["gross-pay", "net-pay", "bank-reconciliation"],
   },
   {
-    id: "g-072",
+    id: "bank-reconciliation",
     slug: "bank-reconciliation",
     term_en: "Bank Reconciliation",
     term_zh: "银行对账",
@@ -839,7 +839,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["payroll-register", "cash-flow"],
   },
   {
-    id: "g-073",
+    id: "overtime-pay",
     slug: "overtime-pay",
     term_en: "Overtime Pay",
     term_zh: "加班工资",
@@ -851,7 +851,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["gross-pay", "hourly-wage"],
   },
   {
-    id: "g-074",
+    id: "hourly-wage",
     slug: "hourly-wage",
     term_en: "Hourly Wage",
     term_zh: "时薪",
@@ -862,7 +862,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["gross-pay", "overtime-pay", "salaried-employee"],
   },
   {
-    id: "g-075",
+    id: "salaried-employee",
     slug: "salaried-employee",
     term_en: "Salaried Employee",
     term_zh: "受薪员工",
@@ -873,7 +873,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["hourly-wage", "gross-pay"],
   },
   {
-    id: "g-076",
+    id: "employer-tax-contribution",
     slug: "employer-tax-contribution",
     term_en: "Employer Tax Contribution",
     term_zh: "雇主税费",
@@ -884,7 +884,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["withholdings", "tax-tables"],
   },
   {
-    id: "g-077",
+    id: "cash-flow",
     slug: "cash-flow",
     term_en: "Cash Flow",
     term_zh: "现金流量",
@@ -899,7 +899,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 06: PriceLab Challenge
   // =====================
   {
-    id: "g-078",
+    id: "markup",
     slug: "markup",
     term_en: "Markup",
     term_zh: "加价率",
@@ -910,7 +910,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["margin", "break-even-point"],
   },
   {
-    id: "g-079",
+    id: "margin",
     slug: "margin",
     term_en: "Margin",
     term_zh: "利润率",
@@ -922,7 +922,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["markup", "break-even-point"],
   },
   {
-    id: "g-080",
+    id: "break-even-point",
     slug: "break-even-point",
     term_en: "Break-Even Point",
     term_zh: "盈亏平衡点",
@@ -933,7 +933,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["markup", "margin", "cvp-analysis"],
   },
   {
-    id: "g-081",
+    id: "cvp-analysis",
     slug: "cvp-analysis",
     term_en: "CVP Analysis",
     term_zh: "本量利分析",
@@ -945,7 +945,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["break-even-point", "fixed-costs", "variable-costs"],
   },
   {
-    id: "g-082",
+    id: "fixed-costs",
     slug: "fixed-costs",
     term_en: "Fixed Costs",
     term_zh: "固定成本",
@@ -956,7 +956,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["variable-costs", "cvp-analysis", "break-even-point"],
   },
   {
-    id: "g-083",
+    id: "variable-costs",
     slug: "variable-costs",
     term_en: "Variable Costs",
     term_zh: "变动成本",
@@ -967,7 +967,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fixed-costs", "cvp-analysis", "break-even-point"],
   },
   {
-    id: "g-084",
+    id: "contribution-margin",
     slug: "contribution-margin",
     term_en: "Contribution Margin",
     term_zh: "边际贡献",
@@ -978,7 +978,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["cvp-analysis", "break-even-point", "variable-costs"],
   },
   {
-    id: "g-085",
+    id: "goal-seek",
     slug: "goal-seek",
     term_en: "Goal Seek",
     term_zh: "单变量求解",
@@ -989,7 +989,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["data-table", "cvp-analysis"],
   },
   {
-    id: "g-086",
+    id: "data-table",
     slug: "data-table",
     term_en: "Data Table",
     term_zh: "数据表",
@@ -1001,7 +1001,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["goal-seek", "cvp-analysis"],
   },
   {
-    id: "g-087",
+    id: "power-query",
     slug: "power-query",
     term_en: "Power Query",
     term_zh: "Power Query数据查询",
@@ -1016,7 +1016,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 07: Inventory Accounting
   // =====================
   {
-    id: "g-088",
+    id: "fifo",
     slug: "fifo",
     term_en: "FIFO",
     term_zh: "先进先出法",
@@ -1028,7 +1028,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["lifo", "weighted-average", "cost-of-goods-sold"],
   },
   {
-    id: "g-089",
+    id: "lifo",
     slug: "lifo",
     term_en: "LIFO",
     term_zh: "后进先出法",
@@ -1040,7 +1040,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fifo", "weighted-average", "cost-of-goods-sold"],
   },
   {
-    id: "g-090",
+    id: "weighted-average",
     slug: "weighted-average",
     term_en: "Weighted Average Cost",
     term_zh: "加权平均成本法",
@@ -1052,7 +1052,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fifo", "lifo", "cost-of-goods-sold"],
   },
   {
-    id: "g-091",
+    id: "specific-identification",
     slug: "specific-identification",
     term_en: "Specific Identification",
     term_zh: "个别认定法",
@@ -1063,7 +1063,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fifo", "lifo", "cost-of-goods-sold"],
   },
   {
-    id: "g-092",
+    id: "cost-of-goods-sold",
     slug: "cost-of-goods-sold",
     term_en: "Cost of Goods Sold (COGS)",
     term_zh: "销货成本",
@@ -1075,7 +1075,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fifo", "lifo", "inventory-turnover"],
   },
   {
-    id: "g-093",
+    id: "ending-inventory",
     slug: "ending-inventory",
     term_en: "Ending Inventory",
     term_zh: "期末存货",
@@ -1086,7 +1086,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["cost-of-goods-sold", "fifo", "lifo"],
   },
   {
-    id: "g-094",
+    id: "inventory-turnover",
     slug: "inventory-turnover",
     term_en: "Inventory Turnover Ratio",
     term_zh: "存货周转率",
@@ -1101,7 +1101,7 @@ export const glossaryData: GlossaryEntry[] = [
   // UNIT 08: Fixed Assets and Depreciation
   // =====================
   {
-    id: "g-095",
+    id: "fixed-assets",
     slug: "fixed-assets",
     term_en: "Fixed Assets",
     term_zh: "固定资产",
@@ -1113,7 +1113,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["depreciation", "accumulated-depreciation", "salvage-value"],
   },
   {
-    id: "g-096",
+    id: "capital-expenditure",
     slug: "capital-expenditure",
     term_en: "Capital Expenditure",
     term_zh: "资本性支出",
@@ -1125,7 +1125,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fixed-assets", "depreciation"],
   },
   {
-    id: "g-097",
+    id: "useful-life",
     slug: "useful-life",
     term_en: "Useful Life",
     term_zh: "使用寿命",
@@ -1136,7 +1136,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["depreciation", "salvage-value", "straight-line-depreciation"],
   },
   {
-    id: "g-098",
+    id: "salvage-value",
     slug: "salvage-value",
     term_en: "Salvage Value",
     term_zh: "残值",
@@ -1148,7 +1148,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["useful-life", "depreciation", "straight-line-depreciation"],
   },
   {
-    id: "g-099",
+    id: "double-declining-balance",
     slug: "double-declining-balance",
     term_en: "Double-Declining Balance",
     term_zh: "双倍余额递减法",
@@ -1160,7 +1160,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["straight-line-depreciation", "depreciation", "book-value"],
   },
   {
-    id: "g-100",
+    id: "book-value",
     slug: "book-value",
     term_en: "Book Value",
     term_zh: "账面价值",
@@ -1171,7 +1171,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["accumulated-depreciation", "depreciation", "fixed-assets"],
   },
   {
-    id: "g-101",
+    id: "asset-register",
     slug: "asset-register",
     term_en: "Asset Register",
     term_zh: "资产登记簿",
@@ -1182,7 +1182,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["fixed-assets", "depreciation", "book-value"],
   },
   {
-    id: "g-102",
+    id: "depreciation-schedule",
     slug: "depreciation-schedule",
     term_en: "Depreciation Schedule",
     term_zh: "折旧明细表",
@@ -1197,7 +1197,7 @@ export const glossaryData: GlossaryEntry[] = [
   // CROSS-UNIT / GENERAL TERMS
   // =====================
   {
-    id: "g-103",
+    id: "working-capital",
     slug: "working-capital",
     term_en: "Working Capital",
     term_zh: "营运资金",
@@ -1208,7 +1208,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["current-ratio", "balance-sheet"],
   },
   {
-    id: "g-104",
+    id: "audit",
     slug: "audit",
     term_en: "Audit",
     term_zh: "审计",
@@ -1219,7 +1219,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["trial-balance", "gaap"],
   },
   {
-    id: "g-105",
+    id: "excel-table",
     slug: "excel-table",
     term_en: "Excel Table",
     term_zh: "Excel表",
@@ -1231,7 +1231,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["named-ranges", "sumif", "xlookup"],
   },
   {
-    id: "g-106",
+    id: "sumproduct",
     slug: "sumproduct",
     term_en: "SUMPRODUCT",
     term_zh: "SUMPRODUCT函数",
@@ -1242,7 +1242,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["sumif", "named-ranges"],
   },
   {
-    id: "g-107",
+    id: "contra-account",
     slug: "contra-account",
     term_en: "Contra Account",
     term_zh: "抵减账户",
@@ -1253,7 +1253,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["accumulated-depreciation", "book-value"],
   },
   {
-    id: "g-108",
+    id: "accounting-period",
     slug: "accounting-period",
     term_en: "Accounting Period",
     term_zh: "会计期间",
@@ -1264,7 +1264,7 @@ export const glossaryData: GlossaryEntry[] = [
     related: ["closing-entries", "adjusting-entries"],
   },
   {
-    id: "g-109",
+    id: "sumifs",
     slug: "sumifs",
     term_en: "SUMIFS",
     term_zh: "多条件求和函数",
