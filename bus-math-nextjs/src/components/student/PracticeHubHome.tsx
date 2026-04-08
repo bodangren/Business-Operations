@@ -148,7 +148,7 @@ export default function PracticeHubHome() {
             </Card>
           </div>
           <Button asChild>
-            <Link href={`/student/practice-hub/flashcards${unitQuery}`}>
+            <Link href={`/student/practice-hub/review`}>
               Start Review Session
             </Link>
           </Button>

@@ -88,7 +88,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/resolve_debug_routes_static_export_20260408/](./tracks/resolve_debug_routes_static_export_20260408/)*
 - [x] **Track: Replace manually assigned glossary IDs with slugs**
 *Link: [./tracks/glossary_id_from_slug_20260409/](./tracks/glossary_id_from_slug_20260409/)*
-- [ ] **Track: Spaced-Repetition Review Prototype**
+- [~] **Track: Spaced-Repetition Review Prototype**
 *Link: [./tracks/srs_review_prototype_20260409/](./tracks/srs_review_prototype_20260409/)*
 
 Foundational active tracks are ordered intentionally:
