@@ -34,6 +34,6 @@
 - Storage migration v1.x passthrough
 - **Populate teacher guidance fields** — deferred to future track (see `conductor/tracks/defer_teacher_guidance_fields_20260408/future-work.md`)
 
-## All Active Tracks Complete?
+## All Active Tracks Complete
 
-No — `defer_teacher_guidance_fields_20260408` is in progress.
+Every track in the registry is marked `[x]`. The codebase is in a clean state with no in-progress work.

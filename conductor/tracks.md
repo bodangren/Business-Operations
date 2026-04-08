@@ -82,7 +82,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/typescript_build_guardrails_20260407/](./tracks/typescript_build_guardrails_20260407/)*
 - [x] **Track: Fix broken cover image on git pages**
 *Link: [./tracks/fix_cover_image_basepath_20260408/](./tracks/fix_cover_image_basepath_20260408/)*
-- [ ] **Track: Document deferral of teacher guidance fields**
+- [x] **Track: Document deferral of teacher guidance fields**
 *Link: [./tracks/defer_teacher_guidance_fields_20260408/](./tracks/defer_teacher_guidance_fields_20260408/)*
 
 Foundational active tracks are ordered intentionally:
