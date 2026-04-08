@@ -2,10 +2,10 @@
 
 ## Phase 1: Audit Current Detail Page and Data Model
 
-- [ ] Confirm the exact failure mode in the teacher lesson detail route and renderer
-- [ ] Inventory the real teacher lesson-plan data structures available in `src/data/teacher/unitXX-lesson-plan.ts`
-- [ ] Compare the current rendered experience against the target operational-lesson-plan standard
-- [ ] Identify any type gaps or missing fields needed to support lesson-specific teacher guidance cleanly
+- [x] Confirm the exact failure mode in the teacher lesson detail route and renderer
+- [x] Inventory the real teacher lesson-plan data structures available in `src/data/teacher/unitXX-lesson-plan.ts`
+- [x] Compare the current rendered experience against the target operational-lesson-plan standard
+- [x] Identify any type gaps or missing fields needed to support lesson-specific teacher guidance cleanly
 
 ## Phase 2: Replace Mocked Rendering with Real Lesson Data
 
