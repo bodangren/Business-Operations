@@ -19,15 +19,20 @@ import { useStudyData } from "@/contexts/StudyDataContext"
 export default function ReviewSession() {
   const { data, mutate } = useStudyData()
   const [currentIndex, setCurrentIndex] = useState(0)
+  const currentIndexRef = React.useRef(currentIndex)
   const [isFlipped, setIsFlipped] = useState(false)
+
+  React.useEffect(() => {
+    currentIndexRef.current = currentIndex
+  }, [currentIndex])
 
   const handleRating = useCallback((rating: ReviewRating) => {
     if (!data) return
     const dueEntries = getDueTerms(data.study_state.due_review_snapshot)
-    const isComplete = currentIndex >= dueEntries.length
-    if (isComplete) return
+    const index = currentIndexRef.current
+    const entry = dueEntries[index]
+    if (!entry) return
 
-    const entry = dueEntries[currentIndex]
     const now = new Date()
     const { entry: updatedEntry, masteryDelta } = processReview(entry, rating, now)
 
@@ -59,7 +64,7 @@ export default function ReviewSession() {
 
     setCurrentIndex((prev) => prev + 1)
     setIsFlipped(false)
-  }, [data, currentIndex, mutate])
+  }, [data, mutate])
 
   if (!data) {
     return (
@@ -190,19 +195,32 @@ export default function ReviewSession() {
               <div
                 className="relative w-full min-h-[280px] cursor-pointer mb-4"
                 style={{ perspective: "800px" }}
-                onClick={() => setIsFlipped((prev) => !prev)}
               >
-                <div
-                  className="relative w-full min-h-[280px] transition-transform duration-500"
+                <button
+                  className="relative w-full min-h-[280px] transition-transform duration-500 text-left"
                   style={{
                     transformStyle: "preserve-3d",
                     transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+                    background: "transparent",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
                   }}
+                  onClick={() => setIsFlipped((prev) => !prev)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault()
+                      setIsFlipped((prev) => !prev)
+                    }
+                  }}
+                  aria-label={`Flashcard for ${glossaryTerm.term_en}. Click or press Enter/Space to flip.`}
+                  aria-live="polite"
                 >
                   {/* Front */}
                   <div
                     className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary to-accent text-primary-foreground"
                     style={{ backfaceVisibility: "hidden" }}
+                    aria-hidden={isFlipped}
                   >
                     <div className="text-xs uppercase tracking-widest opacity-60 mb-3">
                       Term
@@ -216,6 +234,7 @@ export default function ReviewSession() {
                   <div
                     className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-8 bg-card border"
                     style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                    aria-hidden={!isFlipped}
                   >
                     <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
                       Definition
@@ -225,7 +244,7 @@ export default function ReviewSession() {
                       <div className="text-sm text-muted-foreground mt-3 text-center">{glossaryTerm.def_zh}</div>
                     )}
                   </div>
-                </div>
+                </button>
               </div>
             )}
 
