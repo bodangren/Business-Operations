@@ -1,17 +1,17 @@
 # Implementation Plan: Teacher and Capstone UI Audit
 
-## Phase 1: Audit Teacher Routes
+## Phase 1: Audit Teacher Routes [x]
 
-- [ ] Enumerate teacher hub, unit, lesson, classroom-routine, and course-overview routes in scope
-- [ ] Review each teacher route on desktop and mobile and log concrete defects
-- [ ] Identify repeated issues tied to shared teacher layout/components
-- [ ] Prioritize teacher-route fixes by severity and reuse
+- [x] Enumerate teacher hub, unit, lesson, classroom-routine, and course-overview routes in scope
+- [x] Review each teacher route on desktop and mobile and log concrete defects
+- [x] Identify repeated issues tied to shared teacher layout/components
+- [x] Prioritize teacher-route fixes by severity and reuse
 
-## Phase 2: Fix Teacher Route Defects
+## Phase 2: Fix Teacher Route Defects [~]
 
-- [ ] Write or update focused tests for shared teacher-component fixes where practical
-- [ ] Fix shared teacher layout/component issues
-- [ ] Fix page-specific teacher-route defects
+- [x] Write or update focused tests for shared teacher-component fixes where practical
+- [x] Fix shared teacher layout/component issues (mobile sidebar, content padding)
+- [x] Fix page-specific teacher-route defects
 - [ ] Re-run a browser pass for teacher routes
 
 ## Phase 3: Audit and Fix Capstone Routes
@@ -24,8 +24,8 @@
 
 ## Phase 4: Verification and Closeout
 
-- [ ] Run `npm run lint`
-- [ ] Run `npm run build`
+- [x] Run `npm run lint`
+- [x] Run `npm run build`
 - [ ] Run relevant automated tests
 - [ ] Perform a final browser pass on representative teacher and capstone routes
 - [ ] Document any intentionally deferred defects

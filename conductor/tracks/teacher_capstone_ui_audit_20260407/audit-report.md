@@ -10,7 +10,9 @@
 
 ## Shared Findings
 
-- [ ] None logged yet
+- [x] Teacher layout: No mobile responsiveness (fixed w-64 sidebar with no hamburger menu)
+- [x] Teacher pages: No mobile padding for fixed hamburger button
+- [x] video-player.tsx: Missing React import causing test failures
 
 ## Route-Specific Findings
 
@@ -20,9 +22,9 @@
 
 ### Teacher Routes
 
-- [ ] /teacher/ (desktop + mobile)
-- [ ] /teacher/[unit]/ (desktop + mobile)
-- [ ] /teacher/[unit]/[lessonNumber]/ (desktop + mobile)
+- [x] /teacher/ (desktop + mobile)
+- [x] /teacher/[unit]/ (desktop + mobile)
+- [x] /teacher/[unit]/[lessonNumber]/ (desktop + mobile)
 - [ ] /teacher/course-overview/pbl-methodology/ (desktop + mobile)
 - [ ] /teacher/course-overview/backward-design/ (desktop + mobile)
 - [ ] /teacher/classroom-routines/ (desktop + mobile)
