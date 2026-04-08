@@ -1,0 +1,8 @@
+{
+  "track_id": "fix_cover_image_basepath_20260408",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2026-04-08T00:00:00Z",
+  "updated_at": "2026-04-08T00:00:00Z",
+  "description": "Fix broken cover image on git pages due to base path issue"
+}

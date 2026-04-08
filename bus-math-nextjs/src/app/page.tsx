@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import coverImage from "@/../public/cover.png"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -152,10 +153,8 @@ export default function Home() {
                 <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-primary/20 to-accent/20 blur-2xl opacity-40" />
                 <div className="relative rounded-[2rem] border border-border/60 bg-white/80 p-4 shadow-2xl shadow-primary/10">
                   <Image
-                    src="/cover.png"
+                    src={coverImage}
                     alt="Math for Business Operations textbook cover showing business charts and Excel spreadsheets"
-                    width={400}
-                    height={533}
                     className="h-auto w-full rounded-[1.25rem] border border-border/50 shadow-lg"
                     priority
                   />

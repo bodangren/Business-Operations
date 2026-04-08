@@ -80,6 +80,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
   *Link: [./tracks/teacher_lesson_pages_operational_20260407/](./tracks/teacher_lesson_pages_operational_20260407/)*
 - [x] **Track: TypeScript build guardrails**
   *Link: [./tracks/typescript_build_guardrails_20260407/](./tracks/typescript_build_guardrails_20260407/)*
+- [ ] **Track: Fix broken cover image on git pages**
+  *Link: [./tracks/fix_cover_image_basepath_20260408/](./tracks/fix_cover_image_basepath_20260408/)*
 
 Foundational active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
