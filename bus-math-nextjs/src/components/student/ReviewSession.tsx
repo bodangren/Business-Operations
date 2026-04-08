@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -15,16 +15,76 @@ import {
 } from "@/lib/study/srs"
 import type { DueReviewEntry } from "@/lib/study/storage-schema"
 import { useStudyData } from "@/contexts/StudyDataContext"
+import { recordReviewSession, type ReviewSession as ReviewSessionType } from "@/lib/study/modes/record-session"
+import type { UnitId, TopicTag } from "@/types/glossary"
 
 export default function ReviewSession() {
   const { data, mutate } = useStudyData()
   const [currentIndex, setCurrentIndex] = useState(0)
   const currentIndexRef = React.useRef(currentIndex)
   const [isFlipped, setIsFlipped] = useState(false)
+  const [sessionStartedAt, setSessionStartedAt] = useState<string | null>(null)
+  const [sessionResponses, setSessionResponses] = useState<Array<{ term_slug: string; rating: ReviewRating }>>([])
+  const [hasRecordedSession, setHasRecordedSession] = useState(false)
+  const hasRecordedSessionRef = useRef(hasRecordedSession)
+
+  useEffect(() => {
+    hasRecordedSessionRef.current = hasRecordedSession
+  }, [hasRecordedSession])
 
   React.useEffect(() => {
     currentIndexRef.current = currentIndex
   }, [currentIndex])
+
+  // Start the session when we have due terms
+  useEffect(() => {
+    if (data && !sessionStartedAt) {
+      const dueEntries = getDueTerms(data.study_state.due_review_snapshot)
+      if (dueEntries.length > 0) {
+        setSessionStartedAt(new Date().toISOString())
+      }
+    }
+  }, [data, sessionStartedAt])
+
+  // Record the session when review is complete
+  useEffect(() => {
+    if (!data || !sessionStartedAt || hasRecordedSessionRef.current) return
+
+    const dueEntries = getDueTerms(data.study_state.due_review_snapshot)
+    const isComplete = currentIndex >= dueEntries.length
+
+    if (isComplete && sessionResponses.length > 0) {
+      // Collect unit IDs and topic tags from the reviewed terms
+      const termSlugs = sessionResponses.map((r) => r.term_slug)
+      const reviewedTerms = glossaryData.filter((g) => termSlugs.includes(g.slug))
+      const unitIds = [...new Set(reviewedTerms.flatMap((t) => t.units))]
+      const topicTags = [...new Set(reviewedTerms.flatMap((t) => t.topics))]
+
+      const reviewSession: ReviewSessionType = {
+        started_at: sessionStartedAt,
+        responses: sessionResponses,
+      }
+
+      const record = recordReviewSession(reviewSession, {
+        unit_id: (unitIds[0] || "unit01") as UnitId,
+        lesson_id: "review-session",
+        topic_tags: topicTags as TopicTag[],
+        mode: "solo",
+      })
+
+      // Update the study data with the new session
+      mutate((prevData) => {
+        if (!prevData) return prevData
+        return {
+          ...prevData,
+          sessions: [...prevData.sessions, record],
+          last_updated_at: new Date().toISOString(),
+        }
+      }, false)
+
+      setHasRecordedSession(true)
+    }
+  }, [data, currentIndex, sessionStartedAt, sessionResponses, mutate])
 
   const handleRating = useCallback((rating: ReviewRating) => {
     if (!data) return
@@ -51,6 +111,9 @@ export default function ReviewSession() {
     const newMasteryByTerm = data.study_state.mastery_by_term
       .filter((m) => m.term_slug !== entry.term_slug)
       .concat(updatedMastery)
+
+    // Add this response to the session
+    setSessionResponses((prev) => [...prev, { term_slug: entry.term_slug, rating }])
 
     mutate({
       ...data,
