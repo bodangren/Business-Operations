@@ -9,12 +9,12 @@
 
 ## Phase 2: Replace Mocked Rendering with Real Lesson Data
 
-- [ ] Write focused tests for teacher unit/lesson lookup and lesson selection behavior
-- [ ] Extract shared teacher unit-plan lookup logic into a reusable module
-- [ ] Refactor the teacher lesson detail route to resolve real `UnitLessonPlan` and selected `DailyLesson` data
-- [ ] Replace mocked `TeacherLessonPlan` state/effect logic with real server-compatible rendering
-- [ ] Reuse or extract shared daily-lesson rendering logic instead of maintaining duplicate placeholder rendering
-- [ ] Verify that multiple teacher lesson routes now show distinct lesson-specific data
+- [x] Write focused tests for teacher unit/lesson lookup and lesson selection behavior
+- [x] Extract shared teacher unit-plan lookup logic into a reusable module
+- [x] Refactor the teacher lesson detail route to resolve real `UnitLessonPlan` and selected `DailyLesson` data
+- [x] Replace mocked `TeacherLessonPlan` state/effect logic with real server-compatible rendering
+- [x] Reuse or extract shared daily-lesson rendering logic instead of maintaining duplicate placeholder rendering
+- [x] Verify that multiple teacher lesson routes now show distinct lesson-specific data
 
 ## Phase 3: Define the Operational Lesson Page Contract
 

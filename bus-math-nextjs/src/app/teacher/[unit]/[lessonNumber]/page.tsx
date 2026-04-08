@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { TeacherLessonPlan } from '@/components/teacher/TeacherLessonPlan'
+import { getUnitLessonPlan, getDailyLesson } from '@/data/teacher'
 
 interface TeacherLessonPageProps {
   params: Promise<{
@@ -33,8 +34,19 @@ export default async function TeacherLessonPage({ params }: TeacherLessonPagePro
 
   // Extract lesson number for processing
   const lessonNum = parseInt(lessonNumber.replace('lesson-', ''))
+  const unitNum = parseInt(unit.replace('unit', ''))
   
-  if (isNaN(lessonNum) || lessonNum < 1 || lessonNum > 10) {
+  if (isNaN(lessonNum) || lessonNum < 1 || lessonNum > 10 || isNaN(unitNum)) {
+    notFound()
+  }
+
+  const unitLessonPlan = getUnitLessonPlan(unitNum)
+  if (!unitLessonPlan) {
+    notFound()
+  }
+
+  const dailyLesson = getDailyLesson(unitLessonPlan, lessonNum)
+  if (!dailyLesson) {
     notFound()
   }
 
@@ -42,6 +54,8 @@ export default async function TeacherLessonPage({ params }: TeacherLessonPagePro
     <div className="bg-gray-50 pt-16 md:pt-0">
       <div className="max-w-6xl mx-auto py-8 px-4">
         <TeacherLessonPlan 
+          unitLessonPlan={unitLessonPlan}
+          dailyLesson={dailyLesson}
           unit={unit}
           lessonNumber={lessonNum}
         />
@@ -62,16 +76,23 @@ export async function generateStaticParams() {
     }
   }
   
-  console.log('Generated static params:', params.slice(0, 5)) // Debug first 5 params
   return params
 }
 
 export async function generateMetadata({ params }: TeacherLessonPageProps) {
   const { unit, lessonNumber } = await params
   const lessonNum = parseInt(lessonNumber.replace('lesson-', ''))
+  const unitNum = parseInt(unit.replace('unit', ''))
+  
+  const unitLessonPlan = getUnitLessonPlan(unitNum)
+  const dailyLesson = unitLessonPlan ? getDailyLesson(unitLessonPlan, lessonNum) : undefined
   
   return {
-    title: `Teacher: ${unit.toUpperCase()} - Lesson ${lessonNum} | Math for Business Operations`,
-    description: `Teacher lesson plan for ${unit.toUpperCase()}, Lesson ${lessonNum} - Math for Business Operations curriculum`,
+    title: dailyLesson 
+      ? `Teacher: ${unit.toUpperCase()} - ${dailyLesson.title} | Math for Business Operations`
+      : `Teacher: ${unit.toUpperCase()} - Lesson ${lessonNum} | Math for Business Operations`,
+    description: dailyLesson
+      ? dailyLesson.focus
+      : `Teacher lesson plan for ${unit.toUpperCase()}, Lesson ${lessonNum} - Math for Business Operations curriculum`,
   }
 }
