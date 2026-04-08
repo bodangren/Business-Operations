@@ -60,7 +60,7 @@ export default async function TeacherUnitPage({ params }: TeacherUnitPageProps) 
   const lessons = plan.learningPlan.dailyLessons
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="bg-gray-50 pt-16 md:pt-0">
       <div className="max-w-6xl mx-auto py-8 px-4 space-y-6">
         {/* Header */}
         <div className="flex items-start justify-between gap-4">

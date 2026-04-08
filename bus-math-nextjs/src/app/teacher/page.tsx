@@ -6,7 +6,7 @@ import { BookOpen, Users, Calendar, FileText, Settings } from "lucide-react"
 
 export default function TeacherDashboard() {
   return (
-    <div className="p-8">
+    <div className="pt-16 md:pt-0 p-8">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Teacher Dashboard</h1>
