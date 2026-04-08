@@ -1,0 +1,1 @@
+Phase 1: Audited current teacher lesson detail route and renderer; inventoried real teacher lesson-plan data structures (UnitLessonPlan, DailyLesson, etc.) in src/data/teacher/; confirmed data model is sufficient for next phases
