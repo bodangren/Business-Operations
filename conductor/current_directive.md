@@ -1,7 +1,7 @@
 # Current Directive
 
 **Updated:** 2026-04-08
-**Status:** Tech debt cleanup complete
+**Status:** Cover image fix complete
 
 ## What Was Just Completed
 
@@ -9,6 +9,7 @@
 - **Fixed `UNIT_META` positional coupling**: Replaced array with `Record<UnitId, ...>` keyed lookup
 - **Removed dead code**: Deleted unused `businessTerms.ts` file
 - **Updated tech-debt.md**: Marked completed items as fixed
+- **Fixed broken cover image on git pages**: Imported cover.png as module instead of using string path to respect basePath configuration
 
 ## Verification
 
@@ -20,9 +21,8 @@
 ## Next Priorities
 
 1. **Decide on M1**: Either populate the 5 teacher guidance fields across all 80 daily lessons, or amend the plan to document the deferral and formally scope the work as a future track
-2. **Broken cover image on git pages** — base path issue (tech-debt.md, medium priority)
-3. **Glossary IDs manually assigned** — collision risk as terms grow (tech-debt.md, low priority)
-4. **`eslint-config-next` version sync** — keep in lockstep with `next` (tech-debt.md, low priority)
+2. **Glossary IDs manually assigned** — collision risk as terms grow (tech-debt.md, low priority)
+3. **`eslint-config-next` version sync** — keep in lockstep with `next` (tech-debt.md, low priority)
 
 ## Blocked / Deferred
 
