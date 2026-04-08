@@ -12,7 +12,7 @@ export default function CollaborativeWorkPage() {
   const routine = classroomRoutines.find(r => r.type === RoutineType.CollaborativeWork)!;
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 pt-16 md:pt-8">
       <div className="mb-6">
         <Link href="/teacher/classroom-routines">
           <Button variant="outline" size="sm" className="mb-4">

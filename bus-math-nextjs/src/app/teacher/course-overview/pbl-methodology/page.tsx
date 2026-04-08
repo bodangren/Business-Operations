@@ -14,7 +14,7 @@ import {
 
 export default function PBLMethodologyPage() {
   return (
-    <div className="container max-w-6xl mx-auto py-8 px-4">
+    <div className="container max-w-6xl mx-auto py-8 px-4 pt-16 md:pt-8">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">Project-Based Learning Methodology Guide</h1>

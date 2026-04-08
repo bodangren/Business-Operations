@@ -37,7 +37,7 @@ function createSlug(name: string): string {
 
 export default function ClassroomRoutinesPage() {
   return (
-    <div className="container max-w-6xl mx-auto py-8 px-4">
+    <div className="container max-w-6xl mx-auto py-8 px-4 pt-16 md:pt-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">Classroom Routines Guide</h1>
         <p className="text-lg text-muted-foreground mb-6">

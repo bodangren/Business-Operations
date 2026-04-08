@@ -7,12 +7,12 @@
 - [x] Identify repeated issues tied to shared teacher layout/components
 - [x] Prioritize teacher-route fixes by severity and reuse
 
-## Phase 2: Fix Teacher Route Defects [~]
+## Phase 2: Fix Teacher Route Defects [x]
 
 - [x] Write or update focused tests for shared teacher-component fixes where practical
 - [x] Fix shared teacher layout/component issues (mobile sidebar, content padding)
 - [x] Fix page-specific teacher-route defects
-- [ ] Re-run a browser pass for teacher routes
+- [x] Re-run a browser pass for teacher routes
 
 ## Phase 3: Audit and Fix Capstone Routes
 
