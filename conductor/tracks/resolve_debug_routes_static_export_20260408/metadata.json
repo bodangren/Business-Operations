@@ -1,0 +1,8 @@
+{
+  "track_id": "resolve_debug_routes_static_export_20260408",
+  "type": "fix",
+  "status": "new",
+  "created_at": "2026-04-08T00:00:00Z",
+  "updated_at": "2026-04-08T00:00:00Z",
+  "description": "Resolve debug routes middleware gating issue with static export"
+}
