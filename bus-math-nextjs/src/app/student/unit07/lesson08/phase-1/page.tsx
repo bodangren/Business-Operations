@@ -28,7 +28,7 @@ export default function Page() {
                 In Lesson 07, every student worked with the same shared dataset and the same workbook structure. That was your dress rehearsal. Today, you move into the real project.
               </p>
               <p>
-                Each group now receives its own inventory dataset from a different business. The workbook structure stays exactly the same as Lesson 07. What changes is the data, the business context, and your team's recommendation.
+                Each group now receives its own inventory starter workbook for a different business. The workbook structure stays exactly the same as Lesson 07. What changes is the data, the business context, and your team's recommendation.
               </p>
               <p>
                 Sarah Chen needs your team to analyze her client's inventory data and recommend the best inventory valuation method. Your recommendation must be backed by numbers from your workbook, not opinions.
@@ -56,10 +56,10 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Open and name your group's assigned inventory dataset</li>
-                  <li>Set up the workbook with the same sheet structure from Lesson 07</li>
-                  <li>Begin entering your group's data into the Inputs, BeginningInventory, and Purchases sheets</li>
-                  <li>Start calculating goods available for sale and COGS</li>
+                  <li>Open and rename your group's assigned starter workbook</li>
+                  <li>Confirm the workbook keeps the same sheet structure from Lesson 07</li>
+                  <li>Review your group's data in Inputs, BeginningInventory, Purchases, and Sales</li>
+                  <li>Start tracing goods available for sale, COGS, and likely method fit</li>
                 </ul>
               </CardContent>
             </Card>
@@ -71,16 +71,16 @@ export default function Page() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                Each group has been assigned one inventory dataset. Use only the file assigned to your group. Do not use another group's data.
+                Each group has been assigned one starter workbook. Use only the file assigned to your group. Do not use another group's workbook.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
-                  <h3 className="font-semibold">Group Assignments</h3>
+                  <h3 className="font-semibold">Group Starter Workbooks</h3>
                   <ul className="list-disc list-inside space-y-1">
-                    <li><strong>Group 1:</strong> <a className="underline" href="/resources/unit07-pbl-asset-inventory-g1.csv" download>unit07-pbl-inventory-g1.csv</a></li>
-                    <li><strong>Group 2:</strong> <a className="underline" href="/resources/unit07-pbl-asset-inventory-g2.csv" download>unit07-pbl-inventory-g2.csv</a></li>
-                    <li><strong>Group 3:</strong> <a className="underline" href="/resources/unit07-pbl-asset-inventory-g3.csv" download>unit07-pbl-inventory-g3.csv</a></li>
-                    <li><strong>Group 4:</strong> <a className="underline" href="/resources/unit07-pbl-asset-inventory-g4.csv" download>unit07-pbl-inventory-g4.csv</a></li>
+                    <li><strong>Group 1:</strong> <a className="underline" href="/resources/unit07-group1-inventory.xlsx" download>unit07-group1-inventory.xlsx</a></li>
+                    <li><strong>Group 2:</strong> <a className="underline" href="/resources/unit07-group2-inventory.xlsx" download>unit07-group2-inventory.xlsx</a></li>
+                    <li><strong>Group 3:</strong> <a className="underline" href="/resources/unit07-group3-inventory.xlsx" download>unit07-group3-inventory.xlsx</a></li>
+                    <li><strong>Group 4:</strong> <a className="underline" href="/resources/unit07-group4-inventory.xlsx" download>unit07-group4-inventory.xlsx</a></li>
                   </ul>
                 </div>
                 <div className="space-y-2">
@@ -89,7 +89,7 @@ export default function Page() {
                     Save your workbook as: <code className="bg-gray-100 px-1 rounded">Unit07_Project_GroupX.xlsx</code> where X is your group number.
                   </p>
                   <p className="text-sm">
-                    Keep your dataset CSV in the same folder as your workbook.
+                    Keep working in this same workbook for Lessons 09 and 10.
                   </p>
                 </div>
               </div>
@@ -136,9 +136,9 @@ export default function Page() {
             <CardContent className="space-y-2">
               <ul className="list-disc list-inside space-y-1">
                 <li>Correct workbook opened and named with your group number</li>
-                <li>All required sheets created with the Lesson 07 structure</li>
-                <li>BeginningInventory and Purchases sheets populated with your group's data</li>
-                <li>Goods available for sale calculated correctly</li>
+                <li>All required sheets present and aligned to the Lesson 07 structure</li>
+                <li>BeginningInventory, Purchases, and Sales sheets reviewed for your group's business data</li>
+                <li>Goods available for sale traced correctly from the starter workbook data</li>
                 <li>One draft claim or early direction statement about which method might fit best</li>
                 <li>Risk/assumptions list with at least 2 mitigation steps</li>
               </ul>
@@ -151,10 +151,10 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <ol className="list-decimal list-inside space-y-1">
-                <li><strong>Plan (10 min):</strong> Read your dataset, discuss the business context, assign roles</li>
-                <li><strong>Setup (15 min):</strong> Create workbook, name it correctly, set up all required sheets</li>
-                <li><strong>Data Entry (15 min):</strong> Enter BeginningInventory and Purchases data from your CSV</li>
-                <li><strong>Initial Analysis (10 min):</strong> Calculate goods available for sale, draft early claim</li>
+                <li><strong>Plan (10 min):</strong> Read your starter workbook, discuss the business context, assign roles</li>
+                <li><strong>Setup (15 min):</strong> Download your starter workbook, rename it correctly, verify all required sheets</li>
+                <li><strong>Data Review (15 min):</strong> Inspect BeginningInventory, Purchases, and Sales for your group's business</li>
+                <li><strong>Initial Analysis (10 min):</strong> Trace goods available for sale and draft an early claim</li>
                 <li><strong>Check-in (5 min):</strong> Quick review with teacher, confirm you're on track</li>
               </ol>
             </CardContent>
@@ -166,9 +166,9 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-1">
-                <li><strong>Workbook Setup (40%)</strong>: All sheets present, correctly named, data entered accurately</li>
-                <li><strong>Initial Analysis (30%)</strong>: Goods available for sale calculated, early claim shows reasoning</li>
-                <li><strong>Team Organization (15%)</strong>: Roles assigned, file naming correct, data source documented</li>
+                <li><strong>Workbook Setup (40%)</strong>: Correct starter workbook opened, correctly named, and aligned to the Lesson 07 structure</li>
+                <li><strong>Initial Analysis (30%)</strong>: Goods available for sale traced correctly, early claim shows reasoning</li>
+                <li><strong>Team Organization (15%)</strong>: Roles assigned, file naming correct, workbook ownership documented</li>
                 <li><strong>Risk Planning (15%)</strong>: At least 2 risks identified with mitigation steps</li>
               </ul>
             </CardContent>

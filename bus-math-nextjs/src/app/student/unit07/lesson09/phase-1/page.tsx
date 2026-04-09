@@ -31,8 +31,8 @@ export default function Page() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                In Lesson 08, your team opened its assigned inventory dataset, set up the workbook structure, 
-                and began entering data into the BeginningInventory and Purchases sheets. You calculated goods 
+                In Lesson 08, your team opened its assigned starter workbook, confirmed the Lesson 07 structure,
+                and reviewed your group's beginning inventory, purchases, and sales data. You traced goods
                 available for sale and drafted an early claim about which method might fit best.
               </p>
               <p>
@@ -64,9 +64,9 @@ export default function Page() {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Complete the Valuation sheet with FIFO, LIFO, Specific ID, and Weighted Average</li>
-                  <li>Build the MethodCompare sheet with side-by-side results</li>
-                  <li>Add Checks sheet reconciliations and error flags</li>
+                  <li>Audit and finish the Valuation sheet for FIFO, LIFO, Specific ID, and Weighted Average</li>
+                  <li>Confirm the MethodCompare sheet shows side-by-side results clearly</li>
+                  <li>Add or clear Checks sheet reconciliations and error flags</li>
                   <li>Complete the Dashboard with visual summary</li>
                   <li>Write the Recommendation sheet with claim, evidence, and risk</li>
                 </ul>
@@ -81,16 +81,16 @@ export default function Page() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                Continue working in the same workbook from Lesson 08. Use only your group's assigned dataset.
+                Continue working in the same starter workbook from Lesson 08. Use only your group's assigned workbook.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
-                  <h3 className="font-semibold">Group Assignments</h3>
+                  <h3 className="font-semibold">Group Starter Workbooks</h3>
                   <ul className="list-disc list-inside space-y-1">
-                    <li><strong>Group 1:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g1.csv" download>unit07-pbl-inventory-g1.csv</a></li>
-                    <li><strong>Group 2:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g2.csv" download>unit07-pbl-inventory-g2.csv</a></li>
-                    <li><strong>Group 3:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g3.csv" download>unit07-pbl-inventory-g3.csv</a></li>
-                    <li><strong>Group 4:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g4.csv" download>unit07-pbl-inventory-g4.csv</a></li>
+                    <li><strong>Group 1:</strong> <a className="underline text-blue-600" href="/resources/unit07-group1-inventory.xlsx" download>unit07-group1-inventory.xlsx</a></li>
+                    <li><strong>Group 2:</strong> <a className="underline text-blue-600" href="/resources/unit07-group2-inventory.xlsx" download>unit07-group2-inventory.xlsx</a></li>
+                    <li><strong>Group 3:</strong> <a className="underline text-blue-600" href="/resources/unit07-group3-inventory.xlsx" download>unit07-group3-inventory.xlsx</a></li>
+                    <li><strong>Group 4:</strong> <a className="underline text-blue-600" href="/resources/unit07-group4-inventory.xlsx" download>unit07-group4-inventory.xlsx</a></li>
                   </ul>
                 </div>
                 <div className="space-y-2">
@@ -99,7 +99,7 @@ export default function Page() {
                     Your workbook should be named: <code className="bg-gray-100 px-2 py-1 rounded text-sm">Unit07_Project_GroupX.xlsx</code>
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    If your workbook is missing, re-download your group's CSV and rebuild from your Lesson 08 notes.
+                    If your workbook is missing, re-download your group's starter workbook and rebuild from your Lesson 08 notes.
                   </p>
                 </div>
               </div>

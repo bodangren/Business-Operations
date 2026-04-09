@@ -97,16 +97,16 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <p className="mb-3 text-sm text-muted-foreground">
-                Each group uses only their assigned dataset. Do not switch files or use another group's data.
+                Each group uses only their assigned starter workbook. Do not switch files or use another group's workbook.
               </p>
               <ul className="list-disc list-inside space-y-1">
-                <li><strong>Group 1:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g1.csv" download>unit07-pbl-asset-inventory-g1.csv</a></li>
-                <li><strong>Group 2:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g2.csv" download>unit07-pbl-asset-inventory-g2.csv</a></li>
-                <li><strong>Group 3:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g3.csv" download>unit07-pbl-asset-inventory-g3.csv</a></li>
-                <li><strong>Group 4:</strong> <a className="underline text-blue-600" href="/resources/unit07-pbl-asset-inventory-g4.csv" download>unit07-pbl-asset-inventory-g4.csv</a></li>
+                <li><strong>Group 1:</strong> <a className="underline text-blue-600" href="/resources/unit07-group1-inventory.xlsx" download>unit07-group1-inventory.xlsx</a></li>
+                <li><strong>Group 2:</strong> <a className="underline text-blue-600" href="/resources/unit07-group2-inventory.xlsx" download>unit07-group2-inventory.xlsx</a></li>
+                <li><strong>Group 3:</strong> <a className="underline text-blue-600" href="/resources/unit07-group3-inventory.xlsx" download>unit07-group3-inventory.xlsx</a></li>
+                <li><strong>Group 4:</strong> <a className="underline text-blue-600" href="/resources/unit07-group4-inventory.xlsx" download>unit07-group4-inventory.xlsx</a></li>
               </ul>
               <p className="mt-3 text-sm text-amber-700 bg-amber-50 p-2 rounded">
-                <strong>Missing workbook?</strong> Re-download your assigned starter file and rebuild from your Lesson 09 notes. Do not use another group's file.
+                <strong>Missing workbook?</strong> Re-download your assigned starter workbook and rebuild from your Lesson 09 notes. Do not use another group's file.
               </p>
             </CardContent>
           </Card>
