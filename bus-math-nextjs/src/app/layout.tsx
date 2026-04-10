@@ -1,24 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { LessonProgressProvider } from "@/contexts/LessonProgressContext";
 import { StudyDataProvider } from "@/contexts/StudyDataContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-display",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-data",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Math for Business Operations: Applied Accounting with Excel",
-  description: "A comprehensive Grade 12 textbook integrating accounting principles, spreadsheet modeling, and entrepreneurship.",
+  description: "Transform business education with interactive, project-based learning and real-world Excel applications.",
   authors: [{ name: "Daniel Bodanske" }],
 };
 
@@ -36,15 +42,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${playfairDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased font-body bg-[#FAFAFA]`}
       >
-        <LessonProgressProvider>
-          <StudyDataProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </StudyDataProvider>
-        </LessonProgressProvider>
+        <StudyDataProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+        </StudyDataProvider>
       </body>
     </html>
   );
