@@ -1,0 +1,12 @@
+{
+  "track_id": "advanced_study_modes_20260409",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-04-09T00:00:00Z",
+  "updated_at": "2026-04-09T00:00:00Z",
+  "description": "Add interactive business games and advanced study activities: business simulations, vocabulary games, and scenario-based learning—all client-side with localStorage.",
+  "priority": "medium",
+  "estimated_effort": "4-5 weeks",
+  "dependencies": [],
+  "related_tracks": []
+}

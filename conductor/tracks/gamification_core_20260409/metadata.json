@@ -1,0 +1,12 @@
+{
+  "track_id": "gamification_core_20260409",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-04-09T00:00:00Z",
+  "updated_at": "2026-04-09T00:00:00Z",
+  "description": "Add gamification elements to increase student engagement: achievement badges, study streaks, progress visualizations, and virtual economy—all client-side with localStorage.",
+  "priority": "high",
+  "estimated_effort": "2-3 weeks",
+  "dependencies": [],
+  "related_tracks": []
+}

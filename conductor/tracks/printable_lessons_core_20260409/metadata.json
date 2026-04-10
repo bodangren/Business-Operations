@@ -1,0 +1,12 @@
+{
+  "track_id": "printable_lessons_core_20260409",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-04-09T00:00:00Z",
+  "updated_at": "2026-04-09T00:00:00Z",
+  "description": "Add printable lesson and worksheet generation using paged.js for professional print formatting. Teachers can generate worksheets, quizzes, and answer keys from any lesson content.",
+  "priority": "high",
+  "estimated_effort": "3-4 weeks",
+  "dependencies": [],
+  "related_tracks": []
+}

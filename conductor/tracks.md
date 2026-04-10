@@ -94,6 +94,14 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Conduc
 *Link: [./tracks/reviewsession_component_tests_20260409/](./tracks/reviewsession_component_tests_20260409/)*
 - [x] **Track: Review session recording**
 *Link: [./tracks/review_session_recording_20260409/](./tracks/review_session_recording_20260409/)*
+- [ ] **Track: PWA foundation — offline capability and app installation**
+  *Link: [./tracks/pwa_foundation_20260409/](./tracks/pwa_foundation_20260409/)*
+- [ ] **Track: Printable lessons core — worksheet generation with paged.js**
+  *Link: [./tracks/printable_lessons_core_20260409/](./tracks/printable_lessons_core_20260409/)*
+- [ ] **Track: Gamification core — achievement badges and study streaks**
+  *Link: [./tracks/gamification_core_20260409/](./tracks/gamification_core_20260409/)*
+- [ ] **Track: Advanced study modes — business games and interactive learning**
+  *Link: [./tracks/advanced_study_modes_20260409/](./tracks/advanced_study_modes_20260409/)*
 
 Foundational active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
