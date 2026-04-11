@@ -64,7 +64,7 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Frontmatter</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="!right-0 !left-auto">
                   <ul className="grid w-[340px] gap-2 p-3">
                     {FRONTMATTER_LINKS.map((link) => (
                       <li key={link.href}>
@@ -87,8 +87,8 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Student Units</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <NavigationMenuContent className="!right-0 !left-auto">
+                  <ul className="grid w-[380px] gap-3 p-4 md:w-[480px] md:grid-cols-2 lg:w-[520px]">
                     {STUDENT_UNIT_LINKS.map((unit) => (
                       <li key={unit.href}>
                         <NavigationMenuLink asChild>
@@ -112,8 +112,8 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Teacher Resources</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[420px] gap-3 p-4 md:w-[560px] md:grid-cols-2 lg:w-[620px]">
+                <NavigationMenuContent className="!right-0 !left-auto">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[540px] md:grid-cols-2 lg:w-[580px]">
                     {TEACHER_RESOURCE_LINKS.map((link) => (
                       <li key={link.href}>
                         <NavigationMenuLink asChild>
@@ -154,8 +154,8 @@ export function Header() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Reference</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[340px] gap-2 p-3">
+                <NavigationMenuContent className="!right-0 !left-auto">
+                  <ul className="grid w-[220px] gap-2 p-3">
                     {REFERENCE_LINKS.map((link) => (
                       <li key={link.href}>
                         <NavigationMenuLink asChild>

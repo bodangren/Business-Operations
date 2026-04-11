@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "../ui/Button"
 import { GoldLine } from "../ui/Decorations"
 import { ArrowRight, BookOpen, Users, Award, TrendingUp } from "lucide-react"
@@ -60,53 +61,18 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right column - Preview card */}
+          {/* Right column - Hero image */}
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#C9A227] to-[#D4AF37] rounded-lg opacity-60 blur-sm" />
-            <div className="relative bg-white border border-[#E8E8E8] rounded-lg p-6 shadow-xl">
-              <h3 className="text-xl font-serif font-medium text-[#0A192F] mb-4">
-                Start Your Journey
-              </h3>
-              <div className="space-y-3">
-                <Link href="/student/unit01" className="block">
-                  <div className="group flex items-center gap-4 p-4 bg-[#FAFAFA] hover:bg-[#F5F5F0] border border-[#E8E8E8] hover:border-[#C9A227] rounded-lg transition-all cursor-pointer">
-                    <div className="w-12 h-12 bg-[#0A192F] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-[#C9A227] font-mono font-bold">01</span>
-                    </div>
-                    <div>
-                      <div className="font-medium text-[#0A192F] group-hover:text-[#C9A227] transition-colors">Smart Ledger Launch</div>
-                      <div className="text-sm text-[#666666]">Build self-auditing systems</div>
-                    </div>
-                    <ArrowRight className="h-5 w-5 text-[#C9A227] ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                </Link>
-                
-                <Link href="/student" className="block">
-                  <div className="group flex items-center gap-4 p-4 bg-[#FAFAFA] hover:bg-[#F5F5F0] border border-[#E8E8E8] hover:border-[#C9A227] rounded-lg transition-all cursor-pointer">
-                    <div className="w-12 h-12 bg-[#0A192F] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <BookOpen className="h-5 w-5 text-[#C9A227]" />
-                    </div>
-                    <div>
-                      <div className="font-medium text-[#0A192F] group-hover:text-[#C9A227] transition-colors">Practice Hub</div>
-                      <div className="text-sm text-[#666666]">Review vocabulary & concepts</div>
-                    </div>
-                    <ArrowRight className="h-5 w-5 text-[#C9A227] ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                </Link>
-
-                <Link href="/backmatter/glossary" className="block">
-                  <div className="group flex items-center gap-4 p-4 bg-[#FAFAFA] hover:bg-[#F5F5F0] border border-[#E8E8E8] hover:border-[#C9A227] rounded-lg transition-all cursor-pointer">
-                    <div className="w-12 h-12 bg-[#0A192F] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Award className="h-5 w-5 text-[#C9A227]" />
-                    </div>
-                    <div>
-                      <div className="font-medium text-[#0A192F] group-hover:text-[#C9A227] transition-colors">Bilingual Glossary</div>
-                      <div className="text-sm text-[#666666]">200+ business terms</div>
-                    </div>
-                    <ArrowRight className="h-5 w-5 text-[#C9A227] ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                </Link>
-              </div>
+            <div className="relative bg-white border border-[#E8E8E8] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/hero.png"
+                alt="Business Operations Learning Platform"
+                width={800}
+                height={600}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </div>
         </div>
