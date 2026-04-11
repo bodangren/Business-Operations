@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+
 import { Button } from "../ui/Button"
 import { GoldLine } from "../ui/Decorations"
 import { ArrowRight, BookOpen, Users, Award, TrendingUp } from "lucide-react"
@@ -65,13 +65,11 @@ export function HeroSection() {
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#C9A227] to-[#D4AF37] rounded-lg opacity-60 blur-sm" />
             <div className="relative bg-white border border-[#E8E8E8] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/hero.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${process.env.NODE_ENV === 'production' ? '/Business-Operations' : ''}/hero.png`}
                 alt="Business Operations Learning Platform"
-                width={800}
-                height={600}
                 className="w-full h-auto"
-                priority
               />
             </div>
           </div>
