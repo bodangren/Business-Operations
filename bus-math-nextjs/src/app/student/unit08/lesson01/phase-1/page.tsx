@@ -13,8 +13,8 @@ export default function Phase1Page() {
   const videoData = {
     title: "TechStart Is Expanding — Sarah's Equipment Purchase Problem",
     description: "TechStart Solutions is growing. Sarah needs to buy a $15,000 commercial 3D printer for her product line. But how should she track this cost? Can she expense it all at once, or does it need to be tracked differently? An investor is watching how she handles this decision.",
-    youtubeId: "dQw4w9WgXcQ",
-    duration: "4:30",
+    youtubeId: "Owp5F1WAA_w",
+    duration: "1:00",
     transcript: `I thought buying a commercial 3D printer for TechStart would be simple. We were expanding our product line, clients were asking for more physical prototypes, and this printer could help us deliver work we used to outsource. The quote was $15,000, which was a big purchase for us, but it also felt like the right next step.
 
 My first instinct was to record the whole thing as one expense in the month we bought it. Cash leaves the business, expense goes in the books. That seemed honest to me.
