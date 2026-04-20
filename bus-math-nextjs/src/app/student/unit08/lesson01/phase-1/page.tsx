@@ -15,7 +15,17 @@ export default function Phase1Page() {
     description: "TechStart Solutions is growing. Sarah needs to buy a $15,000 commercial 3D printer for her product line. But how should she track this cost? Can she expense it all at once, or does it need to be tracked differently? An investor is watching how she handles this decision.",
     youtubeId: "dQw4w9WgXcQ",
     duration: "4:30",
-    transcript: "Sarah sits at her desk, looking at a quote for a commercial 3D printer. She is excited but also worried about the cost. Her mentor Marcus reminds her that investors watch how founders handle big purchases. If she expenses the whole $15,000 this month, her profit will look terrible. But if she treats it as a long-term asset and spreads the cost over its useful life, her financial statements will tell a more accurate story. The investor she is meeting with next month will want to see that she understands the difference between everyday expenses and long-term investments. Sarah needs to learn about capitalization and depreciation — and fast."
+    transcript: `I thought buying a commercial 3D printer for TechStart would be simple. We were expanding our product line, clients were asking for more physical prototypes, and this printer could help us deliver work we used to outsource. The quote was $15,000, which was a big purchase for us, but it also felt like the right next step.
+
+My first instinct was to record the whole thing as one expense in the month we bought it. Cash leaves the business, expense goes in the books. That seemed honest to me.
+
+Then my CPA, Jennifer Kim, stopped me. She said, "Sarah, if that printer helps you earn revenue for five or more years, one month should not take the whole hit." She explained that this was not like printer paper or coffee for the office. This was a long-term asset, and the cost needed to be spread over the years the printer would help the business generate revenue.
+
+That changed how I saw the purchase. If I expensed all $15,000 right away, this month's profit would look terrible. Then future months would look too good because they would benefit from the printer without carrying any of its cost. Jennifer told me I needed to track the original cost, the depreciation that builds up over time, and the book value that remains on the balance sheet.
+
+Then Marcus called to check on my investor meeting. He was direct: "Sarah, investors will want to know what you own, what it's worth, and whether your numbers can be defended." It was not enough to say, "We bought equipment." I needed an asset record and a depreciation plan I could explain.
+
+So Unit 08 starts with my problem. I can make the purchase, but I cannot yet explain how to spread the cost over time or defend the printer's remaining value. Your job is to learn how businesses decide what counts as a long-term asset, track accumulated depreciation, and use book value to tell a financial story investors can trust.`
   }
 
   const comprehensionQuestions = [
