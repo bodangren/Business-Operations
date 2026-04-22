@@ -3,6 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, MessageCircle, Lightbulb } from "lucide-react"
+import { withBasePath } from "@/lib/paths"
 import Image from "next/image"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
@@ -110,7 +111,7 @@ export default function Phase3Page() {
                   </table>
                   <figure className="overflow-hidden rounded-xl border border-blue-200 bg-white shadow-sm">
                     <Image
-                      src="/images/depreciation-straight-line.png"
+                      src={withBasePath("/images/depreciation-straight-line.png")}
                       alt="Straight-line depreciation chart showing book value decreasing by equal amounts from fifteen thousand dollars to fifteen hundred dollars over five years."
                       width={1600}
                       height={1200}
@@ -141,7 +142,7 @@ export default function Phase3Page() {
                   </table>
                   <figure className="overflow-hidden rounded-xl border border-purple-200 bg-white shadow-sm">
                     <Image
-                      src="/images/depreciation-double-declining-balance.png"
+                      src={withBasePath("/images/depreciation-double-declining-balance.png")}
                       alt="Double-declining balance depreciation chart showing larger drops in early years and smaller drops later until book value reaches fifteen hundred dollars."
                       width={1600}
                       height={1200}
