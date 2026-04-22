@@ -3,6 +3,7 @@ import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, MessageCircle, Lightbulb } from "lucide-react"
+import Image from "next/image"
 import { lesson01Data, unit08Data, lesson01Phases } from "../lesson-data"
 
 export default function Phase3Page() {
@@ -89,7 +90,7 @@ export default function Phase3Page() {
                 Look at the two patterns below. What do you notice? What questions do you have?
               </p>
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="p-4 bg-blue-50 rounded-lg">
+                <div className="p-4 bg-blue-50 rounded-lg space-y-4">
                   <p className="font-semibold text-blue-900 mb-2">Pattern 1: Straight-Line</p>
                   <table className="w-full text-sm">
                     <thead>
@@ -107,9 +108,21 @@ export default function Phase3Page() {
                       <tr><td className="p-1">5</td><td className="p-1 text-right">$1,500</td></tr>
                     </tbody>
                   </table>
+                  <figure className="overflow-hidden rounded-xl border border-blue-200 bg-white shadow-sm">
+                    <Image
+                      src="/images/depreciation-straight-line.png"
+                      alt="Straight-line depreciation chart showing book value decreasing by equal amounts from fifteen thousand dollars to fifteen hundred dollars over five years."
+                      width={1600}
+                      height={1200}
+                      className="h-auto w-full"
+                    />
+                    <figcaption className="px-4 py-3 text-sm text-blue-900">
+                      Straight-line keeps the yearly drop constant, so the book value falls at an even pace until it reaches salvage value.
+                    </figcaption>
+                  </figure>
                 </div>
-                <div className="p-4 bg-purple-50 rounded-lg">
-                  <p className="font-semibold text-purple-900 mb-2">Pattern 2: Accelerated</p>
+                <div className="p-4 bg-purple-50 rounded-lg space-y-4">
+                  <p className="font-semibold text-purple-900 mb-2">Pattern 2: Double-Declining Balance</p>
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-purple-100">
@@ -126,6 +139,18 @@ export default function Phase3Page() {
                       <tr><td className="p-1">5</td><td className="p-1 text-right">$1,500</td></tr>
                     </tbody>
                   </table>
+                  <figure className="overflow-hidden rounded-xl border border-purple-200 bg-white shadow-sm">
+                    <Image
+                      src="/images/depreciation-double-declining-balance.png"
+                      alt="Double-declining balance depreciation chart showing larger drops in early years and smaller drops later until book value reaches fifteen hundred dollars."
+                      width={1600}
+                      height={1200}
+                      className="h-auto w-full"
+                    />
+                    <figcaption className="px-4 py-3 text-sm text-purple-900">
+                      Double-declining balance front-loads depreciation, so the book value drops faster in the early years and slows as it approaches salvage value.
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
             </CardContent>
