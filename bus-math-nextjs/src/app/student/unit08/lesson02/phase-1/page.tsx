@@ -1,6 +1,5 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import { VideoPlayer } from "@/components/ui/video-player"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -9,14 +8,6 @@ import { lesson02Data, unit08Data, lesson02Phases } from "../lesson-data"
 
 export default function Phase1Page() {
   const currentPhase = lesson02Phases[0]
-
-  const videoData = {
-    title: "Sarah's Next Problem — Three Purchases, Two Different Rules",
-    description: "TechStart Solutions is expanding. Sarah has three receipts on her desk: a $15,000 3D printer, $200 of printer paper, and a $3,500 delivery scooter. Her accountant asks: which of these become assets on the balance sheet, and which are expenses on the income statement? Sarah needs a clear rule.",
-    youtubeId: "dQw4w9WgXcQ",
-    duration: "3:45",
-    transcript: "Sarah sits at her desk with three receipts spread out. The 3D printer cost $15,000 and will last 7 years. The printer paper was $200 and will be gone in a month. The delivery scooter was $3,500 and should last about 5 years. Her accountant Marcus calls and asks: Sarah, which of these are assets and which are expenses? Sarah hesitates. She knows the printer is an asset — they just covered that. But what about the paper? And the scooter? Marcus explains that there is a rule for this, and once she learns it, every purchase becomes straightforward. The rule has three parts: does it last more than a year, is the cost significant, and what will it be worth at the end? Sarah realizes she needs to understand capitalization, useful life, and salvage value."
-  }
 
   const comprehensionQuestions = [
     {
@@ -99,7 +90,42 @@ export default function Phase1Page() {
             </CardContent>
           </Card>
 
-          <VideoPlayer video={videoData} />
+          <Card className="border-l-4 border-l-slate-600">
+            <CardHeader>
+              <CardTitle>Sarah&apos;s Desk Snapshot</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-gray-700">
+                Last lesson gave Sarah one clear answer: the 3D printer belongs on the balance sheet
+                as a long-term asset. Today the easy case is gone. Three new receipts are sitting on
+                her desk, and she needs a rule she can defend before she records anything.
+              </p>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <p className="font-semibold text-slate-900">What Sarah already knows</p>
+                  <ul className="mt-2 list-disc list-inside space-y-1 text-sm text-slate-700">
+                    <li>Big purchases that help the business for years can become assets.</li>
+                    <li>Those assets are not expensed all at once.</li>
+                    <li>Investors expect the numbers to match the real business story.</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg border border-orange-200 bg-orange-50 p-4">
+                  <p className="font-semibold text-orange-900">What Sarah still cannot answer</p>
+                  <ul className="mt-2 list-disc list-inside space-y-1 text-sm text-orange-800">
+                    <li>Which purchases should be capitalized and which should be expensed now?</li>
+                    <li>How long should each asset be expected to last?</li>
+                    <li>What value, if any, should remain at the end?</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
+                <p className="text-sm text-blue-900 font-medium">
+                  Quick prediction: before learning the rule, which receipt feels the hardest to defend
+                  to an investor, and why?
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
           <Card className="border-l-4 border-l-blue-600">
             <CardHeader>

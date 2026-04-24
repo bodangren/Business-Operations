@@ -1,71 +1,13 @@
 import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, ArrowRight } from "lucide-react"
 import { lesson02Data, unit08Data, lesson02Phases } from "../lesson-data"
+import CapitalizationDecisionLab from "../CapitalizationDecisionLab"
 
 export default function Phase3Page() {
   const currentPhase = lesson02Phases[2]
-
-  const classificationQuestions = [
-    {
-      id: "q1",
-      question: "TechStart buys a $12,000 commercial espresso machine for the employee break room. It will last about 8 years and can be sold for $1,000 at the end. Should this be capitalized or expensed? What is the depreciable base?",
-      answers: [
-        "Capitalize; depreciable base = $11,000",
-        "Expense immediately; depreciable base = $0",
-        "Capitalize; depreciable base = $12,000",
-        "Capitalize; depreciable base = $1,000"
-      ],
-      explanation: "The espresso machine lasts 8 years (more than 1) and costs $12,000 (significant), so it should be capitalized. Depreciable base = Cost - Salvage Value = $12,000 - $1,000 = $11,000."
-    },
-    {
-      id: "q2",
-      question: "TechStart pays $800 for a one-year business insurance policy. Should this be capitalized as a fixed asset or treated differently?",
-      answers: [
-        "Expense it — it is a prepaid operating cost, not a long-term physical asset",
-        "Capitalize it as a fixed asset with an 8-year useful life",
-        "Capitalize it because $800 is a significant cost",
-        "Expense only half and capitalize the other half"
-      ],
-      explanation: "Insurance is a prepaid expense, not a fixed asset. While it covers a future period, it is not a tangible long-term asset like equipment or vehicles. It is expensed over the coverage period, not depreciated."
-    },
-    {
-      id: "q3",
-      question: "TechStart spends $4,000 to replace the roof on its warehouse. The old roof was fully depreciated. The new roof will last 15 years. Should this be capitalized or expensed?",
-      answers: [
-        "Capitalize — a roof replacement is a major improvement that extends the building's useful life",
-        "Expense immediately — it is a repair cost",
-        "Capitalize only $2,000 and expense the rest",
-        "Expense it because roofs are maintenance"
-      ],
-      explanation: "A major roof replacement is a capital improvement because it extends the useful life of the building and has a significant cost. It should be capitalized and depreciated over its useful life of 15 years."
-    },
-    {
-      id: "q4",
-      question: "An asset costs $20,000, has a useful life of 4 years, and a salvage value of $4,000. What is the depreciable base?",
-      answers: [
-        "$16,000",
-        "$20,000",
-        "$4,000",
-        "$5,000"
-      ],
-      explanation: "Depreciable base = Cost - Salvage Value = $20,000 - $4,000 = $16,000. This is the amount that will be allocated as depreciation expense over the 4-year useful life."
-    },
-    {
-      id: "q5",
-      question: "After 2 years, an asset with a $10,000 cost and $2,000 salvage value has accumulated depreciation of $4,000. What is its current book value?",
-      answers: [
-        "$6,000",
-        "$8,000",
-        "$4,000",
-        "$2,000"
-      ],
-      explanation: "Book Value = Cost - Accumulated Depreciation = $10,000 - $4,000 = $6,000. The asset is still worth $6,000 on the company's books after 2 years."
-    }
-  ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50">
@@ -84,8 +26,8 @@ export default function Phase3Page() {
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">Classify, Calculate, and Explain</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Now you will practice with mixed purchase scenarios. The hints are reduced, and you need to
-              explain your reasoning — not just pick an answer.
+              Now you will work through Sarah&apos;s purchase week step by step. The activity below slows down the
+              accounting decision so you can see exactly when a cost becomes a fixed asset and when it stays an expense.
             </p>
           </div>
 
@@ -147,13 +89,19 @@ export default function Phase3Page() {
             </CardContent>
           </Card>
 
-          <ComprehensionCheck
-            questions={classificationQuestions}
-            title="Mixed Classification Challenge"
-            description="Classify each purchase and calculate the depreciable base. Explain your reasoning."
-            showExplanations={true}
-            allowRetry={true}
-          />
+          <Card className="border-l-4 border-l-cyan-600">
+            <CardHeader>
+              <CardTitle className="text-xl">Activity: Fixed-Asset Decision Lab</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-4">
+                Work through one guided case in sequence. You will test useful life first, then significance,
+                then decide capitalize or expense, and finally calculate depreciable base for the purchases that
+                belong on the balance sheet.
+              </p>
+              <CapitalizationDecisionLab />
+            </CardContent>
+          </Card>
 
           <Card className="border-l-4 border-l-purple-600">
             <CardHeader>
@@ -184,9 +132,8 @@ export default function Phase3Page() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700">
-                In the next phase, you will get repeated practice classifying purchases with new numbers each time.
-                The interface will track your streak and give you targeted feedback when you make mistakes.
-                Your goal: {5} correct classifications in a row.
+                In the next phase, you will apply this same workflow to several new business cases without the step-by-step
+                guidance. The goal is to make the classification process reliable enough to use on your own.
               </p>
             </CardContent>
           </Card>

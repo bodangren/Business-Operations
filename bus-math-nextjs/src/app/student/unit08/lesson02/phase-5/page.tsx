@@ -12,17 +12,39 @@ export default function Phase5Page() {
   const exitTicketQuestions = [
     {
       id: "q1",
-      question: "Which of the following best describes capitalization?",
+      question: "When should a purchase be capitalized as a fixed asset in this lesson?",
       answers: [
-        "Recording a purchase as a long-term asset because it provides value for more than one year",
-        "Recording a purchase as an expense in the current period",
-        "Increasing the value of an asset each year on the balance sheet",
-        "Paying for an asset in cash instead of on credit"
+        "When it provides value for more than one year and the cost is significant enough to track separately",
+        "Whenever the purchase costs more than $100",
+        "Whenever the business pays cash instead of using credit",
+        "Whenever the item could be sold later for any amount"
       ],
-      explanation: "Capitalization means recording a purchase as a long-term asset on the balance sheet because the item will provide economic value to the business for more than one accounting period."
+      explanation: "This lesson's rule has two tests: the purchase must help the business beyond one year and the cost must be significant enough to justify separate tracking as an asset."
     },
     {
       id: "q2",
+      question: "TechStart buys a desk fan for $85. It may last 3 years. Which treatment best matches the lesson rule?",
+      answers: [
+        "Expense it, because it lasts more than one year but the cost is not significant enough to track as its own fixed asset",
+        "Capitalize it, because anything that lasts multiple years must become a fixed asset",
+        "Capitalize it only if TechStart pays cash",
+        "Record half as an asset and half as an expense"
+      ],
+      explanation: "This is the key edge case from the lesson: durability alone is not enough. The purchase also has to be significant enough to track separately."
+    },
+    {
+      id: "q3",
+      question: "Which purchase should be expensed rather than capitalized?",
+      answers: [
+        "A $1,300 machine tune-up that keeps equipment running but does not extend its useful life",
+        "A $12,000 laser cutter expected to last 8 years",
+        "A $6,200 backup server expected to last 6 years",
+        "A $4,800 conference table expected to last 10 years"
+      ],
+      explanation: "Routine maintenance keeps an existing asset operating in its current condition, but it does not create a new long-term asset or extend useful life. That makes it a current-period expense."
+    },
+    {
+      id: "q4",
       question: "A company buys a $50,000 machine that will last 10 years and can be sold for $5,000 at the end. What is the depreciable base?",
       answers: [
         "$45,000",
@@ -33,37 +55,15 @@ export default function Phase5Page() {
       explanation: "Depreciable base = Cost - Salvage Value = $50,000 - $5,000 = $45,000. This is the amount that will be allocated as depreciation expense over the 10-year useful life."
     },
     {
-      id: "q3",
-      question: "Why is routine maintenance on a delivery van expensed instead of capitalized?",
-      answers: [
-        "Because maintenance keeps the van running but does not extend its useful life or increase its capacity",
-        "Because maintenance costs are always small",
-        "Because vans are not considered long-term assets",
-        "Because the IRS requires all vehicle costs to be expensed"
-      ],
-      explanation: "Routine maintenance (oil changes, tire rotations) maintains the asset in its current condition but does not extend its useful life or improve its capacity. Therefore it is expensed. A major engine replacement that extends life would be capitalized."
-    },
-    {
-      id: "q4",
-      question: "What happens to accumulated depreciation over time?",
-      answers: [
-        "It grows each year as more depreciation expense is recorded",
-        "It decreases as the asset ages",
-        "It stays the same throughout the asset's life",
-        "It is reset to zero at the end of each year"
-      ],
-      explanation: "Accumulated depreciation is a running total. Each year, depreciation expense is added to it, so it grows over time. It reduces the asset's book value on the balance sheet."
-    },
-    {
       id: "q5",
-      question: "An asset has a cost of $8,000, accumulated depreciation of $3,000, and a salvage value of $1,000. What is its current book value?",
+      question: "Why do useful life and salvage value matter once a purchase has been capitalized?",
       answers: [
-        "$5,000",
-        "$4,000",
-        "$3,000",
-        "$7,000"
+        "They determine how much of the asset's cost becomes the depreciable base and how long that cost will be spread out",
+        "They determine whether the original cash payment was correct",
+        "They guarantee that every asset will have the same annual depreciation",
+        "They replace the need to decide whether the purchase is an asset or an expense"
       ],
-      explanation: "Book Value = Cost - Accumulated Depreciation = $8,000 - $3,000 = $5,000. The salvage value tells us what the book value will be at the end of the asset's life, not its current book value."
+      explanation: "Useful life tells you how long the asset helps the business, and salvage value tells you what portion of cost is expected to remain at the end. Together they shape the depreciable base and the later depreciation schedule."
     }
   ]
 
@@ -82,10 +82,10 @@ export default function Phase5Page() {
             <Badge className="bg-rose-600 text-white">
               Phase 5: Exit Ticket
             </Badge>
-            <h1 className="text-3xl font-bold text-gray-900">Capitalization & Depreciation Vocabulary Check</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Fixed-Asset Decision Exit Ticket</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              This short quiz checks your understanding of capitalization, useful life, salvage value,
-              and accumulated depreciation. These are the concepts you will use in every depreciation lesson going forward.
+              This short quiz checks whether you can apply the lesson's actual decision process:
+              asset or expense, significant or not, repair or improvement, and depreciable base.
             </p>
           </div>
 
@@ -100,19 +100,19 @@ export default function Phase5Page() {
               <div className="grid gap-3 md:grid-cols-2">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 text-sm">You can explain when a cost becomes an asset vs. an expense</p>
+                  <p className="text-gray-700 text-sm">You can decide when a purchase becomes an asset vs. an expense</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700 text-sm">You can apply the significance test, not just the one-year test</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700 text-sm">You can distinguish routine maintenance from capital improvements</p>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                   <p className="text-gray-700 text-sm">You can calculate depreciable base from cost and salvage value</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 text-sm">You understand how accumulated depreciation builds over time</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 text-sm">You can distinguish repairs from improvements</p>
                 </div>
               </div>
             </CardContent>
@@ -120,8 +120,8 @@ export default function Phase5Page() {
 
           <ComprehensionCheck
             questions={exitTicketQuestions}
-            title="Exit Ticket: Capitalization & Depreciation"
-            description="Answer all 5 questions. These assess the vocabulary and reasoning from today's lesson."
+            title="Exit Ticket: Capitalization Decision"
+            description="Answer all 5 questions. These check the classification and reasoning skills from today's lesson."
             showExplanations={true}
             allowRetry={true}
           />
