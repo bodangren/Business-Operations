@@ -5,29 +5,11 @@ import { PhaseFooter } from "@/components/student/PhaseFooter";
 import { lesson04Data, unit08Data, lesson04Phases } from "../lesson-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, Lightbulb } from "lucide-react";
+import DDBSalvageFloorLab from "../DDBSalvageFloorLab";
 
 const phase3 = lesson04Phases.find(p => p.sequence === 3)!;
 
 export default function Phase3Page() {
-  const cost = 30000;
-  const salvage = 5000;
-  const life = 5;
-  const ddbRate = 2 / life;
-
-  const ddbSchedule: { year: number; beginBV: number; rawExpense: number; adjustedExpense: number; endBV: number; note: string }[] = [];
-  let bv = cost;
-  for (let year = 1; year <= life; year++) {
-    const rawExpense = Math.round(bv * ddbRate);
-    let adjustedExpense = rawExpense;
-    let note = '';
-    if (bv - rawExpense < salvage) {
-      adjustedExpense = Math.max(0, Math.round(bv - salvage));
-      note = 'Adjusted to salvage floor';
-    }
-    bv -= adjustedExpense;
-    ddbSchedule.push({ year, beginBV: cost - ddbSchedule.reduce((s, r) => s + r.adjustedExpense, 0), rawExpense, adjustedExpense, endBV: bv, note });
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-amber-100">
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -60,70 +42,18 @@ export default function Phase3Page() {
               </CardContent>
             </Card>
 
-            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Worked Example: When the Floor Kicks In</h3>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border border-gray-300 p-2">Year</th>
-                    <th className="border border-gray-300 p-2 text-right">Begin BV</th>
-                    <th className="border border-gray-300 p-2 text-right">Raw DDB (40%)</th>
-                    <th className="border border-gray-300 p-2 text-right">Adjusted Expense</th>
-                    <th className="border border-gray-300 p-2 text-right">End BV</th>
-                    <th className="border border-gray-300 p-2">Note</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 p-2 font-medium">Year 1</td>
-                    <td className="border border-gray-300 p-2 text-right">$30,000</td>
-                    <td className="border border-gray-300 p-2 text-right">$12,000</td>
-                    <td className="border border-gray-300 p-2 text-right font-bold">$12,000</td>
-                    <td className="border border-gray-300 p-2 text-right">$18,000</td>
-                    <td className="border border-gray-300 p-2">Normal</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 p-2 font-medium">Year 2</td>
-                    <td className="border border-gray-300 p-2 text-right">$18,000</td>
-                    <td className="border border-gray-300 p-2 text-right">$7,200</td>
-                    <td className="border border-gray-300 p-2 text-right font-bold">$7,200</td>
-                    <td className="border border-gray-300 p-2 text-right">$10,800</td>
-                    <td className="border border-gray-300 p-2">Normal</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 p-2 font-medium">Year 3</td>
-                    <td className="border border-gray-300 p-2 text-right">$10,800</td>
-                    <td className="border border-gray-300 p-2 text-right">$4,320</td>
-                    <td className="border border-gray-300 p-2 text-right font-bold">$4,320</td>
-                    <td className="border border-gray-300 p-2 text-right">$6,480</td>
-                    <td className="border border-gray-300 p-2">Normal</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 p-2 font-medium">Year 4</td>
-                    <td className="border border-gray-300 p-2 text-right">$6,480</td>
-                    <td className="border border-gray-300 p-2 text-right">$2,592</td>
-                    <td className="border border-gray-300 p-2 text-right font-bold text-red-700">$1,480</td>
-                    <td className="border border-gray-300 p-2 text-right">$5,000</td>
-                    <td className="border border-gray-300 p-2 text-red-700 font-medium">Floor hit!</td>
-                  </tr>
-                  <tr className="bg-green-50">
-                    <td className="border border-gray-300 p-2 font-medium">Year 5</td>
-                    <td className="border border-gray-300 p-2 text-right">$5,000</td>
-                    <td className="border border-gray-300 p-2 text-right">$2,000</td>
-                    <td className="border border-gray-300 p-2 text-right font-bold">$0</td>
-                    <td className="border border-gray-300 p-2 text-right">$5,000</td>
-                    <td className="border border-gray-300 p-2">Already at salvage</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p className="text-sm text-gray-600 mt-2">
-              In Year 4, raw DDB would be $2,592, which would push book value to $3,888 — below the 
-              $5,000 salvage value. So the expense is capped at $1,480 ($6,480 − $5,000). Year 5 has 
-              zero expense because the asset is already at salvage value.
-            </p>
+            <Card className="border-orange-200 bg-white my-6">
+              <CardHeader>
+                <CardTitle className="text-orange-900">Activity: Salvage-Floor Guided Lab</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-700 mb-4">
+                  Work through the DDB schedule in sequence. First handle the normal years, then catch the year where the
+                  raw DDB amount would push book value below salvage value, and finally explain the business effect.
+                </p>
+                <DDBSalvageFloorLab />
+              </CardContent>
+            </Card>
 
             <Card className="border-orange-200 bg-orange-50 my-6">
               <CardHeader>
@@ -162,14 +92,12 @@ export default function Phase3Page() {
             <CardContent className="space-y-4">
               <div className="bg-white p-4 rounded border border-purple-200">
                 <p className="font-medium text-purple-900 mb-2">
-                  Scenario: A $20,000 machine with 4-year life and $2,000 salvage value. DDB rate = 50%.
+                  What signal tells you that a DDB calculation needs the salvage-floor adjustment?
                 </p>
-                <div className="space-y-2 text-sm text-purple-700">
-                  <p><strong>Year 1:</strong> $20,000 × 50% = $10,000. BV = $10,000. Normal.</p>
-                  <p><strong>Year 2:</strong> $10,000 × 50% = $5,000. BV = $5,000. Normal.</p>
-                  <p><strong>Year 3:</strong> $5,000 × 50% = $2,500. But $5,000 − $2,500 = $2,500, which is above $2,000 salvage. So $2,500 is fine. BV = $2,500.</p>
-                  <p><strong>Year 4:</strong> $2,500 × 50% = $1,250. But $2,500 − $1,250 = $1,250, which is BELOW $2,000 salvage. Expense is capped at $500. BV = $2,000.</p>
-                </div>
+                <p className="text-sm text-purple-700">
+                  The trigger is simple: after you calculate the raw DDB expense, check the resulting ending book value.
+                  If it would fall below salvage value, the raw amount cannot stand and must be reduced.
+                </p>
               </div>
             </CardContent>
           </Card>

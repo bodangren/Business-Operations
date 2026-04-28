@@ -1,0 +1,20 @@
+# Plan: TypeScript Build Guardrails
+
+## Phase 1: Establish the guardrail surface
+
+- [x] Confirm the current baseline with `./node_modules/.bin/tsc --noEmit`
+- [x] Add a dedicated `typecheck` script to `package.json`
+- [x] Update developer-facing docs/workflow references to use the explicit typecheck command
+
+## Phase 2: Wire TypeScript verification into track completion
+
+- [x] Update Measure workflow or adjacent project docs so future tracks explicitly verify TypeScript cleanliness
+- [x] Ensure the preferred verification path distinguishes between non-mutating typecheck and full build verification
+- [x] If implementation reveals any current TypeScript regressions, fix them before closing the track
+
+## Phase 3: Final verification
+
+- [x] Verify `./node_modules/.bin/tsc --noEmit` exits 0
+- [x] Verify `npm run lint` exits 0
+- [x] Verify `npm run build` succeeds when approval to run it is available, or record the approved fallback verification path
+- [x] Update any relevant tech-debt or workflow notes if the verification standard changed

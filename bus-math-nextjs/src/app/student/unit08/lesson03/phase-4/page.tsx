@@ -24,15 +24,14 @@ export default function Phase4Page() {
 
             <p className="text-lg leading-relaxed">
               Now it is time to practice until the method feels automatic. Each round gives you a 
-              new asset with different numbers. Your job is to calculate the annual expense, 
+              new asset with different numbers. Your job is to enter the annual expense,
               accumulated depreciation, and book value for a specific year.
             </p>
 
             <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
               <p className="text-blue-800 m-0">
-                <strong>Target:</strong> Get 5 consecutive correct answers to show mastery of 
-                straight-line depreciation. Use the "Show Example" button if you need a reminder 
-                of the formula before you submit.
+                <strong>Target:</strong> Get 5 consecutive correct rounds to show mastery of 
+                straight-line depreciation. Use "Show Example" only if you need the step sequence before you submit.
               </p>
             </div>
           </div>

@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, FileText, BarChart3 } from "lucide-react";
 import { FillInTheBlank } from "@/components/exercises/FillInTheBlank";
+import { withBasePath } from "@/lib/paths";
+import Image from "next/image";
 
 const phase2 = lesson03Phases.find(p => p.sequence === 2)!;
 
@@ -156,6 +158,31 @@ export default function Phase2Page() {
                 </div>
               </div>
             </div>
+
+            <Card className="border-blue-200 bg-white my-8 overflow-hidden">
+              <CardHeader>
+                <CardTitle className="text-blue-900">Visual Model: What Straight-Line Does Over Time</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-700">
+                  This infographic uses a different asset and different numbers, but the pattern is the same:
+                  straight-line keeps the annual depreciation amount constant, so book value falls in equal steps
+                  until it reaches salvage value.
+                </p>
+                <figure className="overflow-hidden rounded-xl border border-blue-200 bg-slate-50 shadow-sm">
+                  <Image
+                    src={withBasePath("/images/depreciation-straight-line.png")}
+                    alt="Straight-line depreciation infographic showing equal annual drops in book value, increasing accumulated depreciation, and a constant salvage-value floor."
+                    width={1600}
+                    height={1200}
+                    className="h-auto w-full"
+                  />
+                  <figcaption className="px-4 py-3 text-sm text-blue-900">
+                    Use this as a pattern check: constant annual expense means a straight, even decline in book value.
+                  </figcaption>
+                </figure>
+              </CardContent>
+            </Card>
 
             <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-4">Full Depreciation Schedule</h3>
 

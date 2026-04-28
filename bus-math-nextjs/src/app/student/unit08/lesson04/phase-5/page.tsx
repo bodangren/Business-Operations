@@ -23,29 +23,29 @@ const assessmentQuestions = [
   },
   {
     id: "ddb-q2",
-    question: "Why does DDB produce higher depreciation expense than straight-line in early years?",
+    question: "Why does DDB usually produce higher depreciation expense than straight-line in early years?",
     answers: [
-      "Because DDB applies the rate to the full book value rather than the depreciable base, and the rate is doubled",
+      "Because DDB uses double the straight-line rate and applies it to beginning book value",
       "Because DDB uses a longer useful life than straight-line",
       "Because DDB ignores salvage value entirely in all calculations",
       "Because straight-line is an accelerated method and DDB is not"
     ],
-    explanation: "DDB uses double the SL rate and applies it to book value (not depreciable base). This front-loads the expense."
+    explanation: "DDB uses double the straight-line rate and applies it to beginning book value each year. That front-loads more expense into earlier years."
   },
   {
     id: "ddb-q3",
-    question: "A $20,000 asset with 5-year life and $2,000 salvage value. In Year 4, DDB calculation gives $2,592 expense but book value would fall to $1,908. What should the expense be?",
+    question: "A machine begins Year 4 with a $6,480 book value and a $5,000 salvage value. Raw DDB expense is $2,592. What should the adjusted expense be?",
     answers: [
-      "$1,092, because book value can only go down to $2,000 salvage value",
-      "$2,592, because the DDB formula always takes priority",
-      "$0, because the asset is fully depreciated",
-      "$2,000, because that is the salvage value"
+      "$1,480, because expense must stop exactly at the $5,000 salvage-value floor",
+      "$2,592, because the raw DDB calculation always overrides salvage value",
+      "$5,000, because the expense should equal salvage value",
+      "$0, because the asset must stop depreciating one year early"
     ],
-    explanation: "Book value cannot fall below salvage value. Current BV = $2,592 + $1,908 = $4,500. Wait — the expense must be capped at $4,500 − $2,000 = $2,500. Actually: if BV before expense is $4,500 and salvage is $2,000, max expense = $2,500. But the question says raw expense is $2,592 and would push BV to $1,908. So expense = $4,500 − $2,000 = $2,500... Actually the question states BV would fall to $1,908 which is below $2,000. So expense = beginning BV − $2,000. The correct answer is $1,092 if beginning BV is $3,092."
+    explanation: "Book value can never fall below salvage value. The adjusted expense is $6,480 - $5,000 = $1,480, not the full $2,592 raw amount."
   },
   {
     id: "ddb-q4",
-    question: "Which type of asset is most likely to use DDB depreciation?",
+    question: "Which type of asset is the strongest candidate for DDB depreciation?",
     answers: [
       "Vehicles and technology equipment that lose value quickly in early years",
       "Land that does not depreciate",
@@ -56,7 +56,7 @@ const assessmentQuestions = [
   },
   {
     id: "ddb-q5",
-    question: "If a company switches from straight-line to DDB, what happens to Year 1 net income?",
+    question: "If a company switches from straight-line to DDB for the same asset, what usually happens to Year 1 net income?",
     answers: [
       "Net income decreases because DDB records higher depreciation expense",
       "Net income increases because DDB is more accurate",
@@ -102,10 +102,10 @@ export default function Phase5Page() {
               </CardHeader>
               <CardContent>
                 <ul className="text-purple-800 space-y-2 m-0">
-                  <li>• Calculating DDB depreciation expense</li>
-                  <li>• Applying the salvage value floor rule</li>
+                  <li>• Calculating DDB rate and early-year expense</li>
+                  <li>• Applying the salvage-value floor correctly</li>
                   <li>• Comparing DDB and straight-line in business terms</li>
-                  <li>• Understanding when to choose each method</li>
+                  <li>• Recognizing which assets fit accelerated depreciation</li>
                 </ul>
               </CardContent>
             </Card>

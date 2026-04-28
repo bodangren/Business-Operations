@@ -19,14 +19,13 @@ export default function Phase4Page() {
 
             <p className="text-lg leading-relaxed">
               Practice calculating DDB depreciation and comparing it with straight-line. Each round 
-              gives you a new asset. Your job is to find the correct DDB expense, book value, or 
-              method comparison for a specific year.
+              gives you a new asset. Your job is to enter the DDB expense, ending book value, and 
+              the difference from straight-line for a specific year.
             </p>
 
             <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
               <p className="text-purple-800 m-0">
-                <strong>Target:</strong> Get 5 consecutive correct answers. Use "Show Schedule" to 
-                see the full DDB vs straight-line comparison before you submit.
+                <strong>Target:</strong> Get 5 consecutive correct rounds. Use "Show Schedule" only when you need the full DDB vs straight-line schedule before you submit.
               </p>
             </div>
           </div>
