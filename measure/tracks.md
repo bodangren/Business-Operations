@@ -8,7 +8,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
 
 ## Active Tracks
 
-- [~] **P0 Track: Teacher/student data alignment audit and amendments**
+- [x] **P0 Track: Teacher/student data alignment audit and amendments**
   *Link: [./tracks/teacher_student_data_alignment_20260429/](./tracks/teacher_student_data_alignment_20260429/)*
 - [x] **Track: Reference system — bilingual glossary, index, and unit vocabulary lists**
   *Link: [./tracks/reference_system_20260403/](./tracks/reference_system_20260403/)*
