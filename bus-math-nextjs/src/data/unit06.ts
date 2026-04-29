@@ -79,8 +79,8 @@ export const unit06Data: UnitData = {
       {
         id: "milestone3",
         day: 10,
-        title: "Draft Pricing Recommendation",
-        description: "Complete pricing recommendation memo or presentation",
+        title: "Final Presentation, Submission, and Reflection",
+        description: "Deliver final pricing recommendation presentation, submit polished workbook, and reflect on pricing decisions",
         criteria: [
           "Clear pricing strategy recommendation with rationale",
           "Supporting CVP analysis and sensitivity scenarios",
