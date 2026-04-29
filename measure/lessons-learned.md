@@ -14,6 +14,13 @@
 - **Unit 07 milestone count mismatch**: Teacher plan had 3 milestones but unit07.ts only had 2. Added milestone 3 at day 10 (final presentation) to align with teacher plan and student lesson 10 data.
 - **Lesson vs day numbering**: In Unit 07, student Lesson 08 = day 8 in sequence, Lesson 09 = day 9, Lesson 10 = day 10. Teacher milestone 3 was at day 8 (should be day 10).
 
+## 2026-04-29 — Phase 3-5 Completion
+
+- **Re-run audit after every fix**: Initial full-audit-results.md showed Unit 02 with 1 blocker; re-running the audit returned 0 blockers. Old summaries go stale as fixes land — always re-verify.
+- **Fix what the audit says, not what you remember**: The canonical source order (student lesson data → unit data → teacher plan) resolves ambiguity. For Unit 06, the audit said `unit06.ts` needed fixing, not the teacher plan.
+- **Milestone day = lesson number**: Project lessons 8-10 map to milestone days 1-10. A milestone at the wrong day means the assessment trigger doesn't align with the student lesson.
+- **0 blockers across all 8 units**: Content drift (title differences) and informational (duration differences) are acceptable by design. Teacher and student surfaces serve different audiences.
+
 ## 2026-04-07 — Subagent Queue Management
 
 - **Keep a live active-ID ledger**: Spawned agents do not stay visible unless we track their IDs explicitly in-thread.
