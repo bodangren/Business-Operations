@@ -2,7 +2,7 @@
 
 # Configuration variables
 OPENCODE_WORK_MODEL="minimax-cn-coding-plan/MiniMax-M2.7"
-KIMI_WORK_MODEL="k2.5"
+KIMI_WORK_MODEL="kimi-for-coding/k2.6"
 REVIEW_MODEL_A="xiaomi/mimo-v2-pro"
 REVIEW_MODEL_B="zai-coding-plan/glm-5.1"
 WORKING_DIR="/Users/daniel.bodanske/Desktop/Business-Operations"
