@@ -6,18 +6,18 @@
 P0. Teacher-facing lesson plans and milestones must be trustworthy before additional teacher content work proceeds.
 
 ## Phase 1: Alignment Audit Guardrail
-- [ ] Task 1.1: Define the audit contract
-  - [ ] Specify the fields compared across student lesson data, teacher lesson plans, and unit data.
-  - [ ] Document known acceptable differences, such as teacher-only facilitation guidance.
-  - [ ] Define mismatch severity levels: blocker, content drift, route drift, and informational.
-- [ ] Task 1.2: Add the first deterministic audit check
-  - [ ] Implement a script or test that loads student lesson metadata and teacher/unit data for one unit.
-  - [ ] Check lesson titles, durations, phase counts, phase names, and milestone day/title/description alignment.
-  - [ ] Produce readable mismatch output by unit and lesson.
-- [ ] Task 1.3: Seed the audit with Unit 08
-  - [ ] Run the check logic against Unit 08 data.
-  - [ ] Record current Unit 08 mismatches in an audit note or plan update.
-  - [ ] Use the mismatch list as the repair checklist for Phase 2.
+- [x] Task 1.1: Define the audit contract
+  - [x] Specify the fields compared across student lesson data, teacher lesson plans, and unit data.
+  - [x] Document known acceptable differences, such as teacher-only facilitation guidance.
+  - [x] Define mismatch severity levels: blocker, content drift, route drift, and informational.
+- [x] Task 1.2: Add the first deterministic audit check
+  - [x] Implement a script or test that loads student lesson metadata and teacher/unit data for one unit.
+  - [x] Check lesson titles, durations, phase counts, phase names, and milestone day/title/description alignment.
+  - [x] Produce readable mismatch output by unit and lesson.
+- [x] Task 1.3: Seed the audit with Unit 08
+  - [x] Run the check logic against Unit 08 data.
+  - [x] Record current Unit 08 mismatches in an audit note or plan update.
+  - [x] Use the mismatch list as the repair checklist for Phase 2.
 
 ## Phase 2: Unit 08 Data Amendments
 - [ ] Task 2.1: Align Unit 08 assessment milestones
