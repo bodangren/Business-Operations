@@ -111,14 +111,14 @@ export const unit06LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 9,
-        title: "Pricing Recommendation Memo Draft",
-        description: "Complete draft of pricing strategy recommendation",
+        day: 10,
+        title: "Final Presentation and Submission",
+        description: "Deliver final pricing recommendation presentation and submit polished workbook",
         criteria: [
-          "Clear pricing recommendation with quantitative justification",
-          "Professional memo or slide deck format appropriate for business audience",
-          "Integration of competitor analysis, CVP modeling, and sensitivity insights",
-          "Anticipation of stakeholder concerns and counterarguments"
+          "Polished 3-5 minute presentation with clear recommendation and workbook evidence",
+          "Defend recommendation during Q&A using CVP analysis and sensitivity data",
+          "Final workbook meets all quality standards and submission requirements",
+          "Reflect on pricing logic, risk assessment, and model credibility"
         ]
       }
     ],

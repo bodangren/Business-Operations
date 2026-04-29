@@ -116,14 +116,14 @@ export const unit07LessonPlan: UnitLessonPlan = {
         ]
       },
       {
-        day: 8,
-        title: "Advisory Brief Draft",
-        description: "Strategic analysis document with inventory method recommendations",
+        day: 10,
+        title: "Final Presentation and Submission",
+        description: "Deliver final presentation defending inventory method recommendation and submit polished workbook",
         criteria: [
-          "Clear rationale for inventory method selection tied to business objectives",
-          "COGS and ending inventory analysis across all four methods",
-          "Inventory turnover ratio calculations and interpretation",
-          "Professional business writing appropriate for executive audience"
+          "Clear presentation of inventory valuation story with workbook evidence",
+          "Defend method recommendation during Q&A using cited numbers",
+          "Final workbook meets all quality standards and submission requirements",
+          "Reflect on method choice, evidence quality, and reporting credibility"
         ]
       }
     ],

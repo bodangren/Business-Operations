@@ -7,6 +7,13 @@
 - **Duration field comparison is informational only**: Teacher `duration` stores per-activity time blocks; student `durationEstimateMinutes` is the full lesson duration. This data model difference produces false positive mismatches — ignore in audit.
 - **Audit seeded successfully on all 8 units**: 3 blockers found (Unit 6 milestone day, Unit 7 milestone count); Units 1-5 and 8 pass with acceptable content drift.
 
+## 2026-04-29 — Phase 2 Blocker Fixes
+
+- **Plan vs audit discrepancy**: Plan was written before audit. Phase 2 originally targeted Unit 08, but audit found Unit 08 passes and actual blockers are in Units 06 and 07. Always re-verify plan against audit results.
+- **Unit 06 milestone 3 day mismatch**: Teacher plan had milestone 3 at day 9 (draft recommendation) but student Lesson 10 is final presentation. Fixed by aligning to day 10.
+- **Unit 07 milestone count mismatch**: Teacher plan had 3 milestones but unit07.ts only had 2. Added milestone 3 at day 10 (final presentation) to align with teacher plan and student lesson 10 data.
+- **Lesson vs day numbering**: In Unit 07, student Lesson 08 = day 8 in sequence, Lesson 09 = day 9, Lesson 10 = day 10. Teacher milestone 3 was at day 8 (should be day 10).
+
 ## 2026-04-07 — Subagent Queue Management
 
 - **Keep a live active-ID ledger**: Spawned agents do not stay visible unless we track their IDs explicitly in-thread.

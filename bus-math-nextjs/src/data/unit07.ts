@@ -69,6 +69,18 @@ export const unit07Data: UnitData = {
           "Dynamic updates when methods are changed",
           "Error-free calculations across all scenarios"
         ]
+      },
+      {
+        id: "milestone3",
+        day: 10,
+        title: "Final Presentation and Submission",
+        description: "Deliver final presentation defending inventory method recommendation and submit polished workbook",
+        criteria: [
+          "Clear presentation of inventory valuation story with workbook evidence",
+          "Defend method recommendation during Q&A using cited numbers",
+          "Final workbook meets all quality standards and submission requirements",
+          "Reflect on method choice, evidence quality, and reporting credibility"
+        ]
       }
     ],
     rubric: [

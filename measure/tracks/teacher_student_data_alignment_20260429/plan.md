@@ -19,29 +19,25 @@ P0. Teacher-facing lesson plans and milestones must be trustworthy before additi
   - [x] Record current Unit 08 mismatches in an audit note or plan update.
   - [x] Use the mismatch list as the repair checklist for Phase 2.
 
-## Phase 2: Unit 08 Data Amendments
-- [ ] Task 2.1: Align Unit 08 assessment milestones
-  - [ ] Update `src/data/unit08.ts` milestones to match Lessons 08-10 project milestones.
-  - [ ] Ensure milestone criteria match the student pages' acceptance criteria and project flow.
-  - [ ] Reconcile `unit08LessonPlan.assessment.milestones` if the teacher plan duplicates milestone data.
-- [ ] Task 2.2: Align Unit 08 teacher lesson details to student lesson phases
-  - [ ] Rewrite `src/data/teacher/unit08-lesson-plan.ts` daily lessons so each day follows the implemented student lesson title, focus, and phase progression.
-  - [ ] Preserve operational teacher guidance while removing stale or contradictory activities.
-  - [ ] Handle Lessons 08-10 explicitly, including the fact that Lessons 08-09 are project-day pages and Lesson 10 is a single assessment phase.
-- [ ] Task 2.3: Reconcile Unit 08 rubric and project language
-  - [ ] Compare rubric weights and category names across `unit08.ts`, `unit08-lesson-plan.ts`, and Lesson 10 student page.
-  - [ ] Choose one canonical rubric for Unit 08 or document any intentionally different formative/final rubrics.
-  - [ ] Amend teacher/student-facing data that contradicts the chosen canonical rubric.
+## Phase 2: Units 06 and 07 Blocker Fixes
+- [ ] Task 2.1: Fix Unit 06 milestone 3 day mismatch
+  - [ ] Update `src/data/teacher/unit06-lesson-plan.ts` milestone 3 from day 9 to day 10.
+  - [ ] Update milestone title/description to match Lesson 10 content (final presentation), not Lesson 09 content (draft recommendation).
+  - [ ] Verify `src/data/unit06.ts` milestone 3 day is correctly set to 10.
+- [ ] Task 2.2: Fix Unit 07 milestone count mismatch
+  - [ ] Investigate: student `unit07.ts` has 2 milestones, teacher `unit07-lesson-plan.ts` has 3 milestones.
+  - [ ] Determine correct milestone structure based on student Lessons 08-10.
+  - [ ] Align both unit data and teacher plan to the correct structure.
 
-## Phase 3: Unit-by-Unit Audit for Units 01-07
-- [ ] Task 3.1: Run alignment audit across Units 01-07
+## Phase 3: Units 01-05 Audit
+- [ ] Task 3.1: Run alignment audit across Units 01-05
   - [ ] Generate mismatch summaries for each unit.
   - [ ] Identify units with stale milestones, lesson-detail drift, route drift, or rubric drift.
   - [ ] Prioritize units by teacher-facing risk and amount of detected drift.
 - [ ] Task 3.2: Create repair checklist for each affected unit
   - [ ] Add per-unit subtasks or follow-up tracks if the drift is large.
   - [ ] Mark false positives and intentional differences.
-  - [ ] Keep Unit 08 as the model for how to amend without flattening teacher guidance.
+  - [ ] Note: Units 06 and 07 blockers fixed in Phase 2; Units 08 audit complete (passed with acceptable drift).
 
 ## Phase 4: Remaining Unit Amendments
 - [ ] Task 4.1: Amend highest-risk units after Unit 08
@@ -54,8 +50,9 @@ P0. Teacher-facing lesson plans and milestones must be trustworthy before additi
 
 ## Phase 5: Verification and Handoff
 - [ ] Task 5.1: Verify teacher routes against amended data
-  - [ ] Spot-check `/teacher/unit08/` and `/teacher/unit08/lesson-01` through `/lesson-10`.
-  - [ ] Spot-check at least one repaired lesson in every additional amended unit.
+  - [ ] Spot-check `/teacher/unit06/` and `/teacher/unit06/lesson-10` (milestone 3 fix).
+  - [ ] Spot-check `/teacher/unit07/` milestones (milestone count alignment).
+  - [ ] Spot-check at least one repaired lesson in any additional amended units.
   - [ ] Confirm teacher pages still render useful operational guidance.
 - [ ] Task 5.2: Run approved verification gates
   - [ ] Run non-npm checks that do not require approval.
