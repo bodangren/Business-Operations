@@ -1,5 +1,6 @@
 import * as path from "path"
 import * as fs from "fs"
+import ts from "typescript"
 
 const REPO_ROOT = path.resolve(process.cwd(), "bus-math-nextjs")
 
@@ -57,62 +58,164 @@ type RubricCriteria = {
   developing: string
 }
 
+// ─── TypeScript Compiler API Helpers ─────────────────────────────────────────
+
+function parseSourceFile(filePath: string): ts.SourceFile {
+  const content = fs.readFileSync(filePath, "utf8")
+  return ts.createSourceFile(filePath, content, ts.ScriptTarget.Latest, true)
+}
+
+function resolveExpression(node: ts.Node): ts.Node {
+  if (ts.isAsExpression(node)) return resolveExpression(node.expression)
+  if (ts.isParenthesizedExpression(node)) return resolveExpression(node.expression)
+  return node
+}
+
+function extractString(node: ts.Node): string | null {
+  const resolved = resolveExpression(node)
+  if (ts.isStringLiteral(resolved) || ts.isNoSubstitutionTemplateLiteral(resolved)) {
+    return resolved.text
+  }
+  return null
+}
+
+function extractNumber(node: ts.Node): number | null {
+  const resolved = resolveExpression(node)
+  if (ts.isNumericLiteral(resolved)) {
+    return parseInt(resolved.text, 10)
+  }
+  if (ts.isPrefixUnaryExpression(resolved) && resolved.operator === ts.SyntaxKind.MinusToken && ts.isNumericLiteral(resolved.operand)) {
+    return -parseInt(resolved.operand.text, 10)
+  }
+  return null
+}
+
+function extractBoolean(node: ts.Node): boolean | null {
+  const resolved = resolveExpression(node)
+  if (resolved.kind === ts.SyntaxKind.TrueKeyword) return true
+  if (resolved.kind === ts.SyntaxKind.FalseKeyword) return false
+  return null
+}
+
+function extractArrayLiteral(node: ts.Node): ts.Node[] {
+  const resolved = resolveExpression(node)
+  if (ts.isArrayLiteralExpression(resolved)) {
+    return resolved.elements.slice()
+  }
+  return []
+}
+
+function extractStringArray(node: ts.Node): string[] {
+  return extractArrayLiteral(node).map(extractString).filter((s): s is string => s !== null)
+}
+
+function getObjectPropertyNode(objectNode: ts.Node, key: string): ts.Node | undefined {
+  const resolved = resolveExpression(objectNode)
+  if (!ts.isObjectLiteralExpression(resolved)) return undefined
+  for (const prop of resolved.properties) {
+    if (ts.isPropertyAssignment(prop)) {
+      const name = getPropertyName(prop)
+      if (name === key) return prop.initializer
+    }
+    if (ts.isShorthandPropertyAssignment(prop)) {
+      if (prop.name.text === key) return prop.name
+    }
+  }
+  return undefined
+}
+
+function getObjectPropertyStringValue(objectNode: ts.Node, key: string): string | null {
+  const value = getObjectPropertyNode(objectNode, key)
+  return value ? extractString(value) : null
+}
+
+function getObjectPropertyNumberValue(objectNode: ts.Node, key: string): number | null {
+  const value = getObjectPropertyNode(objectNode, key)
+  return value ? extractNumber(value) : null
+}
+
+function getPropertyName(prop: ts.PropertyAssignment | ts.ShorthandPropertyAssignment): string | undefined {
+  if (ts.isIdentifier(prop.name)) return prop.name.text
+  if (ts.isStringLiteral(prop.name)) return prop.name.text
+  if (ts.isNumericLiteral(prop.name)) return prop.name.text
+  if (ts.isComputedPropertyName(prop.name)) {
+    if (ts.isStringLiteral(prop.name.expression)) return prop.name.expression.text
+  }
+  return undefined
+}
+
+function findExportedVariable(sourceFile: ts.SourceFile, namePattern: RegExp): ts.VariableDeclaration | undefined {
+  let found: ts.VariableDeclaration | undefined
+  ts.forEachChild(sourceFile, (node) => {
+    if (found) return
+    if (!ts.isVariableStatement(node)) return
+    if (!(ts.getCombinedModifierFlags(node) & ts.ModifierFlags.Export)) return
+    for (const decl of node.declarationList.declarations) {
+      if (ts.isIdentifier(decl.name) && namePattern.test(decl.name.text)) {
+        found = decl
+        return
+      }
+    }
+  })
+  return found
+}
+
+// ─── Data Loaders ────────────────────────────────────────────────────────────
+
 function loadStudentLessonData(unit: number): { lessons: LessonData[]; phasesByLesson: Map<number, Phase[]> } {
   const lessons: LessonData[] = []
   const phasesByLesson = new Map<number, Phase[]>()
-  const studentUnitDir = path.join(REPO_ROOT, `src/app/student/unit${String(unit).padStart(2, "0")}`)
+  const unitDir = path.join(REPO_ROOT, `src/app/student/unit${String(unit).padStart(2, "0")}`)
 
-  if (!fs.existsSync(studentUnitDir)) {
-    return { lessons, phasesByLesson }
-  }
+  if (!fs.existsSync(unitDir)) return { lessons, phasesByLesson }
 
-  const lessonDirs = fs.readdirSync(studentUnitDir).filter((d) => /^lesson\d+$/.test(d))
+  const lessonDirs = fs.readdirSync(unitDir).filter((d) => /^lesson\d+$/.test(d))
 
   for (const dir of lessonDirs) {
-    const lessonDataPath = path.join(studentUnitDir, dir, "lesson-data.ts")
-    if (!fs.existsSync(lessonDataPath)) continue
+    const filePath = path.join(unitDir, dir, "lesson-data.ts")
+    if (!fs.existsSync(filePath)) continue
 
-    const content = fs.readFileSync(lessonDataPath, "utf8")
-    const match = content.match(/export\s+const\s+lesson\d+Data\s*=\s*(\{[\s\S]*?\})\s*(?:as\s+const)?/)
-    if (!match) continue
+    const lessonNum = parseInt(dir.replace("lesson", ""), 10)
 
     try {
-      const jsonStr = match[1]
-        .replace(/\n\s*id:\s*"/g, '\n"id":"')
-        .replace(/\n\s*title:\s*"/g, '\n"title":"')
-        .replace(/\n\s*sequence:\s*/g, '\n"sequence":')
-        .replace(/\n\s*unitId:\s*"/g, '\n"unitId":"')
-        .replace(/\n\s*durationEstimateMinutes:\s*/g, '\n"durationEstimateMinutes":')
-        .replace(/\n\s*rationale:\s*"/g, '\n"rationale":"')
+      const sf = parseSourceFile(filePath)
 
-      const idMatch = jsonStr.match(/"id"\s*:\s*"([^"]+)"/)
-      const titleMatch = jsonStr.match(/"title"\s*:\s*"([^"]+)"/)
-      const sequenceMatch = jsonStr.match(/"sequence"\s*:\s*(\d+)/)
-      const unitIdMatch = jsonStr.match(/"unitId"\s*:\s*"([^"]+)"/)
-      const durationMatch = jsonStr.match(/"durationEstimateMinutes"\s*:\s*(\d+)/)
+      // Extract lesson data object
+      const dataDecl = findExportedVariable(sf, new RegExp(`^lesson${String(lessonNum).padStart(2, "0")}Data$`))
+      if (dataDecl?.initializer) {
+        const obj = resolveExpression(dataDecl.initializer)
+        const id = getObjectPropertyStringValue(obj, "id")
+        const title = getObjectPropertyStringValue(obj, "title")
+        const sequence = getObjectPropertyNumberValue(obj, "sequence")
+        const unitId = getObjectPropertyStringValue(obj, "unitId")
+        const duration = getObjectPropertyNumberValue(obj, "durationEstimateMinutes")
 
-      if (idMatch && titleMatch && sequenceMatch && unitIdMatch) {
-        const lessonNum = parseInt(dir.replace("lesson", ""))
-        const lesson: LessonData = {
-          id: idMatch[1],
-          title: titleMatch[1],
-          sequence: parseInt(sequenceMatch[1]),
-          unitId: unitIdMatch[1],
-          durationEstimateMinutes: durationMatch ? parseInt(durationMatch[1]) : undefined,
-        }
-        lessons.push(lesson)
-
-        const phasesMatch = content.match(/export\s+const\s+lesson\d+Phases\s*=\s*(\[[\s\S]*?\])/)
-        if (phasesMatch) {
-          const phases: Phase[] = []
-          const phaseMatches = phasesMatch[1].matchAll(/\{[^}]*phaseName:\s*"([^"]+)"[^}]*sequence:\s*(\d+)/g)
-          for (const m of phaseMatches) {
-            phases.push({ id: "", phaseName: m[1], sequence: parseInt(m[2]) })
-          }
-          phasesByLesson.set(lessonNum, phases)
+        if (id && title && sequence !== null && unitId) {
+          lessons.push({
+            id,
+            title,
+            sequence,
+            unitId,
+            durationEstimateMinutes: duration ?? undefined,
+          })
         }
       }
-    } catch (e) {
+
+      // Extract phases array
+      const phasesDecl = findExportedVariable(sf, new RegExp(`^lesson${String(lessonNum).padStart(2, "0")}Phases$`))
+      if (phasesDecl?.initializer) {
+        const phases: Phase[] = []
+        const elements = extractArrayLiteral(phasesDecl.initializer)
+        for (const elem of elements) {
+          const phaseName = getObjectPropertyStringValue(elem, "phaseName")
+          const sequence = getObjectPropertyNumberValue(elem, "sequence")
+          if (phaseName && sequence !== null) {
+            phases.push({ id: "", phaseName, sequence })
+          }
+        }
+        phasesByLesson.set(lessonNum, phases)
+      }
+    } catch {
       // skip malformed file
     }
   }
@@ -124,20 +227,52 @@ function loadUnitData(unit: number): { milestones: Milestone[]; rubric: RubricCr
   const unitPath = path.join(REPO_ROOT, `src/data/unit${String(unit).padStart(2, "0")}.ts`)
   if (!fs.existsSync(unitPath)) return { milestones: [], rubric: [] }
 
-  const content = fs.readFileSync(unitPath, "utf8")
+  const sf = parseSourceFile(unitPath)
+  const dataDecl = findExportedVariable(sf, /^unit\d+Data$/)
+  if (!dataDecl?.initializer) return { milestones: [], rubric: [] }
 
+  const unitObj = resolveExpression(dataDecl.initializer)
+
+  // Navigate to assessment.milestones
   const milestones: Milestone[] = []
-  const milestoneMatches = content.matchAll(/id:\s*"([^"]+)"[^}]*day:\s*(\d+)[^}]*title:\s*"([^"]+)"[^}]*description:\s*"([^"]+)"[^}]*criteria:\s*\[([\s\S]*?)\]/g)
-  for (const m of milestoneMatches) {
-    const criteriaStr = m[5]
-    const criteria = criteriaStr.split(",").map((c) => c.trim().replace(/^"|"$/g, "")).filter(Boolean)
-    milestones.push({ id: m[1], day: parseInt(m[2]), title: m[3], description: m[4], criteria })
+  const assessmentNode = getObjectPropertyNode(unitObj, "assessment")
+  if (assessmentNode) {
+    const milestonesNode = getObjectPropertyNode(assessmentNode, "milestones")
+    if (milestonesNode) {
+      const elements = extractArrayLiteral(milestonesNode)
+      for (const elem of elements) {
+        const id = getObjectPropertyStringValue(elem, "id")
+        const day = getObjectPropertyNumberValue(elem, "day")
+        const title = getObjectPropertyStringValue(elem, "title")
+        const description = getObjectPropertyStringValue(elem, "description")
+        const criteriaNode = getObjectPropertyNode(elem, "criteria")
+        const criteria = criteriaNode ? extractStringArray(criteriaNode) : []
+
+        if (id && day !== null && title && description) {
+          milestones.push({ id, day, title, description, criteria })
+        }
+      }
+    }
   }
 
+  // Navigate to assessment.rubric
   const rubric: RubricCriteria[] = []
-  const rubricMatches = content.matchAll(/name:\s*"([^"]+)"[^}]*weight:\s*"([^"]+)"[^}]*exemplary:\s*"([^"]+)"[^}]*proficient:\s*"([^"]+)"[^}]*developing:\s*"([^"]+)"/g)
-  for (const m of rubricMatches) {
-    rubric.push({ name: m[1], weight: m[2], exemplary: m[3], proficient: m[4], developing: m[5] })
+  if (assessmentNode) {
+    const rubricNode = getObjectPropertyNode(assessmentNode, "rubric")
+    if (rubricNode) {
+      const elements = extractArrayLiteral(rubricNode)
+      for (const elem of elements) {
+        const name = getObjectPropertyStringValue(elem, "name")
+        const weight = getObjectPropertyStringValue(elem, "weight")
+        const exemplary = getObjectPropertyStringValue(elem, "exemplary")
+        const proficient = getObjectPropertyStringValue(elem, "proficient")
+        const developing = getObjectPropertyStringValue(elem, "developing")
+
+        if (name && weight && exemplary && proficient && developing) {
+          rubric.push({ name, weight, exemplary, proficient, developing })
+        }
+      }
+    }
   }
 
   return { milestones, rubric }
@@ -147,30 +282,77 @@ function loadTeacherLessonPlan(unit: number): { dailyLessons: { day: number; tit
   const planPath = path.join(REPO_ROOT, `src/data/teacher/unit${String(unit).padStart(2, "0")}-lesson-plan.ts`)
   if (!fs.existsSync(planPath)) return { dailyLessons: [], milestones: [], rubric: [] }
 
-  const content = fs.readFileSync(planPath, "utf8")
+  const sf = parseSourceFile(planPath)
+  const dataDecl = findExportedVariable(sf, /^unit\d+LessonPlan$/)
+  if (!dataDecl?.initializer) return { dailyLessons: [], milestones: [], rubric: [] }
 
+  const planObj = resolveExpression(dataDecl.initializer)
+
+  // Navigate to learningPlan.dailyLessons
   const dailyLessons: { day: number; title: string; focus: string; duration: string }[] = []
-  const dayMatches = content.matchAll(/day:\s*(\d+)[^}]*title:\s*"([^"]+)"[^}]*focus:\s*"([^"]+)"[^}]*duration:\s*"([^"]+)"/g)
-  for (const m of dayMatches) {
-    dailyLessons.push({ day: parseInt(m[1]), title: m[2], focus: m[3], duration: m[4] })
+  const learningPlanNode = getObjectPropertyNode(planObj, "learningPlan")
+  if (learningPlanNode) {
+    const dailyLessonsNode = getObjectPropertyNode(learningPlanNode, "dailyLessons")
+    if (dailyLessonsNode) {
+      const elements = extractArrayLiteral(dailyLessonsNode)
+      for (const elem of elements) {
+        const day = getObjectPropertyNumberValue(elem, "day")
+        const title = getObjectPropertyStringValue(elem, "title")
+        const focus = getObjectPropertyStringValue(elem, "focus")
+        const duration = getObjectPropertyStringValue(elem, "duration")
+
+        if (day !== null && title && focus && duration) {
+          dailyLessons.push({ day, title, focus, duration })
+        }
+      }
+    }
   }
 
+  // Navigate to assessment.milestones
   const milestones: Milestone[] = []
-  const milestoneMatches = content.matchAll(/day:\s*(\d+)[^}]*title:\s*"([^"]+)"[^}]*description:\s*"([^"]+)"[^}]*criteria:\s*\[([\s\S]*?)\]/g)
-  for (const m of milestoneMatches) {
-    const criteriaStr = m[4]
-    const criteria = criteriaStr.split(",").map((c) => c.trim().replace(/^"|"$/g, "")).filter(Boolean)
-    milestones.push({ day: parseInt(m[1]), title: m[2], description: m[3], criteria })
+  const assessmentNode = getObjectPropertyNode(planObj, "assessment")
+  if (assessmentNode) {
+    const milestonesNode = getObjectPropertyNode(assessmentNode, "milestones")
+    if (milestonesNode) {
+      const elements = extractArrayLiteral(milestonesNode)
+      for (const elem of elements) {
+        const day = getObjectPropertyNumberValue(elem, "day")
+        const title = getObjectPropertyStringValue(elem, "title")
+        const description = getObjectPropertyStringValue(elem, "description")
+        const criteriaNode = getObjectPropertyNode(elem, "criteria")
+        const criteria = criteriaNode ? extractStringArray(criteriaNode) : []
+
+        if (day !== null && title && description) {
+          milestones.push({ id: "", day, title, description, criteria })
+        }
+      }
+    }
   }
 
+  // Navigate to assessment.rubric
   const rubric: RubricCriteria[] = []
-  const rubricMatches = content.matchAll(/name:\s*"([^"]+)"[^}]*weight:\s*"([^"]+)"[^}]*exemplary:\s*"([^"]+)"[^}]*proficient:\s*"([^"]+)"[^}]*developing:\s*"([^"]+)"/g)
-  for (const m of rubricMatches) {
-    rubric.push({ name: m[1], weight: m[2], exemplary: m[3], proficient: m[4], developing: m[5] })
+  if (assessmentNode) {
+    const rubricNode = getObjectPropertyNode(assessmentNode, "rubric")
+    if (rubricNode) {
+      const elements = extractArrayLiteral(rubricNode)
+      for (const elem of elements) {
+        const name = getObjectPropertyStringValue(elem, "name")
+        const weight = getObjectPropertyStringValue(elem, "weight")
+        const exemplary = getObjectPropertyStringValue(elem, "exemplary")
+        const proficient = getObjectPropertyStringValue(elem, "proficient")
+        const developing = getObjectPropertyStringValue(elem, "developing")
+
+        if (name && weight && exemplary && proficient && developing) {
+          rubric.push({ name, weight, exemplary, proficient, developing })
+        }
+      }
+    }
   }
 
   return { dailyLessons, milestones, rubric }
 }
+
+// ─── Audit Logic ─────────────────────────────────────────────────────────────
 
 function parseDurationMinutes(duration: string): number {
   const minMatch = duration.match(/(\d+)\s*min/i)
@@ -314,20 +496,43 @@ function auditUnit(unit: number): AuditResult {
 }
 
 if (require.main === module) {
-  const unit = parseInt(process.argv[2] ?? "8")
-  const result = auditUnit(unit)
+  const unitArg = process.argv[2]
 
-  console.log(`\n=== Audit Result: ${result.unit} ===`)
-  console.log(`Passed: ${result.passed}`)
-  console.log(`Blockers: ${result.summary.blockers}`)
-  console.log(`Content Drift: ${result.summary.contentDrift}`)
-  console.log(`Route Drift: ${result.summary.routeDrift}`)
-  console.log(`Informational: ${result.summary.informational}`)
-  console.log("\n--- Mismatches ---")
-  for (const m of result.mismatches) {
-    console.log(`[${m.severity}] ${m.lesson ? `Lesson ${m.lesson} — ` : ""}${m.field}`)
-    console.log(`  Student: ${m.studentValue ?? "(null)"}`)
-    console.log(`  Teacher: ${m.teacherValue ?? "(null)"}`)
-    if (m.note) console.log(`  Note: ${m.note}`)
+  if (unitArg === "all") {
+    for (let u = 1; u <= 8; u++) {
+      const result = auditUnit(u)
+      console.log(`\n=== Audit Result: ${result.unit} ===`)
+      console.log(`Passed: ${result.passed}`)
+      console.log(`Blockers: ${result.summary.blockers}`)
+      console.log(`Content Drift: ${result.summary.contentDrift}`)
+      console.log(`Route Drift: ${result.summary.routeDrift}`)
+      console.log(`Informational: ${result.summary.informational}`)
+      if (result.mismatches.length > 0) {
+        console.log("\n--- Mismatches ---")
+        for (const m of result.mismatches) {
+          console.log(`[${m.severity}] ${m.lesson ? `Lesson ${m.lesson} — ` : ""}${m.field}`)
+          console.log(`  Student: ${m.studentValue ?? "(null)"}`)
+          console.log(`  Teacher: ${m.teacherValue ?? "(null)"}`)
+          if (m.note) console.log(`  Note: ${m.note}`)
+        }
+      }
+    }
+  } else {
+    const unit = parseInt(unitArg ?? "8")
+    const result = auditUnit(unit)
+
+    console.log(`\n=== Audit Result: ${result.unit} ===`)
+    console.log(`Passed: ${result.passed}`)
+    console.log(`Blockers: ${result.summary.blockers}`)
+    console.log(`Content Drift: ${result.summary.contentDrift}`)
+    console.log(`Route Drift: ${result.summary.routeDrift}`)
+    console.log(`Informational: ${result.summary.informational}`)
+    console.log("\n--- Mismatches ---")
+    for (const m of result.mismatches) {
+      console.log(`[${m.severity}] ${m.lesson ? `Lesson ${m.lesson} — ` : ""}${m.field}`)
+      console.log(`  Student: ${m.studentValue ?? "(null)"}`)
+      console.log(`  Teacher: ${m.teacherValue ?? "(null)"}`)
+      if (m.note) console.log(`  Note: ${m.note}`)
+    }
   }
 }
