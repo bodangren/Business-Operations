@@ -93,61 +93,61 @@ export default function ReflectionJournal({
 
   return (
     <div className={`max-w-4xl mx-auto p-4 space-y-6 ${className}`}>
-      <Card>
-        <CardHeader>
+      <Card className="card-ledger border-2 border-primary">
+        <CardHeader className="border-b-2 border-primary">
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-2xl font-bold">{unitTitle}</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-3xl font-display font-bold italic">{unitTitle}</CardTitle>
+              <CardDescription className="font-body italic mt-1">
                 Reflect on your learning journey and growth in the CAP framework
               </CardDescription>
             </div>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline">
-                {completedCount}/{totalCount} Complete
+            <div className="flex items-center gap-3">
+              <Badge variant="outline" className="font-mono border-primary">
+                {completedCount}/{totalCount} COMPLETE
               </Badge>
               {isSaved && (
-                <Badge className="bg-green-100 text-green-800">
-                  ✓ Saved
+                <Badge variant="stamp">
+                  ✓ RECORDED
                 </Badge>
               )}
             </div>
           </div>
         </CardHeader>
         
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-8 pt-8">
           {prompts.map((prompt) => (
-            <Card key={prompt.id} className="border-l-4 border-l-muted-foreground/20">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl">{getCategoryIcon(prompt.category)}</span>
-                  <Badge className={getCategoryColor(prompt.category)}>
+            <Card key={prompt.id} className="border-2 border-primary bg-white shadow-none">
+              <CardHeader className="pb-3 border-b border-primary/20 bg-muted/10">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl grayscale">{getCategoryIcon(prompt.category)}</span>
+                  <Badge className={`${getCategoryColor(prompt.category)} border-none rounded-none font-mono font-bold tracking-widest px-2`}>
                     {prompt.category.toUpperCase()}
                   </Badge>
                 </div>
-                <CardTitle className="text-lg leading-relaxed">
+                <CardTitle className="text-xl font-display font-bold">
                   {prompt.prompt}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent>
+              <CardContent className="pt-6">
                 <div className="space-y-2">
                   <Label htmlFor={prompt.id} className="sr-only">
                     Response to {prompt.category} reflection
                   </Label>
                   <textarea
                     id={prompt.id}
-                    className="w-full min-h-[120px] p-3 border border-input bg-background text-sm rounded-md resize-vertical focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                    className="w-full min-h-[140px] p-4 border-2 border-primary bg-background text-base font-body resize-vertical focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-none"
                     placeholder={prompt.placeholder}
                     value={responses[prompt.id] || ''}
                     onChange={(e) => handleResponseChange(prompt.id, e.target.value)}
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
+                  <div className="flex justify-between text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground pt-2">
                     <span>
-                      {responses[prompt.id]?.length || 0} characters
+                      {responses[prompt.id]?.length || 0} CHARACTERS RECORDED
                     </span>
                     {responses[prompt.id]?.trim() && (
-                      <span className="text-green-600">✓ Complete</span>
+                      <span className="text-[var(--ledger-green)]">✓ COMPLETE</span>
                     )}
                   </div>
                 </div>
@@ -155,16 +155,16 @@ export default function ReflectionJournal({
             </Card>
           ))}
           
-          <div className="flex justify-between items-center pt-4 border-t">
-            <div className="text-sm text-muted-foreground">
-              Progress: {completedCount}/{totalCount} reflections completed
+          <div className="flex justify-between items-center pt-6 border-t-2 border-primary">
+            <div className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground">
+              PROGRESS: {completedCount}/{totalCount} REFLECTIONS FILED
             </div>
             <Button 
               onClick={handleSave}
               disabled={completedCount === 0}
-              className="min-w-[120px]"
+              className="min-w-[160px] border-2"
             >
-              {isSaved ? '✓ Saved' : 'Save Reflection'}
+              {isSaved ? '✓ RECORD SAVED' : 'COMMIT REFLECTION'}
             </Button>
           </div>
         </CardContent>

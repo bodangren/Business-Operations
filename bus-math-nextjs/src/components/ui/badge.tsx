@@ -5,18 +5,24 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  "inline-flex items-center justify-center rounded-full border px-2.5 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 overflow-hidden",
   {
     variants: {
       variant: {
         default:
-          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+          "border-primary bg-primary text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
         secondary:
-          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+          "border-secondary bg-secondary text-secondary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
         destructive:
-          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "border-destructive bg-destructive text-white shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
         outline:
-          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+          "border-input text-foreground bg-background",
+        velocity:
+          "velocity-gradient text-white border-transparent shadow-[0_2px_4px_rgba(99,91,255,0.2)]",
+        accent:
+          "border-accent bg-accent text-accent-foreground shadow-[0_1px_2px_rgba(0,212,255,0.2)]",
+        stamp:
+          "border border-primary/20 bg-primary/5 text-primary font-semibold tracking-wide px-3",
       },
     },
     defaultVariants: {

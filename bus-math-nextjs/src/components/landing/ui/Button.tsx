@@ -10,14 +10,14 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-all duration-500 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
   {
     variants: {
       variant: {
-        gold: "bg-[#C9A227] text-[#0A192F] hover:bg-[#D4AF37] hover:shadow-[0_0_20px_rgba(201,162,39,0.3)]",
-        navy: "bg-[#0A192F] text-[#FAFAFA] border border-[#C9A227] hover:bg-[#1A2332] hover:border-[#D4AF37]",
-        outline: "border border-[#C9A227] text-[#0A192F] hover:bg-[#C9A227] hover:text-[#0A192F]",
-        ghost: "text-[#0A192F] hover:bg-[#E8E8E8]",
+        gold: "velocity-gradient text-white shadow-[0_4px_12px_rgba(99,91,255,0.3)] hover:brightness-110",
+        navy: "bg-secondary text-white hover:bg-secondary/90 shadow-[0_4px_10px_rgba(10,37,64,0.15)]",
+        outline: "border border-border text-foreground hover:bg-muted",
+        ghost: "text-foreground hover:bg-muted",
       },
       size: {
         sm: "h-9 px-4 text-xs",

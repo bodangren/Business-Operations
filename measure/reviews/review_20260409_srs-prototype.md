@@ -19,9 +19,9 @@
 ## Scope
 
 Commits since last review (`a218725`):
-- `2772ef3` — Add track `srs_review_prototype_20260409` (conductor docs)
+- `2772ef3` — Add track `srs_review_prototype_20260409` (measure docs)
 - `bfa5f38` — Add spaced-repetition review prototype (code change)
-- `c2aa897` — Complete track (conductor docs)
+- `c2aa897` — Complete track (measure docs)
 
 **1 source code commit.** 297 net new lines across 3 source files.
 

@@ -5,7 +5,7 @@ import { ArrowRight, Home } from "lucide-react"
 import Link from "next/link"
 import ResourceBasePathFixer from "@/components/student/ResourceBasePathFixer"
 import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
-import { getPhaseIcon, getPhaseColor } from "@/components/student/phase-config"
+import { getPhaseIcon } from "@/components/student/phase-config"
 
 // Re-export for backward compatibility with existing imports
 export type { LessonPhase } from "@/types/lesson"
@@ -27,7 +27,6 @@ interface PhaseHeaderNavigationOverrides {
 
 export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }: PhaseHeaderProps) {
   const Icon = getPhaseIcon(phase.phaseName)
-  const colorClass = getPhaseColor(phase.phaseName)
   
   // Sort phases for navigation
   const sortedPhases = [...phases].sort((a, b) => a.sequence - b.sequence)
@@ -46,62 +45,64 @@ export function PhaseHeader({ lesson, unit, phase, phases, navigationOverrides }
       {/* Ensure public resource links include basePath in production */}
       <ResourceBasePathFixer />
       {/* Breadcrumb Navigation */}
-      <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
-        <Link href="/student" className="hover:text-foreground flex items-center gap-1">
+      <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground font-light">
+        <Link href="/student" className="hover:text-primary flex items-center gap-1 transition-colors">
           <Home className="h-3 w-3" />
           Student
         </Link>
-        <ArrowRight className="h-3 w-3" />
-        <Link href={unitHref} className="hover:text-foreground">
+        <ArrowRight className="h-3 w-3 opacity-30" />
+        <Link href={unitHref} className="hover:text-primary transition-colors">
           {unit.title}
         </Link>
-        <ArrowRight className="h-3 w-3" />
-        <Link href={lessonHref} className="hover:text-foreground">
+        <ArrowRight className="h-3 w-3 opacity-30" />
+        <Link href={lessonHref} className="hover:text-primary transition-colors">
           {lessonLabel}
         </Link>
-        <ArrowRight className="h-3 w-3" />
-        <span className="text-foreground">{phaseBreadcrumbLabel}</span>
+        <ArrowRight className="h-3 w-3 opacity-30" />
+        <span className="text-secondary font-medium">{phaseBreadcrumbLabel}</span>
       </nav>
 
       {/* Progress Bar */}
       <div className="space-y-2">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-muted-foreground font-medium">Lesson Progress</span>
-          <span className="text-muted-foreground font-medium">Phase {phase.sequence} of {sortedPhases.length}</span>
+        <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/80">
+          <span>Lesson Progress</span>
+          <span>Phase {phase.sequence} / {sortedPhases.length}</span>
         </div>
         <div className="relative">
-          <Progress value={progress} className="h-3 bg-muted/50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full pointer-events-none" />
+          <Progress value={progress} className="h-1.5 bg-border/40 overflow-hidden rounded-full" />
         </div>
       </div>
 
       {/* Phase Header */}
-      <Card className={`card-statement ${colorClass} shadow-lg`}>
-        <CardHeader className="pb-4">
+      <Card className="velocity-card border-none overflow-hidden">
+        <div className="absolute top-0 left-0 w-1 h-full velocity-gradient" />
+        <CardHeader className="pb-6">
           <div className="flex items-center justify-between">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-background shadow-md border border-border/50">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center w-full">
+              <div className="flex items-center justify-center w-14 h-14 velocity-gradient text-white rounded-xl shadow-[0_4px_12px_rgba(99,91,255,0.3)] shrink-0">
                 <Icon className="h-7 w-7" />
               </div>
-              <div>
+              <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <Badge variant="outline" className="text-xs font-medium bg-background/50 border-border/50">
-                    Phase {phase.sequence}
+                  <Badge variant="velocity" className="text-[10px] font-bold tracking-widest">
+                    PHASE {phase.sequence}
                   </Badge>
-                  <Badge variant="secondary" className="text-xs font-medium">
-                    {phase.phaseName}
+                  <Badge variant="secondary" className="text-[10px] font-bold tracking-widest bg-secondary/5 text-secondary border-none">
+                    {phase.phaseName.toUpperCase()}
                   </Badge>
                 </div>
-                <CardTitle className="text-2xl font-bold text-foreground">
+                <CardTitle className="text-3xl font-semibold text-secondary leading-tight tracking-tight">
                   {phase.phaseName}: {lesson.title}
                 </CardTitle>
               </div>
             </div>
           </div>
           {phase.description && (
-            <p className="text-muted-foreground mt-4 text-sm leading-relaxed">
-              {phase.description}
-            </p>
+            <div className="mt-6 pt-5 border-t border-border/50">
+              <p className="text-foreground/80 text-sm leading-relaxed font-light italic">
+                {phase.description}
+              </p>
+            </div>
           )}
         </CardHeader>
       </Card>

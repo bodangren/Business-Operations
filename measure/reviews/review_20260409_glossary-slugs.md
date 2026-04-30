@@ -19,9 +19,9 @@
 ## Scope
 
 Commits since last review (`c6eda06`):
-- `3c395d0` — Add track `glossary_id_from_slug_20260409` (conductor docs)
+- `3c395d0` — Add track `glossary_id_from_slug_20260409` (measure docs)
 - `c70c971` — Replace manual glossary IDs with slugs (code change)
-- `e7b7e10` — Update track to complete (conductor docs)
+- `e7b7e10` — Update track to complete (measure docs)
 
 **1 source code commit.** Mechanical refactor of 109 glossary entries + 4 test mock files.
 

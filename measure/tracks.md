@@ -135,3 +135,5 @@ Foundational active tracks are ordered intentionally:
   *Link: [./archive/tracks/unit07_20260330/](./archive/tracks/unit07_20260330/)*
 - [x] **Track: Unit 08 - Fixed assets and depreciation**
   *Link: [./archive/tracks/unit08_20260330/](./archive/tracks/unit08_20260330/)*
+
+- [~] [Visual Refresh: Define Unique Identity](tracks/visual_refresh_20260425/index.md)

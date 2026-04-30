@@ -23,8 +23,8 @@ Commits since last review (`da6723b`):
 - `a8b57ae` — feat: Add recordReviewSession function
 - `46c57c0` — feat: Integrate recordReviewSession into ReviewSession component
 - `f4f4b32` — feat: Integrate review session recording and fix tests
-- `33b45e4` — chore(conductor): Add track for review session recording
-- `ccf1c09` — chore(conductor): Mark review session recording track as complete
+- `33b45e4` — chore(measure): Add track for review session recording
+- `ccf1c09` — chore(measure): Mark review session recording track as complete
 - `1b00150` — feat: switch unit 7 project to starter workbooks
 
 **3 source code commits.** ~333 net new lines across 4 source/test files and 3 curriculum pages.

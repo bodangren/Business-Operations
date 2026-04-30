@@ -1,22 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { StudyDataProvider } from "@/contexts/StudyDataContext";
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500", "600", "700"],
   variable: "--font-data",
   subsets: ["latin"],
   display: "swap",
@@ -42,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased font-body bg-[#FAFAFA]`}
+        className={`${inter.variable} ${inter.variable.replace("--font-body", "--font-display")} ${ibmPlexMono.variable} antialiased font-body font-light bg-background text-foreground`}
       >
         <StudyDataProvider>
           <Header />

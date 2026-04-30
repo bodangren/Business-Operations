@@ -85,117 +85,117 @@ export default function ComprehensionCheck({
   const percentage = Math.round((score / questions.length) * 100);
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          {title}
+    <Card className="w-full max-w-4xl mx-auto card-ledger">
+      <CardHeader className="border-b-2 border-primary pb-6">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-2xl font-display font-bold italic flex items-center gap-2">
+            {title}
+          </CardTitle>
           {showResults && (
-            <Badge variant={percentage >= 70 ? "default" : "destructive"}>
-              {score}/{questions.length} ({percentage}%)
+            <Badge variant="stamp">
+              AUDIT: {score}/{questions.length} ({percentage}%)
             </Badge>
           )}
-        </CardTitle>
-        <CardDescription>{description}</CardDescription>
+        </div>
+        <CardDescription className="font-body italic">{description}</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-10 pt-8">
         {shuffledQuestions.map((question, questionIndex) => (
-          <div key={question.id} className="space-y-4">
-            <h3 className="text-lg font-semibold">
+          <div key={question.id} className="space-y-6">
+            <h3 className="text-xl font-display font-bold">
               {questionIndex + 1}. {question.question}
             </h3>
-            
-            <div className="grid gap-2">
+
+            <div className="grid gap-3">
               {question.shuffledAnswers.map((answer, answerIndex) => {
                 const isSelected = selectedAnswers[question.id] === answer;
                 const isCorrect = answer === question.correctAnswer;
                 const showCorrectness = submitted && showResults;
-                
-                let buttonVariant: "default" | "secondary" | "outline" | "destructive" = "outline";
-                let buttonClasses = "";
+
+                let buttonVariant: "default" | "secondary" | "outline" | "destructive" | "stamp" = "outline";
+                let buttonClasses = "border-2";
                 let icon = null;
-                
+
                 if (showCorrectness) {
                   if (isCorrect) {
-                    // Always show correct answer in bright green with very dark text
                     buttonVariant = "outline";
-                    buttonClasses = "border-green-600 bg-green-200 text-black hover:bg-green-300 font-medium";
-                    icon = <CheckCircle className="w-4 h-4 text-green-700" />;
+                    buttonClasses = "border-[var(--ledger-green)] bg-[var(--ledger-green)]/10 text-[var(--ledger-green)] font-mono font-bold";
+                    icon = <CheckCircle className="w-4 h-4" />;
                   } else if (isSelected && !isCorrect) {
-                    // Show selected wrong answer in bright red with very dark text
                     buttonVariant = "outline";
-                    buttonClasses = "border-red-600 bg-red-200 text-black hover:bg-red-300 font-medium";
-                    icon = <XCircle className="w-4 h-4 text-red-700" />;
+                    buttonClasses = "border-[var(--audit-red)] bg-[var(--audit-red)]/10 text-[var(--audit-red)] font-mono font-bold";
+                    icon = <XCircle className="w-4 h-4" />;
                   } else {
-                    // Unselected wrong answers stay neutral with dark text
                     buttonVariant = "outline";
-                    buttonClasses = "border-gray-300 bg-gray-100 text-gray-900";
+                    buttonClasses = "border-border bg-muted/20 text-muted-foreground opacity-50";
                   }
                 } else if (isSelected) {
-                  buttonVariant = "secondary";
+                  buttonVariant = "default";
+                  buttonClasses = "border-primary";
                 }
-                
+
                 return (
                   <Button
                     key={answerIndex}
                     variant={buttonVariant}
-                    className={`justify-start text-left h-auto p-4 whitespace-normal ${buttonClasses}`}
+                    className={`justify-start text-left h-auto p-4 whitespace-normal transition-none ${buttonClasses}`}
                     onClick={() => handleAnswerSelect(question.id, answer)}
                     disabled={submitted}
                   >
-                    <div className="flex items-start gap-2 w-full">
-                      <span className="font-medium min-w-6">
+                    <div className="flex items-start gap-3 w-full">
+                      <span className="font-mono font-bold min-w-8 text-lg">
                         {String.fromCharCode(65 + answerIndex)}.
                       </span>
-                      <span className="flex-1">{answer}</span>
+                      <span className="flex-1 font-body">{answer}</span>
                       {icon}
                     </div>
                   </Button>
                 );
               })}
             </div>
-            
+
             {showResults && showExplanations && question.explanation && (
-              <div className={`mt-3 p-3 rounded-lg border ${
+              <div className={`mt-4 p-4 border-2 border-dashed ${
                 isAnswerCorrect(question.id) 
-                  ? 'bg-green-50 border-green-200' 
-                  : 'bg-red-50 border-red-200'
+                  ? 'bg-[var(--ledger-green)]/5 border-[var(--ledger-green)]/30' 
+                  : 'bg-[var(--audit-red)]/5 border-[var(--audit-red)]/30'
               }`}>
-                <p className={`text-sm ${
+                <p className={`text-sm font-mono ${
                   isAnswerCorrect(question.id) 
-                    ? 'text-green-800' 
-                    : 'text-red-800'
+                    ? 'text-[var(--ledger-green)]' 
+                    : 'text-[var(--audit-red)]'
                 }`}>
-                  <strong>Explanation:</strong> {question.explanation}
+                  <strong className="uppercase tracking-widest block mb-2">Auditor's Note:</strong> {question.explanation}
                 </p>
               </div>
             )}
           </div>
         ))}
-        
-        <div className="flex justify-between items-center pt-4 border-t">
-          <div className="text-sm text-muted-foreground">
-            {Object.keys(selectedAnswers).length} of {questions.length} questions answered
+
+        <div className="flex justify-between items-center pt-8 border-t-2 border-primary">
+          <div className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground">
+            {Object.keys(selectedAnswers).length} / {questions.length} AUDITED
           </div>
-          
-          <div className="flex gap-2">
+
+          <div className="flex gap-4">
             {allowRetry && showResults && (
               <Button
                 variant="outline"
                 onClick={handleRetry}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 border-2"
               >
                 <RefreshCw className="w-4 h-4" />
-                Try Again
+                RE-AUDIT
               </Button>
             )}
-            
+
             {!submitted && (
               <Button
                 onClick={handleSubmit}
                 disabled={!allQuestionsAnswered}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 border-2 border-primary"
               >
-                Submit Answers
+                SUBMIT FOR AUDIT
               </Button>
             )}
           </div>

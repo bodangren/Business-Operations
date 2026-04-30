@@ -22,8 +22,8 @@
 
 Commits since last review (`a218725`):
 - `1307448` — chore(review): audit SRS review prototype track (docs only)
-- `c2aa897` — Complete srs_review_prototype_20260409 track (conductor docs)
-- `25ace41` — Add new track 'reviewsession_component_tests_20260409' (conductor docs)
+- `c2aa897` — Complete srs_review_prototype_20260409 track (measure docs)
+- `25ace41` — Add new track 'reviewsession_component_tests_20260409' (measure docs)
 - `9f313ea` — Add ReviewSession component tests (test file)
 - `3f7e386` — feat(reviewsession): Add tests, fix stale closure, and improve accessibility (source + test)
 
