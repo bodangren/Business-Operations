@@ -8,6 +8,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
 
 ## Active Tracks
 
+- [x] **Track: Teacher-focused README pitch with screenshots**
+  *Link: [./tracks/readme_teacher_pitch_20260506/](./tracks/readme_teacher_pitch_20260506/)*
 - [x] **P0 Track: Teacher/student data alignment audit and amendments**
   *Link: [./tracks/teacher_student_data_alignment_20260429/](./tracks/teacher_student_data_alignment_20260429/)*
 - [x] **Track: Reference system — bilingual glossary, index, and unit vocabulary lists**

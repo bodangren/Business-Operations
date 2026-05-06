@@ -70,6 +70,8 @@ bus-math-v2
 # Audit artifacts
 .audit-static/
 screenshots/
+!bus-math-nextjs/public/screenshots/
+!bus-math-nextjs/public/screenshots/*.png
 
 # opencode artifacts
 .opencode/
