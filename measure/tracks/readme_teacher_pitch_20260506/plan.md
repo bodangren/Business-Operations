@@ -9,6 +9,6 @@
 ## Verification
 - Captured screenshots from the running local app after explicit approval to run `npm run dev`.
 - Verified README image references point to generated PNG files in `bus-math-nextjs/public/screenshots/`.
-- Updated README screenshot links to absolute GitHub raw URLs after GitHub rendering exposed broken relative image paths.
+- Moved the teacher-facing pitch into the repository root `README.md`, with root-relative `./bus-math-nextjs/public/screenshots/...` image paths for standard GitHub rendering.
 - Confirmed screenshot PNG dimensions with `file public/screenshots/*.png`.
 - Did not run `npm run lint` or `npm run typecheck`; this track changed README, image assets, `.gitignore`, and Measure docs only.
