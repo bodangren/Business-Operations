@@ -45,7 +45,7 @@ export function HeroSection() {
 
             <div className="flex flex-wrap gap-4 mb-12">
               <Link href="/student">
-                <Button variant="gold" size="lg" className="px-10">
+                <Button variant="velocity" size="lg" className="px-10">
                   Start Learning
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

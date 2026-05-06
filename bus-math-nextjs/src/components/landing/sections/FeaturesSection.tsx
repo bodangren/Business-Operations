@@ -37,13 +37,13 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="bg-card py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#0A192F] mb-3">
+          <h2 className="mb-3 text-3xl font-light text-secondary md:text-4xl">
             Why This Works
           </h2>
-          <p className="text-lg text-[#666666] max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg font-light text-foreground/70">
             A complete platform designed for real learning outcomes
           </p>
         </div>
@@ -52,13 +52,13 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group bg-[#FAFAFA] border border-[#E8E8E8] hover:border-[#C9A227] rounded-lg p-6 transition-all duration-300 hover:shadow-lg"
+              className="group rounded-lg border border-border/70 bg-background p-6 shadow-[0_4px_6px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_10px_20px_rgba(10,37,64,0.08)]"
             >
-              <div className="w-10 h-10 bg-[#0A192F] rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#C9A227] transition-colors">
-                <feature.icon className="h-5 w-5 text-[#FAFAFA] group-hover:text-[#0A192F] transition-colors" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary transition-colors group-hover:bg-primary">
+                <feature.icon className="h-5 w-5 text-secondary-foreground" />
               </div>
-              <h3 className="text-lg font-medium text-[#0A192F] mb-2">{feature.title}</h3>
-              <p className="text-sm text-[#666666] leading-relaxed">{feature.description}</p>
+              <h3 className="mb-2 text-lg font-medium text-secondary transition-colors group-hover:text-primary">{feature.title}</h3>
+              <p className="text-sm font-light leading-relaxed text-foreground/70">{feature.description}</p>
             </div>
           ))}
         </div>

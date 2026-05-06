@@ -1,0 +1,456 @@
+/* Print-specific styles for paged.js */
+
+/* Page setup */
+@page {
+  size: A4;
+  margin: 2cm 2.5cm;
+
+  @top-center {
+    content: "Business Operations - Lesson Materials";
+    font-size: 9pt;
+    color: #666;
+    font-family: var(--font-body);
+  }
+
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 9pt;
+    color: #666;
+    font-family: var(--font-body);
+  }
+}
+
+/* First page - no header */
+@page :first {
+  @top-center {
+    content: none;
+  }
+}
+
+/* Print-specific body styles */
+@media print {
+  body {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #000;
+    background: white;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  nav,
+  footer,
+  .sidebar,
+  [data-sidebar],
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Ensure printable content is visible */
+  .printable-content,
+  .print-show {
+    display: block !important;
+  }
+
+  /* Typography for print */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #000;
+  }
+
+  h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    border-bottom: 2px solid #0A192F;
+    padding-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: bold;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 0.3em;
+  }
+
+  h3 {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  h4, h5, h6 {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+
+  /* Paragraphs */
+  p {
+    orphans: 3;
+    widows: 3;
+    margin-bottom: 0.8em;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-bottom: 0.3em;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+
+  /* Links */
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+  }
+
+  /* Code blocks */
+  pre, code {
+    font-family: monospace;
+    font-size: 10pt;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 2px 4px;
+    page-break-inside: avoid;
+  }
+
+  pre {
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: visible;
+    white-space: pre-wrap;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    border-left: 3px solid #0A192F;
+    background-color: #f9f9f9;
+    font-style: italic;
+  }
+
+  /* Horizontal rules */
+  hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 2em 0;
+  }
+
+  /* Worksheet-specific styles */
+  .worksheet-header {
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #0A192F;
+  }
+
+  .worksheet-header h1 {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .student-info {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+  }
+
+  .student-info-field {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+  }
+
+  .student-info-field label {
+    font-weight: bold;
+    min-width: 80px;
+  }
+
+  .student-info-field .line {
+    flex: 1;
+    border-bottom: 1px solid #000;
+    min-height: 1.2em;
+  }
+
+  /* Question styles */
+  .question {
+    margin-bottom: 1.5em;
+    page-break-inside: avoid;
+  }
+
+  .question-number {
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+
+  .question-text {
+    margin-bottom: 0.5em;
+  }
+
+  .answer-space {
+    border-bottom: 1px solid #ccc;
+    min-height: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .answer-space-large {
+    min-height: 4em;
+  }
+
+  /* Multiple choice options */
+  .options {
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+  }
+
+  .option {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin-bottom: 0.3em;
+  }
+
+  .option-marker {
+    width: 1.2em;
+    height: 1.2em;
+    border: 1px solid #000;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Answer key styles */
+  .answer-key {
+    page-break-before: always;
+    margin-top: 2em;
+  }
+
+  .answer-key-header {
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #C9A227;
+  }
+
+  .answer-item {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background-color: #f9f9f9;
+    border-left: 3px solid #C9A227;
+  }
+
+  .answer-item .question-number {
+    color: #C9A227;
+  }
+
+  .answer-text {
+    font-weight: bold;
+  }
+
+  .answer-explanation {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.3em;
+    font-size: 10pt;
+  }
+
+  /* Rubric styles */
+  .rubric {
+    margin-top: 2em;
+    border: 2px solid #0A192F;
+    padding: 1em;
+  }
+
+  .rubric-title {
+    font-weight: bold;
+    font-size: 14pt;
+    margin-bottom: 1em;
+    text-align: center;
+    background-color: #0A192F;
+    color: white;
+    padding: 0.5em;
+  }
+
+  .rubric-criteria {
+    margin-bottom: 1em;
+  }
+
+  .rubric-criteria-title {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .rubric-level {
+    display: flex;
+    margin-bottom: 0.5em;
+    padding: 0.3em;
+    border: 1px solid #ddd;
+  }
+
+  .rubric-level-score {
+    width: 50px;
+    font-weight: bold;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    margin-right: 1em;
+    padding-right: 1em;
+  }
+
+  .rubric-level-description {
+    flex: 1;
+  }
+
+  /* Teacher notes */
+  .teacher-notes {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    page-break-inside: avoid;
+  }
+
+  .teacher-notes-title {
+    font-weight: bold;
+    color: #856404;
+    margin-bottom: 0.5em;
+  }
+
+  /* Page break helpers */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Bilingual content */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  .bilingual-column {
+    padding: 0 0.5em;
+  }
+
+  .bilingual-column:first-child {
+    border-right: 1px solid #ddd;
+  }
+
+  /* Lesson metadata */
+  .lesson-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+
+  .lesson-meta-item {
+    text-align: center;
+  }
+
+  .lesson-meta-label {
+    font-size: 9pt;
+    color: #666;
+    text-transform: uppercase;
+  }
+
+  .lesson-meta-value {
+    font-weight: bold;
+    font-size: 12pt;
+  }
+
+  /* Instructions box */
+  .instructions {
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+  }
+
+  .instructions-title {
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 0.5em;
+  }
+
+  /* Matching exercise */
+  .matching {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin: 1em 0;
+  }
+
+  .matching-column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .matching-item {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+
+  .matching-item-number {
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+}

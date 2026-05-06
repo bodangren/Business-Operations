@@ -13,3 +13,6 @@
 
 ## Phase 3: Align Static Marketing Assets
 - [x] Recolor `bus-math-nextjs/public/hero.png` from the old financial gold theme to the Velocity Interface palette.
+
+## Phase 4: Landing Page Cleanup
+- [x] Update lower home page sections and landing UI helpers to remove old gold/serif styling and match the Velocity Interface palette.

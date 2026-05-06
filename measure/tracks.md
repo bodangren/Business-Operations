@@ -98,7 +98,7 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
 *Link: [./tracks/review_session_recording_20260409/](./tracks/review_session_recording_20260409/)*
 - [ ] **Track: PWA foundation — offline capability and app installation**
   *Link: [./tracks/pwa_foundation_20260409/](./tracks/pwa_foundation_20260409/)*
-- [ ] **Track: Printable lessons core — worksheet generation with paged.js**
+- [~] **Track: Printable lessons core — worksheet generation with paged.js**
   *Link: [./tracks/printable_lessons_core_20260409/](./tracks/printable_lessons_core_20260409/)*
 - [ ] **Track: Gamification core — achievement badges and study streaks**
   *Link: [./tracks/gamification_core_20260409/](./tracks/gamification_core_20260409/)*

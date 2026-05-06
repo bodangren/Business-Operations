@@ -14,8 +14,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        gold: "velocity-gradient text-white shadow-[0_4px_12px_rgba(99,91,255,0.3)] hover:brightness-110",
-        navy: "bg-secondary text-white hover:bg-secondary/90 shadow-[0_4px_10px_rgba(10,37,64,0.15)]",
+        velocity: "velocity-gradient text-white shadow-[0_4px_12px_rgba(99,91,255,0.3)] hover:brightness-110",
+        secondary: "bg-secondary text-white hover:bg-secondary/90 shadow-[0_4px_10px_rgba(10,37,64,0.15)]",
         outline: "border border-border text-foreground hover:bg-muted",
         ghost: "text-foreground hover:bg-muted",
       },
@@ -27,7 +27,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "gold",
+      variant: "velocity",
       size: "md",
     },
   }

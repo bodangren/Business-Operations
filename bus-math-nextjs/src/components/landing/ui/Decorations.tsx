@@ -2,20 +2,20 @@
 
 import { cn } from "@/lib/utils"
 
-interface GoldLineProps {
+interface FlowLineProps {
   className?: string
   type?: "horizontal" | "vertical"
   thickness?: "thin" | "medium" | "thick"
 }
 
-export function GoldLine({ className, type = "horizontal", thickness = "thin" }: GoldLineProps) {
+export function FlowLine({ className, type = "horizontal", thickness = "thin" }: FlowLineProps) {
   const thicknessClass = {
-    thin: "h-px w-full border-t border-[#C9A227]",
-    medium: "h-0.5 w-full border-t-2 border-[#C9A227]",
-    thick: "h-1 w-full border-t-4 border-[#C9A227]",
+    thin: "h-px w-full velocity-gradient",
+    medium: "h-0.5 w-full velocity-gradient",
+    thick: "h-1 w-full velocity-gradient",
   }
 
-  const orientationClass = type === "vertical" ? "w-px h-full border-l border-[#C9A227]" : thicknessClass[thickness]
+  const orientationClass = type === "vertical" ? "h-full w-px velocity-gradient" : thicknessClass[thickness]
 
   return <div className={cn(orientationClass, className)} />
 }
@@ -42,16 +42,16 @@ export function GrainOverlay({ className, opacity = 0.03 }: GrainOverlayProps) {
 
 interface DataPointProps {
   className?: string
-  color?: "gold" | "navy" | "excel-green" | "gray"
+  color?: "primary" | "secondary" | "excel-green" | "muted"
   size?: "xs" | "sm" | "md" | "lg"
 }
 
-export function DataPoint({ className, color = "gold", size = "sm" }: DataPointProps) {
+export function DataPoint({ className, color = "primary", size = "sm" }: DataPointProps) {
   const colorClass = {
-    gold: "bg-[#C9A227]",
-    navy: "bg-[#0A192F]",
+    primary: "bg-primary",
+    secondary: "bg-secondary",
     "excel-green": "bg-[#21A366]",
-    gray: "bg-[#666666]",
+    muted: "bg-muted-foreground",
   }
 
   const sizeClass = {
@@ -83,7 +83,7 @@ export function FormulaDecoration({ formula, className, animationDelay = 0 }: Fo
   return (
     <div
       className={cn(
-        "font-mono text-xs md:text-sm text-[#C9A227] opacity-60",
+        "font-mono text-xs text-primary opacity-60 md:text-sm",
         className
       )}
       style={{ animationDelay: `${animationDelay}ms` }}
