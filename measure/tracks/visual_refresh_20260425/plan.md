@@ -10,3 +10,6 @@
 - [x] Update global CSS and Tailwind configuration to match the new `DESIGN.md`.
 - [x] Refactor core UI components (buttons, cards, layout) to reflect the new visual theme.
 - [x] Verify the visual refresh locally.
+
+## Phase 3: Align Static Marketing Assets
+- [x] Recolor `bus-math-nextjs/public/hero.png` from the old financial gold theme to the Velocity Interface palette.
