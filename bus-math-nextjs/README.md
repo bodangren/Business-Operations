@@ -55,43 +55,43 @@ Teacher pages include project-based learning guidance, backward design framing, 
 
 ### Video hook and case narrative
 
-![Lesson 1 Phase 1 video hook introducing Sarah's Smart Ledger challenge](public/screenshots/video-hook-smart-ledger.png)
+![Lesson 1 Phase 1 video hook introducing Sarah's Smart Ledger challenge](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/video-hook-smart-ledger.png)
 
 Lesson openings can include a video-backed business case. Unit 1 begins with Sarah's bookkeeping chaos, then asks students to connect the scenario to clean books, investor confidence, and the need for a smarter ledger.
 
 ### Student textbook hub
 
-![Student textbook hub showing the eight business units and capstone links](public/screenshots/student-textbook-hub.png)
+![Student textbook hub showing the eight business units and capstone links](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/student-textbook-hub.png)
 
 The student hub frames the course as two semesters of applied business work: foundations and automation first, then operations and strategy. Students can launch units, the capstone, the practice hub, the bilingual glossary, and the subject index from one place.
 
 ### Interactive pricing decision
 
-![PriceLab interactive pricing page with sliders and profit feedback](public/screenshots/pricelab-pricing-decision.png)
+![PriceLab interactive pricing page with sliders and profit feedback](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/pricelab-pricing-decision.png)
 
 In Unit 6, students manipulate price and client volume, then read the business consequences. The page turns cost-volume-profit reasoning into a visible decision model.
 
 ### Spreadsheet modeling
 
-![Fixed assets lesson showing asset register and depreciation schedule modeling](public/screenshots/fixed-assets-spreadsheet-model.png)
+![Fixed assets lesson showing asset register and depreciation schedule modeling](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/fixed-assets-spreadsheet-model.png)
 
 In Unit 8, students study how an asset register and depreciation schedule work together. The lesson emphasizes linked sheets, formulas, book value, accumulated depreciation, and validation checks.
 
 ### Reflection and synthesis
 
-![Closing phase with accounting equation synthesis and reflection journal](public/screenshots/lesson-reflection-closing.png)
+![Closing phase with accounting equation synthesis and reflection journal](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/lesson-reflection-closing.png)
 
 Closing phases help students consolidate what they learned, connect business concepts to the larger course story, and reflect on courage, adaptability, and persistence.
 
 ### Practice hub
 
-![Practice Hub with vocabulary study modes and progress indicators](public/screenshots/practice-hub.png)
+![Practice Hub with vocabulary study modes and progress indicators](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/practice-hub.png)
 
 The Practice Hub supports vocabulary retention across the course through unit filters, due review, flashcards, matching, speed rounds, weak-topic review, progress tracking, and export.
 
 ### Capstone project
 
-![Capstone overview showing weekly milestones and deliverables](public/screenshots/capstone-overview.png)
+![Capstone overview showing weekly milestones and deliverables](https://raw.githubusercontent.com/bodangren/Business-Operations/main/bus-math-nextjs/public/screenshots/capstone-overview.png)
 
 The capstone gives teachers a long-form performance task: students build a business plan, linked Excel model, pitch deck, and model-tour presentation over 13 weeks.
 
