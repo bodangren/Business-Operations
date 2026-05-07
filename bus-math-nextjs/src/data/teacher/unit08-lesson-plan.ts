@@ -528,40 +528,40 @@ export const unit08LessonPlan: UnitLessonPlan = {
       },
       {
         day: 6,
-        title: "Method Comparison and Investor-Ready Summary",
-        focus: "Compare methods side by side in the workbook and add workbook checks",
+        title: "Partial-Year Depreciation and Statement Impact",
+        focus: "Build a fresh partial-year workbook and connect depreciation to mini statements",
         duration: "45 minutes",
         activities: [
           {
-            name: "Side-by-Side Method Comparison in Excel",
+            name: "Partial-Year Depreciation in Excel",
             duration: "15 minutes",
-            description: "Add method comparison to the workbook",
+            description: "Build a fresh workbook using purchase dates and months in service",
             details: [
-              "Create comparison sheet showing SLN vs. DDB for each asset",
-              "Calculate annual depreciation, accumulated depreciation, and book value for both methods",
-              "Add charts showing method impact on book value over time",
-              "Interpret: What does the comparison reveal about each method?"
+              "Create an asset register with cost, salvage, life, purchase date, and months in service",
+              "Use SLN(cost, salvage, life) for full-year straight-line depreciation",
+              "Use DDB(cost, salvage, life, 1) for full-year Year 1 DDB depreciation",
+              "Prorate both methods by months in service divided by 12"
             ]
           },
           {
-            name: "Workbook Checks and Validation",
+            name: "Mini Financial Statements",
             duration: "15 minutes",
-            description: "Add validation formulas to ensure workbook integrity",
+            description: "Link depreciation outputs to statement impact",
             details: [
-              "Accumulated depreciation should never exceed depreciable base",
-              "Book value should never drop below salvage value",
-              "Total depreciation across all assets should match summary totals",
-              "Add conditional formatting to flag any violations"
+              "Build a mini income statement with revenue, other operating expenses, depreciation expense, and operating income",
+              "Build a mini balance sheet with fixed asset cost, accumulated depreciation, and net book value",
+              "Compare straight-line and DDB columns side by side",
+              "Flag how method choice changes reported profit and asset value"
             ],
             callout: {
               type: "important",
-              title: "Workbook Integrity Checks",
-              content: "Professional workbooks include built-in validation",
+              title: "Statement Impact Checks",
+              content: "Professional depreciation recommendations connect formulas to financial statements",
               items: [
-                "Book value = Cost − Accumulated Depreciation (always)",
-                "Accumulated Depreciation ≤ Depreciable Base (never exceed)",
-                "Book Value ≥ Salvage Value (depreciation stops at floor)",
-                "Sum of annual depreciation = Total accumulated depreciation"
+                "Year 1 depreciation = full-year function result × months in service ÷ 12",
+                "Operating Income = Revenue − Other Operating Expenses − Depreciation Expense",
+                "Net Book Value = Fixed Asset Cost − Accumulated Depreciation",
+                "Recommendation evidence should cite both income statement and balance sheet numbers"
               ]
             }
           },
@@ -572,7 +572,7 @@ export const unit08LessonPlan: UnitLessonPlan = {
             details: [
               "Structure: Claim → Evidence → Risk Analysis",
               "Claim: Which method do we recommend and why?",
-              "Evidence: Cite specific numbers from asset register and schedule",
+              "Evidence: Cite specific numbers from mini income statement and mini balance sheet",
               "Risk: What are the limitations or risks of the chosen method?"
             ]
           },
@@ -588,8 +588,8 @@ export const unit08LessonPlan: UnitLessonPlan = {
           }
         ],
         materials: [
-          "Method comparison guide",
-          "Workbook verification checklist",
+          "Partial-year depreciation template",
+          "Mini statement checklist",
           "Recommendation template",
           "Chart creation guide"
         ]

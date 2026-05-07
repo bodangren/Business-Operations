@@ -202,15 +202,16 @@ export const unit08Data: UnitData = {
         days: [
           {
             day: 6,
-            focus: "Method Comparison and Investor-Ready Summary",
+            focus: "Partial-Year Depreciation and Statement Impact",
             activities: [
-              "Compare methods side by side in the workbook",
-              "Add workbook checks for accumulated depreciation and book value",
+              "Build a fresh partial-year depreciation workbook",
+              "Use SLN and DDB with months-in-service proration",
+              "Connect depreciation to mini income statements and balance sheets",
               "Write a short defense of recommended depreciation method"
             ],
             resources: [
-              "Method comparison guide",
-              "Workbook verification checklist",
+              "Partial-year depreciation template",
+              "Mini statement checklist",
               "Recommendation template"
             ]
           },
