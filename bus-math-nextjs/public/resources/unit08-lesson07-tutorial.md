@@ -1,45 +1,92 @@
-# Unit 08 Lesson 07 – Circular Reference and Iterative Calculations
+# Unit 08 Lesson 07 - Project Rehearsal Workbook
 
-This tutorial finishes `unit08-lesson07-student.xlsx` to match the teacher workbook (`unit08-lesson07-teacher.xlsx`). Students model interest income that depends on ending cash, creating a controlled circular reference.
+Use this walkthrough with `unit08-lesson07-student.xlsx`. Lesson 07 is a rehearsal, not the final project. Every group uses the same shared data so the class can compare workbook quality before each group receives its own dataset.
 
-## 1. Understand the Cash Loop Layout
+## 1. Categorize Basic Entries
 
-- The **CashLoop** sheet summarizes:
-  - `B3` Beginning Cash = \$20,000
-  - `B4` Operating Cash Flow = `=SUM(Model!B7:G7)` (cumulative net income)
-  - `B5` Interest Rate = 2%
-  - `B6` Interest Income – blank in the student file
-  - `B7` Ending Cash – blank in the student file
-- Interest should be earned on the ending balance, which creates the circular dependency.
+Open the **Entry Categories** sheet.
 
-## 2. Enter the Circular Formulas
+For each business entry, choose:
 
-1. In `B6`, type `=B7*B5`. Interest now depends on the ending cash value.
-2. In `B7`, enter `=B3+B4+B6`. Ending cash adds beginning cash, operating cash flow, and the interest you just linked.
-3. At this point Excel likely warns you about a circular reference and shows zeros—this is expected.
+- **Report**: Income Statement or Balance Sheet
+- **Section**: Revenue, Direct Costs, Operating Expenses, Current Assets, Fixed Assets, Liabilities, or Equity
+- **Statement Line**: the exact line used later in the reports
+- **Reason**: a short explanation of the classification
 
-## 3. Enable Iterative Calculation
+Keep this basic. The goal is to place common entries into the right report line, not to debate advanced accounting treatment.
 
-1. Open **File › Options › Formulas**.
-2. Check **Enable iterative calculation**.
-3. Set **Maximum Iterations** to 100 and **Maximum Change** to 0.01 (the defaults work, but these settings converge quickly).
-4. Click **OK**.
+## 2. Complete the Asset Register
 
-Excel now solves the loop:
-- `B6` Interest Income ≈ **\$653.06**
-- `B7` Ending Cash ≈ **\$32,653.06**
+On **Asset Register**, calculate **Depreciable Base**:
 
-Explain to students that you just solved the equation  
-`Ending Cash = Beginning + Operating + InterestRate × Ending Cash`.
+`=Cost - Salvage Value`
 
-## 4. Sanity Check
+The purchase dates and months in service are already provided. These months drive the partial-year rule.
 
-- Disable iterative calculation temporarily; note how the cash loop collapses.
-- Re-enable it and experiment with a different interest rate (e.g., 3%) to see the balance adjust.
+## 3. Build Partial-Year Depreciation
 
-## 5. Save the Teacher Version
+On **Partial-Year Depreciation**, use `XLOOKUP()` to pull asset details from the register.
 
-- Save as `unit08-lesson07-teacher.xlsx`. Document in lesson notes that iterative calculation must remain on for this sheet.
-- Encourage students to describe when circular modeling is appropriate (cash sweeps, revolvers, interest on cash) versus when it indicates a logic error.
+Then calculate:
 
-This exercise caps Unit 08 by demonstrating how advanced Excel settings support realistic financial modeling.
+- Full-year straight-line depreciation with `SLN(cost, salvage, life)`
+- Full-year double-declining depreciation with `DDB(cost, salvage, life, 1)`
+- Year 1 depreciation by multiplying the full-year result by `months / 12`
+- Ending book value as `cost - Year 1 depreciation`
+
+The student workbook intentionally leaves these cells blank.
+
+## 4. Compare Methods
+
+On **Method Comparison**, link the Year 1 depreciation and ending book value results for each asset.
+
+Use the totals row to identify:
+
+- How much higher DDB depreciation is in Year 1
+- How much lower DDB ending book value is in Year 1
+- Which method creates the smoother income statement result
+
+## 5. Build Full Simple Statements
+
+On **Income Statement**, pull categorized entries into the report and connect depreciation expense from the method comparison.
+
+The report should include:
+
+- Sales revenue and service revenue
+- Cost of goods sold
+- Gross profit
+- Operating expenses
+- Depreciation expense
+- Operating income
+- Interest expense
+- Net income
+
+On **Balance Sheet**, pull categorized entries into the report and connect accumulated depreciation.
+
+The report should include:
+
+- Current assets
+- Fixed assets at cost
+- Accumulated depreciation
+- Net fixed assets
+- Liabilities
+- Owner capital
+- Current net income
+- Balance check
+
+The balance check should equal 0 under both methods.
+
+## 6. Write Recommendation Evidence
+
+On **Recommendation Evidence**, cite statement-based numbers:
+
+- DDB's Year 1 depreciation impact
+- DDB's net income impact
+- DDB's net fixed asset impact
+- Whether the balance sheet still balances
+
+Your final claim should explain which method you recommend and why. Include one risk or limitation.
+
+## Teacher Model
+
+The completed teacher file is `unit08-lesson07-teacher.xlsx`. It shows the intended categories and formulas, but students should receive the template file so they can complete the rehearsal work.

@@ -21,7 +21,7 @@ export default function Phase6Page() {
       id: 'carry-forward',
       category: 'confidence',
       prompt: 'What is the one thing from today that your group must carry into the real project?',
-      placeholder: 'We will definitely bring...'
+      placeholder: 'We will definitely bring the habit of...'
     },
     {
       id: 'next-lesson-change',
@@ -32,8 +32,8 @@ export default function Phase6Page() {
     {
       id: 'evidence-tracing',
       category: 'understanding',
-      prompt: 'Explain in your own words how a recommendation traces back to the asset register.',
-      placeholder: 'A recommendation is only as strong as...'
+      prompt: 'Explain in your own words how depreciation moves from the asset register into both financial statements.',
+      placeholder: 'Depreciation starts with... Then it affects...'
     }
   ]
 
@@ -53,8 +53,9 @@ export default function Phase6Page() {
                 <CardContent className="prose prose-lg max-w-none text-left text-slate-800">
                   <p>
                     Today was your practice run. You worked with the same data as every other group,
-                    traced recommendations back to the asset register, and practiced the peer audit
-                    routine. You now know exactly what the project workbook must look like.
+                    categorized basic business entries, traced depreciation from the asset register into
+                    full simple statements, and practiced the peer audit routine. You now know exactly
+                    what the project workbook must look like.
                   </p>
                   <p>
                     Save your reflection below. It will help you remember what matters when you start
@@ -72,7 +73,8 @@ export default function Phase6Page() {
                     <div className="p-4 bg-white rounded-lg border border-indigo-200">
                       <h4 className="font-semibold text-indigo-900 mb-2">What Stays the Same</h4>
                       <ul className="list-disc list-inside space-y-1 text-sm">
-                        <li>Four-sheet workbook structure</li>
+                        <li>Full evidence-chain workbook structure</li>
+                        <li>Basic entry categorization</li>
                         <li>Definition of Done checklist</li>
                         <li>Recommendation format (claim, evidence, risk)</li>
                         <li>Peer audit routine</li>
@@ -100,8 +102,10 @@ export default function Phase6Page() {
                 <CardContent className="text-slate-800">
                   <p className="mb-4">Before you leave today, confirm your group is ready for the real project:</p>
                   <ul className="list-disc list-inside space-y-1">
-                    <li>Every group member can name all four workbook sheets and their purpose</li>
-                    <li>Every group member can explain how Book Value = Cost − Accumulated Depreciation</li>
+                    <li>Every group member can name the major workbook sheets and their purpose</li>
+                    <li>Every group member can classify basic entries as income statement or balance sheet items</li>
+                    <li>Every group member can explain how depreciation affects net income and net fixed assets</li>
+                    <li>Your group knows that the balance sheet check must equal zero</li>
                     <li>Your group knows how to write a claim-evidence-risk recommendation</li>
                     <li>Your group understands the peer audit criteria</li>
                     <li>You know what changes next lesson and what stays the same</li>

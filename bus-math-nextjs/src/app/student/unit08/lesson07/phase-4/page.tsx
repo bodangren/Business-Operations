@@ -15,12 +15,12 @@ export default function Phase4Page() {
       id: 't1',
       question: 'Which structure must your team recreate independently in the real project?',
       answers: [
-        'All four sheets: Asset Register, Depreciation Schedule, Method Comparison, Recommendation',
+        'The full evidence chain: categories, asset register, depreciation, statements, and recommendation',
         'Only the Recommendation sheet',
         'Only the Asset Register',
         'Nothing — the teacher provides everything'
       ],
-      explanation: 'The entire four-sheet structure transfers to the real project. Only the dataset changes.'
+      explanation: 'The full evidence chain transfers to the real project. Only the dataset changes.'
     },
     {
       id: 't2',
@@ -50,17 +50,18 @@ export default function Phase4Page() {
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none text-left text-slate-800">
                   <p>
-                    Now it is your turn to complete the shared rehearsal workbook. Your teacher may have
-                    left some sections incomplete on purpose so you can practice filling them in.
+                    Now it is your turn to complete the shared rehearsal workbook. Your teacher has
+                    left formula and category cells incomplete on purpose so you can practice filling them in.
                   </p>
                   <p>
                     Work through these tasks with your group:
                   </p>
                   <ol className="list-decimal list-inside space-y-1">
-                    <li>Verify all asset register entries are complete and accurate</li>
-                    <li>Check that depreciation schedule formulas link correctly to the register</li>
-                    <li>Confirm the method comparison sheet shows both straight-line and DDB results</li>
-                    <li>Write a draft recommendation statement with claim, evidence, and risk</li>
+                    <li>Categorize each basic entry into the correct report, section, and statement line</li>
+                    <li>Complete the asset register checks and partial-year depreciation formulas</li>
+                    <li>Confirm the method comparison shows SLN vs DDB Year 1 results</li>
+                    <li>Build the full simple income statement and balance sheet</li>
+                    <li>Write a draft recommendation statement with claim, statement evidence, and risk</li>
                   </ol>
                 </CardContent>
               </Card>
@@ -78,7 +79,7 @@ export default function Phase4Page() {
                     </div>
                     <div>
                       <p className="font-semibold text-orange-900">Evidence:</p>
-                      <p className="text-sm text-slate-600">The Method Comparison sheet shows that <strong>[method]</strong> produces <strong>[specific number or pattern]</strong> in the first three years, compared to <strong>[other method]</strong> which produces <strong>[specific number]</strong>.</p>
+                      <p className="text-sm text-slate-600">The Income Statement and Balance Sheet show that <strong>[method]</strong> produces <strong>[specific profit or book value impact]</strong>, compared to <strong>[other method]</strong> which produces <strong>[specific number]</strong>.</p>
                     </div>
                     <div>
                       <p className="font-semibold text-orange-900">Risk / Limitation:</p>
@@ -98,17 +99,17 @@ export default function Phase4Page() {
                     <div className="p-4 bg-white rounded-lg border border-emerald-200">
                       <h4 className="font-semibold text-emerald-900 mb-2">Workbook Structures</h4>
                       <ul className="list-disc list-inside space-y-1 text-sm">
-                        <li>Four-sheet layout</li>
+                        <li>Entry categories feeding statement lines</li>
                         <li>Linked formulas between sheets</li>
-                        <li>Book value check column</li>
-                        <li>Method comparison table</li>
+                        <li>Partial-year SLN and DDB calculations</li>
+                        <li>Income statement and balance sheet checks</li>
                       </ul>
                     </div>
                     <div className="p-4 bg-white rounded-lg border border-emerald-200">
                       <h4 className="font-semibold text-emerald-900 mb-2">Communication Moves</h4>
                       <ul className="list-disc list-inside space-y-1 text-sm">
                         <li>Claim-evidence-risk recommendation</li>
-                        <li>Cited workbook numbers</li>
+                        <li>Cited statement numbers</li>
                         <li>Clear sheet labels and headers</li>
                         <li>Professional formatting</li>
                       </ul>

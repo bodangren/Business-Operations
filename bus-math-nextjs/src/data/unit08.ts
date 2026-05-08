@@ -220,11 +220,13 @@ export const unit08Data: UnitData = {
             focus: "Project Rehearsal with Shared Data",
             activities: [
               "Practice with shared teacher dataset",
-              "Trace the logic chain from asset register to recommendation",
+              "Categorize basic business entries into simple report lines",
+              "Trace depreciation from asset register to income statement and balance sheet",
               "Peer audit against Definition of Done"
             ],
             resources: [
-              "Shared rehearsal workbook",
+              "Shared rehearsal workbook template",
+              "Simple statement category list",
               "Peer audit checklist",
               "Definition of Done"
             ]

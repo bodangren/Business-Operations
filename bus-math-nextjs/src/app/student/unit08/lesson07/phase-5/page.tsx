@@ -15,12 +15,12 @@ const transferQuiz = [
     id: 'tc1',
     question: 'When auditing a partner\'s workbook, what should you focus on first?',
     answers: [
-      'Whether the recommendation traces back to the asset register and schedule',
+      'Whether the recommendation traces back to categories, depreciation, and statements',
       'Whether the formatting looks colorful',
       'Whether they used the same group name as you',
       'Whether the file is saved in the right folder'
     ],
-    explanation: 'The logic chain is the most important thing. A recommendation without traceable evidence is not trustworthy.'
+    explanation: 'The logic chain is the most important thing. A recommendation without traceable statement evidence is not trustworthy.'
   },
   {
     id: 'tc2',
@@ -35,14 +35,14 @@ const transferQuiz = [
   },
   {
     id: 'tc3',
-    question: 'If a workbook\'s book value does not equal cost minus accumulated depreciation, what should you note in your audit?',
+    question: 'If the balance sheet check is not zero, what should you note in your audit?',
     answers: [
-      'A formula error or hard-coded value that breaks the evidence chain',
+      'A formula or classification error that breaks the evidence chain',
       'Nothing — small differences are acceptable',
       'That the group used the wrong depreciation method',
       'That the workbook needs more sheets'
     ],
-    explanation: 'Book Value = Cost − Accumulated Depreciation must always hold. If it does not, flag it as a formula or data integrity issue.'
+    explanation: 'A balance sheet check should equal zero. If it does not, flag it as a formula, classification, or missing-line issue.'
   }
 ]
 
@@ -77,11 +77,13 @@ export default function Phase5Page() {
                   <p className="mb-4">Check each item. Mark Yes, Partial, or No with a brief note.</p>
                   <div className="space-y-2">
                     {[
-                      'Asset Register has all required fields (name, cost, useful life, salvage value, method, purchase date)',
-                      'Depreciation Schedule formulas link to the Asset Register (no hard-coded values)',
-                      'Book Value = Cost − Accumulated Depreciation holds for every row',
-                      'Method Comparison sheet shows at least two methods side by side',
-                      'Recommendation includes a clear claim, workbook evidence, and risk/limitation',
+                      'Entry Categories sheet classifies basic entries into the correct report and statement line',
+                      'Asset Register has all required fields (name, cost, salvage value, useful life, purchase date, months)',
+                      'Partial-Year Depreciation formulas link to the Asset Register and use SLN, DDB, and months / 12',
+                      'Method Comparison sheet shows SLN and DDB Year 1 expense and ending book value side by side',
+                      'Income Statement includes revenue, direct costs, operating expenses, depreciation, and net income',
+                      'Balance Sheet includes current assets, fixed assets, accumulated depreciation, liabilities, equity, and a zero balance check',
+                      'Recommendation includes a clear claim, statement evidence, and risk/limitation',
                       'Every number in the recommendation cites a specific workbook source',
                       'Sheets are clearly labeled and professionally formatted'
                     ].map((item, i) => (

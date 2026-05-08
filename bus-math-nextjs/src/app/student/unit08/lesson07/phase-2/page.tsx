@@ -13,36 +13,36 @@ export default function Phase2Page() {
   const vocabQuiz = [
     {
       id: 'v1',
-      question: 'Which sheet lists each asset with cost, useful life, salvage value, and depreciation method?',
+      question: 'Which sheet asks you to sort basic business entries into report lines?',
       answers: [
-        'Asset Register',
-        'Depreciation Schedule',
+        'Entry Categories',
+        'Partial-Year Depreciation',
         'Method Comparison',
-        'Recommendation'
+        'Recommendation Evidence'
       ],
-      explanation: 'The Asset Register is the source of truth. Every asset starts here with its key details.'
+      explanation: 'Entry Categories is where you decide whether each item belongs on the income statement or balance sheet and which simple line it supports.'
     },
     {
       id: 'v2',
-      question: 'Which sheet shows annual depreciation expense, accumulated depreciation, and book value over time?',
+      question: 'Which sheets show the final statement impact of depreciation method choice?',
       answers: [
-        'Depreciation Schedule',
-        'Asset Register',
-        'Method Comparison',
-        'Recommendation'
+        'Income Statement and Balance Sheet',
+        'Entry Categories only',
+        'Formula Reference only',
+        'Recommendation Evidence only'
       ],
-      explanation: 'The Depreciation Schedule tracks how each asset loses value year by year.'
+      explanation: 'The income statement shows depreciation expense and net income. The balance sheet shows accumulated depreciation and net fixed assets.'
     },
     {
       id: 'v3',
-      question: 'What is the purpose of the Method Comparison sheet?',
+      question: 'What is the purpose of the Method Comparison sheet in this rehearsal?',
       answers: [
-        'Show side-by-side results of different depreciation methods for the same assets',
+        'Show side-by-side Year 1 depreciation and book value under SLN and DDB',
         'List all assets and their purchase dates',
         'Calculate total company revenue',
         'Store the final recommendation text only'
       ],
-      explanation: 'The Method Comparison sheet lets you see how straight-line and DDB produce different expense timing and book values.'
+      explanation: 'The Method Comparison sheet summarizes the depreciation method choice before those totals flow into the statements.'
     }
   ]
 
@@ -67,12 +67,12 @@ export default function Phase2Page() {
                   </p>
                   <div className="p-4 bg-blue-50 rounded-lg border border-blue-200 my-4">
                     <p className="mb-2 font-semibold text-blue-900">Download:</p>
-                    <a href="/resources/unit08-rehearsal-workbook.xlsx" download className="text-blue-700 underline">
-                      unit08-rehearsal-workbook.xlsx
+                    <a href="/resources/unit08-lesson07-student.xlsx" download className="text-blue-700 underline">
+                      unit08-lesson07-student.xlsx
                     </a>
                     <p className="text-sm text-slate-600 mt-2">
-                      This is the teacher-controlled dataset. Save a copy with your group name so you can
-                      annotate it during today's rehearsal.
+                      This is the shared rehearsal template. Save a copy with your group name and complete
+                      the green cells during today's rehearsal.
                     </p>
                   </div>
                 </CardContent>
@@ -86,36 +86,52 @@ export default function Phase2Page() {
                   <p className="mb-4">Each sheet has a specific job in the evidence chain. Know what each one proves.</p>
                   <div className="space-y-3">
                     <div className="p-4 bg-white rounded-lg border border-blue-200">
-                      <h4 className="font-semibold text-blue-900">1. Asset Register</h4>
+                      <h4 className="font-semibold text-blue-900">1. Entry Categories</h4>
+                      <p className="text-sm">
+                        <strong>Proves:</strong> You can place basic business entries into simple report lines.
+                        These categories feed the income statement and balance sheet.
+                      </p>
+                      <p className="text-sm mt-1 text-slate-600">Key fields: Report, section, statement line, and reason.</p>
+                    </div>
+                    <div className="p-4 bg-white rounded-lg border border-blue-200">
+                      <h4 className="font-semibold text-blue-900">2. Asset Register</h4>
                       <p className="text-sm">
                         <strong>Proves:</strong> What assets the company owns, what each cost, and how each is classified.
                         This is the source of truth. Every depreciation calculation traces back to entries here.
                       </p>
-                      <p className="text-sm mt-1 text-slate-600">Key fields: Asset name, cost, useful life, salvage value, depreciation method, purchase date.</p>
+                      <p className="text-sm mt-1 text-slate-600">Key fields: Asset name, cost, salvage value, useful life, purchase date, and months in service.</p>
                     </div>
                     <div className="p-4 bg-white rounded-lg border border-blue-200">
-                      <h4 className="font-semibold text-blue-900">2. Depreciation Schedule</h4>
+                      <h4 className="font-semibold text-blue-900">3. Partial-Year Depreciation</h4>
                       <p className="text-sm">
-                        <strong>Proves:</strong> How each asset loses value year by year. Shows annual depreciation expense,
-                        accumulated depreciation, and ending book value for every year of each asset's life.
+                        <strong>Proves:</strong> How each asset produces Year 1 depreciation under SLN and DDB
+                        after applying the months-in-service rule.
                       </p>
-                      <p className="text-sm mt-1 text-slate-600">Key check: Book Value = Cost − Accumulated Depreciation must hold every year.</p>
+                      <p className="text-sm mt-1 text-slate-600">Key check: Year 1 depreciation = full-year function result × months ÷ 12.</p>
                     </div>
                     <div className="p-4 bg-white rounded-lg border border-blue-200">
-                      <h4 className="font-semibold text-blue-900">3. Method Comparison</h4>
+                      <h4 className="font-semibold text-blue-900">4. Method Comparison</h4>
                       <p className="text-sm">
-                        <strong>Proves:</strong> How different methods (straight-line vs. DDB) change expense timing and book value.
+                        <strong>Proves:</strong> How straight-line and DDB change Year 1 expense and ending book value.
                         This sheet supports the method-choice recommendation.
                       </p>
-                      <p className="text-sm mt-1 text-slate-600">Key output: side-by-side totals showing which method front-loads expense.</p>
+                      <p className="text-sm mt-1 text-slate-600">Key output: side-by-side totals showing which method front-loads expense and lowers book value faster.</p>
                     </div>
                     <div className="p-4 bg-white rounded-lg border border-blue-200">
-                      <h4 className="font-semibold text-blue-900">4. Recommendation</h4>
+                      <h4 className="font-semibold text-blue-900">5. Income Statement and Balance Sheet</h4>
+                      <p className="text-sm">
+                        <strong>Proves:</strong> Depreciation is part of the full accounting story, not an isolated formula.
+                        The reports show net income, accumulated depreciation, net fixed assets, and the balance check.
+                      </p>
+                      <p className="text-sm mt-1 text-slate-600">Key rule: The balance sheet must balance under both methods.</p>
+                    </div>
+                    <div className="p-4 bg-white rounded-lg border border-blue-200">
+                      <h4 className="font-semibold text-blue-900">6. Recommendation Evidence</h4>
                       <p className="text-sm">
                         <strong>Proves:</strong> Your team's depreciation policy decision with claim, evidence from the workbook,
                         and risk/limitation analysis. This is the final deliverable.
                       </p>
-                      <p className="text-sm mt-1 text-slate-600">Key rule: Every number in the recommendation must cite a specific workbook cell or sheet.</p>
+                      <p className="text-sm mt-1 text-slate-600">Key rule: Every recommendation number must cite a statement or method comparison source.</p>
                     </div>
                   </div>
                 </CardContent>
@@ -128,8 +144,9 @@ export default function Phase2Page() {
                 <CardContent className="text-slate-800">
                   <ul className="list-disc list-inside space-y-1">
                     <li>Shared workbook is open and saved with your group name</li>
-                    <li>You can name all four sheets and explain what each one proves</li>
-                    <li>You can trace one recommendation number back to the asset register</li>
+                    <li>You can name the major workbook sheets and explain what each one proves</li>
+                    <li>You can categorize basic entries into income statement and balance sheet lines</li>
+                    <li>You can trace one recommendation number back to a statement and the asset register</li>
                     <li>You understand the Definition of Done checklist</li>
                   </ul>
                 </CardContent>

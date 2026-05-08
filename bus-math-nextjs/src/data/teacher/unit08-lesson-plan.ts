@@ -597,29 +597,30 @@ export const unit08LessonPlan: UnitLessonPlan = {
       {
         day: 7,
         title: "Project Rehearsal with Shared Data",
-        focus: "Practice with shared teacher dataset, trace logic chain, peer audit",
+        focus: "Practice with shared teacher dataset, categorize entries, build statements, peer audit",
         duration: "45 minutes",
         activities: [
           {
-            name: "Shared Dataset Practice",
+            name: "Shared Dataset and Category Practice",
             duration: "15 minutes",
-            description: "All teams work with the same teacher-provided asset dataset",
+            description: "All teams work with the same teacher-provided entries and asset dataset",
             details: [
-              "Distribute shared rehearsal asset dataset",
-              "Build asset register and depreciation schedule",
-              "Verify results match expected answers",
-              "Ensure all teams can produce consistent, accurate results"
+              "Distribute shared rehearsal workbook template",
+              "Categorize basic entries into income statement and balance sheet lines",
+              "Complete asset register checks and partial-year depreciation setup",
+              "Ensure all teams understand the same quality bar before group-specific project work"
             ]
           },
           {
-            name: "Logic Chain Trace",
+            name: "Statement Logic Chain Trace",
             duration: "15 minutes",
-            description: "Trace the complete logic from asset register to recommendation",
+            description: "Trace the complete logic from entry categories and asset register to recommendation",
             details: [
-              "Asset register inputs → Depreciation calculations → Method comparison",
-              "Method comparison → Business rationale → Policy recommendation",
+              "Entry categories → Income statement and balance sheet lines",
+              "Asset register inputs → Partial-year SLN and DDB calculations → Method comparison",
+              "Method comparison → Income statement and balance sheet impact → Policy recommendation",
               "Identify any weak links in the chain",
-              "Strengthen evidence connections between workbook and recommendation"
+              "Strengthen evidence connections between statements and recommendation"
             ]
           },
           {
@@ -628,8 +629,8 @@ export const unit08LessonPlan: UnitLessonPlan = {
             description: "Teams exchange workbooks and audit against quality standards",
             details: [
               "Use peer audit checklist to evaluate completeness and accuracy",
-              "Check: All assets entered? All calculations correct? Method justified?",
-              "Check: Recommendation supported by workbook evidence?",
+              "Check: Entries categorized? Depreciation formulas linked? Statements balanced?",
+              "Check: Recommendation supported by income statement and balance sheet evidence?",
               "Provide specific, actionable feedback"
             ]
           },
@@ -645,10 +646,11 @@ export const unit08LessonPlan: UnitLessonPlan = {
           }
         ],
         materials: [
-          "Shared rehearsal workbook",
+          "Shared rehearsal workbook template",
+          "Completed teacher model workbook",
+          "Simple statement category list",
           "Peer audit checklist",
-          "Definition of Done",
-          "Shared rehearsal asset dataset"
+          "Definition of Done"
         ]
       },
       {

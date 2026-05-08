@@ -26,12 +26,12 @@ export default function Phase1Page() {
       id: 'q2',
       question: 'What is the main purpose of today\'s rehearsal?',
       answers: [
-        'Practice the exact workbook structure before the real project',
+        'Practice the exact workbook and statement evidence structure before the real project',
         'Learn a new depreciation method',
         'Build a brand-new workbook from scratch',
         'Present final results to the class'
       ],
-      explanation: 'Today is guided practice. You rehearse the structure, evidence chain, and quality standard so you know exactly what to do when you get your own dataset next lesson.'
+      explanation: 'Today is guided practice. You rehearse the categories, depreciation formulas, statement evidence, and quality standard so you know exactly what to do when you get your own dataset next lesson.'
     },
     {
       id: 'q3',
@@ -68,7 +68,7 @@ export default function Phase1Page() {
                   <p>
                     When everyone uses the same numbers, you can compare workbook quality,
                     reasoning, and clarity directly. You will see what a strong recommendation
-                    looks like, trace it back to the asset register and schedule, and practice
+                    looks like, trace it back to categories, the asset register, and statements, and practice
                     the peer-audit routine you will need next lesson.
                   </p>
                 </CardContent>
@@ -127,7 +127,8 @@ export default function Phase1Page() {
                   <ul className="list-disc list-inside space-y-1">
                     <li>What would make a depreciation workbook feel weak or untrustworthy to a manager?</li>
                     <li>Which part of the workbook structure do you feel least confident about right now?</li>
-                    <li>What does &quot;tracing a recommendation back to evidence&quot; mean in your own words?</li>
+                    <li>How can depreciation change both profit and the balance sheet at the same time?</li>
+                    <li>What does &quot;tracing a recommendation back to statement evidence&quot; mean in your own words?</li>
                   </ul>
                 </CardContent>
               </Card>
