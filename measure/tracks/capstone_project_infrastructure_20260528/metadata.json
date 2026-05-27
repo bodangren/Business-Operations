@@ -1,0 +1,12 @@
+{
+  "track_id": "capstone_project_infrastructure_20260528",
+  "type": "feature",
+  "status": "pending",
+  "created_at": "2026-05-28T00:00:00Z",
+  "updated_at": "2026-05-28T00:00:00Z",
+  "description": "Scaffold the 13-week Capstone Project shell with milestone tracking, portfolio templates, rubric components, and investor pitch presentation tools. Students progress through ideation → market research → financial modeling → pitch deck → investor presentation.",
+  "priority": "high",
+  "estimated_effort": "3-4 weeks",
+  "dependencies": [],
+  "related_tracks": []
+}

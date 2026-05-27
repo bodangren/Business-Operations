@@ -9,95 +9,95 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
 ## Active Tracks
 
 - [x] **Track: Teacher-focused README pitch with screenshots**
-  *Link: [./tracks/readme_teacher_pitch_20260506/](./tracks/readme_teacher_pitch_20260506/)*
+  *Link: [./archive/tracks/readme_teacher_pitch_20260506/](./archive/tracks/readme_teacher_pitch_20260506/)*
 - [x] **P0 Track: Teacher/student data alignment audit and amendments**
-  *Link: [./tracks/teacher_student_data_alignment_20260429/](./tracks/teacher_student_data_alignment_20260429/)*
+  *Link: [./archive/tracks/teacher_student_data_alignment_20260429/](./archive/tracks/teacher_student_data_alignment_20260429/)*
 - [x] **Track: Reference system — bilingual glossary, index, and unit vocabulary lists**
-  *Link: [./tracks/reference_system_20260403/](./tracks/reference_system_20260403/)*
+  *Link: [./archive/tracks/reference_system_20260403/](./archive/tracks/reference_system_20260403/)*
 - [x] **Track: Navigation and shell cleanup**
-  *Link: [./tracks/navigation_shell_cleanup_20260403/](./tracks/navigation_shell_cleanup_20260403/)*
+  *Link: [./archive/tracks/navigation_shell_cleanup_20260403/](./archive/tracks/navigation_shell_cleanup_20260403/)*
 - [x] **Track: Teacher and student alignment**
-  *Link: [./tracks/teacher_student_alignment_20260403/](./tracks/teacher_student_alignment_20260403/)*
+  *Link: [./archive/tracks/teacher_student_alignment_20260403/](./archive/tracks/teacher_student_alignment_20260403/)*
 - [x] **Track: Practice hub wireframes**
-*Link: [./tracks/practice_hub_wireframes_20260403/](./tracks/practice_hub_wireframes_20260403/)*
+*Link: [./archive/tracks/practice_hub_wireframes_20260403/](./archive/tracks/practice_hub_wireframes_20260403/)*
 - [x] **Track: Local study, tracking, and export**
-  *Link: [./tracks/local_study_export_20260403/](./tracks/local_study_export_20260403/)*
+  *Link: [./archive/tracks/local_study_export_20260403/](./archive/tracks/local_study_export_20260403/)*
 - [x] **Track: Wire up unit-level study CTAs**
-  *Link: [./tracks/unit_study_ctas_20260404/](./tracks/unit_study_ctas_20260404/)*
+  *Link: [./archive/tracks/unit_study_ctas_20260404/](./archive/tracks/unit_study_ctas_20260404/)*
 - [x] **Track: Gate debug routes behind dev-only flag**
-  *Link: [./tracks/gate_debug_routes_20260405/](./tracks/gate_debug_routes_20260405/)*
+  *Link: [./archive/tracks/gate_debug_routes_20260405/](./archive/tracks/gate_debug_routes_20260405/)*
 - [x] **Track: Study data context provider**
-  *Link: [./tracks/study_data_context_20260405/](./tracks/study_data_context_20260405/)*
+  *Link: [./archive/tracks/study_data_context_20260405/](./archive/tracks/study_data_context_20260405/)*
 - [x] **Track: Lesson-level index entries**
-  *Link: [./tracks/lesson_index_entries_20260405/](./tracks/lesson_index_entries_20260405/)*
+  *Link: [./archive/tracks/lesson_index_entries_20260405/](./archive/tracks/lesson_index_entries_20260405/)*
 - [x] **Track: ESLint warning cleanup pass**
-  *Link: [./tracks/eslint_warning_cleanup_20260405/](./tracks/eslint_warning_cleanup_20260405/)*
+  *Link: [./archive/tracks/eslint_warning_cleanup_20260405/](./archive/tracks/eslint_warning_cleanup_20260405/)*
 - [x] **Track: Dead code removal pass**
-  *Link: [./tracks/dead_code_removal_20260405/](./tracks/dead_code_removal_20260405/)*
+  *Link: [./archive/tracks/dead_code_removal_20260405/](./archive/tracks/dead_code_removal_20260405/)*
 - [x] **Track: ESLint CLI migration**
-  *Link: [./tracks/eslint_cli_migration_20260405/](./tracks/eslint_cli_migration_20260405/)*
+  *Link: [./archive/tracks/eslint_cli_migration_20260405/](./archive/tracks/eslint_cli_migration_20260405/)*
 - [x] **Track: Mastery progress bars on unit cards**
-  *Link: [./tracks/mastery_progress_bars_20260406/](./tracks/mastery_progress_bars_20260406/)*
+  *Link: [./archive/tracks/mastery_progress_bars_20260406/](./archive/tracks/mastery_progress_bars_20260406/)*
 - [x] **Track: Type consolidation — PhaseHeader/PhaseFooter index signatures**
-  *Link: [./tracks/type_consolidation_20260406/](./tracks/type_consolidation_20260406/)*
+  *Link: [./archive/tracks/type_consolidation_20260406/](./archive/tracks/type_consolidation_20260406/)*
 - [x] **Track: Practice-test page LessonPhase migration**
-  *Link: [./tracks/practice_test_lessonphase_20260406/](./tracks/practice_test_lessonphase_20260406/)*
+  *Link: [./archive/tracks/practice_test_lessonphase_20260406/](./archive/tracks/practice_test_lessonphase_20260406/)*
 - [x] **Track: Header unit data from canonical sources**
-  *Link: [./tracks/header_unit_data_20260406/](./tracks/header_unit_data_20260406/)*
+  *Link: [./archive/tracks/header_unit_data_20260406/](./archive/tracks/header_unit_data_20260406/)*
 - [x] **Track: Unit data deduplication in lesson-data files**
-  *Link: [./tracks/unit_data_dedup_20260406/](./tracks/unit_data_dedup_20260406/)*
+  *Link: [./archive/tracks/unit_data_dedup_20260406/](./archive/tracks/unit_data_dedup_20260406/)*
 - [x] **Track: Non-standard phase names — extend type union & remove unsafe casts**
-  *Link: [./tracks/phase_names_20260406/](./tracks/phase_names_20260406/)*
+  *Link: [./archive/tracks/phase_names_20260406/](./archive/tracks/phase_names_20260406/)*
 - [x] **Track: Extract shared phaseIcons constant**
-  *Link: [./tracks/extract_phase_icons_20260406/](./tracks/extract_phase_icons_20260406/)*
+  *Link: [./archive/tracks/extract_phase_icons_20260406/](./archive/tracks/extract_phase_icons_20260406/)*
 - [x] **Track: Derive lessonPages from lesson-data files**
-  *Link: [./tracks/lesson_pages_derive_20260406/](./tracks/lesson_pages_derive_20260406/)*
+  *Link: [./archive/tracks/lesson_pages_derive_20260406/](./archive/tracks/lesson_pages_derive_20260406/)*
 - [x] **Track: Fix 13 pre-existing TS errors in test files**
-  *Link: [./tracks/fix_ts_test_errors_20260406/](./tracks/fix_ts_test_errors_20260406/)*
+  *Link: [./archive/tracks/fix_ts_test_errors_20260406/](./archive/tracks/fix_ts_test_errors_20260406/)*
 - [x] **Track: Consolidate phase name unions — single canonical LessonPhaseName**
-  *Link: [./tracks/consolidate_phase_names_20260407/](./tracks/consolidate_phase_names_20260407/)*
+  *Link: [./archive/tracks/consolidate_phase_names_20260407/](./archive/tracks/consolidate_phase_names_20260407/)*
 - [x] **Track: Tighten PHASE_ICONS types and add defensive fallback helpers**
-  *Link: [./tracks/phase_icons_fallback_20260407/](./tracks/phase_icons_fallback_20260407/)*
+  *Link: [./archive/tracks/phase_icons_fallback_20260407/](./archive/tracks/phase_icons_fallback_20260407/)*
 - [x] **Track: useUnitMastery hook test coverage**
-  *Link: [./tracks/use_unit_mastery_tests_20260407/](./tracks/use_unit_mastery_tests_20260407/)*
+  *Link: [./archive/tracks/use_unit_mastery_tests_20260407/](./archive/tracks/use_unit_mastery_tests_20260407/)*
 - [x] **Track: masteryColor thresholds alignment with proficiencyBand**
-  *Link: [./tracks/mastery_color_thresholds_20260407/](./tracks/mastery_color_thresholds_20260407/)*
+  *Link: [./archive/tracks/mastery_color_thresholds_20260407/](./archive/tracks/mastery_color_thresholds_20260407/)*
 - [x] **Track: Lesson-data import migration — context to types**
-  *Link: [./tracks/lesson_data_import_migration_20260407/](./tracks/lesson_data_import_migration_20260407/)*
+  *Link: [./archive/tracks/lesson_data_import_migration_20260407/](./archive/tracks/lesson_data_import_migration_20260407/)*
 - [x] **Track: Resolve orphan "finance" TopicTag**
-  *Link: [./tracks/resolve_finance_topic_tag_20260407/](./tracks/resolve_finance_topic_tag_20260407/)*
+  *Link: [./archive/tracks/resolve_finance_topic_tag_20260407/](./archive/tracks/resolve_finance_topic_tag_20260407/)*
 - [x] **Track: Clean up root lockfile warning**
-  *Link: [./tracks/cleanup_root_lockfile_20260407/](./tracks/cleanup_root_lockfile_20260407/)*
+  *Link: [./archive/tracks/cleanup_root_lockfile_20260407/](./archive/tracks/cleanup_root_lockfile_20260407/)*
 - [x] **Track: Unused file cleanup in `bus-math-nextjs/`**
-  *Link: [./tracks/unused_file_cleanup_20260407/](./tracks/unused_file_cleanup_20260407/)*
+  *Link: [./archive/tracks/unused_file_cleanup_20260407/](./archive/tracks/unused_file_cleanup_20260407/)*
 - [x] **Track: Shared shell, home, frontmatter, and backmatter UI audit**
-  *Link: [./tracks/shared_surface_ui_audit_20260407/](./tracks/shared_surface_ui_audit_20260407/)*
+  *Link: [./archive/tracks/shared_surface_ui_audit_20260407/](./archive/tracks/shared_surface_ui_audit_20260407/)*
 - [x] **Track: Student hub, unit overview, practice hub, and practice-test UI audit**
-  *Link: [./tracks/student_hub_practice_ui_audit_20260407/](./tracks/student_hub_practice_ui_audit_20260407/)*
+  *Link: [./archive/tracks/student_hub_practice_ui_audit_20260407/](./archive/tracks/student_hub_practice_ui_audit_20260407/)*
 - [x] **Track: Student lesson UI audit for Units 01-04**
-  *Link: [./tracks/student_lessons_u01_u04_ui_audit_20260407/](./tracks/student_lessons_u01_u04_ui_audit_20260407/)*
+  *Link: [./archive/tracks/student_lessons_u01_u04_ui_audit_20260407/](./archive/tracks/student_lessons_u01_u04_ui_audit_20260407/)*
 - [x] **Track: Student lesson UI audit for Units 05-08**
-  *Link: [./tracks/student_lessons_u05_u08_ui_audit_20260407/](./tracks/student_lessons_u05_u08_ui_audit_20260407/)*
+  *Link: [./archive/tracks/student_lessons_u05_u08_ui_audit_20260407/](./archive/tracks/student_lessons_u05_u08_ui_audit_20260407/)*
 - [x] **Track: Teacher and capstone UI audit**
-  *Link: [./tracks/teacher_capstone_ui_audit_20260407/](./tracks/teacher_capstone_ui_audit_20260407/)*
+  *Link: [./archive/tracks/teacher_capstone_ui_audit_20260407/](./archive/tracks/teacher_capstone_ui_audit_20260407/)*
 - [x] **Track: Teacher lesson pages operational rebuild**
-  *Link: [./tracks/teacher_lesson_pages_operational_20260407/](./tracks/teacher_lesson_pages_operational_20260407/)*
+  *Link: [./archive/tracks/teacher_lesson_pages_operational_20260407/](./archive/tracks/teacher_lesson_pages_operational_20260407/)*
 - [x] **Track: TypeScript build guardrails**
-  *Link: [./tracks/typescript_build_guardrails_20260407/](./tracks/typescript_build_guardrails_20260407/)*
+  *Link: [./archive/tracks/typescript_build_guardrails_20260407/](./archive/tracks/typescript_build_guardrails_20260407/)*
 - [x] **Track: Fix broken cover image on git pages**
-*Link: [./tracks/fix_cover_image_basepath_20260408/](./tracks/fix_cover_image_basepath_20260408/)*
+*Link: [./archive/tracks/fix_cover_image_basepath_20260408/](./archive/tracks/fix_cover_image_basepath_20260408/)*
 - [x] **Track: Document deferral of teacher guidance fields**
-*Link: [./tracks/defer_teacher_guidance_fields_20260408/](./tracks/defer_teacher_guidance_fields_20260408/)*
+*Link: [./archive/tracks/defer_teacher_guidance_fields_20260408/](./archive/tracks/defer_teacher_guidance_fields_20260408/)*
 - [x] **Track: Resolve debug routes middleware gating issue with static export**
-*Link: [./tracks/resolve_debug_routes_static_export_20260408/](./tracks/resolve_debug_routes_static_export_20260408/)*
+*Link: [./archive/tracks/resolve_debug_routes_static_export_20260408/](./archive/tracks/resolve_debug_routes_static_export_20260408/)*
 - [x] **Track: Replace manually assigned glossary IDs with slugs**
-*Link: [./tracks/glossary_id_from_slug_20260409/](./tracks/glossary_id_from_slug_20260409/)*
+*Link: [./archive/tracks/glossary_id_from_slug_20260409/](./archive/tracks/glossary_id_from_slug_20260409/)*
 - [x] **Track: Spaced-Repetition Review Prototype**
-*Link: [./tracks/srs_review_prototype_20260409/](./tracks/srs_review_prototype_20260409/)*
+*Link: [./archive/tracks/srs_review_prototype_20260409/](./archive/tracks/srs_review_prototype_20260409/)*
 - [x] **Track: ReviewSession component tests and accessibility fixes**
-*Link: [./tracks/reviewsession_component_tests_20260409/](./tracks/reviewsession_component_tests_20260409/)*
+*Link: [./archive/tracks/reviewsession_component_tests_20260409/](./archive/tracks/reviewsession_component_tests_20260409/)*
 - [x] **Track: Review session recording**
-*Link: [./tracks/review_session_recording_20260409/](./tracks/review_session_recording_20260409/)*
+*Link: [./archive/tracks/review_session_recording_20260409/](./archive/tracks/review_session_recording_20260409/)*
 - [ ] **Track: PWA foundation — offline capability and app installation**
   *Link: [./tracks/pwa_foundation_20260409/](./tracks/pwa_foundation_20260409/)*
 - [~] **Track: Printable lessons core — worksheet generation with paged.js**
@@ -106,6 +106,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
   *Link: [./tracks/gamification_core_20260409/](./tracks/gamification_core_20260409/)*
 - [ ] **Track: Advanced study modes — business games and interactive learning**
   *Link: [./tracks/advanced_study_modes_20260409/](./tracks/advanced_study_modes_20260409/)*
+- [ ] **Track: Capstone Project Infrastructure**
+  *Link: [./tracks/capstone_project_infrastructure_20260528/](./tracks/capstone_project_infrastructure_20260528/)*
 
 Foundational active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.
@@ -117,7 +119,7 @@ Foundational active tracks are ordered intentionally:
 ## Completed Tracks
 
 - [x] **Track: Unit-by-unit XLSX link and workbook integrity audit**
-  *Link: [./tracks/xlsx_audit_20260402/](./tracks/xlsx_audit_20260402/)*
+  *Link: [./archive/tracks/xlsx_audit_20260402/](./archive/tracks/xlsx_audit_20260402/)*
 
 ## Archived Tracks
 
@@ -138,4 +140,4 @@ Foundational active tracks are ordered intentionally:
 - [x] **Track: Unit 08 - Fixed assets and depreciation**
   *Link: [./archive/tracks/unit08_20260330/](./archive/tracks/unit08_20260330/)*
 
-- [x] [Visual Refresh: Define Unique Identity](tracks/visual_refresh_20260425/index.md)
+- [x] [Visual Refresh: Define Unique Identity](archive/tracks/visual_refresh_20260425/index.md)
