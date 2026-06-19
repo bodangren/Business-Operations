@@ -2,28 +2,20 @@
 
 ## Measure Workflow
 
-All development runs through the **Measure** spec-driven development framework exclusively. At the start of every session:
+Load the `measure` skill and read `measure/index.md` before starting work.
 
-1. Load the `measure` skill
-2. Read `measure/index.md` to understand the project context
-3. Follow the workflow defined in `measure/workflow.md`
+## Documentation Standards
 
-Key reference files:
-- `measure/tracks.md` — Active work registry
-- `measure/tracks/<track_id>/plan.md` — Task checklist
-- `measure/product.md` — Product vision
-- `measure/tech-stack.md` — Technology choices
-- `measure/lessons-learned.md` — Project memory
-- `measure/tech-debt.md` — Known shortcuts
+Use JSDoc for all exported functions. Describe params and returns without repeating TypeScript types.
 
-Never start significant work without an active track. Always update `measure/tracks.md` and the current track's `plan.md` before and after work.
+## Codebase Graph
 
+This project uses `build-graph`. Load the `build-graph` skill for commands.
 
 ## Core Rules
 - Work only in `bus-math-nextjs/` unless explicitly told otherwise
 - Do NOT run npm commands or mutate `.next` without explicit user approval
 - Keep student pages in the six-phase structure with gradient backgrounds, `PhaseHeader`/`PhaseFooter`, and `Badge` styling
-
 
 ## Lesson Implementation
 
@@ -56,3 +48,7 @@ Load skills with `/skill <skill-name>` or the skill tool before editing lesson f
 - **Component imports**: Use default exports for interactive components (`ComprehensionCheck`, `ReflectionJournal`), named exports for UI (`PhaseHeader`, `Card`)
 - **MCP Knowledge Base**: Use `mcp__curriculum-mcp__list_components` to discover available components
 - **Testing**: Use Chrome MCP tools for browser validation
+
+## Automation Supervisor
+
+Do NOT modify measure/automation-supervisor.py. This file is centrally managed and hardlinked across all projects.
