@@ -1,39 +1,31 @@
-# Unit 01 Lesson 07 – Final Ledger Validation
+# Lesson 07 Project Rehearsal Tutorial
 
-This tutorial outlines how to complete the final quality check in `unit01-lesson07-student.xlsx` and match the finished teacher model (`unit01-lesson07-teacher.xlsx`). The objective is to add summary totals, calculate the absolute difference, and report the ledger status.
+## Goal
 
-## 1. Verify the Starting Workbook
+Audit the shared four-sheet workbook before the group project.
 
-- Open the student file. On **TrialBalance**, columns A–D already contain the Check formulas and conditional formatting from Lesson 06.
-- The Check column should show mostly green zeros, confirming individual accounts are balanced.
+## Steps
 
-## 2. Insert the Totals Row
+1. Open `unit01-rehearsal-workbook.xlsx`.
+2. Confirm that the workbook has Transactions, Trial Balance, Error Checks, and Executive Summary sheets.
+3. Trace Total Revenue, Total Expenses, Net Income, and Cash Balance from Executive Summary to Trial Balance.
+4. Trace the Trial Balance totals to `LedgerTable` on Transactions.
+5. Confirm that all four Error Checks controls show Pass.
+6. Change one debit amount temporarily.
+7. Confirm that the related controls change to Review.
+8. Undo the change.
+9. Test one blank Account cell in the same way.
+10. Record the expected and actual result for both tests.
 
-1. Click cell `A13` and type **Totals**.
-2. In `B13`, enter `=SUM(B2:B11)` to sum all debit totals. The result should be **8,935**.
-3. In `C13`, enter `=SUM(C2:C11)` for total credits. This also returns **8,935**.
-4. Leave `D13` blank; the Check column stays focused on individual accounts.
+## Shared Evidence
 
-Discuss how this mirrors what accountants do before they sign off on a monthly close.
+- Total debits: $8,620.98
+- Total credits: $8,620.98
+- Revenue: $4,850.00
+- Expenses: $2,817.99
+- Net income: $2,032.01
+- Cash balance: $1,697.01
 
-## 3. Calculate the Absolute Difference
+## Recommendation Pattern
 
-1. Click cell `A14` and type **Difference**.
-2. In `B14`, enter `=ABS(B13-C13)` and press Enter. A balanced ledger produces **0**.
-
-Explain that `ABS` removes any negative sign, making it easy to see the size of a mismatch.
-
-## 4. Create the Status Message
-
-1. In `A15`, type **Ledger Status**.
-2. In `B15`, enter `=IF(B14=0,"Ledger Balanced","Investigate Differences")`.
-3. Press Enter. With clean data the cell displays **Ledger Balanced**.
-
-Encourage students to test the logic by temporarily changing an entry; the message should flip to **Investigate Differences**.
-
-## 5. Save the Teacher Version
-
-- Save the completed workbook as `unit01-lesson07-teacher.xlsx`.
-- Keep the student file unchanged for future practice runs.
-
-With this validation in place, TechStart’s ledger is ready for investor review, and students have a repeatable checklist for future units that build toward full financial statement integration.
+State one claim. Cite at least three workbook values. State one risk or limitation. One month of data does not establish a stable trend.

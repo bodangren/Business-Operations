@@ -6,11 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CheckCircle2, XCircle, Info } from "lucide-react"
+import { isValidExcelTableName } from "@/lib/accounting/unit01-practice"
 
 interface TableStructureSimulatorProps {
   onReset?: () => void
 }
 
+/** Render safe practice for the Lesson 4 Excel table setup. */
 export default function TableStructureSimulator({ onReset }: TableStructureSimulatorProps) {
   const [currentStep, setCurrentStep] = useState<"structure" | "formatting" | "naming" | "complete">("structure")
   const [structureComplete, setStructureComplete] = useState(false)
@@ -25,7 +27,7 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
   const handleStructureCheck = () => {
     setShowFeedback(true)
     setFeedbackType("success")
-    setFeedbackMessage("✓ Correct! Proper column structure: Date | Description | Account | Type | Debit | Credit")
+    setFeedbackMessage("✓ Correct! Proper column structure: Transaction ID | Date | Description | Account | Type | Debit | Credit")
     setStructureComplete(true)
   }
 
@@ -43,13 +45,13 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
 
   const handleNamingCheck = () => {
     setShowFeedback(true)
-    if (tableName.toLowerCase().includes("ledger") && tableName.length > 0) {
+    if (isValidExcelTableName(tableName)) {
       setFeedbackType("success")
       setFeedbackMessage("✓ Correct! 'LedgerTable' is a clear, descriptive name for structured references")
       setNamingComplete(true)
     } else {
       setFeedbackType("error")
-      setFeedbackMessage("✗ Try again. Table name should include 'Ledger' to be clear and descriptive")
+      setFeedbackMessage("✗ Use a name that includes 'Ledger', starts with a letter or underscore, and contains no spaces")
     }
   }
 
@@ -109,6 +111,7 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
               <div className="bg-gray-50 p-4 rounded border">
                 <p className="text-sm font-medium text-gray-900 mb-2">What columns should Sarah's ledger table include?</p>
                 <div className="flex flex-wrap gap-3 text-sm">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded">Transaction ID</span>
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded">Date</span>
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded">Description</span>
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded">Account</span>
@@ -311,7 +314,7 @@ export default function TableStructureSimulator({ onReset }: TableStructureSimul
               <div className="grid grid-cols-3 gap-3 text-xs">
                 <div className="bg-white p-3 rounded border">
                   <p className="font-medium text-green-900">Column Structure</p>
-                  <p className="text-green-700 mt-1">Date | Description | Account | Type | Debit | Credit</p>
+                  <p className="text-green-700 mt-1">Transaction ID | Date | Description | Account | Type | Debit | Credit</p>
                 </div>
                 <div className="bg-white p-3 rounded border">
                   <p className="font-medium text-green-900">Formatting</p>

@@ -215,7 +215,7 @@ export default function Phase1Page() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                In the next phase, we'll dive deep into Excel Tables and SUMIF functions. 
+                In the next phase, you will learn the parts of an Excel Table. Lesson 5 will add SUMIF formulas.
                 You'll learn the technical skills that transform Sarah's manual calculations 
                 into automated precision, building the foundation of her smart ledger system.
               </p>

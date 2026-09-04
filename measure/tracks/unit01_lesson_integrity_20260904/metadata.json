@@ -1,0 +1,11 @@
+{
+  "track_id": "unit01_lesson_integrity_20260904",
+  "type": "bug",
+  "status": "in_progress",
+  "created_at": "2026-09-04T00:00:00Z",
+  "updated_at": "2026-09-04T00:00:00Z",
+  "description": "Correct Unit 1 lesson logic and workbook integrity defects.",
+  "estimated_tasks": 9,
+  "actual_tasks": null,
+  "deviation_notes": "The user approved implementation after reviewing the initial audit. No matching GitHub milestone exists."
+}

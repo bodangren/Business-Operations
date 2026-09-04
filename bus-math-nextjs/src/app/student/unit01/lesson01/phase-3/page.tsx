@@ -22,14 +22,14 @@ export default function Phase3Page() {
     },
     {
       id: 'q2',
-      question: 'Sarah pays $49 for monthly design software. How does the accounting equation respond?',
+      question: 'Sarah pays $52.99 for monthly design software. How does the accounting equation respond?',
       answers: [
         'Cash decreases and equity decreases by the same amount',
         'Only cash decreases because software is temporary',
         'A liability is created for future software access',
         'Assets increase because Sarah now has software'
       ],
-      explanation: 'Paying for software is an expense. Cash (an asset) decreases by $49. Expenses reduce equity, so equity also decreases by $49. Both sides go down together, keeping the equation balanced.'
+      explanation: 'Paying for software is an expense. Cash decreases by $52.99. The expense reduces equity by $52.99. Both sides decrease by the same amount.'
     },
     {
       id: 'q3',
@@ -158,7 +158,7 @@ export default function Phase3Page() {
               {/* Transaction 2 Example */}
               <div className="bg-white p-6 rounded-lg border-2 border-green-400">
                 <h4 className="text-lg font-semibold text-green-900 mb-4">
-                  Transaction 2: Sarah pays $49 for monthly design software
+                  Transaction 2: Sarah pays $52.99 for monthly design software
                 </h4>
                 <div className="space-y-4">
                   <div className="bg-yellow-50 p-4 rounded border border-yellow-300">
@@ -174,7 +174,7 @@ export default function Phase3Page() {
                           <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
                           <div>
                             <p className="font-semibold text-red-900">Cash (Asset) decreases</p>
-                            <p className="text-sm text-red-700">Sarah has $49 less in her bank account</p>
+                            <p className="text-sm text-red-700">Sarah has $52.99 less in her bank account</p>
                           </div>
                         </div>
                       </div>
@@ -183,7 +183,7 @@ export default function Phase3Page() {
                           <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
                           <div>
                             <p className="font-semibold text-red-900">Equity decreases</p>
-                            <p className="text-sm text-red-700">The expense reduces Sarah's ownership stake by $49</p>
+                            <p className="text-sm text-red-700">The expense reduces Sarah's ownership stake by $52.99</p>
                           </div>
                         </div>
                       </div>
@@ -192,7 +192,7 @@ export default function Phase3Page() {
                   
                   <div className="bg-blue-50 p-4 rounded border border-blue-300 mt-4">
                     <p className="font-semibold text-blue-800">Result:</p>
-                    <p className="text-blue-700">Both ASSETS and EQUITY decreased by $49. The equation stayed balanced.</p>
+                    <p className="text-blue-700">Both ASSETS and EQUITY decreased by $52.99. The equation stayed balanced.</p>
                   </div>
                 </div>
               </div>
@@ -293,12 +293,12 @@ export default function Phase3Page() {
             <CardContent>
               <div className="prose prose-purple max-w-none">
                 <p className="text-lg leading-relaxed">
-                  Notice the pattern across all four transactions? Every single business event moves at least two parts 
-                  of the accounting equation, and they always move by the same amount. This is why the equation is called 
-                  "double-entry" — every transaction has two equal and opposite effects that keep the scoreboard balanced.
+                  Notice the pattern across all four transactions? Every business event affects at least two accounts.
+                  Some events change two equation components. Others exchange one asset for another. In every case, the
+                  net effect must keep Assets equal to Liabilities plus Equity.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Sarah's notebook system failed because it recorded one-sided notes: "Got $2,200," "Paid $49." Those 
+                  Sarah's notebook system failed because it recorded one-sided notes: "Got $2,200," "Paid $52.99." Those
                   notes don't show the accounting equation impact. A professional ledger shows the full story:
                   <strong>Which assets changed? Which liabilities changed? How did equity change?</strong>
                 </p>

@@ -86,7 +86,7 @@ export default function Phase3Page() {
                   Define clear, consistent columns that make data easy to read and verify.
                 </p>
                 <p className="font-medium text-blue-900">
-                  Required: Date | Description | Account | Type | Debit | Credit
+                  Required: Transaction ID | Date | Description | Account | Type | Debit | Credit
                 </p>
               </CardContent>
             </Card>

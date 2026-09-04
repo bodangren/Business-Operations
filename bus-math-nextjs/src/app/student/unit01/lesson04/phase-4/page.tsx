@@ -49,12 +49,12 @@ export default function Phase4Page() {
             <CardContent className="space-y-4">
               <div className="flex flex-wrap items-center gap-3">
                 <a
-                  href={withBasePath('/resources/unit01-ledger-basic-practice.xlsx')}
-                  download="unit01-ledger-basic-practice.xlsx"
+                  href={withBasePath('/resources/unit01-lesson04-student.xlsx')}
+                  download="unit01-lesson04-student.xlsx"
                   className="inline-flex"
                 >
                   <Button className="bg-emerald-600 hover:bg-emerald-700">
-                    Download: unit01-ledger-basic-practice.xlsx
+                    Download: unit01-lesson04-student.xlsx
                   </Button>
                 </a>
               </div>
@@ -62,9 +62,9 @@ export default function Phase4Page() {
               <div className="bg-white p-4 rounded border">
                 <h4 className="font-semibold text-emerald-900 mb-3">Workbook Contents</h4>
                 <ul className="text-sm text-emerald-800 space-y-2">
-                  <li>• <strong>Sheet 1:</strong> Raw transaction data (Sarah's TechStart transactions)</li>
-                  <li>• <strong>Data includes:</strong> Date, Description, Account, Type, Debit, Credit columns</li>
-                  <li>• <strong>Pre-loaded:</strong> 12 sample transactions from Sarah's business</li>
+                  <li>• <strong>Sheet:</strong> Transactions</li>
+                  <li>• <strong>Data includes:</strong> Transaction ID, Date, Description, Account, Type, Debit, and Credit</li>
+                  <li>• <strong>Pre-loaded:</strong> 11 transactions shown as 22 debit or credit rows</li>
                   <li>• <strong>Your job:</strong> Convert to professional Excel Table with proper formatting</li>
                 </ul>
               </div>
@@ -102,7 +102,7 @@ export default function Phase4Page() {
                 <div>
                   <h4 className="font-semibold text-blue-900 mb-2">1.1 Check Data Quality</h4>
                   <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                    <li>Review the 12 pre-loaded transactions</li>
+                    <li>Review the 11 pre-loaded transactions and 22 journal rows</li>
                     <li>Confirm all cells have values (no blanks)</li>
                     <li>Verify Debit/Credit columns have numbers (not text)</li>
                     <li>Check that Account column has proper account names</li>
@@ -111,7 +111,7 @@ export default function Phase4Page() {
                 <div>
                   <h4 className="font-semibold text-blue-900 mb-2">1.2 Apply Number Formatting</h4>
                   <ul className="text-blue-800 space-y-1 list-disc list-inside">
-                    <li>Select columns E and F (Debit and Credit)</li>
+                    <li>Select columns F and G (Debit and Credit)</li>
                     <li>Apply Currency format: Ctrl+Shift+$ (Windows)</li>
                     <li>Verify: 2 decimal places, comma separators, $ signs</li>
                     <li>Format negatives as red text: $(500.00)</li>
@@ -147,9 +147,9 @@ export default function Phase4Page() {
                 <div>
                   <h4 className="font-semibold text-purple-900 mb-2">2.1 Select Data Range</h4>
                   <ul className="text-purple-800 space-y-1 list-disc list-inside">
-                    <li>Click any cell in the transaction data (A1:F13)</li>
+                    <li>Click any cell in the transaction data (A1:G23)</li>
                     <li>Excel will automatically detect your data range</li>
-                    <li>Confirm the selection includes all 6 columns</li>
+                    <li>Confirm the selection includes all 7 columns</li>
                   </ul>
                 </div>
                 <div>
@@ -285,6 +285,7 @@ export default function Phase4Page() {
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-blue-200">
+                      <th className="p-2 text-left border border-blue-300">Transaction ID</th>
                       <th className="p-2 text-left border border-blue-300">Date</th>
                       <th className="p-2 text-left border border-blue-300">Description</th>
                       <th className="p-2 text-left border border-blue-300">Account</th>
@@ -295,6 +296,7 @@ export default function Phase4Page() {
                   </thead>
                   <tbody>
                     <tr className="bg-white">
+                      <td className="p-2 border border-blue-300">T001</td>
                       <td className="p-2 border border-blue-300">2/2/2025</td>
                       <td className="p-2 border border-blue-300">Bakery website billed</td>
                       <td className="p-2 border border-blue-300">Accounts Receivable</td>
@@ -303,6 +305,7 @@ export default function Phase4Page() {
                       <td className="p-2 border border-blue-300 text-right">$0.00</td>
                     </tr>
                     <tr className="bg-blue-50">
+                      <td className="p-2 border border-blue-300">T001</td>
                       <td className="p-2 border border-blue-300">2/2/2025</td>
                       <td className="p-2 border border-blue-300">Bakery website billed</td>
                       <td className="p-2 border border-blue-300">Service Revenue</td>
@@ -311,6 +314,7 @@ export default function Phase4Page() {
                       <td className="p-2 border border-blue-300 text-right">$2,200.00</td>
                     </tr>
                     <tr className="bg-white">
+                      <td className="p-2 border border-blue-300">T002</td>
                       <td className="p-2 border border-blue-300">2/4/2025</td>
                       <td className="p-2 border border-blue-300">Supplies purchased</td>
                       <td className="p-2 border border-blue-300">Supplies Expense</td>
@@ -322,8 +326,8 @@ export default function Phase4Page() {
                 </table>
               </div>
               <p className="text-sm text-blue-800 mt-2">
-                <strong>Note:</strong> This is just the first 3 transactions. Your table should include 
-                all 12 transactions with consistent formatting, blue/white banding, and filter arrows.
+                <strong>Note:</strong> These are three sample rows. Your table should include
+                all 22 rows with consistent formatting, banded rows, and filter arrows.
               </p>
             </CardContent>
           </Card>
@@ -350,7 +354,7 @@ export default function Phase4Page() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="flex-shrink-0 mt-1">□</span>
-                      <span>6 columns: Date, Description, Account, Type, Debit, Credit</span>
+                      <span>7 columns: Transaction ID, Date, Description, Account, Type, Debit, Credit</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="flex-shrink-0 mt-1">□</span>
@@ -387,7 +391,7 @@ export default function Phase4Page() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="flex-shrink-0 mt-1">□</span>
-                      <span>All 12 transactions present and formatted correctly</span>
+                      <span>All 11 transactions and 22 journal rows are present</span>
                     </li>
                   </ul>
                 </div>

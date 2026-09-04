@@ -123,10 +123,10 @@ export default function Unit01Lesson02Phase3() {
             </div>
 
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-200">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">🧠 Four Common Transaction Patterns</h3>
+              <h3 className="text-xl font-bold text-blue-900 mb-4">🧠 Five Common Transaction Patterns</h3>
               
               <p className="text-lg text-blue-800 mb-6">
-                Every business transaction follows one of these four patterns. Learning these will help 
+                The practice set uses these five common patterns. Learning them will help
                 you classify transactions quickly and accurately.
               </p>
               
@@ -177,13 +177,27 @@ export default function Unit01Lesson02Phase3() {
                 <div className="bg-white p-4 rounded-lg border border-green-200">
                   <h4 className="font-bold text-green-900 mb-2">Pattern 4: Assets and Liabilities Both Decrease</h4>
                   <p className="text-sm text-green-700 mb-3">
-                    Paying off debts, making loan payments, paying expenses immediately
+                    Paying accounts payable or repaying loan principal
                   </p>
                   <div className="bg-green-50 p-3 rounded text-sm">
                     <p className="font-semibold text-green-900">Effect:</p>
                     <p className="text-green-800">
                       Cash decreases, liability (payable, loan) decreases by same amount. 
                       <strong>Equity unchanged.</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg border border-orange-200">
+                  <h4 className="font-bold text-orange-900 mb-2">Pattern 5: Assets and Equity Both Decrease</h4>
+                  <p className="text-sm text-orange-700 mb-3">
+                    Paying rent, salaries, utilities, or other expenses with cash
+                  </p>
+                  <div className="bg-orange-50 p-3 rounded text-sm">
+                    <p className="font-semibold text-orange-900">Effect:</p>
+                    <p className="text-orange-800">
+                      Cash decreases and the expense reduces equity by the same amount.
+                      <strong> Liabilities are unchanged.</strong>
                     </p>
                   </div>
                 </div>
@@ -221,7 +235,7 @@ export default function Unit01Lesson02Phase3() {
                     How is this different from earning new revenue?
                   </li>
                   <li>
-                    <strong>Discussion Question:</strong> Why do you think accountants formalized these four patterns? 
+                    <strong>Discussion Question:</strong> Why do you think accountants formalized these five patterns?
                     What problems would they prevent in real businesses?
                   </li>
                 </ul>
@@ -231,8 +245,8 @@ export default function Unit01Lesson02Phase3() {
             <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
               <h3 className="text-xl font-bold text-yellow-900 mb-3">🔑 Bridge to Accounting Format</h3>
               <p className="text-yellow-800 mb-3">
-                You're getting closer to how real accountants work. The four patterns you learned today 
-                are foundation for <strong>debits and credits</strong>, which is formal language 
+                You're getting closer to how real accountants work. The five patterns you learned today
+                are a foundation for <strong>debits and credits</strong>, the formal language
                 accountants use to record these exact same transactions.
               </p>
               <p className="text-yellow-800">

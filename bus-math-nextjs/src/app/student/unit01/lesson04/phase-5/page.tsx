@@ -173,7 +173,7 @@ export default function Phase5Page() {
                   <div>
                     <p className="font-medium text-purple-900 text-sm">Part 1 (2-3 sentences):</p>
                     <p className="text-purple-800 text-sm">
-                      Explain why your 6-column structure (Date, Description, Account, Type, Debit, Credit) 
+                      Explain why your 7-column structure (Transaction ID, Date, Description, Account, Type, Debit, Credit)
                       is the right choice for Sarah's investor meeting.
                     </p>
                   </div>

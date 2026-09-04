@@ -102,12 +102,12 @@ export default function Phase2Page() {
               📚 Phase 2: Introduction
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Excel Tables & SUMIF: The Professional Foundation
+              Excel Tables: The Professional Foundation
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Professional financial management starts with professional data organization. 
               The difference between a casual list of numbers and an investor-ready financial 
-              system lies in two powerful Excel features: Excel Tables and SUMIF functions.
+              system starts with one Excel feature: a named Excel Table. Lesson 5 will use this table in SUMIF formulas.
             </p>
           </div>
         </section>
@@ -116,10 +116,9 @@ export default function Phase2Page() {
         <section className="max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              These tools transform static data into dynamic, self-updating systems that 
-              calculate totals instantly and expand automatically as your business grows. 
+              Excel Tables transform static data into structured ranges that expand as the business grows.
               For Sarah's TechStart Solutions, this means the difference between spending 
-              hours on bookkeeping and spending minutes—with perfect accuracy every time.
+              hours locating data and spending minutes filtering a consistent transaction list.
             </p>
           </div>
         </section>
@@ -241,7 +240,7 @@ export default function Phase2Page() {
         <section className="max-w-4xl mx-auto">
           <FillInTheBlank 
           sentences={fillInQuestions}
-          title="Master the Vocabulary: Excel Tables and SUMIF"
+          title="Master the Vocabulary: Excel Tables"
           description="Complete these key concepts to build your Excel foundation"
           showWordList={true}
           showHints={true}
@@ -404,7 +403,7 @@ export default function Phase2Page() {
               </CardHeader>
               <CardContent className="text-sm">
                 <code className="block bg-gray-100 p-2 rounded mb-2">
-                  Date | Description | Account | Type | Debit | Credit
+                  Transaction ID | Date | Description | Account | Type | Debit | Credit
                 </code>
                 <p className="text-gray-600">Essential columns for professional transaction recording</p>
               </CardContent>

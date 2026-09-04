@@ -12,7 +12,7 @@ export default function Lesson10Page() {
     "Trial Balance shows debits = credits with no errors",
     "Error Checks sheet confirms all validations pass",
     "Executive Summary includes claim, 3+ pieces of evidence, and 1 risk",
-    "Presentation notes are ready for your 2-minute pitch",
+    "Presentation notes are ready for your 4-minute pitch",
     "Team has practiced staying within the time limit"
   ]
 
@@ -62,7 +62,7 @@ export default function Lesson10Page() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Card className="border-blue-200 bg-blue-50">
                   <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-blue-800">Your 2‑Minute Pitch</CardTitle>
+                    <CardTitle className="text-lg font-semibold text-blue-800">Your 4-Minute Pitch</CardTitle>
                   </CardHeader>
                   <CardContent className="text-blue-900 space-y-1">
                     <p>1. Introduce your team and business</p>
@@ -117,7 +117,7 @@ export default function Lesson10Page() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-yellow-800 flex items-center gap-2">
                 <ClipboardList className="w-6 h-6" />
-                Today's Workflow (90 Minutes)
+                Today's Workflow (50 Minutes)
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -129,13 +129,13 @@ export default function Lesson10Page() {
                   </p>
                 </div>
                 <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <p className="font-semibold text-orange-900 mb-1">5–70 minutes: Team presentations</p>
+                  <p className="font-semibold text-orange-900 mb-1">5–45 minutes: Team presentations</p>
                   <p className="text-orange-800">
-                    Each team presents for 2 minutes plus 1 minute for questions.
+                    Each team presents for 4 minutes plus 1 minute for questions. The teacher sets the order when more than four teams share a scenario.
                   </p>
                 </div>
                 <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                  <p className="font-semibold text-green-900 mb-1">70–90 minutes: Submit & reflect</p>
+                  <p className="font-semibold text-green-900 mb-1">45–50 minutes: Submit and reflect</p>
                   <p className="text-green-800">
                     Upload your final workbook and complete the reflection below.
                   </p>

@@ -8,94 +8,15 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, RotateCcw, ArrowRight, TrendingUp } from "lucide-react"
 import { lesson02Data, unit01Data, lesson02Phases } from "../lesson-data"
 import { useState, useCallback } from "react"
-
-interface TransactionType {
-  id: string
-  description: string
-  assetsChange: number
-  liabilitiesChange: number
-  equityChange: number
-  pattern: string
-  correctClassifications: string[]
-}
-
-const TRANSACTIONS: TransactionType[] = [
-  {
-    id: "t1",
-    description: "Received $2,500 customer payment for completed work",
-    assetsChange: 2500,
-    liabilitiesChange: 0,
-    equityChange: 2500,
-    pattern: "Assets and Equity Both Increase",
-    correctClassifications: ["cash", "revenue", "both increase"]
-  },
-  {
-    id: "t2",
-    description: "Bought $800 equipment with cash",
-    assetsChange: 0,
-    liabilitiesChange: 0,
-    equityChange: 0,
-    pattern: "Asset-to-Asset Exchange",
-    correctClassifications: ["equipment", "cash", "exchange", "no change"]
-  },
-  {
-    id: "t3",
-    description: "Purchased $1,200 supplies on credit (pay later)",
-    assetsChange: 1200,
-    liabilitiesChange: 1200,
-    equityChange: 0,
-    pattern: "Assets and Liabilities Both Both Increase",
-    correctClassifications: ["supplies", "payable", "credit", "both increase"]
-  },
-  {
-    id: "t4",
-    description: "Paid off $900 accounts payable debt",
-    assetsChange: -900,
-    liabilitiesChange: -900,
-    equityChange: 0,
-    pattern: "Assets and Liabilities Both Decrease",
-    correctClassifications: ["cash", "payable", "decrease", "debt"]
-  },
-  {
-    id: "t5",
-    description: "Owner invested $3,000 personal cash into business",
-    assetsChange: 3000,
-    liabilitiesChange: 0,
-    equityChange: 3000,
-    pattern: "Assets and Equity Both Increase",
-    correctClassifications: ["cash", "equity", "investment", "both increase"]
-  },
-  {
-    id: "t6",
-    description: "Paid $400 monthly rent expense with cash",
-    assetsChange: -400,
-    liabilitiesChange: 0,
-    equityChange: -400,
-    pattern: "Assets and Equity Both Decrease",
-    correctClassifications: ["cash", "expense", "decrease", "equity"]
-  },
-  {
-    id: "t7",
-    description: "Billed client $1,800 for ongoing project (not yet paid)",
-    assetsChange: 1800,
-    liabilitiesChange: 0,
-    equityChange: 1800,
-    pattern: "Assets and Equity Both Increase",
-    correctClassifications: ["receivable", "revenue", "both increase"]
-  },
-  {
-    id: "t8",
-    description: "Took out $2,500 bank loan and deposited cash",
-    assetsChange: 2500,
-    liabilitiesChange: 2500,
-    equityChange: 0,
-    pattern: "Assets and Liabilities Both Increase",
-    correctClassifications: ["cash", "loan", "both increase"]
-  }
-]
+import {
+  UNIT01_EQUATION_PATTERNS,
+  UNIT01_EQUATION_TRANSACTIONS,
+  validateEquationResponse,
+  type EquationTransaction,
+} from "@/lib/accounting/unit01-practice"
 
 interface PracticeProblem {
-  transaction: TransactionType
+  transaction: EquationTransaction
   currentAssets: number
   currentLiabilities: number
   currentEquity: number
@@ -115,16 +36,10 @@ export default function Unit01Lesson02Phase4() {
   const [isCorrect, setIsCorrect] = useState(false)
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0)
   
-  const PATTERNS = [
-    "Asset-to-Asset Exchange",
-    "Assets and Equity Both Increase",
-    "Assets and Liabilities Both Increase",
-    "Assets and Liabilities Both Decrease",
-    "Assets and Equity Both Decrease"
-  ]
-
   const startNewProblem = useCallback(() => {
-    const randomTransaction = TRANSACTIONS[Math.floor(Math.random() * TRANSACTIONS.length)]
+    const randomTransaction = UNIT01_EQUATION_TRANSACTIONS[
+      Math.floor(Math.random() * UNIT01_EQUATION_TRANSACTIONS.length)
+    ]
     const baseAssets = 10000 + Math.floor(Math.random() * 5000)
     const baseLiabilities = 2000 + Math.floor(Math.random() * 3000)
     const baseEquity = baseAssets - baseLiabilities
@@ -150,12 +65,12 @@ export default function Unit01Lesson02Phase4() {
     const liabilitiesChange = parseInt(userLiabilitiesChange) || 0
     const equityChange = parseInt(userEquityChange) || 0
     
-    const assetsCorrect = assetsChange === currentProblem.transaction.assetsChange
-    const liabilitiesCorrect = liabilitiesChange === currentProblem.transaction.liabilitiesChange
-    const equityCorrect = equityChange === currentProblem.transaction.equityChange
-    const patternCorrect = selectedPattern === currentProblem.transaction.pattern
-    
-    const allCorrect = assetsCorrect && liabilitiesCorrect && equityCorrect && patternCorrect
+    const allCorrect = validateEquationResponse(currentProblem.transaction, {
+      assetsChange,
+      liabilitiesChange,
+      equityChange,
+      pattern: selectedPattern,
+    })
     
     setIsCorrect(allCorrect)
     setShowFeedback(true)
@@ -265,7 +180,7 @@ export default function Unit01Lesson02Phase4() {
                   <li>• <strong>Ask what was received:</strong> Cash? Equipment? Service?</li>
                   <li>• <strong>Ask what was given:</strong> Cash? Promise to pay later?</li>
                   <li>• <strong>Check both sides:</strong> Did equation stay balanced?</li>
-                  <li>• <strong>Use the patterns:</strong> Reference the four patterns from Phase 3 if needed</li>
+                  <li>• <strong>Use the patterns:</strong> Reference the five patterns from Phase 3 if needed</li>
                 </ul>
               </div>
 
@@ -442,7 +357,7 @@ export default function Unit01Lesson02Phase4() {
                   Which transaction pattern?
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {PATTERNS.map((pattern) => (
+                  {UNIT01_EQUATION_PATTERNS.map((pattern) => (
                     <button
                       key={pattern}
                       onClick={() => setSelectedPattern(pattern)}

@@ -1,44 +1,49 @@
-# Unit 01 Lesson 05 – Automating the Trial Balance with SUMIF
+# Lesson 05 Trial Balance and Error Checks Tutorial
 
-This tutorial explains how to start from the student practice workbook (`unit01-lesson05-student.xlsx`) and arrive at the completed teacher model (`unit01-lesson05-teacher.xlsx`). The goal is to pull ledger totals into a Trial Balance using `SUMIF`.
+## Goal
 
-## 1. Review the Journal Table
+Use formulas to summarize `LedgerTable` and identify records that need review.
 
-- Open the student workbook and confirm the **Journal** sheet already contains the `JournalEntries` table created in Lesson 04.
-- Point out that row 24 still holds the structured totals. Students rely on this table for every formula they write in this lesson.
+## Starting File
 
-## 2. Inspect the Trial Balance Layout
+Open `unit01-lesson05-student.xlsx`. It has Transactions, Trial Balance, and Error Checks sheets.
 
-- Switch to the **TrialBalance** sheet.
-- The first column lists TechStart’s active accounts. Debit and Credit columns are empty.
-- Explain that every formula will reference the account name in column A and reach back to the `JournalEntries` table.
+## Transactions Control
 
-## 3. Write the Debit `SUMIF`
+Add a column named **Entry Difference** to `LedgerTable`. Use this formula:
 
-1. Click cell `B2` (Cash).
-2. Enter `=SUMIF(JournalEntries[Account],A2,JournalEntries[Debit])`.
-3. Press Enter. The result should be **4,200**.
-4. Fill the formula down through `B11`. Each row picks up the proper debit total.
+```excel
+=SUMIFS(LedgerTable[Debit],LedgerTable[Transaction ID],[@[Transaction ID]])-SUMIFS(LedgerTable[Credit],LedgerTable[Transaction ID],[@[Transaction ID]])
+```
 
-Reinforce why `A2` is the criteria: it keeps the debit total tied to the account name in the same row.
+Each transaction ID must have a result of 0.
 
-## 4. Write the Credit `SUMIF`
+## Trial Balance
 
-1. Click cell `C2`.
-2. Enter `=SUMIF(JournalEntries[Account],A2,JournalEntries[Credit])`.
-3. Press Enter. Cash now shows **2,660** in the credit column.
-4. Copy the formula down to `C11`.
+Use these columns: Account, Total Debits, Total Credits, Debit Balance, and Credit Balance.
 
-Have students compare credits: Service Revenue should total **4,850**, Accounts Payable **210**, and Supplies Inventory **315**.
+Use these formulas in row 2. Then fill them down.
 
-## 5. Quick Accuracy Check
+```excel
+=SUMIF(LedgerTable[Account],A2,LedgerTable[Debit])
+=SUMIF(LedgerTable[Account],A2,LedgerTable[Credit])
+=MAX(B2-C2,0)
+=MAX(C2-B2,0)
+```
 
-- Scan the Debit and Credit columns to make sure blank accounts still display zeros.
-- Sum the Debit column (`SUM(B2:B11)`) and Credit column (`SUM(C2:C11)`) mentally or with a temporary formula. Both should equal **8,935**.
+Sum the Debit Balance and Credit Balance columns. The totals must match.
 
-## 6. Save the Teacher Version
+## Error Checks
 
-- Save the finished file as `unit01-lesson05-teacher.xlsx`.
-- Keep the student workbook unchanged so learners can practice the full set of formulas.
+Create a value and a Pass or Review status for each control:
 
-With this setup complete, Lesson 06 builds on the same sheet by adding a Check column and visual conditional formatting.
+1. Global debit-credit difference.
+2. Rows in an unbalanced transaction ID.
+3. Blank account cells.
+4. Rows with both a debit and credit, or neither amount.
+
+Use conditional formatting. Show Pass in green and Review in red.
+
+## Important Limit
+
+A balanced trial balance is an arithmetic check. It does not detect every wrong account, omitted transaction, or duplicated balanced entry.

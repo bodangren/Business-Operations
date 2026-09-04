@@ -22,12 +22,12 @@ export default function Unit01Lesson02Phase1() {
       id: "q2",
       question: "When Sarah receives a $2,200 payment from the bakery client, what must happen for the accounting equation to stay balanced?",
       answers: [
-        "At least two components of the equation must change by equal amounts",
+        "At least two accounts must change, and the net effect must keep the equation balanced",
         "Only one component can change",
         "The equation will go out of balance temporarily",
         "Nothing needs to change because cash is just money"
       ],
-      explanation: "Every business transaction affects at least two parts of the accounting equation, and those changes must balance perfectly. This is why accounting is called 'double-entry' bookkeeping."
+      explanation: "Every business transaction affects at least two accounts. A customer payment can increase Cash and Revenue, or it can exchange Accounts Receivable for Cash. The net effect must keep the equation balanced."
     },
     {
       id: "q3",

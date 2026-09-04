@@ -177,14 +177,13 @@ export default function Phase6Page() {
                       <Target className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-800">Next Up: Debits and Credits</h4>
+                      <h4 className="font-semibold text-blue-800">Next Up: Transaction Classification</h4>
                       <p className="text-sm text-blue-700 mt-1">
-                        <strong>Lesson2 will teach you the rules</strong> for how every transaction affects the accounting equation. 
-                        You'll learn why "debits" and "credits" are just the language for moving numbers around your scoreboard—
-                        not mysterious accounting terms, but the practical rules Sarah needs to record transactions correctly.
+                        <strong>Lesson 2 will teach you a method</strong> for classifying how each transaction affects
+                        assets, liabilities, and equity. Lesson 3 will introduce debit and credit notation.
                       </p>
                       <p className="text-xs text-blue-600 mt-2 italic">
-                        Preview: Every transaction has equal debits and credits. This is what keeps the equation balanced.
+                        Preview: Start with the business event. Then identify the accounts and equation effects.
                       </p>
                     </div>
                   </div>
@@ -251,12 +250,12 @@ export default function Phase6Page() {
                 
                 <div className="flex items-center justify-between pt-4">
                   <div className="text-sm text-amber-700">
-                    <strong>Coming up in Lesson 2:</strong> The rules of debits and credits—how every transaction keeps the scoreboard balanced
+                    <strong>Coming up in Lesson 2:</strong> Classify transactions and explain their equation effects
                   </div>
                   
                   <Button asChild className="bg-amber-600 hover:bg-amber-700">
                     <Link href="/student/unit01/lesson02" className="flex items-center gap-2">
-                      Continue to Lesson2
+                      Continue to Lesson 2
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>

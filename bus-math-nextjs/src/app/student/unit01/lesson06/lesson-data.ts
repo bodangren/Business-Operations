@@ -38,7 +38,7 @@ export const lesson06Phases = [
     id: "phase06-hook",
     phaseName: "Hook" as const,
     sequence: 1,
-    description: "Sarah has 2 minutes to convince an investor the books are clean. Her ledger works, but the presentation is messy and unclear.",
+    description: "Sarah has 4 minutes to explain the workbook evidence and its limits. Her ledger works, but the presentation is messy and unclear.",
   },
   {
     id: "phase06-intro",
