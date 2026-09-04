@@ -1,0 +1,6 @@
+Phase 3: Annotated Review Set — practice_hub_wireframes_20260403
+- Added Phase 3 annotations to all 8 wireframe HTML files (WF1-WF6)
+- Each annotation block covers: actions, required data, local-only behavior, static constraints, open decisions
+- WF4 includes full export payload contract (xlsx sheet structure)
+- Created open-decisions.md: 23 decisions prioritized (4 high, 16 medium, 3 low)
+- Build: pass | Lint: pass (pre-existing warnings only)

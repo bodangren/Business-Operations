@@ -1,0 +1,17 @@
+Phase 6: Verification checkpoint (2026-04-04)
+
+Track: local_study_export_20260403
+
+Completed:
+- 6.1 Built 3 missing study-mode route pages (flashcards, matching, speed-round)
+- 6.2 Verified data persistence via record-session functions + localStorage
+- 6.3 Verified export/import round-trip uses same LocalStudyData schema
+- 6.4 Lint: 0 errors on new files, build: 603 pages, tests: 186 passing
+- 6.5 Recorded follow-on work: per-term speed-round tracking, session persistence, teacher analysis skill
+
+Key fixes:
+- SessionMode type: changed mode:"study" to mode:"solo" (3 components)
+- isMatchingComplete import alias collision resolved
+- Cleaned up 7 lint warnings (unused imports)
+
+Track complete — all 6 phases done.

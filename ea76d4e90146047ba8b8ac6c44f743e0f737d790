@@ -1,0 +1,1 @@
+Code review of 5 tracks (typescript_build_guardrails, shared_surface_ui_audit, student_hub_practice_ui_audit, student_lessons_u01_u04_ui_audit, student_lessons_u05_u08_ui_audit). 2 fixes: DataTableSimulator shared checked state bug (M1), unused React import (L1). 1 new tech-debt item tracked: UNIT_META positional coupling (M2). Tests: 279 pass, tsc: 0, lint: 0, build: 603 pages.

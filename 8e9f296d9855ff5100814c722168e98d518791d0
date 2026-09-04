@@ -1,0 +1,1 @@
+Conductor track: resolve_finance_topic_tag_20260407 - Removed 'finance' from TopicTag type, updated test to use 'financial-statements', removed from TOPIC_LABELS in GlossaryFilters.tsx, marked tech-debt item as fixed

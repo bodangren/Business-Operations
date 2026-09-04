@@ -1,0 +1,1 @@
+Phase 1: Auto-fix unused imports and let→const. Installed eslint-plugin-unused-imports, configured in eslint.config.mjs. 281 warnings auto-fixed (571→290). 150 files touched. Tests: 216 passed. Build: clean.

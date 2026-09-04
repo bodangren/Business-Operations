@@ -1,0 +1,7 @@
+Track: header_unit_data_20260406 — Phase 1+2 (unit registry + header/index-records migration)
+- Created src/data/unit-registry.ts (UNITS array from 8 unitXXData imports)
+- Refactored header.tsx: hardcoded 32-line arrays → UNITS.map()
+- Refactored index-records.ts: hardcoded 8-line unitPages → UNITS.map()
+- Tests: 227 passed (16 suites), 6 new unit-registry tests
+- Lint: 0 errors, 0 warnings
+- Build: compiled successfully (603+ pages)

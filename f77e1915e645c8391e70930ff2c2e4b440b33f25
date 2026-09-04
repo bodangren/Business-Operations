@@ -1,0 +1,1 @@
+Phase 2: Low-fidelity wireframes complete. Created 8 static HTML wireframe files covering all 6 spec surfaces (WF1-WF6). Key decisions: click-to-select matching (no drag-drop), localStorage-only data, .xlsx export for MVP, bottom tab nav on mobile. Build passed. Ready for Phase 3 (Annotated Review Set).

@@ -1,0 +1,1 @@
+phase_names_20260406 Phase 1 complete: Extended LessonPhaseName union with 3 project phases, removed unsafe as-casts from 5 lesson-data files, added icon/color maps to 3 components. 241 tests pass, 0 lint errors, build compiles.
