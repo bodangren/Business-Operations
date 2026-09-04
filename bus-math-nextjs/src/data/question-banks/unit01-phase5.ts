@@ -282,14 +282,14 @@ const lesson03Questions: Unit01Phase5Question[] = [
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - Debit and Credit Rules",
     prompt: "Sarah receives $1,500 from a client but will not start the work until next month. What is the proper entry?",
-    correctAnswer: "Debit Cash $1,500 to record the money and credit Deferred Revenue $1,500 to show the obligation.",
+    correctAnswer: "Debit Cash $1,500 to record the money and credit Unearned Revenue $1,500 to show the obligation.",
     distractors: [
       "Debit Cash $1,500 and credit Service Revenue $1,500 because the cash already arrived.",
       "Debit Accounts Receivable $1,500 and credit Service Revenue $1,500 for future work.",
-      "Debit Deferred Revenue $1,500 and credit Cash $1,500 to keep liabilities active."
+      "Debit Unearned Revenue $1,500 and credit Cash $1,500 to keep liabilities active."
     ],
     explanation:
-      "Cash increases immediately, but revenue is not earned until the service is delivered. Record the liability Deferred Revenue until the work is performed.",
+      "Cash increases immediately, but revenue is not earned until the service is delivered. Record the liability Unearned Revenue until the work is performed.",
     objectiveTags: ["journal-entries", "liabilities"]
   },
   {
@@ -342,14 +342,14 @@ const lesson03Questions: Unit01Phase5Question[] = [
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - Debit and Credit Rules",
     prompt: "Why is the rule 'debits must equal credits' essential for Sarah's self-auditing ledger?",
-    correctAnswer: "Balanced totals keep the accounting equation aligned and spotlight errors as soon as they appear.",
+    correctAnswer: "Balanced totals provide an arithmetic control that flags unequal debit and credit postings.",
     distractors: [
       "It matches a GAAP requirement that only applies when a company goes public.",
       "It keeps the ledger looking neat and tidy when investors read the report.",
       "It reduces the volume of paperwork Sarah needs to store in the office."
     ],
     explanation:
-      "If debits and credits match, the accounting equation stays balanced. Any difference alerts Sarah to missing or incorrect entries immediately.",
+      "If debits and credits do not match, at least one posting error exists. Equal totals are necessary, but they do not detect wrong accounts or equal offsetting errors.",
     objectiveTags: ["ledger-foundations", "trial-balance"]
   },
   {
@@ -372,14 +372,14 @@ const lesson03Questions: Unit01Phase5Question[] = [
     lessonId: "lesson03",
     lessonTitle: "Lesson 03 - Debit and Credit Rules",
     prompt: "Why is Sarah's T-account system stronger than the handwritten notebooks she used before?",
-    correctAnswer: "It organizes data, enforces balanced totals, and proves professional skill to outside reviewers.",
+    correctAnswer: "It separates debit and credit effects by account so Sarah and a reviewer can trace each entry.",
     distractors: [
       "It takes less time to maintain, even if the math checks happen after each month closes.",
       "It uses fewer worksheet pages, which saves on printing and storage costs.",
       "It removes the need for transaction descriptions because numbers stand on their own."
     ],
     explanation:
-      "T-accounts combine structure with automatic balance checks, showcasing professional accounting discipline to lenders and investors.",
+      "T-accounts provide a consistent left-and-right structure. They help reviewers trace account effects, but they do not perform an automatic accuracy check.",
     objectiveTags: ["investor-confidence", "ledger-foundations"]
   }
 ];
@@ -466,15 +466,15 @@ const lesson04Questions: Unit01Phase5Question[] = [
     id: "lesson04-q6",
     lessonId: "lesson04",
     lessonTitle: "Lesson 04 - Excel Tables and SUMIF",
-    prompt: "A $5,000 expense was entered as revenue. What does a trial balance built on Tables and SUMIFs show?",
-    correctAnswer: "The totals will not balance, signaling the error so Sarah can correct the wrong posting.",
+    prompt: "A balanced entry uses Service Revenue when it should use Rent Expense. What can a trial balance show?",
+    correctAnswer: "The trial balance can still balance, so Sarah needs an account-review control to find the classification error.",
     distractors: [
-      "The trial balance will still balance because every error cancels itself eventually.",
+      "The trial balance always becomes unbalanced when any account name is wrong.",
       "The formulas rewrite the transaction automatically so no one notices the mistake.",
       "Nothing changes because Excel ignores data entry errors if the numbers look reasonable."
     ],
     explanation:
-      "Recording an expense as revenue reverses the debit/credit pattern. The imbalance appears immediately in a well-built trial balance.",
+      "A wrong-account entry can still contain equal debits and credits. The trial balance tests arithmetic equality, not whether the correct accounts were used.",
     objectiveTags: ["excel-automation", "error-detection"]
   },
   {

@@ -52,38 +52,38 @@ export const unit01Data: UnitData = {
     milestones: [
       {
         id: "milestone1",
-        day: 3,
-        title: "Prototype Ledger with 10 Transactions",
-        description: "Complete functional ledger with basic transaction recording",
+        day: 4,
+        title: "Structured Ledger with 11 Transactions",
+        description: "Create a consistent Excel Table for the journal rows",
         criteria: [
           "All transactions correctly posted using debit/credit rules",
-          "Excel Table format with proper headers and structure",
-          "Basic SUMIF formulas calculating account totals",
-          "Trial balance showing mathematical accuracy"
+          "Excel Table has the required seven columns",
+          "Table is named LedgerTable",
+          "All 11 transaction IDs have one debit row and one credit row"
         ]
       },
       {
         id: "milestone2",
         day: 5,
-        title: "Posting Validator + Controls",
-        description: "Implement robust posting validation and self‑auditing controls",
+        title: "Trial Balance + Error Checks",
+        description: "Build the account summary and four defined controls",
         criteria: [
-          "XLOOKUP with IFERROR for account mapping and missing‑ID warnings",
-          "SUMIFS controls validate postings across accounts",
-          "Data Validation blocks invalid entries (negative amounts, stale dates)",
-          "Professional documentation describing each control"
+          "SUMIF calculates debit and credit totals by account",
+          "Debit and credit balance totals match",
+          "Entry Difference checks each transaction ID",
+          "Error Checks reports Pass or Review for four controls"
         ]
       },
       {
         id: "milestone3",
         day: 7,
-        title: "Trial Balance Auto-Check",
-        description: "Complete error validation and correction system",
+        title: "Investor Summary + Rehearsal",
+        description: "Connect the workbook evidence to a clear recommendation",
         criteria: [
-          "Formula validation: ABS(sum_debits - sum_credits) = 0",
-          "Green/red indicator for balance status",
-          "Error identification and correction guidance",
-          "100% accuracy on provided test dataset"
+          "Executive Summary links to workbook formulas",
+          "All four controls show a clear status",
+          "Recommendation cites three workbook values",
+          "One risk or limitation is stated"
         ]
       }
     ],

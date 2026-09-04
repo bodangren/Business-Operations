@@ -9,11 +9,11 @@ import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
 const currentPhase = lesson06Phases[1]
 
 const vocab = [
-  { id: '1', text: 'Create a dedicated {blank} sheet that pulls key metrics from other tabs', answer: 'Summary', hint: 'The first sheet investors should see' },
+  { id: '1', text: 'Create a dedicated {blank} sheet that pulls key metrics from other tabs', answer: 'Executive Summary', hint: 'The first sheet investors should see' },
   { id: '2', text: 'Use {blank} formatting to make important numbers stand out and guide the eye', answer: 'professional', hint: 'Consistent fonts, colors, alignment' },
   { id: '3', text: 'Apply {blank} (green/red) to show balance status at a glance', answer: 'conditional formatting', hint: 'Automatic color changes based on values' },
   { id: '4', text: 'Write {blank} text in status cells so anyone understands what colors mean', answer: 'plain language', hint: '"Balanced" instead of "SUM=0"' },
-  { id: '5', text: 'Include an {blank} section listing what the workbook proves and validates', answer: 'evidence chain', hint: 'Link back to transactions, checks, totals' },
+  { id: '5', text: 'Include an {blank} section that states what each control checks', answer: 'evidence chain', hint: 'Link back to transactions, checks, and totals' },
   { id: '6', text: 'Protect the Summary sheet structure by {blank} the display cells so users see values only', answer: 'locking', hint: 'Prevent accidental formula deletion' },
 ]
 
@@ -39,7 +39,7 @@ export default function Unit01Lesson06Phase2() {
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               An investor-facing summary layer is the control panel for your ledger. It pulls
               the most important metrics, shows status with colors, and explains in plain language
-              what the workbook proves.
+              what the workbook checks.
             </p>
           </div>
         </section>
@@ -69,17 +69,17 @@ export default function Unit01Lesson06Phase2() {
                   <p className="font-semibold text-blue-800">2. Status Indicators</p>
                   <ul className="list-disc list-inside mt-1 space-y-1">
                     <li>Balance Status: "Balanced" or "Review Needed"</li>
-                    <li>Check Column Status: count of red cells</li>
-                    <li>Error Flags: count of validation failures</li>
+                    <li>Controls Needing Review: count of Review results on Error Checks</li>
+                    <li>Error Checks: four named tests with Pass or Review results</li>
                     <li>Visual cues: green for pass, red for issue, yellow for warning</li>
                   </ul>
                 </div>
                 <div className="bg-white border border-blue-200 rounded p-3">
                   <p className="font-semibold text-blue-800">3. Evidence Chain</p>
                   <ul className="list-disc list-inside mt-1 space-y-1">
-                    <li>What the workbook proves: "Debits equal credits"</li>
-                    <li>Validation methods: "Trial balance, check column, error flags"</li>
-                    <li>Data sources: "50 transactions from Oct 1-15, 2026"</li>
+                    <li>What the workbook checks: "Debits equal credits"</li>
+                    <li>Validation methods: "Trial Balance and Error Checks"</li>
+                    <li>Data source: "11 events posted as 22 journal rows"</li>
                     <li>Last updated: date or "Current session"</li>
                   </ul>
                 </div>
@@ -129,14 +129,14 @@ export default function Unit01Lesson06Phase2() {
                   <div className="w-6 h-6 bg-green-500 rounded-full flex-shrink-0 mt-0.5"></div>
                   <div>
                     <p className="font-semibold text-green-800">Green (Pass)</p>
-                    <p className="text-green-700">Balance = 0, Check column = 0, No validation errors</p>
+                    <p className="text-green-700">Difference = 0 and all four Error Checks controls show Pass</p>
                   </div>
                 </div>
                 <div className="bg-white border border-red-300 rounded p-3 flex items-start gap-3">
                   <div className="w-6 h-6 bg-red-500 rounded-full flex-shrink-0 mt-0.5"></div>
                   <div>
                     <p className="font-semibold text-red-800">Red (Issue)</p>
-                    <p className="text-red-700">Balance ≠ 0, Check column errors, Validation failures</p>
+                    <p className="text-red-700">Difference is not 0 or one or more controls show Review</p>
                   </div>
                 </div>
                 <div className="bg-white border border-yellow-300 rounded p-3 flex items-start gap-3">
@@ -151,7 +151,7 @@ export default function Unit01Lesson06Phase2() {
                 <p className="font-semibold">Common Formula Patterns:</p>
                 <ul className="list-disc list-inside mt-1 space-y-1">
                   <li><code>=IF(Balance=0, "Balanced", "Review Needed")</code></li>
-                  <li><code>=IF(CountRed&gt;0, "Errors Found", "All Clear")</code></li>
+                  <li><code>=IF(COUNTIF('Error Checks'!C2:C5,"Review")=0,"All Controls Pass","Review Controls")</code></li>
                   <li><code>=TEXT(TODAY(), "mm/dd/yyyy")</code> for date display</li>
                 </ul>
               </div>

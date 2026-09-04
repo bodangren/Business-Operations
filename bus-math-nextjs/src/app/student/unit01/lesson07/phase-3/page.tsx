@@ -7,14 +7,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Search, Users, FileSpreadsheet } from "lucide-react"
 import SpreadsheetWrapper from "@/components/spreadsheet/SpreadsheetWrapper"
+import { UNIT01_REHEARSAL_EVIDENCE } from "@/data/unit01-project"
 
 const currentPhase = lesson07Phases[2]
 
 const sampleSummaryData = [
   [{ value: "Metric" }, { value: "Value" }],
-  [{ value: "Total Revenue" }, { value: "$15,420" }],
-  [{ value: "Total Expenses" }, { value: "$8,950" }],
-  [{ value: "Net Profit" }, { value: "$6,470" }],
+  [{ value: "Total Revenue" }, { value: `$${UNIT01_REHEARSAL_EVIDENCE.totalRevenue.toLocaleString("en-US", { minimumFractionDigits: 2 })}` }],
+  [{ value: "Total Expenses" }, { value: `$${UNIT01_REHEARSAL_EVIDENCE.totalExpenses.toLocaleString("en-US", { minimumFractionDigits: 2 })}` }],
+  [{ value: "Net Income" }, { value: `$${UNIT01_REHEARSAL_EVIDENCE.netIncome.toLocaleString("en-US", { minimumFractionDigits: 2 })}` }],
   [{ value: "Trial Balance Status" }, { value: "✅ Balanced" }]
 ]
 
@@ -45,7 +46,7 @@ export default function Phase3Page() {
                     <p className="text-violet-900 mb-2">Open the "Executive Summary" sheet. What is the main recommendation?</p>
                     <div className="bg-white border rounded-lg p-3">
                       <p className="font-medium text-gray-800">Example recommendation:</p>
-                      <p className="text-gray-700 italic">"TechStart should invest in more inventory because revenue is growing 15% month-over-month and profit margins are healthy at 42%."</p>
+                      <p className="text-gray-700 italic">"TechStart can present this ledger because all four controls pass and net income is $2,032.01. One month of data does not show a stable trend."</p>
                     </div>
                   </div>
 
@@ -54,8 +55,8 @@ export default function Phase3Page() {
                     <p className="text-blue-900 mb-2">Now trace those numbers back to their source sheets:</p>
                     <ul className="list-disc list-inside text-blue-900 space-y-1">
                       <li>Where does "Total Revenue" come from?</li>
-                      <li>Which sheet proves "profit margins are healthy"?</li>
-                      <li>Where is the "15% month-over-month" growth shown?</li>
+                      <li>Where do Total Expenses and Net Income come from?</li>
+                      <li>Which sheet supports the statement that all four controls pass?</li>
                     </ul>
                   </div>
 

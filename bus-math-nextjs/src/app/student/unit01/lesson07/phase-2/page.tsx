@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileSpreadsheet, Download, Target } from "lucide-react"
 import FillInTheBlank from "@/components/exercises/FillInTheBlank"
+import { withBasePath } from "@/lib/paths"
 
 const currentPhase = lesson07Phases[1]
 
@@ -40,7 +41,7 @@ export default function Phase2Page() {
                       Download the shared rehearsal workbook below. This is exactly the structure your group will use in the real project—just with different data!
                     </p>
                     <a
-                      href="/resources/unit01-rehearsal-workbook.xlsx"
+                      href={withBasePath("/resources/unit01-rehearsal-workbook.xlsx")}
                       download
                       className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold"
                     >
@@ -56,7 +57,7 @@ export default function Phase2Page() {
                       </CardHeader>
                       <CardContent className="text-blue-900">
                         <p><strong>Job:</strong> Records every business event with debits and credits</p>
-                        <p><strong>Proves:</strong> All transactions are captured consistently</p>
+                        <p><strong>Evidence:</strong> Shows the transactions that the team recorded</p>
                       </CardContent>
                     </Card>
 
@@ -66,7 +67,7 @@ export default function Phase2Page() {
                       </CardHeader>
                       <CardContent className="text-purple-900">
                         <p><strong>Job:</strong> Sums debits and credits by account</p>
-                        <p><strong>Proves:</strong> The ledger is mathematically balanced</p>
+                        <p><strong>Evidence:</strong> Tests whether debit and credit balances match</p>
                       </CardContent>
                     </Card>
 
@@ -76,7 +77,7 @@ export default function Phase2Page() {
                       </CardHeader>
                       <CardContent className="text-orange-900">
                         <p><strong>Job:</strong> Flags invalid entries and imbalances</p>
-                        <p><strong>Proves:</strong> The workbook catches mistakes automatically</p>
+                        <p><strong>Evidence:</strong> Identifies four defined conditions for review</p>
                       </CardContent>
                     </Card>
 
@@ -86,7 +87,7 @@ export default function Phase2Page() {
                       </CardHeader>
                       <CardContent className="text-pink-900">
                         <p><strong>Job:</strong> Shows key numbers and recommendation clearly</p>
-                        <p><strong>Proves:</strong> The business story is easy for investors to understand</p>
+                        <p><strong>Evidence:</strong> Connects the recommendation to named workbook values</p>
                       </CardContent>
                     </Card>
                   </div>

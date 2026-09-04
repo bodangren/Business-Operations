@@ -56,8 +56,8 @@ export default function Phase4Page() {
                   <ol className="list-decimal list-inside space-y-4">
                     <li>
                       <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
-                        <h4 className="font-semibold text-amber-900 mb-2">Step 1: Fix the Weak Spots</h4>
-                        <p className="text-amber-900">Find and fix at least 2 issues in the workbook (e.g., broken formula, unclear label, missing check).</p>
+                        <h4 className="font-semibold text-amber-900 mb-2">Step 1: Audit the Controls</h4>
+                        <p className="text-amber-900">Test at least two controls. Record the test change, the expected result, and the actual result. Undo each test change.</p>
                       </div>
                     </li>
                     <li>
@@ -86,7 +86,7 @@ export default function Phase4Page() {
                     <ul className="list-disc list-inside text-green-900 space-y-1">
                       <li>All 4 sheets are complete and linked</li>
                       <li>Recommendation has 1 claim + 3 numbers + 1 risk</li>
-                      <li>2+ weak spots fixed</li>
+                      <li>2+ control tests recorded</li>
                       <li>3 transfer items listed</li>
                     </ul>
                   </div>

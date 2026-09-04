@@ -20,7 +20,7 @@ const guidedPracticeQuestions = [
       "The Difference value alone is enough"
     ],
     explanation:
-      "The IF formula checks if the balance is perfect (0) and shows 'Balanced.' If not, it prompts action with 'Review Needed.'"
+      "The IF formula checks whether the difference is 0 and shows 'Balanced.' If not, it prompts action with 'Review Needed.'"
   },
   {
     id: "conditional-color",
@@ -33,14 +33,14 @@ const guidedPracticeQuestions = [
       "Use a formula-based rule that checks today's date"
     ],
     explanation:
-      "Check the numeric difference directly. If it's not exactly 0, there's an issue—show red. Use green for the perfect 0 case."
+      "Check the numeric difference directly. If it is not 0, show red. Use green when the difference is 0."
   },
   {
     id: "plain-language",
     question:
       "Which explanation belongs in Sarah's executive summary note for investors?",
     answers: [
-      "'Debits and credits balance perfectly at $12,500 with no errors detected—ledger is audit-ready.'",
+      "'Debits and credits match, and all four workbook controls pass. The workbook is ready for review.'",
       "'SUMIF formulas in B2:B50 match SUMIF in C2:C50 and difference is zero.'",
       "'I checked all 50 transactions manually and nothing seemed wrong.'",
       "'The Excel formulas all work and nothing is red right now.'"
@@ -117,15 +117,14 @@ export default function Unit01Lesson06Phase3() {
                   </div>
                   <div className="flex gap-2 items-center">
                     <ArrowRight className="h-4 w-4 text-blue-600" />
-                    <code>=IF(Difference&lt;&gt;0, "Check " &amp; Count(RedCells) &amp; " accounts", "All Clear")</code>
+                    <code>=IF(COUNTIF('Error Checks'!C2:C5,"Review")=0, "All Controls Pass", "Review Controls")</code>
                   </div>
                 </div>
                 <div className="bg-blue-100 border border-blue-300 rounded p-3 mt-3">
                   <p className="font-semibold text-blue-800">Why this works:</p>
                   <p className="text-sm text-blue-900 mt-1">
                     The IF formula checks the condition and returns two possible messages.
-                    When balance is perfect, you get a clean confirmation. When there's an issue,
-                    the formula tells you exactly what needs attention.
+                    The IF formula returns a clear status. The Error Checks sheet shows which control needs attention.
                   </p>
                 </div>
               </div>

@@ -2,10 +2,9 @@ import { PhaseHeader } from "@/components/student/PhaseHeader"
 import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckSquare, Award, Target } from 'lucide-react'
+import { Award, Target } from 'lucide-react'
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { getUnit01Phase5ComprehensionCheckItems } from "@/data/question-banks/unit01-phase5"
-import { TrialBalanceSorting } from "@/components/drag-drop-exercises/TrialBalanceSorting"
 import { lesson03Data, unit01Data, lesson03Phases } from "../lesson-data"
 
 const currentPhase = lesson03Phases[4]
@@ -33,9 +32,8 @@ export default function Phase5Page() {
               Debit & Credit Rules Mastery Check
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Time to demonstrate your mastery of debit and credit rules! This comprehensive 
-              assessment covers T-account construction, journal entries, and trial balance 
-              preparation—all essential skills for building Sarah's self-auditing ledger system.
+              Demonstrate your debit and credit knowledge. This short assessment covers account
+              behavior, T-accounts, journal entries, and entry balance checks.
             </p>
           </div>
         </section>
@@ -62,9 +60,9 @@ export default function Phase5Page() {
                   <h4 className="font-semibold text-blue-900 mb-2">What You'll Demonstrate:</h4>
                   <ul className="text-blue-800 text-sm space-y-1">
                     <li>✓ Mastery of DEA LER debit/credit rules</li>
-                    <li>✓ Ability to analyze complex transactions</li>
+                    <li>✓ Ability to analyze common transactions</li>
                     <li>✓ Understanding of T-account structure</li>
-                    <li>✓ Trial balance preparation skills</li>
+                    <li>✓ Journal-entry balance checks</li>
                     <li>✓ Connection to business applications</li>
                   </ul>
                 </div>
@@ -99,60 +97,6 @@ export default function Phase5Page() {
             showExplanations={true}
             allowRetry={true}
           />
-        </section>
-
-        {/* Practical Application: Trial Balance */}
-        <section className="max-w-4xl mx-auto">
-          <Card className="border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-900 flex items-center gap-2">
-                <CheckSquare className="h-6 w-6" />
-                Practical Application: Trial Balance Construction
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="prose prose-lg max-w-none text-purple-800">
-                <p>
-                  Complete your assessment by demonstrating trial balance skills. This practical 
-                  exercise shows you can organize accounts correctly and verify that the fundamental 
-                  accounting equation remains in balance.
-                </p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <h4 className="font-semibold text-purple-900 mb-2">Assessment Criteria:</h4>
-                <ul className="text-purple-800 text-sm space-y-1">
-                  <li>• Correctly categorize each account as normally having a debit or credit balance</li>
-                  <li>• Demonstrate understanding of account types (Assets, Liabilities, Equity, Revenue, Expenses)</li>
-                  <li>• Show that total debits equal total credits</li>
-                  <li>• Complete the exercise efficiently and accurately</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <div className="mt-6">
-            {(() => {
-              const assessmentTrialBalanceAccounts = [
-                { name: 'Cash', balance: 1000, correctSide: 'debit' as const, category: 'Assets' as const },
-                { name: 'Inventory', balance: 1400, correctSide: 'debit' as const, category: 'Assets' as const },
-                { name: 'Equipment', balance: 1600, correctSide: 'debit' as const, category: 'Assets' as const },
-                { name: 'Rent Expense', balance: 500, correctSide: 'debit' as const, category: 'Expenses' as const },
-                { name: 'Wages Expense', balance: 500, correctSide: 'debit' as const, category: 'Expenses' as const },
-                { name: 'Accounts Payable', balance: 1000, correctSide: 'credit' as const, category: 'Liabilities' as const },
-                { name: 'Notes Payable', balance: 1500, correctSide: 'credit' as const, category: 'Liabilities' as const },
-                { name: 'Sales Revenue', balance: 1500, correctSide: 'credit' as const, category: 'Revenue' as const },
-                { name: "Owner's Equity", balance: 1000, correctSide: 'credit' as const, category: 'Equity' as const },
-              ]
-              return (
-                <TrialBalanceSorting 
-                  title="Trial Balance: Assessment Set"
-                  accounts={assessmentTrialBalanceAccounts}
-                  initialShuffle={true}
-                />
-              )
-            })()}
-          </div>
         </section>
 
         {/* Performance Reflection */}

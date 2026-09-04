@@ -40,7 +40,7 @@ export default function Phase5Page() {
         'The equation is optional for small businesses',
         'Liabilities and equity never change'
       ],
-      explanation: 'The accounting equation is a rule of perfect balance. Every transaction affects at least two parts of the equation, and those changes must be equal to keep both sides balanced. This is why investors trust the equation as a scoreboard.'
+      explanation: 'Every transaction affects at least two accounts. The net changes must keep Assets equal to Liabilities plus Equity. This is why the equation works as a useful scoreboard.'
     },
     {
       id: 'q4',
@@ -158,9 +158,8 @@ export default function Phase5Page() {
             <CardContent>
               <div className="prose prose-blue max-w-none">
                 <p className="text-lg leading-relaxed">
-                  In Lesson 2, you'll learn the rules of debits and credits. These rules will show you exactly 
-                  how to record transactions so the accounting equation always stays balanced. You'll discover 
-                  why this is the foundation Sarah needs to build her Smart Ledger.
+                  In Lesson 2, you'll classify transactions and show how each event changes assets, liabilities,
+                  and equity. In Lesson 3, you will use debits and credits to record those changes.
                 </p>
               </div>
             </CardContent>

@@ -12,12 +12,12 @@ export default function Unit01Lesson02Phase5() {
       id: "q1",
       question: "Which statement is ALWAYS true about every business transaction?",
       answers: [
-        "Every transaction affects at least two components of the accounting equation",
+        "Every transaction affects at least two accounts, and the equation stays balanced",
         "Every transaction affects cash and equity",
         "Every transaction increases total assets",
         "Every transaction changes the owner's equity"
       ],
-      explanation: "The fundamental rule of double-entry bookkeeping is that every transaction affects at least two components of the accounting equation (Assets = Liabilities + Equity), and the equation must always stay balanced."
+      explanation: "The fundamental rule of double-entry bookkeeping is that every transaction affects at least two accounts. The net changes must keep Assets equal to Liabilities plus Equity."
     },
     {
       id: "q2",

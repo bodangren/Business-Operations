@@ -13,6 +13,7 @@ import {
   Target
 } from "lucide-react"
 import { lesson06Data, unit01Data, lesson06Phases } from "../lesson-data"
+import { withBasePath } from "@/lib/paths"
 
 const currentPhase = lesson06Phases[3]
 
@@ -35,7 +36,7 @@ const independentPracticeQuestions = [
     question:
       "What belongs in the 'Evidence Chain' section of your summary?",
     answers: [
-      "What the workbook proves, how it proves it, and where the data comes from.",
+      "What the workbook checks, how it checks it, and where the data comes from.",
       "Every formula used in the workbook.",
       "Personal feelings about the project.",
       "Only the final balance number."
@@ -51,7 +52,7 @@ const independentPracticeQuestions = [
       "'Debits equal credits ($12,500). All error checks pass. Ledger is audit-ready.'",
       "'SUM(B:B)=SUM(C:C) and COUNTIF(Check, \"<>\")=0.'",
       "'Everything looks good, I guess.'",
-      "'The spreadsheet is perfect.'"
+      "'The spreadsheet cannot contain an error.'"
     ],
     explanation:
       "Investors want conclusions, not formulas. State what's true, cite the numbers, and say what that means for the business."
@@ -122,7 +123,7 @@ export default function Unit01Lesson06Phase4() {
                 It should have a working ledger, trial balance, and self-auditing formulas.
               </p>
               <a
-                href="/resources/unit01-lesson05-checkpoint.xlsx"
+                href={withBasePath("/resources/unit01-lesson05-checkpoint.xlsx")}
                 download
                 className="inline-flex items-center gap-2 font-semibold underline text-blue-700"
               >
@@ -133,8 +134,8 @@ export default function Unit01Lesson06Phase4() {
               </p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Debits and credits balance</li>
-                <li>Check column shows 0 for all rows</li>
-                <li>Error flags are working</li>
+                <li>All four Error Checks controls show Pass</li>
+                <li>The global debit-credit difference is 0</li>
               </ul>
             </CardContent>
           </Card>
@@ -149,11 +150,11 @@ export default function Unit01Lesson06Phase4() {
             <CardContent className="text-gray-800 space-y-4 leading-relaxed">
               <ol className="list-decimal list-inside space-y-2 text-base">
                 <li>
-                  <strong>Create Summary Sheet</strong>: Insert a new sheet named "Summary" at the front of the workbook.
-                  Add a title, your name, and the current date using =TEXT(TODAY(), "mm/dd/yyyy").
+                  <strong>Complete Executive Summary</strong>: Open the existing Executive Summary sheet.
+                  Add your name and the current date using =TEXT(TODAY(), "mm/dd/yyyy").
                 </li>
                 <li>
-                  <strong>Link Key Metrics</strong>: Pull Debits Total, Credits Total, Difference, Account Count, and Transaction Count
+                  <strong>Link Key Metrics</strong>: Pull Total Debits, Total Credits, Difference, Revenue, Expenses, Net Income, and Cash Balance
                   from the Trial Balance sheet using cell references (e.g., ='Trial Balance'!B10).
                 </li>
                 <li>
@@ -162,11 +163,10 @@ export default function Unit01Lesson06Phase4() {
                 </li>
                 <li>
                   <strong>Apply Conditional Formatting</strong>: Add green/red/yellow fill to status cells based on values.
-                  Green for perfect balance, red for issues, yellow for warnings.
+                  Green for Pass, red for Review, and yellow for a warning.
                 </li>
                 <li>
-                  <strong>Write Evidence Chain</strong>: In a labeled section, document what the workbook proves,
-                  how it proves it, and where the data comes from.
+                  <strong>Write Evidence Chain</strong>: State what each control checks, how the workbook calculates it, and where the data comes from.
                 </li>
                 <li>
                   <strong>Professional Polish</strong>: Apply consistent fonts, alignment, borders, and spacing.
@@ -192,10 +192,10 @@ export default function Unit01Lesson06Phase4() {
             </CardHeader>
             <CardContent className="text-green-900 space-y-2 leading-relaxed">
               <ul className="list-disc list-inside space-y-2 text-base">
-                <li>Summary sheet is first tab with clear title, author, and date.</li>
+                <li>Executive Summary is the first tab and has a clear title, author, and date.</li>
                 <li>Key metrics are linked from Trial Balance (no hard-coded numbers).</li>
                 <li>Status cells show plain-language messages with conditional formatting colors.</li>
-                <li>Evidence chain section explains what the workbook proves and how.</li>
+                <li>Evidence chain section explains what the workbook checks and how.</li>
                 <li>Professional formatting: consistent fonts, alignment, borders, and spacing.</li>
                 <li>Formula cells are locked to prevent accidental edits.</li>
               </ul>
@@ -212,13 +212,13 @@ export default function Unit01Lesson06Phase4() {
             <CardContent className="text-amber-900 space-y-3 leading-relaxed">
               <p>Use this template for your evidence chain section:</p>
               <div className="bg-white border border-amber-200 rounded p-3">
-                <p className="font-semibold">What This Workbook Proves</p>
-                <p className="text-sm mt-1">Debits equal credits for all transactions from [date range].</p>
-                <p className="font-semibold mt-2">How It Proves It</p>
+                <p className="font-semibold">What This Workbook Checks</p>
+                <p className="text-sm mt-1">Debits equal credits for the recorded transaction set.</p>
+                <p className="font-semibold mt-2">How It Checks It</p>
                 <ul className="list-disc list-inside text-sm mt-1">
                   <li>Trial balance compares total debits and total credits</li>
-                  <li>Check column verifies each transaction balances individually</li>
-                  <li>Error flags catch common posting mistakes</li>
+                  <li>Entry Difference checks each transaction ID</li>
+                  <li>Error Checks flags blank accounts and invalid amount rows</li>
                 </ul>
                 <p className="font-semibold mt-2">Data Source</p>
                 <p className="text-sm mt-1">[Number] transactions from [start date] to [end date] for TechStart Solutions.</p>

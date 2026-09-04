@@ -4,38 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, FileSpreadsheet, Download, Target, ClipboardList, CheckCircle2 } from "lucide-react"
 import ReflectionJournal from "@/components/exercises/ReflectionJournal"
+import { UNIT01_PROJECT_GROUPS, UNIT01_PROJECT_SHEETS } from "@/data/unit01-project"
+import { withBasePath } from "@/lib/paths"
 
 export default function Lesson08Page() {
-  const groups = [
-    {
-      id: "g1",
-      name: "Food Truck Venture",
-      datasetUrl: "/resources/unit01-group1-foodtruck.csv",
-      workbookUrl: "/resources/unit01-group1-starter.xlsx"
-    },
-    {
-      id: "g2",
-      name: "E-commerce Business",
-      datasetUrl: "/resources/unit01-group2-ecommerce.csv",
-      workbookUrl: "/resources/unit01-group2-starter.xlsx"
-    },
-    {
-      id: "g3",
-      name: "Tutoring Service",
-      datasetUrl: "/resources/unit01-group3-tutoring.csv",
-      workbookUrl: "/resources/unit01-group3-starter.xlsx"
-    },
-    {
-      id: "g4",
-      name: "Custom Startup",
-      datasetUrl: "/resources/unit01-group4-custom.csv",
-      workbookUrl: "/resources/unit01-group4-starter.xlsx"
-    }
-  ]
-
   const milestone1Criteria = [
     "Team has downloaded and renamed the correct group workbook",
-    "Transactions sheet has at least 10 transactions from group dataset entered",
+    "Transactions sheet has the first 10 business events entered as 20 journal rows",
     "Trial Balance sheet shows correct SUMIF formulas for debits and credits",
     "Team has drafted one clear claim about the business's financial state",
     "Team has assigned roles for the rest of the project"
@@ -90,7 +65,7 @@ export default function Lesson08Page() {
                 Find your group below and download <strong>only your assigned files</strong>.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
-                {groups.map((group) => (
+                {UNIT01_PROJECT_GROUPS.map((group) => (
                   <Card key={group.id} className="border-slate-200 bg-slate-50">
                     <CardHeader>
                       <CardTitle className="text-xl font-semibold text-slate-800">
@@ -98,8 +73,9 @@ export default function Lesson08Page() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-3">
+                      <p className="text-sm text-slate-700">{group.scenario}</p>
                       <a
-                        href={group.datasetUrl}
+                        href={withBasePath(group.datasetUrl)}
                         download
                         className="inline-flex items-center gap-2 bg-slate-600 hover:bg-slate-700 text-white px-3 py-2 rounded-md font-medium"
                       >
@@ -107,7 +83,7 @@ export default function Lesson08Page() {
                         Download Group Dataset
                       </a>
                       <a
-                        href={group.workbookUrl}
+                        href={withBasePath(group.workbookUrl)}
                         download
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md font-medium"
                       >
@@ -140,10 +116,7 @@ export default function Lesson08Page() {
                     <CardTitle className="text-lg font-semibold text-blue-800">Sheets You Must Keep</CardTitle>
                   </CardHeader>
                   <CardContent className="text-blue-900 space-y-1">
-                    <p>• Transactions</p>
-                    <p>• Trial Balance</p>
-                    <p>• Error Checks</p>
-                    <p>• Executive Summary</p>
+                    {UNIT01_PROJECT_SHEETS.map((sheet) => <p key={sheet}>• {sheet}</p>)}
                   </CardContent>
                 </Card>
                 <Card className="border-purple-200 bg-purple-50">
@@ -190,25 +163,25 @@ export default function Lesson08Page() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-yellow-800 flex items-center gap-2">
                 <ClipboardList className="w-6 h-6" />
-                Today's Workflow (90 Minutes)
+                Today's Workflow (50 Minutes)
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-4 text-gray-800">
                 <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                  <p className="font-semibold text-yellow-900 mb-1">0–15 minutes: Get set up</p>
+                  <p className="font-semibold text-yellow-900 mb-1">0–10 minutes: Get set up</p>
                   <p className="text-yellow-800">
                     Find your group, download your files, rename your workbook, and assign team roles.
                   </p>
                 </div>
                 <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <p className="font-semibold text-orange-900 mb-1">15–60 minutes: Enter transactions</p>
+                  <p className="font-semibold text-orange-900 mb-1">10–40 minutes: Enter transactions</p>
                   <p className="text-orange-800">
-                    Enter your group's first 10 transactions and verify the Trial Balance sheet is working correctly.
+                    Enter the first 10 business events as 20 journal rows. Verify that each event has one debit row and one credit row.
                   </p>
                 </div>
                 <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                  <p className="font-semibold text-green-900 mb-1">60–90 minutes: Draft first claim & reflect</p>
+                  <p className="font-semibold text-green-900 mb-1">40–50 minutes: Draft the first claim and reflect</p>
                   <p className="text-green-800">
                     Write your team's first draft claim about the business's financial state and complete the reflection below.
                   </p>

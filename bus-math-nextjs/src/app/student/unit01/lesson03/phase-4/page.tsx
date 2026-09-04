@@ -205,9 +205,8 @@ export default function Phase4Page() {
             <CardContent className="space-y-4">
               <div className="prose prose-lg max-w-none text-purple-800">
                 <p>
-                  Every journal entry you practice posts feeds into a trial balance—the quality 
-                  control check that proves your entire ledger stays in balance. When you post 
-                  correctly using debit/credit rules, the trial balance automatically reconciles.
+                  Every journal entry feeds into a later trial balance. Equal debit and credit totals
+                  provide one arithmetic check. They do not prove that every account or amount is correct.
                 </p>
                 <p>
                   Practice until posting feels automatic. Then you're ready to build Excel 
@@ -220,8 +219,9 @@ export default function Phase4Page() {
                 <div className="text-sm text-purple-800 space-y-2">
                   <p>• Sum all account debit balances</p>
                   <p>• Sum all account credit balances</p>
-                  <p>• <strong>Equal totals = Clean books</strong></p>
-                  <p>• Unequal totals = Error to find</p>
+                  <p>• <strong>Equal totals = arithmetic check passed</strong></p>
+                  <p>• Unequal totals = at least one posting error exists</p>
+                  <p>• Equal totals can still contain wrong accounts or equal offsetting errors</p>
                 </div>
               </div>
             </CardContent>
@@ -237,7 +237,7 @@ export default function Phase4Page() {
             <CardContent>
               <p className="text-indigo-600">
                 In assessment phase, you'll demonstrate your mastery through a comprehensive quiz 
-                covering debit/credit rules, journal entries, and trial balance logic. 
+                covering debit/credit rules, journal entries, and entry balance checks.
                 The deliberate practice you complete here prepares you to perform accurately 
                 under assessment conditions.
               </p>

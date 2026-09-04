@@ -123,36 +123,36 @@ export const unit01LessonPlan: UnitLessonPlan = {
     },
     milestones: [
       {
-        day: 3,
-        title: "Prototype Ledger with 10 Transactions",
-        description: "Basic ledger functionality with correct transaction recording",
+        day: 4,
+        title: "Structured Ledger with 11 Transactions",
+        description: "Create a consistent Excel Table for the journal rows",
         criteria: [
           "All transactions correctly posted using debit/credit rules",
-          "Excel Table format with proper headers and structure",
-          "Basic SUMIF formulas calculating account totals",
-          "Trial balance showing mathematical accuracy"
+          "Excel Table has the required seven columns",
+          "Table is named LedgerTable",
+          "All 11 transaction IDs have one debit row and one credit row"
         ]
       },
       {
         day: 5,
-        title: "Posting Validator + Controls",
-        description: "Robust posting validation and self‑auditing controls implemented",
+        title: "Trial Balance + Error Checks",
+        description: "Build the account summary and four defined controls",
         criteria: [
-          "XLOOKUP with IFERROR handles mapping and missing‑ID warnings",
-          "SUMIFS controls validate postings across accounts",
-          "Data Validation blocks invalid entries (negative amounts, stale dates)",
-          "Professional documentation describing each control"
+          "SUMIF calculates debit and credit totals by account",
+          "Debit and credit balance totals match",
+          "Entry Difference checks each transaction ID",
+          "Error Checks reports Pass or Review for four controls"
         ]
       },
       {
         day: 7,
-        title: "Trial Balance Auto-Check",
-        description: "Automated validation of ledger accuracy",
+        title: "Investor Summary + Rehearsal",
+        description: "Connect the workbook evidence to a clear recommendation",
         criteria: [
-          "Formula validation: ABS(sum_debits - sum_credits) = 0",
-          "Green/red indicator for balance status",
-          "Error identification and correction guidance",
-          "100% accuracy on provided test dataset"
+          "Executive Summary links to workbook formulas",
+          "All four controls show a clear status",
+          "Recommendation cites three workbook values",
+          "One risk or limitation is stated"
         ]
       }
     ],
@@ -231,13 +231,13 @@ export const unit01LessonPlan: UnitLessonPlan = {
             duration: "10 minutes",
             description: "Watch introduction video about Sarah's digital marketing consultancy and current challenge",
             details: [
-              "Students watch 3-minute video introducing Sarah Chen and TechStart Solutions",
+              "Students watch the 4-minute 30-second video introducing Sarah Chen and TechStart Solutions",
               "Video covers: Sarah's background, business services, current clients, record-keeping challenge",
               "Students take notes on key business details and challenges mentioned"
             ],
             video: {
               title: "Sarah's Story: The Record-Keeping Challenge",
-              duration: "3 minutes",
+              duration: "4 minutes 30 seconds",
               description: "Meet Sarah Chen, founder of TechStart Solutions, as she explains her growing digital marketing business and the chaos of tracking everything in notebooks. Learn about her three current clients and why she needs a better system before tax season."
             },
             callout: {
@@ -316,7 +316,7 @@ export const unit01LessonPlan: UnitLessonPlan = {
           }
         ],
         materials: [
-          "Sarah's TechStart Solutions introduction video (3 minutes)",
+          "Sarah's TechStart Solutions introduction video (4 minutes 30 seconds)",
           "Interactive comprehension activities (digital or printable)",
           "TechStart client data sheets (bakery, pet grooming, dental office)",
           "Think-Pair-Share discussion prompts",
@@ -460,8 +460,8 @@ export const unit01LessonPlan: UnitLessonPlan = {
       },
       {
         day: 4,
-        title: "Excel Model: Tables & SUMIF Functions",
-        focus: "Build Sarah's ledger foundation using Excel Tables and aggregation formulas",
+        title: "Excel Model: LedgerTable Structure",
+        focus: "Convert Sarah's seven-column journal range into a named Excel Table",
         duration: "45 minutes",
         activities: [
           {
@@ -476,12 +476,12 @@ export const unit01LessonPlan: UnitLessonPlan = {
           },
           {
             name: "Excel Tables for TechStart Ledger",
-            duration: "20 minutes",
+            duration: "30 minutes",
             description: "Hands-on creation of structured ledger using Excel Tables",
             details: [
               "Demonstrate: Convert Sarah's transaction list to Excel Table format",
               "Show structured references: How Table columns become formula names",
-              "Practice: Students create their own TechStart ledger table",
+              "Practice: Students select A1:G23 and name the table LedgerTable",
               "Benefits: Dynamic expansion as Sarah's business grows"
             ],
             // COMPONENT: SpreadsheetSimulator.tsx (to be created) - Practice Excel Tables with transaction data
@@ -498,38 +498,26 @@ export const unit01LessonPlan: UnitLessonPlan = {
             }
           },
           {
-            name: "SUMIF Functions for Account Totals",
-            duration: "15 minutes",
-            description: "Build automatic account balance calculations using SUMIF",
-            details: [
-              "Demonstrate: SUMIF to total all cash transactions for Sarah's business",
-              "Guided practice: Students build SUMIF for TechStart revenue accounts",
-              "Partner work: Create SUMIF formulas for expense account totals",
-              "Test: Verify formulas work correctly with new transaction entries"
-            ]
-          },
-          {
             name: "Excel Model Checkpoint",
             duration: "5 minutes",
             description: "Verify working ledger foundation",
             details: [
               "Students test their Excel Table with sample TechStart transactions",
-              "Check: Do SUMIF formulas update automatically when new data is added?",
-              "Preview Day 5: How do we add error-checking to catch Sarah's mistakes?"
+              "Check: Does LedgerTable contain all 22 journal rows?",
+              "Preview Day 5: How do we summarize accounts and add error checks?"
             ]
           }
         ],
         materials: [
           "TechStart transaction dataset (Excel format)",
           "Excel Tables step-by-step guide",
-          "SUMIF formula templates",
           "Ledger structure template"
         ]
       },
       {
         day: 5,
-        title: "Advanced Ledger Automation: Dynamic Trial Balance & Posting Validator",
-        focus: "Implement posting validator, SUMIFS controls, and dynamic trial balance using advanced dataset",
+        title: "Trial Balance and Error Checks",
+        focus: "Use SUMIF and SUMIFS to build an account summary and four defined controls",
         duration: "45 minutes",
         activities: [
           {
@@ -543,37 +531,37 @@ export const unit01LessonPlan: UnitLessonPlan = {
             ]
           },
           {
-            name: "Conditional Formatting Rules",
+            name: "Account Totals with SUMIF",
             duration: "20 minutes",
-            description: "Create visual indicators for common ledger errors",
+            description: "Calculate total debits and credits for each account",
             details: [
-              "Red flag rule 1: Highlight negative account balances that shouldn't be negative",
-              "Red flag rule 2: Flag transactions without proper account codes",
-              "Red flag rule 3: Identify unusually large amounts that need verification",
-              "Green flag rule: Show properly balanced entries with positive formatting"
+              "Build Total Debits and Total Credits with SUMIF",
+              "Calculate Debit Balance and Credit Balance with MAX",
+              "Sum both balance columns and compare the totals",
+              "Explain why equal totals do not detect every possible error"
             ],
             // COMPONENT: ErrorCheckingSystem.tsx (to be created) - Build conditional formatting rules
             callout: {
               type: "important",
-              title: "Sarah's Error-Catching System",
-              content: "Visual cues help Sarah spot problems before they become disasters",
+              title: "Sarah's Defined Controls",
+              content: "Each control tests one named condition",
               items: [
-                "Red highlighting: Immediate attention needed",
-                "Yellow highlighting: Double-check this entry",
-                "Green highlighting: Entry looks correct",
-                "Color coding saves time and prevents mistakes"
+                "Global debit-credit difference",
+                "Unbalanced transaction IDs",
+                "Blank account cells",
+                "Rows with both or neither amount"
               ]
             }
           },
           {
-            name: "Trial Balance Auto-Check Formula",
+            name: "Entry Difference and Error Checks",
             duration: "15 minutes",
-            description: "Build formula to verify debits equal credits automatically",
+            description: "Build the transaction-level formula and four status controls",
             details: [
-              "Create formula: =ABS(SUM(Debits) - SUM(Credits)) to check balance",
-              "Add conditional formatting: Green when balanced (=0), red when unbalanced",
-              "Test with Sarah's data: Introduce intentional error to see formula catch it",
-              "Students build their own trial balance validation system"
+              "Use SUMIFS to calculate Entry Difference by Transaction ID",
+              "Return Pass or Review for each Error Checks control",
+              "Use green for Pass and red for Review",
+              "Introduce one test error, observe the result, and undo the change"
             ]
             // COMPONENT: TrialBalanceGenerator.tsx (to be created) - Create auto-check formula
           },
@@ -584,8 +572,8 @@ export const unit01LessonPlan: UnitLessonPlan = {
             details: [
               "Students input all of Sarah's current transactions into their completed model",
               "Check: Do all visual indicators work correctly?",
-              "Verify: Does the trial balance auto-check show green (balanced)?",
-              "Preview Day 6: How do professional accountants use these systems?"
+              "Verify: Do all four defined controls show Pass?",
+              "Preview Day 6: How do we explain the workbook results clearly?"
             ]
           }
         ],
@@ -598,40 +586,40 @@ export const unit01LessonPlan: UnitLessonPlan = {
       },
       {
         day: 6,
-        title: "Examples: Professional Ledger Applications",
-        focus: "Analyze worked examples of self-auditing ledgers in real business contexts",
+        title: "Executive Summary and Evidence Chain",
+        focus: "Link workbook controls and financial results to an investor-facing recommendation",
         duration: "45 minutes",
         activities: [
           {
-            name: "Professional Standards Review",
+            name: "Executive Summary Requirements",
             duration: "10 minutes",
-            description: "What makes a ledger investor-ready?",
+            description: "Define the metrics, statuses, recommendation, and limitation",
             details: [
-              "Compare Sarah's finished ledger to professional accounting standards",
-              "Identify features that build investor confidence in financial controls",
-              "Review how self-auditing features prevent common startup mistakes"
+              "Link total debits, total credits, and Difference",
+              "Count controls that show Review on Error Checks",
+              "Link Revenue, Expenses, Net Income, and Cash Balance"
             ]
           },
           {
-            name: "Worked Example: TechStart Month 3",
+            name: "Build Sarah's Executive Summary",
             duration: "20 minutes",
-            description: "Step-by-step analysis of Sarah's complete monthly ledger",
+            description: "Create a clear summary from the Lesson 05 checkpoint workbook",
             details: [
-              "Walk through Sarah's Month 3 transactions using the completed Excel model",
-              "Demonstrate how error-checking features caught two potential mistakes",
-              "Show how SUMIF functions automatically updated account totals",
-              "Analyze the trial balance and what it tells Sarah about her business"
+              "Add the Executive Summary as the first sheet",
+              "Link all display values to workbook formulas",
+              "Write one recommendation that cites three values",
+              "State that one month of data does not establish a stable trend"
             ],
             // COMPONENTS: FinancialStatementMatching.tsx ✅, IncomeStatementSimple.tsx ✅
             callout: {
               type: "example",
-              title: "Sarah's Month 3 Success Story",
-              content: "The self-auditing ledger catches errors and saves time",
+              title: "Control Evidence Has Limits",
+              content: "The controls support review but do not prove that every account is correct",
               items: [
-                "Error caught: Duplicate entry for dental office payment would have overstated revenue",
-                "Time saved: Automatic calculations reduced month-end work from 6 hours to 45 minutes",
-                "Confidence gained: Clean trial balance ready for investor presentation",
-                "Professional appearance: Formatted ledger impresses Sarah's CPA advisor"
+                "Equal totals confirm arithmetic balance",
+                "Entry Difference checks each transaction ID",
+                "Blank-account and row-amount controls test data structure",
+                "Classification and omission risks can remain"
               ]
             }
           },
@@ -666,42 +654,42 @@ export const unit01LessonPlan: UnitLessonPlan = {
       },
       {
         day: 7,
-        title: "Exercises: Independent Ledger Construction",
-        focus: "Students independently build complete self-auditing ledger for their TechStart focus area",
+        title: "Project Rehearsal with Shared Data",
+        focus: "Audit the shared four-sheet workbook and rehearse an evidence-based recommendation",
         duration: "45 minutes",
         activities: [
           {
-            name: "Independent Challenge Setup",
+            name: "Shared Workbook Orientation",
             duration: "5 minutes",
-            description: "Clear expectations for today's independent work",
+            description: "Map the four sheets and the evidence chain",
             details: [
-              "Review success criteria: Working Excel Table, SUMIF functions, error-checking, trial balance",
-              "Teams choose their specific TechStart client scenario (bakery, pet grooming, or dental)",
-              "Access provided transaction data for their chosen client type"
+              "Open the shared rehearsal workbook",
+              "Trace summary values to Trial Balance and Transactions",
+              "Confirm that Error Checks has four named controls"
             ]
           },
           {
-            name: "Independent Ledger Construction",
+            name: "Control Test and Recommendation Rehearsal",
             duration: "30 minutes",
-            description: "Students apply all learned skills to build complete system",
+            description: "Students test controls and record evidence before the group project",
             details: [
-              "Create Excel Table structure appropriate for their chosen client type",
-              "Build SUMIF functions for relevant account categories",
-              "Implement conditional formatting rules for error detection",
-              "Create trial balance auto-check formula",
-              "Test system with provided transaction dataset"
+              "Test one changed amount and one blank Account cell",
+              "Record expected and actual control results",
+              "Undo each test change",
+              "Write one claim with three cited values",
+              "State one risk or limitation"
             ],
             // COMPONENTS: TrialBalanceSorting.tsx ✅, TransactionJournal.tsx (to be created)
             callout: {
               type: "important",
-              title: "Milestone 1 Assessment Criteria",
-              content: "Students must demonstrate mastery of all core skills",
+              title: "Rehearsal Definition of Done",
+              content: "Students must trace and test the shared workbook",
               items: [
-                "Excel Table: Proper structure with appropriate headers and formatting",
-                "SUMIF Functions: Accurate account total calculations that update automatically",
-                "Error Detection: Conditional formatting catches common mistakes",
-                "Trial Balance: Auto-check formula correctly identifies balanced/unbalanced entries",
-                "Professional Appearance: Formatted for business presentation"
+                "All four sheets are present and linked",
+                "Two control tests have recorded results",
+                "Recommendation cites three workbook values",
+                "One risk or limitation is clear",
+                "Three transfer items are identified for Lesson 08"
               ]
             }
           },
@@ -728,8 +716,8 @@ export const unit01LessonPlan: UnitLessonPlan = {
           }
         ],
         materials: [
-          "Unit01 advanced practice CSV (resources/unit01-ledger-advanced-practice.csv)",
-          "Validator reference examples",
+          "Shared rehearsal workbook (resources/unit01-rehearsal-workbook.xlsx)",
+          "Lesson 07 tutorial",
           "Assessment rubric checklist"
         ]
       },
@@ -754,7 +742,7 @@ export const unit01LessonPlan: UnitLessonPlan = {
             duration: "10 minutes",
             description: "List sources and agree on file naming rules",
             details: [
-              "Pick dataset for your group (g1–g6) and log its path",
+              "Pick one of the four group scenarios and log its file path",
               "Set naming pattern for workbook versions and tabs",
               "Note assumptions and constraints (access, timing)"
             ]
@@ -775,7 +763,7 @@ export const unit01LessonPlan: UnitLessonPlan = {
             description: "Self-review against acceptance criteria before submission",
             details: [
               "Brief + skeleton started; plan is clear and testable",
-              "Datasets: reuse same g1–g6 files across Days 8–10",
+              "Datasets: reuse the same four scenario files across Days 8–10",
               "Submission checklist completed"
             ]
           }
@@ -819,7 +807,7 @@ export const unit01LessonPlan: UnitLessonPlan = {
             details: [
               "Collect strengths, improvements, Excel skills, business insight, delivery",
               "Summarize changes to make before Day 10",
-              "Reconfirm dataset reuse (g1–g6) for consistency"
+              "Reconfirm use of the same four scenario files"
             ]
             // COMPONENT: PeerCritiqueForm.tsx ✅
           }

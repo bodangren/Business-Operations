@@ -73,8 +73,8 @@ export default function Unit01Lesson02Phase2() {
               <div className="bg-white p-6 rounded-lg border-2 border-green-400 mb-6">
                 <h3 className="text-xl font-bold text-green-900 mb-4 text-center">The Transaction Rule</h3>
                 <p className="text-lg text-center text-green-800 mb-4">
-                  <strong>Every transaction affects at least two components</strong> of the accounting equation, 
-                  and those changes <strong>must balance perfectly</strong>.
+                  <strong>Every transaction affects at least two accounts.</strong> The net changes to assets,
+                  liabilities, and equity <strong>must keep the equation balanced</strong>.
                 </p>
                
                 

@@ -12,7 +12,7 @@ export default function Lesson09Page() {
     "Error Checks sheet confirms all formula validations pass",
     "Executive Summary sheet has a clear claim with at least three cited numbers",
     "Executive Summary includes one clear risk or limitation",
-    "Team has rehearsed their 2-minute explanation of the recommendation"
+    "Team has rehearsed its 4-minute investor pitch"
   ]
 
   const peerFeedbackPrompts = [
@@ -138,27 +138,27 @@ export default function Lesson09Page() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-yellow-800 flex items-center gap-2">
                 <ClipboardList className="w-6 h-6" />
-                Today's Workflow (90 Minutes)
+                Today's Workflow (50 Minutes)
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-4 text-gray-800">
                 <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                  <p className="font-semibold text-yellow-900 mb-1">0–30 minutes: Finish the workbook</p>
+                  <p className="font-semibold text-yellow-900 mb-1">0–20 minutes: Finish the workbook</p>
                   <p className="text-yellow-800">
                     Enter all remaining transactions, verify error checks, and complete the Executive Summary sheet.
                   </p>
                 </div>
                 <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <p className="font-semibold text-orange-900 mb-1">30–60 minutes: Peer critique</p>
+                  <p className="font-semibold text-orange-900 mb-1">20–35 minutes: Peer critique</p>
                   <p className="text-orange-800">
                     Pair with another team, exchange workbooks, and give feedback using the prompts below.
                   </p>
                 </div>
                 <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                  <p className="font-semibold text-green-900 mb-1">60–90 minutes: Revise & rehearse</p>
+                  <p className="font-semibold text-green-900 mb-1">35–50 minutes: Revise and rehearse</p>
                   <p className="text-green-800">
-                    Use peer feedback to revise your work, then rehearse your 2-minute explanation as a team.
+                    Use peer feedback to revise your work. Then rehearse your 4-minute investor pitch as a team.
                   </p>
                 </div>
               </div>

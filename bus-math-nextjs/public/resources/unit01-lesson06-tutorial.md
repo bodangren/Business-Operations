@@ -1,39 +1,34 @@
-# Unit 01 Lesson 06 – Visual Error Checking on the Trial Balance
+# Lesson 06 Executive Summary Tutorial
 
-This guide shows how to transform `unit01-lesson06-student.xlsx` into the teacher solution (`unit01-lesson06-teacher.xlsx`). Students begin with the completed `SUMIF` trial balance from Lesson 05 and add a Check column plus conditional formatting for instant balance feedback.
+## Goal
 
-## 1. Confirm the Starting Point
+Build an Executive Summary that links to the workbook controls and financial results.
 
-- Open the student workbook and visit the **TrialBalance** sheet.
-- Columns A–C already contain the `SUMIF` formulas from Lesson 05. Column D is labeled **Check** but empty.
-- Let students know they will use the Check column to spot accounts where debits and credits disagree.
+## Starting File
 
-## 2. Add the Check Formula
+Open `unit01-lesson05-checkpoint.xlsx`. Confirm that it has Transactions, Trial Balance, and Error Checks sheets.
 
-1. Click cell `D2`.
-2. Enter `=B2-C2` and press Enter. A balanced account returns **0**.
-3. Fill the formula down through `D11`.
+## Steps
 
-Explain that a positive result means the debit total is larger, while a negative result means credits are higher.
+1. Open the existing **Executive Summary** sheet.
+2. Add an author and date.
+3. Link Total Debits and Total Credits to the Trial Balance totals.
+4. Calculate Difference as Total Debits minus Total Credits.
+5. Add a Balance Status formula that returns Balanced or Review Needed.
+6. Count Review statuses with this formula:
 
-## 3. Apply Conditional Formatting
+```excel
+=COUNTIF('Error Checks'!C2:C5,"Review")
+```
 
-1. Highlight the range `D2:D11`.
-2. Go to **Home › Conditional Formatting › New Rule › Format only cells that contain**.
-3. Set the rule to **Cell Value = 0**. Choose a green fill (RGB `C6EFCE`) and bold text if desired. Click **OK**.
-4. Add a second rule: **Cell Value <> 0** with a light red fill (RGB `FFC7CE`).
-5. Ensure the green rule is listed first in the rule manager so it takes priority.
+7. Link Revenue, Expenses, Net Income, and Cash Balance to workbook formulas.
+8. Add a recommendation that cites three linked values.
+9. State one risk or limitation.
+10. Use green for Pass and red for Review.
 
-The Check column now lights up any imbalance, giving Sarah’s bookkeeping team immediate visual cues.
+## Check
 
-## 4. Optional Coach Move
-
-- Filter the Check column for nonzero values to demonstrate how the table makes troubleshooting faster.
-- Clear filters before saving the teacher copy.
-
-## 5. Save the Teacher Version
-
-- Save as `unit01-lesson06-teacher.xlsx`.
-- Provide the student file so learners can practice writing the Check formula and applying both conditional formatting rules themselves.
-
-Lesson 07 will build on this workbook by adding a final ledger validation summary that mirrors what accountants look for before closing the books.
+- The workbook has four sheets.
+- The summary values use formulas. They are not typed totals.
+- All four Error Checks controls show Pass for the clean dataset.
+- The recommendation does not claim that the controls detect every possible error.

@@ -22,7 +22,7 @@ const hookQuestions = [
   },
   {
     id: "q2",
-    question: "Sarah's trial balance shows debits equal credits ($10,000), but the summary says 'Review Needed' because several Check column cells are red. What should she tell the investor?",
+    question: "Sarah's trial balance shows equal debit and credit totals, but the summary says 'Review Needed' because an Error Checks control failed. What should she tell the investor?",
     answers: [
       "'The totals balance, but I've identified three specific accounts that need review and correction.'",
       "'Everything is perfect—debits equal credits.'",
@@ -66,7 +66,7 @@ export default function Unit01Lesson06Phase1() {
             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Sarah Chen sits down with a potential investor. Her ledger is accurate and her error
               checks catch mistakes, but the presentation is messy. The investor asks: <strong>"How do you know
-              your books are clean?"</strong> Sarah has 2 minutes to prove reliability.
+              your books are clean?"</strong> Sarah has 4 minutes to explain the evidence and its limits.
             </p>
           </div>
         </section>

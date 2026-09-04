@@ -35,9 +35,9 @@ const assessmentQuestions = [
     id: "conditional-formatting",
     question: "When should a status cell be red?",
     answers: [
-      "When debits do not equal credits or there are errors in the check column",
+      "When debits do not equal credits or an Error Checks control needs review",
       "Always, to look professional",
-      "When everything is perfect",
+      "When all controls pass",
       "Only when the workbook is saved"
     ],
     explanation: "Red signals an issue that needs attention. Use it when the balance is off or errors are detected."
@@ -107,9 +107,9 @@ export default function Unit01Lesson06Phase5() {
               <div className="bg-purple-100 border border-purple-200 rounded p-3 mt-3">
                 <p className="font-semibold">Example:</p>
                 <p className="text-sm mt-1">
-                  "The ledger is balanced with total debits and credits of $12,500. Here's how I know it's accurate: the trial balance matches,
-                  every transaction's check column shows 0, and all error flags are clear. If there were issues, I'd review the red-flagged transactions.
-                  You can verify this yourself by checking the Summary sheet status cells and the Trial Balance sheet."
+                  "The ledger has equal debit and credit totals. All four Error Checks controls pass. These controls support the report,
+                  but they do not detect every possible classification or omission error. You can inspect the Executive Summary, Trial Balance,
+                  and Error Checks sheets to verify the results."
                 </p>
               </div>
             </CardContent>

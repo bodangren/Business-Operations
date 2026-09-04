@@ -6,25 +6,13 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { CheckCircle, XCircle, Target } from 'lucide-react'
-
-interface JournalLine {
-  id: string
-  account: string
-  debit: number
-  credit: number
-}
-
-interface AccountInfo {
-  name: string
-  type: 'asset' | 'liability' | 'equity' | 'revenue' | 'expense'
-}
-
-export interface PostingScenario {
-  id: string
-  description: string
-  accounts: AccountInfo[]
-  amount: number
-}
+import {
+  generatePostingScenario,
+  getInitialPostingScenario,
+  upsertJournalLine,
+  validateJournalEntry,
+  type JournalLine,
+} from "@/lib/accounting/unit01-practice"
 
 export interface DeliberatePracticeProps {
   title?: string
@@ -33,135 +21,14 @@ export interface DeliberatePracticeProps {
   showIntro?: boolean
 }
 
-function generateScenario(): PostingScenario {
-  const scenarios: Array<{
-    description: string
-    accounts: AccountInfo[]
-    amount: number
-  }> = [
-    {
-      description: "Client pays $650 cash for completed pet grooming service",
-      accounts: [
-        { name: "Cash", type: "asset" },
-        { name: "Service Revenue", type: "revenue" }
-      ],
-      amount: 650
-    },
-    {
-      description: "Pay $800 monthly rent for office space",
-      accounts: [
-        { name: "Rent Expense", type: "expense" },
-        { name: "Cash", type: "asset" }
-      ],
-      amount: 800
-    },
-    {
-      description: "Purchase $450 of supplies on account from PetMart",
-      accounts: [
-        { name: "Supplies", type: "asset" },
-        { name: "Accounts Payable", type: "liability" }
-      ],
-      amount: 450
-    },
-    {
-      description: "Owner invests $2,500 additional cash into business",
-      accounts: [
-        { name: "Cash", type: "asset" },
-        { name: "Owner's Capital", type: "equity" }
-      ],
-      amount: 2500
-    },
-    {
-      description: "Client billed $1,200 for dog training services (not yet paid)",
-      accounts: [
-        { name: "Accounts Receivable", type: "asset" },
-        { name: "Service Revenue", type: "revenue" }
-      ],
-      amount: 1200
-    },
-    {
-      description: "Pay $350 for utilities expense",
-      accounts: [
-        { name: "Utilities Expense", type: "expense" },
-        { name: "Cash", type: "asset" }
-      ],
-      amount: 350
-    },
-    {
-      description: "Purchase $1,800 grooming equipment, paying $500 cash and signing note for remainder",
-      accounts: [
-        { name: "Equipment", type: "asset" },
-        { name: "Cash", type: "asset" },
-        { name: "Notes Payable", type: "liability" }
-      ],
-      amount: 1800
-    },
-    {
-      description: "Receive $600 deposit for pet boarding to be provided next month",
-      accounts: [
-        { name: "Cash", type: "asset" },
-        { name: "Unearned Revenue", type: "liability" }
-      ],
-      amount: 600
-    },
-    {
-      description: "Owner draws $700 for personal use",
-      accounts: [
-        { name: "Owner's Draw", type: "expense" },
-        { name: "Cash", type: "asset" }
-      ],
-      amount: 700
-    },
-    {
-      description: "Pay $2,200 partial payment on bank loan",
-      accounts: [
-        { name: "Notes Payable", type: "liability" },
-        { name: "Cash", type: "asset" }
-      ],
-      amount: 2200
-    }
-  ]
-
-  const baseScenario = scenarios[Math.floor(Math.random() * scenarios.length)]  
-  const multiplier = 0.5 + Math.random()
-  const adjustedAmount = Math.round(baseScenario.amount * multiplier / 50) * 50
-
-  return {
-    id: `scenario-${Date.now()}-${Math.random()}`,
-    description: baseScenario.description.replace(/\$\d+/g, `$${adjustedAmount.toLocaleString()}`),
-    accounts: baseScenario.accounts,
-    amount: adjustedAmount
-  }
-}
-
-function determineCorrectEntry(scenario: PostingScenario): JournalLine[] {
-  const isEquipment = scenario.accounts.some(a => a.name === "Equipment")  
-  if (isEquipment && scenario.accounts.length === 3) {
-    return [
-      { id: '1', account: 'Equipment', debit: scenario.amount, credit: 0 },
-      { id: '2', account: 'Cash', debit: 0, credit: Math.round(scenario.amount * 0.3) },
-      { id: '3', account: 'Notes Payable', debit: 0, credit: scenario.amount - Math.round(scenario.amount * 0.3) }
-    ]
-  }
-
-  return scenario.accounts.map((acc, idx) => {
-    const isDebit = acc.type === 'asset' || acc.type === 'expense'
-    return {
-      id: (idx + 1).toString(),
-      account: acc.name,
-      debit: isDebit ? scenario.amount : 0,
-      credit: isDebit ? 0 : scenario.amount
-    }
-  })
-}
-
+/** Render deliberate journal-entry practice for Unit 1. */
 export default function PostingPracticeLoop({ 
   title = "Posting & Balance Check Practice",
   description = "Practice posting transactions until you can reliably identify correct debit/credit entries and verify balance.",
   masteryTarget = 3,
   showIntro = true
 }: DeliberatePracticeProps) {
-  const [scenario, setScenario] = useState<PostingScenario>(() => generateScenario())
+  const [scenario, setScenario] = useState(getInitialPostingScenario)
   const [userEntry, setUserEntry] = useState<JournalLine[]>([])
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
@@ -169,13 +36,13 @@ export default function PostingPracticeLoop({
   const [totalAttempts, setTotalAttempts] = useState(0)
   const [showSolution, setShowSolution] = useState(false)
 
-  const correctEntry = determineCorrectEntry(scenario)
+  const correctEntry = scenario.correctEntry
 
   const totalDebits = correctEntry.reduce((sum, line) => sum + line.debit, 0)
   const totalCredits = correctEntry.reduce((sum, line) => sum + line.credit, 0)
 
   const handleNewScenario = () => {
-    setScenario(generateScenario())
+    setScenario(generatePostingScenario())
     setUserEntry([])
     setIsSubmitted(false)
     setIsCorrect(null)
@@ -186,14 +53,7 @@ export default function PostingPracticeLoop({
     setIsSubmitted(true)
     setTotalAttempts(prev => prev + 1)
 
-    const userDebits = userEntry.reduce((sum, line) => sum + line.debit, 0)
-    const userCredits = userEntry.reduce((sum, line) => sum + line.credit, 0)
-
-    const accountsMatch = userEntry.length === correctEntry.length &&
-      userEntry.every((line, idx) => line.account === correctEntry[idx].account)
-    const amountsMatch = userDebits === totalDebits && userCredits === totalCredits
-
-    if (accountsMatch && amountsMatch) {
+    if (validateJournalEntry(userEntry, correctEntry)) {
       setIsCorrect(true)
       setCorrectStreak(prev => prev + 1)
     } else {
@@ -203,18 +63,7 @@ export default function PostingPracticeLoop({
   }
 
   const handleAccountChange = (lineId: string, field: 'account' | 'debit' | 'credit', value: string | number) => {
-    setUserEntry(prev => {
-      const updated = [...prev]
-      const idx = updated.findIndex(l => l.id === lineId)
-      if (idx !== -1) {
-        if (field === 'debit' || field === 'credit') {
-          updated[idx][field] = Number(value) || 0
-        } else {
-          updated[idx][field] = value as string
-        }
-      }
-      return updated
-    })
+    setUserEntry((previous) => upsertJournalLine(previous, lineId, field, value))
   }
 
   const getFeedback = () => {
@@ -312,18 +161,7 @@ export default function PostingPracticeLoop({
                         type="text"
                         placeholder="Account Name"
                         value={existingLine?.account || ''}
-                        onChange={(e) => {
-                          if (!existingLine) {
-                            setUserEntry(prev => [...prev, {
-                              id: lineNum.toString(),
-                              account: e.target.value,
-                              debit: 0,
-                              credit: 0
-                            }])
-                          } else {
-                            handleAccountChange(lineNum.toString(), 'account', e.target.value)
-                          }
-                        }}
+                        onChange={(e) => handleAccountChange(lineNum.toString(), 'account', e.target.value)}
                         disabled={isSubmitted}
                       />
                     </div>
@@ -361,7 +199,9 @@ export default function PostingPracticeLoop({
               <button
                 type="button"
                 onClick={() => {
-                  const nextId = (userEntry.length + 1).toString()
+                  const nextId = String(
+                    Math.max(3, ...userEntry.map(({ id }) => Number(id) || 0)) + 1,
+                  )
                   setUserEntry(prev => [...prev, {
                     id: nextId,
                     account: '',

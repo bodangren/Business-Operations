@@ -3,21 +3,21 @@ import { UNIT_REF_MAP } from "@/data/unit-registry"
 export const unit01Data = UNIT_REF_MAP[1]
 export const lesson03Data = {
   id: "mds5t7qrc36pdfr61an",
-  title: "Debit, Credit, and Trial Balance",
+  title: "Debit, Credit, and Journal Entries",
   sequence: 3,
   unitId: "mdrha5ziiupuou6dqt",
   learningObjectives: [
     "Apply DEA LER rules to determine correct debit/credit entries for all account types",
     "Construct accurate journal entries that maintain balance in every transaction",
-    "Post transactions to T-accounts using systematic procedures",
-    "Explain why the trial balance must tie out and what errors it detects",
+    "Record transactions in T-accounts using systematic procedures",
+    "Explain why total debits and credits must match in each journal entry",
     "Connect manual debit/credit skills to the foundation of Sarah's self-auditing ledger"
   ],
   keyConcepts: [
     "DEA LER mnemonic for debit/credit rules",
     "T-account structure as representational support",
     "Journal entry format and balance verification",
-    "Trial balance preparation and interpretation",
+    "Journal-entry balance checks",
     "Double-entry bookkeeping principles"
   ],
   durationEstimateMinutes: 45,
@@ -25,7 +25,7 @@ export const lesson03Data = {
     "Concrete-to-Representational-to-Abstract (CRA) progression",
     "Systematic procedure modeling with worked examples",
     "Algorithmic deliberate practice in Phase 4",
-    "Exit ticket on debit/credit logic and trial balance",
+    "Exit ticket on debit/credit and journal-entry logic",
     "CAP reflection on learning journey"
   ],
   rationale: "This lesson establishes the systematic debit/credit framework that makes Sarah's ledger self-auditing. Students move from understanding the left/right logic to applying it reliably with minimal scaffolding.",

@@ -14,7 +14,7 @@ export const lesson02Data = {
   ],
   keyConcepts: [
     "Transaction classification into equation components",
-    "Double-effect principle (every transaction affects at least two components)",
+    "Double-entry principle (every transaction affects at least two accounts)",
     "Asset, liability, and equity identification in business events",
     "Equation balance verification after transactions"
   ],

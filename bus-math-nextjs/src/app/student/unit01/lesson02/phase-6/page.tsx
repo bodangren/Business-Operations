@@ -79,8 +79,8 @@ export default function Unit01Lesson02Phase6() {
                 <CardContent>
                   <ul className="text-sm space-y-2 text-green-700">
                     <li>• How to classify transactions into equation components</li>
-                    <li>• Four fundamental transaction patterns</li>
-                    <li>• Why every transaction affects at least two components</li>
+                    <li>• Five common transaction patterns</li>
+                    <li>• Why every transaction affects at least two accounts</li>
                     <li>• How to verify equation balance after each event</li>
                     <li>• Common misconceptions and how to avoid them</li>
                   </ul>
@@ -131,7 +131,7 @@ export default function Unit01Lesson02Phase6() {
             />
 
             <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">📚 The Four Transaction Patterns (Quick Reference)</h3>
+              <h3 className="text-xl font-bold text-blue-900 mb-4">📚 The Five Transaction Patterns (Quick Reference)</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg border border-blue-200">
@@ -171,6 +171,16 @@ export default function Unit01Lesson02Phase6() {
                   </p>
                   <p className="text-xs text-green-600 italic">
                     Example: Paying off debt
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg border border-orange-200">
+                  <h4 className="font-bold text-orange-900 mb-2">5. Assets &amp; Equity Both Decrease</h4>
+                  <p className="text-sm text-orange-800 mb-2">
+                    Asset decreases, equity decreases
+                  </p>
+                  <p className="text-xs text-orange-600 italic">
+                    Example: Paying rent with cash
                   </p>
                 </div>
               </div>

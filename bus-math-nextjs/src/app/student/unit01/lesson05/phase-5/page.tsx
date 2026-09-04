@@ -11,7 +11,7 @@ const currentPhase = lesson05Phases[4]
 const assessmentQuestions = [
   {
     id: "q1",
-    question: "What does the formula =SUMIF(LedgerTable[Account], \"Cash\", Ledger LedgerTable[Debit]) calculate?",
+    question: "What does the formula =SUMIF(LedgerTable[Account], \"Cash\", LedgerTable[Debit]) calculate?",
     answers: [
       "Total debit amounts for all transactions where the account is Cash",
       "The total of all debits in the ledger",
@@ -40,7 +40,7 @@ const assessmentQuestions = [
       "No transactions were entered incorrectly",
       "The ledger is ready for tax filing"
     ],
-    explanation: "Trial balance verifies the accounting equation (Assets = Liabilities + Equity) by checking debits equal credits."
+    explanation: "A balanced trial balance proves only that total debit balances equal total credit balances. Wrong accounts and equal offsetting errors can still remain."
   },
   {
     id: "q4",
@@ -57,12 +57,12 @@ const assessmentQuestions = [
     id: "q5",
     question: "Which audit check would matter most to an investor reviewing Sarah's ledger?",
     answers: [
-      "Trial balance verification that debits equal credits",
+      "A set of checks for total balance, transaction balance, and missing account data",
       "Pretty formatting and colors on the spreadsheet",
       "Number of transactions entered per month",
       " alphabetical sorting of account names"
     ],
-    explanation: "Investors care about reliability—proof that the ledger is mathematically accurate and error-checked."
+    explanation: "No single check proves accuracy. A reliable workbook combines ledger totals, transaction-level balance, and missing-data checks."
   }
 ]
 
@@ -125,10 +125,9 @@ export default function Phase5Page() {
               <div className="mt-4 space-y-3">
                 <h4 className="text-sm font-semibold text-blue-900">Example Answer Structure:</h4>
                 <p className="text-sm text-blue-800 bg-blue-100 p-3 rounded">
-                  "The trial balance verification matters most because it proves that Sarah's ledger 
-                  follows double-entry bookkeeping rules—total debits always equal total credits. 
-                  This mathematical proof gives investors confidence that the financial data is 
-                  accurate before they make investment decisions."
+                  "The combined control panel matters most because no single formula proves the ledger is accurate.
+                  It checks total balance, transaction-level balance, and missing account data. Together, these checks
+                  reduce the risk that a balanced total hides a posting error."
                 </p>
               </div>
 
