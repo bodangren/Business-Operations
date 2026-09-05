@@ -498,9 +498,9 @@ const lesson05Questions: Unit02Phase5Question[] = [
     prompt: "What should the verification checkpoint cell check before the close flow completes?",
     correctAnswer: "That total adjusting debits equal total adjusting credits",
     distractors: [
-      "That the workbook is saved as .xlsm format",
+      "That the workbook uses a standard file name",
       "That all cells are formatted with the same font",
-      "That the button is visible on the sheet"
+      "That every cell uses the same font"
     ],
     explanation: "The fundamental accounting rule is that debits must equal credits. A verification checkpoint that confirms this proves the automation produced valid results.",
     objectiveTags: ["verification", "accounting-integrity"]
@@ -509,28 +509,28 @@ const lesson05Questions: Unit02Phase5Question[] = [
     id: "lesson05-q4",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Build First Automation Layer",
-    prompt: "What file format must the workbook be saved in to support macro buttons?",
-    correctAnswer: ".xlsm (Excel Macro-Enabled Workbook)",
+    prompt: "Which file format should students use for this Excel for the web activity?",
+    correctAnswer: ".xlsx (standard Excel workbook)",
     distractors: [
-      ".xlsx (standard Excel workbook)",
-      ".csv (comma-separated values)",
-      ".pdf (portable document format)"
+      ".csv, because it preserves formulas and formatting",
+      ".pdf, because it keeps all controls interactive",
+      ".txt, because it supports multiple worksheets"
     ],
-    explanation: "Standard .xlsx files cannot store macros. The workbook must be saved as .xlsm to preserve the button-triggered automation.",
-    objectiveTags: ["macro-basics", "file-formats"]
+    explanation: "The .xlsx format preserves worksheets, formulas, named ranges, validation, and formatting in Excel for the web.",
+    objectiveTags: ["excel-web", "file-formats"]
   },
   {
     id: "lesson05-q5",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Build First Automation Layer",
-    prompt: "Which manual step does the button-triggered flow replace?",
-    correctAnswer: "Running the six-step close checklist in order by hand every month",
+    prompt: "Which manual work does the linked close model reduce?",
+    correctAnswer: "Repeating the same close calculations and checks by hand every month",
     distractors: [
       "Deciding which accounting principle to apply",
       "Reading the financial statements",
       "Choosing the fiscal year-end date"
     ],
-    explanation: "The button automates the repetitive sequence of the close checklist. It does not replace accounting judgment—only the mechanical execution of known steps.",
+    explanation: "Linked formulas update the repetitive calculations and checks. They do not replace accounting judgment.",
     objectiveTags: ["automation-purpose", "manual-vs-automated"]
   },
   {
@@ -542,7 +542,7 @@ const lesson05Questions: Unit02Phase5Question[] = [
     distractors: [
       "Delete the workbook and start over",
       "Ignore the error and present the numbers anyway",
-      "Change the button color to make it more visible"
+      "Change the status-cell color without checking its formula"
     ],
     explanation: "The CloseStatus is a signal that the verification checkpoint found a problem. The user should trace back to find which adjusting entry or calculation caused the mismatch.",
     objectiveTags: ["error-handling", "troubleshooting"]
@@ -551,15 +551,15 @@ const lesson05Questions: Unit02Phase5Question[] = [
     id: "lesson05-q7",
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Build First Automation Layer",
-    prompt: "What is the most common failure mode for a button-triggered macro flow?",
-    correctAnswer: "The macro references cells that moved or were renamed, causing it to run on the wrong data",
+    prompt: "What is a common failure mode in a linked close model?",
+    correctAnswer: "A fixed reference points to the wrong cell after the workbook layout changes",
     distractors: [
-      "The button is the wrong color and users cannot find it",
-      "Excel does not support buttons in workbooks",
-      "Macros always delete the original data when they run"
+      "The status cell has a neutral fill color",
+      "The workbook contains more than one worksheet",
+      "Named ranges always delete the original data"
     ],
-    explanation: "Hard-coded cell references break when someone inserts a row or renames a sheet. Named ranges reduce this risk because they follow the data even when cells move.",
-    objectiveTags: ["common-errors", "macro-basics"]
+    explanation: "Fixed cell references can break when the layout changes. Named ranges reduce this risk because they remain connected to the intended data.",
+    objectiveTags: ["common-errors", "formula-controls"]
   },
   {
     id: "lesson05-q8",
@@ -594,11 +594,11 @@ const lesson05Questions: Unit02Phase5Question[] = [
     lessonId: "lesson05",
     lessonTitle: "Lesson 05 - Build First Automation Layer",
     prompt: "Which statement best explains the value of the automation you built to someone who did not build it?",
-    correctAnswer: "The button runs the same six-step close checklist every month, checks its own work, and tells you immediately if something is wrong",
+    correctAnswer: "The linked model updates the same close calculations, checks its work, and shows when review is required",
     distractors: [
-      "The workbook has colorful cells and a button that looks professional",
+      "The workbook has colorful cells and looks professional",
       "The automation replaces all accounting judgment so you never need to think",
-      "The file is saved in .xlsm format which is required by the IRS"
+      "The file has a standard extension that guarantees accounting accuracy"
     ],
     explanation: "The value is not in appearance or format—it is in reliability. The automation executes a known sequence, verifies its results, and flags problems. That is what makes it trustworthy.",
     objectiveTags: ["communication", "automation-purpose"]
@@ -614,10 +614,10 @@ const lesson06Questions: Unit02Phase5Question[] = [
     correctAnswer: "A user can enter invalid data and the automation will produce wrong results without any warning",
     distractors: [
       "The workbook will become too large to save",
-      "Excel will refuse to run macros without validation",
-      "The button will disappear from the sheet"
+      "Excel will refuse to calculate any formulas without validation",
+      "The audit panel will disappear from the sheet"
     ],
-    explanation: "Without validation, there is no guard between bad input and the automation. The macro will still execute—but on garbage data—producing wrong financial results that look correct.",
+    explanation: "Without validation, bad inputs flow into the formulas and can produce wrong financial results that look correct.",
     objectiveTags: ["validation", "workbook-design"]
   },
   {
@@ -627,8 +627,8 @@ const lesson06Questions: Unit02Phase5Question[] = [
     prompt: "An accountant opens your workbook and asks: 'How do I know the close ran correctly?' What is the best answer?",
     correctAnswer: "The audit panel shows the inputs used, the outputs produced, and whether verification checks passed",
     distractors: [
-      "The button is green, so it must have worked",
-      "The file is saved as .xlsm, which means it is correct",
+      "The status cell is green, so no source evidence is needed",
+      "The file is saved as .xlsx, which proves it is correct",
       "You have to check every formula by hand"
     ],
     explanation: "An audit panel provides visible, verifiable evidence that the automation ran correctly. It shows what went in, what came out, and whether the fundamental accounting checks (like debits = credits) passed.",
@@ -666,14 +666,14 @@ const lesson06Questions: Unit02Phase5Question[] = [
     id: "lesson06-q5",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
-    prompt: "Your validation rule catches a negative Supplies amount. What should happen when the user clicks the Run Close button?",
-    correctAnswer: "The button should refuse to run and display a message explaining which validation check failed",
+    prompt: "Your validation rule catches a negative Supplies amount. What should the workbook show?",
+    correctAnswer: "The validation result and CloseStatus should show that review is required",
     distractors: [
-      "The button should run anyway and let the user fix it afterward",
-      "The button should silently correct the negative value to zero",
-      "The button should delete the invalid input and continue"
+      "The workbook should ignore it and show Complete",
+      "The workbook should silently correct the negative value to zero",
+      "The workbook should delete the invalid input"
     ],
-    explanation: "A polished wizard checks validation before running. If any check fails, it stops and tells the user exactly what is wrong. This prevents wrong outputs from ever being produced.",
+    explanation: "A polished workbook keeps the failed rule visible and changes CloseStatus immediately. The user can identify and correct the source input.",
     objectiveTags: ["validation", "error-handling"]
   },
   {
@@ -681,9 +681,9 @@ const lesson06Questions: Unit02Phase5Question[] = [
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
     prompt: "How does a polished workbook maintain GAAP accuracy?",
-    correctAnswer: "Validation rules prevent invalid inputs, the audit panel traces outputs back to inputs, and the button flow enforces the correct sequence",
+    correctAnswer: "Validation rules flag invalid inputs, the audit panel traces outputs to inputs, and linked formulas follow the correct sequence",
     distractors: [
-      "GAAP accuracy is guaranteed by saving the file as .xlsm format",
+      "GAAP accuracy is guaranteed by saving the file in a standard format",
       "The workbook maintains GAAP accuracy because it uses named ranges",
       "GAAP accuracy only matters for the financial statements, not the workbook design"
     ],
@@ -694,14 +694,14 @@ const lesson06Questions: Unit02Phase5Question[] = [
     id: "lesson06-q7",
     lessonId: "lesson06",
     lessonTitle: "Lesson 06 - Polish Wizard Interface: Validation, Controls, and Auditability",
-    prompt: "What is the common failure mode of validation that exists only in macro code?",
-    correctAnswer: "Users will not see errors until the output is already wrong because the validation is not visible on the sheet",
+    prompt: "What is the main failure mode of validation that is hidden from users?",
+    correctAnswer: "Users cannot see which rule failed or which input needs correction",
     distractors: [
-      "The macro will run slower if validation is in the code",
-      "Excel will not allow validation in macro code",
+      "Visible validation always makes calculation slower",
+      "Excel for the web does not allow validation rules",
       "The validation will only work on certain versions of Excel"
     ],
-    explanation: "If validation only exists in the macro code, users cannot see what rules are being enforced or which inputs violated them. Always make validation visible on the sheet with flags, error messages, or conditional formatting.",
+    explanation: "Hidden validation does not tell users which rule failed. Keep rules visible with flags, messages, and conditional formatting.",
     objectiveTags: ["validation", "common-errors"]
   },
   {

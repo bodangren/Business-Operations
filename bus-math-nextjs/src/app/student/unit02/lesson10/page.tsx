@@ -91,7 +91,7 @@ const reflectionPrompts = [
   },
   {
     question: "Which automation or control feature made the biggest difference in your workbook's reliability?",
-    guidance: "Consider named ranges, validation rules, error flags, formula structure, or macro automation."
+    guidance: "Consider named ranges, validation rules, error flags, formula structure, or a visible control panel."
   },
   {
     question: "What did peer feedback help you improve that you would not have caught on your own?",
@@ -384,7 +384,7 @@ export default function Lesson10Page() {
               </div>
               <div className="p-4 border border-purple-200 rounded-lg bg-white">
                 <h4 className="font-semibold text-purple-900">Automation Efficiency (25%)</h4>
-                <p className="text-sm text-purple-700 mt-1">Macro or automation reduces close time consistently. Handles your scenario's complexity without manual intervention.</p>
+                <p className="text-sm text-purple-700 mt-1">Linked formulas and visible controls reduce close time consistently. The model handles the scenario without repeated manual calculations.</p>
               </div>
               <div className="p-4 border border-purple-200 rounded-lg bg-white">
                 <h4 className="font-semibold text-purple-900">Demo Clarity and Engagement (15%)</h4>

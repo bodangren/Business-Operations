@@ -919,7 +919,7 @@ export const unit01LessonPlan: UnitLessonPlan = {
       strategies: [
         "Extension Challenges: Dynamic dropdowns for account selection",
         "Peer Teaching: Support struggling classmates",
-        "Advanced Features: Explore pivot tables or basic VBA",
+        "Advanced Features: Explore pivot tables or scenario analysis",
         "Leadership Roles: Facilitate team discussions and planning"
       ]
     },

@@ -22,13 +22,13 @@ export const unit02Data: UnitData = {
     ],
     skills: [
       "Define and use named ranges for dynamic ledgers",
-      "Record and edit macros with the macro recorder",
-      "Write simple VBA procedures to insert adjusting entries (Optional)",
-      "Create user-friendly button or form control to trigger macros",
+      "Build linked calculation blocks with named ranges",
+      "Use IF and AND formulas to control close status",
+      "Create a user-friendly control panel with visible checks",
       "Design intuitive user interfaces for financial automation"
     ],
     deliverables: [
-      "Interactive Excel \"Month-End Wizard\" with UI button and macro",
+      "Interactive Excel Month-End Wizard with a formula-driven control panel",
       "Live demo presentation at Innovation Fair", 
       "Automated system that reduces close time to under 2 hours",
       "User-friendly interface with error-checking routines",
@@ -42,7 +42,7 @@ export const unit02Data: UnitData = {
       description: "Present your automated month-end closing system to Innovation Fair visitors, demonstrating how it reduces closing time from days to hours while maintaining GAAP compliance.",
       context: "This mirrors real-world business scenarios where CFOs seek automation solutions to improve efficiency and reduce the risk of manual errors in critical financial processes.",
       requirements: [
-        "Live Excel demonstration showing macro automation in action",
+        "Live Excel demonstration showing linked calculations and visible controls",
         "Clear explanation of time savings achieved (target: under 2 hours)", 
         "Professional presentation to diverse audience (teachers, parents, entrepreneurs)",
         "User-testing feedback collection and analysis",
@@ -77,11 +77,11 @@ export const unit02Data: UnitData = {
       {
         id: "milestone3",
         day: 8,
-        title: "Time < 2 Hours & UI Button",
+        title: "Time < 2 Hours & Control Panel",
         description: "Complete system achieving target efficiency with professional interface",
         criteria: [
           "Month-end close simulation completed in under 2 hours",
-          "User-friendly button interface for macro execution",
+          "User-friendly control panel with visible status and error checks",
           "Professional formatting and error-flag system implemented", 
           "System handles edge cases and provides clear user feedback"
         ]
@@ -98,7 +98,7 @@ export const unit02Data: UnitData = {
       {
         name: "Automation Efficiency", 
         weight: "25%",
-        exemplary: "Macro/VBA reduces close time to under 2 hours consistently; handles complex scenarios",
+        exemplary: "Linked formulas reduce close time to under 2 hours consistently and handle complex scenarios",
         proficient: "Achieves time target with minor manual intervention; works for basic scenarios",
         developing: "Fails to meet time target; requires significant manual work or frequent debugging"
       },
@@ -152,7 +152,7 @@ export const unit02Data: UnitData = {
             focus: "Skill Introduction: Accruals, Deferrals & SLN Depreciation",
             activities: [
               "Mini-lesson: Accruals/deferrals & SLN depreciation principles",
-              "Demo: Named ranges and macro recorder basics",
+              "Demo: Named ranges and status formula basics",
               "Hands-on practice with sample ledger workbook"
             ],
             resources: [
@@ -212,22 +212,22 @@ export const unit02Data: UnitData = {
             day: 6,
             focus: "Advanced Automation",
             activities: [
-              "Mini-lesson: Closing entries & VBA basics",
-              "Students choose VBA vs. no-code macro recorder approach", 
+              "Mini-lesson: Closing entries, linked formulas, and visible controls",
+              "Students connect visible checks to the close-status formula",
               "Begin building automated closing entry system"
             ],
             resources: [
-              "VBA cheat-sheet",
-              "Macro recorder tutorial",
+              "Formula reference sheet",
+              "Control-panel tutorial",
               "Closing entries examples"
             ],
-            milestone: "Macro inserts closing entries"
+            milestone: "Close model links closing entries"
           },
           {
             day: 7,
             focus: "Time-to-Close Simulation", 
             activities: [
-              "Class-wide simulation: run month-end close with macros",
+              "Class-wide simulation: run the month-end close with linked formulas",
               "Record and analyze \"time to close\" metrics",
               "Debug and optimize automation performance"
             ],
@@ -238,9 +238,9 @@ export const unit02Data: UnitData = {
           },
           {
             day: 8,
-            focus: "UX & Button Design",
+            focus: "Control Panel Design",
             activities: [
-              "Design professional UI button style and placement",
+              "Design a clear control panel and status area",
               "Integrate named range checks & error-flag formatting", 
               "Final testing and quality assurance"
             ],
@@ -248,7 +248,7 @@ export const unit02Data: UnitData = {
               "UI template workbook",
               "Error-checking examples"
             ],
-            milestone: "Time < 2 hrs & UI button"
+            milestone: "Time < 2 hrs & control panel"
           },
           {
             day: 9,
@@ -291,7 +291,7 @@ export const unit02Data: UnitData = {
       "Comprehensive solution (all adjusting entry types)"
     ],
     roles: [
-      "Automation Developer (macro/VBA specialist)",
+      "Workbook Modeler (formula and control specialist)",
       "UX Designer (interface and user experience)", 
       "Quality Assurance (testing and validation)",
       "Business Analyst (efficiency measurement)"
@@ -312,7 +312,7 @@ export const unit02Data: UnitData = {
       "Familiarity with Excel Tables and named ranges"
     ],
     technology: [
-      "Microsoft Excel with macro capabilities enabled",
+      "Microsoft Excel for the web",
       "Access to sample business transaction datasets", 
       "Computer with sufficient processing power for automation",
       "Presentation equipment for Innovation Fair demo"
@@ -334,13 +334,13 @@ export const unit02Data: UnitData = {
         type: "download"
       },
       {
-        title: "Macro Recorder Guide",
-        url: "/resources/macro-guide.pdf", 
+        title: "Formula Control Panel Guide",
+        url: "/resources/formula-control-panel-guide.pdf",
         type: "download"
       },
       {
-        title: "VBA Cheat-Sheet",
-        url: "/resources/vba-reference.pdf",
+        title: "Formula Reference Sheet",
+        url: "/resources/formula-logic-reference.pdf",
         type: "download"
       },
       {
@@ -353,13 +353,13 @@ export const unit02Data: UnitData = {
   
   differentiation: {
     struggling: [
-      "Provide step-by-step macro-recorder walkthrough with visual guides",
+      "Provide a step-by-step control-panel walkthrough with visual guides",
       "Scaffolded formula reference sheet for complex calculations", 
       "Pair with advanced students for peer coaching support",
-      "Focus on no-code solutions using macro recorder vs. VBA programming"
+      "Focus on named ranges, visible checks, and short IF formulas"
     ],
     advanced: [
-      "Challenge to write custom VBA functions beyond basic recording",
+      "Challenge students to add scenario controls and stronger error checks",
       "Add sophisticated error-checking routines and data validation", 
       "Mentor struggling teammates and lead technical discussions",
       "Explore advanced Excel features like pivot tables for reporting"

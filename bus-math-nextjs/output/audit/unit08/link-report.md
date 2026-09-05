@@ -1,6 +1,6 @@
 # Audit Report: unit08
 
-Generated: 2026-04-03T01:41:34.577Z
+Generated: 2026-09-05T12:48:11.375Z
 
 ## Summary
 
@@ -16,5 +16,5 @@ Generated: 2026-04-03T01:41:34.577Z
 |------|-------------|---------|
 | `src/app/student/unit08/lesson05/phase-4/page.tsx` | `unit08-asset-register-starter.xlsx` | variable |
 | `src/app/student/unit08/lesson06/phase-4/page.tsx` | `unit08-lesson06-student.xlsx` | variable |
-| `src/app/student/unit08/lesson07/phase-2/page.tsx` | `unit08-rehearsal-workbook.xlsx` | variable |
+| `src/app/student/unit08/lesson07/phase-2/page.tsx` | `unit08-lesson07-student.xlsx` | variable |
 | `src/app/student/unit08/lesson09/phase-1/page.tsx` | `unit08-group${i + 1}-fixed-assets.xlsx` | dynamic |

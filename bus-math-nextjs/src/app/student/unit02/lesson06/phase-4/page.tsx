@@ -63,7 +63,7 @@ export default function Phase4Page() {
                 </a>
               </div>
               <p className="text-sm text-orange-700">
-                <strong>Required incoming state:</strong> Your Lesson 5 workbook with named ranges, adjusting entries block, verification checkpoint, Adjusted TB, and Run Close button.
+                <strong>Required incoming state:</strong> Your Lesson 5 workbook with named ranges, an adjusting entries block, an adjusted trial balance, and a CloseStatus formula.
               </p>
             </CardContent>
           </Card>
@@ -91,23 +91,23 @@ export default function Phase4Page() {
                   <tbody className="text-blue-800 text-sm">
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Validation Rules</td>
-                      <td className="border border-blue-300 px-3 py-2">Next to each input cell</td>
+                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, cells D5:D9</td>
                       <td className="border border-blue-300 px-3 py-2">Flag invalid inputs before the close runs</td>
                     </tr>
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Period Selector</td>
-                      <td className="border border-blue-300 px-3 py-2">Top of Inputs sheet</td>
+                      <td className="border border-blue-300 px-3 py-2">Control Panel sheet, cell B3</td>
                       <td className="border border-blue-300 px-3 py-2">Dropdown to select close period without editing formulas</td>
                     </tr>
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Audit Panel</td>
-                      <td className="border border-blue-300 px-3 py-2">Top-right of Inputs sheet</td>
+                      <td className="border border-blue-300 px-3 py-2">Control Panel sheet, cells A3:B9</td>
                       <td className="border border-blue-300 px-3 py-2">Shows period, inputs used, outputs, verification status</td>
                     </tr>
                     <tr>
-                      <td className="border border-blue-300 px-3 py-2 font-semibold">Updated Button Flow</td>
-                      <td className="border border-blue-300 px-3 py-2">Same button, enhanced macro</td>
-                      <td className="border border-blue-300 px-3 py-2">Checks validation before running, updates audit panel</td>
+                      <td className="border border-blue-300 px-3 py-2 font-semibold">Validation Summary</td>
+                      <td className="border border-blue-300 px-3 py-2">Control Panel sheet, cell B8</td>
+                      <td className="border border-blue-300 px-3 py-2">Counts failed checks and updates the audit panel</td>
                     </tr>
                   </tbody>
                 </table>
@@ -140,10 +140,10 @@ export default function Phase4Page() {
                     <div>
                       <h4 className="font-semibold text-emerald-900">Add Validation Rules to Each Input</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        For each input cell (Supplies, PrepaidInsurance, etc.), add a Data Validation rule. Set minimum to 0, maximum to the account's unadjusted balance. Use conditional formatting to highlight violations in red.
+                        In <code>Inputs!D5:D9</code>, add formulas that compare each amount with zero and its maximum. Return "OK" or "Review". Use conditional formatting to highlight Review results in red.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
-                        <strong>Checkpoint:</strong> Type a negative number. The cell should show a red border or error message.
+                        <strong>Checkpoint:</strong> Type a negative number. Its visible check must change to Review.
                       </div>
                     </div>
                   </div>
@@ -170,10 +170,10 @@ export default function Phase4Page() {
                     <div>
                       <h4 className="font-semibold text-emerald-900">Create the Audit Panel</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        Build a small table at the top-right showing: Period (from SelectedPeriod), Total Adjustments (sum), Verification Status (OK/ERROR), and CloseStatus (Complete/Error). Use conditional formatting for green/red indicators.
+                        Complete the table in <code>Control Panel!A3:B9</code>. Show the period, adjustment totals, both differences, failed validation count, and CloseStatus. Use conditional formatting for green and red indicators.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
-                        <strong>Checkpoint:</strong> Run the close. The audit panel should update with the current period's data and show green indicators.
+                        <strong>Checkpoint:</strong> Change the selected period. The audit panel must update with the selected scenario.
                       </div>
                     </div>
                   </div>
@@ -183,12 +183,12 @@ export default function Phase4Page() {
                   <div className="flex items-start gap-3">
                     <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">4</div>
                     <div>
-                      <h4 className="font-semibold text-emerald-900">Update the Button Flow</h4>
+                      <h4 className="font-semibold text-emerald-900">Connect the Validation Summary</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        Modify the macro to check validation before running. If any validation flag is active, show a message and stop. If all clear, run the close and update the audit panel.
+                        Add a formula that counts failed validation checks. Update CloseStatus so it shows "Review flagged items" when the count is greater than zero. Keep every failed check visible.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
-                        <strong>Checkpoint:</strong> Enter an invalid input and click the button. It should refuse to run and tell you why.
+                        <strong>Checkpoint:</strong> Enter an invalid input. The failed-check count and CloseStatus must update immediately.
                       </div>
                     </div>
                   </div>
@@ -223,7 +223,7 @@ export default function Phase4Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Button checks validation before running and refuses to proceed on errors</span>
+                  <span>CloseStatus changes immediately when any validation check fails</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
@@ -231,7 +231,7 @@ export default function Phase4Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Workbook saved as .xlsm with all changes preserved</span>
+                  <span>Workbook saved as <code>.xlsx</code> and opens in Excel for the web</span>
                 </li>
               </ul>
             </CardContent>

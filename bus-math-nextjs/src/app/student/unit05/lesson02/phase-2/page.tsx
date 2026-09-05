@@ -74,7 +74,7 @@ export default function Phase2Page() {
         <section className="space-y-4 max-w-4xl mx-auto text-center">
           <Badge className="bg-green-200 text-green-900 text-lg px-4 py-2 gap-2">
             <Calculator className="h-4 w-4" />
-            Mechanics before Macros
+            Mechanics before Automation
           </Badge>
           <h1 className="text-4xl font-bold text-slate-900">How Each Deduction Gets Calculated</h1>
           <p className="text-lg text-slate-700">

@@ -9,13 +9,13 @@ export const lesson05Data = {
   learningObjectives: [
     "Explain which manual month-end step the automation replaces",
     "Build named ranges and input areas that feed calculation blocks",
-    "Create a button-triggered macro flow that runs the close checklist",
+    "Build a formula-driven control panel that runs the close checklist",
     "Add verification checkpoints to prove the automation ran correctly"
   ],
   keyConcepts: [
     "Named ranges as the bridge between manual steps and automation",
     "Input areas that separate user data from calculation logic",
-    "Button-triggered macro flow: one click runs multiple steps in order",
+    "Formula-driven control panel: linked calculations update in the required order",
     "Verification checkpoints that prove the automation produced correct results"
   ],
   durationEstimateMinutes: 45,
@@ -24,7 +24,7 @@ export const lesson05Data = {
     "Safe rehearsal before touching the live workbook",
     "Workbook sprint with verification checkpoints and Definition of Done"
   ],
-  rationale: "Students must build their first automation layer before any wizard polish. This lesson replaces the most painful manual step—running the close checklist—with a clickable button that executes the sequence in order. Students learn named ranges, input areas, and macro triggers as the foundation for everything that follows.",
+  rationale: "Students must build their first automation layer before any wizard polish. This lesson replaces repeated manual calculations with linked formulas that update in the required order. Students learn named ranges, input areas, and visible status controls as the foundation for everything that follows.",
   status: "Draft"
 }
 
@@ -40,7 +40,7 @@ export const lesson05Phases = [
     id: "phase-2",
     phaseName: "Introduction" as const,
     sequence: 2,
-    description: "Named ranges, input areas, buttons, and macro trigger flow explained directly",
+    description: "Named ranges, input areas, linked formulas, and visible status controls explained directly",
   },
   {
     id: "phase-3",
@@ -67,4 +67,3 @@ export const lesson05Phases = [
     description: "What the tool added, what students can now do faster, preview next layer",
   }
 ]
-

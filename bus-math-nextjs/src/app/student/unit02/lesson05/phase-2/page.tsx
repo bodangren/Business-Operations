@@ -26,10 +26,10 @@ const vocabSentences = [
   },
   {
     id: "s3",
-    text: "A {blank}-triggered flow runs multiple calculation steps when the user clicks a single control.",
-    answer: "button",
-    alternativeAnswers: ["button", "macro button", "click"],
-    hint: "One click replaces six manual steps"
+    text: "A {blank} formula links the verification results to a visible Complete or Review message.",
+    answer: "status",
+    alternativeAnswers: ["status", "status formula", "control"],
+    hint: "This message tells the user whether the close checks passed"
   },
   {
     id: "s4",
@@ -54,14 +54,14 @@ const comprehensionQuestions = [
   },
   {
     id: "q2",
-    question: "What is the most common failure mode when building a button-triggered macro flow?",
+    question: "What is a common failure mode in a linked close model?",
     answers: [
-      "The macro references cells that moved or were renamed, causing it to run on the wrong data",
-      "The button is the wrong color and users cannot find it",
-      "Excel does not support buttons in workbooks",
-      "Macros always delete the original data when they run"
+      "A formula uses a fixed cell address that no longer points to the correct input",
+      "The status cell uses the wrong fill color",
+      "The workbook has more than one worksheet",
+      "Named ranges delete source data when they calculate"
     ],
-    explanation: "The most common failure is a broken reference: the macro points to a cell address that changed when someone inserted a row or renamed a sheet. Named ranges reduce this risk because they follow the data even when cells move."
+    explanation: "A fixed reference can point to the wrong cell after a row or column changes. Named ranges reduce this risk because they keep formulas connected to the intended input."
   },
   {
     id: "q3",
@@ -93,10 +93,10 @@ export default function Phase2Page() {
               Phase 2: Tool Anatomy
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              The Parts of a Clickable Close
+              The Parts of a Linked Close Model
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Four building blocks turn a manual checklist into a one-click automation.
+              Four building blocks turn a manual checklist into a live control model.
             </p>
           </div>
         </section>
@@ -147,12 +147,12 @@ export default function Phase2Page() {
               </div>
 
               <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
-                <h4 className="font-semibold text-emerald-900 mb-2">4. Button-Triggered Flow</h4>
+                <h4 className="font-semibold text-emerald-900 mb-2">4. Status Formula</h4>
                 <p className="text-sm text-emerald-800">
-                  A button (form control or macro button) runs the calculation blocks in order when clicked. The flow is: read inputs → run Block 1 → verify → run Block 2 → verify → report status. A <strong>CloseStatus</strong> cell shows "Complete" or "Error—check flagged items" after the flow runs.
+                  A status formula reads the visible checks. It shows <strong>Complete</strong> only when the adjustment difference and adjusted trial balance difference are both zero. Otherwise, it shows <strong>Review flagged items</strong>.
                 </p>
                 <p className="text-xs text-emerald-700 mt-2">
-                  <strong>Where to find it in Excel:</strong> Developer tab → Insert → Button (Form Control) → Assign a macro.
+                  <strong>Formula pattern:</strong> <code>=IF(AND(AdjustmentDifference=0,AdjustedTBDifference=0),"Complete","Review flagged items")</code>
                 </p>
               </div>
             </CardContent>
@@ -182,13 +182,13 @@ export default function Phase2Page() {
                 <div className="bg-red-100 p-4 rounded border border-red-300">
                   <h5 className="font-semibold text-red-900 mb-1">No verification checkpoint</h5>
                   <p className="text-sm text-red-800">
-                    A button that runs without checking its results is dangerous. Always add a verification step that confirms debits equal credits.
+                    A status cell without visible source checks is not trustworthy. Show the debit-credit differences next to the status formula.
                   </p>
                 </div>
                 <div className="bg-red-100 p-4 rounded border border-red-300">
-                  <h5 className="font-semibold text-red-900 mb-1">Macro security blocks the button</h5>
+                  <h5 className="font-semibold text-red-900 mb-1">Status is fixed text</h5>
                   <p className="text-sm text-red-800">
-                    Excel may disable macros by default. Save the workbook as <code>.xlsm</code> (macro-enabled) and enable content when opening.
+                    A typed status does not respond to changed inputs. Use a formula that reads both verification cells.
                   </p>
                 </div>
               </div>

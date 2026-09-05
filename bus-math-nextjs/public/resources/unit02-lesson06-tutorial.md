@@ -1,43 +1,59 @@
-# Unit 02 Lesson 06 – Recording a Formatting Macro
+# Unit 02 Lesson 06 — Build Visible Controls and an Audit Panel
 
-This tutorial shows how to transform `unit02-lesson06-student.xlsx` into the formatted teacher model (`unit02-lesson06-teacher.xlsx`). The class records a macro that polishes the Month-End Snapshot block and assigns it to a button or shortcut.
+Use Excel for the web. Open `unit02-lesson06-student.xlsx`. Save a working copy before you start.
 
-## 1. Preview the Unformatted Report
+## 1. Check the Starting Workbook
 
-- Open the student workbook and go to **MacroPractice**.
-- The data block is intentionally plain: title, headers, and raw numbers.
-- Explain that the macro will apply consistent formatting so Sarah’s reports look investor-ready in seconds.
+Confirm that the workbook has these sheets:
 
-## 2. Record the Macro
+1. `Inputs`
+2. `Close Model`
+3. `Control Panel`
+4. `Scenarios`
 
-1. On the **View** tab, choose **Macros › Record Macro**.
-2. Name it `FormatSnapshot`, assign a shortcut (e.g., `Ctrl+Shift+F`), and store it in *This Workbook*.
-3. Click **OK** to begin recording.
+The Lesson 05 calculations must already update when the input values change.
 
-## 3. Apply the Formatting Steps
+## 2. Add the Period Selector
 
-While recording:
+1. Go to `Control Panel`.
+2. Select cell `B3`.
+3. Add a Data Validation list with `March,April,May`.
+4. Name cell `B3` as `SelectedPeriod`.
+5. Change the selection and confirm that the selected period appears in the audit panel.
 
-1. Select cell `A1`, set it to bold, and increase the font size to 14.
-2. Select row 3 (headers) and apply bold text plus a light fill if desired.
-3. Highlight column `B` and format the numbers as currency with two decimals.
-4. Repeat the currency format for column `C` so variances display with the same style.
-5. Add thin outside borders to the data block (`A3:D7`).
+## 3. Add Visible Validation
 
-These are the exact visual changes already present in the teacher workbook.
+Add a check next to each input on the `Inputs` sheet. Use this formula pattern:
 
-## 4. Stop Recording and Optional Button
+`=IF(AND(B5>=0,B5<=C5),"OK","Review")`
 
-1. Return to **View › Macros › Stop Recording**.
-2. (Optional) Insert a rounded rectangle shape labeled “Format Snapshot”.
-3. Right-click the shape, choose **Assign Macro**, and select `FormatSnapshot`.
+Copy the formula through cell `D9`. Apply conditional formatting. Show `OK` in green and `Review` in red. Keep every rule visible.
 
-Now one click replays every formatting move.
+## 4. Build the Audit Panel
 
-## 5. Save the Teacher Version
+On `Control Panel`, show these values:
 
-- Press the macro shortcut (or button) to confirm the formatting applies correctly.
-- Save the finished workbook as `unit02-lesson06-teacher.xlsx`.
-- Remind students to save as a macro-enabled workbook (`.xlsm`) if they want to reuse the macro in future lessons; the provided teacher file preserves the formatted results for quick comparison.
+- selected period
+- total adjustment debits
+- total adjustment credits
+- adjustment difference
+- adjusted trial balance difference
+- failed validation count
+- close status
 
-The macro gives TechStart’s accounting team a repeatable way to polish monthly snapshots without manual formatting each time.
+Use this status pattern:
+
+`=IF(AND(B6=0,B7=0,B8=0),"Complete","Review flagged items")`
+
+The status must update when any source value changes.
+
+## 5. Test the Controls
+
+1. Enter one negative input. Confirm that its validation result changes to `Review`.
+2. Enter one unequal debit and credit amount. Confirm that the difference changes from zero.
+3. Restore the correct values. Confirm that all checks return to `OK` and the close status returns to `Complete`.
+4. Change the selected period. Confirm that the audit panel updates.
+
+## 6. Save the Workbook
+
+Save the completed file as `unit02-lesson06-complete.xlsx`. Open it once in Excel for the web and confirm that the dropdowns, formulas, and conditional formatting still work.

@@ -42,7 +42,7 @@ export default function CapstoneGuidelinesPage() {
               </div>
               <div>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Week 8: Inventory macro demo (FIFO/LIFO)</li>
+                  <li>Week 8: Inventory valuation demo (FIFO/LIFO)</li>
                   <li>Week 9: Depreciation schedule (SLN/DDB)</li>
                   <li>Week 10: Integrated 3‑statement draft</li>
                   <li>Week 11: Scenario dashboard + tornado</li>
@@ -66,7 +66,7 @@ export default function CapstoneGuidelinesPage() {
                 <li>All three statements linked; no hard‑coded totals</li>
                 <li>Validation dashboard (traffic lights)</li>
                 <li>Scenario Manager and sensitivity table</li>
-                <li>Macro or button to refresh statements (optional)</li>
+                <li>Visible refresh check for linked statements</li>
               </ul>
             </CardContent>
           </Card>
@@ -168,4 +168,3 @@ export default function CapstoneGuidelinesPage() {
     </div>
   )
 }
-

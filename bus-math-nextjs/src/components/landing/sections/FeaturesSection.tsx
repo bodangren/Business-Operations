@@ -26,7 +26,7 @@ const features = [
   {
     icon: Target,
     title: "Excel Mastery",
-    description: "Advanced spreadsheet skills: VBA, Power Query, automation",
+    description: "Advanced spreadsheet skills: linked formulas, Power Query, and visible controls",
   },
   {
     icon: Zap,

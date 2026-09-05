@@ -351,7 +351,7 @@ export const unit03Data: UnitData = {
     advanced: [
       "Advanced ratio analysis including DuPont framework and trend analysis",
       "Custom KPI formulas for industry-specific metrics",
-      "VBA snippets to automate dashboard updates and data refresh",
+      "Linked formulas to automate dashboard updates and data refresh",
       "Mentor role helping teammates with complex formula troubleshooting"
     ],
     ell: [

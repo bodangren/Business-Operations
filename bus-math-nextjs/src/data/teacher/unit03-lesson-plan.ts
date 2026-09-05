@@ -877,7 +877,7 @@ export const unit03LessonPlan: UnitLessonPlan = {
         "Advanced Features: Implement dropdown menus, scenario analysis, and dynamic charting",
         "Industry Customization: Research industry-specific KPIs and benchmarking data",
         "Teaching Roles: Support struggling classmates with formula construction and troubleshooting",
-        "Extension Projects: Create automated reporting features or basic VBA functionality"
+        "Extension Projects: Create automated reporting features or linked scenario controls"
       ]
     },
     {

@@ -556,7 +556,7 @@ const lesson05Questions: Unit04Phase5Question[] = [
     distractors: [
       "They speed up Excel recalculation by optimizing formula processing.",
       "They hide complexity from teachers during project evaluation.",
-      "They enable macros to run automatically when the file opens."
+      "They change formulas automatically when the file opens."
     ],
     explanation: "Notes communicate assumptions and limits—crucial for trust and handoffs.",
     objectiveTags: ["documentation", "transparency", "professional-communication"]

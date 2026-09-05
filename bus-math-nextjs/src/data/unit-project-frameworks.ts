@@ -146,7 +146,7 @@ export const unit01ProjectFramework: UnitProjectFramework = {
     ],
     extensions: [
       "Dynamic dropdown menus for account selection",
-      "Basic VBA automation for repetitive tasks",
+      "Linked validation formulas for repetitive tasks",
       "Integration with accounting software APIs"
     ]
   },
@@ -246,15 +246,15 @@ export const unit02ProjectFramework: UnitProjectFramework = {
     audience: AUTHENTIC_AUDIENCES.INNOVATORS,
     context: "This mirrors real-world business scenarios where CFOs seek automation solutions to improve efficiency and reduce the risk of manual errors in critical financial processes.",
     deliverables: [
-      "Interactive Excel Month-End Wizard with macro automation",
+      "Interactive Excel Month-End Wizard with a formula-driven control panel",
       "Live demonstration showing time savings achieved (target: under 2 hours)",
       "Professional presentation to diverse audience explaining business impact",
       "User-testing feedback collection and analysis",
       "Documentation proving GAAP compliance maintained throughout automation"
     ],
     requirements: [
-      "Macro system automatically processes adjusting and closing entries",
-      "User-friendly button interface for non-expert operation",
+      "Linked formulas process adjusting and closing entries",
+      "User-friendly control panel supports non-expert operation",
       "Error-checking routines prevent invalid entries", 
       "Professional formatting with clear visual feedback",
       "System reduces month-end close time to under 2 hours"
@@ -280,26 +280,26 @@ export const unit02ProjectFramework: UnitProjectFramework = {
     {
       id: "integration",
       day: STANDARD_MILESTONE_TIMING.INTEGRATION.day,
-      title: "Macro Inserts Closing Entries", 
-      description: "Functional automation system with macro-driven processing",
+      title: "Close Model Links Closing Entries",
+      description: "Functional close model with linked formula processing",
       focus: "Technical automation and system reliability",
       criteria: [
-        "Macro successfully records closing entries for revenue and expense accounts",
+        "Formula model records closing entries for revenue and expense accounts",
         "Automated transfer to retained earnings account",
         "Error-checking routines prevent invalid entries",
         "Named ranges properly configured for dynamic updates"
       ],
-      deliverables: ["Working macro system", "Automated closing process", "Error prevention system"]
+      deliverables: ["Working close model", "Automated closing process", "Error prevention system"]
     },
     {
       id: "professional",
       day: STANDARD_MILESTONE_TIMING.PROFESSIONAL.day,
-      title: "Time < 2 Hours & UI Button",
+      title: "Time < 2 Hours & Control Panel",
       description: "Complete professional system achieving efficiency targets",
       focus: "User experience and business impact demonstration", 
       criteria: [
         "Month-end close simulation completed in under 2 hours",
-        "User-friendly button interface for macro execution",
+        "User-friendly control panel with visible status and error checks",
         "Professional formatting and error-flag system implemented",
         "System handles edge cases and provides clear user feedback"
       ],
@@ -330,7 +330,7 @@ export const unit02ProjectFramework: UnitProjectFramework = {
       name: STANDARD_RUBRIC_CATEGORIES.DOCUMENTATION.name,
       weight: "20%",
       focus: "User guidance and system explanation",
-      exemplary: "Comprehensive user guide enables independent operation; clear macro documentation",
+      exemplary: "Comprehensive user guide enables independent operation and explains all control formulas",
       proficient: "Basic instructions provided; most users can operate system with guidance",
       developing: "Minimal documentation; system difficult for others to use",
       businessStandard: "Business systems require clear documentation for knowledge transfer"
@@ -354,7 +354,7 @@ export const unit02ProjectFramework: UnitProjectFramework = {
       "Family business efficiency improvement"
     ],
     roles: [
-      "Automation Developer (macro and VBA focus)",
+      "Workbook Modeler (formula and control focus)",
       "Process Analyst (efficiency and workflow optimization)",
       "User Experience Designer (interface and usability)",
       "Quality Assurance Tester (validation and edge cases)"
@@ -365,7 +365,7 @@ export const unit02ProjectFramework: UnitProjectFramework = {
       "Before/after comparison showcase"
     ],
     extensions: [
-      "Advanced VBA programming with error handling",
+      "Advanced formula design with visible error handling",
       "Integration with external data sources",
       "Custom user forms for data input",
       "Advanced dashboard and reporting features"
@@ -376,7 +376,7 @@ export const unit02ProjectFramework: UnitProjectFramework = {
     templates: [
       {
         title: "Month-End Wizard Starter Workbook",
-        description: "Excel template with basic structure and macro framework",
+        description: "Excel template with a linked close model and visible control framework",
         type: "excel-template",
         required: true,
         classroomOnly: true
@@ -407,15 +407,15 @@ export const unit02ProjectFramework: UnitProjectFramework = {
     ],
     guides: [
       {
-        title: "Excel Macro Recording Guide",
-        description: "Step-by-step instructions for creating and editing macros",
+        title: "Excel Control Panel Guide",
+        description: "Step-by-step instructions for linked formulas and visible controls",
         type: "guide",
         required: true,
         classroomOnly: true
       },
       {
-        title: "VBA Basics for Business Automation",
-        description: "Introduction to Visual Basic for Excel automation",
+        title: "Formula Logic for Business Automation",
+        description: "Introduction to formula-driven business controls",
         type: "guide",
         required: false,
         classroomOnly: true
@@ -432,7 +432,7 @@ export const unit02ProjectFramework: UnitProjectFramework = {
   
   validation: {
     peerReviewCriteria: [
-      "Test macro system with different data scenarios",
+      "Test the close model with different data scenarios",
       "Verify time savings through timed close simulation",
       "Check user interface for ease of operation",
       "Validate GAAP compliance of all automated entries"
@@ -444,7 +444,7 @@ export const unit02ProjectFramework: UnitProjectFramework = {
       "Is my presentation clear to non-accounting audiences?"
     ],
     teacherCheckpoints: [
-      "Review macro code for accounting accuracy",
+      "Review close-model formulas for accounting accuracy",
       "Test system performance with various datasets",
       "Verify user interface meets usability standards",
       "Confirm presentation effectively communicates business value"

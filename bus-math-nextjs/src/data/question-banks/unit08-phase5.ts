@@ -763,7 +763,7 @@ const lesson06Questions: Unit08Phase5Question[] = [
     distractors: [
       "When no switching is required and all drivers stay constant.",
       "When she plans to print the workbook instead of using it on screen.",
-      "When company policy forbids the use of macros or add-ins."
+      "When company policy requires a standard approved method."
     ],
     explanation:
       "Driver tables with lookups keep formulas transparent and update charts instantly, which is ideal for investor dashboards.",
@@ -853,7 +853,7 @@ const lesson06Questions: Unit08Phase5Question[] = [
     distractors: [
       "It uses flashy gradients and hides supporting schedules from the audience.",
       "It relies on hidden values so only the creator understands the calculations.",
-      "It depends entirely on macros that only run on the creator's computer."
+      "It depends on unsupported features that only work on the creator's computer."
     ],
     explanation:
       "Investors want transparency and control. A trustworthy dashboard answers questions without hidden tricks or fragile code.",

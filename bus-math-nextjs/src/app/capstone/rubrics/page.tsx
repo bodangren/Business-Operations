@@ -32,7 +32,7 @@ export default function CapstoneRubricsPage() {
                 <h3 className="font-semibold">Exceeds</h3>
                 <ul className="list-disc list-inside space-y-1">
                   <li>All sheets linked; no manual plugs</li>
-                  <li>Macro/button refresh; clean validation dashboard</li>
+                  <li>Linked statement refresh; clean validation dashboard</li>
                   <li>Clear documentation of assumptions</li>
                 </ul>
               </div>
@@ -185,4 +185,3 @@ export default function CapstoneRubricsPage() {
     </div>
   )
 }
-

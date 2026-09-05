@@ -30,34 +30,34 @@ const validationRules: ValidationRule[] = [
   },
   {
     id: 2,
-    name: "Period Date Check",
-    input: "Close period date",
-    rule: "Must be the last day of a month",
-    expectedBehavior: "Flag dates that are not month-end dates",
+    name: "Insurance Amount Check",
+    input: "Insurance expired amount",
+    rule: "Must be between 0 and the prepaid insurance balance",
+    expectedBehavior: "Flag negative amounts or amounts greater than the available balance",
     correctAnswer: "flag"
   },
   {
     id: 3,
-    name: "Debits Equal Credits",
-    input: "Total adjusting debits and credits",
-    rule: "Total debits must equal total credits exactly",
-    expectedBehavior: "Show ERROR if they differ, OK if they match",
-    correctAnswer: "error"
+    name: "Selected Period Link",
+    input: "SelectedPeriod dropdown value",
+    rule: "All five inputs must use the selected scenario row",
+    expectedBehavior: "Update all input amounts when the selected period changes",
+    correctAnswer: "update"
   },
   {
     id: 4,
-    name: "AccountID Validation",
-    input: "Account ID in the adjustment entry",
-    rule: "Must match an account in the chart of accounts",
-    expectedBehavior: "Flag unknown account IDs before the close runs",
-    correctAnswer: "flag"
+    name: "Debits Equal Credits",
+    input: "Total adjusting debits and credits",
+    rule: "Total debits must equal total credits exactly",
+    expectedBehavior: "Show ERROR if they differ, or OK if they match",
+    correctAnswer: "error"
   },
   {
     id: 5,
     name: "CloseStatus Update",
     input: "All validation checks passed",
     rule: "If all checks pass, CloseStatus shows 'Complete'",
-    expectedBehavior: "Update CloseStatus to 'Complete' after successful run",
+    expectedBehavior: "Update CloseStatus to 'Complete' when all visible checks pass",
     correctAnswer: "complete"
   }
 ]
@@ -74,7 +74,7 @@ export default function Phase3Page() {
     const isCorrect = userAnswer.toLowerCase().includes(rule.correctAnswer.toLowerCase())
     
     if (isCorrect) {
-      setFeedback({ type: "success", message: `Correct! The automation should ${rule.expectedBehavior}.` })
+      setFeedback({ type: "success", message: `Correct! The workbook should ${rule.expectedBehavior}.` })
       if (currentStep < validationRules.length - 1) {
         setTimeout(() => {
           setCurrentStep(prev => prev + 1)
@@ -269,7 +269,7 @@ export default function Phase3Page() {
                 <li>Add validation rules for each input field</li>
                 <li>Build user-facing controls (dropdown or toggle cell)</li>
                 <li>Create an audit panel showing inputs, outputs, and verification</li>
-                <li>Update the button flow to check validation before running</li>
+                <li>Connect CloseStatus to the validation summary</li>
               </ol>
               <div className="bg-blue-100 p-4 rounded border border-blue-300 mt-4">
                 <p className="text-sm text-blue-700">
