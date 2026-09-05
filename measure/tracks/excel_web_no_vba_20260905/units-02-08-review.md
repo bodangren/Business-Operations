@@ -11,7 +11,7 @@ The link audit found no missing workbook links. The automated alignment audit ma
 ## Priority Summary
 
 - Critical: 1 Excel for the web blocker.
-- High: 10 logic or answer-checking defects.
+- High: 11 logic or answer-checking defects.
 - Medium: 6 logic, pacing, or compatibility defects.
 - Low: 2 stale-resource defects.
 
