@@ -21,7 +21,20 @@ The Lesson 05 calculations must already update when the input values change.
 4. Name cell `B3` as `SelectedPeriod`.
 5. Change the selection and confirm that the selected period appears in the audit panel.
 
-## 3. Add Visible Validation
+## 3. Link the Scenario Values to the Inputs
+
+1. Go to `Inputs`.
+2. Select cell `B5`.
+3. Enter this formula:
+
+   `=INDEX(Scenarios!$B$5:$F$7,MATCH(SelectedPeriod,Scenarios!$A$5:$A$7,0),ROW()-4)`
+
+4. Copy the formula through `Inputs!B5:B9`.
+5. Select March, April, and May in `Control Panel!B3`. Confirm that all five input values change for each period.
+
+`MATCH` finds the selected period row. `ROW()-4` connects input rows 5–9 to scenario columns B–F.
+
+## 4. Add Visible Validation
 
 Add a check next to each input on the `Inputs` sheet. Use this formula pattern:
 
@@ -29,7 +42,7 @@ Add a check next to each input on the `Inputs` sheet. Use this formula pattern:
 
 Copy the formula through cell `D9`. Apply conditional formatting. Show `OK` in green and `Review` in red. Keep every rule visible.
 
-## 4. Build the Audit Panel
+## 5. Build the Audit Panel
 
 On `Control Panel`, show these values:
 
@@ -47,13 +60,13 @@ Use this status pattern:
 
 The status must update when any source value changes.
 
-## 5. Test the Controls
+## 6. Test the Controls
 
 1. Enter one negative input. Confirm that its validation result changes to `Review`.
 2. Enter one unequal debit and credit amount. Confirm that the difference changes from zero.
 3. Restore the correct values. Confirm that all checks return to `OK` and the close status returns to `Complete`.
 4. Change the selected period. Confirm that the audit panel updates.
 
-## 6. Save the Workbook
+## 7. Save the Workbook
 
 Save the completed file as `unit02-lesson06-complete.xlsx`. Open it once in Excel for the web and confirm that the dropdowns, formulas, and conditional formatting still work.

@@ -588,8 +588,8 @@ export const unit02LessonPlan: UnitLessonPlan = {
             details: [
               "Named ranges: Readable references for input and output cells",
               "Status formulas: Short IF and AND formulas for visible results",
-              "Student choice: Teams decide between no-code recorder or basic coding approach",
-              "Demonstrate both approaches using simple closing entry example"
+              "Student choice: Teams decide between direct references or named-range formulas",
+              "Demonstrate the named-range pattern with a simple closing entry example"
             ],
             callout: {
               type: "tip",
@@ -598,7 +598,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
               items: [
                 "Named ranges: Keep formulas connected when the layout changes",
                 "Status formulas: Use IF and AND to report pass or review",
-                "Hybrid Approach: Start with recorder, edit code for improvements",
+                "Control approach: Combine named ranges with visible status formulas",
                 "Focus on functionality over complexity"
               ]
             }

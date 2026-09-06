@@ -6,12 +6,16 @@ const PROJECT_ROOT = process.cwd()
 const SEARCH_ROOTS = [join(PROJECT_ROOT, "src"), join(PROJECT_ROOT, "public", "resources")]
 const SEARCH_EXTENSIONS = new Set([".json", ".md", ".ts", ".tsx"])
 const THIS_TEST = "src/data/__tests__/excel-web-compatibility.test.ts"
+const LESSON_SIX_TUTORIAL = join(PROJECT_ROOT, "public", "resources", "unit02-lesson06-tutorial.md")
 const FORBIDDEN_PATTERNS = [
   new RegExp("\\b" + "v" + "ba\\b", "i"),
   new RegExp("\\b" + "macro" + "s?\\b", "i"),
   new RegExp("\\." + "xls" + "m\\b", "i"),
   new RegExp("visual basic for " + "applications", "i"),
   new RegExp("visual " + "basic", "i"),
+  new RegExp("\\b(?:action|no-code) " + "recorder\\b", "i"),
+  new RegExp("record " + "actions?", "i"),
+  new RegExp("start with (?:the )?" + "recorder", "i"),
 ]
 
 function collectTextFiles(directory: string): string[] {
@@ -42,5 +46,13 @@ describe("Excel for the web course content", () => {
       })
 
     expect(violations).toEqual([])
+  })
+
+  it("explains how the period selector links to all five scenario inputs", () => {
+    const tutorial = readFileSync(LESSON_SIX_TUTORIAL, "utf8")
+
+    expect(tutorial).toContain("Inputs!B5:B9")
+    expect(tutorial).toContain("Scenarios!$B$5:$F$7")
+    expect(tutorial).toContain("MATCH(SelectedPeriod,Scenarios!$A$5:$A$7,0)")
   })
 })

@@ -38,4 +38,8 @@
   - [x] Run typecheck, lint, tests, build, and the workbook audit.
   - [x] Refresh the code graph for changed TypeScript files.
   - [x] Confirm that this project has no Measure generation or doctor scripts.
+- [x] Task: Resolve pull request review findings
+  - [x] Include the May row in every scenario lookup.
+  - [x] Add the missing scenario-link instructions to the tutorial.
+  - [x] Detect and remove remaining Excel recorder instructions.
 - [ ] Task: Measure - User Manual Verification 'Generate Docs and Doctor' (Protocol in workflow.md)

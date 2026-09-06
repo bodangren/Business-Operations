@@ -111,10 +111,9 @@ def add_inputs_sheet(workbook: Workbook, scenario_links: bool) -> None:
 
     if scenario_links:
         for row in range(5, 10):
-            scenario_column = row - 3
             ws.cell(row, 2).value = (
-                f'=INDEX(Scenarios!${chr(64 + scenario_column)}$4:${chr(64 + scenario_column)}$6,'
-                'MATCH(SelectedPeriod,Scenarios!$A$4:$A$6,0))'
+                '=INDEX(Scenarios!$B$5:$F$7,'
+                'MATCH(SelectedPeriod,Scenarios!$A$5:$A$7,0),ROW()-4)'
             )
             ws.cell(row, 4).value = f'=IF(AND(B{row}>=0,B{row}<=C{row}),"OK","Review")'
 

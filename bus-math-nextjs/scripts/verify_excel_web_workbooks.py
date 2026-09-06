@@ -64,7 +64,12 @@ def verify_unit_two_contracts() -> None:
     require(lesson_six_student["Inputs"]["B5"].value == 1_200, "Lesson 6 student: expected direct input scaffold")
 
     lesson_six_teacher = load_workbook(RESOURCES / UNIT_TWO_FILES[3], data_only=False)
-    require(lesson_six_teacher["Inputs"]["B5"].value.startswith("=INDEX("), "Lesson 6 teacher: selected-period link is missing")
+    scenario_link = "=INDEX(Scenarios!$B$5:$F$7,MATCH(SelectedPeriod,Scenarios!$A$5:$A$7,0),ROW()-4)"
+    for row in range(5, 10):
+        require(
+            lesson_six_teacher["Inputs"][f"B{row}"].value == scenario_link,
+            f"Lesson 6 teacher: Inputs!B{row} does not include every scenario row",
+        )
     require(lesson_six_teacher["Inputs"]["D5"].value.startswith("=IF(AND("), "Lesson 6 teacher: validation formula is missing")
     require(len(lesson_six_teacher["Control Panel"].data_validations.dataValidation) == 1, "Lesson 6 teacher: period dropdown is missing")
     require(lesson_six_teacher["Control Panel"]["B8"].value.startswith("=COUNTIF("), "Lesson 6 teacher: failed-check count is missing")
