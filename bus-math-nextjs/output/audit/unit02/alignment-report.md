@@ -1,25 +1,9 @@
 # Workbook-Page Alignment Report: unit02
 
-Generated: 2026-04-03T01:41:34.536Z
+Generated: 2026-09-05T12:48:03.414Z
 
 ## Summary
 
-- **Pairs checked**: 2
-- **Aligned**: 2
+- **Pairs checked**: 0
+- **Aligned**: 0
 - **Misaligned**: 0
-
-## Alignment Details
-
-### unit02-lesson05-student.xlsx
-
-- **Page**: `src/app/student/unit02/lesson05/phase-4/page.tsx`
-- **Status**: Aligned
-- **Expected sheets**: Inputs
-- **Actual sheets**: Inputs, Adjustments
-
-### unit02-lesson05-teacher.xlsx
-
-- **Page**: `src/app/student/unit02/lesson05/phase-4/page.tsx`
-- **Status**: Aligned
-- **Expected sheets**: Inputs
-- **Actual sheets**: Inputs, Adjustments

@@ -47,7 +47,7 @@ const comprehensionQuestions = [
     answers: [
       "Next to each input cell and summarized at the top of the sheet",
       "On a hidden sheet that only the developer can see",
-      "In the macro code only, not visible on any sheet",
+      "In hidden formulas that users cannot inspect",
       "Validation is not needed if the user is careful"
     ],
     explanation: "Validation should be visible where users enter data (next to the input cell) and summarized at the top so anyone opening the workbook can immediately see if there are issues."
@@ -160,7 +160,7 @@ export default function Phase2Page() {
                 <div className="bg-red-100 p-4 rounded border border-red-300">
                   <h5 className="font-semibold text-red-900 mb-1">Validation that is invisible</h5>
                   <p className="text-sm text-red-800">
-                    If validation only exists in the macro code, users will not see errors until the output is wrong. Always make validation visible on the sheet.
+                    If validation only exists in hidden logic, users will not see errors until the output is wrong. Always make validation visible on the sheet.
                   </p>
                 </div>
                 <div className="bg-red-100 p-4 rounded border border-red-300">

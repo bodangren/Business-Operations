@@ -6,5 +6,5 @@
 - Workbooks scanned: 14
 - Workbooks OK: 14
 - Workbooks with errors: 0
-- Alignment pairs checked: 2
+- Alignment pairs checked: 0
 - Alignment issues: 0

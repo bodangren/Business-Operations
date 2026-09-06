@@ -70,7 +70,7 @@ export default function Phase6Page() {
                   <li>Validation rules that catch bad inputs before the close runs</li>
                   <li>A period selector that lets users switch scenarios without touching formulas</li>
                   <li>An audit panel that shows inputs, outputs, and verification status at a glance</li>
-                  <li>A button that refuses to run when validation fails</li>
+                  <li>A status formula that changes when validation fails</li>
                 </ul>
               </div>
             </CardContent>
@@ -109,7 +109,7 @@ export default function Phase6Page() {
               </p>
               <div className="bg-amber-100 p-3 rounded border border-amber-300 mt-2">
                 <p className="text-xs text-amber-800">
-                  <strong>What to bring:</strong> Your polished Lesson 6 workbook (.xlsm). You will use it as a reference model during the rehearsal.
+                  <strong>What to bring:</strong> Your polished Lesson 6 workbook. You will use it as a reference model during the rehearsal.
                 </p>
               </div>
             </CardContent>

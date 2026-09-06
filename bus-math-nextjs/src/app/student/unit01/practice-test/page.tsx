@@ -56,7 +56,7 @@ const lessonOptions: Array<{
   {
     id: "lesson05",
     title: "Lesson 05 – Error Checking Systems",
-    focus: "VBA alerts, control totals, and safe formula habits",
+    focus: "visible error alerts, control totals, and safe formula habits",
     color: "border-purple-300 bg-purple-50"
   },
   {

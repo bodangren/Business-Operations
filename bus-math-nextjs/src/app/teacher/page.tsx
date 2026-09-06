@@ -136,8 +136,7 @@ export default function TeacherDashboard() {
           <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg">
             <h4 className="font-medium text-green-900 dark:text-green-100 mb-1">Technology Requirements</h4>
             <p className="text-sm text-green-800 dark:text-green-200">
-              Students need Excel (or equivalent) access for all units. Advanced features like macros 
-              and VBA are introduced progressively.
+              Students need Excel for the web, or an equivalent spreadsheet tool, for all units. The course introduces tables, formulas, validation, and scenario controls progressively.
             </p>
           </div>
           

@@ -18,8 +18,8 @@ const reflectionPrompts = [
   {
     id: "business",
     category: "understanding" as const,
-    prompt: "How does the button-triggered close flow connect back to the manual six-step workflow you learned in Lesson 4?",
-    placeholder: "The button replaces the manual step of... because..."
+    prompt: "How does the formula-driven close model connect to the manual six-step workflow from Lesson 4?",
+    placeholder: "The linked formulas replace the repeated calculation of... because..."
   },
   {
     id: "signal",
@@ -70,7 +70,7 @@ export default function Phase6Page() {
                 <li>Explain why named ranges are safer than hard-coded cell references</li>
                 <li>Separate input areas from calculation blocks in a workbook</li>
                 <li>Build a verification checkpoint that confirms debits equal credits</li>
-                <li>Insert a button and assign a macro that runs a multi-step flow</li>
+                <li>Build a status formula that reads visible verification checks</li>
                 <li>Explain which manual month-end step the automation replaced</li>
                 <li>Defend the trustworthiness of your automation to someone who did not build it</li>
               </ul>
@@ -91,7 +91,7 @@ export default function Phase6Page() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-amber-100 p-4 rounded border border-amber-300">
                   <h4 className="font-semibold text-amber-900 mb-2">Repetition Signal:</h4>
-                  <p className="text-sm text-amber-800">You do the same steps in the same order every month. That is a candidate for a button-triggered flow.</p>
+                  <p className="text-sm text-amber-800">You repeat the same calculations every month. That is a candidate for linked formulas and visible checks.</p>
                 </div>
                 <div className="bg-amber-100 p-4 rounded border border-amber-300">
                   <h4 className="font-semibold text-amber-900 mb-2">Error-Risk Signal:</h4>
@@ -121,7 +121,7 @@ export default function Phase6Page() {
                 <div className="bg-blue-100 p-4 rounded border border-blue-300">
                   <h5 className="font-semibold text-blue-900 mb-1">Faster:</h5>
                   <ul className="text-sm text-blue-800 space-y-1 ml-4 list-disc">
-                    <li>Running the close checklist (one click vs. six manual steps)</li>
+                    <li>Updating the close model from one set of input cells</li>
                     <li>Computing adjusting entries (formulas vs. hand calculation)</li>
                     <li>Checking that debits equal credits (automatic vs. manual sum)</li>
                   </ul>
@@ -151,13 +151,13 @@ export default function Phase6Page() {
               </p>
               <ul className="text-sm text-emerald-800 space-y-1 ml-4 list-disc">
                 <li>Visible controls that let users change scenarios without touching formulas</li>
-                <li>Validation rules that catch bad inputs before the button runs</li>
+                <li>Validation rules that catch bad inputs before they reach the model</li>
                 <li>A dashboard summary that communicates results to non-technical readers</li>
                 <li>Audit trails that show exactly what changed and why</li>
               </ul>
               <div className="bg-emerald-100 p-4 rounded border border-emerald-300">
                 <p className="text-sm text-emerald-700">
-                  <strong>The connection:</strong> Everything in Lesson 6 builds on the four blocks you created today. Named ranges become scenario inputs. The verification checkpoint becomes a full audit panel. The button becomes a polished wizard interface.
+                  <strong>The connection:</strong> Everything in Lesson 6 builds on the four blocks you created today. Named ranges become scenario inputs. The verification checkpoint becomes a full audit panel. The status formula becomes the main control signal.
                 </p>
               </div>
             </CardContent>

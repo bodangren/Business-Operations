@@ -22,15 +22,15 @@ const closeSteps: CloseStep[] = [
   {
     id: 1,
     name: "Read Input Data",
-    description: "Load the unadjusted trial balance amounts from the input area",
-    input: "Unadjusted TB values",
-    output: "Values loaded into named ranges"
+    description: "Read the five adjustment amounts from the input area",
+    input: "Adjustment input values",
+    output: "Named input values are ready"
   },
   {
     id: 2,
     name: "Calculate Adjusting Entries",
     description: "Apply adjustment rules to each account that needs updating",
-    input: "Named ranges: Supplies, PrepaidInsurance, Equipment, WagesPayable, UnearnedRevenue",
+    input: "Named ranges: SuppliesUsed, InsuranceExpired, DepreciationExpense, WagesAccrued, RevenueEarned",
     output: "Adjusting entry amounts computed"
   },
   {
@@ -38,7 +38,7 @@ const closeSteps: CloseStep[] = [
     name: "Verify Debits = Credits",
     description: "Check that total adjusting debits equal total adjusting credits",
     input: "Adjusting entry amounts",
-    output: "Verification pass or fail flag"
+    output: "Verification shows OK or ERROR"
   },
   {
     id: 4,
@@ -65,9 +65,9 @@ export default function Phase3Page() {
   const step = closeSteps[currentStep]
 
   const checkAnswers: Record<number, string[]> = {
-    0: ["supplies", "prepaid insurance", "equipment", "wages payable", "unearned revenue"],
-    1: ["5500", "300", "400", "1800", "1200"],
-    2: ["9200"],
+    0: ["named input", "named range", "input value"],
+    1: ["adjusting entry", "adjustment amount", "adjustment"],
+    2: ["ok", "error", "pass", "fail", "verification"],
     3: ["adjusted trial balance", "adjusted tb"],
     4: ["complete"]
   }
@@ -245,7 +245,7 @@ export default function Phase3Page() {
                     Rehearsal Complete!
                   </h4>
                   <p className="text-green-800">
-                    You walked through all five steps of the automated close flow. The same sequence will run when you click the button in Phase 4.
+                    You walked through all five steps of the automated close flow. In Phase 4, linked formulas will keep this sequence current as inputs change.
                   </p>
                   <button
                     onClick={handleReset}
@@ -273,7 +273,7 @@ export default function Phase3Page() {
                 <li>Define named ranges for each input area</li>
                 <li>Build calculation blocks for adjusting entries</li>
                 <li>Add a verification checkpoint (debits = credits)</li>
-                <li>Insert a button that runs the full close flow</li>
+                <li>Add a CloseStatus formula that reads both verification checks</li>
               </ol>
               <div className="bg-blue-100 p-4 rounded border border-blue-300 mt-4">
                 <p className="text-sm text-blue-700">

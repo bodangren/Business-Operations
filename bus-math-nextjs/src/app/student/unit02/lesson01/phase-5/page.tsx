@@ -14,7 +14,7 @@ export default function Phase5Page() {
       question: 'What was Sarah\'s founder problem that launched the month-end closing crisis?',
       answers: [
         'She couldn\'t close her month quickly or accurately enough to support business decisions and stakeholder requests',
-        'She didn\'t know how to use Excel macros and automation',
+        'She did not know how to use linked formulas and validation checks',
         'Her business wasn\'t growing fast enough to need formal accounting',
         'Her cash balance was too low to support her business operations'
       ],

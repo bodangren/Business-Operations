@@ -19,7 +19,7 @@ const artifactTask = {
   prompts: [
     "What verification step proves the numbers are correct?",
     "What would you tell Sarah to check if the CloseStatus shows 'Error'?",
-    "Which manual step does the button replace, and why is that important?"
+    "Which repeated calculation does the linked model replace, and why is that important?"
   ]
 }
 
@@ -63,7 +63,7 @@ export default function Phase5Page() {
               <ul className="text-sm text-yellow-800 space-y-1 ml-4 list-disc">
                 <li>Explain why named ranges are safer than hard-coded cell references</li>
                 <li>Identify the verification checkpoint that proves the automation ran correctly</li>
-                <li>Describe what the button-triggered flow does in order</li>
+                <li>Describe how the linked calculation blocks update in order</li>
                 <li>Recognize common setup errors and how to fix them</li>
                 <li>Explain which manual step the automation replaced</li>
               </ul>

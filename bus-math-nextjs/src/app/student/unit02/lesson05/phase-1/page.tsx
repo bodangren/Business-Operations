@@ -29,7 +29,7 @@ const comprehensionQuestions = [
       "Explaining the financial statements to an investor",
       "Choosing the company's fiscal year-end date"
     ],
-    explanation: "Automation works best on repetitive, rule-based sequences. The month-end close checklist is the same six steps every month—exactly the kind of process a button-triggered flow can replace."
+    explanation: "Automation works best on repetitive, rule-based sequences. The month-end close checklist is the same six steps every month. Linked formulas and visible checks can update this sequence without repeated manual calculations."
   },
   {
     id: "q3",
@@ -111,7 +111,7 @@ export default function Phase1Page() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-green-800">
-                A well-built automation layer does not replace Sarah's accounting knowledge. It replaces the <strong>risk of forgetting a step</strong>. Instead of manually walking through six steps every month, Sarah clicks one button and the workbook:
+                A well-built automation layer does not replace Sarah's accounting knowledge. It reduces the <strong>risk of forgetting a step</strong>. Sarah enters the period data once, and the linked workbook:
               </p>
               <ul className="text-sm text-green-800 space-y-1 ml-4 list-disc">
                 <li>Runs the adjusting entry calculations in order</li>
@@ -121,7 +121,7 @@ export default function Phase1Page() {
               </ul>
               <div className="bg-green-100 p-4 rounded border border-green-300">
                 <p className="text-sm text-green-700">
-                  <strong>Today's target:</strong> Build the first automation layer—named ranges, input areas, and a button-triggered close flow—that replaces the most painful manual step.
+                  <strong>Today's target:</strong> Build the first automation layer with named ranges, input areas, linked formulas, and a visible close status.
                 </p>
               </div>
             </CardContent>
@@ -139,7 +139,7 @@ export default function Phase1Page() {
                 This lesson does not build the full wizard. It does not add dashboards, scenario switching, or investor presentations. Those come later.
               </p>
               <p className="text-amber-800">
-                Today you build <strong>one thing well</strong>: a clickable flow that runs the close checklist in order and proves it worked. That single automation layer is the foundation for everything in Lesson 6.
+                Today you build <strong>one thing well</strong>: a linked close model that follows the checklist order and shows whether its checks passed. That automation layer is the foundation for Lesson 6.
               </p>
             </CardContent>
           </Card>

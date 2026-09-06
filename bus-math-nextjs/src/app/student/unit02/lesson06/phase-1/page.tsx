@@ -16,7 +16,7 @@ const comprehensionQuestions = [
       "She can accidentally overwrite a formula and the automation will produce wrong numbers without warning",
       "The workbook will become too large to email",
       "Excel will refuse to save the file",
-      "The button will disappear from the sheet"
+      "The workbook will stop showing the audit result"
     ],
     explanation: "Without validation and separated input areas, a user can overwrite a formula and not realize it. The automation will still run—but it will produce wrong results. Validation rules prevent this."
   },
@@ -25,8 +25,8 @@ const comprehensionQuestions = [
     question: "An accountant opens Sarah's workbook and asks: 'How do I know the close ran correctly?' What is the best answer?",
     answers: [
       "An audit panel shows the inputs used, the outputs produced, and a verification that debits equal credits",
-      "The button is green, so it must have worked",
-      "The file is saved as .xlsm, which means it is correct",
+      "The status cell is green, so no further evidence is needed",
+      "The file uses the .xlsx format, which proves it is correct",
       "You have to check every formula by hand"
     ],
     explanation: "An audit panel provides visible, verifiable evidence that the automation ran correctly. It shows what went in, what came out, and whether the fundamental accounting checks passed."
@@ -37,8 +37,8 @@ const comprehensionQuestions = [
     answers: [
       "A dropdown or toggle cell that drives which input set the automation reads",
       "A new sheet for each month with manual copy-paste",
-      "A different colored button for each month",
-      "A macro that deletes the old data"
+      "A different font color for each month",
+      "A formula that deletes the old data"
     ],
     explanation: "A user-facing control like a dropdown or toggle cell lets users change scenarios without touching formulas. The automation reads the selected scenario and pulls the right data automatically."
   }
@@ -72,7 +72,7 @@ export default function Phase1Page() {
         <section className="max-w-4xl mx-auto space-y-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              In Lesson 5, Sarah built a button that runs the close checklist. It works for her. But when her part-time bookkeeper tried to use it, three things went wrong:
+              In Lesson 5, Sarah built a linked close model. It works with the original inputs. But when her part-time bookkeeper tried to use it for a new month, three things went wrong:
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export default function Phase1Page() {
                 A polished wizard interface is not about making things look pretty. It is about making the workbook <strong>usable by someone who did not build it</strong>. Today you will add:
               </p>
               <ul className="text-sm text-green-800 space-y-1 ml-4 list-disc">
-                <li><strong>Validation rules</strong> that catch bad inputs before the button runs</li>
+                <li><strong>Validation rules</strong> that catch bad inputs before formulas use them</li>
                 <li><strong>User-facing controls</strong> (dropdowns, toggle cells) that let scenarios change without editing formulas</li>
                 <li><strong>An audit panel</strong> that shows inputs, outputs, and verification results in one place</li>
               </ul>

@@ -1,0 +1,11 @@
+{
+  "track_id": "excel_web_no_vba_20260905",
+  "type": "bug",
+  "status": "in_progress",
+  "created_at": "2026-09-05T12:29:34Z",
+  "updated_at": "2026-09-06T01:20:00Z",
+  "description": "Remove VBA and recorded-macro dependencies so all student activities work in Excel for the web.",
+  "estimated_tasks": 8,
+  "actual_tasks": null,
+  "deviation_notes": "Automated implementation and verification are complete. Pull request review added three corrections for the May scenario lookup, tutorial parity, and recorder detection. The four required user manual verification checkpoints remain open. The Units 2-8 review found separate defects and recorded them without fixes."
+}

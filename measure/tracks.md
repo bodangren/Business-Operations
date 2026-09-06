@@ -111,6 +111,8 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
   *Link: [./tracks/capstone_project_infrastructure_20260528/](./tracks/capstone_project_infrastructure_20260528/)*
 - [~] **Track: Unit 1 lesson logic and workbook integrity**
   *Link: [./tracks/unit01_lesson_integrity_20260904/](./tracks/unit01_lesson_integrity_20260904/)*
+- [~] **Track: Excel for the web without VBA**
+  *Link: [./tracks/excel_web_no_vba_20260905/](./tracks/excel_web_no_vba_20260905/)*
 
 Foundational active tracks are ordered intentionally:
 1. `reference_system_20260403` establishes the glossary/index data model used by later tracks.

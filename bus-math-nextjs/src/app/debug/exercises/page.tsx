@@ -269,7 +269,7 @@ const techStartQuestions = [
       'Excel Tables with filtering and sorting',
       'Basic cell formatting only',
       'Chart creation tools',
-      'Macro programming'
+      'Formula-based automation'
     ],
     explanation: 'Excel Tables provide structured data organization, built-in filtering, sorting, and automatic formula expansion - perfect for tracking multiple clients and projects.'
   },

@@ -1,10 +1,10 @@
 ## unit07 Audit Summary
 
-- Links discovered: 6
-- Links valid: 6
+- Links discovered: 18
+- Links valid: 18
 - Links missing: 0
-- Workbooks scanned: 15
-- Workbooks OK: 15
+- Workbooks scanned: 19
+- Workbooks OK: 19
 - Workbooks with errors: 0
 - Alignment pairs checked: 0
 - Alignment issues: 0

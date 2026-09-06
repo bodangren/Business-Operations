@@ -341,9 +341,9 @@ export default function BackwardDesignPage() {
                       <p className="font-medium">Excel Skills:</p>
                       <ul className="mt-1 space-y-1">
                         <li>• Create and use named ranges for dynamic references</li>
-                        <li>• Record and edit macros using macro recorder</li>
-                        <li>• Design user-friendly button controls for automation</li>
-                        <li>• Write basic VBA procedures (optional extension)</li>
+                        <li>• Build linked calculations with named ranges</li>
+                        <li>• Design a user-friendly control panel</li>
+                        <li>• Add visible validation and status formulas</li>
                       </ul>
                     </div>
                   </CardContent>
@@ -378,8 +378,8 @@ export default function BackwardDesignPage() {
                   </CardHeader>
                   <CardContent className="space-y-2 text-sm">
                     <p><strong>Milestone 1:</strong> Four adjusting entry scenarios correctly mapped and automated</p>
-                    <p><strong>Milestone 2:</strong> Macro successfully inserts closing entries</p>
-                    <p><strong>Milestone 3:</strong> Complete system closes books in under 2 hours with UI button</p>
+                    <p><strong>Milestone 2:</strong> Linked formulas produce correct closing entries</p>
+                    <p><strong>Milestone 3:</strong> Complete system closes books in under 2 hours with a control panel</p>
                   </CardContent>
                 </Card>
               </div>
@@ -603,7 +603,7 @@ export default function BackwardDesignPage() {
                   <tr className="border-b bg-gray-50 dark:bg-gray-900/50">
                     <td className="border-r p-3 font-medium">2</td>
                     <td className="border-r p-3">Month-end automation</td>
-                    <td className="border-r p-3">Macros, named ranges, UI design</td>
+                    <td className="border-r p-3">Linked formulas, named ranges, control-panel design</td>
                     <td className="border-r p-3">GAAP compliance, process efficiency</td>
                     <td className="p-3">Automated systems for capstone model</td>
                   </tr>

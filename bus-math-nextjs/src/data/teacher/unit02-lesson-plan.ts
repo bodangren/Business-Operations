@@ -39,8 +39,8 @@ export const unit02LessonPlan: UnitLessonPlan = {
         category: "technical",
         items: [
           "Named ranges creation and management in Excel",
-          "Macro recorder functionality and basic VBA procedures",
-          "Form controls and button integration for user interfaces",
+          "Named ranges, linked formulas, and visible controls",
+          "Visible status cells and control-panel design",
           "Dynamic formula references using named ranges",
           "Error-checking routines and data validation techniques"
         ]
@@ -61,8 +61,8 @@ export const unit02LessonPlan: UnitLessonPlan = {
         category: "technical",
         items: [
           "Create and utilize named ranges for dynamic ledger systems",
-          "Record and edit macros using Excel's macro recorder",
-          "Write basic VBA procedures for repetitive accounting tasks",
+          "Build linked formula blocks for repetitive accounting tasks",
+          "Use IF and AND formulas to report close status",
           "Design user-friendly interfaces with form controls",
           "Implement error-checking and validation in automated systems"
         ]
@@ -78,7 +78,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
       scenario: "Teams present their Month-End Wizard to Innovation Fair visitors (teachers, parents, local entrepreneurs) demonstrating how automation can transform a 2-day manual process into a 2-hour automated workflow while maintaining GAAP accuracy.",
       requirements: [
         "Live demonstration of complete month-end close process",
-        "UI button interface that non-experts can operate",
+        "Control panel that non-experts can operate",
         "Time simulation showing sub-2-hour completion",
         "GAAP-compliant adjusting and closing entries",
         "User feedback collection and analysis"
@@ -110,11 +110,11 @@ export const unit02LessonPlan: UnitLessonPlan = {
       },
       {
         day: 8,
-        title: "Complete System: Time < 2 Hours & UI Button",
+        title: "Complete System: Time < 2 Hours & Control Panel",
         description: "Fully functional Month-End Wizard with professional user interface",
         criteria: [
           "Complete month-end simulation completed in under 2 hours",
-          "User-friendly button interface for macro execution",
+          "User-friendly control panel with visible status and error checks",
           "Named ranges properly configured for dynamic updates",
           "Error-checking and validation routines functional"
         ]
@@ -131,7 +131,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
       {
         name: "Automation Efficiency",
         weight: "25%",
-        exemplary: "Macro/VBA reduces close time well below 2 hours; handles edge cases and errors gracefully",
+        exemplary: "Linked formulas reduce close time well below 2 hours and handle edge cases clearly",
         proficient: "System meets 2-hour requirement with basic functionality working correctly",
         developing: "Automation incomplete or unreliable; time savings minimal"
       },
@@ -554,7 +554,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
       },
       {
         day: 6,
-        title: "Advanced Automation: Closing Entries & VBA Basics",
+        title: "Advanced Automation: Linked Closing Entries",
         focus: "Introduction to Excel automation tools and closing entry procedures",
         duration: "45 minutes",
         activities: [
@@ -566,7 +566,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
               "Purpose: Zero out temporary accounts (revenue, expenses) at period end",
               "Process: Close revenues to retained earnings, close expenses to retained earnings",
               "Post-closing trial balance: Only permanent accounts (assets, liabilities, equity) remain",
-              "Connection to automation: Perfect candidate for macro automation"
+              "Connection to automation: This sequence is a good candidate for linked formulas"
             ],
             callout: {
               type: "definition",
@@ -581,24 +581,24 @@ export const unit02LessonPlan: UnitLessonPlan = {
             }
           },
           {
-            name: "Excel Automation Options: Macro Recorder vs. VBA",
+            name: "Excel Automation Pattern: Inputs, Formulas, Checks, Status",
             duration: "15 minutes",
             description: "Introduction to Excel automation tools and student choice pathways",
-            // Component: ToolingChoiceSelector.tsx - Choose automation approach: Macro Recorder vs Basic VBA
+            // Component: ToolingChoiceSelector.tsx - Choose the correct visible workbook control.
             details: [
-              "Macro recorder: Point-and-click recording of manual actions",
-              "Basic VBA: Simple code procedures for repetitive tasks",
-              "Student choice: Teams decide between no-code recorder or basic coding approach",
-              "Demonstrate both approaches using simple closing entry example"
+              "Named ranges: Readable references for input and output cells",
+              "Status formulas: Short IF and AND formulas for visible results",
+              "Student choice: Teams decide between direct references or named-range formulas",
+              "Demonstrate the named-range pattern with a simple closing entry example"
             ],
             callout: {
               type: "tip",
               title: "Automation Pathway Choice",
               content: "Choose the approach that matches your team's technical comfort",
               items: [
-                "Macro Recorder: No coding required, records your manual actions",
-                "Basic VBA: Simple IF statements and loops for more flexibility",
-                "Hybrid Approach: Start with recorder, edit code for improvements",
+                "Named ranges: Keep formulas connected when the layout changes",
+                "Status formulas: Use IF and AND to report pass or review",
+                "Control approach: Combine named ranges with visible status formulas",
                 "Focus on functionality over complexity"
               ]
             }
@@ -607,10 +607,10 @@ export const unit02LessonPlan: UnitLessonPlan = {
             name: "Hands-On Automation Practice",
             duration: "10 minutes",
             description: "Teams begin building their chosen automation solution",
-            // Component: MonthEndWizard.tsx - Build automated closing entry system with macro recorder or basic VBA
+            // Component: MonthEndWizard.tsx - Build the linked closing-entry control model.
             details: [
-              "Macro recorder teams: Record closing entry sequence for their focus area",
-              "VBA teams: Write basic procedure using provided templates",
+              "Teams link closing-entry formulas for their focus area",
+              "Teams build visible verification and status cells",
               "Test automation with sample data to verify functionality",
               "Troubleshoot common issues with instructor support"
             ]
@@ -618,18 +618,18 @@ export const unit02LessonPlan: UnitLessonPlan = {
           {
             name: "Milestone 2 Assessment & Preview",
             duration: "5 minutes",
-            description: "Check progress toward macro functionality goal",
+            description: "Check progress toward the formula-control functionality goal",
             details: [
               "Teams demonstrate their automation progress",
-              "Verify: Does macro successfully insert closing entries for their focus area?",
+              "Verify: Do the formulas produce the correct closing entries for the focus area?",
               "Preview Day 7: Time-to-close simulation and full system testing"
             ]
           }
         ],
         materials: [
           "Closing entry procedure guide",
-          "Macro recorder step-by-step tutorial",
-          "Basic VBA templates and cheat sheet",
+          "Control-panel step-by-step tutorial",
+          "Formula templates and reference sheet",
           "Sample datasets for automation testing"
         ]
       },
@@ -858,7 +858,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
       category: "feedback",
       title: "Feedback Strategies",
       strategies: [
-        "Technical Accuracy: Specific corrections to Excel formulas and VBA code",
+        "Technical Accuracy: Specific corrections to Excel formulas and control logic",
         "Process Efficiency: Time measurement feedback with optimization suggestions",
         "User Experience: Usability testing results with interface improvement recommendations",
         "Business Value: Assessment of how well systems address real-world business problems"
@@ -872,8 +872,8 @@ export const unit02LessonPlan: UnitLessonPlan = {
       audience: "struggling",
       title: "For Struggling Students",
       strategies: [
-        "Step-by-Step Macro Guides: Visual walkthroughs for macro recorder usage",
-        "Pre-built Templates: Partial VBA code with clear modification instructions",
+        "Step-by-Step Formula Guides: Visual walkthroughs for linked control cells",
+        "Pre-built Templates: Partial formulas with clear modification instructions",
         "Simplified Scenarios: Focus on one adjusting entry type before expanding",
         "Peer Support: Pair with students strong in Excel automation skills"
       ]
@@ -882,7 +882,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
       audience: "advanced",
       title: "For Advanced Students",
       strategies: [
-        "Advanced VBA Functions: Error handling routines and user input validation",
+        "Advanced Formula Functions: Error handling and user input validation",
         "Cross-Sheet Integration: Link multiple workbooks for comprehensive systems",
         "Custom Functions: Write UDF (User Defined Functions) for complex calculations",
         "Mentoring Role: Support other teams with technical troubleshooting"
@@ -907,7 +907,7 @@ export const unit02LessonPlan: UnitLessonPlan = {
       title: "Technology Requirements",
       items: [
         { name: "Hardware: 1:1 computers with Microsoft Excel (365 or 2019+)" },
-        { name: "Excel Features: Macro recording enabled, VBA development environment access" },
+        { name: "Excel Features: Tables, named ranges, data validation, and conditional formatting" },
         { name: "Presentation: Innovation Fair booth space with tables and power access" },
         { name: "Timing: Stopwatches or timing apps for simulation measurement" },
         { name: "Backup: USB drives or cloud storage for system reliability during demonstrations" }
@@ -917,8 +917,8 @@ export const unit02LessonPlan: UnitLessonPlan = {
       category: "instructional",
       title: "Instructional Materials",
       items: [
-        { name: "Macro Recorder Tutorial", link: "../excel-instruction/macro-recorder-guide.pdf" },
-        { name: "Basic VBA Cheat Sheet", link: "../excel-instruction/vba-basics.pdf" },
+        { name: "Control Panel Tutorial", link: "../excel-instruction/control-panel-guide.pdf" },
+        { name: "Formula Reference Sheet", link: "../excel-instruction/formula-reference.pdf" },
         { name: "GAAP Adjusting Entries Reference", link: "../accounting-concepts/adjusting-entries-guide.pdf" },
         { name: "Month-End Simulation Dataset", link: "../simulations/month-end-dataset.xlsx" },
         { name: "UI Design Standards Guide", link: "../excel-instruction/professional-ui-standards.pdf" }
@@ -941,20 +941,20 @@ export const unit02LessonPlan: UnitLessonPlan = {
     questions: [
       "Did students successfully bridge accounting concepts with Excel automation skills?",
       "How effective was the sprint-based project structure for maintaining engagement?",
-      "What level of VBA complexity is appropriate for 12th grade students?",
+      "What level of formula complexity is appropriate for Grade 12 students?",
       "How well did the Innovation Fair format assess real-world application skills?",
       "Which automation techniques proved most transferable to other business contexts?"
     ],
     dataCollection: [
       "Time Simulation Results: Quantitative measurement of automation effectiveness",
       "Innovation Fair Feedback: Visitor surveys on system usability and student presentation quality",
-      "Technical Assessment: Analysis of macro and VBA code functionality and reliability",
+      "Technical Assessment: Analysis of formula-control functionality and reliability",
       "Student Reflection: Written analysis of learning challenges and breakthrough moments",
       "Peer Feedback Quality: Assessment of constructive critique skills development"
     ],
     nextUnitPrep: [
       "Archive successful automation templates for future student reference",
-      "Document common VBA errors and debugging strategies for instruction improvement",
+      "Document common formula errors and debugging strategies for instruction improvement",
       "Identify students ready for advanced Excel features in Unit 3",
       "Prepare connection materials linking automation concepts to integrated financial modeling",
       "Collect Innovation Fair feedback for continuous curriculum improvement"

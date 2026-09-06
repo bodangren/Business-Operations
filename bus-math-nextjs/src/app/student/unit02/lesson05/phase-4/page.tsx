@@ -24,10 +24,10 @@ export default function Phase4Page() {
               Phase 4: Workbook Sprint
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
-              Build the Automation
+              Build the Formula-Driven Close
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Open the starter workbook and build your first clickable close flow.
+              Open the starter workbook and build a linked close model with visible checks.
             </p>
           </div>
         </section>
@@ -55,7 +55,7 @@ export default function Phase4Page() {
                 </a>
               </div>
               <p className="text-sm text-orange-700">
-                <strong>Required incoming state:</strong> The workbook has an "Inputs" sheet with unadjusted trial balance data. You will add named ranges, calculation blocks, and a button to the same file.
+                <strong>Required incoming state:</strong> The workbook has an Inputs sheet, a Close Model sheet, and a Control Panel sheet. You will complete the blank formulas and checks in the same file.
               </p>
             </CardContent>
           </Card>
@@ -83,38 +83,33 @@ export default function Phase4Page() {
                   <tbody className="text-blue-800 text-sm">
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Input Area</td>
-                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, rows 2-15</td>
-                      <td className="border border-blue-300 px-3 py-2">Unadjusted TB values, period dates</td>
+                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, rows 4-9</td>
+                      <td className="border border-blue-300 px-3 py-2">Five month-end adjustment amounts and their limits</td>
                     </tr>
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Named Ranges</td>
                       <td className="border border-blue-300 px-3 py-2">Formula tab → Name Manager</td>
-                      <td className="border border-blue-300 px-3 py-2">Supplies, PrepaidInsurance, Equipment, WagesPayable, UnearnedRevenue</td>
+                      <td className="border border-blue-300 px-3 py-2">SuppliesUsed, InsuranceExpired, DepreciationExpense, WagesAccrued, RevenueEarned</td>
                     </tr>
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Adjusting Entries Block</td>
-                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, rows 18-30</td>
+                      <td className="border border-blue-300 px-3 py-2">Close Model sheet, rows 3-15</td>
                       <td className="border border-blue-300 px-3 py-2">Computes each adjustment amount from named ranges</td>
                     </tr>
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Verification Checkpoint</td>
-                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, row 32</td>
+                      <td className="border border-blue-300 px-3 py-2">Close Model sheet, row 15</td>
                       <td className="border border-blue-300 px-3 py-2">Checks total debits = total credits</td>
                     </tr>
                     <tr>
                       <td className="border border-blue-300 px-3 py-2 font-semibold">Adjusted TB Block</td>
-                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, rows 35-50</td>
+                      <td className="border border-blue-300 px-3 py-2">Close Model sheet, rows 18-35</td>
                       <td className="border border-blue-300 px-3 py-2">Unadjusted + adjustments = adjusted balances</td>
                     </tr>
                     <tr>
-                      <td className="border border-blue-300 px-3 py-2 font-semibold">CloseStatus Cell</td>
-                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, cell A1</td>
-                      <td className="border border-blue-300 px-3 py-2">Shows "Complete" or "Error—check flagged items"</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-blue-300 px-3 py-2 font-semibold">Run Close Button</td>
-                      <td className="border border-blue-300 px-3 py-2">Inputs sheet, top-right</td>
-                      <td className="border border-blue-300 px-3 py-2">Triggers the full close flow</td>
+                      <td className="border border-blue-300 px-3 py-2 font-semibold">CloseStatus Formula</td>
+                      <td className="border border-blue-300 px-3 py-2">Control Panel sheet, cell B9</td>
+                      <td className="border border-blue-300 px-3 py-2">Shows Complete only when both differences are zero</td>
                     </tr>
                   </tbody>
                 </table>
@@ -147,7 +142,7 @@ export default function Phase4Page() {
                     <div>
                       <h4 className="font-semibold text-emerald-900">Define Named Ranges</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        Select each input cell range and define a name: Supplies, PrepaidInsurance, Equipment, WagesPayable, UnearnedRevenue. Verify each name appears in the Name Manager.
+                        Select each input cell and define a name: SuppliesUsed, InsuranceExpired, DepreciationExpense, WagesAccrued, RevenueEarned. Verify each name in the Name Manager.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
                         <strong>Checkpoint:</strong> Type each name in the Name Box (left of formula bar). Each should jump to the correct cell.
@@ -162,7 +157,7 @@ export default function Phase4Page() {
                     <div>
                       <h4 className="font-semibold text-emerald-900">Build Adjusting Entries Block</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        Create a table with columns: Account, Unadjusted, Adjustment, Adjusted. Use named ranges in formulas—never hard-coded cell addresses.
+                        Complete the Debit and Credit formulas in the adjustment journal. Use the named inputs instead of fixed cell addresses.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
                         <strong>Checkpoint:</strong> Change a named range value. The adjustment should update automatically.
@@ -177,7 +172,7 @@ export default function Phase4Page() {
                     <div>
                       <h4 className="font-semibold text-emerald-900">Add Verification Checkpoint</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        Add a cell that checks: <code>=IF(TotalDebits=TotalCredits, "OK", "ERROR: Debits ≠ Credits")</code>. This must appear before the button.
+                        In <code>Close Model!B15</code>, subtract total adjustment credits from total adjustment debits. A balanced journal has a zero difference.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
                         <strong>Checkpoint:</strong> Intentionally enter a wrong adjustment. The checkpoint should show "ERROR".
@@ -205,12 +200,12 @@ export default function Phase4Page() {
                   <div className="flex items-start gap-3">
                     <div className="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">5</div>
                     <div>
-                      <h4 className="font-semibold text-emerald-900">Insert the Run Close Button</h4>
+                      <h4 className="font-semibold text-emerald-900">Build the CloseStatus Formula</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        Developer tab → Insert → Button → Draw it on the sheet → Assign a macro that reads inputs, runs calculations, checks verification, and updates CloseStatus.
+                        In <code>Control Panel!B9</code>, add an IF formula that reads the adjustment difference and adjusted trial balance difference. Return "Complete" only when both values equal zero.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
-                        <strong>Checkpoint:</strong> Click the button. CloseStatus should show "Complete" if all checks pass.
+                        <strong>Checkpoint:</strong> Change one adjustment amount. CloseStatus must change to "Review flagged items" until the entry balances again.
                       </div>
                     </div>
                   </div>
@@ -233,7 +228,7 @@ export default function Phase4Page() {
               <ul className="text-sm text-green-800 space-y-2 ml-4">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>At least 5 named ranges defined and working (Supplies, PrepaidInsurance, Equipment, WagesPayable, UnearnedRevenue)</span>
+                  <span>Five named inputs work: SuppliesUsed, InsuranceExpired, DepreciationExpense, WagesAccrued, and RevenueEarned</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
@@ -253,11 +248,11 @@ export default function Phase4Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Button runs the full flow and CloseStatus updates to "Complete"</span>
+                  <span>CloseStatus responds to both verification differences</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Workbook saved as .xlsm (macro-enabled format)</span>
+                  <span>Workbook saved as <code>.xlsx</code> and opens in Excel for the web</span>
                 </li>
               </ul>
             </CardContent>
@@ -275,7 +270,7 @@ export default function Phase4Page() {
                 <strong>Named range not working?</strong> Check the Name Manager (Formula tab → Name Manager). Make sure the range reference is correct and not pointing to a blank cell.
               </p>
               <p className="text-red-800">
-                <strong>Button does nothing?</strong> Right-click the button → Assign Macro. Make sure the macro name is selected. Also verify macros are enabled (File → Options → Trust Center → Macro Settings).
+                <strong>Status does not change?</strong> Select the CloseStatus cell. Confirm that its formula refers to both difference cells and that workbook calculation is automatic.
               </p>
               <p className="text-red-800">
                 <strong>Verification always shows ERROR?</strong> Check that your adjusting entry debits and credits are equal. Each adjustment should have one debit and one credit of the same amount.

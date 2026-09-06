@@ -740,7 +740,7 @@ const lesson06Questions: Unit03Phase5Question[] = [
     correctAnswer: "Clarity, reliability, and auditability in one page",
     distractors: [
       "A separate sheet for each metric",
-      "Hidden macros that run behind the scenes",
+      "Hidden formulas that users cannot inspect",
       "Only a single big number without context"
     ],
     explanation: "One page that updates live and proves correctness earns trust.",

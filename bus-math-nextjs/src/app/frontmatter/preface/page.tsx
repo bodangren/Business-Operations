@@ -81,7 +81,7 @@ export default function PrefacePage() {
                 <h3 className="font-semibold mb-2">What you'll learn</h3>
                 <ul className="list-disc list-inside text-sm space-y-1">
                   <li>Core accounting (ledger → statements → KPIs)</li>
-                  <li>Excel automation (tables, SUMIF/SUMIFS, Goal Seek, data tables, macros)</li>
+                  <li>Excel automation with tables, SUMIF/SUMIFS, Goal Seek, data tables, and visible controls</li>
                   <li>Decision skills (pricing, forecasting, cash flow)</li>
                 </ul>
               </div>
@@ -156,7 +156,7 @@ export default function PrefacePage() {
               <CardContent>
                 <ul className="list-disc list-inside text-sm space-y-1">
                   <li><strong>Unit 1: Smart Ledger Launch</strong> — Self‑auditing ledger and trial balance.</li>
-                  <li><strong>Unit 2: Month‑End Wizard</strong> — Adjusting entries and macro‑powered close.</li>
+                  <li><strong>Unit 2: Month‑End Wizard</strong> — Adjusting entries and a formula-driven close.</li>
                   <li><strong>Unit 3: Three‑Statement Storyboard</strong> — Linked I/S, B/S, C/F + KPI dashboard.</li>
                   <li><strong>Unit 4: Data‑Driven Café</strong> — Clean POS data, analyze, and forecast demand.</li>
                 </ul>
