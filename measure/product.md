@@ -20,8 +20,8 @@ Math for Business Operations: Applied Accounting with Excel
 2. **Interactive Learning Components**
    - T-accounts and journal entry builders
    - Drag-and-drop exercises
-   - Comprehension checks and quizzes
-   - Reflection journals
+   - One short exit ticket in each standard lesson
+   - Simple unit reviews with answer explanations
    - Business simulation scenarios
 3. **Excel Integration**
    - Spreadsheet components
@@ -32,8 +32,10 @@ Math for Business Operations: Applied Accounting with Excel
    - Classroom routines
    - Assessment rubrics
 5. **Student Pathways**
-   - Unit introduction pages
-   - 6-phase lesson structure
+   - Direct access to the current lesson
+   - Unit pages with lesson lists first
+   - One route per lesson with Start, Learn, Do, and Check sections
+   - Three-state unit reviews: Start, Questions, and Results
    - Progress tracking
 
 ## Deliverables

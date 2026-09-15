@@ -15,7 +15,12 @@ This project uses `build-graph`. Load the `build-graph` skill for commands.
 ## Core Rules
 - Work only in `bus-math-nextjs/` unless explicitly told otherwise
 - Do NOT run npm commands or mutate `.next` without explicit user approval
-- Keep student pages in the six-phase structure with gradient backgrounds, `PhaseHeader`/`PhaseFooter`, and `Badge` styling
+- Keep the six teaching phases in teacher plans and lesson metadata.
+- Present standard student lessons on one route with four visible sections: Start, Learn, Do, and Check.
+- Use restrained gradient backgrounds and badges. Do not wrap each lesson section in a large decorative card.
+- Treat `PhaseHeader` and `PhaseFooter` as legacy migration components. Do not add new uses.
+- Do not add routine reflection journals to student lessons or practice tests.
+- Use one short MCQ exit ticket per standard lesson. Do not place MCQ sets in Start, Learn, or Do.
 
 ## Lesson Implementation
 
@@ -45,7 +50,7 @@ Load skills with `/skill <skill-name>` or the skill tool before editing lesson f
 ## Key References
 
 - **Track Plans**: `measure/tracks.md` and the individual track directories are the only planning source of truth
-- **Component imports**: Use default exports for interactive components (`ComprehensionCheck`, `ReflectionJournal`), named exports for UI (`PhaseHeader`, `Card`)
+- **Component imports**: Use default exports for interactive components and named exports for UI primitives such as `Card` and `Badge`
 - **MCP Knowledge Base**: Use `mcp__curriculum-mcp__list_components` to discover available components
 - **Testing**: Use Chrome MCP tools for browser validation
 

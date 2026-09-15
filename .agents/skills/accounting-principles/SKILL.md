@@ -1,11 +1,21 @@
 ---
 name: accounting-principles
-description: Write or revise a student-facing accounting-principles lesson for Math for Business Operations. Use for lessons 2-4 when the lesson teaches an accounting concept, valuation method, or manual procedure before Excel automation. This skill is for explicit instruction, scaffolded practice, algorithmic phase-4 mastery practice, MCQ exit tickets, and reflection. Do not use for launch lessons, Excel-principles lessons, or project lessons.
+description: Write or revise a student-facing accounting-principles lesson for Math for Business Operations. Use for lessons 2-4 when the lesson teaches an accounting concept, valuation method, or manual procedure before Excel automation. This skill is for explicit instruction, scaffolded practice, algorithmic mastery practice, one MCQ exit ticket, and a concise handoff. Do not use for launch lessons, Excel-principles lessons, or project lessons.
 ---
 
 # Accounting Principles Skill
 
 Assume the repository's base lesson standard in `AGENTS.md` already applies. This skill adds only the accounting-principles lesson logic.
+
+## Student Presentation Rule
+
+Keep the six phases below as the teaching and authoring contract. Present them on one student route with four visible sections:
+- Start: Recycle and Introduce
+- Learn: Explicit Instruction
+- Do: Scaffold Fade and Deliberate Practice
+- Check: Assessment, Summary, and Handoff
+
+Use section anchors for direct links. Do not create new phase routes or routine reflection forms.
 
 ## Goal
 
@@ -73,7 +83,7 @@ The accounting-principles lesson pattern is:
 3. deeper instruction with reduced scaffolding
 4. algorithmic deliberate practice for mastery
 5. short MCQ exit ticket on knowledge and understanding
-6. reflection and preview
+6. concise synthesis and preview
 
 ## Accounting-Principles Phase Contract
 
@@ -161,19 +171,20 @@ Avoid:
 - repeating the exact phase-4 drill format
 - introducing brand new content
 
-### Phase 6: Reflection
+### Phase 6: Synthesis and Handoff
 Purpose:
-Help students consolidate what the method is for, where they feel confident, and what comes next.
+Help students consolidate what the method is for and identify what comes next.
 
 Requirements:
-- ask students to reflect on both confidence and understanding
 - connect the lesson back to the business problem
 - identify what signal tells a student to use this method
 - preview the next accounting principle or comparison
+- provide a direct next-lesson action
 
 Avoid:
 - major new instruction
 - excessive recap cards or repeated summaries
+- a saved reflection form
 
 ## Phase-4 Component Contract
 
