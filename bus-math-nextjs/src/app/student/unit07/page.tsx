@@ -58,6 +58,7 @@ const overviewSkills = [
 ]
 
 const unit07Lessons = lessonSources.map((ld, index) => ({
+  lessonId: `lesson${(index + 1).toString().padStart(2, "0")}`,
   title: ld.title,
   keyConcepts: overviewSkills[index] ? [overviewSkills[index]] : [],
   learningObjectives: overviewBuildGoals[index] ? [overviewBuildGoals[index]] : [],

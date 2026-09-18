@@ -33,7 +33,8 @@ const unit01Lessons = [
   lesson09Data,
   lesson10Data,
 ].sort((a, b) => (a.sequence ?? 0) - (b.sequence ?? 0))
-  .map(ld => ({
+  .map((ld, index) => ({
+    lessonId: `lesson${(index + 1).toString().padStart(2, "0")}`,
     title: ld.title,
     keyConcepts: ld.keyConcepts,
     learningObjectives: ld.learningObjectives,

@@ -1,10 +1,6 @@
-import { PhaseHeader } from "@/components/student/PhaseHeader"
-import { PhaseFooter } from "@/components/student/PhaseFooter"
 import { VideoPlayer } from "@/components/ui/video-player"
-import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users } from "lucide-react"
-import { type LessonRef, type UnitRef, type LessonPhase } from "@/types/lesson"
 
 interface VideoData {
   title: string
@@ -12,13 +8,6 @@ interface VideoData {
   youtubeId: string
   duration: string
   transcript: string
-}
-
-interface ComprehensionQuestion {
-  id: string
-  question: string
-  answers: string[]
-  explanation: string
 }
 
 interface UnitConfig {
@@ -42,49 +31,24 @@ interface UnitConfig {
 }
 
 interface Lesson01Phase1Props {
-  lesson01Data: LessonRef
-  unitData: UnitRef
-  lesson01Phases: LessonPhase[]
   videoData: VideoData
-  comprehensionQuestions: ComprehensionQuestion[]
   unitConfig: UnitConfig
   additionalContent?: React.ReactNode
 }
 
 export default function Lesson01Phase1({
-  lesson01Data,
-  unitData,
-  lesson01Phases,
   videoData,
-  comprehensionQuestions,
   unitConfig,
   additionalContent
 }: Lesson01Phase1Props) {
-  const currentPhase = lesson01Phases[0] // Hook phase
-  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-      <PhaseHeader 
-        lesson={lesson01Data}
-        unit={unitData}
-        phase={currentPhase}
-        phases={lesson01Phases}
-      />
-      
+    <div className="bg-gradient-to-br from-background via-background to-muted/20">
       <div className="max-w-4xl mx-auto space-y-8 pb-8 px-4">
         {/* Additional Content - For units with extra intro context */}
         {additionalContent}
 
         {/* Video Player - FIRST: Start with Sarah's interview video per launch-lesson skill */}
         <VideoPlayer video={videoData} />
-
-        {/* Short Processing After Video */}
-        <ComprehensionCheck
-          questions={comprehensionQuestions}
-          title="Understanding Sarah's Challenge"
-          description="Test your understanding of Sarah's business situation and the challenges she encountered."
-          showExplanations={true}
-        />
 
         {/* Turn and Talk - Short discussion after initial processing */}
         <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/10">
@@ -137,13 +101,6 @@ export default function Lesson01Phase1({
           </div>
         </div>
       </div>
-
-      <PhaseFooter 
-        lesson={lesson01Data}
-        unit={unitData}
-        phase={currentPhase}
-        phases={lesson01Phases}
-      />
     </div>
   )
 }
