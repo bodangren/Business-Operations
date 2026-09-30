@@ -3,11 +3,16 @@ import { Badge } from "@/components/ui/badge"
 import { Download, CheckCircle2, AlertCircle, FileText } from "lucide-react"
 
 
+/**
+ * Guide the scenario and validation build.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-orange-50">
       
       <div className="space-y-8">
+        <p><a href="/resources/unit02-lesson06-tutorial.md" className="text-primary underline" download>Download the workbook build tutorial</a></p>
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
@@ -32,17 +37,11 @@ export default function Phase4Content() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-orange-800">
-                Open the workbook you built in Lesson 5. If you need a fresh start, download the starter.
+                Continue your saved Lesson 5 workbook. If you need a fresh start, open
+                BM U02L06 - Textbook Aligned.xlsx in OneDrive, or download its website copy below.
+                The Lesson 6 starter includes the completed Lesson 5 close model.
               </p>
               <div className="flex items-center gap-4 flex-wrap">
-                <a
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
-                  href="/resources/unit02-lesson05-student.xlsx"
-                  download
-                >
-                  <Download className="h-4 w-4" />
-                  Your Lesson 5 Workbook
-                </a>
                 <a
                   className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm"
                   href="/resources/unit02-lesson06-student.xlsx"

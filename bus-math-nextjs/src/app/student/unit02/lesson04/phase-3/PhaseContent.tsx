@@ -60,6 +60,10 @@ const challengeEntries = [
   }
 ]
 
+/**
+ * Present the balanced month-end challenge.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase3Content() {
 
   return (
@@ -117,13 +121,13 @@ export default function Phase3Content() {
                     <tr><td className="border border-orange-300 px-3 py-2">Accumulated Depreciation</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$800</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Accounts Payable</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$4,500</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Unearned Revenue</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$2,400</td></tr>
-                    <tr><td className="border border-orange-300 px-3 py-2">Common Stock</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$30,000</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Common Stock</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$36,600</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Retained Earnings (beginning)</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$5,000</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Dividends</td><td className="border border-orange-300 px-3 py-2 text-right">$2,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Service Revenue</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$28,000</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Wages Expense</td><td className="border border-orange-300 px-3 py-2 text-right">$12,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Rent Expense</td><td className="border border-orange-300 px-3 py-2 text-right">$3,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
-                    <tr><td className="border border-orange-300 px-3 py-2 font-semibold">Totals</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$70,700</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2 font-semibold">Totals</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -154,7 +158,7 @@ export default function Phase3Content() {
               </p>
               <MonthEndChallenge
                 entries={challengeEntries}
-                trialBalanceTotal={{ debits: 77300, credits: 70700 }}
+                trialBalanceTotal={{ debits: 77300, credits: 77300 }}
               />
             </CardContent>
           </Card>
@@ -232,6 +236,35 @@ export default function Phase3Content() {
               </ul>
             </CardContent>
           </Card>
+
+          <section className="space-y-4 border-t pt-6" aria-labelledby="manual-close-worksheet">
+            <h3 id="manual-close-worksheet" className="text-xl font-semibold">Manual close worksheet</h3>
+            <p>
+              If your teacher assigns the worksheet, open BM U02L04 - Textbook Aligned.xlsx in OneDrive.
+              A website copy is available below. This is a separate March case. Use the facts in that file.
+            </p>
+            <p>
+              Complete its six sheets in order: Unadjusted TB, Adjustments, Adjusted TB, Financial Statements,
+              Closing Entries, and Post-closing TB. Calculate the amounts by hand. You can enter the results
+              in the worksheet or on paper. Enter 0 on each unused debit or credit side.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="/resources/unit02-lesson04-student.xlsx" className="text-primary underline" download>
+                Download the manual close worksheet
+              </a>
+              <a href="/resources/unit02-lesson04-tutorial.md" className="text-primary underline" download>
+                Download the worksheet guide
+              </a>
+            </div>
+            <details>
+              <summary className="cursor-pointer font-medium">Check the reference after your attempt</summary>
+              <p className="mt-2">
+                <a href="/resources/unit02-lesson04-teacher.xlsx" className="text-primary underline" download>
+                  Download the completed reference
+                </a>. Compare the accounts and amounts. A zero difference alone does not prove that an entry is correct.
+              </p>
+            </details>
+          </section>
 
         </section>
       </div>

@@ -20,6 +20,11 @@ interface MonthEndChallengeProps {
   trialBalanceTotal: { debits: number; credits: number }
 }
 
+/**
+ * Render the adjusting-entry challenge and trial-balance check.
+ * @param props - Source adjustment entries and unadjusted trial-balance totals.
+ * @returns The journal inputs, answer checks, and source-balance warning.
+ */
 export default function MonthEndChallenge({ entries, trialBalanceTotal }: MonthEndChallengeProps) {
   const [userAnswers, setUserAnswers] = useState<Record<string, { debitAccount: string; creditAccount: string; amount: string }>>(
     Object.fromEntries(entries.map(e => [e.id, { debitAccount: "", creditAccount: "", amount: "" }]))
@@ -88,7 +93,7 @@ export default function MonthEndChallenge({ entries, trialBalanceTotal }: MonthE
           {isUnbalanced && (
             <div className="bg-red-100 p-3 rounded border border-red-300">
               <p className="text-sm text-red-800 font-semibold">
-                Note: The unadjusted trial balance above shows debits of ${trialBalanceTotal.debits.toLocaleString()} and credits of ${trialBalanceTotal.credits.toLocaleString()}. This difference will be resolved once all adjustments are recorded correctly.
+                Note: The unadjusted trial balance above shows debits of ${trialBalanceTotal.debits.toLocaleString()} and credits of ${trialBalanceTotal.credits.toLocaleString()}. Find and correct the source error before you adjust the accounts. Balanced adjusting entries cannot remove this starting difference.
               </p>
             </div>
           )}

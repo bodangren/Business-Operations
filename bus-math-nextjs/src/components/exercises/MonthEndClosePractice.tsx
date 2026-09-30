@@ -1,111 +1,14 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import { generateUnit02AdjustmentScenario } from "@/lib/accounting/unit02-practice"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Trophy, RotateCcw, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
 
-interface AdjustmentItem {
-  description: string
-  unadjustedBalance: number
-  additionalInfo: string
-  entryType: "accrued-revenue" | "accrued-expense" | "deferred-revenue" | "deferred-expense" | "depreciation"
-  debitAccount: string
-  creditAccount: string
-  amount: number
-  explanation: string
-}
-
 interface MonthEndClosePracticeProps {
   masteryTarget?: number
-}
-
-function generateScenario(seed: number): AdjustmentItem {
-  const scenarios: AdjustmentItem[] = [
-    {
-      description: "Supplies on hand at month-end",
-      unadjustedBalance: 3000 + (seed % 5) * 1000,
-      additionalInfo: `Physical count shows $${1000 + (seed % 3) * 500} remaining`,
-      entryType: "deferred-expense",
-      debitAccount: "Supplies Expense",
-      creditAccount: "Supplies",
-      amount: 2000 + (seed % 4) * 500,
-      explanation: "Supplies used = unadjusted balance minus physical count. Debit Supplies Expense to record the cost used; credit Supplies to reduce the asset."
-    },
-    {
-      description: "Prepaid insurance expired",
-      unadjustedBalance: 2400 + (seed % 3) * 1200,
-      additionalInfo: `${12 - (seed % 6)} months remaining on the policy`,
-      entryType: "deferred-expense",
-      debitAccount: "Insurance Expense",
-      creditAccount: "Prepaid Insurance",
-      amount: 200 + (seed % 4) * 100,
-      explanation: "One month of prepaid insurance has expired. Debit Insurance Expense; credit Prepaid Insurance to reduce the asset."
-    },
-    {
-      description: "Monthly depreciation on equipment",
-      unadjustedBalance: 30000 + (seed % 4) * 10000,
-      additionalInfo: `Useful life: ${3 + (seed % 5)} years. Salvage value: $0. Straight-line method.`,
-      entryType: "depreciation",
-      debitAccount: "Depreciation Expense",
-      creditAccount: "Accumulated Depreciation",
-      amount: 500 + (seed % 5) * 100,
-      explanation: "Monthly depreciation = (Cost - Salvage) / Useful life in months. Debit Depreciation Expense; credit Accumulated Depreciation (a contra-asset)."
-    },
-    {
-      description: "Wages earned by employees but not yet paid",
-      unadjustedBalance: 0,
-      additionalInfo: `Employees worked the last ${2 + (seed % 3)} days of the month. Daily payroll: $${400 + (seed % 3) * 200}.`,
-      entryType: "accrued-expense",
-      debitAccount: "Wages Expense",
-      creditAccount: "Wages Payable",
-      amount: 800 + (seed % 4) * 400,
-      explanation: "Wages have been incurred but not yet paid. Debit Wages Expense to record the cost; credit Wages Payable to record the liability."
-    },
-    {
-      description: "Unearned revenue now earned",
-      unadjustedBalance: 3000 + (seed % 3) * 1000,
-      additionalInfo: `Cash was received in advance for a ${2 + (seed % 2)}-month project. One month of work is complete.`,
-      entryType: "deferred-revenue",
-      debitAccount: "Unearned Revenue",
-      creditAccount: "Service Revenue",
-      amount: 1000 + (seed % 3) * 500,
-      explanation: "Part of the advance payment has been earned. Debit Unearned Revenue to reduce the liability; credit Service Revenue to recognize earned revenue."
-    },
-    {
-      description: "Services performed but not yet billed",
-      unadjustedBalance: 0,
-      additionalInfo: `Work completed for a client worth $${600 + (seed % 5) * 200}. Invoice will be sent next month.`,
-      entryType: "accrued-revenue",
-      debitAccount: "Accounts Receivable",
-      creditAccount: "Service Revenue",
-      amount: 600 + (seed % 5) * 200,
-      explanation: "Revenue has been earned but not yet recorded. Debit Accounts Receivable to record the amount owed; credit Service Revenue to recognize the revenue."
-    },
-    {
-      description: "Interest on a note payable has accrued",
-      unadjustedBalance: 0,
-      additionalInfo: `Note payable: $${10000 + (seed % 5) * 5000}. Annual interest rate: ${6 + (seed % 4)}%. One month of interest has accrued.`,
-      entryType: "accrued-expense",
-      debitAccount: "Interest Expense",
-      creditAccount: "Interest Payable",
-      amount: 50 + (seed % 5) * 25,
-      explanation: "Interest expense has been incurred but not yet paid. Debit Interest Expense; credit Interest Payable to record the liability."
-    },
-    {
-      description: "Rent paid in advance now partially used",
-      unadjustedBalance: 6000 + (seed % 3) * 3000,
-      additionalInfo: `Prepaid rent covers ${3 + (seed % 3)} months. One month has passed.`,
-      entryType: "deferred-expense",
-      debitAccount: "Rent Expense",
-      creditAccount: "Prepaid Rent",
-      amount: 1500 + (seed % 3) * 500,
-      explanation: "One month of prepaid rent has been used. Debit Rent Expense; credit Prepaid Rent to reduce the asset."
-    }
-  ]
-
-  return scenarios[seed % scenarios.length]
 }
 
 function getStepOrder(entryType: string): string {
@@ -123,6 +26,11 @@ function getStepOrder(entryType: string): string {
   }
 }
 
+/**
+ * Render repeatable month-end journal-entry practice.
+ * @param props - The required number of consecutive correct adjustments.
+ * @returns The adjustment task and feedback.
+ */
 export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClosePracticeProps) {
   const [round, setRound] = useState(0)
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0)
@@ -132,7 +40,7 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
   const [masteryReached, setMasteryReached] = useState(false)
   const [showWorkedExample, setShowWorkedExample] = useState(false)
 
-  const scenario = generateScenario(round)
+  const scenario = generateUnit02AdjustmentScenario(round)
 
   const [selectedDebit, setSelectedDebit] = useState("")
   const [selectedCredit, setSelectedCredit] = useState("")
@@ -163,13 +71,14 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
 
   const handleNewScenario = () => {
     setRound(r => r + 1)
+    setMasteryReached(false)
     resetInputs()
   }
 
   const handleSubmit = () => {
     const debitCorrect = selectedDebit === scenario.debitAccount
     const creditCorrect = selectedCredit === scenario.creditAccount
-    const amountCorrect = parseFloat(amountInput) === scenario.amount
+    const amountCorrect = Number.isFinite(Number(amountInput)) && Math.abs(Number(amountInput) - scenario.amount) < 0.005
     const typeCorrect = selectedType === getStepOrder(scenario.entryType)
 
     const correct = debitCorrect && creditCorrect && amountCorrect && typeCorrect
@@ -235,7 +144,7 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
             />
           </div>
           <p className="text-sm text-blue-700">
-            Get <strong>{masteryTarget} consecutive correct</strong> answers to demonstrate mastery. Feedback is given after submission.
+            Round each amount to the nearest cent. Get <strong>{masteryTarget} consecutive correct</strong> answers to demonstrate mastery. Feedback is given after submission.
           </p>
         </CardContent>
       </Card>

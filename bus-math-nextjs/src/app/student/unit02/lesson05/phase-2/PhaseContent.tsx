@@ -34,6 +34,10 @@ const vocabSentences = [
   }
 ]
 
+/**
+ * Explain the linked workbook controls.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase2Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-emerald-50">
@@ -71,7 +75,7 @@ export default function Phase2Content() {
               <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
                 <h4 className="font-semibold text-emerald-900 mb-2">1. Named Ranges</h4>
                 <p className="text-sm text-emerald-800">
-                  A named range gives a cell or range a readable label. Instead of referencing <code>=SUM(C2:C50)</code>, you write <code>=SUM(AdjustingEntries)</code>. Named ranges follow the data when rows are inserted or deleted, so formulas do not break.
+                  A named range gives a cell or range a readable label. Instead of <code>=SUM(C2:C50)</code>, you can write <code>=SUM(AdjustingEntries)</code>. Check the named range after you change the source layout. A deleted source can still cause a broken reference.
                 </p>
                 <p className="text-xs text-emerald-700 mt-2">
                   <strong>Where to find it in Excel:</strong> Select a cell or range → Formula tab → Define Name → Type a name like "PeriodStart".
@@ -91,7 +95,7 @@ export default function Phase2Content() {
               <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
                 <h4 className="font-semibold text-emerald-900 mb-2">3. Calculation Blocks</h4>
                 <p className="text-sm text-emerald-800">
-                  Each step of the close checklist becomes a calculation block. Block 1 computes adjusting entries. Block 2 produces the adjusted trial balance. Block 3 generates the financial statements. Each block reads from named ranges and input areas—never from hard-coded cell addresses.
+                  Each step of the close checklist becomes a calculation block. Block 1 computes adjusting entries. Block 2 produces the adjusted trial balance. Block 3 generates the financial statements. Use named inputs and cell references to link the blocks. Do not type calculated totals into output cells.
                 </p>
                 <p className="text-xs text-emerald-700 mt-2">
                   <strong>Key rule:</strong> Every block should be testable independently. You should be able to verify Block 1 without running Block 2.
@@ -101,10 +105,10 @@ export default function Phase2Content() {
               <div className="bg-emerald-100 p-5 rounded-lg border border-emerald-300">
                 <h4 className="font-semibold text-emerald-900 mb-2">4. Status Formula</h4>
                 <p className="text-sm text-emerald-800">
-                  A status formula reads the visible checks. It shows <strong>Complete</strong> only when the adjustment difference and adjusted trial balance difference are both zero. Otherwise, it shows <strong>Review flagged items</strong>.
+                  A status formula first checks that the required cells contain numbers. It shows <strong>Not finished</strong> if data are missing. It then checks the adjustment difference and adjusted trial balance difference. Zero differences give <strong>Complete</strong>. Other results give <strong>Review flagged items</strong>. A balanced entry can still use the wrong amount. Compare each input with its source.
                 </p>
                 <p className="text-xs text-emerald-700 mt-2">
-                  <strong>Formula pattern:</strong> <code>=IF(AND(AdjustmentDifference=0,AdjustedTBDifference=0),"Complete","Review flagged items")</code>
+                  <strong>Formula pattern:</strong> <code>=IF(RequiredCellsMissing,"Not finished",IF(AND(AdjustmentDifference=0,AdjustedTBDifference=0),"Complete","Review flagged items"))</code>. This is a pattern. Use the cell references in the Lesson 5 tutorial for the workbook formula.
                 </p>
               </div>
             </CardContent>
@@ -120,9 +124,9 @@ export default function Phase2Content() {
             <CardContent className="space-y-3">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-red-100 p-4 rounded border border-red-300">
-                  <h5 className="font-semibold text-red-900 mb-1">Hard-coded cell references</h5>
+                  <h5 className="font-semibold text-red-900 mb-1">Typed output totals</h5>
                   <p className="text-sm text-red-800">
-                    Using <code>=C2+C50</code> instead of named ranges means the formula breaks when someone inserts a row. Always use named ranges.
+                    A typed total stays fixed when an input changes. Use a formula that refers to the source cells. Use named ranges to make important inputs easier to identify.
                   </p>
                 </div>
                 <div className="bg-red-100 p-4 rounded border border-red-300">
