@@ -57,7 +57,8 @@ def verify_unit_two_contracts() -> None:
 
     lesson_five_teacher = load_workbook(RESOURCES / UNIT_TWO_FILES[1], data_only=False)
     require(lesson_five_teacher["Close Model"]["B4"].value == "=SuppliesUsed", "Lesson 5 teacher: wrong adjustment formula")
-    require(lesson_five_teacher["Control Panel"]["B9"].value.startswith("=IF(AND("), "Lesson 5 teacher: CloseStatus is missing")
+    require('COUNT(' in lesson_five_teacher["Control Panel"]["B9"].value, "Lesson 5 teacher: CloseStatus must check for missing numeric cells")
+    require('"Not finished"' in lesson_five_teacher["Control Panel"]["B9"].value, "Lesson 5 teacher: CloseStatus must not accept an incomplete model")
 
     lesson_six_student = load_workbook(RESOURCES / UNIT_TWO_FILES[2], data_only=False)
     require(lesson_six_student.sheetnames == ["Inputs", "Close Model", "Control Panel", "Scenarios"], "Lesson 6 student: wrong sheets")
@@ -73,6 +74,10 @@ def verify_unit_two_contracts() -> None:
     require(lesson_six_teacher["Inputs"]["D5"].value.startswith("=IF(AND("), "Lesson 6 teacher: validation formula is missing")
     require(len(lesson_six_teacher["Control Panel"].data_validations.dataValidation) == 1, "Lesson 6 teacher: period dropdown is missing")
     require(lesson_six_teacher["Control Panel"]["B8"].value.startswith("=COUNTIF("), "Lesson 6 teacher: failed-check count is missing")
+    require('COUNTA(Inputs!D5:D9)<>5' in lesson_six_teacher["Control Panel"]["B9"].value, "Lesson 6 teacher: CloseStatus must check all five validation results")
+
+    lesson_seven_teacher = load_workbook(RESOURCES / "unit02-lesson07-teacher.xlsx", data_only=False)
+    require(lesson_seven_teacher["Report"]["B5"].value == '=ROUND(Adjustments!E6/12,2)', "Lesson 7 teacher: monthly report must use monthly depreciation")
 
     expected_names = {
         "SuppliesUsed",

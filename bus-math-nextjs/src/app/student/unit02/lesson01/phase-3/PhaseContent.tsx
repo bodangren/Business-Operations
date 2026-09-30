@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { ArrowRight, Clock, CheckCircle, AlertTriangle } from "lucide-react"
 
+/** Render the close-delay prediction and reveal. */
 export default function Phase3Content() {
   const [step, setStep] = useState<'predict' | 'reveal'>('predict')
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({})
 
   const simulationData = {
     scenario: "TechStart Fitness Studio Retainer Client",
@@ -33,7 +34,7 @@ export default function Phase3Content() {
   }
 
   const handleAnswer = (answer: string) => {
-    setSelectedAnswer(answer)
+    setSelectedAnswers(previous => ({ ...previous, [answer.split('-')[0]]: answer }))
   }
 
   const handleReveal = () => {
@@ -123,7 +124,7 @@ export default function Phase3Content() {
                             type="radio"
                             name="q1"
                             value={answer}
-                            checked={selectedAnswer === `q1-${idx}`}
+                            checked={selectedAnswers.q1 === `q1-${idx}`}
                             onChange={() => handleAnswer(`q1-${idx}`)}
                             className="text-purple-600"
                           />
@@ -147,7 +148,7 @@ export default function Phase3Content() {
                             type="radio"
                             name="q2"
                             value={answer}
-                            checked={selectedAnswer === `q2-${idx}`}
+                            checked={selectedAnswers.q2 === `q2-${idx}`}
                             onChange={() => handleAnswer(`q2-${idx}`)}
                             className="text-purple-600"
                           />
@@ -171,7 +172,7 @@ export default function Phase3Content() {
                             type="radio"
                             name="q3"
                             value={answer}
-                            checked={selectedAnswer === `q3-${idx}`}
+                            checked={selectedAnswers.q3 === `q3-${idx}`}
                             onChange={() => handleAnswer(`q3-${idx}`)}
                             className="text-purple-600"
                           />
@@ -218,7 +219,7 @@ export default function Phase3Content() {
                         <Clock className="h-5 w-5 text-red-600 flex-shrink-0 mt-1" />
                         <div>
                           <h4 className="font-semibold text-red-800 mb-2">Decision Speed: Delayed by 4 Days</h4>
-                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswer?.startsWith('q1-1') ? '✓ Correct!' : '✗ Different prediction'}</p>
+                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswers.q1?.startsWith('q1-1') ? '✓ Correct!' : '✗ Different prediction'}</p>
                           <p className="text-red-600 text-sm"><strong>Reality:</strong> CEO waits 4 days for accurate profitability data, making the pricing decision under time pressure with incomplete information.</p>
                         </div>
                       </div>
@@ -229,7 +230,7 @@ export default function Phase3Content() {
                         <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-1" />
                         <div>
                           <h4 className="font-semibold text-red-800 mb-2">Opportunity Cost: Missed Investor Meeting</h4>
-                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswer?.startsWith('q2-0') ? '✓ Correct!' : '✗ Different prediction'}</p>
+                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswers.q2?.startsWith('q2-0') ? '✓ Correct!' : '✗ Different prediction'}</p>
                           <p className="text-red-600 text-sm"><strong>Reality:</strong> Missed the weekend window to present to a potential investor because financial statements weren't ready to support the pitch.</p>
                         </div>
                       </div>
@@ -240,7 +241,7 @@ export default function Phase3Content() {
                         <AlertTriangle className="h-5 w-5 text-red-600 flex-shrink-0 mt-1" />
                         <div>
                           <h4 className="font-semibold text-red-800 mb-2">Stakeholder Confidence: Banker Receives Delayed Financials</h4>
-                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswer?.startsWith('q3-1') ? '✓ Correct!' : '✗ Different prediction'}</p>
+                          <p className="text-red-700 text-sm mb-2"><strong>Before Reveal (Your Prediction):</strong> {selectedAnswers.q3?.startsWith('q3-1') ? '✓ Correct!' : '✗ Different prediction'}</p>
                           <p className="text-red-600 text-sm"><strong>Reality:</strong> Banker receives outdated financials after a 2-day delay, creating uncertainty about whether the business has its financial house in order.</p>
                         </div>
                       </div>

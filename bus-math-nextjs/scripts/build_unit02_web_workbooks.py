@@ -238,7 +238,14 @@ def add_control_panel_sheet(workbook: Workbook, completed: bool, lesson_six: boo
         ws["B6"] = "='Close Model'!B15"
         ws["B7"] = "='Close Model'!F35"
         ws["B8"] = '=COUNTIF(Inputs!D5:D9,"Review")' if lesson_six else 0
-        ws["B9"] = '=IF(AND(B6=0,B7=0,B8=0),"Complete","Review flagged items")'
+        validation_missing = ',COUNTA(Inputs!D5:D9)<>5' if lesson_six else ''
+        ws["B9"] = (
+            '=IF(OR(COUNT(\'Close Model\'!B4:C13)<>20,'
+            'COUNT(\'Close Model\'!F19:G33)<>30'
+            + validation_missing
+            + '),"Not finished",IF(AND(B6=0,B7=0,B8=0),'
+            '"Complete","Review flagged items"))'
+        )
 
     for row in range(4, 8):
         ws.cell(row, 2).number_format = MONEY_FORMAT

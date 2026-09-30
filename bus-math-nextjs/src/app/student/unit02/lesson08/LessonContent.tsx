@@ -1,3 +1,4 @@
+import type { StudentLessonSectionId } from "@/types/student-lesson"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -43,7 +44,7 @@ const workbookSheets = [
 ]
 
 const milestone1Criteria = [
-  "Correct workbook downloaded, opened, and renamed using the naming convention",
+  "Assigned OneDrive workbook copied, opened, and renamed using the naming convention",
   "Assumptions sheet completed with group name, date, version, and scenario summary",
   "Data sheet populated with your group's assigned dataset numbers",
   "Adjustments sheet started with at least 3 identified adjusting entries and reasons",
@@ -61,29 +62,30 @@ const submissionChecklist = [
 ]
 
 const groupDatasets = [
-  { group: 1, scenario: "TechStart Solutions — Q4 close with prepaid insurance adjustment", file: "unit02-pbl-month-end-wizard-g1.csv" },
-  { group: 2, scenario: "GreenLeaf Consulting — Year-end with accrued revenue recognition", file: "unit02-pbl-month-end-wizard-g2.csv" },
+  { group: 1, scenario: "TechStart Solutions — January 2025 reference extract", file: "unit02-pbl-month-end-wizard-g1.csv" },
+  { group: 2, scenario: "GreenLeaf Consulting — January 2025 reference extract", file: "unit02-pbl-month-end-wizard-g2.csv" },
   { group: 3, scenario: "BlueWave Manufacturing — Month-end with depreciation and supplies", file: "unit02-pbl-month-end-wizard-g3.csv" },
   { group: 4, scenario: "Summit Retail Corp — Period close with unearned revenue deferral", file: "unit02-pbl-month-end-wizard-g4.csv" },
   { group: 5, scenario: "NorthStar Services — Month-end with accrued wages and prepaid rent", file: "unit02-pbl-month-end-wizard-g5.csv" },
-  { group: 6, scenario: "Apex Digital Agency — Year-end with bad debt and depreciation", file: "unit02-pbl-month-end-wizard-g6.csv" }
+  { group: 6, scenario: "Apex Digital Agency — January 2025 reference extract", file: "unit02-pbl-month-end-wizard-g6.csv" }
 ]
 
-export default function Lesson08Content() {
-  return (
-    <div className="bg-gradient-to-br from-slate-50 to-emerald-50">
-      <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-4">
+/**
+ * Render the project milestone section.
+ * @param props - The visible student section.
+ * @returns The context, instructions, workflow, or milestone check.
+ */
+export default function Lesson08Content({ section = "start" }: { section?: StudentLessonSectionId }) {
+  return (<>
+{section === "start" ? <>
+<div className="text-center space-y-4">
           <Badge className="bg-emerald-100 text-emerald-800 text-lg px-4 py-2">Lesson 08 — Milestone 1: Project Kickoff</Badge>
           <h2 className="text-3xl font-bold text-slate-900">{lesson08Data.title}</h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Today your team moves from guided rehearsal into independent project work. Each group receives its own month-end closing scenario. Your workbook must follow the exact structure from Lesson 07.
           </p>
         </div>
-
-        {/* Context */}
-        <Card className="border-emerald-200 bg-white">
+<Card className="border-emerald-200 bg-white">
           <CardHeader>
             <CardTitle className="text-emerald-900 flex items-center gap-2">
               <Target className="w-5 h-5" />
@@ -103,9 +105,7 @@ export default function Lesson08Content() {
             </p>
           </CardContent>
         </Card>
-
-        {/* Business Objectives */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="border-emerald-200">
             <CardHeader>
               <CardTitle className="text-emerald-900">Business Objectives</CardTitle>
@@ -135,13 +135,13 @@ export default function Lesson08Content() {
             </CardContent>
           </Card>
         </div>
-
-        {/* Group Dataset Assignment */}
-        <Card className="border-blue-200 bg-blue-50">
+</> : null}
+{section === "learn" ? <>
+<Card className="border-blue-200 bg-blue-50">
           <CardHeader>
             <CardTitle className="text-blue-900 flex items-center gap-2">
               <Users className="w-5 h-5" />
-              Your Group's Assigned Dataset
+              Your Group's Source Workbook and Reference Extract
             </CardTitle>
           </CardHeader>
           <CardContent className="text-blue-900 space-y-4">
@@ -149,9 +149,12 @@ export default function Lesson08Content() {
               <AlertCircle className="h-4 w-4 text-blue-700" />
               <AlertTitle className="text-blue-900">Use Only Your Assigned File</AlertTitle>
               <AlertDescription className="text-blue-800">
-                Each group has a unique scenario. Download only the file assigned to your group number. You will use this same dataset across Lessons 08, 09, and 10.
+                Use a copy of the Excel workbook assigned to your group in OneDrive. Keep it for Lessons 08–10. The CSV files below are reference extracts. They do not provide a complete opening trial balance or both sides of every journal entry. Use the assigned workbook as the source for the full close.
               </AlertDescription>
             </Alert>
+            <p className="text-sm">
+              Before you build, confirm the reporting period and balanced opening trial balance. Find the debit and credit accounts for each transaction. Check the supplies count, prepaid coverage dates, asset lives and salvage values, accrued amounts, and dividends where applicable. Ask your teacher for missing source facts. Record confirmed facts on Assumptions.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
               {groupDatasets.map((d) => (
                 <div key={d.group} className="p-4 border border-blue-200 rounded-lg bg-white">
@@ -173,9 +176,7 @@ export default function Lesson08Content() {
             </div>
           </CardContent>
         </Card>
-
-        {/* Workbook Structure Reminder */}
-        <Card className="border-emerald-200 bg-white">
+<Card className="border-emerald-200 bg-white">
           <CardHeader>
             <CardTitle className="text-emerald-900 flex items-center gap-2">
               <ClipboardCheck className="w-5 h-5" />
@@ -204,9 +205,7 @@ export default function Lesson08Content() {
             </div>
           </CardContent>
         </Card>
-
-        {/* File Naming Convention */}
-        <Card className="border-amber-200 bg-amber-50">
+<Card className="border-amber-200 bg-amber-50">
           <CardHeader>
             <CardTitle className="text-amber-900">File Naming Convention</CardTitle>
           </CardHeader>
@@ -219,13 +218,48 @@ export default function Lesson08Content() {
               Example: <code className="bg-white px-1 border border-amber-300 rounded">Unit02_Lesson08_Group3_BlueWaveManufacturing.xlsx</code>
             </p>
             <p className="text-sm text-amber-800">
-              <strong>Missing workbook?</strong> Re-download your group's assigned CSV file from the dataset section above and rebuild from your Lesson 07 notes.
+              <strong>Missing workbook?</strong> Open the assigned Excel file in OneDrive and save a new copy. Check OneDrive version history if you lost recent work. The CSV extract alone cannot reconstruct the full close.
             </p>
           </CardContent>
         </Card>
-
-        {/* Milestone 1 Acceptance Criteria */}
-        <Card className="border-emerald-200 bg-white">
+</> : null}
+{section === "do" ? <>
+<Card className="border-emerald-200 bg-emerald-50">
+          <CardHeader>
+            <CardTitle className="text-emerald-900 flex items-center gap-2">
+              <ArrowRight className="w-5 h-5" />
+              Workflow Today (45–50 minutes)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-emerald-900">
+            <ol className="list-decimal list-inside space-y-3">
+              <li>
+                <strong>Receive and organize (5 min):</strong> Copy your group's assigned OneDrive workbook. Check the source facts. Rename and save your copy using the naming convention above.
+              </li>
+              <li>
+                <strong>Assumptions sheet (5 min):</strong> Fill in group name, date, version, and a 2-3 sentence summary of your scenario.
+              </li>
+              <li>
+                <strong>Data sheet (10 min):</strong> Link the assigned workbook's source values. Use the CSV extract only for comparison. Verify totals against the complete source.
+              </li>
+              <li>
+                <strong>Adjustments sheet (15 min):</strong> Identify at least 3 adjusting entries your scenario requires. Record each with a clear reason (accrual, deferral, depreciation, etc.).
+              </li>
+              <li>
+                <strong>Trial Balance skeleton (5 min):</strong> Create column headers for unadjusted and adjusted trial balance. Do not populate numbers yet—that is Lesson 09.
+              </li>
+              <li>
+                <strong>Draft recommendation direction (5 min):</strong> Write 1-2 sentences stating the direction your team's recommendation is heading. This is a working claim, not the final version.
+              </li>
+              <li>
+                <strong>Teacher check-in (5 min):</strong> Review your workbook against the Milestone 1 acceptance criteria with your teacher.
+              </li>
+            </ol>
+          </CardContent>
+        </Card>
+</> : null}
+{section === "check" ? <>
+<Card className="border-emerald-200 bg-white">
           <CardHeader>
             <CardTitle className="text-emerald-900 flex items-center gap-2">
               <CheckSquare className="w-5 h-5" />
@@ -246,44 +280,7 @@ export default function Lesson08Content() {
             </ul>
           </CardContent>
         </Card>
-
-        {/* Workflow / Timeboxing */}
-        <Card className="border-emerald-200 bg-emerald-50">
-          <CardHeader>
-            <CardTitle className="text-emerald-900 flex items-center gap-2">
-              <ArrowRight className="w-5 h-5" />
-              Workflow Today (45–50 minutes)
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-emerald-900">
-            <ol className="list-decimal list-inside space-y-3">
-              <li>
-                <strong>Receive and organize (5 min):</strong> Download your group's dataset. Rename and save your workbook using the naming convention above.
-              </li>
-              <li>
-                <strong>Assumptions sheet (5 min):</strong> Fill in group name, date, version, and a 2-3 sentence summary of your scenario.
-              </li>
-              <li>
-                <strong>Data sheet (10 min):</strong> Enter all transaction values from your group's CSV file. Verify totals match the source.
-              </li>
-              <li>
-                <strong>Adjustments sheet (15 min):</strong> Identify at least 3 adjusting entries your scenario requires. Record each with a clear reason (accrual, deferral, depreciation, etc.).
-              </li>
-              <li>
-                <strong>Trial Balance skeleton (5 min):</strong> Create column headers for unadjusted and adjusted trial balance. Do not populate numbers yet—that is Lesson 09.
-              </li>
-              <li>
-                <strong>Draft recommendation direction (5 min):</strong> Write 1-2 sentences stating the direction your team's recommendation is heading. This is a working claim, not the final version.
-              </li>
-              <li>
-                <strong>Teacher check-in (5 min):</strong> Review your workbook against the Milestone 1 acceptance criteria with your teacher.
-              </li>
-            </ol>
-          </CardContent>
-        </Card>
-
-        {/* Submission Checklist */}
-        <Card className="border-emerald-200 bg-white">
+<Card className="border-emerald-200 bg-white">
           <CardHeader>
             <CardTitle className="text-emerald-900">Submission Checklist</CardTitle>
           </CardHeader>
@@ -298,9 +295,7 @@ export default function Lesson08Content() {
             </ul>
           </CardContent>
         </Card>
-
-        {/* What Comes Next */}
-        <Card className="border-blue-200 bg-blue-50">
+<Card className="border-blue-200 bg-blue-50">
           <CardHeader>
             <CardTitle className="text-blue-900 flex items-center gap-2">
               <ArrowRight className="w-5 h-5" />
@@ -316,8 +311,6 @@ export default function Lesson08Content() {
             </p>
           </CardContent>
         </Card>
-
-      </div>
-    </div>
-  )
+</> : null}
+</>)
 }

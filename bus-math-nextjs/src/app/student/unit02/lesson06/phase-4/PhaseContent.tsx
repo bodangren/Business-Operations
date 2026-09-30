@@ -3,11 +3,16 @@ import { Badge } from "@/components/ui/badge"
 import { Download, CheckCircle2, AlertCircle, FileText } from "lucide-react"
 
 
+/**
+ * Guide the scenario and validation build.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-orange-50">
       
       <div className="space-y-8">
+        <p><a href="/resources/unit02-lesson06-tutorial.md" className="text-primary underline" download>Download the workbook build tutorial</a></p>
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">

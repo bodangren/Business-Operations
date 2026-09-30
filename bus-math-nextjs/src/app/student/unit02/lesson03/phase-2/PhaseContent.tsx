@@ -37,6 +37,10 @@ const conceptBlanks = [
   }
 ]
 
+/**
+ * Explain the four closing entries.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase2Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-blue-50">
@@ -256,9 +260,8 @@ export default function Phase2Content() {
                 </h3>
                 <p className="text-sm text-red-800">
                   Students sometimes close revenue directly to Retained Earnings, skipping Income Summary.
-                  While the final Retained Earnings number would be the same, GAAP requires the Income Summary
-                  step because it creates a clear audit trail showing exactly how net income was calculated
-                  during the closing process.
+                  Closing directly to Retained Earnings can also be valid. This course uses Income Summary
+                  to show net income or loss and to make each closing step easy to check.
                 </p>
               </div>
             </CardContent>

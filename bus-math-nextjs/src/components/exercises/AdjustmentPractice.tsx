@@ -64,7 +64,7 @@ function generateAccruedRevenue(id: number): AdjustmentScenario {
 
   return {
     id: `ar-${id}`,
-    description: `On March ${day}, Sarah completed a ${service} for ${client} worth $${amount}. She will not invoice until April 5. What is the March 31 adjusting entry?`,
+    description: `On March ${day}, Sarah completed the ${service} for ${client} worth $${amount}. She will not invoice until April 5. What is the March 31 adjusting entry?`,
     type: 'accrued-revenue',
     debitAccount: 'Accounts Receivable',
     creditAccount: 'Service Revenue',
@@ -149,6 +149,11 @@ interface AdjustmentPracticeProps {
   masteryTarget?: number
 }
 
+/**
+ * Render adjustment practice with the course chart of accounts.
+ * @param props - The required number of consecutive correct cases.
+ * @returns The practice case, account chart, and feedback.
+ */
 export default function AdjustmentPractice({ masteryTarget = 3 }: AdjustmentPracticeProps) {
   const [round, setRound] = useState(0)
   const [scenario, setScenario] = useState<AdjustmentScenario>(() => GENERATORS[0](0))
@@ -281,6 +286,12 @@ export default function AdjustmentPractice({ masteryTarget = 3 }: AdjustmentPrac
         </CardContent>
       </Card>
 
+      <details className="rounded border p-4">
+        <summary className="cursor-pointer font-semibold">Course chart of accounts</summary>
+        <p className="mt-2 text-sm">Use these labels. Accounts Receivable records amounts owed by clients. Accounts Payable records amounts owed to vendors. Service Revenue records earned work. Deferred Revenue records advance receipts.</p>
+        <p className="mt-2 text-sm">Vendor expenses: freelance designer — Design Expense; cleaning service — Maintenance Expense; IT consultant — Consulting Expense; copywriter — Marketing Expense; photographer — Photography Expense.</p>
+        <p className="mt-2 text-sm">Prepaid assets and expenses: Prepaid Insurance / Insurance Expense; Prepaid Software / Software Expense; Prepaid Rent / Rent Expense; Prepaid Advertising / Advertising Expense; Prepaid Supplies / Supplies Expense.</p>
+      </details>
       {/* Type Selection */}
       <Card>
         <CardHeader>

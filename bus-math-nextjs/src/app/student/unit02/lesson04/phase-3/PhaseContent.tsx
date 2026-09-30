@@ -60,6 +60,10 @@ const challengeEntries = [
   }
 ]
 
+/**
+ * Present the balanced month-end challenge.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase3Content() {
 
   return (
@@ -117,13 +121,13 @@ export default function Phase3Content() {
                     <tr><td className="border border-orange-300 px-3 py-2">Accumulated Depreciation</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$800</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Accounts Payable</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$4,500</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Unearned Revenue</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$2,400</td></tr>
-                    <tr><td className="border border-orange-300 px-3 py-2">Common Stock</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$30,000</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2">Common Stock</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$36,600</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Retained Earnings (beginning)</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$5,000</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Dividends</td><td className="border border-orange-300 px-3 py-2 text-right">$2,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Service Revenue</td><td className="border border-orange-300 px-3 py-2"></td><td className="border border-orange-300 px-3 py-2 text-right">$28,000</td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Wages Expense</td><td className="border border-orange-300 px-3 py-2 text-right">$12,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
                     <tr><td className="border border-orange-300 px-3 py-2">Rent Expense</td><td className="border border-orange-300 px-3 py-2 text-right">$3,000</td><td className="border border-orange-300 px-3 py-2"></td></tr>
-                    <tr><td className="border border-orange-300 px-3 py-2 font-semibold">Totals</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$70,700</td></tr>
+                    <tr><td className="border border-orange-300 px-3 py-2 font-semibold">Totals</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td><td className="border border-orange-300 px-3 py-2 text-right font-semibold">$77,300</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -154,7 +158,7 @@ export default function Phase3Content() {
               </p>
               <MonthEndChallenge
                 entries={challengeEntries}
-                trialBalanceTotal={{ debits: 77300, credits: 70700 }}
+                trialBalanceTotal={{ debits: 77300, credits: 77300 }}
               />
             </CardContent>
           </Card>

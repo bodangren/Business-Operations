@@ -1,21 +1,26 @@
 "use client"
+import type { StudentLessonSectionId } from "@/types/student-lesson"
+
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import Unit02PeerFeedback from "@/components/exercises/Unit02PeerFeedback"
 import Link from "next/link"
 import { ArrowRight, Target } from "lucide-react"
 
-export default function Phase1Content() {
+/**
+ * Render the project milestone section.
+ * @param props - The visible student section.
+ * @returns The context, instructions, workflow, or milestone check.
+ */
+export default function Phase1Content({ section = "start" }: { section?: StudentLessonSectionId }) {
   const slug = "month-end-wizard"
   const groups = [1,2,3,4,5,6]
 
-  return (
-    <div className="bg-white">
-      <div className="space-y-8">
-
-        <Card>
+  return (<>
+{section === "start" ? <>
+<Card>
           <CardHeader>
             <div className="flex items-center gap-3">
               <Badge variant="secondary">PBL Milestone 3</Badge>
@@ -30,8 +35,42 @@ export default function Phase1Content() {
             </p>
           </CardContent>
         </Card>
-
-        <Card>
+</> : null}
+{section === "learn" ? <>
+<Card>
+          <CardHeader>
+            <CardTitle>Standard Rubric (Capstone‑Aligned)</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside space-y-1 text-sm">
+              <li>Technical Accuracy: 50% — correct modeling, formulas, validations</li>
+              <li>Strategic Rationale: 20% — alignment to business goals, trade‑offs</li>
+              <li>Communication & Clarity: 15% — concise story, visuals, audience fit</li>
+              <li>Time Management: 10% — 4–5 minutes, clean transitions</li>
+              <li>Q&A Readiness: 5% — confident, concise responses</li>
+            </ul>
+          </CardContent>
+        </Card>
+<Card>
+          <CardHeader>
+            <CardTitle>Group Datasets (g1–g6)</CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm space-y-2">
+            <p>Present the same OneDrive workbook used in Lessons 08–09. These CSV files are reference extracts. They do not replace the complete source workbook.</p>
+            <ul className="list-disc list-inside">
+              {groups.map((g) => (
+                <li key={g}>
+                  <a className="underline" href={`/resources/unit02-pbl-${slug}-g${g}.csv`} download>
+                    Download unit02-pbl-{slug}-g{g}.csv
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+</> : null}
+{section === "do" ? <>
+<Card>
           <CardHeader>
             <CardTitle>Presentation Flow (40 minutes)</CardTitle>
           </CardHeader>
@@ -43,8 +82,17 @@ export default function Phase1Content() {
             </ul>
           </CardContent>
         </Card>
-
-        <Card>
+<Card>
+          <CardHeader>
+            <CardTitle>Audience Peer Reviews</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Unit02PeerFeedback projectTitle="Month‑End Wizard Final Presentation" unitNumber={2} />
+          </CardContent>
+        </Card>
+</> : null}
+{section === "check" ? <>
+<Card>
           <CardHeader>
             <div className="flex items-center gap-3">
               <Badge variant="outline">Acceptance Criteria</Badge>
@@ -61,50 +109,7 @@ export default function Phase1Content() {
             </ul>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Standard Rubric (Capstone‑Aligned)</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside space-y-1 text-sm">
-              <li>Technical Accuracy: 50% — correct modeling, formulas, validations</li>
-              <li>Strategic Rationale: 20% — alignment to business goals, trade‑offs</li>
-              <li>Communication & Clarity: 15% — concise story, visuals, audience fit</li>
-              <li>Time Management: 10% — 4–5 minutes, clean transitions</li>
-              <li>Q&A Readiness: 5% — confident, concise responses</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Audience Peer Reviews</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <PeerCritiqueForm projectTitle="Month‑End Wizard Final Presentation" unitNumber={2} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Group Datasets (g1–g6)</CardTitle>
-          </CardHeader>
-          <CardContent className="text-sm space-y-2">
-            <p>Same data as Lessons 08–09; no new data today:</p>
-            <ul className="list-disc list-inside">
-              {groups.map((g) => (
-                <li key={g}>
-                  <a className="underline" href={`/resources/unit02-pbl-${slug}-g${g}.csv`} download>
-                    Download unit02-pbl-{slug}-g{g}.csv
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card className="border-teal-200 bg-teal-50">
+<Card className="border-teal-200 bg-teal-50">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-teal-900">
               <Target className="h-5 w-5" />
@@ -129,7 +134,5 @@ export default function Phase1Content() {
             </Button>
           </CardContent>
         </Card>
-
-      </div>
-    </div>
-  )}
+</> : null}
+</>)}

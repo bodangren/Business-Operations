@@ -2,6 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { AlertTriangle } from "lucide-react"
 
+/**
+ * Introduce checks for the month-end close.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase1Content() {
 
   return (
@@ -25,7 +29,7 @@ export default function Phase1Content() {
         <section className="max-w-4xl mx-auto space-y-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              In Lesson 3, Sarah learned how to close temporary accounts—revenue, expenses, and dividends—to Income Summary and then to Retained Earnings. That was a critical step. But there is a dangerous gap between "the entries are closed" and "the close is correct."
+              In Lesson 3, Sarah closed revenue and expenses to Income Summary. She then closed Income Summary to Retained Earnings. Dividends closed directly to Retained Earnings. Now she must check each step of the close.
             </p>
           </div>
 

@@ -1,33 +1,43 @@
-# Unit 02 Lesson 07 – Linking Depreciation into the Month-End Report
+# Unit 2 Lesson 7: Monthly depreciation link
 
-Follow these steps to turn the student workbook (`unit02-lesson07-student.xlsx`) into the completed teacher model (`unit02-lesson07-teacher.xlsx`). The objective is to link the depreciation schedule directly into the summary report so adjustments flow automatically.
+Use a copy of the existing `BM-U02L07.xlsx` file from OneDrive. Keep the original file. This example has three sheets: Summary, Adjustments, and Report. The website reference file uses the same three sheets.
 
-## 1. Confirm the Depreciation Total
+This example checks the depreciation link. It does not contain the complete trial balance or closing journal required for the project. Use the full close workbook assigned by your teacher for those tasks.
 
-- On the **Adjustments** sheet, verify that row 6 already sums annual depreciation to **8,800.00** from Lesson 05.
-- Point out that this total changes as assets are updated—linking it prevents stale numbers in the report.
+## 1. Check the source period
 
-## 2. Open the Report Sheet
+The Summary sheet contains one month of revenue and other operating expenses. Revenue is $18,500. Other operating expenses are $9,400. Depreciation is not included in that expense total.
 
-- Switch to **Report**.
-- Total Revenue (`B3`) and Total Expenses (`B4`) already pull from the Summary sheet.
-- `B5` (Depreciation Expense) is blank; `B6` calculates Net Income as `B3-(B4+B5)`.
+The Adjustments sheet uses useful lives in years. Cells E2:E5 calculate annual depreciation. Their total in E6 is $8,800. Annual and monthly amounts use different periods.
 
-## 3. Link Depreciation Expense
+## 2. Check the annual formulas
 
-1. Click cell `B5`.
-2. Type `=Adjustments!E6` and press Enter.
-3. The Depreciation Expense line now displays **8,800**.
+Use `=ROUND(SLN(B2,C2,D2),2)` in Adjustments!E2. Copy the formula to E3:E5. Each row must refer to its own asset. Use `=SUM(E2:E5)` in E6.
 
-Students should notice Net Income (`B6`) immediately adjusts to **300**, reflecting the true month-end result.
+## 3. Link monthly depreciation
 
-## 4. Optional Formatting Touch
+In Report!B5, enter:
 
-- Bold the report title in `A1` or add currency formatting to the value column if you want to mirror the teacher file precisely.
+```excel
+=ROUND(Adjustments!E6/12,2)
+```
 
-## 5. Save the Teacher Version
+The result must be $733.33. Use a currency format with two decimal places.
 
-- Save the workbook as `unit02-lesson07-teacher.xlsx`.
-- Encourage students to tweak an asset’s cost in **Adjustments** to watch the report update in real time.
+In Report!B6, use:
 
-Linking the adjustment schedule closes the loop on TechStart’s month-end workflow, ensuring every depreciation change hits the report instantly.
+```excel
+=B3-(B4+B5)
+```
+
+Monthly net income must be $8,366.67. The calculation is $18,500 − $9,400 − $733.33.
+
+## 4. Test the link
+
+Increase the van cost in Adjustments!B2 by $1,200. Annual depreciation increases by $240. Monthly depreciation increases by $20. Net income decreases by $20. Restore the original cost after this test.
+
+## 5. Use the result as evidence
+
+Cite Report!B5 and Report!B6 in your recommendation. State that net income does not show available cash. Check the cash balance and payment dates before you recommend a purchase.
+
+Save your practice copy in OneDrive. Do not replace the teacher's original file.

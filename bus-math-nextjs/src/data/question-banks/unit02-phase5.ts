@@ -819,7 +819,10 @@ export const allUnit02Phase5Questions: Unit02Phase5Question[] = [
 ];
 
 /**
- * Convert Unit02Phase5Question to ComprehensionCheck format
+ * Convert questions with the correct answer first.
+ * The quiz component changes display order without changing this key.
+ * @param questions - Source questions to convert.
+ * @returns Quiz items with stable answer keys.
  */
 export function toComprehensionCheckFormat(
   questions: Unit02Phase5Question[]
@@ -827,7 +830,7 @@ export function toComprehensionCheckFormat(
   return questions.map(q => ({
     id: q.id,
     question: q.prompt,
-    answers: shuffleArray([q.correctAnswer, ...q.distractors]),
+    answers: [q.correctAnswer, ...q.distractors],
     explanation: q.explanation
   }));
 }

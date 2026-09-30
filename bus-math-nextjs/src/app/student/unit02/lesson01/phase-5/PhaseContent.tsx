@@ -2,6 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
 import { CheckCircle } from "lucide-react"
 
+/**
+ * Render the workflow exit ticket.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase5Content() {
 
   const assessmentQuestions = [
@@ -58,7 +62,7 @@ export default function Phase5Content() {
         'Surface activity is slow; the deeper problem is lack of staff',
         'Surface activity is about taxes; the deeper problem is about profit'
       ],
-      explanation: 'Sarah\'s weekend nightmare was surface-level activity—trying harder and longer on a cash ledger that can\'t support accrual accounting. The deeper problem is the need for a fundamentally different workflow: accruals, def adjusting entries, and closing entries to show true business performance.'
+      explanation: 'A cash ledger alone cannot show accrual-based performance. Sarah needs adjusting entries before she prepares the financial statements. She then needs closing entries to reset the temporary accounts.'
     }
   ]
 

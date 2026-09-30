@@ -1,72 +1,40 @@
-# Unit 02 Lesson 06 — Build Visible Controls and an Audit Panel
+# Lesson 6: Test the month-end controls
 
-Use Excel for the web. Open `unit02-lesson06-student.xlsx`. Save a working copy before you start.
+Open the textbook-aligned Lesson 6 student workbook. It has Inputs, Close Model, Control Panel, and Scenarios sheets. It includes the Lesson 5 model. Save your own copy.
 
-## 1. Check the Starting Workbook
+## 1. Check the input ranges
 
-Confirm that the workbook has these sheets:
+In Inputs!D5, enter `=IF(AND(B5>=0,B5<=C5),"OK","Review")`. Copy it down to D9. The maximum values are in C5:C9.
 
-1. `Inputs`
-2. `Close Model`
-3. `Control Panel`
-4. `Scenarios`
+Add conditional formatting to B5:D9. Use `=$D5="Review"` to mark failed rows. Apply decimal data validation to each input using a minimum of 0 and the maximum from its row. Keep the visible formula check because pasted values can bypass validation.
 
-The Lesson 05 calculations must already update when the input values change.
+Checkpoint: A supplies value of −25 must show Review. An insurance value of 1,300 must show Review because the maximum is 1,200. Restore the valid values after each test.
 
-## 2. Add the Period Selector
+## 2. Link the selected scenario
 
-1. Go to `Control Panel`.
-2. Select cell `B3`.
-3. Add a Data Validation list with `March,April,May`.
-4. Name cell `B3` as `SelectedPeriod`.
-5. Change the selection and confirm that the selected period appears in the audit panel.
+Control Panel!B3 is named SelectedPeriod. Add a dropdown with March, April, and May.
 
-## 3. Link the Scenario Values to the Inputs
+In Inputs!B5, enter:
 
-1. Go to `Inputs`.
-2. Select cell `B5`.
-3. Enter this formula:
+```excel
+=INDEX(Scenarios!$B$5:$F$7,MATCH(SelectedPeriod,Scenarios!$A$5:$A$7,0),ROW()-4)
+```
 
-   `=INDEX(Scenarios!$B$5:$F$7,MATCH(SelectedPeriod,Scenarios!$A$5:$A$7,0),ROW()-4)`
+Copy it through Inputs!B5:B9. MATCH finds the period row. INDEX returns the appropriate amount. Change scenario amounts on Scenarios; do not overwrite the linked formulas on Inputs.
 
-4. Copy the formula through `Inputs!B5:B9`.
-5. Select March, April, and May in `Control Panel!B3`. Confirm that all five input values change for each period.
+Checkpoint: April must show 1,450, 300, 400, 2,100, and 900. All five range checks must show OK.
 
-`MATCH` finds the selected period row. `ROW()-4` connects input rows 5–9 to scenario columns B–F.
+## 3. Combine and test the controls
 
-## 4. Add Visible Validation
+In Control Panel!B8, enter `=COUNTIF(Inputs!D5:D9,"Review")`.
+In B9, enter:
 
-Add a check next to each input on the `Inputs` sheet. Use this formula pattern:
+```excel
+=IF(OR(COUNT('Close Model'!B4:C13)<>20,COUNT('Close Model'!F19:G33)<>30,COUNTA(Inputs!D5:D9)<>5),"Not finished",IF(AND(B6=0,B7=0,B8=0),"Complete","Review flagged items"))
+```
 
-`=IF(AND(B5>=0,B5<=C5),"OK","Review")`
+Test each scenario. Then temporarily change April supplies on Scenarios!B6 to −25. The input check must show Review, the failed-check count must be 1, and the status must show Review flagged items. Restore 1,450.
 
-Copy the formula through cell `D9`. Apply conditional formatting. Show `OK` in green and `Review` in red. Keep every rule visible.
+Test a journal error by temporarily replacing one linked credit with a different amount. The balance difference must become nonzero. Restore the formula.
 
-## 5. Build the Audit Panel
-
-On `Control Panel`, show these values:
-
-- selected period
-- total adjustment debits
-- total adjustment credits
-- adjustment difference
-- adjusted trial balance difference
-- failed validation count
-- close status
-
-Use this status pattern:
-
-`=IF(AND(B6=0,B7=0,B8=0),"Complete","Review flagged items")`
-
-The status must update when any source value changes.
-
-## 6. Test the Controls
-
-1. Enter one negative input. Confirm that its validation result changes to `Review`.
-2. Enter one unequal debit and credit amount. Confirm that the difference changes from zero.
-3. Restore the correct values. Confirm that all checks return to `OK` and the close status returns to `Complete`.
-4. Change the selected period. Confirm that the audit panel updates.
-
-## 7. Save the Workbook
-
-Save the completed file as `unit02-lesson06-complete.xlsx`. Open it once in Excel for the web and confirm that the dropdowns, formulas, and conditional formatting still work.
+Document each test in your workbook notes. Check the source records and account choices separately. Range and balance checks cannot prove complete accounting accuracy.

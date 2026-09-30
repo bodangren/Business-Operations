@@ -3,11 +3,16 @@ import { Badge } from "@/components/ui/badge"
 import { Download, CheckCircle2, AlertCircle, FileText } from "lucide-react"
 
 
+/**
+ * Guide the Lesson 5 workbook build.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-orange-50">
       
       <div className="space-y-8">
+        <p><a href="/resources/unit02-lesson05-tutorial.md" className="text-primary underline" download>Download the workbook build tutorial</a></p>
         <section className="space-y-6">
           <div className="text-center space-y-4">
             <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">
@@ -192,10 +197,10 @@ export default function Phase4Content() {
                     <div>
                       <h4 className="font-semibold text-emerald-900">Build the CloseStatus Formula</h4>
                       <p className="text-sm text-emerald-800 mt-1">
-                        In <code>Control Panel!B9</code>, add an IF formula that reads the adjustment difference and adjusted trial balance difference. Return "Complete" only when both values equal zero.
+                        In <code>Control Panel!B9</code>, add an IF formula that reads the adjustment difference and adjusted trial balance difference. First return Not finished if journal or adjusted-balance cells are empty. Then return Complete only when both differences equal zero. Use the exact formula in the tutorial.
                       </p>
                       <div className="bg-emerald-200 p-2 rounded mt-2 text-xs">
-                        <strong>Checkpoint:</strong> Change one adjustment amount. CloseStatus must change to "Review flagged items" until the entry balances again.
+                        <strong>Checkpoint:</strong> Change a named input from 1,200 to 1,234. Both sides must update together. CloseStatus can remain Complete because the entry still balances. Then change only its credit cell. CloseStatus must show Review flagged items. Restore the credit formula. Compare the input with the source count to check amount accuracy.
                       </div>
                     </div>
                   </div>

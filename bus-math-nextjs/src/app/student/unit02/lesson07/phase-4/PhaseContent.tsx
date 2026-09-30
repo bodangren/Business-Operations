@@ -40,6 +40,10 @@ const transferFeatures = [
   }
 ]
 
+/**
+ * Guide the recommendation and transfer checks.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-purple-50">
@@ -71,7 +75,7 @@ export default function Phase4Content() {
                     </p>
                   </div>
                   <p className="mt-4">
-                    Example: <em>"TechStart should delay its equipment purchase until Q2. Evidence: Net income this month was only $300 after $8,800 in depreciation, and cash on hand is $12,000 against $9,500 in monthly operating costs. Risk: If a key client pays early, the cash position could improve enough to proceed."</em>
+                    Example: <em>"TechStart should check its cash budget before it buys equipment. Evidence: Monthly revenue is $18,500. Other operating expenses are $9,400. Monthly depreciation is $733.33, so net income is $8,366.67. Risk: Net income does not show available cash. We need the cash balance and payment dates before we can confirm that the purchase is affordable."</em>
                   </p>
                   <p className="mt-4">
                     Write your own recommendation below. Use numbers from the shared workbook.
