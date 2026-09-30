@@ -56,7 +56,7 @@ That page should still include:
 - workflow
 - acceptance criteria
 - checklist or rubric
-- reflection or handoff
+- next-step handoff
 
 ## Non-Negotiable Workbook Rule
 
@@ -78,7 +78,7 @@ What does not change:
 Across lessons 8-10, the project arc should usually be:
 1. kickoff and workbook setup
 2. completion, testing, recommendation, and rehearsal
-3. final presentation, submission, and reflection
+3. final presentation, submission, and completion
 
 ## Milestone Contract
 
@@ -118,19 +118,18 @@ Evidence to require:
 
 ### Lesson 10: Final Presentation and Submission
 Purpose:
-Present the final recommendation, submit the artifact, and reflect on the project.
+Present the final recommendation and submit the artifact.
 
 Requirements:
 - require final polish of workbook and presentation notes
 - make the audience, presentation standard, and submission standard explicit
 - include final checklist and timing guidance
-- require reflection after presentation or submission
+- provide a clear completion confirmation and course handoff
 
 Evidence to require:
 - final workbook
 - final recommendation or presentation artifact
 - submission confirmation
-- reflection
 
 ## Required Page Sections For A Milestone Lesson
 
@@ -144,7 +143,7 @@ A strong group-project milestone page should usually include:
 - acceptance criteria
 - submission checklist
 - rubric or evaluation standard
-- reflection or next-step handoff
+- next-step handoff
 
 ## Dataset and Workbook Assignment Rules
 
@@ -188,7 +187,6 @@ Peer critique should:
 Prefer components that:
 - support checklist-driven progress
 - support peer critique
-- support reflection
 - help students access the correct group files
 - help students understand milestone expectations quickly
 

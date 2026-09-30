@@ -1,1 +1,5 @@
-export { default } from "../page"
+import { LegacyPhaseRedirect } from "@/components/student/LegacyPhaseRedirect"
+
+export default function Phase1Page() {
+  return <LegacyPhaseRedirect legacyPath="/student/unit01/lesson09/phase-1" />
+}

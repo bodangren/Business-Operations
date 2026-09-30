@@ -1,17 +1,22 @@
-import { StudentLessonOverview } from "@/components/student/StudentLessonOverview"
-import { lesson10Data, unit03Data, lesson10Phases } from "./lesson-data"
+import { StudentLessonShell } from "@/components/student/StudentLessonShell"
+import { getNextLessonLink } from "@/lib/lesson-sequence"
+import { getUnitMetadata } from "@/lib/student-navigation"
+import { lesson10Data } from "./lesson-data"
+import Phase1Content from "./phase-1/PhaseContent"
 
 export default function Lesson10Page() {
   return (
-    <div className="container mx-auto py-8">
-      <StudentLessonOverview 
-        lesson={lesson10Data} 
-        unit={unit03Data} 
-        phases={lesson10Phases}
-      />
-      <div className="mt-6">
-        <a className="underline text-blue-600" href="/student/unit03/lesson10/phase-1/">Go to Phase 1</a>
-      </div>
-    </div>
+    <StudentLessonShell
+      unitId="unit03"
+      unitLabel={getUnitMetadata("unit03").label}
+      lessonId="lesson10"
+      lessonNumber={10}
+      lessonTitle={lesson10Data.title}
+      unitHref="/student/unit03"
+      nextLesson={getNextLessonLink("/student/unit03/lesson10") ?? undefined}
+      sections={[
+        { id: "start", children: <Phase1Content /> },
+      ]}
+    />
   )
 }

@@ -1,11 +1,21 @@
 ---
 name: launch-lesson
-description: Write or revise a student-facing launch lesson for Math for Business Operations. Use for Lesson 1 or any lesson explicitly designated as a launch lesson. This skill is for lessons that introduce the founder problem, unit scoreboard, shared simulation, and phase-by-phase launch flow. Do not use for accounting-principles lessons, Excel-principles lessons, or project lessons.
+description: Write or revise a student-facing launch lesson for Math for Business Operations. Use for Lesson 1 or any lesson explicitly designated as a launch lesson. This skill is for lessons that introduce the founder problem, unit scoreboard, shared simulation, and the Start-Learn-Do-Check student flow. Do not use for accounting-principles lessons, Excel-principles lessons, or project lessons.
 ---
 
 # Launch Lesson Skill
 
 Assume the repository's base lesson standard in `AGENTS.md` already applies. This skill adds only the launch-lesson logic.
+
+## Student Presentation Rule
+
+Keep the six phases below as the teaching and authoring contract. Present them on one student route with four visible sections:
+- Start: Hook
+- Learn: Introduction
+- Do: Guided Practice and Independent Practice
+- Check: Assessment and Closing
+
+Use section anchors for direct links. Do not create new phase routes or routine reflection forms.
 
 ## Goal
 
@@ -128,7 +138,7 @@ Requirements:
 - restate the enduring formula, scoreboard, or key unit question
 - summarize what students should now understand
 - preview the first formal rule or principle coming next
-- include reflection
+- provide a direct next-lesson handoff
 
 Avoid:
 - introducing major new content

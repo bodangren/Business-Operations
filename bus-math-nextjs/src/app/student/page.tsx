@@ -4,6 +4,9 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, GraduationCap, FileText, Layers } from "lucide-react"
 import HubUnitCard from "@/components/student/HubUnitCard"
+import CurrentLessonCard from "@/components/student/CurrentLessonCard"
+import { StudentPrimaryNav } from "@/components/student/StudentPrimaryNav"
+import { CURRENT_LESSON } from "@/data/current-lesson"
 import type { UnitId } from "@/types/glossary"
 
 const units: { number: string; title: string; description: string; href: string; unitId: UnitId }[] = [
@@ -20,7 +23,9 @@ const units: { number: string; title: string; description: string; href: string;
 export default function StudentHubPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
-      <div className="mb-8 space-y-2">
+      <StudentPrimaryNav />
+
+      <div className="mt-6 mb-8 space-y-2">
         <Badge variant="outline" className="text-sm">Student Textbook</Badge>
         <h1 className="text-3xl font-bold">Math for Business Operations</h1>
         <p className="text-muted-foreground text-base">
@@ -29,8 +34,12 @@ export default function StudentHubPage() {
         </p>
       </div>
 
+      <div className="mb-8">
+        <CurrentLessonCard config={CURRENT_LESSON} />
+      </div>
+
       {/* Semester 1 */}
-      <section className="mb-8 space-y-4">
+      <section id="units" className="mb-8 space-y-4 scroll-mt-20">
         <h2 className="text-xl font-semibold flex items-center gap-2">
           <BookOpen className="h-5 w-5 text-primary" />
           Semester 1 — Foundations & Automation
@@ -56,7 +65,7 @@ export default function StudentHubPage() {
       </section>
 
       {/* Capstone & Reference */}
-      <section className="mb-8 space-y-4">
+      <section id="resources" className="mb-8 space-y-4 scroll-mt-20">
         <h2 className="text-xl font-semibold flex items-center gap-2">
           <FileText className="h-5 w-5 text-muted-foreground" />
           Capstone & Reference

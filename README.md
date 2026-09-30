@@ -13,27 +13,27 @@ The course follows Sarah Chen's TechStart Solutions as the core business narrati
 - Build accounting fluency through ledgers, journal entries, financial statements, payroll, inventory, and depreciation.
 - Practice Excel thinking through formulas, linked sheets, validation checks, dashboards, and scenario analysis.
 - Make decisions in business contexts, including pricing, cost-volume-profit tradeoffs, payroll design, asset tracking, and investor-readiness.
-- Use formative checks, reflection journals, vocabulary practice, and reference tools to strengthen understanding before major performance tasks.
+- Use one short exit ticket, vocabulary practice, and reference tools to strengthen understanding before major performance tasks.
 - Finish with a 13-week capstone that connects the units into an investor-ready business plan, linked financial model, pitch deck, and model tour.
 
 ## Pedagogical Features
 
-### Six-phase lesson design
+### Simple student lessons
 
-Each lesson is organized into a predictable instructional arc:
+Teacher plans use a predictable six-phase instructional arc:
 
 1. Hook: introduce a business problem students can understand.
 2. Introduction: teach the concept with worked context.
 3. Guided Practice: model the process with scaffolded checks.
 4. Independent Practice: let students make and test decisions.
 5. Assessment: verify understanding before moving on.
-6. Closing: synthesize learning through reflection and transfer.
+6. Closing: synthesize learning and prepare the next transfer step.
 
-That structure makes the textbook easier to teach from: students know where they are in the lesson, and teachers can use phases as natural stopping points for direct instruction, partner work, independent work, exit tickets, or homework.
+Student pages combine these teaching moves into four visible sections: Start, Learn, Do, and Check. Each lesson uses one route. Teachers can link directly to a section with an anchor.
 
-### Formative assessment throughout
+### Focused formative assessment
 
-Interactive checks appear inside lesson phases, not only at the end. Students answer comprehension questions, complete fill-in-the-blank vocabulary prompts, use reflection journals, and revisit key concepts through practice modes. This supports quick classroom checks for understanding before students enter more complex spreadsheet or project work.
+Each standard lesson ends with one short exit ticket. Earlier sections use discussion, worked examples, simulations, workbook checks, and authentic practice. Routine reflection journals are not part of student lessons.
 
 ### Business simulations and decision tools
 
@@ -77,12 +77,6 @@ In Unit 6, students manipulate price and client volume, then read the business c
 
 In Unit 8, students study how an asset register and depreciation schedule work together. The lesson emphasizes linked sheets, formulas, book value, accumulated depreciation, and validation checks.
 
-### Reflection and synthesis
-
-![Closing phase with accounting equation synthesis and reflection journal](./bus-math-nextjs/public/screenshots/lesson-reflection-closing.png)
-
-Closing phases help students consolidate what they learned, connect business concepts to the larger course story, and reflect on courage, adaptability, and persistence.
-
 ### Practice hub
 
 ![Practice Hub with vocabulary study modes and progress indicators](./bus-math-nextjs/public/screenshots/practice-hub.png)
@@ -98,14 +92,14 @@ The capstone gives teachers a long-form performance task: students build a busin
 ## Course Scope
 
 - 8 core units, each built around an applied business operations challenge.
-- 10 lessons per unit, with lesson phases for classroom pacing.
+- 10 lessons per unit, with one student route per lesson.
 - A 13-week capstone sequence with weekly milestones.
 - Teacher dashboard, methodology resources, classroom routines, and unit pages.
 - Student practice hub, bilingual glossary, and subject index.
-- Interactive components for checks, journals, drag-and-drop style practice, spreadsheet previews, and business decision models.
+- Interactive components for exit tickets, drag-and-drop practice, spreadsheet previews, and business decision models.
 
 ## Why It Works in a Classroom
 
-This textbook is built around transfer. Students are not just told what accounting and Excel tools are; they use them to answer business questions that have consequences. The repeated six-phase structure lowers classroom management friction, while the business narrative gives teachers a coherent reason for each new skill.
+This textbook is built around transfer. Students are not just told what accounting and Excel tools are; they use them to answer business questions that have consequences. The teacher-facing six-phase model supports classroom planning. The four-section student page reduces navigation and keeps the current task clear.
 
 It is also honest about complexity. Students learn that good business math is not about finding one magic answer. It is about building a model, checking assumptions, reading outputs, explaining tradeoffs, and improving the decision.

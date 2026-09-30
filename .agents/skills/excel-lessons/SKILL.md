@@ -1,11 +1,21 @@
 ---
 name: excel-lessons
-description: Write or revise a student-facing Excel lesson for Math for Business Operations. Use for lessons 4 or 5 to 6 when the lesson teaches a new Excel tool, workbook pattern, or automation move before project rehearsal. This skill is for business-pressure hooks, explicit tool anatomy, safe simulator practice, workbook build sprints, workbook audit/explanation, and reflection. Do not use for lesson 1 launch lessons, lesson 2 to 3 or 4 accounting-principles lessons, lesson 7 project rehearsal, or lesson 8-10 project lessons.
+description: Write or revise a student-facing Excel lesson for Math for Business Operations. Use for lessons 4 or 5 to 6 when the lesson teaches a new Excel tool, workbook pattern, or automation move before project rehearsal. This skill is for business-pressure hooks, explicit tool anatomy, safe simulator practice, workbook build sprints, workbook audit and explanation, and a concise handoff. Do not use for lesson 1 launch lessons, lesson 2 to 3 or 4 accounting-principles lessons, lesson 7 project rehearsal, or lesson 8-10 project lessons.
 ---
 
 # Excel Lessons Skill
 
 Assume the repository's base lesson standard in `AGENTS.md` already applies. This skill adds only the Excel-lesson logic.
+
+## Student Presentation Rule
+
+Keep the six phases below as the teaching and authoring contract. Present them on one student route with four visible sections:
+- Start: Tool Pressure
+- Learn: Tool Anatomy
+- Do: Safe Rehearsal and Workbook Sprint
+- Check: Audit, Summary, and Handoff
+
+Use section anchors for direct links. Do not create new phase routes or routine reflection forms.
 
 ## Goal
 
@@ -143,18 +153,19 @@ Avoid:
 - bloated assessments
 - turning phase 5 into a second build sprint
 
-### Phase 6: Reflection and Handoff
+### Phase 6: Synthesis and Handoff
 Purpose:
 Lock in what the tool added to the model and preview the next workbook layer.
 
 Requirements:
-- reflect on both tool use and professional judgment
 - name what the student can now do faster or more reliably
 - preview the next workbook layer or next lesson's build
+- provide a direct next-lesson action
 
 Avoid:
 - major new instruction
 - long repetitive recap sections
+- a saved reflection form
 
 ## Spreadsheet Component Rules
 

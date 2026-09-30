@@ -1,11 +1,21 @@
 ---
 name: project-rehearsal
-description: Write or revise a student-facing project rehearsal lesson for Math for Business Operations. Use for lesson 7 or any guided transfer lesson that rehearses the project workbook, quality standard, evidence chain, audit routine, and presentation expectations before students begin the real project. This skill is for shared teacher-data workbook orientation, guided group practice, guided audit, final polish, peer critique, transfer checks, and project handoff. Do not use for launch lessons, accounting-principles lessons, Excel build lessons, or independent project lessons.
+description: Write or revise a student-facing project rehearsal lesson for Math for Business Operations. Use for lesson 7 or any guided transfer lesson that rehearses the project workbook, quality standard, evidence chain, audit routine, and presentation expectations before students begin the real project. This skill is for shared teacher-data workbook orientation, guided group practice, guided audit, final polish, peer critique, transfer checks, and a concise project handoff. Do not use for launch lessons, accounting-principles lessons, Excel build lessons, or independent project lessons.
 ---
 
 # Project Rehearsal Skill
 
 Assume the repository's base lesson standard in `AGENTS.md` already applies. This skill adds only the project-rehearsal lesson logic.
+
+## Student Presentation Rule
+
+Keep the six phases below as the teaching and authoring contract. Present them on one student route with four visible sections:
+- Start: Rehearsal Purpose
+- Learn: Shared Artifact Orientation
+- Do: Guided Audit and Polish
+- Check: Transfer Check, Summary, and Project Handoff
+
+Use section anchors for direct links. Do not create new phase routes or routine reflection forms.
 
 ## Goal
 
@@ -131,12 +141,12 @@ Avoid:
 - assessment that ignores the artifact
 - peer review with no concrete criteria
 
-### Phase 6: Reflection and Project Handoff
+### Phase 6: Synthesis and Project Handoff
 Purpose:
 Lock in the quality standard and preview how students will apply it in their own project scenario.
 
 Requirements:
-- reflect on what the rehearsal clarified
+- summarize what the rehearsal clarified
 - name what must be carried into the project
 - explain what changes in the next lesson when students get their own scenario or team task
 - keep the handoff concrete and specific
@@ -144,6 +154,7 @@ Requirements:
 Avoid:
 - broad motivational closing with no project transition
 - introducing another large standard at the very end
+- a saved reflection form
 
 ## Shared Artifact Rules
 

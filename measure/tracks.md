@@ -8,6 +8,9 @@ Legacy `Unitxx-Improvement-Plan.md` files have been consolidated into the Measur
 
 ## Active Tracks
 
+- [ ] **Track: Student experience simplification**
+  *Link: [./tracks/student_experience_simplification_20260915/](./tracks/student_experience_simplification_20260915/)*
+
 - [x] **Track: Teacher-focused README pitch with screenshots**
   *Link: [./archive/tracks/readme_teacher_pitch_20260506/](./archive/tracks/readme_teacher_pitch_20260506/)*
 - [x] **P0 Track: Teacher/student data alignment audit and amendments**

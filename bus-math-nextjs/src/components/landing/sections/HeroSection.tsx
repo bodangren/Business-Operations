@@ -2,7 +2,7 @@
 
 
 import { Button } from "../ui/Button"
-import { ArrowRight, BookOpen, Users, Award, TrendingUp } from "lucide-react"
+import { ArrowRight, BookOpen, Users, Award, TrendingUp, GraduationCap } from "lucide-react"
 import Link from "next/link"
 
 const quickStats = [
@@ -53,6 +53,12 @@ export function HeroSection() {
               <Link href="/student">
                 <Button variant="outline" size="lg" className="px-10 border-border bg-white/50 backdrop-blur-sm shadow-sm">
                   Browse Units
+                </Button>
+              </Link>
+              <Link href="/teacher">
+                <Button variant="outline" size="lg" className="px-10 border-border bg-white/50 backdrop-blur-sm shadow-sm">
+                  For Teachers
+                  <GraduationCap className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
