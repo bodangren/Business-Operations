@@ -237,6 +237,35 @@ export default function Phase3Content() {
             </CardContent>
           </Card>
 
+          <section className="space-y-4 border-t pt-6" aria-labelledby="manual-close-worksheet">
+            <h3 id="manual-close-worksheet" className="text-xl font-semibold">Manual close worksheet</h3>
+            <p>
+              If your teacher assigns the worksheet, open BM U02L04 - Textbook Aligned.xlsx in OneDrive.
+              A website copy is available below. This is a separate March case. Use the facts in that file.
+            </p>
+            <p>
+              Complete its six sheets in order: Unadjusted TB, Adjustments, Adjusted TB, Financial Statements,
+              Closing Entries, and Post-closing TB. Calculate the amounts by hand. You can enter the results
+              in the worksheet or on paper. Enter 0 on each unused debit or credit side.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="/resources/unit02-lesson04-student.xlsx" className="text-primary underline" download>
+                Download the manual close worksheet
+              </a>
+              <a href="/resources/unit02-lesson04-tutorial.md" className="text-primary underline" download>
+                Download the worksheet guide
+              </a>
+            </div>
+            <details>
+              <summary className="cursor-pointer font-medium">Check the reference after your attempt</summary>
+              <p className="mt-2">
+                <a href="/resources/unit02-lesson04-teacher.xlsx" className="text-primary underline" download>
+                  Download the completed reference
+                </a>. Compare the accounts and amounts. A zero difference alone does not prove that an entry is correct.
+              </p>
+            </details>
+          </section>
+
         </section>
       </div>
 

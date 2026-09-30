@@ -3,6 +3,7 @@
 - [x] Add regression tests for assessment, practice, and feedback defects.
 - [x] Repair quiz keys, prediction state, account labels, adjustment calculations, and closing practice.
 - [x] Replace keyword simulators and align Lessons 5–6 tutorials and checkpoints.
+- [x] Confirm the OneDrive folder and map textbook-aligned Lessons 4–6. Correct the existing Lesson 4 website copies and manual-close guide. Check totals and preserve the original source.
 - [~] Identify the existing OneDrive rehearsal and group workbook sources. Validate the correct source files before changing resource requirements.
 - [~] Align Lessons 7–10 resources, navigation, timing, and accounting checks. Resource mapping needs confirmation.
 - [x] Add local feedback save and export controls.

@@ -37,7 +37,9 @@ export default function Phase4Content() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-orange-800">
-                Download the starter workbook. It contains TechStart's March unadjusted trial balance and blank sections for you to build.
+                Open BM U02L05 - Textbook Aligned.xlsx in OneDrive, or download the website copy below.
+                It contains TechStart&apos;s March unadjusted trial balance and blank sections for you to build.
+                This case has five adjustments. Use this file&apos;s values for the model.
               </p>
               <div className="flex items-center gap-4">
                 <a

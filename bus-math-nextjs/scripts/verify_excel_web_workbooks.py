@@ -17,6 +17,10 @@ UNIT_TWO_FILES = (
     "unit02-lesson06-student.xlsx",
     "unit02-lesson06-teacher.xlsx",
 )
+LESSON_FOUR_SHEETS = [
+    "Unadjusted TB", "Adjustments", "Adjusted TB", "Financial Statements",
+    "Closing Entries", "Post-closing TB",
+]
 FORBIDDEN_PARTS = ("vbaproject.bin", "xl/activex/", "xl/ctrlprops/")
 FORBIDDEN_TEXT = re.compile(r"\b(?:vba|macros?)\b|\.xlsm\b|visual basic", re.IGNORECASE)
 
@@ -48,6 +52,27 @@ def verify_package(path: Path) -> None:
 
 def verify_unit_two_contracts() -> None:
     """Verify workbook sheets, defined names, formulas, and controls."""
+    for version in ("student", "teacher"):
+        path = RESOURCES / f"unit02-lesson04-{version}.xlsx"
+        verify_package(path)
+        workbook = load_workbook(path, data_only=False)
+        require(workbook.sheetnames == LESSON_FOUR_SHEETS, f"Lesson 4 {version}: manual close sheets are missing")
+        opening = workbook["Unadjusted TB"]
+        require(sum(opening.cell(row, 2).value or 0 for row in range(5, 20)) == 51_700, f"Lesson 4 {version}: wrong opening debits")
+        require(sum(opening.cell(row, 3).value or 0 for row in range(5, 20)) == 51_700, f"Lesson 4 {version}: opening trial balance does not balance")
+        require(opening["B24"].value == 4_300, f"Lesson 4 {version}: supplies fact differs from the source")
+        require(opening["B30"].value == 900, f"Lesson 4 {version}: unbilled revenue fact is missing")
+        if version == "student":
+            require(workbook["Adjustments"]["C5"].value is None, "Lesson 4 student: adjusting journal must be blank")
+            require(workbook["Financial Statements"]["B11"].value is None, "Lesson 4 student: net income must be blank")
+            require(workbook["Closing Entries"]["C5"].value is None, "Lesson 4 student: closing journal must be blank")
+        else:
+            require(workbook["Adjustments"]["C15"].value == "Accounts Receivable", "Lesson 4 teacher: accrued revenue debit is missing")
+            require(workbook["Adjusted TB"]["D5"].value.startswith("=SUMIF("), "Lesson 4 teacher: posting must use the journal")
+            require(workbook["Financial Statements"]["B11"].value == "=B5-B10", "Lesson 4 teacher: net income must follow the statements")
+            require(workbook["Closing Entries"]["D12"].value == "='Financial Statements'!B11", "Lesson 4 teacher: close the computed income")
+            require(workbook["Post-closing TB"]["C14"].value == "='Financial Statements'!B16", "Lesson 4 teacher: carry forward ending retained earnings")
+
     for filename in UNIT_TWO_FILES:
         verify_package(RESOURCES / filename)
 
