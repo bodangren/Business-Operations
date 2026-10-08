@@ -39,7 +39,7 @@ export interface StudentLessonShellProps {
  * in canonical order with stable anchors, a four-step progress header, and one
  * next-step action per section. It does not use the legacy phase chrome.
  * @param props - The lesson identity, section content, and next lesson link.
- * @returns The lesson page with matched video review inside Learn.
+ * @returns The lesson page with video review in Learn or the single milestone section.
  */
 export function StudentLessonShell({
   unitId,
@@ -55,6 +55,7 @@ export function StudentLessonShell({
 }: StudentLessonShellProps) {
   const provided = new Map(sections.map((section) => [section.id, section]))
   const visible = STUDENT_LESSON_SECTIONS.filter((section) => provided.has(section.id))
+  const videoSection = provided.has("learn") ? "learn" : visible[0]?.id
 
   return (
     <div className="bg-gradient-to-br from-background via-background to-muted/20">
@@ -122,7 +123,7 @@ export function StudentLessonShell({
 
               <div className="space-y-4">{content?.children}</div>
 
-              {section.id === "learn" && (
+              {section.id === videoSection && (
                 <LessonVideoResources unitId={unitId} lessonNumber={lessonNumber} />
               )}
 

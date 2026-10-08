@@ -1,0 +1,940 @@
+{
+  "checkedAt": "2026-10-08T23:45:53.620Z",
+  "mode": "all 80 source page components, React server render",
+  "expectationSha256": "76c6d8c0ed909f53305715a3332e4abb2f2cb243f13d469ae49a53b864cbdd3b",
+  "pages": 80,
+  "passed": 80,
+  "failed": 0,
+  "results": [
+    {
+      "key": "unit01/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "equation"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson03",
+      "status": "PASS",
+      "accounting": [
+        "debits",
+        "journals",
+        "taccounts"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson04",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "tables"
+      ],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson05",
+      "status": "PASS",
+      "accounting": [
+        "trial"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit01/lesson05#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit01/lesson03#video-review",
+        "/student/unit01/lesson04#video-review",
+        "/student/unit01/lesson05#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit01/lesson03#video-review",
+        "/student/unit01/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit01/lesson05#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit01/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit01/lesson05#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit01/lesson05#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "adjustments"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson03",
+      "status": "PASS",
+      "accounting": [
+        "closing"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson04",
+      "status": "PASS",
+      "accounting": [
+        "cycle",
+        "dep-entry"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson05",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "names"
+      ],
+      "earlierReviews": [
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "validation"
+      ],
+      "earlierReviews": [
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson02#video-review",
+        "/student/unit02/lesson03#video-review",
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson02#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson03#video-review",
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit02/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson01",
+      "status": "PASS",
+      "accounting": [
+        "statements"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "income"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson03",
+      "status": "PASS",
+      "accounting": [
+        "balance"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson04",
+      "status": "PASS",
+      "accounting": [
+        "indirect",
+        "roa",
+        "current"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson05",
+      "status": "PASS",
+      "accounting": [
+        "links"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "selector"
+      ],
+      "earlierReviews": [
+        "/student/unit03/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit03/lesson02#video-review",
+        "/student/unit03/lesson03#video-review",
+        "/student/unit03/lesson04#video-review",
+        "/student/unit03/lesson05#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit03/lesson02#video-review",
+        "/student/unit03/lesson03#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit03/lesson04#video-review",
+        "/student/unit03/lesson05#video-review",
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit03/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit03/lesson05#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson02",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson03",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson04",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "regression"
+      ],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson05",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit04/lesson04#video-review",
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit04/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit04/lesson04#video-review",
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit04/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit04/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "gross-net"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson03",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "payroll-cap"
+      ],
+      "earlierReviews": [
+        "/student/unit05/lesson02#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson04",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson02#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson05",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "sumifs"
+      ],
+      "earlierReviews": [
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit05/lesson03#video-review",
+        "/student/unit05/lesson05#video-review",
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit05/lesson02#video-review",
+        "/student/unit05/lesson03#video-review",
+        "/student/unit05/lesson05#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit05/lesson02#video-review",
+        "/student/unit05/lesson03#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit05/lesson03#video-review",
+        "/student/unit05/lesson05#video-review",
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit05/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit05/lesson02#video-review",
+        "/student/unit05/lesson03#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "margin"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson03",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "cvp"
+      ],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson04",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson05",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson02#video-review",
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson02#video-review",
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit06/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit06/lesson03#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [],
+      "section": null,
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "inventory"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson03",
+      "status": "PASS",
+      "accounting": [
+        "fifo",
+        "lifo"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson04",
+      "status": "PASS",
+      "accounting": [
+        "weighted"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson05",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [
+        "excel-weighted"
+      ],
+      "earlierReviews": [
+        "/student/unit07/lesson03#video-review",
+        "/student/unit07/lesson04#video-review",
+        "/student/unit03/lesson06#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson06",
+      "status": "PASS",
+      "accounting": [
+        "turnover",
+        "days"
+      ],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit03/lesson06#video-review",
+        "/student/unit06/lesson02#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit07/lesson03#video-review",
+        "/student/unit07/lesson04#video-review",
+        "/student/unit07/lesson05#video-review",
+        "/student/unit07/lesson06#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit07/lesson02#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit07/lesson03#video-review",
+        "/student/unit07/lesson04#video-review",
+        "/student/unit07/lesson06#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit07/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit07/lesson03#video-review",
+        "/student/unit07/lesson04#video-review",
+        "/student/unit07/lesson06#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson01",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson02",
+      "status": "PASS",
+      "accounting": [
+        "capitalization"
+      ],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson03",
+      "status": "PASS",
+      "accounting": [
+        "straight"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson04",
+      "status": "PASS",
+      "accounting": [
+        "ddb"
+      ],
+      "excel": [],
+      "earlierReviews": [],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson05",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit08/lesson03#video-review",
+        "/student/unit08/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson06",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit08/lesson03#video-review",
+        "/student/unit08/lesson04#video-review",
+        "/student/unit02/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson07",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit08/lesson02#video-review",
+        "/student/unit08/lesson03#video-review",
+        "/student/unit08/lesson04#video-review"
+      ],
+      "section": "learn",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson08",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit08/lesson02#video-review",
+        "/student/unit08/lesson03#video-review",
+        "/student/unit08/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson09",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit08/lesson03#video-review",
+        "/student/unit08/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    },
+    {
+      "key": "unit08/lesson10",
+      "status": "PASS",
+      "accounting": [],
+      "excel": [],
+      "earlierReviews": [
+        "/student/unit08/lesson03#video-review",
+        "/student/unit08/lesson04#video-review"
+      ],
+      "section": "start",
+      "errors": []
+    }
+  ]
+}

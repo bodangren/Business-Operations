@@ -88,6 +88,14 @@ describe("StudentLessonShell", () => {
     )
   })
 
+  it("places earlier reviews once in the single milestone section", () => {
+    const { container } = renderShell({ lessonId: "lesson09", lessonNumber: 9, sections: [{ id: "start", children: <p>Project milestone</p> }] })
+    expect(container.querySelectorAll("#video-review")).toHaveLength(1)
+    expect(document.getElementById("start")).toContainElement(document.getElementById("video-review"))
+    expect(screen.getByRole("link", { name: /Unit 1, Lesson 5: Trial balance/ })).toHaveAttribute("href", "/student/unit01/lesson05#video-review")
+    expect(container.querySelector("iframe")).toBeNull()
+  })
+
   it("renders the exit ticket and summary inside Check", () => {
     renderShell({
       exitTicket: <p>Exit ticket question</p>,
