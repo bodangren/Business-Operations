@@ -9,6 +9,7 @@ import {
 import type { UnitId } from "@/types/glossary"
 import type { StudentLessonSectionId } from "@/types/student-lesson"
 import LessonVisitRecorder from "./LessonVisitRecorder"
+import LessonVideoResources from "./LessonVideoResources"
 
 export interface StudentLessonShellSection {
   id: StudentLessonSectionId
@@ -37,6 +38,8 @@ export interface StudentLessonShellProps {
  * Compact one-route lesson shell. It renders the four visible student sections
  * in canonical order with stable anchors, a four-step progress header, and one
  * next-step action per section. It does not use the legacy phase chrome.
+ * @param props - The lesson identity, section content, and next lesson link.
+ * @returns The lesson page with matched video review inside Learn.
  */
 export function StudentLessonShell({
   unitId,
@@ -118,6 +121,10 @@ export function StudentLessonShell({
               </div>
 
               <div className="space-y-4">{content?.children}</div>
+
+              {section.id === "learn" && (
+                <LessonVideoResources unitId={unitId} lessonNumber={lessonNumber} />
+              )}
 
               {section.id === "check" && (
                 <div className="space-y-4">
