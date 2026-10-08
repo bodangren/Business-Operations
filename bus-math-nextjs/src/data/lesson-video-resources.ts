@@ -423,6 +423,17 @@ const videos = {
     "startSeconds": 145,
     "endSeconds": 277,
     "kind": "accounting"
+  },
+  "text-columns": {
+    "resourceId": "text-columns",
+    "videoId": "TKQ--deRcUM",
+    "title": "Excel Text To Columns Feature to Split a Column of Text Values. Excel Magic Trick 1905",
+    "channel": "excelisfun",
+    "topic": "Split a text column with Text to Columns",
+    "focus": "Select the source column. Use Data > Text to Columns, choose the delimiter, and set an empty destination range. Keep the original data. Use the class tutorial for TRIM, PROPER, CLEAN, and duplicate checks.",
+    "startSeconds": 52,
+    "endSeconds": 131,
+    "kind": "excel"
   }
 } as const
 
@@ -483,6 +494,7 @@ const lessonVideos: Partial<Record<UnitId, Record<number, LessonVideoSelection>>
   },
   unit04: {
     4: resources(["regression"]),
+    5: resources(["text-columns"]),
     6: resources([], [review("unit03", 6, "Dropdown and exact-match XLOOKUP")], "Use the earlier review for the selector. Use the class tutorial for this forecast model."),
     7: resources([], [review("unit04", 4, "Slope and model fit"), review("unit03", 6, "Dropdown and exact-match XLOOKUP")]),
     8: resources([], [review("unit04", 4, "Slope and model fit")]),

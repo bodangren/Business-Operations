@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-10-08T23:45:53.620Z",
+  "checkedAt": "2026-10-08T23:53:18.515Z",
   "mode": "all 80 source page components, React server render",
-  "expectationSha256": "76c6d8c0ed909f53305715a3332e4abb2f2cb243f13d469ae49a53b864cbdd3b",
+  "expectationSha256": "d97056aee7c7f2152c7376615d7a7049c3626b312a56b1c2f460e340dc0b0ef2",
   "pages": 80,
   "passed": 80,
   "failed": 0,
@@ -399,9 +399,11 @@
       "key": "unit04/lesson05",
       "status": "PASS",
       "accounting": [],
-      "excel": [],
+      "excel": [
+        "text-columns"
+      ],
       "earlierReviews": [],
-      "section": null,
+      "section": "learn",
       "errors": []
     },
     {
