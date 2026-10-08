@@ -3,7 +3,7 @@
  */
 import React from "react"
 import { describe, expect, it } from "vitest"
-import { render, screen } from "@testing-library/react"
+import { render, screen, within } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import { StudentLessonShell } from "../StudentLessonShell"
 
@@ -29,6 +29,15 @@ function renderShell(overrides: Partial<React.ComponentProps<typeof StudentLesso
 }
 
 describe("StudentLessonShell", () => {
+  it("places matched videos inside Learn and keeps all four sections", () => {
+    renderShell({ lessonId: "lesson02", lessonNumber: 2 })
+    const learn = document.getElementById("learn")!
+    expect(within(learn).getByRole("heading", { name: "Video review" })).toBeInTheDocument()
+    expect(document.getElementById("start")?.querySelector("iframe")).toBeNull()
+    expect(screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent))
+      .toEqual(["Start", "Learn", "Do", "Check"])
+  })
+
   it("renders the four sections in Start, Learn, Do, Check order with stable anchors", () => {
     renderShell()
 
