@@ -11,11 +11,11 @@ describe("LessonVideoResources", () => {
     const iframe = container.querySelector("iframe")
     expect(iframe).toHaveAttribute("loading", "lazy")
     expect(iframe?.getAttribute("src")).toContain("youtube-nocookie.com/embed/vGPn_Oo7UBQ")
-    expect(iframe?.getAttribute("src")).toContain("start=2304")
+    expect(iframe?.getAttribute("src")).toContain("start=2320")
     expect(screen.getByRole("link", { name: /Watch on YouTube/ })).toHaveAttribute(
-      "href", "https://www.youtube.com/watch?v=vGPn_Oo7UBQ&t=2304s",
+      "href", "https://www.youtube.com/watch?v=vGPn_Oo7UBQ&t=2320s",
     )
-    expect(screen.getByText(/Specific Identification/)).toBeInTheDocument()
+    expect(screen.getByText(/Use this page for Specific Identification/)).toBeInTheDocument()
   })
 
   it("keeps Excel review optional and collapsed", () => {
@@ -30,7 +30,7 @@ describe("LessonVideoResources", () => {
 
   it("limits a long ratio video to the selected section and collapses workbook review", () => {
     const { container } = render(<LessonVideoResources unitId="unit07" lessonNumber={6} />)
-    expect(container.querySelector("iframe")?.getAttribute("src")).toContain("start=664&end=686")
+    expect(container.querySelector("iframe")?.getAttribute("src")).toContain("start=661&end=686")
     expect(screen.getByText(/Stop at 11:26/)).toBeInTheDocument()
     expect(container.querySelector("details")).not.toHaveAttribute("open")
   })

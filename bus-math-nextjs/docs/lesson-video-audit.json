@@ -1,0 +1,4024 @@
+{
+  "checkedDate": "2026-10-08",
+  "baselineCommit": "3d20e91d59842ffed221c8691ed528850540c67d",
+  "method": "Review actual Learn instruction, worked examples, workbook requirements, and project tasks for all 80 source-rendered lessons. Inspect selected timestamped YouTube transcripts and primary player metadata. Do not treat metadata or a passing schema check as content evidence. Freeze these decisions before implementation. Compare all rendered pages against this file independently of the production map.",
+  "limits": "Transcript review, not full playback. Excel interface versions come from creator narration and descriptions; current desktop execution is not claimed. No suitable match means none was verified in the requested sources, not that no video exists. Local calculations outside the video placement task were not re-audited.",
+  "sources": [
+    {
+      "resourceId": "equation",
+      "videoId": "56xscQ4viWE",
+      "title": "The ACCOUNTING EQUATION For BEGINNERS",
+      "channel": "Accounting Stuff",
+      "topic": "Assets, liabilities, and equity",
+      "focus": "Review the accounting equation and transaction effects. Apply the rule to the examples on this page.",
+      "startSeconds": 30,
+      "endSeconds": 242,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "The transcript explains assets, liabilities, equity, and the balance rule. It then applies the equation to transactions."
+    },
+    {
+      "resourceId": "debits",
+      "videoId": "VhwZ9t2b3Zk",
+      "title": "ACCOUNTING BASICS: Debits and Credits Explained",
+      "channel": "Accounting Stuff",
+      "topic": "Debit and credit rules",
+      "focus": "Review the six DEALER groups. Debits increase Dividends, Expenses, and Assets. Credits increase Liabilities, Equity, and Revenue.",
+      "startSeconds": 40,
+      "endSeconds": 312,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:44 sources and destinations; 2:29 expanded equation; 3:46 six groups; 4:17 DEALER; 4:32 recap."
+    },
+    {
+      "resourceId": "journals",
+      "videoId": "Y-_Q3rANyxU",
+      "title": "How JOURNAL ENTRIES Work (in Accounting)",
+      "channel": "Accounting Stuff",
+      "topic": "Journal format and a worked entry",
+      "focus": "Review journal number, date, accounts, amounts, and description. Check the cash payment example.",
+      "startSeconds": 136,
+      "endSeconds": 346,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:19 definition; 2:27 fields; 3:22 balanced entry; 4:34 laundry payment; 5:41 completed entry."
+    },
+    {
+      "resourceId": "taccounts",
+      "videoId": "kA9snSvCgW8",
+      "title": "T Accounts Explained SIMPLY (With 5 Examples)",
+      "channel": "Accounting Stuff",
+      "topic": "Post transactions to T-accounts",
+      "focus": "Review debit and credit sides. Trace the worked transactions into the affected accounts.",
+      "startSeconds": 63,
+      "endSeconds": 599,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:03 account definition; 1:51 left/right; 2:35 cash balance; 5:23 investment; 6:46 loan; 7:23 equipment; 8:33 revenue and supplies."
+    },
+    {
+      "resourceId": "tables",
+      "videoId": "2xE6FUp7guQ",
+      "title": "Excel for Accountants: PivotTables, Power Query, IF, SUMIFS, VLOOKUP, Flash Fill, Charts…CWU Seminar",
+      "channel": "excelisfun",
+      "topic": "Create and name an Excel Table",
+      "focus": "Review Ctrl+T, headers, table names, and expansion. The video uses an older Excel ribbon. Use the class tutorial for structured references and formatting.",
+      "startSeconds": 5442,
+      "endSeconds": 5514,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:30:42 data layout; 1:30:49 Insert Table or Ctrl+T; 1:31:02 headers; 1:31:10 Table Tools Design naming; 1:31:34 expansion. Stop before Data Relationships."
+    },
+    {
+      "resourceId": "trial",
+      "videoId": "3_PfoTzSCQE",
+      "title": "The TRIAL BALANCE Explained (Full Example!)",
+      "channel": "Accounting Stuff",
+      "topic": "Trial balance and its error limits",
+      "focus": "Review account balances and equal debit and credit totals. A balanced trial balance can still contain missing, duplicate, or wrong-account entries. Use the class tutorial for SUMIF and audit flags.",
+      "startSeconds": 41,
+      "endSeconds": 427,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:41 definition; 2:44 balance does not prove accuracy; 3:35 working trial balance; 6:14 separate columns; 7:03 limitation."
+    },
+    {
+      "resourceId": "adjustments",
+      "videoId": "H0N7tvXuJlU",
+      "title": "Prepayments and Accruals | Adjusting Entries",
+      "channel": "Accounting Stuff",
+      "topic": "Accruals and the four adjustment types",
+      "focus": "Review timing and the four adjustment types. The video starts prepayments as expense or revenue. This lesson starts them as assets or liabilities. Use the lesson entries for the worked calculations.",
+      "startSeconds": 104,
+      "endSeconds": 563,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "3:12 earned/incurred timing; 4:43 prepayments/accruals; 5:36 expense/revenue initial method; 6:39 prepaid/deferred; 8:20 accrued expense/revenue."
+    },
+    {
+      "resourceId": "closing",
+      "videoId": "e1z2lpdQyGQ",
+      "title": "CLOSING ENTRIES: Everything You Need To Know",
+      "channel": "Accounting Stuff",
+      "topic": "Four closing entries with Income Summary",
+      "focus": "Review temporary and permanent accounts. Follow the four-step Income Summary method. The clip stops before the direct-to-Retained-Earnings shortcut.",
+      "startSeconds": 20,
+      "endSeconds": 696,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:20 temporary/permanent; 5:55 four-step method; 6:28 revenue; expense, Income Summary, and dividends closing follow; 11:36 end before shortcut."
+    },
+    {
+      "resourceId": "cycle",
+      "videoId": "yYX4bvQSqbo",
+      "title": "ACCOUNTING BASICS: a Guide to (Almost) Everything",
+      "channel": "Accounting Stuff",
+      "topic": "From trial balance to post-closing trial balance",
+      "focus": "Trace the unadjusted trial balance, adjustments, adjusted trial balance, statements, and closing. The video closes directly to Retained Earnings. Use the four Income Summary entries from Lesson 3.",
+      "startSeconds": 378,
+      "endSeconds": 800,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "6:18 unadjusted trial balance; 7:28 adjustments; 10:14 adjusted trial balance; 10:41 statements; 12:34 closing; 13:10 post-closing trial balance."
+    },
+    {
+      "resourceId": "dep-entry",
+      "videoId": "_pas1ETbrj8",
+      "title": "DEPRECIATION BASICS! With Journal Entries",
+      "channel": "Accounting Stuff",
+      "topic": "Depreciation entry and statement effects",
+      "focus": "Review the debit to Depreciation Expense and credit to Accumulated Depreciation. Trace the effect on book value. This example uses full years and no salvage value.",
+      "startSeconds": 388,
+      "endSeconds": 617,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "6:29 expense entry; 7:11 accumulated depreciation; 8:03 contra asset; 8:15 book value; 9:39 repeated entries and statement effects. Stop before disposal."
+    },
+    {
+      "resourceId": "names",
+      "videoId": "lZq3tR0Y9Ow",
+      "title": "Names and Circular References with important tricks - Excel",
+      "channel": "Ahmed Nasser STT",
+      "topic": "Name a cell and use it in a formula",
+      "focus": "Select a cell and enter its name in the Name Box. Use the name in a formula. This clip stops before the circular-reference example. Use the class tutorial for the control panel.",
+      "startSeconds": 161,
+      "endSeconds": 211,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:41 name creation; 2:45 select; 2:50 Name Box; 3:00 TaxRate; 3:20 formula. Excludes the later instruction to enable iterative calculation."
+    },
+    {
+      "resourceId": "validation",
+      "videoId": "SDfb-cdDDb4",
+      "title": "SUMIFS with Dynamic Data Validation List & Conditional Formatting for Row. Excel Magic Trick 1739",
+      "channel": "excelisfun",
+      "topic": "Create a dynamic validation list",
+      "focus": "Review SORT, UNIQUE, and a validation list in Microsoft 365. This clip does not test amounts, dates, or audit status. Use the class tutorial for those controls.",
+      "startSeconds": 50,
+      "endSeconds": 143,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:50 sorted unique list; 1:03 SORT/UNIQUE; 1:39 Data Validation; 1:52 list source; 1:59 spilled range operator; 2:08 test."
+    },
+    {
+      "resourceId": "statements",
+      "videoId": "Fi1wkUczuyk",
+      "title": "FINANCIAL STATEMENTS: all the basics in 8 MINS!",
+      "channel": "Accounting Stuff",
+      "topic": "What each financial statement shows",
+      "focus": "Review the balance sheet, income statement, and cash flow statement. This is an overview. Use Lesson 4 for the indirect cash flow calculation.",
+      "startSeconds": 22,
+      "endSeconds": 528,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:07 balance sheet snapshot; 3:17 income statement over time; 4:49 profit versus cash; 6:41 opening/closing cash; 7:00 three cash flow groups. The example uses direct cash flow."
+    },
+    {
+      "resourceId": "income",
+      "videoId": "0--AvwZabIQ",
+      "title": "The INCOME STATEMENT for BEGINNERS",
+      "channel": "Accounting Stuff",
+      "topic": "Build an income statement from a trial balance",
+      "focus": "Review revenue, expense groups, and net income. Trace the adjusted trial balance into a basic and detailed income statement.",
+      "startSeconds": 32,
+      "endSeconds": 294,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:32 revenue/expenses; 1:06 detailed groups; 1:52 adjusted trial balance; 2:51 income accounts; 3:23 categorization; 4:08 statement build."
+    },
+    {
+      "resourceId": "balance",
+      "videoId": "CMv1zlZhb4Q",
+      "title": "The BALANCE SHEET for BEGINNERS (Full Example)",
+      "channel": "Accounting Stuff",
+      "topic": "Classify accounts and include retained earnings",
+      "focus": "Review current and non-current accounts. Include net income and dividends in retained earnings before you check the balance sheet.",
+      "startSeconds": 17,
+      "endSeconds": 406,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:17 classification; 2:18 adjusted trial balance; 4:29 omitted current earnings mistake; 5:12 detailed sheet; 5:56 retained earnings rollforward."
+    },
+    {
+      "resourceId": "indirect",
+      "videoId": "8CH-6wdfz0Y",
+      "title": "Prepare A Cash Flow Statement | Indirect Method",
+      "channel": "Accounting Stuff",
+      "topic": "Indirect cash flow from operating activities",
+      "focus": "Start with net income. Add back depreciation and adjust for working capital. This clip covers operating cash flow. Use the lesson for investing, financing, and the final cash check.",
+      "startSeconds": 126,
+      "endSeconds": 555,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:26 net profit; 3:09 non-cash items; 3:37 working capital; 5:25 worked example; 6:20 balance movements; 8:50 operating total. Investing/financing are expressly excluded."
+    },
+    {
+      "resourceId": "roa",
+      "videoId": "3W_LwpeG8c8",
+      "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+      "channel": "Accounting Stuff",
+      "topic": "Return on assets",
+      "focus": "Review net income divided by assets. Use average assets when the workbook supplies opening and closing balances.",
+      "startSeconds": 309,
+      "endSeconds": 382,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "5:18 returns; 5:38 ROA formula; 5:53 period-versus-snapshot warning; 6:04 average balance; 6:22 transition."
+    },
+    {
+      "resourceId": "current",
+      "videoId": "3W_LwpeG8c8",
+      "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+      "channel": "Accounting Stuff",
+      "topic": "Current ratio",
+      "focus": "Review current assets divided by current liabilities. Use this ratio to assess short-term coverage.",
+      "startSeconds": 609,
+      "endSeconds": 629,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "10:09 all current assets; 10:17 current ratio formula; 10:25 liquidity ratio ends."
+    },
+    {
+      "resourceId": "links",
+      "videoId": "_F6a0ddbjtI",
+      "title": "The KEY to Understanding Financial Statements",
+      "channel": "Accounting Stuff",
+      "topic": "Net income links to retained earnings",
+      "focus": "Trace net income and dividends into retained earnings. This clip explains the accounting link. Use the class tutorial for Excel cross-sheet formulas and cash checks.",
+      "startSeconds": 136,
+      "endSeconds": 357,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:16 equity breakdown; 2:50 retained earnings; 3:27 beginning earnings + profit - dividends; 5:16 income statement source; 5:46 link."
+    },
+    {
+      "resourceId": "selector",
+      "videoId": "5IkGnB1ZTaY",
+      "title": "Searchable Data Validation Dropdown List & XLOOKUP function – M365 Excel Magic Trick 1773",
+      "channel": "excelisfun",
+      "topic": "Dropdown selection with exact-match XLOOKUP",
+      "focus": "Create a validation list and return a value with XLOOKUP. XLOOKUP uses exact match by default. Use the class tutorial for scenario tables, charts, and model checks.",
+      "startSeconds": 15,
+      "endSeconds": 78,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:15 list; 0:25 Data Validation; 0:39 source; 0:51 XLOOKUP; 0:54 default exact match; 1:14 returned price. Stops before searchable-list feature."
+    },
+    {
+      "resourceId": "regression",
+      "videoId": "h1Sx8d8cUyo",
+      "title": "Excel Magic Trick # 265: Mixed Cost Accounting Linear Regression - Ron's Class",
+      "channel": "excelisfun",
+      "topic": "SLOPE, INTERCEPT, and RSQ",
+      "focus": "Review SLOPE, INTERCEPT, and RSQ in a cost example. The video uses Excel 2007. Use the class tutorial for current menus, café forecasts, and extrapolation checks.",
+      "startSeconds": 623,
+      "endSeconds": 834,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "10:23 SLOPE; 11:26 INTERCEPT; 11:43 correlation; 13:17 square correlation; 13:35 RSQ. Does not show FORECAST.LINEAR or the café task."
+    },
+    {
+      "resourceId": "gross-net",
+      "videoId": "B-rGJ35ndOQ",
+      "title": "Gross vs Net",
+      "channel": "The Finance Storyteller",
+      "topic": "Gross pay, net pay, and deductions",
+      "focus": "Review gross pay, take-home pay, and deduction types. The example amounts are illustrative. Use the class table and worked examples for payroll calculations.",
+      "startSeconds": 15,
+      "endSeconds": 83,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:21 advertised gross salary; 0:36 take-home net; 0:53 example varies by jurisdiction; 1:03 deduction types. Stop before corporate revenue. Backup used because preferred catalog has no selected payroll gross/net explanation."
+    },
+    {
+      "resourceId": "payroll-cap",
+      "videoId": "sI9Qx3Tk030",
+      "title": "Excel Busn Math 41: Payroll Deductions With Ceilings (FICA)",
+      "channel": "excelisfun",
+      "topic": "Taxable wages when a paycheck crosses a cap",
+      "focus": "Review the capped wage calculation. The video uses an old wage limit. Use the class table. This clip does not cover FIT withholding or total employer cash needs.",
+      "startSeconds": 285,
+      "endSeconds": 592,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "4:45 cumulative earnings; 5:28 below/crossing/above cap; 6:16 exact cap; 8:31 ceiling minus beginning cumulative; 9:19 taxable earnings."
+    },
+    {
+      "resourceId": "sumifs",
+      "videoId": "6c9fIZys7ng",
+      "title": "Learn how to use SUMIFS & COUNTIFS function. SUM or COUNT only certain items! EMT1708.",
+      "channel": "excelisfun",
+      "topic": "SUMIFS with one or two conditions",
+      "focus": "Review the sum range and paired criteria ranges. Apply the pattern to employee hours. A text mismatch can return zero. Use the class tutorial for overtime and payroll formulas.",
+      "startSeconds": 68,
+      "endSeconds": 251,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:08 SUMIFS one condition; 2:23 multiple criteria; 3:09 SUMIFS two conditions; 3:38 extra-space error; 4:00 correction."
+    },
+    {
+      "resourceId": "margin",
+      "videoId": "jS7jbz1UWuA",
+      "title": "GROSS PROFIT MARGIN: a Simple Explanation",
+      "channel": "Accounting Stuff",
+      "topic": "Gross margin uses revenue as the denominator",
+      "focus": "Review gross profit divided by revenue. This clip covers margin. Use the lesson for markup, contribution margin, and break-even calculations.",
+      "startSeconds": 192,
+      "endSeconds": 322,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "3:16 formula; 3:30 direct costs only; 4:01 worked example; 4:42 year comparison. No markup or CVP calculation."
+    },
+    {
+      "resourceId": "cvp",
+      "videoId": "Y58nnb-BWfE",
+      "title": "Highline Excel 2013 Class Video 49: Break Even Analysis Formulas & Chart, Plotting Break Even Point",
+      "channel": "excelisfun",
+      "topic": "CVP formulas and the break-even model",
+      "focus": "Review sales, variable cost, contribution margin, profit, and break-even. The video uses Excel 2013. Use the lesson for capacity and target profit. Round required whole units up.",
+      "startSeconds": 65,
+      "endSeconds": 507,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:05 inputs; 1:46 sales; 3:02 contribution margin; 3:40 total costs; 4:01 profit; 6:17 chart; 7:40 break-even derivation; 8:14 fixed cost divided by price minus variable cost. Stops before rounding to nearest."
+    },
+    {
+      "resourceId": "inventory",
+      "videoId": "OB6RDzqvNbk",
+      "title": "INVENTORY & COST OF GOODS SOLD",
+      "channel": "Accounting Stuff",
+      "topic": "Inventory purchases, sales, and COGS",
+      "focus": "Review inventory as an asset. Trace a purchase and a sale into Inventory, Revenue, and Cost of Goods Sold. Use the lesson for the inventory reconciliation equation.",
+      "startSeconds": 96,
+      "endSeconds": 521,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:36 merchandising goods; 2:12 asset; 3:22 purchase entry; 5:41 revenue; 6:30 transfer to COGS; 7:35 effects. No multi-layer cost flow calculation."
+    },
+    {
+      "resourceId": "fifo",
+      "videoId": "Hvul1enbwjk",
+      "title": "First In First Out (FIFO) | Inventory Cost Flows",
+      "channel": "Accounting Stuff",
+      "topic": "FIFO cost layers and ending inventory",
+      "focus": "Assign the oldest costs to sales. Trace the remaining layers into ending inventory and compare the profit effect when costs rise.",
+      "startSeconds": 161,
+      "endSeconds": 620,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:43 FIFO; 3:18 example; 7:46 oldest layers; 8:45 ending inventory; 9:42 rising-cost effect."
+    },
+    {
+      "resourceId": "lifo",
+      "videoId": "dAEm17g0T6E",
+      "title": "Last In First Out (LIFO) | Inventory Cost Flows",
+      "channel": "Accounting Stuff",
+      "topic": "LIFO cost layers and the profit effect",
+      "focus": "Assign the newest costs to sales. Compare COGS, ending inventory, and gross profit with FIFO.",
+      "startSeconds": 107,
+      "endSeconds": 491,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:50 newest first; 2:09 same example; 5:47 newest layers; 6:39 remaining inventory; 7:35 recent costs; 7:44 rising-cost profit effect."
+    },
+    {
+      "resourceId": "weighted",
+      "videoId": "vGPn_Oo7UBQ",
+      "title": "The Essential Guide to Inventory in Accounting",
+      "channel": "Accounting Stuff",
+      "topic": "Periodic weighted average",
+      "focus": "Divide total available cost by total available units. Use the average for COGS and ending inventory. The video rounds the rate early. Keep full precision until the final money amounts. Use this page for Specific Identification.",
+      "startSeconds": 2320,
+      "endSeconds": 2772,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "38:40 definition; 40:13 weighted unit-cost formula; 40:37 single-sale example; 43:44 blended cost; 44:35 COGS; 45:11 ending inventory. It does not teach Specific Identification."
+    },
+    {
+      "resourceId": "excel-weighted",
+      "videoId": "-tX25Ceh56A",
+      "title": "How to Use Excel to Calculate Ending Inventory, COGS, and Gross Profit with FIFO, LIFO, and WA?",
+      "channel": "Ahmed Nasser STT",
+      "topic": "Calculate weighted-average inventory in Excel",
+      "focus": "Review totals and the weighted-average rate in Excel. The example uses spilled arrays and prior setup sheets. Use the class tutorial for the four-method workbook and its layer formulas.",
+      "startSeconds": 1069,
+      "endSeconds": 1223,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "17:49 Average Cost sheet; 18:49 SUMIF quantities; 19:14 cost total; 19:28 cost divided by quantity; 19:52 ending units; 20:14 ending cost. No Specific Identification."
+    },
+    {
+      "resourceId": "turnover",
+      "videoId": "3W_LwpeG8c8",
+      "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+      "channel": "Accounting Stuff",
+      "topic": "Inventory turnover",
+      "focus": "Review COGS divided by inventory. Use the average inventory value from the class workbook.",
+      "startSeconds": 661,
+      "endSeconds": 686,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "11:01 inventory turnover; 11:08 COGS/inventory; 11:16 interpretation. Average-balance warning occurs earlier at 6:04; page note supplies it."
+    },
+    {
+      "resourceId": "days",
+      "videoId": "3W_LwpeG8c8",
+      "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+      "channel": "Accounting Stuff",
+      "topic": "Days of inventory",
+      "focus": "Review inventory divided by COGS, multiplied by 365. Use average inventory. Match the COGS period to the days measure in your workbook.",
+      "startSeconds": 788,
+      "endSeconds": 824,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "13:08 inverse of turnover; 13:15 inventory/COGS; 13:21 times 365; 13:29 average days. No selector or Excel dashboard instruction."
+    },
+    {
+      "resourceId": "capitalization",
+      "videoId": "_pas1ETbrj8",
+      "title": "DEPRECIATION BASICS! With Journal Entries",
+      "channel": "Accounting Stuff",
+      "topic": "Record an asset cost instead of an expense",
+      "focus": "Review capitalization in the balance sheet. Use the lesson rules for significant cost, useful life, salvage value, and depreciable base.",
+      "startSeconds": 122,
+      "endSeconds": 162,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:04 purchase; 2:16 accrual method; 2:21 capitalization; 2:27 balance-sheet cost; 2:34 later expense. Does not cover the significant-cost threshold or salvage."
+    },
+    {
+      "resourceId": "straight",
+      "videoId": "iruD9KTNnNc",
+      "title": "STRAIGHT LINE Method of Depreciation in 3 Steps!",
+      "channel": "Accounting Stuff",
+      "topic": "Straight-line formula and full-year schedule",
+      "focus": "Review cost, salvage value, useful life, annual expense, accumulated depreciation, and book value. Use the lesson for partial-year calculations.",
+      "startSeconds": 35,
+      "endSeconds": 380,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "1:03 cost/life; 1:38 salvage; 1:47 five columns; 3:14 formula; 4:12 accumulated depreciation; 5:14 completed schedule; 6:11 constant expense."
+    },
+    {
+      "resourceId": "ddb",
+      "videoId": "M-VzJ51zZoM",
+      "title": "DOUBLE DECLINING BALANCE Method of Depreciation",
+      "channel": "Accounting Stuff",
+      "topic": "DDB rate and the first two years",
+      "focus": "Review twice the straight-line rate applied to beginning book value. This example shows the first two years. Use the lesson to enforce the salvage floor and compare complete schedules.",
+      "startSeconds": 145,
+      "endSeconds": 277,
+      "kind": "accounting",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "2:25 depreciation; 2:50 double rate; 3:11 beginning book value; 3:31 first year; 4:07 second year. Excludes the earlier suggestion to ignore residual value and later incomplete end-of-life result."
+    }
+  ],
+  "unusedAccountingCandidates": [
+    {
+      "candidate": "ledger",
+      "title": "GENERAL LEDGER: Visual Guide to Posting Journals",
+      "videoId": "Fu8zGee1SZw",
+      "channel": "Accounting Stuff",
+      "note": "Manual posting example starts at 02:43. Software example starts at 05:46.",
+      "decision": "The manual posting example is not an Excel Table procedure. Journal and T-account reviews already teach posting."
+    },
+    {
+      "candidate": "cashaccrual",
+      "title": "CASH VS ACCRUAL ACCOUNTING: Explained in (Almost) 2 Minutes!",
+      "videoId": "CRcHPo-gP1M",
+      "channel": "Accounting Stuff",
+      "note": "Cash method starts at 01:14. Accrual method starts at 02:18. Do not infer duration from the title.",
+      "decision": "The selected adjustment clip covers earned/incurred timing. Do not add a second timing overview. Transcript export failed for this candidate; it is not installed."
+    },
+    {
+      "candidate": "prepaid",
+      "title": "How Prepaid Expenses Work | Adjusting Entries",
+      "videoId": "RE7wrflFOGA",
+      "channel": "Accounting Stuff",
+      "note": "Optional detail for prepaid expenses. Verified in the creator's linked course index.",
+      "decision": "Detail candidate only. Not installed; the course worked examples and selected overview support the lesson. Segment not inspected."
+    },
+    {
+      "candidate": "deferred",
+      "title": "Deferred Revenue Explained | Adjusting Entries",
+      "videoId": "F1zNQ1wga7o",
+      "channel": "Accounting Stuff",
+      "note": "Optional detail for unearned revenue. Verified in the creator's linked course index.",
+      "decision": "Detail candidate only. Not installed; the course worked examples and selected overview support the lesson. Segment not inspected."
+    },
+    {
+      "candidate": "accruedexpense",
+      "title": "Accrued Expenses Broken Down | Adjusting Entries",
+      "videoId": "9aZ6CCj-ies",
+      "channel": "Accounting Stuff",
+      "note": "Optional detail for incurred costs that are not yet paid. Verified in the creator's linked course index.",
+      "decision": "Detail candidate only. Not installed; earlier adjustment review supports payroll timing. Segment not inspected."
+    },
+    {
+      "candidate": "accruedrevenue",
+      "title": "Accrued Revenue MADE EASY | Adjusting Entries",
+      "videoId": "7ibN25VCvFg",
+      "channel": "Accounting Stuff",
+      "note": "Optional detail for earned revenue that is not yet paid. Verified in the creator's linked course index.",
+      "decision": "Detail candidate only. Not installed; the course worked examples and selected overview support the lesson. Segment not inspected."
+    },
+    {
+      "candidate": "taxbrackets",
+      "title": "TAX BRACKETS: a Simple Guide for Beginners",
+      "videoId": "FeANJVZNfTA",
+      "channel": "Accounting Stuff",
+      "note": "Concept support for progressive tax and marginal rates. It does not provide the lesson's current payroll withholding procedure.",
+      "decision": "Reject the former Unit 5 Lesson 3 placement. Marginal annual tax is not the payroll withholding, employer-tax, or wage-cap procedure. Do not present it as a payroll tutorial."
+    }
+  ],
+  "rejectedInstalledExcel": [
+    {
+      "videoId": "_dVB1gPIKx4",
+      "reason": "The transcript automates balanced journal rows from one amount. It does not detect invalid, missing, duplicate, or unbalanced entries with the lesson checks."
+    },
+    {
+      "videoId": "hvrba_TKqqo",
+      "reason": "SUMIFS yearly income statement construction does not teach cross-sheet links. Replaced by accounting relationship support with a stated Excel gap."
+    },
+    {
+      "videoId": "W6JMFsVAzJI",
+      "reason": "Creator chapters teach TEXTSPLIT, FILTERXML, and Power Query. They do not teach the Data > Text to Columns procedure."
+    },
+    {
+      "videoId": "RcXVitTsHLE",
+      "reason": "The transcript demonstrates a new table-name dialog only. Replaced by the user-provided seminar segment for Create Table, headers, naming, and expansion."
+    }
+  ],
+  "repeatPolicy": "Each exact segment is embedded once. The ratios video has four separate ratio segments. The depreciation video has two separate segments: the entry and capitalization. These segments teach different topics. Repeated schedules, selectors, trial balances, and workflows use earlier-lesson links.",
+  "rows": [
+    {
+      "key": "unit01/lesson01",
+      "title": "Introduction: Sarah's Challenge",
+      "topics": [
+        "Accounting equation",
+        "transaction effects",
+        "business records and investor trust"
+      ],
+      "sourceSha256": "21e5e238793fdc90d002b46c83f3cabb6b8d6c9c35085553f777b4036fc72559",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No new video. Keep the launch story and equation prediction as the introduction.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [
+        {
+          "candidate": "basics",
+          "videoId": "yYX4bvQSqbo",
+          "decision": "Keep the launch task. Place only the close-cycle segment in Unit 2 Lesson 4; later lessons link there."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/IN4MBaOdLRY?rel=0&modestbranding=1",
+          "title": "From Chaos to Control: Starting Your Business with a Smart Ledger",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/IN4MBaOdLRY?rel=0&modestbranding=1",
+          "title": "From Chaos to Control: Starting Your Business with a Smart Ledger",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit01/lesson02",
+      "title": "Classifying Transactions: How Business Events Change the Accounting Equation",
+      "topics": [
+        "Assets, liabilities, equity",
+        "transaction effects",
+        "equation balance"
+      ],
+      "sourceSha256": "e2a7a1b7f201fa926122f2398337c06da4308e284cfdbab7663804453a802875",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "equation",
+          "videoId": "56xscQ4viWE",
+          "title": "The ACCOUNTING EQUATION For BEGINNERS",
+          "channel": "Accounting Stuff",
+          "topic": "Assets, liabilities, and equity",
+          "focus": "Review the accounting equation and transaction effects. Apply the rule to the examples on this page.",
+          "startSeconds": 30,
+          "endSeconds": 242
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "equation",
+          "videoId": "56xscQ4viWE",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/56xscQ4viWE?rel=0",
+          "title": "The ACCOUNTING EQUATION For BEGINNERS — Accounting Stuff",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson03",
+      "title": "Debit, Credit, and Journal Entries",
+      "topics": [
+        "Six DEALER groups",
+        "journal entries",
+        "T-accounts",
+        "normal balances"
+      ],
+      "sourceSha256": "8b20def8a8f3e09abdfa4066d6a48204126d2d3a7970537ea403eef3ae3a9491",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "debits",
+          "videoId": "VhwZ9t2b3Zk",
+          "title": "ACCOUNTING BASICS: Debits and Credits Explained",
+          "channel": "Accounting Stuff",
+          "topic": "Debit and credit rules",
+          "focus": "Review the six DEALER groups. Debits increase Dividends, Expenses, and Assets. Credits increase Liabilities, Equity, and Revenue.",
+          "startSeconds": 40,
+          "endSeconds": 312
+        },
+        {
+          "resourceId": "journals",
+          "videoId": "Y-_Q3rANyxU",
+          "title": "How JOURNAL ENTRIES Work (in Accounting)",
+          "channel": "Accounting Stuff",
+          "topic": "Journal format and a worked entry",
+          "focus": "Review journal number, date, accounts, amounts, and description. Check the cash payment example.",
+          "startSeconds": 136,
+          "endSeconds": 346
+        },
+        {
+          "resourceId": "taccounts",
+          "videoId": "kA9snSvCgW8",
+          "title": "T Accounts Explained SIMPLY (With 5 Examples)",
+          "channel": "Accounting Stuff",
+          "topic": "Post transactions to T-accounts",
+          "focus": "Review debit and credit sides. Trace the worked transactions into the affected accounts.",
+          "startSeconds": 63,
+          "endSeconds": 599
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "debits",
+          "videoId": "VhwZ9t2b3Zk",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "journals",
+          "videoId": "Y-_Q3rANyxU",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "taccounts",
+          "videoId": "kA9snSvCgW8",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/VhwZ9t2b3Zk?rel=0",
+          "title": "ACCOUNTING BASICS: Debits and Credits Explained — Accounting Stuff",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Y-_Q3rANyxU?rel=0&start=146",
+          "title": "How JOURNAL ENTRIES Work (in Accounting) — Accounting Stuff — 2:26",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson04",
+      "title": "Excel Model: Move Manual Ledger to Excel Table",
+      "topics": [
+        "Excel Tables",
+        "LedgerTable",
+        "structured references",
+        "formats",
+        "filters",
+        "table expansion"
+      ],
+      "sourceSha256": "0cbf16f3f85d74c1f75a79d877182a7a6da6b1b4aca76e1670a7d7d8f54b9780",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "tables",
+          "videoId": "2xE6FUp7guQ",
+          "title": "Excel for Accountants: PivotTables, Power Query, IF, SUMIFS, VLOOKUP, Flash Fill, Charts…CWU Seminar",
+          "channel": "excelisfun",
+          "topic": "Create and name an Excel Table",
+          "focus": "Review Ctrl+T, headers, table names, and expansion. The video uses an older Excel ribbon. Use the class tutorial for structured references and formatting.",
+          "startSeconds": 5442,
+          "endSeconds": 5514
+        }
+      ],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "The clip does not teach ledger structured-reference formulas or all formatting steps.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "ledger",
+          "videoId": "Fu8zGee1SZw",
+          "decision": "The manual posting example is not an Excel Table procedure. Journal and T-account reviews already teach posting."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/RcXVitTsHLE?rel=0",
+          "title": "Naming Excel Tables Became Easy. Excel Magic Trick 1927 — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson05",
+      "title": "Build Self-Auditing Formulas and Error Flags",
+      "topics": [
+        "SUMIF trial balance",
+        "SUMIFS entry check",
+        "debit/credit totals",
+        "missing accounts",
+        "invalid amounts",
+        "error flags"
+      ],
+      "sourceSha256": "e66276b3a271a584bdca312d208ca74554ca321867d249219143c633a0a6e96b",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "trial",
+          "videoId": "3_PfoTzSCQE",
+          "title": "The TRIAL BALANCE Explained (Full Example!)",
+          "channel": "Accounting Stuff",
+          "topic": "Trial balance and its error limits",
+          "focus": "Review account balances and equal debit and credit totals. A balanced trial balance can still contain missing, duplicate, or wrong-account entries. Use the class tutorial for SUMIF and audit flags.",
+          "startSeconds": 41,
+          "endSeconds": 427
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "The accounting clip does not implement SUMIF/SUMIFS or the four workbook controls.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "trial",
+          "videoId": "3_PfoTzSCQE",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/3_PfoTzSCQE?rel=0",
+          "title": "The TRIAL BALANCE Explained (Full Example!) — Accounting Stuff",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/_dVB1gPIKx4?rel=0",
+          "title": "Journal Entries without Balance errors in Excel 365 — Ahmed Nasser STT",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson06",
+      "title": "Investor-Facing Summary & Workbook Polish",
+      "topics": [
+        "ExecutiveSummary metrics",
+        "IF/COUNTIF status",
+        "formatting",
+        "evidence limits"
+      ],
+      "sourceSha256": "45d4ca560588bf901f40e2c6a407d4de4d8e784ac767eb69fd6d5de57bfa858c",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit01",
+          "lessonNumber": 5,
+          "topic": "Trial balance and error limits",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "No selected clip teaches ExecutiveSummary layout or status formulas.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "trial",
+          "videoId": "3_PfoTzSCQE",
+          "decision": "Link to Unit 1 Lesson 5. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson07",
+      "title": "Project Rehearsal: Shared Data, Shared Standard",
+      "topics": [
+        "Shared ledger workbook",
+        "trace evidence",
+        "peer audit",
+        "readiness recommendation"
+      ],
+      "sourceSha256": "f83ceb5e226186b35eb0d35bfe2eb83833dd4f91d58cdcf14349ada19dc5a8dc",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit01",
+          "lessonNumber": 3,
+          "topic": "Journal entries and T-accounts",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit01",
+          "lessonNumber": 4,
+          "topic": "Create and name a Table",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit01",
+          "lessonNumber": 5,
+          "topic": "Trial balance and error limits",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "trial",
+          "videoId": "3_PfoTzSCQE",
+          "decision": "Link to Unit 1 Lesson 5. Do not repeat the embed."
+        },
+        {
+          "candidate": "journals",
+          "videoId": "Y-_Q3rANyxU",
+          "decision": "Link to Unit 1 Lesson 3. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson08",
+      "title": "Project Milestone 1: Kickoff & Workbook Setup",
+      "topics": [
+        "Assigned group data",
+        "ledger setup",
+        "chart of accounts",
+        "journal entries"
+      ],
+      "sourceSha256": "09350cd27dd43f9a3cfd503b058a087effaef0f22f0cca939389133658c17401",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit01",
+          "lessonNumber": 3,
+          "topic": "Journal entries and T-accounts",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit01",
+          "lessonNumber": 4,
+          "topic": "Create and name a Table",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "ledger",
+          "videoId": "Fu8zGee1SZw",
+          "decision": "The manual posting example is not an Excel Table procedure. Journal and T-account reviews already teach posting."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson09",
+      "title": "Project Milestone 2: Complete Workbook & Rehearse",
+      "topics": [
+        "Complete ledger",
+        "trial balance and controls",
+        "recommendation",
+        "rehearsal"
+      ],
+      "sourceSha256": "3cabe0d4377169f3f6fb9111cce0dd5a1a5535e7eb16a15b1a4ba39fc7300441",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit01",
+          "lessonNumber": 5,
+          "topic": "Trial balance and error limits",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "trial",
+          "videoId": "3_PfoTzSCQE",
+          "decision": "Link to Unit 1 Lesson 5. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit01/lesson10",
+      "title": "Project Milestone 3: Final Presentation & Submission",
+      "topics": [
+        "Present evidence",
+        "defend checks",
+        "submit workbook"
+      ],
+      "sourceSha256": "28bef6014055eaf8d7ba1a8e26edf2b35cbc3dc41f67ec5b4100deda9496cc87",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit01",
+          "lessonNumber": 5,
+          "topic": "Trial balance and error limits",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson01",
+      "title": "Launch: The Month-End Closing Crisis",
+      "topics": [
+        "Month-end timing, accuracy, and close workflow preview"
+      ],
+      "sourceSha256": "946fcd759cea394de8868daef75231eb77f2f7b32fe63af893a3f10cad499d17",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit01",
+          "lessonNumber": 5,
+          "topic": "Trial balance and error limits",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier trial-balance review only. Formal close instruction is in Lessons 2–4.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "basics",
+          "videoId": "yYX4bvQSqbo",
+          "decision": "Keep the launch task. Place only the close-cycle segment in Unit 2 Lesson 4; later lessons link there."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/1O_YHSGpZDo?rel=0&modestbranding=1",
+          "title": "The Closing Crisis: Growing Pains",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/1O_YHSGpZDo?rel=0&modestbranding=1",
+          "title": "The Closing Crisis: Growing Pains",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit02/lesson02",
+      "title": "Accruals and Deferrals: Timing Is Everything",
+      "topics": [
+        "Accrual timing",
+        "prepaid expenses",
+        "deferred revenue",
+        "accrued expenses and revenue",
+        "adjustment calculations"
+      ],
+      "sourceSha256": "2ea4ccefb087052a84a3303cc9c0a1bed8da1493fb72b775486600a3767aa38e",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "adjustments",
+          "videoId": "H0N7tvXuJlU",
+          "title": "Prepayments and Accruals | Adjusting Entries",
+          "channel": "Accounting Stuff",
+          "topic": "Accruals and the four adjustment types",
+          "focus": "Review timing and the four adjustment types. The video starts prepayments as expense or revenue. This lesson starts them as assets or liabilities. Use the lesson entries for the worked calculations.",
+          "startSeconds": 104,
+          "endSeconds": 563
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "The clip is conceptual. Its initial prepayment entries differ from the course method.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "adjustments",
+          "videoId": "H0N7tvXuJlU",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "cashaccrual",
+          "videoId": "CRcHPo-gP1M",
+          "decision": "The selected adjustment clip covers earned/incurred timing. Do not add a second timing overview. Transcript export failed for this candidate; it is not installed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/H0N7tvXuJlU?rel=0",
+          "title": "Prepayments and Accruals | Adjusting Entries — Accounting Stuff",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/CRcHPo-gP1M?rel=0",
+          "title": "CASH VS ACCRUAL ACCOUNTING: Explained in (Almost) 2 Minutes! — Accounting Stuff",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson03",
+      "title": "Closing Entries: Resetting Temporary Accounts",
+      "topics": [
+        "Temporary and permanent accounts",
+        "four closing entries through Income Summary",
+        "post-closing balances"
+      ],
+      "sourceSha256": "8363f422860acf40d261bc3ec547a2cda4286f5bf746531da985d2ce584761bc",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "closing",
+          "videoId": "e1z2lpdQyGQ",
+          "title": "CLOSING ENTRIES: Everything You Need To Know",
+          "channel": "Accounting Stuff",
+          "topic": "Four closing entries with Income Summary",
+          "focus": "Review temporary and permanent accounts. Follow the four-step Income Summary method. The clip stops before the direct-to-Retained-Earnings shortcut.",
+          "startSeconds": 20,
+          "endSeconds": 696
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "closing",
+          "videoId": "e1z2lpdQyGQ",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/e1z2lpdQyGQ?rel=0",
+          "title": "CLOSING ENTRIES: Everything You Need To Know — Accounting Stuff",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson04",
+      "title": "Complete Manual Month-End Flow",
+      "topics": [
+        "Unadjusted trial balance",
+        "adjustments including depreciation",
+        "adjusted trial balance",
+        "statements",
+        "closing",
+        "post-closing trial balance"
+      ],
+      "sourceSha256": "5b0af5362f79f3e38f55dd231faac990b1b5a798a8a4e1b2c44635574441cdc8",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "cycle",
+          "videoId": "yYX4bvQSqbo",
+          "title": "ACCOUNTING BASICS: a Guide to (Almost) Everything",
+          "channel": "Accounting Stuff",
+          "topic": "From trial balance to post-closing trial balance",
+          "focus": "Trace the unadjusted trial balance, adjustments, adjusted trial balance, statements, and closing. The video closes directly to Retained Earnings. Use the four Income Summary entries from Lesson 3.",
+          "startSeconds": 378,
+          "endSeconds": 800
+        },
+        {
+          "resourceId": "dep-entry",
+          "videoId": "_pas1ETbrj8",
+          "title": "DEPRECIATION BASICS! With Journal Entries",
+          "channel": "Accounting Stuff",
+          "topic": "Depreciation entry and statement effects",
+          "focus": "Review the debit to Depreciation Expense and credit to Accumulated Depreciation. Trace the effect on book value. This example uses full years and no salvage value.",
+          "startSeconds": 388,
+          "endSeconds": 617
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "basics",
+          "videoId": "yYX4bvQSqbo",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "depbasics",
+          "videoId": "_pas1ETbrj8",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/_pas1ETbrj8?rel=0&start=283",
+          "title": "DEPRECIATION BASICS! With Journal Entries — Accounting Stuff — 4:43",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson05",
+      "title": "Build First Automation Layer",
+      "topics": [
+        "Named ranges",
+        "linked calculation blocks",
+        "trial balance checks",
+        "IF/AND status"
+      ],
+      "sourceSha256": "ea6cbcceecc0298eb2bc71d2696cd61bef001a3435468c1ad368665ba3f92b5a",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "names",
+          "videoId": "lZq3tR0Y9Ow",
+          "title": "Names and Circular References with important tricks - Excel",
+          "channel": "Ahmed Nasser STT",
+          "topic": "Name a cell and use it in a formula",
+          "focus": "Select a cell and enter its name in the Name Box. Use the name in a formula. This clip stops before the circular-reference example. Use the class tutorial for the control panel.",
+          "startSeconds": 161,
+          "endSeconds": 211
+        }
+      ],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Named-cell clip only. Linked close blocks and IF/AND checks remain in the tutorial.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [
+        {
+          "candidate": "adjustments",
+          "videoId": "H0N7tvXuJlU",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        },
+        {
+          "candidate": "closing",
+          "videoId": "e1z2lpdQyGQ",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/lZq3tR0Y9Ow?rel=0",
+          "title": "Names and Circular References with important tricks — Ahmed Nasser STT",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson06",
+      "title": "Polish Wizard Interface: Validation, Controls, and Auditability",
+      "topics": [
+        "Validation for amounts, dates, account, period",
+        "traceable audit panel",
+        "error checks"
+      ],
+      "sourceSha256": "33ed9aba6d73a91cb83fdf38ff58d242e7a49b91396276a47f58358acad62d3c",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "validation",
+          "videoId": "SDfb-cdDDb4",
+          "title": "SUMIFS with Dynamic Data Validation List & Conditional Formatting for Row. Excel Magic Trick 1739",
+          "channel": "excelisfun",
+          "topic": "Create a dynamic validation list",
+          "focus": "Review SORT, UNIQUE, and a validation list in Microsoft 365. This clip does not test amounts, dates, or audit status. Use the class tutorial for those controls.",
+          "startSeconds": 50,
+          "endSeconds": 143
+        }
+      ],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Dynamic list only. Negative amounts, dates, periods, and audit panel are not covered.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/SDfb-cdDDb4?rel=0",
+          "title": "SUMIFS, Dynamic Data Validation List and Conditional Formatting — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson07",
+      "title": "Project Rehearsal: Guided Practice with Shared Data",
+      "topics": [
+        "Shared close workbook",
+        "audit seven tabs",
+        "trace evidence",
+        "recommendation"
+      ],
+      "sourceSha256": "0925cb3f099868972de6c47aaa14c64b4cedb4d32a3792ef5190a4d5e53fd66e",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 2,
+          "topic": "Accrual and adjustment timing",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit02",
+          "lessonNumber": 3,
+          "topic": "Four closing entries",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "adjustments",
+          "videoId": "H0N7tvXuJlU",
+          "decision": "Link to Unit 2 Lesson 2. Do not repeat the embed."
+        },
+        {
+          "candidate": "closing",
+          "videoId": "e1z2lpdQyGQ",
+          "decision": "Link to Unit 2 Lesson 3. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson08",
+      "title": "Project Kickoff: Your Group's Month-End Scenario",
+      "topics": [
+        "Assigned group workbook",
+        "adjustment setup",
+        "control plan"
+      ],
+      "sourceSha256": "9227c7dd7e0ea5134eee2e46a3a90fd824f01628378178f3744f156a5e977ae2",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 2,
+          "topic": "Accrual and adjustment timing",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "adjustments",
+          "videoId": "H0N7tvXuJlU",
+          "decision": "Link to Unit 2 Lesson 2. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson09",
+      "title": "Complete Workbook and Rehearse Demo",
+      "topics": [
+        "Complete adjustments, statements, closing, checks",
+        "recommendation",
+        "rehearsal"
+      ],
+      "sourceSha256": "9155b083837a92fafbf0b68a23b58a608bf8ccc06a549ad5866e91089479daf3",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 3,
+          "topic": "Four closing entries",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "closing",
+          "videoId": "e1z2lpdQyGQ",
+          "decision": "Link to Unit 2 Lesson 3. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit02/lesson10",
+      "title": "PBL Milestone 3: Final Innovation Fair Demo",
+      "topics": [
+        "Present close evidence",
+        "answer questions",
+        "submit workbook"
+      ],
+      "sourceSha256": "b62b7b8aece8ab6979379cc2a3c7c84c20a2924cdc6c908ef27963846964e915",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson01",
+      "title": "Launch: The Investor Question",
+      "topics": [
+        "Profit, solvency, and cash",
+        "purpose of three financial statements"
+      ],
+      "sourceSha256": "af2dc3e40d48c154ebf536bf8be46fcfdef721f6c8ef70cbf78fe07c0adba61c",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "statements",
+          "videoId": "Fi1wkUczuyk",
+          "title": "FINANCIAL STATEMENTS: all the basics in 8 MINS!",
+          "channel": "Accounting Stuff",
+          "topic": "What each financial statement shows",
+          "focus": "Review the balance sheet, income statement, and cash flow statement. This is an overview. Use Lesson 4 for the indirect cash flow calculation.",
+          "startSeconds": 22,
+          "endSeconds": 528
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Overview only. The example uses the direct cash flow method.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "statements",
+          "videoId": "Fi1wkUczuyk",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/XHZjrjOcr7E?rel=0&modestbranding=1",
+          "title": "Speaking the Language of Investors: Creating Financial Statements",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/XHZjrjOcr7E?rel=0&modestbranding=1",
+          "title": "Speaking the Language of Investors: Creating Financial Statements",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit03/lesson02",
+      "title": "Build the Income Statement",
+      "topics": [
+        "Adjusted trial balance to income statement",
+        "revenue and expense groups",
+        "net income"
+      ],
+      "sourceSha256": "17d1c9e9141e06b04241d43196144b3b475483de228517ad2b00c89e79260887",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "income",
+          "videoId": "0--AvwZabIQ",
+          "title": "The INCOME STATEMENT for BEGINNERS",
+          "channel": "Accounting Stuff",
+          "topic": "Build an income statement from a trial balance",
+          "focus": "Review revenue, expense groups, and net income. Trace the adjusted trial balance into a basic and detailed income statement.",
+          "startSeconds": 32,
+          "endSeconds": 294
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "income",
+          "videoId": "0--AvwZabIQ",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/0--AvwZabIQ?rel=0&start=112",
+          "title": "The INCOME STATEMENT for BEGINNERS — Accounting Stuff — 1:52",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson03",
+      "title": "Build the Balance Sheet and Retained Earnings",
+      "topics": [
+        "Current/non-current assets and liabilities",
+        "equity",
+        "retained earnings rollforward",
+        "balance check"
+      ],
+      "sourceSha256": "432db99862aaeddcf5f6c23edb224a91fe71c73d2bee50fbd4a8f31353121f19",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "balance",
+          "videoId": "CMv1zlZhb4Q",
+          "title": "The BALANCE SHEET for BEGINNERS (Full Example)",
+          "channel": "Accounting Stuff",
+          "topic": "Classify accounts and include retained earnings",
+          "focus": "Review current and non-current accounts. Include net income and dividends in retained earnings before you check the balance sheet.",
+          "startSeconds": 17,
+          "endSeconds": 406
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "balance",
+          "videoId": "CMv1zlZhb4Q",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "relationships",
+          "videoId": "_F6a0ddbjtI",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/CMv1zlZhb4Q?rel=0&start=138",
+          "title": "The BALANCE SHEET for BEGINNERS (Full Example) — Accounting Stuff — 2:18",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/_F6a0ddbjtI?rel=0",
+          "title": "The KEY to Understanding Financial Statements — Accounting Stuff",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson04",
+      "title": "Indirect Cash Flow Statement and Ratio Interpretation",
+      "topics": [
+        "Indirect cash flow",
+        "working capital signs",
+        "operating/investing/financing",
+        "cash reconciliation",
+        "ROA",
+        "current ratio"
+      ],
+      "sourceSha256": "dd388851ee4c577873c8e7b46c0247dc3a3044eb1ccf4ec99cc6753ec0a2626b",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "indirect",
+          "videoId": "8CH-6wdfz0Y",
+          "title": "Prepare A Cash Flow Statement | Indirect Method",
+          "channel": "Accounting Stuff",
+          "topic": "Indirect cash flow from operating activities",
+          "focus": "Start with net income. Add back depreciation and adjust for working capital. This clip covers operating cash flow. Use the lesson for investing, financing, and the final cash check.",
+          "startSeconds": 126,
+          "endSeconds": 555
+        },
+        {
+          "resourceId": "roa",
+          "videoId": "3W_LwpeG8c8",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+          "channel": "Accounting Stuff",
+          "topic": "Return on assets",
+          "focus": "Review net income divided by assets. Use average assets when the workbook supplies opening and closing balances.",
+          "startSeconds": 309,
+          "endSeconds": 382
+        },
+        {
+          "resourceId": "current",
+          "videoId": "3W_LwpeG8c8",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+          "channel": "Accounting Stuff",
+          "topic": "Current ratio",
+          "focus": "Review current assets divided by current liabilities. Use this ratio to assess short-term coverage.",
+          "startSeconds": 609,
+          "endSeconds": 629
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Operating cash flow and two ratios only. Investing, financing, and final cash reconciliation remain local.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "indirect",
+          "videoId": "8CH-6wdfz0Y",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "ratios",
+          "videoId": "3W_LwpeG8c8",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/8CH-6wdfz0Y?rel=0",
+          "title": "Prepare A Cash Flow Statement | Indirect Method — Accounting Stuff",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/3W_LwpeG8c8?rel=0&start=346&end=409",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements — Accounting Stuff — 5:46",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/3W_LwpeG8c8?rel=0&start=491&end=629",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements — Accounting Stuff — 8:11",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson05",
+      "title": "Link the Three Statements: Cross‑Sheet References and Integrity Checks",
+      "topics": [
+        "Cross-sheet formulas",
+        "net income to retained earnings",
+        "cash links",
+        "tie checks"
+      ],
+      "sourceSha256": "20302f89eb0b2551de0750e712eae8ac1bca9b1264afd2d6032aeb44112933a7",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "links",
+          "videoId": "_F6a0ddbjtI",
+          "title": "The KEY to Understanding Financial Statements",
+          "channel": "Accounting Stuff",
+          "topic": "Net income links to retained earnings",
+          "focus": "Trace net income and dividends into retained earnings. This clip explains the accounting link. Use the class tutorial for Excel cross-sheet formulas and cash checks.",
+          "startSeconds": 136,
+          "endSeconds": 357
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Accounting relationship only. No verified Excel cross-sheet procedure is selected.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "relationships",
+          "videoId": "_F6a0ddbjtI",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/_F6a0ddbjtI?rel=0",
+          "title": "The KEY to Understanding Financial Statements — Accounting Stuff",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/hvrba_TKqqo?rel=0",
+          "title": "Yearly Income Statement Using SUMIFS — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson06",
+      "title": "Integration & Dashboard: Decision-Ready Three‑Statement Model",
+      "topics": [
+        "Scenario inputs",
+        "exact-match XLOOKUP",
+        "structured tables",
+        "KPI tiles",
+        "charts"
+      ],
+      "sourceSha256": "7dbe2dcbe28a7e58b09e00ec0f27b3f288bf9f78342d73a6b39639098fd18ae2",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "selector",
+          "videoId": "5IkGnB1ZTaY",
+          "title": "Searchable Data Validation Dropdown List & XLOOKUP function – M365 Excel Magic Trick 1773",
+          "channel": "excelisfun",
+          "topic": "Dropdown selection with exact-match XLOOKUP",
+          "focus": "Create a validation list and return a value with XLOOKUP. XLOOKUP uses exact match by default. Use the class tutorial for scenario tables, charts, and model checks.",
+          "startSeconds": 15,
+          "endSeconds": 78
+        }
+      ],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 4,
+          "topic": "Operating cash flow and ratios",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Selector only. No full three-statement scenario dashboard tutorial is selected.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [
+        {
+          "candidate": "ratios",
+          "videoId": "3W_LwpeG8c8",
+          "decision": "Link to Unit 3 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/5IkGnB1ZTaY?rel=0",
+          "title": "Searchable Data Validation Drop-down and XLOOKUP — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson07",
+      "title": "Project Rehearsal: Three-Statement Workbook Audit",
+      "topics": [
+        "Shared five-tab financial model",
+        "trace statement links",
+        "checks",
+        "recommendation"
+      ],
+      "sourceSha256": "362871c14004e5ce45cf484007e438424a1de9b809c18d9454d4cb09e6999fd6",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 2,
+          "topic": "Income statement",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 3,
+          "topic": "Balance sheet and retained earnings",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 4,
+          "topic": "Operating cash flow and ratios",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 5,
+          "topic": "Net income to retained earnings",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "relationships",
+          "videoId": "_F6a0ddbjtI",
+          "decision": "Link to Unit 3 Lesson 5. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson08",
+      "title": "Presentation Prep: KPI Dashboard Design",
+      "topics": [
+        "Assigned group model",
+        "statement skeleton",
+        "KPI plan"
+      ],
+      "sourceSha256": "8161defa25f1ae6ea6ada006ff69039deb44bf3f6a7492e31b7f99bed3269ea2",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 2,
+          "topic": "Income statement",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 3,
+          "topic": "Balance sheet and retained earnings",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "ratios",
+          "videoId": "3W_LwpeG8c8",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson09",
+      "title": "Mock Panel & Revisions: Expert Critique Session",
+      "topics": [
+        "Complete linked statements",
+        "scenario tests",
+        "recommendation",
+        "rehearsal"
+      ],
+      "sourceSha256": "0bc22c6e626afd620375b9a520758b5ef87ca2d0efb50ed45ee3dd425a17822b",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 4,
+          "topic": "Operating cash flow and ratios",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 5,
+          "topic": "Net income to retained earnings",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "relationships",
+          "videoId": "_F6a0ddbjtI",
+          "decision": "Link to Unit 3 Lesson 5. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit03/lesson10",
+      "title": "Public Presentation: Demo Day Investor Showcase",
+      "topics": [
+        "Present linked statement evidence",
+        "defend scenario choice",
+        "submit"
+      ],
+      "sourceSha256": "701a55858037cce050b3edfed11f35af6367a79d7c2bc0d31f63607675bd281e",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 5,
+          "topic": "Net income to retained earnings",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson01",
+      "title": "Launch: Weekend Profit vs. Waste",
+      "topics": [
+        "Café demand, waste, staffing cost",
+        "evidence for a weekend recommendation"
+      ],
+      "sourceSha256": "f6ff37989ecd673594cbd65e47e4028e20adf5009712f31e277db00b0b6af227",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No selected clip matches the café launch task.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [
+        {
+          "candidate": "grossmargin",
+          "videoId": "jS7jbz1UWuA",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/MKNYfuGZntk?rel=0&modestbranding=1",
+          "title": "Data as a Weapon: Using Analytics for Competitive Advantage",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/MKNYfuGZntk?rel=0&modestbranding=1",
+          "title": "Data as a Weapon: Using Analytics for Competitive Advantage",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit04/lesson02",
+      "title": "Descriptive Statistics: What Does Normal Look Like?",
+      "topics": [
+        "Mean, median, range",
+        "describe center and spread",
+        "compare business datasets"
+      ],
+      "sourceSha256": "2fb156e09268e777e177a687612a5561940e43f3b0ce58390b3bea5ca290f5fe",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No suitable center-and-spread segment was verified in the requested sources.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson03",
+      "title": "Outliers and Data Quality",
+      "topics": [
+        "Z-scores",
+        "±2 flags",
+        "inspect outliers",
+        "keep, correct, or remove with reason"
+      ],
+      "sourceSha256": "4c4e55633146b94fcb40e0ba76e462773486b151a8c4967e642595c9d908881e",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No suitable Z-score and business outlier segment was verified in the requested sources.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson04",
+      "title": "Forecasting Logic: Predicting the Future from Past Data",
+      "topics": [
+        "Slope",
+        "R-squared",
+        "linear trend",
+        "extrapolation risk",
+        "café forecast"
+      ],
+      "sourceSha256": "ee71544b62dacd21506e13594a208250cf0703091c2a1f801119ef117907b721",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "regression",
+          "videoId": "h1Sx8d8cUyo",
+          "title": "Excel Magic Trick # 265: Mixed Cost Accounting Linear Regression - Ron's Class",
+          "channel": "excelisfun",
+          "topic": "SLOPE, INTERCEPT, and RSQ",
+          "focus": "Review SLOPE, INTERCEPT, and RSQ in a cost example. The video uses Excel 2007. Use the class tutorial for current menus, café forecasts, and extrapolation checks.",
+          "startSeconds": 623,
+          "endSeconds": 834
+        }
+      ],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Cost regression formulas only. No café FORECAST.LINEAR or extrapolation procedure.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/h1Sx8d8cUyo?rel=0",
+          "title": "Mixed Cost Accounting Linear Regression — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson05",
+      "title": "Data Cleaning and Analysis",
+      "topics": [
+        "TRIM/PROPER/CLEAN",
+        "Text to Columns",
+        "types and formats",
+        "Remove Duplicates",
+        "filters",
+        "cleaning record"
+      ],
+      "sourceSha256": "5d3e45174bf2e4fac68cb3eef6bcba5cde16a9e70bee9f2a7bd5e8369714902e",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No verified clip matches the taught TRIM/PROPER/CLEAN, Text to Columns, and Remove Duplicates workflow.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/W6JMFsVAzJI?rel=0",
+          "title": "Text To Columns or Split to Rows? — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson06",
+      "title": "Integration & Presentation: Decision‑Ready Dashboard",
+      "topics": [
+        "Scenario driver",
+        "exact-match XLOOKUP",
+        "named cells",
+        "KPI/chart updates",
+        "checks"
+      ],
+      "sourceSha256": "c6d6cb5c70f7d4c070a211ff62181efe3123f248c80c938b909b818206d4ee5b",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "Use the earlier review for the selector. Use the class tutorial for this forecast model.",
+      "coverageGaps": "Earlier selector review only. Café-specific assumptions and checks remain local.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/5IkGnB1ZTaY?rel=0",
+          "title": "Searchable Data Validation Drop-down and XLOOKUP — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson07",
+      "title": "Project Rehearsal: Café Analysis Walkthrough",
+      "topics": [
+        "Shared café workbook",
+        "trace cleaned data, forecast, dashboard, recommendation"
+      ],
+      "sourceSha256": "350d0125551bad998786198a945d35a7d8dfeede6602d52a8d13ae8f51e64f7b",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit04",
+          "lessonNumber": 4,
+          "topic": "Slope and model fit",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson08",
+      "title": "Project Kickoff: Team Setup",
+      "topics": [
+        "Assigned group café dataset",
+        "workbook setup",
+        "cleaning",
+        "forecast plan"
+      ],
+      "sourceSha256": "9621aedeb3a955d99339253e84ab2f29c7b08adecfeb1e682011755ad029b04a",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit04",
+          "lessonNumber": 4,
+          "topic": "Slope and model fit",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson09",
+      "title": "Mock Panel & Revision: Presentation Rehearsal",
+      "topics": [
+        "Complete forecast and dashboard",
+        "scenario checks",
+        "recommendation",
+        "rehearsal"
+      ],
+      "sourceSha256": "28f3c32bf7b17296b3427eef0857e11b13f6febbf00d5c41c724b78cca6ba85a",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit04",
+          "lessonNumber": 4,
+          "topic": "Slope and model fit",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit04/lesson10",
+      "title": "Public Presentation: Café Management Showcase",
+      "topics": [
+        "Present café forecast evidence",
+        "defend assumptions",
+        "submit"
+      ],
+      "sourceSha256": "d740d07b745d21d26cedded2df6612d6dd2fb7b26039346845a2428b8af2c953",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit04",
+          "lessonNumber": 4,
+          "topic": "Slope and model fit",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson01",
+      "title": "Launch & Explore: The Payroll Cash Crunch",
+      "topics": [
+        "Gross pay",
+        "net pay",
+        "deductions",
+        "employer payroll cash need"
+      ],
+      "sourceSha256": "db3bb478ea3758fe44c40f66e571a271df7f5b3d53c0bf010456e1a67b9c5025",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No new video. Keep the payroll launch and gross/net reasoning task.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [
+        {
+          "candidate": "cashaccrual",
+          "videoId": "CRcHPo-gP1M",
+          "decision": "The selected adjustment clip covers earned/incurred timing. Do not add a second timing overview. Transcript export failed for this candidate; it is not installed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/FZo-q8LRWtk?rel=0&modestbranding=1",
+          "title": "The First Hire: The Weight and Wisdom of Payroll",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/FZo-q8LRWtk?rel=0&modestbranding=1",
+          "title": "The First Hire: The Weight and Wisdom of Payroll",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit05/lesson02",
+      "title": "Skill Introduction: Gross to Net Calculations",
+      "topics": [
+        "Hourly and salary gross pay",
+        "FIT brackets",
+        "FICA",
+        "state placeholder",
+        "benefits",
+        "net pay"
+      ],
+      "sourceSha256": "b8113682f566c5a6c5bf487864a40879e98130deff35df28a293ba0b17b8e8a2",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "gross-net",
+          "videoId": "B-rGJ35ndOQ",
+          "title": "Gross vs Net",
+          "channel": "The Finance Storyteller",
+          "topic": "Gross pay, net pay, and deductions",
+          "focus": "Review gross pay, take-home pay, and deduction types. The example amounts are illustrative. Use the class table and worked examples for payroll calculations.",
+          "startSeconds": 15,
+          "endSeconds": 83
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Definitions and deduction categories only. Not FIT withholding or current tax tables.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "backupgrossnet",
+          "videoId": "B-rGJ35ndOQ",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/B-rGJ35ndOQ?rel=0",
+          "title": "Gross vs Net — The Finance Storyteller",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson03",
+      "title": "Deductions and Net Pay",
+      "topics": [
+        "Employee deductions versus employer taxes",
+        "net pay versus employer cost",
+        "Social Security cap"
+      ],
+      "sourceSha256": "abb3d8691c9ccc8029a282f23579761e341e54c1712be556f140368e11689eaf",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "payroll-cap",
+          "videoId": "sI9Qx3Tk030",
+          "title": "Excel Busn Math 41: Payroll Deductions With Ceilings (FICA)",
+          "channel": "excelisfun",
+          "topic": "Taxable wages when a paycheck crosses a cap",
+          "focus": "Review the capped wage calculation. The video uses an old wage limit. Use the class table. This clip does not cover FIT withholding or total employer cash needs.",
+          "startSeconds": 285,
+          "endSeconds": 592
+        }
+      ],
+      "relatedLessons": [
+        {
+          "unitId": "unit05",
+          "lessonNumber": 2,
+          "topic": "Gross pay and net pay",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Cap logic only. Old example limit; no FIT, benefits, or full employer cost calculation.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [
+        {
+          "candidate": "taxbrackets",
+          "videoId": "FeANJVZNfTA",
+          "decision": "Reject the former Unit 5 Lesson 3 placement. Marginal annual tax is not the payroll withholding, employer-tax, or wage-cap procedure. Do not present it as a payroll tutorial."
+        },
+        {
+          "candidate": "backupgrossnet",
+          "videoId": "B-rGJ35ndOQ",
+          "decision": "Link to Unit 5 Lesson 2. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/FeANJVZNfTA?rel=0",
+          "title": "TAX BRACKETS: a Simple Guide for Beginners — Accounting Stuff",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson04",
+      "title": "Payroll Timing and Liabilities",
+      "topics": [
+        "Payroll timing",
+        "unpaid wage and tax liabilities",
+        "employer expense",
+        "cash reconciliation"
+      ],
+      "sourceSha256": "28fb7b99b6bee638f0e9f62fc0732fa02b84dcc92475a20dd64010738b7e0d71",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 2,
+          "topic": "Accrual and adjustment timing",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "Review accrual timing. Use this lesson for payroll liabilities and cash reconciliation.",
+      "coverageGaps": "Earlier accrual concept only. No payroll-register or cash-reconciliation tutorial selected.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "accruedexpense",
+          "videoId": "9aZ6CCj-ies",
+          "decision": "Detail candidate only. Not installed; earlier adjustment review supports payroll timing. Segment not inspected."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson05",
+      "title": "Schedule-to-Pay: Building the Weekly Labor Engine",
+      "topics": [
+        "Roster and schedule",
+        "SUMIFS hours",
+        "overtime",
+        "EmployeeID XLOOKUP",
+        "gross pay formulas"
+      ],
+      "sourceSha256": "242c9af958c851290c7bfaef171000d547ab4108ef693d793c89e6d624273b89",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "sumifs",
+          "videoId": "6c9fIZys7ng",
+          "title": "Learn how to use SUMIFS & COUNTIFS function. SUM or COUNT only certain items! EMT1708.",
+          "channel": "excelisfun",
+          "topic": "SUMIFS with one or two conditions",
+          "focus": "Review the sum range and paired criteria ranges. Apply the pattern to employee hours. A text mismatch can return zero. Use the class tutorial for overtime and payroll formulas.",
+          "startSeconds": 68,
+          "endSeconds": 251
+        }
+      ],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "SUMIFS and selector support only. Overtime and gross-pay model remain local.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/6c9fIZys7ng?rel=0",
+          "title": "Learn SUMIFS and COUNTIFS — excelisfun",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/5IkGnB1ZTaY?rel=0",
+          "title": "Searchable Data Validation Drop-down and XLOOKUP — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson06",
+      "title": "Pay Stub Studio: Taxes, Net Pay, and Proof",
+      "topics": [
+        "TaxMath",
+        "withholding",
+        "FICA",
+        "net pay",
+        "selected employee paystub",
+        "checks"
+      ],
+      "sourceSha256": "d139f93b0385f03f9d3aec131371718136a228038bd8779ff58751ee13d5b060",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit05",
+          "lessonNumber": 3,
+          "topic": "Capped wage calculation",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit05",
+          "lessonNumber": 5,
+          "topic": "SUMIFS for employee hours",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skills only. No selected video builds the taught TaxMath and paystub workbook.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "taxbrackets",
+          "videoId": "FeANJVZNfTA",
+          "decision": "Reject the former Unit 5 Lesson 3 placement. Marginal annual tax is not the payroll withholding, employer-tax, or wage-cap procedure. Do not present it as a payroll tutorial."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/5IkGnB1ZTaY?rel=0",
+          "title": "Searchable Data Validation Drop-down and XLOOKUP — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson07",
+      "title": "Project Rehearsal: Shared Payroll Workbook Audit",
+      "topics": [
+        "Shared payroll workbook",
+        "wage/tax/paystub reconciliation",
+        "evidence",
+        "recommendation"
+      ],
+      "sourceSha256": "3d184663cff60dbf575311cc0e2b69d474dea99046bb9250f15a10084de236db",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit05",
+          "lessonNumber": 2,
+          "topic": "Gross pay and net pay",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit05",
+          "lessonNumber": 3,
+          "topic": "Capped wage calculation",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit05",
+          "lessonNumber": 5,
+          "topic": "SUMIFS for employee hours",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson08",
+      "title": "Project Kickoff — Your Payroll Workbook",
+      "topics": [
+        "Assigned group payroll scenario",
+        "register setup",
+        "tax and control plan"
+      ],
+      "sourceSha256": "e07b0159dbd5f904cea7ac5ad8ad26864b5b5e6a2fb7f2138e3ff0a001273a2b",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit05",
+          "lessonNumber": 2,
+          "topic": "Gross pay and net pay",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit05",
+          "lessonNumber": 3,
+          "topic": "Capped wage calculation",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson09",
+      "title": "PBL Milestone 2: Prototype + Rehearsal (PayDay Simulator)",
+      "topics": [
+        "Complete register, taxes, paystub, checks",
+        "recommendation",
+        "rehearsal"
+      ],
+      "sourceSha256": "8a6824d1d9ca808e5fef396d4da6b98aff7c0516fd5644a3f59fe71d100640fc",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit05",
+          "lessonNumber": 3,
+          "topic": "Capped wage calculation",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit05",
+          "lessonNumber": 5,
+          "topic": "SUMIFS for employee hours",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit05/lesson10",
+      "title": "Public Presentation: YouTube Publication & Business Q&A",
+      "topics": [
+        "Present payroll evidence",
+        "defend accuracy",
+        "submit"
+      ],
+      "sourceSha256": "6c998bcf5c4a841e301706c30665965c5cf584b1739d953781c3ac2dbd1f2b4f",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit05",
+          "lessonNumber": 2,
+          "topic": "Gross pay and net pay",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit05",
+          "lessonNumber": 3,
+          "topic": "Capped wage calculation",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson01",
+      "title": "Launch: The Pricing Problem",
+      "topics": [
+        "Competitive and profitable pricing",
+        "cost, capacity, and risk constraints"
+      ],
+      "sourceSha256": "d9eb59aca065d2725116e258003806b65f3fbfe366a8de6df90ceff4174ebee9",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No selected clip matches the pricing launch task.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [
+        {
+          "candidate": "grossmargin",
+          "videoId": "jS7jbz1UWuA",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/DQpR1dbtQnc?rel=0&modestbranding=1",
+          "title": "The Profit Paradox: Why Higher Revenue Doesn't Always Mean More Profit",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/DQpR1dbtQnc?rel=0&modestbranding=1",
+          "title": "The Profit Paradox: Why Higher Revenue Doesn't Always Mean More Profit",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit06/lesson02",
+      "title": "Markup vs. Margin Concepts",
+      "topics": [
+        "Markup versus margin denominators",
+        "gross margin",
+        "contribution margin"
+      ],
+      "sourceSha256": "89911f135a726af6b9e03579438677bc1e4ddc2137784eb4e443e74019052cfa",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "margin",
+          "videoId": "jS7jbz1UWuA",
+          "title": "GROSS PROFIT MARGIN: a Simple Explanation",
+          "channel": "Accounting Stuff",
+          "topic": "Gross margin uses revenue as the denominator",
+          "focus": "Review gross profit divided by revenue. This clip covers margin. Use the lesson for markup, contribution margin, and break-even calculations.",
+          "startSeconds": 192,
+          "endSeconds": 322
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Gross margin only. Markup and contribution margin remain local.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "grossmargin",
+          "videoId": "jS7jbz1UWuA",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/jS7jbz1UWuA?rel=0&start=193",
+          "title": "GROSS PROFIT MARGIN: a Simple Explanation — Accounting Stuff — 3:13",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson03",
+      "title": "CVP Model Construction",
+      "topics": [
+        "Fixed/variable costs",
+        "contribution margin",
+        "CVP",
+        "break-even",
+        "capacity",
+        "target profit"
+      ],
+      "sourceSha256": "b67f11040d8406dca0cd8290040211fe570987c69426746cad9fa7f00dc6cb5f",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "cvp",
+          "videoId": "Y58nnb-BWfE",
+          "title": "Highline Excel 2013 Class Video 49: Break Even Analysis Formulas & Chart, Plotting Break Even Point",
+          "channel": "excelisfun",
+          "topic": "CVP formulas and the break-even model",
+          "focus": "Review sales, variable cost, contribution margin, profit, and break-even. The video uses Excel 2013. Use the lesson for capacity and target profit. Round required whole units up.",
+          "startSeconds": 65,
+          "endSeconds": 507
+        }
+      ],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "CVP formulas only. Capacity and target-profit decisions remain local.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Y58nnb-BWfE?rel=0",
+          "title": "Highline Excel 2013 Class 49: Break-Even Analysis with Formulas and Chart — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson04",
+      "title": "Scenario Comparison & Sensitivity Reasoning",
+      "topics": [
+        "Price/volume scenario paths",
+        "capacity",
+        "sensitivity",
+        "risk"
+      ],
+      "sourceSha256": "4f408d972d7e8a0116e67eca7fa0645b91835b437e76c1306210281300099bff",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier CVP review only. No verified price/volume sensitivity segment selected.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson05",
+      "title": "Goal Seek: Hit Your Profit Target",
+      "topics": [
+        "Goal Seek: Set Cell, To Value, By Changing Cell",
+        "solve price/volume",
+        "feasibility"
+      ],
+      "sourceSha256": "d0d79983255f57da64d3c9c5ebb62651af8f389adab346e08dd0f7deea5e0985",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "The earlier review covers the profit model. Use the class tutorial for Goal Seek.",
+      "coverageGaps": "No verified Goal Seek procedure in the requested sources. Earlier link reviews the profit model.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson06",
+      "title": "Data Tables: Sensitivity Analysis",
+      "topics": [
+        "One/two-variable Data Tables",
+        "row/column input cells",
+        "sensitivity matrix"
+      ],
+      "sourceSha256": "1f5920cc55326e8ac00068d831bc80f416cc94c4082aa72135de129cec101c95",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "The earlier review covers the profit model. Use the class tutorial for Data Tables.",
+      "coverageGaps": "No verified one/two-variable Data Table procedure in the requested sources. Earlier link reviews the profit model.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson07",
+      "title": "Project Rehearsal: Shared Workbook, Evidence Chain, and Quality Standard",
+      "topics": [
+        "Shared pricing workbook",
+        "trace costs, price options, feasibility, target profit, sensitivity, dashboard"
+      ],
+      "sourceSha256": "7f4489cb2ee9f3c6b79005e77450bfbd6547a0eb84ffe1c4b3e43a60fc4346ac",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 2,
+          "topic": "Gross margin",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson08",
+      "title": "Project Kickoff: Group Workbook Setup and First Analysis",
+      "topics": [
+        "Assigned pricing business",
+        "classify costs",
+        "price options",
+        "feasibility",
+        "draft claim"
+      ],
+      "sourceSha256": "93d126238ee1293d277cdb2d106f48e6ebf6cee8f07d363ba1f3c50c7b28d5fd",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 2,
+          "topic": "Gross margin",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson09",
+      "title": "Complete the Workbook and Rehearse the Recommendation",
+      "topics": [
+        "Complete target profit and sensitivity",
+        "price-volume matrix",
+        "evidence and risk",
+        "rehearsal"
+      ],
+      "sourceSha256": "2d4d3e14dfc2c1e6aa490cdfa540df99281cf109c762f297c960b561e4bdfce4",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit06/lesson10",
+      "title": "Final Presentation, Submission, and Reflection",
+      "topics": [
+        "Present pricing evidence",
+        "capacity and downside defense",
+        "submit"
+      ],
+      "sourceSha256": "6ca937adcb9b7fe500fde430db273bfcbce5cce64b4c284d5dd7e2ff6de7545b",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit06",
+          "lessonNumber": 3,
+          "topic": "CVP and break-even model",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson01",
+      "title": "Unit Launch: Sarah's Inventory Problem",
+      "topics": [
+        "Inventory month preview",
+        "cash, shelf value, and margin",
+        "inventory equation"
+      ],
+      "sourceSha256": "b7ba865e0ae127b9c6efb5ec28dde71bc42a2418483d4be2249aedf23386b72d",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "No new video. Keep the inventory month scanner as the launch.",
+      "decision": "No suitable new video selected.",
+      "originalCandidates": [
+        {
+          "candidate": "inventory",
+          "videoId": "OB6RDzqvNbk",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Z5XM90DfSeg?rel=0&modestbranding=1",
+          "title": "Sarah's Inventory Wake-Up Call",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Z5XM90DfSeg?rel=0&modestbranding=1",
+          "title": "Sarah's Inventory Wake-Up Call",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit07/lesson02",
+      "title": "Inventory Cost Flow Foundations: Beginning Inventory, Purchases, and COGS",
+      "topics": [
+        "Beginning inventory and purchases",
+        "goods available",
+        "COGS and ending inventory",
+        "layers"
+      ],
+      "sourceSha256": "b38a82c1e888be9c65d905e2ec499aa1c9be58a45b99a80c8003b981cd4aece0",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "inventory",
+          "videoId": "OB6RDzqvNbk",
+          "title": "INVENTORY & COST OF GOODS SOLD",
+          "channel": "Accounting Stuff",
+          "topic": "Inventory purchases, sales, and COGS",
+          "focus": "Review inventory as an asset. Trace a purchase and a sale into Inventory, Revenue, and Cost of Goods Sold. Use the lesson for the inventory reconciliation equation.",
+          "startSeconds": 96,
+          "endSeconds": 521
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Purchase/sale entries only. Multi-layer reconciliation is taught on the page.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "inventory",
+          "videoId": "OB6RDzqvNbk",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "fifo",
+          "videoId": "Hvul1enbwjk",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/OB6RDzqvNbk?rel=0",
+          "title": "INVENTORY & COST OF GOODS SOLD — Accounting Stuff",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson03",
+      "title": "FIFO and LIFO: Two Ways to Value the Same Inventory",
+      "topics": [
+        "FIFO and LIFO",
+        "cost layers",
+        "ending inventory",
+        "gross profit under rising prices"
+      ],
+      "sourceSha256": "edf0f4e75f46b527e6e32dc40820b69104eff5864c55ceea61452fecd0e8dddd",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "fifo",
+          "videoId": "Hvul1enbwjk",
+          "title": "First In First Out (FIFO) | Inventory Cost Flows",
+          "channel": "Accounting Stuff",
+          "topic": "FIFO cost layers and ending inventory",
+          "focus": "Assign the oldest costs to sales. Trace the remaining layers into ending inventory and compare the profit effect when costs rise.",
+          "startSeconds": 161,
+          "endSeconds": 620
+        },
+        {
+          "resourceId": "lifo",
+          "videoId": "dAEm17g0T6E",
+          "title": "Last In First Out (LIFO) | Inventory Cost Flows",
+          "channel": "Accounting Stuff",
+          "topic": "LIFO cost layers and the profit effect",
+          "focus": "Assign the newest costs to sales. Compare COGS, ending inventory, and gross profit with FIFO.",
+          "startSeconds": 107,
+          "endSeconds": 491
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Use the page examples and class tutorial for details beyond the selected segment.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "fifo",
+          "videoId": "Hvul1enbwjk",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "lifo",
+          "videoId": "dAEm17g0T6E",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Hvul1enbwjk?rel=0&start=161",
+          "title": "First In First Out (FIFO) | Inventory Cost Flows — Accounting Stuff — 2:41",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/dAEm17g0T6E?rel=0&start=110",
+          "title": "Last In First Out (LIFO) | Inventory Cost Flows — Accounting Stuff — 1:50",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson04",
+      "title": "Specific Identification and Weighted Average",
+      "topics": [
+        "Specific Identification from serial/lot records",
+        "periodic weighted average",
+        "reconciliation"
+      ],
+      "sourceSha256": "0f99095e5be27223c3eea405637e071e75b604e52805c3cad858f0b2b065c4ce",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "weighted",
+          "videoId": "vGPn_Oo7UBQ",
+          "title": "The Essential Guide to Inventory in Accounting",
+          "channel": "Accounting Stuff",
+          "topic": "Periodic weighted average",
+          "focus": "Divide total available cost by total available units. Use the average for COGS and ending inventory. The video rounds the rate early. Keep full precision until the final money amounts. Use this page for Specific Identification.",
+          "startSeconds": 2320,
+          "endSeconds": 2772
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Weighted average only. No selected clip teaches Specific Identification. Keep full precision in the course calculation.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "weighted",
+          "videoId": "vGPn_Oo7UBQ",
+          "decision": "Install the inspected segment listed in this row."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/vGPn_Oo7UBQ?rel=0&start=2304",
+          "title": "The Essential Guide to Inventory in Accounting — Average Cost — Accounting Stuff — 38:24",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson05",
+      "title": "Build the Inventory Method Workbook",
+      "topics": [
+        "Four Excel method algorithms",
+        "cumulative lots",
+        "reversed lots",
+        "LotID XLOOKUP",
+        "weighted rate",
+        "output selector"
+      ],
+      "sourceSha256": "ce3831b1e600ea515b37083662d1583d2e42980af4e0a336a2e67ee703049900",
+      "section": "learn",
+      "accounting": [],
+      "excel": [
+        {
+          "resourceId": "excel-weighted",
+          "videoId": "-tX25Ceh56A",
+          "title": "How to Use Excel to Calculate Ending Inventory, COGS, and Gross Profit with FIFO, LIFO, and WA?",
+          "channel": "Ahmed Nasser STT",
+          "topic": "Calculate weighted-average inventory in Excel",
+          "focus": "Review totals and the weighted-average rate in Excel. The example uses spilled arrays and prior setup sheets. Use the class tutorial for the four-method workbook and its layer formulas.",
+          "startSeconds": 1069,
+          "endSeconds": 1223
+        }
+      ],
+      "relatedLessons": [
+        {
+          "unitId": "unit07",
+          "lessonNumber": 3,
+          "topic": "FIFO and LIFO",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 4,
+          "topic": "Periodic weighted average",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Weighted-average Excel example only; different array layout. No full four-method course algorithm tutorial.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [
+        {
+          "candidate": "fifo",
+          "videoId": "Hvul1enbwjk",
+          "decision": "Link to Unit 7 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "lifo",
+          "videoId": "dAEm17g0T6E",
+          "decision": "Link to Unit 7 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "weighted",
+          "videoId": "vGPn_Oo7UBQ",
+          "decision": "Link to Unit 7 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/-tX25Ceh56A?rel=0",
+          "title": "Ending Inventory, Cost of Goods Sold and Gross Profit: FIFO, LIFO and Weighted Average — Ahmed Nasser STT",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson06",
+      "title": "Build the Scenario-Switch Dashboard",
+      "topics": [
+        "Composite scenario/method key",
+        "XLOOKUP outputs",
+        "turnover",
+        "days on hand",
+        "gross margin",
+        "checks"
+      ],
+      "sourceSha256": "33044add2f51e42d7fc20015a10ae5e1ee0e1ea7129cf6802ef9465f970f5d2e",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "turnover",
+          "videoId": "3W_LwpeG8c8",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+          "channel": "Accounting Stuff",
+          "topic": "Inventory turnover",
+          "focus": "Review COGS divided by inventory. Use the average inventory value from the class workbook.",
+          "startSeconds": 661,
+          "endSeconds": 686
+        },
+        {
+          "resourceId": "days",
+          "videoId": "3W_LwpeG8c8",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements",
+          "channel": "Accounting Stuff",
+          "topic": "Days of inventory",
+          "focus": "Review inventory divided by COGS, multiplied by 365. Use average inventory. Match the COGS period to the days measure in your workbook.",
+          "startSeconds": 788,
+          "endSeconds": 824
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit03",
+          "lessonNumber": 6,
+          "topic": "Dropdown and exact-match XLOOKUP",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit06",
+          "lessonNumber": 2,
+          "topic": "Gross margin",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Ratio definitions and earlier lookup review only. Composite-key architecture and audit checks remain local.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [
+        {
+          "candidate": "ratios",
+          "videoId": "3W_LwpeG8c8",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "grossmargin",
+          "videoId": "jS7jbz1UWuA",
+          "decision": "Link to Unit 6 Lesson 2. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/3W_LwpeG8c8?rel=0&start=664&end=686",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements — Accounting Stuff — 11:04",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/3W_LwpeG8c8?rel=0&start=789&end=823",
+          "title": "FINANCIAL RATIOS: How to Analyze Financial Statements — Accounting Stuff — 13:09",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/5IkGnB1ZTaY?rel=0",
+          "title": "Searchable Data Validation Drop-down and XLOOKUP — excelisfun",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson07",
+      "title": "Project Rehearsal: One Shared Dataset, One Shared Workbook",
+      "topics": [
+        "Shared inventory workbook",
+        "four methods",
+        "reconciliation",
+        "KPIs",
+        "recommendation evidence"
+      ],
+      "sourceSha256": "0f8e55a3c870a9c03dd6493bd07ad1629fc80c68dc3d8fa8d91c2de0e621b837",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit07",
+          "lessonNumber": 3,
+          "topic": "FIFO and LIFO",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 4,
+          "topic": "Periodic weighted average",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 5,
+          "topic": "Weighted average in Excel",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 6,
+          "topic": "Inventory turnover and days",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "fifo",
+          "videoId": "Hvul1enbwjk",
+          "decision": "Link to Unit 7 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "lifo",
+          "videoId": "dAEm17g0T6E",
+          "decision": "Link to Unit 7 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "weighted",
+          "videoId": "vGPn_Oo7UBQ",
+          "decision": "Link to Unit 7 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson08",
+      "title": "Group Project Kickoff: New Business, New Starter Workbook, Same Workbook Logic",
+      "topics": [
+        "Assigned inventory group workbook",
+        "source data",
+        "goods available",
+        "early method claim"
+      ],
+      "sourceSha256": "01d59b31a16ade0b03a0be881c647ab036b932f399eabadc1687435bf31fe0ff",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit07",
+          "lessonNumber": 2,
+          "topic": "Inventory and COGS",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "inventory",
+          "videoId": "OB6RDzqvNbk",
+          "decision": "Link to Unit 7 Lesson 2. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson09",
+      "title": "Group Project Build: Complete the Workbook and Rehearse the Recommendation",
+      "topics": [
+        "Complete four methods, comparison, checks, dashboard",
+        "scenario test",
+        "recommendation",
+        "rehearsal"
+      ],
+      "sourceSha256": "9871544df8e1c773e5634bdbaab863c24d06efe305580a7df6da5c74f10e4340",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit07",
+          "lessonNumber": 3,
+          "topic": "FIFO and LIFO",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 4,
+          "topic": "Periodic weighted average",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 6,
+          "topic": "Inventory turnover and days",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "fifo",
+          "videoId": "Hvul1enbwjk",
+          "decision": "Link to Unit 7 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "lifo",
+          "videoId": "dAEm17g0T6E",
+          "decision": "Link to Unit 7 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "weighted",
+          "videoId": "vGPn_Oo7UBQ",
+          "decision": "Link to Unit 7 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit07/lesson10",
+      "title": "Final Presentation: Defend Ending Inventory, Method Choice, and Business Recommendation",
+      "topics": [
+        "Present method choice",
+        "defend COGS, ending inventory, profit, and risk",
+        "submit"
+      ],
+      "sourceSha256": "f95ff5b3be74e927f2723a28468b11422c7921536a11bdc5f8b0595f8e77550e",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit07",
+          "lessonNumber": 3,
+          "topic": "FIFO and LIFO",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 4,
+          "topic": "Periodic weighted average",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit07",
+          "lessonNumber": 6,
+          "topic": "Inventory turnover and days",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson01",
+      "title": "Sarah's Equipment Purchase — Why Long-Term Assets Are Different",
+      "topics": [
+        "Long-term asset versus expense",
+        "cost",
+        "accumulated depreciation",
+        "book value"
+      ],
+      "sourceSha256": "4ef917efebb28c6034e09c1962bdd3bab31d30a57c46d747474736fd3d91fd64",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier depreciation-entry review only. Keep the launch scoreboard task.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "depbasics",
+          "videoId": "_pas1ETbrj8",
+          "decision": "Link to Unit 2 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Owp5F1WAA_w?rel=0&modestbranding=1",
+          "title": "TechStart Is Expanding — Sarah's Equipment Purchase Problem",
+          "section": "start"
+        }
+      ],
+      "existingVideoFrames": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/Owp5F1WAA_w?rel=0&modestbranding=1",
+          "title": "TechStart Is Expanding — Sarah's Equipment Purchase Problem",
+          "section": "start"
+        }
+      ]
+    },
+    {
+      "key": "unit08/lesson02",
+      "title": "When Does a Cost Become an Asset? — Capitalization, Useful Life, and Salvage Value",
+      "topics": [
+        "Capitalization",
+        "significant cost",
+        "useful life",
+        "salvage",
+        "depreciable base"
+      ],
+      "sourceSha256": "d9b251a1d6192aa11f469c00b3825ad94ee14b7a748fa662e44040b7afc784b8",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "capitalization",
+          "videoId": "_pas1ETbrj8",
+          "title": "DEPRECIATION BASICS! With Journal Entries",
+          "channel": "Accounting Stuff",
+          "topic": "Record an asset cost instead of an expense",
+          "focus": "Review capitalization in the balance sheet. Use the lesson rules for significant cost, useful life, salvage value, and depreciable base.",
+          "startSeconds": 122,
+          "endSeconds": 162
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Capitalization definition only. Cost significance, salvage, life, and base are taught on the page.",
+      "decision": "Embed inspected segment and link earlier review.",
+      "originalCandidates": [
+        {
+          "candidate": "depbasics",
+          "videoId": "_pas1ETbrj8",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "straight",
+          "videoId": "iruD9KTNnNc",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/_pas1ETbrj8?rel=0&start=141",
+          "title": "DEPRECIATION BASICS! With Journal Entries — Accounting Stuff — 2:21",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson03",
+      "title": "Straight-Line Depreciation",
+      "topics": [
+        "Straight-line formula",
+        "annual expense",
+        "schedule",
+        "statement effects",
+        "partial year"
+      ],
+      "sourceSha256": "adf0b19a01916eb209224ed875d31e034e41f7eee3728705ef3b4d101aba8b70",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "straight",
+          "videoId": "iruD9KTNnNc",
+          "title": "STRAIGHT LINE Method of Depreciation in 3 Steps!",
+          "channel": "Accounting Stuff",
+          "topic": "Straight-line formula and full-year schedule",
+          "focus": "Review cost, salvage value, useful life, annual expense, accumulated depreciation, and book value. Use the lesson for partial-year calculations.",
+          "startSeconds": 35,
+          "endSeconds": 380
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "Full-year straight-line only. Partial-year calculations remain local.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "straight",
+          "videoId": "iruD9KTNnNc",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "depbasics",
+          "videoId": "_pas1ETbrj8",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/iruD9KTNnNc?rel=0&start=35",
+          "title": "STRAIGHT LINE Method of Depreciation in 3 Steps! — Accounting Stuff — 0:35",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson04",
+      "title": "Double-Declining Balance and Method Comparison",
+      "topics": [
+        "DDB rate",
+        "beginning book value",
+        "salvage floor",
+        "compare SL/DDB expense and profit"
+      ],
+      "sourceSha256": "9a7c5c98b8871c93133f13dbd63c3eeef982dc9796c00a8769e29629f81e2ecd",
+      "section": "learn",
+      "accounting": [
+        {
+          "resourceId": "ddb",
+          "videoId": "M-VzJ51zZoM",
+          "title": "DOUBLE DECLINING BALANCE Method of Depreciation",
+          "channel": "Accounting Stuff",
+          "topic": "DDB rate and the first two years",
+          "focus": "Review twice the straight-line rate applied to beginning book value. This example shows the first two years. Use the lesson to enforce the salvage floor and compare complete schedules.",
+          "startSeconds": 145,
+          "endSeconds": 277
+        }
+      ],
+      "excel": [],
+      "relatedLessons": [],
+      "note": "",
+      "coverageGaps": "DDB first two years only. The video does not enforce the lesson salvage floor.",
+      "decision": "Embed inspected segment.",
+      "originalCandidates": [
+        {
+          "candidate": "ddb",
+          "videoId": "M-VzJ51zZoM",
+          "decision": "Install the inspected segment listed in this row."
+        },
+        {
+          "candidate": "straight",
+          "videoId": "iruD9KTNnNc",
+          "decision": "Do not add this broad review here. Use the selected topic segment or the stated earlier lesson links. Keep the current task and its coverage limits."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/M-VzJ51zZoM?rel=0&start=34",
+          "title": "DOUBLE DECLINING BALANCE Method of Depreciation — Accounting Stuff — 0:34",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson05",
+      "title": "Build Asset Register and Depreciation Schedule",
+      "topics": [
+        "Asset register",
+        "linked annual schedules",
+        "accumulated depreciation",
+        "book value checks"
+      ],
+      "sourceSha256": "855cd96dc1f835c03a8af1a97f793889e979bec6c7caa316e27fc54b6246cdc3",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit08",
+          "lessonNumber": 3,
+          "topic": "Straight-line schedule",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 4,
+          "topic": "DDB rate and first two years",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier accounting schedules only. No selected clip builds the course asset register.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "straight",
+          "videoId": "iruD9KTNnNc",
+          "decision": "Link to Unit 8 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "ddb",
+          "videoId": "M-VzJ51zZoM",
+          "decision": "Link to Unit 8 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/iruD9KTNnNc?rel=0&start=106",
+          "title": "STRAIGHT LINE Method of Depreciation in 3 Steps! — Accounting Stuff — 1:46",
+          "section": "learn"
+        },
+        {
+          "src": "https://www.youtube-nocookie.com/embed/M-VzJ51zZoM?rel=0&start=95",
+          "title": "DOUBLE DECLINING BALANCE Method of Depreciation — Accounting Stuff — 1:35",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson06",
+      "title": "Partial-Year Depreciation and Statement Impact",
+      "topics": [
+        "SLN and DDB functions",
+        "months in service",
+        "Year 1 proration",
+        "linked income statement and balance sheet"
+      ],
+      "sourceSha256": "81bba65acbe6c8d2e2d2e5a624e15ad159633cadcecf353168e8e008164af81b",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit08",
+          "lessonNumber": 3,
+          "topic": "Straight-line schedule",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 4,
+          "topic": "DDB rate and first two years",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit02",
+          "lessonNumber": 4,
+          "topic": "Close workflow and depreciation entries",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "Review the earlier methods and statement effects. Use the class tutorial for SLN, DDB, and months in service.",
+      "coverageGaps": "No selected clip teaches SLN/DDB functions or partial-year proration.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "depbasics",
+          "videoId": "_pas1ETbrj8",
+          "decision": "Link to Unit 2 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [
+        {
+          "src": "https://www.youtube-nocookie.com/embed/_pas1ETbrj8?rel=0&start=283",
+          "title": "DEPRECIATION BASICS! With Journal Entries — Accounting Stuff — 4:43",
+          "section": "learn"
+        }
+      ],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson07",
+      "title": "Project Rehearsal: Depreciation Workbook with Shared Data",
+      "topics": [
+        "Shared fixed-asset workbook",
+        "entry categories",
+        "register",
+        "partial year",
+        "method comparison",
+        "statements",
+        "recommendation"
+      ],
+      "sourceSha256": "75751b12e000478efc99743257440cbd34980ca5b72dc0c2eeca056aad9a76bb",
+      "section": "learn",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit08",
+          "lessonNumber": 2,
+          "topic": "Capitalization",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 3,
+          "topic": "Straight-line schedule",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 4,
+          "topic": "DDB rate and first two years",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "depbasics",
+          "videoId": "_pas1ETbrj8",
+          "decision": "Link to Unit 8 Lesson 2. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson08",
+      "title": "Project Kickoff: Group Fixed-Asset Datasets",
+      "topics": [
+        "Assigned fixed-asset dataset",
+        "asset register",
+        "linked schedule",
+        "draft policy"
+      ],
+      "sourceSha256": "2e150ae587b66dd7228ca4a944b291d9ee0a2ebfca2e94ea908de264705cf124",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit08",
+          "lessonNumber": 2,
+          "topic": "Capitalization",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 3,
+          "topic": "Straight-line schedule",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 4,
+          "topic": "DDB rate and first two years",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "straight",
+          "videoId": "iruD9KTNnNc",
+          "decision": "Link to Unit 8 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "ddb",
+          "videoId": "M-VzJ51zZoM",
+          "decision": "Link to Unit 8 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson09",
+      "title": "Complete Workbook and Depreciation Recommendation",
+      "topics": [
+        "Complete schedules and method comparison",
+        "book value tests",
+        "evidence and risk",
+        "rehearsal"
+      ],
+      "sourceSha256": "3d7b1368674b34f73b828956d234ef379f76044a9539ade6d93b10488a720ccd",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit08",
+          "lessonNumber": 3,
+          "topic": "Straight-line schedule",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 4,
+          "topic": "DDB rate and first two years",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [
+        {
+          "candidate": "straight",
+          "videoId": "iruD9KTNnNc",
+          "decision": "Link to Unit 8 Lesson 3. Do not repeat the embed."
+        },
+        {
+          "candidate": "ddb",
+          "videoId": "M-VzJ51zZoM",
+          "decision": "Link to Unit 8 Lesson 4. Do not repeat the embed."
+        }
+      ],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    },
+    {
+      "key": "unit08/lesson10",
+      "title": "PBL Milestone 3: Fixed‑Asset Recommendation Presentations",
+      "topics": [
+        "Present depreciation policy",
+        "defend method and statement impact",
+        "submit"
+      ],
+      "sourceSha256": "114b1680589ad3be7e3382673adefe0507435315e81c11fd470ea365d7cffea0",
+      "section": "start",
+      "accounting": [],
+      "excel": [],
+      "relatedLessons": [
+        {
+          "unitId": "unit08",
+          "lessonNumber": 3,
+          "topic": "Straight-line schedule",
+          "note": "Review this skill before you check the current workbook."
+        },
+        {
+          "unitId": "unit08",
+          "lessonNumber": 4,
+          "topic": "DDB rate and first two years",
+          "note": "Review this skill before you check the current workbook."
+        }
+      ],
+      "note": "",
+      "coverageGaps": "Earlier skill review only. The project task, workbook checks, evidence, and presentation instructions remain on this page.",
+      "decision": "Link earlier review only.",
+      "originalCandidates": [],
+      "previousEmbeds": [],
+      "existingVideoFrames": []
+    }
+  ]
+}
