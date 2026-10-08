@@ -471,6 +471,19 @@
       "kind": "accounting",
       "inspection": "YouTube timestamped transcript; primary player metadata",
       "evidence": "2:25 depreciation; 2:50 double rate; 3:11 beginning book value; 3:31 first year; 4:07 second year. Excludes the earlier suggestion to ignore residual value and later incomplete end-of-life result."
+    },
+    {
+      "resourceId": "text-columns",
+      "videoId": "TKQ--deRcUM",
+      "title": "Excel Text To Columns Feature to Split a Column of Text Values. Excel Magic Trick 1905",
+      "channel": "excelisfun",
+      "topic": "Split a text column with Text to Columns",
+      "focus": "Select the source column. Use Data > Text to Columns, choose the delimiter, and set an empty destination range. Keep the original data. Use the class tutorial for TRIM, PROPER, CLEAN, and duplicate checks.",
+      "startSeconds": 52,
+      "endSeconds": 131,
+      "kind": "excel",
+      "inspection": "YouTube timestamped transcript; primary player metadata",
+      "evidence": "0:52 source column; 0:59 Data > Data Tools; 1:15 Delimited; 1:21 delimiter preview; 1:41 preserve source by choosing a separate destination; 1:59 Finish. Output is static. Use an empty destination rather than overwrite existing cells."
     }
   ],
   "unusedAccountingCandidates": [
@@ -2068,11 +2081,22 @@
       "sourceSha256": "5d3e45174bf2e4fac68cb3eef6bcba5cde16a9e70bee9f2a7bd5e8369714902e",
       "section": "learn",
       "accounting": [],
-      "excel": [],
+      "excel": [
+        {
+          "resourceId": "text-columns",
+          "videoId": "TKQ--deRcUM",
+          "title": "Excel Text To Columns Feature to Split a Column of Text Values. Excel Magic Trick 1905",
+          "channel": "excelisfun",
+          "topic": "Split a text column with Text to Columns",
+          "focus": "Select the source column. Use Data > Text to Columns, choose the delimiter, and set an empty destination range. Keep the original data. Use the class tutorial for TRIM, PROPER, CLEAN, and duplicate checks.",
+          "startSeconds": 52,
+          "endSeconds": 131
+        }
+      ],
       "relatedLessons": [],
       "note": "",
-      "coverageGaps": "No verified clip matches the taught TRIM/PROPER/CLEAN, Text to Columns, and Remove Duplicates workflow.",
-      "decision": "No suitable new video selected.",
+      "coverageGaps": "Text to Columns only. TRIM/PROPER/CLEAN, formats, Remove Duplicates, filters, and the cleaning record remain in the class tutorial.",
+      "decision": "Embed inspected segment.",
       "originalCandidates": [],
       "previousEmbeds": [
         {
@@ -4020,5 +4044,6 @@
       "previousEmbeds": [],
       "existingVideoFrames": []
     }
-  ]
+  ],
+  "reviewAmendment": "The final full-playlist check found the direct Text to Columns tutorial TKQ--deRcUM. Its timestamped transcript was reviewed before placement. It replaces the stated cleaning-procedure gap with partial coverage. The rejected TEXTSPLIT candidate remains rejected."
 }

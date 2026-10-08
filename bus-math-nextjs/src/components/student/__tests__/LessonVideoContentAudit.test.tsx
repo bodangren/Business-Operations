@@ -73,7 +73,7 @@ describe("independent content comparison and fault detection", () => {
   })
 
   it("rejects an unplanned embed on a lesson with no suitable video", () => {
-    const { row, html } = renderLesson("unit04/lesson05")
+    const { row, html } = renderLesson("unit04/lesson02")
     expect(compareVideoPage(readVideoPage(html), row)).toEqual([])
     const extra = mutate(html, (document) => {
       const frame = document.createElement("iframe")

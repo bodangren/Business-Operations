@@ -13,11 +13,13 @@ The correction removes false matches and repeated embeds. Each selected segment 
 | 1 | Add T-account support. Replace the automated-journal clip that did not teach the required audit checks. Use a Table creation segment from the requested seminar. | 4 | 5 | 1 |
 | 2 | Add the full close sequence. Bound closing to the four-step Income Summary method. Correct the depreciation-entry start. Limit the named-cell and validation clips to the steps they show. | 5 | 7 | 0 |
 | 3 | Add the three-statement overview. Replace the Excel SUMIFS mismatch with the net-income/retained-earnings explanation. State the cross-sheet and cash-flow limits. | 6 | 5 | 0 |
-| 4 | Remove the TEXTSPLIT clip that was described as Text to Columns. Bound the regression clip. State the gaps for center/spread, Z-scores, and cleaning. | 1 | 5 | 4 |
+| 4 | Replace the TEXTSPLIT mismatch with the direct Text to Columns procedure. Bound the regression clip. State the gaps for center/spread, Z-scores, and other cleaning steps. | 2 | 5 | 3 |
 | 5 | Remove the annual marginal-tax clip from the employer/payroll lesson. Add a bounded wage-cap example with its old-limit warning. Keep gross/net and SUMIFS support specific. | 3 | 8 | 1 |
 | 6 | State the margin/markup gap. Bound CVP before the nearest-unit rounding step. Keep Goal Seek and Data Table instruction in the class tutorial. | 2 | 7 | 1 |
 | 7 | State the Specific Identification gap. Keep weighted-average precision. Limit Excel support to its actual method. Use one selector review and separate ratio segments. | 5 | 6 | 1 |
 | 8 | Use earlier schedule and entry reviews instead of repeated embeds. Separate capitalization from the journal entry. State the DDB salvage-floor and partial-year Excel gaps. | 3 | 8 | 0 |
+
+The final playlist check found a direct Text to Columns tutorial. Its transcript was reviewed before installation. The updated course map contains 37 segments from 33 videos on 30 pages. Earlier-lesson links appear on 51 pages.
 
 ## Evidence
 
@@ -30,7 +32,7 @@ The correction removes false matches and repeated embeds. Each selected segment 
 
 The source check rendered the real page component for each lesson. It compared the output with the frozen review file. It checked video IDs, start/end times, source titles, descriptions, accounting/Excel roles, direct watch links, section placement, earlier links, and the existing interviews. It also checked each lesson source hash. The page files and their tasks did not change.
 
-Result: 80 pages passed; 0 failed. The comparison used review-file SHA-256 `76c6d8c0ed909f53305715a3332e4abb2f2cb243f13d469ae49a53b864cbdd3b`.
+Result: 80 pages passed; 0 failed. The comparison used review-file SHA-256 `d97056aee7c7f2152c7376615d7a7049c3626b312a56b1c2f460e340dc0b0ef2`.
 
 The old implementation failed 73 of the 80 decision comparisons before the correction. This count includes missing reviews and links. It is not a count of incorrect teaching lessons.
 
