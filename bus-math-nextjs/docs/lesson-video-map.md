@@ -2,6 +2,8 @@
 
 All 80 lessons have a content decision. Accounting Stuff is the first accounting source. The Finance Storyteller supplies the payroll gross/net backup. Excel review is optional.
 
+The main video is at the top of Learn, before the lesson instruction. Players and earlier review links are visible by default. Milestone pages show their review links at the start of their single section.
+
 The map contains 37 inspected segments from 33 videos. Segments appear on 30 pages. Earlier-lesson links appear on 51 pages. Some pages have both. Seven pages keep their existing instruction without a new resource. The eight launch interviews remain in Start.
 
 Read [the review evidence](lesson-video-audit.json) for segment notes, original candidate decisions, removed placements, source hashes, and coverage limits. Read [the verification report](lesson-video-verification.md) for the full-page check.

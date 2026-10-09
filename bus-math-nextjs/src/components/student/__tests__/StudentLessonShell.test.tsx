@@ -29,10 +29,13 @@ function renderShell(overrides: Partial<React.ComponentProps<typeof StudentLesso
 }
 
 describe("StudentLessonShell", () => {
-  it("places matched videos inside Learn and keeps all four sections", () => {
+  it("shows the main video before the Learn instruction and keeps all four sections", () => {
     renderShell({ lessonId: "lesson02", lessonNumber: 2 })
     const learn = document.getElementById("learn")!
     expect(within(learn).getByRole("heading", { name: "Video review" })).toBeInTheDocument()
+    expect(learn.children[1]).toHaveAttribute("id", "video-review")
+    expect(learn.querySelector("details")).toHaveAttribute("open")
+    expect(learn.children[2]).toContainElement(screen.getByText("Learn body"))
     expect(document.getElementById("start")?.querySelector("iframe")).toBeNull()
     expect(screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent))
       .toEqual(["Start", "Learn", "Do", "Check"])

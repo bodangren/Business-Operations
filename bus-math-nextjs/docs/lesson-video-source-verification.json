@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-10-09T00:00:30.712Z",
+  "checkedAt": "2026-10-09T00:58:44.775Z",
   "mode": "all 80 source page components, React server render",
-  "expectationSha256": "d97056aee7c7f2152c7376615d7a7049c3626b312a56b1c2f460e340dc0b0ef2",
+  "expectationSha256": "0fa6922733af6a2b65f7342bdb28c9b9505fc4e746fbbb1040e079287d92be57",
   "pages": 80,
   "passed": 80,
   "failed": 0,
@@ -13,6 +13,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -24,6 +26,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -37,6 +41,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -48,6 +54,8 @@
       ],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -59,6 +67,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -70,6 +80,8 @@
         "/student/unit01/lesson05#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -83,6 +95,8 @@
         "/student/unit01/lesson05#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -95,6 +109,8 @@
         "/student/unit01/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -106,6 +122,8 @@
         "/student/unit01/lesson05#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -117,6 +135,8 @@
         "/student/unit01/lesson05#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -128,6 +148,8 @@
         "/student/unit01/lesson05#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -139,6 +161,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -150,6 +174,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -162,6 +188,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -175,6 +203,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -188,6 +218,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -201,6 +233,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -212,6 +246,8 @@
         "/student/unit02/lesson02#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -224,6 +260,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -235,6 +273,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -246,6 +286,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -257,6 +299,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -268,6 +312,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -281,6 +327,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -292,6 +340,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -305,6 +355,8 @@
         "/student/unit03/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -319,6 +371,8 @@
         "/student/unit03/lesson05#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -331,6 +385,8 @@
         "/student/unit03/lesson03#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -344,6 +400,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -355,6 +413,8 @@
         "/student/unit03/lesson05#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -364,6 +424,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -373,6 +435,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -382,6 +446,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -393,6 +459,8 @@
       ],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -404,6 +472,8 @@
       ],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -415,6 +485,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -427,6 +499,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -438,6 +512,8 @@
         "/student/unit04/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -450,6 +526,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -461,6 +539,8 @@
         "/student/unit04/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -470,6 +550,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -481,6 +563,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -494,6 +578,8 @@
         "/student/unit05/lesson02#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -505,6 +591,8 @@
         "/student/unit02/lesson02#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -518,6 +606,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -531,6 +621,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -544,6 +636,8 @@
         "/student/unit05/lesson05#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -556,6 +650,8 @@
         "/student/unit05/lesson03#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -569,6 +665,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -581,6 +679,8 @@
         "/student/unit05/lesson03#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -590,6 +690,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -601,6 +703,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -612,6 +716,8 @@
       ],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -623,6 +729,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -634,6 +742,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -645,6 +755,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -657,6 +769,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -669,6 +783,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -680,6 +796,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -691,6 +809,8 @@
         "/student/unit06/lesson03#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -700,6 +820,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": null,
+      "resourceAtSectionStart": false,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -711,6 +833,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -723,6 +847,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -734,6 +860,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -749,6 +877,8 @@
         "/student/unit03/lesson06#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -764,6 +894,8 @@
         "/student/unit06/lesson02#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -778,6 +910,8 @@
         "/student/unit07/lesson06#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -789,6 +923,8 @@
         "/student/unit07/lesson02#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -802,6 +938,8 @@
         "/student/unit07/lesson06#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -815,6 +953,8 @@
         "/student/unit07/lesson06#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -826,6 +966,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -839,6 +981,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -850,6 +994,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -861,6 +1007,8 @@
       "excel": [],
       "earlierReviews": [],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -873,6 +1021,8 @@
         "/student/unit08/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -886,6 +1036,8 @@
         "/student/unit02/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -899,6 +1051,8 @@
         "/student/unit08/lesson04#video-review"
       ],
       "section": "learn",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -912,6 +1066,8 @@
         "/student/unit08/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -924,6 +1080,8 @@
         "/student/unit08/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     },
     {
@@ -936,6 +1094,8 @@
         "/student/unit08/lesson04#video-review"
       ],
       "section": "start",
+      "resourceAtSectionStart": true,
+      "closedReviewCount": 0,
       "errors": []
     }
   ]

@@ -34,7 +34,7 @@ try {
     const actual = readVideoPage(html)
     const errors = compareVideoPage(actual, row)
     if (digest !== row.sourceSha256) errors.push(`${row.key}: lesson source changed after review; inspect and update the evidence explicitly`)
-    results.push({ key: row.key, status: errors.length ? "FAIL" : "PASS", accounting: actual.accounting.map((video) => video.resourceId), excel: actual.excel.map((video) => video.resourceId), earlierReviews: actual.relatedLessons.map((lesson) => lesson.href), section: actual.section ?? null, errors })
+    results.push({ key: row.key, status: errors.length ? "FAIL" : "PASS", accounting: actual.accounting.map((video) => video.resourceId), excel: actual.excel.map((video) => video.resourceId), earlierReviews: actual.relatedLessons.map((lesson) => lesson.href), section: actual.section ?? null, resourceAtSectionStart: actual.resourceAtSectionStart, closedReviewCount: actual.closedReviewCount, errors })
   }
   const report = { checkedAt: new Date().toISOString(), mode: live ? "published HTML" : "all 80 source page components, React server render", expectationSha256: crypto.createHash("sha256").update(fs.readFileSync("docs/lesson-video-audit.json")).digest("hex"), pages: results.length, passed: results.filter((result) => result.status === "PASS").length, failed: results.filter((result) => result.status === "FAIL").length, results }
   if (destination) fs.writeFileSync(destination, JSON.stringify(report, null, 2) + "\n")
