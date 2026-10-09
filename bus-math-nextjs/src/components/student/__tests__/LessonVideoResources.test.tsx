@@ -1,6 +1,6 @@
 /** @vitest-environment jsdom */
 import React from "react"
-import { fireEvent, render, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import { describe, expect, it } from "vitest"
 import LessonVideoResources from "../LessonVideoResources"
@@ -18,21 +18,27 @@ describe("LessonVideoResources", () => {
     expect(screen.getByText(/Use this page for Specific Identification/)).toBeInTheDocument()
   })
 
-  it("keeps Excel review optional and collapsed", () => {
+  it("shows Excel review by default and labels it optional", () => {
     const { container } = render(<LessonVideoResources unitId="unit05" lessonNumber={5} />)
     const summary = screen.getByText("Optional Excel review")
     const disclosure = summary.closest("details")
-    expect(disclosure).not.toHaveAttribute("open")
+    expect(disclosure).toHaveAttribute("open")
     expect(screen.getByText(/Follow the class tutorial/)).toBeInTheDocument()
-    fireEvent.click(summary)
     expect(container.querySelector("iframe")).toHaveAccessibleName()
   })
 
-  it("limits a long ratio video to the selected section and collapses workbook review", () => {
+  it("shows the selected ratio segments by default", () => {
     const { container } = render(<LessonVideoResources unitId="unit07" lessonNumber={6} />)
     expect(container.querySelector("iframe")?.getAttribute("src")).toContain("start=661&end=686")
     expect(screen.getByText(/Stop at 11:26/)).toBeInTheDocument()
-    expect(container.querySelector("details")).not.toHaveAttribute("open")
+    for (const disclosure of container.querySelectorAll("details")) {
+      expect(disclosure).toHaveAttribute("open")
+    }
+  })
+
+  it("shows earlier lesson links by default", () => {
+    const { container } = render(<LessonVideoResources unitId="unit07" lessonNumber={9} />)
+    expect(container.querySelector("[data-earlier-reviews]")).toHaveAttribute("open")
   })
 
   it("renders no block when no suitable video is selected", () => {

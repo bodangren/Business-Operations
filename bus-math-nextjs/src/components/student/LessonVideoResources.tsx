@@ -61,11 +61,11 @@ export default function LessonVideoResources({ unitId, lessonNumber }: LessonVid
   if (!selection) return null
 
   return (
-    <div id="video-review" className="scroll-mt-20 space-y-4 border-t border-border/60 pt-4">
+    <div id="video-review" className="scroll-mt-20 space-y-4">
       <h3 className="text-lg font-semibold">Video review</h3>
       {selection.note && <p data-video-note className="text-sm text-foreground/90">{selection.note}</p>}
       {selection.accounting.map((video, index) => (
-        <details key={video.resourceId} data-accounting-review className="space-y-3">
+        <details open key={video.resourceId} data-accounting-review className="space-y-3">
           <summary className="cursor-pointer text-sm font-medium text-primary">
             {index === 0 ? "Accounting review" : "Accounting support"}: {video.topic}
           </summary>
@@ -73,7 +73,7 @@ export default function LessonVideoResources({ unitId, lessonNumber }: LessonVid
         </details>
       ))}
       {selection.excel.length > 0 && (
-        <details data-excel-review className="space-y-3">
+        <details open data-excel-review className="space-y-3">
           <summary className="cursor-pointer text-sm font-medium text-primary">Optional Excel review</summary>
           <p className="pt-2 text-sm text-foreground/90">
             Missed class? Use these videos to review the Excel steps. Follow the class tutorial to build your workbook.
@@ -84,7 +84,7 @@ export default function LessonVideoResources({ unitId, lessonNumber }: LessonVid
         </details>
       )}
       {selection.relatedLessons.length > 0 && (
-        <details data-earlier-reviews className="space-y-3">
+        <details open data-earlier-reviews className="space-y-3">
           <summary className="cursor-pointer text-sm font-medium text-primary">Review an earlier lesson</summary>
           <p className="pt-2 text-sm text-foreground/90">Use these reviews if you need help with a skill from an earlier lesson.</p>
           <ul className="space-y-3">

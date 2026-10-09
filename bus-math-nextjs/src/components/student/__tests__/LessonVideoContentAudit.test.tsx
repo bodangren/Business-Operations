@@ -34,6 +34,13 @@ describe("independent content comparison and fault detection", () => {
     it(`accepts the reviewed page and rejects missing, extra, and wrong video content in ${key}`, () => {
       const { row, html } = renderLesson(key)
       expect(compareVideoPage(readVideoPage(html), row)).toEqual([])
+      const hidden = mutate(html, (document) => document.querySelector("[data-video-resource]")!.closest("details")!.removeAttribute("open"))
+      expect(compareVideoPage(readVideoPage(hidden), row).some((error: string) => error.includes("collapsed"))).toBe(true)
+      const belowInstruction = mutate(html, (document) => {
+        const block = document.getElementById("video-review")!
+        block.closest("section")!.append(block)
+      })
+      expect(compareVideoPage(readVideoPage(belowInstruction), row).some((error: string) => error.includes("position before lesson instruction"))).toBe(true)
       const missing = mutate(html, (document) => document.querySelector("[data-video-resource]")!.remove())
       expect(compareVideoPage(readVideoPage(missing), row).length).toBeGreaterThan(0)
       const extra = mutate(html, (document) => {
@@ -70,6 +77,8 @@ describe("independent content comparison and fault detection", () => {
     expect(compareVideoPage(readVideoPage(missing), row).length).toBeGreaterThan(0)
     const wrong = mutate(html, (document) => document.querySelector("[data-lesson-review] a")!.setAttribute("href", "/student/unit01/lesson01"))
     expect(compareVideoPage(readVideoPage(wrong), row).length).toBeGreaterThan(0)
+    const hidden = mutate(html, (document) => document.querySelector("[data-earlier-reviews]")!.removeAttribute("open"))
+    expect(compareVideoPage(readVideoPage(hidden), row).some((error: string) => error.includes("closed reviews"))).toBe(true)
   })
 
   it("accepts published lesson links and rejects a wrong lesson or fragment", () => {

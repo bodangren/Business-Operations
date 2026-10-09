@@ -121,11 +121,11 @@ export function StudentLessonShell({
                 <p className="text-sm text-muted-foreground">{definition.description}</p>
               </div>
 
-              <div className="space-y-4">{content?.children}</div>
-
               {section.id === videoSection && (
                 <LessonVideoResources unitId={unitId} lessonNumber={lessonNumber} />
               )}
+
+              <div className="space-y-4">{content?.children}</div>
 
               {section.id === "check" && (
                 <div className="space-y-4">

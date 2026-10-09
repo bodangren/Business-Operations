@@ -53,6 +53,8 @@ export function readVideoPage(html) {
     note: text(document.querySelector("[data-video-note]")),
     blockCount: blocks.length,
     section: blocks[0]?.closest("section[id]")?.id,
+    resourceAtSectionStart: Boolean(blocks[0] && blocks[0].closest("section[id]")?.children[1] === blocks[0]),
+    closedReviewCount: document.querySelectorAll("#video-review details:not([open])").length,
     existingVideoFrames: [...document.querySelectorAll('iframe[src*="youtube-nocookie.com"]')].filter((frame) => !frame.closest("[data-video-resource]")).map((frame) => ({src: frame.getAttribute("src"), title: frame.getAttribute("title"), section: frame.closest("section[id]")?.id})),
     youtubeFrames: document.querySelectorAll('iframe[src*="youtube-nocookie.com"]').length,
     excelDisclosure: text(document.querySelector("[data-excel-review] > summary")),
@@ -74,6 +76,8 @@ export function compareVideoPage(actual, expected) {
   const hasResources = expected.accounting.length + expected.excel.length + expected.relatedLessons.length > 0
   check("block count", actual.blockCount, hasResources ? 1 : 0)
   check("placement", actual.section, hasResources ? expected.section : undefined)
+  check("position before lesson instruction", actual.resourceAtSectionStart, hasResources && expected.resourcesAtSectionStart)
+  check("closed reviews", actual.closedReviewCount, 0)
   check("section structure", actual.visibleSections, expected.section === "start" ? ["start"] : ["start", "learn", "do", "check"])
   check("unaccounted YouTube frames", actual.youtubeFrames, expected.accounting.length + expected.excel.length + (expected.existingVideoFrames?.length ?? 0))
   check("existing launch interviews", actual.existingVideoFrames, expected.existingVideoFrames ?? [])
@@ -91,7 +95,7 @@ export function compareVideoPage(actual, expected) {
       check(`${kind}[${index}].frameTitle`, row.frameTitle, `${wanted.title} — ${wanted.channel} — ${stamp(wanted.startSeconds)}`)
       check(`${kind}[${index}].section`, row.section, expected.section)
       check(`${kind}[${index}].title count`, row.headingCount, 1)
-      check(`${kind}[${index}].collapsed`, row.collapsed, true)
+      check(`${kind}[${index}].collapsed`, row.collapsed, !expected.resourcesExpanded)
     })
   }
   check("earlier reviews", actual.relatedLessons, expected.relatedLessons.map((lesson) => ({
