@@ -2,6 +2,8 @@
 
 All 80 lesson page components match the reviewed decisions. The comparison found zero unexplained differences.
 
+All 80 published pages also match the reviewed decisions. The published check found zero content differences after the production build and deployment passed.
+
 The content audit covers all eight units. It lists actual lesson topics, selected segments, partial coverage, rejected candidates, earlier review links, and source evidence. The audit was prepared before the production map changed. The eight existing launch interviews have a separate baseline check.
 
 The correction removes false matches and repeated embeds. Each selected segment appears once. Later applications link to the teaching lesson. Excel review stays optional and collapsed. Accounting reviews also start collapsed. Standard lessons keep Start, Learn, Do, and Check. Project pages keep their single milestone section.
@@ -26,6 +28,7 @@ The final playlist check found a direct Text to Columns tutorial. Its transcript
 - [All 80 topic lists and video decisions](lesson-video-map.md).
 - [Frozen review data and inspection notes](lesson-video-audit.json).
 - [All 80 source-page comparison results](lesson-video-source-verification.json).
+- [All 80 published-page comparison results](lesson-video-published-verification.json).
 - [CSV map](lesson-video-map.csv).
 
 ## Verification
@@ -36,7 +39,9 @@ Result: 80 pages passed; 0 failed. The comparison used review-file SHA-256 `d970
 
 The old implementation failed 73 of the 80 decision comparisons before the correction. This count includes missing reviews and links. It is not a count of incorrect teaching lessons.
 
-104 targeted tests passed. Fault checks changed rendered content across all eight units. Missing clips, extra clips, valid-format wrong IDs, false focus text, wrong ranges, wrong roles, duplicate titles, wrong sections, and missing/wrong review links all produced failures. These checks prove conformance to the reviewed decisions. They do not decide instructional fit. The transcript notes provide that evidence.
+105 targeted tests passed. Fault checks changed rendered content across all eight units. Missing clips, extra clips, valid-format wrong IDs, false focus text, wrong ranges, wrong roles, duplicate titles, wrong sections, and missing/wrong review links all produced failures. These checks prove conformance to the reviewed decisions. They do not decide instructional fit. The transcript notes provide that evidence.
+
+The published comparison checks the lesson routes after GitHub Pages adds the site base path and a trailing slash. It removes these two URL format differences. It keeps the unit, lesson, and fragment unchanged. A test confirms that a wrong lesson or fragment still fails. The published result records deployment commit `c06169603c121e8a43e408b6b0c2f2cd5043288d` and its successful deployment run.
 
 TypeScript passed. ESLint reported 0 errors and 4 existing warnings outside the changed files. Local checks used the installed binaries. They did not run npm or change `.next`.
 

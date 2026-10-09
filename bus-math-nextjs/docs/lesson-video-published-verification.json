@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-09T00:00:30.712Z",
-  "mode": "all 80 source page components, React server render",
+  "checkedAt": "2026-10-09T00:00:52.316Z",
+  "mode": "published HTML",
   "expectationSha256": "d97056aee7c7f2152c7376615d7a7049c3626b312a56b1c2f460e340dc0b0ef2",
   "pages": 80,
   "passed": 80,
@@ -938,5 +938,8 @@
       "section": "start",
       "errors": []
     }
-  ]
+  ],
+  "deploymentCommit": "c06169603c121e8a43e408b6b0c2f2cd5043288d",
+  "deploymentWorkflow": "https://github.com/bodangren/Business-Operations/actions/runs/37862108762",
+  "urlComparison": "Remove the site base path and the slash before a lesson fragment. Keep the unit, lesson, and fragment unchanged."
 }
