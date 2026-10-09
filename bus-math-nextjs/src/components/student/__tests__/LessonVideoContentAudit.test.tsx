@@ -72,6 +72,23 @@ describe("independent content comparison and fault detection", () => {
     expect(compareVideoPage(readVideoPage(wrong), row).length).toBeGreaterThan(0)
   })
 
+  it("accepts published lesson links and rejects a wrong lesson or fragment", () => {
+    const { row, html } = renderLesson("unit07/lesson09")
+    const published = mutate(html, (document) => {
+      for (const link of document.querySelectorAll("[data-lesson-review] a")) {
+        link.setAttribute("href", `/Business-Operations${link.getAttribute("href")!.replace("#", "/#")}`)
+      }
+    })
+    expect(compareVideoPage(readVideoPage(published), row)).toEqual([])
+    for (const href of [
+      "/Business-Operations/student/unit07/lesson02/#video-review",
+      "/Business-Operations/student/unit07/lesson03/#learn",
+    ]) {
+      const wrong = mutate(published, (document) => document.querySelector("[data-lesson-review] a")!.setAttribute("href", href))
+      expect(compareVideoPage(readVideoPage(wrong), row).some((error: string) => error.includes("earlier reviews"))).toBe(true)
+    }
+  })
+
   it("rejects an unplanned embed on a lesson with no suitable video", () => {
     const { row, html } = renderLesson("unit04/lesson02")
     expect(compareVideoPage(readVideoPage(html), row)).toEqual([])

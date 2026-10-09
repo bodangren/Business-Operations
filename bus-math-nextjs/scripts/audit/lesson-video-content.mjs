@@ -2,7 +2,11 @@ import { JSDOM } from "jsdom"
 
 const text = (element) => element?.textContent?.trim() ?? ""
 const stamp = (seconds) => `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`
-const route = (href) => href?.replace(/^\/Business-Operations(?=\/)/, "") ?? ""
+// Next.js adds the site base path and a slash before the lesson fragment.
+// Keep the unit, lesson, and fragment unchanged for the content comparison.
+const route = (href) => href
+  ?.replace(/^\/Business-Operations(?=\/)/, "")
+  .replace(/^(\/student\/unit\d{2}\/lesson\d{2})\/(?=#)/, "$1") ?? ""
 
 /**
  * Read video content from the actual rendered lesson HTML.
