@@ -56,6 +56,10 @@ const definitionOfDone = [
   "No broken formulas or #REF! errors anywhere in the workbook"
 ]
 
+/**
+ * Map the assigned workbook to the project requirements.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase2Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-blue-50">
@@ -70,7 +74,7 @@ export default function Phase2Content() {
                 <AlertCircle className="h-4 w-4 text-blue-700" />
                 <AlertTitle className="text-blue-900">Shared Data Notice</AlertTitle>
                 <AlertDescription className="text-blue-800">
-                  Every group in this class is working with the <strong>same teacher-provided dataset</strong>. The workbook you download is identical to the teacher's reference workbook. This lets the whole class compare reasoning, evidence chains, and workbook quality directly.
+                  Open a copy of the full month-end close workbook assigned in OneDrive. Every group uses the same source for this rehearsal. Check its opening balances, adjustment facts, and reporting period before you start. The download below is a separate three-sheet depreciation example.
                 </AlertDescription>
               </Alert>
 
@@ -78,17 +82,17 @@ export default function Phase2Content() {
                 <CardHeader>
                   <CardTitle className="text-blue-900 flex items-center gap-2">
                     <FileSpreadsheet className="w-5 h-5" />
-                    Download the Shared Rehearsal Workbook
+                    Open the Assigned Workbook
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-blue-900 space-y-4">
                   <p>
-                    Download the rehearsal workbook before continuing. This is the same data every group will use today.
+                    Use the existing Excel workbook from the class OneDrive folder. The download below contains Summary, Adjustments, and Report. Use it to test the monthly depreciation link. It does not contain the trial balance or closing journal needed for the full rehearsal.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <a href="/resources/unit02-lesson07-teacher.xlsx" download className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
                       <FileSpreadsheet className="w-4 h-4" />
-                      Download: unit02-lesson07-teacher.xlsx
+                      Download depreciation example (3 sheets)
                     </a>
                     <a href="/resources/unit02-lesson07-tutorial.md" className="inline-flex items-center gap-2 px-4 py-2 border border-blue-300 text-blue-700 rounded-md hover:bg-blue-100 transition-colors">
                       View Tutorial Guide
@@ -103,7 +107,7 @@ export default function Phase2Content() {
                 </CardHeader>
                 <CardContent className="prose prose-lg max-w-none text-blue-900">
                   <p>
-                    A strong project workbook does not just contain numbers—it builds an <strong>evidence chain</strong>. Each sheet has a job. It must prove something that supports the final recommendation. Below is the map for today's rehearsal workbook. Your project workbook in Lessons 08–10 will follow the same structure.
+                    The seven areas below define the full project evidence chain. Match each area to the assigned OneDrive workbook. If its source data do not support a required area, ask your teacher for the correct file before you continue. Do not create opening balances or asset lives to fill a gap.
                   </p>
                   <div className="space-y-4 mt-6">
                     {workbookSheets.map((sheet, i) => (

@@ -18,7 +18,7 @@ export const lesson09Data = {
     "Peer feedback as revision input, not formality",
     "Milestone 2 acceptance criteria"
   ],
-  durationEstimateMinutes: 60,
+  durationEstimateMinutes: 70,
   pedagogicalApproach: [
     "Group-project milestone: workbook completion and testing",
     "Peer critique with required revision move",

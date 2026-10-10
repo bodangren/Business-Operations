@@ -4,6 +4,10 @@ import { TrendingUp, Target } from "lucide-react"
 import ClosingEntryPractice from "@/components/exercises/ClosingEntryPractice"
 
 
+/**
+ * Present independent closing-entry practice.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-purple-50">
@@ -23,7 +27,7 @@ export default function Phase4Content() {
                 <p>
                   You know the four-step closing procedure. Now it's time to build speed and accuracy.
                   Each round gives you a new set of adjusted account balances. Your job is to identify
-                  the correct dollar amount for each of the four closing steps.
+                  the correct accounts, debit and credit sides, and amounts for each closing entry. Then check the balances after posting.
                 </p>
                 <p>
                   The interface stays the same every round. Only the numbers change. Work through each
@@ -64,7 +68,7 @@ export default function Phase4Content() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-amber-800">
-                      Enter the <strong>dollar amount</strong> for each step. The journal entry structure is the same every round.
+                      Select the <strong>account and side</strong> for each line. Enter a nonnegative journal amount. A loss reverses the Income Summary entry.
                     </p>
                   </CardContent>
                 </Card>

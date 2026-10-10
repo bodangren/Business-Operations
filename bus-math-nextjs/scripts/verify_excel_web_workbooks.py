@@ -17,6 +17,10 @@ UNIT_TWO_FILES = (
     "unit02-lesson06-student.xlsx",
     "unit02-lesson06-teacher.xlsx",
 )
+LESSON_FOUR_SHEETS = [
+    "Unadjusted TB", "Adjustments", "Adjusted TB", "Financial Statements",
+    "Closing Entries", "Post-closing TB",
+]
 FORBIDDEN_PARTS = ("vbaproject.bin", "xl/activex/", "xl/ctrlprops/")
 FORBIDDEN_TEXT = re.compile(r"\b(?:vba|macros?)\b|\.xlsm\b|visual basic", re.IGNORECASE)
 
@@ -48,6 +52,27 @@ def verify_package(path: Path) -> None:
 
 def verify_unit_two_contracts() -> None:
     """Verify workbook sheets, defined names, formulas, and controls."""
+    for version in ("student", "teacher"):
+        path = RESOURCES / f"unit02-lesson04-{version}.xlsx"
+        verify_package(path)
+        workbook = load_workbook(path, data_only=False)
+        require(workbook.sheetnames == LESSON_FOUR_SHEETS, f"Lesson 4 {version}: manual close sheets are missing")
+        opening = workbook["Unadjusted TB"]
+        require(sum(opening.cell(row, 2).value or 0 for row in range(5, 20)) == 51_700, f"Lesson 4 {version}: wrong opening debits")
+        require(sum(opening.cell(row, 3).value or 0 for row in range(5, 20)) == 51_700, f"Lesson 4 {version}: opening trial balance does not balance")
+        require(opening["B24"].value == 4_300, f"Lesson 4 {version}: supplies fact differs from the source")
+        require(opening["B30"].value == 900, f"Lesson 4 {version}: unbilled revenue fact is missing")
+        if version == "student":
+            require(workbook["Adjustments"]["C5"].value is None, "Lesson 4 student: adjusting journal must be blank")
+            require(workbook["Financial Statements"]["B11"].value is None, "Lesson 4 student: net income must be blank")
+            require(workbook["Closing Entries"]["C5"].value is None, "Lesson 4 student: closing journal must be blank")
+        else:
+            require(workbook["Adjustments"]["C15"].value == "Accounts Receivable", "Lesson 4 teacher: accrued revenue debit is missing")
+            require(workbook["Adjusted TB"]["D5"].value.startswith("=SUMIF("), "Lesson 4 teacher: posting must use the journal")
+            require(workbook["Financial Statements"]["B11"].value == "=B5-B10", "Lesson 4 teacher: net income must follow the statements")
+            require(workbook["Closing Entries"]["D12"].value == "='Financial Statements'!B11", "Lesson 4 teacher: close the computed income")
+            require(workbook["Post-closing TB"]["C14"].value == "='Financial Statements'!B16", "Lesson 4 teacher: carry forward ending retained earnings")
+
     for filename in UNIT_TWO_FILES:
         verify_package(RESOURCES / filename)
 
@@ -57,7 +82,8 @@ def verify_unit_two_contracts() -> None:
 
     lesson_five_teacher = load_workbook(RESOURCES / UNIT_TWO_FILES[1], data_only=False)
     require(lesson_five_teacher["Close Model"]["B4"].value == "=SuppliesUsed", "Lesson 5 teacher: wrong adjustment formula")
-    require(lesson_five_teacher["Control Panel"]["B9"].value.startswith("=IF(AND("), "Lesson 5 teacher: CloseStatus is missing")
+    require('COUNT(' in lesson_five_teacher["Control Panel"]["B9"].value, "Lesson 5 teacher: CloseStatus must check for missing numeric cells")
+    require('"Not finished"' in lesson_five_teacher["Control Panel"]["B9"].value, "Lesson 5 teacher: CloseStatus must not accept an incomplete model")
 
     lesson_six_student = load_workbook(RESOURCES / UNIT_TWO_FILES[2], data_only=False)
     require(lesson_six_student.sheetnames == ["Inputs", "Close Model", "Control Panel", "Scenarios"], "Lesson 6 student: wrong sheets")
@@ -73,6 +99,10 @@ def verify_unit_two_contracts() -> None:
     require(lesson_six_teacher["Inputs"]["D5"].value.startswith("=IF(AND("), "Lesson 6 teacher: validation formula is missing")
     require(len(lesson_six_teacher["Control Panel"].data_validations.dataValidation) == 1, "Lesson 6 teacher: period dropdown is missing")
     require(lesson_six_teacher["Control Panel"]["B8"].value.startswith("=COUNTIF("), "Lesson 6 teacher: failed-check count is missing")
+    require('COUNTA(Inputs!D5:D9)<>5' in lesson_six_teacher["Control Panel"]["B9"].value, "Lesson 6 teacher: CloseStatus must check all five validation results")
+
+    lesson_seven_teacher = load_workbook(RESOURCES / "unit02-lesson07-teacher.xlsx", data_only=False)
+    require(lesson_seven_teacher["Report"]["B5"].value == '=ROUND(Adjustments!E6/12,2)', "Lesson 7 teacher: monthly report must use monthly depreciation")
 
     expected_names = {
         "SuppliesUsed",

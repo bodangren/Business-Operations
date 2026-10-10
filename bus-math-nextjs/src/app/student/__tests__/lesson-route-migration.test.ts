@@ -45,7 +45,7 @@ describe("student lesson route migration", () => {
       const source = read(path.join(lesson.unitId, lessonId, "page.tsx"))
       const lessonNumber = Number(lessonId.replace("lesson", ""))
       const expected = MILESTONE_LESSON_NUMBERS.has(lessonNumber)
-        ? new Set(["start"])
+        ? new Set(lesson.unitId === "unit02" ? ["start", "learn", "do", "check"] : ["start"])
         : new Set(phaseNumbers(lesson.unitId, lessonId).map((phase) => PHASE_SECTIONS[phase]))
       if (expected.size === 0) expected.add("start")
 
@@ -55,7 +55,7 @@ describe("student lesson route migration", () => {
     }
   })
 
-  it("renders every project milestone lesson as one page with a single Start section", () => {
+  it("keeps milestones on one page and gives Unit 2 usable section navigation", () => {
     for (const lesson of LESSON_PAGES) {
       const lessonId = lesson.href.split("/").pop() as string
       const lessonNumber = Number(lessonId.replace("lesson", ""))
@@ -64,7 +64,11 @@ describe("student lesson route migration", () => {
       const source = read(path.join(lesson.unitId, lessonId, "page.tsx"))
       expect(source, lesson.href).toContain('{ id: "start"')
       for (const sectionId of ["learn", "do", "check"]) {
-        expect(source, `${lesson.href} -> ${sectionId}`).not.toContain(`id: "${sectionId}"`)
+        if (lesson.unitId === "unit02") {
+          expect(source, `${lesson.href} -> ${sectionId}`).toContain(`id: "${sectionId}"`)
+        } else {
+          expect(source, `${lesson.href} -> ${sectionId}`).not.toContain(`id: "${sectionId}"`)
+        }
       }
     }
   })

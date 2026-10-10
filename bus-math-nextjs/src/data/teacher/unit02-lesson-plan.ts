@@ -759,11 +759,11 @@ export const unit02LessonPlan: UnitLessonPlan = {
         day: 9,
         title: "PBL Milestone 2: Prototype + Rehearsal",
         focus: "Working prototype, validations passing, documented tests; rehearsal and peer feedback",
-        duration: "60 minutes",
+        duration: "70 minutes",
         activities: [
           {
             name: "Prototype Build Sprint",
-            duration: "30 minutes",
+            duration: "40 minutes",
             description: "Implement excelSkillFocus and run tests on the dataset",
             details: [
               "XLOOKUP mapping + SWITCH/IFS routing",

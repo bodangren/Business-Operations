@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import ComprehensionCheck from "@/components/exercises/ComprehensionCheck"
-import PeerCritiqueForm from "@/components/exercises/PeerCritiqueForm"
+import Unit02PeerFeedback from "@/components/exercises/Unit02PeerFeedback"
 import { ClipboardCheck, Users } from "lucide-react"
 import { getQuestionsForLesson, toComprehensionCheckFormat } from "@/data/question-banks/unit02-phase5"
 
@@ -45,6 +45,10 @@ const auditCriteria = [
   }
 ]
 
+/**
+ * Present the transfer ticket and saved peer audit.
+ * @returns The lesson content and activity controls.
+ */
 export default function Phase5Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-orange-50">
@@ -115,7 +119,7 @@ export default function Phase5Content() {
                   <p className="text-orange-900 mb-4">
                     Use the form below to record your audit findings. Be specific — cite exact phrases or numbers from the workbook you reviewed.
                   </p>
-                  <PeerCritiqueForm
+                  <Unit02PeerFeedback
                     projectTitle="TechStart Month-End Rehearsal Workbook"
                     peerName="Peer Group"
                     unitNumber={2}
