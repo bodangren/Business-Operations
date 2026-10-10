@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CheckCircle2, XCircle, RotateCcw, ChevronRight, AlertTriangle, Package, Calculator, TrendingUp, BookOpen } from "lucide-react"
 
-// Pre-defined scenarios that produce clean averages
+// Purchase inputs. Keep the average unrounded until cost allocation.
 const SCENARIOS = [
   { 
     product: "Flour", 
@@ -78,7 +78,7 @@ const generateScenario = (): ScenarioState => {
   const totalUnits = s.beg.units + s.p1.units + s.p2.units
   const totalCost = begTotal + p1Total + p2Total
   const rawAvg = totalCost / totalUnits
-  const avgCost = Math.round(rawAvg * 100) / 100
+  const avgCost = rawAvg
   
   // Sell 50-70% of available units, rounded to nearest 10
   const minSold = Math.ceil(totalUnits * 0.50)
@@ -86,8 +86,8 @@ const generateScenario = (): ScenarioState => {
   const unitsSold = Math.round(((minSold + maxSold) / 2) / 10) * 10
   
   const unitsRemaining = totalUnits - unitsSold
-  const cogs = unitsSold * avgCost
-  const endingInventory = unitsRemaining * avgCost
+  const cogs = Math.round(unitsSold * avgCost * 100) / 100
+  const endingInventory = Math.round((totalCost - cogs) * 100) / 100
   
   return {
     product: s.product,
@@ -106,6 +106,10 @@ const generateScenario = (): ScenarioState => {
   }
 }
 
+/**
+ * Guide weighted-average allocation without early unit-cost rounding.
+ * @returns Calculation steps, feedback, and a cost-conservation check.
+ */
 export default function WeightedAvgPractice() {
   const [scenario, setScenario] = useState<ScenarioState | null>(null)
   const [step, setStep] = useState(0)
@@ -145,8 +149,8 @@ export default function WeightedAvgPractice() {
   const checkAnswer = (key: string, expected: number) => {
     const userAnswer = parseFloat(answers[key] || "")
     if (isNaN(userAnswer)) return false
-    // Allow small rounding differences
-    return Math.abs(userAnswer - expected) < 0.5
+    const tolerance = key === "avgCost" ? 0.00005 : 0.005
+    return Math.abs(userAnswer - expected) < tolerance
   }
 
   if (!scenario) return null
@@ -449,6 +453,7 @@ export default function WeightedAvgPractice() {
                         <div className="flex gap-2 mt-2">
                           <Input
                             type="number"
+                            step="0.01"
                             value={answers.totalUnits || ""}
                             onChange={(e) => setAnswers(prev => ({ ...prev, totalUnits: e.target.value }))}
                             placeholder="?"
@@ -468,6 +473,7 @@ export default function WeightedAvgPractice() {
                           <span className="flex items-center text-blue-800 font-medium">$</span>
                           <Input
                             type="number"
+                            step="0.01"
                             value={answers.totalCost || ""}
                             onChange={(e) => setAnswers(prev => ({ ...prev, totalCost: e.target.value }))}
                             placeholder="?"
@@ -515,7 +521,7 @@ export default function WeightedAvgPractice() {
                   <h4 className="font-semibold text-amber-900 text-lg">Step 2: Find the Average Cost</h4>
                   <p className="text-amber-800">
                     Now that you have the <strong>total units</strong> and <strong>total cost</strong>, 
-                    divide to find the single average cost per unit.
+                    divide to find the average cost per unit. Round this answer to four decimal places. Use total cost ÷ total units at full precision for COGS. Round final currency amounts to cents.
                   </p>
                   <div className="bg-white p-4 rounded-lg border border-amber-200">
                     <p className="text-amber-900 font-medium mb-2">The Weighted Average Formula:</p>
@@ -542,7 +548,7 @@ export default function WeightedAvgPractice() {
             <CardContent className="space-y-4">
               <p className="text-slate-600">
                 Using your totals from the previous step, divide the total cost by the total units. 
-                Round to <strong>2 decimal places</strong> if needed.
+                Round this answer to <strong>4 decimal places</strong>. Use total cost ÷ total units at full precision for COGS.
               </p>
 
               <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
@@ -558,7 +564,7 @@ export default function WeightedAvgPractice() {
                       <span className="text-slate-600">$</span>
                       <Input
                         type="number"
-                        step="0.01"
+                        step="0.0001"
                         value={answers.avgCost || ""}
                         onChange={(e) => setAnswers(prev => ({ ...prev, avgCost: e.target.value }))}
                         placeholder="0.00"
@@ -576,11 +582,11 @@ export default function WeightedAvgPractice() {
                     <div className="space-y-2">
                       <p className="text-green-900 font-medium">
                         <CheckCircle2 className="h-5 w-5 inline mr-2" />
-                        Correct! ${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()} = 
-                        <strong> ${scenario.avgCost.toFixed(2)}/{scenario.product.toLowerCase().slice(0, -1)}</strong>
+                        Correct! ${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()} ≈
+                        <strong> ${scenario.avgCost.toFixed(4)}/{scenario.product.toLowerCase().slice(0, -1)}</strong>
                       </p>
                       <p className="text-green-700 text-sm">
-                        This single rate will be used for <strong>both</strong> COGS and Ending Inventory.
+                        Use the full ratio for COGS. Subtract rounded COGS from total cost to find ending inventory.
                       </p>
                     </div>
                   ) : (
@@ -590,7 +596,7 @@ export default function WeightedAvgPractice() {
                         Not quite. Let's work through it:
                       </p>
                       <p className="text-red-700 text-sm">
-                        ${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()} = ${scenario.avgCost.toFixed(2)}
+                        ${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()} ≈ ${scenario.avgCost.toFixed(4)}
                       </p>
                     </div>
                   )}
@@ -615,7 +621,7 @@ export default function WeightedAvgPractice() {
                         </p>
                         <p className="font-medium">
                           ✓ RIGHT: Total Cost ÷ Total Units = ${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()} 
-                          = ${scenario.avgCost.toFixed(2)}
+                          ≈ ${scenario.avgCost.toFixed(4)}
                         </p>
                       </div>
                       <p className="text-red-700 text-sm mt-2">
@@ -650,7 +656,7 @@ export default function WeightedAvgPractice() {
                   </p>
                   <p className="text-blue-800">
                     This is the key difference from FIFO and LIFO. You don't ask "which layer sold first?" 
-                    You just multiply units sold by the average cost.
+                    Multiply units sold by total cost ÷ total units. Keep full precision. Round COGS to cents.
                   </p>
                 </div>
               </div>
@@ -670,11 +676,12 @@ export default function WeightedAvgPractice() {
                     <div className="flex items-center justify-center gap-3">
                       <span className="text-purple-600">{scenario.unitsSold.toLocaleString()} {scenario.product.toLowerCase()}</span>
                       <span className="text-slate-400">×</span>
-                      <span className="text-purple-600">${scenario.avgCost.toFixed(2)}/{scenario.product.toLowerCase().slice(0, -1)}</span>
+                      <span className="text-purple-600">(${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()})</span>
                       <span className="text-slate-400">=</span>
                       <span className="text-slate-600">$</span>
                       <Input
                         type="number"
+                        step="0.01"
                         value={answers.cogs || ""}
                         onChange={(e) => setAnswers(prev => ({ ...prev, cogs: e.target.value }))}
                         placeholder="?"
@@ -690,7 +697,7 @@ export default function WeightedAvgPractice() {
                   {checked.cogs ? (
                     <p className="text-green-900">
                       <CheckCircle2 className="h-5 w-5 inline mr-2" />
-                      Correct! {scenario.unitsSold.toLocaleString()} × ${scenario.avgCost.toFixed(2)} = 
+                      Correct! {scenario.unitsSold.toLocaleString()} × (${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()}) =
                       <strong> ${scenario.cogs.toFixed(2)}</strong>
                     </p>
                   ) : (
@@ -700,7 +707,7 @@ export default function WeightedAvgPractice() {
                         Not quite. COGS = ${scenario.cogs.toFixed(2)}
                       </p>
                       <p className="text-red-700 text-sm mt-1">
-                        {scenario.unitsSold.toLocaleString()} × ${scenario.avgCost.toFixed(2)} = ${scenario.cogs.toFixed(2)}
+                        {scenario.unitsSold.toLocaleString()} × (${scenario.totalCost.toLocaleString()} ÷ {scenario.totalUnits.toLocaleString()}) = ${scenario.cogs.toFixed(2)}
                       </p>
                     </div>
                   )}
@@ -744,7 +751,7 @@ export default function WeightedAvgPractice() {
                 <div className="space-y-3">
                   <h4 className="font-semibold text-blue-900 text-lg">Step 4: Calculate Ending Inventory</h4>
                   <p className="text-blue-800">
-                    What's left on the shelf? Use the <strong>same average cost</strong> for the remaining units.
+                    Calculate ending inventory as total cost minus rounded COGS. This keeps the full cost assigned.
                   </p>
                   <div className="bg-white p-3 rounded border border-blue-200">
                     <p className="text-blue-800 text-sm">
@@ -769,6 +776,7 @@ export default function WeightedAvgPractice() {
                   <div className="flex gap-2">
                     <Input
                       type="number"
+                      step="0.01"
                       value={answers.unitsRemaining || ""}
                       onChange={(e) => setAnswers(prev => ({ ...prev, unitsRemaining: e.target.value }))}
                       placeholder="?"
@@ -788,6 +796,7 @@ export default function WeightedAvgPractice() {
                     <span className="flex items-center text-slate-600 font-medium">$</span>
                     <Input
                       type="number"
+                      step="0.01"
                       value={answers.endingInventory || ""}
                       onChange={(e) => setAnswers(prev => ({ ...prev, endingInventory: e.target.value }))}
                       placeholder="?"
@@ -806,8 +815,8 @@ export default function WeightedAvgPractice() {
                 onClick={() => {
                   setChecked(prev => ({
                     ...prev,
-                    unitsRemaining: parseInt(answers.unitsRemaining || "0") === scenario.unitsRemaining,
-                    endingInventory: Math.abs(parseFloat(answers.endingInventory || "0") - scenario.endingInventory) < 1
+                    unitsRemaining: parseFloat(answers.unitsRemaining || "") === scenario.unitsRemaining,
+                    endingInventory: Math.abs(parseFloat(answers.endingInventory || "") - scenario.endingInventory) < 0.005
                   }))
                 }}
                 className="bg-purple-600 hover:bg-purple-700"
@@ -823,7 +832,7 @@ export default function WeightedAvgPractice() {
                       Weighted Average Complete!
                     </p>
                     <p className="text-green-700 text-sm mb-3">
-                      Same rate (${scenario.avgCost.toFixed(2)}) for both COGS and Ending Inventory. No layer tracking needed!
+                      Use the full average for COGS. Ending inventory receives the remaining cost.
                     </p>
                     <div className="grid grid-cols-3 gap-2 text-center">
                       <div className="bg-white p-3 rounded-lg border border-green-200">
@@ -890,6 +899,7 @@ export default function WeightedAvgPractice() {
                   <span className="font-bold">$</span>
                   <Input
                     type="number"
+                    step="0.01"
                     value={answers.verification || ""}
                     onChange={(e) => setAnswers(prev => ({ ...prev, verification: e.target.value }))}
                     placeholder="?"
@@ -939,7 +949,7 @@ export default function WeightedAvgPractice() {
               )}
 
               <Button 
-                onClick={() => setChecked(prev => ({ ...prev, verification: checkAnswer("verification", scenario.cogs + scenario.endingInventory) }))} 
+                onClick={() => setChecked(prev => ({ ...prev, verification: checkAnswer("verification", scenario.totalCost) && Math.abs(scenario.cogs + scenario.endingInventory - scenario.totalCost) < 0.005 }))}
                 className="bg-purple-600 hover:bg-purple-700"
               >
                 Check

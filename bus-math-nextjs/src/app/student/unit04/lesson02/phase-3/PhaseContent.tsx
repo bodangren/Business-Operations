@@ -3,6 +3,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, AlertTriangle } from "lucide-react";
 
+/**
+ * Compare summary statistics for the displayed sales and traffic data.
+ * @returns Guided calculations and interpretation prompts.
+ */
 export default function Phase3Content() {
 
   return (
@@ -52,9 +56,9 @@ export default function Phase3Content() {
                   <div>
                     <p className="font-medium text-amber-800 mb-2">Weekends 1-8 (with outlier):</p>
                     <p className="font-mono text-amber-700 mb-2">$480, $495, $510, $505, $490, $500, $515, $2,100</p>
-                    <p className="text-amber-700 text-sm">Mean = $636.88</p>
+                    <p className="text-amber-700 text-sm">Mean = $699.38</p>
                     <p className="text-amber-700 text-sm">Median = $502.50</p>
-                    <p className="text-amber-600 text-sm mt-2">Difference: $134.38—huge gap!</p>
+                    <p className="text-amber-600 text-sm mt-2">Difference: $196.88</p>
                   </div>
                 </div>
               </div>
@@ -62,10 +66,9 @@ export default function Phase3Content() {
               <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                 <h4 className="font-semibold text-purple-900 mb-2">What does this mean for the café?</h4>
                 <p className="text-purple-800">
-                  If Sarah uses the <strong>mean</strong> ($636.88) to plan inventory, she'll expect to sell $637 worth 
-                  of goods every weekend—except NO weekend actually hit that number except the one special event. 
-                  If she uses the <strong>median</strong> ($502.50), she gets a number that actually represents what 
-                  most weekends are like.
+                  The <strong>mean</strong> ($699.38) is above each of the seven regular weekends.
+                  The $2,100 special event raises the mean. The <strong>median</strong> ($502.50) is close to
+                  regular weekend sales.
                 </p>
               </div>
             </CardContent>
@@ -90,10 +93,10 @@ export default function Phase3Content() {
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <p className="font-medium text-blue-900 mb-2">Mean calculation:</p>
-                    <p className="text-blue-700">Sum = 1,070</p>
+                    <p className="text-blue-700">Sum = 970</p>
                     <p className="text-blue-700">Count = 7</p>
-                    <p className="text-blue-700">Mean = 1,070 ÷ 7 = 152.857...</p>
-                    <p className="text-blue-700 font-medium">Rounded: 153 customers/day</p>
+                    <p className="text-blue-700">Mean = 970 ÷ 7 = 138.571...</p>
+                    <p className="text-blue-700 font-medium">Rounded: 139 customers/day</p>
                   </div>
                   <div>
                     <p className="font-medium text-blue-900 mb-2">Median calculation:</p>
@@ -105,9 +108,8 @@ export default function Phase3Content() {
 
                 <div className="mt-4 p-4 bg-blue-100 rounded-lg">
                   <p className="text-blue-800 font-medium">
-                    The mean (153) is slightly higher than the median (139). This slight right skew comes from 
-                    the two higher values (156, 147) pulling the average up. For business planning, Sarah might 
-                    use the median (139) as her "typical day" but note that most days range from 128-147.
+                    The mean (138.57) and median (139) are close. Both round to 139 customers per day.
+                    The daily counts range from 125 to 156.
                   </p>
                 </div>
               </div>

@@ -7,6 +7,10 @@ import { Input } from "@/components/ui/input";
 import { CheckCircle2, XCircle, Table2, ArrowRight, Info } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
+/**
+ * Check Data Table input cells against the displayed model.
+ * @returns The model, setup fields, and feedback.
+ */
 export default function DataTableSimulator() {
   const [step, setStep] = useState(1);
   const [columnInput, setColumnInput] = useState("");
@@ -14,8 +18,8 @@ export default function DataTableSimulator() {
   const [columnChecked, setColumnChecked] = useState(false);
   const [rowChecked, setRowChecked] = useState(false);
 
-  const isColumnCorrect = columnInput.toUpperCase().includes("B5") || columnInput.includes("Price");
-  const isRowCorrect = rowInput.toUpperCase().includes("B6") || rowInput.includes("Volume");
+  const isColumnCorrect = /^(?:\$?B\$?4|price)$/i.test(columnInput.trim());
+  const isRowCorrect = /^(?:\$?B\$?5|volume)$/i.test(rowInput.trim());
 
   return (
     <div className="space-y-6">
@@ -47,24 +51,30 @@ export default function DataTableSimulator() {
                 <div className="text-slate-400">4</div><div className="text-slate-600">Price</div><div className="bg-blue-50 p-1 border border-blue-300">$1,350</div><div></div>
               </div>
               <div className="grid grid-cols-4 gap-1 min-w-[360px]">
-                <div className="text-slate-400">5</div><div className="text-slate-600">Volume</div><div className="bg-blue-50 p-1 border border-blue-300">24</div><div></div>
+                <div className="text-slate-400">5</div><div className="text-slate-600">Volume</div><div className="bg-blue-50 p-1 border border-blue-300">25</div><div></div>
               </div>
               <div className="grid grid-cols-4 gap-1 min-w-[360px]">
-                <div className="text-slate-400">6</div><div className="text-slate-600">Profit</div><div className="bg-green-50 p-1 border border-green-300 font-bold break-all">= (B4-880)*B5 - 12000</div><div></div>
+                <div className="text-slate-400">6</div><div className="text-slate-600">Fixed Costs</div><div>$12,000</div><div></div>
+              </div>
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
+                <div className="text-slate-400">7</div><div className="text-slate-600">Variable Cost</div><div>$880</div><div></div>
+              </div>
+              <div className="grid grid-cols-4 gap-1 min-w-[360px]">
+                <div className="text-slate-400">13</div><div className="text-slate-600">Total Profit</div><div className="bg-green-50 p-1 border border-green-300 font-bold break-all">= (B4-B7)*B5 - B6</div><div></div>
               </div>
               <div className="grid grid-cols-4 gap-1 min-w-[360px] mt-2 pt-2 border-t border-slate-200">
-                <div className="text-slate-400">8</div><div className="text-slate-600">Data Table Area</div><div></div><div></div>
+                <div className="text-slate-400">18</div><div></div><div>=B13</div><div></div>
               </div>
               <div className="grid grid-cols-4 gap-1 min-w-[360px]">
-                <div className="text-slate-400">9</div><div className="bg-purple-50 p-1 border border-purple-300">$1,200</div><div></div><div></div>
+                <div className="text-slate-400">19</div><div className="bg-purple-50 p-1 border border-purple-300">$1,200</div><div></div><div></div>
               </div>
             </div>
 
             <div className="mt-3 flex items-start gap-2">
               <Info className="w-4 h-4 text-purple-600 mt-1" />
               <p className="text-xs text-purple-800">
-                <strong>Critical:</strong> Your profit formula (B6) must be positioned <em>above</em> the prices and 
-                to the <em>left</em> of where the results will appear. This is the anchor Excel needs.
+                <strong>Setup:</strong> B13 contains Total Profit. Put =B13 in B18 above the result cells.
+                Put prices down A19:A25. Select A18:B25 for the one-variable Data Table.
               </p>
             </div>
           </div>
@@ -127,7 +137,7 @@ export default function DataTableSimulator() {
             </div>
             
             <p className="text-xs text-purple-800 mb-3">
-              Now imagine a two-variable table. The prices go across the top row. Which input in your CVP model 
+              Now imagine a two-variable table. The volumes go across the top row. Which input in your CVP model
               corresponds to those values?
             </p>
             

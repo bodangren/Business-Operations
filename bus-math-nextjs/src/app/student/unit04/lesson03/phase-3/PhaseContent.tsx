@@ -14,9 +14,16 @@ const transactionData = [
   { id: 10, item: "Cookie", amount: 2.25 }
 ]
 
-const mean = 17.42
-const stdDev = 38.47
+const mean = transactionData.reduce((sum, transaction) => sum + transaction.amount, 0) / transactionData.length
+const stdDev = Math.sqrt(transactionData.reduce((sum, transaction) => sum + (transaction.amount - mean) ** 2, 0) / (transactionData.length - 1))
+const withoutCatering = transactionData.filter(transaction => transaction.item !== "Catering Order")
+const filteredMean = withoutCatering.reduce((sum, transaction) => sum + transaction.amount, 0) / withoutCatering.length
+const filteredStdDev = Math.sqrt(withoutCatering.reduce((sum, transaction) => sum + (transaction.amount - filteredMean) ** 2, 0) / (withoutCatering.length - 1))
 
+/**
+ * Present sample statistics and z-scores from one transaction dataset.
+ * @returns The data, worked analysis, and comparison without catering.
+ */
 export default function Phase3Content() {
   return (
     <div className="bg-gray-50">
@@ -57,11 +64,11 @@ export default function Phase3Content() {
                 </tbody>
                 <tfoot>
                   <tr className="font-semibold bg-blue-50">
-                    <td className="p-2">Mean (μ)</td>
+                    <td className="p-2">Sample Mean (x̄)</td>
                     <td className="text-right p-2 font-mono">{mean.toFixed(2)}</td>
                   </tr>
                   <tr className="font-semibold bg-blue-50">
-                    <td className="p-2">Standard Deviation (σ)</td>
+                    <td className="p-2">Sample Standard Deviation (s)</td>
                     <td className="text-right p-2 font-mono">{stdDev.toFixed(2)}</td>
                   </tr>
                 </tfoot>
@@ -75,7 +82,7 @@ export default function Phase3Content() {
             </CardHeader>
             <CardContent className="text-orange-800 space-y-6">
               <p className="text-lg">
-                Using z = (x - μ) / σ, calculate the z-score for each transaction and decide:
+                Use z = (x − x̄) / s. Keep full precision during the calculation. Round each z-score to two decimal places.
               </p>
 
               <div className="bg-white p-4 rounded-lg border border-orange-200">
@@ -85,7 +92,7 @@ export default function Phase3Content() {
                     <tr className="border-b border-orange-200">
                       <th className="text-left p-2">Transaction</th>
                       <th className="text-right p-2">x</th>
-                      <th className="text-right p-2">z = (x-μ)/σ</th>
+                      <th className="text-right p-2">z = (x − x̄) / s</th>
                       <th className="text-center p-2">|z| &gt; 2?</th>
                       <th className="text-left p-2">Decision</th>
                     </tr>
@@ -94,29 +101,29 @@ export default function Phase3Content() {
                     <tr className="border-b border-orange-100">
                       <td className="p-2">Coffee</td>
                       <td className="text-right p-2 font-mono">4.25</td>
-                      <td className="text-right p-2 font-mono">{(4.25 - mean) / stdDev}</td>
+                      <td className="text-right p-2 font-mono">{((4.25 - mean) / stdDev).toFixed(2)}</td>
                       <td className="text-center p-2">No</td>
                       <td className="p-2">Keep</td>
                     </tr>
                     <tr className="border-b border-orange-100">
                       <td className="p-2">Muffin</td>
                       <td className="text-right p-2 font-mono">2.75</td>
-                      <td className="text-right p-2 font-mono">{(2.75 - mean) / stdDev}</td>
+                      <td className="text-right p-2 font-mono">{((2.75 - mean) / stdDev).toFixed(2)}</td>
                       <td className="text-center p-2">No</td>
                       <td className="p-2">Keep</td>
                     </tr>
                     <tr className="border-b border-orange-100 bg-red-50">
                       <td className="p-2 font-semibold">Catering Order</td>
                       <td className="text-right p-2 font-mono font-semibold">127.50</td>
-                      <td className="text-right p-2 font-mono font-semibold text-red-600">13.94</td>
+                      <td className="text-right p-2 font-mono font-semibold text-red-600">{((127.50 - mean) / stdDev).toFixed(2)}</td>
                       <td className="text-center p-2 font-bold text-red-600">YES</td>
                       <td className="p-2">Investigate</td>
                     </tr>
                     <tr className="border-b border-orange-100 bg-yellow-50">
                       <td className="p-2 font-semibold">Data Error</td>
                       <td className="text-right p-2 font-mono font-semibold">0.05</td>
-                      <td className="text-right p-2 font-mono font-semibold text-yellow-600">-1.51</td>
-                      <td className="text-center p-2 font-bold text-yellow-600">Close</td>
+                      <td className="text-right p-2 font-mono font-semibold text-yellow-600">{((0.05 - mean) / stdDev).toFixed(2)}</td>
+                      <td className="text-center p-2 font-bold text-yellow-600">No</td>
                       <td className="p-2">Correct</td>
                     </tr>
                   </tbody>
@@ -127,7 +134,7 @@ export default function Phase3Content() {
                 <h4 className="font-semibold text-orange-900 mb-2">Discussion Questions</h4>
                 <ol className="list-decimal list-inside text-orange-800 space-y-2">
                   <li>Why does the catering order have such a huge z-score while the data error doesn't?</li>
-                  <li>Despite the different z-scores, why should both be treated as outliers?</li>
+                  <li>The $0.05 entry does not meet the z-score rule. What other evidence could identify it as a data error?</li>
                   <li>How would your analysis change if the catering order was actually $12.75 (a typo)?</li>
                   <li>What additional information would help Sarah make better decisions about these outliers?</li>
                 </ol>
@@ -148,15 +155,15 @@ export default function Phase3Content() {
                 <div className="bg-white p-4 rounded border border-green-200">
                   <h4 className="font-semibold text-green-900 mb-2">With Outliers</h4>
                   <ul className="text-green-800 text-sm space-y-1">
-                    <li>Mean = $17.42</li>
-                    <li>Std Dev = $38.47</li>
+                    <li>Mean = ${mean.toFixed(2)}</li>
+                    <li>Std Dev = ${stdDev.toFixed(2)}</li>
                   </ul>
                 </div>
                 <div className="bg-white p-4 rounded border border-green-200">
-                  <h4 className="font-semibold text-green-900 mb-2">Without Outliers</h4>
+                  <h4 className="font-semibold text-green-900 mb-2">Without Catering Order</h4>
                   <ul className="text-green-800 text-sm space-y-1">
-                    <li>Mean = $5.19</li>
-                    <li>Std Dev = $3.32</li>
+                    <li>Mean = ${filteredMean.toFixed(2)}</li>
+                    <li>Std Dev = ${filteredStdDev.toFixed(2)}</li>
                   </ul>
                 </div>
               </div>

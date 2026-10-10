@@ -17,6 +17,8 @@ interface ScenarioProblem {
   premiumVolume: number;
   volumePrice: number;
   volumeVolume: number;
+  maxPrice: number;
+  maxVolume: number;
   answer: "premium" | "volume" | "neither";
   explanation: string;
 }
@@ -40,8 +42,12 @@ const generateProblem = (seed: number): ScenarioProblem => {
   const volumePrice = v.currentPrice;
   const volumeVolume = Math.ceil(targetCM / cm);
   
-  const answers: ("premium" | "volume" | "neither")[] = ["premium", "volume"];
-  const answer = answers[seed % 2];
+  const proposedVolume = volumeVolume + (seed % 3);
+  const maxPrice = seed % 2 === 0 ? premiumPrice : v.currentPrice;
+  const maxVolume = seed % 2 === 0 ? v.currentVolume : proposedVolume;
+  const premiumFeasible = premiumPrice <= maxPrice && premiumVolume <= maxVolume;
+  const volumeFeasible = volumePrice <= maxPrice && proposedVolume <= maxVolume;
+  const answer = premiumFeasible ? "premium" : volumeFeasible ? "volume" : "neither";
   
   return {
     id: seed,
@@ -50,14 +56,20 @@ const generateProblem = (seed: number): ScenarioProblem => {
     premiumPrice,
     premiumVolume,
     volumePrice,
-    volumeVolume: volumeVolume + (seed % 3),
+    volumeVolume: proposedVolume,
+    maxPrice,
+    maxVolume,
     answer,
     explanation: answer === "premium" 
-      ? `Premium path: $${premiumPrice} × ${premiumVolume} projects hits target with lower volume risk.`
-      : `Volume path: ${volumeVolume + (seed % 3)} projects at $${volumePrice} is more achievable.`
+      ? `The premium path reaches the profit target within both limits. The volume path requires ${proposedVolume} projects, above the ${maxVolume}-project capacity.`
+      : `The volume path reaches the profit target within both limits. The premium price of $${premiumPrice} exceeds the $${maxPrice} customer price limit.`
   };
 };
 
+/**
+ * Check pricing decisions against stated price and capacity limits.
+ * @returns Scenario data, choice controls, and calculation feedback.
+ */
 export default function Phase4Content() {
   const [problemNum, setProblemNum] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -106,16 +118,15 @@ export default function Phase4Content() {
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-cyan-900">
                   <p>
-                    For each problem, determine which pricing path (Premium Pricing or Volume) is more 
-                    <strong>realistic</strong> given the business constraints.
+                    Choose the path that reaches the profit target within the stated price and capacity limits.
                   </p>
                   <ul className="list-disc list-inside space-y-1">
                     <li><strong>Premium path:</strong> Keep current volume, raise price to hit target</li>
                     <li><strong>Volume path:</strong> Keep current price, increase volume to hit target</li>
-                    <li><strong>Neither:</strong> Both require unrealistic changes</li>
+                    <li><strong>Neither:</strong> Both exceed a stated limit</li>
                   </ul>
                   <p className="font-semibold">
-                    Consider: Which path requires fewer fundamental changes to the business model?
+                    Check both limits before you choose a path.
                   </p>
                 </CardContent>
               </Card>
@@ -128,6 +139,10 @@ export default function Phase4Content() {
                   </CardTitle>
                   <p className="text-slate-600">
                     Target Profit: ${problem.targetProfit.toLocaleString()}
+                  </p>
+                  <p className="text-slate-700 text-sm">
+                    Customer price limit: ${problem.maxPrice.toLocaleString()} per project.
+                    Capacity limit: {problem.maxVolume} projects per period.
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -221,7 +236,7 @@ export default function Phase4Content() {
                         )}
                         <div>
                           <p className="font-semibold">Neither</p>
-                          <p className="text-sm text-slate-600">Both require unrealistic changes</p>
+                          <p className="text-sm text-slate-600">Both exceed a stated limit</p>
                         </div>
                       </div>
                     </button>

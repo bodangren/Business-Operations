@@ -2,6 +2,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
+/**
+ * Present an income statement with separate operating and interest items.
+ * @returns The guided statement and calculation notes.
+ */
 export default function Phase3Content() {
 
   const complicationTrialBalance = [
@@ -33,6 +37,10 @@ export default function Phase3Content() {
     .reduce((sum, a) => sum + a.amount, 0)
 
   const netIncome = totalRevenue - totalExpenses
+  const interestIncome = complicationTrialBalance.find(a => a.name === "Interest Income")!.amount
+  const interestExpense = complicationTrialBalance.find(a => a.name === "Interest Expense")!.amount
+  const operatingRevenue = totalRevenue - interestIncome
+  const operatingExpenses = totalExpenses - interestExpense
 
   return (
     <div className="max-w-4xl space-y-8">
@@ -130,13 +138,9 @@ export default function Phase3Content() {
                   <span>Sales Revenue</span>
                   <span>$2,100</span>
                 </div>
-                <div className="flex justify-between pl-4">
-                  <span>Interest Income</span>
-                  <span>$120</span>
-                </div>
                 <div className="flex justify-between font-bold border-t border-gray-300 pt-1">
-                  <span>Total Revenue</span>
-                  <span>${totalRevenue.toLocaleString()}</span>
+                  <span>Total Operating Revenue</span>
+                  <span>${operatingRevenue.toLocaleString()}</span>
                 </div>
 
                 <div className="font-bold border-b border-gray-400 pb-1 mt-4">Operating Expenses</div>
@@ -154,15 +158,19 @@ export default function Phase3Content() {
                 </div>
                 <div className="flex justify-between font-bold border-t border-gray-300 pt-1">
                   <span>Total Operating Expenses</span>
-                  <span>${(totalExpenses - 80).toLocaleString()}</span>
+                  <span>${operatingExpenses.toLocaleString()}</span>
                 </div>
 
                 <div className="flex justify-between font-bold border-t-2 border-gray-400 pt-2 mt-2">
                   <span>Operating Income</span>
-                  <span>${(totalRevenue - totalExpenses + 80).toLocaleString()}</span>
+                  <span>${(operatingRevenue - operatingExpenses).toLocaleString()}</span>
                 </div>
 
                 <div className="font-bold border-b border-gray-400 pb-1 mt-4">Non-Operating</div>
+                <div className="flex justify-between pl-4">
+                  <span>Interest Income</span>
+                  <span>${interestIncome.toLocaleString()}</span>
+                </div>
                 <div className="flex justify-between pl-4">
                   <span>Interest Expense</span>
                   <span>($80)</span>

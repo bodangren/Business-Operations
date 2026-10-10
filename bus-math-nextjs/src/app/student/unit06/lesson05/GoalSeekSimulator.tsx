@@ -10,6 +10,10 @@ const FIXED_COSTS = 12000;
 const VARIABLE_COST = 880;
 const TARGET_PROFIT = 15000;
 
+/**
+ * Check a Goal Seek setup against the displayed profit model.
+ * @returns The setup fields and calculation feedback.
+ */
 export default function GoalSeekSimulator() {
   const [inputs, setInputs] = useState({
     setCell: "",
@@ -31,18 +35,18 @@ export default function GoalSeekSimulator() {
       return;
     }
 
-    if (setCellVal !== "profit" && setCellVal !== "totalprofit" && setCellVal !== "b2") {
-      setFeedback({ type: "error", message: 'Set Cell should be your Profit formula cell (e.g., "Profit" or "B2").' });
+    if (setCellVal !== "profit" && setCellVal !== "totalprofit" && setCellVal !== "b13") {
+      setFeedback({ type: "error", message: 'Set Cell should be your Profit formula cell (e.g., "Profit" or "B13").' });
       return;
     }
 
-    if (toValueVal !== "15000" && toValueVal !== "15000000") {
+    if (Number(toValueVal) !== TARGET_PROFIT) {
       setFeedback({ type: "error", message: "To Value should be 15000 (your target profit)." });
       return;
     }
 
-    if (byChangingCellVal !== "price" && byChangingCellVal !== "b1") {
-      setFeedback({ type: "error", message: 'By Changing Cell should be your Price input cell (e.g., "Price" or "B1").' });
+    if (byChangingCellVal !== "price" && byChangingCellVal !== "b4") {
+      setFeedback({ type: "error", message: 'By Changing Cell should be your Price input cell (e.g., "Price" or "B4").' });
       return;
     }
 
@@ -103,7 +107,7 @@ export default function GoalSeekSimulator() {
               <div className="w-32 text-sm font-bold text-slate-700">Set Cell:</div>
               <Input 
                 className="flex-1 font-mono text-sm"
-                placeholder='e.g., "Profit" or "B2"'
+                placeholder='e.g., "Profit" or "B13"'
                 value={inputs.setCell}
                 onChange={e => setInputs(prev => ({ ...prev, setCell: e.target.value }))}
               />
@@ -121,7 +125,7 @@ export default function GoalSeekSimulator() {
               <div className="w-32 text-sm font-bold text-slate-700">By Changing Cell:</div>
               <Input 
                 className="flex-1 font-mono text-sm"
-                placeholder='e.g., "Price" or "B1"'
+                placeholder='e.g., "Price" or "B4"'
                 value={inputs.byChangingCell}
                 onChange={e => setInputs(prev => ({ ...prev, byChangingCell: e.target.value }))}
               />
@@ -181,8 +185,8 @@ export default function GoalSeekSimulator() {
               </div>
               <p className="text-sm text-green-700 leading-relaxed">
                 Excel will calculate that Sarah needs a price of <strong>${correctPrice.toFixed(2)}</strong> 
-                to hit $15,000 profit at 25 projects. Rounding to a natural price point, 
-                she could charge <strong>$1,388</strong> and still exceed her target.
+                to reach $15,000 profit at 25 projects. Check:
+                (${correctPrice.toFixed(2)} − $880) × 25 − $12,000 = $15,000.
               </p>
             </div>
           )}

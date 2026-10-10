@@ -24,9 +24,10 @@ function generateScenario() {
   
   for (let i = 0; i < numPurchases; i++) {
     const isLast = i === numPurchases - 1
+    const maximumUnits = Math.min(30, totalUnits - unitsAssigned - (numPurchases - i - 1) * 5)
     const unitsForThis = isLast 
       ? totalUnits - unitsAssigned 
-      : Math.floor(Math.random() * Math.min(30, totalUnits - unitsAssigned - (numPurchases - i - 1) * 5)) + 10
+      : 5 + Math.floor(Math.random() * (maximumUnits - 5 + 1))
     
     const day = (i * 8) + 3// Days 3, 11, 19, 27
     purchases.push({
@@ -94,6 +95,10 @@ function calculateMarkup(grossProfit: number, cogs: number): number {
   return cogs > 0 ? (grossProfit / cogs) * 100 : 0
 }
 
+/**
+ * Compare inventory methods with valid generated purchase layers.
+ * @returns Cost calculations, checks, and a recommendation activity.
+ */
 export default function MethodRecommendationStudio() {
   const [scenario, setScenario] = useState<ReturnType<typeof generateScenario> | null>(null)
   
@@ -172,8 +177,8 @@ export default function MethodRecommendationStudio() {
     }
   }, [scenario])
   
-  const parseNum = (val: string) => parseInt(val) || 0
-  const parseFloatVal = (val: string) => parseFloat(val) || 0
+  const parseNum = (val: string) => parseFloat(val)
+  const parseFloatVal = (val: string) => parseFloat(val)
   
   // Validation functions using arithmetic
   const fifoCogsCorrect = correctAnswers ? parseNum(fifoCogs) === correctAnswers.fifoCogs : false

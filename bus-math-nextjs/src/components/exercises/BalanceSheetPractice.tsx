@@ -80,7 +80,8 @@ function generateRound(): PracticeRound {
   const numEquityBase = randInt(1, 2);
   const numDistractors = randInt(2, 4);
   
-  const shuffledAssets = [...assetPool].sort(() => Math.random() - 0.5);
+  // Keep Cash as the balancing account. Include Equipment before its contra-asset.
+  const shuffledAssets = [assetPool[0], assetPool[4], ...assetPool.filter(a => a.name !== 'Cash' && a.name !== 'Equipment').sort(() => Math.random() - 0.5)];
   const shuffledLiabilities = [...liabilityPool].sort(() => Math.random() - 0.5);
   const shuffledEquity = [...equityPool].sort(() => Math.random() - 0.5);
   const shuffledDistractors = [...distractorPool].sort(() => Math.random() - 0.5);
@@ -116,14 +117,21 @@ function generateRound(): PracticeRound {
   const allAccounts = [...selectedAssets, ...selectedLiabilities, ...selectedEquity, ...selectedDistractors]
     .sort(() => Math.random() - 0.5);
   
-  const correctAssets = selectedAssets.reduce((sum, a) => sum + a.amount, 0);
   const correctLiabilities = selectedLiabilities.reduce((sum, l) => sum + l.amount, 0);
   
   const beginningRE = randInt(2000, 8000);
   const netIncome = randInt(1500, 6000);
   const dividends = randInt(0, Math.min(2000, netIncome));
   const correctRetainedEarnings = beginningRE + netIncome - dividends;
-  const correctEquity = selectedEquity.reduce((sum, e) => sum + e.amount, 0) + correctRetainedEarnings;
+  const nonCashAssets = selectedAssets.filter(a => a.name !== 'Cash').reduce((sum, a) => sum + a.amount, 0);
+  const initialEquity = selectedEquity.reduce((sum, e) => sum + e.amount, 0) + correctRetainedEarnings;
+  const requiredCash = correctLiabilities + initialEquity - nonCashAssets;
+  // Add contributed capital if needed to keep Cash positive.
+  const additionalCapital = Math.max(0, 100 - requiredCash);
+  selectedEquity[0].amount += additionalCapital;
+  selectedAssets[0].amount = requiredCash + additionalCapital;
+  const correctEquity = initialEquity + additionalCapital;
+  const correctAssets = selectedAssets.reduce((sum, a) => sum + a.amount, 0);
   
   return {
     companyName,
@@ -183,6 +191,10 @@ function checkAnswer(
   return { correct: false, feedback: feedback || misconceptionFeedback.allCorrect };
 }
 
+/**
+ * Present a balanced set of accounts for classification practice.
+ * @returns The current balance-sheet problem and answer feedback.
+ */
 export function BalanceSheetPractice() {
   const [round, setRound] = useState<PracticeRound>(generateRound);
   const [userAssets, setUserAssets] = useState("");

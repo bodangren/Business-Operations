@@ -146,13 +146,13 @@ const VALIDATION_SCENARIOS: ValidationScenario[] = [
         name: 'Gross Pay Calculation Error',
         description: 'Detect discrepancies between calculated and entered gross pay',
         category: 'logic',
-        condition: 'Gross_Pay ≠ Hours_Worked × Hourly_Rate',
-        excelFormula: '=ABS(D2-(B2*C2))>0.01',
+        condition: 'Gross_Pay differs from regular pay plus overtime pay',
+        excelFormula: '=ABS(D2-(MIN(B2,40)*C2+MAX(B2-40,0)*C2*1.5))>0.01',
         businessContext: 'Catches calculation errors that could lead to underpayment or overpayment issues',
         colorCode: 'bg-red-100 border-red-400 text-red-800',
         priority: 'High',
         sampleData: [832.50, 836.00, 600.00, 871.00, 875.00],
-        expectedResults: [false, false, false, false, false]
+        expectedResults: [true, false, false, true, false]
       },
       {
         id: 'missing-department',
@@ -296,6 +296,10 @@ const VALIDATION_SCENARIOS: ValidationScenario[] = [
   }
 ]
 
+/**
+ * Test business validation rules against sample records.
+ * @returns Rule controls, sample data, and validation results.
+ */
 export default function ErrorCheckingSystem() {
   const [selectedScenario, setSelectedScenario] = useState<ValidationScenario>(VALIDATION_SCENARIOS[0])
   const [selectedRule, setSelectedRule] = useState<ValidationRule | null>(null)
@@ -315,8 +319,12 @@ export default function ErrorCheckingSystem() {
           return Number(data.Hours_Worked) > 40
         case 'Employee_ID is blank':
           return !data.Employee_ID || String(data.Employee_ID).trim() === ''
-        case 'Gross_Pay ≠ Hours_Worked × Hourly_Rate':
-          return Math.abs(Number(data.Gross_Pay) - (Number(data.Hours_Worked) * Number(data.Hourly_Rate))) > 0.01
+        case 'Gross_Pay differs from regular pay plus overtime pay': {
+          const hours = Number(data.Hours_Worked)
+          const rate = Number(data.Hourly_Rate)
+          const expectedPay = Math.min(hours, 40) * rate + Math.max(hours - 40, 0) * rate * 1.5
+          return Math.abs(Number(data.Gross_Pay) - expectedPay) > 0.01
+        }
         case 'Department is blank':
           return !data.Department || String(data.Department).trim() === ''
         case 'Current_Stock < Minimum_Stock':

@@ -4,6 +4,10 @@ import { ArrowRight, Calculator, Users, AlertTriangle, Lightbulb } from "lucide-
 import CostAssignmentPractice from "../CostAssignmentPractice"
 
 
+/**
+ * Present inventory cost-range practice with quantity limits.
+ * @returns Practice instructions and the cost assignment activity.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-indigo-50">
@@ -68,14 +72,14 @@ export default function Phase4Content() {
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-3 bg-amber-100 rounded">
                     <p className="text-sm text-amber-800">
-                      <strong>Example:</strong> You have 36 units available for sale worth $746 total.
+                      <strong>Example:</strong> You have 37 units available for sale worth $736 total.
                       You sell 20 units.
                     </p>
                   </div>
                   <div className="p-3 bg-amber-100 rounded">
                     <p className="text-sm text-amber-800">
                       <strong>Question:</strong> What's COGS? It depends! Could be anywhere from 
-                      $360 to $440 based on which 20 units you sold.
+                      $376 to $420. Use each layer's available quantity to find the limits.
                     </p>
                   </div>
                 </div>
