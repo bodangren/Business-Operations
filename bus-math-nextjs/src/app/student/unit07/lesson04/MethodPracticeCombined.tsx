@@ -34,6 +34,10 @@ const WEIGHTED_AVG_SCENARIOS = [
   { product: "Bulk Nails", unit: "boxes", beg: { units: 100, price: 4.50 }, p1: { units: 150, price: 4.80 }, p2: { units: 120, price: 5.10 } },
 ]
 
+/**
+ * Guide specific identification and weighted-average cost allocation.
+ * @returns Practice tabs, calculation feedback, and reconciled totals.
+ */
 export default function MethodPracticeCombined() {
   const [activeTab, setActiveTab] = useState<"specid" | "weighted">("specid")
   
@@ -63,11 +67,11 @@ export default function MethodPracticeCombined() {
   // Calculate Weighted Average values
   const waTotalUnits = waScenario.beg.units + waScenario.p1.units + waScenario.p2.units
   const waTotalCost = (waScenario.beg.units * waScenario.beg.price) + (waScenario.p1.units * waScenario.p1.price) + (waScenario.p2.units * waScenario.p2.price)
-  const waAvgCost = Math.round((waTotalCost / waTotalUnits) * 100) / 100
+  const waAvgCost = waTotalCost / waTotalUnits
   const waUnitsSold = Math.round(waTotalUnits * 0.65 / 10) * 10 // 65% rounded
-  const waCogs = waUnitsSold * waAvgCost
+  const waCogs = Math.round(waUnitsSold * waAvgCost * 100) / 100
   const waRemaining = waTotalUnits - waUnitsSold
-  const waEndingInv = waRemaining * waAvgCost
+  const waEndingInv = Math.round((waTotalCost - waCogs) * 100) / 100
 
   const resetSpecId = () => {
     setSpecIdStep(0)
@@ -198,6 +202,7 @@ export default function MethodPracticeCombined() {
                       <span className="text-slate-700">COGS = $</span>
                       <Input
                         type="number"
+                        step="0.01"
                         value={specIdAnswers.cogs || ""}
                         onChange={(e) => setSpecIdAnswers(prev => ({ ...prev, cogs: e.target.value }))}
                         placeholder="?"
@@ -253,6 +258,7 @@ export default function MethodPracticeCombined() {
                       <div className="flex items-center gap-2">
                         <Input
                           type="number"
+                          step="0.01"
                           value={specIdAnswers.remainingCount || ""}
                           onChange={(e) => setSpecIdAnswers(prev => ({ ...prev, remainingCount: e.target.value }))}
                           placeholder="?"
@@ -273,6 +279,7 @@ export default function MethodPracticeCombined() {
                         <span className="text-slate-600">$</span>
                         <Input
                           type="number"
+                          step="0.01"
                           value={specIdAnswers.endingInv || ""}
                           onChange={(e) => setSpecIdAnswers(prev => ({ ...prev, endingInv: e.target.value }))}
                           placeholder="?"
@@ -428,6 +435,7 @@ export default function MethodPracticeCombined() {
                           <div className="flex gap-2 mt-1">
                             <Input
                               type="number"
+                              step="0.01"
                               value={waAnswers.totalUnits || ""}
                               onChange={(e) => setWaAnswers(prev => ({ ...prev, totalUnits: e.target.value }))}
                               placeholder="?"
@@ -443,6 +451,7 @@ export default function MethodPracticeCombined() {
                             <span className="flex items-center text-slate-600">$</span>
                             <Input
                               type="number"
+                              step="0.01"
                               value={waAnswers.totalCost || ""}
                               onChange={(e) => setWaAnswers(prev => ({ ...prev, totalCost: e.target.value }))}
                               placeholder="?"
@@ -481,6 +490,7 @@ export default function MethodPracticeCombined() {
                 <div className="space-y-4">
                   <p className="text-slate-600">
                     Calculate the weighted average cost per {waScenario.unit.slice(0, -1) || "unit"}.
+                    Round this answer to four decimal places. Use total cost ÷ total units at full precision when you calculate COGS.
                   </p>
 
                   <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 text-center">
@@ -492,7 +502,7 @@ export default function MethodPracticeCombined() {
                       <span className="text-slate-600">$</span>
                       <Input
                         type="number"
-                        step="0.01"
+                        step="0.0001"
                         value={waAnswers.avgCost || ""}
                         onChange={(e) => setWaAnswers(prev => ({ ...prev, avgCost: e.target.value }))}
                         placeholder="0.00"
@@ -506,13 +516,13 @@ export default function MethodPracticeCombined() {
                     <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                       <p className="text-green-900">
                         <CheckCircle2 className="h-5 w-5 inline mr-2" />
-                        Correct! Weighted average = ${waAvgCost.toFixed(2)}
+                        Correct! Weighted average = ${waAvgCost.toFixed(4)}
                       </p>
                     </div>
                   )}
 
                   <Button 
-                    onClick={() => setWaChecked(prev => ({ ...prev, avgCost: Math.abs(parseFloat(waAnswers.avgCost || "0") - waAvgCost) < 0.01 }))}
+                    onClick={() => setWaChecked(prev => ({ ...prev, avgCost: Math.abs(parseFloat(waAnswers.avgCost || "") - waAvgCost) < 0.00005 }))}
                     className="bg-purple-600 hover:bg-purple-700"
                   >
                     Check
@@ -536,8 +546,9 @@ export default function MethodPracticeCombined() {
                   <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                     <p className="text-sm text-red-700 mb-2">COGS Calculation:</p>
                     <div className="text-xl font-bold">
-                      {waUnitsSold.toLocaleString()} {waScenario.unit} × ${waAvgCost.toFixed(2)} = $<Input
+                      {waUnitsSold.toLocaleString()} × (${waTotalCost.toLocaleString()} ÷ {waTotalUnits.toLocaleString()}) = $<Input
                         type="number"
+                        step="0.01"
                         value={waAnswers.cogs || ""}
                         onChange={(e) => setWaAnswers(prev => ({ ...prev, cogs: e.target.value }))}
                         placeholder="?"
@@ -551,7 +562,7 @@ export default function MethodPracticeCombined() {
                   )}
 
                   <Button 
-                    onClick={() => setWaChecked(prev => ({ ...prev, cogs: Math.abs(parseFloat(waAnswers.cogs || "0") - waCogs) < 1 }))}
+                    onClick={() => setWaChecked(prev => ({ ...prev, cogs: Math.abs(parseFloat(waAnswers.cogs || "") - waCogs) < 0.005 }))}
                     className="bg-purple-600 hover:bg-purple-700"
                   >
                     Check
@@ -569,7 +580,7 @@ export default function MethodPracticeCombined() {
               {waStep === 3 && (
                 <div className="space-y-4">
                   <p className="text-slate-600">
-                    Calculate ending inventory (two values needed).
+                    Calculate units remaining. Then subtract rounded COGS from total cost to find ending inventory.
                   </p>
 
                   <div className="grid grid-cols-2 gap-4">
@@ -578,6 +589,7 @@ export default function MethodPracticeCombined() {
                       <div className="flex gap-2 mt-1">
                         <Input
                           type="number"
+                          step="0.01"
                           value={waAnswers.remaining || ""}
                           onChange={(e) => setWaAnswers(prev => ({ ...prev, remaining: e.target.value }))}
                           placeholder="?"
@@ -593,6 +605,7 @@ export default function MethodPracticeCombined() {
                         <span className="flex items-center text-slate-600">$</span>
                         <Input
                           type="number"
+                          step="0.01"
                           value={waAnswers.endingInv || ""}
                           onChange={(e) => setWaAnswers(prev => ({ ...prev, endingInv: e.target.value }))}
                           placeholder="?"
@@ -606,8 +619,8 @@ export default function MethodPracticeCombined() {
                   <Button 
                     onClick={() => setWaChecked(prev => ({
                       ...prev,
-                      remaining: parseInt(waAnswers.remaining || "0") === waRemaining,
-                      endingInv: Math.abs(parseFloat(waAnswers.endingInv || "0") - waEndingInv) < 1
+                      remaining: parseFloat(waAnswers.remaining || "") === waRemaining,
+                      endingInv: Math.abs(parseFloat(waAnswers.endingInv || "") - waEndingInv) < 0.005
                     }))}
                     className="bg-purple-600 hover:bg-purple-700"
                   >
@@ -618,7 +631,7 @@ export default function MethodPracticeCombined() {
                     <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                       <p className="font-medium text-green-900 mb-2">✓ Weighted Average Complete</p>
                       <p className="text-green-700 text-sm">
-                        Same rate (${waAvgCost.toFixed(2)}) for both COGS and Ending Inventory.
+                        COGS uses the full average. Ending inventory is total cost minus rounded COGS.
                       </p>
                       <div className="mt-2 grid grid-cols-3 gap-2 text-center text-sm">
                         <div className="bg-white p-2 rounded border border-green-300">

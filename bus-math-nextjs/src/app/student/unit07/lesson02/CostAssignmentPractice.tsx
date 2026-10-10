@@ -61,14 +61,18 @@ function calculateAnswers(scenario: PracticeScenario) {
   const gafsUnits = scenario.beginningUnits + purchaseUnits
   const gafsValue = beginningValue + purchaseValue
   
-  // Find min and max cost per unit across all layers
-  const allCosts = [scenario.beginningCostPerUnit, ...scenario.purchases.map(p => p.costPerUnit)]
-  const minCostPerUnit = Math.min(...allCosts)
-  const maxCostPerUnit = Math.max(...allCosts)
-  
-  // COGS range: units sold × min cost to units sold × max cost
-  const cogsMin = scenario.unitsSold * minCostPerUnit
-  const cogsMax = scenario.unitsSold * maxCostPerUnit
+  const layers = [{ units: scenario.beginningUnits, costPerUnit: scenario.beginningCostPerUnit }, ...scenario.purchases]
+  const assignCost = (descending: boolean) => {
+    let remaining = scenario.unitsSold
+    return [...layers].sort((a, b) => descending ? b.costPerUnit - a.costPerUnit : a.costPerUnit - b.costPerUnit)
+      .reduce((cost, layer) => {
+        const assigned = Math.min(remaining, layer.units)
+        remaining -= assigned
+        return cost + assigned * layer.costPerUnit
+      }, 0)
+  }
+  const cogsMin = assignCost(false)
+  const cogsMax = assignCost(true)
   
   // Ending Inventory range: GAFS - COGS max to GAFS - COGS min
   // (higher COGS = lower ending inventory)
@@ -83,6 +87,10 @@ function calculateAnswers(scenario: PracticeScenario) {
   }
 }
 
+/**
+ * Check inventory cost limits and the corresponding ending inventory.
+ * @returns Scenario data, calculation fields, and feedback.
+ */
 export default function CostAssignmentPractice() {
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0)
   const [step, setStep] = useState<'intro' | 'gafs' | 'cogs' | 'check'>('intro')
@@ -113,23 +121,26 @@ export default function CostAssignmentPractice() {
   }
 
   const checkGAFS = () => {
-    const unitsCorrect = parseInt(gafsUnitsAnswer) === correctAnswers.gafsUnits
-    const valueCorrect = parseInt(gafsValueAnswer) === correctAnswers.gafsValue
+    const unitsCorrect = parseFloat(gafsUnitsAnswer) === correctAnswers.gafsUnits
+    const valueCorrect = parseFloat(gafsValueAnswer) === correctAnswers.gafsValue
     setGafsResult(unitsCorrect && valueCorrect ? 'correct' : 'incorrect')
   }
 
   const checkCOGS = () => {
-    const cogsNum = parseInt(cogsAnswer)
+    const cogsNum = parseFloat(cogsAnswer)
     const isInRange = cogsNum >= correctAnswers.cogsRange.min && 
                        cogsNum <= correctAnswers.cogsRange.max
     setCogsResult(isInRange ? 'correct' : 'incorrect')
   }
 
   const checkFinal = () => {
-    const eiNum = parseInt(endingInventoryAnswer)
+    const eiNum = parseFloat(endingInventoryAnswer)
+    const cogsNum = parseFloat(cogsAnswer)
     const isInRange = eiNum >= correctAnswers.endingInventoryRange.min && 
                        eiNum <= correctAnswers.endingInventoryRange.max
-    setFinalResult(isInRange ? 'correct' : 'incorrect')
+    const cogsInRange = cogsNum >= correctAnswers.cogsRange.min && cogsNum <= correctAnswers.cogsRange.max
+    const costConserved = Math.abs(cogsNum + eiNum - correctAnswers.gafsValue) < 0.005
+    setFinalResult(isInRange && cogsInRange && costConserved ? 'correct' : 'incorrect')
   }
 
   const nextScenario = () => {
@@ -293,7 +304,7 @@ export default function CostAssignmentPractice() {
                 />
               </div>
               <p className="text-sm text-purple-600 mt-2">
-                Hint: Think about the lowest and highest possible costs per unit.
+                For the minimum, use the lowest-cost layers first. For the maximum, use the highest-cost layers first. Each layer has a limited number of units.
               </p>
             </div>
             <div className="flex gap-3">
@@ -305,12 +316,12 @@ export default function CostAssignmentPractice() {
                   {cogsResult === 'correct' ? (
                     <>
                       <CheckCircle2 className="h-5 w-5" />
-                      <span>Correct! Any value between ${correctAnswers.cogsRange.min} and ${correctAnswers.cogsRange.max} works.</span>
+                      <span>Your estimate is within the cost limits: ${correctAnswers.cogsRange.min} to ${correctAnswers.cogsRange.max}.</span>
                     </>
                   ) : (
                     <>
                       <HelpCircle className="h-5 w-5" />
-                      <span>Not in range. Think about min/max cost per unit.</span>
+                      <span>Outside the cost limits. Check the quantity available in each layer.</span>
                     </>
                   )}
                 </div>
@@ -360,12 +371,12 @@ export default function CostAssignmentPractice() {
                   {finalResult === 'correct' ? (
                     <>
                       <CheckCircle2 className="h-5 w-5" />
-                      <span>Correct! Any value between ${correctAnswers.endingInventoryRange.min} and ${correctAnswers.endingInventoryRange.max} works.</span>
+                      <span>Correct! COGS of ${cogsAnswer} plus ending inventory of ${endingInventoryAnswer} equals ${correctAnswers.gafsValue}.</span>
                     </>
                   ) : (
                     <>
                       <HelpCircle className="h-5 w-5" />
-                      <span>Not in range. Check your calculation.</span>
+                      <span>Check your calculation. COGS plus ending inventory must equal ${correctAnswers.gafsValue}.</span>
                     </>
                   )}
                 </div>

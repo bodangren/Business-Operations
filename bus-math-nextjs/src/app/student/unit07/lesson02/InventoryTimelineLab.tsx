@@ -84,7 +84,7 @@ const timelineEvents: TimelineEvent[] = [
     costPerUnit: null,
     expectedUnitsOnHand: 20,
     expectedPurchasesValue: 620,
-    expectedCOGS: 236, // 2 remaining from L1 ($36) + 10 from L2 ($200)
+    expectedCOGS: 380, // $144 from the first sale + $236 from this sale
     expectedInventoryValue: 420
   },
   {
@@ -97,11 +97,15 @@ const timelineEvents: TimelineEvent[] = [
     costPerUnit: null,
     expectedUnitsOnHand: 15,
     expectedPurchasesValue: 620,
-    expectedCOGS: 340, // 5 from L2 ($100)
-    expectedInventoryValue: 280
+    expectedCOGS: 480, // $380 from prior sales + 5 units at $20
+    expectedInventoryValue: 320
   }
 ]
 
+/**
+ * Show FIFO inventory changes and cumulative cost of goods sold.
+ * @returns Timeline inputs, running totals, and worked answers.
+ */
 export default function InventoryTimelineLab() {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState<Record<string, { unitsOnHand: string; inventoryValue: string }>>({})

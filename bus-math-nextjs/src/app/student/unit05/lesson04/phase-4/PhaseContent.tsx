@@ -40,9 +40,13 @@ const checkAnswer = (problem: TimingProblem, netPayAnswer: number, liabilityAnsw
   return { netPay, employerTax, totalLiability, expectedFloat, netCorrect, liabCorrect, floatCorrect }
 }
 
+/**
+ * Check payroll timing calculations once per problem.
+ * @returns The current problem, feedback, and correct-answer streak.
+ */
 export default function Phase4Content() {
   const [problemNumber, setProblemNumber] = useState(1)
-  const [problem] = useState(() => generateProblem(1))
+  const problem = generateProblem(problemNumber)
   const [netPayInput, setNetPayInput] = useState("")
   const [liabilityInput, setLiabilityInput] = useState("")
   const [floatInput, setFloatInput] = useState("")
@@ -51,6 +55,7 @@ export default function Phase4Content() {
   const [masteryCount, setMasteryCount] = useState(0)
 
   const handleCheck = () => {
+    if (showFeedback) return
     const net = parseFloat(netPayInput) || 0
     const liab = parseFloat(liabilityInput) || 0
     const float = parseFloat(floatInput) || 0
@@ -58,7 +63,9 @@ export default function Phase4Content() {
     setResult(res)
     setShowFeedback(true)
     if (res.netCorrect && res.liabCorrect && res.floatCorrect) {
-      setMasteryCount(masteryCount + 1)
+      setMasteryCount(current => current + 1)
+    } else {
+      setMasteryCount(0)
     }
   }
 
@@ -154,6 +161,7 @@ export default function Phase4Content() {
 
                   <button
                     onClick={handleCheck}
+                    disabled={showFeedback || !netPayInput || !liabilityInput || !floatInput}
                     className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700"
                   >
                     Check Answers

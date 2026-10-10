@@ -14,6 +14,7 @@ interface DepreciationProblem {
   salvageValue: number
   usefulLife: number
   yearToCalculate: number
+  regularAnnualExpense: number
   correctAnnualExpense: number
   correctAccumulated: number
   correctBookValue: number
@@ -47,7 +48,9 @@ function generateProblem(): DepreciationProblem {
 
   const depreciableBase = cost - salvageValue
   const annualExpense = roundToNearestDollar(depreciableBase / usefulLife)
-  const accumulated = annualExpense * yearToCalculate
+  const accumulated = yearToCalculate === usefulLife ? depreciableBase : Math.min(depreciableBase, annualExpense * yearToCalculate)
+  const priorAccumulated = Math.min(depreciableBase, annualExpense * (yearToCalculate - 1))
+  const targetYearExpense = accumulated - priorAccumulated
   const bookValue = cost - accumulated
 
   return {
@@ -57,7 +60,8 @@ function generateProblem(): DepreciationProblem {
     salvageValue,
     usefulLife,
     yearToCalculate,
-    correctAnnualExpense: annualExpense,
+    regularAnnualExpense: annualExpense,
+    correctAnnualExpense: targetYearExpense,
     correctAccumulated: accumulated,
     correctBookValue: bookValue
   }
@@ -67,6 +71,10 @@ function parseMoney(value: string) {
   return Number.parseFloat(value.replace(/,/g, '').trim())
 }
 
+/**
+ * Check whole-dollar depreciation with a final-year adjustment to salvage.
+ * @returns The depreciation problem, answer fields, and worked schedule.
+ */
 export default function StraightLineMastery() {
   const [problem, setProblem] = useState<DepreciationProblem>(generateProblem)
   const [annualAnswer, setAnnualAnswer] = useState('')
@@ -94,13 +102,13 @@ export default function StraightLineMastery() {
       setFeedbackBody('You found the annual expense, built accumulated depreciation to the target year, and updated book value correctly.')
       setReteach('')
     } else if (!annualCorrect) {
-      setFeedbackTitle('The annual depreciation expense is off.')
-      setFeedbackBody('Start with depreciable base: cost minus salvage value. Then divide by useful life.')
-      setReteach('Most errors here come from forgetting to subtract salvage value or dividing by the wrong life.')
+      setFeedbackTitle('The target-year depreciation expense is off.')
+      setFeedbackBody('Divide cost minus salvage value by useful life. Round the regular annual expense to whole dollars. In the final year, record only the remaining depreciable base.')
+      setReteach('For the final year, subtract prior accumulated depreciation from the depreciable base.')
     } else if (!accumulatedCorrect) {
       setFeedbackTitle('The accumulated depreciation is off.')
-      setFeedbackBody('Accumulated depreciation is the annual expense multiplied by the number of years recorded so far.')
-      setReteach('Do not recompute a new annual amount for the target year. Straight-line keeps the same annual expense every year.')
+      setFeedbackBody('Before the final year, multiply the rounded annual expense by the year number. In the final year, accumulated depreciation equals cost minus salvage value.')
+      setReteach('Use the rounded annual expense before the final year. In the final year, adjust the expense so book value equals salvage value.')
     } else {
       setFeedbackTitle('The book value is off.')
       setFeedbackBody('Book value equals original cost minus accumulated depreciation, not minus one year of expense.')
@@ -186,13 +194,14 @@ export default function StraightLineMastery() {
 
           <div className="bg-amber-50 border border-amber-200 p-3 rounded">
             <p className="text-sm text-amber-800 font-medium">
-              Calculate straight-line depreciation for Year {problem.yearToCalculate}.
+              Calculate straight-line depreciation for Year {problem.yearToCalculate}. Round annual expense to whole dollars.
+              Adjust the final year so book value equals salvage value.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
             <div>
-              <label className="text-sm font-medium text-gray-700">Annual expense</label>
+              <label className="text-sm font-medium text-gray-700">Expense in target year</label>
               <Input
                 inputMode="decimal"
                 placeholder="Enter dollars"
@@ -273,10 +282,14 @@ export default function StraightLineMastery() {
                     <strong>Depreciable base:</strong> ${problem.cost.toLocaleString()} − ${problem.salvageValue.toLocaleString()} = ${depreciableBase.toLocaleString()}
                   </p>
                   <p className="text-sm text-slate-700">
-                    <strong>Annual expense:</strong> ${depreciableBase.toLocaleString()} ÷ {problem.usefulLife} = ${problem.correctAnnualExpense.toLocaleString()}
+                    <strong>Regular annual expense:</strong> ${depreciableBase.toLocaleString()} ÷ {problem.usefulLife}, rounded = ${problem.regularAnnualExpense.toLocaleString()}
                   </p>
                   <p className="text-sm text-slate-700">
-                    <strong>Accumulated in Year {problem.yearToCalculate}:</strong> ${problem.correctAnnualExpense.toLocaleString()} × {problem.yearToCalculate} = ${problem.correctAccumulated.toLocaleString()}
+                    <strong>Accumulated in Year {problem.yearToCalculate}:</strong> ${problem.correctAccumulated.toLocaleString()}.
+                    {problem.yearToCalculate === problem.usefulLife ? ' The final-year adjustment uses the full depreciable base.' : ` Regular annual expense × ${problem.yearToCalculate}.`}
+                  </p>
+                  <p className="text-sm text-slate-700">
+                    <strong>Expense in target year:</strong> ${problem.correctAnnualExpense.toLocaleString()}
                   </p>
                   <p className="text-sm text-slate-700">
                     <strong>Book value:</strong> ${problem.cost.toLocaleString()} − ${problem.correctAccumulated.toLocaleString()} = ${problem.correctBookValue.toLocaleString()}
@@ -298,7 +311,7 @@ export default function StraightLineMastery() {
             <div className="text-sm text-blue-700 space-y-2">
               <p><strong>Step 1:</strong> Find depreciable base = Cost − Salvage Value</p>
               <p><strong>Step 2:</strong> Divide by useful life = Annual Depreciation Expense</p>
-              <p><strong>Step 3:</strong> Multiply by the year number = Accumulated Depreciation</p>
+              <p><strong>Step 3:</strong> Multiply the rounded annual expense by the year number. In the final year, set accumulated depreciation to cost minus salvage value.</p>
               <p><strong>Step 4:</strong> Subtract accumulated from cost = Book Value</p>
             </div>
           </div>
@@ -318,7 +331,7 @@ export default function StraightLineMastery() {
             <h4 className="font-semibold text-red-800 mb-1">Common Mistakes</h4>
             <ul className="text-sm text-red-700 space-y-1 list-disc list-inside">
               <li>Forgetting to subtract salvage value.</li>
-              <li>Changing annual expense from year to year.</li>
+              <li>Forgetting the final-year adjustment for rounding.</li>
               <li>Confusing accumulated depreciation with one year of expense.</li>
               <li>Subtracting annual expense instead of accumulated depreciation to find book value.</li>
             </ul>
