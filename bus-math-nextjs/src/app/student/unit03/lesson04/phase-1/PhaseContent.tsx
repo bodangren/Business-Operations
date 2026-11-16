@@ -12,13 +12,13 @@ export default function Phase1Content() {
 
           <div className="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-lg border border-blue-200 mb-8">
             <p className="text-lg leading-relaxed text-blue-900">
-              Sarah walked into the bank feeling confident. Her Income Statement showed $4,220 in net income. Her
+              Sarah walked into the bank feeling confident. Her Income Statement showed $4,450 in net income. Her
               Balance Sheet balanced perfectly. But when the loan officer asked, <strong>"How much cash did your
               business actually generate this month?"</strong> — Sarah froze. Her bank account had only grown by $800.
             </p>
 
             <p className="text-lg leading-relaxed text-blue-900 mt-4">
-              "I made $4,220 in profit," she said. The loan officer shook his head. <strong>"Profit is not the same
+              "I made $4,450 in profit," she said. The loan officer shook his head. <strong>"Profit is not the same
               as cash, Sarah. A business can be profitable and still run out of cash. We need to see your Statement
               of Cash Flows."</strong>
             </p>

@@ -146,8 +146,8 @@ export default function Phase5Content() {
           <p className="text-yellow-800 leading-relaxed mb-4">
             Armed with her three-statement financial story, Sarah returned to the bank. This time she showed not
             just profit, but <em>cash generation</em>. "My operating cash flow is $2,850," she explained. "The
-            reason my bank account only grew by $800 is that I invested $3,000 in new equipment — an investment
-            that will increase my capacity by 40 percent next quarter."
+            business paid $3,000 for equipment and received $950 from a long-term loan.
+            Cash increased by $800, from $9,500 to $10,300. I must plan for future loan repayments."
           </p>
           <p className="text-yellow-800 leading-relaxed">
             The loan officer nodded. "Now you're speaking our language. Profit tells me you're viable. Cash flow
