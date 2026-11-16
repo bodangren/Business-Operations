@@ -172,11 +172,13 @@ export default function Phase2Content() {
                 <tr><td className="border border-gray-300 px-4 py-2">Supplies</td><td className="border border-gray-300 px-4 py-2 text-right">$800</td><td className="border border-gray-300 px-4 py-2 text-right">$1,200</td><td className="border border-gray-300 px-4 py-2 text-right text-red-700">+$400</td></tr>
                 <tr><td className="border border-gray-300 px-4 py-2">Equipment</td><td className="border border-gray-300 px-4 py-2 text-right">$9,000</td><td className="border border-gray-300 px-4 py-2 text-right">$12,000</td><td className="border border-gray-300 px-4 py-2 text-right text-red-700">+$3,000</td></tr>
                 <tr><td className="border border-gray-300 px-4 py-2">Accounts Payable</td><td className="border border-gray-300 px-4 py-2 text-right">$2,600</td><td className="border border-gray-300 px-4 py-2 text-right">$3,200</td><td className="border border-gray-300 px-4 py-2 text-right text-green-700">+$600</td></tr>
-                <tr><td className="border border-gray-300 px-4 py-2">Notes Payable</td><td className="border border-gray-300 px-4 py-2 text-right">$8,000</td><td className="border border-gray-300 px-4 py-2 text-right">$8,000</td><td className="border border-gray-300 px-4 py-2 text-right">—</td></tr>
+                <tr><td className="border border-gray-300 px-4 py-2">Long-term Notes Payable</td><td className="border border-gray-300 px-4 py-2 text-right">$8,000</td><td className="border border-gray-300 px-4 py-2 text-right">$8,950</td><td className="border border-gray-300 px-4 py-2 text-right">+$950</td></tr>
               </tbody>
             </table>
             <div className="bg-blue-50 p-3 rounded border border-blue-200 text-sm text-blue-800">
-              <strong>Additional information:</strong> No equipment was sold. No dividends were paid. No new stock issued.
+              <strong>Additional information:</strong> Sarah received $950 in cash from a new long-term loan. No loan principal was repaid.
+              All notes payable are due after one year. The equipment purchase was paid in cash.
+              No equipment was sold. No dividends were paid. No new stock was issued.
             </div>
           </div>
 
@@ -212,23 +214,24 @@ export default function Phase2Content() {
               <div>
                 <h5 className="font-bold text-purple-800 border-b border-purple-300 pb-1 mb-2">Cash Flows from Financing Activities</h5>
                 <div className="grid grid-cols-2 gap-2 ml-4">
-                  <span className="text-gray-500 italic">(No financing activities this period)</span><span className="text-right">$0</span>
-                  <span className="font-bold border-t border-purple-300 pt-1">Net Cash from Financing Activities</span><span className="font-bold border-t border-purple-300 pt-1 text-right">$0</span>
+                  <span>Proceeds from Long-term Loan</span><span className="text-right">$950</span>
+                  <span className="font-bold border-t border-purple-300 pt-1">Net Cash from Financing Activities</span><span className="font-bold border-t border-purple-300 pt-1 text-right">$950</span>
                 </div>
               </div>
 
               <div className="bg-amber-50 p-4 rounded border border-amber-300">
                 <div className="grid grid-cols-2 gap-2 font-bold text-amber-900">
-                  <span>Net Change in Cash</span><span className="text-right">$2,850 − $3,000 + $0 = ($150)</span>
+                  <span>Net Change in Cash</span><span className="text-right">$2,850 − $3,000 + $950 = $800</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   <span>Beginning Cash</span><span className="text-right">$9,500</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 font-bold border-t border-amber-300 pt-2 mt-2">
-                  <span>Ending Cash</span><span className="text-right">$9,350</span>
+                  <span>Ending Cash</span><span className="text-right">$10,300</span>
                 </div>
                 <p className="text-amber-700 text-xs mt-2">
-                  Note: The ending cash should reconcile to the Balance Sheet. Any difference signals a classification error.
+                  Cash check: $9,500 + $800 = $10,300. This equals ending cash on the Balance Sheet.
+                  If the amounts differ, check for missing transactions, incorrect balances, calculation errors, and classification errors.
                 </p>
               </div>
             </div>

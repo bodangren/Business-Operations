@@ -199,9 +199,9 @@ export default function Phase3Content() {
             <h4 className="font-semibold text-amber-900 mb-3 text-lg">The Complete Picture</h4>
             <p className="text-amber-800 leading-relaxed">
               Sarah's business is <strong>profitable</strong> (Net Income $4,450), <strong>growing</strong> (investing
-              in equipment), and <strong>liquid</strong> (current ratio 5.59). The low cash increase is a temporary
-              timing issue — customers owe her $2,100 that she will collect soon. This is the story she needs to
-              tell the bank, backed by all three statements.
+              in equipment), and <strong>liquid</strong> (current ratio 5.59). Operating activities provided $2,850.
+              Sarah paid $3,000 for equipment and received $950 from a long-term loan. Cash increased by $800.
+              Customers owe her an additional $2,100. She must collect these receivables and plan for loan repayments.
             </p>
           </div>
 
