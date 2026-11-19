@@ -7,23 +7,20 @@ export const lesson05Data = {
   sequence: 5,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Clean raw café POS data using Excel tools (TRIM, Text-to-Columns, Remove Duplicates)",
-    "Identify and handle outliers using z-score analysis",
-    "Apply filters and sorting to prepare data for statistical analysis",
-    "Document data quality decisions for audit and investor review"
+    "Identify exact duplicate records",
+    "Clean day labels with TRIM and PROPER",
+    "Summarize the eight clean weekend records",
   ],
   keyConcepts: [
-    "Data cleaning workflow: import, inspect, clean, validate",
-    "TRIM, PROPER, Text-to-Columns for messy text data",
-    "Remove Duplicates and filter functions for data quality",
-    "Outlier detection using z-scores and IQR methods",
-    "Documentation and audit trail for data decisions"
+    "Point-of-sale records",
+    "Exact duplicates",
+    "Historical waste rate",
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
     "Use excel-lessons skill: business pressure first, then tool mechanics, safe rehearsal, workbook sprint"
   ],
-  rationale: "Clean data is the foundation of reliable forecasts. Before predicting future sales, students must transform raw POS data into an analysis-ready format using professional Excel tools.",
+  rationale: "Clean records support reliable forecasts.",
   status: "Revised"
 }
 

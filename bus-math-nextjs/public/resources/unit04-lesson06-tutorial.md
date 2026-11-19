@@ -1,37 +1,11 @@
-# Unit 04 Lesson 06 – Visualizing Sales by Weekday
+# Lesson 6 Build and test the dashboard
 
-Use this walkthrough to transform `unit04-lesson06-student.xlsx` into the completed teacher model (`unit04-lesson06-teacher.xlsx`). Students calculate weekday averages and prepare chart-ready data that can feed a column or line chart.
+Open [Unit04_L06_Start.xlsx](unit04-lesson06-student.xlsx).
 
-## 1. Verify the Starting Point
+1. Keep the completed Analysis. Forecast weekend 9 with FORECAST.LINEAR(NextWeekend,CleanPOS[Orders],CleanPOS[Weekend]).
+2. Use COUNTIF to confirm exactly one scenario match. Use SUMIF to read the selected plan from Plans. Resolve invalid names or missing inputs before reporting a result.
+3. Multiply forecast orders by the demand factor. Divide expected waste by prepared units. Compare the result with 3%. Compare units available after waste with demand rounded up.
+4. Link the order values in Dashboard A5:B13 and the waste rates in D5:E8. Insert a line chart for orders and a column chart for waste rates.
+5. Switch Low, Base, and High. Check that the Plan value changes. The chart ranges are fixed for this exercise. If you add a weekend, extend the chart source and confirm the new point appears.
 
-- The workbook already includes the cleaned sales table and completed summary stats from Lesson 05.
-- The **DayAverages** sheet lists each weekday with blank Average Sales cells.
-
-## 2. Calculate Average Sales per Day
-
-1. In `B2`, enter `=AVERAGEIF(CleanedSales!D:D,"Monday",CleanedSales!E:E)` to pull Monday’s average.\n2. Fill the formula down through `B7`, changing only the day criteria each time (Tuesday, Wednesday, etc.).
-3. Results should match the teacher workbook:
-   - Monday: 185.50
-   - Tuesday: 142.75
-   - Wednesday: 182.725
-   - Thursday: 156.80
-   - Friday: 214.90
-   - Saturday: 172.40
-
-Stress why the `AVERAGEIF` approach is flexible—if Sarah adds more Monday orders, the cell updates automatically.
-
-## 3. Build the Chart (Teacher Demonstration)
-
-1. Highlight the completed range `A1:B7`.
-2. Insert a column chart (or line chart) via **Insert › Charts**.
-3. Format with a descriptive title such as “Average Café Sales by Weekday”.
-4. Optional: Add data labels to call out the busiest day (Friday) and the slowest (Tuesday).
-
-Save the chart on the same sheet or move it to a new sheet titled “WeekdayChart” as you prefer.
-
-## 4. Save the Teacher Version
-
-- Save the workbook as `unit04-lesson06-teacher.xlsx`.
-- Remind students that their final version should include both the filled averages and the chart they created live.
-
-This visual snapshot helps the class discuss staffing plans, promotional days, and ingredient ordering backed by real café data.
+In Forecasting, use B7 for the trend, B8 for scenario orders, B9 for the planned waste rate, B11 for the waste check, and B12 for the service check. On Dashboard, link E6:E8 to HistoricalWaste, PlanWasteRate, and WasteTarget.

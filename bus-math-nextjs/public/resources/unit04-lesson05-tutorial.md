@@ -1,47 +1,10 @@
-# Unit 04 Lesson 05 – Descriptive Statistics for Café Sales
+# Lesson 5 Clean and summarize the records
 
-This guide walks through upgrading `unit04-lesson05-student.xlsx` to the completed teacher file (`unit04-lesson05-teacher.xlsx`). Students summarize TechStart Café’s cleaned sales data with `AVERAGE`, `MEDIAN`, `STDEV.S`, and `COUNTA`.
+Open [Unit04_L05_Start.xlsx](unit04-lesson05-student.xlsx).
 
-## 1. Confirm the Cleaned Data
+1. Compare the nine raw records with the eight rows in Analysis. Identify the exact duplicate. Keep the raw records.
+2. Check that weekends 1–8 are in source order. Clean the Day labels with TRIM and PROPER.
+3. Use COUNT on RawPOS[Weekend] and CleanPOS[Weekend]. The results are 9 and 8.
+4. Use AVERAGE, MEDIAN, and STDEV.S on the eight order counts. Divide total wasted units by total prepared units for the historical waste rate.
 
-- Open the student workbook and ensure **CleanedSales** matches the eight polished records from Lesson 04.
-- Remind students that statistics only make sense after the data is consistent and duplicate-free.
-
-## 2. Build the Summary Table
-
-- Go to **SummaryStats**. The Metric column is pre-filled; the Value column is empty.
-- All formulas reference `CleanedSales`, so the stats update automatically if more orders are added later.
-
-### Average Sales
-
-1. Select `B2`.
-2. Enter `=AVERAGE(CleanedSales!E:E)` and press Enter.
-3. Format the result as currency (should be \$179.85).
-
-### Median Sales
-
-1. In `B3`, type `=MEDIAN(CleanedSales!E:E)` (result: \$172.40).
-2. Explain how the median resists outliers when a new high-ticket order comes in.
-
-### Standard Deviation
-
-1. In `B4`, enter `=STDEV.S(CleanedSales!E:E)` (result: \$24.76).
-2. Discuss how variability helps the café plan inventory and staffing.
-
-### Total Transactions
-
-1. In `B5`, use `=COUNTA(CleanedSales!A:A)` to count orders.
-2. Result should be `8`, matching the cleaned dataset.
-
-## 3. Optional Formatting Touches
-
-- Apply bold to the Metric column headers.
-- Add number formatting to two decimal places.
-- Use conditional formatting or color scales if you want to highlight the statistic that matters most for discussion.
-
-## 4. Save the Teacher Version
-
-- Save the finished workbook as `unit04-lesson05-teacher.xlsx`.
-- Encourage students to compare their calculated values to confirm they match before moving on to lesson 06.
-
-With descriptive statistics in place, the class is ready to visualize average sales by weekday and spot operational trends.
+In Analysis C6, enter `=PROPER(TRIM(INDEX(RawPOS[Day text],CleanPOS[[#This Row],[Weekend]])))`. Fill to C13. In B16:B17, count the two numeric Weekend columns. Keep the numeric clean rows supplied in the file.

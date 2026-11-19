@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/paths"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 
@@ -186,6 +188,8 @@ export default function Phase3Content() {
         </Card>
       </div>
 
+    <section className="space-y-3 px-4 py-4"><h3 className="text-xl font-semibold">Classroom practice</h3><p>Use the workbook to calculate each z-score by hand. Check the sign and apply the statistical limit.</p>
+      <p><a className="font-semibold underline" href={withBasePath("/resources/unit04-lesson03-student.xlsx")} download="Unit04_L03_Start.xlsx">Unit04_L03_Start.xlsx</a></p></section>
     </div>
   )
 }

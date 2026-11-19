@@ -1,5 +1,7 @@
 'use client';
 
+import { withBasePath } from "@/lib/paths"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, AlertTriangle } from "lucide-react";
 
@@ -160,6 +162,8 @@ export default function Phase3Content() {
         </div>
 
       </div>
+    <section className="space-y-3 px-4 py-4"><h3 className="text-xl font-semibold">Classroom practice</h3><p>Use the workbook to organize your manual calculations. Show the sum, mean, median, and range.</p>
+      <p><a className="font-semibold underline" href={withBasePath("/resources/unit04-lesson02-student.xlsx")} download="Unit04_L02_Start.xlsx">Unit04_L02_Start.xlsx</a></p></section>
     </div>
   );
 }

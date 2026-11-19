@@ -12,7 +12,7 @@ I started running into two big problems. First, I noticed a competing agency was
 
 The real 'aha' moment came when I finally did a deep competitive analysis. I was honestly shocked. I discovered that my pricing was about 15% below the market average for the level of quality I was delivering. I was just leaving money on the table because I hadn't done the research. That's when it hit me: data analysis isn't some boring, academic exercise. It's a competitive weapon. My gut feeling was wrong, but the data was telling me the truth.
 
-So I had to learn how to be a data-driven business owner. This unit's driving question is about using sales data to help a café maximize profit, but the principle was exactly the same for my business. It's about moving beyond just reporting what happened and starting to analyze *why* it happened and what you should do next. It's about digging into trends, deeply understanding metrics like ROI, and then using that insight to make strategic choices about my pricing, my services, and where I should focus my energy.
+So I had to learn how to be a data-driven business owner. This unit's driving question is about using sales data to help a café plan preparation, but the principle was exactly the same for my business. It's about moving beyond just reporting what happened and starting to analyze *why* it happened and what you should do next. It's about digging into trends, deeply understanding metrics like ROI, and then using that insight to make strategic choices about my pricing, my services, and where I should focus my energy.
 
 Once I started using data this way, everything changed. I was able to confidently adjust my pricing to reflect my value. I could walk into a client meeting and show them a clear, data-backed report on the return they were getting. I won bigger and better projects. But, this success led directly to the next big problem. I was winning so much new work that I was consistently working over 60 hours a week. I had hit my personal capacity. I knew that if I wanted the business to keep growing, I couldn't do it alone anymore.`
   }
@@ -45,7 +45,7 @@ Once I started using data this way, everything changed. I was able to confidentl
   const additionalContent = (
     <div className="prose prose-lg max-w-none">
       <p className="text-base leading-relaxed">
-        To master this skill, we're going to step into the shoes of a data consultant. Our new "client" is the campus café, a bustling hub that has a big problem. They have tons of sales data, but they don't know what it's telling them. Your mission is to use their data to create a plan that will make their business more profitable and efficient. The essential question you must answer is: <strong>Given two years of POS data, what inventory and staffing plan will maximize weekend profits without raising waste above 3%?</strong>
+        To master this skill, we're going to step into the shoes of a data consultant. Our new "client" is the campus café, a bustling hub that has a big problem. Use eight weekends of synthetic order and waste records to compare preparation plans. <strong>Which weekend plan can cover forecast demand and keep expected food waste at or below 3%?</strong>
       </p>
       
       <p className="text-base leading-relaxed">

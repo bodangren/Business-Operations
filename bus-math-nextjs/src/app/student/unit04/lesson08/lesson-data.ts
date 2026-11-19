@@ -9,20 +9,20 @@ export const lesson08Data = {
   sequence: 8,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Define the project scope, stakeholders, and success metrics for the weekend‑ops analysis",
-    "Set up the Excel workbook skeleton matching the rehearsal structure",
-    "Import and organize the group‑specific dataset for analysis"
+    "Open the assigned group workbook and keep the five rehearsal sheets",
+    "Define the decision and state a risk",
+    "Verify the raw records and complete Analysis",
   ],
   keyConcepts: [
-    "Project definition and scope planning",
-    "Excel workbook structure and tab organization",
-    "Data inventory and file management"
+    "Group workbook continuity",
+    "Data source check",
+    "Project scope",
   ],
   durationEstimateMinutes: 50,
   pedagogicalApproach: [
     "Team‑based project launch with assigned datasets, workbook setup, and milestone acceptance criteria"
   ],
-  rationale: "Students launch their team project with a clear problem definition, workbook skeleton, and their group's assigned dataset. The structure mirrors the rehearsal lesson exactly so teams can focus on their specific business scenario.",
+  rationale: "Use the assigned group workbook with synthetic weekend data. Keep this file through Lesson 10.",
   status: "Draft"
 }
 

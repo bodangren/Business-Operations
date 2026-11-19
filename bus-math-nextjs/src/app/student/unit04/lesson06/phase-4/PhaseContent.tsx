@@ -1,78 +1,18 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle2 } from "lucide-react"
+import { withBasePath } from "@/lib/paths"
 
-
-export default function Phase4Content() {
+/** @returns Build and test the dashboard. */
+export default function LessonContent() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-orange-50">
-
-      <div className="space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-2">🧩 Phase 4: Independent Practice</Badge>
-            <h2 className="text-3xl font-bold text-gray-900">Integration Mastery Challenges</h2>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Build your decision‑ready dashboard. Use scenario toggles by name, link visuals, and create an executive
-              summary tied to KPIs.
-            </p>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-900">Download Practice Data</CardTitle>
-            </CardHeader>
-            <CardContent className="text-blue-900 space-y-2">
-              <p>
-                Use this dataset with Base/Stretch/Downside lines, KPI targets, and edge cases for validation:
-              </p>
-              <a className="underline font-semibold" href="/resources/unit04-forecasting-integration-practice.csv" download>
-                /resources/unit04-forecasting-integration-practice.csv
-              </a>
-              <p className="text-sm">
-                Check for: missing scenario names, negative or &gt;100% rates, stale AsOfDate, and broken chart links.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Build Tasks</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2 text-sm">
-              <ul className="list-disc list-inside space-y-1">
-                <li>Create a driver table with scenario names and assumptions.</li>
-                <li>Set SelectedScenario (named cell) and switch by exact name using XLOOKUP or INDEX‑MATCH.</li>
-                <li>Link outputs to dashboard charts/tiles using Table[Column] references.</li>
-                <li>Add an audit panel: missing names, rate bounds, stale dates.</li>
-                <li>Write a one‑paragraph executive summary that updates with KPIs.</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-900 flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5" />
-                Self‑Assessment Checklist
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-green-900 text-sm space-y-1">
-              <ul className="list-disc list-inside space-y-1">
-                <li>Scenario switches by name; wrong names show a clear message.</li>
-                <li>Charts update when you add rows (no fixed ranges).</li>
-                <li>Validation flags appear for rates &lt;0 or &gt;1 and stale dates.</li>
-                <li>Executive summary mentions runway, margin, and traffic thresholds.</li>
-                <li>All assumptions are documented next to inputs.</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
-
-    </div>
+    <section className="space-y-4">
+      <h3 className="text-xl font-semibold">Build and test the dashboard</h3>
+      <p><a className="font-semibold underline" href={withBasePath("/resources/unit04-lesson06-student.xlsx")} download="Unit04_L06_Start.xlsx">Unit04_L06_Start.xlsx</a> · <a className="font-semibold underline" href={withBasePath("/resources/unit04-lesson06-tutorial.md")}>Workbook tutorial</a></p>
+      <ol className="list-decimal space-y-2 pl-6">
+        <li>Keep the completed Analysis. Forecast weekend 9 with FORECAST.LINEAR(NextWeekend,CleanPOS[Orders],CleanPOS[Weekend]).</li>
+        <li>Use COUNTIF to confirm exactly one scenario match. Use SUMIF to read the selected plan from Plans. Resolve invalid names or missing inputs before reporting a result.</li>
+        <li>Multiply forecast orders by the demand factor. Divide expected waste by prepared units. Compare the result with 3%. Compare units available after waste with demand rounded up.</li>
+        <li>Link the order values in Dashboard A5:B13 and the waste rates in D5:E8. Insert a line chart for orders and a column chart for waste rates.</li>
+        <li>Switch Low, Base, and High. Check that the Plan value changes. The chart ranges are fixed for this exercise. If you add a weekend, extend the chart source and confirm the new point appears.</li>
+      </ol>
+    </section>
   )
 }
-

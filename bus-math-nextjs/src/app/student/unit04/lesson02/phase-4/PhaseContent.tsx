@@ -33,8 +33,8 @@ export default function Phase4Content() {
       id: 2,
       data: [85, 92, 78, 95, 88, 72],
       question: "Find the median of these 6 daily sales amounts.",
-      answer: 86,
-      explanation: "Sorted: 72, 78, 85, 88, 92, 95. Median = (85+88)÷2 = 86.5. Rounded to nearest dollar: 87 or use exact 86.5"
+      answer: 86.5,
+      explanation: "Sorted: 72, 78, 85, 88, 92, 95. Median = (85 + 88) ÷ 2 = 86.5. Enter the exact median."
     },
     {
       id: 3,

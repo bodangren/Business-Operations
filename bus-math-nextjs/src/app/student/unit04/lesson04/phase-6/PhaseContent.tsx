@@ -66,8 +66,7 @@ export default function Phase6Content() {
               </CardHeader>
               <CardContent className="text-blue-800 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Remember the unit's driving question: <em>"Given two years of weekend POS data, what inventory 
-                  and staffing plan will maximize weekend profits without raising waste above 3%?"</em>
+                  Remember the unit's driving question: <em>"Which weekend plan can cover forecast demand and keep expected food waste at or below 3%?"</em>
                 </p>
                 
                 <div className="bg-white p-4 rounded-lg border border-blue-200">
@@ -75,11 +74,11 @@ export default function Phase6Content() {
                   <div className="space-y-3 text-sm">
                     <div className="border-l-4 border-blue-400 pl-3">
                       <p className="font-medium text-blue-900">Predict demand</p>
-                      <p className="text-blue-800">Use past weekend patterns to forecast next weekend's customer count, guiding inventory and staffing decisions.</p>
+                      <p className="text-blue-800">Use past weekend order counts to forecast demand and compare preparation plans.</p>
                     </div>
                     <div className="border-l-4 border-purple-400 pl-3">
                       <p className="font-medium text-blue-900">Identify optimal levels</p>
-                      <p className="text-blue-800">Find where adding more staff or inventory stops giving returns - the "sweet spot" that maximizes profit.</p>
+                      <p className="text-blue-800">Compare available units with forecast orders rounded up to a whole unit.</p>
                     </div>
                     <div className="border-l-4 border-green-400 pl-3">
                       <p className="font-medium text-blue-900">Plan for waste limits</p>

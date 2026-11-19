@@ -1,72 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { FinancialDashboard } from "@/components/charts/FinancialDashboard"
-import ErrorCheckingSystem from "@/components/business-simulations/ErrorCheckingSystem"
-import ChartLinkingSimulator from "@/components/business-simulations/ChartLinkingSimulator"
-
-
-export default function Phase3Content() {
+/** @returns Compare the plans before you build. */
+export default function LessonContent() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-purple-50">
-
-      <div className="space-y-8">
-        <section className="space-y-6">
-          <div className="text-center space-y-4">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2">🛠️ Phase 3: Guided Practice</Badge>
-            <h2 className="text-3xl font-bold text-gray-900">Build Sarah’s Integration Dashboard</h2>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Implement scenario controls with a driver table, link outputs to visuals, and install validation
-              that catches missing names, stale dates, and out‑of‑range rates.
-            </p>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-purple-200 bg-purple-50">
-            <CardHeader>
-              <CardTitle className="text-purple-900">Professional Reliability Checklist</CardTitle>
-            </CardHeader>
-            <CardContent className="text-purple-900 space-y-2">
-              <ul className="list-disc list-inside text-sm space-y-1">
-                <li>No hard‑coded values in outputs; all driven by inputs.</li>
-                <li>Scenario switches by exact name; IFNA/IFERROR protects demos.</li>
-                <li>Charts bind to outputs that use Table[Column] references.</li>
-                <li>Audit panel counts: missing keys, stale AsOfDate, rate bounds.</li>
-                <li>Executive summary states the decision and the why.</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <FinancialDashboard title="Café Operations Dashboard" className="max-w-4xl mx-auto" />
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Validation Builder (Practice)</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-3">
-                Use the validation tool to practice writing rules like “Scenario name must not be blank,” “Rates between
-                0% and 100%,” and “AsOfDate within 30 days.” Transfer these patterns into your spreadsheet model.
-              </p>
-              <ErrorCheckingSystem />
-            </CardContent>
-          </Card>
-
-          <Card className="border-blue-200">
-            <CardHeader>
-              <CardTitle className="text-blue-900">Chart Linking Simulator</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700 mb-3">
-                Practice linking charts to data using structured references, then build recommendations based on KPI thresholds.
-              </p>
-              <ChartLinkingSimulator />
-            </CardContent>
-          </Card>
-        </section>
-      </div>
-
-    </div>
+    <section className="space-y-4">
+      <h3 className="text-xl font-semibold">Compare the plans before you build</h3>
+      <p>Base prepares 120 units and expects to waste 3. Waste is 3 ÷ 120 = 2.5%. There are 117 units available. The forecast of 116.43 orders rounds up to 117 for the service check.</p>
+      <p>High prepares 132 units and expects to waste 5. Waste is 3.79%, above the 3% target. Its 127 available units are below the rounded estimate of 129.</p>
+    </section>
   )
 }
-
