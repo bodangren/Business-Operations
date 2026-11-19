@@ -114,9 +114,9 @@ export default function Phase3Content() {
                   <h4 className="font-semibold text-green-900 mb-2">Answers</h4>
                   <ul className="text-green-800 text-sm space-y-1 list-disc list-inside">
                     <li><strong>Direction:</strong> Positive - more advertising → more sales</li>
-                    <li><strong>Slope:</strong> About $2 per $1 spent (each $100 in ads adds ~$200 in sales)</li>
+                    <li><strong>Slope:</strong> About $1.86 in predicted sales per additional $1 in advertising, based on the fitted line</li>
                     <li><strong>Consistency:</strong> Pretty high - points cluster reasonably close to the line</li>
-                    <li><strong>Prediction:</strong> Approximately $2,000 in sales for $450 advertising</li>
+                    <li><strong>Prediction:</strong> The fitted line predicts $1,912.50 in sales at $450 in advertising</li>
                   </ul>
                 </div>
               </CardContent>
@@ -159,10 +159,10 @@ export default function Phase3Content() {
                 <div className="bg-white p-4 rounded-lg border border-orange-200">
                   <h4 className="font-semibold text-orange-900 mb-2">Answers</h4>
                   <ul className="text-orange-800 text-sm space-y-1 list-disc list-inside">
-                    <li><strong>Direction:</strong> Negative - hotter days → lower sales (probably because people stay cool indoors)</li>
-                    <li><strong>Slope:</strong> About -$65 per degree (each degree warmer = $65 less in sales)</li>
+                    <li><strong>Direction:</strong> Negative. Higher temperatures are associated with lower sales in these records.</li>
+                    <li><strong>Slope:</strong> About −$73.71 in predicted sales per degree Fahrenheit, based on the fitted line</li>
                     <li><strong>Pattern explanation:</strong> On hot days, people may go to air-conditioned malls or avoid the café's outdoor area</li>
-                    <li><strong>Prediction:</strong> Approximately $6,000 in sales for 70°F</li>
+                    <li><strong>Prediction:</strong> The fitted line predicts $6,266.67 in sales at 70°F</li>
                   </ul>
                 </div>
               </CardContent>
@@ -265,15 +265,14 @@ export default function Phase3Content() {
                   <div className="bg-white p-4 rounded-lg border border-green-200">
                     <h3 className="font-semibold text-green-900 mb-2">Slope Quantifies Impact</h3>
                     <p className="text-green-800 text-sm">
-                      The slope tells you exactly how much the outcome changes for each unit increase in the input - 
-                      essential for planning and budgeting.
+                      The slope gives the estimated change in the outcome for each unit increase in the input.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold text-green-900 mb-2">Fit Shows Certainty</h3>
+                    <h3 className="font-semibold text-green-900 mb-2">Fit Describes the Observed Data</h3>
                     <p className="text-green-800 text-sm">
-                      How tightly points cluster around the line shows how reliable your predictions will be. 
-                      Low fit doesn't mean "bad" - just "less certain."
+                      Fit measures how well the line describes the observed results. Check for changes in conditions before using the line to forecast.
+                      A low fit can indicate that the line accounts for little of the variation.
                     </p>
                   </div>
                 </div>
