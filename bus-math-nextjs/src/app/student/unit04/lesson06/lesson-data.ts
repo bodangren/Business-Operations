@@ -7,24 +7,20 @@ export const lesson06Data = {
   sequence: 6,
   unitId: "mdrhlhv2yok8auw4s3s",
   learningObjectives: [
-    "Integrate forecasting outputs into a single, decision‑ready dashboard",
-    "Implement scenario switching (Base/Stretch/Downside) with exact‑match logic",
-    "Link model outputs to charts/tiles using structured references",
-    "Apply validation (IFNA/IFERROR) and audit checks for investor‑ready reliability",
-    "Communicate insights with concise executive summaries tied to KPIs"
+    "Forecast the next weekend with FORECAST.LINEAR",
+    "Compare Low, Base, and High using waste and service checks",
+    "Test the linked dashboard charts",
   ],
   keyConcepts: [
-    "Named‑range or driver table scenario control",
-    "XLOOKUP/INDEX‑MATCH exact‑match switching with IFNA/IFERROR fallbacks",
-    "Structured references (Table[Column]) for stable visuals",
-    "KPI thresholds (runway, margin, coverage) driving executive summaries",
-    "Auditability, documentation, and performance standards"
+    "Scenario selection with COUNTIF and SUMIF",
+    "Planned waste and demand coverage",
+    "Chart values and fixed chart ranges",
   ],
   durationEstimateMinutes: 45,
   pedagogicalApproach: [
     "Integrate prior skills into a scenario‑driven dashboard and present"
   ],
-  rationale: "Students turn Lesson04–05 forecasting into a live, investor‑ready system: scenario controls, linked visuals, validation, and clear decision cues.",
+  rationale: "Use one forecast and three plans to compare waste and demand coverage.",
   status: "Draft"
 }
 
@@ -57,7 +53,7 @@ export const lesson06Phases = [
     phaseName: "Independent Practice" as const,
     sequence: 4,
     description: "Integration mastery challenges with downloadable dataset; executive summary outputs",
-    // resources: /public/resources/unit04-forecasting-integration-practice.csv
+    // Workbook: /public/resources/unit04-lesson06-student.xlsx
   },
   {
     id: "phase_assessment_6",

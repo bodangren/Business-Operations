@@ -64,7 +64,7 @@ export default function Phase2Content() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              Here's the problem in plain English: The campus café wants to <strong>maximize profit</strong> on weekends, but they currently waste between 8-12% of their inventory. Their target is 3% or less.
+              The campus café wants to prepare enough food to cover forecast orders. Its target is to waste 3% or less of the units it prepares.
             </p>
             <div className="bg-white p-4 rounded-lg border border-orange-200 my-4">
               <div className="text-center">

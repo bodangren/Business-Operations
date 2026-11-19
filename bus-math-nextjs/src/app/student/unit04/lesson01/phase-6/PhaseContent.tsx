@@ -39,7 +39,7 @@ export default function Phase6Content() {
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
             <h2 className="text-xl font-bold text-blue-900 mb-3">By the End of This Unit</h2>
             <p className="text-gray-700">
-              You'll be able to look at two years of café sales data and confidently recommend: how many croissants to bake, how many baristas to schedule, and what price to charge. Your recommendation will be backed by data, not gut feelings.
+              Use eight weekends of café data to estimate orders, compare preparation plans, and explain the waste and demand checks.
             </p>
           </div>
 
