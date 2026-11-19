@@ -118,14 +118,13 @@ export default function Phase2Content() {
                 <div className="bg-white p-4 rounded border border-red-200">
                   <h4 className="font-semibold text-red-900 mb-2">Your calculation:</h4>
                   <p className="text-red-800 text-sm">z = -12.45 / 8.25 = -1.51</p>
-                  <p className="text-red-800 text-sm mt-2">Wait, that's only -1.51, which is less than 2... so it's not an outlier by the numbers?</p>
+                  <p className="text-red-800 text-sm mt-2">The absolute z-score is 1.51, which is below the threshold of 2.</p>
                 </div>
                 <div className="bg-white p-4 rounded border border-red-200">
                   <h4 className="font-semibold text-red-900 mb-2">But wait!</h4>
                   <p className="text-red-800 text-sm">
-                    Actually, -1.51 is just outside the ±2 range when you consider direction. More importantly, 
-                    <strong>$0.05 makes no business sense</strong> - no menu item costs that little. This is 
-                    clearly a data entry error that needs correction regardless of the z-score.
+                    The z-score is inside the interval from −2 to +2. Use the menu and the receipt to investigate this sale because
+                    <strong>$0.05 makes no business sense</strong> - no menu item costs that little. Correct the record if the source confirms an error.
                   </p>
                 </div>
               </div>
@@ -134,8 +133,7 @@ export default function Phase2Content() {
                 <h4 className="font-semibold text-red-900 mb-2">Key Insight: Statistics + Business Context</h4>
                 <p className="text-red-800">
                   Z-scores tell you what's unusual <em>mathematically</em>. But you also need business judgment 
-                  to decide what's unusual <em>practically</em>. $127.50 with z=13.94 is clearly a real transaction 
-                  (catering order). $0.05 with z=-1.51 is clearly an error (no items cost 5 cents).
+                  to decide what's unusual <em>practically</em>. The receipt confirms the $127.50 catering order in this example. Check the source for the $0.05 transaction before you change it.
                 </p>
               </div>
             </CardContent>

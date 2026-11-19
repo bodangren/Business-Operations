@@ -136,9 +136,9 @@ export default function Phase2Content() {
                       <strong>Café example:</strong> Sales stay around $9,000 every month
                     </p>
                     <p className="text-purple-800 text-sm font-mono mt-2">
-                      → January: $9,000<br/>
-                      → February: $9,100<br/>
-                      → March: $8,900
+                      → January: $9,100<br/>
+                      → February: $8,800<br/>
+                      → March: $9,100
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg border border-purple-200">
@@ -175,7 +175,7 @@ export default function Phase2Content() {
                       <strong>Café example:</strong> Sales vary predictably by about $200-300 each month
                     </p>
                     <p className="text-orange-800 text-sm mt-2 font-medium text-green-700">
-                      Predictions are more reliable when fit is high
+                      A high R-squared describes fit over the observed period. Check whether the conditions are likely to continue.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg border border-orange-200">
@@ -200,7 +200,7 @@ export default function Phase2Content() {
                     more variability that can't be explained by time alone.
                   </p>
                   <p className="text-orange-800 text-sm mt-2">
-                    <strong>Fit tells you how much you can trust the prediction, not whether the business is good or bad.</strong>
+                    <strong>R-squared shows how much of the variation in the observed results the fitted line accounts for. Future results can differ.</strong>
                   </p>
                 </div>
               </CardContent>
