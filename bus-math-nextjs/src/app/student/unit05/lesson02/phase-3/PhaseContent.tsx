@@ -20,12 +20,12 @@ const scenarios: DeductionScenario[] = [
     taxableWages: 2140,
     filingStatus: "single",
     bracketHint:
-      "Annualize $2,140 × 26 = $55,640. Still inside the 12% bracket, so apply the single formula: $1,192.50 + 12% over $11,925, then divide back to the pay period.",
+      "Annualize $2,140 × 26 = $55,640. Use the classroom single-filer 22% bracket: $5,578.50 + 22% of the amount over $48,475. Divide by 26 and round to cents.",
     stateRate: 0.04,
     expected: {
       socialSecurity: 132.68,
       medicare: 31.03,
-      federalIncome: 318.45,
+      federalIncome: 275.18,
       stateIncome: 85.6
     }
   },
@@ -43,7 +43,7 @@ const scenarios: DeductionScenario[] = [
     expected: {
       socialSecurity: 164.92,
       medicare: 38.57,
-      federalIncome: 412.9,
+      federalIncome: 389.58,
       stateIncome: 106.4
     }
   },
@@ -61,13 +61,17 @@ const scenarios: DeductionScenario[] = [
     expected: {
       socialSecurity: 153.76,
       medicare: 35.96,
-      federalIncome: 286.2,
+      federalIncome: 284.52,
       stateIncome: 74.4
     },
     notes: "Maria works in Arizona so Sarah withholds a flat 3% until the AZ worksheet is complete."
   }
 ]
 
+/**
+ * Present deduction practice using the displayed classroom tax tables.
+ * @returns Worked examples, reference tables, and guided calculation fields.
+ */
 export default function Phase3Content() {
   return (
     <div className="bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-100">
@@ -77,7 +81,7 @@ export default function Phase3Content() {
           <Badge className="bg-purple-200 text-purple-900 text-lg px-4 py-2">Guided Calculator Practice</Badge>
           <h2 className="text-4xl font-bold text-slate-900">Fill in the Paystub Deductions with Support</h2>
           <p className="text-lg text-slate-700 max-w-3xl mx-auto">
-            Use the IRS tables you just studied to calculate each deduction. This component gives you scaffolds: hints,
+            Use the classroom tables below to calculate each deduction. This component gives you scaffolds: hints,
             highlighting, and instant feedback. Phase 4 removes the training wheels.
           </p>
 
@@ -90,7 +94,7 @@ export default function Phase3Content() {
             </CardHeader>
             <CardContent className="text-slate-700 text-sm">
               Keep the correct filing status in view while you calculate. Match each scenario card to one of these tables,
-              find the taxable income range, and apply the IRS formula before dividing back down to the bi-weekly amount.
+              find the taxable income range, and apply the displayed formula before dividing by 26.
             </CardContent>
           </Card>
           <div className="grid gap-4 lg:grid-cols-3">

@@ -81,7 +81,10 @@ function checkAnswer(
   userNetChange: number,
   correct: { operating: number; investing: number; financing: number; netChange: number }
 ): { correct: boolean; feedback: string } {
-  const tolerance = 1;
+  if (![userOperating, userInvesting, userFinancing, userNetChange].every(Number.isFinite)) {
+    return { correct: false, feedback: "Enter a number in each answer field." };
+  }
+  const tolerance = 0.005;
   const opDiff = Math.abs(userOperating - correct.operating);
   const invDiff = Math.abs(userInvesting - correct.investing);
   const finDiff = Math.abs(userFinancing - correct.financing);
@@ -99,9 +102,13 @@ function checkAnswer(
     feedback += misconceptionFeedback.netWrong;
   }
 
-  return { correct: !!feedback, feedback: feedback.trim() || misconceptionFeedback.allCorrect };
+  return { correct: false, feedback: feedback.trim() };
 }
 
+/**
+ * Present cash-flow rounds and check each submitted statement.
+ * @returns Practice inputs, feedback, and the current correct-answer streak.
+ */
 export function CashFlowPractice() {
   const [round, setRound] = useState<CashFlowRound>(generateRound);
   const [userOperating, setUserOperating] = useState("");
@@ -117,10 +124,11 @@ export function CashFlowPractice() {
   const masteryTarget = 3;
 
   const handleSubmit = useCallback(() => {
-    const operating = parseFloat(userOperating) || 0;
-    const investing = parseFloat(userInvesting) || 0;
-    const financing = parseFloat(userFinancing) || 0;
-    const netChange = parseFloat(userNetChange) || 0;
+    if (submitted) return;
+    const operating = parseFloat(userOperating);
+    const investing = parseFloat(userInvesting);
+    const financing = parseFloat(userFinancing);
+    const netChange = parseFloat(userNetChange);
 
     const checkResult = checkAnswer(operating, investing, financing, netChange, {
       operating: round.correctOperating,
@@ -138,7 +146,7 @@ export function CashFlowPractice() {
     } else {
       setConsecutiveCorrect(0);
     }
-  }, [userOperating, userInvesting, userFinancing, userNetChange, round]);
+  }, [userOperating, userInvesting, userFinancing, userNetChange, round, submitted]);
 
   const handleNewRound = useCallback(() => {
     setRound(generateRound());

@@ -4,6 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, RefreshCw, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
 
+/**
+ * Check statistics answers for the displayed data.
+ * @returns Practice rounds, answer feedback, and progress.
+ */
 export default function Phase4Content() {
 
   type Problem = {
@@ -69,8 +73,9 @@ export default function Phase4Content() {
   const currentProblem = problems[currentIndex];
 
   const handleSubmit = () => {
+    if (submitted) return;
     const userNum = parseFloat(userAnswer);
-    const isCorrect = Math.abs(userNum - currentProblem.answer) < 0.1;
+    const isCorrect = Math.abs(userNum - currentProblem.answer) < 0.005;
     setCorrect(isCorrect);
     setSubmitted(true);
     

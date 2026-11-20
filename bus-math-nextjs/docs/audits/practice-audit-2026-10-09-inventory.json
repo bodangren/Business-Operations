@@ -1,0 +1,3360 @@
+{
+  "scope": "Units 01–08, lessons 01–10; guided and independent practice",
+  "lessons": [
+    {
+      "unit": "unit01",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit01/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson01/phase-4/PhaseContent.tsx",
+        "src/components/exercises/FillInTheBlank.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit01/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson02/phase-4/PhaseContent.tsx",
+        "src/lib/accounting/unit01-practice.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit01/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson03/phase-4/PhaseContent.tsx",
+        "src/components/accounting/PostingPracticeLoop.tsx",
+        "src/components/accounting/TAccountSimple.tsx",
+        "src/components/exercises/JournalEntryBuilding.tsx",
+        "src/lib/accounting/unit01-practice.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit01/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson04/phase-4/PhaseContent.tsx",
+        "src/components/accounting/TableStructureSimulator.tsx",
+        "src/lib/accounting/unit01-practice.ts",
+        "src/lib/paths.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit01/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson05/phase-4/PhaseContent.tsx",
+        "src/lib/accounting/unit01-practice.ts",
+        "src/lib/paths.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit01/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson06/phase-4/PhaseContent.tsx",
+        "src/lib/paths.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit01/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit01/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit01/lesson07/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx",
+        "src/data/unit01-project.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit01/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit01/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson08/LessonContent.tsx",
+        "src/app/student/unit01/lesson08/lesson-data.ts",
+        "src/app/student/unit01/lesson08/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01-project.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/lib/paths.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit01/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit01/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson09/LessonContent.tsx",
+        "src/app/student/unit01/lesson09/lesson-data.ts",
+        "src/app/student/unit01/lesson09/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit01",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit01/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit01/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit01/lesson10/LessonContent.tsx",
+        "src/app/student/unit01/lesson10/lesson-data.ts",
+        "src/app/student/unit01/lesson10/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit02/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit02/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson02/phase-4/PhaseContent.tsx",
+        "src/components/exercises/AdjustmentPractice.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit02/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson03/phase-4/PhaseContent.tsx",
+        "src/components/exercises/ClosingEntryPractice.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit02/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson04/phase-4/PhaseContent.tsx",
+        "src/components/exercises/MonthEndChallenge.tsx",
+        "src/components/exercises/MonthEndClosePractice.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit02/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit02/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit02/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit02/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit02/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit02/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit02/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson08/LessonContent.tsx",
+        "src/app/student/unit02/lesson08/lesson-data.ts",
+        "src/app/student/unit02/lesson08/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit02/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit02/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson09/LessonContent.tsx",
+        "src/app/student/unit02/lesson09/lesson-data.ts",
+        "src/app/student/unit02/lesson09/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit02",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit02/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit02/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit02/lesson10/lesson-data.ts",
+        "src/app/student/unit02/lesson10/page.tsx",
+        "src/app/student/unit02/lesson10/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit03/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit03/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson02/phase-4/PhaseContent.tsx",
+        "src/components/exercises/IncomeStatementPractice.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit03/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson03/phase-4/PhaseContent.tsx",
+        "src/components/exercises/BalanceSheetPractice.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit03/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson04/phase-4/PhaseContent.tsx",
+        "src/components/exercises/CashFlowPractice.tsx",
+        "src/components/exercises/DragAndDrop.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit03/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson05/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/CrossSheetLinkSimulator.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit03/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson06/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/ErrorCheckingSystem.tsx",
+        "src/components/charts/FinancialDashboard.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit03/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit03/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit03/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit03/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit03/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson08/lesson-data.ts",
+        "src/app/student/unit03/lesson08/page.tsx",
+        "src/app/student/unit03/lesson08/phase-1/PhaseContent.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit03/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit03/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson09/lesson-data.ts",
+        "src/app/student/unit03/lesson09/page.tsx",
+        "src/app/student/unit03/lesson09/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit03",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit03/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit03/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit03/lesson10/lesson-data.ts",
+        "src/app/student/unit03/lesson10/page.tsx",
+        "src/app/student/unit03/lesson10/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit04/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson01/phase-4/PhaseContent.tsx",
+        "src/components/charts/BarChart.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit04/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit04/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit04/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson04/phase-4/PhaseContent.tsx",
+        "src/components/charts/ScatterChart.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit04/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson05/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/index.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit04/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson06/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/ChartLinkingSimulator.tsx",
+        "src/components/business-simulations/ErrorCheckingSystem.tsx",
+        "src/components/charts/FinancialDashboard.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit04/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit04/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit04/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit04/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit04/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson08/LessonContent.tsx",
+        "src/app/student/unit04/lesson08/lesson-data.ts",
+        "src/app/student/unit04/lesson08/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit04/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit04/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson09/lesson-data.ts",
+        "src/app/student/unit04/lesson09/page.tsx",
+        "src/app/student/unit04/lesson09/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit04",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit04/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit04/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit04/lesson10/lesson-data.ts",
+        "src/app/student/unit04/lesson10/page.tsx",
+        "src/app/student/unit04/lesson10/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit05/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson01/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/RestaurantStaffingSimulator.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit05/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson02/phase-4/PhaseContent.tsx",
+        "src/components/payroll/CalculateDeductions.tsx",
+        "src/components/payroll/TaxBracketTable.tsx",
+        "src/data/payroll/federalTaxTables.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit05/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit05/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson04/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/ErrorCheckingSystem.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit05/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson05/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit05/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit05/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit05/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit05/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit05/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit05/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson08/LessonContent.tsx",
+        "src/app/student/unit05/lesson08/lesson-data.ts",
+        "src/app/student/unit05/lesson08/page.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit05/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit05/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson09/lesson-data.ts",
+        "src/app/student/unit05/lesson09/page.tsx",
+        "src/app/student/unit05/lesson09/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit05",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit05/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit05/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit05/lesson10/lesson-data.ts",
+        "src/app/student/unit05/lesson10/page.tsx",
+        "src/app/student/unit05/lesson10/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit06/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit06/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson02/phase-4/PhaseContent.tsx",
+        "src/components/drag-drop-exercises/BreakEvenComponents.tsx",
+        "src/components/exercises/MarkupMarginMastery.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit06/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson03/phase-4/PhaseContent.tsx",
+        "src/components/exercises/BreakEvenMastery.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit06/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit06/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson05/GoalSeekSimulator.tsx",
+        "src/app/student/unit06/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson05/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit06/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson06/DataTableSimulator.tsx",
+        "src/app/student/unit06/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson06/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit06/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit06/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit06/lesson07/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit06/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit06/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson08/lesson-data.ts",
+        "src/app/student/unit06/lesson08/page.tsx",
+        "src/app/student/unit06/lesson08/phase-1/PhaseContent.tsx",
+        "src/app/student/unit06/project-workbooks.ts",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit06/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit06/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson09/lesson-data.ts",
+        "src/app/student/unit06/lesson09/page.tsx",
+        "src/app/student/unit06/lesson09/phase-1/PhaseContent.tsx",
+        "src/app/student/unit06/project-workbooks.ts",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit06",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit06/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit06/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit06/lesson10/lesson-data.ts",
+        "src/app/student/unit06/lesson10/page.tsx",
+        "src/app/student/unit06/lesson10/phase-1/PhaseContent.tsx",
+        "src/app/student/unit06/project-workbooks.ts",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit07/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson01/InventoryPredictionLab.tsx",
+        "src/app/student/unit07/lesson01/InventoryStrategyStudio.tsx",
+        "src/app/student/unit07/lesson01/inventory-simulation.ts",
+        "src/app/student/unit07/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit07/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson02/CostAssignmentPractice.tsx",
+        "src/app/student/unit07/lesson02/InventoryTimelineLab.tsx",
+        "src/app/student/unit07/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit07/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson03/LayerAssignmentPractice.tsx",
+        "src/app/student/unit07/lesson03/MethodRecommendationStudio.tsx",
+        "src/app/student/unit07/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit07/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson04/MethodComparisonMatrix.tsx",
+        "src/app/student/unit07/lesson04/MethodPracticeCombined.tsx",
+        "src/app/student/unit07/lesson04/WeightedAvgDemo.tsx",
+        "src/app/student/unit07/lesson04/WeightedAvgPractice.tsx",
+        "src/app/student/unit07/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit07/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson05/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/MethodComparisonSimulator.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit07/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson06/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/DynamicMethodSelector.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit07/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit07/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit07/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit07/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit07/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson08/lesson-data.ts",
+        "src/app/student/unit07/lesson08/page.tsx",
+        "src/app/student/unit07/lesson08/phase-1/PhaseContent.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit07/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit07/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson09/lesson-data.ts",
+        "src/app/student/unit07/lesson09/page.tsx",
+        "src/app/student/unit07/lesson09/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit07",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit07/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit07/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit07/lesson10/lesson-data.ts",
+        "src/app/student/unit07/lesson10/page.tsx",
+        "src/app/student/unit07/lesson10/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson01",
+      "route": "src/app/student/unit08/lesson01/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson01/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson01/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson01/phase-4/PhaseContent.tsx",
+        "src/lib/paths.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson02",
+      "route": "src/app/student/unit08/lesson02/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson02/CapitalizationDecisionLab.tsx",
+        "src/app/student/unit08/lesson02/CapitalizationScenarioPractice.tsx",
+        "src/app/student/unit08/lesson02/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson02/phase-4/PhaseContent.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson03",
+      "route": "src/app/student/unit08/lesson03/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson03/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson03/PartialYearDepreciationLab.tsx",
+        "src/app/student/unit08/lesson03/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson03/phase-4/PhaseContent.tsx",
+        "src/components/exercises/StraightLineMastery.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson04",
+      "route": "src/app/student/unit08/lesson04/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson04/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson04/DDBSalvageFloorLab.tsx",
+        "src/app/student/unit08/lesson04/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson04/phase-4/PhaseContent.tsx",
+        "src/components/exercises/DDBComparisonMastery.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson05",
+      "route": "src/app/student/unit08/lesson05/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson05/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson05/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson05/phase-4/PhaseContent.tsx",
+        "src/components/business-simulations/AssetRegisterSimulator.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson06",
+      "route": "src/app/student/unit08/lesson06/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson06/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson06/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson06/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson07",
+      "route": "src/app/student/unit08/lesson07/page.tsx",
+      "kind": "guided-and-independent",
+      "practiceSources": [
+        "src/app/student/unit08/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson07/phase-4/PhaseContent.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson07/phase-3/PhaseContent.tsx",
+        "src/app/student/unit08/lesson07/phase-4/PhaseContent.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson08",
+      "route": "src/app/student/unit08/lesson08/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit08/lesson08/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson08/LessonContent.tsx",
+        "src/app/student/unit08/lesson08/lesson-data.ts",
+        "src/app/student/unit08/lesson08/page.tsx",
+        "src/components/spreadsheet/SpreadsheetHelpers.ts",
+        "src/components/spreadsheet/SpreadsheetWrapper.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson09",
+      "route": "src/app/student/unit08/lesson09/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit08/lesson09/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson09/lesson-data.ts",
+        "src/app/student/unit08/lesson09/page.tsx",
+        "src/app/student/unit08/lesson09/phase-1/PhaseContent.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    },
+    {
+      "unit": "unit08",
+      "lesson": "lesson10",
+      "route": "src/app/student/unit08/lesson10/page.tsx",
+      "kind": "single-page-activity",
+      "practiceSources": [
+        "src/app/student/unit08/lesson10/page.tsx"
+      ],
+      "dependencies": [
+        "src/app/student/unit08/lesson10/lesson-data.ts",
+        "src/app/student/unit08/lesson10/page.tsx",
+        "src/app/student/unit08/lesson10/phase-1/PhaseContent.tsx",
+        "src/components/exercises/PeerCritiqueForm.tsx",
+        "src/data/unit-registry.ts",
+        "src/data/unit01.ts",
+        "src/data/unit02.ts",
+        "src/data/unit03.ts",
+        "src/data/unit04.ts",
+        "src/data/unit05.ts",
+        "src/data/unit06.ts",
+        "src/data/unit07.ts",
+        "src/data/unit08.ts",
+        "src/types/glossary.ts",
+        "src/types/lesson.ts",
+        "src/types/unit.ts"
+      ],
+      "status": "inventoried; see reviewer report for verification"
+    }
+  ],
+  "files": [
+    {
+      "file": "src/app/student/unit01/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "99fbc68a5a1cf0b5c5aaf71825634f801cb1365aa9e96fdb3a457f6eeba3486d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "2dc8d7fe7f00b166e3f927917275c4d9d1f790dc7b4ad2c9c2f236b1380e2fce",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "74aeb94339d53db5025b34160858b4bd93c200114c6536b180efbbfb36dd1742",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "2348d6d7ecd3034037b70494dc582c0252871c1fb6fa277f3ad7d1b46aecf96e",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "f4be786e605c68421d04e0e3ce2fd4f75bc4600f7f9e2cf0c97787eb4fab96df",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "2af1f546da20f8ab539f587da5163a961456497ad8ce1288e879be71f397071f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "2b122ded4ef137d3472945beb2ef17612bf59c651753475f3ad17d8c8b79e9c6",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "ed790512602c42701f7321fed6bb6242062ca032a5d79c27483db9492c86d7a1",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "7e307a6955590a99654d17b6c9006562ed2b55d46c6569a9c3cab3bce9a4d4e9",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "87c12df6e06b8d340635277554ffd31cef063574bd3b323f1195ba54576693ca",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "79a7e0f7383d680d3bf0c9463337adb76faeae2ddb95b1ca24700139a0eb85ae",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "00cde7f12c08b6dc216d164ab75e15a7a2b8c983255d1f2cad94e9d1b0139fac",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "31d1bbe16e56c1714bc10563ab878878afd84dea3fd6f069707a8c24c31f6e6e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit01/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "bc3035a341890bc2a0344c50fddf7bcf197f86c25bf3b14ae01ca0704a2da2cb",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson08/LessonContent.tsx",
+      "sha256": "0e853c46ad6d0d9723f1e2ca0743f09239bcaa3bab08b19495f28a1134a9eff2",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson08/lesson-data.ts",
+      "sha256": "e416a5b648ce00be5f093bea95dd83fb67770e3068dcb69bfcca655523cef06f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson08/page.tsx",
+      "sha256": "09350cd27dd43f9a3cfd503b058a087effaef0f22f0cca939389133658c17401",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson09/LessonContent.tsx",
+      "sha256": "f4a33ccde3166ef40d8e0fa67c9c38fc1cda3f9e2bfb02bbef59d78ac2f873ab",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson09/lesson-data.ts",
+      "sha256": "76e2aa3b7fc251823a6d7732b01de62fea36e80c3d3ab7b31cf4b11aea6ace30",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson09/page.tsx",
+      "sha256": "3cabe0d4377169f3f6fb9111cce0dd5a1a5535e7eb16a15b1a4ba39fc7300441",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson10/LessonContent.tsx",
+      "sha256": "70bb8c38e8becb49b94d3138ed6973ad0a300977ac2273c61316a0daa17b79f2",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson10/lesson-data.ts",
+      "sha256": "b9e426eafa79c5914b94fe61dca36d9a940e412dd598efbf3839852938077288",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit01/lesson10/page.tsx",
+      "sha256": "28bef6014055eaf8d7ba1a8e26edf2b35cbc3dc41f67ec5b4100deda9496cc87",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "253313c0327b4bee34bcd9d88f10db5e969dea82cefd757cf40ac9b74ece2612",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "f5225c59043cc25a264e0232efb850826b0022a8151ed5b515890d3cb9a2ddd5",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "5650e6f66a21006bd56a2d99a4eb65007b80812978a49d18cb42d3258590f134",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "2a7c54b9b91080bfe9e8b805c6c8ea32e5380b080ac6b4be7ae483b8c39f1645",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "a67957238a7b8ba75f46fa7de8c1d10217c34701c80f7b8bd190da3f539c1dc9",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "6a1bf9c51f316e034234a1d0cbcbc29e9ec8d572cdc2ceca18448e40612ba4a2",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "35388dae9032ddbc309fab962d03f7083da7f212dc2e9b4ce4facbbfa4445fad",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "873bcec8f5f989620cf67f88ef37f7b1c8f1ae37f8cffae84116671f618500f0",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "85ccc51e949902e6ebd14554bb82190461604dca6faa52cc7b9e1495a00515fb",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "7724ff32338d5ecff35db225565dc7130f64299d73cb6b1af6e0e12d54d6f715",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "a06a3f2a3ab1506e3b9af333c56ee55a08d18c27df419bf2ece8720dd4405a91",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "bcaea3bbb6f89db8714ff3bf8554576be8a181e1e4eca3cb02cc6fe7e9c4ed4c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "8285b5e2538c18adf8fc23cf70dd704d35feba1a42f54fed846bbef146a46719",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "52a8a0894a31710bdc3961300ef5f05829917afd2e2f1ab4cbedf21fb1a37f90",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson08/LessonContent.tsx",
+      "sha256": "3438155ff6b1cf0e0d38055862e3b957da8887297854cc48486a57a57e246e93",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson08/lesson-data.ts",
+      "sha256": "9ca0cec4616204cc184c1aee63d04cc75facce1fabe2654f33ed8a0b59bcd458",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson08/page.tsx",
+      "sha256": "9227c7dd7e0ea5134eee2e46a3a90fd824f01628378178f3744f156a5e977ae2",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson09/LessonContent.tsx",
+      "sha256": "e170b897c3ddb93ad51984a986695a3ba91650660b639b9af572d03cf8dc353a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson09/lesson-data.ts",
+      "sha256": "a1da2410d4b86d22530975810f136218b97808d090ffbb4d62d7e520b3961cb5",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson09/page.tsx",
+      "sha256": "9155b083837a92fafbf0b68a23b58a608bf8ccc06a549ad5866e91089479daf3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson10/lesson-data.ts",
+      "sha256": "d0357ee1701fdb15edeef1135f3f55da4d8f04a392e2871fc55cb19c532e7fff",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson10/page.tsx",
+      "sha256": "b62b7b8aece8ab6979379cc2a3c7c84c20a2924cdc6c908ef27963846964e915",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit02/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "48224b7416a9389d93491c4493d45d5bdfdc9ff223e6756316fc0d99584a9111",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "22180c7076df0e5ac37eec672c8f3e78b7e088116cc49f1500e0981c51f8ce9c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "4bf7da026f00468695bf23b64b3a969b9d897b5ecab02cad3965668795b6001a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "d34f354ec0836e157878c1df4e4c032a3ba8b29287abd7c8a9a75202ae5c9150",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "a371fe4a6202b8306c249d12d0a8c7a144e136bdd1227f1efce81cafefd6d147",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "0035e9368ea1dd74394cc3f9cf6fc88a07873494e87d88b5338dbcc4f73e699c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "6d105231cf0a28f5b16927142498fe6032d503ab6c3f0d710a23382ded475f4a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "9c7213b667e0a9f5bad07c96fb74b59da1fe3aea42bbe4f449e1a9759e48a5b8",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "0d8682f3b1139a9fc1a6ca4549145c76532c09ee11a5649cd4b64b342276fca4",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "52d4c064e1ad51690c7c64c8d5d42cb8ad168f4713d9ee8d2221b0f080ab0f3d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "c3d7b1a9d275967f2c3c2d87e1fe3bfd99e42eed65f08f2fda876ce63fb26f41",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "f863a3bd22314557b4e0fd23cb08b0b3cdb1eb3cd75d32b9ad654ef47a89dcf7",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "9cfa2088a223afbc5c9392a9ac2ed084564b6f8d178cd97207a2abb4f90d1a7e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "8ee7b2c4a30377e21ede137ed969fdf98e82ada85f8d5bfe4f49a07c277de9f0",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "098bd1e69d846b84942c7424e429ca1704670f363fb6efda58c1ff1d934d052e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson08/lesson-data.ts",
+      "sha256": "22cc66544afed1b3faa301b46649f41cf343ba06a3838e388016e9ce5da9632c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson08/page.tsx",
+      "sha256": "8161defa25f1ae6ea6ada006ff69039deb44bf3f6a7492e31b7f99bed3269ea2",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson08/phase-1/PhaseContent.tsx",
+      "sha256": "64909d7939de9e832e017f5be69551ee797d2a4dd2e14ce3b49a574a8b04f5de",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson09/lesson-data.ts",
+      "sha256": "bb7b3ad6e2e08c8a128e2f4cc53bfa82bad8a6f2690fbd536575e4c82c9a69fc",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson09/page.tsx",
+      "sha256": "0bc22c6e626afd620375b9a520758b5ef87ca2d0efb50ed45ee3dd425a17822b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson09/phase-1/PhaseContent.tsx",
+      "sha256": "c9a09bc8e8bdcd26ac70f5352bd4907180435ea79d409206ed6fce7603b701e7",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson10/lesson-data.ts",
+      "sha256": "a57da82b461ff68001b5a86ebac66e354609288439b8d83511814420495b8308",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson10/page.tsx",
+      "sha256": "701a55858037cce050b3edfed11f35af6367a79d7c2bc0d31f63607675bd281e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit03/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "0b6a0cfa96fa12822dfb1aa33df5092465cdf0348b2581739422f1045059ced1",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "0f54dcb95bee65f9121e5bf97fae2985c0b6d1b72656727ef4a9905bb5738c39",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "6caa91c9e5c76d0d29461dcc011cec156f151447fc4b21c395a7e0c24ad45677",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "5ed5b9eea66ad649517b123038a2f1899347011417ac6153a4622024bf0b9980",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "feacfdada5f47d2f80b8485b68bc3522a935810962471f12914c19e41c928cb9",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "a9274fcb4b42fa66254186bda8d3784ba27fa632ff47d066ba5c2b4c572bca64",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "446d03407e96584f661d36859b308768d8fbd7f514eb9ce316121b8847b91939",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "b1e7ad71194c90359682d2dc265dbb97cbb18d04d61af260012a06c54d3c7b08",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "ef6fc38962ac41b2561f9b3d834707360729aa21b5ce1ae8c95a5248b8018f39",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "63ccd3d65c3d013cd40172d7ccb2ad0edac5ffa7f2ccc0a675a637c46548daf0",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit04/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "0a295ea206e96f5856c19caac894c15fb40237e2400745f39611f89bfecb8a7f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "e1be15774170499681ff1b5f8283007818f574d2a2bfc2856454b2ff1f82350e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "777d4cdbe5b43aaadfbd5bf20ade5d4a565c87afbf6dc08a8ee9301a8ec15879",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "8313864f42d9f1a8989cffb888f30fec9ca35bde424a1b003095c55ebdba7e56",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "c533bd6377793667cf8b9729ded96b6896c30ac28cd66a9cb77d221d59400eb2",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson08/LessonContent.tsx",
+      "sha256": "65973f6e31633fd020a93ff080aa82e8fb5c9f507c6d0378dee2c31d12d4b037",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson08/lesson-data.ts",
+      "sha256": "0466bca05ee2c80f90dc7b2c460aef9c765932142471c43f189eda799838b40e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson08/page.tsx",
+      "sha256": "9621aedeb3a955d99339253e84ab2f29c7b08adecfeb1e682011755ad029b04a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson09/lesson-data.ts",
+      "sha256": "15873217c5204c2af9ee6280cdbb950553b5d14d9a57477bc38943f1f55ff973",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson09/page.tsx",
+      "sha256": "28f3c32bf7b17296b3427eef0857e11b13f6febbf00d5c41c724b78cca6ba85a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson09/phase-1/PhaseContent.tsx",
+      "sha256": "5a64457cbd69c5b1e1d18527693f0a5e1d3d48dca43bf6e95b8d1091c6c8acfd",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson10/lesson-data.ts",
+      "sha256": "bc5c54c49a71502905bffa87a6904069a75564da477c7f33717df3853946465b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson10/page.tsx",
+      "sha256": "d740d07b745d21d26cedded2df6612d6dd2fb7b26039346845a2428b8af2c953",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit04/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "0840e04110e7ab4f775df91c0660ecd66ef9966c5c448424239bd641bf6d96d6",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "67c3841654ab2eb7a6dce60dc135a513bdfa91fe3d2d8984d479dd7df22365bf",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit05/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "4bbc053349b9e4d35098128f131ff1be5c0d816d15515d2527bcc72b48daf7c3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "daa43f3ff73ea516477a9c2251a6f745cb9dd726f9247f3c18cae35e55a66faa",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "f66b4d8b02fae5e95b6ef8f6717b1a8cf48bac80bdc4188e573666466f319043",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "01d9c2c1015a00e9c64dfe7de3ffd54064114455fe9b170e7369666df4d9608a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "f7222ec9cb49ac2df905f8841b4beb78c26ce0ac939a32c45c98b6e5a19da9c3",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "7e11b14c3f7f2da9874eb8e60c751cc5f2737b965f483dd4412f31dfbfe18758",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "5bc0353c1290d6478c2f02ec3254509b08aa6dab74d9da0c4df62a9bb6941d77",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "7469f7ec17c7dadd1570608d75aff92de89f63aa3314ad0993b33c973b847d4d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit05/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "8224d19bf1f56237fd60bd2249acb165f61f1628476394937f742e821c00ff38",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "ecb243d7b3ee36198f0149b81650d1b1ae04d52151882f8c995c2447ddbe1f08",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "ead9b4cc4fea1f1a23fe2f35c63f6eced03e861acd77e113be6fe811f990060b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "76aa686d0436a17e532a520eba275beec6b5a6d3e668279b94c15d7712f7e252",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "7b02e343f666f1bb70ebc998a64513194ea31971ae74b102c50177bfe61f155c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson08/LessonContent.tsx",
+      "sha256": "062d4c52b489ef8fddd60d6779cc72f644cb3efebec04701781b851857bc7d89",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson08/lesson-data.ts",
+      "sha256": "1b10f923b07588f3c915085ad11a75c38536371eb3268ddafc13b619d1cf6f78",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson08/page.tsx",
+      "sha256": "e07b0159dbd5f904cea7ac5ad8ad26864b5b5e6a2fb7f2138e3ff0a001273a2b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson09/lesson-data.ts",
+      "sha256": "ddad75cdc4e477267ec23c21cfdfd81c0bf6fba304f2fd6bd4ef73753b310109",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson09/page.tsx",
+      "sha256": "8a6824d1d9ca808e5fef396d4da6b98aff7c0516fd5644a3f59fe71d100640fc",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson09/phase-1/PhaseContent.tsx",
+      "sha256": "712c0df990090f596ed0c18d861a79af89738b71d9b846740ac0ea78c5f7ce02",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson10/lesson-data.ts",
+      "sha256": "be7be427ab238a9832f0bb923917bd15dce89aa3a895239d732b459ae2294f23",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson10/page.tsx",
+      "sha256": "6c998bcf5c4a841e301706c30665965c5cf584b1739d953781c3ac2dbd1f2b4f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit05/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "858e14c4e3c1e152f368eb67770ed1675b83d076bbc801fd1cf03b35826da3bd",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "a0c6782468a4c7474716e66948c89bcc58fb26b2ca972c2c4ff6a42b78347f97",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "883dab0e740c37f18ceaef46c820c1413021ba614849b11841129d0d72224584",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "a83d08a8a33c20b7c9222a6e7c7f9bfabc9656d2fddacfb45362e29e83cd387f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "41af71e8258000bc849617d7a676ab3c085a082e1e3c5b557266c90b418b0f7d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "f546b1b8d677eec874460b44c4f0c23c8fb5f09a100fe6221de43ce5f66436ef",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "f5fac3026181db91a7da33b649de82cef866dd4f3176818b62c31414d36fa260",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "2ffa8e248129ed0047098e3e3db7bffc35ff9151e3888b9fb4f40e0d166c505d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "01788da7805b4598ae3b23529a1deea6d1c9c51d89acae529051df4a5007af34",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson05/GoalSeekSimulator.tsx",
+      "sha256": "ab9958eac7d54e10aecece78b5de7c5294afedd91a899d8529c7664b757e2af6",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "aee1226375ba8cd54d13d07e9ff86b9f4a2335dc659ea6f948853ac6ccfc1f28",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "e2c7e804c0c8fa17ff5bbe7d1244ada451cbdbf8f4cdbdc866412e0059644d20",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit06/lesson06/DataTableSimulator.tsx",
+      "sha256": "7f08b0e7013a4db00a70979165789de313b30ba70c41b8a3d25990c715ed0c1d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "6082db191777b375b53f9df1a07232ab91eb70c24b3e3dc18f907d3325f86af8",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "2712395de6c0a5439c17292e3d83803132be91720781252a33c84b9a6205405a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit06/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "2dd4cc70aa61e8eb52febc22598d2157b9ff97ac271c6e7e53b28d6632b03c19",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit06/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "28ce0be291aeca6ee58a170be389cf9c6b69cc395c23a303e5177ff483b98ff1",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit06/lesson08/lesson-data.ts",
+      "sha256": "05c335e0953ce845290604885c6c5c020083cc5cb4d63b3d187b3027ed436d9f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson08/page.tsx",
+      "sha256": "93d126238ee1293d277cdb2d106f48e6ebf6cee8f07d363ba1f3c50c7b28d5fd",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson08/phase-1/PhaseContent.tsx",
+      "sha256": "bd0d1a68ddbc43af5949365ec9d37c1992d5f2a025b8366fd7884cf151f327f5",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson09/lesson-data.ts",
+      "sha256": "709ba8badc583d9ae653550ace2aa68249fddbc217bea0acedeaf4abccec55b3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson09/page.tsx",
+      "sha256": "2d4d3e14dfc2c1e6aa490cdfa540df99281cf109c762f297c960b561e4bdfce4",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson09/phase-1/PhaseContent.tsx",
+      "sha256": "850e2fcb23238e4f8dc0ba6378b2c05f7da2e472b41395ecc0651e6bd510f9db",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson10/lesson-data.ts",
+      "sha256": "04059591e9a83e2a0b3d718bd8259f5156f27de32a8a0ba3c5270daf82d65845",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson10/page.tsx",
+      "sha256": "6ca937adcb9b7fe500fde430db273bfcbce5cce64b4c284d5dd7e2ff6de7545b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "2fad13e2e3ee00d15524bef8df5e682b160b9cbc94b9c7c989b63574919ffdb1",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit06/project-workbooks.ts",
+      "sha256": "a2d3c109293730ea49f199122adecb98b1fcdd10758868d75eeae7f4910ce644",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson01/InventoryPredictionLab.tsx",
+      "sha256": "ee46bbf7ce1e4ed1f3a632dd70500048abcaecdc4ea9fb4cd0f9abaac650b94d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson01/InventoryStrategyStudio.tsx",
+      "sha256": "962e41a4da7f367caab32acc02bc78c58e6c804818c5356ead320ec3db4bf3cc",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson01/inventory-simulation.ts",
+      "sha256": "244fd738ec57871ac1a3f48ef22621b5423edfbb3931496f2f1a8120bf9422dc",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "08e9d4f96c3fb999865f946709424fda3d25fded75dbd2cc3c1f2e7aee79be30",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "0ebdf89feaec664572166572e417090076cc3664690aaee9b0b1ed434776ced5",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson02/CostAssignmentPractice.tsx",
+      "sha256": "fec217fd1e7a8b47eecc7690dfc750e954312ec034918b622382a6253e3fe453",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson02/InventoryTimelineLab.tsx",
+      "sha256": "e639b63563860e818e53809327a1a48f1aaf9c1e0a4f67a043bf2597b0b04a3d",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "d37c4eb4f0361b3fbad7c449089c7d218f2a819960a2285f5ae2bdf5d141c7be",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "9e0e01d5b24aab043609ece48c5cceb816ad41d49326007af5920036f6e38b0a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson03/LayerAssignmentPractice.tsx",
+      "sha256": "929f2f89599c1f6c78556e2e489b9214272aecb0ee0380a3b4669aeb0e377b52",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson03/MethodRecommendationStudio.tsx",
+      "sha256": "27393693ce8f9405b50c33275b49ff7b3db45ba0fbe25ea2e3aaf1a6a1228b1f",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "422a2c500788f2fcb2ab05bdcf41593697988e36a6ff245d6c83b67b5fcd14eb",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "00e455b84b551667729e548cca6ab1c7136a58236dea190a5c853b21653c470f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson04/MethodComparisonMatrix.tsx",
+      "sha256": "413e6c3376e611df1283474efdb2f48677ccd1a502bc9b9c520a06d4df62d32c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson04/MethodPracticeCombined.tsx",
+      "sha256": "0bdf650a09dfcb2fd903111ff2243aab1cbf08b40f553f3e0f0f36ff13dd3a42",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson04/WeightedAvgDemo.tsx",
+      "sha256": "3e626864f0936dd46a977bc0debc53cd4fbe725364a7df581ce906fdf073b026",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson04/WeightedAvgPractice.tsx",
+      "sha256": "918bb6d60f3a28a9c81978e6399a2a7f12c1c62d43c8a116b42f427a7b2c6dbe",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "93b08b6b644badf9fa09dacfe391367c8f5e5da446d9fc61152741d774c1b58d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "5ecf83f18234384ba184bc051bb9321ed44b717b3a79aa03aa4b3ed0ca049cbf",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "055d5c3a1854aac97d6861202089aaeb45347a93f30f1ec1a32d53ae21ca4d94",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "c0363f381fe381d29fc8a0db3fd85d48e6f11fd7c90d2915e11cf71710195247",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit07/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "64e6da7de99d33edd0a4e0348a9b58e305c058f0660758cca6b6b740c589bf5f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "ea32b22a6b447ec52593989c14cc86ac47d64777ac58e2e9abbd76c6622621f3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit07/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "5b2dfa11dcb98f3f87557029f1f71d4d89a04075b8b1188678a8382b6f04a0b6",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "fade09a800ec247d1cc2bbb5cfe6f09ce8b060cfe76b2f23176c4d59cf12be45",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson08/lesson-data.ts",
+      "sha256": "02e6c2427187362c249cd3648211a9252118f45d5debf61dc8d5370c7f7a1826",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson08/page.tsx",
+      "sha256": "01d59b31a16ade0b03a0be881c647ab036b932f399eabadc1687435bf31fe0ff",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson08/phase-1/PhaseContent.tsx",
+      "sha256": "3a83c21f70b8dc39b579e802ca35ca98f2359a7799096ef0681447ff86027200",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson09/lesson-data.ts",
+      "sha256": "d85a5d82392d508028d65181a9f913a4bd3964c7cd40950981100a0b5cf984d8",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson09/page.tsx",
+      "sha256": "9871544df8e1c773e5634bdbaab863c24d06efe305580a7df6da5c74f10e4340",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson09/phase-1/PhaseContent.tsx",
+      "sha256": "2e92c33cc42ce5d39fd3c9646c1a770373be66acef4e45b8b450fe41a3f7011f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson10/lesson-data.ts",
+      "sha256": "8e077377c752a6a6252300f31dbc009d815bc68f89c5e0445ef2a02d9f319520",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson10/page.tsx",
+      "sha256": "f95ff5b3be74e927f2723a28468b11422c7921536a11bdc5f8b0595f8e77550e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit07/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "39887e00a63b8dbcbb34ee1bde18d87442732ff24018e8a093efad68d86af5ef",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson01/phase-3/PhaseContent.tsx",
+      "sha256": "d7c3d58a342331890de8afb981b6d4999f4e8debd6b9d6ce070c5a7e577d5e70",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson01/phase-4/PhaseContent.tsx",
+      "sha256": "23bbbe3cbdaafdb6389a4fd8d12cc2b52827bea70b7e3812b26cb8422f1176d0",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson02/CapitalizationDecisionLab.tsx",
+      "sha256": "ac0f29c2ff3cb55cf823aae18acf864e6bbebdb19f83136d4841e1c334d97306",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson02/CapitalizationScenarioPractice.tsx",
+      "sha256": "535af39d78d3f5d988c9c28ccd41ae70544c45fa104634bfc9c97cf0b5fe574f",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson02/phase-3/PhaseContent.tsx",
+      "sha256": "6460c5d9fc7208777fbc4af532757095412de4419ea698b4e139cf90d048c99e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson02/phase-4/PhaseContent.tsx",
+      "sha256": "b688919612f45d53597f4d0ff6ea5156d176bd198d9eb85173e23fdad3f2a6c9",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson03/PartialYearDepreciationLab.tsx",
+      "sha256": "65c471f7be3e0df5b038668af3cf17a6976cdc754618323edc57749a93ba3e94",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson03/phase-3/PhaseContent.tsx",
+      "sha256": "65d48fcacd5b93dfb23d5243d11d02f57c7be5a2a7a4f028fbab22e20817d88d",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson03/phase-4/PhaseContent.tsx",
+      "sha256": "d552eab7610da91b80d58b49b5a4bedff66b16b79528de03856482c4220a4ab6",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson04/DDBSalvageFloorLab.tsx",
+      "sha256": "ac9c104242c8f1947d640b5ecbe55b6d4fe79e160a9a316b95ee313a8a287c18",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson04/phase-3/PhaseContent.tsx",
+      "sha256": "23098b8043d150b0b51b77bd878cf6cf4e2a7f08f9602b4f9a8d8cf78a95be9c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson04/phase-4/PhaseContent.tsx",
+      "sha256": "052b243acd4ac03c5bbd937c06a48e12fa074c227bdf0db04457d27e0a862747",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson05/phase-3/PhaseContent.tsx",
+      "sha256": "7f472cc71603a419750c95ff4471dcc00da4d3a58a79669c1cc22a566ce7dea6",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson05/phase-4/PhaseContent.tsx",
+      "sha256": "9369b756543e9b65aefd0c0fdcbc3e089f77bb9b84666057d365c0bd5f90e3da",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit08/lesson06/phase-3/PhaseContent.tsx",
+      "sha256": "0eace983a30657f825c0a49c723f0f47317ff60ce8973ce03055a734cd8e440f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson06/phase-4/PhaseContent.tsx",
+      "sha256": "ba43124b23aeeeef3b318c65ad84c16260f6f8354df8aadefcba15f08378b12c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit08/lesson07/phase-3/PhaseContent.tsx",
+      "sha256": "0caa5ef96163690120769609f9a0c5644d7934e9ff36aac8fdf3934c5d079299",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit08/lesson07/phase-4/PhaseContent.tsx",
+      "sha256": "8d739691d9f94e740c8044a81edffde1800a267d10af7e8b287e5aa007e1511a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson08/LessonContent.tsx",
+      "sha256": "92d5f9994c947063c9519fa4bdc6243d2be68b8804c680d9032377fffe262520",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/app/student/unit08/lesson08/lesson-data.ts",
+      "sha256": "399a3889f9390f98b28a4060ac31de9b805c4fb15dde4d52ec4d6a809d3d54e5",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson08/page.tsx",
+      "sha256": "2e150ae587b66dd7228ca4a944b291d9ee0a2ebfca2e94ea908de264705cf124",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson09/lesson-data.ts",
+      "sha256": "d76d38ee29ab8e6dea2dc19eea1414705b62e1817ba4937c776d78db95effc6b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson09/page.tsx",
+      "sha256": "3d7b1368674b34f73b828956d234ef379f76044a9539ade6d93b10488a720ccd",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson09/phase-1/PhaseContent.tsx",
+      "sha256": "ab07a9e436d03db7830944920863c20f92c13c00ea08bc3801e9f3303c7f64e0",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson10/lesson-data.ts",
+      "sha256": "3716edffa9f07c32e39aa73c0c547855f6c31b254ee8c25e769d13a03ee07be7",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson10/page.tsx",
+      "sha256": "114b1680589ad3be7e3382673adefe0507435315e81c11fd470ea365d7cffea0",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/app/student/unit08/lesson10/phase-1/PhaseContent.tsx",
+      "sha256": "dc0cea7a6c55379b6d4fa62d678220b953b0cf4921f1d35667ba5cf57b90f3b8",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/accounting/PostingPracticeLoop.tsx",
+      "sha256": "06246983f392d1c403b210af93bce185ef2845c3375ff49c08656ece69819c64",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/accounting/TAccountSimple.tsx",
+      "sha256": "fb0a2a3b9b1358b9f6d46dc4144eea221040be937841454deabc0b98d82385e1",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/accounting/TableStructureSimulator.tsx",
+      "sha256": "baf127c030473665e9945b1c49e91e302d91091c644ca6100769c0b0cb048ece",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/AssetRegisterSimulator.tsx",
+      "sha256": "e1077ec90a13698b2fd32ae3783d406bb72139df2e2f08ee59822a2c8ab8f1cb",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/ChartLinkingSimulator.tsx",
+      "sha256": "fad5bf866824c724469e1e2a424ec0aafe1a5f53285ddb70a39ebe5b79d7dc7b",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/CrossSheetLinkSimulator.tsx",
+      "sha256": "179da4f91a8d6838932a4e5d770f7a08284eb1aeb9c9d4cc29909ca981f4dbbd",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/DynamicMethodSelector.tsx",
+      "sha256": "60e362bc69a0882ca866b1abddc6b538aa3c3612fc37698119cf7359ec9bd0c9",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/ErrorCheckingSystem.tsx",
+      "sha256": "ef82487bc03969c62dcaaa3e36148757d647227f521a5a0b3c7deec6f6b4ece5",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/MethodComparisonSimulator.tsx",
+      "sha256": "a617700e4d22629fc7a083964c1ef1c08b9869ddc811f9fef6f31f2f56aacd3a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/business-simulations/RestaurantStaffingSimulator.tsx",
+      "sha256": "58d4b237dc34b1b32221d772787b62c1d7fc2a1e2634f5171ae5a9dc3083abc9",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/charts/BarChart.tsx",
+      "sha256": "02ad7c7733147fc5b9291a1c7e4c0ebe0dc42a4091df0855f6c238b7b87fed65",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/charts/FinancialDashboard.tsx",
+      "sha256": "27f1b70756e10f8b0a069124119e5170564639e0ad840d6348fb0256397db087",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/charts/ScatterChart.tsx",
+      "sha256": "0e33de190407d4bf2b4526bb9a12ca6acc0b7bf55da4dca50cdc95d86b2ebdaa",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/drag-drop-exercises/BreakEvenComponents.tsx",
+      "sha256": "3118c8b614f232d81adf09d3ea885ea318061c4f0d0482279d8f7c4d47ed92c4",
+      "randomInputs": true,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/AdjustmentPractice.tsx",
+      "sha256": "38adee07cad6deb309f8d4cf6994a7405b5d3dc78ea0910d294ac8ce7df526b9",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/BalanceSheetPractice.tsx",
+      "sha256": "92bc5597deaffad73616d65a5ccf7c113f316e64b7e0ce23c1c3578b5dfeef4b",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/BreakEvenMastery.tsx",
+      "sha256": "ed7ec10a4c18ae949dc6fc3b73ef3fa80387dfb6108d0b1d10f24f52680ddf85",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/CashFlowPractice.tsx",
+      "sha256": "57988e31523902cb00bef4eefa9311600745b1cf3391a4c62282f5bebf1301d7",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/ClosingEntryPractice.tsx",
+      "sha256": "f47d262651dec34e205e6802d61d317cdb2e343399102e14aa9560bd8c89a2dd",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/DDBComparisonMastery.tsx",
+      "sha256": "b2d0c738cfcefd7acb0ccd97282ee6de252542c80d112e854109480211ef3396",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/DragAndDrop.tsx",
+      "sha256": "cbb8b457a586a204596883e0fd1a1544144cadda2481d345f814ad4b3bb6e193",
+      "randomInputs": true,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/FillInTheBlank.tsx",
+      "sha256": "c6419dad268733eb92f1437aa99e5cb2012019498516622ac8ed569c2d2554e9",
+      "randomInputs": true,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/IncomeStatementPractice.tsx",
+      "sha256": "044e3c573630e8dc901e08fa2ec4829549a8dac6a0330a601a054be5516827b5",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/JournalEntryBuilding.tsx",
+      "sha256": "5b1caadb7ef668e08af2e7be172e9ab1f90b8910ea1f58b4d3ebf86c37efa483",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/MarkupMarginMastery.tsx",
+      "sha256": "3a0a1a934fcbb2eabb18ac4191a3ec3417da241747dafb1303e2feed5e20c6e9",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/MonthEndChallenge.tsx",
+      "sha256": "b6683260b32e12a6f3f454241fa2d69200696a5df95ffc6a8485b0cf381a8070",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/MonthEndClosePractice.tsx",
+      "sha256": "73dc00d9d578b8a73b545aefe527ada0e3fc0a3569d2f41550e3e7b0dce6d03a",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/PeerCritiqueForm.tsx",
+      "sha256": "ae40eb6e4bacb38326f492deac8e3f4d2eaf58f4a5e5b25533fb279f2bc181cb",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/exercises/StraightLineMastery.tsx",
+      "sha256": "c3fd693d76cdeb2e1c27237fa8d8b1a2d87a481082e4152b9d18049ae3ceff8a",
+      "randomInputs": true,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/payroll/CalculateDeductions.tsx",
+      "sha256": "e8dc71e906efbf1c064a293514b2e2a330065a30ed154c94e02d0dc0d6dee49c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/payroll/TaxBracketTable.tsx",
+      "sha256": "1bc3e148ba13400f67cf704ebbc4bb80eba55c95ecd02e64080347e830790712",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/components/spreadsheet/SpreadsheetHelpers.ts",
+      "sha256": "9fbbfc0d146beab6661903e0810baac33b5823fa432bb044abe2148cddae5a50",
+      "randomInputs": false,
+      "numericAnswerParsing": true,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/components/spreadsheet/SpreadsheetWrapper.tsx",
+      "sha256": "d5f97bc91fadaaa76bf17ae24db58ef7020bd7309cfd76c01ca18849ea4424f3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/components/spreadsheet/index.ts",
+      "sha256": "0cc768a0e54c73628bd95cc5d67d0b5e73020dcbe5da8a815a09e296335264cb",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": true
+    },
+    {
+      "file": "src/data/payroll/federalTaxTables.ts",
+      "sha256": "6cd556b8d53b086638532eae4411b50850f3791f7ac094e9d453157447ec971f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit-registry.ts",
+      "sha256": "625e702571459470f21e3e0605715ceb746cb84db47db1c055cd157c6546dbf3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit01-project.ts",
+      "sha256": "dcbf2693bcb5fe5517b7ac3fda96d5256153bf440b421f8b1fd4a1f89176f738",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit01.ts",
+      "sha256": "490870a6f419cef96e0c2b18c2677eec3b7a5aab073c0c5c67d1bf393f8e00ca",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit02.ts",
+      "sha256": "b6fbea6381348fae468109d91edd7bc7e7f7ed3fea2eeb009480a3a9f937fe41",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit03.ts",
+      "sha256": "622158498b43115629d4c10f5731ec1b38923dc8c4802d616b4b1a815d262895",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit04.ts",
+      "sha256": "653f82ea720ecad204b89e2f4e1f4f309acf5d8fdb4d2b97150d81df01140c4f",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit05.ts",
+      "sha256": "cf7eb7e5141acd6079d20864748e40096355dcb88ad2153e931732f9d2db1f1e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit06.ts",
+      "sha256": "75bf20ff370290fe16b2d16732ed81f6113b4d4e10664b10b09f43a7ee477ea9",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit07.ts",
+      "sha256": "a4a6f7938a3096d9c51f1086e21bb6592be600bb4535bd38ceac60acc76a6695",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/data/unit08.ts",
+      "sha256": "7d890e6e288e756cc4ce5d948933f0992d2d009b34f6d936e5ecb3be3c7167e7",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/lib/accounting/unit01-practice.ts",
+      "sha256": "08f543e1094856ec6f4a4ea0228fadbaa76d21a0aad92de608c3b2b36cadedc3",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/lib/paths.ts",
+      "sha256": "38c22e8095ecd2a79a8e3bdcc35dcc57a35ad6c39682be1b10e4cbc10fd8a016",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/types/glossary.ts",
+      "sha256": "1b0c46feb9522db0319477b9dd45ea53cdb1e305f274182ce6d06e813efdac3a",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/types/lesson.ts",
+      "sha256": "af9cfac2a6b4b573b9c7093fb119023bfe706baf85c55911f7b2c7e671eeb10e",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    },
+    {
+      "file": "src/types/unit.ts",
+      "sha256": "7106ed64a0bcdc84beea654918e445f2944ee299315923b1e6788b76d01c298c",
+      "randomInputs": false,
+      "numericAnswerParsing": false,
+      "spreadsheetPreview": false
+    }
+  ]
+}

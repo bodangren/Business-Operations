@@ -13,41 +13,44 @@ function h(value: string): { value: string; readOnly: true } { return { value, r
 function r(value: string | number): { value: string | number; readOnly: true } { return { value, readOnly: true }; }
 const E: { value: string; readOnly: true } = { value: "", readOnly: true };
 
-// Sample CVP model
+// Match the CVP Model sheet built in Lesson 5. Formula strings are display text.
 const cvpSheet: SpreadsheetData = [
   [h("PriceLab CVP Model"), E, E, E],
   [E, E, E, E],
-  [h("Input Variables"), E, h("Values"), E],
-  [h("Selling Price"), r(1350), h("$/project"), E],
-  [h("Variable Cost"), r(880), h("$/project"), E],
-  [h("Fixed Costs"), r(12000), h("$/month"), E],
+  [h("INPUTS"), E, E, E],
+  [h("Price per Project"), r(1350), h("$/project"), E],
+  [h("Projects (Volume)"), r(25), h("projects"), E],
+  [h("Fixed Costs"), r(12000), h("$/period"), E],
+  [h("Variable Cost/Project"), r(880), h("$/project"), E],
   [E, E, E, E],
-  [h("Calculated Results"), E, h("Formulas"), E],
-  [h("Contribution Margin"), r(470), h("Price - VC"), E],
-  [h("Break-Even Units"), r("=ROUND(B5/B4,0)"), h("units"), E],
-  [h("Target Profit"), r(15000), h("$"), E],
-  [h("Target Units"), r("=(B8+B9)/B4"), h("units"), E],
+  [h("CALCULATIONS"), h("Value ($)"), h("Formula to enter in column B"), E],
+  [h("Contribution Margin"), r(470), r(" =B4-B7"), E],
+  [h("Total Revenue"), r(33750), r(" =B4*B5"), E],
+  [h("Total Variable Cost"), r(22000), r(" =B7*B5"), E],
+  [h("Total Profit"), r(-250), r(" =B11-B12-B6"), E],
 ];
 
-// Sample Data Table output
+// Profit at 25 projects, with price down the first column.
 const dataTableSheet: SpreadsheetData = [
-  [h("One-Variable Data Table: Price Sensitivity"), E, E, E, E, E, E],
-  [E, E, E, E, E, E, E],
-  [h("Formula Cell:"), r("Profit Formula"), E, E, h("= (B4-880)*B5 - 12000"), E, E],
-  [E, E, E, E, E, E, E],
-  [h("Price →"), r(1000), r(1100), r(1200), r(1300), r(1400), r(1500)],
-  [h("Profit ↓"), r(-7200), r(-1200), r(4800), r(10800), r(16800), r(22800)],
+  [h("One-Variable Data Table: Price Sensitivity"), E],
+  [E, E],
+  [h("Price ($/project)"), h("Profit ($) at 25 projects")],
+  ...[1000, 1100, 1200, 1300, 1400, 1500, 1600].map(price => [r(price), r((price - 880) * 25 - 12000)]),
 ];
 
+// Prices go down the first column. Volumes go across the top row.
 const twoVarSheet: SpreadsheetData = [
-  [h("Two-Variable Data Table: Price × Volume Matrix"), E, E, E, E, E],
-  [E, E, E, h("Price →"), E, E],
-  [E, E, r(1000), r(1200), r(1400), r(1600)],
-  [h("Volume"), r(15), r(-4200), r(4800), r(13800), r(22800)],
-  [h("↓"), r(25), r(3800), r(14800), r(25800), r(36800)],
-  [h(""), r(35), r(11800), r(24800), r(37800), r(50800)],
+  [h("Two-Variable Data Table: Price × Volume"), E, E, E, E, E],
+  [E, E, E, E, E, E],
+  [h("Price ↓ / Volume →"), E, E, E, E, E],
+  [r(" =B13"), r(15), r(25), r(35), r(45), r(55)],
+  ...[1000, 1200, 1400, 1600].map(price => [r(price), ...[15, 25, 35, 45, 55].map(volume => r((price - 880) * volume - 12000))]),
 ];
 
+/**
+ * Present Data Table previews that match the Lesson 5 profit model.
+ * @returns Verified model outputs and Data Table build instructions.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-orange-50">
@@ -133,16 +136,16 @@ export default function Phase4Content() {
                   <div className="bg-white p-4 rounded border border-blue-200 text-xs font-mono overflow-x-auto">
                     <SpreadsheetWrapper
                       initialData={dataTableSheet}
-                      columnLabels={["A", "B", "C", "D", "E", "F", "G"]}
+                      columnLabels={["A", "B"]}
                       readOnly={true}
                     />
                   </div>
                   <div className="bg-blue-50 p-4 rounded border border-blue-200">
                     <h4 className="font-bold text-blue-900 text-sm mb-2">Excel Instructions:</h4>
                     <ol className="list-decimal list-inside space-y-1 text-blue-800 text-xs">
-                      <li>In a row above, enter your price range (e.g., $1,000 to $1,600 in increments of $100)</li>
-                      <li>In the cell immediately to the left of the first price, enter the profit formula <strong>= (B4-880)*B5 - 12000</strong> (or reference your Profit cell)</li>
-                      <li>Select the range including the formula and all prices</li>
+                      <li>Enter prices from $1,000 to $1,600 down A19:A25 in $100 steps</li>
+                      <li>In B18, enter <strong>=B13</strong> to link to Total Profit. Leave A18 blank</li>
+                      <li>Select A18:B25, including the formula link, prices, and blank result cells</li>
                       <li>Go to <strong>Data → What-If Analysis → Data Table</strong></li>
                       <li>For <strong>Column Input Cell</strong>, select your Price input cell (e.g., B4)</li>
                       <li>Click OK—Excel fills in all profit values</li>
@@ -173,9 +176,9 @@ export default function Phase4Content() {
                   <div className="bg-purple-50 p-4 rounded border border-purple-200">
                     <h4 className="font-bold text-purple-900 text-sm mb-2">Excel Instructions:</h4>
                     <ol className="list-decimal list-inside space-y-1 text-purple-800 text-xs">
-                      <li>In the first row, enter your price range (across columns)</li>
-                      <li>In the first column, enter your volume range (down rows)</li>
-                      <li>In the corner cell (where row and column headers meet), enter the profit formula</li>
+                      <li>In the top row, enter volumes across the columns</li>
+                      <li>In the first column, enter prices down the rows</li>
+                      <li>In the top-left corner cell, enter =B13 to link to Total Profit</li>
                       <li>Select the entire range including the corner formula</li>
                       <li>Go to <strong>Data → What-If Analysis → Data Table</strong></li>
                       <li>For <strong>Row Input Cell</strong>, select your Volume input cell (e.g., B5)</li>

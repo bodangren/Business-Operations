@@ -19,11 +19,11 @@ const headerCell = (value: string) =>
 const labelCell = (value: string) =>
   baseCell(value, "bg-slate-50 text-slate-600 font-semibold border border-slate-200");
 
-const inputCell = (value: string) =>
+const inputCell = (value: string | number) =>
   baseCell(value, "bg-white text-blue-800 font-mono border border-blue-200");
 
 const formulaCell = (value: string) =>
-  baseCell(value, "bg-amber-50 text-amber-800 font-mono border border-amber-200");
+  baseCell(` ${value}`, "bg-amber-50 text-amber-800 font-mono border border-amber-200");
 
 const E = baseCell("");
 
@@ -31,22 +31,26 @@ const sheet1: SpreadsheetData = [
   [headerCell("Sarah's CVP Model - Target Profit Analysis"), E, E, E],
   [E, E, E, E],
   [labelCell("INPUTS"), E, E, E],
-  [labelCell("Price per Project:"), inputCell("$1,350"), E, E],
-  [labelCell("Projects (Volume):"), inputCell("25"), E, E],
-  [labelCell("Fixed Costs:"), inputCell("$12,000"), E, E],
-  [labelCell("Variable Cost/Project:"), inputCell("$880"), E, E],
+  [labelCell("Price per Project:"), inputCell(1350), E, E],
+  [labelCell("Projects (Volume):"), inputCell(25), E, E],
+  [labelCell("Fixed Costs:"), inputCell(12000), E, E],
+  [labelCell("Variable Cost/Project:"), inputCell(880), E, E],
   [E, E, E, E],
-  [labelCell("CALCULATIONS"), E, E, E],
-  [labelCell("Contribution Margin:"), formulaCell("=B4-B7"), E, E],
-  [labelCell("Total Revenue:"), formulaCell("=B4*B5"), E, E],
-  [labelCell("Total Variable Cost:"), formulaCell("=B7*B5"), E, E],
-  [labelCell("Total Profit:"), formulaCell("=B9-B6"), E, E],
+  [labelCell("CALCULATIONS"), headerCell("Value ($)"), headerCell("Formula to enter in column B"), E],
+  [labelCell("Contribution Margin:"), baseCell(470), formulaCell("=B4-B7"), E],
+  [labelCell("Total Revenue:"), baseCell(33750), formulaCell("=B4*B5"), E],
+  [labelCell("Total Variable Cost:"), baseCell(22000), formulaCell("=B7*B5"), E],
+  [labelCell("Total Profit:"), baseCell(-250), formulaCell("=B11-B12-B6"), E],
   [E, E, E, E],
   [labelCell("GOAL SEEK RESULT"), E, E, E],
-  [labelCell("Target Profit:"), inputCell("$15,000"), E, E],
-  [labelCell("Required Price:"), inputCell("$1,388"), E, E],
+  [labelCell("Target Profit:"), inputCell(15000), E, E],
+  [labelCell("Required Price:"), baseCell(1960), formulaCell("=B7+(B6+B16)/B5"), E],
 ];
 
+/**
+ * Present a Goal Seek workbook model with verified formulas and outputs.
+ * @returns The model preview and workbook build instructions.
+ */
 export default function Phase4Content() {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-orange-50">
@@ -86,8 +90,7 @@ export default function Phase4Content() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-sm text-blue-800">
-                    This is the exact structure you'll build. The yellow cells are inputs, 
-                    the green cells are formulas.
+                    Use column B for values and working formulas. Column C shows the formula text to enter. The preview shows the starting price of $1,350 and profit of −$250.
                   </p>
                   <div className="overflow-x-auto bg-white p-4 rounded border border-blue-200">
                     <SpreadsheetWrapper
@@ -111,7 +114,7 @@ export default function Phase4Content() {
                   <div className="bg-slate-50 p-4 rounded border border-slate-200">
                     <h4 className="font-bold text-slate-900 mb-3">Step 1: Set Up the CVP Model</h4>
                     <ul className="list-disc list-inside text-slate-700 text-sm space-y-1">
-                      <li>Open a new Excel workbook, rename Sheet1 to "CVP Model"</li>
+                      <li>Open a new Excel workbook. Rename Sheet1 to "CVP Model". Save the file as PriceLab_GOALSEEK.xlsx.</li>
                       <li>Create the INPUTS section with labels and input cells for Price, Volume, Fixed Costs, Variable Cost</li>
                       <li>Create the CALCULATIONS section with formulas for Contribution Margin, Revenue, Variable Costs, and Total Profit</li>
                       <li>Verify the Profit formula works: it should calculate correctly when you change Price or Volume</li>
@@ -152,7 +155,7 @@ export default function Phase4Content() {
                   <p className="font-medium">Before you move on, verify each of these:</p>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Changing the Price input updates the Profit formula automatically</li>
-                    <li>Goal Seek successfully changes the Price to approximately $1,388</li>
+                    <li>Goal Seek successfully changes the Price to $1,960 for the $15,000 profit target</li>
                     <li>The resulting price makes mathematical sense (higher than variable cost + proportional to target)</li>
                     <li>You can run Goal Seek again with a different target and get a new answer</li>
                   </ul>

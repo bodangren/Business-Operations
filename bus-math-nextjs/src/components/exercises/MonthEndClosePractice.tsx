@@ -22,86 +22,103 @@ interface MonthEndClosePracticeProps {
 }
 
 function generateScenario(seed: number): AdjustmentItem {
+  const suppliesBalance = 3000 + (seed % 5) * 1000
+  const suppliesRemaining = 1000 + (seed % 3) * 500
+  const insuranceBalance = 2400 + (seed % 3) * 1200
+  const insuranceMonths = 12 - (seed % 6)
+  const equipmentCost = 30000 + (seed % 4) * 10000
+  const usefulLifeYears = 3 + (seed % 5)
+  const unpaidDays = 2 + (seed % 3)
+  const dailyPayroll = 400 + (seed % 3) * 200
+  const advancePayment = 3000 + (seed % 3) * 1000
+  const projectMonths = 2 + (seed % 2)
+  const servicesEarned = 600 + (seed % 5) * 200
+  const notePrincipal = 10000 + (seed % 5) * 5000
+  const annualInterestPercent = 6 + (seed % 4)
+  const rentBalance = 6000 + (seed % 3) * 3000
+  const rentMonths = 3 + (seed % 3)
+  const roundToCents = (amount: number) => Math.round(amount * 100) / 100
+
   const scenarios: AdjustmentItem[] = [
     {
       description: "Supplies on hand at month-end",
-      unadjustedBalance: 3000 + (seed % 5) * 1000,
-      additionalInfo: `Physical count shows $${1000 + (seed % 3) * 500} remaining`,
+      unadjustedBalance: suppliesBalance,
+      additionalInfo: `Physical count shows $${suppliesRemaining} remaining`,
       entryType: "deferred-expense",
       debitAccount: "Supplies Expense",
       creditAccount: "Supplies",
-      amount: 2000 + (seed % 4) * 500,
+      amount: suppliesBalance - suppliesRemaining,
       explanation: "Supplies used = unadjusted balance minus physical count. Debit Supplies Expense to record the cost used; credit Supplies to reduce the asset."
     },
     {
       description: "Prepaid insurance expired",
-      unadjustedBalance: 2400 + (seed % 3) * 1200,
-      additionalInfo: `${12 - (seed % 6)} months remaining on the policy`,
+      unadjustedBalance: insuranceBalance,
+      additionalInfo: `Before this adjustment, prepaid insurance covers ${insuranceMonths} months. One month has expired.`,
       entryType: "deferred-expense",
       debitAccount: "Insurance Expense",
       creditAccount: "Prepaid Insurance",
-      amount: 200 + (seed % 4) * 100,
+      amount: roundToCents(insuranceBalance / insuranceMonths),
       explanation: "One month of prepaid insurance has expired. Debit Insurance Expense; credit Prepaid Insurance to reduce the asset."
     },
     {
       description: "Monthly depreciation on equipment",
-      unadjustedBalance: 30000 + (seed % 4) * 10000,
-      additionalInfo: `Useful life: ${3 + (seed % 5)} years. Salvage value: $0. Straight-line method.`,
+      unadjustedBalance: equipmentCost,
+      additionalInfo: `Useful life: ${usefulLifeYears} years. Salvage value: $0. Straight-line method.`,
       entryType: "depreciation",
       debitAccount: "Depreciation Expense",
       creditAccount: "Accumulated Depreciation",
-      amount: 500 + (seed % 5) * 100,
+      amount: roundToCents(equipmentCost / (usefulLifeYears * 12)),
       explanation: "Monthly depreciation = (Cost - Salvage) / Useful life in months. Debit Depreciation Expense; credit Accumulated Depreciation (a contra-asset)."
     },
     {
       description: "Wages earned by employees but not yet paid",
       unadjustedBalance: 0,
-      additionalInfo: `Employees worked the last ${2 + (seed % 3)} days of the month. Daily payroll: $${400 + (seed % 3) * 200}.`,
+      additionalInfo: `Employees worked the last ${unpaidDays} days of the month. Daily payroll: $${dailyPayroll}.`,
       entryType: "accrued-expense",
       debitAccount: "Wages Expense",
       creditAccount: "Wages Payable",
-      amount: 800 + (seed % 4) * 400,
-      explanation: "Wages have been incurred but not yet paid. Debit Wages Expense to record the cost; credit Wages Payable to record the liability."
+      amount: unpaidDays * dailyPayroll,
+      explanation: "Accrued wages = unpaid days × daily payroll. Debit Wages Expense to record the cost; credit Wages Payable to record the liability."
     },
     {
       description: "Unearned revenue now earned",
-      unadjustedBalance: 3000 + (seed % 3) * 1000,
-      additionalInfo: `Cash was received in advance for a ${2 + (seed % 2)}-month project. One month of work is complete.`,
+      unadjustedBalance: advancePayment,
+      additionalInfo: `Cash was received in advance for a ${projectMonths}-month project. Work is spread equally across the months. One month of work is complete.`,
       entryType: "deferred-revenue",
       debitAccount: "Unearned Revenue",
       creditAccount: "Service Revenue",
-      amount: 1000 + (seed % 3) * 500,
-      explanation: "Part of the advance payment has been earned. Debit Unearned Revenue to reduce the liability; credit Service Revenue to recognize earned revenue."
+      amount: roundToCents(advancePayment / projectMonths),
+      explanation: "Revenue earned = advance payment ÷ project months. Debit Unearned Revenue to reduce the liability; credit Service Revenue to recognize earned revenue."
     },
     {
       description: "Services performed but not yet billed",
       unadjustedBalance: 0,
-      additionalInfo: `Work completed for a client worth $${600 + (seed % 5) * 200}. Invoice will be sent next month.`,
+      additionalInfo: `Work completed for a client worth $${servicesEarned}. Invoice will be sent next month.`,
       entryType: "accrued-revenue",
       debitAccount: "Accounts Receivable",
       creditAccount: "Service Revenue",
-      amount: 600 + (seed % 5) * 200,
+      amount: servicesEarned,
       explanation: "Revenue has been earned but not yet recorded. Debit Accounts Receivable to record the amount owed; credit Service Revenue to recognize the revenue."
     },
     {
       description: "Interest on a note payable has accrued",
       unadjustedBalance: 0,
-      additionalInfo: `Note payable: $${10000 + (seed % 5) * 5000}. Annual interest rate: ${6 + (seed % 4)}%. One month of interest has accrued.`,
+      additionalInfo: `Note payable: $${notePrincipal}. Annual interest rate: ${annualInterestPercent}%. One month of interest has accrued.`,
       entryType: "accrued-expense",
       debitAccount: "Interest Expense",
       creditAccount: "Interest Payable",
-      amount: 50 + (seed % 5) * 25,
-      explanation: "Interest expense has been incurred but not yet paid. Debit Interest Expense; credit Interest Payable to record the liability."
+      amount: roundToCents(notePrincipal * annualInterestPercent / 100 / 12),
+      explanation: "Monthly interest = note principal × annual interest rate ÷ 12. Convert the rate from a percentage to a decimal. Debit Interest Expense; credit Interest Payable to record the liability."
     },
     {
       description: "Rent paid in advance now partially used",
-      unadjustedBalance: 6000 + (seed % 3) * 3000,
-      additionalInfo: `Prepaid rent covers ${3 + (seed % 3)} months. One month has passed.`,
+      unadjustedBalance: rentBalance,
+      additionalInfo: `Prepaid rent covers ${rentMonths} months. One month has passed.`,
       entryType: "deferred-expense",
       debitAccount: "Rent Expense",
       creditAccount: "Prepaid Rent",
-      amount: 1500 + (seed % 3) * 500,
-      explanation: "One month of prepaid rent has been used. Debit Rent Expense; credit Prepaid Rent to reduce the asset."
+      amount: roundToCents(rentBalance / rentMonths),
+      explanation: "Monthly rent expense = prepaid rent ÷ months covered. Debit Rent Expense; credit Prepaid Rent to reduce the asset."
     }
   ]
 
@@ -123,6 +140,11 @@ function getStepOrder(entryType: string): string {
   }
 }
 
+/**
+ * Present month-end adjustments and check submitted entries.
+ * @param props - Practice settings, including the required correct-answer streak.
+ * @returns The current scenario, answer feedback, or mastery result.
+ */
 export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClosePracticeProps) {
   const [round, setRound] = useState(0)
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0)
@@ -133,6 +155,10 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
   const [showWorkedExample, setShowWorkedExample] = useState(false)
 
   const scenario = generateScenario(round)
+  const formattedAmount = scenario.amount.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
 
   const [selectedDebit, setSelectedDebit] = useState("")
   const [selectedCredit, setSelectedCredit] = useState("")
@@ -162,6 +188,10 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
   }, [])
 
   const handleNewScenario = () => {
+    if (masteryReached) {
+      setMasteryReached(false)
+      setConsecutiveCorrect(0)
+    }
     setRound(r => r + 1)
     resetInputs()
   }
@@ -315,14 +345,16 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
               <label className="block text-sm font-medium text-gray-700 mb-1">Adjustment Amount ($):</label>
               <input
                 type="number"
+                step="0.01"
                 value={amountInput}
                 onChange={(e) => setAmountInput(e.target.value)}
                 disabled={submitted}
                 placeholder="Enter amount"
                 className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
               />
+              <p className="text-xs text-gray-600 mt-1">Round the final amount to the nearest cent.</p>
               {submitted && parseFloat(amountInput) !== scenario.amount && (
-                <p className="text-red-600 text-xs mt-1">Incorrect. The correct amount is ${scenario.amount.toLocaleString()}.</p>
+                <p className="text-red-600 text-xs mt-1">Incorrect. The correct amount is ${formattedAmount}.</p>
               )}
             </div>
           </div>
@@ -352,10 +384,10 @@ export default function MonthEndClosePractice({ masteryTarget = 3 }: MonthEndClo
                   <div className="bg-amber-50 p-4 rounded border border-amber-200">
                     <p className="font-semibold text-amber-900 mb-2">Correct Entry:</p>
                     <p className="text-sm font-mono text-amber-800">
-                      Debit {scenario.debitAccount} ........ ${scenario.amount.toLocaleString()}
+                      Debit {scenario.debitAccount} ........ ${formattedAmount}
                     </p>
                     <p className="text-sm font-mono text-amber-800">
-                      Credit {scenario.creditAccount} ......... ${scenario.amount.toLocaleString()}
+                      Credit {scenario.creditAccount} ......... ${formattedAmount}
                     </p>
                     <p className="text-sm text-amber-700 mt-2">{scenario.explanation}</p>
                   </div>

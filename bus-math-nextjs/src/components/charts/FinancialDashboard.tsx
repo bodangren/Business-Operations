@@ -40,6 +40,11 @@ interface KPIData {
   icon: React.ReactNode
 }
 
+/**
+ * Present monthly business data and summary indicators.
+ * @param props - Dashboard title, display controls, and optional data.
+ * @returns The dashboard charts and indicators.
+ */
 export function FinancialDashboard({ 
   title = "Financial Dashboard", 
   className = "",
@@ -102,7 +107,7 @@ export function FinancialDashboard({
     },
     {
       title: 'Cash Flow',
-      value: '$23,100',
+      value: `$${defaultMonthlyData.reduce((sum, month) => sum + month.cashFlow, 0).toLocaleString('en-US')}`,
       change: '-2.1%',
       trend: 'down',
       icon: <Target className="h-4 w-4" />

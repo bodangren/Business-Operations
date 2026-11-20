@@ -1,0 +1,384 @@
+{
+  "method": "Execute source declarations in isolation and recompute with separate arithmetic. Browser rendering and workbook files are outside this script.",
+  "evidence": [
+    {
+      "check": "month-end full 120-round cycle",
+      "version": "baseline f617fc9",
+      "wrongAmounts": 103,
+      "failingTypes": [
+        "Prepaid insurance expired",
+        "Monthly depreciation on equipment",
+        "Wages earned by employees but not yet paid",
+        "Unearned revenue now earned",
+        "Interest on a note payable has accrued",
+        "Rent paid in advance now partially used",
+        "Supplies on hand at month-end"
+      ],
+      "examples": [
+        {
+          "round": 2,
+          "description": "Prepaid insurance expired",
+          "expected": 327.27,
+          "actual": 300
+        },
+        {
+          "round": 3,
+          "description": "Monthly depreciation on equipment",
+          "expected": 833.33,
+          "actual": 700
+        },
+        {
+          "round": 4,
+          "description": "Wages earned by employees but not yet paid",
+          "expected": 800,
+          "actual": 2000
+        },
+        {
+          "round": 5,
+          "description": "Unearned revenue now earned",
+          "expected": 2000,
+          "actual": 1500
+        },
+        {
+          "round": 7,
+          "description": "Interest on a note payable has accrued",
+          "expected": 100,
+          "actual": 75
+        },
+        {
+          "round": 8,
+          "description": "Rent paid in advance now partially used",
+          "expected": 2250,
+          "actual": 2000
+        },
+        {
+          "round": 9,
+          "description": "Supplies on hand at month-end",
+          "expected": 4000,
+          "actual": 2000
+        },
+        {
+          "round": 10,
+          "description": "Prepaid insurance expired",
+          "expected": 266.67,
+          "actual": 300
+        }
+      ]
+    },
+    {
+      "check": "month-end full 120-round cycle",
+      "version": "working copy",
+      "wrongAmounts": 0,
+      "failingTypes": [],
+      "examples": []
+    },
+    {
+      "check": "cash-flow wrong-answer grading",
+      "submitted": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "expectedCorrect": false,
+      "actual": {
+        "correct": false,
+        "feedback": "Your Operating Cash Flow does not match. Remember: start with Net Income, add back Depreciation, subtract increases in current assets (AR, Supplies), and add increases in current liabilities (AP). Your Investing Cash Flow does not match. Equipment purchases are cash outflows (negative). Only include long-term asset transactions here. Your Financing Cash Flow does not match. Borrowing is a cash inflow (positive). Dividends paid are a cash outflow (negative)."
+      }
+    },
+    {
+      "check": "statistics median",
+      "inputs": [
+        85,
+        92,
+        78,
+        95,
+        88,
+        72
+      ],
+      "expected": 86.5,
+      "actual": 86.5,
+      "acceptsCorrectValue": true
+    },
+    {
+      "check": "weighted-average cost conservation",
+      "results": [
+        {
+          "product": "Flour",
+          "goodsAvailable": 550,
+          "storedCOGS": 330,
+          "storedEndingInventory": 220,
+          "difference": 0,
+          "correctCOGS": 330
+        },
+        {
+          "product": "Sugar",
+          "goodsAvailable": 444,
+          "storedCOGS": 266.4,
+          "storedEndingInventory": 177.6,
+          "difference": 0,
+          "correctCOGS": 266.4
+        },
+        {
+          "product": "Rice",
+          "goodsAvailable": 290,
+          "storedCOGS": 174,
+          "storedEndingInventory": 116,
+          "difference": 0,
+          "correctCOGS": 174
+        },
+        {
+          "product": "Oats",
+          "goodsAvailable": 876,
+          "storedCOGS": 525.6,
+          "storedEndingInventory": 350.4,
+          "difference": 0,
+          "correctCOGS": 525.6
+        },
+        {
+          "product": "Cornmeal",
+          "goodsAvailable": 894,
+          "storedCOGS": 536.4,
+          "storedEndingInventory": 357.6,
+          "difference": 0,
+          "correctCOGS": 536.4
+        },
+        {
+          "product": "Barley",
+          "goodsAvailable": 342,
+          "storedCOGS": 205.2,
+          "storedEndingInventory": 136.8,
+          "difference": 0,
+          "correctCOGS": 205.2
+        }
+      ]
+    },
+    {
+      "check": "inventory feasible allocation range",
+      "expectedCOGS": {
+        "min": 376,
+        "max": 420
+      },
+      "actual": {
+        "gafsUnits": 37,
+        "gafsValue": 736,
+        "cogsRange": {
+          "min": 376,
+          "max": 420
+        },
+        "endingInventoryRange": {
+          "min": 316,
+          "max": 360
+        }
+      },
+      "costConservationRequired": true
+    },
+    {
+      "check": "generated inventory layer quantities",
+      "draws": [
+        0,
+        0.99,
+        0,
+        0,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99
+      ],
+      "purchases": [
+        {
+          "date": "Jan 3",
+          "units": 30,
+          "costPerUnit": 33
+        },
+        {
+          "date": "Jan 11",
+          "units": 5,
+          "costPerUnit": 42
+        },
+        {
+          "date": "Jan 19",
+          "units": 5,
+          "costPerUnit": 51
+        },
+        {
+          "date": "Jan 27",
+          "units": 5,
+          "costPerUnit": 60
+        }
+      ],
+      "unitsSold": 25,
+      "totalUnits": 45,
+      "fifoCOGS": 825,
+      "lifoCOGS": 1095
+    },
+    {
+      "check": "straight-line salvage floor",
+      "draws": [
+        0,
+        0,
+        0.375,
+        0,
+        0.99,
+        0.1
+      ],
+      "problem": {
+        "id": "3llllllll",
+        "assetName": "delivery van",
+        "cost": 28000,
+        "salvageValue": 3000,
+        "usefulLife": 6,
+        "yearToCalculate": 6,
+        "regularAnnualExpense": 4167,
+        "correctAnnualExpense": 4165,
+        "correctAccumulated": 25000,
+        "correctBookValue": 3000
+      },
+      "expectedFinalBookValue": 3000
+    },
+    {
+      "check": "inventory timeline FIFO conservation",
+      "results": [
+        {
+          "event": "event-1",
+          "expectedCumulativeCOGS": 0,
+          "actualCOGS": 0,
+          "expectedInventory": 180,
+          "actualInventory": 180
+        },
+        {
+          "event": "event-2",
+          "expectedCumulativeCOGS": 0,
+          "actualCOGS": 0,
+          "expectedInventory": 580,
+          "actualInventory": 580
+        },
+        {
+          "event": "event-3",
+          "expectedCumulativeCOGS": 144,
+          "actualCOGS": 144,
+          "expectedInventory": 436,
+          "actualInventory": 436
+        },
+        {
+          "event": "event-4",
+          "expectedCumulativeCOGS": 144,
+          "actualCOGS": 144,
+          "expectedInventory": 656,
+          "actualInventory": 656
+        },
+        {
+          "event": "event-5",
+          "expectedCumulativeCOGS": 380,
+          "actualCOGS": 380,
+          "expectedInventory": 420,
+          "actualInventory": 420
+        },
+        {
+          "event": "event-6",
+          "expectedCumulativeCOGS": 480,
+          "actualCOGS": 480,
+          "expectedInventory": 320,
+          "actualInventory": 320
+        }
+      ]
+    },
+    {
+      "check": "guided statistics spread and z-scores",
+      "inputs": [
+        4.25,
+        2.75,
+        5.25,
+        12.95,
+        127.5,
+        3.5,
+        8.75,
+        0.05,
+        6.95,
+        2.25
+      ],
+      "mean": 17.419999999999998,
+      "storedStandardDeviation": 38.85122048704948,
+      "populationStandardDeviation": 36.85750398494179,
+      "sampleStandardDeviation": 38.85122048704948,
+      "cateringZUsingDisplayedValues": 2.83337302200567,
+      "expectedCateringZ": 2.83
+    },
+    {
+      "check": "payroll answers against the lesson's displayed classroom table",
+      "results": [
+        {
+          "id": "alex-base",
+          "annualWages": 55640,
+          "displayedTableRate": 0.22,
+          "expectedFromDisplayedTable": 275.18,
+          "storedAnswer": 275.18,
+          "hint": "Annualize $2,140 × 26 = $55,640. Use the classroom single-filer 22% bracket: $5,578.50 + 22% of the amount over $48,475. Divide by 26 and round to cents."
+        },
+        {
+          "id": "alex-overtime",
+          "annualWages": 69160,
+          "displayedTableRate": 0.22,
+          "expectedFromDisplayedTable": 389.58,
+          "storedAnswer": 389.58,
+          "hint": "Annualized wages jump above $69k, so part of this check is taxed at 22%. Use $5,578.50 + 22% of the amount over $48,475, then convert back to this pay period."
+        },
+        {
+          "id": "maria-head",
+          "annualWages": 64480,
+          "displayedTableRate": 0.12,
+          "expectedFromDisplayedTable": 284.52,
+          "storedAnswer": 284.52,
+          "hint": "HOH brackets go 10% up to $17,000, then 12% up to $64,850. Annualized wages ≈ $64,480, still inside the 12% band."
+        }
+      ],
+      "limitation": "This checks internal lesson consistency. It does not validate tax law or current withholding rules."
+    },
+    {
+      "check": "Goal Seek rejects target one thousand times too high",
+      "results": [
+        {
+          "enteredTarget": "15000",
+          "feedback": {
+            "type": "success",
+            "message": "Perfect! You've set up Goal Seek to find the price needed for $15,000 profit."
+          }
+        },
+        {
+          "enteredTarget": "15000000",
+          "feedback": {
+            "type": "error",
+            "message": "To Value should be 15000 (your target profit)."
+          }
+        }
+      ],
+      "correctPrice": 1960,
+      "profitAtBaseline1388Price": 700
+    },
+    {
+      "check": "Data Table cell references match the displayed model",
+      "results": [
+        {
+          "columnInput": "B4",
+          "rowInput": "B5",
+          "isColumnCorrect": true,
+          "isRowCorrect": true
+        },
+        {
+          "columnInput": "B5",
+          "rowInput": "B6",
+          "isColumnCorrect": false,
+          "isRowCorrect": false
+        }
+      ]
+    }
+  ]
+}

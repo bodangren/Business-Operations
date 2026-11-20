@@ -20,6 +20,11 @@ interface MonthEndChallengeProps {
   trialBalanceTotal: { debits: number; credits: number }
 }
 
+/**
+ * Check adjusting entries for the supplied trial balance.
+ * @param props - Required entries and starting trial-balance totals.
+ * @returns Entry fields and feedback after submission.
+ */
 export default function MonthEndChallenge({ entries, trialBalanceTotal }: MonthEndChallengeProps) {
   const [userAnswers, setUserAnswers] = useState<Record<string, { debitAccount: string; creditAccount: string; amount: string }>>(
     Object.fromEntries(entries.map(e => [e.id, { debitAccount: "", creditAccount: "", amount: "" }]))
@@ -88,7 +93,7 @@ export default function MonthEndChallenge({ entries, trialBalanceTotal }: MonthE
           {isUnbalanced && (
             <div className="bg-red-100 p-3 rounded border border-red-300">
               <p className="text-sm text-red-800 font-semibold">
-                Note: The unadjusted trial balance above shows debits of ${trialBalanceTotal.debits.toLocaleString()} and credits of ${trialBalanceTotal.credits.toLocaleString()}. This difference will be resolved once all adjustments are recorded correctly.
+                The unadjusted trial balance shows debits of ${trialBalanceTotal.debits.toLocaleString()} and credits of ${trialBalanceTotal.credits.toLocaleString()}. Equal debit and credit adjustments cannot remove this difference. Find and correct the starting error before you complete the close.
               </p>
             </div>
           )}
